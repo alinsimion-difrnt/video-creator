@@ -477,7 +477,17 @@ class SafeZoneReport(Strict):
 class GradeFinding(Strict):
     level: Literal["fail", "warn"]  # fail: must be fixed before the mix; warn: advisory
     area: Literal[
-        "layout", "contrast", "brand", "motion", "pacing", "timing", "sound", "text", "accent", "overlap"
+        "layout",
+        "contrast",
+        "brand",
+        "motion",
+        "pacing",
+        "timing",
+        "sound",
+        "text",
+        "accent",
+        "overlap",
+        "safe",
     ]
     msg: str = Field(min_length=1)
     t: float | None = Field(default=None, ge=0)  # when it happens, if it has a time

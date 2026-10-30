@@ -1,0 +1,42 @@
+provenance:
+  schema_version: 1
+  tool_version: 0.1.0
+  stage: c1_brief
+  annotator: claude-code
+  skill: null
+  model: null
+  input_hash: '0000000000000000000000000000000000000000000000000000000000000000'
+  created_at: '2026-10-17T12:00:00Z'
+project: demo25-tiktok
+brand: acme
+build: motion
+cut_s: 25.0
+product:
+  name: Acme
+  spoken: Ack-me
+  url: https://acme.example
+  one_liner: Tracks which brands ChatGPT, Gemini and Perplexity recommend, against
+    the competitors you pick.
+audience: Marketing leads and agency owners at small and mid-size companies who are
+  starting to ask whether AI assistants recommend them.
+destination: tiktok
+format: narrated_explainer
+length:
+  min_s: 22
+  max_s: 28
+tone: 'Warm, plain and specific: a person describing what the product does. No slogans,
+  no rhetorical pairs. Zara warm (ADR 0018).'
+message: AI assistants hand out short lists; Acme shows whether you are on them.
+facts:
+- id: engines
+  claim: Tracks ChatGPT, Gemini and Perplexity
+  source: https://acme.example (homepage, 'ChatGPT · Gemini · Perplexity')
+- id: competitors
+  claim: Compares you with the competitors you choose, on the same prompts
+  source: https://acme.example ('Unlimited competitors')
+- id: sources
+  claim: Tracks which domains and URLs the AI cites
+  source: https://acme.example ('Citation Sources')
+- id: free_plan
+  claim: Free plan, no card
+  source: https://acme.example/pricing ('No card, no time limit')

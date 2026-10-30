@@ -86,3 +86,26 @@ captions:                                # burned-in captions per frame (Acme v2
     background_alpha: 0.92
     max_width_px: 1400
     padding_px: [13, 30]
+  vertical:                              # TikTok / Reels / Shorts (config create.design.frames.vertical)
+    kind: pill
+    family: body
+    weight: 600
+    size_px: 52
+    line_height: 1.25
+    tracking_em: -0.01
+    text: ink
+    active: ink
+    dim_opacity: 0.35
+    background: surface
+    background_alpha: 0.94
+    max_width_px: 480                    # inside the caption band (x 300-780)
+    radius_px: 12
+    padding_px: [14, 26]
+frames:                                  # frames other than landscape (type.sizes and layout above serve landscape)
+  vertical:
+    sizes: video1080x1920                # tokens.json type styles: phone sizes, nothing under 44px
+    layout:
+      safe_margin: spacing.video1080x1920.safe margin
+      section_gap: spacing.video1080x1920.section gap
+      stack_gap: spacing.video1080x1920.stack gap
+      card_padding: spacing.video1080x1920.card padding

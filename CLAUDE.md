@@ -55,6 +55,7 @@ uv run lens synth [--force] [--no-proposals] (S9: corpus/stats/*.json, taxonomy/
 uv run lens cards [--pending] [--g4-page f.html] (A3 cards -> .md; briefs: lens status --card <pid>) |
 uv run lens scenes [--pending] (S9 scene stats) | uv run lens export (S10: exports/*.json + skill pack) |
 uv run create init|status <project> (Phase 2: projects/<project>/, stages C1-C13 in lens/stages.py) |
+uv run create init <p>-tiktok --from <p> --destination tiktok (vertical sibling: same script + voice) |
 uv run create voice <project> [--dry-run] [--force] | uv run create timing <project> (P1: C4, C5) |
 uv run create tokens <project> (P2: C3; needs brand/video.yaml) |
 uv run create edits <project> --page|--apply f (Robert's crops, zooms, notes -> edits.yaml) |

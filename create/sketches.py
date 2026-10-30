@@ -57,13 +57,14 @@ def snapshot(bundle: Path, scene: str, render: CreateRender, out: Path) -> Path:
     return path
 
 
-def sheet_png(frames: list[Path], columns: int, out: Path) -> Path:
+def sheet_png(frames: list[Path], columns: int, out: Path, vertical: bool = False) -> Path:
     n = len(frames)
     rows = -(-n // columns)
     inputs = [x for f in frames for x in ("-i", str(f))]
-    scaled = ";".join(f"[{i}:v]scale=640:360,pad=644:364:2:2:color=0xE5E7EB[v{i}]" for i in range(n))
+    w, h = (360, 640) if vertical else (640, 360)  # cells keep the frame's shape
+    scaled = ";".join(f"[{i}:v]scale={w}:{h},pad={w + 4}:{h + 4}:2:2:color=0xE5E7EB[v{i}]" for i in range(n))
     blanks = rows * columns - n
-    pads = ";".join(f"color=c=white:s=644x364:d=1[b{j}]" for j in range(blanks))
+    pads = ";".join(f"color=c=white:s={w + 4}x{h + 4}:d=1[b{j}]" for j in range(blanks))
     labels = [f"[v{i}]" for i in range(n)] + [f"[b{j}]" for j in range(blanks)]
     stacks = ";".join(
         f"{''.join(labels[r * columns : (r + 1) * columns])}hstack={columns}[r{r}]" for r in range(rows)

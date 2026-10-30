@@ -21,6 +21,7 @@ from create.grade import (
     hold_findings,
     move_findings,
     new_round,
+    safe_findings,
     seam_findings,
     sfx_findings,
     spend,
@@ -204,6 +205,38 @@ def test_the_close_needs_a_visible_logo():
     assert _levels(dom_findings(covered, 24.0, G)[0], "brand") == ["fail"]
     gone = [_sample(i * G.sample_step_s, [url], []) for i in range(8)]
     assert _levels(dom_findings(gone, 24.0, G)[0], "brand") == ["fail"]
+
+
+def test_text_at_the_minimum_is_not_small_after_rounding():
+    edge = {"text": "Body", "px": 43.9, "box": [120, 400, 700, 460]}
+    samples = [_sample(i * G.sample_step_s, [edge]) for i in range(8)]
+    assert _levels(dom_findings(samples, 44.0, G)[0], "text") == []
+
+
+VERTICAL = CFG.create.design.frames["vertical"]
+
+
+def test_vertical_text_under_the_action_rail_or_in_the_caption_band_fails():
+    step = G.sample_step_s
+    inside = {"text": "Inside", "px": 72.0, "box": [140, 400, 760, 480]}
+    rail = {
+        "text": "Under the rail",
+        "px": 44.0,
+        "box": [600, 1000, 1000, 1060],
+    }  # right of x 780 below y 840
+    band = {"text": "On the captions", "px": 44.0, "box": [200, 1100, 700, 1160]}
+    samples = [_sample(i * step, [inside, rail, band]) for i in range(6)]
+    found = safe_findings(samples, VERTICAL, True, 2, G)
+    msgs = sorted(f.msg for f in found)
+    assert all(f.area == "safe" and f.level == "fail" for f in found)
+    assert any("'Under the rail' outside" in m for m in msgs)
+    assert any("'On the captions' in the caption band" in m for m in msgs)
+    assert not any("Inside" in m for m in msgs)
+    # no burned-in captions: the band is free; a fly-through and an off-frame box are not findings
+    assert [f for f in safe_findings(samples, VERTICAL, False, 2, G) if "caption band" in f.msg] == []
+    off = {"text": "Gone", "px": 44.0, "box": [1100, 400, 1500, 480]}
+    passing = [_sample(0.0, [rail])] + [_sample(i * step, [inside, off]) for i in range(1, 6)]
+    assert safe_findings(passing, VERTICAL, True, 2, G) == []
 
 
 def test_pieces_of_one_line_never_overlap_each_other():

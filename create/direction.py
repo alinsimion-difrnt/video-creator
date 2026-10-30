@@ -18,7 +18,7 @@ import yaml
 from create.build import css_vars
 from lens import __version__
 from lens.hashing import cache_key
-from lens.schemas.config import LensConfig
+from lens.schemas.config import LensConfig, Rect
 from lens.schemas.create import Brief, Script, Timeline, Tokens
 
 EXPORTS = ("motion-tokens.json", "pacing.json", "sound-spec.json", "patterns.json")
@@ -56,6 +56,33 @@ def design_rules(md: str, sections: list[str]) -> str:
     """The configured `## N.` sections of a brand's DESIGN.md, verbatim."""
     parts = re.split(r"(?m)^## ", md)
     return "\n\n".join("### " + p.strip() for p in parts if p.startswith(tuple(sections)))
+
+
+def _rect(r: Rect) -> str:
+    return f"x {r.x0}-{r.x1}, y {r.y0}-{r.y1}"
+
+
+def frame_rules(tokens: Tokens, cfg: LensConfig) -> list[str]:
+    """Where text and logos may sit on this frame (config create.design.frames); c8_grade checks them."""
+    lay = tokens.layout
+    frame = cfg.create.design.frames[tokens.frame]
+    safe = "; ".join(_rect(r) for r in lay.safe)
+    lines = [
+        f"Safe area (px): every text and logo lies fully inside one of: {safe}. "
+        f"Text at least {frame.min_text_px:g}px.",
+    ]
+    if tokens.captions is not None:
+        lines.append(
+            f"Caption band ({_rect(lay.caption_band)}): burned-in captions go there after the mix; keep text "
+            "and logos out of it (backgrounds and shapes may pass behind)."
+        )
+    if lay.height > lay.width:
+        lines.append(
+            "Vertical: the platform's own UI (top tabs, the action rail on the right, the description at the "
+            "bottom) covers the rest. Stack, do not spread: one idea per frame, big type, a single column, "
+            "the hook in the first 2 s. Backgrounds and decoration may fill the whole frame."
+        )
+    return lines
 
 
 def _load(base: Path, root: Path) -> dict[str, Any]:
@@ -106,6 +133,7 @@ def direction_md(root: Path, project: str, cfg: LensConfig) -> str:
         f"Tone: {brief.tone}",
         f"Frame: {tokens.layout.width}x{tokens.layout.height}, {tl.fps} fps, exactly {dur:g} s. "
         f"Destination: {brief.destination}. Language: {brief.language}.",
+        *frame_rules(tokens, cfg),
         "Facts you may show (nothing else is claimed):",
         *(f"- {f.id}: {f.claim}" for f in brief.facts),
         "",

@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import re
+import shutil
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -192,3 +194,40 @@ def status(root: Path, project: str) -> list[StageStatus]:
             waiting = [d for d in deps if not done.get(d, False)]
             out.append(StageStatus(s.id, "waiting", "after " + ", ".join(waiting)))
     return out
+
+
+# What a sibling version shares with its source (same narration, another destination): the brief, the
+# script, the chosen voice takes and the word clock. Tokens, direction and the build depend on the frame.
+SIBLING_FILES = ("brief.yaml", "script.yaml", "voice.json", "timeline.json")
+SIBLING_MEDIA = ("voice", "timing")
+
+
+def derive_project(root: Path, src: str, dst: str, destination: str | None) -> list[str]:
+    """projects/<dst>/ as a copy of <src>'s narration, re-pointed at <dst> (and at another destination).
+
+    The voice takes are copied with their media, so the sibling needs no new ElevenLabs credits.
+    Returns the copied files, relative to the repo.
+    """
+    s, d = root / "projects" / src, root / "projects" / dst
+    if not (s / "brief.yaml").exists():
+        raise FileNotFoundError(f"projects/{src}/brief.yaml does not exist")
+    if any(d.glob("*")):
+        raise FileExistsError(f"projects/{dst}/ is not empty")
+    d.mkdir(parents=True, exist_ok=True)
+    copied = []
+    for name in SIBLING_FILES:
+        if not (s / name).exists():
+            continue
+        text = (s / name).read_text().replace(f"data/create/{src}/", f"data/create/{dst}/")
+        text = re.sub(r"(?m)^project: .*$", f"project: {dst}", text)  # YAML
+        text = re.sub(r'(?m)^(\s*)"project": "[^"]*"', rf'\1"project": "{dst}"', text)  # JSON
+        if name == "brief.yaml" and destination is not None:
+            text = re.sub(r"(?m)^destination: .*$", f"destination: {destination}", text)
+        (d / name).write_text(text)
+        copied.append(f"projects/{dst}/{name}")
+    for sub in SIBLING_MEDIA:
+        media = root / "data" / "create" / src / sub
+        if media.is_dir():
+            shutil.copytree(media, root / "data" / "create" / dst / sub, dirs_exist_ok=True)
+            copied.append(f"data/create/{dst}/{sub}/")
+    return copied

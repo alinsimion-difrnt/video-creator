@@ -23,7 +23,9 @@ storyboard + template route below.
 
 Frames (ADR 0023): the brief's destination picks a frame from config `create.design.frames` (landscape
 1920x1080, vertical 1080x1920 with the TikTok/Reels/Shorts safe area). `uv run create audit
-<project>` checks every built scene's text and logos against that frame's safe area and caption band.
+<project>` checks every built scene's text and logos against that frame's safe area and caption band; on the
+motion route `create grade` does the same from its DOM samples. `create init <p2> --from <p> --destination
+tiktok` starts a vertical sibling of a landscape explainer with the same script, voice and timing.
 
 Captions (ADR 0024): `uv run create captions <project>` groups the timeline's words by the frame's rules;
 `uv run create burn <project> --plate film.mp4` burns them on with the brand's caption style

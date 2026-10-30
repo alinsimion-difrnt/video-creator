@@ -25,10 +25,47 @@ def _slug(project: str) -> str:
 @app.command()
 def init(
     project: Annotated[str, typer.Argument(help="Project slug, e.g. acme-v2.")],
-    brand: Annotated[str, typer.Option("--brand", help="Brand slug: the hand-off in brands/<brand>/.")],
+    brand: Annotated[
+        str | None, typer.Option("--brand", help="Brand slug: the hand-off in brands/<brand>/.")
+    ] = None,
+    source: Annotated[
+        str | None,
+        typer.Option(
+            "--from",
+            help="Make a sibling of this project: same brief, script, voice, timing (no voice credits).",
+        ),
+    ] = None,
+    destination: Annotated[
+        str | None,
+        typer.Option(
+            "--destination", help="With --from: the sibling's destination, e.g. tiktok or linkedin."
+        ),
+    ] = None,
 ) -> None:
-    """Create the project folders (and the brand folder if new) and say what the hand-off still needs."""
+    """Create the project folders (and the brand folder if new) and say what the hand-off still needs.
+
+    `--from <project> --destination tiktok` starts a vertical version of a landscape explainer (or the
+    other way round): then run `create tokens` and `create direction` for the new frame.
+    """
     slug = _slug(project)
+    if source is not None:
+        from create.project import derive_project
+
+        cfg = load_config()
+        if destination is not None and destination not in cfg.create.design.destination_frames:
+            known = ", ".join(cfg.create.design.destination_frames)
+            raise typer.BadParameter(f"{destination!r} is not a destination ({known})")
+        try:
+            copied = derive_project(REPO_ROOT, _slug(source), slug, destination)
+        except (FileNotFoundError, FileExistsError) as exc:
+            typer.echo(str(exc))
+            raise typer.Exit(1) from exc
+        typer.echo(f"copied {len(copied)} items from {source}: {', '.join(copied)}")
+        brand = brand or brand_of(REPO_ROOT, slug)
+    elif destination is not None:
+        raise typer.BadParameter("--destination needs --from (a new brief names its own destination)")
+    if brand is None:
+        raise typer.BadParameter("--brand is required (or --from a project whose brief names one)")
     brand_slug = _slug(brand)
     for path in (
         REPO_ROOT / "projects" / slug,

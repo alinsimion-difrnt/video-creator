@@ -213,8 +213,20 @@ def test_vertical_tokens_use_the_frame_and_its_minimum(root: Path):
 
 def test_a_frame_the_brand_has_no_sizes_for_is_an_error(root: Path):
     cfg = load_config(root / "config/lens.yaml")
+    video = _video(root)
+    video.pop("frames", None)  # the demo brand ships vertical sizes; a brand without them
     with pytest.raises(ValueError, match="no 'vertical' sizes"):
-        build_tokens("demo", _brand(root), _video(root), cfg, fake_fetch({}), "vertical")
+        build_tokens("demo", _brand(root), video, cfg, fake_fetch({}), "vertical")
+
+
+def test_acme_ships_vertical_sizes_at_the_phone_minimum(root: Path):
+    cfg = load_config(root / "config/lens.yaml")
+    tokens = build_tokens(
+        "demo", _brand(root), _video(root), cfg, fake_fetch({"Space Grotesk": "✓"}), "vertical"
+    )
+    assert (tokens.layout.width, tokens.layout.height) == (1080, 1920)
+    assert tokens.captions is not None and tokens.captions.max_width_px <= 480
+    assert token_errors(tokens, cfg.create.design) == []
 
 
 def test_run_tokens_takes_the_frame_from_the_destination(root: Path):

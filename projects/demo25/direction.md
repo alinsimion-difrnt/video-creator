@@ -1,4 +1,4 @@
-<!-- c6_direction 0.1.0 input_hash=a62e22365209d2a5ab43408254a846ba61270eedabe0f9a292b70615c33c922f -->
+<!-- c6_direction 0.1.0 input_hash=e4e3eef7b4e66fcf226d8c488cf48a14918def8a41654d7317c9df181c52c566 -->
 # Direction pack: demo25 (25 s)
 
 ## 1. The job
@@ -6,6 +6,8 @@ Product: Acme (https://acme.example). Audience: Marketing leads and agency owner
 Message: AI assistants hand out short lists; Acme shows whether you are on them.
 Tone: Warm, plain and specific: a person describing what the product does. No slogans, no rhetorical pairs. Zara warm (ADR 0018).
 Frame: 1920x1080, 30 fps, exactly 25 s. Destination: linkedin. Language: en.
+Safe area (px): every text and logo lies fully inside one of: x 77-1843, y 43-1037. Text at least 24px.
+Caption band (x 0-1920, y 896-1080): burned-in captions go there after the mix; keep text and logos out of it (backgrounds and shapes may pass behind).
 Facts you may show (nothing else is claimed):
 - engines: Tracks ChatGPT, Gemini and Perplexity
 - competitors: Compares you with the competitors you choose, on the same prompts
@@ -41,65 +43,52 @@ Design rules (brands/acme/DESIGN.md, verbatim):
 
 ### 2. How the accent is used
 
-- One orange: **#00AA90** (`accent`). Hover/pressed: #029778. The platform's older #00AEA6 still exists in a few kit components; do not mix the two in one frame. Use #00AA90 for the video.
-- The accent is for **emphasis and state**, not decoration: the one key word in a headline, the hero stat number, the focal brand in a chart, checked/selected/focus states, the brand chip, the primary button.
-- **Orange text on white is not AA at any size.** #00AA90 on white measures 2.94:1, just under the 3:1 large-text bar. The brand accepts this for the accent word and the hero stat (display sizes, bold, short), as the existing marketing assets do; keep it to those two uses. For any orange text that must pass: `brand-ink` #028C77 (4.18:1, large text only) or `site-accent-ink` #01775C (5.16:1 on site-canvas, passes normal text).
-- White on orange (button label) is 2.94:1 as well. In video, keep orange buttons large (label ≥ 28px bold) and few, or use the outline button.
-- **One accent moment per frame.** A headline with an accent word and an orange stat on the same frame is already the limit. The orange logo in a corner counts as half a moment: keep it small (48 px) when the frame already has an accent.
-- Orange tints: 8% for a chip background, 4% for a selected row, 10% for the focus glow. Never a solid orange panel as background for body copy.
-- Chart convention: the customer's brand is orange; competitors use their own colour, never orange, never grey-only.
+- One teal: **#00AA90** (`accent`). Pressed: #029778.
+- The accent is for **emphasis and state**, not decoration: the one key word in a headline, the hero stat number, the focal brand in a chart, checked/selected states, the brand chip, the primary button.
+- **Teal text on white is not AA at any size** (2.94:1). It is allowed for the accent word and the hero stat at display sizes only. For teal text that must pass: `brand-ink` #028C77 (large text) or `site-accent-ink` #01775C (normal text).
+- **One accent moment per frame.** The teal logo in a corner counts as half a moment.
+- Teal tints: 8% for a chip background, 4% for a selected row. Never a solid teal panel behind body copy.
+- Charts: the customer's brand is teal; competitors use their own colour, never teal.
 
 ### 3. Layout rules
 
-- Canvas: white (#FFFFFF) or `surface-2` #FAFAFA for product frames; `site-canvas` #F5F7FA for marketing frames. Do not mix registers within one scene.
-- Cards: white, 1px hairline, radius 12px (web). **(added)** On a 1920 canvas use radius 20px and the soft card shadow; keep the border at 1px.
-- Depth only when something floats (dropdown, toast, tooltip). Resting cards are bordered, nearly shadowless.
-- Hairline dividers between sections, never heavier than 1px.
-- Uppercase labels are bold, 0.05-0.08em tracked, grey (#6B7280), never orange.
-- Left-align text. Headlines use balanced wrapping; body uses pretty wrapping.
-- **(added)** Video grid: 96px safe margin, 64px between sections, 24px stack gap, 40px card padding.
-- Icons: Heroicons only (outline 1.5px stroke), sized to the text they sit beside.
+- Canvas: white or `surface-2` #FAFAFA for product frames; `site-canvas` #F5F7FA for marketing frames. One register per scene.
+- Cards: white, 1px hairline, radius 20px on a 1920 canvas, soft card shadow.
+- Hairline dividers, never heavier than 1px. Uppercase labels bold, tracked, grey (#6B7280), never teal.
+- Left-align text. Video grid: 96px safe margin, 64px between sections, 24px stack gap, 40px card padding.
 
 ### 4. Type
 
-| Style | Family / weight | Web | 1920x1080 video (added) |
-|---|---|---|---|
-| Display | Space Grotesk 700 | 60-72px / 1.0 / -0.025em | 128px / 1.02 / -0.03em |
-| Headline | Space Grotesk 700 | 30-36px / 1.2 / -0.025em | 72px / 1.08 / -0.03em |
-| Stat number | Space Grotesk 700 | 30px / 1.0 / -0.025em | 200px / 1.0 / -0.04em |
-| Body | Inter 400 | 14px / 1.43 | 32px / 1.4 |
-| Body strong | Inter 600 | 14px / 1.43 | 32px / 1.4 |
-| Caption | Inter 400 | 12px / 1.33 | 24px / 1.4 |
-| Uppercase label | Inter 700, caps | 11px / 1.0 / 0.05em | 22px / 1.0 / 0.08em |
+| Style | Family / weight | 1920x1080 video |
+|---|---|---|
+| Display | Space Grotesk 700 | 128px / 1.02 / -0.03em |
+| Headline | Space Grotesk 700 | 72px / 1.08 / -0.03em |
+| Stat number | Space Grotesk 700 | 200px / 1.0 / -0.04em |
+| Body | Inter 400 / 600 | 32px / 1.4 |
+| Caption | Inter 400 | 24px / 1.4 |
+| Uppercase label | Inter 700, caps | 24px / 1.0 / 0.08em |
 
-Minimum text size in video: 24px. Mono (system stack) only for code or tabular figures.
+Minimum text size in video: 24px.
 
 ### 5. Components, as they are
 
-- **Headline with accent word**: navy headline, one span in #00AA90, same weight, no underline.
-- **Stat number**: Space Grotesk bold, navy or orange, with a DeltaBadge on the baseline (green pill +x.x pp, red for down, grey when flat). Sign + colour, never colour alone.
-- **Chip / Tag**: radius 6px, Inter 500, 22/26px tall. Default: #E5E7EB bg + navy text. Brand: orange 8% bg + #028C77 text. Outline: transparent + grey border.
-- **StatCard**: white, 12px radius, hairline, card shadow; header with a 20px Heroicon, title, muted subtitle; hairline divider; body 20px padding.
-- **Chat / answer panel**: no dedicated kit component. **(added)** Compose from a card: engine chip in the header, Inter body, brand mentions as a brand chip or bold navy; cited sources as SourceAvatarCircle + domain in caption style.
-- **Bar row with percentage**: label left (Inter), track in `fill-subtle` #F3F4F6, fill in brand orange for the focal brand (competitor colour otherwise), value right-aligned in Space Grotesk bold, tabular numerals.
-- **Buttons**: not in the kit; built from tokens: orange solid with white label, orange outline, or ghost. No dark filled buttons.
+- **Headline with accent word**: plum headline, one span in teal, same weight.
+- **Stat number**: Space Grotesk bold with a delta badge on the baseline (green up, red down). Sign + colour, never colour alone.
+- **Chip**: radius 6px, Inter 500. Default grey bg + plum text; brand chip teal 8% bg + #028C77 text.
+- **Card**: white, hairline, card shadow; header with icon, title, muted subtitle.
+- **Bar row**: label left, track in `fill-subtle`, teal fill for the focal brand, value right in tabular numerals.
 
 ### 6. Do / Don't
 
 Do
 - Pair every status colour with text or an icon.
-- Keep one hairline weight and one orange.
-- Use Space Grotesk for headings and numbers only; Inter for all reading text.
-- Tint shadows toward navy (rgba(62,8,99,a)) when a panel floats.
-- Count numbers up (AnimatedNumber) rather than cutting.
+- Keep one hairline weight and one teal.
+- Count numbers up rather than cutting.
 
 Don't
 - Don't use gradients, glass, or glows as decoration.
-- Don't put small orange text on white.
-- Don't use dark filled buttons or a dark hero band as the default (navy band is allowed for the logo lockup only).
-- Don't recolour the logo: orange #00AA90 is the main version; navy and white are the only alternates (see logo/README.md).
-- Don't use Tailwind greys or any grey outside the token list.
-- Don't use emoji or vendor logos; use BrandIcon-style favicons for engines and brands.
+- Don't put small teal text on white.
+- Don't recolour the logo.
 - Don't use an em dash in copy.
 
 ## 4. Motion, measured from premium explainers (seconds: median (low-high))
@@ -149,6 +138,7 @@ Pick any value inside low-high; the median is a safe default. A move longer than
 - SFX for 25 s: about 16 (range 6-24); measured 38 per minute
 - SFX onset relative to its reveal (ms, negative = before): chime -31 (-208..157); click -89 (-129..189); glitch -38 (-101..32); impact 16 (-154..162); swoosh_reverse -27 (-221..196); whoosh -155 (-262..116)
 - library (assets/sfx/<name>.mp3): click-soft, click, pop, whoosh-short, whoosh, whoosh-cinematic, chime, ping, sparkle, typing, key-press, riser, impact-bass-1, impact-bass-2, notification; gain -18..0 dB per cue
+- optional `x` per cue: the reveal's horizontal centre as a share of the frame width (0 left, 1 right); c12_mix pans the cue toward it
 - the narration and a music bed built for the video are mixed by c12_mix; you only place SFX
 - final mix: -16 to -14 LUFS, true peak <= -1 dBTP (c12_mix normalises)
 
@@ -180,3 +170,6 @@ Pick any value inside low-high; the median is a safe default. A move longer than
 12. The logo appears whole, in a zone of its own, or not at all until the close; never a clipped sliver at a frame edge or under a headline. _(demo25 acceptance review (2026-10-17))_
 13. The main card of a scene spans at least half the frame width; an empty frame around a small card reads as unfinished. _(demo15, demo25 and the demo25 acceptance review)_
 14. Hold the final frame (logo and url) still for at least the final hold. _(brief)_
+15. At every handover the outgoing element is still moving when the next scene starts and the incoming one arrives already in motion; the frame never comes to rest between two scenes. _(launch-video-kit continuity rule (docs/learnings/launch-video-kit.md); grade checks it)_
+16. Show both ends of the size range at least once each; a close-up (one UI element, a typed prompt or a number filling most of the frame) and a wide view of the whole product. Push into the part the voice names, never the whole app at thumbnail size. _(launch-video-kit lessons; demo15 and demo25 (text read small))_
+17. Mix at least three ease families from section 4; overshoot (back.out) only on small pops such as chips, icons and avatars, never on the camera, a card, a text block or data. _(exports/motion-tokens.json and patterns.json; launch-video-kit ease tokens; grade checks it)_

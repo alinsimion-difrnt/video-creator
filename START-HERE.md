@@ -45,6 +45,28 @@ commands are listed in CLAUDE.md; `create/README.md` explains the stages.
 Voice uses an ElevenLabs subscription (`ELEVENLABS_API_KEY` in `.env`, never committed). Nothing else is a paid
 API: visual review runs as Claude Code subagents.
 
+## 5. Explainer or TikTok
+The brief's `destination` picks the frame:
+
+| destination | frame | notes |
+|---|---|---|
+| `linkedin`, `youtube` | 1920x1080 | classic explainer, 60-120 s |
+| `tiktok`, `instagram_reels`, `youtube_shorts` | 1080x1920 | safe area clear of the platform UI, text >= 44px, captions burned in |
+
+The same flow builds both (`build-motion` skill): `create tokens` sizes the brand for the frame,
+`create direction` tells the builder the safe area, `create grade` fails text under the TikTok action rail or in
+the caption band, then `create captions` + `create burn` put the captions on the finished vertical film.
+
+Both versions of one video, one voice-over:
+```bash
+uv run create init my-video-tiktok --from my-video --destination tiktok
+uv run create tokens my-video-tiktok && uv run create direction my-video-tiktok
+```
+Your brand needs vertical sizes for this: `frames.vertical` and `captions.vertical` in `brands/<brand>/video.yaml`
+plus a `video1080x1920` size set in its tokens.json (see `brands/acme/` for a working example).
+
+Presenter TikToks (you on camera) use the footage route instead: `process-take` / `tiktok-edit` skills.
+
 ## Good to know
 - CLAUDE.md is the rulebook Claude follows here. Read its hard rules once; they keep media and secrets out of git.
 - Skills and docs written for the original owner's presenter videos (process-take, build-panel, tiktok-edit,

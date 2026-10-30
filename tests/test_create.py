@@ -199,6 +199,32 @@ def test_cli_init_and_status(tmp_path: Path, monkeypatch):
     assert result.exit_code == 1
 
 
+def test_cli_init_from_makes_a_sibling_for_another_destination(tmp_path: Path, monkeypatch):
+    import create.cli as cli
+
+    monkeypatch.setattr(cli, "REPO_ROOT", tmp_path)
+    src = tmp_path / "projects" / "demo25"
+    shutil.copytree(REPO_ROOT / "projects" / "demo25", src)
+    (tmp_path / "data" / "create" / "demo25" / "voice").mkdir(parents=True)
+    (tmp_path / "data" / "create" / "demo25" / "voice" / "s01-t2.mp3").write_bytes(b"x")
+    runner = CliRunner()
+    result = runner.invoke(cli.app, ["init", "demo25-tiktok", "--from", "demo25", "--destination", "tiktok"])
+    assert result.exit_code == 0, result.output
+    dst = tmp_path / "projects" / "demo25-tiktok"
+    brief = yaml.safe_load((dst / "brief.yaml").read_text())
+    assert (brief["project"], brief["destination"], brief["brand"]) == ("demo25-tiktok", "tiktok", "acme")
+    voice = json.loads((dst / "voice.json").read_text())
+    assert voice["project"] == "demo25-tiktok"
+    assert "data/create/demo25/" not in (dst / "voice.json").read_text()  # takes point at the sibling's copy
+    assert json.loads((dst / "timeline.json").read_text())["project"] == "demo25-tiktok"
+    assert not (dst / "tokens.json").exists() and not (dst / "direction.md").exists()  # per frame
+    assert (tmp_path / "data" / "create" / "demo25-tiktok" / "voice" / "s01-t2.mp3").exists()
+    # a second run does not overwrite; an unknown destination or --destination alone is refused
+    assert runner.invoke(cli.app, ["init", "demo25-tiktok", "--from", "demo25"]).exit_code == 1
+    assert runner.invoke(cli.app, ["init", "x", "--from", "demo25", "--destination", "fax"]).exit_code != 0
+    assert runner.invoke(cli.app, ["init", "x", "--destination", "tiktok"]).exit_code != 0
+
+
 @pytest.mark.parametrize(
     ("spoken", "reason"),
     [

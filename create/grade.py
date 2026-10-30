@@ -7,7 +7,8 @@ fonts and logos, the SFX library), then:
 - motion: every timeline move against the measured range; the ease mix against the corpus (families,
   overshoot share, overshoot only on small elements); the frame at rest inside a handover window;
 - DOM samples on the timeline: text under the frame's minimum size, accent moments per frame, text running
-  into text or the logo (each counted only when it lasts `persist_s`);
+  into text or the logo, text or a logo outside the frame's safe area (TikTok/Reels/Shorts UI on vertical)
+  or in its caption band when captions will be burned on (each counted only when it lasts `persist_s`);
 - render, then lens signals: hard cuts, dead holds, idle stretches past the corpus shot high;
 - SFX: names, times and count against the corpus range;
 and writes projects/<p>/motion/grade.json plus two review sheets (overview, handovers) next to the render.
@@ -36,7 +37,7 @@ from create.sketches import hyperframes
 from lens import __version__
 from lens.hashing import cache_key
 from lens.schemas.common import Annotator, Provenance
-from lens.schemas.config import CreateRender, LensConfig, MotionGradeConfig
+from lens.schemas.config import CreateFrame, CreateRender, LensConfig, MotionGradeConfig
 from lens.schemas.create import (
     Brief,
     GradeFinding,
@@ -320,7 +321,7 @@ def dom_findings(
         texts = s["texts"]
         for x in texts:
             sizes.setdefault(x["text"], []).append(x["px"])
-            if x["px"] < min_text_px:
+            if x["px"] < min_text_px - 0.5:  # measured sizes carry sub-pixel rounding
                 small.setdefault(x["text"], []).append(s["t"])
                 small_px[x["text"]] = min(small_px.get(x["text"], 1e9), x["px"])
         for i, a in enumerate(texts):
@@ -374,10 +375,46 @@ def dom_findings(
     return out, {"min_text_px": min(settled) if settled else None, "max_accent_moments": peak}
 
 
+def safe_findings(
+    samples: Sequence[dict[str, Any]], frame: CreateFrame, captions: bool, tol: float, g: MotionGradeConfig
+) -> list[GradeFinding]:
+    """Text and logos outside every safe rectangle, or (when captions will be burned on) in the caption band.
+
+    Boxes entirely off the frame are not seen and not checked; each finding must last `persist_s`.
+    """
+    step = g.sample_step_s
+    hits: dict[tuple[str, str], list[float]] = {}
+    for s in samples:
+        items = [(x["text"], x["box"]) for x in s["texts"]]
+        items += [("the logo", lg["box"]) for lg in s["logos"] if not lg["covered"]]
+        for text, (x0, y0, x1, y1) in items:
+            if x1 <= 0 or y1 <= 0 or x0 >= frame.width or y0 >= frame.height:
+                continue
+            if not any(r.contains(x0, y0, x1, y1, tol=tol) for r in frame.safe):
+                hits.setdefault((text, "outside_safe"), []).append(s["t"])
+            band = frame.caption_band
+            if (
+                captions
+                and x0 < band.x1 - tol
+                and x1 > band.x0 + tol
+                and y0 < band.y1 - tol
+                and y1 > band.y0 + tol
+            ):
+                hits.setdefault((text, "in_caption_band"), []).append(s["t"])
+    out: list[GradeFinding] = []
+    where = {
+        "outside_safe": f"outside the {frame.width}x{frame.height} frame's safe area",
+        "in_caption_band": "in the caption band (burned-in captions go there)",
+    }
+    for (text, problem), ts in hits.items():
+        for start, length in [r for r in _runs(ts, step) if r[1] >= g.persist_s - 1e-9][:1]:
+            out.append(_f("fail", "safe", f"{text!r} {where[problem]} for {length:.1f} s", start))
+    return out
+
+
 # --- browser, render, signals ---------------------------------------------------------------------------
 
-COLLECT = """([accent]) => {
-  const W = 1920, H = 1080;
+COLLECT = """([accent, W, H]) => {
   const parse = (c) => { const m = c && c.match(/rgba?\\(([^)]+)\\)/); if (!m) return null;
     const p = m[1].split(',').map(Number); return (p.length > 3 && p[3] < 0.5) ? null : p.slice(0, 3); };
   const isAccent = (c) => { const p = parse(c);
@@ -429,7 +466,7 @@ TWEENS = """() => { const main = window.__timelines.main;
   let s = t.startTime();
   for (let p = t.parent; p && p !== main; p = p.parent) s = p.startTime() + s / p.timeScale();
   const e = t.vars.ease; const r = document.getElementById('main') || document.body;
-  const full = r.offsetWidth * r.offsetHeight || 1920 * 1080;
+  const full = r.offsetWidth * r.offsetHeight || innerWidth * innerHeight;
   const area = Math.max(0, ...t.targets().map(el => {
     if (!(el instanceof Element)) return 0;
     if (el.offsetWidth !== undefined) return el.offsetWidth * el.offsetHeight;
@@ -439,7 +476,7 @@ TWEENS = """() => { const main = window.__timelines.main;
 
 
 def browse(
-    index: Path, dur: float, accent: str, g: MotionGradeConfig
+    index: Path, dur: float, accent: str, g: MotionGradeConfig, size: tuple[int, int] = (1920, 1080)
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     """Seek the paused timeline every `sample_step_s` and collect the DOM samples, plus every tween."""
     from playwright.sync_api import sync_playwright
@@ -449,7 +486,7 @@ def browse(
     js = COLLECT.replace("MINVIS", str(g.min_visible_opacity))
     with sync_playwright() as pw:
         b = launch(pw)
-        page = b.new_page(viewport={"width": 1920, "height": 1080})
+        page = b.new_page(viewport={"width": size[0], "height": size[1]})
         page.goto(index.as_uri())
         page.wait_for_function(
             "() => !!(window.__timelines && window.__timelines.main)", timeout=15000, polling=100
@@ -461,7 +498,7 @@ def browse(
         for i in range(n + 1):
             t = min(i * g.sample_step_s, dur - 1e-3)
             page.evaluate(f"() => {{ window.__timelines.main.seek({t}, false); return true; }}")
-            samples.append({"t": round(t, 3), **page.evaluate(js, [list(_rgb(accent))])})
+            samples.append({"t": round(t, 3), **page.evaluate(js, [list(_rgb(accent)), *size])})
         b.close()
     return samples, tweens
 
@@ -525,11 +562,13 @@ def bundle(root: Path, project: str, tokens: Tokens, brand: str, render: CreateR
     return out
 
 
-def lens_signals(video: Path, fps: float, cfg: LensConfig) -> dict[str, Any]:
+def lens_signals(
+    video: Path, fps: float, cfg: LensConfig, size: tuple[int, int] = (1920, 1080)
+) -> dict[str, Any]:
     from lens.signals import video as V
 
     v = cfg.signals.video
-    fs = V.scan(video, fps, 1920, 1080, v)
+    fs = V.scan(video, fps, size[0], size[1], v)
     trans = V.detect_transitions(fs, V.detect_cuts(fs, v), v)
     shots = V.build_shots(fs.n, trans)
     events = V.detect_events(fs, shots, v)
@@ -543,9 +582,13 @@ def lens_signals(video: Path, fps: float, cfg: LensConfig) -> dict[str, Any]:
     }
 
 
-def review_sheets(video: Path, timeline: Timeline, dur: float, out: Path) -> list[Path]:
+def review_sheets(
+    video: Path, timeline: Timeline, dur: float, out: Path, vertical: bool = False
+) -> list[Path]:
     """Two contact sheets for a fresh-eyes reviewer: the whole film, and around each handover."""
     from create.sketches import sheet_png
+
+    scale = "-1:640" if vertical else "640:-1"  # each frame's long side 640 px
 
     out.mkdir(parents=True, exist_ok=True)
     n = 12
@@ -576,14 +619,15 @@ def review_sheets(video: Path, timeline: Timeline, dur: float, out: Path) -> lis
                     "-frames:v",
                     "1",
                     "-vf",
-                    f"scale=640:-1,drawtext=text='{t:.2f} s':x=12:y=12:fontsize=26:fontcolor=white:"
+                    f"scale={scale},drawtext=text='{t:.2f} s':x=12:y=12:fontsize=26:fontcolor=white:"
                     "box=1:boxcolor=black@0.6",
                     str(f),
                 ],
                 check=True,
             )
             frames.append(f)
-        sheets.append(sheet_png(frames, 6 if name == "handovers" else 4, out / f"{name}.png"))
+        cols = (6 if name == "handovers" else 4) * (2 if vertical else 1)  # tall cells: twice as many a row
+        sheets.append(sheet_png(frames, cols, out / f"{name}.png", vertical))
         for f in frames:
             f.unlink()
     return sheets
@@ -682,9 +726,13 @@ def run_grade(root: Path, project: str, cfg: LensConfig) -> MotionGrade:
     frame = cfg.create.design.frames[tokens.frame]
 
     found += colour_findings(html, tokens.colors, g) + decoration_findings(html, g)
-    samples, tweens = browse(out / "index.html", dur, tokens.colors["accent"], g)
+    size = (tokens.layout.width, tokens.layout.height)
+    samples, tweens = browse(out / "index.html", dur, tokens.colors["accent"], g, size)
     moves_found, moves = move_findings(tweens, g)
     dom_found, dom = dom_findings(samples, frame.min_text_px, g)
+    dom_found += safe_findings(
+        samples, frame, tokens.captions is not None, cfg.create.design.audit_tolerance_px, g
+    )
     motion = json.loads((root / "exports" / "motion-tokens.json").read_text())
     found += moves_found + dom_found
     found += ease_findings(tweens, motion["easing"]["spring_overshoot"]["share"], g)
@@ -706,13 +754,13 @@ def run_grade(root: Path, project: str, cfg: LensConfig) -> MotionGrade:
     if res.returncode != 0:
         raise RuntimeError(f"hyperframes render failed\n{res.stdout[-1500:]}{res.stderr[-1500:]}")
     video = out / "video.mp4"
-    sig = lens_signals(video, timeline.fps, cfg)
+    sig = lens_signals(video, timeline.fps, cfg, size)
     expected = round(dur * timeline.fps)
     if abs(sig["frames"] - expected) > 1:
         found.append(_f("fail", "timing", f"{sig['frames']} frames rendered, expected {expected}"))
     found += hold_findings(sig["holds"], sig["transitions"], timeline.fps, dur, shot["high"])
     found += sfx_findings(cues, dur, sound["sfx_per_min"], out / "assets" / "sfx")
-    review_sheets(video, timeline, dur, out / "review")
+    review_sheets(video, timeline, dur, out / "review", size[1] > size[0])
 
     fps = timeline.fps
     fails = sum(f.level == "fail" for f in found)

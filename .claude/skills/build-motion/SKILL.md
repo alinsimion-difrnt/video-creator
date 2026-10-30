@@ -10,6 +10,12 @@ reads one file instead of the repo, and `create grade` checks what code can meas
 (`build: templates`) stay for projects that ask for them.
 
 ## The flow (main session)
+The frame comes from the brief's `destination` (config `create.design.destination_frames`): linkedin and
+youtube build 1920x1080, tiktok, instagram_reels and youtube_shorts build 1080x1920 with the platforms' safe
+area. For both versions of one explainer, build the landscape one, then
+`uv run create init <p>-tiktok --from <p> --destination tiktok` (same script and voice, no new credits) and run
+this flow again from `create tokens`; a TikTok usually wants `cut_s` or a shorter script (hook in 2 s).
+
 1. `uv run create status <p>`: c1-c5 and c3 done (brief with `build: motion`, optional `cut_s` to shorten the
    close tail; script with each scene's `on_screen` items and `notes`, which the pack carries; voice; timeline;
    tokens).
@@ -29,6 +35,9 @@ reads one file instead of the repo, and `create grade` checks what code can meas
 6. `uv run create music <p> --dry-run`, then `uv run create music <p>` (ElevenLabs credits: ask first in team
    mode; a rerun with the same plan is free).
 7. `uv run create mix <p>` -> `data/create/<p>/motion/final/<p>.mp4`. Listen; send it.
+   Vertical (TikTok, Reels, Shorts) and any film the brand has a caption style for: `uv run create captions <p>`,
+   then `uv run create burn <p> --plate data/create/<p>/motion/final/<p>.mp4` -> the captioned file in
+   `data/create/<p>/render/`. That is the one to post.
 8. New lessons go into config `create.motion.rules` (with their source), so the next pack carries them.
 
 ## The build (motion-builder agent)
@@ -59,7 +68,8 @@ HyperFrames lint, runtime, layout and contrast; colours outside the brand tokens
 status colours are fine); gradients, glows, glass, underlines; moves past `max_move_s`; the ease mix (at least
 `min_ease_families`, overshoot within the corpus share and only on small elements); the frame at rest inside a
 handover window (last word of one scene to just after the next scene's first word); text under the frame's
-minimum size, accent moments per frame, text running into text or the logo (each only when it lasts
+minimum size, accent moments per frame, text running into text or the logo, text or a logo outside the
+frame's safe area or (when the brand has captions for the frame) in the caption band (each only when it lasts
 `persist_s`); hard cuts, dead holds and idle stretches from lens signals; SFX names, times and count; the
 film's length. It also writes the two review sheets. It cannot judge taste: that is the builder's frames and the
 fresh-eyes review.
