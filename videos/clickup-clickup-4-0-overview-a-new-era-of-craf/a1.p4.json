@@ -1,0 +1,146 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "55e64cd82b09f9d617bb14e301ad1cdce44fda2f8033ed7680c151220ac39c2a",
+    "created_at": "2026-10-05T06:23:06.445995Z"
+  },
+  "video": "clickup-clickup-4-0-overview-a-new-era-of-craf",
+  "task": "a1-p4",
+  "shots": [
+    {
+      "shot": "s017",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Custom Fields block of a task, with glowing outlines on the 'From Account type' and 'From location' group labels",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Custom Fields",
+        "From Account type",
+        "From location",
+        "Account Owner",
+        "Account Tier",
+        "Renewal Date",
+        "Department",
+        "Summary"
+      ],
+      "text_word_count": 15,
+      "typography": "No overlay type; native product UI text only (sans-serif, medium-weight 'Custom Fields' section header, regular sentence-case field labels). Group labels get a soft gradient glow outline as the only added graphic.",
+      "depth_cues": ["glow"],
+      "what_happens": "Tight crop on a task's Custom Fields while VO says 'custom field task types' (w194-w210); two group labels light up with glowing outlines, then the cursor opens the Account Tier dropdown and switches Gold to Bronze before hovering Department.",
+      "build_rebuild": "Render a cropped task-detail panel at ~150% scale, draw animated gradient-stroke rounded rectangles around the two field-group labels, then script a cursor that opens a select menu and picks a new option chip.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s018",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Full ClickUp task window ('NovaCore Solutions') floating on a grainy magenta-orange-blue gradient",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "NovaCore Solutions",
+        "Subtasks",
+        "Review account details",
+        "No spillover here!"
+      ],
+      "text_word_count": 9,
+      "typography": "Native UI only: bold sentence-case task title, regular sans-serif list rows; a playful in-task image caption 'No spillover here!' in bold with emoji.",
+      "depth_cues": ["shadow", "grain"],
+      "what_happens": "Camera pulls out from the field close-up to reveal the whole app window with drop shadow on a gradient backdrop; the window scrolls to Subtasks, the cursor opens 'Review account details', which shows a meme image, then the frame whites out into a soft blur at the end (VO w210-w220 'cleaner, sharper, built exactly for the work at hand').",
+      "build_rebuild": "Place an app-window screenshot with large soft drop shadow over an animated grainy gradient, scale it from 1.6 to 1.0, scroll the inner content, cut its content to a subtask view on click, and end with a white blur-out.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s019",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "other",
+      "composition_other": "diagonal: tilted 3D UI plane running top-right to bottom-left, profile card left of centre",
+      "focal_element": "Perspective-tilted ClickUp sidebar and Home menu with a 'Project Manager' profile card in front",
+      "transition_in": "blur",
+      "transition_other": null,
+      "on_screen_text": [
+        "Mango Tech",
+        "Home",
+        "Inbox",
+        "Project Manager"
+      ],
+      "text_word_count": 6,
+      "typography": "Native UI type in a clean sans-serif, laid flat on a tilted plane; no overlay headline. Most text is defocused and unreadable.",
+      "depth_cues": ["perspective_tilt", "blur", "shadow"],
+      "what_happens": "Out of the white blur, a tilted 3D layout of UI fragments (sidebar, Home menu, task list, a profile card) racks into focus then softens again, as VO starts 'And we've built all of this' (w221-w226).",
+      "build_rebuild": "Compose flat UI fragments on a single plane, rotate it in 3D (about rotateX 45deg, rotateZ -30deg) under a slow camera drift, and animate a depth-of-field blur from strong to sharp and back over 1.7 s.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s020",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Single floating feature card (Chat, then Calendar, then Teams Hub) on a grainy purple-pink gradient",
+      "transition_in": "other",
+      "transition_other": "unseen hand-off from the white tilted UI to the gradient card stage; likely a motion-blurred card swap",
+      "on_screen_text": [
+        "Chat",
+        "Calendar",
+        "Weekly planning",
+        "Amy / Andrew",
+        "Teams Hub"
+      ],
+      "text_word_count": 8,
+      "typography": "Card titles in bold sentence-case sans-serif with a coloured product icon; small regular sans body text inside each card.",
+      "depth_cues": ["shadow", "blur", "grain"],
+      "what_happens": "Rounded feature cards fly through centre frame one after another with heavy motion blur, each briefly settling (Chat, Calendar, Teams Hub) as the VO says 'the quality and craft' (w227-w231), recapping features shown earlier.",
+      "build_rebuild": "Stack simplified feature-card components and fly each through centre in turn with a vertical slide plus directional motion blur, holding each card about 0.5 s on an animated grain gradient.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s021",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "other",
+      "composition_other": "UI plane tilted into the lower-right of frame with a callout label upper-left",
+      "focal_element": "Kinetic callout label 'pixel precision' with a dotted leader line pointing to the corner of a tilted app window",
+      "transition_in": "whip",
+      "transition_other": null,
+      "on_screen_text": [
+        "pixel precision"
+      ],
+      "text_word_count": 2,
+      "typography": "Large lowercase geometric sans-serif, 'pixel' in a lighter weight and 'precision' in bold, white on the gradient, tight tracking; connected by a dotted leader line.",
+      "depth_cues": ["perspective_tilt", "blur", "grain"],
+      "what_happens": "Remaining cards (incl. Brain) whip past with motion blur, then a tilted app window settles in from below and a 'pixel precision' annotation appears with a leader line to the window corner, landing on 'ClickUp. Every pixel' (w236-w238).",
+      "build_rebuild": "Whip the previous cards off-frame with vertical motion blur, slide a 3D-tilted window screenshot up into the lower-right, then draw a dotted leader line and fade in a two-weight lowercase label at its end.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s022",
+      "shot_type": "3d",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Stack of feature cards dropping onto a pile that resolves into a single card bearing the ClickUp logo",
+      "transition_in": "blur",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": ["shadow", "blur", "perspective_tilt"],
+      "what_happens": "On a soft lavender-white floor, feature cards (Teams Hub, Sprints and others) drop from above with motion blur and stack into a neat pile with coloured edges, which compresses into one white card showing the ClickUp logo, under VO 'refined, every workflow smoother' (w239-w242).",
+      "build_rebuild": "In a 3D scene with an overhead camera, drop card meshes one at a time onto a stack with eased landings and soft contact shadows, then collapse the stack into a single card textured with the logo.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

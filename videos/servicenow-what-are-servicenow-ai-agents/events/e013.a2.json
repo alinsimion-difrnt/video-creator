@@ -1,0 +1,65 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "4b0456a71aef1db3aa354f4e8c2a78f652ed200632dd8825ae0b9c8cec6044cb",
+    "created_at": "2026-10-05T06:53:01.149220Z"
+  },
+  "video": "servicenow-what-are-servicenow-ai-agents",
+  "event": "e013",
+  "task": "a2-e013",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Hand slamming down",
+      "role": "other",
+      "role_other": "live_action_hand",
+      "change_types": ["slide_down", "blur_in"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "ease_in"}
+    },
+    {
+      "box": null,
+      "manual_box": [470, 355, 600, 860],
+      "manual_reason": "No candidate isolates the stapler's top arm; b02 covers only the hinge knob at right and b03 the front of the base.",
+      "label": "Stapler arm pressed shut",
+      "role": "other",
+      "role_other": "live_action_prop",
+      "change_types": ["rotate"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 150, "easing_class": "ease_in"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x083",
+      "verdict": "confirm",
+      "label": "click",
+      "note": "Sharp broadband transient landing as the hand drives the stapler arm down (around f1801-f1804); a mechanical stapler click, not a glitch."
+    }
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "live action vignette",
+    "description": "Macro live-action insert: a hand comes down fast and presses a chrome stapler shut, shallow depth of field, locked-off camera.",
+    "why_premium": "A tight macro insert with a crisp synced click punctuates the story beat (decisive, frustrated action) and keeps the edit rhythm tight between wider shots."
+  },
+  "build_hint": {
+    "gsap": "Not a graphics build: place the clip as a <video> layer on the HyperFrames timeline and align the click SFX to the press frame; for a synthetic version use gsap.to(arm, {rotation:8, transformOrigin:'right center', duration:0.15, ease:'power3.in'}) with the hand tweening y in parallel.",
+    "remotion": "Use <OffthreadVideo> in a <Sequence>; for a synthetic version interpolate arm rotate over ~4 frames with Easing.in(Easing.cubic) and put the click <Audio> on the contact frame."
+  },
+  "confidence": "medium",
+  "notes": "Live-action macro shot; camera.move none. The b02 OCR text is noise off the stapler chrome, not on-screen text."
+}

@@ -1,0 +1,51 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "a9881f61dd17c1ea5201ce73752920454cd63e5d13615119f59280190bcf5de8",
+    "created_at": "2026-10-05T06:47:03.014424Z"
+  },
+  "video": "meta-this-is-meta-quest-3",
+  "event": "e002",
+  "task": "a2-e002",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Full-frame scene swap: night rooftop ghost-blaster to sunlit desert shield fight",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["other", "color_shift"],
+      "change_other": "scene replacement under a burst of diagonal light-ray / dust streaks with motion blur",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 125, "easing_class": "ambiguous"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x004",
+      "verdict": "unsure",
+      "label": "unsure",
+      "note": "Broadband low-end transient ~330 ms before the visual swap, while the rooftop scene is still on screen; looks more like a music hit than a reversed swoosh, but cannot separate it from the score."
+    }
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "light streak scene swap",
+    "description": "Within one detected shot the footage jumps from a dark rooftop mixed-reality game to a bright desert game; the change is masked by diagonal light rays and dust streaks with heavy directional motion blur that continue over the new scene.",
+    "why_premium": "The swap is hidden inside an in-world energy/light burst that matches the action (blaster fire into a shield swing), so the cut feels like a continuous motion beat timed to the 'from the left' narration rather than an edit."
+  },
+  "build_hint": {
+    "gsap": "Stack scene A and scene B; overlay a light-streak layer. tl.fromTo('.streaks',{opacity:0,xPercent:-20},{opacity:1,xPercent:0,duration:0.1,ease:'power3.out'}).set('.sceneA',{autoAlpha:0}).fromTo('.sceneB',{filter:'blur(12px) brightness(1.4)'},{filter:'blur(0px) brightness(1)',duration:0.4,ease:'power2.out'}).to('.streaks',{opacity:0,duration:0.5,ease:'power1.in'});",
+    "remotion": "Two <Sequence> clips with a hard switch at the burst frame; streak overlay opacity interpolate(frame,[0,3,15],[0,1,0]); scene B filter blur/brightness interpolated with Easing.out(Easing.cubic). No spring."
+  },
+  "confidence": "medium",
+  "notes": "Probably a missed shot boundary (scene changes completely between f500 and f503 though the event sits in shot s012). camera.move is none; pan/scale values reflect content change, not a camera move."
+}

@@ -1,0 +1,55 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T14:00:39Z"
+  },
+  "id": "pokemon-black-white",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "cool",
+    "notes": "Clips 1-2 are real battle footage; clip3 sets the real Snivy sprite beside a fan 3D model. Cel-shaded sprites, a few tones per material, dark outline, shadows darker and cooler. Each trainer battle gets its own backdrop gradient (purple-navy, sandy orange, sky blue)."
+  },
+  "lighting": "Baked into sprites: a light from upper left, mid-tone and one shadow tone. Each sprite casts a dark offset drop shadow on its oval platform, which grounds it; the platforms themselves are soft gradient discs.",
+  "silhouette": "Each Pokemon and trainer reads from its outline alone (Snivy's leaf tail and collar, Klang's two gears, Simisage's leaf crest). Near sprites (the player's Pokemon, the player trainer from behind) are drawn large with chunky pixels; far ones are small and sharp.",
+  "motion": {
+    "timing": "No metrics file: describe only. Every battle sprite loops an idle: Snivy bobs while its leaf tail sways and flicks over a few seconds, Klang's small gear turns against the big one, Simisage sways. Trainers start turned away and rotate to face camera on the challenge line.",
+    "principles": [
+      "secondary motion",
+      "squash and stretch",
+      "follow-through",
+      "arcs"
+    ]
+  },
+  "texture": "Clean sprite shading, no dithering on the sprites; smooth gradient backdrops and platforms behind them, over more 3D environments than any earlier handheld entry.",
+  "camera": "Battle camera drifts and pushes in on whoever acts (the near platform slides out of frame, the far one grows) while sprites stay 2D; a white light-burst flash covers each send-out.",
+  "sound": "",
+  "acting": {
+    "enters": "The trainer appears turned away, then turns to face you with the challenge text; a Pokemon bursts out of a white flash onto its platform and drops straight into its idle loop.",
+    "acts": "A constant idle loop (breathing, bobbing, tail sway, gear spin) keeps the character alive while it waits; the big moves are saved for attacks.",
+    "exits": "Recalled on command ('come back') in a beam/flash and replaced by a new one on the same spot.",
+    "comes_back": true,
+    "depth": "Player side close in front, large, seen from behind and cut off by the frame edge; opponent smaller further back facing us; the camera moves between the two platforms."
+  },
+  "techniques": [
+    "always-on idle loop per character so it is never a frozen sticker",
+    "full-body back view for the near character, front view for the far one",
+    "turn-to-face reveal as the entrance beat",
+    "flash burst to cover an entrance or swap",
+    "offset drop shadow on a gradient platform to ground the sprite",
+    "camera push-in on the action while sprites stay 2D",
+    "own backdrop gradient per opponent"
+  ],
+  "feel": "near back-view hero + far front-view rival + always-on idle loop + flash entrances = a living stage with clear depth",
+  "for_fred": "Give Fred a quiet idle loop (gentle bob, tail fin sway) for when he waits, and keep the big moves for the punchlines so they are not overused. Enter him with a turn-to-face reveal or a bubble flash, and use near/far staging: Fred large and close from behind, Pixie small in the background, then swap.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Pok%C3%A9mon_Black_and_White",
+    "data/study/pixel/work/pokemon-black-white/clip1-7678469832928529684.jpg",
+    "data/study/pixel/work/pokemon-black-white/clip2-7614674422804253965.jpg",
+    "data/study/pixel/work/pokemon-black-white/clip3-7458022633750154501.jpg"
+  ]
+}

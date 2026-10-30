@@ -1,0 +1,45 @@
+name: packets
+
+# Fetch S5 annotation packets (images + JSON) from R2 as a short-lived private artifact, for annotation
+# sessions that have no R2 credentials (BUILD_PLAN 7.4 step 1). Nothing is committed.
+on:
+  workflow_dispatch:
+    inputs:
+      videos:
+        description: "Space-separated source ids"
+        required: true
+
+permissions:
+  contents: read
+
+env:
+  VIDEOS: ${{ inputs.videos }}
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_BUCKET: ${{ secrets.R2_BUCKET }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - name: Install
+        run: uv sync --frozen --no-dev
+      - name: Pull packets
+        run: |
+          for v in $VIDEOS; do
+            [[ "$v" =~ ^[a-z0-9]+([-_][a-z0-9]+)*$ ]] || { echo "bad source id: $v" >&2; exit 2; }
+            uv run lens storage pull-packets --video "$v"
+          done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: packets
+          path: data/packets/
+          retention-days: 1
+          if-no-files-found: error

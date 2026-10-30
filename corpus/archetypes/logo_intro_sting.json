@@ -1,0 +1,232 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a3_pattern_cards",
+  "annotator": "claude-code",
+  "skill": "write-archetype-cards@a75a12f0ca91",
+  "model": null,
+  "input_hash": "f34f130efbf8a63f30d4a59152316f909a0e8afb536fc98f5a2b2be0dd74e8e4",
+  "created_at": "2026-10-05T19:09:49.129130Z"
+ },
+ "id": "logo_intro_sting",
+ "name": "Logo Intro Sting",
+ "summary": "The brand mark or wordmark resolves at the centre of a clean background, often with a product line or tagline, and holds briefly before handing off to the first idea. It opens the video and tells the viewer whose story this is.",
+ "when_to_use": [
+  "As the cold open or first beat of a launch or explainer video",
+  "When the narration opens by naming the product",
+  "As a short brand moment before cutting into the product interface"
+ ],
+ "slots": [
+  {"name": "logo", "what": "the brand mark or wordmark as a vector", "required": true},
+  {"name": "product_line", "what": "a product name or short subline under the logo", "required": false},
+  {"name": "tagline", "what": "one short claim that follows the logo", "required": false},
+  {"name": "background", "what": "a solid colour, a soft gradient or near-black", "required": true},
+  {"name": "decoration", "what": "light accents such as drifting bands, sparkles or a faint grid", "required": false},
+  {"name": "handoff_element", "what": "the first piece of interface or layout that leads into the next scene", "required": false}
+ ],
+ "steps": [
+  "Start on the empty background, or fade up from dark",
+  "Resolve the logo: assemble it from fragments, wipe it on, draw its stroke or fade it up",
+  "Fade or slide in the product line or tagline under it",
+  "Hold the lockup briefly while the narration names the product",
+  "Hand off by blurring the logo out, reframing it into a page or interface, or zooming through"
+ ],
+ "patterns": [
+  "logo_resolve",
+  "blur_crossfade",
+  "layout_reframe"
+ ],
+ "build": {
+  "gsap": "One timeline per scene. Resolve the logo with a clip-path wipe, a stroke-dashoffset draw or a staggered gather of fragments into place, using a power or expo out ease; fade the subline up in parallel. Hold, then either tween blur and opacity on the logo while the next layer fades in, or tween the container's scale and position to reframe it into the next layout.",
+  "remotion": "A Sequence for the logo with a spring driving scale or a clip reveal and interpolate for opacity; a nested Sequence starts the subline or tagline after the logo settles; a closing Sequence overlaps the next scene and interpolates blur and opacity for the handoff."
+ },
+ "sound": "Mostly music and mixed accents. A reverse swoosh building into the logo is the most common clear cue, landing in the middle of the scene; a soft chime can mark the lockup, and an impact sometimes hits late as the handoff begins.",
+ "numbers": {
+  "id": "logo_intro_sting",
+  "shots": 13,
+  "videos": 12,
+  "weight": 7.4,
+  "duration_s": {
+   "n": 13,
+   "videos": 12,
+   "weight": 7.4,
+   "median": 2.586,
+   "p25": 1.263,
+   "p75": 3.881,
+   "ci": [
+    1.428,
+    3.795
+   ]
+  },
+  "events_per_shot": {
+   "n": 13,
+   "videos": 12,
+   "weight": 7.4,
+   "median": 0.5,
+   "p25": 0.0,
+   "p75": 1.071,
+   "ci": [
+    0.0,
+    1.0
+   ]
+  },
+  "first_motion_s": {
+   "n": 5,
+   "videos": 4,
+   "weight": 3.8,
+   "median": 0.162,
+   "p25": 0.126,
+   "p75": 1.48,
+   "ci": [
+    0.126,
+    4.917
+   ]
+  },
+  "pattern_mix": {
+   "other": 0.2963,
+   "logo_resolve": 0.2593,
+   "blur_crossfade": 0.1481,
+   "cursor_guided_demo": 0.1481,
+   "layout_reframe": 0.1481
+  },
+  "transition_mix": {
+   "other": 0.6351,
+   "zoom_through": 0.1622,
+   "hard_cut": 0.0946,
+   "blur": 0.0541,
+   "crossfade": 0.0541
+  },
+  "shot_type_mix": {
+   "logo": 0.9459,
+   "3d": 0.0541
+  },
+  "beat_mix": {
+   "hook": 0.7432,
+   "mechanism": 0.1486,
+   "demo": 0.0541,
+   "proof": 0.0541
+  },
+  "sfx_label_mix": {
+   "unsure": 0.32,
+   "swoosh_reverse": 0.256,
+   "music": 0.176,
+   "impact": 0.16,
+   "chime": 0.088
+  },
+  "sfx_offset_s_by_label": {
+   "chime": {
+    "n": 2,
+    "videos": 2,
+    "weight": 1.1,
+    "median": 2.367,
+    "p25": 1.448,
+    "p75": 2.868,
+    "ci": null
+   },
+   "impact": {
+    "n": 3,
+    "videos": 2,
+    "weight": 2.0,
+    "median": 3.566,
+    "p25": 2.729,
+    "p75": 3.975,
+    "ci": null
+   },
+   "music": {
+    "n": 5,
+    "videos": 4,
+    "weight": 2.2,
+    "median": 1.519,
+    "p25": 1.064,
+    "p75": 2.633,
+    "ci": [
+     1.009,
+     3.032
+    ]
+   },
+   "swoosh_reverse": {
+    "n": 5,
+    "videos": 3,
+    "weight": 3.2,
+    "median": 1.661,
+    "p25": 1.313,
+    "p75": 2.222,
+    "ci": [
+     1.283,
+     2.495
+    ]
+   },
+   "unsure": {
+    "n": 7,
+    "videos": 6,
+    "weight": 4.0,
+    "median": 2.175,
+    "p25": 0.24,
+    "p75": 2.787,
+    "ci": [
+     0.24,
+     3.158
+    ]
+   }
+  },
+  "examples": [
+   {
+    "video": "meta-introducing-meta-quest-3-coming-this-f",
+    "shot": "s001",
+    "score": 5.0
+   },
+   {
+    "video": "hubspot-what-is-hubspot",
+    "shot": "s001",
+    "score": 4.0
+   },
+   {
+    "video": "notion-introducing-the-new-notion-ai",
+    "shot": "s002",
+    "score": 4.0
+   },
+   {
+    "video": "datadog-datadog-overview-see-inside-the-platfor",
+    "shot": "s001",
+    "score": 4.0
+   },
+   {
+    "video": "workday-workday-adaptive-planning-demo-finan",
+    "shot": "s001",
+    "score": 3.0
+   }
+  ]
+ },
+ "examples": [
+  {
+   "video": "meta-introducing-meta-quest-3-coming-this-f",
+   "shot": "s001",
+   "score": 5.0
+  },
+  {
+   "video": "hubspot-what-is-hubspot",
+   "shot": "s001",
+   "score": 4.0
+  },
+  {
+   "video": "notion-introducing-the-new-notion-ai",
+   "shot": "s002",
+   "score": 4.0
+  },
+  {
+   "video": "datadog-datadog-overview-see-inside-the-platfor",
+   "shot": "s001",
+   "score": 4.0
+  },
+  {
+   "video": "workday-workday-adaptive-planning-demo-finan",
+   "shot": "s001",
+   "score": 3.0
+  }
+ ],
+ "caveats": [
+  "First-motion timing comes from only a few shots and has a wide spread.",
+  "Many sound cues are labelled unsure, and each specific cue type comes from only a few videos."
+ ]
+}

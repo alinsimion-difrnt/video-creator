@@ -1,0 +1,22 @@
+# v16 — the boat in 3D: Fred rows a path through the air while 3D (frame styles yield to the rig in the boat),
+# lands, and the 3D frames come back. Questions: does the fallback read as one character? Does the landing
+# switch back cleanly?
+name: v16
+voice: iP95p4xoKVk53GoZ742B
+script: >-
+  Fred is 3D now. Fred also has a boat. He rows around my head, very slowly, and lands. Show off.
+plan:
+  layout: [{word: 0, layout: full}]
+  props:
+    - id: fred
+      art: fred
+      word: "Fred"
+      until: "off"
+      at: lap
+      size: 0.2
+      style: illustrated
+      beats:
+        - {word: "3D", style: toon3d}
+        - {word: "boat", ride: boat, path: [shoulder_left, above, shoulder_right]}
+        - {word: "lands", ride: none, move: lap}
+        - {word: "Show", do: wave}

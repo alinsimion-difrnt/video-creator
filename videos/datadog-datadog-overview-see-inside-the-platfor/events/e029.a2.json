@@ -1,0 +1,100 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "bb17b5122ec26faf1d86b25fe357f769b64288ea204f83028bbf21dd5d288173",
+    "created_at": "2026-10-05T06:43:00.045541Z"
+  },
+  "video": "datadog-datadog-overview-see-inside-the-platfor",
+  "event": "e029",
+  "task": "a2-e029",
+  "elements": [
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Avoid downtime icon (exclamation circle)",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["scale_down", "slide_right"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 450, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b06",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Avoid downtime label",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["scale_down", "slide_right"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Avoid downtime",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 450, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Dollar coin icon (circle + $)",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["rotate", "scale_up", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b08",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Coin burst rays",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["pop", "draw_on"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 250, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Reduce costs label",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["slide_up", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Reduce costs",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 350, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "layout_reframe",
+    "proposed_name": null,
+    "description": "The existing 'Avoid downtime' icon and label shrink and slide right to open the centre slot; a dollar coin flips in edge-on (Y-rotation) and scales up, 'Reduce costs' rises in beneath it, and short burst rays pop around the coin as it settles. 'Speed up' on the left stays put.",
+    "why_premium": "The current hero hands its centre slot to the new benefit in one continuous move instead of a cut, so the viewer reads a growing three-item list; the edge-on coin flip and the late ray burst give the new item a tactile, celebratory landing."
+  },
+  "build_hint": {
+    "gsap": "tl.to([downtimeIcon, downtimeLabel], {x: '+=320', scale: 0.55, duration: 0.45, ease: 'power2.inOut'}); tl.fromTo(coin, {rotationY: 90, scale: 0.6, autoAlpha: 0}, {rotationY: 0, scale: 1, autoAlpha: 1, duration: 0.4, ease: 'back.out(1.4)'}, '<0.15'); tl.fromTo(reduceLabel, {y: 30, autoAlpha: 0}, {y: 0, autoAlpha: 1, duration: 0.35, ease: 'power3.out'}, '<0.1'); tl.fromTo(rays, {scale: 0, autoAlpha: 0}, {scale: 1, autoAlpha: 1, duration: 0.25, ease: 'back.out(2)', stagger: {each: 0.02, from: 'center'}}, '-=0.1');",
+    "remotion": "Shift/shrink the old hero with interpolate(frame, [0, 14], [0, 1], {easing: Easing.inOut(Easing.cubic)}); coin rotateY 90deg->0 and scale 0.6->1 via spring({frame: frame - 4, fps, config: {damping: 14, stiffness: 180, mass: 1}}); label translateY 30->0 + opacity with Easing.out(Easing.cubic) from frame 7; rays scale 0->1 via spring({frame: frame - 14, fps, config: {damping: 10, stiffness: 220}}) with 1-frame stagger."
+  },
+  "confidence": "medium",
+  "notes": "Coin outer ring and seven of eight rays have no own candidate box; b04 ($ glyph) stands for the coin and b08 (left ray) for the ray burst. Pattern could also be read as stagger_list_reveal (third benefit added); layout_reframe chosen because existing items resize/shift together. No SFX candidates; spectrogram shows only rhythmic music hits."
+}

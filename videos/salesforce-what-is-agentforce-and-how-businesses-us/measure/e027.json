@@ -1,0 +1,167 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "s7_measure",
+    "annotator": "code",
+    "skill": null,
+    "model": null,
+    "input_hash": "441ce31c31f19d958c7f608914c5d864bef09a36c636b1245087947d9bf3f3ba",
+    "created_at": "2026-10-05T10:13:03.646065Z"
+  },
+  "video": "salesforce-what-is-agentforce-and-how-businesses-us",
+  "event": "e027",
+  "fps": 23.81,
+  "elements": [
+    {
+      "box": "b01",
+      "xyxy": [
+        18,
+        11,
+        1266,
+        645
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.731,
+      "channels": [
+        {
+          "name": "x",
+          "start_f": 2004,
+          "end_f": 2024,
+          "start_value": 933.5,
+          "end_value": 642.0,
+          "observed_start": true,
+          "cls": "linear",
+          "gsap": {
+            "ease": "circ.out",
+            "duration_ms": 1050.0,
+            "rmse": 0.10365
+          },
+          "bezier": "cubic-bezier(0.352, 1.481, 0.986, 0.308)",
+          "bezier_rmse": 0.0292,
+          "spring": {
+            "zeta": 3.0,
+            "omega0": 17.116,
+            "settle_ms": 1343.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 292.971,
+              "damping": 102.698
+            },
+            "remotion_exact": false,
+            "rmse": 0.08822
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 642.6,
+          "fit_quality": 0.569
+        },
+        {
+          "name": "y",
+          "start_f": 2004,
+          "end_f": 2024,
+          "start_value": 181.0,
+          "end_value": 328.0,
+          "observed_start": true,
+          "cls": "linear",
+          "gsap": {
+            "ease": "circ.out",
+            "duration_ms": 1050.0,
+            "rmse": 0.09398
+          },
+          "bezier": "cubic-bezier(0.334, 1.481, 0.981, 0.337)",
+          "bezier_rmse": 0.02806,
+          "spring": {
+            "zeta": 3.0,
+            "omega0": 18.025,
+            "settle_ms": 1275.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 324.907,
+              "damping": 108.151
+            },
+            "remotion_exact": false,
+            "rmse": 0.08599
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 633.6,
+          "fit_quality": 0.5958
+        },
+        {
+          "name": "scale",
+          "start_f": 2004,
+          "end_f": 2024,
+          "start_value": 0.545,
+          "end_value": 1.0,
+          "observed_start": true,
+          "cls": "linear",
+          "gsap": {
+            "ease": "circ.out",
+            "duration_ms": 1050.0,
+            "rmse": 0.11492
+          },
+          "bezier": "cubic-bezier(0.339, 1.480, 0.995, 0.257)",
+          "bezier_rmse": 0.03111,
+          "spring": {
+            "zeta": 3.0,
+            "omega0": 15.779,
+            "settle_ms": 1457.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 248.97,
+              "damping": 94.673
+            },
+            "remotion_exact": false,
+            "rmse": 0.09596
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 715.7,
+          "fit_quality": 0.4668
+        },
+        {
+          "name": "opacity",
+          "start_f": 2004,
+          "end_f": 2024,
+          "start_value": 0.0,
+          "end_value": 1.0,
+          "observed_start": true,
+          "cls": "linear",
+          "gsap": {
+            "ease": "none",
+            "duration_ms": 1027.9,
+            "rmse": 0.13832
+          },
+          "bezier": "cubic-bezier(0.399, 1.290, 1.000, 0.134)",
+          "bezier_rmse": 0.01409,
+          "spring": {
+            "zeta": 3.0,
+            "omega0": 10.694,
+            "settle_ms": 2149.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 114.357,
+              "damping": 64.163
+            },
+            "remotion_exact": false,
+            "rmse": 0.0885
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 1027.9,
+          "fit_quality": 0.6112
+        }
+      ],
+      "timing": {
+        "ease": "circ.out",
+        "start_s": 84.1823,
+        "duration_ms": 1050.0,
+        "rmse": 0.12544
+      },
+      "stagger": null,
+      "sfx_offset_ms": {
+        "x051": 60.0
+      },
+      "source": "model_estimate",
+      "quality": 0.6112
+    }
+  ],
+  "failed": {}
+}

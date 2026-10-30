@@ -1,0 +1,307 @@
+<title>Gold Set Review</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;600&display=swap">
+<style>
+/* Layout: one review column; a sticky bar holds the video tabs and progress; each item is a card of
+   frames on top, Claude's answers as editable controls below, and the verdict buttons last. */
+:root{--bg:#f5f5f2;--surface:#ffffff;--fg:#1c1e21;--muted:#5f636a;--line:#deded8;--accent:#b4410c;
+--accent-fg:#ffffff;--ok:#1f7a4d;--ok-bg:#e3f2ea;--fix:#8a5a00;--fix-bg:#fbefd5;--chip:#eeeee9;
+--sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+--mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121315;--surface:#1b1d20;
+--fg:#ececea;--muted:#a3a7ad;--line:#2e3135;--accent:#fb8c4a;--accent-fg:#1a0d04;--ok:#6fd3a0;
+--ok-bg:#163326;--fix:#f2c063;--fix-bg:#3a2d10;--chip:#26292d;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121315;--surface:#1b1d20;--fg:#ececea;--muted:#a3a7ad;--line:#2e3135;
+--accent:#fb8c4a;--accent-fg:#1a0d04;--ok:#6fd3a0;--ok-bg:#163326;--fix:#f2c063;--fix-bg:#3a2d10;
+--chip:#26292d;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 var(--sans)}
+main{max-width:58rem;margin:0 auto;padding:1.25rem 16px 5rem}
+h1{font-size:1.45rem;line-height:1.2;margin:0;text-wrap:balance}
+h2{font-size:1.05rem;margin:0;text-wrap:balance}
+p{margin:0;max-width:65ch}
+.muted{color:var(--muted)}
+.eyebrow{font:500 .72rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.intro{display:grid;gap:.5rem;margin-bottom:1rem}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);
+border-bottom:1px solid var(--line);padding-block:.6rem;display:grid;gap:.5rem}
+.tabs{display:flex;flex-wrap:wrap;gap:.4rem}
+.tab{font:500 .85rem var(--sans);border:1px solid var(--line);background:var(--surface);color:var(--fg);
+border-radius:999px;padding:.3rem .75rem;cursor:pointer}
+.tab[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.tab span{font-family:var(--mono);font-variant-numeric:tabular-nums;opacity:.75;margin-left:.35rem}
+.row{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .9rem}
+.meter{flex:1 1 12rem;height:6px;background:var(--chip);border-radius:3px;overflow:hidden;min-width:8rem}
+.meter i{display:block;height:100%;background:var(--ok);width:0}
+.count{font:500 .85rem var(--mono);font-variant-numeric:tabular-nums}
+.banner{border:1px solid var(--fix);background:var(--fix-bg);color:var(--fg);padding:.6rem .8rem;
+border-radius:6px;margin-top:.75rem}
+section.group{display:grid;gap:.9rem;margin-top:1.25rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1rem;display:grid;
+gap:.8rem;min-width:0}
+.card.confirmed{border-color:var(--ok)}.card.corrected{border-color:var(--fix)}
+.head{display:flex;flex-wrap:wrap;gap:.4rem .8rem;align-items:baseline}
+.head h3{margin:0;font:600 .95rem var(--mono)}
+.pill{font:500 .72rem/1 var(--mono);letter-spacing:.04em;text-transform:uppercase;padding:.3rem .5rem;
+border-radius:999px;background:var(--chip);color:var(--muted)}
+.pill.confirmed{background:var(--ok-bg);color:var(--ok)}.pill.corrected{background:var(--fix-bg);color:var(--fix)}
+a{color:var(--accent)}a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{
+outline:2px solid var(--accent);outline-offset:2px}
+.frames{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));gap:.5rem}
+.frames figure{margin:0;display:grid;gap:.25rem;min-width:0}
+.frames img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:3px}
+.frames figcaption{font-size:.78rem;color:var(--muted)}
+.said{font-size:.88rem;color:var(--muted);border-left:2px solid var(--line);padding-left:.6rem}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,13rem),1fr));gap:.6rem}
+label.f{display:grid;gap:.2rem;font-size:.78rem;color:var(--muted);min-width:0}
+select,input[type=text]{font:inherit;font-size:.9rem;color:var(--fg);background:var(--bg);
+border:1px solid var(--line);border-radius:4px;padding:.35rem .45rem;width:100%;min-width:0}
+.changed{border-color:var(--fix);background:var(--fix-bg)}
+.chips{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center}
+.chip{font:.8rem var(--mono);border:1px solid var(--line);background:var(--chip);color:var(--fg);
+border-radius:999px;padding:.2rem .55rem;cursor:pointer}
+.chip[aria-pressed="false"]{background:transparent;color:var(--muted);text-decoration:line-through}
+.chip.on{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.chips select{width:auto}
+.el{border-top:1px solid var(--line);padding-top:.7rem;display:grid;gap:.45rem;min-width:0}
+.el.off{opacity:.55}
+.el .who{display:flex;flex-wrap:wrap;gap:.5rem;align-items:baseline}
+.id{font:600 .82rem var(--mono);background:var(--fg);color:var(--bg);border-radius:3px;padding:.05rem .35rem}
+.sub{font-size:.78rem;color:var(--muted);font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.sfx{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.3rem .7rem;align-items:center}
+.actions{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;border-top:1px solid var(--line);padding-top:.8rem}
+button.b{font:600 .9rem var(--sans);border-radius:5px;padding:.5rem .9rem;cursor:pointer;border:1px solid var(--line);
+background:var(--surface);color:var(--fg)}
+button.b.yes{background:var(--ok);border-color:var(--ok);color:var(--surface)}
+button.b.fix{background:var(--accent);border-color:var(--accent);color:var(--accent-fg)}
+button.b:disabled{opacity:.45;cursor:default}
+.msg{font-size:.85rem;color:var(--muted)}
+.empty{padding:2rem 1rem;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:6px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<main>
+  <div class="intro">
+    <div class="eyebrow">Explainer lens · gold set (G2)</div>
+    <h1>Gold Set Review</h1>
+    <p>Each card shows what Claude saw and what it answered. If every answer is right, tap
+      <b>Claude is right</b>. If something is wrong, change it and tap <b>Save my fix</b>.
+      Use <b>Watch</b> to check the motion or sound in the real video.</p>
+    <p class="muted">Box ids (b03) match the coloured boxes on the end frame; yellow m-boxes were drawn by
+      Claude by hand. Saved answers are kept here for Claude to collect.</p>
+  </div>
+  <div class="bar">
+    <div class="tabs" id="tabs"></div>
+    <div class="row">
+      <div class="meter" aria-hidden="true"><i id="meter"></i></div>
+      <span class="count" id="count"></span>
+      <label class="row msg"><input type="checkbox" id="todo"> Only show what's left</label>
+    </div>
+  </div>
+  <div id="banner" class="banner" hidden></div>
+  <div id="list"></div>
+</main>
+<script>
+const DATA = /*DATA*/null;
+const O = DATA.options;
+const state = { video: 0, todoOnly: false, reviews: {}, drafts: {}, busy: {}, msgs: {} };
+let db = null;
+const $ = (s, el = document) => el.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const clone = o => JSON.parse(JSON.stringify(o));
+const nice = s => String(s).replace(/_/g, " ");
+const SHOT_FIELDS = ["shot_type", "composition", "transition_in", "depth_cues"];
+const EVENT_FIELDS = ["elements", "missed", "pattern", "sfx"];
+const isShot = item => !!item.shot && !item.event;
+
+function seedOf(item) { const o = {}; for (const f of (isShot(item) ? SHOT_FIELDS : EVENT_FIELDS)) o[f] = clone(item[f]); return o; }
+function reviewed(item) { const r = state.reviews[item.key]; return r && (r.status === "confirmed" || r.status === "corrected") ? r : null; }
+function current(item) {
+  if (state.drafts[item.key]) return state.drafts[item.key];
+  const r = reviewed(item); const s = seedOf(item);
+  if (r) for (const f of Object.keys(s)) if (f in r) s[f] = clone(r[f]);
+  return s;
+}
+function statusOf(item) { const r = reviewed(item); return r ? r.status : "pending"; }
+function same(a, b) { return JSON.stringify(a) === JSON.stringify(b); }
+function ts(s) { const m = Math.floor(s / 60), r = s - m * 60; return `${m}:${r.toFixed(1).padStart(4, "0")}`; }
+function watch(v, s) {
+  if (!v.watch) return `<span class="muted">${ts(s)}</span>`;
+  const t = Math.max(0, Math.floor(s) - 1);
+  const sep = v.watch.includes("?") ? "&" : "?";
+  return `<a href="${esc(v.watch + sep + "t=" + t + "s")}" target="_blank" rel="noopener">Watch ${ts(s)}</a>`;
+}
+function select(id, options, value, changed, label) {
+  const opts = options.map(o => `<option value="${esc(o)}"${o === value ? " selected" : ""}>${esc(nice(o))}</option>`).join("");
+  return `<select id="${id}" aria-label="${esc(label)}" class="${changed ? "changed" : ""}">${opts}</select>`;
+}
+
+function itemsOf(v) { return [...v.shots, ...v.events]; }
+function allItems() { return DATA.videos.flatMap(itemsOf); }
+
+function renderTabs() {
+  $("#tabs").innerHTML = DATA.videos.map((v, i) => {
+    const items = itemsOf(v), done = items.filter(x => statusOf(x) !== "pending").length;
+    return `<button class="tab" id="tab-${i}" aria-pressed="${i === state.video}">${esc(v.title)}<span>${done}/${items.length}</span></button>`;
+  }).join("");
+  DATA.videos.forEach((_, i) => $("#tab-" + i).onclick = () => { state.video = i; renderAll(); scrollTo({ top: 0 }); });
+  const all = allItems(), done = all.filter(x => statusOf(x) !== "pending").length;
+  $("#count").textContent = `${done} of ${all.length} checked`;
+  $("#meter").style.width = (100 * done / all.length).toFixed(1) + "%";
+}
+
+function shotCard(v, s) {
+  const cur = current(s), seed = seedOf(s), st = statusOf(s), k = s.key;
+  const ch = f => !same(cur[f], seed[f]);
+  const other = f => s.other[f] && cur[f] === "other" ? `<span>Claude: “${esc(s.other[f])}”</span>` : "";
+  const cues = O.depth_cues.map(c => `<button class="chip${cur.depth_cues.includes(c) ? " on" : ""}" data-cue="${esc(c)}" aria-pressed="${cur.depth_cues.includes(c)}">${esc(nice(c))}</button>`).join("");
+  return `<article class="card ${st}" id="c-${esc(k)}">
+    <div class="head"><h3>Shot ${esc(s.shot)}</h3><span class="muted">${ts(s.start_s)} to ${ts(s.end_s)}</span>
+      ${watch(v, s.start_s)}<span class="pill ${st}">${st === "pending" ? "to check" : st}</span></div>
+    ${s.image ? `<div class="frames"><figure><img src="${s.image}" alt="Key frame of shot ${esc(s.shot)}"><figcaption>Key frame</figcaption></figure></div>` : ""}
+    <p class="said">Claude: ${esc(s.what)} Focus: ${esc(s.focal)}</p>
+    <div class="fields">
+      <label class="f">What kind of shot${select(k + "-shot_type", O.shot_type, cur.shot_type, ch("shot_type"), "Shot type")}${other("shot_type")}</label>
+      <label class="f">Layout${select(k + "-composition", O.composition, cur.composition, ch("composition"), "Composition")}${other("composition")}</label>
+      <label class="f">How it starts (transition in)${select(k + "-transition_in", O.transition_in, cur.transition_in, ch("transition_in"), "Transition in")}${other("transition_in")}</label>
+    </div>
+    <div class="f"><span class="sub">Depth effects you can see</span><div class="chips${ch("depth_cues") ? " changed" : ""}" style="border-radius:6px;padding:${ch("depth_cues") ? ".3rem" : "0"}">${cues}</div></div>
+    ${actions(s)}
+  </article>`;
+}
+
+function eventCard(v, e) {
+  const cur = current(e), seed = seedOf(e), st = statusOf(e), k = e.key;
+  const els = cur.elements.map((el, i) => {
+    const sEl = seed.elements[i] || {};
+    const types = el.change_types.map(c => `<button class="chip on" data-rm="${i}:${esc(c)}" aria-label="Remove ${esc(nice(c))}">${esc(nice(c))} ×</button>`).join("");
+    const add = `<select data-add="${i}" aria-label="Add a change type"><option value="">+ add</option>${O.change_types.filter(c => !el.change_types.includes(c)).map(c => `<option value="${esc(c)}">${esc(nice(c))}</option>`).join("")}</select>`;
+    return `<div class="el${el.moves ? "" : " off"}">
+      <div class="who"><span class="id">${esc(el.id)}</span><span>${esc(el.label)}</span>
+        <label class="row msg"><input type="checkbox" data-moves="${i}"${el.moves ? " checked" : ""}> really moves here</label></div>
+      ${el.moves ? `<div class="fields"><label class="f">What it is${select(k + "-role-" + i, O.role, el.role, el.role !== sEl.role, "Role")}</label>
+        <div class="f"><span>How it changes</span><div class="chips${same(el.change_types, sEl.change_types) ? "" : " changed"}">${types}${add}</div></div></div>` : ""}
+    </div>`;
+  }).join("");
+  const picked = new Set(cur.elements.map(x => x.id));
+  const free = e.candidates.filter(c => !picked.has(c.id) && !cur.missed.includes(c.id));
+  const missed = cur.missed.map(id => `<button class="chip on" data-unmiss="${esc(id)}" aria-label="Remove ${esc(id)}">${esc(id)} ×</button>`).join("");
+  const addMiss = free.length ? `<select data-miss="1" aria-label="Add a missed box"><option value="">+ a box that moves</option>${free.map(c => `<option value="${esc(c.id)}">${esc(c.id)}${c.text ? " · " + esc(c.text.slice(0, 40)) : ""}</option>`).join("")}</select>` : "";
+  const sfx = cur.sfx.map((x, i) => `<div class="sfx">
+      <span class="id">${esc(x.id)}</span>
+      <div class="row">${watch(v, x.sync_s)}
+        <label class="f" style="flex:1 1 10rem">Sound${select(k + "-sfx-" + i, O.sfx, x.label, x.label !== (seed.sfx[i] || {}).label, "Sound label")}</label></div>
+      ${e.sfx_notes[x.id] ? `<span></span><p class="said">Claude: ${esc(e.sfx_notes[x.id])} (detector: ${esc(nice(e.classifier[x.id] || "?"))})</p>` : ""}
+    </div>`).join("");
+  return `<article class="card ${st}" id="c-${esc(k)}">
+    <div class="head"><h3>Animation ${esc(e.event)}</h3><span class="muted">shot ${esc(e.shot)} · ${ts(e.start_s)} to ${ts(e.end_s)} · camera ${esc(nice(e.camera))}</span>
+      ${watch(v, e.start_s)}<span class="pill ${st}">${st === "pending" ? "to check" : st}</span></div>
+    <div class="frames">
+      <figure><img src="${e.end}" alt="End frame with numbered boxes"><figcaption>End frame with the boxes Claude could pick</figcaption></figure>
+      <figure><img src="${e.filmstrip}" alt="Frames across the animation"><figcaption>The animation, frame by frame</figcaption></figure>
+    </div>
+    <label class="f">The motion pattern${select(k + "-pattern", O.pattern, cur.pattern, cur.pattern !== seed.pattern, "Pattern")}</label>
+    <p class="said">Claude: ${esc(e.pattern_note)}</p>
+    <div><span class="sub">What moves</span>${els || `<p class="muted">Claude picked nothing.</p>`}</div>
+    <div class="f"><span class="sub">Boxes that move but Claude missed</span><div class="chips${cur.missed.length ? " changed" : ""}">${missed || `<span class="muted">none</span>`}${addMiss}</div></div>
+    ${cur.sfx.length ? `<div class="f"><span class="sub">Sounds near this moment</span>${sfx}</div>` : ""}
+    ${actions(e)}
+  </article>`;
+}
+
+function actions(item) {
+  const k = item.key, dirty = !same(current(item), seedOf(item)) && !!state.drafts[item.key];
+  const busy = !!state.busy[k], can = !!db;
+  return `<div class="actions">
+    <button class="b yes" data-act="yes"${busy || !can ? " disabled" : ""}>Claude is right</button>
+    <button class="b fix" data-act="fix"${busy || !can || !dirty ? " disabled" : ""}>Save my fix</button>
+    ${state.drafts[k] ? `<button class="b" data-act="undo"${busy ? " disabled" : ""}>Undo changes</button>` : ""}
+    <span class="msg" role="status">${esc(state.msgs[k] || "")}</span>
+  </div>`;
+}
+
+function edit(item, fn) {
+  const d = clone(current(item)); fn(d); state.drafts[item.key] = d; renderCard(item);
+}
+
+function wire(card, item) {
+  const v = DATA.videos[state.video];
+  card.querySelectorAll("select[id]").forEach(sel => sel.onchange = () => edit(item, d => {
+    const f = sel.id.slice(item.key.length + 1).split("-");
+    if (f[0] === "role") d.elements[+f[1]].role = sel.value;
+    else if (f[0] === "sfx") d.sfx[+f[1]].label = sel.value;
+    else d[f[0]] = sel.value;
+  }));
+  card.querySelectorAll("[data-cue]").forEach(b => b.onclick = () => edit(item, d => {
+    const c = b.dataset.cue; d.depth_cues = d.depth_cues.includes(c) ? d.depth_cues.filter(x => x !== c) : [...d.depth_cues, c];
+    if (d.depth_cues.length > 1) d.depth_cues = d.depth_cues.filter(x => x !== "none");
+  }));
+  card.querySelectorAll("[data-rm]").forEach(b => b.onclick = () => edit(item, d => {
+    const [i, c] = b.dataset.rm.split(":"); const el = d.elements[+i];
+    if (el.change_types.length > 1) el.change_types = el.change_types.filter(x => x !== c);
+    else state.msgs[item.key] = "Each element needs at least one change. Add the right one first.";
+  }));
+  card.querySelectorAll("[data-add]").forEach(s => s.onchange = () => s.value && edit(item, d => d.elements[+s.dataset.add].change_types.push(s.value)));
+  card.querySelectorAll("[data-moves]").forEach(c => c.onchange = () => edit(item, d => { d.elements[+c.dataset.moves].moves = c.checked; }));
+  card.querySelectorAll("[data-unmiss]").forEach(b => b.onclick = () => edit(item, d => { d.missed = d.missed.filter(x => x !== b.dataset.unmiss); }));
+  card.querySelectorAll("[data-miss]").forEach(s => s.onchange = () => s.value && edit(item, d => d.missed.push(s.value)));
+  card.querySelectorAll("[data-act]").forEach(b => b.onclick = () => act(item, b.dataset.act));
+}
+
+async function act(item, what) {
+  const k = item.key;
+  if (what === "undo") { delete state.drafts[k]; state.msgs[k] = ""; renderCard(item); return; }
+  if (!db) return;
+  const body = what === "yes" ? seedOf(item) : clone(current(item));
+  const status = what === "yes" || same(body, seedOf(item)) ? "confirmed" : "corrected";
+  state.busy[k] = true; state.msgs[k] = "Saving…"; renderCard(item);
+  try {
+    await db.collection("reviews").doc(k).set({ ...body, status, video: k.split("~")[0], item: k.split("~")[1], saved_at: new Date().toISOString() });
+    state.reviews[k] = { ...body, status };
+    delete state.drafts[k]; state.msgs[k] = status === "confirmed" ? "Saved: Claude was right." : "Saved your fix.";
+  } catch (err) {
+    state.msgs[k] = err && err.code === "invalid_argument" ? "You can't save on this page. Ask Robert for edit access." : "Not saved. Check your connection and try again.";
+  }
+  state.busy[k] = false; renderTabs(); renderCard(item);
+}
+
+function renderCard(item) {
+  const v = DATA.videos[state.video];
+  const old = document.getElementById("c-" + item.key);
+  if (!old) return;
+  const wrap = document.createElement("div");
+  wrap.innerHTML = isShot(item) ? shotCard(v, item) : eventCard(v, item);
+  const card = wrap.firstElementChild; old.replaceWith(card); wire(card, item);
+}
+
+function renderAll() {
+  renderTabs();
+  const v = DATA.videos[state.video];
+  const keep = x => !state.todoOnly || statusOf(x) === "pending" || state.drafts[x.key];
+  const shots = v.shots.filter(keep), events = v.events.filter(keep);
+  const group = (title, note, cards) => cards.length ? `<section class="group"><div class="row"><h2>${title}</h2><span class="muted">${note}</span></div>${cards.join("")}</section>` : "";
+  $("#list").innerHTML =
+    group("Shots", `${v.shots.length} in this video`, shots.map(s => shotCard(v, s))) +
+    group("Animations", `${v.events.length} picked across the video`, events.map(e => eventCard(v, e))) ||
+    `<div class="empty">Everything in this video is checked. Pick another video above.</div>`;
+  for (const item of [...shots, ...events]) { const c = document.getElementById("c-" + item.key); if (c) wire(c, item); }
+}
+
+$("#todo").onchange = e => { state.todoOnly = e.target.checked; renderAll(); };
+renderAll();
+
+(async () => {
+  try { db = window.claude ? await window.claude.use("db") : null; } catch { db = null; }
+  if (!db) {
+    const b = $("#banner"); b.hidden = false;
+    b.textContent = "Saving is off in this view. Open the page on claude.ai while signed in to save your answers.";
+    renderAll(); return;
+  }
+  db.collection("reviews").onSnapshot(snap => {
+    const next = {}; for (const d of snap.docs) next[d.id] = d.data();
+    const changed = Object.keys({ ...next, ...state.reviews }).filter(k => !same(next[k], state.reviews[k]));
+    state.reviews = next;
+    renderTabs();
+    for (const item of itemsOf(DATA.videos[state.video])) if (changed.includes(item.key) && !state.drafts[item.key]) renderCard(item);
+  }, () => { const b = $("#banner"); b.hidden = false; b.textContent = "Lost the link to saved answers. Reload the page."; });
+  renderAll();
+})();
+</script>

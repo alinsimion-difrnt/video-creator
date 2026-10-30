@@ -1,0 +1,114 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "e30df5eba89bc3479e0b04a47973c32c6b9ac5dbb2f1f467884a0ea1cca45e0a",
+    "created_at": "2026-10-05T06:43:25.597998Z"
+  },
+  "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+  "event": "e007",
+  "task": "a2-e007",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Agent config form (LLM / Voice / Avatar cards) exiting upward",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_up", "fade", "blur_out"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 500, "easing_class": "ease_in"}
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Agent greeting bubble, line 1",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["fade", "slide_up", "blur_in"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Hey, welcome to QuickCrate.",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 350, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b06",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Agent greeting bubble, line 2",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["fade", "slide_up", "blur_in"],
+      "change_other": null,
+      "is_text": true,
+      "text": "How can I help you today?",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 350, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "User chat bubble with grey avatar orb",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["fade", "slide_up", "blur_in"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 350, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b09",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "User message typing in",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["typewriter"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Hey, can I",
+      "text_unit": "word",
+      "estimates": {"duration_ms": 300, "easing_class": "step"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Cursor leaving / fading out",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_down", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "ease_in"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "blur_crossfade",
+    "proposed_name": null,
+    "description": "Section change from the agent-builder form to a live chat: the form and the 'Build, test, and deploy.' headline travel up, grey out and blur away while the chat bubbles (agent greeting top-right, user bubble left) blur/fade in on a clean canvas; the user line then types on in sync with the spoken 'Hey, can I'.",
+    "why_premium": "No hard cut: the motion keeps travelling in one direction (upward) so the build step hands off to the test step as one continuous gesture, and the typed user line is locked to the voiceover words, making the demo feel live."
+  },
+  "build_hint": {
+    "gsap": "tl.to(['.form', '.headline'], {y: -260, opacity: 0, filter: 'blur(8px)', duration: 0.5, ease: 'power2.in'}) then tl.fromTo(['.agent-bubble', '.user-bubble'], {opacity: 0, y: 30, filter: 'blur(8px)'}, {opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.35, ease: 'power2.out', stagger: 0.08}, '-=0.15'); then a TextPlugin/char loop types 'Hey, can I' word-synced to narration.",
+    "remotion": "Exit: interpolate(frame, [0, 15], [0, -260]) on translateY with Easing.in(Easing.cubic), opacity 1->0, blur 0->8px. Enter: spring({damping: 200}) driving opacity/translateY/blur on the bubbles with a 2-3 frame stagger; user text sliced by word timestamps."
+  },
+  "confidence": "medium",
+  "notes": "Camera verdict tilt_down (pan_y -0.51): the whole canvas travels, which may be a virtual camera rather than per-element slides. The 'Build, test, and deploy.' headline also slides up and greys out but has no box on the end frame (it is gone), so it is not listed as an element."
+}

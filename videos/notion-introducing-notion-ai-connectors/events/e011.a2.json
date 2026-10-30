@@ -1,0 +1,44 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "ee5dc513eabfa5cf77c4224c5f259e36573c365294d8d1841a7a9547543d158c",
+    "created_at": "2026-10-05T06:47:05.781346Z"
+  },
+  "video": "notion-introducing-notion-ai-connectors",
+  "event": "e011",
+  "task": "a2-e011",
+  "elements": [
+    {"box": "b01", "manual_box": null, "manual_reason": null,
+     "label": "Outer connector icons (Google Drive, Salesforce) converging from row ends", "role": "icon",
+     "role_other": null, "change_types": ["slide_right", "slide_left", "fade"], "change_other": null,
+     "is_text": false, "text": null, "text_unit": null,
+     "estimates": {"duration_ms": 500, "easing_class": "ease_in_out", "source": "model_estimate"}},
+    {"box": "b02", "manual_box": null, "manual_reason": null,
+     "label": "Inner connector icons (Slack, Jira, GitHub) collapsing behind Notion logo", "role": "icon",
+     "role_other": null, "change_types": ["slide_right", "slide_left", "fade"], "change_other": null,
+     "is_text": false, "text": null, "text_unit": null,
+     "estimates": {"duration_ms": 450, "easing_class": "ease_in_out", "source": "model_estimate"}},
+    {"box": "b03", "manual_box": null, "manual_reason": null, "label": "Notion logo (stays on top, settles at center)",
+     "role": "logo", "role_other": null, "change_types": ["slide_right"], "change_other": null,
+     "is_text": false, "text": null, "text_unit": null,
+     "estimates": {"duration_ms": 500, "easing_class": "ease_in_out", "source": "model_estimate"}}
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "logo_resolve",
+    "proposed_name": null,
+    "description": "After a hard cut from the question card, a centered row of six app-tile icons (Google Drive, Slack, Notion, Jira, GitHub, Salesforce) collapses inward; the other tiles slide under the Notion tile and disappear, leaving the Notion logo alone at center.",
+    "why_premium": "One converging move tells the story (all your tools fold into Notion) with no copy; the Notion tile is layered on top so the others visibly tuck behind it, and the shared ease makes the stack resolve as a single gesture."
+  },
+  "build_hint": {
+    "gsap": "Row of tiles with Notion at highest z-index; tl.to(otherTiles, {x: (i, el) => centerX - el.centerX, duration: 0.5, ease: 'power3.inOut', stagger: {from: 'edges', each: 0.02}}).to(otherTiles, {opacity: 0, duration: 0.15}, '-=0.15') while notionTile tweens x to center with the same ease.",
+    "remotion": "For each tile, progress = interpolate(frame, [0, 15], [0, 1], {easing: Easing.inOut(Easing.cubic)}); translateX = (centerX - tileX) * progress; opacity drops to 0 over the last 4 frames for non-Notion tiles; Notion tile rendered last (on top) and translated to center."
+  },
+  "confidence": "medium",
+  "notes": "Question text exits via a hard cut at the start of the burst (energy spike at frame ~304), not animated; not listed as an element. Outer vs inner icon grouping onto b01/b02 is approximate since the icons end hidden behind the Notion tile; camera.move none, scale 0.69 reflects content collapsing, not a zoom. No SFX candidates."
+}

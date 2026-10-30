@@ -1,0 +1,83 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a2_annotate_event",
+  "annotator": "claude-code",
+  "skill": "annotate-event@3dad117bd85a",
+  "model": null,
+  "input_hash": "9d5389d287d8560c20e1b0d1af85f286d8e19a0b24f5ab3bf6a776ff5583b291",
+  "created_at": "2026-10-05T06:38:59.137730Z"
+ },
+ "video": "atlassian-introduction-to-jira-product-discovery",
+ "event": "e073",
+ "task": "a2-e073",
+ "elements": [
+  {
+   "box": "b01",
+   "label": "Main view content (Roadmap board and Share popover replaced by Timeline view)",
+   "role": "ui_panel",
+   "change_types": ["other"],
+   "change_other": "hard content swap (page navigation, no tween)",
+   "is_text": false,
+   "text": null,
+   "text_unit": null,
+   "estimates": {"duration_ms": 70, "easing_class": "step"}
+  },
+  {
+   "box": "b04",
+   "label": "Sidebar 'Timeline view' item selected with cursor",
+   "role": "list_item",
+   "change_types": ["highlight"],
+   "is_text": true,
+   "text": "Timeline view",
+   "text_unit": "whole",
+   "estimates": {"duration_ms": 100, "easing_class": "step"}
+  },
+  {
+   "box": "b10",
+   "label": "Page title changes to 'Timeline view'",
+   "role": "headline",
+   "change_types": ["other"],
+   "change_other": "text swap (Roadmap to Timeline view)",
+   "is_text": true,
+   "text": "Timeline view",
+   "text_unit": "whole",
+   "estimates": {"duration_ms": 70, "easing_class": "step"}
+  },
+  {
+   "box": "b06",
+   "label": "Collaborator avatar stack updates",
+   "role": "avatar",
+   "change_types": ["other"],
+   "change_other": "content swap",
+   "is_text": false,
+   "text": null,
+   "text_unit": null,
+   "estimates": null
+  },
+  {
+   "box": "b07",
+   "label": "Share button returns from active (dark) to default state",
+   "role": "button",
+   "change_types": ["color_shift"],
+   "is_text": true,
+   "text": "Share",
+   "text_unit": "whole",
+   "estimates": {"duration_ms": 70, "easing_class": "step"}
+  }
+ ],
+ "sfx_review": [],
+ "pattern": {
+  "id": "cursor_guided_demo",
+  "proposed_name": null,
+  "description": "The cursor moves from the Copy link popover to the sidebar and clicks 'Timeline view'; the popover closes and the whole content area cuts to the Timeline view while the sidebar row takes the selected outline.",
+  "why_premium": "The click lands in the narration pause right before 'Now using a timeline view', so the view arrives just as it is named. The persistent sidebar keeps the viewer oriented across the hard swap."
+ },
+ "build_hint": {
+  "gsap": "Timeline: gsap.to(cursor, {x, y, duration:0.5, ease:'power2.inOut'}); then at click tl.set('.share-popover', {autoAlpha:0}).set('.view-roadmap', {autoAlpha:0}).set('.view-timeline', {autoAlpha:1}).set('.nav-timeline', {className:'+=selected'}); a 0.1s opacity fromTo would soften it but the source is a hard step.",
+  "remotion": "Move the cursor with spring({frame, fps, config:{damping:200}}) to the sidebar row; switch views with a frame threshold (frame >= clickFrame) rather than interpolate; no spring on the swap."
+ },
+ "confidence": "medium",
+ "notes": "Screen-recorded navigation; the content change is an instant swap (energy peaks on two frames). The 'Copied' toast stays static. The cursor sits inside b04 so it is not listed separately."
+}

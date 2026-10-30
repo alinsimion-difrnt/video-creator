@@ -1,0 +1,190 @@
+name: prepare
+
+# S1-S5: ingest, normalize, signals, visual evidence, annotation packets. Callable from nightly.yml (ADR 0006).
+# Batches: `select` takes up to batch.per_run videos from `lens queue` (ready, media arrived, S3 not
+# done, not failed before); `prepare` analyses them one runner each, batch.max_parallel at once;
+# `collect` rebuilds one data PR from the outputs kept in R2, then dispatches the next batch while the queue has more.
+on:
+  workflow_dispatch:
+    inputs:
+      videos:
+        description: "Space-separated source ids (empty = next batch from the queue)"
+        required: false
+        default: ""
+  workflow_call:
+    inputs:
+      videos:
+        type: string
+        required: false
+        default: ""
+  push:
+    branches: [main]
+    paths: [sources/sources.yaml]
+  schedule:
+    - cron: "17 5 * * *"     # daily: picks up uploads from scripts/fetch_batch.py; no-op if none
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write   # collect re-dispatches this workflow while the queue has more
+
+concurrency:
+  group: prepare
+  cancel-in-progress: false
+
+jobs:
+  select:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_BUCKET: ${{ secrets.R2_BUCKET }}
+    outputs:
+      videos: ${{ steps.sel.outputs.videos }}
+      parallel: ${{ steps.sel.outputs.parallel }}
+    steps:
+      - name: Check R2 is configured
+        id: r2
+        run: |
+          if [ -z "$R2_ACCOUNT_ID" ] || [ -z "$R2_ACCESS_KEY_ID" ] || [ -z "$R2_SECRET_ACCESS_KEY" ] || [ -z "$R2_BUCKET" ]; then
+            echo "::notice title=prepare skipped::R2 secrets are not set (R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY, R2_BUCKET). See docs/operating-guide.md."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/checkout@v4
+        if: steps.r2.outputs.ready == 'true'
+      - uses: astral-sh/setup-uv@v6
+        if: steps.r2.outputs.ready == 'true'
+        with:
+          enable-cache: true
+      - name: Install
+        if: steps.r2.outputs.ready == 'true'
+        run: uv sync --frozen --no-dev
+      - name: Select videos
+        if: steps.r2.outputs.ready == 'true'
+        id: sel
+        env:
+          VIDEOS: ${{ inputs.videos }}
+        run: |
+          if [ -n "$VIDEOS" ]; then
+            for v in $VIDEOS; do
+              [[ "$v" =~ ^[a-z0-9]+([-_][a-z0-9]+)*$ ]] || { echo "bad source id: $v" >&2; exit 2; }
+            done
+            list=$(printf '%s\n' $VIDEOS | jq -R . | jq -cs .)
+          else
+            list=$(uv run lens queue --json)
+          fi
+          echo "videos=$list" >> "$GITHUB_OUTPUT"
+          echo "parallel=$(uv run python -c 'from lens.config import load_config; print(load_config().batch.max_parallel)')" >> "$GITHUB_OUTPUT"
+          echo "::notice title=batch::$list"
+
+  prepare:
+    needs: select
+    if: needs.select.outputs.videos != '' && needs.select.outputs.videos != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      max-parallel: ${{ fromJSON(needs.select.outputs.parallel) }}
+      matrix:
+        video: ${{ fromJSON(needs.select.outputs.videos) }}
+    env:
+      R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_BUCKET: ${{ secrets.R2_BUCKET }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - name: Install ffmpeg
+        run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg
+      - name: Cache local models (whisper, demucs, CLAP)
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/huggingface
+            ~/.cache/torch
+          key: models-${{ hashFiles('config/lens.yaml') }}
+          restore-keys: models-
+      - name: Install
+        run: uv sync --frozen --no-dev
+      # No pull-state here: the queue only hands out videos whose S3 is not done, and a job always
+      # redoes S1-S5 from the inbox. Pulled markers without their (R2-only) media made a retry skip
+      # S1-S2 and then fail for want of the original.
+      - name: S1 ingest
+        run: uv run lens ingest --video ${{ matrix.video }}
+      - name: S2 normalize
+        run: uv run lens frames --video ${{ matrix.video }}
+      - name: S3 signals
+        run: uv run lens signals --video ${{ matrix.video }}
+      - name: S4 evidence
+        run: uv run lens evidence --video ${{ matrix.video }}
+      - name: S5 packets
+        run: uv run lens packets --video ${{ matrix.video }}
+      - name: Push media, originals and markers
+        if: always()
+        run: uv run lens storage push --video ${{ matrix.video }}
+      - name: Validate
+        run: uv run lens validate --all
+      - name: Mark failed (the queue skips it until --retry-failed)
+        if: failure()
+        run: >-
+          uv run lens storage mark-failed --video ${{ matrix.video }}
+          --note "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
+  collect:
+    needs: [select, prepare]
+    if: always() && needs.prepare.result != 'skipped'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_BUCKET: ${{ secrets.R2_BUCKET }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - name: Install
+        run: uv sync --frozen --no-dev
+      # Every video's committed outputs are kept in R2 by `lens storage push`; the data PR is rebuilt
+      # from all of them, so earlier batches not merged yet are never dropped.
+      - name: Pull all committed outputs from R2
+        run: uv run lens storage pull-outputs
+      - name: Validate
+        run: uv run lens validate --all
+      # The branch is pushed before the PR call, so the outputs are safe even when the repo does not let
+      # Actions open PRs (Settings > Actions > General); the chain must not stop on that.
+      - name: Open or update the data PR
+        continue-on-error: true
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: data/prepare
+          add-paths: |
+            videos/*/meta.json
+            videos/*/palette.json
+            videos/*/signals.summary.json
+            packets/*/manifest.json
+          commit-message: "data: prepare outputs (${{ github.run_id }})"
+          title: "data: prepare outputs"
+          body: |
+            Validated S1-S5 outputs from run ${{ github.run_id }} (batch: ${{ needs.select.outputs.videos }}).
+            Media, originals and stage markers are in R2; only compact JSON is committed.
+      # Explicit runs chain too: one dispatch then drains the queue, so no second dispatch can replace a
+      # pending run in the `prepare` concurrency group.
+      - name: Next batch if the queue has more
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          next=$(uv run lens queue --json)
+          if [ "$next" != "[]" ]; then
+            echo "::notice title=next batch::$next"
+            gh workflow run prepare.yml --ref "${{ github.ref_name }}"
+          fi

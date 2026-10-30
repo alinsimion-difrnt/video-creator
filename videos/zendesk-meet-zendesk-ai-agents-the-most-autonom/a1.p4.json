@@ -1,0 +1,227 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "3344a88460c3c5e69ae95d2fe00f21b2d1ab522edf9299feabc88c495462ad4c",
+    "created_at": "2026-10-05T07:48:14.501294Z"
+  },
+  "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+  "task": "a1-p4",
+  "shots": [
+    {
+      "shot": "s011",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "The s001 'AI agent' chat widget (left) linked by a dotted connector to the 'AI agent chain of thought' checklist card (upper right)",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "AI agent",
+        "I’d like to return my order #44433.",
+        "Hey Angela, which items would you like to return?",
+        "Snail Mucin Serum",
+        "Saddle Tan Wallet",
+        "French Soap Set",
+        "Select",
+        "Select",
+        "Select",
+        "AI agent chain of thought",
+        "Search knowledge",
+        "Retrieve order details",
+        "Verify order is eligible for return",
+        "Verify item selection for return"
+      ],
+      "text_word_count": 51,
+      "typography": "Same UI type system as s001: clean geometric sans (low-confidence guess: Zendesk brand sans), small sentence-case medium-weight 'AI agent' header in white on the dark bar, regular-weight chat bubble copy, bold small product names, medium/bold checklist title over regular-weight items.",
+      "depth_cues": [
+        "shadow",
+        "glow"
+      ],
+      "what_happens": "Bookend reprise of the opening demo on the flat green field: the white chat widget already sits left of centre with only the customer bubble and photo avatar (1:36-1:37), the agent reply with the ringed AI avatar appears (~1:37.5), the three product cards with Select buttons follow (~1:38, middle selected), a dotted connector draws out to the upper right (~1:39.5), and the 'chain of thought' card pops in with three checked rows (1:40) and a fourth by 1:40.5. The final two samples show a slow push-in (the whole composition is larger at 1:42-1:42.5). Plays under the VO 'exactly how you need it to, providing you with an AI agent that's not just powerful, but can be held accountable' (w233-w253).",
+      "build_rebuild": "Reuse the s001 chat-widget scene without the title intro: stagger in the agent bubble, the 3-card product row and an SVG dashed connector (stroke-dashoffset), pop the checklist card with rows ticking in about 0.25-0.5s apart, and apply a slow 1.0 to ~1.15 camera scale over the last 1.5s.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s012",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "One-line tagline 'That’s the power of Zendesk AI agents.' on a lime-to-white diagonal gradient",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "That’s the power of Zendesk AI agents."
+      ],
+      "text_word_count": 7,
+      "typography": "Large black geometric sans, regular-to-medium weight, sentence case with full stop, normal tracking, single centred line (same headline style as s002 and s005).",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "Hard cut to the bright gradient card. At 1:43 the line reads 'That’s the power of Zendesk  AI' set from the left, by 1:43.5 'agents.' has been added and the line is centred; it then holds while the VO says the same words (w254-w260, 103.24-105.06s). The last sample (1:45.5) is already a white frame with 'Learn more', i.e. the crossfade into s013.",
+      "build_rebuild": "Render a lime-to-white linear gradient and reveal the tagline word by word with short fade-ups over about 0.5s, re-centring the line as it completes, then hold and crossfade to a white end card.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s013",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Lime highlighted URL pill 'zendesk.com/service/ai/ai-agents' under a small 'Learn more' label",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "Learn more",
+        "zendesk.com/service/ai/ai-agents"
+      ],
+      "text_word_count": 3,
+      "typography": "'Learn more' in a light-to-regular weight sentence-case sans, mid size; the URL below in bold lowercase sans on a rounded lime highlighter pill, normal tracking.",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "End card on white: 'Learn more' is already present after the crossfade, and at 1:46 the lime URL pill is mid-reveal (pill and text cut off at '/ai-a'), fully drawn by 1:46.5; it then holds static to ~1:50. No VO (the transcript ends at w260, 105.06s); music only. The final sample (1:50.5) already shows the white Zendesk mark on a near-black field, the start of s014.",
+      "build_rebuild": "On a white frame, centre a small 'Learn more' label, then reveal a rounded lime pill with the bold URL left-to-right via a clip-path/width mask over about 0.5s, and hold for about 4s.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s014",
+      "shot_type": "logo",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The Zendesk Z mark splitting apart to reveal swapping white service icons (chat bubble, thumbs-up, smiley, check) between its two halves",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "On a near-black field the white Z mark sits centred (1:51), then splits horizontally into its top-left and bottom-right halves, and icons slot in between: a speech bubble with dots and a partly visible shape (1:51.5), a thumbs-up bubble plus a smiley (1:52), a smiley merged into the left half plus a typing bubble (1:52.5), then a typing bubble and a check circle (1:53-1:54); at 1:54.5 the halves close back into the plain Z. Anchors count 3 events. Music only, no VO.",
+      "build_rebuild": "Split the logo SVG into its two halves, tween them apart horizontally (ease-in-out, about 0.3s), cycle white glyph icons in the gap with scale/pop swaps every ~0.5s, then tween the halves back together into the intact mark.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s015",
+      "shot_type": "logo",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Zendesk logo lockup (Z mark above lowercase 'zendesk' wordmark) in white",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "zendesk"
+      ],
+      "text_word_count": 1,
+      "typography": "Brand wordmark only: lowercase geometric sans logotype, medium weight, open tracking, centred under the mark.",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "Final lockup: the Z mark sits higher and smaller with the 'zendesk' wordmark below it on the near-black field, entering via the detected zoom-through; it holds static across all four samples (1:55-1:56.5) to the end of the video. Music only.",
+      "build_rebuild": "Scale the centred Z mark down and up the frame while the wordmark fades in below it (about 0.4s ease-out), then hold the lockup for about 2s to the end.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001"], "words": [0, 40]},
+      {"beat": "mechanism", "shots": ["s002"], "words": [41, 54]},
+      {"beat": "demo", "shots": ["s003"], "words": [55, 130]},
+      {"beat": "problem", "shots": ["s004", "s005"], "words": [131, 154]},
+      {"beat": "demo", "shots": ["s006", "s007", "s008", "s009", "s010"], "words": [155, 232]},
+      {"beat": "outcome", "shots": ["s011"], "words": [233, 253]},
+      {"beat": "cta", "shots": ["s012", "s013", "s014", "s015"], "words": [254, 260]}
+    ],
+    "hook": {
+      "text": "Meet the next generation of AI agents from Zendesk. Our AI agents don't just process tasks, they reason, they learn, they adapt...",
+      "technique": "bold_claim",
+      "technique_other": null,
+      "shots": ["s001"],
+      "words": [0, 21]
+    },
+    "cta": {
+      "text": "Learn more zendesk.com/service/ai/ai-agents",
+      "shots": ["s013"]
+    },
+    "tone": "Confident, calm enterprise launch: measured VO, soft green brand palette, clean recreated UI and plain-sentence title cards; one competitive jab ('All hype. No performance.') but otherwise polished and reassuring rather than energetic.",
+    "signature_moments": [
+      {
+        "shots": ["s003"],
+        "description": "A 30 s split-screen chat demo where every agent turn on the left is mirrored by new chain-of-thought bullets (API triggers, agent hand-offs) on the right.",
+        "why_premium": "It makes an invisible AI process legible: the viewer sees both the customer experience and the reasoning behind it, which is the product's core differentiator shown rather than claimed."
+      },
+      {
+        "shots": ["s001", "s011"],
+        "description": "The opening chat widget plus chain-of-thought checklist returns as a bookend before the tagline, finishing with a slow push-in.",
+        "why_premium": "Bookending gives the story a deliberate closed structure and reinforces one memorable product image, a hallmark of planned, storyboarded explainers."
+      },
+      {
+        "shots": ["s014", "s015"],
+        "description": "The Z logo splits open and cycles service icons (chat bubble, thumbs-up, smiley, check) in its gap before closing and resolving into the lockup.",
+        "why_premium": "A bespoke logo animation built from the brand's own geometry ties the mark to the product's purpose instead of a stock logo reveal."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 4,
+        "evidence": "Opens instantly with the 'INTRODUCING AI Agents' title and a working chat-plus-reasoning UI while the VO makes a crisp contrast claim ('don't just process tasks, they reason, they learn, they adapt', w12-w21); strong, though a launch-style claim rather than a sharp pain or stat.",
+        "refs": ["s001", "w0", "w12", "w21"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "Clear arc: claim, one concrete banking use case, competitor contrast, two named features with chapter cards, accountability payoff and URL. The s003 and s010 screens are text-dense (181 and 147 on-screen words) and hard to read at speed.",
+        "refs": ["s003", "s006", "s009", "s010", "s012"]
+      },
+      "ui_showcase": {
+        "score": 4,
+        "evidence": "Simplified recreated UI tells the story well (chat thread mirrored by chain of thought in s003, procedure typed into the builder in s007, auto-built flow in s008), but s010 is a long static hold of a dense form with 0 events in anchors.",
+        "refs": ["s003", "s007", "s008", "s010"]
+      },
+      "motion_polish": {
+        "score": 3,
+        "evidence": "Clean, consistent motion (dot-to-pill chapter cards, staggered bubbles, dashed connector draw-on, logo split) but conservative and with long static holds: s003 runs 30 s, s010 runs about 18 s with 0 events, and several text cards simply hold.",
+        "refs": ["s001", "s006", "s010", "s014"]
+      },
+      "sound_design": {
+        "score": 3,
+        "evidence": "Judged from anchors plus visuals: a steady 120.19 BPM music bed under the VO, integrated loudness of -31.44 LUFS (quiet), and 111 SFX candidates that are mostly music or 'unsure' with swoosh_reverse CLAP labels, bunched in 0-16 s and 32-66 s; no clear accents line up with the chapter cards or the logo animation. Supportive but not distinctive.",
+        "refs": ["s001", "s003", "s014"]
+      },
+      "vo_script_quality": {
+        "score": 4,
+        "evidence": "Tight, benefit-led script with rhythmic triads ('they reason, they learn, they adapt', w16-w21), a relatable concrete scenario (missing reward for a family trip, w55-w81) and a clear payoff ('not just powerful, but can be held accountable', w245-w253); the competitor jab (w131-w154) is a little generic.",
+        "refs": ["w16", "w55", "w131", "w245", "w253"]
+      },
+      "brand_consistency": {
+        "score": 5,
+        "evidence": "One coherent system throughout: green/lime palette, repeated 'INTRODUCING' pill chapter cards, the same headline type on gradient cards, the opening UI returning as a bookend, and an end logo animation built from the Z mark.",
+        "refs": ["s001", "s006", "s009", "s011", "s012", "s014", "s015"]
+      },
+      "works_muted": {
+        "score": 4,
+        "evidence": "Key messages are on screen as text (s002 mechanism sentence, s005 'All hype. No performance.', feature chapter cards, s012 tagline, s013 URL) and the demos are self-explanatory; muted viewers lose the banking-scenario framing and the s004 competitor-race meaning.",
+        "refs": ["s002", "s004", "s005", "s006", "s009", "s012", "s013"]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "A well-structured, on-brand launch explainer that visualises AI reasoning convincingly and bookends neatly; held back from best-in-class by long static holds, dense text screens and a fairly anonymous sound bed.",
+        "refs": ["s001", "s003", "s010", "s011", "s014"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 2,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "Heavy baked-in English: full-sentence title cards (s002, s005, s012), chapter cards (s006, s009), and text-dense recreated UI (s003 about 181 words, s010 about 147, s007 about 95) would all need re-rendering. The VO carries the banking scenario and the competitor contrast. The recreated (not screen-captured) UI helps, since strings could be swapped in the source project."
+    }
+  }
+}

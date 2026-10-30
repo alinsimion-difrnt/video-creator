@@ -1,0 +1,54 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "10547d5702e37f13cbd1d77a1c56ecc351b4048ccd0f1ff1f1b1aa4a0c9568ef",
+    "created_at": "2026-10-13T13:05:41+00:00"
+  },
+  "id": "7617861386781117716",
+  "kind": "clip",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "cool",
+    "notes": "Measured palette_size 1 is an artefact (the still hit the dark end card), so no count. Navy/indigo room, warm orange accents: lamp, oranges, juice, skin."
+  },
+  "lighting": "One cold ceiling lamp plus blue night window; a warm pool on the counter and the couple; corners fall to deep navy. Cool ambient, warm key.",
+  "silhouette": "Two figures overlap into one readable shape: boy at the counter, girl hugging from behind; black hair blocks and white shirt vs patterned pajamas keep them apart.",
+  "motion": {
+    "timing": "Code: median hold 133.3 ms (p25 116.7, p75 133.3), about 4s at 30 fps, 5.15 drawings/s. Loop of about 8 s, then a TikTok end card fills the rest of the 12 s file.",
+    "principles": [
+      "small loop",
+      "secondary action",
+      "overlap",
+      "idle breathing"
+    ]
+  },
+  "texture": "Clean pixels at 2x (native 288x288 measured); almost no dithering (share 0.0001); rain streaks on the window and wood grain in the floor carry the texture.",
+  "camera": "Locked-off square wide shot of the whole kitchen; no moves. The scene is the frame.",
+  "sound": "",
+  "acting": {
+    "enters": "No entrance; the loop starts mid-action with both already in place.",
+    "acts": "He squeezes oranges at the counter; she hugs him from behind and leans her head in, swaying. Small repeated gestures, not big poses.",
+    "exits": "No exit; the loop resets.",
+    "comes_back": false,
+    "depth": "Couple mid-ground left, table and chairs behind right, rain-lit window at the back; depth from overlap and value, not scale changes."
+  },
+  "techniques": [
+    "cool ambient + warm key light on the characters",
+    "low-contrast room, higher-contrast hero pair",
+    "4s hold timing (about 8 drawings/s) for a calm loop",
+    "secondary action: her sway against his working arm",
+    "ambient loop props: rain on the window, steam/lamp glow",
+    "warm orange accents repeated across the scene to lead the eye"
+  ],
+  "feel": "navy room + one warm lamp on the couple + slow 4s two-character loop = cozy domestic calm",
+  "for_fred": "Give Fred and Pixie a shared tiny loop in one locked wide shot: Fred busy with a task, Pixie leaning on him and swaying on a different beat. Light them warm against a cool room so they read at phone size.",
+  "sources": [
+    "data/study/pixel/work/7617861386781117716/sheet.jpg",
+    "studies/pixel-art/clips/7617861386781117716.json",
+    "studies/pixel-art/tiktok.yaml",
+    "https://www.tiktok.com/@pixosly/video/7617861386781117716"
+  ]
+}

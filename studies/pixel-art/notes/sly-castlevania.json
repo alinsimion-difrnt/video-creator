@@ -1,0 +1,54 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T13:02:39+00:00"
+  },
+  "id": "sly-castlevania",
+  "kind": "tutorial",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "unknown",
+    "notes": "Official NES palette; moving sprites get 3 colours plus one colour shared by all sprites, bent only slightly with a few extras. Colour signals character: a green Fishman, evil colours and possessed eyes on the dog."
+  },
+  "lighting": "Not covered; mood comes from palette choice and themed tiles (ivy courtyards, dungeons, clock towers).",
+  "silhouette": "Sprites fit a 16x16 tile grid; one crouch pose doubles as the jump pose. Enemies built from several references (real animals, concept art) rather than copied sprites.",
+  "motion": {
+    "timing": "Whip attack reworked with a smear frame (frame 3) and an overshoot frame (frame 4); the bat gets one extra mid-wing frame; the skeleton grows from a 2-frame walk into taunting poses. No durations given. Jump height is 2 tiles, hit knockback 2 tiles.",
+    "principles": [
+      "smear frames",
+      "overshoot",
+      "pose reuse",
+      "reference from real motion (slow-motion bat footage)",
+      "expressive poses over more frames"
+    ]
+  },
+  "texture": "Simple tile variations with careful pixel clusters; clean up clusters that CRTs used to soften.",
+  "camera": "Side-scrolling, tile-based; not discussed further.",
+  "sound": "",
+  "acting": {
+    "enters": "Not covered.",
+    "acts": "Character through pose and colour: the skeleton taunts between steps, the possessed dog's eyes and colours show it has turned.",
+    "exits": "Not covered; knockback of 2 tiles is the main reaction.",
+    "comes_back": false,
+    "depth": "One plane on a tile grid; stairs in half-tile steps so the hero never stops mid-step."
+  },
+  "techniques": [
+    "smear then overshoot frame in the whip swing",
+    "one pose doing two jobs (crouch = jump)",
+    "one extra in-between where the motion looked generic",
+    "taunting idle poses instead of a plain loop",
+    "colour as character signal",
+    "bend hardware palette limits only slightly",
+    "clean CRT-era clusters for sharp screens"
+  ],
+  "feel": "tight 3-colour sprites + one smear + one overshoot + taunting poses = classic menace on a tiny budget",
+  "for_fred": "Copy the skeleton: let Fred stop mid-swim and strike a taunting pose at the viewer instead of looping. Reuse poses (his squash pose can be both landing and wind-up) so the reel has fewer, more deliberate animations.",
+  "sources": [
+    "https://www.slynyrd.com/blog/2022/3/19/pixelblog-37-classic-castlevania-study",
+    "studies/pixel-art/sources.yaml"
+  ]
+}

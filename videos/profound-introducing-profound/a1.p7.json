@@ -1,0 +1,136 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "fa356644fb1eeec703994ba1f442d7db5164fc007a8ae6d68bcfb153a5ae330b",
+    "created_at": "2026-10-05T06:30:32.923818Z"
+  },
+  "video": "profound-introducing-profound",
+  "task": "a1-p7",
+  "shots": [
+    {
+      "shot": "s045",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "First a recreated tweet card (Garry Tan praising Perplexity over Google), then a Nike vs lululemon comparison with an OpenAI-style AI logo in a circle between them",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Garry Tan",
+        "@garrytan",
+        "Perplexity is actually just better than Google for clear well cited answers. The quality of results and speed to answer is significantly better.",
+        "132",
+        "143",
+        "2.1K",
+        "Analyzing.",
+        "Finished"
+      ],
+      "text_word_count": 31,
+      "typography": "Tweet: clean neutral sans (Inter-like, low confidence), name semibold, body medium weight, sentence case, normal tracking; status pill text small regular sans in a rounded outlined capsule. Brand logos shown as their own wordmarks.",
+      "depth_cues": ["shadow", "blur"],
+      "what_happens": "Over VO w86-w105 ('your life is changing forever ... recommend your business or your competitors'), a frosted tweet card on a light grey background fades/sharpens in (social proof for AI search). Around 32.5s it gives way to a split: Nike logo left, AI logo in a glowing circle centre, lululemon right, joined by a thin vertical line to an 'Analyzing.' pill; logos fade from grey to full colour, then a row of six dash segments under each brand fills with red/orange/green scores (Nike scores higher, lululemon only two red) and the pill flips to 'Finished'. From ~36.5s everything except the Nike logo fades out and the Nike logo scales up with motion blur, leading into the zoom-through.",
+      "build_rebuild": "On a light grey canvas, fade in a blurred-to-sharp tweet card with soft shadow, then cross to a three-column layout (brand logo, centred AI icon in a glass circle, brand logo) with a status pill that toggles 'Analyzing.' to 'Finished' while six rounded dash bars per brand fill left-to-right in red/orange/green, then fade all but the left logo and scale it up with motion blur.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s046",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Centred two-line kinetic caption, then the Profound logo lockup",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "and there's absolutely nothing",
+        "you can do about it.",
+        "Profound"
+      ],
+      "text_word_count": 10,
+      "typography": "Bold/semibold geometric-grotesk sans (Inter-like, low confidence), white on black, lowercase sentence case, normal tracking; first line smaller, second line noticeably larger and heavier; words appear grey then brighten to white. Logo wordmark in medium-weight sans next to a small pixel/checker mark.",
+      "depth_cues": ["none"],
+      "what_happens": "The zoom through the Nike swoosh ends on black (~39.0s). Words appear one at a time in sync with VO w106-w114 ('And there's absolutely nothing you can do about it'), each entering dim grey and brightening, the second line at a larger size with a slight baseline bounce. At ~42.5s the background lifts to dark charcoal and the caption shrinks slightly; around w115-w116 ('until now') a white shape sweeps across the frame (a mask wipe around a letter-like 'o'), resolving into the white 'Profound' logo lockup on charcoal by ~43.5s, held through w117-w119 ('Because with profound').",
+      "build_rebuild": "On a black frame, reveal each caption word on its VO word timestamp with opacity 0.4-to-1 and a small upward settle (line 2 at ~1.3x size), then lift the background to charcoal, sweep a white mask shape across, and resolve the centred logo mark plus wordmark.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s047",
+      "shot_type": "3d",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "A silver laptop on a dark surface with a translucent dashboard panel floating in front of its screen",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Nike",
+        "Industry Analysis",
+        "Visibility",
+        "All models",
+        "Industry Mention Volume",
+        "5.6",
+        "Industry Mention Overview"
+      ],
+      "text_word_count": 13,
+      "typography": "Small UI sans (regular/medium) inside the dashboard, title case section headings; mostly too small to read reliably at this scale.",
+      "depth_cues": ["shadow", "perspective_tilt", "blur"],
+      "what_happens": "Monochrome, moody product shot (likely a 3D render, possibly footage): a laptop under hard window-light shadows shows a white abstract wallpaper; a frosted, semi-transparent Profound dashboard ('Industry Mention Volume' line chart with a 5.6 tooltip) floats in front of the screen and slides/settles into the screen plane over ~44.5-46.5s, becoming the screen content. VO w119-w126 ('profound world-leading software you can track exactly'). The last sampled frame (47.5s) already shows the next shot's caption, so the cut may be soft.",
+      "build_rebuild": "Render a laptop on a dark table with diagonal shadow gobos, place a frosted-glass dashboard plane in front of the screen and animate its position and rotation to snap flush into the screen over ~2s with ease-out.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s048",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Centred two-line headline 'Track what people are asking AI about your industry'",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Track what people are asking AI",
+        "about your industry"
+      ],
+      "text_word_count": 9,
+      "typography": "Semibold sans (Inter-like, low confidence), sentence case, normal tracking, two centred lines of equal size; words start grey and brighten to white karaoke-style.",
+      "depth_cues": ["none"],
+      "what_happens": "On a dark charcoal gradient background with soft light falloff, the headline is already laid out but words brighten from grey to white in sync with VO w126-w134 ('exactly what people are asking AI about your industry'), fully lit by ~49.5s. In the final frame (~50.0s) a tilted dashboard view ('Nike > Industry Analysis' with a pie chart) has already taken over, so the exit into s049 looks like a fast cut or blur transition.",
+      "build_rebuild": "Lay out the full headline centred on a dark radial gradient at 40% opacity, then tween each word's opacity to 100% on its VO word start time (karaoke highlight).",
+      "confidence": "high"
+    },
+    {
+      "shot": "s049",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Perspective-tilted dashboard: pie and line charts, then the 'All models' dropdown opening",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Nike",
+        "Industry Analysis",
+        "All models",
+        "21/10/2024",
+        "All models",
+        "Google AI Overviews",
+        "ChatGPT",
+        "Perplexity",
+        "Copilot"
+      ],
+      "text_word_count": 14,
+      "typography": "UI sans (regular/medium), title case labels, small breadcrumb text; dropdown items medium weight with model icons; date partly blurred by depth of field.",
+      "depth_cues": ["perspective_tilt", "blur", "glow", "shadow"],
+      "what_happens": "A dark dashboard plane tilted diagonally fills the frame with shallow depth of field. A blue pie segment grows and a green line chart draws on (50.5-51.5s), then the camera pans/pushes to the top-right 'All models' selector (~52.0s); the pill gains a golden glowing outline as if clicked and a dropdown opens, its items (All models, Google AI Overviews, ChatGPT, Perplexity, Copilot) staggering in top to bottom. VO w135-w145 ('See a bird's-eye comparison of how every major platform talks').",
+      "build_rebuild": "Tilt the dashboard in 3D (~-20deg rotateZ with perspective) under a blurred depth of field, grow the pie slice and draw the line chart path, then move the camera to the model selector, add a gold glow ring and stagger the five dropdown items in with 80ms offsets.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

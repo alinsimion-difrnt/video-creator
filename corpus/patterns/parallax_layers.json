@@ -1,0 +1,161 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a3_pattern_cards",
+    "annotator": "claude-code",
+    "skill": "write-pattern-cards@e525a58fa6d8",
+    "model": null,
+    "input_hash": "a24fb45aa54cd258c38759f7e224c72d327c4cf517b4165f03502f9565518c6e",
+    "created_at": "2026-10-05T12:52:02.110355Z"
+  },
+  "id": "parallax_layers",
+  "name": "Layers Drift At Different Speeds",
+  "summary": "Separate layers of a flat scene (tiles, logos, background shapes, a foreground pill or headline) move at different speeds or in different directions, so the picture feels like it has depth. Often the headline or focal element stays calm while the layers around it drift.",
+  "when_to_use": [
+    "Keeping a held card or collage alive while the narration plays",
+    "Opening a reel with a collage that settles around a title",
+    "Giving a flat diagram or logo network a sense of space",
+    "Adding a feeling of speed behind a static message"
+  ],
+  "avoid_when": [
+    "The viewer must read dense text inside the moving layers",
+    "Every layer would move at the same rate, which reads as a plain slide rather than depth",
+    "The scene already has strong camera motion competing for attention"
+  ],
+  "steps": [
+    "Split the scene into layers by depth: back (background shapes or tiles), middle (cards, nodes, icons) and front (headline, pill or a defocused particle).",
+    "Keep the focal element on its own layer and keep it still or nearly still.",
+    "Give each other layer its own direction and speed; nearer layers move faster, farther layers slower, and opposing directions add energy on an opening.",
+    "For a hold, use a slow continuous drift or a gentle sine bob with varied phase per element so nothing moves in lockstep.",
+    "For an entrance, let the layers settle into place from opposite sides while the title lands in the calm centre.",
+    "Optionally add a blurred foreground element that crosses quickly to sell shallow depth of field."
+  ],
+  "build": {
+    "gsap": "Put each depth layer in its own container. For entrances, use gsap.fromTo per layer on x/y with opposing start offsets, a back.out spring-overshoot or a power ease-out, and a light stagger within a layer. For holds, use gsap.to with a sine ease-in-out yoyo repeat, or ease none for constant drift, varying speed per layer. A fast foreground particle uses a power ease-in with a blur filter.",
+    "remotion": "Map each layer's translate from frame: a spring (moderate damping, slight overshoot) interpolated between opposing start offsets for entrances, or a linear interpolate or Math.sin of frame for continuous drift on holds, with a different speed or amplitude multiplier per layer. Keep the focal layer unanimated or animate only its colour."
+  },
+  "sound": "No typical sound: the motion usually rides on the music bed; where a cue was tagged it was a reverse swoosh landing slightly before the motion.",
+  "why_premium": "Parallax gives a flat composition real depth for almost no production cost: when the back tiles, mid-layer nodes and a front headline move at different rates or in opposing directions, the eye reads a three-dimensional space instead of a slide. On holds, a slow, varied drift keeps the frame breathing so a static card never looks frozen, yet it stays quiet enough not to compete with the narration. A still focal element against the moving field becomes a clear anchor, and a fast defocused particle crossing the foreground sells a shallow depth of field that feels filmed rather than built.",
+  "numbers": {
+    "id": "parallax_layers",
+    "events": 5,
+    "videos": 5,
+    "weight": 4.4,
+    "duration_ms": {
+      "n": 14,
+      "videos": 3,
+      "weight": 12.1826,
+      "median": 505.194,
+      "p25": 319.0,
+      "p75": 684.45,
+      "ci": [
+        319.0,
+        667.274
+      ]
+    },
+    "easing_mix": {
+      "spring_overshoot": 0.3769,
+      "ease_in_out": 0.279,
+      "ease_out": 0.2785,
+      "ease_in": 0.0656
+    },
+    "change_mix": {
+      "other": 0.3306,
+      "slide_up": 0.1532,
+      "fade": 0.1452,
+      "color_shift": 0.121,
+      "slide_down": 0.1129,
+      "slide_left": 0.0726,
+      "scale_up": 0.0323,
+      "slide_right": 0.0323
+    },
+    "role_mix": {
+      "logo": 0.2381,
+      "headline": 0.2143,
+      "card": 0.1786,
+      "other": 0.0952,
+      "icon": 0.0595,
+      "notification": 0.0595,
+      "ui_panel": 0.0595,
+      "background": 0.0476,
+      "metric": 0.0476
+    },
+    "sfx_label_mix": {
+      "music": 0.5,
+      "swoosh_reverse": 0.25,
+      "unsure": 0.25
+    },
+    "sfx_offset_ms": {
+      "n": 10,
+      "videos": 1,
+      "weight": 10.0,
+      "median": -285.05,
+      "p25": -392.7,
+      "p75": -94.1,
+      "ci": [
+        -392.7,
+        -94.1
+      ]
+    },
+    "examples": [
+      {
+        "video": "figma-introducing-figma-motion-your-canvas-no",
+        "event": "e001",
+        "score": 5.0
+      },
+      {
+        "video": "hubspot-what-is-hubspot",
+        "event": "e007",
+        "score": 4.0
+      },
+      {
+        "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+        "event": "e003",
+        "score": 4.0
+      },
+      {
+        "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+        "event": "e033",
+        "score": 5.0
+      },
+      {
+        "video": "datadog-datadog-overview-see-inside-the-platfor",
+        "event": "e017",
+        "score": 4.0
+      }
+    ]
+  },
+  "examples": [
+    {
+      "video": "figma-introducing-figma-motion-your-canvas-no",
+      "event": "e001",
+      "score": 5.0
+    },
+    {
+      "video": "hubspot-what-is-hubspot",
+      "event": "e007",
+      "score": 4.0
+    },
+    {
+      "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+      "event": "e003",
+      "score": 4.0
+    },
+    {
+      "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+      "event": "e033",
+      "score": 5.0
+    },
+    {
+      "video": "datadog-datadog-overview-see-inside-the-platfor",
+      "event": "e017",
+      "score": 4.0
+    }
+  ],
+  "caveats": [
+    "Durations were measured in only a few of the videos, and continuous drifts on holds have no natural end, so the duration figures describe entrances better than ambient drift.",
+    "Sound offset comes from a single video only.",
+    "A large share of changes are labelled other, because slow ambient drift does not fit the standard change types."
+  ]
+}

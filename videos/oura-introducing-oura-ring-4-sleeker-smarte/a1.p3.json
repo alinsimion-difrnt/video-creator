@@ -1,0 +1,202 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "100926cbbb878d8edc0f8dcdd6df851b0fc54076c001c80bc0e40ac0e2246bfe",
+    "created_at": "2026-10-05T07:42:33.911228Z"
+  },
+  "video": "oura-introducing-oura-ring-4-sleeker-smarte",
+  "task": "a1-p3",
+  "shots": [
+    {
+      "shot": "s013",
+      "shot_type": "footage",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Silver ring standing upright on olive suede-like fabric, casting a long hard shadow toward the viewer",
+      "transition_in": "other",
+      "transition_other": "Detector flagged a non-cut transition from the swirled-fabric shot (s012); with one in-shot sample I cannot see its type. Both scenes share the olive fabric, so it may be a match on material.",
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": ["shadow", "blur"],
+      "what_happens": "Text-free product beat: the ring stands on textured olive fabric in low raking light with a long shadow and a soft vignette. The only other sampled frame (20.5 s) already shows the hand-on-chest scene of s014, so the visible change happens slightly before the detected boundary. Several swoosh_reverse SFX candidates sit in this shot (x026-x029).",
+      "build_rebuild": "Hold a text-free macro of the ring standing upright on olive suede, lit by one low hard key light to throw a long shadow, for about 1.2 s with a subtle push.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s014",
+      "shot_type": "footage",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Hand wearing the ring pressed flat against the chest of an olive shirt, with the caption centred below the ring",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": ["And listen to your heart"],
+      "text_word_count": 5,
+      "typography": "Same caption system: 'And listen to your' in white sans-serif regular, sentence case, normal tracking, centred; the accent word 'heart' in white light italic serif, lowercase. Builds from 'And listen' (21.0 s) to the full line (21.5 s).",
+      "depth_cues": ["blur"],
+      "what_happens": "Lifestyle close-up of a hand over the heart wearing the ring, with a blurred warm room behind. The caption builds word-group by word-group and completes with the italic-serif 'heart', then holds while the lyric 'everyone who sees you falls' plays (w13-w17).",
+      "build_rebuild": "Over a shallow-focus clip of a hand on the chest, fade in 'And listen' in centred white sans, add 'to your' and then 'heart' in italic serif within about 0.5 s, and hold for 2 s.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s015",
+      "shot_type": "other",
+      "shot_type_other": "device-in-hand footage: a phone held in a ringed hand showing the app's Heart Health screen (UI likely composited)",
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Phone screen with the Heart Health / Cardiovascular Age card and a line chart ending in a glowing dot",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "9:41",
+        "Heart Health",
+        "Cardiovascular Age",
+        "Aligned",
+        "Your cardiovascular age is aligned with your actual age.",
+        "−4 years",
+        "W34"
+      ],
+      "text_word_count": 18,
+      "typography": "Native app UI typography: bold white sans title 'Heart Health', small muted label 'Cardiovascular Age', large bold 'Aligned', regular body copy, and a bold light-tinted metric '−4 years'; all sentence/title case, normal tracking.",
+      "depth_cues": ["blur", "glow", "perspective_tilt"],
+      "what_happens": "The only app moment: a hand holds a phone at a slight angle against a blurred room. On the dark card the line chart extends to a glowing endpoint (23.5 s to 24.0 s) and the '−4 years' metric appears above it, then holds. The lyric 'love I' (w19-w20) plays over it.",
+      "build_rebuild": "Composite the app's Heart Health card onto a hand-held phone plate tilted about 15 degrees, draw the line chart on to a glowing endpoint dot over ~0.5 s, then fade in the '−4 years' metric above it.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s016",
+      "shot_type": "footage",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Ring tumbling and spinning on a sunlit light-oak table, smeared by motion blur",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": ["shadow", "blur"],
+      "what_happens": "A 0.5 s energy beat: the ring spins fast on the wooden table under a hard window light streak, with strong motion blur and double images of the band, before the video moves into the end card. One motion event is counted in this shot.",
+      "build_rebuild": "Insert a ~0.5 s macro of the ring spinning on a sunlit wood surface with heavy motion blur (shutter-angle blur or a fast spin clip) as the lead-in to the end card.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s017",
+      "shot_type": "3d",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Floating, slowly rotating ring over soft beige fabric, first behind the 'Oura Ring 4' title and tagline, then under the logo with the shop CTA",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Oura Ring 4",
+        "Sleeker. Smarter. Made for you.",
+        "ŌURA",
+        "Shop now at Oura"
+      ],
+      "text_word_count": 13,
+      "typography": "Title 'Oura Ring' in white regular sans-serif, title case, with the numeral 4 knocked out of a solid white circle badge (same lockup as s002); tagline in smaller white regular sans, sentence case, revealed sentence by sentence. End card: spaced uppercase 'ŌURA' wordmark with a macron, top centre, and a small sans 'Shop now at Oura' at the bottom. Font guess (low confidence): the same neutral grotesk throughout.",
+      "depth_cues": ["blur", "shadow"],
+      "what_happens": "The camera zooms through from the tumbling ring to a large defocused ring floating over beige fabric. 'Oura Ring 4' fades in, then 'Sleeker.', 'Smarter.' and 'Made for you.' appear one after another (26.5-27.0 s). The title block fades out by 27.5 s while the ring recedes, and from 28.0 s an end card holds: logo at top, small rotating ring in the centre, 'Shop now at Oura' at the bottom, until the end (lyric w21-w24).",
+      "build_rebuild": "Over a slowly rotating 3D ring floating above a soft fabric backdrop, fade in the product lockup with the circled numeral, stagger the three tagline sentences ~0.25 s apart, cross-fade to a logo-top / ring-centre / CTA-bottom end card at about 2.5 s and hold for 2 s.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001", "s002"], "words": null},
+      {"beat": "mechanism", "shots": ["s003", "s004"], "words": null},
+      {"beat": "outcome", "shots": ["s005", "s006", "s007", "s008", "s009", "s010", "s011", "s012", "s013", "s014"], "words": [0, 17]},
+      {"beat": "demo", "shots": ["s015"], "words": [18, 20]},
+      {"beat": "cta", "shots": ["s016", "s017"], "words": [21, 24]}
+    ],
+    "hook": {
+      "text": "Meet Oura Ring 4",
+      "technique": "other",
+      "technique_other": "named product reveal: the caption 'Meet' over ambient fabric footage completes as the product name over a still product hero, with no claim, question or speech",
+      "shots": ["s001", "s002"],
+      "words": null
+    },
+    "cta": {"text": "Shop now at Oura", "shots": ["s017"]},
+    "tone": "Calm, warm and aspirational wellness lifestyle; quiet luxury product film carried by a vocal pop track rather than a narrator.",
+    "signature_moments": [
+      {
+        "shots": ["s003", "s005", "s008", "s009", "s011", "s014"],
+        "description": "A single caption system repeats all through the video: a short white sans-serif phrase, then one accent word ('accuracy', 'sleep', 'activity', 'recovery', 'stress', 'heart') added in a light italic serif.",
+        "why_premium": "Mixing a neutral sans with an editorial italic serif accent reads as magazine-grade art direction, and repeating it strictly turns six benefit claims into one rhythm the viewer learns at once."
+      },
+      {
+        "shots": ["s015"],
+        "description": "The only app moment: a hand-held phone where the cardiovascular-age chart draws to a glowing endpoint and the '−4 years' metric appears.",
+        "why_premium": "Real UI shown in-context on a device in a lived-in room, with one animated data point, proves the benefit without breaking the lifestyle mood."
+      },
+      {
+        "shots": ["s016", "s017"],
+        "description": "A motion-blurred ring tumbling on a sunlit table zooms through into a floating 3D ring behind the 'Oura Ring 4' lockup and a staggered 'Sleeker. Smarter. Made for you.' tagline, then settles into a logo / ring / CTA end card.",
+        "why_premium": "The burst of energy right before a calm, centred lockup gives the ending a clear release, and bringing back the circled-numeral lockup from s002 closes the loop."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 3,
+        "evidence": "Elegant but low-tension opening: 'Meet' over defocused curtains, then the product name over a still ring hero. There is no claim or question until 'Incredible accuracy' in s003, and no speech before w0 at 11.25 s.",
+        "refs": ["s001", "s002", "s003"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "Each benefit gets its own shot and a one-word italic accent (accuracy, sleep, activity, recovery, stress, heart), so the feature list is easy to read. The 'how' stays vague beyond the sensor render and one app screen.",
+        "refs": ["s003", "s005", "s008", "s009", "s011", "s014", "s015"]
+      },
+      "ui_showcase": {
+        "score": 2,
+        "evidence": "Only one app screen, about 1.5 s long (Heart Health chart drawing to '−4 years'). It is well executed in-context, but there is no other UI or app flow.",
+        "refs": ["s015"]
+      },
+      "motion_polish": {
+        "score": 4,
+        "evidence": "Consistent caption build timing, a 3D sensor macro with light sweeps, chart draw-on with a glowing endpoint, a motion-blurred tumble and a zoom-through into a staggered tagline lockup. Motion is mostly gentle drifts and plain cuts rather than designed moves.",
+        "refs": ["s003", "s015", "s016", "s017"]
+      },
+      "sound_design": {
+        "score": 4,
+        "evidence": "Judged from the anchors' audio facts plus visuals: a vocal pop track at 107.67 BPM drives the edit, and several cuts land within about 60 ms of a detected beat (s005, s006, s010, s014, s015). SFX candidates are mostly music, with a dense swoosh_reverse/impact cluster (x026-x034) under the s013-s015 transitions. Integrated loudness is a quiet -23.87 LUFS. I cannot hear the mix, so foley or sweetening quality is not judged.",
+        "refs": ["s005", "s006", "s010", "s013", "s014", "s015"]
+      },
+      "vo_script_quality": {
+        "score": null,
+        "evidence": "No voice-over: the transcribed words (w0-w24, e.g. 'I can feel your love') are song lyrics from the music track, not a script.",
+        "refs": ["w0", "w24"]
+      },
+      "brand_consistency": {
+        "score": 5,
+        "evidence": "One caption system throughout (white sans plus italic-serif accent), consistent warm, earthy grading and fabric/wood surfaces, the circled-numeral lockup used at the open and close, and a clean logo end card.",
+        "refs": ["s002", "s005", "s014", "s017"]
+      },
+      "works_muted": {
+        "score": 5,
+        "evidence": "The whole story is carried by on-screen captions, product shots and the end card; the lyrics only add mood, so nothing is lost with sound off.",
+        "refs": ["s002", "s003", "s005", "s014", "s017"]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "A highly polished, coherent 30 s product film with strong art direction and a reusable caption system. Its gentle hook and minimal UI demo keep it short of best-in-class as an explainer.",
+        "refs": ["s003", "s014", "s015", "s017"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 3,
+      "baked_in_text": true,
+      "vo_dependent": false,
+      "notes": "No narration, so only the captions need translating, and they are short. But every caption is baked onto footage with an English-word-order accent word in a second typeface, and the app UI and end-card lockup are English, so each locale needs re-composited text and possibly re-rendered UI."
+    }
+  }
+}

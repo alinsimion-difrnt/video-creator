@@ -1,0 +1,53 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T13:59:40+00:00"
+  },
+  "id": "octopath-traveler",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "cool",
+    "notes": "Frames (Octopath Traveler 0, filmed off a TV): saturated greens and warm wood in towns; blue-cyan cave light; battle scenes swing to full-screen orange-red and ice-blue spell colour. Saturation tuned with depth (wiki)."
+  },
+  "lighting": "HD-2D: sprites in 3D sets with bloom and depth of field (sources.yaml). Frames show god-ray light shafts through forest, glowing bloom on spells that floods the screen, and a dark cave lit from one blue source above.",
+  "silhouette": "Small sprites (about 1/10 of screen height) with clear job costumes (wiki); in battle the sprites stay small while spell effects are huge. Menu portraits show the same chibi sprite at tiny size.",
+  "motion": {
+    "timing": "No frame timings measured. Battle frames show big spell effects (fire wave, ice burst) changing every ~2 s in the clip; sprites themselves move little.",
+    "principles": [
+      "staging",
+      "anticipation",
+      "exaggeration"
+    ]
+  },
+  "texture": "Pixel sprites and pixel-textured props against 3D sets with blurred foliage; bloom softens edges of light. Diorama look: crisp middle plane, soft near and far.",
+  "camera": "Slightly tilted 3D camera looking down at a flat sprite layer; depth of field blurs foreground leaves and far trees. Battle: side-on wide shot, enemies left, party right.",
+  "sound": "Score by Yasunori Nishiki; each hero has a theme tied to their story.",
+  "acting": {
+    "enters": "Not shown; the overworld shots have the hero walking into a town path from below.",
+    "acts": "In battle, characters stay put and the spell effect does the acting: a wave of fire or ice crosses the whole screen.",
+    "exits": "Not shown.",
+    "comes_back": null,
+    "depth": "Flat sprites in a 3D set; blur on near and far planes and light shafts between them, so a tiny sprite still reads in the sharp middle plane."
+  },
+  "techniques": [
+    "flat sprites in a 3D set (HD-2D)",
+    "depth of field blur on near and far planes",
+    "bloom and god-ray light shafts",
+    "small still sprite + screen-filling effect does the action",
+    "single coloured light source in dark scenes",
+    "costume = job, readable silhouette per hero"
+  ],
+  "feel": "crisp tiny sprite + blurred planes + bloom and light shafts = toy diorama that glows",
+  "for_fred": "Fake HD-2D: blur a foreground layer and the far background, keep Fred crisp in the middle. For a big moment, keep Fred small and still and let one effect (a splash wave, a glow) cross the whole frame; blur and shrink him when he goes to the back.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Octopath_Traveler",
+    "studies/pixel-art/sources.yaml",
+    "data/study/pixel/work/octopath-traveler/clip3-7585094599169936653.jpg",
+    "data/study/pixel/work/octopath-traveler/clip2-7652581221003824397.jpg (mostly a talking head; only a menu screen shows the art)"
+  ]
+}

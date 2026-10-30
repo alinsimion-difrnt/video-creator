@@ -1,0 +1,97 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "e9cec225b409798b315e5f3be7fcad7f525d0f011bb4e4ee93d5fc27b9d7c4b7",
+    "created_at": "2026-10-05T06:47:49.862790Z"
+  },
+  "video": "meta-this-is-meta-quest-3",
+  "event": "e009",
+  "task": "a2-e009",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Hard cut from live-action dancer to first-person VR tennis capture, then in-game head motion settles on the court",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "hard cut to gameplay capture followed by first-person head-motion drift (tilt up, slight zoom)",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out", "source": "model_estimate"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "'Captured on PC.' capture disclaimer appears with the gameplay shot",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "appears on the cut (no visible animation)",
+      "is_text": true,
+      "text": "Captured on PC.",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": null,
+      "manual_box": [410, 324, 578, 672],
+      "manual_reason": "The 'to expand' caption is gone in the settled end frame, so no candidate box covers it; the box marks where it sat (same position as candidate b02 in e008).",
+      "label": "Caption 'to expand' removed at the cut",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "cut out together with the live-action clip",
+      "is_text": true,
+      "text": "to expand",
+      "text_unit": "whole",
+      "estimates": null
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x045",
+      "verdict": "override",
+      "label": "music",
+      "note": "384 ms before the cut, in the regular music pulse; CLAP says music (0.788). Same candidate as reviewed in e008."
+    },
+    {
+      "id": "x046",
+      "verdict": "unsure",
+      "label": "unsure",
+      "note": "Broadband transient right at the cut (-29 ms); could be a cut accent or the in-game racket hit visible in the first gameplay frames."
+    },
+    {
+      "id": "x047",
+      "verdict": "unsure",
+      "label": "unsure",
+      "note": "Low-frequency onset about 320 ms after the cut, with no clear visual trigger; may be a music beat or in-game ball sound. CLAP score low (0.286)."
+    },
+    {
+      "id": "x048",
+      "verdict": "override",
+      "label": "music",
+      "note": "Sits in the recurring music pulse 720 ms after the cut with no visual event; CLAP says music (0.477)."
+    }
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "gameplay capture cut",
+    "description": "On the beat, the edit cuts from live-action footage of a player to first-person in-headset gameplay capture; the caption sentence ends with the live clip and a small 'Captured on PC.' disclaimer sits bottom-centre over the capture.",
+    "why_premium": "Cutting on the music beat from the person to what they see sells the product promise in one frame, and the small, consistent disclaimer keeps the capture honest without competing with the gameplay."
+  },
+  "build_hint": {
+    "gsap": "tl.set('.liveClip, .caption', {autoAlpha: 0}, beatTime).set('.captureClip, .disclaimer', {autoAlpha: 1}, beatTime); in-clip motion is source footage, so no tween; optionally add a 2-3% scale settle with fromTo('.captureClip', {scale: 1.03}, {scale: 1, duration: 0.4, ease: 'power2.out'}).",
+    "remotion": "Two back-to-back <Sequence> blocks cut on the beat frame; render the disclaimer as a static <AbsoluteFill> label inside the capture sequence. Optional settle: scale = interpolate(frame, [0, 12], [1.03, 1], {easing: Easing.out(Easing.quad), extrapolateRight: 'clamp'})."
+  },
+  "confidence": "low",
+  "notes": "Most motion after the cut is in-game first-person head movement, not a camera move added in the edit; camera.move says tilt_up for that reason. b02 ('Ace Haven') and b04 ('Court 2') are in-game signage moving with the scene, so they are covered by b01 rather than listed separately."
+}

@@ -1,0 +1,50 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T14:01:59+00:00"
+  },
+  "id": "mark-ferrari",
+  "kind": "artist",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "cool",
+    "notes": "No frames or metrics here. Loom's DOS release was 16-colour EGA (wiki); his cycled scenes run on 8-bit indexed palettes where a few slots are reserved to rotate. Deep blue/violet shadows, warm light sources."
+  },
+  "lighting": "Time of day and weather are carried by the palette: the same drawing reads as dawn, dusk or night because the indexed colours change, not the pixels. Light comes from a sky or a lit window.",
+  "silhouette": "Landscapes first: layered trees, cliffs, ruins and water read as big dark shapes against a bright sky band; figures, when present, are tiny.",
+  "motion": {
+    "timing": "Nothing measured. Motion is palette rotation: water, rain, snow and fire 'move' by cycling a strip of colour slots, so the loop runs forever with zero redrawn frames.",
+    "principles": [
+      "colour cycling",
+      "ambient loop",
+      "secondary motion only"
+    ]
+  },
+  "texture": "Heavy hand-placed dithering to fake gradients in skies and water; dithering also builds the bands that colour cycling travels through.",
+  "camera": "Locked wide establishing shot; the canvas-cycle viewer only zooms. Stillness of the frame makes the cycled areas the only thing moving.",
+  "sound": "The Canvas Cycle viewer offers optional ambient sound per scene.",
+  "acting": {
+    "enters": "No characters act; the scene is the performer.",
+    "acts": "Waterfalls, rain and reflections shimmer in place while the rest stays frozen.",
+    "exits": "",
+    "comes_back": null,
+    "depth": "Depth from atmospheric value steps: far layers lighter and bluer, near layers darker."
+  },
+  "techniques": [
+    "colour cycling: rotate a reserved strip of palette slots to animate water, rain, snow",
+    "palette swap for time of day on one drawing",
+    "dithered gradient bands that double as cycle paths",
+    "atmospheric perspective: lighter, bluer far layers",
+    "frozen frame + one moving element (cinemagraph logic)"
+  ],
+  "feel": "frozen wide landscape + one strip of cycled colour (water, rain) = alive and calm without redrawing",
+  "for_fred": "Use a cycled-colour ambient loop (pond ripples, sign glow) behind Fred so the scene stays alive while he is off screen; then his re-entry is the only new motion and reads instantly. A palette shift (day to dusk) can mark a time jump between his appearances.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Loom_(video_game)",
+    "http://www.effectgames.com/demos/canvascycle/"
+  ]
+}

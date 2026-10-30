@@ -1,0 +1,44 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "bef0cdd35b028e2de36ebef2c8cc32bb67f42050d3b9d0321e0dc05644046855",
+    "created_at": "2026-10-05T06:46:59.103693Z"
+  },
+  "video": "meta-this-is-meta-quest-3",
+  "event": "e001",
+  "task": "a2-e001",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Mixed-reality backyard scene with player and virtual effects",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["color_shift", "other"],
+      "change_other": "live-action player motion with a VFX light-flare burst and warm-to-cool grade shift",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 130, "easing_class": "ambiguous"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "vfx light flare burst",
+    "description": "Live-action mixed-reality footage: the player swings a virtual blaster, a lens-flare streak and particle sparks flash across the frame and the grade swings from warm red/orange to cool teal/green as virtual creatures glow.",
+    "why_premium": "The virtual effects are composited with real light interaction (flare, sparks, colour spill on the player), so the MR content reads as physically present rather than overlaid."
+  },
+  "build_hint": {
+    "gsap": "Not a UI build. Approximate with an overlay layer: gsap.fromTo('.flare', {opacity:0, x:'-30%'}, {opacity:1, x:'10%', duration:0.13, ease:'power2.out'}) then fade out; simultaneously tween a colour-grade filter on the footage (hue-rotate/saturation) over ~0.3s with 'power1.inOut'.",
+    "remotion": "Footage in <OffthreadVideo>; flare overlay opacity/translateX via interpolate(frame,[0,4,10],[0,1,0]) and a CSS filter hue-rotate interpolated across the burst; no spring needed."
+  },
+  "confidence": "medium",
+  "notes": "Live-action footage, single full-frame diff box; camera.move is none, so pan_x reflects in-frame content (player swing, flare), not a camera move. No SFX candidates."
+}

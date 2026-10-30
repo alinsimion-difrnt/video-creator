@@ -1,0 +1,235 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "2c4d9ea6d4424a504cfad15f53be9b297eeedd9ed59c3eaf585429860fd286da",
+    "created_at": "2026-10-05T06:30:05.732069Z"
+  },
+  "video": "profound-introducing-profound",
+  "task": "a1-p3",
+  "shots": [
+    {
+      "shot": "s013",
+      "shot_type": "other",
+      "shot_type_other": "press_collage (magazine cover plus news/podcast footage cards on a plain backdrop)",
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Framed TIME magazine cover (OpenAI CEO) centred, with hearing and podcast footage cards tucked behind it left and right",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "TIME",
+        "THE 100 MOST INFLUENTIAL COMPANIES",
+        "OPENAI CEO SAM ALTMAN"
+      ],
+      "text_word_count": 10,
+      "typography": "Third-party cover typography: high-contrast serif masthead, uppercase serif cover lines with a large numeral; no typography authored by the video itself",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Over w40-w44 ('intelligence this way. It's a') a magazine cover sits centred with a drop shadow; across the 2 fps frames the side cards change (left card resolves into a congressional-hearing clip, right card swaps from one podcast still to another), so the cards behind the cover are live footage that swap out while the cover holds.",
+      "build_rebuild": "Centre a shadowed cover image card on a plain backdrop and place two smaller video cards behind it, offset left and right, that slide out from behind the cover and swap their footage sources on the beat while the cover stays fixed.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s014",
+      "shot_type": "other",
+      "shot_type_other": "press_headline_screenshot (cropped news article headline)",
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Article headline with the word 'ChatGPT' sitting near frame centre",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Forbes",
+        "FORBES > INNOVATION > ENTERPRISE TECH",
+        "Why Agentic AI Will S ChatGPT Look Like A Calculator",
+        "Bernard Marr Contributor"
+      ],
+      "text_word_count": 18,
+      "typography": "Third-party article page: large light-weight editorial serif headline in sentence/title case, small uppercase sans breadcrumb with wide tracking, bold sans byline",
+      "depth_cues": [
+        "blur",
+        "grain"
+      ],
+      "what_happens": "First frame of a 3-frame headline flash on w45 ('revolution'): a cropped, tightly framed news headline fills the screen with a vignette and soft-focus edges; the headline is cropped so 'ChatGPT' lands in the central band of the frame.",
+      "build_rebuild": "Show a full-bleed screenshot of a headline scaled up and cropped so the keyword sits at a fixed screen anchor, add a radial vignette, edge blur and film grain, and hold it for 3 frames.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s015",
+      "shot_type": "other",
+      "shot_type_other": "press_headline_screenshot (cropped news article headline)",
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Headline word 'ChatGPT' held at the same screen position as in the previous shot",
+      "transition_in": "match_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Offbeat | Man Claims ChatGPT Saved His Life By Diagnosing Life-Threatening Illness",
+        "an Claims ChatGPT Saved His I agnosing Life-Threatening Illn",
+        "post went viral, attracting attention of social media users, who a chatbots helping them with the diagnoses.",
+        "by: Abhinav Singh | Offbeat | Jan 20, 2025 11:13 am IST",
+        "Depth | Israel-Gaza war | War in Ukraine | Climate | UK | World | Business | Politics",
+        "ple brings ChatGPT to iPhones overhaul"
+      ],
+      "text_word_count": 63,
+      "typography": "Third-party pages: heavy bold grotesque headline in title case (keyframe page) and a medium-weight slab-ish serif headline under a bold sans nav bar (sheet frame); no authored typography",
+      "depth_cues": [
+        "blur",
+        "grain"
+      ],
+      "what_happens": "Rapid headline flash during w45 ('revolution'). The mid-shot keyframe shows one news headline while the 18.000 s contact-sheet frame shows a different one, so within this ~3-frame shot two different headlines appear; in both, 'ChatGPT' is aligned to the same central band as s014, creating a keyword match cut.",
+      "build_rebuild": "Cut to the next headline screenshot positioned so its 'ChatGPT' word overlays the previous one's exact x/y, with the same vignette and grain treatment, holding 1-3 frames per headline.",
+      "confidence": "low"
+    },
+    {
+      "shot": "s016",
+      "shot_type": "other",
+      "shot_type_other": "press_headline_screenshot (cropped news article headline)",
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Headline word 'ChatGPT' in the central band",
+      "transition_in": "match_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "SIGN IN / UP",
+        "AI + ML",
+        "OpenAI's ChatGPT crawler car sites, answering your queries",
+        "The S in LLM stands for Security",
+        "Thomas Claburn"
+      ],
+      "text_word_count": 22,
+      "typography": "Third-party page: bold geometric/grotesque sans headline in sentence case, regular-weight sans standfirst, bold uppercase sans section label and header",
+      "depth_cues": [
+        "blur",
+        "grain"
+      ],
+      "what_happens": "Another 3-frame headline flash under w45-w46 ('revolution that's'); the 'ChatGPT' word again sits at the same screen position, keeping the eye fixed while the surrounding publication changes; one detected event in the shot.",
+      "build_rebuild": "Continue the keyword-locked montage: swap in another cropped headline screenshot with 'ChatGPT' pinned to the shared anchor point, same vignette/grain, 3-frame hold.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s017",
+      "shot_type": "other",
+      "shot_type_other": "press_body_text_screenshot (cropped news article paragraph)",
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Body-copy word 'ChatGPT' in the central band",
+      "transition_in": "match_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "d global magazine giant Condé p to allow ChatGPT and its sear om Vogue, The New Yorker, GQ ns."
+      ],
+      "text_word_count": 19,
+      "typography": "Third-party article body: semibold humanist sans at very large crop scale, sentence case; no authored typography",
+      "depth_cues": [
+        "blur",
+        "grain"
+      ],
+      "what_happens": "3-frame flash on w46 ('that's') of an extreme crop of an article paragraph; 'ChatGPT' stays locked to the shared screen position; edges soft-focused with vignette.",
+      "build_rebuild": "Insert a heavily scaled crop of article body text whose 'ChatGPT' word aligns to the montage anchor, with the same vignette, edge blur and grain, held 3 frames.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s018",
+      "shot_type": "other",
+      "shot_type_other": "press_headline_screenshot (cropped news article headline)",
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Headline word 'ChatGPT' in the central band under a site navigation bar",
+      "transition_in": "match_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Depth | Israel-Gaza war | War in Ukraine | Climate | UK | World | Business | Politics",
+        "ple brings ChatGPT to iPhones overhaul"
+      ],
+      "text_word_count": 17,
+      "typography": "Third-party page: medium-weight serif headline in sentence case, bold sans navigation labels",
+      "depth_cues": [
+        "blur",
+        "grain"
+      ],
+      "what_happens": "3-frame headline flash on w46 ('that's'); same keyword-locked framing, with a strip of footage (a raised hand) visible below the article; one detected event, near the x015 music onset at 18.32 s.",
+      "build_rebuild": "Cut to a cropped headline screenshot with 'ChatGPT' on the anchor point and a sliver of video footage beneath it, same vignette and grain, 3-frame hold.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s019",
+      "shot_type": "other",
+      "shot_type_other": "press_headline_screenshot (cropped news article headline)",
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Headline word 'ChatGPT' in the central band",
+      "transition_in": "match_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "FORBES > INNOVATION > ENTERPRISE TECH",
+        "Why Agentic AI Will ChatGPT Look Like Calculator",
+        "Bernard Marr Contributor"
+      ],
+      "text_word_count": 15,
+      "typography": "Third-party page: light editorial serif headline, small uppercase tracked sans breadcrumb, bold sans byline",
+      "depth_cues": [
+        "blur",
+        "grain"
+      ],
+      "what_happens": "2-frame flash on w46 ('that's') revisiting the same headline as s014 at a slightly different crop/scale, so the montage loops back through its sources while the 'ChatGPT' anchor holds.",
+      "build_rebuild": "Re-show the first headline screenshot at a slightly larger scale and shifted crop (keyword still on the anchor) for 2 frames to create a stutter-loop through the sources.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s020",
+      "shot_type": "other",
+      "shot_type_other": "press_headline_screenshot (cropped news article headline)",
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Headline word 'ChatGPT' in the central band",
+      "transition_in": "match_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "at | Man Claims ChatGPT Saved His Life By Diagnosing Life-Threatening Illness",
+        "Claims ChatGPT Saved Hi gnosing Life-Threatening Il",
+        "t went viral, attracting attention of social media users, w atbots helping them with the diagnoses."
+      ],
+      "text_word_count": 34,
+      "typography": "Third-party page: heavy bold grotesque headline in title case, regular sans standfirst and breadcrumb",
+      "depth_cues": [
+        "blur",
+        "grain"
+      ],
+      "what_happens": "2-frame flash on w46 ('that's') of a headline already seen in s015, slightly rescaled; the stutter-loop continues with 'ChatGPT' locked to the anchor.",
+      "build_rebuild": "Repeat a previously shown headline screenshot at a slightly different scale with the keyword on the anchor, 2-frame hold, same vignette and grain.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s021",
+      "shot_type": "other",
+      "shot_type_other": "press_headline_screenshot (cropped news article headline) with a news-broadcast footage frame",
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Headline word 'ChatGPT' in the central band (keyframe); a news anchor to camera (sheet frame)",
+      "transition_in": "match_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "+ ML",
+        "penAI's ChatGPT crawler c ites, answering your querie",
+        "ne S in LLM stands for Security"
+      ],
+      "text_word_count": 16,
+      "typography": "Third-party page: bold grotesque headline in sentence case, regular sans standfirst; the broadcast frame has no legible text",
+      "depth_cues": [
+        "blur",
+        "grain"
+      ],
+      "what_happens": "2-frame shot on w46 ('that's'). The mid-shot keyframe repeats the s016 headline at a larger crop, while the 18.500 s sheet frame shows a news anchor in a studio, so the montage appears to break out of headlines into broadcast footage at this point; which frame dominates cannot be confirmed from two stills.",
+      "build_rebuild": "End the keyword-locked headline stutter with a last rescaled headline frame, then hard-cut into full-frame news-broadcast footage to carry the 'it's coming' line.",
+      "confidence": "low"
+    }
+  ],
+  "summary": null
+}

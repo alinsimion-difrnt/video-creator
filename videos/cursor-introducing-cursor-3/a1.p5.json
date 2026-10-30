@@ -1,0 +1,176 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "fb4ed7080cb3bfa170b02155ac895a8012c4bdb5b5aec30e4c6bb5d0883597ef",
+    "created_at": "2026-10-05T07:37:12.274143Z"
+  },
+  "video": "cursor-introducing-cursor-3",
+  "task": "a1-p5",
+  "shots": [
+    {
+      "shot": "s024",
+      "shot_type": "presenter",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Close-up of the red-haired presenter in a grey sweater speaking, against a shallow-focus bookshelf with the warm pendant lamp glow at top right",
+      "transition_in": "other",
+      "transition_other": "Anchors flag this boundary as 'other'. The framing is the same close-up angle as s023, so this looks like a continuation or jump within the same take. I see no wipe, dissolve or flash in the stills.",
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": ["blur"],
+      "what_happens": "He delivers the vision line 'to build toward a world where agents really feel like colleagues and where you can build' (w315-w330) to an off-camera point slightly left of the lens. Expression and small head movements change, but the framing stays static. There are no graphics. The last sheet frame (1:24.000) already shows the wide two-shot, so the real cut lands slightly before the detected boundary. Anchors list two events in the shot, but I could not identify a matching visual change in the stills beyond the speaker's head movement.",
+      "build_rebuild": "Hold the shallow-depth-of-field close-up single on the speaker for the full closing vision sentence with no overlay, then hard-cut to the wide on 'anything'.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s025",
+      "shot_type": "presenter",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "Locked-off wide two-shot: the red-haired presenter (right) with both hands flat on the table, and the smiling bearded co-host behind the open laptop (left)",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": ["none"],
+      "what_happens": "Back to the wide set-up for the final words 'anything you like on a computer instantly.' (w331-w337). The speaker gestures once, then settles both palms on the table and looks to camera. The co-host smiles at camera. The shot holds briefly in silence after the last word, giving a natural button before the end card. There are no graphics.",
+      "build_rebuild": "End the live footage on the static wide two-shot, let the speaker finish and hold about 0.4 s of settled silence, then hard-cut to the white logo card.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s026",
+      "shot_type": "logo",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The Cursor hexagonal cube mark, then the mark plus 'CURSOR' wordmark lockup, centred on an off-white canvas",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": ["CURSOR"],
+      "text_word_count": 1,
+      "typography": "Wordmark in all caps, bold geometric sans with wide, squarish letterforms and slightly open tracking, dark on off-white, set to the right of the icon at roughly cap-height of the mark. This is the brand's logo artwork, not live type.",
+      "depth_cues": ["perspective_tilt"],
+      "what_happens": "Hard cut to a clean off-white end card with no voice-over. At 1:26.5 a dark rounded square tumbles in 3D (a lit bevel edge is visible). At 1:27.0 it has folded or morphed into an angular arrow shard, and at 1:27.5 it resolves into the centred hexagonal cube mark (the keyframe). By 1:28.0 the 'CURSOR' wordmark has appeared to the right, with the icon shifted left so the full lockup is centred, and the lockup holds still to 1:29. At 2 fps I cannot tell whether the wordmark is a mask reveal, a slide or a fade, or what easing the morph uses.",
+      "build_rebuild": "On an off-white full-frame card, rotate a dark rounded square in 3D, morph it through an arrow shape into the cube icon over about 1 s, then slide the icon left while revealing the wordmark so the lockup ends centred, and hold for about 1 s.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s027",
+      "shot_type": "other",
+      "shot_type_other": "Black end frame (empty tail)",
+      "composition": "other",
+      "composition_other": "Empty black frame, no elements",
+      "focal_element": "Solid black frame",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": ["none"],
+      "what_happens": "About 1 s of pure black after the logo card, until the video ends at 1:30.34. The 1:29.0 frame is still the logo and 1:29.5 is already black. I cannot tell from the stills whether this is a hard cut or a very fast fade.",
+      "build_rebuild": "Cut from the logo card to black and hold it for about 1 s as the tail of the video.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001", "s002"], "words": [0, 34]},
+      {"beat": "mechanism", "shots": ["s003", "s004", "s005", "s006"], "words": [35, 101]},
+      {"beat": "demo", "shots": ["s007", "s008", "s009", "s010", "s011", "s012", "s013", "s014", "s015", "s016"], "words": [102, 245]},
+      {"beat": "proof", "shots": ["s017", "s018", "s019", "s020", "s021"], "words": [246, 291]},
+      {"beat": "outcome", "shots": ["s022", "s023", "s024", "s025"], "words": [292, 337]},
+      {"beat": "cta", "shots": ["s026", "s027"], "words": null}
+    ],
+    "hook": {
+      "text": "Coding is changing, and it's changing for the better. The gap between imagination and reality is shrinking to an instant.",
+      "technique": "bold_claim",
+      "technique_other": null,
+      "shots": ["s001"],
+      "words": [0, 19]
+    },
+    "cta": {
+      "text": null,
+      "shots": ["s026"]
+    },
+    "tone": "Calm, warm and understated founder conversation. It is confident and optimistic without hype, shot as a cinematic documentary in a book-lined office and intercut with honest, real product captures. It ends on a minimal monochrome logo card.",
+    "signature_moments": [
+      {
+        "shots": ["s026"],
+        "description": "End card: a dark square tumbles in 3D, folds through an arrow shard into the cube mark, then the wordmark joins and the lockup settles centred on off-white.",
+        "why_premium": "It is the only designed motion in the film, so the brand mark gets a crafted, physical-feeling resolve that contrasts with the live footage. The quiet background and long hold read as confident rather than salesy."
+      },
+      {
+        "shots": ["s009", "s013", "s019"],
+        "description": "Real UI captures are punched in on the exact control the founders name, cut to the spoken words: 'Commit & Create PR' as they say 'merge PR', 'Move to > Cloud' as they say 'zap it back up onto the cloud', and the Composer 2 tooltip as they name Composer 2.",
+        "why_premium": "Tight word-to-UI sync makes each claim visibly true in the real product without any mock-up, and the punch-ins keep small UI text legible."
+      },
+      {
+        "shots": ["s016"],
+        "description": "One continuous full-window capture hops through about five sidebar agents, roughly one click per beat, and each click swaps the pane (plans, video artifacts, a live run).",
+        "why_premium": "It shows 'all these different agents' as real, parallel work at a glance, with rhythm instead of explanation."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 3,
+        "evidence": "It opens on a bold-claim line delivered to camera in a well-lit, cinematic two-shot with name supers (w0-w19). The claim is broad and the first product visual does not arrive until about 13.6 s, so the hook relies on the founders' credibility rather than a visual surprise.",
+        "refs": ["s001", "s002", "w0", "w19", "s004"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "The script names one capability at a time (look at changes, merge PR, go to definition, local/cloud handoff, parallel agents, Cloud, Composer 2), and nearly every claim is followed by a matching real UI capture. Some captures run unzoomed (s011, s016), so detail is hard to read, and the model/product/runtime framing (w309-w312) is only spoken.",
+        "refs": ["s009", "s011", "s013", "s016", "s019", "w309", "w312"]
+      },
+      "ui_showcase": {
+        "score": 4,
+        "evidence": "It uses the real product throughout, with no mock-ups. Punch-ins and pans on the key controls (Commit & Create PR, Move to > Cloud, model picker tooltip) are timed to VO. Unzoomed full-window shots leave the body text too small at 1080p, and there are no UI motion-graphics callouts.",
+        "refs": ["s005", "s009", "s013", "s016", "s019"]
+      },
+      "motion_polish": {
+        "score": 3,
+        "evidence": "The edit is mostly clean hard cuts between two or three camera angles and screen captures, with occasional reframes or punch-ins. The logo resolve is the only crafted motion graphic. Several cuts land a few frames before the detected boundaries, and s023 is a very short 0.3 s fragment. This is competent and restrained but not motion-led.",
+        "refs": ["s023", "s021", "s026"]
+      },
+      "sound_design": {
+        "score": 3,
+        "evidence": "Judged from anchors plus visuals. There is a music bed at about 103 BPM under clean presenter audio, and integrated loudness is -27.31 LUFS (quiet for online delivery). The 128 SFX candidates are mostly 'swoosh_reverse'/'impact' with moderate CLAP scores and fall almost on the beat grid (e.g. candidate x001 at 2.299 s vs beat 2.298 s), which suggests music transients rather than designed SFX. Nothing in the visuals implies hits on UI actions or the logo, so the sound design reads as music plus voice only.",
+        "refs": ["s001", "s026"]
+      },
+      "vo_script_quality": {
+        "score": 4,
+        "evidence": "The script is conversational and specific, and the two founders trade lines naturally. It moves from a thesis (w0-w34) to the announcement (w42-w44), then concrete features, and ends on an aspirational vision ('agents really feel like colleagues', w321-w325). It has some filler and repetition ('really, really seamless', w175-w177) and the 'We announced...' recap stretch (w246-w291) is list-like.",
+        "refs": ["w0", "w44", "w175", "w246", "w321", "w337"]
+      },
+      "brand_consistency": {
+        "score": 4,
+        "evidence": "The warm, book-lined set, the light off-white product UI and the off-white monochrome end card share one restrained, warm-neutral look. The UI consistently shows the same light theme and the same task ('Add group by option None for sidebar in Glass'). No brand graphics appear between the open and the end card.",
+        "refs": ["s001", "s005", "s019", "s026"]
+      },
+      "works_muted": {
+        "score": 2,
+        "evidence": "The story is carried almost entirely by the on-camera VO. There are no captions or kinetic type, and with sound off the viewer sees founders talking and UI clicks without knowing what is claimed. Only the lower-thirds, the UI button labels and the logo give muted context.",
+        "refs": ["s001", "s009", "s013", "s026"]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "This is a well-shot, credible founder-led launch film: cinematic lighting and set, honest real-product demos synced to the script, and a crisp logo resolve. It is held back from best-in-class by sparse motion design, a slow-to-visual opening, small UI text in unzoomed captures, and weak muted and localization performance.",
+        "refs": ["s001", "s009", "s013", "s016", "s026"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 2,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "Very little baked-in motion type (two lower-thirds and the logo), but the real English product UI is baked into every screen capture. The film is fully dependent on on-camera speech, so dubbing would break lip sync and subtitles are the only practical route. Re-recording the screen captures in another UI language would be needed for full localization."
+    }
+  }
+}

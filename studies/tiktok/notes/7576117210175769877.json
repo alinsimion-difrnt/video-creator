@@ -1,0 +1,40 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code",
+                 "input_hash": "f2ce266c07f0f78fe0f88a0faf1b5b65c6cd5f6fd62da0185aa40897b0d19163",
+                 "created_at": "2026-10-13T11:56:54+00:00"},
+  "id": "7576117210175769877",
+  "format": "talking_head",
+  "hook": {"type": "list_promise",
+           "line": "Five things you need to learn SEO (on-screen title; the spoken track did not transcribe cleanly).",
+           "visual": "One-frame thumbnail: giant red '5' and 'THINGS YOU NEED TO LEARN SEO' beside him holding up an open hand; cut at 0.07 s to him at a desk raising five fingers."},
+  "beats": [
+    {"t": 0.0, "what": "Thumbnail-style title card flashes, then he faces camera at a desk."},
+    {"t": 1.5, "what": "Red-and-white caption '5 THINGS YOU NEED TO LEARN SEO' appears as he raises five fingers."},
+    {"t": 5.39, "what": "Item 1 'Basic education' over b-roll of an open book and magnifying glass."},
+    {"t": 6.2, "what": "Rapid b-roll list: laptop, his own YouTube course channel, SEMrush/Ahrefs/WordPress logos, a clock for 'Time'."},
+    {"t": 13.93, "what": "Zoom punch on the clock graphic for item 5, time."},
+    {"t": 16.17, "what": "Back on camera counting on his fingers as he expands on the list."},
+    {"t": 21.55, "what": "Pink-washed b-roll of an office presenter beside a laptop chart."},
+    {"t": 31.13, "what": "Brief cutaway to a 'What is SEO?' definition screen."},
+    {"t": 43.11, "what": "On camera; a Black Friday 80% scholarship SEO course offer is pitched."},
+    {"t": 55.73, "what": "End card: profile photo, 'comment BLACK FRIDAY below and I'll send you the details', follow button."}
+  ],
+  "graphics": {"captions": "title_only",
+               "caption_position": "bottom",
+               "devices": ["title_text", "b_roll", "zoom_punch", "screenshot", "jump_cut"],
+               "density": "moderate", "per_minute_estimate": 12},
+  "characters": [],
+  "cta": {"kind": "comment", "t": 52.93},
+  "why_it_works": [
+    "A big red numeral and a raised open hand promise a short, countable list, so the viewer knows the cost of staying.",
+    "The whole list is shown in the first 15 s as quick labelled b-roll, then explained, so the payoff comes before the detail.",
+    "'Comment BLACK FRIDAY' turns the sale into comments (661), which the algorithm rewards and which give him a DM list."
+  ],
+  "weaknesses": [
+    "After 16 s it settles into a long static desk shot (19.2 s longest shot) with almost no graphics.",
+    "There are no spoken-word captions (words on screen median 2), so sound-off viewers lose the explanation.",
+    "The second half is a course pitch, which the 0.44 loop score and the drop in visual change suggest loses viewers."
+  ],
+  "for_robert": "Front-load the whole list as a 2-second-per-item montage with numbered labels, then explain each item; have Fred hold up the number for each item."
+}

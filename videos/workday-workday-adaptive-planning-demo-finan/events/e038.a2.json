@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "98e7e3607990dcf7bb1b09ee65a385242cdc66c4f5e8280191976cb82abae898",
+    "created_at": "2026-10-05T06:55:59.086950Z"
+  },
+  "video": "workday-workday-adaptive-planning-demo-finan",
+  "event": "e038",
+  "task": "a2-e038",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Dark scrim over the Version admin page",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["fade", "color_shift"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 80, "easing_class": "step"}
+    },
+    {
+      "box": null,
+      "manual_box": [144, 98, 900, 214],
+      "manual_reason": "No candidate box covers the whole blue navigation drawer; candidates only cover its individual menu labels (b02-b15).",
+      "label": "Blue left navigation drawer",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_right"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 80, "easing_class": "step"}
+    },
+    {
+      "box": "b15",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Navigation menu items (Home through Support)",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Home Sheets Assumptions Reports Dashboards Announcements Consolidation Processes Workflow Formulas Modeling Administration Integration Support",
+      "text_unit": "whole",
+      "estimates": null
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "nav drawer open",
+    "description": "Clicking the app logo opens a full-height navigation drawer on the left while a dark scrim dims the page behind it; the change lands in about two frames.",
+    "why_premium": "Low premium value on its own: it is a raw screen-recording state change. The scrim does focus attention on the menu, but there is no eased slide or stagger."
+  },
+  "build_hint": {
+    "gsap": "tl.fromTo(scrim, {opacity: 0}, {opacity: 0.75, duration: 0.25, ease: 'power2.out'}, 0).fromTo(drawer, {xPercent: -100}, {xPercent: 0, duration: 0.3, ease: 'power3.out'}, 0).from(drawer.querySelectorAll('li'), {opacity: 0, x: -12, stagger: 0.02, duration: 0.2, ease: 'power2.out'}, 0.1); the source cuts nearly instantly, so this is an upgraded version.",
+    "remotion": "drawer translateX = interpolate(spring({frame, fps, config: {damping: 30, stiffness: 220}}), [0, 1], [-150, 0]); scrim opacity = interpolate(frame, [0, 8], [0, 0.75], {extrapolateRight: 'clamp'}); menu items offset by i * 1 frame."
+  },
+  "confidence": "medium",
+  "notes": "Energy spikes over two frames only (f2446-f2447), so the source is effectively a hard state change; the slide on the drawer is inferred, not seen. b15 (Home) stands in for the whole menu list because no candidate covers all items."
+}

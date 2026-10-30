@@ -1,0 +1,39 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "6cbea5b91a2601ee8ba7f66a121a94c8d34c76695031740abe92fd5892f877f2",
+                 "created_at": "2026-10-13T11:05:00+00:00"},
+  "id": "7427944799182834975",
+  "format": "talking_head",
+  "hook": {"type": "problem",
+           "line": "Part two of how to categorize your videos to escape the 200-300 view jail.",
+           "visual": "Sunlit handheld selfie close-up; white title 'How to Auto Generate a Description Box' at top and a reply-to-comment sticker under it."},
+  "beats": [
+    {"t": 0.0, "what": "Part-two framing and the 'view jail' pain, with the title and the viewer's comment sticker already on screen."},
+    {"t": 6.58, "what": "Small text note: the description box is part 2 of categorizing, do all 5 steps."},
+    {"t": 13.16, "what": "The rule: always pick the 10-minute recording option, never 15 s/30 s/60 s."},
+    {"t": 26.32, "what": "Worked example: a 28 s video, keep recording until it passes 61 s."},
+    {"t": 33.47, "what": "First cut: this guarantees TikTok auto-generates the description box."},
+    {"t": 42.2, "what": "Cut: then trim the clip back down to the part where you actually talk."},
+    {"t": 47.27, "what": "Cut: one-breath recap of the three rules."},
+    {"t": 52.63, "what": "Text note reminds viewers to still do the 5 steps from the prior video."},
+    {"t": 66.2, "what": "Asks supporters to send a gift, then for questions in the comments."}
+  ],
+  "graphics": {"captions": "title_only", "caption_position": "top",
+               "devices": ["title_text", "screenshot", "jump_cut", "camera_move"],
+               "density": "minimal", "per_minute_estimate": 4},
+  "characters": [],
+  "cta": {"kind": "other", "t": 66.2},
+  "why_it_works": [
+    "Reply-to-comment format: the viewer's question is pinned on screen, so it feels like a personal answer and proves demand.",
+    "Names a pain everyone small fears ('view jail') and promises a 'guaranteed' fix, which raises stakes for a tiny technical trick.",
+    "One specific, checkable hack (record past 61 s, then trim) that people can test right away, which drives comments (3.8k) and shares (5.3k).",
+    "A persistent title at the top keeps the topic readable for anyone who joins mid-video."
+  ],
+  "weaknesses": [
+    "Almost no visual change: 3 cuts in 72 s and the first only at 33 s; the face fills the frame in harsh sunlight.",
+    "No captions for the spoken steps and no screen recording of where the description box actually appears.",
+    "The rules are repeated several times, padding the video past a minute.",
+    "Ends on a gift request, which is a weak payoff for the viewer."
+  ],
+  "for_robert": "Steal the reply-to-comment sticker plus persistent title, but avoid the static minute: when he says 'it'll be right here', cut to the screen and let Fred point at the spot."
+}

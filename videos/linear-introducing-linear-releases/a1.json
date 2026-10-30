@@ -1,0 +1,119 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "de32921418c61348e98884788404137c87fc13a9fb571072ec75e320968c81b6",
+    "created_at": "2026-10-04T21:29:04.760278Z"
+  },
+  "video": "linear-introducing-linear-releases",
+  "task": "a1-p1",
+  "shots": [
+    {
+      "shot": "s001",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "other",
+      "composition_other": "mixed within one detected shot: full-bleed perspective graph sections, a stacked fan of three tilted panels, and centered type/logo cards",
+      "focal_element": "a monochrome branching-line graph where many issue-ID nodes converge into a single release line, later shown on tilted release panels",
+      "transition_in": "other",
+      "transition_other": "none: first shot of the video (anchors give transition_in null)",
+      "on_screen_text": [
+        "MOB-9124",
+        "APP-1843",
+        "ENG-9833",
+        "MOBILE APP",
+        "SCHEDULED RELEASE",
+        "LAUNCH",
+        "v1.1",
+        "PLAN AND TRACK RELEASES",
+        "SDK",
+        "PRODUCTION",
+        "CONTINUOUS RELEASE",
+        "SDK-372",
+        "API-5094",
+        "AUTH-3219",
+        "SDK-311",
+        "SDK-334",
+        "ENG-9810",
+        "UX-4534",
+        "UX-4598",
+        "NAV-5874",
+        "ENG-7699",
+        "ENG-9868",
+        "NAV-5809",
+        "RELEASES",
+        "AVAILABLE NOW",
+        "Linear"
+      ],
+      "text_word_count": 33,
+      "typography": "Monospaced, regular weight, all caps with wide tracking for headlines ('PLAN AND TRACK RELEASES', 'RELEASES', 'AVAILABLE NOW') and for small node labels and panel headers; status pills in small caps with a dot indicator; end card is the sentence-case wordmark 'Linear' in a geometric sans with its logo mark (font guesses low confidence). Node-ID list is partial: many tiny/defocused labels were not legible.",
+      "depth_cues": [
+        "blur",
+        "perspective_tilt",
+        "shadow",
+        "glow"
+      ],
+      "what_happens": "The scene detector found one shot, but the contact sheets show several internal cuts/sections: (1) a close, shallow-depth-of-field drift over glowing curved lines tagged with issue IDs converging to the right; (2) a pulled-back tilted 'MOBILE APP / SCHEDULED RELEASE' panel where all branches merge into a single line ending at a 'LAUNCH v1.1' node; (3) a centered mono title card 'PLAN AND TRACK RELEASES' that fades out; (4) three tilted panels (MOBILE APP, SDK, PRODUCTION / CONTINUOUS RELEASE) fanning in from darkness; (5) another defocused close drift along the PRODUCTION graph; (6) a black card where 'RELEASES' then 'AVAILABLE NOW' type on with a block cursor; (7) the Linear logo lockup end card. No voice-over; music only.",
+      "build_rebuild": "Render SVG bezier paths from scattered issue-ID nodes that converge to one release line on a dark 3D-tilted panel (CSS perspective + rotateX/rotateY), drift a camera with depth-of-field blur over it, then cut to a centered monospace typewriter headline with a block cursor and end on a centered logo lockup.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001"], "words": null},
+      {"beat": "mechanism", "shots": ["s001"], "words": null},
+      {"beat": "demo", "shots": ["s001"], "words": null},
+      {"beat": "cta", "shots": ["s001"], "words": null}
+    ],
+    "hook": {
+      "text": "Wordless opening: a shallow-focus drift over glowing branch lines labelled with issue IDs that converge into one release line",
+      "technique": "demo_first",
+      "technique_other": null,
+      "shots": ["s001"],
+      "words": null
+    },
+    "cta": {
+      "text": "AVAILABLE NOW",
+      "shots": ["s001"]
+    },
+    "tone": "Minimal, cinematic, confident teaser: monochrome near-black world, monospace type, no voice-over, product metaphor over feature explanation.",
+    "signature_moments": [
+      {
+        "shots": ["s001"],
+        "description": "Many issue-ID branches flow and merge into a single line that terminates at a 'LAUNCH v1.1' node on a tilted release panel.",
+        "why_premium": "Turns the abstract idea 'many issues ship as one release' into a single elegant visual metaphor built from the product's own data vocabulary."
+      },
+      {
+        "shots": ["s001"],
+        "description": "Three tilted release panels (Mobile App, SDK, Production) fan in from darkness with shallow depth of field.",
+        "why_premium": "Real-camera cues (perspective, focus falloff, soft shadows) make recreated UI feel like a physical object and show multiple release types in one frame."
+      },
+      {
+        "shots": ["s001"],
+        "description": "Monospace typewriter reveal 'RELEASES' then 'AVAILABLE NOW' with a block cursor, resolving to the Linear logo.",
+        "why_premium": "Restrained, on-brand developer-tool typography; the cursor ties the launch message to an engineering audience without extra copy."
+      }
+    ],
+    "scores": {
+      "hook": {"score": 4, "evidence": "Opens straight into a striking defocused branch-line visual with readable issue IDs; intriguing but does not state the product until the title card.", "refs": ["s001"]},
+      "clarity": {"score": 3, "evidence": "Only 'PLAN AND TRACK RELEASES' explains the feature; the graph metaphor is clear to Linear users but the video shows no concrete workflow or interaction.", "refs": ["s001"]},
+      "ui_showcase": {"score": 3, "evidence": "Release panels with scheduled/continuous status pills are shown, but as stylized recreated UI with no cursor, interaction or real screens.", "refs": ["s001"]},
+      "motion_polish": {"score": 4, "evidence": "From stills: consistent depth-of-field, perspective camera drifts, fades and a typewriter reveal; easing and timing cannot be judged from 2 fps sheets.", "refs": ["s001"]},
+      "sound_design": {"score": 3, "evidence": "Judged from anchors plus visuals: a steady ~110 BPM music bed, integrated loudness -24.7 LUFS (quiet), and no detected SFX; no audible accents on the typewriter or logo per anchors.", "refs": ["s001"]},
+      "vo_script_quality": {"score": null, "evidence": "No voice-over: anchors contain no transcript words.", "refs": []},
+      "brand_consistency": {"score": 5, "evidence": "Strict monochrome near-black world, monospace labels, Linear-style issue IDs and a clean logo end card throughout.", "refs": ["s001"]},
+      "works_muted": {"score": 5, "evidence": "No voice-over; all messaging is on-screen text, so the story is identical with sound off.", "refs": ["s001"]},
+      "overall": {"score": 4, "evidence": "Highly polished, on-brand launch teaser with a strong visual metaphor; limited explanatory depth keeps it short of best-in-class as an explainer.", "refs": ["s001"]}
+    },
+    "localization_friendliness": {
+      "score": 4,
+      "baked_in_text": true,
+      "vo_dependent": false,
+      "notes": "Only a few short headline cards ('PLAN AND TRACK RELEASES', 'RELEASES', 'AVAILABLE NOW') need translation; issue IDs and panel labels can stay in English. No voice-over to re-record."
+    }
+  }
+}

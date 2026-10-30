@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "f343fa74a2f86e5b778dbc44f40891ef3ec60f72e17272fff5f43ebab5fd3d4d",
+    "created_at": "2026-10-05T06:38:33.151484Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e097",
+  "task": "a2-e097",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Mouse cursor travelling from text area to Cancel button",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_down", "morph"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 270, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Cancel button hover state",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["highlight", "color_shift"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Cancel",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 100, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "Real screen-recorded cursor moves down out of the feedback text area (I-beam to arrow/not-allowed to hand pointer) and lands on the Cancel button, which picks up a grey hover background.",
+    "why_premium": "The cursor change (I-beam, arrow, pointer) and button hover state confirm the target before the click, so viewers can follow the demo action without narration; it is raw screen capture rather than a designed move."
+  },
+  "build_hint": {
+    "gsap": "Cursor sprite: gsap.to(cursor, {x, y, duration: 0.27, ease: 'power2.out'}); swap cursor glyph (text -> default -> pointer) with set() at path milestones; on arrival gsap.to(button, {backgroundColor: '#ebecf0', duration: 0.1, ease: 'none'}).",
+    "remotion": "Interpolate cursor x/y over ~8 frames at 30fps with Easing.out(Easing.quad) (or spring {damping: 30, stiffness: 200, mass: 1} for no overshoot); switch cursor image by frame threshold; button background toggles to hover colour on the arrival frame."
+  },
+  "confidence": "medium",
+  "notes": "Unpolished screen recording; b01 contains both the hover background change and the cursor tip on the end frame. No SFX candidates; audio is music bed under narration."
+}

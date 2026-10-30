@@ -1,0 +1,124 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "daec67de3cfd96e476d7c8ff8604d1c5f153e18567160a393d5baa2d1ea5ca2b",
+    "created_at": "2026-10-05T06:27:49.113365Z"
+  },
+  "video": "moz-how-to-find-keyword-opportunties-with-ke",
+  "task": "a1-p3",
+  "shots": [
+    {
+      "shot": "s003",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Moz Keyword Explorer results page shown as an inset rounded white card on a purple-to-blue gradient; in the final stretch the SERP Analysis table with the AI Overview row and its expand arrow under the cursor",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Primary Search Intent",
+        "Informational",
+        "SERP Features",
+        "AI Overview",
+        "People Also Ask",
+        "Related Searches",
+        "Videos",
+        "Keyword Suggestions for \"how to give my dog a haircut\"",
+        "By Topic",
+        "New",
+        "By Keyword",
+        "Top suggestions",
+        "Questions",
+        "View all topics",
+        "About this section",
+        "SERP Analysis for \"how to give my dog a haircut\"",
+        "AI Overview Text Preview"
+      ],
+      "text_word_count": 50,
+      "typography": "All text is native product UI: a clean humanist sans (low-confidence guess: Lato), semibold sentence-case section headings with quoted keyword, regular-weight small labels and table headers, pill-shaped chips with small medium-weight labels, normal tracking. No added captions or kinetic type. Bubble-chart chip labels and table body text are too small to quote reliably and are omitted.",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "Long (85.6 s) narrated screen-recording walkthrough of the Keyword Overview page inside a rounded card framed by a purple-to-blue gradient. I only saw sheets 13-15 (84.0-97.0 s) and the mid-shot keyframe. The keyframe shows the Keyword Suggestions area with Top suggestions and Questions bubble clusters and an added faceted 3D gem graphic between them, matching the 'two gold mines' line (w157-w161). From 84.0 s, for the pro tip (w249-w256) the cursor moves to the small arrow beside the AI Overview chip in the SERP Analysis table; a click-ripple shows around 85.0 s, and by 85.5 s an 'AI Overview Text Preview' panel with a summary paragraph and three source links has expanded under the row (w257-w269). The view then holds almost still with the cursor on the arrow while the VO wraps up (w270-w296), until 97.4 s.",
+      "build_rebuild": "Show a 1:1 screen capture of the product page inside a rounded-corner white card at about 90% frame width over a left-to-right purple-to-light-blue linear gradient, move a large hand cursor along an eased path to the target arrow, fire a 300 ms expanding ring at the click, and open the preview panel below the row with a height expand.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s004",
+      "shot_type": "abstract",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Full-height solid vertical colour bands (pale blue, bright blue, dark navy, mid navy) sweeping across the frame",
+      "transition_in": "other",
+      "transition_other": "layered colour-panel wipe: stacked brand-colour vertical panels slide horizontally over the UI scene (same device as s002)",
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "A 0.43 s graphic transition with no text. The keyframe shows a purple strip at the far left (the last edge of the gradient frame) being covered by pale blue, bright blue, dark navy and mid navy vertical bands. By 97.5 s a bright blue band sits at the left over dark and mid navy. The VO line 'in just two minutes' (w294-w296) plays over it. The same panel-wipe device bridged s001 to s002.",
+      "build_rebuild": "Reuse the s002 transition: four full-height solid rectangles in brand blues translate horizontally across the frame with staggered starts (~60-80 ms) and ease-in-out over ~0.45 s, revealing the end card underneath.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s005",
+      "shot_type": "other",
+      "shot_type_other": "branded end card (flat illustrated layout with wordmark, help-hub message and URL)",
+      "composition": "split",
+      "composition_other": null,
+      "focal_element": "MOZ wordmark over the two-line 'Learn more on the Moz Help Hub' message and the moz.com/help URL on a large blue blob at left; empty white space at right",
+      "transition_in": "other",
+      "transition_other": "end of the layered colour-panel wipe from s004 revealing the card",
+      "on_screen_text": [
+        "MOZ",
+        "Learn more on the Moz Help Hub",
+        "moz.com/help"
+      ],
+      "text_word_count": 9,
+      "typography": "Message in a regular-weight slab serif, sentence/title case, two left-aligned lines, normal tracking; URL in the same slab serif, smaller and lowercase; MOZ is the heavy geometric logotype. Low-confidence font guess: Roboto Slab, matching the s001 title card.",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "Static flat-vector end card in the same style as the opening title card: a blue blob edged by a yellow arc stroke, a dark circle with a ring and diagonal ticks at lower left, a sparkle asterisk and a dot. The VO covers the takeaway and Help Hub line (w297-w327). At about 104.5 s, as the VO reaches 'Moz Help Hub at moz.com slash help' (w317-w324), a white double-chevron fades in to the right of the URL and nudges left and right pointing at it. At 108.0 s a pale teal panel enters from the right edge to start the wipe into s006.",
+      "build_rebuild": "Render a static SVG card (blue blob, yellow arc, wordmark, two-line slab-serif message, URL line). Timed to the URL word in the VO, fade in a white double-chevron icon next to the URL and loop a 6-8 px horizontal translateX nudge (sine ease-in-out, ~0.5 s period). Then slide a full-height panel in from the right edge.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s006",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The Moz free Keyword Explorer landing page (hero headline 'Try our free keyword research tool with AI-Powered Insights' plus the keyword-entry form) inside the rounded inset card on the purple-to-blue gradient",
+      "transition_in": "other",
+      "transition_other": "colour-panel wipe: a solid bright-blue panel fills the frame, then the inset UI card slides in from the right",
+      "on_screen_text": [
+        "MOZ",
+        "Products Free SEO Tools Learn SEO Blog Why Moz Log in",
+        "Try our free keyword research tool with AI-Powered Insights",
+        "Now featuring Moz AI, Keyword Explorer is your comprehensive keyword research tool featuring over 1.25 billion keyword suggestions. Identify high-opportunity target keywords, analyze SERPs, and spot where you can improve rankings.",
+        "Preview the power of Keyword Explorer",
+        "Enter a keyword and see top suggestions, monthly volume, organic CTR, and difficulty.",
+        "pet groomers",
+        "Find keywords"
+      ],
+      "text_word_count": 75,
+      "typography": "Native web-page type in a geometric/humanist sans. The hero headline is bold, white and sentence case on a dark navy hero image, with 'AI-Powered Insights' in a warm gradient fill, a hand-drawn underline swoosh and sparkle icons. The body copy is regular weight and centred. The form heading is semibold dark text on white, and the button is a dark pill with a white medium-weight label. No added captions.",
+      "depth_cues": [
+        "glow"
+      ],
+      "what_happens": "At 108.5 s the frame is a solid bright-blue panel, with the UI card's left edge entering from the right. By 109.0 s the inset card holds the Moz Keyword Explorer landing page. Its hero image shows a glowing wireframe brain and a translucent key, and below sits the keyword form ('pet groomers', United States locale, a Cloudflare 'Success!' check, a Find keywords button). The card holds static until 110.93 s while the VO offers the freemium tool and the free trial (w329-w336).",
+      "build_rebuild": "Wipe a full-frame solid brand-blue rectangle across, then translateX a rounded-corner screenshot card (about 85% frame width) from +100% to centre over ~0.4 s with ease-out on the purple-to-blue gradient, and hold it static for the rest of the shot.",
+      "confidence": "high"
+    }
+  ],
+  "summary": null
+}

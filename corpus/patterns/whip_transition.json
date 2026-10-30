@@ -1,0 +1,114 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a3_pattern_cards",
+    "annotator": "claude-code",
+    "skill": "write-pattern-cards@e525a58fa6d8",
+    "model": null,
+    "input_hash": "44ad1c5b8815c5c8879a8a19544409e5ec5fd326537b145e156f554de25e9654",
+    "created_at": "2026-10-05T12:52:02.961135Z"
+  },
+  "id": "whip_transition",
+  "name": "Fast Whip To Next Scene",
+  "summary": "The current scene shoots off screen in a very fast, motion-blurred sweep, as if the camera was flicked, and the next scene sweeps in behind it and settles, often with a headline landing as the blur clears.",
+  "when_to_use": [
+    "Jumping between two related scenes while keeping the sense of one continuous world",
+    "Marking a change of time, place or topic that the narration calls out",
+    "Adding energy between beats of a fast feature reel"
+  ],
+  "avoid_when": [
+    "The video is calm or instructional and needs a gentle pace",
+    "Several whips would land back to back and tire the viewer",
+    "The outgoing scene holds detail the viewer still needs to read"
+  ],
+  "steps": [
+    "Pick the whip direction (up or sideways) and keep both scenes on one shared container",
+    "Accelerate the outgoing content off frame while adding a strong motion blur",
+    "Bring the incoming scene in from the opposite side with blur, decelerating as it arrives",
+    "Clear the blur as the new scene settles into place",
+    "Land the headline or key word as the motion resolves, line by line if there are several"
+  ],
+  "build": {
+    "gsap": "A timeline: a to tween moving the outgoing scene by xPercent or yPercent with a filter blur on an ease-in (power-type), overlapping a fromTo bringing the incoming scene in with an ease-out and blur returning to zero. Headline lines follow with a staggered fromTo on opacity and y; an ease-in-out or back-type ease can give the landing a slight overshoot.",
+    "remotion": "Use interpolate on translateX or translateY with an ease-in curve for the exit and an ease-out curve for the entry, plus a blur filter that peaks mid-whip. Background elements and headline lines can settle on a spring, mildly underdamped if a small overshoot is wanted, driving translate and opacity."
+  },
+  "sound": "no typical sound",
+  "why_premium": "A whip reads as the camera itself moving rather than an edit, so two scenes feel like parts of one continuous space instead of separate clips. The heavy motion blur hides the hand-off and keeps the cut energetic, while timing the landing to a narrated change gives the move a reason. Letting the new headline arrive only as the blur clears, with a short empty beat or oversized type layered over the footage, turns the landing frame into a clear message moment.",
+  "numbers": {
+    "id": "whip_transition",
+    "events": 2,
+    "videos": 2,
+    "weight": 1.6,
+    "duration_ms": {
+      "n": 6,
+      "videos": 1,
+      "weight": 4.7142,
+      "median": 1402.72,
+      "p25": 644.82,
+      "p75": 1472.676,
+      "ci": [
+        606.1,
+        1471.9
+      ]
+    },
+    "easing_mix": {
+      "spring_overshoot": 0.3394,
+      "ease_out": 0.3344,
+      "ease_in": 0.1693,
+      "ease_in_out": 0.1569
+    },
+    "change_mix": {
+      "slide_up": 0.4286,
+      "fade": 0.2143,
+      "blur_out": 0.1429,
+      "blur_in": 0.0714,
+      "pop": 0.0714,
+      "slide_left": 0.0714
+    },
+    "role_mix": {
+      "background": 0.5,
+      "headline": 0.375,
+      "other": 0.125
+    },
+    "sfx_label_mix": {},
+    "sfx_offset_ms": {
+      "n": 0,
+      "videos": 0,
+      "weight": 0.0,
+      "median": null,
+      "p25": null,
+      "p75": null,
+      "ci": null
+    },
+    "examples": [
+      {
+        "video": "loom-introducing-loom-ai",
+        "event": "e004",
+        "score": 4.0
+      },
+      {
+        "video": "meta-this-is-meta-quest-3",
+        "event": "e003",
+        "score": 4.0
+      }
+    ]
+  },
+  "examples": [
+    {
+      "video": "loom-introducing-loom-ai",
+      "event": "e004",
+      "score": 4.0
+    },
+    {
+      "video": "meta-this-is-meta-quest-3",
+      "event": "e003",
+      "score": 4.0
+    }
+  ],
+  "caveats": [
+    "Seen in only two videos, and element timing was measured in only one of them",
+    "Measured durations cover the settling elements and headline, not just the whip itself, so they run longer than the sweep",
+    "No sound was measured for this pattern"
+  ]
+}

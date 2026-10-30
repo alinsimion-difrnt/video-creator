@@ -1,0 +1,230 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a3_pattern_cards",
+  "annotator": "claude-code",
+  "skill": "write-archetype-cards@a75a12f0ca91",
+  "model": null,
+  "input_hash": "f79ac7cb0e4ffd26577c28ac05059e8ee72b2e0e35aa226110e1e05342cbf830",
+  "created_at": "2026-10-05T19:09:25.242424Z"
+ },
+ "id": "prompt_input_card",
+ "name": "Prompt Input Card",
+ "summary": "A clean, rounded prompt box sits on a calm background while a request types into it with a caret, often followed by a press on the send button. It shows the viewer how simply they ask the product for something, usually as the hook or the start of a demo.",
+ "when_to_use": [
+  "Opening an AI feature by showing the question a user would ask.",
+  "Starting a demo beat where the request leads into the product's answer.",
+  "Showing a menu of presets or modes attached to an input field."
+ ],
+ "slots": [
+  {"name": "greeting", "what": "an optional short line above the input that sets the tone", "required": false},
+  {"name": "prompt_text", "what": "the request the user types, one sentence in plain language", "required": true},
+  {"name": "input_chrome", "what": "the prompt box itself with its send button and small controls", "required": true},
+  {"name": "context_ui", "what": "simplified surrounding interface such as suggestion chips or a short list", "required": false},
+  {"name": "preset_menu", "what": "an optional popover of modes or presets with a moving highlight", "required": false},
+  {"name": "handoff_element", "what": "what the sent prompt turns into, such as a chat bubble or a thinking label", "required": false}
+ ],
+ "steps": [
+  "The background and an optional greeting fade up on their own.",
+  "The prompt box and any surrounding interface assemble beneath it with a gentle stagger.",
+  "The camera pushes in so the input fills more of the frame.",
+  "The request types on character by character with a blinking caret.",
+  "A cursor moves to the send button and presses it, or a preset highlight moves to the chosen option.",
+  "The interface clears and the prompt hands off to the next scene as a bubble or a thinking state."
+ ],
+ "patterns": ["layout_reframe", "spotlight_focus"],
+ "build": {
+  "gsap": "One timeline per scene. Stagger the interface pieces in with opacity and a small upward move on an expo or sine ease-out. Tween the camera wrapper's scale toward the prompt box on a slow sine in-out. Type the prompt with a stepped tween over a text counter plus a blinking caret, then tween the cursor to the send button and play a quick scale-down press. End with a fade of the surrounding interface and a scale of the prompt into its handoff element.",
+  "remotion": "One Sequence for the assembly, one for the push-in and typing, one for the send and handoff. Drive the push-in with a heavily damped spring, slice the prompt string by an interpolated character count for the typing, and use a stiff, short spring for the button press and popover entrance."
+ },
+ "sound": "Music usually carries the scene. When there are cues, a reversed swoosh tends to land early as the box arrives, and a soft click marks the send press shortly after; an impact or glitch occasionally punctuates the handoff. Many cues are unclassified, so treat sound as optional.",
+ "numbers": {
+  "id": "prompt_input_card",
+  "shots": 30,
+  "videos": 13,
+  "weight": 18.6,
+  "duration_s": {
+   "n": 30,
+   "videos": 13,
+   "weight": 18.6,
+   "median": 2.739,
+   "p25": 2.01,
+   "p75": 5.055,
+   "ci": [
+    2.181,
+    3.667
+   ]
+  },
+  "events_per_shot": {
+   "n": 30,
+   "videos": 13,
+   "weight": 18.6,
+   "median": 0.0,
+   "p25": 0.0,
+   "p75": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ]
+  },
+  "first_motion_s": {
+   "n": 4,
+   "videos": 4,
+   "weight": 3.2,
+   "median": 0.613,
+   "p25": 0.25,
+   "p75": 9.897,
+   "ci": null
+  },
+  "pattern_mix": {
+   "other": 0.6,
+   "layout_reframe": 0.3,
+   "spotlight_focus": 0.1
+  },
+  "transition_mix": {
+   "hard_cut": 0.3656,
+   "other": 0.3656,
+   "zoom_through": 0.1613,
+   "crossfade": 0.1075
+  },
+  "shot_type_mix": {
+   "ui_recreated": 0.6237,
+   "ui_closeup": 0.2688,
+   "kinetic_type": 0.0645,
+   "screen_recording": 0.043
+  },
+  "beat_mix": {
+   "demo": 0.5556,
+   "hook": 0.3232,
+   "proof": 0.0808,
+   "agitate": 0.0202,
+   "outcome": 0.0202
+  },
+  "sfx_label_mix": {
+   "music": 0.3676,
+   "unsure": 0.2426,
+   "swoosh_reverse": 0.1397,
+   "click": 0.0882,
+   "impact": 0.0882,
+   "chime": 0.0441,
+   "glitch": 0.0294
+  },
+  "sfx_offset_s_by_label": {
+   "chime": {
+    "n": 2,
+    "videos": 2,
+    "weight": 1.2,
+    "median": 7.044,
+    "p25": 1.867,
+    "p75": 10.495,
+    "ci": null
+   },
+   "click": {
+    "n": 5,
+    "videos": 3,
+    "weight": 2.4,
+    "median": 1.465,
+    "p25": 1.065,
+    "p75": 1.704,
+    "ci": [
+     1.065,
+     1.625
+    ]
+   },
+   "glitch": {
+    "n": 2,
+    "videos": 1,
+    "weight": 0.8,
+    "median": 1.794,
+    "p25": 1.419,
+    "p75": 2.169,
+    "ci": null
+   },
+   "impact": {
+    "n": 3,
+    "videos": 3,
+    "weight": 2.4,
+    "median": 1.163,
+    "p25": 0.634,
+    "p75": 15.514,
+    "ci": null
+   },
+   "music": {
+    "n": 23,
+    "videos": 4,
+    "weight": 10.0,
+    "median": 3.396,
+    "p25": 0.898,
+    "p75": 6.592,
+    "ci": [
+     1.527,
+     5.702
+    ]
+   },
+   "swoosh_reverse": {
+    "n": 6,
+    "videos": 5,
+    "weight": 3.8,
+    "median": 0.933,
+    "p25": 0.11,
+    "p75": 2.62,
+    "ci": [
+     0.1,
+     2.698
+    ]
+   },
+   "unsure": {
+    "n": 9,
+    "videos": 5,
+    "weight": 6.6,
+    "median": 1.601,
+    "p25": 0.967,
+    "p75": 2.515,
+    "ci": [
+     0.815,
+     2.462
+    ]
+   }
+  },
+  "examples": [
+   {
+    "video": "attio-introducing-ask-attio",
+    "shot": "s001",
+    "score": 4.0
+   },
+   {
+    "video": "figma-introducing-figma-motion-your-canvas-no",
+    "shot": "s016",
+    "score": 5.0
+   },
+   {
+    "video": "google-introducing-the-google-pixel-9-pro",
+    "shot": "s001",
+    "score": 4.0
+   },
+   {
+    "video": "raycast-new-raycast-coming-2026",
+    "shot": "s008",
+    "score": 4.0
+   },
+   {
+    "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+    "shot": "s007",
+    "score": 4.0
+   }
+  ]
+ },
+ "examples": [
+  {"video": "attio-introducing-ask-attio", "shot": "s001", "score": 4.0},
+  {"video": "figma-introducing-figma-motion-your-canvas-no", "shot": "s016", "score": 5.0},
+  {"video": "google-introducing-the-google-pixel-9-pro", "shot": "s001", "score": 4.0},
+  {"video": "raycast-new-raycast-coming-2026", "shot": "s008", "score": 4.0},
+  {"video": "zendesk-meet-zendesk-ai-agents-the-most-autonom", "shot": "s007", "score": 4.0}
+ ],
+ "caveats": [
+  "Most member shots have no counted motion event, so motion timing here is thin and first motion is measured on few shots.",
+  "The most common pattern label is other; the typing itself has no measured pattern in this set.",
+  "Sound cues are sparse and many are unclassified."
+ ]
+}

@@ -1,0 +1,22 @@
+# v15 — Pixie behind the presenter (the person matte): she peeks out from behind his shoulder, then jumps down.
+# Questions: does the matte hold on a still plate? Does "behind" read?
+name: v15
+voice: iP95p4xoKVk53GoZ742B
+script: >-
+  Something is behind me, isn't it? I can feel it. Is it the cat? It's the cat.
+plan:
+  layout: [{word: 0, layout: full}]
+  props:
+    - id: pixie
+      art: cat
+      word: "behind"
+      until: "cat#2"
+      at: shoulder_left
+      size: 0.24
+      behind: true
+      enter: pop
+      exit: run_left
+      beats:
+        - {word: "feel", do: look}
+        - {word: "cat", tag: Pixie}
+        - {word: "It's", move: floor_left}

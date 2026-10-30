@@ -1,0 +1,321 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "s3_signals",
+    "annotator": "code",
+    "skill": null,
+    "model": null,
+    "input_hash": "f232bc50d3652718678e2cba3729f712b53fda80588cbb12e1374001437ab6d8",
+    "created_at": "2026-10-04T19:49:16.173740Z"
+  },
+  "video_id": "google-introducing-the-google-pixel-9-pro",
+  "video": {
+    "fps": 23.81,
+    "duration_s": 29.9874,
+    "shots": [
+      {
+        "id": "s001",
+        "start_s": 0.0,
+        "end_s": 20.4116,
+        "transition_in": null,
+        "motion_energy": 0.001271,
+        "events_per_s": 0.098,
+        "wpm": null
+      },
+      {
+        "id": "s002",
+        "start_s": 20.4116,
+        "end_s": 25.4515,
+        "transition_in": {
+          "kind": "other",
+          "start_s": 20.4116,
+          "duration_s": 3.7799,
+          "direction": null
+        },
+        "motion_energy": 0.015227,
+        "events_per_s": 0.198,
+        "wpm": null
+      },
+      {
+        "id": "s003",
+        "start_s": 25.4515,
+        "end_s": 29.9874,
+        "transition_in": {
+          "kind": "zoom_through",
+          "start_s": 25.4515,
+          "duration_s": 0.378,
+          "direction": null
+        },
+        "motion_energy": 0.001292,
+        "events_per_s": 0.0,
+        "wpm": null
+      }
+    ],
+    "transitions_by_kind": {
+      "other": 1,
+      "zoom_through": 1
+    },
+    "mean_shot_s": 9.996,
+    "events": [
+      {
+        "id": "e001",
+        "shot": "s001",
+        "kind": "motion",
+        "start_s": 19.0676,
+        "end_s": 19.3196,
+        "bbox": [
+          0.3125,
+          0.1388888888888889,
+          0.6875,
+          0.7555555555555555
+        ],
+        "camera_move": "none"
+      },
+      {
+        "id": "e002",
+        "shot": "s001",
+        "kind": "motion",
+        "start_s": 20.1176,
+        "end_s": 20.3696,
+        "bbox": [
+          0.29375,
+          0.1388888888888889,
+          0.703125,
+          1.0
+        ],
+        "camera_move": "none"
+      },
+      {
+        "id": "e003",
+        "shot": "s002",
+        "kind": "camera",
+        "start_s": 24.1915,
+        "end_s": 24.4015,
+        "bbox": [
+          0.015625,
+          0.2777777777777778,
+          1.0,
+          1.0
+        ],
+        "camera_move": "pull_out"
+      }
+    ],
+    "camera_moves": {
+      "pull_out": 1
+    },
+    "holds": [
+      {
+        "shot": "s001",
+        "start_s": 0.0,
+        "end_s": 19.0676,
+        "dead": false
+      },
+      {
+        "shot": "s002",
+        "start_s": 24.4435,
+        "end_s": 25.4515,
+        "dead": false
+      },
+      {
+        "shot": "s003",
+        "start_s": 25.8295,
+        "end_s": 29.9874,
+        "dead": false
+      }
+    ],
+    "dead_hold_count": 0,
+    "dead_hold_s": 0.0,
+    "pace_cv": 1.109
+  },
+  "audio": {
+    "stems": true,
+    "ducking_db": null,
+    "loudness": {
+      "integrated_lufs": -14.58,
+      "short_term_max_lufs": -10.55,
+      "lra_lu": 8.79,
+      "sample_peak_dbfs": -1.01,
+      "true_peak_dbtp": -0.95
+    },
+    "bpm": 117.45,
+    "beat_confidence": 0.408,
+    "sfx": [
+      {
+        "id": "x001",
+        "sync_s": 8.87,
+        "label": "music",
+        "label_source": "clap",
+        "rules_label": "unsure",
+        "clap_label": "music",
+        "clap_score": 0.966,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": 8870.0,
+        "at_scene_start": false
+      },
+      {
+        "id": "x002",
+        "sync_s": 10.1912,
+        "label": "music",
+        "label_source": "clap",
+        "rules_label": "unsure",
+        "clap_label": "music",
+        "clap_score": 0.561,
+        "agreement": null,
+        "on_beat": true,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": 10191.2,
+        "at_scene_start": false
+      },
+      {
+        "id": "x003",
+        "sync_s": 10.4954,
+        "label": "chime",
+        "label_source": "clap",
+        "rules_label": "unsure",
+        "clap_label": "chime",
+        "clap_score": 0.697,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": -9916.2,
+        "at_scene_start": false
+      },
+      {
+        "id": "x004",
+        "sync_s": 15.2787,
+        "label": "unsure",
+        "label_source": "rules",
+        "rules_label": "unsure",
+        "clap_label": "music",
+        "clap_score": 0.358,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": -5132.9,
+        "at_scene_start": false
+      },
+      {
+        "id": "x005",
+        "sync_s": 20.2981,
+        "label": "impact",
+        "label_source": "rules",
+        "rules_label": "impact",
+        "clap_label": "chime",
+        "clap_score": 0.744,
+        "agreement": false,
+        "on_beat": false,
+        "reveal_offset_ms": -71.5,
+        "scene_start_offset_ms": -113.5,
+        "at_scene_start": false
+      },
+      {
+        "id": "x006",
+        "sync_s": 24.762,
+        "label": "unsure",
+        "label_source": "rules",
+        "rules_label": "unsure",
+        "clap_label": "chime",
+        "clap_score": 0.41,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": 360.5,
+        "scene_start_offset_ms": 570.5,
+        "at_scene_start": false
+      },
+      {
+        "id": "x007",
+        "sync_s": 25.535,
+        "label": "unsure",
+        "label_source": "rules",
+        "rules_label": "unsure",
+        "clap_label": "swoosh_reverse",
+        "clap_score": 0.39,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": 0.0,
+        "at_scene_start": true
+      },
+      {
+        "id": "x008",
+        "sync_s": 25.715,
+        "label": "unsure",
+        "label_source": "rules",
+        "rules_label": "unsure",
+        "clap_label": "music",
+        "clap_score": 0.396,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": 0.0,
+        "at_scene_start": true
+      },
+      {
+        "id": "x009",
+        "sync_s": 26.805,
+        "label": "unsure",
+        "label_source": "rules",
+        "rules_label": "unsure",
+        "clap_label": "chime",
+        "clap_score": 0.43,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": 975.5,
+        "at_scene_start": false
+      },
+      {
+        "id": "x010",
+        "sync_s": 27.0048,
+        "label": "unsure",
+        "label_source": "rules",
+        "rules_label": "unsure",
+        "clap_label": "music",
+        "clap_score": 0.321,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": 1175.3,
+        "at_scene_start": false
+      },
+      {
+        "id": "x011",
+        "sync_s": 27.8291,
+        "label": "chime",
+        "label_source": "clap",
+        "rules_label": "unsure",
+        "clap_label": "chime",
+        "clap_score": 0.593,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": 1999.6,
+        "at_scene_start": false
+      },
+      {
+        "id": "x012",
+        "sync_s": 28.56,
+        "label": "swoosh_reverse",
+        "label_source": "clap",
+        "rules_label": "unsure",
+        "clap_label": "swoosh_reverse",
+        "clap_score": 0.674,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": 2730.5,
+        "at_scene_start": false
+      }
+    ],
+    "sfx_per_min": 24.01,
+    "label_agreement_share": 0.0,
+    "sfx_at_scene_start_share": 0.167,
+    "sfx_near_reveal_share": 0.167,
+    "cuts_on_beat_share": 0.0
+  },
+  "speech": null,
+  "captions": null
+}

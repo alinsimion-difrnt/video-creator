@@ -1,0 +1,86 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "d3049d0055ac7b65fe99d0d1f8b7070d70775dee45396383c90859727cc247ee",
+    "created_at": "2026-10-05T06:38:32.014012Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e019",
+  "task": "a2-e019",
+  "elements": [
+    {
+      "box": null,
+      "manual_box": [243, 727, 972, 988],
+      "manual_reason": "The whole Fields list scrolls as one unit inside the side panel; candidate boxes only cover individual rows or the over-wide union b01 that includes the static table.",
+      "label": "Fields panel list (scrolling)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Other fields (31)",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 900, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b18",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Panel scrollbar thumb",
+      "role": "other",
+      "role_other": "scrollbar",
+      "change_types": ["slide_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Mouse cursor moving down the toggle column",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    },
+    {
+      "box": "b11",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Hovered row highlight (Delivery progress)",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Delivery progress",
+      "text_unit": "whole",
+      "estimates": null
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "masked_scroll",
+    "proposed_name": null,
+    "description": "Screen-recorded Fields side panel scrolls its list of fields inside the fixed panel while the cursor hovers down the toggle column; rows highlight on hover and a brief tooltip flashes over Comments.",
+    "why_premium": "The list moves inside a fixed mask so the rest of the UI stays anchored; the eye follows the cursor to the next toggle, setting up the add-field action without a cut."
+  },
+  "build_hint": {
+    "gsap": "Clip the list in an overflow-hidden panel; gsap.to(list, {y: -scrollDistance, duration: 0.9, ease: 'power2.out'}) in sync with gsap.to(scrollThumb, {y: thumbDistance, duration: 0.9, ease: 'power2.out'}); cursor via gsap.to(cursor, {y: rowY, duration: 0.6, ease: 'power1.inOut'}) and row hover background via a short 0.1s fade to the highlight colour.",
+    "remotion": "translateY on the list = interpolate(frame, [0, 27], [0, -scrollDistance], {easing: Easing.out(Easing.quad), extrapolateRight: 'clamp'}) inside an overflow:hidden container; scrollbar thumb mapped to the same progress; cursor position interpolated with Easing.inOut(Easing.quad); hover row opacity toggled when cursor y enters the row."
+  },
+  "confidence": "medium",
+  "notes": "Real screen recording (wheel scroll), not a designed animation. A tooltip ('The number of comments added to the idea') appears briefly mid-burst near the Comments row and is gone by the end frame, so it has no box. Energy shows several scroll steps rather than one smooth glide."
+}

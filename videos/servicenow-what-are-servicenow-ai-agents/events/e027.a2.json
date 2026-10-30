@@ -1,0 +1,61 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "d15f448a011e811814f529c35f2ae3be78baa5a90a6beb7e64ddb626469addec",
+    "created_at": "2026-10-05T06:52:19.086269Z"
+  },
+  "video": "servicenow-what-are-servicenow-ai-agents",
+  "event": "e027",
+  "task": "a2-e027",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Standing colleague leaning in over the seated pair while talking",
+      "role": "other",
+      "role_other": "live_action_person",
+      "change_types": ["other"],
+      "change_other": "live-action body and head movement",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Defocused foreground desk lamp at right edge",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "slight handheld drift of defocused foreground",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    }
+  ],
+  "sfx_review": [
+    {"id": "x161", "verdict": "override", "label": "music", "note": "Stacked harmonic lines that continue the same tonal pattern as the music bed before and after; nothing on screen triggers a chime, so this reads as a score note."},
+    {"id": "x162", "verdict": "unsure", "label": "unsure", "note": "At the right edge of the spectrogram window, about 0.7 s after the event; the shape is not visible enough to judge, and there is no visual trigger in this burst."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "footage character beat",
+    "description": "Live-action office shot (comedic 'geese' line): the standing colleague leans in and speaks over the seated pair. Framing is locked, with defocused foreground monitors and lamps; no graphics.",
+    "why_premium": "A cinematic, shallow-depth-of-field acting beat carries the humour and gives the viewer a break between product overlays."
+  },
+  "build_hint": {
+    "gsap": "No motion-graphic build; play the footage clip as is. Optional: gsap.to(footage, {scale: 1.01, duration: 2, ease: 'none'}) for a gentle synthetic drift.",
+    "remotion": "<OffthreadVideo> in a <Sequence>; optional scale = interpolate(frame, [0, 60], [1, 1.01]) for a slow linear drift."
+  },
+  "confidence": "medium",
+  "notes": "Pure live-action movement; the small diff boxes (b03-b09) are defocus and lighting flicker on the foreground props. CLAP labelled both candidates 'chime'; x161 looks musical. A human listen would settle it."
+}

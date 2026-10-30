@@ -1,0 +1,105 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "a0402fe0ae353544ac4f3f0bd5b4b29161af445190e73aab85104750c9a1c2d3",
+    "created_at": "2026-10-05T07:46:45.197041Z"
+  },
+  "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+  "task": "a1-p2",
+  "shots": [
+    {
+      "shot": "s003",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "split",
+      "composition_other": null,
+      "focal_element": "Left-hand chat thread between a customer avatar and the AI agent, mirrored on the right by an 'AI Agent Reasoning' card whose chain-of-thought list grows as the chat progresses",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Customer conversation",
+        "AI Agent Reasoning",
+        "Hi! How can I help you?",
+        "A reward from my last purchase seems to be missing",
+        "Oh no! Let me check on that for you.",
+        "Thank you",
+        "Of course! Your 03/15/2025 purchase qualifies but is marked ineligible. Let me check the details.",
+        "Looks like your purchase was mistakenly marked ineligible for rewards. Want me to fix that and update your balance?",
+        "Please",
+        "I've applied 500 points to your account. You now have 23,000 points total. Can I help you redeem any rewards?",
+        "No thanks, still saving up for my trip!",
+        "Sure thing! Let me know if I can be of any more assistance.",
+        "Reward status",
+        "Customer issue: Reward status",
+        "Description: The customer would like to inquire about the status of their cashback rewards.",
+        "Chain of thought:",
+        "Task: Understand visitor's issue",
+        "Pass to Procedure Agent.",
+        "Task: Retrieve past transactions. Validate cashback status.",
+        "Trigger API queryRewardsLedger.",
+        "Validate cashback eligibility.",
+        "Trigger API verifyMerchantProcessor.",
+        "Cashback ineligible due to third party merchant processing.",
+        "Pass to Knowledge Agent.",
+        "Expanded question: Has the vendor who processed the purchase been pre-approved?",
+        "Trigger API updateRewardsBalance"
+      ],
+      "text_word_count": 181,
+      "typography": "Clean geometric sans throughout (low-confidence guess: a Zendesk brand sans such as Vanilla Sans). Column headers are light weight, sentence case, normal tracking, centred over each column; chat bubbles use regular weight sentence case at body size; the reasoning card uses a medium-weight title ('Reward status') over small regular-weight labels and a bulleted list in a muted grey.",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "A 30 s single-shot recreated chat demo: two columns divided by a thin vertical rule. Messages pop in one at a time on the left (agent bubbles with a sparkle avatar on the left, customer bubbles with a photo avatar on the right), and the thread scrolls up to drop older bubbles as new ones arrive. In step with each agent turn, the right-hand 'AI Agent Reasoning' card fills with a description and then appends chain-of-thought bullets (API triggers, agent hand-offs, eligibility checks), visualising the VO's 'cross-checks past transactions, scans company policies, and applies a missing reward' (w99-w111) and ending with the reward applied and the customer declining further help.",
+      "build_rebuild": "Build a 16:9 two-column layout on a dark green ground with a 1px vertical divider, render a scripted message array as rounded bubbles that pop in (scale 0.95 to 1 plus fade) and push the stack upward with a masked scroll, and on each agent message append the next chain-of-thought bullet lines to a fixed white card on the right.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s004",
+      "shot_type": "abstract",
+      "shot_type_other": null,
+      "composition": "stacked",
+      "composition_other": null,
+      "focal_element": "Glowing Zendesk logo orb racing to the right along a lime-green gradient trail, past three grey generic shapes stuck at the left edge",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "zendesk"
+      ],
+      "text_word_count": 1,
+      "typography": "Only the Zendesk logo wordmark inside the orb: lowercase, bold, tight brand logotype.",
+      "depth_cues": [
+        "glow"
+      ],
+      "what_happens": "Four horizontal lanes stacked vertically: three grey silhouette shapes (cloud, notched circle, pill; plausibly stand-ins for competitor logos, but no names are visible) slide in from the left with fading grey motion trails and stall near the left third, while the Zendesk orb in the second lane shoots ahead with a lime gradient trail, overshoots toward the right edge, pulses back and forth and finishes near the right edge. Plays under the VO about other vendors' 'endless configurations' (w131-w150).",
+      "build_rebuild": "Stack four lanes, animate three grey shapes in from x=-10% to about 25% with a left-to-right fading gradient trail, and animate a glowing logo circle with a lime gradient tail from the left to about 90% width with an ease-out plus slight back-and-forth wobble, keeping its trail length tied to its x position.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s005",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Centred one-line headline 'All hype. No performance.'",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "All hype. No performance."
+      ],
+      "text_word_count": 4,
+      "typography": "Large black sans headline, medium weight, sentence case with full stops, normal to slightly tight tracking, single line centred.",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "A hard cut to a bright diagonal lime-to-white gradient card with the headline held static and centred for about 3 s, echoing the VO 'All hype, no performance' (w151-w154). No motion of the text is visible at 2 fps.",
+      "build_rebuild": "Fill the frame with a linear gradient from lime at bottom-left to white at top-right and set the headline centred in a large medium-weight sans, held without animation for the duration of the VO phrase.",
+      "confidence": "high"
+    }
+  ],
+  "summary": null
+}

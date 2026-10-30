@@ -1,0 +1,339 @@
+{
+  "$defs": {
+    "Annotator": {
+      "enum": [
+        "code",
+        "claude-code",
+        "human"
+      ],
+      "title": "Annotator",
+      "type": "string"
+    },
+    "GoldElement": {
+      "additionalProperties": false,
+      "properties": {
+        "change_types": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Change Types",
+          "type": "array"
+        },
+        "id": {
+          "pattern": "^[bm]\\d{2}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "moves": {
+          "default": true,
+          "title": "Moves",
+          "type": "boolean"
+        },
+        "role": {
+          "title": "Role",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "role",
+        "change_types"
+      ],
+      "title": "GoldElement",
+      "type": "object"
+    },
+    "GoldEvent": {
+      "additionalProperties": false,
+      "properties": {
+        "elements": {
+          "items": {
+            "$ref": "#/$defs/GoldElement"
+          },
+          "title": "Elements",
+          "type": "array"
+        },
+        "end_s": {
+          "title": "End S",
+          "type": "number"
+        },
+        "event": {
+          "pattern": "^e\\d{3,}$",
+          "title": "Event",
+          "type": "string"
+        },
+        "missed": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Missed",
+          "type": "array"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        },
+        "pattern": {
+          "title": "Pattern",
+          "type": "string"
+        },
+        "sfx": {
+          "items": {
+            "$ref": "#/$defs/GoldSfx"
+          },
+          "title": "Sfx",
+          "type": "array"
+        },
+        "shot": {
+          "title": "Shot",
+          "type": "string"
+        },
+        "start_s": {
+          "title": "Start S",
+          "type": "number"
+        },
+        "status": {
+          "default": "pending",
+          "enum": [
+            "pending",
+            "confirmed",
+            "corrected"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "event",
+        "shot",
+        "start_s",
+        "end_s",
+        "elements",
+        "pattern",
+        "sfx"
+      ],
+      "title": "GoldEvent",
+      "type": "object"
+    },
+    "GoldSfx": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^x\\d{3,}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "sync_s": {
+          "title": "Sync S",
+          "type": "number"
+        }
+      },
+      "required": [
+        "id",
+        "sync_s",
+        "label"
+      ],
+      "title": "GoldSfx",
+      "type": "object"
+    },
+    "GoldShot": {
+      "additionalProperties": false,
+      "properties": {
+        "composition": {
+          "title": "Composition",
+          "type": "string"
+        },
+        "depth_cues": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Depth Cues",
+          "type": "array"
+        },
+        "end_s": {
+          "exclusiveMinimum": 0,
+          "title": "End S",
+          "type": "number"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        },
+        "shot": {
+          "pattern": "^s\\d{3,}$",
+          "title": "Shot",
+          "type": "string"
+        },
+        "shot_type": {
+          "title": "Shot Type",
+          "type": "string"
+        },
+        "start_s": {
+          "minimum": 0,
+          "title": "Start S",
+          "type": "number"
+        },
+        "status": {
+          "default": "pending",
+          "enum": [
+            "pending",
+            "confirmed",
+            "corrected"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "transition_in": {
+          "title": "Transition In",
+          "type": "string"
+        }
+      },
+      "required": [
+        "shot",
+        "start_s",
+        "end_s",
+        "shot_type",
+        "composition",
+        "transition_in",
+        "depth_cues"
+      ],
+      "title": "GoldShot",
+      "type": "object"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "description": "Carried by every output JSON (BUILD_PLAN section 2.7).",
+      "properties": {
+        "annotator": {
+          "$ref": "#/$defs/Annotator"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "input_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Input Hash",
+          "type": "string"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "schema_version": {
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "skill": {
+          "anyOf": [
+            {
+              "pattern": "^[a-z0-9-]+@[0-9a-f]{8,64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Skill"
+        },
+        "stage": {
+          "title": "Stage",
+          "type": "string"
+        },
+        "tool_version": {
+          "title": "Tool Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool_version",
+        "stage",
+        "annotator",
+        "input_hash",
+        "created_at"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "events": {
+      "items": {
+        "$ref": "#/$defs/GoldEvent"
+      },
+      "title": "Events",
+      "type": "array"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    },
+    "shots": {
+      "items": {
+        "$ref": "#/$defs/GoldShot"
+      },
+      "title": "Shots",
+      "type": "array"
+    },
+    "video": {
+      "title": "Video",
+      "type": "string"
+    },
+    "watch_url": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Watch Url"
+    }
+  },
+  "required": [
+    "provenance",
+    "video",
+    "watch_url",
+    "shots",
+    "events"
+  ],
+  "title": "GoldFile",
+  "type": "object"
+}

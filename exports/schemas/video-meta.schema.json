@@ -1,0 +1,387 @@
+{
+  "$defs": {
+    "Annotator": {
+      "enum": [
+        "code",
+        "claude-code",
+        "human"
+      ],
+      "title": "Annotator",
+      "type": "string"
+    },
+    "AudioInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "channels": {
+          "exclusiveMinimum": 0,
+          "title": "Channels",
+          "type": "integer"
+        },
+        "duration_s": {
+          "exclusiveMinimum": 0,
+          "title": "Duration S",
+          "type": "number"
+        },
+        "sample_rate": {
+          "exclusiveMinimum": 0,
+          "title": "Sample Rate",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "sample_rate",
+        "channels",
+        "duration_s"
+      ],
+      "title": "AudioInfo",
+      "type": "object"
+    },
+    "BaseFrames": {
+      "additionalProperties": false,
+      "properties": {
+        "count": {
+          "minimum": 1,
+          "title": "Count",
+          "type": "integer"
+        },
+        "fps": {
+          "exclusiveMinimum": 0,
+          "title": "Fps",
+          "type": "number"
+        },
+        "height": {
+          "exclusiveMinimum": 0,
+          "title": "Height",
+          "type": "integer"
+        },
+        "naming": {
+          "default": "t{ms:08d}.jpg",
+          "title": "Naming",
+          "type": "string"
+        },
+        "width": {
+          "exclusiveMinimum": 0,
+          "title": "Width",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "fps",
+        "width",
+        "height",
+        "count"
+      ],
+      "title": "BaseFrames",
+      "type": "object"
+    },
+    "OriginalInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "audio_channels": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Audio Channels"
+        },
+        "audio_codec": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Audio Codec"
+        },
+        "audio_sample_rate": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Audio Sample Rate"
+        },
+        "bytes": {
+          "minimum": 0,
+          "title": "Bytes",
+          "type": "integer"
+        },
+        "container": {
+          "title": "Container",
+          "type": "string"
+        },
+        "duration_s": {
+          "minimum": 0,
+          "title": "Duration S",
+          "type": "number"
+        },
+        "has_audio": {
+          "title": "Has Audio",
+          "type": "boolean"
+        },
+        "height": {
+          "exclusiveMinimum": 0,
+          "title": "Height",
+          "type": "integer"
+        },
+        "irregular_frame_share": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Irregular Frame Share",
+          "type": "number"
+        },
+        "native_fps": {
+          "exclusiveMinimum": 0,
+          "title": "Native Fps",
+          "type": "number"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        },
+        "vfr": {
+          "title": "Vfr",
+          "type": "boolean"
+        },
+        "video_codec": {
+          "title": "Video Codec",
+          "type": "string"
+        },
+        "width": {
+          "exclusiveMinimum": 0,
+          "title": "Width",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "sha256",
+        "bytes",
+        "container",
+        "video_codec",
+        "duration_s",
+        "width",
+        "height",
+        "native_fps",
+        "vfr",
+        "irregular_frame_share",
+        "has_audio",
+        "audio_codec",
+        "audio_sample_rate",
+        "audio_channels"
+      ],
+      "title": "OriginalInfo",
+      "type": "object"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "description": "Carried by every output JSON (BUILD_PLAN section 2.7).",
+      "properties": {
+        "annotator": {
+          "$ref": "#/$defs/Annotator"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "input_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Input Hash",
+          "type": "string"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "schema_version": {
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "skill": {
+          "anyOf": [
+            {
+              "pattern": "^[a-z0-9-]+@[0-9a-f]{8,64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Skill"
+        },
+        "stage": {
+          "title": "Stage",
+          "type": "string"
+        },
+        "tool_version": {
+          "title": "Tool Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool_version",
+        "stage",
+        "annotator",
+        "input_hash",
+        "created_at"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "ProxyInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "duration_s": {
+          "exclusiveMinimum": 0,
+          "title": "Duration S",
+          "type": "number"
+        },
+        "fps": {
+          "exclusiveMinimum": 0,
+          "title": "Fps",
+          "type": "number"
+        },
+        "frames": {
+          "exclusiveMinimum": 0,
+          "title": "Frames",
+          "type": "integer"
+        },
+        "has_audio": {
+          "title": "Has Audio",
+          "type": "boolean"
+        },
+        "height": {
+          "exclusiveMinimum": 0,
+          "title": "Height",
+          "type": "integer"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        },
+        "width": {
+          "exclusiveMinimum": 0,
+          "title": "Width",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "sha256",
+        "width",
+        "height",
+        "fps",
+        "duration_s",
+        "frames",
+        "has_audio"
+      ],
+      "title": "ProxyInfo",
+      "type": "object"
+    },
+    "Window": {
+      "additionalProperties": false,
+      "properties": {
+        "capped": {
+          "title": "Capped",
+          "type": "boolean"
+        },
+        "end_s": {
+          "exclusiveMinimum": 0,
+          "title": "End S",
+          "type": "number"
+        },
+        "start_s": {
+          "minimum": 0,
+          "title": "Start S",
+          "type": "number"
+        }
+      },
+      "required": [
+        "start_s",
+        "end_s",
+        "capped"
+      ],
+      "title": "Window",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "audio": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/AudioInfo"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "base_frames": {
+      "$ref": "#/$defs/BaseFrames"
+    },
+    "original": {
+      "$ref": "#/$defs/OriginalInfo"
+    },
+    "phash": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Phash",
+      "type": "array"
+    },
+    "possible_duplicates": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Possible Duplicates",
+      "type": "array"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    },
+    "proxy": {
+      "$ref": "#/$defs/ProxyInfo"
+    },
+    "video": {
+      "title": "Video",
+      "type": "string"
+    },
+    "window": {
+      "$ref": "#/$defs/Window"
+    }
+  },
+  "required": [
+    "provenance",
+    "video",
+    "original",
+    "window",
+    "proxy",
+    "audio",
+    "base_frames",
+    "phash"
+  ],
+  "title": "VideoMeta",
+  "type": "object"
+}

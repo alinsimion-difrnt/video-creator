@@ -1,0 +1,55 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "f41cf2cd698e7ed63644b311680372f97ad6ab8c1879dd6ee5f1753bccb3c9ca",
+    "created_at": "2026-10-05T06:57:26.119087Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "task": "a1-p2",
+  "shots": [
+    {
+      "shot": "s003",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "A third-party web article in a second Chrome tab whose section text is highlighted, then the Jira Product Discovery Chrome extension popup attaching it to an idea",
+      "transition_in": "other",
+      "transition_other": "abrupt reframe from the punched-in crop on the Insights tab (end of s002) back out to the full browser window, same recording; then an in-recording browser tab switch at about 50.5-51.0 s",
+      "on_screen_text": [
+        "[TS-9] Onboarding templates",
+        "In defense of templates: An ov",
+        "Templates increase user engagement and productivity",
+        "Templates can reduce the barrier to entry.",
+        "Templates allow you to stop reinventing the wheel.",
+        "Templates can reduce errors and rework.",
+        "Browsing templates can seed and spark new ideas.",
+        "Meghan Wenzel",
+        "14K Followers",
+        "Follow",
+        "More from Medium",
+        "2023 State of UX and CX Predictions",
+        "How to use chatGPT for UI/UX design: 25 examples",
+        "How to Stand Out as a Junior UX Designer",
+        "How I use ChatGPT as a UI/UX Designer",
+        "Onboarding templates",
+        "Add",
+        "Cancel"
+      ],
+      "text_word_count": 89,
+      "typography": "Native web/product text only: the article uses a serif body face with bold sans-serif heading and bold lead-in sentences per bullet (Medium-style fonts, low-confidence guess), sentence case, default tracking; the extension popup uses small regular sans-serif UI labels; no added captions or kinetic type",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Opens on the full browser showing the Onboarding templates idea (about 50.0-50.5 s) while the VO says 'dropping a link or better again using the Chrome extension' (w158-w167); the presenter switches to a second tab with a UX article, which appears briefly cropped in (about 51.0-51.5 s) before the full browser frame returns. The cursor drag-selects the heading and four bullets so they turn highlight-blue (about 53.0-56.0 s, w168-w177); an author hover card briefly pops up near 54.5 s. The extension icon is clicked and a popup appears top-right (about 56.0 s, w178): its Idea field drop-down lists ideas, the presenter types a partial query, picks 'Onboarding templates' (about 59.0-59.5 s, w179-w183), and the popup shows the Add/Cancel buttons as the VO finishes 'into your product discovery' (w184-w187). The popup and hover card cast soft drop shadows. Small popup labels are too low-resolution in the contact sheets to quote fully.",
+      "build_rebuild": "Show a full-bleed screen capture of a browser article, animate a text-selection highlight sweeping down the paragraphs, then pop a 360px extension card with drop shadow at the top-right containing a searchable idea select that types a query and resolves to 'Onboarding templates' with an Add button.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

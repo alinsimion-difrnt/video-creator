@@ -1,0 +1,36 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "e3410bf4c3807fb3deaf4957154c5849f3ce4de2c8dc838932d7ce3cab4a16cb",
+                 "created_at": "2026-10-13T15:05:00+00:00"},
+  "id": "7432849218525498667",
+  "format": "green_screen",
+  "hook": {"type": "list_promise",
+           "line": "A step-by-step tutorial on how to use the new ChatGPT search.",
+           "visual": "Smiling woman cut out over her own blog post, pointing up at tilted blue 'OpenAI ChatGPT Search / step-by-step tutorial' tags and a yellow 'Press down 2x the speed' note."},
+  "beats": [
+    {"t": 0.0, "what": "Promise of a step-by-step tutorial over the blog post's title card, with a 'watch at 2x' sticky note"},
+    {"t": 5.2, "what": "Cut: background scrolls to how ChatGPT decides to search, and the manual 'search the web' button"},
+    {"t": 12.07, "what": "Cut to the weather example screenshot pulled from the National Weather Service"},
+    {"t": 13.2, "what": "Zoom punch on her face as the weather example lands"},
+    {"t": 17.27, "what": "Cut: news, then sports and location (pizza near you) sections scroll behind her"},
+    {"t": 24.61, "what": "Follow-up conversation example and availability caveat: paid users only for now"},
+    {"t": 30.07, "what": "Cut to her kitchen, full frame, with a blue 'Sabrina.DEV' label for the newsletter CTA"}
+  ],
+  "graphics": {"captions": "title_only", "caption_position": "top",
+               "devices": ["green_screen_bg", "screenshot", "title_text", "zoom_punch", "jump_cut", "sticker_emoji"],
+               "density": "moderate", "per_minute_estimate": 14},
+  "characters": [],
+  "cta": {"kind": "link_in_bio", "t": 30.07},
+  "why_it_works": [
+    "The background is her own blog post scrolling in step with what she says, so the video doubles as a preview of the full guide she sells at the end",
+    "'Press down 2x the speed' note invites a replay at double speed, which counts as extra watch time",
+    "Fast 4 words/s delivery with 1-3 concrete examples (weather, news, pizza) keeps a dry feature list moving",
+    "Setting change at 30 s (blog to kitchen with a big name label) marks the CTA clearly as a different beat"
+  ],
+  "weaknesses": [
+    "The blog text behind her is tiny and mostly covered by her face, so the screenshots cannot be read on a phone",
+    "No spoken captions, so muted viewers only get the title tags",
+    "Video ends mid-sentence on the CTA"
+  ],
+  "for_robert": "Use the scene-change-for-CTA move: when he asks people to follow or click, cut to a new frame with a bold name label and have Fred hold the sign, so the ask reads as its own beat."
+}

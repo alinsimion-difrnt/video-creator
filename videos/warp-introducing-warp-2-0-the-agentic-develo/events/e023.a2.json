@@ -1,0 +1,60 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "298c099a65e3b2983276b6de93fb37beb87e256abbe819a669843c7fe72f4b72",
+    "created_at": "2026-10-05T06:52:05.623854Z"
+  },
+  "video": "warp-introducing-warp-2-0-the-agentic-develo",
+  "event": "e023",
+  "task": "a2-e023",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Tweet card header (avatar, name, handle, first line)",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "rapid hard-cut swap between different tweet screenshots every 2-3 frames, with slight positional drift",
+      "is_text": true,
+      "text": "Hardik Pithva @hardikpthv · May 10, 2 Did you try @warpdotdev? I just love it!",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 80, "easing_class": "step"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Tweet body paragraph",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "swapped in with the tweet card on each hard cut",
+      "is_text": true,
+      "text": "Super #easy and #fast to #share CLI #out much more. Thanks @psybercity for recom",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 80, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x053", "verdict": "unsure", "label": "unsure", "note": "1.3 s after the event, on the word 'half'; onset with a decaying low band similar to the music hits at the montage start, no reverse-swoosh envelope visible."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "social proof flash montage",
+    "description": "About ten cropped user tweets about the product hard-cut every 2-3 frames over roughly one second, each crop slightly offset, settling on one tweet.",
+    "why_premium": "Plays over 'loved by over a half million' so the testimonials read as sheer volume of real users; uniform dark theme and tight crops keep a frantic cut rate legible and on-brand."
+  },
+  "build_hint": {
+    "gsap": "Timeline of N tweet layers: tl.set(layers[i], {autoAlpha: 1}, i * 0.083).set(layers[i - 1], {autoAlpha: 0}, i * 0.083), each layer with a small random x/y offset; optional gsap.to(wrapper, {y: -30, ease: 'none', duration: 1}) drift; last tweet holds.",
+    "remotion": "<Series> of tweet <Series.Sequence durationInFrames={2}> at 24 fps, each with a fixed small translate offset; wrapper translateY = interpolate(frame, [0, 26], [0, -30]) linear; final Sequence holds."
+  },
+  "confidence": "medium",
+  "notes": "Camera verdict tilt_up likely reflects offsets between successive tweet crops, not a real camera tilt. Same tweet sequence and same settling tweet as e022: the montage appears to repeat (or e022/e023 overlap). Worth a human check."
+}

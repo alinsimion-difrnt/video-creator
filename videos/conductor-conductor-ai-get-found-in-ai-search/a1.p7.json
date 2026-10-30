@@ -1,0 +1,130 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "9b7728294369ffaf651c69eae2829dfa4069a3d9a6d7acfd9a8348589ee52133",
+    "created_at": "2026-10-05T06:27:06.526056Z"
+  },
+  "video": "conductor-conductor-ai-get-found-in-ai-search",
+  "task": "a1-p7",
+  "shots": [
+    {
+      "shot": "s035",
+      "shot_type": "logo",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Centred white 'Extraordinary.' payoff word, replaced by the 'Conductor AI' wordmark end card on the cloudy navy vignette",
+      "transition_in": "other",
+      "transition_other": "Not visible at 2 fps: the s034 card wall is gone and 'Extraordinary.' is already settled on the empty navy background at the first sample (1:53.0)",
+      "on_screen_text": ["Extraordinary.", "Conductor AI"],
+      "text_word_count": 3,
+      "typography": "'Extraordinary.' in a large bold geometric sans, sentence case with a full stop, white, normal tracking, set high in frame; end card is the humanist sans wordmark from s010, semibold title case, 'Conductor' white and 'AI' in a green gradient (font guess: Lato-like, low confidence).",
+      "depth_cues": ["none"],
+      "what_happens": "On 'you need extraordinary.' (w310-w312) the single word 'Extraordinary.' holds centred-upper on the dark navy cloudy background; between the 1:54.5 and 1:55.0 samples it is swapped for the centred 'Conductor AI' wordmark, landing with 'Find it with Conductor AI.' (w313-w317; SFX candidate x081 'unsure' sits at ~114.88 s near the swap), and the lockup then holds static for about 7 s to the end with only the background clouds drifting. The swap mechanism (cut, fade or blur) is not visible at 2 fps.",
+      "build_rebuild": "On a navy radial-vignette background with a slowly drifting soft cloud texture, show a bold white 'Extraordinary.' headline for ~2 s, then replace it on the VO word 'Find' with a centred 'Conductor' (white) + 'AI' (green gradient) wordmark and hold it static to the end of the video.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001", "s002", "s003", "s004"], "words": [0, 16]},
+      {"beat": "problem", "shots": ["s005", "s006", "s007"], "words": [17, 41]},
+      {"beat": "agitate", "shots": ["s008"], "words": [42, 48]},
+      {"beat": "mechanism", "shots": ["s009", "s010", "s011", "s012", "s013", "s014", "s015"], "words": [49, 107]},
+      {"beat": "demo", "shots": ["s016"], "words": [108, 123]},
+      {"beat": "outcome", "shots": ["s017", "s018"], "words": [124, 137]},
+      {"beat": "proof", "shots": ["s019", "s020"], "words": [138, 148]},
+      {"beat": "demo", "shots": ["s021", "s022", "s023", "s024", "s025", "s026", "s027", "s028"], "words": [149, 236]},
+      {"beat": "demo", "shots": ["s029", "s030", "s031", "s032"], "words": [237, 295]},
+      {"beat": "agitate", "shots": ["s033", "s034"], "words": [296, 309]},
+      {"beat": "cta", "shots": ["s035"], "words": [310, 317]}
+    ],
+    "hook": {
+      "text": "AI search is here, reshaping everything, ready to see where you stand and learn how to dominate.",
+      "technique": "bold_claim",
+      "technique_other": null,
+      "shots": ["s001", "s002", "s003", "s004"],
+      "words": [0, 16]
+    },
+    "cta": {
+      "text": "Find it with Conductor AI.",
+      "shots": ["s035"]
+    },
+    "tone": "Confident, polished enterprise launch: brisk, upbeat corporate VO over a driving ~140 BPM music bed, with a dark navy/teal-lime visual world and a 'stop settling for average' challenger stance.",
+    "signature_moments": [
+      {
+        "shots": ["s011", "s012", "s013"],
+        "description": "A wall of dashboard cards collapses behind the glowing 'Data & AI Engine' badge, the camera zooms through the badge into a full dashboard, and the Revenue metric counts up from 83K to 156K.",
+        "why_premium": "One continuous camera move turns an abstract claim (data plus AI) into a concrete result, so the zoom-through doubles as both transition and explanation."
+      },
+      {
+        "shots": ["s017", "s018", "s019", "s020"],
+        "description": "'5X BETTER CONTENT' and '10X FASTER' land on the spoken numbers over a radiating chevron speed tunnel, then a circular iris wipe opens onto the analyst badges and customer logo wall.",
+        "why_premium": "Stats are synced to the voice and handed off to proof through a designed iris transition rather than a cut, which makes the claim-then-evidence step feel authored."
+      },
+      {
+        "shots": ["s021", "s022", "s023"],
+        "description": "The Content Score bar climbs 0% to 92% while shifting orange to green, the editor tilts away in 3D, a blog card swings in and a trophy pops with confetti before the AI-visibility chart builds layer by layer.",
+        "why_premium": "A chain of linked 3D card hand-offs shows cause and effect (optimise, publish, win, measure) in about 8 seconds without leaving the product's visual language."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 3,
+        "evidence": "Opens on a relatable before/after: a classic search results grid becomes an AI chat prompt and an 'AI Market Share' donut within 7 s, but the spoken line is a generic claim ('AI search is here, reshaping everything') with no stat or sharp pain.",
+        "refs": ["s001", "s002", "s003", "s004", "w0", "w16"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "Clear arc from old SEO noise to AI search to platform to proof to CTA, with each claim visualised (logo cloud for 'noise', tactic chips for 'yesterday's tactics', clustered cards for 'LLMs'); acronym-heavy VO ('end-to-end AEO-GEO SEO platform') and a long feature list in s027 lower it from 5.",
+        "refs": ["s005", "s007", "s009", "s015", "s027", "w55", "w57"]
+      },
+      "ui_showcase": {
+        "score": 4,
+        "evidence": "Mostly simplified recreated UIs (topic map with cursor click, content score editor, monitoring dashboard with alert chips) that animate meaningfully with count-ups and chart builds, plus one real product screen scrolled in s027; the real UI gets only a passive scroll and push-in.",
+        "refs": ["s013", "s016", "s021", "s027", "s030"]
+      },
+      "motion_polish": {
+        "score": 4,
+        "evidence": "Wide, well-executed transition vocabulary (zoom-through, circular iris wipe, 3D card swings, blur hand-offs, typewriter and count-up synced to VO words) with consistent easing; some heavy motion-blur hand-offs and the static 7 s end card are less refined.",
+        "refs": ["s012", "s018", "s019", "s022", "s028", "s035"]
+      },
+      "sound_design": {
+        "score": 3,
+        "evidence": "Judged from anchors plus visuals: a continuous music bed at 139.67 BPM and -17.3 LUFS integrated; 81 SFX candidates, most labelled music, impact or unsure with only a few confident discrete cues (e.g. swoosh_reverse x003 at 0.908), clustered in 0-45 s and 70-100 s and sparse in 45-70 s and after 100 s (one candidate in s035). Motion hits appear supported by the music rather than a distinct designed SFX layer.",
+        "refs": ["s005", "s009", "s027", "s035"]
+      },
+      "vo_script_quality": {
+        "score": 3,
+        "evidence": "Well structured and rhythmic with concrete stats ('five times better', 'up to 10 times faster') and a callback ending ('To win an AI search, you need extraordinary.'), but heavy on enterprise buzzwords ('purpose-built', 'enterprise-grade', 'ultimate digital insurance policy') and long lists that blur the message.",
+        "refs": ["w124", "w137", "w245", "w248", "w305", "w312"]
+      },
+      "brand_consistency": {
+        "score": 4,
+        "evidence": "One visual system throughout: dark navy vignette and teal-to-lime gradient backdrops, green accent highlights, the same geometric sans, and the 'Conductor AI' wordmark bookending the product reveal (s010) and close (s035); green-styled Conductor cards are contrasted against plain 'Generic Content' cards in s031-s034.",
+        "refs": ["s010", "s017", "s031", "s034", "s035"]
+      },
+      "works_muted": {
+        "score": 3,
+        "evidence": "Key payoffs are on screen ('5X BETTER CONTENT', '10X FASTER', 'All in one place', 'Extraordinary.', logo wall, product name), but the problem framing, the meaning of the dashboards and the monitoring/clustering mechanisms rely on the VO; there are no captions.",
+        "refs": ["s017", "s018", "s020", "s028", "s035", "s015", "s030"]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "A polished, coherent enterprise explainer with strong transitions, VO-synced kinetic stats and meaningful UI animation; held back from best-in-class by a generic hook, buzzword-dense script, an undistinguished SFX layer and a plain static end card without an explicit next step.",
+        "refs": ["s004", "s013", "s018", "s021", "s035"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 2,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "English text is baked into almost every scene (recreated UI labels, typed prompts, article copy, kinetic stats '5X'/'10X', 'All in one place', 'Extraordinary.'), and the story depends on a dense English VO with no captions; the recreated vector UIs could be re-rendered per locale, but the real dashboard in s027 and the brand/customer logos cannot."
+    }
+  }
+}

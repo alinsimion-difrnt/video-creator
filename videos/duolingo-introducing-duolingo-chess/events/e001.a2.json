@@ -1,0 +1,57 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "ed88d98ede0455969024b7792d05ac88dfc28facf147c30a3f1bdcb3c5ca0c89",
+    "created_at": "2026-10-05T06:43:01.390189Z"
+  },
+  "video": "duolingo-introducing-duolingo-chess",
+  "event": "e001",
+  "task": "a2-e001",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "White king chess piece shattering into fragments",
+      "role": "other",
+      "role_other": "3d_object",
+      "change_types": ["other"],
+      "change_other": "shatter (rigid-body fracture, fragments fall and scatter)",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "ease_in"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x006",
+      "verdict": "confirm",
+      "label": "swoosh_reverse",
+      "note": "Rising swell ahead of the motion-blurred whip into this shot (f183); plausibly a reverse swoosh lead-in, not tied to the shatter itself."
+    },
+    {
+      "id": "x007",
+      "verdict": "confirm",
+      "label": "impact",
+      "note": "Clear broadband vertical onset ~185 ms before the visible fracture; reads as the hit that breaks the king. The shatter crackle follows as diffuse broadband texture during the event."
+    }
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "3d object shatter",
+    "description": "In a shallow-depth-of-field 3D chess scene, the white king fractures in place and collapses into a pile of faceted white shards while the surrounding black pieces stay still.",
+    "why_premium": "A physically simulated fracture with real-feeling weight, faceted shards and tactile CG materials turns a narrative beat (the opponent's king is beaten) into a punchy visual punchline, sold by a synced impact hit."
+  },
+  "build_hint": {
+    "gsap": "Pre-render the fracture as a 3D sim (image sequence/video); in HyperFrames play it with a hard cut-in, then add gsap.fromTo(shardsLayer, {y: 0}, {y: 6, duration: 0.3, ease: 'power2.in'}) and a 2-frame camera shake (x: +/-4, ease: 'steps(2)') on impact.",
+    "remotion": "Use <OffthreadVideo> or an image sequence of the rendered shatter; optional impact shake translateX = 4 * Math.sin(frame * 3) * Math.max(0, 1 - (frame - impactFrame) / 6) for 6 frames."
+  },
+  "confidence": "medium",
+  "notes": "Rendered 3D footage; the motion is a physics sim, so easing is not meaningful. f183 is motion blur from the incoming shot transition, not part of the shatter. b02 (tiny right-edge box) is noise and is not listed."
+}

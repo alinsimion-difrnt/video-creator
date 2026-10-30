@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "7cb4d87502b06906efb82526f49a89108c27b858b9a3fe11ac21e383ce1bdafa",
+    "created_at": "2026-10-05T06:44:21.724049Z"
+  },
+  "video": "datadog-datadog-overview-see-inside-the-platfor",
+  "event": "e014",
+  "task": "a2-e014",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Watchdog story UI screen sweeping in along a diagonal edge from the top-right, then settling scale",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["mask_reveal", "scale_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 350, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Orange caption banner 'AI-powered anomaly detection'",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["mask_reveal", "slide_right"],
+      "change_other": null,
+      "is_text": true,
+      "text": "AI-powered anomaly detection",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 250, "easing_class": "ease_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [380, 70, 640, 640],
+      "manual_reason": "The outgoing title card text is gone in the settled end frame; the coordinates are its position in the first frames.",
+      "label": "Outgoing title 'Cut through the complexity'",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["mask_reveal"],
+      "change_other": "Exits: covered by the incoming UI's diagonal wipe edge.",
+      "is_text": true,
+      "text": "Cut through the complexity",
+      "text_unit": "whole",
+      "estimates": null
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "diagonal ui wipe in",
+    "description": "A product UI screenshot sweeps over the title card along a diagonal edge from the top-right, slightly over-scaled and settling as it lands. An orange caption banner then wipes in left to right across the middle of the UI, naming the feature.",
+    "why_premium": "The diagonal edge repeats the slash motif of the previous wipe, so the transitions feel like one system. The UI lands first and the caption follows, so the eye takes in real product context before the feature name. The bright banner gives the caption contrast on a busy screen without dimming the UI."
+  },
+  "build_hint": {
+    "gsap": "tl.fromTo('.ui-shot',{clipPath:'polygon(100% 0%,100% 0%,100% 0%,100% 0%)',scale:1.4},{clipPath:'polygon(-60% 0%,100% 0%,100% 100%,-60% 100%)',scale:1,duration:0.35,ease:'power3.out'}); tl.fromTo('.caption-banner',{clipPath:'inset(0 100% 0 0)',x:-30},{clipPath:'inset(0 0% 0 0)',x:0,duration:0.25,ease:'power2.out'},'-=0.1'). The banner has a skewed (parallelogram) left edge.",
+    "remotion": "wipe = interpolate(frame,[0,10],[0,1],{easing:Easing.out(Easing.cubic)}) driving a diagonal polygon clipPath on the UI layer; uiScale = interpolate(frame,[0,10],[1.4,1],{easing:Easing.out(Easing.cubic)}); banner reveal = spring({frame:frame-7,fps,config:{damping:200,stiffness:200}}) mapped to inset-right 100%->0%."
+  },
+  "confidence": "medium",
+  "notes": "Camera verdict is pull_out (scale 0.71), read as the UI layer settling from an over-scaled start. Box b02 covers only the caption text, not the full orange banner shape. The UI wipe and the banner reveal overlap and are hard to separate in the filmstrip."
+}

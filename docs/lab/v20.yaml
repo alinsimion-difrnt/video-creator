@@ -1,0 +1,60 @@
+# v20 — the final demo: v19 (hook first, blocky presenter matching pixel Fred, the cat build-up) plus Pixie
+# peeking over his shoulder from behind on "wait" (v17's peek), before she walks in. Rendered at full size.
+name: v20
+voice: iP95p4xoKVk53GoZ742B
+cut_at: "Claude"
+script: >-
+  This fish is AI. So is everything else in this video. He can be 3D, flat, or pixel art. I'll call him Fred.
+  Claude, give Fred a moustache and a top hat. Much better. My process doesn't cost an arm and a leg.
+  I write the jokes, Claude does the alchemy. And that's... wait. What is this cat? Cute.
+  I'll call her Pixie. Pixie, no!
+plan:
+  layout: [{word: 0, layout: full}]
+  punches: ["everything", "Fred"]
+  props:
+    - id: fred
+      art: fred
+      word: "fish"
+      until: "no"
+      at: lap
+      size: 0.2
+      style: photo
+      beats:
+        - {word: "3D", style: toon3d}
+        - {word: "flat", style: illustrated}
+        - {word: "pixel", style: pixel}
+        - {word: "Fred", style: illustrated, do: wave, tag: Fred}
+        - {word: "moustache", add: [moustache]}
+        - {word: "hat", add: [top_hat]}
+        - {word: "arm", add: [automail]}
+        - {word: "alchemy", do: clap}
+        - {word: "wait", do: look}
+    - id: peek
+      art: cat
+      word: "wait"
+      until: "this#3"
+      at: shoulder_left
+      size: 0.24
+      behind: true
+      enter: pop
+      exit: pop
+      beats:
+        - {word: "What", do: look}
+    - id: pixie
+      art: cat
+      word: "cat"
+      until: "no"
+      at: floor_right
+      size: 0.3
+      enter: walk_right
+      exit: run_left
+      beats:
+        - {word: "Cute", do: look}
+        - {word: "Pixie", tag: Pixie}
+        - {word: "Pixie#2", move: lap}
+        - {word: "no", carry: fred}
+  fx:
+    - {word: "pixel", until: "call", kind: blocky, spec: {block: 22}}
+    - {word: "alchemy", kind: alchemy, spec: {at: fred}}
+    - {word: "no", kind: shake}
+    - {word: "no", kind: fade_black}

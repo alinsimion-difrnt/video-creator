@@ -1,0 +1,53 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T13:02:41+00:00"
+  },
+  "id": "sly-animation",
+  "kind": "tutorial",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "unknown",
+    "notes": "Advice only: start animating with small sprites, limited palettes and clear colour separation."
+  },
+  "lighting": "Not covered.",
+  "silhouette": "Keyframes must read on their own: a punch reads from wind-up and full extension alone; run strides need extended limbs and a forward tilt.",
+  "motion": {
+    "timing": "Article's example: 8-frame run at 80 ms per pose, cut to 4 frames at 160 ms per pose; 6-frame run is his usual sweet spot; Mega Man run: 3 poses in a 4-frame loop. Article figures, not measured.",
+    "principles": [
+      "keyframes first, in-betweens second",
+      "vertical bounce in run cycles",
+      "timing sets energy",
+      "looping cycles",
+      "economy of frames"
+    ]
+  },
+  "texture": "Loops expose every stray pixel; check clusters on every frame.",
+  "camera": "Not covered.",
+  "sound": "",
+  "acting": {
+    "enters": "Not covered.",
+    "acts": "Idle must simply move: a bouncy breathing loop is the common choice; 8-bit JRPGs reuse a 2-frame walk as idle. Keep idle length consistent across characters to fit the budget.",
+    "exits": "Not covered.",
+    "comes_back": null,
+    "depth": "Not covered."
+  },
+  "techniques": [
+    "2-frame idle (walk-in-place) or bouncy breathing idle",
+    "3-pose run: stride, pass, stride with the pass frame reused in a 4-frame loop",
+    "when cutting frames, drop recoil first, then the high point; never contact or pass",
+    "double the frame duration when halving the frame count (80 ms x8 -> 160 ms x4)",
+    "strong keyframes over smooth in-betweens",
+    "check every frame for stray pixels before looping"
+  ],
+  "feel": "few strong key poses + held longer + small bounce = energetic motion without sluggish smoothness",
+  "for_fred": "Give Fred a 2-frame breathing idle and a short swim cycle built from 3-4 strong key poses held around 80-160 ms, and spend the frames saved on acting beats (exit, return, background cameo) instead of looping the same smooth animation; reuse one idle rhythm for Fred and Pixie so they feel like one world.",
+  "sources": [
+    "https://www.slynyrd.com/blog/2018/8/19/pixelblog-8-intro-to-animation",
+    "studies/pixel-art/sources.yaml"
+  ]
+}

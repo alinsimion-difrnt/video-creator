@@ -1,0 +1,102 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "d9e16c4434d1239bd61544dc0c70060b014d1afca6ec2b8647331eb60a81a50e",
+    "created_at": "2026-10-05T06:44:48.603536Z"
+  },
+  "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+  "event": "e024",
+  "task": "a2-e024",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Transcript of chat bubbles, which shrinks and fades/blurs away behind the incoming card",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["scale_down", "fade", "blur_out"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [352, 105, 637, 895],
+      "manual_reason": "No candidate box covers the whole audio-player card container. The diff boxes only cover its waveform, play button and time label.",
+      "label": "Audio playback card (white rounded card with soft shadow)",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["scale_up", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Waveform with a blue played section and a grey remainder",
+      "role": "chart",
+      "role_other": null,
+      "change_types": ["scale_up", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b06",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Play button, which appears last",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["fade", "pop"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 200, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b11",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Playback time label",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["fade", "scale_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "0:04 / 0:53",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x034", "verdict": "unsure", "label": "unsure", "note": "About 410 ms after the burst, once the card has settled. The spectrogram shows no sweep there, just the ongoing music bed."}
+  ],
+  "pattern": {
+    "id": "scale_dissolve_transition",
+    "proposed_name": null,
+    "description": "The transcript view shrinks back (scale about 0.79) and dissolves while a small blank card in the centre grows into a full-width audio-player card. The waveform fills in first, then the play button and time label appear.",
+    "why_premium": "Scale and opacity move together, so the change from transcript to playback reads as one zoom into a new layer and not a cut. Because the card grows out of the old content, the playback feature looks like part of the same conversation record, and the play button arriving last lands the payoff on the word 'playback'."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.transcript', {scale: 0.8, opacity: 0, filter: 'blur(6px)', duration: 0.4, ease: 'power2.inOut'}); tl.fromTo('.playerCard', {scale: 0.25, opacity: 0}, {scale: 1, opacity: 1, duration: 0.4, ease: 'power3.out'}, '<0.05'); tl.fromTo(['.waveform', '.time', '.playBtn'], {opacity: 0}, {opacity: 1, duration: 0.2, stagger: 0.08}, '>-0.1').",
+    "remotion": "const p = spring({frame, fps, config: {damping: 200, stiffness: 160}}); the transcript gets scale interpolate(p, [0, 1], [1, 0.8]), opacity 1 - p and blur 6*p. The card gets scale interpolate(p, [0, 1], [0.25, 1]) and opacity p. The play button opacity/scale use a second spring delayed by about 6 frames."
+  },
+  "confidence": "medium",
+  "notes": "camera.move pull_out describes the transcript receding; the incoming card grows the other way, so this is an element-level scale dissolve and not a pure camera move. The card's manual_box is estimated from the end frame."
+}

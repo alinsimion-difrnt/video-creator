@@ -1,0 +1,128 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "6622bbc01e9ee33c61f8b26f51575347f736ae52912aa2659a00d387535b72cb",
+    "created_at": "2026-10-05T06:44:21.026446Z"
+  },
+  "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+  "event": "e009",
+  "task": "a2-e009",
+  "elements": [
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Divider + status row appended under agent reply",
+      "role": "other",
+      "role_other": "status_row",
+      "change_types": ["fade", "draw_on"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 200, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b09",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Order status chip with check icon",
+      "role": "notification",
+      "role_other": null,
+      "change_types": ["fade", "color_shift"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Order arriving at 2pm",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 200, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Agent reply bubble shifting up",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Yes, of course. Let me check for you now.",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "User bubble shifting up",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Hey, can I check the status of my order?",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [693, 478, 900, 774],
+      "manual_reason": "No candidate box covers the new agent bubble outline; b01 is the whole thread diff region.",
+      "label": "New agent bubble growing from a small pill",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["scale_up", "morph", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 250, "easing_class": "spring_no_overshoot"}
+    },
+    {
+      "box": null,
+      "manual_box": [672, 796, 742, 840],
+      "manual_reason": "The new bubble's gradient avatar orb has no candidate box.",
+      "label": "Agent avatar orb for new bubble",
+      "role": "avatar",
+      "role_other": null,
+      "change_types": ["scale_up", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 200, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b11",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "New reply text, first words",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Your order",
+      "text_unit": "word",
+      "estimates": {"duration_ms": 120, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "ai_answer_stream",
+    "proposed_name": null,
+    "description": "The previous agent reply gains a divider and an 'Order arriving at 2pm' status chip, then the thread scrolls up and a second agent bubble grows out of a small pill with its avatar orb popping in; its text starts word by word ('Your order') in sync with the voice.",
+    "why_premium": "Structured data (the status chip) is appended to the conversational reply rather than shown as plain text, and the next bubble is born from a typing pill, so the chat feels live and tool-backed while speech and text stay locked."
+  },
+  "build_hint": {
+    "gsap": "tl.fromTo('.reply-1 .divider', {scaleX: 0}, {scaleX: 1, transformOrigin: 'left', duration: 0.2, ease: 'power2.out'}).fromTo('.reply-1 .status', {opacity: 0, y: 4}, {opacity: 1, y: 0, duration: 0.2}, '<'); tl.to('.thread', {y: -100, duration: 0.4, ease: 'power2.inOut'}); tl.fromTo('.reply-2', {width: 32, height: 20, opacity: 0}, {opacity: 1, width: 380, height: 150, duration: 0.3, ease: 'power3.out'}, '<0.15').fromTo('.reply-2 .orb', {scale: 0}, {scale: 1, duration: 0.2, ease: 'back.out(1.4)'}, '<'); words fade in at narration timestamps.",
+    "remotion": "Divider scaleX and status opacity via interpolate over 6 frames; thread translateY spring({damping: 200}); new bubble width/height spring({damping: 22, stiffness: 180}) from pill size; orb scale spring; reply words keyed to word start frames."
+  },
+  "confidence": "medium",
+  "notes": "Camera verdict tilt_down (pan_y -0.14) but it reads as the chat thread scrolling; the status chip appears at the very start of the burst and could alternatively be its own chip_append beat."
+}

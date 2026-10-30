@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "a0bc1b1b40cb1468d684655c67d481fb169f24d4f0ef5d28beb7aede3c48413e",
+    "created_at": "2026-10-05T06:42:56.932095Z"
+  },
+  "video": "duolingo-introducing-duolingo-chess",
+  "event": "e010",
+  "task": "a2-e010",
+  "elements": [
+    {
+      "box": null,
+      "manual_box": [40, 330, 1000, 750],
+      "manual_reason": "No candidate box covers the plush character; b01 is the whole-frame diff region and b02 only the raised arm.",
+      "label": "Plush mascot character (Oscar-style puppet)",
+      "role": "other",
+      "role_other": "character",
+      "change_types": ["scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 170, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Character's raised right arm (gesture)",
+      "role": "other",
+      "role_other": "character_limb",
+      "change_types": ["rotate"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Chessboard and blurred chess pieces background",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["scale_up", "blur_in"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 170, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "character crash zoom",
+    "description": "Live-action puppet shot: a fast camera push-in (about 1.2x) punches in on the mascot as he raises an arm and speaks, background chess pieces blurring further with shallower depth of field.",
+    "why_premium": "A short, snappy punch-in timed to the punchline ('too well') adds comedic emphasis and energy without a cut, keeping continuity on the character's performance."
+  },
+  "build_hint": {
+    "gsap": "gsap.fromTo('.scene', {scale: 1, yPercent: 0}, {scale: 1.2, yPercent: -2.5, duration: 0.17, ease: 'power2.inOut'}); background layer: fromTo filter blur(4px)->blur(8px) same timing; arm gesture as a separate rotate tween (power2.out, 0.3s) starting slightly before the zoom.",
+    "remotion": "const s = interpolate(frame, [0, 5], [1, 1.2], {easing: Easing.inOut(Easing.quad), extrapolateRight: 'clamp'}); apply transform: scale(s) translateY(-2.5%) on the scene container; arm via interpolate rotate with Easing.out(Easing.quad) over ~9 frames."
+  },
+  "confidence": "medium",
+  "notes": "Live-action/puppet footage, not UI; camera verdict push_in (scale 1.198). Energy curve has a near-zero frame mid-burst (duplicate frame), possibly a speed-ramped zoom. b02 OCR text 'ho' is a misread of the arm. No SFX candidates."
+}

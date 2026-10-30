@@ -1,0 +1,76 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a2_annotate_event",
+  "annotator": "claude-code",
+  "skill": "annotate-event@3dad117bd85a",
+  "model": null,
+  "input_hash": "46b4f8e1abfcf49373489d9516d2d3dc55d5c69fabf42f307489bc4dd2c13691",
+  "created_at": "2026-10-05T06:38:32.152883Z"
+ },
+ "video": "anthropic-introducing-claude-design-by-anthropic-l",
+ "event": "e012",
+ "task": "a2-e012",
+ "elements": [
+  {
+   "box": "b01",
+   "manual_box": null,
+   "manual_reason": null,
+   "label": "Phone preview plus Tweaks panel composition replacing the 'Dimming...' loading card",
+   "role": "ui_panel",
+   "role_other": null,
+   "change_types": ["fade", "scale_down"],
+   "change_other": null,
+   "is_text": false,
+   "text": null,
+   "text_unit": null,
+   "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+  },
+  {
+   "box": "b15",
+   "manual_box": null,
+   "manual_reason": null,
+   "label": "Tweaks panel input being typed",
+   "role": "body_text",
+   "role_other": null,
+   "change_types": ["typewriter"],
+   "change_other": null,
+   "is_text": true,
+   "text": "Dark mo",
+   "text_unit": "char",
+   "estimates": {"duration_ms": 250, "easing_class": "linear"}
+  },
+  {
+   "box": null,
+   "manual_box": [185, 702, 280, 740],
+   "manual_reason": "No candidate box covers the mouse cursor; it moves from the panel header down to the Dark mode row.",
+   "label": "Mouse cursor",
+   "role": "cursor",
+   "role_other": null,
+   "change_types": ["other"],
+   "change_other": "position move",
+   "is_text": false,
+   "text": null,
+   "text_unit": null,
+   "estimates": {"duration_ms": 350, "easing_class": "ease_in_out"}
+  }
+ ],
+ "sfx_review": [
+  {"id": "x034", "verdict": "confirm", "label": "music", "note": "Sustained tonal music bed before the cut; no transient."},
+  {"id": "x035", "verdict": "confirm", "label": "music", "note": "Music pulse inside the event window; harmonic bands, no whoosh shape."},
+  {"id": "x036", "verdict": "confirm", "label": "music", "note": "Sharp broadband onset reads as a music beat, after the visual settle."}
+ ],
+ "pattern": {
+  "id": "scale_dissolve_transition",
+  "proposed_name": null,
+  "description": "The centered 'Dimming...' loading card dissolves into the full phone-plus-Tweaks-panel UI, which arrives slightly scaled and drifts into place (code reads a small tilt/scale) while the cursor starts typing 'Dark mo' into the panel.",
+  "why_premium": "The loading state hands off to the result without a hard jump; the slight scale settle gives depth and the typing starts immediately so the demo never pauses."
+ },
+ "build_hint": {
+  "gsap": "tl.to('.loading-card', {opacity: 0, scale: 1.04, duration: 0.2, ease: 'power2.in'}).fromTo('.ui-stage', {opacity: 0, scale: 1.03, y: -8}, {opacity: 1, scale: 1, y: 0, duration: 0.35, ease: 'power3.out'}, '<0.1').to('.cursor', {x: 0, y: 40, duration: 0.35, ease: 'power2.inOut'}, '<').to('.tweak-input', {text: 'Dark mo', duration: 0.3, ease: 'none'}, '>-0.1')",
+  "remotion": "Cross-fade loading card out and UI stage in with interpolate over ~6 frames; UI scale = 1.03 - 0.03*spring({frame, fps, config: {damping: 200, stiffness: 120, mass: 1}}) (no overshoot); cursor position via interpolate with Easing.inOut(Easing.cubic); input text = 'Dark mode'.slice(0, Math.floor(interpolate(frame, [s, s+8], [0, 7], {extrapolateRight: 'clamp'})))"
+ },
+ "confidence": "medium",
+ "notes": "The outgoing 'Dimming...' card is not in the end frame so it has no box. Code reports camera tilt_down with tiny scale; frames show the UI briefly offset/scaled between f1040 and f1044, which could be a camera settle rather than a layer scale. The typing could alternatively be classed prompt_type_on; it is secondary here."
+}

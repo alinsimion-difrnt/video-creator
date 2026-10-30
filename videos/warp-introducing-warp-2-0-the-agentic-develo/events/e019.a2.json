@@ -1,0 +1,93 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "abcda916211b26b199856785399e2671391c868d688f01cb924d1c891305875e",
+    "created_at": "2026-10-05T06:52:22.799521Z"
+  },
+  "video": "warp-introducing-warp-2-0-the-agentic-develo",
+  "event": "e019",
+  "task": "a2-e019",
+  "elements": [
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Code listing, upper block (AISettings / menu_items.extend)",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "if AISettings::handle(ctx)",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 420, "easing_class": "step"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Code listing, lower block (shared sessions feature flag)",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "if FeatureFlag::CreatingSharedSessions.is_enabled()",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 420, "easing_class": "step"}
+    },
+    {
+      "box": "b19",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Line-number gutter",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "10425-10451",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 420, "easing_class": "step"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Presenter (talking)",
+      "role": "other",
+      "role_other": "presenter",
+      "change_types": ["other"],
+      "change_other": "natural presenter movement while speaking",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x042",
+      "verdict": "confirm",
+      "label": "impact",
+      "note": "Broadband transient with a low-frequency tail at ~96.03 s, preceded by a short noise swell; lands after the scroll burst, just before 'over 20,000'. CLAP said swoosh_reverse (0.278), which may describe the build-up rather than the hit."
+    }
+  ],
+  "pattern": {
+    "id": "masked_scroll",
+    "proposed_name": null,
+    "description": "The vi editor window next to the presenter scrolls the Rust source upward in discrete line jumps inside its fixed rounded mask, building toward the '20,000 lines' line in the voiceover.",
+    "why_premium": "Ongoing real-code scroll keeps the product on screen while the presenter talks, and the scroll is paced to land on a sound hit just before the punchline number."
+  },
+  "build_hint": {
+    "gsap": "Static window, overflow hidden; gsap.to(code, {y: '-=' + lineH * n, duration: 0.42, ease: 'steps(5)'}) with gutter in the same container; schedule an impact SFX on the timeline right after the last step.",
+    "remotion": "translateY = -lineHeight * Math.floor(interpolate(frame, [0, 17], [0, nLines], {extrapolateRight: 'clamp'})) inside an overflow:hidden window; <Audio> impact via <Sequence from={endFrame}>; no spring."
+  },
+  "confidence": "medium",
+  "notes": "Continuation of the s020 editor scroll (e015, e017). SFX x042 sits ~470 ms after event start and after the visible burst; it could equally belong to the following event."
+}

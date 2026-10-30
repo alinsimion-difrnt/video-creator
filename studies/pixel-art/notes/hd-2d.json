@@ -1,0 +1,54 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T14:01:54+00:00"
+  },
+  "id": "hd-2d",
+  "kind": "style",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "mixed",
+    "notes": "Clips: saturated warm light (gold, orange fire, magenta flowers) against cool blue-green shadows and snow; sprites keep a small retro palette while the 3D world uses full colour."
+  },
+  "lighting": "Dynamic point lights make sprites cast shadows; bloom on fires, spells and sparkles; volumetric light and fog; warm pools of light in cool scenes.",
+  "silhouette": "Small 2D sprite characters (retro SNES-style) stand in a detailed 3D world; they read through size contrast and a lit glow or effect around them, not through outlines.",
+  "motion": {
+    "timing": "Sprites keep few-frame retro cycles while effects (particles, bloom bursts, light flicker) run smoothly at full frame rate.",
+    "principles": [
+      "low-frame sprites in smooth world",
+      "effect bursts",
+      "particles"
+    ]
+  },
+  "texture": "Pixel-look textures on polygon surfaces (stone, grass, brick), softened by depth of field so foreground and background blur.",
+  "camera": "High angled diorama camera with tilt-shift depth of field: a thin sharp band where the hero stands, blurred near and far; the camera tracks and swings around the scene.",
+  "sound": "",
+  "acting": {
+    "enters": "Hero walks into the sharp band from a blurred edge (Dott's town remake: the tiny trainer walks between houses).",
+    "acts": "Combat beats: small sprite triggers a big lit burst of particles and bloom many times its size.",
+    "exits": "Leaves into blur or darkness rather than off a hard edge.",
+    "comes_back": null,
+    "depth": "Strong: characters are tiny in a deep diorama; blur in front and behind sells the miniature scale."
+  },
+  "techniques": [
+    "2D pixel sprites as billboards in a 3D scene",
+    "tilt-shift depth of field for a diorama look",
+    "point light so sprites cast real shadows",
+    "bloom and particles on every effect",
+    "warm light pools in cool, fogged environments",
+    "small sprite, big effect: impact larger than the character"
+  ],
+  "feel": "tiny crisp sprite + blurred near/far planes + bloom on every hit = toy diorama that feels expensive",
+  "for_fred": "For the 'small in the background' beat, put Fred far back in a sharp tilt-shift band with the foreground blurred, let him do his thing tiny, then bring him close. Give one key moment a bloom burst with a cast shadow, and keep the rest of the reel plain so it lands.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/HD-2D",
+    "https://en.wikipedia.org/wiki/Octopath_Traveler",
+    "data/study/pixel/work/hd-2d/clip1-7224265582667910442.jpg",
+    "data/study/pixel/work/hd-2d/clip2-7652832753850830102.jpg",
+    "data/study/pixel/work/hd-2d/clip3-7652901405652569357.jpg"
+  ]
+}

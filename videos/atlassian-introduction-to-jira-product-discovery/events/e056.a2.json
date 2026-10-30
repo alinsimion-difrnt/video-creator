@@ -1,0 +1,100 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "b40ce55d98ff719597b16e768ff855528fc62748c9a114a34055c130873bb4a4",
+    "created_at": "2026-10-05T06:38:36.284280Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e056",
+  "task": "a2-e056",
+  "elements": [
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Add to view tooltip (re-appears under each hovered toggle)",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["pop", "slide_down"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Add to view",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Assignee and Comments toggles (hover state on and off)",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["color_shift"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Created toggle hover state (cursor settles here)",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["color_shift"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Created row hover highlight",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Created",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Transient Comments description hover card",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["pop", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Comments The number of comments added to the idea",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "The cursor steps down the toggle column of the Fields panel (Assignee, Comments, competitive differentiator, Created); the 'Add to view' tooltip jumps to sit under each hovered toggle, a description card flashes for Comments, and the cursor settles on the Created toggle with its row highlighted.",
+    "why_premium": "The tooltip hopping row to row turns a plain list into a visible 'adding and removing fields' demonstration exactly as the narration says it, without any overlay graphics."
+  },
+  "build_hint": {
+    "gsap": "Cursor: tl.to('.cursor', {y: '+=36', duration: 0.06, ease: 'power1.out', repeat: 3, repeatDelay: 0.04}); at each step tl.set('.tooltip', {y: rowY + 32}).set(toggle, {opacity: 0.6}) and reset the previous toggle; flash the description card with set autoAlpha 1 then 0 after ~0.1s. All hard state changes, no eased tweens beyond the cursor.",
+    "remotion": "Compute hovered row = floor(interpolate(frame, keyframes, rowYs)); tooltip translateY = rowY + offset (step, no spring); toggle and row background switch on the hovered index. No spring."
+  },
+  "confidence": "medium",
+  "notes": "Fields count changed to 3 and Bucket moved into 'Fields in this view' before this burst (static across the filmstrip here), so not listed. b02 is the union region used for the transient Comments card, which is absent in the end frame."
+}

@@ -1,0 +1,30 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a2_annotate_event",
+  "annotator": "claude-code",
+  "skill": "annotate-event@3dad117bd85a",
+  "model": null,
+  "input_hash": "ec1ed13c9478832ca84e641753fab676169dd9bdbdd2086788fffc3b08f6e3f1",
+  "created_at": "2026-10-05T06:44:13.903860Z"
+ },
+ "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+ "event": "e013",
+ "task": "a2-e013",
+ "elements": [
+  {"box": "b07", "manual_box": null, "manual_reason": null, "label": "Selected voice name in picker pill", "role": "list_item", "role_other": null, "change_types": ["slide_up", "weight_shift", "color_shift"], "change_other": null, "is_text": true, "text": "SAANU", "text_unit": "whole", "estimates": {"duration_ms": 120, "easing_class": "ease_out"}},
+  {"box": "b08", "manual_box": null, "manual_reason": null, "label": "Voice list item above selection", "role": "list_item", "role_other": null, "change_types": ["slide_up", "fade"], "change_other": null, "is_text": true, "text": "JESSICA", "text_unit": "whole", "estimates": {"duration_ms": 120, "easing_class": "ease_out"}},
+  {"box": "b12", "manual_box": null, "manual_reason": null, "label": "Voice list item at top fade edge", "role": "list_item", "role_other": null, "change_types": ["slide_up", "fade"], "change_other": null, "is_text": true, "text": "MANAV", "text_unit": "whole", "estimates": {"duration_ms": 120, "easing_class": "ease_out"}},
+  {"box": "b09", "manual_box": null, "manual_reason": null, "label": "Voice list item below selection", "role": "list_item", "role_other": null, "change_types": ["slide_up", "fade"], "change_other": null, "is_text": true, "text": "SULLY", "text_unit": "whole", "estimates": {"duration_ms": 120, "easing_class": "ease_out"}},
+  {"box": "b11", "manual_box": null, "manual_reason": null, "label": "Voice list item lower", "role": "list_item", "role_other": null, "change_types": ["slide_up", "fade"], "change_other": null, "is_text": true, "text": "DOGA", "text_unit": "whole", "estimates": {"duration_ms": 120, "easing_class": "ease_out"}},
+  {"box": "b03", "manual_box": null, "manual_reason": null, "label": "Small voice orb inside picker pill", "role": "avatar", "role_other": null, "change_types": ["color_shift", "rotate"], "change_other": null, "is_text": false, "text": null, "text_unit": null, "estimates": {"duration_ms": 150, "easing_class": "ease_in_out"}},
+  {"box": "b02", "manual_box": null, "manual_reason": null, "label": "Large voice orb", "role": "avatar", "role_other": null, "change_types": ["color_shift", "morph", "rotate"], "change_other": null, "is_text": false, "text": null, "text_unit": null, "estimates": {"duration_ms": 150, "easing_class": "ease_in_out"}},
+  {"box": "b05", "manual_box": null, "manual_reason": null, "label": "Cursor", "role": "cursor", "role_other": null, "change_types": ["slide_left", "fade"], "change_other": null, "is_text": false, "text": null, "text_unit": null, "estimates": {"duration_ms": 300, "easing_class": "ease_out"}}
+ ],
+ "sfx_review": [],
+ "pattern": {"id": "masked_scroll", "proposed_name": null, "description": "A cursor enters and the voice-name list scrolls rapidly upward through a fixed selection pill (slot-machine style), each name snapping bold as it lands in the pill while the small and large orbs recolour to that voice's gradient; the list fades out at the top and bottom edges.", "why_premium": "The fixed pill plus edge-faded list reads as a real picker, and tying each name to a distinct orb colour makes the breadth of the voice library felt in a fraction of a second; the light tick SFX per step sells the detents."},
+ "build_hint": {"gsap": "Per step: tl.to('.voice-list', {y: '-=row', duration: 0.1, ease: 'power2.out'}) repeated with a 0.03 s gap; on each step tl.to(prevName, {fontWeight: 400, color: '#bbb', duration: 0.08}, '<').to(nextName, {fontWeight: 700, color: '#000', duration: 0.08}, '<'); orbs: tl.to('.orb', {'--hue': next, rotation: '+=40', duration: 0.12, ease: 'sine.inOut'}, '<'); cursor: gsap.fromTo('.cursor', {x: 120, autoAlpha: 0}, {x: 0, autoAlpha: 1, duration: 0.3, ease: 'power3.out'}). List container uses a vertical mask-image linear-gradient.", "remotion": "Compute step = Math.floor(frame / 3); list translateY = interpolate within each step using Easing.out(Easing.quad) between -step*row and -(step+1)*row; selected index = step; orb gradient interpolateColors between voice palettes over the step; cursor via spring({frame, fps, config: {damping: 200}}) on translateX; wrap the list in a div with maskImage linear-gradient."},
+ "confidence": "medium",
+ "notes": "Could also be classed input_text_cycle (a selector cycling through alternatives); masked_scroll chosen because the motion is a vertical list scroll behind a fixed mask. The spectrogram shows regular short tick-like transients per step but there are no SFX candidates to review. b04 and b10 are redundant/empty diff boxes and were not used."
+}

@@ -1,0 +1,178 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "ce8965e91d694cf8d20648f8b2ad40c30ad3142a569e0fbdff124ab982db0163",
+    "created_at": "2026-10-05T06:29:26.248016Z"
+  },
+  "video": "moz-how-to-find-keyword-opportunties-with-ke",
+  "task": "a1-p4",
+  "shots": [
+    {
+      "shot": "s007",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The free Keyword Explorer results for 'pet groomers' (Volume / Organic CTR / Difficulty cards, then the Top Suggestions table beside a blurred, padlocked panel) inside the rounded inset card on the purple-to-blue gradient",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Preview the power of Keyword Explorer",
+        "Enter a keyword and see top suggestions, monthly volume, organic CTR, and difficulty.",
+        "pet groomers",
+        "Not working? Try resetting it!",
+        "Find keywords",
+        "*Limit 3 searches/day",
+        "Showing results for",
+        "pet groomers",
+        "Volume",
+        "6.3k",
+        "The number of queries per month for a given keyword.",
+        "Organic CTR",
+        "41%",
+        "An estimate of the percentage of clicks available to traditional, organic links on the SERP.",
+        "Difficulty",
+        "50",
+        "Moderate",
+        "A score that shows how hard it would be to rank in the top 10 spots for a keyword.",
+        "Keyword Suggestions",
+        "Top Suggestions",
+        "Keyword",
+        "Monthly Volume",
+        "pet groomer",
+        "4903",
+        "groomers",
+        "8229",
+        "dog groomer near me",
+        "50787",
+        "See additional keyword suggestions, including questions related to your keyword, with a Moz Pro Free Trial"
+      ],
+      "text_word_count": 121,
+      "typography": "All native web-page UI in a clean humanist sans (low-confidence guess: Lato): bold section headings ('Keyword Suggestions', 'Preview the power of Keyword Explorer'), the query 'pet groomers' in a larger semibold accent-coloured line under a small 'Showing results for', card labels semibold sentence case, metric values regular weight, helper captions tiny italic, a pill 'Moderate' badge and a dark pill 'Find keywords' button, normal tracking. No added captions. The lock-panel message is partly cut off by the card edge, and the lower table rows and blurred panel content are too small or blurred to read.",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "Hard cut at 110.93 s to the same landing page lower down: at 111.0 s the 'Preview the power of Keyword Explorer' form with 'pet groomers' entered sits above the top of the results. From about 111.0 s to 113.0 s the page scrolls up smoothly inside the inset card, past 'Showing results for pet groomers' and the Volume (6.3k), Organic CTR (41%) and Difficulty (50, Moderate) cards, to the Keyword Suggestions area: a Top Suggestions table on the left and a blurred panel with a padlock and a Moz Pro Free Trial upsell on the right. The scroll settles around 113.5 s and holds while the VO says 'sign up for a free trial to access premium features' (w337-w346). At about 114.5 s a pale teal panel and a dark navy band enter from the right edge, starting the wipe into s008.",
+      "build_rebuild": "Inside the same rounded-corner card (~85% frame width) on the purple-to-light-blue gradient, translateY a tall full-page screenshot of the results page upward by roughly one viewport over ~2 s with ease-in-out, hold it ~1.5 s, then slide full-height teal and navy rectangles in from the right edge to begin the panel wipe.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s008",
+      "shot_type": "other",
+      "shot_type_other": "branded end card (flat illustrated layout with wordmark, subscribe message and a YouTube subscribe button graphic)",
+      "composition": "split",
+      "composition_other": null,
+      "focal_element": "Red YouTube 'SUBSCRIBE' button with a black hand-cursor icon and click tick marks, under the two-line 'Subscribe for more SEO tips!' message and the MOZ wordmark on the left blue blob; white empty space at right",
+      "transition_in": "other",
+      "transition_other": "end of a layered colour-panel wipe: teal and navy panels enter from the right at the end of s007, then a solid bright-blue panel covers the left ~60% of the frame (115.0 s) and resolves into the card's blue blob",
+      "on_screen_text": [
+        "MOZ",
+        "Subscribe for more SEO tips!",
+        "SUBSCRIBE"
+      ],
+      "text_word_count": 7,
+      "typography": "Message in a regular-weight slab serif, sentence case with an exclamation, two left-aligned lines, normal tracking (low-confidence guess: Roboto Slab, matching the s001 and s005 cards); 'SUBSCRIBE' in a small all-caps medium-weight sans in white on the red button; MOZ is the heavy geometric logotype.",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "At 115.0 s a solid bright-blue panel covers the left of the frame against white, with the yellow arc already showing at its edge. By 115.5 s the end card is fully revealed: the blue blob with yellow arc, the MOZ wordmark, 'Subscribe for more SEO tips!', a red YouTube subscribe button with a hand cursor and burst ticks, and the same dark circle, ring, sparkle and dot ornaments at lower left as s001 and s005. The card then looks static at 2 fps through 124.95 s, with no visible button press or cursor movement. The VO asks viewers to subscribe for weekly tips (w347-w370) and ends at 121.7 s, leaving about 3 s of card with no VO. Anchors list SFX candidates x002-x010 in this shot, mostly labelled unsure, and I see no visual events that line up with them.",
+      "build_rebuild": "Reuse the s005 end-card SVG layout (blue blob, yellow arc, wordmark, ornaments), swapping in a two-line slab-serif 'Subscribe for more SEO tips!' and a red rounded-rect subscribe button with a play icon, hand-cursor glyph and tick-mark burst, revealed by a full-height brand-blue panel sliding in from the right, then held static for about 9.5 s.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001"], "words": [0, 38]},
+      {"beat": "demo", "shots": ["s002", "s003"], "words": [39, 276]},
+      {"beat": "outcome", "shots": ["s003", "s004", "s005"], "words": [277, 305]},
+      {"beat": "cta", "shots": ["s005", "s006", "s007", "s008"], "words": [306, 370]}
+    ],
+    "hook": {
+      "text": "Today, we're diving into one of your most powerful tools for keyword research, the keyword overview section in Moz's Keyword Explorer. In just a few minutes, I'll show you how to uncover golden insights about any keyword you're targeting.",
+      "technique": "other",
+      "technique_other": "agenda/benefit promise read over a static branded title card ('Find Keywords Fast!') with an animated 'Voiced by AI' waveform badge",
+      "shots": ["s001"],
+      "words": [0, 38]
+    },
+    "cta": {
+      "text": "Learn more on the Moz Help Hub at moz.com/help; get started with the freemium Keyword Explorer or sign up for a free trial; subscribe for more SEO tips.",
+      "shots": ["s005", "s006", "s007", "s008"]
+    },
+    "tone": "Friendly, upbeat how-to tutorial with an AI-generated voice. Second-person and instructional, with casual 'gold' metaphors ('golden insights', 'two gold mines', 'pure gold'). The flat-illustrated brand cards bookend a plain product walkthrough.",
+    "signature_moments": [
+      {
+        "shots": ["s003"],
+        "description": "Throughout the long walkthrough, the camera zooms in on each UI element as the VO names it. An orange outline draws on around the target, and a small illustrated sticker pops beside it (calendar for Monthly Volume, a character for Difficulty, a gem for the 'two gold mines').",
+        "why_premium": "Tying camera moves and highlights to the spoken words turns a raw screen capture into a guided demo. The viewer always knows where to look, and the stickers add brand personality without hiding the real UI."
+      },
+      {
+        "shots": ["s002", "s004", "s008"],
+        "description": "Every section change uses the same layered wipe of staggered full-height brand-colour panels: title to demo, demo to end card, and the free-tool page to the subscribe card.",
+        "why_premium": "One repeated, on-brand transition makes the separate pieces feel like a designed system instead of spliced clips. It is cheap to build but reads as deliberate."
+      },
+      {
+        "shots": ["s001"],
+        "description": "On the opening title card, a purple audio-waveform badge with a robot mascot animates with the voice-over and openly labels the narration 'Voiced by AI'.",
+        "why_premium": "It gives a static card live motion that follows the audio, and it is open about the AI voice instead of hiding it."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 2,
+        "evidence": "The opening is a generic 'Today we're diving into...' agenda line over a static title card that holds for 10.8 s. There is no stat, question, pain point or early product shot, and the UI first appears only at about 11.8 s.",
+        "refs": ["s001", "w0", "w38"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "The walkthrough is linear and step by step: navigate, type a keyword, Analyze, then each metric, suggestions, SERP analysis and a pro tip. Zoom-ins and orange highlight boxes land on each element as the VO names it, and the example query stays the same throughout.",
+        "refs": ["s003", "w43", "w84", "w103", "w198", "w244"]
+      },
+      "ui_showcase": {
+        "score": 3,
+        "evidence": "It uses the real product UI in a framed inset card, with eased camera zooms, highlight boxes and a cursor-driven expand of the AI Overview preview. However, the UI is shown as a raw capture with no recreated or simplified panels, the free-tool segment is just a static hold and a plain scroll, and dense table text is unreadable at frame size.",
+        "refs": ["s003", "s006", "s007"]
+      },
+      "motion_polish": {
+        "score": 2,
+        "evidence": "The panel wipes are clean and consistent, but most of the video is either static cards (s001, s005 and s008 hold for 10.8 s, 10.4 s and about 9.5 s) or a continuous screen capture with basic zooms and a plain scroll. There is no kinetic type, layered element animation or spring motion.",
+        "refs": ["s001", "s002", "s003", "s005", "s007", "s008"]
+      },
+      "sound_design": {
+        "score": 2,
+        "evidence": "Judged from anchors plus visuals. A music bed at about 117 BPM is detected, and integrated loudness is -17.89 LUFS. All 10 SFX candidates (x001-x010) fall in the last 11 s (114.3-121.6 s, the s007/s008 outro), and most are labelled unsure or music, so the demo clicks, zooms and highlight pops appear to have no sound effects synced to them.",
+        "refs": ["s003", "s008"]
+      },
+      "vo_script_quality": {
+        "score": 3,
+        "evidence": "The AI-voiced script is clear, concise and well paced to the actions, with good second-person instructions and a pro tip. It leans on clichés ('golden insights', 'gold mines', 'pure gold'), and the transcript repeats 'strategy.' (w82-w83), which could be a voice artifact.",
+        "refs": ["w31", "w158", "w272", "w82", "w83", "s001"]
+      },
+      "brand_consistency": {
+        "score": 4,
+        "evidence": "The opening and both end cards share the same flat style: blue blob, yellow arc, MOZ wordmark, slab-serif type and ornaments. Every transition is a brand-blue panel wipe, and every UI shot sits in the same rounded card on the purple-to-blue gradient.",
+        "refs": ["s001", "s002", "s004", "s005", "s006", "s008"]
+      },
+      "works_muted": {
+        "score": 2,
+        "evidence": "There are no captions. Muted, a viewer sees the title, the highlighted UI elements and the end-card text, but every explanation of what a metric means and why it matters is in the VO only, and the CTA details (free tool, free trial) are spoken.",
+        "refs": ["s003", "s006", "s007"]
+      },
+      "overall": {
+        "score": 3,
+        "evidence": "A competent, well-branded product tutorial: clear guided walkthrough, consistent panel-wipe system and cards. Held back by a weak static hook, long static holds, minimal motion craft, no SFX in the demo, and full dependence on the voice-over.",
+        "refs": ["s001", "s003", "s005", "s008"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 3,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "Card text is short and could be swapped (title, Help Hub line and URL, subscribe line), and because the narration is AI-generated, re-voicing is cheap. However, the walkthrough is an English product capture whose example query, labels and tables are baked into the recording, and the meaning depends almost entirely on the VO, with no captions."
+    }
+  }
+}

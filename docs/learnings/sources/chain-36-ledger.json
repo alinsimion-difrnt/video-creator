@@ -1,0 +1,35 @@
+{
+  "fps": 30,
+  "current": "LEFT",
+  "hero": "the AI answer card (ChatGPT, 'Is Patty Lane worth a visit?')",
+  "seams": [
+    {
+      "id": "bank→restaurant (x-ray match cut, scan line sweeps LEFT)",
+      "cut": 7.49,
+      "type": "match-cut",
+      "technique": "same card, same rect; a vertical scan line wipes right-to-left (the current) from the bank answer into the restaurant answer",
+      "carrier": { "out": "#xcard", "in": "#xcard" }
+    },
+    {
+      "id": "payoff→answer card ('And fourth')",
+      "cut": 10.40,
+      "technique": "cut-the-curve LEFT: payoff frame power4.in 300px + linear-ish fade dying at the cut; card enters mid-flight power4.out 300px, ignites at 0.35 opacity; 8px wrapper blur both sides",
+      "exit": { "selector": "#chart", "axis": "x", "dir": -1 },
+      "entry": { "selector": "#acard", "axis": "x", "dir": -1 }
+    },
+    {
+      "id": "x-ray world → source world (re-host of the same card)",
+      "cut": 13.95,
+      "type": "morph",
+      "technique": "camera at rest after the Z-forward push; world A's card is swapped for world B's pixel-identical copy (same rect, same state)",
+      "carrier": { "out": "#acard", "in": "#cardB" }
+    },
+    {
+      "id": "card → source cloud (scale-burst: leaving a world)",
+      "cut": 14.64,
+      "technique": "Z forward all the way: after the stillness the push resumes (power3.in lunge) and the card shatters past the lens; shards keep growing (z+), the pills release the cloud",
+      "exit": { "selector": "#cardB", "axis": "z", "dir": 1 },
+      "entry": { "selector": "#shard-lead", "axis": "z", "dir": 1, "scanRoot": "#cwrap" }
+    }
+  ]
+}

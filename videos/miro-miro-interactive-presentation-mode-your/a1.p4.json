@@ -1,0 +1,209 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "4883b8afe7e646a568d1392411944283616a90866c596d7aa0d4bafaf1eb9450",
+    "created_at": "2026-10-05T06:28:44.358201Z"
+  },
+  "video": "miro-miro-interactive-presentation-mode-your",
+  "task": "a1-p4",
+  "shots": [
+    {
+      "shot": "s016",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "split",
+      "composition_other": null,
+      "focal_element": "The coral 'Risks' frame beside a 2x2 grid of pink sticky notes, with Ashley's, Sophia's and Deepak's named cursors and the viewer reaction toolbar",
+      "transition_in": "push",
+      "transition_other": null,
+      "on_screen_text": [
+        "The data",
+        "Risks",
+        "UXR resources",
+        "Mobile team backlog",
+        "Cross team dependencies",
+        "New engineers ramping up",
+        "Ashley",
+        "Sophia",
+        "Deepak",
+        "Raise",
+        "Leave",
+        "100%"
+      ],
+      "text_word_count": 21,
+      "typography": "Frame title in large bold white rounded geometric sans, title case single word; sticky-note labels in regular dark-grey sans, sentence case, centred; 'The data' in bold blue sans; cursor tags small medium-weight sans on yellow/blue/black pills; viewer toolbar labels tiny regular UI sans. Font guess (low confidence): a Miro-style geometric sans.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "The viewer pans forward again from 'The data' chart frame onto the 'Risks' frame, the view eases in slightly so Risks and its four pink stickies fill the screen, then pulls back and keeps panning right so the 'Alignment and next steps' frame enters at the edge, i.e. returning to the presenter's current view. VO w145-w152 ('the current view. With the new interactive presentation').",
+      "build_rebuild": "Translate the board canvas left by about one frame width with ease-in-out, add a subtle 1.0-to-1.15 scale push while the Risks frame is centred, then ease the scale back and continue the pan so the next frame slides in from the right, keeping the bottom viewer toolbar and named cursor pills fixed on top.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s017",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "The 'Questions, answers, and feedback' frame filling up with stickers, floating reactions, confetti, a timer widget and comment sticky notes, ending on the centred line 'Miro is a space for all people'",
+      "transition_in": "push",
+      "transition_other": null,
+      "on_screen_text": [
+        "Questions, answers, and feedback",
+        "MISSING FEEDBACK",
+        "GENIUS",
+        "THANK YOU",
+        "Meeting next week to track progress?",
+        "Can't wait to see our user's reactions!",
+        "05:00",
+        "+1m",
+        "+5m",
+        "Raise",
+        "Leave",
+        "Ashley",
+        "Sophia",
+        "Deepak",
+        "Lisa",
+        "Raphael",
+        "Miro is a space for all people",
+        "miro",
+        "Switch presenter"
+      ],
+      "text_word_count": 42,
+      "typography": "Frame headline in bold blue rounded geometric sans, sentence case; sticker lettering is illustrated hand-drawn display type in all caps ('MISSING FEEDBACK', 'GENIUS', 'THANK YOU'); comment sticky notes in small regular dark sans; timer digits in medium-weight tabular sans; closing line 'Miro is a space for all people' in bold near-black geometric sans, sentence case, normal tracking, centred, with a hand-drawn blue circle around 'all'. Font guess (low confidence): Miro's brand geometric sans.",
+      "depth_cues": [
+        "shadow",
+        "blur"
+      ],
+      "what_happens": "A pan from the green 'thanks' frame lands on the Q&A frame (with 'MISSING FEEDBACK' and 'GENIUS' stickers) and holds while VO says no one has to passively watch (w153-w161). On 'post stickers and reactions' (w173-w177) star, heart and thumbs-up stickers pop in at the top-left, then thumbs-up, heart and fire reactions with avatars float up from the toolbar, followed by a confetti burst and new 'THANK YOU' and mug stickers (w178-w188). A timer widget appears top-right at 05:00 and counts down (w189-w195), and two comment sticky notes are added (w197-w200). The board holds through the closing VO line naming Miro's new presentation mode (w201-w218), then fades to white as 'Miro is a space for all people' fades in large and centred, scales down into a recreated board UI collage (watch render, Switch presenter button, reaction bar, 05:02 timer, fire/heart sticky) with a hand-drawn circle around 'all', and finally fades to white.",
+      "build_rebuild": "Hold a full-frame board view, spawn stickers with a pop (scale 0 to 1.1 to 1 spring) and float emoji+avatar reactions upward with fade-out, fire a short confetti particle burst, slide a countdown timer card into the top-right, then crossfade to a white canvas with a centred bold headline that scales from ~1.3 to 1.0 while recreated UI props fade in around it and a stroke-dashoffset circle draws around one word before a final fade to white.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {
+        "beat": "hook",
+        "shots": ["s001", "s002"],
+        "words": null
+      },
+      {
+        "beat": "demo",
+        "shots": ["s003", "s004", "s005", "s006", "s007", "s008"],
+        "words": [0, 57]
+      },
+      {
+        "beat": "demo",
+        "shots": ["s009", "s010"],
+        "words": [58, 85]
+      },
+      {
+        "beat": "demo",
+        "shots": ["s011", "s012"],
+        "words": [86, 102]
+      },
+      {
+        "beat": "demo",
+        "shots": ["s013", "s014", "s015", "s016"],
+        "words": [103, 147]
+      },
+      {
+        "beat": "outcome",
+        "shots": ["s016", "s017"],
+        "words": [148, 200]
+      },
+      {
+        "beat": "cta",
+        "shots": ["s017"],
+        "words": [201, 218]
+      }
+    ],
+    "hook": {
+      "text": "Interactive presentations",
+      "technique": "demo_first",
+      "technique_other": null,
+      "shots": ["s001", "s002"],
+      "words": null
+    },
+    "cta": {
+      "text": null,
+      "shots": ["s017"]
+    },
+    "tone": "Friendly, upbeat, product-native walkthrough: a calm persona-led VO (Ashley the PM) over bright, playful board content with illustrated stickers and an upbeat ~123 BPM music bed; collaborative and light rather than salesy.",
+    "signature_moments": [
+      {
+        "shots": ["s001", "s002"],
+        "description": "Opening collage: a recreated Present menu pulls back into a drifting field of floating UI fragments (vote stickies with confetti, reaction bar, emoji, 3D watch) around a static bold 'Interactive presentations' title.",
+        "why_premium": "Deconstructing the product into floating, shadowed UI props with layered parallax-like drift reads as bespoke motion design rather than a screen capture, and previews every feature before the demo."
+      },
+      {
+        "shots": ["s008", "s012"],
+        "description": "Key controls (frame list toolbar, 'Choose a new presenter' popover) are isolated on an empty canvas, one with a perspective tilt, while the scripted cursor operates them.",
+        "why_premium": "Removing the board clutter focuses attention on a single interaction and gives the screen recording a designed, editorial rhythm."
+      },
+      {
+        "shots": ["s017"],
+        "description": "The Q&A frame fills with popping stickers, rising reactions with avatars and a confetti burst on 'post stickers and reactions', then resolves to the 'Miro is a space for all people' line with a hand-drawn circle around 'all'.",
+        "why_premium": "The payoff visually performs the benefit (an engaged audience) instead of stating it, and the hand-drawn annotation ties the brand line back to the whiteboard medium."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 3,
+        "evidence": "Visually attractive feature-collage title in the first 3.7 s, but there is no stated problem or claim and narration only begins at w0 (~7.4 s), so the hook relies on aesthetics alone.",
+        "refs": ["s001", "s002", "w0"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "One persona and one meeting carry the story in a logical order (start, navigate, facilitation tools, hand off, viewer join, catch up, react), with each VO clause matched by an on-screen action; the long static hold in s017 slightly blunts the ending.",
+        "refs": ["s003", "s009", "s012", "s013", "s017", "w58", "w103"]
+      },
+      "ui_showcase": {
+        "score": 4,
+        "evidence": "Real product UI throughout with scripted named cursors, camera push-ins to the toolbar and popovers, and isolated UI panels for the key interactions; some moments are small and busy at full-board scale (join pop-up text unreadable in s013).",
+        "refs": ["s008", "s009", "s012", "s013", "s015"]
+      },
+      "motion_polish": {
+        "score": 4,
+        "evidence": "Smooth eased board pans and pushes with motion blur, perspective-tilted isolated cards, crossfades between full board and isolated UI, sticker pops and a confetti burst; however s017 holds nearly static for ~10 s (about 1:16-1:27) before the end card.",
+        "refs": ["s001", "s007", "s008", "s009", "s017"]
+      },
+      "sound_design": {
+        "score": 3,
+        "evidence": "Judged from anchor audio facts plus visuals: a continuous music bed at 123.05 BPM, integrated loudness -18.83 LUFS, and most of the 166 SFX candidates classified as music; distinct SFX are sparse (chime candidates x001-x010 in the opening, one click x143, swoosh_reverse x161 near the close), so UI actions like sticker pops are not clearly sonified.",
+        "refs": ["s001", "s002", "s017"]
+      },
+      "vo_script_quality": {
+        "score": 3,
+        "evidence": "Clear, persona-driven narration that maps cleanly to actions ('clicks on the present button', 'hand off presenting to Sophia'), but it is a feature list with few benefits until w154-w161 and closes on a soft statement rather than an ask.",
+        "refs": ["w0", "w93", "w154", "w201"]
+      },
+      "brand_consistency": {
+        "score": 4,
+        "evidence": "Consistent white canvas, Miro product typography, coral/teal/blue slide palette and illustrated stickers throughout; the end card returns to the Miro wordmark board UI and brand line.",
+        "refs": ["s002", "s011", "s017"]
+      },
+      "works_muted": {
+        "score": 2,
+        "evidence": "Beyond the opening title and closing line there are no captions or explanatory supertitles; actions are visible, but features such as limited tools, the presenter hand-off and the viewer join pop-up are only explained by VO.",
+        "refs": ["s002", "s009", "s012", "s013", "s017"]
+      },
+      "overall": {
+        "score": 3,
+        "evidence": "A polished, competent product-native feature explainer with a strong designed opening and some isolated-UI moments, held back by a hook without a problem statement, sparse sound design, VO dependence and a long static hold before a soft, CTA-less ending.",
+        "refs": ["s001", "s008", "s012", "s017"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 2,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "Board frames, sticky notes, popovers, illustrated stickers ('MISSING FEEDBACK', 'GENIUS', 'THANK YOU') and the title/end lines are baked into recorded or recreated UI; localising requires re-recording the board in each language plus new VO, and the story relies on narration to explain features."
+    }
+  }
+}

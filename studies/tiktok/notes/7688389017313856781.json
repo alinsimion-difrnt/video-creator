@@ -1,0 +1,39 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "dbfe79d5832c97771a74d2427cb16bcb4b150ce13079a31d4ce790a1d21a72aa",
+                 "created_at": "2026-10-13T12:00:00+00:00"},
+  "id": "7688389017313856781",
+  "format": "talking_head",
+  "hook": {"type": "result_first",
+           "line": "On track to make over $10,000 in two months of part-time UGC with zero experience.",
+           "visual": "Creator leans into the camera on a bed with a red mug; a typewriter title builds 'How to build a $10,000 UGC portfolio' over her, then payment-notification cards pop in at 2.6 s."},
+  "beats": [
+    {"t": 0.0, "what": "Mic held up, title types itself in word by word with '(with ZERO experience)' underneath"},
+    {"t": 2.62, "what": "Four green '+$1,500 / +$6,000' payout cards pop in around her as proof of the claim"},
+    {"t": 8.83, "what": "Series title 'the $5k experiment' in large serif plus bold yellow type"},
+    {"t": 15.53, "what": "Cut to a closer frame; Step 1 shown as a screenshot of her own skimmable bullet-point bio"},
+    {"t": 26.49, "what": "'STEP 2: 3-5 sample videos' handwritten title at the top"},
+    {"t": 35.32, "what": "Arrow and 'MY SAMPLE AD' label point to a phone mockup playing her sample video"},
+    {"t": 44.15, "what": "Phone mockup of a portfolio tile with a hand-drawn white circle around the format label"},
+    {"t": 61.8, "what": "Three handwritten bullets list what brands want: lighting, audio, personality"},
+    {"t": 70.63, "what": "'STEP 3: Straight shooter website' title"},
+    {"t": 97.12, "what": "Handwritten 'follow for more content like this :)' as she says follow along"}
+  ],
+  "graphics": {"captions": "word_by_word", "caption_position": "mixed",
+               "devices": ["title_text", "screenshot", "product_ui", "arrow_or_circle", "chart_or_number", "music_bed", "jump_cut"],
+               "density": "moderate", "per_minute_estimate": 7},
+  "characters": [],
+  "cta": {"kind": "follow", "t": 97.12},
+  "why_it_works": [
+    "Money result and payout cards shown in the first 3 s, so the viewer stays to learn how it was done",
+    "'with ZERO experience' lowers the bar, so beginners feel the steps apply to them",
+    "Numbered step titles at the top act as chapter markers, so viewers know progress through a 97 s video",
+    "Her own bio and sample-ad phone mockups prove each step instead of only describing it"
+  ],
+  "weaknesses": [
+    "Long single framing (longest shot 46.6 s, 3.71 cuts/min) leans entirely on her delivery",
+    "Step 4 has no title card, so the numbered structure breaks near the end",
+    "Most text sits outside the safe area (0.807 share), risking overlap with TikTok UI"
+  ],
+  "for_robert": "Pop small proof cards (real numbers or results) around his head in the first 3 s, and give each step a top title card; Fred could carry or deliver the step card."
+}

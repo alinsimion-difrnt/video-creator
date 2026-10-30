@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "768d1efaf224a04585f30a27e97ee73caca228924f7e1fc5acec985162cb846f",
+    "created_at": "2026-10-05T06:48:03.024140Z"
+  },
+  "video": "notion-introducing-the-new-notion-ai",
+  "event": "e028",
+  "task": "a2-e028",
+  "elements": [
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "CTA line 1, first half",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["slide_up", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Try Notion",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 350, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "CTA line 1, second half",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["slide_up", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "AI for free",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 350, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "CTA line 2 (URL)",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["slide_up", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "at Notion.com",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 350, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "kinetic_word_reveal",
+    "proposed_name": null,
+    "description": "End-card CTA: the two-line headline 'Try Notion AI for free / at Notion.com' rises into place on a plain off-white background, line by line, with the second line trailing the first by a couple of frames.",
+    "why_premium": "A line-staggered rise with a clean, overshoot-free settle gives the closing call to action a confident rhythm, and the bare background keeps all attention on the URL."
+  },
+  "build_hint": {
+    "gsap": "tl.fromTo('.cta-line', {y: 80, autoAlpha: 0}, {y: 0, autoAlpha: 1, duration: 0.35, ease: 'power3.out', stagger: 0.07})",
+    "remotion": "For each line i: const p = interpolate(frame - i * 2, [0, 10], [0, 1], {easing: Easing.out(Easing.cubic), extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}); translateY((1 - p) * 80px), opacity p. A spring with damping 200 works as a no-overshoot alternative."
+  },
+  "confidence": "medium",
+  "notes": "Line 1 has no single candidate box; it is split across OCR boxes b03 ('Try Notion') and b05 (OCR read 'Al for free', visibly 'AI for free'), which move together. Second line trails by ~2-3 frames (seen at f1201-f1204). Same treatment as e027 title card. No SFX candidates."
+}

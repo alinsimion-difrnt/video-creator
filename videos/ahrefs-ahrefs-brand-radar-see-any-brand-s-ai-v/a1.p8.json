@@ -1,0 +1,141 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "ce67bac929e8c22c20a76a809551f6fe0e1aa10613a9e98ae0bcbced8b23e0cd",
+    "created_at": "2026-10-05T06:23:20.648258Z"
+  },
+  "video": "ahrefs-ahrefs-brand-radar-see-any-brand-s-ai-v",
+  "task": "a1-p8",
+  "shots": [
+    {
+      "shot": "s032",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Three-act closer on the blue-to-peach gradient dome: a 3x2 wall of Ahrefs research-article cards, then the centred two-line tagline 'Stay discoverable / in search, AI, and beyond.', then the 'ahrefs' wordmark over 'Brand Radar' lockup",
+      "transition_in": "blur",
+      "transition_other": null,
+      "on_screen_text": [
+        "AI Overviews Reduce Clicks by 34.5%",
+        "67% of ChatGPT's Top 1,000 Citations Are Off-Limits to Marketers (+ More Findings)",
+        "Websites Using AI Content Grow 5% Faster [+ New Research Report]",
+        "New Study: AI Assistants Prefer to Cite \"Fresher\" Content (17 Million Citations Analyzed)",
+        "96.98% of Clicks Happen in the Top 10 Search Results",
+        "86% of Top Mentioned Sources Are Not Shared Across ChatGPT, Perplexity, and AI Overviews",
+        "Stay discoverable in search, AI, and beyond.",
+        "ahrefs",
+        "Brand Radar"
+      ],
+      "text_word_count": 77,
+      "typography": "Article cards: bold white sentence/title-case headlines on royal-blue blog-thumbnail cards with tiny nav, author and date lines (too small to read at this resolution). Tagline: clean grotesque/geometric sans, regular weight, sentence case, normal tracking, white, two centred lines; spoken keywords briefly tint peach. End card: the 'ahrefs' wordmark (orange 'a', white rest, bold) over 'Brand Radar' in a regular-weight sentence-case sans. Font guess (low confidence): Ahrefs' brand grotesque.",
+      "depth_cues": ["blur", "glow", "shadow"],
+      "what_happens": "The s031 stat table blurs and lifts away (first frame, 2:35.0) as six Ahrefs research-study cards resolve into a 3x2 grid and hold while the VO says 'and the most comprehensive research studies in the industry' (w410-w418); the cards dim and the tagline blurs in over the gradient by 2:39.5 on 'Your customers search everywhere. Make sure your brand stays discoverable in search, AI, and beyond.' (w419-w433), with 'search' (w430, ~2:43.5) and 'beyond' (w433, ~2:45.0) briefly tinted peach as they are spoken (the 'AI' tint, if any, falls between sampled frames). Around 2:45.5-2:46.5 the tagline crossfades out and the ahrefs / Brand Radar lockup fades in and holds to the end (2:51.7) under the closing line 'Turn AI into your best sales channel.' (w434-w440), which is voice-only.",
+      "build_rebuild": "On the brand radial gradient, blur-in a 3x2 grid of article thumbnail cards (filter blur 12px to 0, opacity 0 to 1, ~0.4 s, slight stagger), fade them out after ~3 s, blur-in a two-line centred tagline and tween each keyword's colour to peach and back on its VO word index, then crossfade to a centred wordmark-plus-product-name lockup held for ~5 s.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001"], "words": [0, 14]},
+      {"beat": "problem", "shots": ["s002"], "words": [15, 36]},
+      {"beat": "mechanism", "shots": ["s002", "s003"], "words": [37, 67]},
+      {"beat": "demo", "shots": ["s004", "s005", "s006", "s007", "s008", "s009", "s010", "s011", "s012", "s013"], "words": [68, 184]},
+      {"beat": "outcome", "shots": ["s014"], "words": [185, 191]},
+      {"beat": "proof", "shots": ["s015"], "words": [192, 225]},
+      {"beat": "mechanism", "shots": ["s015"], "words": [226, 238]},
+      {"beat": "demo", "shots": ["s016", "s017", "s018", "s019", "s020", "s021", "s022", "s023", "s024", "s025"], "words": [239, 367]},
+      {"beat": "agitate", "shots": ["s026"], "words": [368, 382]},
+      {"beat": "proof", "shots": ["s027", "s028", "s029", "s030", "s031", "s032"], "words": [383, 418]},
+      {"beat": "outcome", "shots": ["s032"], "words": [419, 433]},
+      {"beat": "cta", "shots": ["s032"], "words": [434, 440]}
+    ],
+    "hook": {
+      "text": "If you're not showing up in AI answers, you're invisible to millions of potential customers.",
+      "technique": "pain",
+      "technique_other": null,
+      "shots": ["s001"],
+      "words": [0, 14]
+    },
+    "cta": {
+      "text": "Turn AI into your best sales channel. (VO only, over the ahrefs / Brand Radar end-card lockup; no URL, button or on-screen offer)",
+      "shots": ["s032"]
+    },
+    "tone": "Confident, upbeat product-launch narration: brisk and benefit-led with conversational asides ('But wait,', 'Oh, and Reddit?'), heritage- and data-proud in the last third; visually premium and calm, built on one recurring dark-blue-to-peach gradient world that alternates with tilted, highlighted real product UI.",
+    "signature_moments": [
+      {
+        "shots": ["s002", "s003"],
+        "description": "A 3D wireframe terrain gains platform logo orbs as each channel is named, then the Ahrefs mark appears with a radar ring and the orbs are gathered into orbit around it, resolving into a sweeping-radar emblem on the product-name line.",
+        "why_premium": "Turns the product name into a bespoke visual metaphor (a radar scanning every platform) instead of a logo slate, giving the launch a cinematic, brand-owned centrepiece."
+      },
+      {
+        "shots": ["s027", "s028", "s029", "s030"],
+        "description": "A horizontal carousel of archival Ahrefs homepages from 2012 onward steps year by year with motion blur and a synced year ticker, then accelerates through the middle years and lands on the current homepage.",
+        "why_premium": "Converts a credibility claim ('pioneered the SEO industry since 2012') into evidence in about 9 s, with a speed ramp that feels edited rather than templated."
+      },
+      {
+        "shots": ["s004", "s006", "s018", "s024", "s025"],
+        "description": "Real product screens on a gently tilted, drifting 3D plane, with yellow highlight washes and orange-to-yellow gradient outlines landing on the exact cell, card or column as the VO names it.",
+        "why_premium": "Word-level sync between narration and UI callouts makes a dense dashboard legible and keeps genuine UI feeling designed rather than screen-recorded."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 4,
+        "evidence": "Opens straight on a pain statement (w0-w14) over a typed 'Best running shoes' query with AI-answer brand chips appearing, which shows the problem in under 5.5 s; strong and on-category but a familiar framing rather than a surprising one.",
+        "refs": ["s001", "w0", "w14"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "Each feature is paired with a matching UI view and a VO-synced highlight (AI responses, cited pages, competitor gaps, topics, search demand, web/YouTube/TikTok/Reddit visibility), and kinetic-type cards break the sections. Docked for density (many rapid page swaps in s005-s009) and a number mismatch: VO says 'nearly 200 million' (w208-w210) while the counter lands on 250,000,000+ and s031 shows 250M+.",
+        "refs": ["s005", "s009", "s015", "s031", "w208", "w210"]
+      },
+      "ui_showcase": {
+        "score": 4,
+        "evidence": "Real product UI throughout the demo beats, staged on a tilted 3D plane with push-ins, column washes, gradient outlines and an expanding nested panel (s008); a broad feature tour. Some screens are dense and are on screen for under 2 s, so detail is hard to read.",
+        "refs": ["s004", "s008", "s010", "s018", "s024", "s025"]
+      },
+      "motion_polish": {
+        "score": 4,
+        "evidence": "Consistent eased camera drift on UI, blur and zoom-through transitions, a speed-ramped motion-blurred carousel, a count-up and a bespoke 3D terrain/radar sequence; motion is coherent across 32 shots. Some in-shot page swaps in the UI sections read as hard content replacements rather than designed transitions.",
+        "refs": ["s002", "s012", "s015", "s030", "s032"]
+      },
+      "sound_design": {
+        "score": 3,
+        "evidence": "Judged from anchors audio facts plus visuals, not by listening: a steady 120.19 BPM music bed, integrated loudness -10.34 LUFS (loud, web-mastered), and 57 SFX candidates over 171.7 s, mostly labelled music, swoosh_reverse or unsure, clustering around transitions (about 48-52 s, 72-76 s and 146-149 s, matching the s008-s009, s015 and carousel moves). Competent and transition-aware, but no distinctive sonic signature can be confirmed from the data.",
+        "refs": ["s009", "s015", "s028", "s030"]
+      },
+      "vo_script_quality": {
+        "score": 4,
+        "evidence": "Clear problem-mechanism-demo-proof-outcome arc, benefit-led sentences, conversational pivots ('But wait,' w305-w306; 'Oh, and Reddit?' w351-w353) and a bookend that returns to 'your customers search everywhere' (w368-w372, w419-w422). Somewhat list-like in the feature middle and the 200 million vs 250M+ inconsistency weakens the proof.",
+        "refs": ["w0", "w305", "w351", "w368", "w419", "w434"]
+      },
+      "brand_consistency": {
+        "score": 5,
+        "evidence": "The same dark-blue-to-peach gradient dome frames the opener, kinetic cards, data cards, heritage carousel and end card; highlight colours (yellow wash, orange-to-yellow outline) repeat across all UI beats; the orange-'a' ahrefs wordmark closes the film, and the 'Best running shoes' query motif returns at s026.",
+        "refs": ["s001", "s014", "s026", "s031", "s032"]
+      },
+      "works_muted": {
+        "score": 2,
+        "evidence": "Muted, a viewer sees a polished tour of an analytics product and the closing tagline, but most of the argument (what each screen means, why third-party mentions matter, the heritage claim) lives only in the VO; UI sections carry no explanatory captions, only highlights.",
+        "refs": ["s007", "s018", "s027", "s032"]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "A premium, highly on-brand launch film with a bespoke radar metaphor, tightly VO-synced UI callouts and an effective heritage carousel; held back from best-in-class by its 2:52 length and density, heavy reliance on VO, and a minor stat inconsistency.",
+        "refs": ["s002", "s018", "s030", "s032"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 2,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "English is baked into real product UI screenshots, the archival homepages, the research-article cards and the kinetic taglines ('No setup', 'No waiting time', 'Stay discoverable in search, AI, and beyond.'), and VO-word-timed highlights would need re-timing for a new language. The gradient, 3D radar and logo sections (s002, s003, s022) are language-neutral and reusable."
+    }
+  }
+}

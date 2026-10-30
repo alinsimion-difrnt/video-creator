@@ -1,0 +1,103 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "e7231d23e4b7a88b200f22025c99dff13c121312e4b155cdac26e40b446d3cd9",
+    "created_at": "2026-10-05T06:43:48.396671Z"
+  },
+  "video": "datadog-datadog-overview-see-inside-the-platfor",
+  "event": "e026",
+  "task": "a2-e026",
+  "elements": [
+    {
+      "box": null,
+      "manual_box": [55, 420, 945, 715],
+      "manual_reason": "The phone mockup has left the frame by the end frame, so no candidate covers it; box from its position in the first filmstrip frame.",
+      "label": "Phone mockup with mobile dashboard (exiting)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["blur_out", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 250, "easing_class": "ease_in"}
+    },
+    {
+      "box": null,
+      "manual_box": [455, 290, 545, 795],
+      "manual_reason": "The headline has left the frame by the end frame, so no candidate covers it; box from its position in the first filmstrip frame.",
+      "label": "Headline (exiting)",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["mask_reveal"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Wherever you are",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 150, "easing_class": "ease_in"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Diagonal gradient band wipe (background)",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["mask_reveal", "slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Clock-with-arrow icon",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["scale_up", "rotate", "blur_in"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 450, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Feature label",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["scale_up", "blur_in"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Speed up",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x045", "verdict": "confirm", "label": "music", "note": "411 ms before the event; part of the music bed, no visual change at that moment."},
+    {"id": "x046", "verdict": "confirm", "label": "chime", "note": "Lines up with the diagonal wipe start; a tonal band appears in the mid frequencies right after it. Low CLAP score (0.53), so possibly a music accent."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "diagonal band wipe",
+    "description": "A translucent diagonal gradient band sweeps up across the frame, wiping away the phone mockup and 'Wherever you are' headline (which blur out); behind it a clock-with-arrow icon and 'Speed up' label grow from small and blurred into focus, with the clock hand and arrow rotating as they settle.",
+    "why_premium": "The wipe uses the brand's own diagonal gradient band instead of a generic transition, and the incoming icon is animated (hand and arrow rotate) as it scales in, so the new benefit lands with energy that matches its meaning ('speed up')."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.phone, .headline', {filter: 'blur(12px)', opacity: 0, duration: 0.25, ease: 'power2.in'}).fromTo('.band', {yPercent: 100}, {yPercent: -20, duration: 0.3, ease: 'power2.inOut'}, '<').fromTo('.clock', {scale: 0.4, rotation: -90, filter: 'blur(8px)'}, {scale: 1, rotation: 0, filter: 'blur(0px)', duration: 0.45, ease: 'power3.out'}, '-=0.1').fromTo('.label', {scale: 0.6, opacity: 0}, {scale: 1, opacity: 1, duration: 0.4, ease: 'power3.out'}, '<0.05').",
+    "remotion": "Band translateY via interpolate with Easing.inOut(Easing.cubic) over ~18 frames; icon and label scale/rotation via spring({frame: frame-iconStart, fps, config: {damping: 20, stiffness: 140, mass: 1}}) with no visible overshoot; blur = interpolate(spring, [0,1], [8,0])."
+  },
+  "confidence": "medium",
+  "notes": "The phone and headline elements are gone at the end frame, so they use manual boxes taken from the first frame. Whether the headline is masked by the band or fades on its own is unclear (f3838 shows it partly cut off by the band edge). Icon rotation covers the clock hand and the arrow; the arc itself has no separate candidate box (b03 covers only the hands)."
+}

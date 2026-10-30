@@ -1,0 +1,71 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "74827a1545ff680f287afd42fccf4ce1b6fbb450f8fc40104cc258bf73339645",
+    "created_at": "2026-10-13T13:02:05+00:00"
+  },
+  "id": "saint11-effects",
+  "kind": "tutorial",
+  "palette": {
+    "colours_estimate": 16,
+    "shadows": "mixed",
+    "notes": "Measured 10-31 colours per sheet: smoke 10, explosion 12, electric 14, wind 15, fire 16, water 21, holograms 28, glitch 31 (UI included). Effects stay on short ramps; holograms use a 14-colour blue ramp, glitch adds noise colours."
+  },
+  "lighting": "Effects are the light: fire and explosion go white-yellow core to orange to dark red smoke, electricity is a white-cyan bolt with a flash, holograms glow blue with scanlines.",
+  "silhouette": "Each effect has a clear outer shape: a teardrop flame, a round blast that breaks into rings, a tornado funnel, a zigzag bolt, a ghost body that fades to transparent at the edges.",
+  "motion": {
+    "timing": "Fire 30 frames at 100 ms, smoke 40 at 100 ms, water 32 at 100 ms, holograms 48 at 100 ms; explosion 20 at 80 ms (1.6 s); electric 15 at 80-110 ms; wind 80 frames and glitch 14 frames both at 60 ms, the fastest sheets.",
+    "principles": [
+      "anticipation",
+      "follow through",
+      "overlapping action",
+      "secondary action",
+      "loop",
+      "dissipation"
+    ]
+  },
+  "texture": "Clusters and pixel particles instead of dithering (about 1-1.8%); smoke breaks into small blobs, water into foam bits, glitch into rows of displaced pixels and noise blocks.",
+  "camera": "Static panels; the explosion and electric sheets use a short white contrast frame on the whole panel to punch the moment.",
+  "sound": "",
+  "acting": {
+    "enters": "Effects arrive with anticipation: a dark dot or flash before the blast, a spark before the bolt, a puff before the wind gust.",
+    "acts": "Fire layers several flame waves; the explosion goes flash, fireball, smoke, debris; wind wraps a figure in streaks; ghosts float with a slow bob while their edges flicker.",
+    "exits": "Effects dissipate rather than cut: smoke thins into particles, blast debris falls and stays briefly, the bolt leaves a fading afterglow, glitch snaps back to clean.",
+    "comes_back": true,
+    "depth": "Effects sit in front of or behind characters to stage depth; a tiny runner in the wind panel is dwarfed by large tornado funnels."
+  },
+  "techniques": [
+    "explosion = flash frame, white circle, fireball, smoke rings, falling debris",
+    "fire as several overlapping waves cycling up and breaking off at the tip",
+    "smoke: round blobs that grow, drift and break into small particles",
+    "lightning: 1-2 frame white-cyan bolt plus a contrast frame, then afterglow",
+    "wind: thin streaks and leaves on arcs, played fast at 60 ms",
+    "hologram: blue ramp, scanlines, flicker and a row offset now and then",
+    "glitch: shifted rows, noise blocks and colour-split for 1-2 frames, then clean",
+    "every effect ends by dissipating, never by a hard cut"
+  ],
+  "feel": "flash before + short hot-to-cool ramp + particles that dissipate = effects that punch for 1 frame and fade for 10",
+  "for_fred": "Use effects to carry Fred's exits and returns: a puff of smoke or a glitch burst when he leaves, a bubble or spark flash when he pops back. Keep each effect to a flash plus a few dissipating particles at 60-80 ms so it reads in a vertical reel, and do not repeat the same effect for every exit.",
+  "sources": [
+    "https://saint11.art/img/pixel-tutorials/Fire.gif",
+    "https://saint11.art/img/pixel-tutorials/Explosion.gif",
+    "https://saint11.art/img/pixel-tutorials/SmokeSheet.gif",
+    "https://saint11.art/img/pixel-tutorials/Water.gif",
+    "https://saint11.art/img/pixel-tutorials/Wind.gif",
+    "https://saint11.art/img/pixel-tutorials/Electric.gif",
+    "https://saint11.art/img/pixel-tutorials/Holograms-Ghosts.gif",
+    "https://saint11.art/img/pixel-tutorials/Glitch.gif",
+    "studies/pixel-art/metrics/saint11-effects.json",
+    "data/study/pixel/work/saint11-effects/Electric.png",
+    "data/study/pixel/work/saint11-effects/Explosion.png",
+    "data/study/pixel/work/saint11-effects/Fire.png",
+    "data/study/pixel/work/saint11-effects/Glitch.png",
+    "data/study/pixel/work/saint11-effects/Holograms-Ghosts.png",
+    "data/study/pixel/work/saint11-effects/SmokeSheet.png",
+    "data/study/pixel/work/saint11-effects/Water.png",
+    "data/study/pixel/work/saint11-effects/Wind.png"
+  ]
+}

@@ -1,0 +1,24 @@
+# local mirror of R2: media, frames, packets, signal curves
+data/
+# never commit media
+*.mp4
+*.mov
+*.webm
+*.wav
+*.mp3
+*.m4a
+# python
+.venv/
+__pycache__/
+*.pyc
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+# local env
+.env
+*.local.json
+
+# a project's own media (photos, PNGs for reel props): never committed (CLAUDE.md)
+projects/*/assets/
+# starter kit zips (scripts/make_starter_kit.py)
+dist/

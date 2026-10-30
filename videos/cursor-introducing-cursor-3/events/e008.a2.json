@@ -1,0 +1,48 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "b22d51f7f1ba918f7f0bba7caa33516795d741b3b75cd4698a9f483047ed4ded",
+    "created_at": "2026-10-05T06:43:50.128595Z"
+  },
+  "video": "cursor-introducing-cursor-3",
+  "event": "e008",
+  "task": "a2-e008",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Live-action interview single; handheld camera drifts and reframes on the speaker against a defocused bookshelf",
+      "role": "other",
+      "role_other": "presenter footage",
+      "change_types": ["slide_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 1100, "easing_class": "ambiguous", "source": "model_estimate"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x095", "verdict": "unsure", "label": "unsure", "note": "Just before the burst; broadband music bloom, no designed visual event in live footage."},
+    {"id": "x096", "verdict": "unsure", "label": "unsure", "note": "Mid-burst; vertical broadband stripe typical of the music bed rhythm, not a swoosh sweep."},
+    {"id": "x097", "verdict": "unsure", "label": "unsure", "note": "Mid-burst; same rhythmic music texture, nothing on screen to sync to."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "documentary handheld drift",
+    "description": "Natural handheld camera drift and reframing on a talking-head interview single while the speaker talks; the camera tilts up slightly and the subject settles lower in frame.",
+    "why_premium": "Shallow depth of field, warm practical background and a softly moving camera give the founder testimony a candid documentary feel instead of a locked-off corporate interview."
+  },
+  "build_hint": {
+    "gsap": "For a live-footage plate: gsap.fromTo('.footage', {y: '-1%', scale: 1.02}, {y: '1%', scale: 1.0, duration: 1.1, ease: 'sine.inOut'}) to simulate a slow handheld tilt/reframe; no stagger.",
+    "remotion": "y = interpolate(frame, [0, 26], [-0.01, 0.01] * height, {easing: Easing.inOut(Easing.sin)}) and scale 1.02 -> 1.0 on an <OffthreadVideo> wrapper; add low-amplitude noise for handheld feel."
+  },
+  "confidence": "medium",
+  "notes": "Camera verdict tilt_up with tiny shifts (pan_y 0.10, scale 0.985); motion is mostly handheld drift plus subject head movement. Labelled slide_down because the content moves down as the camera tilts up. All SFX candidates look like music bed peaks."
+}

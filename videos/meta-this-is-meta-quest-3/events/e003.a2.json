@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "fb863e41d4cbe3a1772ea7f7e93a4f0728ce26a973d1b5f61b825cf2efc15e8b",
+    "created_at": "2026-10-05T06:47:03.543825Z"
+  },
+  "video": "meta-this-is-meta-quest-3",
+  "event": "e003",
+  "task": "a2-e003",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Footage whip-pans from daytime desert game to dusk courtyard boxing scene",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["slide_left", "blur_in", "blur_out"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [0, 0, 890, 1000],
+      "manual_reason": "Only candidate b01 (full frame) exists and is used for the footage; the giant translucent word overlay appears on the last frame and has no separate candidate box.",
+      "label": "Oversized translucent word overlay cropped by the frame",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["fade", "pop"],
+      "change_other": null,
+      "is_text": true,
+      "text": "virtu",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "whip_transition",
+    "proposed_name": null,
+    "description": "A fast horizontal whip pan with heavy motion blur carries the viewer from the desert daytime scene into a dusk courtyard; as the blur resolves, a giant semi-transparent white word (cropped, reads 'virtu...', likely 'virtual') snaps on over the footage.",
+    "why_premium": "The whip lands exactly on the narration 'day to the night', and the oversized cropped type layered over live action turns the landing frame into a kinetic-type beat without hiding the subject."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.sceneA',{xPercent:-60,filter:'blur(24px)',duration:0.15,ease:'power3.in'}).fromTo('.sceneB',{xPercent:60,filter:'blur(24px)'},{xPercent:0,filter:'blur(0px)',duration:0.2,ease:'power3.out'}).set('.bigWord',{autoAlpha:0.7}) — word set on (or 1-2 frame fade) right as blur clears; mix-blend-mode: screen.",
+    "remotion": "Translate scene A/B with interpolate(frame,[0,4,9],[0,-60,..]) in percent using Easing.inOut(Easing.cubic) plus a blur filter peaking mid-whip; big word opacity interpolate(frame,[9,10],[0,0.7]). No spring."
+  },
+  "confidence": "medium",
+  "notes": "camera.move is pan_right but the content travels left (pan_x negative); labelled slide_left for the footage. The word is cropped at both edges; 'virtu' is what is visible, full word likely 'virtual' (check following frames). Event sits in shot s012 though the scene changes, so a shot boundary may be missed."
+}

@@ -1,0 +1,35 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a2_annotate_event",
+  "annotator": "claude-code",
+  "skill": "annotate-event@3dad117bd85a",
+  "model": null,
+  "input_hash": "6a49948cba45f3fe514df28f7797047e675c4ba4bc133221f2692f0cf840feb1",
+  "created_at": "2026-10-05T06:43:34.877317Z"
+ },
+ "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+ "event": "e012",
+ "task": "a2-e012",
+ "elements": [
+  {"box": "b02", "manual_box": null, "manual_reason": null, "label": "Gradient orb (conic pink/blue) with white tab", "role": "logo", "role_other": null, "change_types": ["blur_in", "scale_up", "scale_down", "rotate"], "change_other": null, "is_text": false, "text": null, "text_unit": null, "estimates": {"duration_ms": 1500, "easing_class": "ease_in_out"}},
+  {"box": "b01", "manual_box": null, "manual_reason": null, "label": "Pipeline cards orbiting as a ring (group)", "role": "other", "role_other": "card group", "change_types": ["rotate", "scale_down", "fade"], "change_other": null, "is_text": false, "text": null, "text_unit": null, "estimates": {"duration_ms": 1600, "easing_class": "ease_in_out"}},
+  {"box": "b05", "manual_box": null, "manual_reason": null, "label": "Transcription card (start position)", "role": "card", "role_other": null, "change_types": ["slide_up", "rotate", "fade"], "change_other": null, "is_text": false, "text": null, "text_unit": null, "estimates": {"duration_ms": 1500, "easing_class": "ease_in_out"}},
+  {"box": "b04", "manual_box": null, "manual_reason": null, "label": "Turn taking card (start position)", "role": "card", "role_other": null, "change_types": ["slide_up", "rotate", "fade"], "change_other": null, "is_text": false, "text": null, "text_unit": null, "estimates": {"duration_ms": 1500, "easing_class": "ease_in_out"}},
+  {"box": "b07", "manual_box": null, "manual_reason": null, "label": "LLM card (start position)", "role": "card", "role_other": null, "change_types": ["slide_up", "rotate", "fade"], "change_other": null, "is_text": false, "text": null, "text_unit": null, "estimates": {"duration_ms": 1500, "easing_class": "ease_in_out"}},
+  {"box": "b03", "manual_box": null, "manual_reason": null, "label": "Testing card (start position)", "role": "card", "role_other": null, "change_types": ["slide_down", "rotate", "fade"], "change_other": null, "is_text": false, "text": null, "text_unit": null, "estimates": {"duration_ms": 1500, "easing_class": "ease_in_out"}},
+  {"box": "b08", "manual_box": null, "manual_reason": null, "label": "Phone card (start position)", "role": "card", "role_other": null, "change_types": ["slide_down", "rotate", "fade"], "change_other": null, "is_text": false, "text": null, "text_unit": null, "estimates": {"duration_ms": 1500, "easing_class": "ease_in_out"}},
+  {"box": "b06", "manual_box": null, "manual_reason": null, "label": "Website card (start position)", "role": "card", "role_other": null, "change_types": ["slide_left", "rotate", "fade"], "change_other": null, "is_text": false, "text": null, "text_unit": null, "estimates": {"duration_ms": 1500, "easing_class": "ease_in_out"}}
+ ],
+ "sfx_review": [
+  {"id": "x010", "verdict": "unsure", "label": "unsure", "note": "Weak, diffuse energy while the cards orbit; no clear transient; CLAP score low (0.24)."},
+  {"id": "x011", "verdict": "confirm", "label": "swoosh_reverse", "note": "Vertical broadband streak near the end of the burst as the orb collapses to its final size."},
+  {"id": "x012", "verdict": "confirm", "label": "swoosh_reverse", "note": "After the event window; strong CLAP score, likely tail of the orb collapse / next beat."},
+  {"id": "x013", "verdict": "confirm", "label": "swoosh_reverse", "note": "After the event window; strong CLAP score, not visible in this filmstrip."}
+ ],
+ "pattern": {"id": "other", "proposed_name": "orbit collapse to orb", "description": "The linear pipeline of feature cards lifts into a circular ring that orbits around a growing conic-gradient orb; the orb blooms to fill the ring, swallowing the cards, then contracts into a compact orb widget at centre.", "why_premium": "It visualises 'complexity collapses into one product' in a single continuous motion: many parts physically converge into the brand orb, synced to 'but not anymore', with a reverse swoosh landing the collapse."},
+ "build_hint": {"gsap": "tl.to('.card', {motionPath/ring positions via x,y, rotation: 0, duration: 0.8, ease: 'power2.inOut', stagger: 0.04}); tl.to('.ring', {rotation: 90, duration: 1.0, ease: 'none'}, '<'); tl.fromTo('.orb', {scale: 0, filter: 'blur(30px)', autoAlpha: 0}, {scale: 3, filter: 'blur(0px)', autoAlpha: 1, duration: 0.7, ease: 'power2.out'}, '-=0.6'); tl.to('.card', {autoAlpha: 0, scale: 0.6, duration: 0.3, ease: 'power2.in'}, '<0.3'); tl.to('.orb', {scale: 1, duration: 0.45, ease: 'power3.inOut'}); orb gradient rotates continuously (conic-gradient angle tween).", "remotion": "Cards: interpolate a ring angle with Easing.inOut(Easing.cubic) and place each at (cos, sin) * radius, offset by i/N; orb scale from spring({frame, fps, config: {damping: 200}}) up to 3, then a second spring (damping ~20, stiffness ~120) back to 1; orb blur via interpolate; card opacity fades out as orb radius passes them."},
+ "confidence": "medium",
+ "notes": "End frame shows only the orb; card boxes b03-b08 mark where cards left from (start positions), mapped to cards by x position. Orb role chosen as logo (brand orb) but may be an AI-agent avatar widget. x012/x013 fall after the event end."
+}

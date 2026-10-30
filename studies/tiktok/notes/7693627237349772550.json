@@ -1,0 +1,96 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "tiktok_notes",
+  "annotator": "claude-code",
+  "input_hash": "5ec017524f6428ed5a93f5ffa6a5fe04691efe9663a356e08e12c87b1aac1220",
+  "created_at": "2026-10-13T10:56:20+00:00"
+ },
+ "id": "7693627237349772550",
+ "format": "split_screen",
+ "hook": {
+  "type": "news",
+  "line": "Claude just dropped a feature called Mods, but most people have no idea how to use it.",
+  "visual": "Top half cream canvas: an orange Claude cube drops in, a 'Mods' title appears and small mod cubes fan out; bottom half he talks into a handheld mic."
+ },
+ "beats": [
+  {
+   "t": 0.0,
+   "what": "Orange cube drops onto the cream canvas while the news line starts"
+  },
+  {
+   "t": 4.75,
+   "what": "'Mods' title with a ring of labelled mini-cubes around the big cube"
+  },
+  {
+   "t": 9.5,
+   "what": "Large faded '1' marks the first tip"
+  },
+  {
+   "t": 14.25,
+   "what": "Two dark Session A and Session B windows pass a message card between them"
+  },
+  {
+   "t": 19.0,
+   "what": "Two cubes labelled PLANS and BUILDS hand tasks back and forth"
+  },
+  {
+   "t": 28.5,
+   "what": "Full-screen mock dashboard of agents with Running and Waiting pills"
+  },
+  {
+   "t": 33.25,
+   "what": "Easy tasks list next to an 'Opus $$$' card for tip three"
+  },
+  {
+   "t": 38.0,
+   "what": "Mod node routes easy requests to Haiku and hard ones to Opus"
+  },
+  {
+   "t": 42.75,
+   "what": "Prompt bubble 'Build me a mod...' and the cube building a dashed box"
+  },
+  {
+   "t": 49.13,
+   "what": "Full-face shot with a Follow card popping up over his hand"
+  }
+ ],
+ "graphics": {
+  "captions": "word_by_word",
+  "caption_position": "mixed",
+  "devices": [
+   "split_screen",
+   "product_ui",
+   "title_text",
+   "chart_or_number",
+   "jump_cut"
+  ],
+  "density": "heavy",
+  "per_minute_estimate": 14
+ },
+ "characters": [
+  {
+   "who": "Orange Claude cube",
+   "enters": "Drops in from the top of the canvas at 0 s",
+   "acts": "Spawns mini mod cubes, splits into PLANS and BUILDS cubes that pass tasks, then builds a new box from a prompt",
+   "exits": "Gives way to full-screen UI cards and code",
+   "comes_back": true
+  }
+ ],
+ "cta": {
+  "kind": "follow",
+  "t": 49.13
+ },
+ "why_it_works": [
+  "News framing plus 'no one is talking about' promises insider value in the first 3 s",
+  "The top-half animation literally acts out each tip (two sessions passing a message), so the idea lands without reading",
+  "One recurring cube character ties every tip together visually",
+  "Follow card appears as a UI pop-up on the exact line asking for the follow"
+ ],
+ "weaknesses": [
+  "Loop score 0.545; the ending does not lead back to the start",
+  "Small mono caption chunks on the seam compete with the diagrams"
+ ],
+ "for_robert": "Copy the recurring object that acts out each point: Fred can drop in at the hook, then split, carry and build things in the top half for each tip, and return for the follow."
+}

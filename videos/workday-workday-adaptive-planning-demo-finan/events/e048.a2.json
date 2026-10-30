@@ -1,0 +1,44 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "210190c6d53e30570ac27baa7b201fcf7ee91fca6a660c892a42f2413a0e5cf1",
+    "created_at": "2026-10-05T06:57:33.931000Z"
+  },
+  "video": "workday-workday-adaptive-planning-demo-finan",
+  "event": "e048",
+  "task": "a2-e048",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "App content area: nav menu and P&L sheet clearing to a blank loading page with spinner",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "page load clear",
+    "description": "A recorded navigation in two steps. The blue left nav menu collapses and the sheet briefly shows a highlighted accounts column (first energy spike). Then the whole content area clears to a blank page with a centred loading spinner (second spike), while the window chrome and logo stay in place.",
+    "why_premium": "Not authored motion. It is a raw app page transition left in the edit, and the narration ('key financial statements and metrics') bridges it. The steady window frame keeps it from feeling like a cut."
+  },
+  "build_hint": {
+    "gsap": "tl.to(navMenu, {xPercent: -100, duration: 0.05, ease: 'none'}).set(sheet, {autoAlpha: 0}, '+=0.3').set(spinner, {autoAlpha: 1}, '<'); in a recreation, prefer replacing the spinner with a short blur_crossfade to the next sheet.",
+    "remotion": "Sequence the nav-open frame, then the sheet frame, then at f0 switch to the blank/spinner layer (opacity steps, no interpolation); a recreation would better use a 200-300 ms crossfade straight to the destination screen."
+  },
+  "confidence": "medium",
+  "notes": "There are two separate energy spikes (frames ~3111 and ~3119), and b01 covers both. The nav menu collapse could be split out as its own element, but it has no separate candidate box. No canonical pattern fits a reload-to-spinner, hence 'other'."
+}

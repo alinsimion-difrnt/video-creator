@@ -1,0 +1,556 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "s3_signals",
+    "annotator": "code",
+    "skill": null,
+    "model": null,
+    "input_hash": "9e90ffa17dfda438da7b7f48193f3a0e8685ef31ced5ef851641d9484d20f49a",
+    "created_at": "2026-10-04T19:32:06.564212Z"
+  },
+  "video_id": "attio-introducing-ask-attio",
+  "video": {
+    "fps": 30.303,
+    "duration_s": 46.794,
+    "shots": [
+      {
+        "id": "s001",
+        "start_s": 0.0,
+        "end_s": 7.227,
+        "transition_in": null,
+        "motion_energy": 0.001386,
+        "events_per_s": 0.553,
+        "wpm": null
+      },
+      {
+        "id": "s002",
+        "start_s": 7.227,
+        "end_s": 10.23,
+        "transition_in": {
+          "kind": "zoom_through",
+          "start_s": 7.227,
+          "duration_s": 0.264,
+          "direction": null
+        },
+        "motion_energy": 0.01051,
+        "events_per_s": 0.333,
+        "wpm": null
+      },
+      {
+        "id": "s003",
+        "start_s": 10.23,
+        "end_s": 26.103,
+        "transition_in": {
+          "kind": "other",
+          "start_s": 10.23,
+          "duration_s": 0.264,
+          "direction": null
+        },
+        "motion_energy": 0.003606,
+        "events_per_s": 0.504,
+        "wpm": null
+      },
+      {
+        "id": "s004",
+        "start_s": 26.103,
+        "end_s": 27.753,
+        "transition_in": {
+          "kind": "push",
+          "start_s": 26.103,
+          "duration_s": 1.947,
+          "direction": "left"
+        },
+        "motion_energy": 0.007776,
+        "events_per_s": 0.0,
+        "wpm": null
+      },
+      {
+        "id": "s005",
+        "start_s": 27.753,
+        "end_s": 28.545,
+        "transition_in": {
+          "kind": "push",
+          "start_s": 27.753,
+          "duration_s": 0.726,
+          "direction": "left"
+        },
+        "motion_energy": 0.044894,
+        "events_per_s": 0.0,
+        "wpm": null
+      },
+      {
+        "id": "s006",
+        "start_s": 28.545,
+        "end_s": 33.066,
+        "transition_in": {
+          "kind": "crossfade",
+          "start_s": 28.545,
+          "duration_s": 0.462,
+          "direction": null
+        },
+        "motion_energy": 0.001368,
+        "events_per_s": 0.442,
+        "wpm": null
+      },
+      {
+        "id": "s007",
+        "start_s": 33.066,
+        "end_s": 46.794,
+        "transition_in": {
+          "kind": "hard_cut",
+          "start_s": 33.066,
+          "duration_s": 0.0,
+          "direction": null
+        },
+        "motion_energy": 0.00045,
+        "events_per_s": 0.219,
+        "wpm": null
+      }
+    ],
+    "transitions_by_kind": {
+      "zoom_through": 1,
+      "other": 1,
+      "push": 2,
+      "crossfade": 1,
+      "hard_cut": 1
+    },
+    "mean_shot_s": 6.685,
+    "events": [
+      {
+        "id": "e001",
+        "shot": "s001",
+        "kind": "motion",
+        "start_s": 0.726,
+        "end_s": 0.858,
+        "bbox": [
+          0.171875,
+          0.3055555555555556,
+          0.828125,
+          0.9388888888888889
+        ],
+        "camera_move": "none"
+      },
+      {
+        "id": "e002",
+        "shot": "s001",
+        "kind": "camera",
+        "start_s": 3.333,
+        "end_s": 3.696,
+        "bbox": [
+          0.109375,
+          0.08333333333333333,
+          1.0,
+          1.0
+        ],
+        "camera_move": "tilt_down"
+      },
+      {
+        "id": "e003",
+        "shot": "s001",
+        "kind": "motion",
+        "start_s": 5.643,
+        "end_s": 6.039,
+        "bbox": [
+          0.065625,
+          0.4166666666666667,
+          0.721875,
+          0.5944444444444444
+        ],
+        "camera_move": "none"
+      },
+      {
+        "id": "e004",
+        "shot": "s001",
+        "kind": "motion",
+        "start_s": 7.062,
+        "end_s": 7.194,
+        "bbox": [
+          0.434375,
+          0.3611111111111111,
+          0.565625,
+          0.6111111111111112
+        ],
+        "camera_move": "none"
+      },
+      {
+        "id": "e005",
+        "shot": "s002",
+        "kind": "motion",
+        "start_s": 7.524,
+        "end_s": 7.656,
+        "bbox": [
+          0.390625,
+          0.4722222222222222,
+          0.609375,
+          0.6388888888888888
+        ],
+        "camera_move": "none"
+      },
+      {
+        "id": "e006",
+        "shot": "s003",
+        "kind": "motion",
+        "start_s": 10.527,
+        "end_s": 10.626,
+        "bbox": [
+          0.0,
+          0.0,
+          1.0,
+          0.5333333333333333
+        ],
+        "camera_move": "none"
+      },
+      {
+        "id": "e007",
+        "shot": "s003",
+        "kind": "motion",
+        "start_s": 12.045,
+        "end_s": 12.507,
+        "bbox": [
+          0.0,
+          0.3888888888888889,
+          1.0,
+          1.0
+        ],
+        "camera_move": "none"
+      },
+      {
+        "id": "e008",
+        "shot": "s003",
+        "kind": "motion",
+        "start_s": 14.817,
+        "end_s": 15.015,
+        "bbox": [
+          0.328125,
+          0.4,
+          0.671875,
+          0.6166666666666667
+        ],
+        "camera_move": "none"
+      },
+      {
+        "id": "e009",
+        "shot": "s003",
+        "kind": "motion",
+        "start_s": 16.104,
+        "end_s": 16.269,
+        "bbox": [
+          0.34375,
+          0.4166666666666667,
+          0.625,
+          0.5833333333333334
+        ],
+        "camera_move": "none"
+      },
+      {
+        "id": "e010",
+        "shot": "s003",
+        "kind": "motion",
+        "start_s": 18.084,
+        "end_s": 18.513,
+        "bbox": [
+          0.34375,
+          0.4166666666666667,
+          0.628125,
+          0.5833333333333334
+        ],
+        "camera_move": "none"
+      },
+      {
+        "id": "e011",
+        "shot": "s003",
+        "kind": "motion",
+        "start_s": 20.295,
+        "end_s": 20.889,
+        "bbox": [
+          0.328125,
+          0.4666666666666667,
+          0.671875,
+          1.0
+        ],
+        "camera_move": "none"
+      },
+      {
+        "id": "e012",
+        "shot": "s003",
+        "kind": "motion",
+        "start_s": 21.45,
+        "end_s": 21.912,
+        "bbox": [
+          0.40625,
+          0.0,
+          0.59375,
+          0.5
+        ],
+        "camera_move": "none"
+      },
+      {
+        "id": "e013",
+        "shot": "s003",
+        "kind": "motion",
+        "start_s": 24.189,
+        "end_s": 26.07,
+        "bbox": [
+          0.0,
+          0.4444444444444444,
+          0.9375,
+          0.6444444444444445
+        ],
+        "camera_move": "none"
+      },
+      {
+        "id": "e014",
+        "shot": "s006",
+        "kind": "motion",
+        "start_s": 30.228,
+        "end_s": 30.459,
+        "bbox": [
+          0.296875,
+          0.43333333333333335,
+          0.690625,
+          0.5888888888888889
+        ],
+        "camera_move": "none"
+      },
+      {
+        "id": "e015",
+        "shot": "s006",
+        "kind": "motion",
+        "start_s": 32.868,
+        "end_s": 33.033,
+        "bbox": [
+          0.328125,
+          0.3611111111111111,
+          0.6875,
+          0.5277777777777778
+        ],
+        "camera_move": "none"
+      },
+      {
+        "id": "e016",
+        "shot": "s007",
+        "kind": "motion",
+        "start_s": 38.676,
+        "end_s": 39.138,
+        "bbox": [
+          0.165625,
+          0.4666666666666667,
+          0.703125,
+          0.5333333333333333
+        ],
+        "camera_move": "none"
+      },
+      {
+        "id": "e017",
+        "shot": "s007",
+        "kind": "motion",
+        "start_s": 40.524,
+        "end_s": 40.623,
+        "bbox": [
+          0.28125,
+          0.4388888888888889,
+          0.671875,
+          0.5555555555555556
+        ],
+        "camera_move": "none"
+      },
+      {
+        "id": "e018",
+        "shot": "s007",
+        "kind": "motion",
+        "start_s": 42.834,
+        "end_s": 42.9,
+        "bbox": [
+          0.275,
+          0.4388888888888889,
+          0.6625,
+          0.5555555555555556
+        ],
+        "camera_move": "none"
+      }
+    ],
+    "camera_moves": {
+      "tilt_down": 1
+    },
+    "holds": [
+      {
+        "shot": "s001",
+        "start_s": 0.891,
+        "end_s": 3.333,
+        "dead": false
+      },
+      {
+        "shot": "s001",
+        "start_s": 3.729,
+        "end_s": 5.643,
+        "dead": false
+      },
+      {
+        "shot": "s001",
+        "start_s": 6.072,
+        "end_s": 7.062,
+        "dead": false
+      },
+      {
+        "shot": "s002",
+        "start_s": 7.689,
+        "end_s": 10.23,
+        "dead": false
+      },
+      {
+        "shot": "s003",
+        "start_s": 10.659,
+        "end_s": 12.045,
+        "dead": false
+      },
+      {
+        "shot": "s003",
+        "start_s": 12.54,
+        "end_s": 14.817,
+        "dead": false
+      },
+      {
+        "shot": "s003",
+        "start_s": 15.048,
+        "end_s": 16.104,
+        "dead": false
+      },
+      {
+        "shot": "s003",
+        "start_s": 16.302,
+        "end_s": 18.084,
+        "dead": false
+      },
+      {
+        "shot": "s003",
+        "start_s": 18.546,
+        "end_s": 20.295,
+        "dead": false
+      },
+      {
+        "shot": "s003",
+        "start_s": 21.945,
+        "end_s": 24.189,
+        "dead": false
+      },
+      {
+        "shot": "s006",
+        "start_s": 29.007,
+        "end_s": 30.228,
+        "dead": false
+      },
+      {
+        "shot": "s006",
+        "start_s": 30.492,
+        "end_s": 32.868,
+        "dead": false
+      },
+      {
+        "shot": "s007",
+        "start_s": 33.066,
+        "end_s": 38.676,
+        "dead": false
+      },
+      {
+        "shot": "s007",
+        "start_s": 39.171,
+        "end_s": 40.524,
+        "dead": false
+      },
+      {
+        "shot": "s007",
+        "start_s": 40.656,
+        "end_s": 42.834,
+        "dead": false
+      },
+      {
+        "shot": "s007",
+        "start_s": 42.933,
+        "end_s": 46.794,
+        "dead": false
+      }
+    ],
+    "dead_hold_count": 0,
+    "dead_hold_s": 0.0,
+    "pace_cv": 1.466
+  },
+  "audio": {
+    "stems": true,
+    "ducking_db": null,
+    "loudness": {
+      "integrated_lufs": -12.37,
+      "short_term_max_lufs": -6.04,
+      "lra_lu": 11.36,
+      "sample_peak_dbfs": 0.0,
+      "true_peak_dbtp": 0.38
+    },
+    "bpm": 129.2,
+    "beat_confidence": 0.153,
+    "sfx": [
+      {
+        "id": "x001",
+        "sync_s": 7.3565,
+        "label": "impact",
+        "label_source": "rules",
+        "rules_label": "impact",
+        "clap_label": "glitch",
+        "clap_score": 0.781,
+        "agreement": false,
+        "on_beat": false,
+        "reveal_offset_ms": 162.5,
+        "scene_start_offset_ms": 0.0,
+        "at_scene_start": true
+      },
+      {
+        "id": "x002",
+        "sync_s": 20.2071,
+        "label": "unsure",
+        "label_source": "rules",
+        "rules_label": "unsure",
+        "clap_label": "riser",
+        "clap_score": 0.455,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": -87.9,
+        "scene_start_offset_ms": -5895.9,
+        "at_scene_start": false
+      },
+      {
+        "id": "x003",
+        "sync_s": 22.6677,
+        "label": "unsure",
+        "label_source": "rules",
+        "rules_label": "unsure",
+        "clap_label": "riser",
+        "clap_score": 0.421,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": -3435.3,
+        "at_scene_start": false
+      },
+      {
+        "id": "x004",
+        "sync_s": 31.0335,
+        "label": "unsure",
+        "label_source": "rules",
+        "rules_label": "unsure",
+        "clap_label": "chime",
+        "clap_score": 0.425,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": 2026.5,
+        "at_scene_start": false
+      }
+    ],
+    "sfx_per_min": 5.13,
+    "label_agreement_share": 0.0,
+    "sfx_at_scene_start_share": 0.25,
+    "sfx_near_reveal_share": 0.5,
+    "cuts_on_beat_share": null
+  },
+  "speech": null,
+  "captions": null
+}

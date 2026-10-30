@@ -1,0 +1,308 @@
+{
+  "$defs": {
+    "Annotator": {
+      "enum": [
+        "code",
+        "claude-code",
+        "human"
+      ],
+      "title": "Annotator",
+      "type": "string"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "description": "Carried by every output JSON (BUILD_PLAN section 2.7).",
+      "properties": {
+        "annotator": {
+          "$ref": "#/$defs/Annotator"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "input_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Input Hash",
+          "type": "string"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "schema_version": {
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "skill": {
+          "anyOf": [
+            {
+              "pattern": "^[a-z0-9-]+@[0-9a-f]{8,64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Skill"
+        },
+        "stage": {
+          "title": "Stage",
+          "type": "string"
+        },
+        "tool_version": {
+          "title": "Tool Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool_version",
+        "stage",
+        "annotator",
+        "input_hash",
+        "created_at"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "SfxFact": {
+      "additionalProperties": false,
+      "properties": {
+        "clap_label": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Clap Label"
+        },
+        "clap_score": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Clap Score"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "offset_ms": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Offset Ms"
+        },
+        "sync_s": {
+          "title": "Sync S",
+          "type": "number"
+        }
+      },
+      "required": [
+        "id",
+        "sync_s",
+        "label"
+      ],
+      "title": "SfxFact",
+      "type": "object"
+    },
+    "ShotAnchor": {
+      "additionalProperties": false,
+      "properties": {
+        "end_s": {
+          "exclusiveMinimum": 0,
+          "title": "End S",
+          "type": "number"
+        },
+        "events": {
+          "minimum": 0,
+          "title": "Events",
+          "type": "integer"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "start_s": {
+          "minimum": 0,
+          "title": "Start S",
+          "type": "number"
+        },
+        "transition_in": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Transition In"
+        }
+      },
+      "required": [
+        "id",
+        "start_s",
+        "end_s",
+        "transition_in",
+        "events"
+      ],
+      "title": "ShotAnchor",
+      "type": "object"
+    },
+    "WordAnchor": {
+      "additionalProperties": false,
+      "properties": {
+        "end_s": {
+          "minimum": 0,
+          "title": "End S",
+          "type": "number"
+        },
+        "i": {
+          "minimum": 0,
+          "title": "I",
+          "type": "integer"
+        },
+        "start_s": {
+          "minimum": 0,
+          "title": "Start S",
+          "type": "number"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "i",
+        "text",
+        "start_s",
+        "end_s"
+      ],
+      "title": "WordAnchor",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "`pass1/anchors.json`: the ids and times a Pass 1 (A1) annotator may cite.",
+  "properties": {
+    "beats_s": {
+      "items": {
+        "type": "number"
+      },
+      "title": "Beats S",
+      "type": "array"
+    },
+    "bpm": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Bpm"
+    },
+    "duration_s": {
+      "exclusiveMinimum": 0,
+      "title": "Duration S",
+      "type": "number"
+    },
+    "fps": {
+      "exclusiveMinimum": 0,
+      "title": "Fps",
+      "type": "number"
+    },
+    "integrated_lufs": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Integrated Lufs"
+    },
+    "palette": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Palette",
+      "type": "array"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    },
+    "sfx": {
+      "items": {
+        "$ref": "#/$defs/SfxFact"
+      },
+      "title": "Sfx",
+      "type": "array"
+    },
+    "shots": {
+      "items": {
+        "$ref": "#/$defs/ShotAnchor"
+      },
+      "title": "Shots",
+      "type": "array"
+    },
+    "video": {
+      "title": "Video",
+      "type": "string"
+    },
+    "words": {
+      "items": {
+        "$ref": "#/$defs/WordAnchor"
+      },
+      "title": "Words",
+      "type": "array"
+    }
+  },
+  "required": [
+    "provenance",
+    "video",
+    "duration_s",
+    "fps",
+    "shots",
+    "words",
+    "bpm",
+    "beats_s",
+    "integrated_lufs",
+    "palette",
+    "sfx"
+  ],
+  "title": "Anchors",
+  "type": "object"
+}

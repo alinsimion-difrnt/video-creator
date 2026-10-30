@@ -1,0 +1,86 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "35165202cfc2501744d0bbf581aeb436529b6d48303936fa94d02c62b09a1d7b",
+    "created_at": "2026-10-05T06:38:37.837204Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e022",
+  "task": "a2-e022",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Field type dropdown list (scrolling)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Multi-select / Number / People / Rating / Reactions / Select / Short text / Slider / DYNAMIC FIELDS / Custom formula / Vote",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 650, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b07",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Dropdown scrollbar thumb",
+      "role": "other",
+      "role_other": "scrollbar",
+      "change_types": ["slide_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    },
+    {
+      "box": "b17",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Hovered option highlight (Slider)",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Slider",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Mouse cursor moving down the options",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "masked_scroll",
+    "proposed_name": null,
+    "description": "The open Field type dropdown scrolls its option list inside the fixed menu while the cursor hovers down through the standard field types; the hover highlight follows the cursor and the Dynamic fields and Insights groups scroll into view.",
+    "why_premium": "Scrolling inside a fixed menu keeps the form and table anchored while revealing the breadth of field types in under a second, matching the narration 'choose from a standard field type'."
+  },
+  "build_hint": {
+    "gsap": "Overflow-hidden menu; gsap.to(optionList, {y: -scrollDistance, duration: 0.65, ease: 'power2.out'}) with the scrollbar thumb tweened on the same progress; cursor gsap.to(cursor, {y: '+=270', duration: 0.6, ease: 'power1.inOut'}); hover highlight bar repositioned per row with gsap.set or a 0.08s fade.",
+    "remotion": "List translateY = interpolate(frame, [0, 20], [0, -scrollDistance], {easing: Easing.out(Easing.quad), extrapolateRight: 'clamp'}) inside overflow:hidden; thumb y mapped from the same progress; highlighted row index derived from cursor y each frame."
+  },
+  "confidence": "medium",
+  "notes": "Screen recording (wheel scroll in steps, visible as two energy bursts). b01 is the union box; it covers the dropdown header and the upper list but not the lowest rows (Insights, Pendo for Polaris)."
+}

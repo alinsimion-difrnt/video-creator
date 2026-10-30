@@ -1,0 +1,178 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a3_pattern_cards",
+  "annotator": "claude-code",
+  "skill": "write-archetype-cards@a75a12f0ca91",
+  "model": null,
+  "input_hash": "58191688afcaf165a30c4198d9f458975f40508964d0bf6a7f8fb4d7c1901d76",
+  "created_at": "2026-10-05T19:09:27.286605Z"
+ },
+ "id": "abstract_shape_metaphor",
+ "name": "Abstract Shape Metaphor",
+ "summary": "A brief, full-frame abstract image of soft shapes, gradient orbs, outlines or dot fields stands in for an idea such as growth, voice or data. It bridges two scenes and gives the narration a visual metaphor instead of literal interface.",
+ "when_to_use": [
+  "Explaining how something works with a metaphor rather than a screen.",
+  "Bridging between scenes with a short visual beat that carries a shape forward.",
+  "Opening a video on mood before the product appears."
+ ],
+ "slots": [
+  {"name": "metaphor_shape", "what": "the main form, such as an orb, a growing stem, an outline circle or a dot field", "required": true},
+  {"name": "background", "what": "a flat or softly blurred pale or brand-coloured field", "required": true},
+  {"name": "palette", "what": "a few brand colours used for gradients or particles", "required": false},
+  {"name": "carry_element", "what": "the shape that continues into the next scene for a match cut", "required": false}
+ ],
+ "steps": [
+  "A soft, out-of-focus field appears with the shape just entering or barely visible.",
+  "The shape settles into place or multiplies into a field as the narration names the idea.",
+  "The camera flies into or scales past the shape.",
+  "The shape carries through to the next scene as a match cut or a zoom-through."
+ ],
+ "patterns": ["match_cut_element"],
+ "build": {
+  "gsap": "One short timeline per scene. Build shapes as SVG or divs with radial gradients and a CSS blur filter, and tween their scale, position and blur on a sine in-out. For a dot field, generate many small circles and give each a tiny looping offset with a random stagger. End by tweening the container's scale well past full frame on an expo ease-in for a zoom-through, keeping the carry element's position for the next scene.",
+  "remotion": "One Sequence, usually short. Interpolate blur and scale from the frame index, drive the main shape with a soft, low-stiffness spring, and use seeded noise per particle for jitter. Place the carry element in a shared layer so the next Sequence starts from the same position."
+ },
+ "sound": "no typical sound",
+ "numbers": {
+  "id": "abstract_shape_metaphor",
+  "shots": 11,
+  "videos": 3,
+  "weight": 8.4,
+  "duration_s": {
+   "n": 11,
+   "videos": 3,
+   "weight": 8.4,
+   "median": 1.585,
+   "p25": 0.409,
+   "p75": 2.685,
+   "ci": [
+    0.429,
+    2.644
+   ]
+  },
+  "events_per_shot": {
+   "n": 11,
+   "videos": 3,
+   "weight": 8.4,
+   "median": 0.0,
+   "p25": 0.0,
+   "p75": 1.0,
+   "ci": [
+    0.0,
+    1.0
+   ]
+  },
+  "first_motion_s": {
+   "n": 4,
+   "videos": 1,
+   "weight": 3.2,
+   "median": 1.402,
+   "p25": 0.676,
+   "p75": 1.733,
+   "ci": null
+  },
+  "pattern_mix": {
+   "other": 0.75,
+   "match_cut_element": 0.25
+  },
+  "transition_mix": {
+   "other": 0.5238,
+   "zoom_through": 0.381,
+   "crossfade": 0.0952
+  },
+  "shot_type_mix": {
+   "abstract": 1.0
+  },
+  "beat_mix": {
+   "mechanism": 0.6087,
+   "hook": 0.2174,
+   "demo": 0.1739
+  },
+  "sfx_label_mix": {
+   "unsure": 0.75,
+   "chime": 0.1,
+   "impact": 0.05,
+   "music": 0.05,
+   "swoosh_reverse": 0.05
+  },
+  "sfx_offset_s_by_label": {
+   "chime": {
+    "n": 1,
+    "videos": 1,
+    "weight": 0.8,
+    "median": 0.623,
+    "p25": 0.623,
+    "p75": 0.623,
+    "ci": null
+   },
+   "impact": {
+    "n": 1,
+    "videos": 1,
+    "weight": 0.4,
+    "median": 3.056,
+    "p25": 3.056,
+    "p75": 3.056,
+    "ci": null
+   },
+   "music": {
+    "n": 1,
+    "videos": 1,
+    "weight": 0.4,
+    "median": 2.307,
+    "p25": 2.307,
+    "p75": 2.307,
+    "ci": null
+   },
+   "swoosh_reverse": {
+    "n": 1,
+    "videos": 1,
+    "weight": 0.4,
+    "median": 0.996,
+    "p25": 0.996,
+    "p75": 0.996,
+    "ci": null
+   },
+   "unsure": {
+    "n": 10,
+    "videos": 2,
+    "weight": 6.0,
+    "median": 1.571,
+    "p25": 0.339,
+    "p75": 2.13,
+    "ci": [
+     0.27,
+     2.096
+    ]
+   }
+  },
+  "examples": [
+   {
+    "video": "figma-introducing-figma-motion-your-canvas-no",
+    "shot": "s001",
+    "score": 5.0
+   },
+   {
+    "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+    "shot": "s002",
+    "score": 4.0
+   },
+   {
+    "video": "fullstory-behavioral-data-made-simple-by-fullstory",
+    "shot": "s010",
+    "score": 4.0
+   }
+  ]
+ },
+ "examples": [
+  {"video": "figma-introducing-figma-motion-your-canvas-no", "shot": "s001", "score": 5.0},
+  {"video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb", "shot": "s002", "score": 4.0},
+  {"video": "fullstory-behavioral-data-made-simple-by-fullstory", "shot": "s010", "score": 4.0}
+ ],
+ "caveats": [
+  "Few shots from only a few videos; first motion is measured in a single video.",
+  "Sound cues are mostly unclassified, so no clear cue is recommended.",
+  "Most motion is labelled other, so the build notes lean on member descriptions."
+ ]
+}

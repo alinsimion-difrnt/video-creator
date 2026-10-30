@@ -1,0 +1,76 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "11575d77b524e58bbe36e055771d74c09650c50f0209523185e9bd91d55adf06",
+    "created_at": "2026-10-05T06:47:04.881962Z"
+  },
+  "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+  "event": "e036",
+  "task": "a2-e036",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Green success frame around the card (thin outline swells into a thick rounded border)",
+      "role": "other",
+      "role_other": "status frame / border",
+      "change_types": ["scale_up", "highlight", "other"],
+      "change_other": "stroke width grows outward from a hairline to a thick solid band",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Days counter numeral",
+      "role": "metric",
+      "role_other": null,
+      "change_types": ["scale_down"],
+      "change_other": null,
+      "is_text": true,
+      "text": "5",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Card caption",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["scale_down"],
+      "change_other": null,
+      "is_text": true,
+      "text": "DAYS TO PRODUCTION",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x064", "verdict": "confirm", "label": "music", "note": "Music bed, well before the border swell."},
+    {"id": "x065", "verdict": "confirm", "label": "music", "note": "Broadband music onset at the end of the swell; no distinct SFX shape."},
+    {"id": "x066", "verdict": "confirm", "label": "music", "note": "Music bed after the event."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "success border swell",
+    "description": "After the countdown lands on '5 DAYS TO PRODUCTION', a hairline green outline around the card thickens outward into a bold rounded green frame while the white card inside settles slightly smaller, marking the metric as achieved.",
+    "why_premium": "A single colour-and-weight change signals success without new copy or icons; the border grows outward around a stable card, so the number stays legible while the frame adds emphasis and a brand-green payoff."
+  },
+  "build_hint": {
+    "gsap": "Frame as a rounded rect behind the card: gsap.fromTo('.success-frame', {padding: 1, borderRadius: 40}, {padding: 28, borderRadius: 64, duration: 0.4, ease: 'power2.inOut'}); simultaneously gsap.to('.card', {scale: 0.96, duration: 0.4, ease: 'power2.inOut'}). Alternative: animate box-shadow '0 0 0 1px #3BD67A' -> '0 0 0 28px #3BD67A'.",
+    "remotion": "const p = interpolate(frame, [start, start + 12], [0, 1], {easing: Easing.inOut(Easing.quad), extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}); frame inset = interpolate(p, [0, 1], [1, 28]) px around the card; card scale = interpolate(p, [0, 1], [1, 0.96])."
+  },
+  "confidence": "medium",
+  "notes": "Pattern 'other': spotlight_focus was the nearest canonical id but no dimming/isolation happens; this is a border-weight swell. The card/number shrink is slight and could be a perspective of the frame growing; camera verdict none."
+}

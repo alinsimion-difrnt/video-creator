@@ -1,0 +1,145 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "66809c1237fa1061fce936518441700ed7d5899b70c4b7d13086729028dc0311",
+    "created_at": "2026-10-05T06:22:50.223533Z"
+  },
+  "video": "clickup-clickup-4-0-just-changed-work-ai-softwar",
+  "task": "a1-p6",
+  "shots": [
+    {
+      "shot": "s031",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Centered white pill-shaped status card with a spinning gradient ring and the label 'Creating task with AI...', floating over a heavily blurred chat thread",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Creating task with AI...",
+        "New landing page"
+      ],
+      "text_word_count": 7,
+      "typography": "Clean geometric sans-serif UI label, medium/semibold weight, sentence case, normal tracking; background chat text is blurred and illegible",
+      "depth_cues": [
+        "blur",
+        "shadow",
+        "glow"
+      ],
+      "what_happens": "Over a blurred chat message thread, a floating card with a gradient-outlined border and spinner reads 'Creating task with AI...'; around 1:06.5 the card fades/blurs out (its label is partially unreadable mid-change) and the view resolves into a sharp ClickUp sidebar plus empty list where a single new row 'New landing page' appears. VO (w189-w193): 'apps. It's a fundamentally converged'.",
+      "build_rebuild": "Blur a chat-thread screenshot (~12px), center a rounded white card with a 2px magenta-to-violet gradient border and soft drop shadow containing a rotating gradient ring and 'Creating task with AI...', then crossfade-blur the card away into a sharp list view where a 'New landing page' row fades in.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s032",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Full ClickUp app window (Marketing > Projects list view) floating on a vivid gradient background, its Priority and Assignee AI columns showing shimmering 'Prioritizing...' / 'Assigning...' placeholders",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "IN PROGRESS",
+        "New landing page",
+        "Brand Positioning Strategy",
+        "Content Marketing Plan",
+        "Social Media Campaigns",
+        "Email Marketing Strategy",
+        "Prioritizing...",
+        "Assigning..."
+      ],
+      "text_word_count": 19,
+      "typography": "Native ClickUp UI sans-serif at small sizes; status chips in uppercase with letter-spacing; AI-column placeholders in a lighter tinted style; nothing added as overlay type",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "The full app window sits inset on a saturated gradient backdrop; the list populates with more task groups (In Progress, Review, further sections) while the AI columns show 'Prioritizing...'/'Assigning...' loaders, then the camera pushes in until the list fills the frame. VO (w193-w194): 'converged platform'.",
+      "build_rebuild": "Place a rounded, drop-shadowed app-window screenshot centered at ~75% scale over a grainy multicolour gradient, stagger in table rows top to bottom, then scale the window from 1.0 to ~1.6 with ease-in-out over ~1s so the list header area ends full-bleed.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s033",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Task activity/comment panel where AI agents (@design-agent, @code-agent, @schedule-agent) are mentioned and reply with a generated landing-page image and a meeting confirmation",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Activity",
+        "Ayda created this task",
+        "@design-agent design the landing page for this task",
+        "Based on the task description, here is the corresponding landing page design.",
+        "A New Era of Convergence",
+        "Welcome to ClickUp 4.0",
+        "@code-agent build it",
+        "ONE APP",
+        "@schedule-agent schedule a meeting with @Alexander Zinchenko",
+        "Meeting scheduled for 2:30 pm (PDT) tomorrow with @Alexander Zinchenko."
+      ],
+      "text_word_count": 56,
+      "typography": "UI comments in native sans-serif, regular weight, sentence case, @mentions in accent colour; agent replies stream in a tinted gradient style before settling; 'ONE APP' is a large bold geometric sans, all caps, slightly tight tracking with a gradient fill",
+      "depth_cues": [
+        "shadow",
+        "blur"
+      ],
+      "what_happens": "Starts on the list as the Priority column resolves from shimmer to real values (High/Medium/Low) and assignee avatars appear; cuts/scrolls to an Activity panel where Ayda posts '@design-agent design the landing page for this task', the Design Agent reply streams in with a 'LandingPage.png' mock ('A New Era of Convergence'), then '@code-agent build it' is typed and sent; a white card with gradient top glow shows 'ONE APP' (on 'one app', w209-w210); then Maggie's '@schedule-agent' request gets a streamed 'Meeting scheduled' reply; the final frame (~1:20) is already live-action of the presenter at a desk. The segmenter treated these several visual changes as one shot; inner cuts look like quick blur/push transitions but I cannot confirm them at 2 fps. VO (w195-w218): 'where everything works together seamlessly, from communication to project management, to knowledge management, and one app accelerated by the world's most productive AI. 4'.",
+      "build_rebuild": "Sequence three cropped comment-thread panels on a gradient-edged canvas: in each, type an @agent mention into a reply box, then stream the agent's reply text word by word with a temporary gradient tint and fade in an attached image card, with a 1s interstitial white card showing a gradient-filled bold 'ONE APP' scaled up 0.9 to 1.0 timed to the spoken 'one app'.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s034",
+      "shot_type": "presenter",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Founder seated at a desk facing camera in a magenta-lit room, with large white kinetic captions building word by word around his head",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "4.0",
+        "is the epicenter",
+        "for all of your work and collaboration"
+      ],
+      "text_word_count": 11,
+      "typography": "White bold geometric sans; '4.0' very large at top-centre, remaining words smaller, lowercase, stacked in loose staggered lines left and right of the head; words appear in sync with speech, some with a brief blur-in",
+      "depth_cues": [
+        "blur"
+      ],
+      "what_happens": "Live-action medium shot of the presenter talking to camera behind a keyboard; '4.0' lands first (w218-w219), then 'is the' / 'epicenter' appear left of his head and 'for all of / your / work and / collaboration' build on the right, each word timed to the VO (w218-w229) until the full sentence stands.",
+      "build_rebuild": "Over talking-head footage, place '4.0' in large bold white type above the head, then reveal each following word with a 150ms blur-to-sharp fade at its word start time, laying the words out in two ragged-left text columns flanking the speaker.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s035",
+      "shot_type": "presenter",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "Presenter cut out against a seamless white background, centered, with black kinetic captions appearing at left then right",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "It's the beginning",
+        "of a new"
+      ],
+      "text_word_count": 6,
+      "typography": "Black bold geometric sans, sentence case, medium size, normal tracking; words enter individually with a slight baseline offset/scale as they appear",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "Hard cut to the presenter on pure white in a studio framing; 'It's the' then 'beginning' appear at left mid-height, then 'of a' and 'new' pop in on the right, word-synced to the VO (w230-w235).",
+      "build_rebuild": "On a white-background talking-head clip, pop each spoken word in as black bold text at its word start time (scale 0.9 to 1.0, opacity 0 to 1, ~120ms), first line anchored left of the speaker and the continuation anchored right.",
+      "confidence": "high"
+    }
+  ],
+  "summary": null
+}

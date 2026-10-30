@@ -1,0 +1,115 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "16f27673348ac2d029da9b7438cb0254beef8ea6b08d31f17531c6c5c66e4e25",
+    "created_at": "2026-10-05T07:39:48.379081Z"
+  },
+  "video": "meta-this-is-meta-quest-3",
+  "task": "a1-p7",
+  "shots": [
+    {
+      "shot": "s034",
+      "shot_type": "3d",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Centered white feature captions over CG hardware renders: the Snapdragon XR2 Gen 2 chip, a light-streak tunnel, the speaker grille, the headset lenses, then in-headset gameplay",
+      "transition_in": "other",
+      "transition_other": "Detector reports a non-hard-cut entry from s033; the first sampled frame (0:56.5) is already mid-scene, so the entry style cannot be seen",
+      "on_screen_text": [
+        "Double the GPU power",
+        "Faster and smoother experiences",
+        "Enhanced 3D audio",
+        "Dazzling 4K graphics"
+      ],
+      "text_word_count": 13,
+      "typography": "Clean geometric sans (low-confidence guess: Meta's brand sans), semibold, sentence case, normal tracking, white, mid-size and centered; 'Faster and smoother experiences' types on left to right and exits with a horizontal motion blur; tiny legal footnotes at the bottom are too small to read",
+      "depth_cues": ["blur", "glow", "perspective_tilt"],
+      "what_happens": "One detected shot that actually chains several spec beats: a camera pulls back over the glowing XR2 Gen 2 chip on a circuit board ('Double the GPU power'), pushes into the chip into a light-streak tunnel ('Faster and smoother experiences', text streaks out with motion blur), moves to a macro of the speaker grille ('Enhanced 3D audio'), then a pale headset interior with the lenses, zooms through a lens into first-person sword gameplay ('Dazzling 4K graphics', with a bright impact flash), and ends on live-action footage of a man playing in a living room. The internal cuts were not split by the detector; SFX candidates x017 to x025 (swooshes and impacts) fall inside this shot.",
+      "build_rebuild": "Sequence four 2-2.5 s CG product macros with one centered white semibold caption each, linking them with a push-in through a light-streak tunnel and a zoom through the headset lens into gameplay footage, timed to the 129 BPM beat grid.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s035",
+      "shot_type": "footage",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Young woman wearing the white Quest 3 headset, swinging both controllers in a sunlit living room",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": ["blur", "glow"],
+      "what_happens": "A 0.6 s lifestyle insert: low-angle shot of a woman playing with controllers, warm backlight and lens flare from the window behind her.",
+      "build_rebuild": "Hard-cut on the beat to a 0.6 s low-angle lifestyle clip of a person in motion with the product, warm backlit grade, no overlay.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s036",
+      "shot_type": "footage",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Woman with braids playing in a living room, then a first-person shooter view with a glowing green weapon",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Gaming has never felt so real",
+        "Captured on PC."
+      ],
+      "text_word_count": 8,
+      "typography": "Same white semibold sans, sentence case, centered over footage; the caption builds word by word ('...felt so' then 'real'); 'Captured on PC.' is a tiny bottom-centre disclaimer over the gameplay",
+      "depth_cues": ["perspective_tilt", "shadow"],
+      "what_happens": "A low-angle shot of a woman gaming while the caption 'Gaming has never felt so real' builds word by word; the footage then shrinks into a tilted rounded-corner card on a pale gradient and a second card carrying gameplay sweeps in on a diagonal, revealing first-person shooter gameplay (ammo counter, muzzle flash) full frame.",
+      "build_rebuild": "Show the live-action clip full frame with a word-by-word caption, then shrink it to a rotated rounded card on a pale gradient while a second rounded card with gameplay slides in diagonally and scales up to full bleed.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s037",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Big white word 'Enjoy' over a VR painting app where a virtual hand paints a yellow stroke",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Enjoy",
+        "Captured on PC."
+      ],
+      "text_word_count": 4,
+      "typography": "Single word in large white bold-to-semibold sans, sentence case, normal tracking, centered and much larger than the earlier feature captions; small 'Captured on PC.' disclaimer bottom centre",
+      "depth_cues": ["shadow", "perspective_tilt"],
+      "what_happens": "VR painting gameplay: a virtual hand drags a brush and draws a curling yellow stroke across a pink canvas while the single word 'Enjoy' stays fixed in the centre.",
+      "build_rebuild": "Cut to a 1 s gameplay clip and overlay one large centered white word that stays still while the footage plays underneath, as the first word of a one-word-per-cut phrase.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s038",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Big white word 'incredible' over first-person game footage of an airfield with a knife in hand",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "incredible"
+      ],
+      "text_word_count": 1,
+      "typography": "Same large white semibold sans as 'Enjoy', all lowercase, centered, normal tracking; it reads as the continuation of a phrase broken across cuts",
+      "depth_cues": ["blur"],
+      "what_happens": "First-person gameplay at an airfield (plane, boarding stairs, a knife held up in the foreground) with the slowly drifting camera under the static word 'incredible'.",
+      "build_rebuild": "Hard-cut on the next beat to another 1 s gameplay clip, swapping the centered word for the next lowercase word of the phrase at the same size and position.",
+      "confidence": "high"
+    }
+  ],
+  "summary": null
+}

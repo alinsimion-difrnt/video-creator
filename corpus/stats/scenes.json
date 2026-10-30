@@ -1,0 +1,2921 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "s9_scene_stats",
+  "annotator": "code",
+  "skill": null,
+  "model": null,
+  "input_hash": "2497c77bb6a89ee87aca9f385516e1074247ec105e710e2257f80f210a617700",
+  "created_at": "2026-10-05T19:08:44.916446Z"
+ },
+ "weighting": {
+  "tier": {
+   "reference": 1.0,
+   "average": 0.5,
+   "competitor": 0.5,
+   "own": 0.0
+  },
+  "score_from": "overall",
+  "score_missing": 0.6,
+  "quality": true
+ },
+ "shots": 1138,
+ "archetypes": [
+  {
+   "id": "product_ui_tour",
+   "shots": 308,
+   "videos": 41,
+   "weight": 161.3,
+   "duration_s": {
+    "n": 308,
+    "videos": 41,
+    "weight": 161.3,
+    "median": 3.099,
+    "p25": 1.623,
+    "p75": 5.298,
+    "ci": [
+     2.7,
+     3.481
+    ]
+   },
+   "events_per_shot": {
+    "n": 308,
+    "videos": 41,
+    "weight": 161.3,
+    "median": 0.0,
+    "p25": 0.0,
+    "p75": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "first_motion_s": {
+    "n": 57,
+    "videos": 14,
+    "weight": 39.6,
+    "median": 1.012,
+    "p25": 0.42,
+    "p75": 2.049,
+    "ci": [
+     0.786,
+     1.39
+    ]
+   },
+   "pattern_mix": {
+    "cursor_guided_demo": 0.224,
+    "other": 0.216,
+    "layout_reframe": 0.1293,
+    "ui_camera_push_in": 0.1173,
+    "masked_scroll": 0.1027,
+    "scale_dissolve_transition": 0.04,
+    "ai_answer_stream": 0.032,
+    "skeleton_resolve": 0.028,
+    "prompt_type_on": 0.0227,
+    "stagger_list_reveal": 0.02,
+    "blur_crossfade": 0.0187,
+    "chip_append": 0.0173,
+    "kinetic_word_reveal": 0.016,
+    "spotlight_focus": 0.016
+   },
+   "transition_mix": {
+    "other": 0.3986,
+    "hard_cut": 0.2765,
+    "zoom_through": 0.1569,
+    "crossfade": 0.08,
+    "push": 0.0663,
+    "slide": 0.0074,
+    "morph": 0.005,
+    "mask_wipe": 0.0043,
+    "blur": 0.0025,
+    "whip": 0.0025
+   },
+   "shot_type_mix": {
+    "screen_recording": 0.2877,
+    "ui_recreated": 0.261,
+    "ui_closeup": 0.2405,
+    "ui_full": 0.1835,
+    "other": 0.0136,
+    "footage": 0.0074,
+    "abstract": 0.0062
+   },
+   "beat_mix": {
+    "demo": 0.6873,
+    "mechanism": 0.0969,
+    "outcome": 0.0682,
+    "hook": 0.0411,
+    "cta": 0.04,
+    "proof": 0.0344,
+    "problem": 0.0321
+   },
+   "sfx_label_mix": {
+    "unsure": 0.3484,
+    "music": 0.2933,
+    "swoosh_reverse": 0.1369,
+    "impact": 0.1177,
+    "chime": 0.0739,
+    "click": 0.0192,
+    "whoosh": 0.0052,
+    "glitch": 0.0031,
+    "typing": 0.0023
+   },
+   "sfx_offset_s_by_label": {
+    "chime": {
+     "n": 56,
+     "videos": 17,
+     "weight": 38.5,
+     "median": 3.537,
+     "p25": 1.109,
+     "p75": 8.257,
+     "ci": [
+      2.808,
+      5.629
+     ]
+    },
+    "click": {
+     "n": 24,
+     "videos": 12,
+     "weight": 10.0,
+     "median": 2.422,
+     "p25": 1.17,
+     "p75": 10.928,
+     "ci": [
+      1.713,
+      8.218
+     ]
+    },
+    "glitch": {
+     "n": 4,
+     "videos": 2,
+     "weight": 1.6,
+     "median": 14.555,
+     "p25": 7.027,
+     "p75": 19.36,
+     "ci": null
+    },
+    "impact": {
+     "n": 105,
+     "videos": 21,
+     "weight": 61.3,
+     "median": 2.235,
+     "p25": 0.885,
+     "p75": 4.651,
+     "ci": [
+      1.756,
+      2.867
+     ]
+    },
+    "music": {
+     "n": 356,
+     "videos": 28,
+     "weight": 152.7,
+     "median": 3.292,
+     "p25": 1.313,
+     "p75": 11.157,
+     "ci": [
+      2.844,
+      3.806
+     ]
+    },
+    "swoosh_reverse": {
+     "n": 132,
+     "videos": 22,
+     "weight": 71.3,
+     "median": 3.546,
+     "p25": 1.019,
+     "p75": 9.921,
+     "ci": [
+      2.478,
+      4.464
+     ]
+    },
+    "typing": {
+     "n": 4,
+     "videos": 1,
+     "weight": 1.2,
+     "median": 4.198,
+     "p25": 2.652,
+     "p75": 7.078,
+     "ci": null
+    },
+    "unsure": {
+     "n": 309,
+     "videos": 33,
+     "weight": 181.4,
+     "median": 2.919,
+     "p25": 1.154,
+     "p75": 10.123,
+     "ci": [
+      2.579,
+      3.342
+     ]
+    },
+    "whoosh": {
+     "n": 4,
+     "videos": 3,
+     "weight": 2.7,
+     "median": 0.955,
+     "p25": 0.6,
+     "p75": 1.737,
+     "ci": null
+    }
+   },
+   "examples": [
+    {
+     "video": "atlassian-introduction-to-jira-product-discovery",
+     "shot": "s004",
+     "score": 3.0
+    },
+    {
+     "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+     "shot": "s002",
+     "score": 5.0
+    },
+    {
+     "video": "anthropic-introducing-claude-design-by-anthropic-l",
+     "shot": "s013",
+     "score": 4.0
+    },
+    {
+     "video": "datadog-datadog-overview-see-inside-the-platfor",
+     "shot": "s012",
+     "score": 4.0
+    },
+    {
+     "video": "warp-introducing-warp-2-0-the-agentic-develo",
+     "shot": "s012",
+     "score": 4.0
+    }
+   ]
+  },
+  {
+   "id": "presenter_to_camera",
+   "shots": 98,
+   "videos": 10,
+   "weight": 59.8,
+   "duration_s": {
+    "n": 98,
+    "videos": 10,
+    "weight": 59.8,
+    "median": 3.759,
+    "p25": 2.528,
+    "p75": 6.071,
+    "ci": [
+     3.276,
+     4.662
+    ]
+   },
+   "events_per_shot": {
+    "n": 98,
+    "videos": 10,
+    "weight": 59.8,
+    "median": 0.0,
+    "p25": 0.0,
+    "p75": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "first_motion_s": {
+    "n": 12,
+    "videos": 2,
+    "weight": 9.6,
+    "median": 0.983,
+    "p25": 0.272,
+    "p75": 2.544,
+    "ci": [
+     0.378,
+     2.503
+    ]
+   },
+   "pattern_mix": {
+    "other": 0.7222,
+    "masked_scroll": 0.2222,
+    "chip_append": 0.0556
+   },
+   "transition_mix": {
+    "hard_cut": 0.6505,
+    "other": 0.209,
+    "slide": 0.0535,
+    "crossfade": 0.0468,
+    "whip": 0.0268,
+    "push": 0.0134
+   },
+   "shot_type_mix": {
+    "presenter": 0.8261,
+    "footage": 0.1003,
+    "other": 0.0535,
+    "ui_recreated": 0.0201
+   },
+   "beat_mix": {
+    "demo": 0.2324,
+    "mechanism": 0.2209,
+    "outcome": 0.216,
+    "proof": 0.1375,
+    "hook": 0.1113,
+    "problem": 0.0573,
+    "agitate": 0.0131,
+    "cta": 0.0115
+   },
+   "sfx_label_mix": {
+    "music": 0.2519,
+    "unsure": 0.2442,
+    "swoosh_reverse": 0.187,
+    "impact": 0.1549,
+    "chime": 0.1263,
+    "click": 0.0143,
+    "whoosh": 0.0119,
+    "speech": 0.0095
+   },
+   "sfx_offset_s_by_label": {
+    "chime": {
+     "n": 28,
+     "videos": 3,
+     "weight": 21.2,
+     "median": 4.465,
+     "p25": 1.849,
+     "p75": 6.395,
+     "ci": [
+      3.054,
+      5.544
+     ]
+    },
+    "click": {
+     "n": 3,
+     "videos": 1,
+     "weight": 2.4,
+     "median": 1.557,
+     "p25": 0.488,
+     "p75": 3.116,
+     "ci": null
+    },
+    "impact": {
+     "n": 34,
+     "videos": 5,
+     "weight": 26.0,
+     "median": 1.77,
+     "p25": 0.988,
+     "p75": 3.213,
+     "ci": [
+      1.27,
+      2.398
+     ]
+    },
+    "music": {
+     "n": 63,
+     "videos": 5,
+     "weight": 42.3,
+     "median": 2.908,
+     "p25": 1.217,
+     "p75": 4.508,
+     "ci": [
+      2.32,
+      3.267
+     ]
+    },
+    "speech": {
+     "n": 2,
+     "videos": 1,
+     "weight": 1.6,
+     "median": 1.749,
+     "p25": 0.808,
+     "p75": 2.691,
+     "ci": null
+    },
+    "swoosh_reverse": {
+     "n": 43,
+     "videos": 5,
+     "weight": 31.4,
+     "median": 2.105,
+     "p25": 0.717,
+     "p75": 4.035,
+     "ci": [
+      1.562,
+      2.768
+     ]
+    },
+    "unsure": {
+     "n": 57,
+     "videos": 7,
+     "weight": 41.0,
+     "median": 2.406,
+     "p25": 1.108,
+     "p75": 4.012,
+     "ci": [
+      1.877,
+      2.882
+     ]
+    },
+    "whoosh": {
+     "n": 3,
+     "videos": 2,
+     "weight": 2.0,
+     "median": 1.662,
+     "p25": 1.459,
+     "p75": 1.948,
+     "ci": null
+    }
+   },
+   "examples": [
+    {
+     "video": "warp-introducing-warp-2-0-the-agentic-develo",
+     "shot": "s020",
+     "score": 4.0
+    },
+    {
+     "video": "cursor-introducing-cursor-3",
+     "shot": "s002",
+     "score": 4.0
+    },
+    {
+     "video": "servicenow-what-does-servicenow-do",
+     "shot": "s009",
+     "score": 4.0
+    },
+    {
+     "video": "clickup-clickup-4-0-just-changed-work-ai-softwar",
+     "shot": "s002",
+     "score": 4.0
+    },
+    {
+     "video": "profound-how-to-maximize-ai-visibility-analytics",
+     "shot": "s001",
+     "score": 4.0
+    }
+   ]
+  },
+  {
+   "id": "kinetic_statement_card",
+   "shots": 66,
+   "videos": 21,
+   "weight": 35.6,
+   "duration_s": {
+    "n": 66,
+    "videos": 21,
+    "weight": 35.6,
+    "median": 3.234,
+    "p25": 1.673,
+    "p75": 4.593,
+    "ci": [
+     2.836,
+     3.57
+    ]
+   },
+   "events_per_shot": {
+    "n": 66,
+    "videos": 21,
+    "weight": 35.6,
+    "median": 0.0,
+    "p25": 0.0,
+    "p75": 1.0,
+    "ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "first_motion_s": {
+    "n": 14,
+    "videos": 7,
+    "weight": 11.4,
+    "median": 0.297,
+    "p25": 0.046,
+    "p75": 1.399,
+    "ci": [
+     0.1,
+     1.283
+    ]
+   },
+   "pattern_mix": {
+    "kinetic_word_reveal": 0.3475,
+    "input_text_cycle": 0.1418,
+    "other": 0.1418,
+    "layout_reframe": 0.0851,
+    "logo_resolve": 0.0851,
+    "masked_scroll": 0.0851,
+    "chip_append": 0.0284,
+    "cursor_guided_demo": 0.0284,
+    "parallax_layers": 0.0284,
+    "stagger_list_reveal": 0.0284
+   },
+   "transition_mix": {
+    "hard_cut": 0.4101,
+    "other": 0.3539,
+    "zoom_through": 0.1573,
+    "crossfade": 0.0337,
+    "push": 0.0225,
+    "blur": 0.0112,
+    "mask_wipe": 0.0112
+   },
+   "shot_type_mix": {
+    "kinetic_type": 0.8652,
+    "abstract": 0.0674,
+    "other": 0.0506,
+    "footage": 0.0084,
+    "ui_full": 0.0084
+   },
+   "beat_mix": {
+    "outcome": 0.1927,
+    "mechanism": 0.1875,
+    "hook": 0.1693,
+    "problem": 0.1432,
+    "demo": 0.1146,
+    "agitate": 0.0885,
+    "cta": 0.0729,
+    "proof": 0.0313
+   },
+   "sfx_label_mix": {
+    "unsure": 0.4862,
+    "swoosh_reverse": 0.1422,
+    "chime": 0.1376,
+    "music": 0.1307,
+    "impact": 0.1032
+   },
+   "sfx_offset_s_by_label": {
+    "chime": {
+     "n": 20,
+     "videos": 4,
+     "weight": 12.0,
+     "median": 3.461,
+     "p25": 1.779,
+     "p75": 5.84,
+     "ci": [
+      2.719,
+      5.672
+     ]
+    },
+    "impact": {
+     "n": 17,
+     "videos": 12,
+     "weight": 9.0,
+     "median": 1.483,
+     "p25": 0.305,
+     "p75": 3.277,
+     "ci": [
+      0.393,
+      3.253
+     ]
+    },
+    "music": {
+     "n": 22,
+     "videos": 10,
+     "weight": 11.4,
+     "median": 0.727,
+     "p25": 0.421,
+     "p75": 3.261,
+     "ci": [
+      0.525,
+      2.806
+     ]
+    },
+    "swoosh_reverse": {
+     "n": 26,
+     "videos": 7,
+     "weight": 12.4,
+     "median": 1.652,
+     "p25": 1.082,
+     "p75": 3.39,
+     "ci": [
+      1.286,
+      2.356
+     ]
+    },
+    "unsure": {
+     "n": 73,
+     "videos": 13,
+     "weight": 42.4,
+     "median": 2.111,
+     "p25": 0.961,
+     "p75": 5.352,
+     "ci": [
+      1.434,
+      2.488
+     ]
+    }
+   },
+   "examples": [
+    {
+     "video": "attio-introducing-ask-attio",
+     "shot": "s003",
+     "score": 4.0
+    },
+    {
+     "video": "notion-introducing-the-new-notion-ai",
+     "shot": "s003",
+     "score": 4.0
+    },
+    {
+     "video": "notion-introducing-notion-ai-connectors",
+     "shot": "s004",
+     "score": 4.0
+    },
+    {
+     "video": "meta-introducing-meta-quest-3-coming-this-f",
+     "shot": "s016",
+     "score": 5.0
+    },
+    {
+     "video": "loom-introducing-loom-ai",
+     "shot": "s001",
+     "score": 4.0
+    }
+   ]
+  },
+  {
+   "id": "logo_close",
+   "shots": 55,
+   "videos": 49,
+   "weight": 31.8,
+   "duration_s": {
+    "n": 55,
+    "videos": 49,
+    "weight": 31.8,
+    "median": 6.859,
+    "p25": 4.354,
+    "p75": 10.237,
+    "ci": [
+     4.8,
+     8.792
+    ]
+   },
+   "events_per_shot": {
+    "n": 55,
+    "videos": 49,
+    "weight": 31.8,
+    "median": 0.0,
+    "p25": 0.0,
+    "p75": 1.0,
+    "ci": [
+     0.0,
+     1.0
+    ]
+   },
+   "first_motion_s": {
+    "n": 16,
+    "videos": 14,
+    "weight": 12.8,
+    "median": 0.574,
+    "p25": 0.183,
+    "p75": 1.644,
+    "ci": [
+     0.33,
+     1.042
+    ]
+   },
+   "pattern_mix": {
+    "logo_resolve": 0.3158,
+    "other": 0.2406,
+    "kinetic_word_reveal": 0.1504,
+    "layout_reframe": 0.0977,
+    "prompt_type_on": 0.0602,
+    "input_text_cycle": 0.0451,
+    "cursor_guided_demo": 0.0301,
+    "ui_camera_push_in": 0.0301,
+    "whip_transition": 0.0301
+   },
+   "transition_mix": {
+    "other": 0.3239,
+    "hard_cut": 0.3176,
+    "zoom_through": 0.1698,
+    "crossfade": 0.1509,
+    "blur": 0.0126,
+    "push": 0.0126,
+    "whip": 0.0126
+   },
+   "shot_type_mix": {
+    "logo": 0.522,
+    "kinetic_type": 0.2044,
+    "other": 0.195,
+    "3d": 0.0503,
+    "presenter": 0.0189,
+    "abstract": 0.0094
+   },
+   "beat_mix": {
+    "cta": 0.7224,
+    "outcome": 0.2262,
+    "demo": 0.0411,
+    "proof": 0.0103
+   },
+   "sfx_label_mix": {
+    "music": 0.4015,
+    "unsure": 0.2754,
+    "swoosh_reverse": 0.1261,
+    "chime": 0.0975,
+    "impact": 0.0804,
+    "glitch": 0.0136,
+    "whoosh": 0.0055
+   },
+   "sfx_offset_s_by_label": {
+    "chime": {
+     "n": 20,
+     "videos": 11,
+     "weight": 14.3,
+     "median": 2.804,
+     "p25": 1.689,
+     "p75": 6.658,
+     "ci": [
+      2.289,
+      6.049
+     ]
+    },
+    "glitch": {
+     "n": 4,
+     "videos": 3,
+     "weight": 2.0,
+     "median": 1.274,
+     "p25": 0.216,
+     "p75": 2.001,
+     "ci": null
+    },
+    "impact": {
+     "n": 16,
+     "videos": 9,
+     "weight": 11.8,
+     "median": 3.176,
+     "p25": 1.288,
+     "p75": 11.732,
+     "ci": [
+      1.448,
+      10.689
+     ]
+    },
+    "music": {
+     "n": 98,
+     "videos": 21,
+     "weight": 58.9,
+     "median": 5.056,
+     "p25": 2.68,
+     "p75": 12.318,
+     "ci": [
+      4.312,
+      6.443
+     ]
+    },
+    "swoosh_reverse": {
+     "n": 29,
+     "videos": 16,
+     "weight": 18.5,
+     "median": 2.175,
+     "p25": 1.015,
+     "p75": 4.405,
+     "ci": [
+      1.241,
+      3.211
+     ]
+    },
+    "unsure": {
+     "n": 74,
+     "videos": 28,
+     "weight": 40.4,
+     "median": 2.369,
+     "p25": 0.914,
+     "p75": 6.575,
+     "ci": [
+      1.588,
+      3.732
+     ]
+    },
+    "whoosh": {
+     "n": 1,
+     "videos": 1,
+     "weight": 0.8,
+     "median": 0.385,
+     "p25": 0.385,
+     "p75": 0.385,
+     "ci": null
+    }
+   },
+   "examples": [
+    {
+     "video": "notion-introducing-notion-ai-connectors",
+     "shot": "s005",
+     "score": 4.0
+    },
+    {
+     "video": "datadog-datadog-overview-see-inside-the-platfor",
+     "shot": "s013",
+     "score": 4.0
+    },
+    {
+     "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+     "shot": "s008",
+     "score": 5.0
+    },
+    {
+     "video": "figma-introducing-figma-motion-your-canvas-no",
+     "shot": "s028",
+     "score": 5.0
+    },
+    {
+     "video": "meta-introducing-meta-quest-3-coming-this-f",
+     "shot": "s034",
+     "score": 5.0
+    }
+   ]
+  },
+  {
+   "id": "tile_grid",
+   "shots": 33,
+   "videos": 15,
+   "weight": 21.6,
+   "duration_s": {
+    "n": 33,
+    "videos": 15,
+    "weight": 21.6,
+    "median": 2.38,
+    "p25": 1.042,
+    "p75": 3.317,
+    "ci": [
+     1.965,
+     2.919
+    ]
+   },
+   "events_per_shot": {
+    "n": 33,
+    "videos": 15,
+    "weight": 21.6,
+    "median": 0.0,
+    "p25": 0.0,
+    "p75": 1.0,
+    "ci": [
+     0.0,
+     1.0
+    ]
+   },
+   "first_motion_s": {
+    "n": 9,
+    "videos": 6,
+    "weight": 7.8,
+    "median": 0.6,
+    "p25": 0.252,
+    "p75": 0.987,
+    "ci": [
+     0.274,
+     0.966
+    ]
+   },
+   "pattern_mix": {
+    "other": 0.4286,
+    "layout_reframe": 0.1818,
+    "card_wall_stagger": 0.1169,
+    "parallax_layers": 0.0649,
+    "kinetic_word_reveal": 0.0519,
+    "spotlight_focus": 0.0519,
+    "stagger_list_reveal": 0.0519,
+    "ui_camera_push_in": 0.0519
+   },
+   "transition_mix": {
+    "other": 0.5093,
+    "zoom_through": 0.2222,
+    "hard_cut": 0.1944,
+    "slide": 0.037,
+    "blur": 0.0185,
+    "mask_wipe": 0.0185
+   },
+   "shot_type_mix": {
+    "other": 0.287,
+    "ui_recreated": 0.213,
+    "logo": 0.1667,
+    "kinetic_type": 0.1481,
+    "ui_full": 0.1111,
+    "abstract": 0.0556,
+    "3d": 0.0185
+   },
+   "beat_mix": {
+    "demo": 0.3929,
+    "outcome": 0.2054,
+    "proof": 0.1696,
+    "hook": 0.1071,
+    "mechanism": 0.0536,
+    "problem": 0.0536,
+    "agitate": 0.0179
+   },
+   "sfx_label_mix": {
+    "unsure": 0.3932,
+    "music": 0.2282,
+    "swoosh_reverse": 0.2233,
+    "impact": 0.0874,
+    "chime": 0.0485,
+    "whoosh": 0.0194
+   },
+   "sfx_offset_s_by_label": {
+    "chime": {
+     "n": 4,
+     "videos": 2,
+     "weight": 2.0,
+     "median": 1.553,
+     "p25": 0.822,
+     "p75": 1.621,
+     "ci": null
+    },
+    "impact": {
+     "n": 6,
+     "videos": 4,
+     "weight": 3.6,
+     "median": 0.321,
+     "p25": 0.259,
+     "p75": 0.788,
+     "ci": [
+      0.246,
+      0.854
+     ]
+    },
+    "music": {
+     "n": 12,
+     "videos": 6,
+     "weight": 9.4,
+     "median": 1.92,
+     "p25": 0.632,
+     "p75": 2.314,
+     "ci": [
+      0.661,
+      2.276
+     ]
+    },
+    "swoosh_reverse": {
+     "n": 16,
+     "videos": 5,
+     "weight": 9.2,
+     "median": 1.761,
+     "p25": 0.599,
+     "p75": 2.234,
+     "ci": [
+      0.616,
+      2.058
+     ]
+    },
+    "unsure": {
+     "n": 24,
+     "videos": 11,
+     "weight": 16.2,
+     "median": 1.014,
+     "p25": 0.419,
+     "p75": 2.756,
+     "ci": [
+      0.551,
+      1.761
+     ]
+    },
+    "whoosh": {
+     "n": 1,
+     "videos": 1,
+     "weight": 0.8,
+     "median": 3.861,
+     "p25": 3.861,
+     "p75": 3.861,
+     "ci": null
+    }
+   },
+   "examples": [
+    {
+     "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+     "shot": "s004",
+     "score": 5.0
+    },
+    {
+     "video": "datadog-datadog-overview-see-inside-the-platfor",
+     "shot": "s008",
+     "score": 4.0
+    },
+    {
+     "video": "notion-introducing-notion-ai-connectors",
+     "shot": "s001",
+     "score": 4.0
+    },
+    {
+     "video": "meta-introducing-meta-quest-3-coming-this-f",
+     "shot": "s028",
+     "score": 5.0
+    },
+    {
+     "video": "figma-introducing-figma-motion-your-canvas-no",
+     "shot": "s025",
+     "score": 5.0
+    }
+   ]
+  },
+  {
+   "id": "prompt_input_card",
+   "shots": 30,
+   "videos": 13,
+   "weight": 18.6,
+   "duration_s": {
+    "n": 30,
+    "videos": 13,
+    "weight": 18.6,
+    "median": 2.739,
+    "p25": 2.01,
+    "p75": 5.055,
+    "ci": [
+     2.181,
+     3.667
+    ]
+   },
+   "events_per_shot": {
+    "n": 30,
+    "videos": 13,
+    "weight": 18.6,
+    "median": 0.0,
+    "p25": 0.0,
+    "p75": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "first_motion_s": {
+    "n": 4,
+    "videos": 4,
+    "weight": 3.2,
+    "median": 0.613,
+    "p25": 0.25,
+    "p75": 9.897,
+    "ci": null
+   },
+   "pattern_mix": {
+    "other": 0.6,
+    "layout_reframe": 0.3,
+    "spotlight_focus": 0.1
+   },
+   "transition_mix": {
+    "hard_cut": 0.3656,
+    "other": 0.3656,
+    "zoom_through": 0.1613,
+    "crossfade": 0.1075
+   },
+   "shot_type_mix": {
+    "ui_recreated": 0.6237,
+    "ui_closeup": 0.2688,
+    "kinetic_type": 0.0645,
+    "screen_recording": 0.043
+   },
+   "beat_mix": {
+    "demo": 0.5556,
+    "hook": 0.3232,
+    "proof": 0.0808,
+    "agitate": 0.0202,
+    "outcome": 0.0202
+   },
+   "sfx_label_mix": {
+    "music": 0.3676,
+    "unsure": 0.2426,
+    "swoosh_reverse": 0.1397,
+    "click": 0.0882,
+    "impact": 0.0882,
+    "chime": 0.0441,
+    "glitch": 0.0294
+   },
+   "sfx_offset_s_by_label": {
+    "chime": {
+     "n": 2,
+     "videos": 2,
+     "weight": 1.2,
+     "median": 7.044,
+     "p25": 1.867,
+     "p75": 10.495,
+     "ci": null
+    },
+    "click": {
+     "n": 5,
+     "videos": 3,
+     "weight": 2.4,
+     "median": 1.465,
+     "p25": 1.065,
+     "p75": 1.704,
+     "ci": [
+      1.065,
+      1.625
+     ]
+    },
+    "glitch": {
+     "n": 2,
+     "videos": 1,
+     "weight": 0.8,
+     "median": 1.794,
+     "p25": 1.419,
+     "p75": 2.169,
+     "ci": null
+    },
+    "impact": {
+     "n": 3,
+     "videos": 3,
+     "weight": 2.4,
+     "median": 1.163,
+     "p25": 0.634,
+     "p75": 15.514,
+     "ci": null
+    },
+    "music": {
+     "n": 23,
+     "videos": 4,
+     "weight": 10.0,
+     "median": 3.396,
+     "p25": 0.898,
+     "p75": 6.592,
+     "ci": [
+      1.527,
+      5.702
+     ]
+    },
+    "swoosh_reverse": {
+     "n": 6,
+     "videos": 5,
+     "weight": 3.8,
+     "median": 0.933,
+     "p25": 0.11,
+     "p75": 2.62,
+     "ci": [
+      0.1,
+      2.698
+     ]
+    },
+    "unsure": {
+     "n": 9,
+     "videos": 5,
+     "weight": 6.6,
+     "median": 1.601,
+     "p25": 0.967,
+     "p75": 2.515,
+     "ci": [
+      0.815,
+      2.462
+     ]
+    }
+   },
+   "examples": [
+    {
+     "video": "attio-introducing-ask-attio",
+     "shot": "s001",
+     "score": 4.0
+    },
+    {
+     "video": "figma-introducing-figma-motion-your-canvas-no",
+     "shot": "s016",
+     "score": 5.0
+    },
+    {
+     "video": "google-introducing-the-google-pixel-9-pro",
+     "shot": "s001",
+     "score": 4.0
+    },
+    {
+     "video": "raycast-new-raycast-coming-2026",
+     "shot": "s008",
+     "score": 4.0
+    },
+    {
+     "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+     "shot": "s007",
+     "score": 4.0
+    }
+   ]
+  },
+  {
+   "id": "title_card",
+   "shots": 23,
+   "videos": 19,
+   "weight": 12.9,
+   "duration_s": {
+    "n": 23,
+    "videos": 19,
+    "weight": 12.9,
+    "median": 2.7,
+    "p25": 2.059,
+    "p75": 3.442,
+    "ci": [
+     2.125,
+     3.16
+    ]
+   },
+   "events_per_shot": {
+    "n": 23,
+    "videos": 19,
+    "weight": 12.9,
+    "median": 0.188,
+    "p25": 0.0,
+    "p75": 1.0,
+    "ci": [
+     0.0,
+     1.0
+    ]
+   },
+   "first_motion_s": {
+    "n": 8,
+    "videos": 6,
+    "weight": 6.2,
+    "median": 0.089,
+    "p25": 0.039,
+    "p75": 0.612,
+    "ci": [
+     0.033,
+     0.584
+    ]
+   },
+   "pattern_mix": {
+    "kinetic_word_reveal": 0.2353,
+    "other": 0.2353,
+    "logo_resolve": 0.1765,
+    "parallax_layers": 0.1471,
+    "ui_camera_push_in": 0.1176,
+    "blur_crossfade": 0.0882
+   },
+   "transition_mix": {
+    "other": 0.4264,
+    "hard_cut": 0.3876,
+    "crossfade": 0.1008,
+    "slide": 0.062,
+    "push": 0.0233
+   },
+   "shot_type_mix": {
+    "kinetic_type": 0.6047,
+    "ui_full": 0.155,
+    "other": 0.1085,
+    "logo": 0.0775,
+    "abstract": 0.031,
+    "ui_recreated": 0.0233
+   },
+   "beat_mix": {
+    "demo": 0.3696,
+    "hook": 0.3696,
+    "mechanism": 0.1232,
+    "proof": 0.087,
+    "outcome": 0.029,
+    "problem": 0.0217
+   },
+   "sfx_label_mix": {
+    "chime": 0.2983,
+    "music": 0.2644,
+    "unsure": 0.2407,
+    "swoosh_reverse": 0.1017,
+    "impact": 0.0949
+   },
+   "sfx_offset_s_by_label": {
+    "chime": {
+     "n": 17,
+     "videos": 5,
+     "weight": 8.8,
+     "median": 2.564,
+     "p25": 1.479,
+     "p75": 4.04,
+     "ci": [
+      1.566,
+      3.454
+     ]
+    },
+    "impact": {
+     "n": 5,
+     "videos": 4,
+     "weight": 2.8,
+     "median": 1.472,
+     "p25": 0.652,
+     "p75": 2.693,
+     "ci": [
+      0.537,
+      2.648
+     ]
+    },
+    "music": {
+     "n": 13,
+     "videos": 7,
+     "weight": 7.8,
+     "median": 1.384,
+     "p25": 0.913,
+     "p75": 1.91,
+     "ci": [
+      0.959,
+      1.891
+     ]
+    },
+    "swoosh_reverse": {
+     "n": 6,
+     "videos": 2,
+     "weight": 3.0,
+     "median": 0.333,
+     "p25": 0.181,
+     "p75": 1.299,
+     "ci": [
+      0.191,
+      1.495
+     ]
+    },
+    "unsure": {
+     "n": 14,
+     "videos": 9,
+     "weight": 7.1,
+     "median": 1.097,
+     "p25": 0.407,
+     "p75": 1.375,
+     "ci": [
+      0.795,
+      1.264
+     ]
+    }
+   },
+   "examples": [
+    {
+     "video": "figma-introducing-figma-motion-your-canvas-no",
+     "shot": "s004",
+     "score": 5.0
+    },
+    {
+     "video": "datadog-datadog-overview-see-inside-the-platfor",
+     "shot": "s007",
+     "score": 4.0
+    },
+    {
+     "video": "notion-introducing-the-new-notion-ai",
+     "shot": "s007",
+     "score": 4.0
+    },
+    {
+     "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+     "shot": "s006",
+     "score": 4.0
+    },
+    {
+     "video": "duolingo-introducing-duolingo-chess",
+     "shot": "s024",
+     "score": 4.0
+    }
+   ]
+  },
+  {
+   "id": "chat_demo_panel",
+   "shots": 18,
+   "videos": 8,
+   "weight": 10.6,
+   "duration_s": {
+    "n": 18,
+    "videos": 8,
+    "weight": 10.6,
+    "median": 6.177,
+    "p25": 3.444,
+    "p75": 11.176,
+    "ci": [
+     3.925,
+     10.332
+    ]
+   },
+   "events_per_shot": {
+    "n": 18,
+    "videos": 8,
+    "weight": 10.6,
+    "median": 1.0,
+    "p25": 0.0,
+    "p75": 2.938,
+    "ci": [
+     0.0,
+     2.0
+    ]
+   },
+   "first_motion_s": {
+    "n": 8,
+    "videos": 4,
+    "weight": 6.2,
+    "median": 0.146,
+    "p25": 0.0,
+    "p75": 0.618,
+    "ci": [
+     0.0,
+     0.652
+    ]
+   },
+   "pattern_mix": {
+    "masked_scroll": 0.2526,
+    "stagger_list_reveal": 0.2105,
+    "other": 0.1684,
+    "ai_answer_stream": 0.1263,
+    "notification_pop": 0.1263,
+    "chip_append": 0.0421,
+    "prompt_type_on": 0.0421,
+    "ui_camera_push_in": 0.0316
+   },
+   "transition_mix": {
+    "hard_cut": 0.6038,
+    "other": 0.3585,
+    "zoom_through": 0.0377
+   },
+   "shot_type_mix": {
+    "ui_recreated": 0.4906,
+    "ui_closeup": 0.3396,
+    "screen_recording": 0.0943,
+    "ui_full": 0.0755
+   },
+   "beat_mix": {
+    "demo": 0.8113,
+    "hook": 0.0755,
+    "outcome": 0.0755,
+    "proof": 0.0377
+   },
+   "sfx_label_mix": {
+    "music": 0.348,
+    "unsure": 0.2819,
+    "swoosh_reverse": 0.2203,
+    "impact": 0.1057,
+    "click": 0.0176,
+    "chime": 0.0132,
+    "pop": 0.0088,
+    "glitch": 0.0044
+   },
+   "sfx_offset_s_by_label": {
+    "chime": {
+     "n": 2,
+     "videos": 1,
+     "weight": 1.2,
+     "median": 5.639,
+     "p25": 5.558,
+     "p75": 5.72,
+     "ci": null
+    },
+    "click": {
+     "n": 4,
+     "videos": 1,
+     "weight": 1.6,
+     "median": 6.368,
+     "p25": 4.324,
+     "p75": 10.785,
+     "ci": null
+    },
+    "glitch": {
+     "n": 1,
+     "videos": 1,
+     "weight": 0.4,
+     "median": 3.261,
+     "p25": 3.261,
+     "p75": 3.261,
+     "ci": null
+    },
+    "impact": {
+     "n": 14,
+     "videos": 3,
+     "weight": 9.6,
+     "median": 16.924,
+     "p25": 10.256,
+     "p75": 22.041,
+     "ci": [
+      12.543,
+      21.539
+     ]
+    },
+    "music": {
+     "n": 58,
+     "videos": 5,
+     "weight": 31.6,
+     "median": 7.639,
+     "p25": 3.527,
+     "p75": 10.949,
+     "ci": [
+      5.706,
+      9.289
+     ]
+    },
+    "pop": {
+     "n": 1,
+     "videos": 1,
+     "weight": 0.8,
+     "median": 0.056,
+     "p25": 0.056,
+     "p75": 0.056,
+     "ci": null
+    },
+    "swoosh_reverse": {
+     "n": 32,
+     "videos": 3,
+     "weight": 20.0,
+     "median": 12.793,
+     "p25": 3.937,
+     "p75": 17.98,
+     "ci": [
+      6.42,
+      14.061
+     ]
+    },
+    "unsure": {
+     "n": 43,
+     "videos": 5,
+     "weight": 25.6,
+     "median": 7.06,
+     "p25": 3.626,
+     "p75": 13.538,
+     "ci": [
+      5.457,
+      10.011
+     ]
+    }
+   },
+   "examples": [
+    {
+     "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+     "shot": "s003",
+     "score": 4.0
+    },
+    {
+     "video": "notion-introducing-the-new-notion-ai",
+     "shot": "s006",
+     "score": 4.0
+    },
+    {
+     "video": "salesforce-what-is-agentforce-and-how-businesses-us",
+     "shot": "s004",
+     "score": 3.0
+    },
+    {
+     "video": "raycast-new-raycast-coming-2026",
+     "shot": "s009",
+     "score": 4.0
+    },
+    {
+     "video": "clickup-clickup-4-0-just-changed-work-ai-softwar",
+     "shot": "s033",
+     "score": 4.0
+    }
+   ]
+  },
+  {
+   "id": "abstract_shape_metaphor",
+   "shots": 11,
+   "videos": 3,
+   "weight": 8.4,
+   "duration_s": {
+    "n": 11,
+    "videos": 3,
+    "weight": 8.4,
+    "median": 1.585,
+    "p25": 0.409,
+    "p75": 2.685,
+    "ci": [
+     0.429,
+     2.644
+    ]
+   },
+   "events_per_shot": {
+    "n": 11,
+    "videos": 3,
+    "weight": 8.4,
+    "median": 0.0,
+    "p25": 0.0,
+    "p75": 1.0,
+    "ci": [
+     0.0,
+     1.0
+    ]
+   },
+   "first_motion_s": {
+    "n": 4,
+    "videos": 1,
+    "weight": 3.2,
+    "median": 1.402,
+    "p25": 0.676,
+    "p75": 1.733,
+    "ci": null
+   },
+   "pattern_mix": {
+    "other": 0.75,
+    "match_cut_element": 0.25
+   },
+   "transition_mix": {
+    "other": 0.5238,
+    "zoom_through": 0.381,
+    "crossfade": 0.0952
+   },
+   "shot_type_mix": {
+    "abstract": 1.0
+   },
+   "beat_mix": {
+    "mechanism": 0.6087,
+    "hook": 0.2174,
+    "demo": 0.1739
+   },
+   "sfx_label_mix": {
+    "unsure": 0.75,
+    "chime": 0.1,
+    "impact": 0.05,
+    "music": 0.05,
+    "swoosh_reverse": 0.05
+   },
+   "sfx_offset_s_by_label": {
+    "chime": {
+     "n": 1,
+     "videos": 1,
+     "weight": 0.8,
+     "median": 0.623,
+     "p25": 0.623,
+     "p75": 0.623,
+     "ci": null
+    },
+    "impact": {
+     "n": 1,
+     "videos": 1,
+     "weight": 0.4,
+     "median": 3.056,
+     "p25": 3.056,
+     "p75": 3.056,
+     "ci": null
+    },
+    "music": {
+     "n": 1,
+     "videos": 1,
+     "weight": 0.4,
+     "median": 2.307,
+     "p25": 2.307,
+     "p75": 2.307,
+     "ci": null
+    },
+    "swoosh_reverse": {
+     "n": 1,
+     "videos": 1,
+     "weight": 0.4,
+     "median": 0.996,
+     "p25": 0.996,
+     "p75": 0.996,
+     "ci": null
+    },
+    "unsure": {
+     "n": 10,
+     "videos": 2,
+     "weight": 6.0,
+     "median": 1.571,
+     "p25": 0.339,
+     "p75": 2.13,
+     "ci": [
+      0.27,
+      2.096
+     ]
+    }
+   },
+   "examples": [
+    {
+     "video": "figma-introducing-figma-motion-your-canvas-no",
+     "shot": "s001",
+     "score": 5.0
+    },
+    {
+     "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+     "shot": "s002",
+     "score": 4.0
+    },
+    {
+     "video": "fullstory-behavioral-data-made-simple-by-fullstory",
+     "shot": "s010",
+     "score": 4.0
+    }
+   ]
+  },
+  {
+   "id": "comparison_split",
+   "shots": 12,
+   "videos": 5,
+   "weight": 8.4,
+   "duration_s": {
+    "n": 12,
+    "videos": 5,
+    "weight": 8.4,
+    "median": 1.945,
+    "p25": 1.587,
+    "p75": 3.012,
+    "ci": [
+     1.617,
+     2.94
+    ]
+   },
+   "events_per_shot": {
+    "n": 12,
+    "videos": 5,
+    "weight": 8.4,
+    "median": 0.0,
+    "p25": 0.0,
+    "p75": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "first_motion_s": {
+    "n": 0,
+    "videos": 0,
+    "weight": 0.0,
+    "median": null,
+    "p25": null,
+    "p75": null,
+    "ci": null
+   },
+   "pattern_mix": {},
+   "transition_mix": {
+    "other": 0.6667,
+    "hard_cut": 0.1429,
+    "zoom_through": 0.1429,
+    "crossfade": 0.0476
+   },
+   "shot_type_mix": {
+    "other": 0.381,
+    "3d": 0.2381,
+    "abstract": 0.1905,
+    "ui_recreated": 0.1429,
+    "footage": 0.0476
+   },
+   "beat_mix": {
+    "demo": 0.2857,
+    "problem": 0.2381,
+    "proof": 0.2381,
+    "hook": 0.1905,
+    "agitate": 0.0476
+   },
+   "sfx_label_mix": {
+    "music": 0.3093,
+    "unsure": 0.3093,
+    "impact": 0.299,
+    "whoosh": 0.0825
+   },
+   "sfx_offset_s_by_label": {
+    "impact": {
+     "n": 11,
+     "videos": 3,
+     "weight": 5.8,
+     "median": 1.044,
+     "p25": 0.302,
+     "p75": 1.836,
+     "ci": [
+      0.299,
+      1.805
+     ]
+    },
+    "music": {
+     "n": 9,
+     "videos": 4,
+     "weight": 6.0,
+     "median": 2.645,
+     "p25": 1.794,
+     "p75": 5.038,
+     "ci": [
+      2.012,
+      5.004
+     ]
+    },
+    "unsure": {
+     "n": 9,
+     "videos": 3,
+     "weight": 6.0,
+     "median": 3.147,
+     "p25": 1.808,
+     "p75": 4.243,
+     "ci": [
+      1.811,
+      4.197
+     ]
+    },
+    "whoosh": {
+     "n": 2,
+     "videos": 1,
+     "weight": 1.6,
+     "median": 0.386,
+     "p25": 0.289,
+     "p75": 0.483,
+     "ci": null
+    }
+   },
+   "examples": [
+    {
+     "video": "meta-introducing-meta-quest-3-coming-this-f",
+     "shot": "s004",
+     "score": 5.0
+    },
+    {
+     "video": "duolingo-introducing-duolingo-chess",
+     "shot": "s001",
+     "score": 4.0
+    },
+    {
+     "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+     "shot": "s004",
+     "score": 4.0
+    },
+    {
+     "video": "fullstory-behavioral-data-made-simple-by-fullstory",
+     "shot": "s002",
+     "score": 4.0
+    },
+    {
+     "video": "profound-introducing-profound",
+     "shot": "s045",
+     "score": 4.0
+    }
+   ]
+  },
+  {
+   "id": "logo_intro_sting",
+   "shots": 13,
+   "videos": 12,
+   "weight": 7.4,
+   "duration_s": {
+    "n": 13,
+    "videos": 12,
+    "weight": 7.4,
+    "median": 2.586,
+    "p25": 1.263,
+    "p75": 3.881,
+    "ci": [
+     1.428,
+     3.795
+    ]
+   },
+   "events_per_shot": {
+    "n": 13,
+    "videos": 12,
+    "weight": 7.4,
+    "median": 0.5,
+    "p25": 0.0,
+    "p75": 1.071,
+    "ci": [
+     0.0,
+     1.0
+    ]
+   },
+   "first_motion_s": {
+    "n": 5,
+    "videos": 4,
+    "weight": 3.8,
+    "median": 0.162,
+    "p25": 0.126,
+    "p75": 1.48,
+    "ci": [
+     0.126,
+     4.917
+    ]
+   },
+   "pattern_mix": {
+    "other": 0.2963,
+    "logo_resolve": 0.2593,
+    "blur_crossfade": 0.1481,
+    "cursor_guided_demo": 0.1481,
+    "layout_reframe": 0.1481
+   },
+   "transition_mix": {
+    "other": 0.6351,
+    "zoom_through": 0.1622,
+    "hard_cut": 0.0946,
+    "blur": 0.0541,
+    "crossfade": 0.0541
+   },
+   "shot_type_mix": {
+    "logo": 0.9459,
+    "3d": 0.0541
+   },
+   "beat_mix": {
+    "hook": 0.7432,
+    "mechanism": 0.1486,
+    "demo": 0.0541,
+    "proof": 0.0541
+   },
+   "sfx_label_mix": {
+    "unsure": 0.32,
+    "swoosh_reverse": 0.256,
+    "music": 0.176,
+    "impact": 0.16,
+    "chime": 0.088
+   },
+   "sfx_offset_s_by_label": {
+    "chime": {
+     "n": 2,
+     "videos": 2,
+     "weight": 1.1,
+     "median": 2.367,
+     "p25": 1.448,
+     "p75": 2.868,
+     "ci": null
+    },
+    "impact": {
+     "n": 3,
+     "videos": 2,
+     "weight": 2.0,
+     "median": 3.566,
+     "p25": 2.729,
+     "p75": 3.975,
+     "ci": null
+    },
+    "music": {
+     "n": 5,
+     "videos": 4,
+     "weight": 2.2,
+     "median": 1.519,
+     "p25": 1.064,
+     "p75": 2.633,
+     "ci": [
+      1.009,
+      3.032
+     ]
+    },
+    "swoosh_reverse": {
+     "n": 5,
+     "videos": 3,
+     "weight": 3.2,
+     "median": 1.661,
+     "p25": 1.313,
+     "p75": 2.222,
+     "ci": [
+      1.283,
+      2.495
+     ]
+    },
+    "unsure": {
+     "n": 7,
+     "videos": 6,
+     "weight": 4.0,
+     "median": 2.175,
+     "p25": 0.24,
+     "p75": 2.787,
+     "ci": [
+      0.24,
+      3.158
+     ]
+    }
+   },
+   "examples": [
+    {
+     "video": "meta-introducing-meta-quest-3-coming-this-f",
+     "shot": "s001",
+     "score": 5.0
+    },
+    {
+     "video": "hubspot-what-is-hubspot",
+     "shot": "s001",
+     "score": 4.0
+    },
+    {
+     "video": "notion-introducing-the-new-notion-ai",
+     "shot": "s002",
+     "score": 4.0
+    },
+    {
+     "video": "datadog-datadog-overview-see-inside-the-platfor",
+     "shot": "s001",
+     "score": 4.0
+    },
+    {
+     "video": "workday-workday-adaptive-planning-demo-finan",
+     "shot": "s001",
+     "score": 3.0
+    }
+   ]
+  },
+  {
+   "id": "stat_count_up",
+   "shots": 10,
+   "videos": 7,
+   "weight": 5.8,
+   "duration_s": {
+    "n": 10,
+    "videos": 7,
+    "weight": 5.8,
+    "median": 3.448,
+    "p25": 2.833,
+    "p75": 5.429,
+    "ci": [
+     2.833,
+     5.4
+    ]
+   },
+   "events_per_shot": {
+    "n": 10,
+    "videos": 7,
+    "weight": 5.8,
+    "median": 0.125,
+    "p25": 0.0,
+    "p75": 1.0,
+    "ci": [
+     0.0,
+     1.0
+    ]
+   },
+   "first_motion_s": {
+    "n": 3,
+    "videos": 3,
+    "weight": 2.6,
+    "median": 2.307,
+    "p25": 1.597,
+    "p75": 2.791,
+    "ci": null
+   },
+   "pattern_mix": {
+    "metric_count_up": 0.2778,
+    "other": 0.2778,
+    "layout_reframe": 0.2222,
+    "parallax_layers": 0.2222
+   },
+   "transition_mix": {
+    "other": 0.5172,
+    "mask_wipe": 0.1379,
+    "slide": 0.1379,
+    "zoom_through": 0.1379,
+    "blur": 0.069
+   },
+   "shot_type_mix": {
+    "data_viz": 0.6552,
+    "kinetic_type": 0.2759,
+    "ui_recreated": 0.069
+   },
+   "beat_mix": {
+    "proof": 0.5161,
+    "outcome": 0.2903,
+    "mechanism": 0.1935
+   },
+   "sfx_label_mix": {
+    "music": 0.2626,
+    "unsure": 0.2323,
+    "chime": 0.1919,
+    "swoosh_reverse": 0.1717,
+    "impact": 0.0808,
+    "whoosh": 0.0404,
+    "click": 0.0202
+   },
+   "sfx_offset_s_by_label": {
+    "chime": {
+     "n": 5,
+     "videos": 2,
+     "weight": 3.8,
+     "median": 2.161,
+     "p25": 1.223,
+     "p75": 3.007,
+     "ci": [
+      1.183,
+      3.242
+     ]
+    },
+    "click": {
+     "n": 1,
+     "videos": 1,
+     "weight": 0.4,
+     "median": 1.646,
+     "p25": 1.646,
+     "p75": 1.646,
+     "ci": null
+    },
+    "impact": {
+     "n": 4,
+     "videos": 3,
+     "weight": 1.6,
+     "median": 3.02,
+     "p25": 1.67,
+     "p75": 3.404,
+     "ci": null
+    },
+    "music": {
+     "n": 10,
+     "videos": 4,
+     "weight": 5.2,
+     "median": 3.572,
+     "p25": 1.734,
+     "p75": 5.165,
+     "ci": [
+      2.064,
+      5.114
+     ]
+    },
+    "swoosh_reverse": {
+     "n": 6,
+     "videos": 3,
+     "weight": 3.4,
+     "median": 2.064,
+     "p25": 0.587,
+     "p75": 2.733,
+     "ci": [
+      0.462,
+      2.839
+     ]
+    },
+    "unsure": {
+     "n": 8,
+     "videos": 4,
+     "weight": 4.6,
+     "median": 2.231,
+     "p25": 0.833,
+     "p75": 9.118,
+     "ci": [
+      0.785,
+      8.838
+     ]
+    },
+    "whoosh": {
+     "n": 1,
+     "videos": 1,
+     "weight": 0.8,
+     "median": 0.899,
+     "p25": 0.899,
+     "p75": 0.899,
+     "ci": null
+    }
+   },
+   "examples": [
+    {
+     "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+     "shot": "s006",
+     "score": 5.0
+    },
+    {
+     "video": "hubspot-what-is-hubspot",
+     "shot": "s016",
+     "score": 4.0
+    },
+    {
+     "video": "warp-introducing-warp-2-0-the-agentic-develo",
+     "shot": "s018",
+     "score": 4.0
+    },
+    {
+     "video": "loom-introducing-loom-ai",
+     "shot": "s008",
+     "score": 4.0
+    },
+    {
+     "video": "ahrefs-ahrefs-brand-radar-see-any-brand-s-ai-v",
+     "shot": "s015",
+     "score": 4.0
+    }
+   ]
+  },
+  {
+   "id": "app_icon_orbit",
+   "shots": 12,
+   "videos": 4,
+   "weight": 5.2,
+   "duration_s": {
+    "n": 12,
+    "videos": 4,
+    "weight": 5.2,
+    "median": 0.99,
+    "p25": 0.165,
+    "p75": 2.458,
+    "ci": [
+     0.165,
+     2.383
+    ]
+   },
+   "events_per_shot": {
+    "n": 12,
+    "videos": 4,
+    "weight": 5.2,
+    "median": 0.0,
+    "p25": 0.0,
+    "p75": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "first_motion_s": {
+    "n": 0,
+    "videos": 0,
+    "weight": 0.0,
+    "median": null,
+    "p25": null,
+    "p75": null,
+    "ci": null
+   },
+   "pattern_mix": {},
+   "transition_mix": {
+    "other": 0.4615,
+    "crossfade": 0.2308,
+    "zoom_through": 0.2308,
+    "hard_cut": 0.0769
+   },
+   "shot_type_mix": {
+    "3d": 0.5385,
+    "ui_recreated": 0.2308,
+    "other": 0.1538,
+    "abstract": 0.0769
+   },
+   "beat_mix": {
+    "outcome": 0.6154,
+    "demo": 0.1538,
+    "hook": 0.1538,
+    "problem": 0.0769
+   },
+   "sfx_label_mix": {
+    "music": 0.4167,
+    "chime": 0.1667,
+    "impact": 0.1667,
+    "unsure": 0.1667,
+    "click": 0.0833
+   },
+   "sfx_offset_s_by_label": {
+    "chime": {
+     "n": 1,
+     "videos": 1,
+     "weight": 0.8,
+     "median": 1.079,
+     "p25": 1.079,
+     "p75": 1.079,
+     "ci": null
+    },
+    "click": {
+     "n": 1,
+     "videos": 1,
+     "weight": 0.4,
+     "median": 0.737,
+     "p25": 0.737,
+     "p75": 0.737,
+     "ci": null
+    },
+    "impact": {
+     "n": 2,
+     "videos": 1,
+     "weight": 0.8,
+     "median": 5.538,
+     "p25": 4.525,
+     "p75": 6.55,
+     "ci": null
+    },
+    "music": {
+     "n": 4,
+     "videos": 2,
+     "weight": 2.0,
+     "median": 1.599,
+     "p25": 0.498,
+     "p75": 7.35,
+     "ci": null
+    },
+    "unsure": {
+     "n": 2,
+     "videos": 1,
+     "weight": 0.8,
+     "median": 0.486,
+     "p25": 0.119,
+     "p75": 0.854,
+     "ci": null
+    }
+   },
+   "examples": [
+    {
+     "video": "datadog-datadog-overview-see-inside-the-platfor",
+     "shot": "s010",
+     "score": 4.0
+    },
+    {
+     "video": "clickup-clickup-4-0-just-changed-work-ai-softwar",
+     "shot": "s036",
+     "score": 4.0
+    },
+    {
+     "video": "clickup-clickup-4-0-world-s-first-converged-ai",
+     "shot": "s018",
+     "score": 4.0
+    },
+    {
+     "video": "zapier-zapier-s-newest-product-features-build",
+     "shot": "s001",
+     "score": 4.0
+    }
+   ]
+  },
+  {
+   "id": "bars_ring",
+   "shots": 10,
+   "videos": 5,
+   "weight": 5.2,
+   "duration_s": {
+    "n": 10,
+    "videos": 5,
+    "weight": 5.2,
+    "median": 2.967,
+    "p25": 1.633,
+    "p75": 4.094,
+    "ci": [
+     1.5,
+     3.604
+    ]
+   },
+   "events_per_shot": {
+    "n": 10,
+    "videos": 5,
+    "weight": 5.2,
+    "median": 0.0,
+    "p25": 0.0,
+    "p75": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "first_motion_s": {
+    "n": 0,
+    "videos": 0,
+    "weight": 0.0,
+    "median": null,
+    "p25": null,
+    "p75": null,
+    "ci": null
+   },
+   "pattern_mix": {},
+   "transition_mix": {
+    "other": 0.6154,
+    "push": 0.1538,
+    "blur": 0.0769,
+    "slide": 0.0769,
+    "zoom_through": 0.0769
+   },
+   "shot_type_mix": {
+    "data_viz": 0.3846,
+    "ui_recreated": 0.3846,
+    "ui_closeup": 0.2308
+   },
+   "beat_mix": {
+    "demo": 0.9231,
+    "hook": 0.0769
+   },
+   "sfx_label_mix": {
+    "unsure": 0.3429,
+    "impact": 0.2857,
+    "swoosh_reverse": 0.1714,
+    "glitch": 0.0857,
+    "click": 0.0571,
+    "music": 0.0571
+   },
+   "sfx_offset_s_by_label": {
+    "click": {
+     "n": 2,
+     "videos": 1,
+     "weight": 0.8,
+     "median": 4.857,
+     "p25": 3.359,
+     "p75": 6.354,
+     "ci": null
+    },
+    "glitch": {
+     "n": 2,
+     "videos": 2,
+     "weight": 1.2,
+     "median": 1.869,
+     "p25": 0.575,
+     "p75": 2.732,
+     "ci": null
+    },
+    "impact": {
+     "n": 7,
+     "videos": 2,
+     "weight": 4.0,
+     "median": 0.636,
+     "p25": 0.566,
+     "p75": 2.708,
+     "ci": [
+      0.487,
+      2.708
+     ]
+    },
+    "music": {
+     "n": 2,
+     "videos": 1,
+     "weight": 0.8,
+     "median": 3.134,
+     "p25": 1.421,
+     "p75": 4.848,
+     "ci": null
+    },
+    "swoosh_reverse": {
+     "n": 4,
+     "videos": 2,
+     "weight": 2.4,
+     "median": 0.431,
+     "p25": 0.146,
+     "p75": 1.433,
+     "ci": null
+    },
+    "unsure": {
+     "n": 6,
+     "videos": 2,
+     "weight": 4.8,
+     "median": 1.339,
+     "p25": 0.826,
+     "p75": 1.574,
+     "ci": [
+      0.826,
+      1.778
+     ]
+    }
+   },
+   "examples": [
+    {
+     "video": "anthropic-introducing-claude-design-by-anthropic-l",
+     "shot": "s025",
+     "score": 4.0
+    },
+    {
+     "video": "duolingo-introducing-duolingo-chess",
+     "shot": "s036",
+     "score": 4.0
+    },
+    {
+     "video": "ahrefs-ahrefs-brand-radar-see-any-brand-s-ai-v",
+     "shot": "s010",
+     "score": 4.0
+    },
+    {
+     "video": "conductor-conductor-ai-get-found-in-ai-search",
+     "shot": "s004",
+     "score": 4.0
+    },
+    {
+     "video": "profound-introducing-profound",
+     "shot": "s052",
+     "score": 4.0
+    }
+   ]
+  },
+  {
+   "id": "ai_working_loader",
+   "shots": 7,
+   "videos": 6,
+   "weight": 5.0,
+   "duration_s": {
+    "n": 7,
+    "videos": 6,
+    "weight": 5.0,
+    "median": 2.083,
+    "p25": 1.627,
+    "p75": 2.383,
+    "ci": [
+     1.59,
+     2.436
+    ]
+   },
+   "events_per_shot": {
+    "n": 7,
+    "videos": 6,
+    "weight": 5.0,
+    "median": 0.0,
+    "p25": 0.0,
+    "p75": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "first_motion_s": {
+    "n": 0,
+    "videos": 0,
+    "weight": 0.0,
+    "median": null,
+    "p25": null,
+    "p75": null,
+    "ci": null
+   },
+   "pattern_mix": {},
+   "transition_mix": {
+    "hard_cut": 0.64,
+    "other": 0.36
+   },
+   "shot_type_mix": {
+    "ui_recreated": 0.56,
+    "ui_closeup": 0.44
+   },
+   "beat_mix": {
+    "demo": 0.84,
+    "hook": 0.16
+   },
+   "sfx_label_mix": {
+    "unsure": 1.0
+   },
+   "sfx_offset_s_by_label": {
+    "unsure": {
+     "n": 4,
+     "videos": 2,
+     "weight": 1.6,
+     "median": 1.213,
+     "p25": 0.667,
+     "p75": 1.862,
+     "ci": null
+    }
+   },
+   "examples": [
+    {
+     "video": "figma-introducing-figma-motion-your-canvas-no",
+     "shot": "s017",
+     "score": 5.0
+    },
+    {
+     "video": "anthropic-introducing-claude-design-by-anthropic-l",
+     "shot": "s004",
+     "score": 4.0
+    },
+    {
+     "video": "notion-introducing-the-new-notion-ai",
+     "shot": "s005",
+     "score": 4.0
+    },
+    {
+     "video": "raycast-new-raycast-coming-2026",
+     "shot": "s010",
+     "score": 4.0
+    },
+    {
+     "video": "clickup-clickup-4-0-just-changed-work-ai-softwar",
+     "shot": "s031",
+     "score": 4.0
+    }
+   ]
+  },
+  {
+   "id": "document_highlight",
+   "shots": 10,
+   "videos": 6,
+   "weight": 3.9,
+   "duration_s": {
+    "n": 10,
+    "videos": 6,
+    "weight": 3.9,
+    "median": 8.686,
+    "p25": 3.69,
+    "p75": 15.711,
+    "ci": [
+     3.767,
+     15.867
+    ]
+   },
+   "events_per_shot": {
+    "n": 10,
+    "videos": 6,
+    "weight": 3.9,
+    "median": 0.0,
+    "p25": 0.0,
+    "p75": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "first_motion_s": {
+    "n": 1,
+    "videos": 1,
+    "weight": 0.6,
+    "median": 0.0,
+    "p25": 0.0,
+    "p75": 0.0,
+    "ci": null
+   },
+   "pattern_mix": {
+    "other": 1.0
+   },
+   "transition_mix": {
+    "other": 0.5128,
+    "crossfade": 0.1795,
+    "hard_cut": 0.1538,
+    "push": 0.0769,
+    "zoom_through": 0.0769
+   },
+   "shot_type_mix": {
+    "ui_closeup": 0.4359,
+    "ui_recreated": 0.4103,
+    "screen_recording": 0.1538
+   },
+   "beat_mix": {
+    "demo": 0.4043,
+    "mechanism": 0.3617,
+    "agitate": 0.0851,
+    "proof": 0.0851,
+    "outcome": 0.0638
+   },
+   "sfx_label_mix": {
+    "music": 0.3113,
+    "click": 0.2384,
+    "unsure": 0.1589,
+    "impact": 0.1325,
+    "swoosh_reverse": 0.1325,
+    "chime": 0.0265
+   },
+   "sfx_offset_s_by_label": {
+    "chime": {
+     "n": 1,
+     "videos": 1,
+     "weight": 0.4,
+     "median": 29.593,
+     "p25": 29.593,
+     "p75": 29.593,
+     "ci": null
+    },
+    "click": {
+     "n": 9,
+     "videos": 2,
+     "weight": 3.6,
+     "median": 13.411,
+     "p25": 11.433,
+     "p75": 16.29,
+     "ci": [
+      11.746,
+      16.168
+     ]
+    },
+    "impact": {
+     "n": 5,
+     "videos": 2,
+     "weight": 2.0,
+     "median": 6.047,
+     "p25": 2.139,
+     "p75": 9.651,
+     "ci": [
+      0.695,
+      20.127
+     ]
+    },
+    "music": {
+     "n": 13,
+     "videos": 4,
+     "weight": 4.7,
+     "median": 5.479,
+     "p25": 3.842,
+     "p75": 22.361,
+     "ci": [
+      4.113,
+      18.048
+     ]
+    },
+    "swoosh_reverse": {
+     "n": 5,
+     "videos": 1,
+     "weight": 2.0,
+     "median": 18.466,
+     "p25": 12.768,
+     "p75": 22.9,
+     "ci": [
+      9.41,
+      25.449
+     ]
+    },
+    "unsure": {
+     "n": 6,
+     "videos": 2,
+     "weight": 2.4,
+     "median": 12.385,
+     "p25": 1.968,
+     "p75": 18.953,
+     "ci": [
+      1.968,
+      23.371
+     ]
+    }
+   },
+   "examples": [
+    {
+     "video": "workday-workday-adaptive-planning-demo-finan",
+     "shot": "s010",
+     "score": 3.0
+    },
+    {
+     "video": "ahrefs-ahrefs-brand-radar-see-any-brand-s-ai-v",
+     "shot": "s006",
+     "score": 4.0
+    },
+    {
+     "video": "conductor-conductor-ai-get-found-in-ai-search",
+     "shot": "s009",
+     "score": 4.0
+    },
+    {
+     "video": "fullstory-behavioral-data-made-simple-by-fullstory",
+     "shot": "s006",
+     "score": 4.0
+    },
+    {
+     "video": "amplitude-find-onboarding-funnel-drop-off-amplit",
+     "shot": "s007",
+     "score": 3.0
+    }
+   ]
+  },
+  {
+   "id": "cards_triptych",
+   "shots": 8,
+   "videos": 5,
+   "weight": 3.0,
+   "duration_s": {
+    "n": 8,
+    "videos": 5,
+    "weight": 3.0,
+    "median": 5.196,
+    "p25": 1.758,
+    "p75": 6.418,
+    "ci": [
+     1.758,
+     6.418
+    ]
+   },
+   "events_per_shot": {
+    "n": 8,
+    "videos": 5,
+    "weight": 3.0,
+    "median": 0.0,
+    "p25": 0.0,
+    "p75": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "first_motion_s": {
+    "n": 0,
+    "videos": 0,
+    "weight": 0.0,
+    "median": null,
+    "p25": null,
+    "p75": null,
+    "ci": null
+   },
+   "pattern_mix": {},
+   "transition_mix": {
+    "other": 0.5,
+    "push": 0.2667,
+    "zoom_through": 0.1333,
+    "crossfade": 0.1
+   },
+   "shot_type_mix": {
+    "ui_recreated": 0.5,
+    "3d": 0.1333,
+    "abstract": 0.1333,
+    "kinetic_type": 0.1333,
+    "screen_recording": 0.1
+   },
+   "beat_mix": {
+    "demo": 0.3235,
+    "agitate": 0.2353,
+    "outcome": 0.2353,
+    "mechanism": 0.2059
+   },
+   "sfx_label_mix": {
+    "unsure": 0.3929,
+    "chime": 0.2381,
+    "music": 0.1905,
+    "impact": 0.131,
+    "swoosh_reverse": 0.0476
+   },
+   "sfx_offset_s_by_label": {
+    "chime": {
+     "n": 5,
+     "videos": 1,
+     "weight": 2.0,
+     "median": 5.326,
+     "p25": 2.966,
+     "p75": 6.711,
+     "ci": [
+      2.523,
+      7.992
+     ]
+    },
+    "impact": {
+     "n": 3,
+     "videos": 3,
+     "weight": 1.1,
+     "median": 1.221,
+     "p25": 0.485,
+     "p75": 1.755,
+     "ci": null
+    },
+    "music": {
+     "n": 4,
+     "videos": 2,
+     "weight": 1.6,
+     "median": 1.403,
+     "p25": 0.94,
+     "p75": 3.001,
+     "ci": null
+    },
+    "swoosh_reverse": {
+     "n": 1,
+     "videos": 1,
+     "weight": 0.4,
+     "median": 0.478,
+     "p25": 0.478,
+     "p75": 0.478,
+     "ci": null
+    },
+    "unsure": {
+     "n": 9,
+     "videos": 3,
+     "weight": 3.3,
+     "median": 2.724,
+     "p25": 1.735,
+     "p75": 4.495,
+     "ci": [
+      1.827,
+      4.452
+     ]
+    }
+   },
+   "examples": [
+    {
+     "video": "conductor-conductor-ai-get-found-in-ai-search",
+     "shot": "s026",
+     "score": 4.0
+    },
+    {
+     "video": "datadog-consolidate-your-tools-with-datadog-s-ec",
+     "shot": "s007",
+     "score": 4.0
+    },
+    {
+     "video": "scrunch-scrunch-the-internet",
+     "shot": "s006",
+     "score": 4.0
+    },
+    {
+     "video": "zapier-zapier-s-newest-product-features-build",
+     "shot": "s009",
+     "score": 4.0
+    },
+    {
+     "video": "typeform-apply-your-brand-assets-to-a-typeform-wi",
+     "shot": "s005",
+     "score": 3.0
+    }
+   ]
+  },
+  {
+   "id": "shortlist_card",
+   "shots": 2,
+   "videos": 2,
+   "weight": 0.8,
+   "duration_s": {
+    "n": 2,
+    "videos": 2,
+    "weight": 0.8,
+    "median": 2.551,
+    "p25": 2.4,
+    "p75": 2.703,
+    "ci": null
+   },
+   "events_per_shot": {
+    "n": 2,
+    "videos": 2,
+    "weight": 0.8,
+    "median": 0.0,
+    "p25": 0.0,
+    "p75": 0.0,
+    "ci": null
+   },
+   "first_motion_s": {
+    "n": 0,
+    "videos": 0,
+    "weight": 0.0,
+    "median": null,
+    "p25": null,
+    "p75": null,
+    "ci": null
+   },
+   "pattern_mix": {},
+   "transition_mix": {
+    "hard_cut": 1.0
+   },
+   "shot_type_mix": {
+    "ui_recreated": 1.0
+   },
+   "beat_mix": {
+    "agitate": 0.5,
+    "demo": 0.5
+   },
+   "sfx_label_mix": {
+    "music": 0.6,
+    "swoosh_reverse": 0.2,
+    "unsure": 0.2
+   },
+   "sfx_offset_s_by_label": {
+    "music": {
+     "n": 3,
+     "videos": 2,
+     "weight": 1.2,
+     "median": 0.891,
+     "p25": 0.521,
+     "p75": 1.898,
+     "ci": null
+    },
+    "swoosh_reverse": {
+     "n": 1,
+     "videos": 1,
+     "weight": 0.4,
+     "median": 2.365,
+     "p25": 2.365,
+     "p75": 2.365,
+     "ci": null
+    },
+    "unsure": {
+     "n": 1,
+     "videos": 1,
+     "weight": 0.4,
+     "median": 1.58,
+     "p25": 1.58,
+     "p75": 1.58,
+     "ci": null
+    }
+   },
+   "examples": [
+    {
+     "video": "conductor-conductor-ai-get-found-in-ai-search",
+     "shot": "s008",
+     "score": 4.0
+    },
+    {
+     "video": "profound-introducing-profound",
+     "shot": "s053",
+     "score": 4.0
+    }
+   ]
+  }
+ ],
+ "other_shots": 412
+}

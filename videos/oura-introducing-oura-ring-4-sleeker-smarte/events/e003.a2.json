@@ -1,0 +1,60 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "f93b903961e415218ce3077d803e659e5ebf330b779a013d5fc27e01fe8b08ae",
+    "created_at": "2026-10-05T06:48:11.224898Z"
+  },
+  "video": "oura-introducing-oura-ring-4-sleeker-smarte",
+  "event": "e003",
+  "task": "a2-e003",
+  "elements": [
+    {
+      "box": null,
+      "manual_box": [264, 324, 653, 758],
+      "manual_reason": "Diff candidates are only small edge slivers; the spinning ring itself has no candidate box except full-frame b01.",
+      "label": "Oura ring spinning on the tabletop (motion-blurred)",
+      "role": "other",
+      "role_other": "product",
+      "change_types": ["rotate", "blur_in"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "linear"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Wood table, shadows and blurred foreground (moves with the camera pan)",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    }
+  ],
+  "sfx_review": [
+    {"id": "x035", "verdict": "override", "label": "music", "note": "Sits at the onset of one of the regular broadband music pulses, ~560 ms before the burst; CLAP swoosh_reverse score is low (0.24) and nothing visual lands at 24.52 s."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "product spin closeup",
+    "description": "Macro live-action/3D shot of the ring spinning on its edge on a wooden table, heavy motion blur and a moving soft shadow, while the camera pans gently left.",
+    "why_premium": "Real physics (spin, specular glints, cast shadow) shows the product's finish and roundness without any graphics; shallow depth of field and warm grading keep it tactile, and the slow pan adds life without pulling focus from the object."
+  },
+  "build_hint": {
+    "gsap": "Footage-driven: play the clip and add a slight gsap.to('.clip', {xPercent: -3, duration: 0.4, ease: 'none'}) drift if recreating the pan; no overlay animation in this burst.",
+    "remotion": "<OffthreadVideo> in a <Sequence>; optional translateX = interpolate(frame, [0, 12], [0, -3%]) linear for the pan. Spin itself is baked into the render."
+  },
+  "confidence": "low",
+  "notes": "Heavy motion blur makes the ring outline ambiguous; the manual box is approximate. camera.move is pan_left (code verdict), reported only via the background element. Diff boxes b02-b09 are edge regions changed by the pan, not separate elements."
+}

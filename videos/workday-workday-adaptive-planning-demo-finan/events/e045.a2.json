@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "85b834fe3b29df9e84aafe48c40ddf956b99f4cf38a0631c358a83ee3ba24279",
+    "created_at": "2026-10-05T06:56:43.812094Z"
+  },
+  "video": "workday-workday-adaptive-planning-demo-finan",
+  "event": "e045",
+  "task": "a2-e045",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "App window with open Versions dropdown, scaling up toward the dropdown",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["scale_up", "slide_left"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 450, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "May Forecast row hover highlight",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "May Forecast",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "ui_camera_push_in",
+    "proposed_name": null,
+    "description": "With the Versions dropdown already open, the whole recorded UI layer scales up (about 1.15x) and drifts up-left so the dropdown list fills the centre of the frame. Energy is highest at the start and decays, i.e. a fast-out deceleration. At the end the cursor rests on 'May Forecast' and that row gets a grey hover highlight.",
+    "why_premium": "The editorial zoom makes small dropdown text readable at social sizes and points the eye at the menu the narration names ('our version drop-down list'). The decelerating ease lands the zoom softly before the selection."
+  },
+  "build_hint": {
+    "gsap": "Wrap the screen recording in a container and tl.to(screen, {scale: 1.15, x: '-6%', y: '-5%', transformOrigin: 'center', duration: 0.45, ease: 'power3.out'}). Then tl.set(rowMayForecast, {backgroundColor: '#e0e0e0'}) when the cursor arrives.",
+    "remotion": "const s = spring({frame: frame - f0, fps, config: {damping: 200, stiffness: 120, mass: 1}}); transform: `translate(${-6 * s}%, ${-5 * s}%) scale(${1 + 0.15 * s})` on the screen layer (critically damped, no overshoot)."
+  },
+  "confidence": "medium",
+  "notes": "camera.move is 'none' although scale is 1.147 with pan. Visually the whole UI layer (and the blue corner shape) enlarges, so it reads as an editorial zoom on the recording. It is recorded here as content scale_up on b01 and not as a camera move; a human should check whether ui_camera_push_in or layout_reframe is the right pattern. The cursor has no candidate box and is not listed."
+}

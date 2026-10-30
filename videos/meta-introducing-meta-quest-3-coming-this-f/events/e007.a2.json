@@ -1,0 +1,71 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "a4072c6ef4bb32baf59ea34e59372acdf768821a875803373393d13559e2f320",
+    "created_at": "2026-10-05T06:47:31.276192Z"
+  },
+  "video": "meta-introducing-meta-quest-3-coming-this-f",
+  "event": "e007",
+  "task": "a2-e007",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Full-frame footage: hard cut from red game world to Ghostbusters VR firehouse scene, with a white smoke burst across the frame",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "hard cut to new gameplay footage, followed by an in-footage smoke burst",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Overlay word swaps 'Deeper' to 'Larger'",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Larger",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 170, "easing_class": "ambiguous"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x046",
+      "verdict": "override",
+      "label": "music",
+      "note": "Broadband vertical transient in a regular series (about 55.0, 55.18, 55.5, 55.88 s); a music beat, about 300 ms before the cut, not a reverse swoosh."
+    },
+    {
+      "id": "x047",
+      "verdict": "override",
+      "label": "music",
+      "note": "Coincides with new tonal horizontal bands starting around 56.0 s and sits between beat transients; nothing visual happens then (583 ms after the event). Reads as music, low certainty."
+    }
+  ],
+  "pattern": {
+    "id": "kinetic_word_reveal",
+    "proposed_name": null,
+    "description": "A single centred overlay word sits on top of fast-cut gameplay; on the cut to new footage the word swaps ('Deeper' to 'Larger'), with the swap masked by a white smoke burst in the footage, continuing a one-word-per-shot comparative sequence.",
+    "why_premium": "One bold word per beat keeps the copy at a glance-read pace while the footage carries the proof; the word holds its centre position across cuts so the eye never has to search, and the swap is hidden inside visual action, not a separate text animation."
+  },
+  "build_hint": {
+    "gsap": "Timeline per beat: tl.set(clipA, {autoAlpha: 0}).set(clipB, {autoAlpha: 1}) on the cut (hard cut, no ease); then tl.to(wordOld, {autoAlpha: 0, duration: 0.08, ease: 'none'}).fromTo(wordNew, {autoAlpha: 0}, {autoAlpha: 1, duration: 0.1, ease: 'power1.out'}, '<0.04'); keep both words absolutely centred in the same slot.",
+    "remotion": "Sequence per clip with hard cuts (no transition); word layer as its own Sequence offset ~4 frames after the cut, opacity = interpolate(frame, [0, 3], [0, 1], {extrapolateRight: 'clamp'}); no spring, the swap is near-instant."
+  },
+  "confidence": "medium",
+  "notes": "The word swap lags the footage cut by about 3 frames ('Deeper' still visible on f1322 and f1325 over the new scene) and coincides with the smoke burst; whether the text fades or hard-swaps is not clear at this frame spacing. b03 (trap display '00') only moves with the hand-held prop inside the footage, so it is folded into b01, not listed."
+}

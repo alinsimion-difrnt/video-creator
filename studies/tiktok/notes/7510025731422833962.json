@@ -1,0 +1,37 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code",
+                 "input_hash": "80a663766c0e945a05a0cdfbf6e2e5f8cd61f0a1c6c54034e1286e0908b68d7e",
+                 "created_at": "2026-10-13T15:34:00+00:00"},
+  "id": "7510025731422833962",
+  "format": "split_screen",
+  "hook": {"type": "bold_claim",
+           "line": "You can now get your business to rank and show up in a ChatGPT search.",
+           "visual": "Top half: blog article titled 'Can Chat GPT See Your Business?'; bottom half: presenter at a mic with yellow-highlighted word-by-word captions on the seam"},
+  "beats": [
+    {"t": 0.0, "what": "Claim: your business can now rank in ChatGPT search, over the article headline"},
+    {"t": 4.1, "what": "Names it: generative engine optimization, like SEO; article scrolls to 'What GEO looks like'"},
+    {"t": 8.2, "what": "ChatGPT doesn't crawl like Google; article shows the list of sources it uses"},
+    {"t": 19.6, "what": "Article scrolls to the line about missing or inconsistent business info: AI won't rank you"},
+    {"t": 24.6, "what": "'Take a screenshot' prompt, then the tips list (real customer questions, structure, FAQ) fills the top half"},
+    {"t": 37.67, "what": "Scrolls further to a real-life client example section while he finishes the tips"},
+    {"t": 42.73, "what": "Cut to his TikTok profile page as he says 'follow'"}
+  ],
+  "graphics": {"captions": "word_by_word", "caption_position": "middle",
+               "devices": ["split_screen", "screenshot", "screen_recording"],
+               "density": "moderate", "per_minute_estimate": 7},
+  "characters": [],
+  "cta": {"kind": "follow", "t": 42.73},
+  "why_it_works": [
+    "The article on top acts as a citation, so the claim reads as reported fact rather than opinion",
+    "'Take a screenshot' cue flags the list as the save-worthy part and drives saves",
+    "Captions sit on the seam between the article and the face, so the eye stays in one spot while both halves change",
+    "Cutting to the profile page on 'follow' shows exactly where to tap"
+  ],
+  "weaknesses": [
+    "Article text is far too small to read on a phone; the screenshot prompt points at an illegible list",
+    "The face half never changes framing; all motion comes from scrolling a page",
+    "Transcript slips ('chat should be so you can find') suggest a single unedited take"
+  ],
+  "for_robert": "End on a cut to his own profile while saying 'follow' - Fred could point at the follow button - but put any list he wants saved in big text, not a scrolled article."
+}

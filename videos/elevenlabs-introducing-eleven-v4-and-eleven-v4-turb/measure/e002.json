@@ -1,0 +1,584 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "s7_measure",
+    "annotator": "code",
+    "skill": null,
+    "model": null,
+    "input_hash": "60f8d89555b56d27a5dc140860723be3f5315c62976d1162650b7fa5b7261ef2",
+    "created_at": "2026-10-05T09:12:47.486594Z"
+  },
+  "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+  "event": "e002",
+  "fps": 30.303,
+  "elements": [
+    {
+      "box": "b02",
+      "xyxy": [
+        248,
+        94,
+        566,
+        506
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.468,
+      "channels": [
+        {
+          "name": "x",
+          "start_f": 368,
+          "end_f": 430,
+          "start_value": 350.5,
+          "end_value": 407.0,
+          "observed_start": true,
+          "cls": "ease_out",
+          "gsap": {
+            "ease": "elastic.out(1,0.3)",
+            "duration_ms": 2376.0,
+            "rmse": 4.8731
+          },
+          "bezier": "cubic-bezier(0.000, 2.500, 0.200, 2.500)",
+          "bezier_rmse": 4.37894,
+          "spring": {
+            "zeta": 0.05,
+            "omega0": 6.062,
+            "settle_ms": 12539.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 36.75,
+              "damping": 0.606
+            },
+            "remotion_exact": true,
+            "rmse": 4.81515
+          },
+          "overshoot_pct": 1378.76,
+          "duration_ms": 2376.0,
+          "fit_quality": 0.0
+        },
+        {
+          "name": "y",
+          "start_f": 368,
+          "end_f": 430,
+          "start_value": 421.0,
+          "end_value": 300.0,
+          "observed_start": true,
+          "cls": "ease_out",
+          "gsap": {
+            "ease": "back.out(3)",
+            "duration_ms": 1918.9,
+            "rmse": 3.72019
+          },
+          "bezier": "cubic-bezier(0.000, 2.499, 0.767, 2.499)",
+          "bezier_rmse": 3.23392,
+          "spring": {
+            "zeta": 0.05,
+            "omega0": 2.793,
+            "settle_ms": 20000.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 7.803,
+              "damping": 0.279
+            },
+            "remotion_exact": true,
+            "rmse": 3.58639
+          },
+          "overshoot_pct": 440.5,
+          "duration_ms": 1979.7,
+          "fit_quality": 0.0
+        },
+        {
+          "name": "scale",
+          "start_f": 368,
+          "end_f": 430,
+          "start_value": 0.92,
+          "end_value": 1.0,
+          "observed_start": true,
+          "cls": "linear",
+          "gsap": {
+            "ease": "none",
+            "duration_ms": 363.2,
+            "rmse": 0.56146
+          },
+          "bezier": "cubic-bezier(0.000, 1.931, 0.370, -1.000)",
+          "bezier_rmse": 0.42328,
+          "spring": {
+            "zeta": 3.0,
+            "omega0": 1.937,
+            "settle_ms": 11864.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 3.751,
+              "damping": 11.62
+            },
+            "remotion_exact": false,
+            "rmse": 0.59236
+          },
+          "overshoot_pct": 95.32,
+          "duration_ms": 363.2,
+          "fit_quality": 0.0
+        }
+      ],
+      "timing": {
+        "ease": "back.out(3)",
+        "start_s": 12.045,
+        "duration_ms": 894.4,
+        "rmse": 3.58116
+      },
+      "stagger": null,
+      "sfx_offset_ms": {},
+      "source": "model_estimate",
+      "quality": 0.0
+    },
+    {
+      "box": "b03",
+      "xyxy": [
+        716,
+        102,
+        1043,
+        464
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.539,
+      "channels": [
+        {
+          "name": "x",
+          "start_f": 369,
+          "end_f": 434,
+          "start_value": 231.5,
+          "end_value": 879.5,
+          "observed_start": true,
+          "cls": "linear",
+          "gsap": {
+            "ease": "circ.out",
+            "duration_ms": 2376.0,
+            "rmse": 0.45536
+          },
+          "bezier": "cubic-bezier(0.270, 2.347, 0.989, -0.948)",
+          "bezier_rmse": 0.28131,
+          "spring": {
+            "zeta": 3.0,
+            "omega0": 5.169,
+            "settle_ms": 4445.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 26.719,
+              "damping": 31.014
+            },
+            "remotion_exact": false,
+            "rmse": 0.43239
+          },
+          "overshoot_pct": 67.21,
+          "duration_ms": 2376.0,
+          "fit_quality": 0.0
+        },
+        {
+          "name": "y",
+          "start_f": 368,
+          "end_f": 434,
+          "start_value": 320.5,
+          "end_value": 283.0,
+          "observed_start": true,
+          "cls": "spring",
+          "gsap": {
+            "ease": "back.out(3)",
+            "duration_ms": 2329.9,
+            "rmse": 11.57691
+          },
+          "bezier": "cubic-bezier(0.000, 2.499, 0.780, 2.500)",
+          "bezier_rmse": 11.06069,
+          "spring": {
+            "zeta": 0.05,
+            "omega0": 2.407,
+            "settle_ms": 20000.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 5.792,
+              "damping": 0.241
+            },
+            "remotion_exact": true,
+            "rmse": 11.37225
+          },
+          "overshoot_pct": 1282.67,
+          "duration_ms": 20000.0,
+          "fit_quality": 0.0
+        },
+        {
+          "name": "scale",
+          "start_f": 369,
+          "end_f": 434,
+          "start_value": 1.535,
+          "end_value": 1.0,
+          "observed_start": true,
+          "cls": "ease_out",
+          "gsap": {
+            "ease": "circ.inOut",
+            "duration_ms": 502.7,
+            "rmse": 0.09462
+          },
+          "bezier": "cubic-bezier(0.101, 1.540, 0.069, 0.613)",
+          "bezier_rmse": 0.07323,
+          "spring": {
+            "zeta": 1.1211,
+            "omega0": 17.424,
+            "settle_ms": 410.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 303.587,
+              "damping": 39.067
+            },
+            "remotion_exact": false,
+            "rmse": 0.09644
+          },
+          "overshoot_pct": 6.89,
+          "duration_ms": 1589.7,
+          "fit_quality": 0.9528
+        }
+      ],
+      "timing": {
+        "ease": "back.out(3)",
+        "start_s": 12.045,
+        "duration_ms": 2318.4,
+        "rmse": 6.69436
+      },
+      "stagger": null,
+      "sfx_offset_ms": {},
+      "source": "measured",
+      "quality": 0.9528
+    },
+    {
+      "box": "b01",
+      "xyxy": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.583,
+      "channels": [
+        {
+          "name": "x",
+          "start_f": 368,
+          "end_f": 434,
+          "start_value": 151.5,
+          "end_value": 640.0,
+          "observed_start": true,
+          "cls": "ambiguous",
+          "gsap": {
+            "ease": "back.out(3)",
+            "duration_ms": 1095.4,
+            "rmse": 1.89853
+          },
+          "bezier": "cubic-bezier(0.011, 2.500, 0.073, 2.500)",
+          "bezier_rmse": 1.62939,
+          "spring": {
+            "zeta": 0.05,
+            "omega0": 4.29,
+            "settle_ms": 17718.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 18.404,
+              "damping": 0.429
+            },
+            "remotion_exact": true,
+            "rmse": 1.69957
+          },
+          "overshoot_pct": 248.11,
+          "duration_ms": 1047.5,
+          "fit_quality": 0.4322
+        },
+        {
+          "name": "y",
+          "start_f": 368,
+          "end_f": 434,
+          "start_value": 123.0,
+          "end_value": 360.0,
+          "observed_start": true,
+          "cls": "spring",
+          "gsap": {
+            "ease": "back.inOut(1.7)",
+            "duration_ms": 56.8,
+            "rmse": 2.39004
+          },
+          "bezier": "cubic-bezier(0.935, -0.970, 0.976, -0.999)",
+          "bezier_rmse": 2.27889,
+          "spring": {
+            "zeta": 0.05,
+            "omega0": 4.091,
+            "settle_ms": 18582.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 16.732,
+              "damping": 0.409
+            },
+            "remotion_exact": true,
+            "rmse": 2.29505
+          },
+          "overshoot_pct": 300.63,
+          "duration_ms": 18582.0,
+          "fit_quality": 0.1247
+        },
+        {
+          "name": "scale",
+          "start_f": 370,
+          "end_f": 434,
+          "start_value": 0.587,
+          "end_value": 1.0,
+          "observed_start": true,
+          "cls": "linear",
+          "gsap": {
+            "ease": "circ.out",
+            "duration_ms": 2376.0,
+            "rmse": 0.17205
+          },
+          "bezier": "cubic-bezier(0.032, 1.469, 1.000, 0.128)",
+          "bezier_rmse": 0.06906,
+          "spring": {
+            "zeta": 3.0,
+            "omega0": 6.36,
+            "settle_ms": 3613.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 40.45,
+              "damping": 38.16
+            },
+            "remotion_exact": false,
+            "rmse": 0.14793
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 1587.5,
+          "fit_quality": 0.002
+        }
+      ],
+      "timing": {
+        "ease": "circ.out",
+        "start_s": 12.1082,
+        "duration_ms": 2376.0,
+        "rmse": 1.93055
+      },
+      "stagger": null,
+      "sfx_offset_ms": {},
+      "source": "model_estimate",
+      "quality": 0.4322
+    },
+    {
+      "box": "b04",
+      "xyxy": [
+        48,
+        599,
+        162,
+        677
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.846,
+      "channels": [
+        {
+          "name": "x",
+          "start_f": 372,
+          "end_f": 435,
+          "start_value": 606.0,
+          "end_value": 105.0,
+          "observed_start": false,
+          "cls": "ease_in_out",
+          "gsap": {
+            "ease": "back.inOut(2.5)",
+            "duration_ms": 250.6,
+            "rmse": 0.3174
+          },
+          "bezier": "cubic-bezier(1.000, -0.949, 0.060, -0.066)",
+          "bezier_rmse": 0.2892,
+          "spring": {
+            "zeta": 1.5067,
+            "omega0": 43.733,
+            "settle_ms": 245.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 1912.54,
+              "damping": 131.785
+            },
+            "remotion_exact": false,
+            "rmse": 0.31955
+          },
+          "overshoot_pct": 16.8,
+          "duration_ms": 259.3,
+          "fit_quality": 0.7381
+        },
+        {
+          "name": "y",
+          "start_f": 372,
+          "end_f": 435,
+          "start_value": 362.5,
+          "end_value": 638.0,
+          "observed_start": false,
+          "cls": "linear",
+          "gsap": {
+            "ease": "none",
+            "duration_ms": 2276.1,
+            "rmse": 0.43294
+          },
+          "bezier": "cubic-bezier(0.079, 2.309, 0.458, -0.982)",
+          "bezier_rmse": 0.38014,
+          "spring": {
+            "zeta": 3.0,
+            "omega0": 4.139,
+            "settle_ms": 5552.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 17.127,
+              "damping": 24.831
+            },
+            "remotion_exact": false,
+            "rmse": 0.43049
+          },
+          "overshoot_pct": 7.08,
+          "duration_ms": 2276.1,
+          "fit_quality": 0.2105
+        },
+        {
+          "name": "scale",
+          "start_f": 371,
+          "end_f": 435,
+          "start_value": 0.196,
+          "end_value": 1.0,
+          "observed_start": false,
+          "cls": "ease_in",
+          "gsap": {
+            "ease": "circ.in",
+            "duration_ms": 2271.0,
+            "rmse": 0.04016
+          },
+          "bezier": "cubic-bezier(0.000, -0.106, 1.000, 0.119)",
+          "bezier_rmse": 0.03921,
+          "spring": {
+            "zeta": 0.05,
+            "omega0": 0.85,
+            "settle_ms": 20000.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 0.722,
+              "damping": 0.085
+            },
+            "remotion_exact": true,
+            "rmse": 0.05872
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 2124.7,
+          "fit_quality": 0.9755
+        },
+        {
+          "name": "opacity",
+          "start_f": 371,
+          "end_f": 433,
+          "start_value": 0.753,
+          "end_value": 1.0,
+          "observed_start": false,
+          "cls": "linear",
+          "gsap": {
+            "ease": "sine.in",
+            "duration_ms": 72.2,
+            "rmse": 0.74063
+          },
+          "bezier": "cubic-bezier(1.000, 2.500, 0.349, -0.713)",
+          "bezier_rmse": 0.52534,
+          "spring": {
+            "zeta": 0.3402,
+            "omega0": 235.993,
+            "settle_ms": 47.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 55692.859,
+              "damping": 160.571
+            },
+            "remotion_exact": true,
+            "rmse": 0.74063
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 33.0,
+          "fit_quality": 0.0
+        }
+      ],
+      "timing": {
+        "ease": "none",
+        "start_s": 12.157,
+        "duration_ms": 2277.0,
+        "rmse": 0.47049
+      },
+      "stagger": null,
+      "sfx_offset_ms": {},
+      "source": "measured",
+      "quality": 0.9755
+    },
+    {
+      "box": "b05",
+      "xyxy": [
+        386,
+        640,
+        895,
+        660
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.489,
+      "channels": [
+        {
+          "name": "opacity",
+          "start_f": 379,
+          "end_f": 423,
+          "start_value": 0.0,
+          "end_value": 1.0,
+          "observed_start": true,
+          "cls": "linear",
+          "gsap": {
+            "ease": "none",
+            "duration_ms": 91.8,
+            "rmse": 0.30253
+          },
+          "bezier": "cubic-bezier(0.937, 1.136, 0.280, 0.992)",
+          "bezier_rmse": 0.30251,
+          "spring": {
+            "zeta": 0.7456,
+            "omega0": 30.97,
+            "settle_ms": 187.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 959.161,
+              "damping": 46.185
+            },
+            "remotion_exact": true,
+            "rmse": 0.30279
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 91.8,
+          "fit_quality": 0.3217
+        }
+      ],
+      "timing": {
+        "ease": "none",
+        "start_s": 12.4824,
+        "duration_ms": 91.8,
+        "rmse": 0.30253
+      },
+      "stagger": null,
+      "sfx_offset_ms": {},
+      "source": "model_estimate",
+      "quality": 0.3217
+    },
+    {
+      "box": "b06",
+      "xyxy": [
+        388,
+        673,
+        891,
+        693
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.492,
+      "channels": [],
+      "timing": null,
+      "stagger": null,
+      "sfx_offset_ms": {},
+      "source": "model_estimate",
+      "quality": 0.0
+    }
+  ],
+  "failed": {}
+}

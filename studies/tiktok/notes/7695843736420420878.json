@@ -1,0 +1,37 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "0c5ce6c14b04ccba25e67669467668376ad83ab1c3231c9c347c5738162f6313",
+                 "created_at": "2026-10-13T15:00:00+00:00"},
+  "id": "7695843736420420878",
+  "format": "news_reaction",
+  "hook": {"type": "news",
+           "line": "Google is no longer the only one cracking down on spammy GEO tactics.",
+           "visual": "Handheld walking selfie outdoors, man in glasses; orange label 'Claude's new rules target GEO spam' at top, white captions with an orange word highlight below."},
+  "beats": [
+    {"t": 0.0, "what": "News opener while walking, orange headline label pinned at the top"},
+    {"t": 7.07, "what": "Cut to a screenshot of a Lily Ray post on the policy change, his face in a small inset below"},
+    {"t": 19.87, "what": "Back to walking selfie: promises what it is, why people do it, how to grow safely"},
+    {"t": 30.92, "what": "Explains how GEO works: AI searches, cites pages, cited pages recommending you win"},
+    {"t": 63.4, "what": "Names what is being targeted: networks of fake third-party pages recommending a client"},
+    {"t": 92.8, "what": "Zoom punch on 'you don't want to make the internet a worse place'"},
+    {"t": 108.2, "what": "The safe method: give AI brand context plus a few minutes of your own input per piece"},
+    {"t": 139.12, "what": "Self-reference: a video like this one is his favorite input, Claude drafts and posts from it"},
+    {"t": 164.13, "what": "Closing aside about walking his dog anyway, ends abruptly"}
+  ],
+  "graphics": {"captions": "word_by_word", "caption_position": "bottom",
+               "devices": ["title_text", "screenshot", "jump_cut", "camera_move", "zoom_punch", "music_bed"],
+               "density": "minimal", "per_minute_estimate": 4},
+  "characters": [],
+  "cta": {"kind": "none", "t": null},
+  "why_it_works": [
+    "Ties a fresh policy update to a named industry voice and shows her post at 7 s, so the news feels verified",
+    "Walking selfie with a changing background gives constant motion without edits across 170 s",
+    "Self-referential payoff (this very video becomes his content) makes the method tangible"
+  ],
+  "weaknesses": [
+    "170 s with a longest shot of 42.6 s; the GEO explainer middle is slow for a news hook",
+    "No CTA; the video stops on a throwaway line",
+    "After the opening screenshot there is no visual for the method he describes"
+  ],
+  "for_robert": "Pin an orange headline label and cut to the source post within 7 s for news reels; Fred could hold the screenshot. Avoid the long middle with no visuals and end on a clear ask."
+}

@@ -1,0 +1,1549 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "s8_reconcile",
+    "annotator": "code",
+    "skill": null,
+    "model": null,
+    "input_hash": "9a227e2ba56a9cb852999699725efa225de4038de8a1a459fdc746e9dbeaee9e",
+    "created_at": "2026-10-05T12:18:18.638706Z"
+  },
+  "video": "google-introducing-the-google-pixel-9-pro",
+  "brand": "Google",
+  "title": "Introducing the Google Pixel 9 Pro",
+  "format": "teaser",
+  "tier": "reference",
+  "duration_s": 29.9874,
+  "fps": 23.81,
+  "frame_size": [
+    1280,
+    720
+  ],
+  "palette": [
+    "#000001",
+    "#f0edeb",
+    "#2a262e",
+    "#d4cdd1",
+    "#5c5461",
+    "#9d949f"
+  ],
+  "summary": {
+    "beats": [
+      {
+        "beat": "hook",
+        "shots": [
+          "s001"
+        ],
+        "words": null
+      },
+      {
+        "beat": "demo",
+        "shots": [
+          "s001"
+        ],
+        "words": null
+      },
+      {
+        "beat": "outcome",
+        "shots": [
+          "s002"
+        ],
+        "words": null
+      },
+      {
+        "beat": "cta",
+        "shots": [
+          "s003"
+        ],
+        "words": null
+      }
+    ],
+    "hook": {
+      "text": "Write me a breakup letter. Tell them I’ve found something new.",
+      "technique": "other",
+      "technique_other": "witty typed AI prompt that builds curiosity (a breakup letter addressed to the viewer's old phone)",
+      "shots": [
+        "s001"
+      ],
+      "words": null
+    },
+    "cta": {
+      "text": "Learn more at GoogleStore.com",
+      "shots": [
+        "s003"
+      ]
+    },
+    "tone": "Playful, minimal and confident: a deadpan typed joke on black that pays off in a glossy hardware reveal and a clean light-mode brand close.",
+    "signature_moments": [
+      {
+        "shots": [
+          "s001"
+        ],
+        "description": "The long prompt types on in real time with a caret, then shrinks into a chat bubble on a phone screen that rises in with a rim glow.",
+        "why_premium": "One continuous typographic idea carries the story and transitions seamlessly from abstract text into the product UI without a cut."
+      },
+      {
+        "shots": [
+          "s002"
+        ],
+        "description": "The phone rotates in front of a glowing gradient 'Oh hi, AI.' while the scene shifts from dark to light.",
+        "why_premium": "Layering product render over soft glowing type with depth blur and a lighting shift gives a cinematic reveal that feels expensive and on-brand."
+      },
+      {
+        "shots": [
+          "s003"
+        ],
+        "description": "A tiny sparkle grows and resolves into the Google G.",
+        "why_premium": "A small, precise logo morph ties the Gemini AI motif to the master brand in under a second."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 4,
+        "evidence": "The breakup-letter prompt is unexpected and funny, and the payoff ('Dear Old Phone') is held back until the end of the typing, creating sustained curiosity; it starts slowly with a generic greeting.",
+        "refs": [
+          "s001"
+        ]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "Single message (new AI phone replaces your old one) with a date and URL; what the AI actually does is only implied by placeholder bars, not shown.",
+        "refs": [
+          "s001",
+          "s002",
+          "s003"
+        ]
+      },
+      "ui_showcase": {
+        "score": 2,
+        "evidence": "Gemini UI appears only as a simplified prompt and skeleton answer bars marked 'Screen simulated'; the focus is hardware, not interface.",
+        "refs": [
+          "s001"
+        ]
+      },
+      "motion_polish": {
+        "score": 5,
+        "evidence": "Smooth typewriter with caret, text-to-phone-screen hand-off, 3D phone rotation with glow and lighting shift, zoom-through blur and sparkle-to-logo morph are all clean and continuous.",
+        "refs": [
+          "s001",
+          "s002",
+          "s003"
+        ]
+      },
+      "sound_design": {
+        "score": 4,
+        "evidence": "Judged from anchor audio facts: music bed at 117.45 BPM, integrated loudness -14.58 LUFS, no speech; an impact (x005) lands just before the phone reveal cut and a chime/swoosh_reverse cluster (x011, x012) accents the logo resolve. SFX are sparse and mostly music-labelled, so detail beyond that cannot be judged.",
+        "refs": [
+          "s001",
+          "s002",
+          "s003"
+        ]
+      },
+      "vo_script_quality": {
+        "score": null,
+        "evidence": "No voice-over: the transcript has no words; the script is carried entirely by on-screen text.",
+        "refs": []
+      },
+      "brand_consistency": {
+        "score": 5,
+        "evidence": "Consistent Google sans typography, Gemini blue-to-pink gradient across 'Hello.', 'Gemini', 'Oh hi, AI.' and 'August 13th', ending on the Google G and store URL.",
+        "refs": [
+          "s001",
+          "s002",
+          "s003"
+        ]
+      },
+      "works_muted": {
+        "score": 5,
+        "evidence": "The whole story is told in on-screen text and product visuals with no voice-over, so it is fully understandable muted.",
+        "refs": [
+          "s001",
+          "s002",
+          "s003"
+        ]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "A tight 30 s teaser with a memorable typed-prompt concept, premium motion and strong brand cohesion; light on actual product or UI substance.",
+        "refs": [
+          "s001",
+          "s002",
+          "s003"
+        ]
+      }
+    },
+    "localization_friendliness": {
+      "score": 2,
+      "baked_in_text": true,
+      "vo_dependent": false,
+      "notes": "No voice-over, but the entire narrative is an English wordplay prompt typed on screen plus a glowing headline composited behind a 3D render, so localizing means re-rendering text animations and rewriting the joke; the date and URL are also baked in."
+    }
+  },
+  "shots": [
+    {
+      "id": "s001",
+      "start_s": 0.0,
+      "end_s": 20.4116,
+      "transition_in": null,
+      "motion_energy": 0.001271,
+      "wpm": null,
+      "annotation": {
+        "shot": "s001",
+        "shot_type": "kinetic_type",
+        "shot_type_other": null,
+        "composition": "rule_of_thirds",
+        "composition_other": null,
+        "focal_element": "A Gemini prompt typed character by character in large white sans text on pure black, under a small gradient 'Gemini' wordmark",
+        "transition_in": "other",
+        "transition_other": "video start (no incoming transition)",
+        "on_screen_text": [
+          "Hello.",
+          "How can I help you today?",
+          "Gemini",
+          "Write me a breakup letter. Tell them I’ve found something new. That actually feels magical. Not just the same old thing. Oh, and have it start, “Dear Old Phone.”",
+          "Screen simulated. Limitations apply. Check responses for accuracy."
+        ],
+        "text_word_count": 43,
+        "typography": "Geometric humanist sans (low-confidence guess: Google Sans), sentence case, regular/medium weight, normal tracking; 'Hello.' in a blue-to-pink gradient with grey secondary line; prompt in large white left-aligned text block with a thin blinking caret; tiny centred disclaimer at bottom",
+        "depth_cues": [
+          "glow"
+        ],
+        "what_happens": "A Gemini greeting 'Hello. How can I help you today?' fades in and out, then the 'Gemini' label appears and a long humorous prompt types on letter by letter with a caret, wrapping into six lines; near the end the text dims, a glowing phone edge rises from the bottom right and the prompt shrinks into a chat bubble on the phone screen with gradient placeholder answer bars streaming beneath it.",
+        "build_rebuild": "On a black canvas, fade in a gradient 'Hello.' plus grey subline, swap to a small gradient 'Gemini' label, then type the prompt with a per-character typewriter and blinking caret, and finally scale the text block down into a chat bubble inside a phone mockup that slides up with a rim glow while three skeleton bars animate in below.",
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "s002",
+      "start_s": 20.4116,
+      "end_s": 25.4515,
+      "transition_in": "other",
+      "motion_energy": 0.015227,
+      "wpm": null,
+      "annotation": {
+        "shot": "s002",
+        "shot_type": "3d",
+        "shot_type_other": null,
+        "composition": "centered",
+        "composition_other": null,
+        "focal_element": "The Pixel 9 Pro rear camera bar, the phone rendered upright and centred",
+        "transition_in": "other",
+        "transition_other": "cut on motion from the phone screen in s001 to the phone in profile rotating toward its back (detected as other; exact mechanism not clear at 2 fps)",
+        "on_screen_text": [
+          "Oh hi, AI.",
+          "Google",
+          "Pixel 9 Pro"
+        ],
+        "text_word_count": 7,
+        "typography": "Large rounded geometric sans, sentence case, medium weight, glowing blue-to-pink gradient for 'Oh hi, AI.' behind the phone; later dark grey 'Google' and 'Pixel 9 Pro' in medium weight flanking the phone",
+        "depth_cues": [
+          "glow",
+          "blur",
+          "shadow"
+        ],
+        "what_happens": "The phone rotates from profile to show its back while a glowing gradient headline 'Oh hi, AI.' resolves behind it (the phone occludes the middle of the line, so any word between 'hi,' and 'AI.' cannot be seen); the background brightens from dark to light cream, the glow text fades, and 'Google' and 'Pixel 9 Pro' appear left and right of the camera bar as a product lockup.",
+        "build_rebuild": "Render a 3D phone rotating from side to back view in front of a blurred, glowing gradient headline, then cross-fade the background from near-black to off-white while replacing the headline with a two-sided 'Google' / 'Pixel 9 Pro' lockup.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "id": "s003",
+      "start_s": 25.4515,
+      "end_s": 29.9874,
+      "transition_in": "zoom_through",
+      "motion_energy": 0.001292,
+      "wpm": null,
+      "annotation": {
+        "shot": "s003",
+        "shot_type": "logo",
+        "shot_type_other": null,
+        "composition": "centered",
+        "composition_other": null,
+        "focal_element": "Launch date 'August 13th' then the Google G logo with the store URL",
+        "transition_in": "zoom_through",
+        "transition_other": null,
+        "on_screen_text": [
+          "Google",
+          "Pixel 9 Pro",
+          "August 13th",
+          "Learn more at GoogleStore.com"
+        ],
+        "text_word_count": 10,
+        "typography": "Same geometric sans; 'August 13th' small, centred, medium weight with a blue-to-pink gradient fill that animates; small dark grey two-line URL under the logo",
+        "depth_cues": [
+          "blur"
+        ],
+        "what_happens": "The product lockup blurs out as the camera pushes through, revealing a centred gradient 'August 13th' on off-white; it disappears, a small four-point Gemini-style sparkle grows at centre and resolves into the full-colour Google G, and 'Learn more at GoogleStore.com' fades in beneath it.",
+        "build_rebuild": "Zoom-blur the previous frame out into an off-white canvas, fade in a centred gradient date label, then scale a small sparkle up and morph it into the Google G logo while fading in a two-line URL below.",
+        "confidence": "high"
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "e001",
+      "shot": "s001",
+      "kind": "motion",
+      "start_s": 19.0676,
+      "end_s": 19.3196,
+      "camera_move": "none",
+      "status": "annotated",
+      "skip_reason": null,
+      "of": null,
+      "pattern": {
+        "id": "layout_reframe",
+        "proposed_name": null,
+        "description": "A full-size prompt dims to grey, then shrinks and reflows into a compact grey chat bubble; the phone frame and Gemini wordmark settle slightly, and the sparkle icon plus gradient placeholder bars appear below to signal the answer loading.",
+        "why_premium": "The prompt never cuts away: the same words physically become the sent message, so the viewer tracks one object from 'asking' to 'sent'; the dim-then-shrink sequence and the immediate shimmer bars sell responsiveness without showing a spinner."
+      },
+      "build_hint": {
+        "gsap": "tl.to('.prompt', {color:'#9a9a9a', duration:0.08, ease:'none'}) .to('.prompt', {scale:0.55, x:dx, y:dy, duration:0.35, ease:'power2.inOut'}) — or a Flip.from(state) when swapping the big prompt for the bubble layout — .fromTo('.bubble', {autoAlpha:0, scale:0.95}, {autoAlpha:1, scale:1, duration:0.3, ease:'power2.out'}, '<') .to(['.phone-frame','.gemini-wordmark'], {y:'+=10', duration:0.35, ease:'power2.inOut'}, '<') .fromTo(['.sparkle','.bar-1','.bar-2'], {autoAlpha:0}, {autoAlpha:1, duration:0.25, ease:'power2.out', stagger:0.06}, '-=0.1').",
+        "remotion": "const t = interpolate(frame, [2, 13], [0, 1], {easing: Easing.inOut(Easing.cubic), extrapolateLeft:'clamp', extrapolateRight:'clamp'}); prompt scale = interpolate(t,[0,1],[1,0.55]), translate toward bubble position; bubble opacity = t; placeholder opacity = spring({frame: frame - 14, fps, config:{damping:200}}) staggered by 2 frames; no overshoot."
+      },
+      "confidence": "medium",
+      "notes": "No SFX candidates. The prompt-to-bubble transform could also be read as a crossfade between two text layouts (large text fades while bubble text fades in) rather than a true scale morph; frames f457-f461 suggest a dim then reflow. Phone frame/wordmark shift is small; camera.move is none.",
+      "elements": [
+        {
+          "id": "b06",
+          "box": [
+            451,
+            271,
+            833,
+            296
+          ],
+          "box_source": "candidate",
+          "label": "Prompt text line 1 (large prompt shrinking into bubble)",
+          "role": "body_text",
+          "role_other": null,
+          "change_types": [
+            "fade",
+            "scale_down",
+            "morph"
+          ],
+          "change_other": null,
+          "is_text": true,
+          "text": "Write me a breakup letter. Tell them I’ve found",
+          "text_unit": "line",
+          "timing": {
+            "source": "measured",
+            "duration_ms": 370.5,
+            "start_s": 19.2967,
+            "ease": "circ.out",
+            "easing_class": "ease_out",
+            "bezier": "cubic-bezier(1.000, 0.562, 0.242, -1.000)",
+            "spring": {
+              "mass": 1.0,
+              "stiffness": 344.024,
+              "damping": 31.315
+            },
+            "overshoot_pct": 0.0,
+            "quality": 0.996,
+            "channels": [
+              "x",
+              "y",
+              "opacity"
+            ],
+            "changes": [
+              "fade",
+              "slide_right",
+              "slide_up"
+            ],
+            "stagger_unit": "all",
+            "stagger_ms": 0.0
+          },
+          "sfx_offset_ms": {}
+        },
+        {
+          "id": "b05",
+          "box": [
+            450,
+            299,
+            848,
+            326
+          ],
+          "box_source": "candidate",
+          "label": "Prompt text line 2",
+          "role": "body_text",
+          "role_other": null,
+          "change_types": [
+            "fade",
+            "scale_down",
+            "morph"
+          ],
+          "change_other": null,
+          "is_text": true,
+          "text": "something new. That actually feels magical. Not",
+          "text_unit": "line",
+          "timing": {
+            "source": "measured",
+            "duration_ms": 370.3,
+            "start_s": 19.2987,
+            "ease": "circ.out",
+            "easing_class": "ease_out",
+            "bezier": "cubic-bezier(0.540, 0.867, 0.423, 0.918)",
+            "spring": {
+              "mass": 1.0,
+              "stiffness": 599.316,
+              "damping": 43.084
+            },
+            "overshoot_pct": 0.0,
+            "quality": 1.0,
+            "channels": [
+              "x",
+              "y",
+              "opacity"
+            ],
+            "changes": [
+              "fade",
+              "slide_right",
+              "slide_up"
+            ],
+            "stagger_unit": "all",
+            "stagger_ms": 0.0
+          },
+          "sfx_offset_ms": {}
+        },
+        {
+          "id": "b04",
+          "box": [
+            449,
+            325,
+            824,
+            356
+          ],
+          "box_source": "candidate",
+          "label": "Prompt text line 3",
+          "role": "body_text",
+          "role_other": null,
+          "change_types": [
+            "fade",
+            "scale_down",
+            "morph"
+          ],
+          "change_other": null,
+          "is_text": true,
+          "text": "just the same old thing. Oh, and have it start,",
+          "text_unit": "line",
+          "timing": {
+            "source": "measured",
+            "duration_ms": 925.0,
+            "start_s": 18.8816,
+            "ease": "power2.inOut",
+            "easing_class": "ease_in_out",
+            "bezier": "cubic-bezier(1.000, 1.722, 0.624, 0.588)",
+            "spring": {
+              "mass": 1.0,
+              "stiffness": 465.51,
+              "damping": 37.301
+            },
+            "overshoot_pct": 0.0,
+            "quality": 0.9961,
+            "channels": [
+              "x",
+              "y",
+              "opacity"
+            ],
+            "changes": [
+              "fade",
+              "slide_right",
+              "slide_up"
+            ],
+            "stagger_unit": "all",
+            "stagger_ms": 0.0
+          },
+          "sfx_offset_ms": {}
+        },
+        {
+          "id": "b08",
+          "box": [
+            452,
+            355,
+            606,
+            379
+          ],
+          "box_source": "candidate",
+          "label": "Prompt text line 4",
+          "role": "body_text",
+          "role_other": null,
+          "change_types": [
+            "fade",
+            "scale_down",
+            "morph"
+          ],
+          "change_other": null,
+          "is_text": true,
+          "text": "“Dear Old Phone.”",
+          "text_unit": "line",
+          "timing": {
+            "source": "measured",
+            "duration_ms": 1008.0,
+            "start_s": 18.8125,
+            "ease": "circ.inOut",
+            "easing_class": "ease_in_out",
+            "bezier": "cubic-bezier(1.000, 1.722, 0.624, 0.588)",
+            "spring": {
+              "mass": 1.0,
+              "stiffness": 465.51,
+              "damping": 37.301
+            },
+            "overshoot_pct": 0.0,
+            "quality": 0.9961,
+            "channels": [
+              "x",
+              "y",
+              "opacity"
+            ],
+            "changes": [
+              "fade",
+              "slide_right",
+              "slide_up"
+            ],
+            "stagger_unit": "word",
+            "stagger_ms": 63.0
+          },
+          "sfx_offset_ms": {}
+        },
+        {
+          "id": "b02",
+          "box": [
+            397,
+            254,
+            880,
+            505
+          ],
+          "box_source": "candidate",
+          "label": "Grey user chat bubble behind the prompt",
+          "role": "card",
+          "role_other": null,
+          "change_types": [
+            "fade",
+            "scale_up"
+          ],
+          "change_other": null,
+          "is_text": false,
+          "text": null,
+          "text_unit": null,
+          "timing": {
+            "source": "measured",
+            "duration_ms": 874.7,
+            "start_s": 18.8445,
+            "ease": "circ.inOut",
+            "easing_class": "ease_in_out",
+            "bezier": "cubic-bezier(1.000, 0.384, 0.495, 0.466)",
+            "spring": {
+              "mass": 1.0,
+              "stiffness": 75.143,
+              "damping": 11.982
+            },
+            "overshoot_pct": 0.0,
+            "quality": 0.9995,
+            "channels": [
+              "x",
+              "y",
+              "opacity"
+            ],
+            "changes": [
+              "fade",
+              "slide_right",
+              "slide_up"
+            ],
+            "stagger_unit": null,
+            "stagger_ms": null
+          },
+          "sfx_offset_ms": {}
+        },
+        {
+          "id": "m06",
+          "box": [
+            410,
+            475,
+            879,
+            492
+          ],
+          "box_source": "manual",
+          "label": "Pink gradient loading bar (answer placeholder)",
+          "role": "other",
+          "role_other": "loading_placeholder",
+          "change_types": [
+            "fade",
+            "color_shift"
+          ],
+          "change_other": null,
+          "is_text": false,
+          "text": null,
+          "text_unit": null,
+          "timing": {
+            "source": "measured",
+            "duration_ms": 561.8,
+            "start_s": 18.9732,
+            "ease": "none",
+            "easing_class": "linear",
+            "bezier": "cubic-bezier(0.256, 1.507, 0.527, 0.956)",
+            "spring": {
+              "mass": 1.0,
+              "stiffness": 5111.631,
+              "damping": 90.596
+            },
+            "overshoot_pct": 3.04,
+            "quality": 1.0,
+            "channels": [
+              "x",
+              "y",
+              "scale",
+              "opacity"
+            ],
+            "changes": [
+              "fade",
+              "scale_up",
+              "slide_down",
+              "slide_left"
+            ],
+            "stagger_unit": null,
+            "stagger_ms": null
+          },
+          "sfx_offset_ms": {}
+        },
+        {
+          "id": "b07",
+          "box": [
+            399,
+            518,
+            878,
+            545
+          ],
+          "box_source": "candidate",
+          "label": "Second dark loading bar (answer placeholder)",
+          "role": "other",
+          "role_other": "loading_placeholder",
+          "change_types": [
+            "fade"
+          ],
+          "change_other": null,
+          "is_text": false,
+          "text": null,
+          "text_unit": null,
+          "timing": {
+            "source": "measured",
+            "duration_ms": 598.3,
+            "start_s": 18.8905,
+            "ease": "none",
+            "easing_class": "linear",
+            "bezier": "cubic-bezier(1.000, 0.889, 0.290, 0.613)",
+            "spring": {
+              "mass": 1.0,
+              "stiffness": 16.843,
+              "damping": 5.038
+            },
+            "overshoot_pct": 1.91,
+            "quality": 0.9924,
+            "channels": [
+              "x",
+              "y",
+              "scale"
+            ],
+            "changes": [
+              "scale_up",
+              "slide_down",
+              "slide_left"
+            ],
+            "stagger_unit": null,
+            "stagger_ms": null
+          },
+          "sfx_offset_ms": {}
+        },
+        {
+          "id": "b10",
+          "box": [
+            413,
+            425,
+            430,
+            441
+          ],
+          "box_source": "candidate",
+          "label": "Gemini sparkle icon",
+          "role": "icon",
+          "role_other": null,
+          "change_types": [
+            "fade",
+            "pop"
+          ],
+          "change_other": null,
+          "is_text": false,
+          "text": null,
+          "text_unit": null,
+          "timing": {
+            "source": "measured",
+            "duration_ms": 782.8,
+            "start_s": 18.8992,
+            "ease": "none",
+            "easing_class": "linear",
+            "bezier": "cubic-bezier(0.996, -0.144, 0.030, 1.144)",
+            "spring": {
+              "mass": 1.0,
+              "stiffness": 5142.693,
+              "damping": 117.042
+            },
+            "overshoot_pct": 1.0,
+            "quality": 0.9796,
+            "channels": [
+              "x",
+              "scale",
+              "opacity"
+            ],
+            "changes": [
+              "fade",
+              "scale_down",
+              "slide_left"
+            ],
+            "stagger_unit": null,
+            "stagger_ms": null
+          },
+          "sfx_offset_ms": {}
+        },
+        {
+          "id": "b03",
+          "box": [
+            378,
+            96,
+            923,
+            276
+          ],
+          "box_source": "candidate",
+          "label": "Glowing phone outline (top edge)",
+          "role": "background",
+          "role_other": null,
+          "change_types": [
+            "slide_down"
+          ],
+          "change_other": null,
+          "is_text": false,
+          "text": null,
+          "text_unit": null,
+          "timing": {
+            "source": "measured",
+            "duration_ms": 324.9,
+            "start_s": 19.4036,
+            "ease": "circ.out",
+            "easing_class": "ease_out",
+            "bezier": "cubic-bezier(0.552, -1.000, 0.000, 0.365)",
+            "spring": {
+              "mass": 1.0,
+              "stiffness": 3245.766,
+              "damping": 253.851
+            },
+            "overshoot_pct": 0.0,
+            "quality": 0.9248,
+            "channels": [
+              "x"
+            ],
+            "changes": [
+              "slide_right"
+            ],
+            "stagger_unit": null,
+            "stagger_ms": null
+          },
+          "sfx_offset_ms": {}
+        },
+        {
+          "id": "b09",
+          "box": [
+            398,
+            184,
+            492,
+            208
+          ],
+          "box_source": "candidate",
+          "label": "Gemini wordmark",
+          "role": "logo",
+          "role_other": null,
+          "change_types": [
+            "slide_down"
+          ],
+          "change_other": null,
+          "is_text": true,
+          "text": "Gemini",
+          "text_unit": "whole",
+          "timing": {
+            "source": "measured",
+            "duration_ms": 998.7,
+            "start_s": 18.6939,
+            "ease": "none",
+            "easing_class": "linear",
+            "bezier": "cubic-bezier(0.634, 0.385, 0.746, 0.528)",
+            "spring": {
+              "mass": 1.0,
+              "stiffness": 2.888,
+              "damping": 0.17
+            },
+            "overshoot_pct": 0.0,
+            "quality": 0.9958,
+            "channels": [
+              "x",
+              "scale"
+            ],
+            "changes": [
+              "scale_down",
+              "slide_right"
+            ],
+            "stagger_unit": null,
+            "stagger_ms": null
+          },
+          "sfx_offset_ms": {}
+        }
+      ],
+      "sfx": []
+    },
+    {
+      "id": "e002",
+      "shot": "s001",
+      "kind": "motion",
+      "start_s": 20.1176,
+      "end_s": 20.3696,
+      "camera_move": "none",
+      "status": "annotated",
+      "skip_reason": null,
+      "of": null,
+      "pattern": {
+        "id": "other",
+        "proposed_name": "device 3d turn",
+        "description": "While the Gemini answer is still loading (gradient shimmer travelling along placeholder bars), the whole phone yaws in 3D so its glowing side rail swings into view and the screen content shifts right in perspective, with a slight scale-down.",
+        "why_premium": "Turning the hardware during the wait converts dead loading time into a product beauty shot; the rim light on the rail and the continuous shimmer keep both device and software alive in the same move."
+      },
+      "build_hint": {
+        "gsap": "Wrap the screen UI in a .device with transformPerspective:1200; gsap.fromTo('.device', {rotationY:0, scale:1}, {rotationY:-18, scale:0.93, duration:0.6, ease:'power2.inOut'}); shimmer runs independently: gsap.fromTo('.bar', {backgroundPosition:'-100% 0'}, {backgroundPosition:'200% 0', duration:1.2, ease:'none', repeat:-1, stagger:0.15}). Screen children inherit the transform (no separate tweens).",
+        "remotion": "const t = interpolate(frame, [0, 14], [0, 1], {easing: Easing.inOut(Easing.quad), extrapolateRight:'clamp'}); style={{transform:`perspective(1200px) rotateY(${-18*t}deg) scale(${1-0.07*t})`}}; bar gradient offset = (frame % 36) / 36 for a looping linear shimmer."
+      },
+      "confidence": "medium",
+      "notes": "camera.move is none; scale 0.93 reflects the device turning/receding, not a camera pull-out (it could also be a real camera orbit around a physical render, which the frame alone cannot distinguish). Screen elements move only as part of the phone, not independently. Disclaimer line b07 is barely changed and omitted.",
+      "elements": [
+        {
+          "id": "b01",
+          "box": [
+            365,
+            98,
+            911,
+            720
+          ],
+          "box_source": "candidate",
+          "label": "Phone body turning in 3D to reveal its lit side rail",
+          "role": "other",
+          "role_other": "device",
+          "change_types": [
+            "rotate",
+            "scale_down"
+          ],
+          "change_other": null,
+          "is_text": false,
+          "text": null,
+          "text_unit": null,
+          "timing": {
+            "source": "measured",
+            "duration_ms": 686.6,
+            "start_s": 19.6871,
+            "ease": "power1.in",
+            "easing_class": "ease_in",
+            "bezier": "cubic-bezier(0.455, 0.132, 0.780, 0.808)",
+            "spring": {
+              "mass": 1.0,
+              "stiffness": 9.76,
+              "damping": 1.182
+            },
+            "overshoot_pct": 0.0,
+            "quality": 1.0,
+            "channels": [
+              "x",
+              "opacity"
+            ],
+            "changes": [
+              "fade",
+              "slide_right"
+            ],
+            "stagger_unit": null,
+            "stagger_ms": null
+          },
+          "sfx_offset_ms": {
+            "x005": -71.5
+          }
+        },
+        {
+          "id": "b05",
+          "box": [
+            467,
+            173,
+            546,
+            213
+          ],
+          "box_source": "candidate",
+          "label": "Gemini wordmark on screen",
+          "role": "logo",
+          "role_other": null,
+          "change_types": [
+            "slide_right"
+          ],
+          "change_other": null,
+          "is_text": true,
+          "text": "Gemini",
+          "text_unit": "whole",
+          "timing": {
+            "source": "measured",
+            "duration_ms": 635.0,
+            "start_s": 19.7396,
+            "ease": "sine.in",
+            "easing_class": "ease_in",
+            "bezier": "cubic-bezier(0.589, 0.260, 1.000, 0.943)",
+            "spring": {
+              "mass": 1.0,
+              "stiffness": 7.007,
+              "damping": 0.265
+            },
+            "overshoot_pct": 0.0,
+            "quality": 0.9999,
+            "channels": [
+              "x",
+              "y",
+              "scale"
+            ],
+            "changes": [
+              "scale_down",
+              "slide_right",
+              "slide_up"
+            ],
+            "stagger_unit": null,
+            "stagger_ms": null
+          },
+          "sfx_offset_ms": {
+            "x005": -71.5
+          }
+        },
+        {
+          "id": "b03",
+          "box": [
+            506,
+            267,
+            804,
+            301
+          ],
+          "box_source": "candidate",
+          "label": "Prompt bubble line 1",
+          "role": "body_text",
+          "role_other": null,
+          "change_types": [
+            "slide_right"
+          ],
+          "change_other": null,
+          "is_text": true,
+          "text": "Write me a breakup letter. Tell them I've found",
+          "text_unit": "line",
+          "timing": {
+            "source": "measured",
+            "duration_ms": 486.8,
+            "start_s": 19.9122,
+            "ease": "none",
+            "easing_class": "linear",
+            "bezier": "cubic-bezier(0.129, -0.000, 1.000, 0.935)",
+            "spring": {
+              "mass": 1.0,
+              "stiffness": 13.684,
+              "damping": 0.718
+            },
+            "overshoot_pct": 0.0,
+            "quality": 0.999,
+            "channels": [
+              "x",
+              "y",
+              "scale"
+            ],
+            "changes": [
+              "scale_down",
+              "slide_down",
+              "slide_right"
+            ],
+            "stagger_unit": "word",
+            "stagger_ms": 42.0
+          },
+          "sfx_offset_ms": {
+            "x005": -71.5
+          }
+        },
+        {
+          "id": "b02",
+          "box": [
+            505,
+            297,
+            813,
+            328
+          ],
+          "box_source": "candidate",
+          "label": "Prompt bubble line 2",
+          "role": "body_text",
+          "role_other": null,
+          "change_types": [
+            "slide_right"
+          ],
+          "change_other": null,
+          "is_text": true,
+          "text": "something new. That actually feels magical. Not",
+          "text_unit": "line",
+          "timing": {
+            "source": "model_estimate",
+            "duration_ms": 600.0,
+            "start_s": null,
+            "ease": null,
+            "easing_class": "ease_in_out",
+            "bezier": null,
+            "spring": null,
+            "overshoot_pct": null,
+            "quality": null,
+            "channels": [],
+            "changes": [],
+            "stagger_unit": null,
+            "stagger_ms": null
+          },
+          "sfx_offset_ms": {}
+        },
+        {
+          "id": "b04",
+          "box": [
+            505,
+            324,
+            796,
+            356
+          ],
+          "box_source": "candidate",
+          "label": "Prompt bubble line 3",
+          "role": "body_text",
+          "role_other": null,
+          "change_types": [
+            "slide_right"
+          ],
+          "change_other": null,
+          "is_text": true,
+          "text": "just the same old thing. Oh, and have it start,",
+          "text_unit": "line",
+          "timing": {
+            "source": "measured",
+            "duration_ms": 105.3,
+            "start_s": 20.2485,
+            "ease": "power1.in",
+            "easing_class": "ease_in",
+            "bezier": "cubic-bezier(0.417, 0.112, 0.642, 1.124)",
+            "spring": {
+              "mass": 1.0,
+              "stiffness": 491.696,
+              "damping": 25.822
+            },
+            "overshoot_pct": 0.0,
+            "quality": 1.0,
+            "channels": [
+              "x",
+              "scale"
+            ],
+            "changes": [
+              "scale_down",
+              "slide_right"
+            ],
+            "stagger_unit": "all",
+            "stagger_ms": 0.0
+          },
+          "sfx_offset_ms": {
+            "x005": -71.5
+          }
+        },
+        {
+          "id": "b06",
+          "box": [
+            507,
+            351,
+            628,
+            380
+          ],
+          "box_source": "candidate",
+          "label": "Prompt bubble line 4",
+          "role": "body_text",
+          "role_other": null,
+          "change_types": [
+            "slide_right"
+          ],
+          "change_other": null,
+          "is_text": true,
+          "text": "\"Dear Old Phone.\"",
+          "text_unit": "line",
+          "timing": {
+            "source": "measured",
+            "duration_ms": 482.9,
+            "start_s": 19.8901,
+            "ease": "sine.in",
+            "easing_class": "ease_in",
+            "bezier": "cubic-bezier(0.526, 0.530, 0.000, -0.152)",
+            "spring": {
+              "mass": 1.0,
+              "stiffness": 11.942,
+              "damping": 0.346
+            },
+            "overshoot_pct": 0.0,
+            "quality": 0.9992,
+            "channels": [
+              "x",
+              "scale"
+            ],
+            "changes": [
+              "scale_down",
+              "slide_right"
+            ],
+            "stagger_unit": "word",
+            "stagger_ms": 231.0
+          },
+          "sfx_offset_ms": {
+            "x005": -71.5
+          }
+        },
+        {
+          "id": "b08",
+          "box": [
+            476,
+            422,
+            491,
+            438
+          ],
+          "box_source": "candidate",
+          "label": "Gemini sparkle icon",
+          "role": "icon",
+          "role_other": null,
+          "change_types": [
+            "slide_right"
+          ],
+          "change_other": null,
+          "is_text": false,
+          "text": null,
+          "text_unit": null,
+          "timing": {
+            "source": "measured",
+            "duration_ms": 359.0,
+            "start_s": 19.9001,
+            "ease": "elastic.out(1,0.3)",
+            "easing_class": "spring_overshoot",
+            "bezier": "cubic-bezier(0.509, -1.000, 0.000, -0.779)",
+            "spring": {
+              "mass": 1.0,
+              "stiffness": 62.638,
+              "damping": 9.603
+            },
+            "overshoot_pct": 0.0,
+            "quality": 0.9451,
+            "channels": [
+              "x",
+              "scale",
+              "opacity"
+            ],
+            "changes": [
+              "fade",
+              "scale_down",
+              "slide_right"
+            ],
+            "stagger_unit": null,
+            "stagger_ms": null
+          },
+          "sfx_offset_ms": {
+            "x005": -29.5
+          }
+        },
+        {
+          "id": "m08",
+          "box": [
+            474,
+            466,
+            837,
+            570
+          ],
+          "box_source": "manual",
+          "label": "Three shimmering answer-placeholder bars",
+          "role": "other",
+          "role_other": "loading_placeholder",
+          "change_types": [
+            "color_shift",
+            "slide_right"
+          ],
+          "change_other": null,
+          "is_text": false,
+          "text": null,
+          "text_unit": null,
+          "timing": {
+            "source": "measured",
+            "duration_ms": 237.7,
+            "start_s": 19.9064,
+            "ease": "back.out(3)",
+            "easing_class": "spring_overshoot",
+            "bezier": "cubic-bezier(0.420, 0.000, 0.580, 1.000)",
+            "spring": {
+              "mass": 1.0,
+              "stiffness": 21625.64,
+              "damping": 253.222
+            },
+            "overshoot_pct": 0.0,
+            "quality": 1.0,
+            "channels": [
+              "x",
+              "y",
+              "opacity"
+            ],
+            "changes": [
+              "fade",
+              "slide_left",
+              "slide_up"
+            ],
+            "stagger_unit": null,
+            "stagger_ms": null
+          },
+          "sfx_offset_ms": {
+            "x005": -71.5
+          }
+        }
+      ],
+      "sfx": [
+        "x005"
+      ]
+    },
+    {
+      "id": "e003",
+      "shot": "s002",
+      "kind": "camera",
+      "start_s": 24.1915,
+      "end_s": 24.4015,
+      "camera_move": "pull_out",
+      "status": "annotated",
+      "skip_reason": null,
+      "of": null,
+      "pattern": {
+        "id": "logo_resolve",
+        "proposed_name": null,
+        "description": "The previous purple 'Oh hi AI' line blurs away while 'Google' slides in from the left and 'Pixel 9 Pro' from the right with heavy motion blur, both sharpening into a symmetrical lockup flanking the camera bar as the camera pulls back slightly.",
+        "why_premium": "Directional motion blur that resolves to crisp type gives speed without a hard cut; mirroring the two words around the camera bar makes the hardware itself the centre of the brand lockup."
+      },
+      "build_hint": {
+        "gsap": "tl.to('.prev-line', {autoAlpha:0, filter:'blur(12px)', duration:0.15, ease:'power1.in'}) .fromTo('.w-google', {x:-120, autoAlpha:0, filter:'blur(16px)'}, {x:0, autoAlpha:1, filter:'blur(0px)', duration:0.35, ease:'expo.out'}, '<0.05') .fromTo('.w-pixel', {x:120, autoAlpha:0, filter:'blur(16px)'}, {x:0, autoAlpha:1, filter:'blur(0px)', duration:0.35, ease:'expo.out'}, '<') .fromTo('.stage', {scale:1.18}, {scale:1, duration:0.8, ease:'power2.out'}, 0).",
+        "remotion": "const p = spring({frame: frame - 1, fps, config:{damping:200, stiffness:180, mass:0.8}}); Google translateX = interpolate(p,[0,1],[-120,0]), Pixel translateX = interpolate(p,[0,1],[120,0]); filter blur = interpolate(p,[0,1],[16,0]); opacity = p; stage scale = interpolate(frame,[0,20],[1.18,1],{easing:Easing.out(Easing.quad), extrapolateRight:'clamp'}); no overshoot."
+      },
+      "confidence": "medium",
+      "notes": "The outgoing 'Oh hi AI' line (visible only in f569) has no box on the end frame, so it is described but not listed as an element. camera.move is pull_out; the phone's apparent shrink is treated as camera, not element motion. Lens-reflection changes in b06/b08 are lighting shifts from the move and are omitted.",
+      "elements": [
+        {
+          "id": "b03",
+          "box": [
+            53,
+            325,
+            280,
+            412
+          ],
+          "box_source": "candidate",
+          "label": "Google wordmark (left of phone)",
+          "role": "logo",
+          "role_other": null,
+          "change_types": [
+            "slide_right",
+            "blur_in",
+            "fade"
+          ],
+          "change_other": null,
+          "is_text": true,
+          "text": "Google",
+          "text_unit": "whole",
+          "timing": {
+            "source": "measured",
+            "duration_ms": 797.9,
+            "start_s": 23.8962,
+            "ease": "circ.out",
+            "easing_class": "ease_out",
+            "bezier": "cubic-bezier(0.177, 1.058, 0.670, 0.923)",
+            "spring": {
+              "mass": 1.0,
+              "stiffness": 696.401,
+              "damping": 113.993
+            },
+            "overshoot_pct": 0.0,
+            "quality": 0.9999,
+            "channels": [
+              "x",
+              "y",
+              "scale"
+            ],
+            "changes": [
+              "scale_down",
+              "slide_down",
+              "slide_right"
+            ],
+            "stagger_unit": null,
+            "stagger_ms": null
+          },
+          "sfx_offset_ms": {
+            "x006": 192.5
+          }
+        },
+        {
+          "id": "b02",
+          "box": [
+            922,
+            326,
+            1249,
+            409
+          ],
+          "box_source": "candidate",
+          "label": "Product name 'Pixel 9 Pro' (right of phone)",
+          "role": "headline",
+          "role_other": null,
+          "change_types": [
+            "slide_left",
+            "blur_in",
+            "fade"
+          ],
+          "change_other": null,
+          "is_text": true,
+          "text": "Pixel 9 Pro",
+          "text_unit": "whole",
+          "timing": {
+            "source": "measured",
+            "duration_ms": 782.1,
+            "start_s": 23.9824,
+            "ease": "circ.out",
+            "easing_class": "ease_out",
+            "bezier": "cubic-bezier(0.212, 0.700, 0.479, 0.848)",
+            "spring": {
+              "mass": 1.0,
+              "stiffness": 20.006,
+              "damping": 8.247
+            },
+            "overshoot_pct": 0.0,
+            "quality": 1.0,
+            "channels": [
+              "x",
+              "y",
+              "scale"
+            ],
+            "changes": [
+              "scale_down",
+              "slide_down",
+              "slide_left"
+            ],
+            "stagger_unit": "word",
+            "stagger_ms": 105.0
+          },
+          "sfx_offset_ms": {
+            "x006": 108.5
+          }
+        }
+      ],
+      "sfx": [
+        "x006"
+      ]
+    }
+  ],
+  "sfx": [
+    {
+      "id": "x001",
+      "sync_s": 8.87,
+      "classifier_label": "music",
+      "clap_label": "music",
+      "clap_score": 0.966,
+      "label": "music",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x002",
+      "sync_s": 10.1912,
+      "classifier_label": "music",
+      "clap_label": "music",
+      "clap_score": 0.561,
+      "label": "music",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x003",
+      "sync_s": 10.4954,
+      "classifier_label": "chime",
+      "clap_label": "chime",
+      "clap_score": 0.697,
+      "label": "chime",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x004",
+      "sync_s": 15.2787,
+      "classifier_label": "unsure",
+      "clap_label": "music",
+      "clap_score": 0.358,
+      "label": "unsure",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x005",
+      "sync_s": 20.2981,
+      "classifier_label": "impact",
+      "clap_label": "chime",
+      "clap_score": 0.744,
+      "label": "impact",
+      "label_source": "claude",
+      "verdict": "confirm",
+      "events": [
+        "e002"
+      ],
+      "on_beat": false,
+      "reveal_offset_ms": -71.5
+    },
+    {
+      "id": "x006",
+      "sync_s": 24.762,
+      "classifier_label": "unsure",
+      "clap_label": "chime",
+      "clap_score": 0.41,
+      "label": "unsure",
+      "label_source": "code",
+      "verdict": "unsure",
+      "events": [
+        "e003"
+      ],
+      "on_beat": false,
+      "reveal_offset_ms": 360.5
+    },
+    {
+      "id": "x007",
+      "sync_s": 25.535,
+      "classifier_label": "unsure",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.39,
+      "label": "unsure",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x008",
+      "sync_s": 25.715,
+      "classifier_label": "unsure",
+      "clap_label": "music",
+      "clap_score": 0.396,
+      "label": "unsure",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x009",
+      "sync_s": 26.805,
+      "classifier_label": "unsure",
+      "clap_label": "chime",
+      "clap_score": 0.43,
+      "label": "unsure",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x010",
+      "sync_s": 27.0048,
+      "classifier_label": "unsure",
+      "clap_label": "music",
+      "clap_score": 0.321,
+      "label": "unsure",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x011",
+      "sync_s": 27.8291,
+      "classifier_label": "chime",
+      "clap_label": "chime",
+      "clap_score": 0.593,
+      "label": "chime",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x012",
+      "sync_s": 28.56,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.674,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    }
+  ],
+  "coverage": {
+    "events": 3,
+    "annotated": 3,
+    "propagated": 0,
+    "skipped": 0,
+    "pending": 0,
+    "elements": 20,
+    "measured": 19,
+    "estimated": 1
+  },
+  "checks": [
+    {
+      "name": "a1_shots",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "a1_summary",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "a2_events",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "events_in_shots",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "sfx_ids",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "sfx_labels",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "measure_boxes",
+      "ok": true,
+      "detail": null
+    }
+  ]
+}

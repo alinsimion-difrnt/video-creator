@@ -1,0 +1,53 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "e8d959e5abbb9b265e258c3a02b0e643d5532d796743319c6a96110ed3d4de2e",
+    "created_at": "2026-10-13T13:07:00+00:00"
+  },
+  "id": "7264304933326064942",
+  "kind": "clip",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "unknown",
+    "notes": "Code: 4 colours on the still (first 20 s measured); the clip mixes many flat-colour slides, screenshots and game footage, so no single palette. Slides use one flat background colour per tip."
+  },
+  "lighting": "Flat slide backgrounds; examples show a single-light portrait and a sphere lit from one side to teach shading.",
+  "silhouette": "Simple icons per tip (robot, potion bottle, sphere, portrait) centred and readable at small size.",
+  "motion": {
+    "timing": "Code: median hold 16.7 ms, 19.93 changes/s over the first 20 of 55 s; fast cuts, one tip per ~3-4 s, with lines drawing on and check or question marks popping.",
+    "principles": [
+      "pop-in",
+      "draw-on",
+      "cut on word"
+    ]
+  },
+  "texture": "Clean 2x pixel scale (native 288x512) on the drawn slides, no dithering; mixed with photo and screen captures.",
+  "camera": "Static centred slides with cuts on every spoken word or tip; inserts of a website, a photo of a rabbit, game footage and a launcher.",
+  "sound": "",
+  "acting": {
+    "enters": "Icons pop onto a flat colour background.",
+    "acts": "Comparisons: two potion bottles with question marks, then a tick on the better one; lines draw themselves.",
+    "exits": "Hard cut on the next word.",
+    "comes_back": false,
+    "depth": "No depth; one centred object per slide."
+  },
+  "techniques": [
+    "one tip per slide, one flat background colour each",
+    "A/B comparison with a tick mark",
+    "line drawing itself on to show stroke rules",
+    "word-by-word big captions",
+    "palette advice: use a ready-made list (Lospec)",
+    "single light source on a sphere to teach shading"
+  ],
+  "feel": "flat colour slide + one centred sprite + tick/question-mark pop = fast readable tips",
+  "for_fred": "Use the A/B beat: show two versions side by side with question marks, then pop a tick onto the right one while Fred nods at it; one idea per 3-4 s slide.",
+  "sources": [
+    "data/study/pixel/work/7264304933326064942/sheet.jpg",
+    "studies/pixel-art/clips/7264304933326064942.json",
+    "studies/pixel-art/tiktok.yaml",
+    "https://www.tiktok.com/@juniperdev/video/7264304933326064942"
+  ]
+}

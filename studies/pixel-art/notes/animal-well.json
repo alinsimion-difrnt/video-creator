@@ -1,0 +1,54 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T14:01:39+00:00"
+  },
+  "id": "animal-well",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "cool",
+    "notes": "Near-black backgrounds with deep blues, violets and teal; small warm accents (red, yellow, pink) for the blob, lamps and items. Clip 1 is unrelated (dog video), clip 2 is a creator talking, only short game shots."
+  },
+  "lighting": "Darkness is the default; light comes from small sources (lamps, candles, glowing waterfalls) that reveal nearby tiles. Low resolution was a deliberate limit that shapes this lighting.",
+  "silhouette": "The player is a tiny yellow blob, only a few pixels, readable because it is the warmest thing on a dark cool screen.",
+  "motion": {
+    "timing": "Not measured (no metrics file). Frames show slow ambient motion (drifting motes, swinging chains, a yoyo/rope arc) while rooms stay static; much animation is procedural in code.",
+    "principles": [
+      "secondary action",
+      "ambient motion",
+      "contrast of scale"
+    ]
+  },
+  "texture": "Blue line-like tile edges on black, CRT/scanline sheen, sparse fireflies and specks, overgrown crumbling architecture.",
+  "camera": "Fixed single-screen rooms (flip-screen); no scrolling within a room.",
+  "sound": "Ambient soundtrack and noises carry the eerie mood (per reviews); little music.",
+  "acting": {
+    "enters": "The blob emerges from a flower at the start; in rooms it appears from the edge of a fixed screen.",
+    "acts": "Small hero, huge animals: many creatures are much bigger than the player and some ignore it, so scale itself is the drama.",
+    "exits": "Leaves by a screen edge into the next flip-screen room.",
+    "comes_back": null,
+    "depth": "Tiny hero against a big dark room; giant creatures and pillars dwarf it."
+  },
+  "techniques": [
+    "dark default + small local light sources",
+    "one warm hero on a cool near-black palette",
+    "tiny hero vs giant creature for scale",
+    "drifting particles/motes for ambient life",
+    "flip-screen fixed rooms",
+    "procedural motion for an uncanny feel"
+  ],
+  "feel": "near-black cool room + one warm few-pixel hero + slow drifting motes = eerie wonder",
+  "for_fred": "Put Fred small in a dark room with one light source near him and slow drifting specks; let a giant shape (a huge Pixie paw or eye) move in the background while Fred stays tiny. Use the dark scene as a quiet beat between busy ones.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Animal_Well",
+    "data/study/pixel/work/animal-well/clip1-7664739920199650574.jpg",
+    "data/study/pixel/work/animal-well/clip2-7426021473078365470.jpg",
+    "data/study/pixel/work/animal-well/clip3-7367165092485516587.jpg",
+    "studies/pixel-art/sources.yaml"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "bea3f4a7f35db43ee3ca04490ed99a455af7c74394fb096dd71e2e6bbe326513",
+    "created_at": "2026-10-05T06:47:00.569209Z"
+  },
+  "video": "meta-this-is-meta-quest-3",
+  "event": "e007",
+  "task": "a2-e007",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Footage swap behind a white light-streak sweep (portal scene to player in headset)",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["other", "blur_out"],
+      "change_other": "light-streak sweep that wipes one footage clip into the next",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 200, "easing_class": "ease_out", "source": "model_estimate"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Caption 'Get ready' over footage",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["blur_in", "scale_down", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Get ready",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 250, "easing_class": "ease_out", "source": "model_estimate"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x042",
+      "verdict": "unsure",
+      "label": "unsure",
+      "note": "447 ms before the sweep and in line with the regular music pulses in the spectrogram; may be a pre-roll reverse swoosh or simply a beat."
+    },
+    {
+      "id": "x043",
+      "verdict": "override",
+      "label": "music",
+      "note": "Low-frequency onset followed by sustained broadband texture reads as a music section change, about 260 ms after the caption settles, not a discrete impact."
+    }
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "light streak transition",
+    "description": "White radial light streaks sweep across frame and hide a cut between two footage clips; as they clear, a bold white caption blurs in from slightly larger scale and settles centred over the new shot.",
+    "why_premium": "The cut is hidden inside a branded light effect, so the change of scene feels like part of the motion, and the caption lands within the same few frames, giving one clean beat instead of a cut followed by a separate title."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.streaks', {opacity: 1, scaleX: 1.4, duration: 0.12, ease: 'power2.in'}).set('.clipA', {autoAlpha: 0}).set('.clipB', {autoAlpha: 1}).to('.streaks', {opacity: 0, duration: 0.15, ease: 'power2.out'}).fromTo('.caption', {opacity: 0, scale: 1.25, filter: 'blur(12px)'}, {opacity: 1, scale: 1, filter: 'blur(0px)', duration: 0.25, ease: 'power3.out'}, '<')",
+    "remotion": "Streak overlay opacity via interpolate(frame, [0,3,7], [0,1,0]); swap <Sequence> clips at the streak peak; caption scale from spring({frame: frame-4, fps, config: {damping: 26, stiffness: 220, mass: 1}}) mapped 1.25 to 1, opacity and blur via interpolate over 6 frames with Easing.out(Easing.cubic)."
+  },
+  "confidence": "medium",
+  "notes": "The caption's blur-in starts during the streak sweep, so the two motions overlap. b01 covers the whole frame; the light streak itself has no separate candidate box."
+}

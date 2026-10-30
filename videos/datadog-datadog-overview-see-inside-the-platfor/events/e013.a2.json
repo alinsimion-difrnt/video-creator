@@ -1,0 +1,86 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "9c023764d9f47c718e26b37bdf5225f48b5211a6a62b0b134bc68b572b288714",
+    "created_at": "2026-10-05T06:43:50.536634Z"
+  },
+  "video": "datadog-datadog-overview-see-inside-the-platfor",
+  "event": "e013",
+  "task": "a2-e013",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Logo wall pushed in and wiped away by a widening diagonal violet band, revealing a soft lavender gradient background",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["mask_reveal", "scale_up", "color_shift"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 750, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [424, 59, 568, 940],
+      "manual_reason": "The outgoing headline is gone in the settled end frame, so no candidate box covers it; the coordinates are its position in the earlier frames.",
+      "label": "Outgoing headline 'With 450+ turn-key integrations'",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["mask_reveal", "fade"],
+      "change_other": "Exits: the diagonal band wipes it off.",
+      "is_text": true,
+      "text": "With 450+ turn-key integrations",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 300, "easing_class": "ease_in"}
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "New headline line 1 'Cut through'",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["mask_reveal", "scale_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Cut through",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "New headline line 2 'the complexity'",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["mask_reveal", "scale_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "the complexity",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "diagonal band wipe",
+    "description": "A thin violet diagonal line enters from the bottom-left, widens into a broad band as it sweeps across while the logo wall pushes in, and wipes the old scene away. The next title, 'Cut through the complexity', is revealed inside the band and settles on a soft lavender gradient.",
+    "why_premium": "The wipe acts out the copy: a slash literally cuts through the busy logo wall to a calm, empty frame. The diagonal follows the isometric grid angle, so the transition feels designed rather than stock, and the jump from busy to calm resets the viewer's attention for the next beat."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.logo-wall',{scale:1.6,duration:0.75,ease:'power2.in'}); tl.fromTo('.band',{clipPath:'polygon(0% 100%,0% 100%,0% 100%,0% 100%)'},{clipPath:'polygon(0% 0%,100% 0%,100% 100%,0% 100%)',duration:0.6,ease:'power3.inOut'},'<0.1'); on .band (rotate -30deg) animate scaleY 0.02->8 so the line widens into a full-frame wipe; tl.fromTo('.title-new .line',{opacity:0,scale:0.9},{opacity:1,scale:1,duration:0.4,ease:'power2.out',stagger:0.05},'<0.3').",
+    "remotion": "bandProgress = interpolate(frame,[0,18],[0,1],{easing:Easing.inOut(Easing.cubic)}) driving a rotated rect's height (2px -> 150% of the frame diagonal) used as a clip mask for the new scene; wallScale = interpolate(frame,[0,22],[1,1.6],{easing:Easing.in(Easing.quad)}); title lines scale = spring({frame:frame-9-i*2,fps,config:{damping:200}}) from 0.9 to 1."
+  },
+  "confidence": "medium",
+  "notes": "The camera push_in applies to the outgoing logo wall. Element 1 (b01) covers both the wall and the band because the band ends up filling the frame. Whether the new title also scales during the reveal, or is only masked, is hard to tell from the filmstrip. Box b02 (the union over the title) is not used."
+}

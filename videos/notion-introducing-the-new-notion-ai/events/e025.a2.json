@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "ee5447bd44991850b289c8c1772b6725ea37c388cc9d8873dc816faeee94c528",
+    "created_at": "2026-10-05T06:47:08.540646Z"
+  },
+  "video": "notion-introducing-the-new-notion-ai",
+  "event": "e025",
+  "task": "a2-e025",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Notion page UI cut away to blank card",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "hard cut out (page, title, red frame strip replaced by blank off-white card in one frame)",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Headline line 1",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["slide_up", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Analyze PDFs",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 350, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Headline line 2",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["slide_up", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "and images",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 350, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "kinetic_word_reveal",
+    "proposed_name": null,
+    "description": "Hard cut from the Notion demo to an empty off-white card; after a short beat of blank, the two-line feature headline rises in from below, line 1 slightly ahead of line 2, and settles centred.",
+    "why_premium": "Same title-card treatment as the earlier feature headline (e021) gives the film a consistent chapter rhythm; the brief empty beat after the cut resets attention before the type lands with a fast ease-out."
+  },
+  "build_hint": {
+    "gsap": "tl.set('.demo', {autoAlpha: 0}).set('.title-card', {autoAlpha: 1}).fromTo('.title-card .line', {yPercent: 60, opacity: 0}, {yPercent: 0, opacity: 1, duration: 0.35, ease: 'power3.out', stagger: 0.06}, '+=0.15')",
+    "remotion": "<Sequence from={cut}> title card; per line i: p = spring({frame: frame - delay - i*2, fps, config: {damping: 200, stiffness: 180}}); translateY = interpolate(p, [0,1], [40,0]); opacity = p. Demo sequence ends at cut (no transition)."
+  },
+  "confidence": "medium",
+  "notes": "Mirrors e021 (same title-card build). The cut itself is a shot-level transition; b01 listed only to record the UI disappearing. Camera pan values reflect the content swap, not a camera move."
+}

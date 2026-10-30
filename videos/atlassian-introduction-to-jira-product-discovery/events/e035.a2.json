@@ -1,0 +1,114 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "b274542cb3bd6bcd2a7ca6f0cbd99a415c149be864b2470c3e048d234b5db743",
+    "created_at": "2026-10-05T06:40:18.730018Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e035",
+  "task": "a2-e035",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Jira Product Discovery Chrome extension popup: opens as a blank white panel below the toolbar, then renders its form",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "instant open as an empty white panel, then content paints in one frame (no tween)",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 70, "easing_class": "step"}
+    },
+    {
+      "box": "b09",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Project dropdown value resolving from the placeholder to the default project",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "text swap: placeholder 'Select a Project' replaced by the loaded value",
+      "is_text": true,
+      "text": "John testing JPD",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Captured page URL under 'Add to idea'",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "appears with the popup content paint",
+      "is_text": true,
+      "text": "https://uxdesign.cc/in-defense-of-template...",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Quoted snippet of the highlighted article text inside the popup",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "appears with the popup content paint",
+      "is_text": true,
+      "text": "Templates increase user engagement and",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": "b10",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Add (primary) button at the popup footer",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "appears with the popup content paint",
+      "is_text": true,
+      "text": "Add",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": null,
+      "manual_box": [290, 783, 330, 800],
+      "manual_reason": "The mouse pointer is too small for the candidate boxes; it moves from the extension icon in the toolbar down onto the Ideas field.",
+      "label": "Mouse pointer moving from the toolbar extension icon down to the Ideas dropdown",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "skeleton_resolve",
+    "proposed_name": null,
+    "description": "Clicking the Chrome extension icon opens a popup that first shows as an empty white panel, then paints its full form (Project, Ideas, Add to idea URL, quoted selection, Add/Cancel); the Project field then resolves from placeholder to 'John testing JPD'. Timed to 'include and attach'.",
+    "why_premium": "Shows the capture flow end to end in real UI: the selected text and URL arrive pre-filled in the popup, proving the 'highlight and attach' claim in one glance without any added graphics."
+  },
+  "build_hint": {
+    "gsap": "Recreation: tl.fromTo(popup, {autoAlpha: 0, y: -8, scale: 0.98, transformOrigin: 'top right'}, {autoAlpha: 1, y: 0, scale: 1, duration: 0.2, ease: 'power2.out'}).from(popup.querySelectorAll('.field'), {autoAlpha: 0, y: 6, duration: 0.2, ease: 'power2.out', stagger: 0.03}, '-=0.05').set(projectValue, {textContent: 'John testing JPD'}, '+=0.25'); cursor: gsap.to(cursor, {x, y, duration: 0.3, ease: 'power2.out'}). Faithful replica uses gsap.set steps (blank panel 1-2 frames, then content).",
+    "remotion": "const p = spring({frame: frame - start, fps, config: {damping: 26, stiffness: 260, mass: 0.8}}); popup opacity = p, translateY = interpolate(p, [0, 1], [-8, 0]); fields stagger by 1 frame with the same spring; project label switches text at a fixed frame (step). Faithful replica: blank panel for 1-2 frames, then full content, no spring."
+  },
+  "confidence": "medium",
+  "notes": "Screen recording of a real extension popup, so all motion is step changes; skeleton_resolve chosen for the blank-panel-then-content load (notification_pop also plausible). Diff box b02 (empty area right of '+ Add a description') has no visible element in the end frame and is not used. No SFX candidates."
+}

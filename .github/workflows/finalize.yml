@@ -1,0 +1,142 @@
+name: finalize
+
+# S7 measure + S8 reconcile for annotated videos (BUILD_PLAN 9). S7 needs the proxy and the S4 evidence,
+# which live in R2, so it runs here; the measurements come back as artifacts, then S8 writes
+# videos/<id>/record.json for every video and one data PR carries both. Annotations are never redone.
+on:
+  workflow_dispatch:
+    inputs:
+      videos:
+        description: "Space-separated source ids to measure (empty = every video with A2 annotations)"
+        required: false
+        default: ""
+      force:
+        description: "Re-measure even when the inputs are unchanged"
+        type: boolean
+        default: false
+  workflow_call:
+    inputs:
+      videos:
+        type: string
+        default: ""
+      force:
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: finalize
+  cancel-in-progress: false
+
+env:
+  R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+  R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+  R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+  R2_BUCKET: ${{ secrets.R2_BUCKET }}
+
+jobs:
+  select:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      videos: ${{ steps.sel.outputs.videos }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Select videos
+        id: sel
+        env:
+          VIDEOS: ${{ inputs.videos }}
+        run: |
+          if [ -n "$VIDEOS" ]; then
+            for v in $VIDEOS; do
+              [[ "$v" =~ ^[a-z0-9]+([-_][a-z0-9]+)*$ ]] || { echo "bad source id: $v" >&2; exit 2; }
+            done
+            list=$(printf '%s\n' $VIDEOS | jq -R . | jq -cs .)
+          else
+            list=$(ls -d videos/*/events 2>/dev/null | cut -d/ -f2 | sort -u | jq -R . | jq -cs .)
+          fi
+          echo "videos=$list" >> "$GITHUB_OUTPUT"
+          echo "::notice title=finalize::$list"
+
+  measure:
+    needs: select
+    if: needs.select.outputs.videos != '' && needs.select.outputs.videos != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        video: ${{ fromJSON(needs.select.outputs.videos) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - name: Install ffmpeg
+        run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg
+      - name: Install
+        run: uv sync --frozen --no-dev
+      - name: Pull the proxy and S4 evidence
+        run: uv run lens storage pull-media --video ${{ matrix.video }} --kind media --kind evidence
+      - name: S7 measure (the boxes A2 chose)
+        run: uv run lens measure --video ${{ matrix.video }} ${{ inputs.force && '--force' || '' }}
+      - name: Validate
+        run: uv run lens validate --all
+      - uses: actions/upload-artifact@v4
+        with:
+          name: measure-${{ matrix.video }}
+          path: videos/${{ matrix.video }}/measure/
+          retention-days: 3
+          if-no-files-found: ignore
+
+  reconcile:
+    needs: [select, measure]
+    if: always() && needs.select.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - name: Install
+        run: uv sync --frozen --no-dev
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: measure-*
+          path: artifacts
+      - name: Place measurements
+        run: |
+          shopt -s nullglob
+          for d in artifacts/measure-*/; do
+            v=$(basename "$d"); v=${v#measure-}
+            mkdir -p "videos/$v/measure"
+            cp "$d"*.json "videos/$v/measure/"
+          done
+      - name: S8 reconcile
+        run: uv run lens reconcile
+      - name: Validate
+        run: uv run lens validate --all
+      - name: Coverage
+        run: |
+          jq -r '[.video, .coverage.annotated, .coverage.elements, .coverage.measured, .coverage.estimated] | @tsv' \
+            videos/*/record.json | awk 'BEGIN{print "video\tannotated\telements\tmeasured\testimated"} {print}' \
+            | tee -a "$GITHUB_STEP_SUMMARY"
+      # The branch is pushed before the PR call; the repo may not let Actions open PRs.
+      - name: Open or update the data PR
+        continue-on-error: true
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: data/finalize
+          add-paths: |
+            videos/*/measure/*.json
+            videos/*/record.json
+          commit-message: "data: S7 measurements and S8 records (${{ github.run_id }})"
+          title: "data: measurements and video records"
+          body: |
+            S7 measure + S8 reconcile by run ${{ github.run_id }} (measured: ${{ needs.select.outputs.videos }}).
+            Only JSON is committed; the proxy and evidence stay in R2.

@@ -1,0 +1,82 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a2_annotate_event",
+  "annotator": "claude-code",
+  "skill": "annotate-event@3dad117bd85a",
+  "model": null,
+  "input_hash": "3228982929d8e492725b842d15e9b12b044a6f7de3af3ce694146bb3edb60bfb",
+  "created_at": "2026-10-05T06:40:10.938381Z"
+ },
+ "video": "atlassian-introduction-to-jira-product-discovery",
+ "event": "e077",
+ "task": "a2-e077",
+ "elements": [
+  {
+   "box": "b06",
+   "label": "'Authentication options' card title shifts up with the scroll",
+   "role": "headline",
+   "change_types": ["slide_up"],
+   "is_text": true,
+   "text": "Authentication options",
+   "text_unit": "whole",
+   "estimates": {"duration_ms": 170, "easing_class": "ease_out"}
+  },
+  {
+   "box": "b04",
+   "label": "'Authentication options' progress bar shifts up",
+   "role": "chart",
+   "change_types": ["slide_up"],
+   "is_text": false,
+   "text": null,
+   "text_unit": null,
+   "estimates": {"duration_ms": 170, "easing_class": "ease_out"}
+  },
+  {
+   "box": "b05",
+   "label": "'Performance improvements' card title shifts up",
+   "role": "headline",
+   "change_types": ["slide_up"],
+   "is_text": true,
+   "text": "Performance improvements",
+   "text_unit": "whole",
+   "estimates": {"duration_ms": 170, "easing_class": "ease_out"}
+  },
+  {
+   "box": "b02",
+   "label": "'Performance improvements' progress bar (100% Done) shifts up",
+   "role": "chart",
+   "change_types": ["slide_up"],
+   "is_text": false,
+   "text": null,
+   "text_unit": null,
+   "estimates": {"duration_ms": 170, "easing_class": "ease_out"}
+  },
+  {
+   "box": null,
+   "manual_box": [660, 824, 688, 840],
+   "manual_reason": "The hover expand icon at the top-right of the 'Performance improvements' card disappears during the burst; no candidate box covers that spot.",
+   "label": "Card hover expand icon disappears",
+   "role": "icon",
+   "change_types": ["fade"],
+   "is_text": false,
+   "text": null,
+   "text_unit": null,
+   "estimates": {"duration_ms": 70, "easing_class": "step"}
+  }
+ ],
+ "sfx_review": [],
+ "pattern": {
+  "id": "masked_scroll",
+  "proposed_name": null,
+  "description": "The timeline body scrolls up a few pixels under the fixed header and quarter row; both idea cards move together and the card's hover icon drops as the pointer leaves it.",
+  "why_premium": "Weak: a small incidental scroll in the screen recording rather than an authored move. It only nudges the content and does not change what the viewer is reading."
+ },
+ "build_hint": {
+  "gsap": "gsap.to('.timeline-body', {y:'-=4', duration:0.17, ease:'power2.out'}) inside an overflow:hidden container; tl.set('.card-expand-icon', {autoAlpha:0}) at the start.",
+  "remotion": "translateY = interpolate(frame, [start, start+5], [0, -4], {easing: Easing.out(Easing.quad), extrapolateRight:'clamp'}) on the timeline body inside a clipped container; no spring."
+ },
+ "confidence": "low",
+ "notes": "Very small vertical shift (about 4 px; camera verdict none, pan_y -0.0037), so it is treated as an in-panel scroll, not a camera move. It could also be a re-render jitter after the e075 drag. The union box b01 and the band box b03 cover the same moving cards and are not listed separately."
+}

@@ -1,0 +1,39 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "df76e806d3a17024e00345d1a1d0602fc90eaf0bffaa651f7ad6f0cf57526d20",
+                 "created_at": "2026-10-13T12:25:00+00:00"},
+  "id": "7693959217207627038",
+  "format": "split_screen",
+  "hook": {"type": "pattern_interrupt",
+           "line": "Make a video like this for your business and no one can stop it going viral.",
+           "visual": "Top half: an odd clip of a woman lowering a glass fishbowl over her head in front of a TV; a 'Turn Your Business Into Viral Content' label; bottom half: presenter at a desk with boxed word captions."},
+  "beats": [
+    {"t": 0.0, "what": "Split screen: strange fishbowl clip on top, presenter below promising a viral business video."},
+    {"t": 5.8, "what": "Top half becomes a Google search for Google Flow (punch-in): take a photo of your shop and upload it."},
+    {"t": 8.8, "what": "Screen recording of the Flow prompt box with a red 'City FPV To Store Front' label: the first prompt code."},
+    {"t": 10.93, "what": "Full-screen result: an FPV drone-style flight down a city street toward the shop."},
+    {"t": 14.4, "what": "Second prompt code shown on screen in red: 'VFX Architectural Assemble'."},
+    {"t": 18.97, "what": "Full-screen result: a jewellery storefront, as the shop is 'assembled piece by piece'."},
+    {"t": 20.2, "what": "Outdoor and Indoor photos side by side on a dotted canvas: upload both for the third prompt."},
+    {"t": 25.29, "what": "Result: a smooth walk-through from the storefront into the chandelier-lit interior."},
+    {"t": 31.2, "what": "Back to full-frame presenter: follow and comment 'X', with a big yellow \"X\" in quotes on screen."}
+  ],
+  "graphics": {"captions": "word_by_word",
+               "caption_position": "mixed",
+               "devices": ["split_screen", "screen_recording", "product_ui", "b_roll", "title_text", "zoom_punch", "jump_cut", "music_bed"],
+               "density": "heavy", "per_minute_estimate": 25},
+  "characters": [],
+  "cta": {"kind": "comment", "t": 31.2},
+  "why_it_works": [
+    "An unrelated, odd clip on top (fishbowl on a head) stops the scroll while the bottom half delivers the actual promise.",
+    "Each prompt is a named 'code' shown in red on screen, then immediately followed by its full-screen result, so every step pays off within a few seconds.",
+    "Very fast edit (21.18 cuts per min, 8.82 punches per min, longest shot 4.47 s) fits three prompts into 34 s.",
+    "Comment-keyword CTA ('X') to get the full prompt list trades the save for a comment and a DM."
+  ],
+  "weaknesses": [
+    "The hook clip has nothing to do with shop videos, so the promise 'a video like this' does not match what is shown.",
+    "Very quiet mix (-27.3 LUFS).",
+    "The AI results are shown only briefly and never next to the original shop photo, so the before/after is weak."
+  ],
+  "for_robert": "Use the 'named code then instant result' rhythm: say the prompt, show it in red on screen, cut to its result within about 2 s; avoid a hook clip that the video never pays off."
+}

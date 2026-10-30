@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "d742d8cbd4c0a8060b0c458f0abc2ef267bcd0f5cd51801f3db7a74d44a985f3",
+    "created_at": "2026-10-05T06:43:02.357880Z"
+  },
+  "video": "attio-introducing-ask-attio",
+  "event": "e017",
+  "task": "a2-e017",
+  "elements": [
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "'Ask' (persists, shifts left in reflow)",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["slide_left", "slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Ask",
+      "text_unit": "word",
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "'more from CRM.' replacing 'Attio'",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["other", "slide_up"],
+      "change_other": "instant word swap on a single frame",
+      "is_text": true,
+      "text": "more from CRM.",
+      "text_unit": "word",
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "kinetic_word_reveal",
+    "proposed_name": null,
+    "description": "The 'Ask Attio' lockup drifts up slightly, then on one frame 'Attio' is swapped for 'more from CRM.'; the reflowed line ('Ask more from CRM.') is re-centred and continues a small upward settle.",
+    "why_premium": "A hard word swap on the beat inside a continuous upward drift turns the brand name into the tagline; keeping 'Ask' as the fixed anchor makes the wordplay legible instantly."
+  },
+  "build_hint": {
+    "gsap": "tl.to(line, {y: -8, duration: 0.3, ease: 'none'}).set(word, {textContent: 'more from CRM.'}).fromTo(line, {y: -8}, {y: -14, duration: 0.3, ease: 'power2.out'}) with the row centred via flex so 'Ask' shifts left on the swap.",
+    "remotion": "Choose the tail string by frame (frame < swapFrame ? 'Attio' : 'more from CRM.') in a centred flex row; translateY = interpolate(frame, [start, end], [0, -14], {easing: Easing.out(Easing.quad)}); no spring."
+  },
+  "confidence": "medium",
+  "notes": "The swap happens between frames 1228 and 1229 (energy spike, then a zero-energy duplicate frame). 'Ask' jumps left on the reflow rather than gliding. Old 'Attio' occupied the same region as b01, so it is not listed separately."
+}

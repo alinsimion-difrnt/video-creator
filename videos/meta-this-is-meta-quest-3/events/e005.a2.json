@@ -1,0 +1,65 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "b47e1f787d163d0e1ceadaa43c6ceb17c2443cf53a314cbbdae3d5695f44f6b5",
+    "created_at": "2026-10-05T06:47:04.371345Z"
+  },
+  "video": "meta-this-is-meta-quest-3",
+  "event": "e005",
+  "task": "a2-e005",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Gameplay footage changes from rooftop punch game to Venice rooftop climbing game",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["blur_in", "slide_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 200, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Centered caption word swaps from 'new' to 'adventures'",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "adventures",
+      "text_unit": "word",
+      "estimates": {"duration_ms": 80, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x026",
+      "verdict": "confirm",
+      "label": "impact",
+      "note": "Sharp broadband onset with low-end weight, lands on the in-game punch burst (yellow spark explosion) just before the footage swap; not a reversed swoosh shape."
+    }
+  ],
+  "pattern": {
+    "id": "kinetic_word_reveal",
+    "proposed_name": null,
+    "description": "A single large white sans-serif word sits centred over gameplay footage and is replaced word-by-word ('new' -> 'adventures') on each footage cut; the footage change itself arrives with a short motion-blurred tilt into the new game.",
+    "why_premium": "One-word-per-cut captions keep the line readable over busy gameplay and sync the edit rhythm to the sentence, with the punch impact SFX punctuating the switch."
+  },
+  "build_hint": {
+    "gsap": "tl.set('.word-new',{autoAlpha:0}).set('.word-adventures',{autoAlpha:1}) at the cut; footage: gsap.fromTo('.clipB',{yPercent:-6,filter:'blur(16px)'},{yPercent:0,filter:'blur(0px)',duration:0.2,ease:'power3.out'}). Words swap with hard sets (or a 2-frame opacity tween), no stagger.",
+    "remotion": "Per-word <Sequence from={cutFrame}> rendering one centered word; footage translateY/blur via interpolate(frame,[0,5],[-6,0]) with Easing.out(Easing.cubic). No spring."
+  },
+  "confidence": "medium",
+  "notes": "camera.move tilt_up reported by code; the visible blur at f1785 is the footage transition, labelled slide_down for content. The word swap appears to be a hard replace rather than an animated reveal."
+}

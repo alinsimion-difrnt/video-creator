@@ -1,0 +1,116 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "4252f694ebdd9c028ee3354bc7a24b3d58b8e7c92ec5901375015af67e4e0b2b",
+    "created_at": "2026-10-05T06:43:23.626931Z"
+  },
+  "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+  "event": "e002",
+  "task": "a2-e002",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Left dotted point-cloud head",
+      "role": "other",
+      "role_other": "particle_figure",
+      "change_types": ["morph", "fade", "blur_in"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 1300, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Right dotted point-cloud head",
+      "role": "other",
+      "role_other": "particle_figure",
+      "change_types": ["morph", "fade", "blur_in"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 1300, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Gradient glow background wash",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["color_shift", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 1500, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Blurred foreground bokeh particle",
+      "role": "other",
+      "role_other": "particle",
+      "change_types": ["slide_right", "blur_in"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Caption line 1 with spoken-word highlight",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["fade", "highlight", "color_shift"],
+      "change_other": null,
+      "is_text": true,
+      "text": "[chatter] [nervous] Just give me a moment... [calling",
+      "text_unit": "word",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b06",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Caption line 2",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "out] Quiet on set! [whispering nervously] Hang on, I",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x006", "verdict": "confirm", "label": "swoosh_reverse", "note": "Dense broadband swell building from ~12.12s and cutting off near 12.38s as the bar mark bursts into particles."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "particle assemble reveal",
+    "description": "The waveform mark bursts into scattered particles inside a coloured glow while the camera pushes in; the particles drift and converge into two dotted point-cloud heads, and a tagged caption fades in below with the spoken words highlighted.",
+    "why_premium": "A single continuous particle system carries the brand mark into the next idea (two speakers) without a cut; depth comes from blurred foreground bokeh and a slow push-in, and the caption highlight is word-synced to the voice."
+  },
+  "build_hint": {
+    "gsap": "Timeline: scale the camera group 1 -> 1.1 (power1.inOut, 1.7s); emit N particles from the logo centre with x/y/scale tweens (power3.out, stagger {each: 0.004, from: 'center'}), then tween each to its target position in one of two head point-clouds (power2.inOut, 0.9s); background radial-gradient opacity 0 -> 1 -> 0.15 (sine.inOut); captions fromTo opacity 0 -> 1 (power2.out, 0.4s) with per-word color tweens timed to word starts.",
+    "remotion": "Per particle: progress = spring({frame: frame - delay_i, fps, config: {damping: 26, stiffness: 80}}); position = interpolate(progress, [0,1], [scatter_i, headTarget_i]); camera scale = interpolate(frame, [0, 50], [1, 1.1], {easing: Easing.inOut(Easing.quad)}); caption word colour switches at word.start_s * fps."
+  },
+  "confidence": "medium",
+  "notes": "Camera verdict is push_in. Small bokeh particles b08, b09, b12 and mouth dots b07/b10/b11 also drift but are omitted as minor. Caption highlight timing follows narration words 27-31."
+}

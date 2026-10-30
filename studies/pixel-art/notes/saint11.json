@@ -1,0 +1,70 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "f9c9cb05273ae16327d45f8ccd39d506c3e7dff52321b5bfae2558b15f9831d4",
+    "created_at": "2026-10-13T14:01:59+00:00"
+  },
+  "id": "saint11",
+  "kind": "artist",
+  "palette": {
+    "colours_estimate": 18,
+    "shadows": "mixed",
+    "notes": "Metrics: characterIdle 18 colours, acting GIFs 16-19, effects 10-31, 1-bit 4. Ramps hue-shift both ways (+46 and -28 degrees in one GIF). Cool dark backgrounds, warm orange heroes."
+  },
+  "lighting": "One clear key light per sprite; the IlluminationTechniques and Shading cards build volume step by step (Shading holds each step, median 600 ms).",
+  "silhouette": "Silhouette card starts from a solid flat shape, then adds detail: a pose must read as a filled shape first (first frame held 1800 ms).",
+  "motion": {
+    "timing": "Metrics: holds 80-100 ms (10-12.5 drawings/s) almost everywhere; walk 12 frames/1.2 s; attack anticipation held 300 ms; impact uses a 20 ms frame; Cuteness mixes 30-120 ms.",
+    "principles": [
+      "anticipation",
+      "squash and stretch",
+      "impact frame",
+      "smear",
+      "easing",
+      "follow-through"
+    ]
+  },
+  "texture": "Clean flat clusters, almost no dithering (dither share about 1-2%); tiny native size (256 px at 2x).",
+  "camera": "Fixed small stage per card; Parallax card shows layers scrolling at different speeds; City card holds the scene for 3000 ms between beats.",
+  "sound": "",
+  "acting": {
+    "enters": "In the City card a car drives in from the edge into a held, quiet street.",
+    "acts": "Attack: long held windup, fast strike, recovery; Death: hit, fall, settle; Cuteness: big head, round shapes; Defend: brace before the projectile lands.",
+    "exits": "Death and Breaking end on a held settled pose, then the loop restarts.",
+    "comes_back": true,
+    "depth": "Parallax: a flying creature crosses in front of slower far layers; small sprites in wide sets."
+  },
+  "techniques": [
+    "held anticipation (300 ms) before a fast strike",
+    "single very short impact frame (20 ms) plus particles",
+    "silhouette first: pose must read as a flat fill",
+    "hue-shifted ramps with low dithering",
+    "steady 80-100 ms holds, pauses for emphasis only",
+    "long scene hold (3000 ms) between beats"
+  ],
+  "feel": "steady 80-100 ms holds + one long anticipation + a flash impact frame = punchy, readable small acting",
+  "for_fred": "Give Fred's gag a 300 ms held windup, a fast action and a settled hold, then let the scene sit empty for a beat before he swims back in for the second try. Check every Fred pose as a flat silhouette first.",
+  "sources": [
+    "https://saint11.art/blog/pixel-art-tutorials/",
+    "studies/pixel-art/metrics/saint11-acting.json",
+    "studies/pixel-art/metrics/saint11-timing.json",
+    "studies/pixel-art/metrics/saint11-form.json",
+    "studies/pixel-art/metrics/saint11-effects.json",
+    "studies/pixel-art/metrics/saint11-movement.json",
+    "studies/pixel-art/metrics/saint11-scenes.json",
+    "data/study/pixel/work/saint11-acting/characterIdle.png",
+    "data/study/pixel/work/saint11-acting/Cuteness.png",
+    "data/study/pixel/work/saint11-acting/Breaking.png",
+    "data/study/pixel/work/saint11-acting/Defend.png",
+    "data/study/pixel/work/saint11-acting/Death.png",
+    "data/study/pixel/work/saint11-timing/Squash.png",
+    "data/study/pixel/work/saint11-timing/AttackSheet.png",
+    "data/study/pixel/work/saint11-timing/Impact-export.png",
+    "data/study/pixel/work/saint11-scenes/City.png",
+    "data/study/pixel/work/saint11-scenes/Parallax.png",
+    "data/study/pixel/work/saint11-form/Silhouette.png"
+  ]
+}

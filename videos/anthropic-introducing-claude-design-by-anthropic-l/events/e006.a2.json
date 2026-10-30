@@ -1,0 +1,65 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "5824b5236fcddbee2e911e8342f0fc6e4481c8ea17d2a772fcd032764f354f35",
+    "created_at": "2026-10-05T06:38:33.994106Z"
+  },
+  "video": "anthropic-introducing-claude-design-by-anthropic-l",
+  "event": "e006",
+  "task": "a2-e006",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Chat panel (Let's prototype... conversation) enlarging from the full app view to a close-up",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 150, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Key phrase 'serene mobile meditation' lifted off the baseline with a per-letter fade wave",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["slide_up", "fade", "highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "serene mobile meditation",
+      "text_unit": "char",
+      "estimates": {"duration_ms": 300, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x021",
+      "verdict": "override",
+      "label": "music",
+      "note": "Sits inside a pitched descending glide that starts with the zoom; the same glide recurs in the score with no visual event (e007 around 32.3s and 32.6s), so it reads as music, not a dedicated whoosh."
+    }
+  ],
+  "pattern": {
+    "id": "spotlight_focus",
+    "proposed_name": null,
+    "description": "The view jumps from the full Claude Design workspace into a tight close-up of the prompt in the chat panel, then the key phrase 'serene mobile meditation' lifts slightly above the line with a letter-by-letter fade wave to pull the eye to it.",
+    "why_premium": "Two stages of focus: first the frame enlarges the one panel that matters, then a small typographic emphasis on three words in the prompt, so the viewer reads the brief without a highlighter box or callout."
+  },
+  "build_hint": {
+    "gsap": "tl.fromTo('.workspace', {scale: 1}, {scale: 2.8, transformOrigin: '20% 40%', duration: 0.15, ease: 'power3.out'}); then SplitText the phrase into chars and tl.to(chars, {y: -6, opacity: (i) => 0.4 + 0.6 * Math.abs(Math.sin(i / 3)), duration: 0.3, ease: 'sine.inOut', stagger: 0.02}, '+=0.05').",
+    "remotion": "Workspace scale = interpolate(frame, [0, 4], [1, 2.8], {easing: Easing.out(Easing.cubic), extrapolateRight: 'clamp'}); per char i of the phrase: y = -6 * spring({frame: frame - 6 - i * 0.5, fps, config: {damping: 20, stiffness: 200}}), opacity from a sine of i for the wave."
+  },
+  "confidence": "low",
+  "notes": "camera.move is 'none' although scale sums to 1.348; the wide-to-close change between f734 and f736 happens within two frames and could be a near-cut rather than an animated zoom, so it is described as the panel scaling, not as a camera move. The phrase emphasis (baseline lift plus partial letter fade) is only visible in f742-f743; it could also be a deliberate frame artifact of a per-character wave."
+}

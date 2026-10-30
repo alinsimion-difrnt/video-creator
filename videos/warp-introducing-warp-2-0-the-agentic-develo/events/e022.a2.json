@@ -1,0 +1,61 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "785c8efc63898f9dfa34f01df24da9b451b132bb46c750581c0c395f60fb6d31",
+    "created_at": "2026-10-05T06:51:30.573108Z"
+  },
+  "video": "warp-introducing-warp-2-0-the-agentic-develo",
+  "event": "e022",
+  "task": "a2-e022",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Tweet card header (avatar, name, handle, first line)",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "rapid hard-cut swap between different tweet screenshots every 2-3 frames, with slight drift",
+      "is_text": true,
+      "text": "Hardik Pithva @hardikpthv · May 10, 2 Did you try @warpdotdev? I just love it!",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 80, "easing_class": "step"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Tweet body paragraph",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "swapped in with the tweet card on the hard cut",
+      "is_text": true,
+      "text": "Super #easy and #fast to #share CLI #out much more. Thanks @psybercity for recom",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 80, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x051", "verdict": "override", "label": "music", "note": "Onset sits on a sustained low tonal band (bass note), before the event box; no visual change at that moment."},
+    {"id": "x052", "verdict": "unsure", "label": "unsure", "note": "Faint broadband line mid-montage; no clear reverse-swoosh envelope, could be a cut tick or music texture."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "social proof flash montage",
+    "description": "Cropped close-ups of user tweets praising the product hard-cut every 2-3 frames (about 80 ms each), each slightly offset and drifting, until settling on one tweet.",
+    "why_premium": "Compresses a wall of real testimonials into half a second on the word 'world-class terminal', conveying volume of love without reading time; tight crops and consistent dark theme keep it cohesive."
+  },
+  "build_hint": {
+    "gsap": "Timeline of N tweet layers: for each, tl.set(layer, {autoAlpha: 1}, i * 0.083).set(prev, {autoAlpha: 0}, i * 0.083); add a gentle gsap.fromTo(wrapper, {x: 0, y: 0}, {x: 40, y: -20, ease: 'none', duration: 0.5}) drift; last tweet holds.",
+    "remotion": "Sequence per tweet with durationInFrames 2-3 (at 24 fps), back to back via Series; wrap in an AbsoluteFill translated by interpolate(frame, [0, 12], [0, 40]) linear for drift; final Sequence holds."
+  },
+  "confidence": "medium",
+  "notes": "Camera verdict pan_right likely reflects position offsets between successive tweet crops rather than a true camera pan. The settled tweet's elements overlap; b02/b03 chosen as the two text regions rather than each OCR line."
+}

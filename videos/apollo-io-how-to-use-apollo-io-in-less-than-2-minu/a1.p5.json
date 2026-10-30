@@ -1,0 +1,129 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "d115eab80df87123552cbf7e562ef750368c1481f7caa2c4789194df7dc19279",
+    "created_at": "2026-10-05T06:24:01.979978Z"
+  },
+  "video": "apollo-io-how-to-use-apollo-io-in-less-than-2-minu",
+  "task": "a1-p5",
+  "shots": [
+    {
+      "shot": "s015",
+      "shot_type": "logo",
+      "shot_type_other": null,
+      "composition": "other",
+      "composition_other": "End-card layout: wordmark top-centre, a row of three social handles bottom-left, a two-line 'Subscribe' label right of centre, with large empty areas that look reserved for platform end-screen elements (inferred).",
+      "focal_element": "Black Apollo.io wordmark top-centre on a brand-yellow background patterned with rows of lighter-yellow rounded pill shapes",
+      "transition_in": "other",
+      "transition_other": "Detector flags 'other' from the presenter shot; the first sampled frame (1:59.5) is already yellow with only fragments of the logo, so the transition itself is not visible at 2 fps.",
+      "on_screen_text": [
+        "Apollo.io",
+        "Subscribe @Apolloio",
+        "/MeetApollo",
+        "/Apolloio",
+        "@MeetApolloio"
+      ],
+      "text_word_count": 6,
+      "typography": "Logo wordmark: bold geometric sans with a stylised triangular 'A', lowercase 'pollo.io', tight tracking. 'Subscribe' in small bold sans over a regular-weight handle line; social handles in small regular sans beside Facebook, LinkedIn and X glyphs; mixed case as in the handles, normal tracking.",
+      "depth_cues": ["none"],
+      "what_happens": "End card with no voice-over (last word w359 ends before the shot starts). At 1:59.5 only scattered logo fragments are visible; by 2:00.0 the wordmark is resolving letter by letter and the social row and 'Subscribe' label are mask-revealing in; everything is complete by 2:00.5. The card then holds for about 18.7 s while three rows of lighter-yellow pill shapes drift slowly sideways in alternating directions (top and bottom rows rightward, middle row leftward, as read from frame-to-frame positions). Anchors show music candidates at 119.9, 122.1 and 124.4 s (x079-x081) and beat tracking stops at about 125.1 s, so the music probably ends partway through; the rest of the audio cannot be confirmed.",
+      "build_rebuild": "On a flat brand-yellow canvas, lay out three rows of lighter-yellow rounded pills that translate horizontally at a constant slow speed (alternating direction per row, looping), assemble the wordmark from fragments into place over ~1 s with ease-out, mask-reveal the social-handle row and Subscribe label at the same time, then hold until the end.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001"], "words": [0, 30]},
+      {"beat": "mechanism", "shots": ["s002", "s003"], "words": [31, 64]},
+      {"beat": "demo", "shots": ["s004", "s005", "s006", "s007", "s008", "s009", "s010", "s011", "s012", "s013"], "words": [65, 339]},
+      {"beat": "cta", "shots": ["s014", "s015"], "words": [340, 359]}
+    ],
+    "hook": {
+      "text": "Presenter intro 'Hey, I'm Kelvin with Apollo' followed by the claim of the most up-to-date lead database and the world's only end-to-end sales platform, reinforced by a heavy kinetic caption 'Most up-to-date lead database'.",
+      "technique": "bold_claim",
+      "technique_other": null,
+      "shots": ["s001"],
+      "words": [0, 30]
+    },
+    "cta": {
+      "text": "head over to apollo.io today and create an account for free",
+      "shots": ["s014", "s015"]
+    },
+    "tone": "Friendly, upbeat and brisk: a smiling on-camera host bookends a fast, signposted product tour ('You can start by', 'Next', 'And finally'), with a bright yellow brand system and light motion-graphics accents.",
+    "signature_moments": [
+      {
+        "shots": ["s002"],
+        "description": "Punched-in presenter shot where three white UI cards (prospect profile, sequence steps, AI email assistant) pop into the empty corners on their exact VO keywords, the email body typing on.",
+        "why_premium": "Fuses talking head and product in one frame, tying each spoken promise to a concrete UI element so the overview feels designed rather than recorded."
+      },
+      {
+        "shots": ["s004"],
+        "description": "The People Search UI dims back while oversized blue numerals appear and count up to the spoken database size (w75-w82).",
+        "why_premium": "Turns a stat that would be a throwaway line into a visual payoff, using restraint (dimmed UI, one colour, big type) instead of a separate data slide."
+      },
+      {
+        "shots": ["s007", "s008"],
+        "description": "The meetings page shrinks into a rounded card on the yellow brand stage, a calendar event scales up to full frame, and later the Conversations page dims to spotlight the AI call summary.",
+        "why_premium": "Camera-like scale moves and spotlighting give a long screen recording structure and focus, and the yellow stage keeps the brand present inside the demo."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 3,
+        "evidence": "Competent but conventional: a self-introduction (w0-w4) before the claim, a static presenter frame, and one strong kinetic caption on the claim (w10-w15). Bold claim, no question, tension or demo in the first seconds.",
+        "refs": ["s001", "w0", "w10", "w15", "w24"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "Each feature is named in the VO and shown at the same moment by cursor and camera push-ins, in a logical order (prospect, list, sequence, A/B and AI, Home, meetings, Conversations, Deals, Analytics, Plays) with explicit signposting. Pace is fast (about 360 words in 119 s) and many features get only a few seconds, which costs some retention.",
+        "refs": ["s004", "s007", "s011", "w65", "w185", "w326"]
+      },
+      "ui_showcase": {
+        "score": 4,
+        "evidence": "Real product UI throughout, enhanced with overlay stats, floating UI cards, dim-and-spotlight, scale-to-card moves and frequent push-ins on clicked items. Long stretches (s004 about 32 s, s007 about 29 s, s011 about 19 s) are still mostly raw cursor recordings with small UI text.",
+        "refs": ["s002", "s004", "s007", "s008", "s011"]
+      },
+      "motion_polish": {
+        "score": 3,
+        "evidence": "Polished bookends (kinetic caption, popping cards, logo assembly, drifting pill end card) and yellow circle wipes, but the middle relies on digital zooms and slides over screen captures with few designed motion graphics. Easing cannot be judged at 2 fps.",
+        "refs": ["s001", "s002", "s003", "s004", "s015"]
+      },
+      "sound_design": {
+        "score": 3,
+        "evidence": "Judged from anchor audio facts plus visuals: a continuous music bed at 120.19 BPM, music hits on the logo sting (x001, x002), and 81 SFX candidates mostly labelled music, swoosh_reverse or unsure with modest CLAP scores, clustered around the stats and transitions (about 20-29 s and 90-113 s) and none detected between about 69 s and 90 s. Integrated loudness is -23.68 LUFS, a quiet master. Functional and on-brand, not a distinctive sound layer.",
+        "refs": ["s003", "s004", "s011"]
+      },
+      "vo_script_quality": {
+        "score": 3,
+        "evidence": "Natural, confident on-camera delivery with clear transitions ('You can start by', 'Next', 'And finally', 'So if you're ready') and benefit phrasing ('no prospect ever falls through the cracks'). It is essentially a feature list, with one quantified proof point (280M people / 70M companies) and no customer outcome.",
+        "refs": ["w65", "w76", "w185", "w214", "w326", "w340"]
+      },
+      "brand_consistency": {
+        "score": 4,
+        "evidence": "The brand yellow recurs as logo sting, circle wipes, the stage behind scaled screens and the end card, and the logo appears at open and close. The heavy extended kinetic type of s001 is not reused later, and the overlay blue in s004 is the only other added accent.",
+        "refs": ["s001", "s003", "s004", "s007", "s015"]
+      },
+      "works_muted": {
+        "score": 2,
+        "evidence": "Apart from the caption in s001, the cards in s002 and the stat numerals in s004, there are no captions or headings; feature names reach a muted viewer only as small UI labels, so the narrative (what each screen is for) depends on the voice-over.",
+        "refs": ["s001", "s002", "s004", "s007", "s011", "s014"]
+      },
+      "overall": {
+        "score": 3,
+        "evidence": "A solid presenter-plus-product-tour explainer: good VO-to-UI sync, consistent brand yellow and well-crafted opening and closing graphics, but the long middle is mostly screen recording with camera moves, the hook is a standard self-intro, and the piece leans heavily on audio.",
+        "refs": ["s002", "s004", "s007", "s014", "s015"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 2,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "English is baked into the kinetic caption (s001), the floating UI cards (s002), every product screen and the end-card handles. The voice-over is delivered on camera by a presenter (s001, s002, s014), so a dub would need lip-sync or re-shooting, and the muted story is weak. The stat overlays and logo stings are the only easily swappable layers."
+    }
+  }
+}

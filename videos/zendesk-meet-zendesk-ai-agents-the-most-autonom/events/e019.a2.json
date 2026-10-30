@@ -1,0 +1,46 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "a02cf8e85db3eaab5ff6169fbf5976eff3faee4dd0ddcba2de6b6b8be70ea8ba",
+    "created_at": "2026-10-05T06:58:00.598454Z"
+  },
+  "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+  "event": "e019",
+  "task": "a2-e019",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "AI Agent Builder app window (with its contents)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 700, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x085", "verdict": "confirm", "label": "music", "note": "Before the window starts growing; one of the recurring percussive streaks of the bed."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "ui window grow",
+    "description": "The framed AI Agent Builder window (header, procedure form, canvas, cursor) scales up as one unit over a static dark green background, decelerating into its final larger size.",
+    "why_premium": "Enlarging the product window itself instead of cutting gives the viewer a smooth 'lean in' to the procedure text just as narration says 'you just describe your business procedures', while the static backdrop keeps it from reading as a camera move."
+  },
+  "build_hint": {
+    "gsap": "gsap.fromTo(appWindow, {scale: 0.82, transformOrigin: '50% 50%'}, {scale: 1, duration: 0.7, ease: 'power3.out'}); background untouched.",
+    "remotion": "scale = interpolate(spring({frame, fps, config: {damping: 200, stiffness: 100}}), [0, 1], [0.82, 1]) on the window container (no overshoot); background layer static."
+  },
+  "confidence": "medium",
+  "notes": "camera.move is none: scale 1.2173 is the window growing inside a static background, so no camera move is reported. The procedure textarea ends with a partial line 'Fina', suggesting typing continues; no candidate box covers it and it may fall outside this burst, so it is not listed. ui_camera_push_in is the nearest canonical pattern if a reviewer prefers it."
+}

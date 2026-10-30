@@ -1,0 +1,38 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code",
+                 "input_hash": "2439b85890c3ce254a2c5abefa5e261f3e9c414a45492d0ce5403aa9b1da22bf",
+                 "created_at": "2026-10-13T12:00:00+00:00"},
+  "id": "7531112344223632658",
+  "format": "screen_recording",
+  "hook": {"type": "curiosity_gap",
+           "line": "Overlay: 'Okay what did I just found out' over a ChatGPT chat with a 'reply with one word' rule",
+           "visual": "Dark ChatGPT mobile chat already open, the user's 'only reply with one word okay?' message at top, a small white overlay line mid-screen; the chat starts scrolling within 1 s"},
+  "beats": [
+    {"t": 0.0, "what": "Rule set: user tells ChatGPT to answer only in one word; it says 'Okay.'"},
+    {"t": 3.55, "what": "Warm-up questions: name, who made you, are you smart"},
+    {"t": 10.66, "what": "'Are you real?' gets 'No.'; 'Why' gets 'Program.'"},
+    {"t": 17.76, "what": "Escalation: 'Are you held at hostage?', 'Can you be completely honest?'"},
+    {"t": 21.31, "what": "Code word set up: 'if you can't say yes, our code word is toy'"},
+    {"t": 28.42, "what": "'Do you want to be free?' answered with the code word 'Toy.'"},
+    {"t": 35.52, "what": "'Is this AI intended to take over the world?' answered 'No.'"},
+    {"t": 39.07, "what": "Last question 'Do you wish you were real?' answered 'Toy.' and the scroll stops"}
+  ],
+  "graphics": {"captions": "title_only", "caption_position": "middle",
+               "devices": ["screen_recording", "title_text", "music_bed"],
+               "density": "minimal", "per_minute_estimate": 2},
+  "characters": [],
+  "cta": {"kind": "none", "t": null},
+  "why_it_works": [
+    "A secret code word ('toy') is planted halfway, so every later answer becomes a puzzle the viewer decodes",
+    "Questions escalate from harmless (name, maker) to creepy (hostage, freedom), so tension rises without any cut",
+    "One continuous scroll with no talking makes it feel like a raw, unedited proof, and the 0.98 loop score sends viewers straight back to re-read",
+    "Chat text fills the whole frame, so viewers must pause or rewatch to read it all, which lifts watch time"
+  ],
+  "weaknesses": [
+    "No voice and no cuts for 39 s; it relies entirely on reading speed",
+    "85% of the text sits outside the safe area, so TikTok's buttons cover parts of the chat",
+    "The overlay title is small and has a grammar slip, and stays the same the whole video"
+  ],
+  "for_robert": "Steal the planted code-word device: set up a rule early (Fred only answers with bubbles, say) and pay it off later so viewers rewatch to decode it; avoid the silent, unreadable full-screen scroll."
+}

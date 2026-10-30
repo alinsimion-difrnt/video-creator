@@ -1,0 +1,48 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "4a241a0e67570859042b7aee32084f3bf2c184cb27af0241a49bcc51895e9730",
+    "created_at": "2026-10-05T07:00:11.544832Z"
+  },
+  "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+  "task": "a1-p1",
+  "shots": [
+    {
+      "shot": "s001",
+      "shot_type": "abstract",
+      "shot_type_other": null,
+      "composition": "split",
+      "composition_other": null,
+      "focal_element": "Two rotating 3D point-cloud faces (one green-tinted, one orange/red-tinted) side by side on an off-white field, with a two-line karaoke-style prompt caption below that highlights the spoken words; bookended by a centered disclaimer line and gradient-orb motion graphics.",
+      "transition_in": "other",
+      "transition_other": "Opening shot: starts on a blank off-white frame and the first text line blurs/fades in; no incoming cut.",
+      "on_screen_text": [
+        "Everything you are about to hear was generated from the prompts shown, with no edits or modifications — just Eleven",
+        "[chatter] [nervous] Just give me a moment... [calling out] Quiet on set! [whispering nervously] Hang on, I",
+        "can't reach the back to... [strain] okay, I'm ready. [commanding] Rolling [clapperboard snap]",
+        "[commanding] And, action. [voice breaking] I told myself I wouldn't cry.. [voice breaking] [crying]",
+        "[inhales] You know, I stood, [exhales with sadness] I stood in front of the mirror this morning and I said,",
+        "[gasps] [smacks lips] 'not today'. [sniffs] and yet. [sniffs] [exhales loudly] here we are [light chuckle]",
+        "[firm] And cut. Splendid. Thank you, everybody. Great work today! [chatter continuous] [laughing] One take",
+        "and you're already being generous? [British accent] \"Splendid, thank you, everybody\" [chuckles] who are",
+        "you and what have you done with my director? [chuckles] Don't test me.",
+        "Intent."
+      ],
+      "text_word_count": 142,
+      "typography": "Clean geometric/grotesk sans-serif throughout (low-confidence guess: a Inter/Eleven-style grotesk), sentence case, normal tracking. Disclaimer: small regular weight, two centered lines, ending in a tiny outlined pill badge (badge text too small to read). Prompt captions: small regular weight, two centered lines near the bottom; audio tags in square brackets sit in a muted tone while the currently spoken words switch to a darker/accented, slightly heavier state word by word (karaoke highlight). 'Intent.' is a large centered medium-weight word with an accent-coloured full stop.",
+      "depth_cues": [
+        "blur",
+        "perspective_tilt"
+      ],
+      "what_happens": "One continuous 63.7 s segment on a constant off-white background (the detector found no cut, so it contains several visual scenes). 0-8 s: the disclaimer blurs in left-to-right line by line while the VO reads it (w0-w17); a small badge pops after 'Eleven'. ~8.5-10.5 s: the text blurs out as a gradient orb grows, swirls and shrinks to a dot on 'A speech model' (w18-w20). ~11-12 s: the dot morphs into a gradient audio-waveform bar cluster that collapses into three dots, then (12.5 s) explodes into a blurred bokeh particle field with soft colour washes that resolves into two point-cloud faces. ~13-51 s: the two faces slowly rotate and 'breathe' as their dots shift, while the bottom caption shows each generated dialogue prompt (with audio tags) and highlights words in sync with the voices (w27-w110), swapping to the next caption block via a quick blur crossfade. ~51.5 s: the faces fade and a gradient orb grows in the centre on 'But voice carries more than just sound' (w111-w117). ~54.5-55.5 s: the orb splits into small orbs riding inside white rounded pill tracks of varying heights like an equalizer ('tone', w120). ~56-57 s: a pixelated/mosaic square passes over the orb ('texture', w121). 57.5-58.5 s: the word 'Intent.' appears alone, centred (w122). 59-63.7 s: two orbs orbit inside thin concentric guide circles that expand, ending with the orbs scaled up past the frame edges on 'you embody it' (w123-w135) into the next shot.",
+      "build_rebuild": "On a flat off-white canvas, render two Three.js point-cloud head meshes with slow sinusoidal y-rotation and per-point jitter, place a two-line centred caption below whose words switch from muted to accent colour on each transcript word timestamp, and between sections morph a canvas gradient orb (radial noise shader) through scale-up, split-into-pill-tracks, pixelate-mask and orbit-on-concentric-circles states.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

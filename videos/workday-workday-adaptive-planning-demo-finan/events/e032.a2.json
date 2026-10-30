@@ -1,0 +1,128 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "1545c82b422ef5621475a0b86673c1dc47518f90b840b27e8e34f85f82312a19",
+    "created_at": "2026-10-05T06:56:12.831510Z"
+  },
+  "video": "workday-workday-adaptive-planning-demo-finan",
+  "event": "e032",
+  "task": "a2-e032",
+  "elements": [
+    {
+      "box": null,
+      "manual_box": [507, 92, 524, 527],
+      "manual_reason": "No candidate covers the new blank highlighted row inserted under Working Budget. Only OCR boxes on neighbouring rows exist.",
+      "label": "New blank version row inserted and selected (copy of Working Budget)",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["fade", "highlight"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b09",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Working Budget row loses selection highlight",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Working Budget",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Forecast description rows shift down one row",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["slide_down"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Original forecast with 3 month Actuals overlay",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b16",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "What-If and Intelligent Planning rows shift down",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["slide_down"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Budget What-If Scenario",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "FX Analysis description rows shift down",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["slide_down"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Data from Actuals version translated using rates from Actuals shifted back 1 year",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": null,
+      "manual_box": [236, 531, 847, 898],
+      "manual_reason": "The only candidate over the Version Details panel is b01, which spans the whole browser window.",
+      "label": "Version Details panel swaps to the new-version form (Name field, New Version Options)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "content swap (form re-render)",
+      "is_text": true,
+      "text": "New Version Options",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": null,
+      "manual_box": [190, 160, 225, 178],
+      "manual_reason": "The cursor has no candidate box of its own.",
+      "label": "Mouse cursor moves up to the toolbar copy button and clicks",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "ambiguous"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "The cursor selects Working Budget and clicks the toolbar copy action. A new blank row is inserted under it and selected, the rows below snap down, and the right-hand details panel re-renders as the new-version form.",
+    "why_premium": "Cause and effect stay visible in one framed view: the click, the new row and the form all land together while the voice-over says 'Let's call this new version'. The viewer never loses the thread of the workflow."
+  },
+  "build_hint": {
+    "gsap": "Timeline: tl.to('.cursor', {x: toolbarX, y: toolbarY, duration: 0.35, ease: 'power2.inOut'}).to('.cursor', {scale: 0.9, duration: 0.06, yoyo: true, repeat: 1}). Then Flip the list: Flip.from(state, {duration: 0.25, ease: 'power2.out'}) after inserting the row, and run .fromTo('.new-row', {autoAlpha: 0}, {autoAlpha: 1, duration: 0.2}) at the same time. Finish with .fromTo('.details-form', {autoAlpha: 0, y: 6}, {autoAlpha: 1, y: 0, duration: 0.25, ease: 'power2.out'}, '<').",
+    "remotion": "Interpolate the cursor position with Easing.inOut(Easing.cubic) over about 10 frames. At clickFrame, insert the row and drive translateY for the rows below with spring({config: {damping: 200}}) * rowH. Cross-fade the details panel content with interpolate over 6 frames."
+  },
+  "confidence": "medium",
+  "notes": "Camera move is 'none', but scale is 1.0086 and the browser frame looks very slightly larger and shifted left at the end. That may be a subtle zoom outside the burst; someone should check it. Name field shows 'M' as typing begins (event e033 may cover the typing)."
+}

@@ -1,0 +1,53 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T14:01:54+00:00"
+  },
+  "id": "isometric",
+  "kind": "style",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "warm",
+    "notes": "Clips: pastel grounds (mint, pink, peach) with warm wood browns and orange cones; one teal-and-cream cottage. Shadow faces are darker, slightly redder browns; outlines are dark navy or brown."
+  },
+  "lighting": "Three-face lighting on every block: top face lightest, one side mid, the other side darkest, light from the upper left. A darker floor tile under objects acts as a contact shadow.",
+  "silhouette": "Everything is built from 2:1 cuboids (shelves, tables, cones, a house): the readable shape is the diamond top plus two side faces; small props stack inside bigger ones.",
+  "motion": {
+    "timing": "Clips show placement and build-up, not character animation: objects snap onto the grid, stack, and a drawing is built line by line in a sped-up timelapse.",
+    "principles": [
+      "snap to grid",
+      "stacking build-up",
+      "layer by layer reveal"
+    ]
+  },
+  "texture": "Flat fills per face with a few lighter planks or tile seams; the cottage adds roof shingles, half-timbering and stone at the end. Faces are meant to tile seamlessly on all four sides.",
+  "camera": "Fixed dimetric view with no perspective, so objects keep their size anywhere on the grid; the camera only pushes in on one object or pulls out to a full room.",
+  "sound": "",
+  "acting": {
+    "enters": "No characters; props pop onto a tile (shelf, then a second, third) or a cursor drops them in.",
+    "acts": "Stacking and nesting: items go inside shelves, cones on top, chair on the table, until a whole cluttered room is built.",
+    "exits": "",
+    "comes_back": null,
+    "depth": "Depth comes from the grid: things further up-screen are further back, and overlap does the rest, not scale."
+  },
+  "techniques": [
+    "2:1 two-step lines (about 26.5 degrees) instead of true 30 degrees",
+    "three-face shading: light top, mid left, dark right",
+    "build objects from cuboids on a wireframe guide, then sculpt details",
+    "even tile sizes so faces tile seamlessly",
+    "contact shadow tile under each object",
+    "build-up reveal: line art, flat colours, shading, texture, background"
+  ],
+  "feel": "pastel ground + warm three-face cubes + objects snapping onto a 2:1 grid = cozy toybox diorama",
+  "for_fred": "For a product-feature beat, put Fred on a small isometric tile island and have features pop onto tiles around him one at a time, each snapping in with a contact shadow. Avoid: isometric gives no scale for depth, so if Fred must go 'far away', move him up-screen behind props instead of shrinking him.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Isometric_video_game_graphics",
+    "https://www.slynyrd.com/blog/2022/11/28/pixelblog-41-isometric-pixel-art",
+    "data/study/pixel/work/isometric/clip1-7360877034349825326.jpg",
+    "data/study/pixel/work/isometric/clip3-7221752616231947566.jpg"
+  ]
+}

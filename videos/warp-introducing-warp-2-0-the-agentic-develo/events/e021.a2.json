@@ -1,0 +1,149 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "c4c6dc5780ec0ae55876e17ed380e48f09b93da2d4301fd6f0b5d49fdd197791",
+    "created_at": "2026-10-05T06:53:17.733203Z"
+  },
+  "video": "warp-introducing-warp-2-0-the-agentic-develo",
+  "event": "e021",
+  "task": "a2-e021",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Warp Drive view replacing the Rules page in the app window",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_left", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 540, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b11",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Highlighted 'Growth' team row",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Growth >",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 540, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b16",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Sidebar section 'Shared with me'",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Shared with me >",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 540, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b14",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Sidebar item 'MCP Servers'",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": true,
+      "text": "MCP Servers",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 540, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Share popover: invite email field and Invite button",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["slide_left", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "hello@warp.dev",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 540, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Share popover: access list (Jessica Wang)",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["slide_left", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Jessica Wang",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 540, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b10",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Share link row with Copy link",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["slide_left", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Copy link",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 540, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b06",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Presenter hand gesture lowering",
+      "role": "other",
+      "role_other": "presenter",
+      "change_types": ["other"],
+      "change_other": "natural presenter gesture",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x046",
+      "verdict": "unsure",
+      "label": "unsure",
+      "note": "Sits ~1.09 s after event start, at the very right edge of the spectrogram, so its shape is not visible; CLAP says music (0.418) and nothing visual happens then in this packet. Likely part of the music bed, not a UI SFX."
+    }
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "ui page slide",
+    "description": "Inside the fixed app window beside the presenter, the Rules page slides away and a Warp Drive view (sidebar plus share popover with invite field, access list and link) slides in from the right, timed to 'the ability to share prompts'.",
+    "why_premium": "Same locked window frame and eased page slide as the previous feature (e020), so a run of features reads as one continuous product walkthrough; the arriving screen is pre-staged with a typed email and cursor, showing the feature already in use."
+  },
+  "build_hint": {
+    "gsap": "Window overflow hidden; gsap.timeline().to(rulesPage, {xPercent: -30, autoAlpha: 0, duration: 0.5, ease: 'power2.inOut'}).fromTo(drivePage, {xPercent: 100}, {xPercent: 0, duration: 0.5, ease: 'power2.inOut'}, '<'); popover moves with the page (no separate stagger visible).",
+    "remotion": "const p = interpolate(frame, [0, 16], [0, 1], {easing: Easing.bezier(0.45, 0, 0.55, 1), extrapolateRight: 'clamp'}); old page translateX(-30%*p) opacity 1-p; new page (sidebar + popover) translateX((1-p)*100%) inside an overflow:hidden window."
+  },
+  "confidence": "medium",
+  "notes": "Same transition style as e020 (both shot s026); worth a human check whether both should share one canonical id (e.g. a new 'ui page slide' pattern vs layout_reframe). The cursor in the popover has no candidate box and appears static, so it is not listed."
+}

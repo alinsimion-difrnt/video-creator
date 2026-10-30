@@ -1,0 +1,54 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T13:58:46+00:00"
+  },
+  "id": "stardew-valley",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "warm",
+    "notes": "Frames: warm wood oranges and browns indoors, saturated greens outdoors, teal water; shadows go darker brown/orange, not grey. Mines drop to dark warm browns lit by a lamp. UI is cream/orange wood too."
+  },
+  "lighting": "Warm and soft: lamp glow in the mines, window light in the saloon, evening campfire in fan art. Little cast shading on sprites; mood comes from the scene's overall colour.",
+  "silhouette": "Chunky big-head sprites about two heads tall with a bold hat or hair shape (pink beanie, blue hair) as the identifier; portraits use a strong hair mass and a dark outline.",
+  "motion": {
+    "timing": "Not measured. Sprites use short walk cycles and small gestures; fan animation of the style cuts between still portraits and small moving sprites.",
+    "principles": [
+      "simple walk cycles",
+      "pose cut-ins",
+      "emote pop-ups"
+    ]
+  },
+  "texture": "Tile-based wood planks, grass with scattered flowers and clumps, water with light ripples. Portraits have soft blush and cluster shading, higher resolution than sprites.",
+  "camera": "Top-down 3/4 view following the farmer; dialogue and menus overlay the scene. Fan edits cut from small sprite shots to full-frame portraits.",
+  "sound": "Light, relaxed score that changes with seasons and weather.",
+  "acting": {
+    "enters": "Villagers walk in on daily routes; in fan animation the character pops in large as a portrait, then is shown small in the room.",
+    "acts": "Sprite does a simple gesture with an emote bubble (speech, heart); feelings live in the big portrait (blush, closed-eye smile, hands on cheeks).",
+    "exits": "Walk off along their route or through a door; the world keeps going.",
+    "comes_back": true,
+    "depth": "Cuts between scales rather than layers: tiny sprite behind a bar counter, then a close-up portrait; fan art adds a floating mini-character beside a big portrait."
+  },
+  "techniques": [
+    "portrait cut-in for emotion while the sprite stays simple",
+    "emote bubble above the sprite (heart, speech, question)",
+    "warm brown shadows instead of grey",
+    "bold hat or hair shape as the character's identifier",
+    "seasonal and time-of-day palette swaps",
+    "pixel heart and sparkle pops around a happy portrait"
+  ],
+  "feel": "warm wood palette + chunky big-head sprites + portrait cut-in for feelings = cozy readable world",
+  "for_fred": "Keep Fred's sprite simple and cut to a big portrait close-up for the emotional beat (closed-eye smile, blush, pixel hearts), then back to small Fred walking his route. Let Pixie float in as a mini sprite beside Fred's big portrait.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Stardew_Valley",
+    "data/study/pixel/work/stardew-valley/clip1-7671444984054189333.jpg",
+    "data/study/pixel/work/stardew-valley/clip2-7230935177692777771.jpg",
+    "data/study/pixel/work/stardew-valley/clip3-7695462233970658573.jpg",
+    "studies/pixel-art/sources.yaml"
+  ]
+}

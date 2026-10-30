@@ -1,0 +1,140 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "df9391bc873ea7c9732441cf21d033df9aaf18c7b30cba4d3fc1acf71c183c48",
+    "created_at": "2026-10-05T06:59:48.659264Z"
+  },
+  "video": "duolingo-introducing-duolingo-chess",
+  "task": "a1-p5",
+  "shots": [
+    {
+      "shot": "s025",
+      "shot_type": "other",
+      "shot_type_other": "collage of white-outlined plush-character cutouts over flat graphic background with stacked puzzle cards",
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "endless stacks of chess-puzzle cards with multiple Oscar plush cutouts popping among them",
+      "transition_in": "other",
+      "transition_other": "fast graphic change from the previous short shot; the flat backdrop is already partly filled by puzzle cards in the first sampled frame (exact mechanism not visible at 2 fps)",
+      "on_screen_text": [
+        "OF PUZZLES"
+      ],
+      "text_word_count": 2,
+      "typography": "Heavy rounded sans, all caps, italic/slanted, white fill with a dark outline/drop edge; only the tail 'OF PUZZLES' is visible before the cards cover it (font guess, low confidence: Duolingo's Feather Bold)",
+      "depth_cues": [
+        "parallax"
+      ],
+      "what_happens": "As Oscar says 'I've got thousands of puzzles' (w50-w54), mini chess-board puzzle cards stack up in receding piles from both sides, burying the headline, while several Oscar cutouts at different scales bob and pop in the foreground and on top of the stacks; the pink backdrop is overtaken by teal.",
+      "build_rebuild": "Render a teal full-frame background, then stagger-in dozens of white puzzle-card PNGs (teal border, chessboard thumbnail) in two converging fanned stacks with 30-40 ms offsets, layering 3-4 outlined character cutouts at different scales that scale-pop in on separate beats.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s026",
+      "shot_type": "footage",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "Oscar's phone showing the Duolingo chess screen, seen over his shoulder at an office desk",
+      "transition_in": "other",
+      "transition_other": "a stack of puzzle-board cards in the first sampled frame sweeps off to the right, revealing the office scene behind it (card-stack wipe)",
+      "on_screen_text": [
+        "Play Chess"
+      ],
+      "text_word_count": 2,
+      "typography": "Small in-app UI label, bold sans, sentence case; barely legible at this distance",
+      "depth_cues": [
+        "blur"
+      ],
+      "what_happens": "The puzzle cards clear to reveal an over-the-shoulder view of plush Oscar in a leather chair at a sticky-note-covered office cubicle, holding a pink phone with the chess app; the camera pushes in toward the phone as he asks 'Ready for a real match?' (w55-w59), with 'Don't' (w60) starting at the cut.",
+      "build_rebuild": "Composite a live-action/CG over-the-shoulder plate with a screen-replaced phone UI, wipe the previous card stack out to the right over ~250 ms, then apply a slow ease-in-out camera push toward the phone with shallow depth of field on the background.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s027",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "the in-app chess board on the phone with the Oscar avatar and speech bubble",
+      "transition_in": "other",
+      "transition_other": "continuation of the push-in into a tighter phone framing; cut vs. continuous move cannot be determined from 2 fps samples",
+      "on_screen_text": [
+        "Play Chess",
+        "Let's see what you've got."
+      ],
+      "text_word_count": 7,
+      "typography": "In-app UI: bold sans title 'Play Chess' in sentence case, speech bubble in light-weight grey sans; a small points/timer status row at the top is too small to read reliably",
+      "depth_cues": [
+        "blur"
+      ],
+      "what_happens": "Close on the phone screen: an illustrated Oscar avatar with speech bubble sits above the board, a black pawn advances, and by the end the camera has pushed further onto the board as a black queen appears on the right flank, while Oscar says 'worry. I'll go easy on you.' (w61-w66).",
+      "build_rebuild": "Screen-replace the phone with a recorded app capture of an opening move sequence, keep the background at heavy bokeh, and drive a steady push-in plus slight rotation so the board fills the frame by the end of the shot.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s028",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "the white king area on the phone board as the black queen delivers a quick mate",
+      "transition_in": "other",
+      "transition_other": "tighter reframe onto the board continuing the push-in; mechanism not visible at 2 fps",
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": [
+        "blur"
+      ],
+      "what_happens": "Extreme close-up on the board: the black queen sits beside the exposed white king and the white king flashes/shimmers (sampled frame shows a burst effect on it) as Oscar quips 'Whoopsie!' (w67), implying a quick checkmate; an SFX (x022, whoosh/impact) lands near the end as the shot whips back to the office.",
+      "build_rebuild": "Hold an extreme close-up on the app capture of a scholar's-mate-style finish, trigger a short sparkle/burst particle on the defeated king on the 'Whoopsie' word, and end on a fast whoosh hit into the next shot.",
+      "confidence": "low"
+    },
+    {
+      "shot": "s029",
+      "shot_type": "footage",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "plush Oscar turned in his chair to face the camera with a deadpan, heavy-lidded expression",
+      "transition_in": "other",
+      "transition_other": "the office wide shot with Oscar swivelling his chair round toward camera (sampled just at the boundary), read as a fast whip/swivel reveal; exact mechanism not visible",
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": [
+        "blur"
+      ],
+      "what_happens": "Oscar, now facing the lens in a medium shot in his cubicle with the laptop and Duo poster softly blurred behind, delivers the deadpan punchline 'I won.' (w68-w69) with almost no movement.",
+      "build_rebuild": "Cut to a locked-off, centred medium shot of the character facing camera on a shallow-focus office set and hold still for the full line so the deadpan timing carries the joke.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s030",
+      "shot_type": "footage",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "plush Oscar seated in a director's chair holding a microphone, beside an easel poster of himself",
+      "transition_in": "other",
+      "transition_other": "location change to a pink-curtain interview stage; cut vs. other transition not determinable from samples",
+      "on_screen_text": [
+        "THE MASTER"
+      ],
+      "text_word_count": 2,
+      "typography": "Poster title: heavy rounded sans, all caps, white; 'THE' small above a large 'MASTER' (font guess, low confidence: Feather Bold)",
+      "depth_cues": [
+        "blur"
+      ],
+      "what_happens": "Talk-show style set: Oscar sits in a director's chair with a mic in front of a pink curtain next to a 'THE MASTER' poster; he responds to an off-screen interviewer line 'Ah, you says smart and talented, Oscar. What will you think of mixed?' (w70-w82, transcript partly garbled) with small head and eye moves, a slight camera reframe around 40.0 s, and the shot ends in a heavy horizontal motion blur as it pushes into the next shot (x023 swoosh near 40.0 s).",
+      "build_rebuild": "Film a static two-thirds medium of the character on a curtain stage with the poster soft in the background, add a subtle punch-in reframe mid-line, and exit with a horizontal push transition using strong directional motion blur synced to a swoosh.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

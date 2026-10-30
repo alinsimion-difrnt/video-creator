@@ -1,0 +1,54 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T13:03:02+00:00"
+  },
+  "id": "sly-walk",
+  "kind": "tutorial",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "unknown",
+    "notes": "The article does not cover palette; the work starts from a flat colour-coded dummy (head, neck, torso, arms, legs) so each body part is readable before any shading."
+  },
+  "lighting": "Not covered; the article is about poses and timing, not light.",
+  "silhouette": "Built on a simple colour-coded dummy; legs crossing at the pass pose and arms at the extremes of their swing on contact give two clearly different silhouettes per step.",
+  "motion": {
+    "timing": "8-frame cycle (article calls it the best balance of economy and fluidity), also shown at 4 and 6 frames. Reference: a 72-frame 60 fps slice reduced to 8 keys. No per-frame ms given.",
+    "principles": [
+      "key poses: contact, down, pass, swing",
+      "triangle-wave head bob",
+      "arcs",
+      "opposing arm/leg momentum",
+      "follow-through in cloth folds"
+    ]
+  },
+  "texture": "Clothing folds kept minimal, with consistent anchor points and fold direction across all frames so they do not flicker.",
+  "camera": "Side view, character walking in place; no camera.",
+  "sound": "",
+  "acting": {
+    "enters": "No staging shown; the cycle is a loop in place.",
+    "acts": "Personality comes from the gait: a tight arm swing reads stiff and businesslike, a fuller swing past the hips reads peppy and elegant.",
+    "exits": "",
+    "comes_back": null,
+    "depth": "Single sprite at one scale; the article warns that labour grows quickly with sprite size, so plan size, detail and frame count together."
+  },
+  "techniques": [
+    "8-frame walk: contact, down, pass, swing, then the mirror of those four",
+    "lowest point on contact, tallest on the pass",
+    "head height follows a triangle wave, not a sine wave",
+    "arm swing width sets the character: tight = stiff, wide = peppy",
+    "trim live-action reference to one loop, then reduce to key frames",
+    "one-pixel secondary shifts on contact sell weight",
+    "start from a colour-coded body-part dummy before detail"
+  ],
+  "feel": "8 keys + triangle-wave bob + arm swing width as personality = a walk that says who the character is",
+  "for_fred": "Give Fred's swim a 4-key cycle (contact-like push, glide, pass, reach) with a triangle-wave bob, not a smooth sine float. Use cycle shape as character: Pixie gets a wide, peppy stride, Fred a tight, fussy one, so a single walk across the frame already tells who they are.",
+  "sources": [
+    "https://www.slynyrd.com/blog/2024/5/24/pixelblog-50-human-walk-cycle",
+    "studies/pixel-art/sources.yaml"
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "6383b9f465ef3879f5bfc92ac5a5a2c6799b62c3df56328a209c7389208e562b",
+    "created_at": "2026-10-05T06:42:55.662136Z"
+  },
+  "video": "datadog-datadog-overview-see-inside-the-platfor",
+  "event": "e001",
+  "task": "a2-e001",
+  "elements": [
+    {
+      "box": null,
+      "manual_box": [380, 200, 700, 820],
+      "manual_reason": "Title has fully exited before the settled end frame, so no candidate box covers it; region is where it sat in the first filmstrip frames.",
+      "label": "Intro title",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["slide_right", "blur_out", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Modern monitoring for a complex world",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 250, "easing_class": "ease_in"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Green and purple host hexagons with tag chips",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["blur_in", "fade", "scale_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b06",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Top red host hexagon (chip 'agent' as anchor)",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["slide_down", "blur_in", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Host ID label on green hexagon",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "0280c01db327f9c",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x005",
+      "verdict": "unsure",
+      "label": "unsure",
+      "note": "Candidate sits at the right edge of the spectrogram, ~725 ms after the burst; the window shows only rhythmic music hits, nothing that ties a chime to this transition."
+    }
+  ],
+  "pattern": {
+    "id": "blur_crossfade",
+    "proposed_name": null,
+    "description": "The opening title drifts sideways while blurring and fading out; the hexagon host diagram blurs and fades in underneath it, settling with a slight scale-down, the top red hex dropping in from above.",
+    "why_premium": "Using depth-of-field blur instead of a hard cut keeps the change soft and continuous, so the scene moves from a statement to the product metaphor without a jarring break."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.title', {x: 60, filter: 'blur(12px)', opacity: 0, duration: 0.25, ease: 'power2.in'}); tl.fromTo('.hex-cluster', {scale: 1.08, filter: 'blur(14px)', opacity: 0}, {scale: 1, filter: 'blur(0px)', opacity: 1, duration: 0.4, ease: 'power3.out'}, '<0.05'); tl.fromTo('.hex-top', {y: -40, filter: 'blur(14px)', opacity: 0}, {y: 0, filter: 'blur(0px)', opacity: 1, duration: 0.4, ease: 'power3.out'}, '<'); tl.from('.hex-id', {opacity: 0, duration: 0.3}, '-=0.2')",
+    "remotion": "title: interpolate(frame,[0,8],[0,1]) drives translateX 0->60, blur 0->12px, opacity 1->0 (Easing.in(Easing.quad)); cluster: spring({frame: frame-2, fps, config:{damping: 26, stiffness: 160, mass: 1}}) drives scale 1.08->1, blur 14->0px, opacity 0->1; top hex uses the same spring for translateY -40->0."
+  },
+  "confidence": "medium",
+  "notes": "Burst is short (0.2 s) and mostly blur; the top red hex has no whole-hex candidate box, so b06 (a chip inside it) stands in for it. Exact title direction looks rightward from the filmstrip but is subtle."
+}

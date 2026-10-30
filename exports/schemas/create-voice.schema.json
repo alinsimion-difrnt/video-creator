@@ -1,0 +1,309 @@
+{
+  "$defs": {
+    "Annotator": {
+      "enum": [
+        "code",
+        "claude-code",
+        "human"
+      ],
+      "title": "Annotator",
+      "type": "string"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "description": "Carried by every output JSON (BUILD_PLAN section 2.7).",
+      "properties": {
+        "annotator": {
+          "$ref": "#/$defs/Annotator"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "input_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Input Hash",
+          "type": "string"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "schema_version": {
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "skill": {
+          "anyOf": [
+            {
+              "pattern": "^[a-z0-9-]+@[0-9a-f]{8,64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Skill"
+        },
+        "stage": {
+          "title": "Stage",
+          "type": "string"
+        },
+        "tool_version": {
+          "title": "Tool Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool_version",
+        "stage",
+        "annotator",
+        "input_hash",
+        "created_at"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "TakeProsody": {
+      "additionalProperties": false,
+      "description": "lens speech measures of one take (whisper words, as the corpus was measured).",
+      "properties": {
+        "articulation_wpm": {
+          "minimum": 0,
+          "title": "Articulation Wpm",
+          "type": "number"
+        },
+        "band_distance": {
+          "minimum": 0,
+          "title": "Band Distance",
+          "type": "number"
+        },
+        "brand_heard": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Brand Heard"
+        },
+        "energy_std_db": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Energy Std Db"
+        },
+        "in_range": {
+          "minimum": 0,
+          "title": "In Range",
+          "type": "integer"
+        },
+        "pause_mean_ms": {
+          "minimum": 0,
+          "title": "Pause Mean Ms",
+          "type": "number"
+        },
+        "pitch_std_semitones": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pitch Std Semitones"
+        },
+        "wpm": {
+          "minimum": 0,
+          "title": "Wpm",
+          "type": "number"
+        }
+      },
+      "required": [
+        "wpm",
+        "articulation_wpm",
+        "pause_mean_ms",
+        "in_range",
+        "band_distance"
+      ],
+      "title": "TakeProsody",
+      "type": "object"
+    },
+    "TimedWord": {
+      "additionalProperties": false,
+      "properties": {
+        "end_s": {
+          "minimum": 0,
+          "title": "End S",
+          "type": "number"
+        },
+        "i": {
+          "minimum": 0,
+          "title": "I",
+          "type": "integer"
+        },
+        "start_s": {
+          "minimum": 0,
+          "title": "Start S",
+          "type": "number"
+        },
+        "text": {
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "i",
+        "text",
+        "start_s",
+        "end_s"
+      ],
+      "title": "TimedWord",
+      "type": "object"
+    },
+    "VoiceScene": {
+      "additionalProperties": false,
+      "properties": {
+        "audio": {
+          "title": "Audio",
+          "type": "string"
+        },
+        "credits": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Credits"
+        },
+        "duration_s": {
+          "exclusiveMinimum": 0,
+          "title": "Duration S",
+          "type": "number"
+        },
+        "prosody": {
+          "$ref": "#/$defs/TakeProsody"
+        },
+        "scene": {
+          "pattern": "^s\\d{2}$",
+          "title": "Scene",
+          "type": "string"
+        },
+        "take": {
+          "minimum": 1,
+          "title": "Take",
+          "type": "integer"
+        },
+        "takes": {
+          "minimum": 1,
+          "title": "Takes",
+          "type": "integer"
+        },
+        "text_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Text Hash",
+          "type": "string"
+        },
+        "words": {
+          "items": {
+            "$ref": "#/$defs/TimedWord"
+          },
+          "minItems": 1,
+          "title": "Words",
+          "type": "array"
+        }
+      },
+      "required": [
+        "scene",
+        "text_hash",
+        "take",
+        "takes",
+        "audio",
+        "duration_s",
+        "words",
+        "prosody"
+      ],
+      "title": "VoiceScene",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "C4: the chosen take per scene, with word timings.",
+  "properties": {
+    "credits_used": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Credits Used"
+    },
+    "model_id": {
+      "minLength": 1,
+      "title": "Model Id",
+      "type": "string"
+    },
+    "project": {
+      "title": "Project",
+      "type": "string"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    },
+    "scenes": {
+      "items": {
+        "$ref": "#/$defs/VoiceScene"
+      },
+      "minItems": 1,
+      "title": "Scenes",
+      "type": "array"
+    },
+    "voice_id": {
+      "minLength": 1,
+      "title": "Voice Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "provenance",
+    "project",
+    "voice_id",
+    "model_id",
+    "scenes"
+  ],
+  "title": "Voice",
+  "type": "object"
+}

@@ -1,0 +1,60 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "dd857347ddf9427c6c094ff8f1958b763528c12bfa4c3cf93fd2c75e9c70448a",
+    "created_at": "2026-10-05T06:42:55.430859Z"
+  },
+  "video": "datadog-datadog-overview-see-inside-the-platfor",
+  "event": "e016",
+  "task": "a2-e016",
+  "elements": [
+    {
+      "box": null,
+      "manual_box": [0, 453, 792, 832],
+      "manual_reason": "No candidate isolates the outlined exclamation-mark icon; b01 is the whole changed region dominated by the background gradient shift.",
+      "label": "Exclamation-mark outline echo fan",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["rotate", "scale_up", "other"],
+      "change_other": "duplicate echo copies fan out from one outline, each rotated progressively clockwise around the dot",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 480, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Gradient background",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["color_shift"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 500, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x034", "verdict": "confirm", "label": "music", "note": "Rhythmic music pulse ~0.4 s after the event; no distinct SFX transient tied to the fan-out."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "echo fan stagger",
+    "description": "A single line-art exclamation mark splits into several outline copies that rotate outward in a staggered fan behind the static headline, while the background gradient shifts from orange to magenta.",
+    "why_premium": "Turns a static icon into a motion-blur-like echo trail using only thin strokes, adding energy and emphasis to the alerts claim without competing with the white headline."
+  },
+  "build_hint": {
+    "gsap": "Clone the outline icon 4-5 times; gsap.fromTo(clones, {rotation: 0, scale: 1}, {rotation: (i) => i * 12, scale: 1.15, transformOrigin: '50% 90%', duration: 0.5, ease: 'power2.out', stagger: 0.04}); in parallel tween the background gradient stops (orange -> magenta) with ease 'sine.inOut' over 0.6s. Headline stays static.",
+    "remotion": "Render N copies of the SVG outline; for copy i, rotate = interpolate(spring({frame: frame - i * 1, fps, config: {damping: 26, stiffness: 140, mass: 1}}), [0, 1], [0, i * 12]) deg with transformOrigin near the dot; background gradient colors via interpolateColors(frame, [0, 18], [orange, magenta])."
+  },
+  "confidence": "medium",
+  "notes": "Headline b02 appears static; its changed_share comes from the background behind it. Exclamation fan has no candidate box, hence manual_box."
+}

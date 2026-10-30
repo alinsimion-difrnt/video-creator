@@ -1,0 +1,44 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "b12b9a8349a11e2f159d32a8d80ad701dd4bf01d90905d5f9f8847d484471207",
+    "created_at": "2026-10-05T06:56:48.647799Z"
+  },
+  "video": "workday-workday-adaptive-planning-demo-finan",
+  "event": "e026",
+  "task": "a2-e026",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "App window (navigation drawer and Reports submenu) starting a slight scale-down and upward drift inside the frame",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["scale_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 200, "easing_class": "ease_in"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "layout_reframe",
+    "proposed_name": null,
+    "description": "The recorded app window starts shrinking slightly and drifting up by a pixel or two while the cursor rests on Modeling; menu text across the window shifts together, with no new content.",
+    "why_premium": "A slow, near-invisible reframe keeps a static screen alive between clicks and sets up the next view without a cut."
+  },
+  "build_hint": {
+    "gsap": "gsap.to('.app-window', {scale: 0.994, y: -2, duration: 0.2, ease: 'power1.in', transformOrigin: '50% 0%'}) as the start of a longer scale-out; animate the window wrapper only, children move with it.",
+    "remotion": "Window scale = interpolate(frame, [0, 6], [1, 0.994], {easing: Easing.in(Easing.quad), extrapolateRight: 'extend'}), translateY = interpolate(frame, [0, 6], [0, -2]); no spring."
+  },
+  "confidence": "low",
+  "notes": "The motion is subpixel: filmstrip frames look the same; evidence is the uniform partial change across every text box plus scale 0.9943 from code. Camera verdict is none, so this is read as the window wrapper scaling inside the frame, not a camera move. Energy still rising at burst end, so this is probably the start of a larger reframe in the next event. No SFX candidates."
+}

@@ -1,0 +1,65 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "ff0429c10adb2c420615a17fe49a91f4bf530d12ad09facb41fcdfcc86f360ff",
+    "created_at": "2026-10-05T06:46:58.847073Z"
+  },
+  "video": "meta-introducing-meta-quest-3-coming-this-f",
+  "event": "e006",
+  "task": "a2-e006",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Full-frame scene: headset lens close-up zooms through into red game world",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["scale_up", "blur_out", "blur_in"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 340, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Overlay word 'Deeper' replacing 'Jump into new'",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["blur_in", "scale_down", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Deeper",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x045",
+      "verdict": "override",
+      "label": "music",
+      "note": "Broadband vertical transient that repeats at regular intervals across the window (about 53.68, 53.78, 53.97, 54.22, 54.68 s); reads as a music beat, not a discrete swoosh. Precedes the visual zoom by about 160 ms."
+    }
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "radial zoom through",
+    "description": "The shot pushes into the headset lens; a radial (zoom) blur streaks the frame, the next scene emerges scaled-down from the blur, and the overlay word swaps from 'Jump into new' to 'Deeper' through the same blur so the text change rides the transition.",
+    "why_premium": "The lens acts as a literal portal, so the cut carries meaning (entering the world); the radial blur hides the seam in about a third of a second, and swapping the kinetic word inside the blur keeps the type beat continuous instead of cutting it separately."
+  },
+  "build_hint": {
+    "gsap": "Outgoing layer: gsap.to(sceneA, {scale: 1.8, filter: 'blur(14px)', duration: 0.18, ease: 'power2.in'}) with a radial-blur overlay opacity 0->1. Incoming layer: gsap.fromTo(sceneB, {scale: 1.25, filter: 'blur(14px)', opacity: 0}, {scale: 1, filter: 'blur(0px)', opacity: 1, duration: 0.25, ease: 'power3.out'}, '<0.1'); word swap: fromTo(word, {scale: 1.6, filter: 'blur(10px)', opacity: 0}, {scale: 1, filter: 'blur(0px)', opacity: 1, duration: 0.3, ease: 'power3.out'}, '<').",
+    "remotion": "Two Sequences overlapping ~3 frames; sceneA scale = interpolate(frame, [0, 6], [1, 1.8], {easing: Easing.in(Easing.quad)}) with blur; sceneB and the word use spring({frame, fps, config: {damping: 200, stiffness: 180}}) mapped to scale 1.25->1 (word 1.6->1) and blur 14->0px; radial-blur overlay opacity peaks at the overlap."
+  },
+  "confidence": "medium",
+  "notes": "camera.move is 'none' per facts though the whole frame visibly zooms; reported as content scale on b01, not a camera move. Outgoing text 'Jump into new' is not on the end frame, so it has no box; its blur-out is folded into the b02 swap description."
+}

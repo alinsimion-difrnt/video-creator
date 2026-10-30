@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "ee548e33c9c5dee06fad8dfbb8813602d5425b9fa32c006f4639e0184d6ef388",
+    "created_at": "2026-10-05T06:51:27.867572Z"
+  },
+  "video": "servicenow-what-are-servicenow-ai-agents",
+  "event": "e025",
+  "task": "a2-e025",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Background colleague walking into frame behind the seated pair",
+      "role": "other",
+      "role_other": "live_action_person",
+      "change_types": ["slide_right"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 380, "easing_class": "linear"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Out-of-focus foreground desk equipment at right edge",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "slight live-action drift of defocused foreground",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "footage subject entrance",
+    "description": "Live-action office shot, locked-off framing: a colleague walks in from the left and stops behind two seated workers, smiling, while the narration says 'balance PTO and customer service coverage'.",
+    "why_premium": "Story beats come from blocking inside a static cinematic frame, with shallow depth of field and defocused foreground objects, so there is no cut or graphic overlay, which keeps the ad-film look."
+  },
+  "build_hint": {
+    "gsap": "Not a motion-graphic build. If recreated with a cut-out: gsap.fromTo(person, {x: -120, opacity: 0.6}, {x: 0, opacity: 1, duration: 0.4, ease: 'none'}) over a blurred static plate; optional slow 'sine.inOut' drift on a foreground blur layer for parallax.",
+    "remotion": "Use live footage with <OffthreadVideo>; for a cut-out recreation, translateX = interpolate(frame, [0, 12], [-120, 0], {extrapolateRight: 'clamp'}) with linear easing, foreground layer drifting a few px."
+  },
+  "confidence": "medium",
+  "notes": "Live-action footage; the diff boxes b03-b14 are small lighting/defocus flicker, not distinct elements. camera.move is none, so no camera move is reported."
+}

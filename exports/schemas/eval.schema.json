@@ -1,0 +1,313 @@
+{
+  "$defs": {
+    "Annotator": {
+      "enum": [
+        "code",
+        "claude-code",
+        "human"
+      ],
+      "title": "Annotator",
+      "type": "string"
+    },
+    "AnswerKeyScores": {
+      "additionalProperties": false,
+      "properties": {
+        "box_precision": {
+          "$ref": "#/$defs/Ratio"
+        },
+        "box_recall": {
+          "$ref": "#/$defs/Ratio"
+        },
+        "box_unjudged": {
+          "minimum": 0,
+          "title": "Box Unjudged",
+          "type": "integer"
+        },
+        "change_types": {
+          "$ref": "#/$defs/Ratio"
+        },
+        "change_types_with_measured": {
+          "$ref": "#/$defs/Ratio"
+        },
+        "estimate_easing": {
+          "$ref": "#/$defs/Ratio"
+        },
+        "events": {
+          "minimum": 0,
+          "title": "Events",
+          "type": "integer"
+        },
+        "measured_easing": {
+          "$ref": "#/$defs/Ratio"
+        },
+        "sfx_after_review": {
+          "$ref": "#/$defs/Ratio"
+        },
+        "sfx_classifier": {
+          "$ref": "#/$defs/Ratio"
+        },
+        "video": {
+          "title": "Video",
+          "type": "string"
+        }
+      },
+      "required": [
+        "video",
+        "events",
+        "box_precision",
+        "box_unjudged",
+        "box_recall",
+        "change_types",
+        "change_types_with_measured",
+        "sfx_classifier",
+        "sfx_after_review",
+        "estimate_easing",
+        "measured_easing"
+      ],
+      "title": "AnswerKeyScores",
+      "type": "object"
+    },
+    "ConsistencyScores": {
+      "additionalProperties": false,
+      "properties": {
+        "boxes": {
+          "$ref": "#/$defs/Ratio"
+        },
+        "change_types": {
+          "$ref": "#/$defs/Ratio"
+        },
+        "events": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Events",
+          "type": "array"
+        },
+        "missing": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Missing",
+          "type": "array"
+        },
+        "pattern": {
+          "$ref": "#/$defs/Ratio"
+        },
+        "role": {
+          "$ref": "#/$defs/Ratio"
+        },
+        "run": {
+          "title": "Run",
+          "type": "string"
+        },
+        "sfx_label": {
+          "$ref": "#/$defs/Ratio"
+        }
+      },
+      "required": [
+        "run",
+        "events",
+        "missing",
+        "boxes",
+        "pattern",
+        "role",
+        "change_types",
+        "sfx_label"
+      ],
+      "title": "ConsistencyScores",
+      "type": "object"
+    },
+    "MeasuredShare": {
+      "additionalProperties": false,
+      "properties": {
+        "events": {
+          "minimum": 0,
+          "title": "Events",
+          "type": "integer"
+        },
+        "measured": {
+          "minimum": 0,
+          "title": "Measured",
+          "type": "integer"
+        },
+        "ok": {
+          "title": "Ok",
+          "type": "boolean"
+        },
+        "share": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Share"
+        },
+        "target": {
+          "title": "Target",
+          "type": "number"
+        },
+        "tier": {
+          "title": "Tier",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tier",
+        "events",
+        "measured",
+        "share",
+        "target",
+        "ok"
+      ],
+      "title": "MeasuredShare",
+      "type": "object"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "description": "Carried by every output JSON (BUILD_PLAN section 2.7).",
+      "properties": {
+        "annotator": {
+          "$ref": "#/$defs/Annotator"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "input_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Input Hash",
+          "type": "string"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "schema_version": {
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "skill": {
+          "anyOf": [
+            {
+              "pattern": "^[a-z0-9-]+@[0-9a-f]{8,64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Skill"
+        },
+        "stage": {
+          "title": "Stage",
+          "type": "string"
+        },
+        "tool_version": {
+          "title": "Tool Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool_version",
+        "stage",
+        "annotator",
+        "input_hash",
+        "created_at"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "Ratio": {
+      "additionalProperties": false,
+      "properties": {
+        "hits": {
+          "minimum": 0,
+          "title": "Hits",
+          "type": "number"
+        },
+        "n": {
+          "minimum": 0,
+          "title": "N",
+          "type": "number"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        }
+      },
+      "required": [
+        "hits",
+        "n"
+      ],
+      "title": "Ratio",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "answer_key": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/AnswerKeyScores"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "consistency": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ConsistencyScores"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Hash",
+      "type": "string"
+    },
+    "measured": {
+      "$ref": "#/$defs/MeasuredShare"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    }
+  },
+  "required": [
+    "provenance",
+    "hash",
+    "answer_key",
+    "consistency",
+    "measured"
+  ],
+  "title": "EvalFile",
+  "type": "object"
+}

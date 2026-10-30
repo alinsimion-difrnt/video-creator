@@ -1,0 +1,36 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code",
+                 "input_hash": "6ebbd20b321655076d6a04f4b3382f2aaac7655cea5bbe442606d9093a8b3162",
+                 "created_at": "2026-10-13T09:30:41Z"},
+  "id": "7694107340626201887",
+  "format": "split_screen",
+  "hook": {"type": "question",
+           "line": "What kind of job makes $3 million a year?",
+           "visual": "Top: streamer in headphones; bottom: photo of a suited finance executive on a trading floor; the question in a white box with money emojis on the seam."},
+  "beats": [
+    {"t": 0.0, "what": "Streamer asks the question; the title box on the seam repeats it with '$3 million EVERY year'."},
+    {"t": 4.53, "what": "He says he is curious; the answer is set up with the trading-floor photo below."},
+    {"t": 6.79, "what": "Answer starts: mid-level employees at a trading firm make five to ten million; chat overlay reads 'HE feels POOR'."},
+    {"t": 11.32, "what": "He throws his head back at the hedge-fund numbers."},
+    {"t": 14.13, "what": "Measured motion: he leans back in, as the answer escalates to five to twenty million for a hedge-fund PM."},
+    {"t": 18.11, "what": "Jaw-drop face on 'tens of millions' for a good VC, held to the end."}
+  ],
+  "graphics": {"captions": "title_only",
+               "caption_position": "middle",
+               "devices": ["split_screen", "title_text", "sticker_emoji", "chart_or_number"],
+               "density": "minimal", "per_minute_estimate": 6},
+  "characters": [],
+  "cta": {"kind": "none", "t": null},
+  "why_it_works": [
+    "A money question with a specific number ($3 million) opens a curiosity gap that the answer keeps escalating past.",
+    "The bottom-half photo of a finance executive on a trading floor tells the viewer the topic before the answer arrives.",
+    "The streamer's open-mouth reaction is the payoff; viewers watch for the face, and the clip loops cleanly (loop score 0.978)."
+  ],
+  "weaknesses": [
+    "No cuts at all in 25 s (0 cuts); the only movement is his head.",
+    "Very quiet audio (-28.1 LUFS) and no word captions, so the numbers are lost with the sound off.",
+    "The bottom half is one still photo for the whole video; it never changes with the numbers."
+  ],
+  "for_robert": "Steal the escalating-number answer with a reaction: have Fred's eyes widen or jaw drop each time the number goes up, rather than a static image filling half the frame."
+}

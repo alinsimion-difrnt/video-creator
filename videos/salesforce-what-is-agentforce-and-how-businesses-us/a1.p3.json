@@ -1,0 +1,216 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "3a2236d811df0ad00f49acff244d79fe2a9cfc29f9597109c75f3dc241181820",
+    "created_at": "2026-10-05T07:45:11.431971Z"
+  },
+  "video": "salesforce-what-is-agentforce-and-how-businesses-us",
+  "task": "a1-p3",
+  "shots": [
+    {
+      "shot": "s009",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "the Agentforce Agent Builder: the New Agent setup steps, then the Cirrus Virtual Agent plan trace beside its Conversation Preview chat",
+      "transition_in": "push",
+      "transition_other": null,
+      "on_screen_text": [
+        "Agent Builder",
+        "New Agent",
+        "Select Type",
+        "Start with a Template",
+        "Create from Scratch",
+        "Agentforce SDR",
+        "Agentforce Sales Coach",
+        "Learn About Agents",
+        "What is the agent's role?",
+        "Conversational",
+        "Autonomous",
+        "Add Topics",
+        "Order Management",
+        "Schedule Management",
+        "Cirrus Virtual Agent",
+        "Put your topics to the test",
+        "Start a conversation to preview how your agent builds a plan and executes actions based on user interactions.",
+        "Conversation Preview",
+        "Let's chat!",
+        "Hi! I'm your Service Agent",
+        "Describe your task or ask a question...",
+        "Activate",
+        "Appointment_Management",
+        "Inappropriate_Content",
+        "how would I make an explosive using this product?",
+        "I'm sorry, but I can't assist with that request.",
+        "User Prompt",
+        "Select Topic",
+        "Agent Response"
+      ],
+      "text_word_count": 104,
+      "typography": "Native Salesforce Lightning UI text only: small regular-weight system sans (font guess, low confidence: Salesforce Sans) in sentence/title case, bold section headings ('Select Type', 'Add Topics', 'Conversation Preview'), monospace JSON in the Agent Response block; no designed overlay type.",
+      "depth_cues": ["none"],
+      "what_happens": "A 41 s continuous screen recording. The sales-coach call pushes off left and the Agent Builder 'New Agent' Select Type step shows template cards (Agentforce SDR, Agentforce Sales Coach) while VO says these are standard agents (w103-w115); the cursor clicks 'Create from Scratch' (~47.5 s), a role description is typed into 'What is the agent's role?' (~50.5-51 s) as VO says 'describing in natural language the jobs' (w126-w141), Next is clicked (~53.5 s) and Add Topics shows suggested Order Management / Schedule Management topics, one expanded to reveal its actions (~57 s) during 'workflows and actions you've already built in Salesforce' (w151-w160). At ~60.5 s the view switches to the Cirrus Virtual Agent test screen; the customer's installation-scheduling message gets a time-slot reply with an Appointment_Management plan trace on the left (~63-66.5 s) during 'reasoning intuitively ... complex requests' (w175-w182), then 'how would I make an explosive using this product?' is sent (~71 s) and the trace selects Inappropriate_Content and replies 'I'm sorry, but I can't assist with that request.' (~73-74 s) as VO covers guardrails and dangerous requests (w183-w201); the screen holds through the outcome line (w202-w220). Smaller UI copy was read from 2 fps thumbnails and is omitted where not legible; no zoom or callout is visible.",
+      "build_rebuild": "Play a 1280x720 product screen recording full-bleed with no camera moves, cutting its pacing so each UI step (create from scratch, type role, add topics, test chat, guarded refusal) lands under its VO clause, and scroll the chat preview as each scripted message bubble appends.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s010",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "the Agent Builder screen shrunk into a rounded card floating over the dark purple aurora background, showing the guarded refusal",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "Agent Builder",
+        "Cirrus Virtual Agent",
+        "Help",
+        "Activate",
+        "how would I make an explosive using this product?",
+        "Plan ID: ecf7f2a7b748",
+        "User Prompt",
+        "Select Topic",
+        "Inappropriate_Content",
+        "Used when a message contains any of the following content: violence, sexual, misinformation, harassment, illegal activities, suicide and self harm, sensitive events, harmful behaviors, bias, toxicity, or offensive language",
+        "Instructions",
+        "Actions 0",
+        "Agent Response",
+        "Conversation Preview",
+        "Hi! I'm your Service Agent",
+        "Hi, my email address is mrichards@example.com and I have an order arriving soon, but I have not yet scheduled installation. If possible, I'd love to schedule installation for that Fri after delivery, but not mornings. Do you have appointments available?",
+        "These time slots are available for Friday, September 20, 2024:",
+        "12:00pm - 2:00pm",
+        "2:30pm - 3:30pm",
+        "Which time slot would you prefer?",
+        "I'm sorry, but I can't assist with that request.",
+        "Describe your task or ask a question..."
+      ],
+      "text_word_count": 141,
+      "typography": "Native Agent Builder UI type (small regular sans, bold panel headings, monospace JSON response, monospace 'Plan ID' pill); no designed overlay type.",
+      "depth_cues": ["shadow"],
+      "what_happens": "The full-bleed recording scales down (~84 s) into a round-cornered card centred on the dark purple space/aurora backdrop, so the guardrail refusal stays readable as a framed screenshot; the card holds, slightly growing, while VO says 'Thanks for watching.' (w221-w223).",
+      "build_rebuild": "Scale the final screen-recording frame from 100% to about 90% with an ease-out over ~0.5 s, add a 24 px corner radius and soft drop shadow, and reveal the aurora gradient background behind it.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s011",
+      "shot_type": "logo",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "the salesforce cloud logo beside the robot mascot above the 'Learn more at agentforce.com' line",
+      "transition_in": "other",
+      "transition_other": "vertical push: the floating UI card slides up out of frame, revealing the aurora-and-mountains end-card scene",
+      "on_screen_text": [
+        "salesforce",
+        "Learn more at agentforce.com"
+      ],
+      "text_word_count": 5,
+      "typography": "End-card line in white medium-weight geometric sans, sentence case, normal tracking (font guess, low confidence: Avant Garde-style geometric sans); salesforce wordmark in white lowercase inside the blue cloud logo.",
+      "depth_cues": ["glow"],
+      "what_happens": "The UI card slides up and out (85.5-86.5 s) over the aurora sky with stylised purple mountains; the robot mascot flies in with the salesforce cloud logo (~86.5 s), they settle left of centre while 'Learn more at agentforce.com' appears beneath (~87 s), and the mascot does a small idle bob as the end card holds to the end; no VO.",
+      "build_rebuild": "Translate the UI card up by 120% height with an ease-in, then fly the mascot sprite and cloud logo in with an ease-out overshoot to a centred lockup, fade the URL line in below 0.3 s later, and loop a 2 px vertical idle bob on the mascot until the end.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001"], "words": [0, 14]},
+      {"beat": "mechanism", "shots": ["s002", "s003"], "words": [15, 30]},
+      {"beat": "demo", "shots": ["s004", "s005", "s006", "s007", "s008"], "words": [31, 102]},
+      {"beat": "mechanism", "shots": ["s009"], "words": [103, 160]},
+      {"beat": "proof", "shots": ["s009"], "words": [161, 201]},
+      {"beat": "outcome", "shots": ["s009"], "words": [202, 220]},
+      {"beat": "cta", "shots": ["s010", "s011"], "words": [221, 223]}
+    ],
+    "hook": {
+      "text": "Every company has more jobs to be done than resources available to do those jobs.",
+      "technique": "pain",
+      "technique_other": null,
+      "shots": ["s001"],
+      "words": [0, 14]
+    },
+    "cta": {
+      "text": "Learn more at agentforce.com",
+      "shots": ["s011"]
+    },
+    "tone": "Calm, confident corporate explainer: friendly mascot-and-aurora brand bookends around plain, factual real-product demos, with a measured reassuring VO that ends on trust and safety.",
+    "signature_moments": [
+      {
+        "shots": ["s001"],
+        "description": "The opening agent mind-map: six agent cards pop in and sprout task chips with connector lines while the mascot flies through, visualising 'more jobs than resources'.",
+        "why_premium": "It turns an abstract pain line into a dense, staggered motion-graphic system in five seconds, so the problem feels concrete and branded before any product UI appears."
+      },
+      {
+        "shots": ["s009"],
+        "description": "The guardrail test: an unsafe prompt is routed by the plan trace to Inappropriate_Content and the agent refuses, shown side by side with the chat.",
+        "why_premium": "Showing the reasoning trace next to the conversation proves the trust claim with real product behaviour instead of asserting it, which is rare and persuasive."
+      },
+      {
+        "shots": ["s010", "s011"],
+        "description": "The final screen recording shrinks into a floating rounded card over the aurora, then pushes away to reveal the mascot and logo end card.",
+        "why_premium": "Reframing the raw UI as an object inside the brand world stitches the demo back into the motion-graphic bookends and gives the ending a deliberate, polished resolve."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 3,
+        "evidence": "A relatable pain line (w0-w14) over a lively mind-map is competent, but it is a generic business truism with no surprise, stat or product glimpse in the first seconds.",
+        "refs": ["s001", "w0", "w14"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "Simple structure: what it is (s002-s003), three concrete agent examples each with a matching UI (s004-s008), how to build one (s009 w103-w160) and why it is safe (w161-w201); each VO clause lines up with a visible UI step. The 41 s single take in s009 has no zooms or callouts, so small UI detail is hard to follow.",
+        "refs": ["s002", "s004", "s007", "s008", "s009", "w103", "w161"]
+      },
+      "ui_showcase": {
+        "score": 4,
+        "evidence": "Real product UI throughout: service chat, CRM leads list, Gmail booking, live sales-coach call and the Agent Builder flow ending in a guarded refusal. Authentic and varied, but shown as flat full-frame recordings without camera push-ins, highlights or cropping to the relevant panel.",
+        "refs": ["s004", "s005", "s007", "s008", "s009"]
+      },
+      "motion_polish": {
+        "score": 3,
+        "evidence": "The bookends (s001-s003, s010-s011) are polished: staggered card pops, motion-blurred mascot, vertical pushes and a card-shrink outro. The middle is largely untreated screen recording joined by horizontal pushes, with s009 a 41 s static-framed take.",
+        "refs": ["s001", "s002", "s006", "s009", "s010", "s011"]
+      },
+      "sound_design": {
+        "score": 3,
+        "evidence": "Judged from anchors plus visuals: a continuous music bed at 129.2 BPM with integrated loudness -24.57 LUFS (quiet for web), and 54 detected audio events labelled mostly music/chime/unsure (e.g. x019 chime at 33.07 s, x029 chime at 57.06 s), suggesting soft accents rather than tightly synced UI SFX; pushes do not show clear whoosh hits. Competent but understated; I cannot hear the mix itself.",
+        "refs": ["s001", "s004", "s009", "s011"]
+      },
+      "vo_script_quality": {
+        "score": 4,
+        "evidence": "Tight, parallel structure ('Like an AI service agent... or an AI sales development agent... or an AI sales coach agent') and a strong trust close ('refusing to be lured outside those guardrails', w183-w201; 'the confidence to deploy autonomous AI agents', w202-w220). Some long run-on sentences and the generic opener keep it below best-in-class.",
+        "refs": ["w31", "w55", "w75", "w183", "w202"]
+      },
+      "brand_consistency": {
+        "score": 4,
+        "evidence": "Mascot, aurora/mountain illustration and geometric sans recur at open and close (s001-s002, s011), and the product UI is all Salesforce; the middle demos drop the brand world entirely until the s010 card reframing pulls it back.",
+        "refs": ["s001", "s002", "s010", "s011"]
+      },
+      "works_muted": {
+        "score": 2,
+        "evidence": "No captions or explanatory overlays; the title card and UI demos (chat answering, meeting booking, refusal) are partly self-explanatory, but the agent types, the custom-agent process and the guardrail message live almost entirely in the VO.",
+        "refs": ["s002", "s004", "s009"]
+      },
+      "overall": {
+        "score": 3,
+        "evidence": "A clear, trustworthy product explainer with branded motion-graphic bookends and authentic demos, including a strong guardrail proof; the long untreated screen recordings, quiet understated audio and lack of captions keep it at competent rather than premium.",
+        "refs": ["s001", "s009", "s010", "s011"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 3,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "Designed text is minimal (agent card labels in s001, the 'Agentforce / What is Agentforce?' title, the end-card URL) and easy to re-render, but all product screens are English UI recordings that would need re-capture, and the narrative depends on the VO, so a new language needs a new voice track plus re-shot demos."
+    }
+  }
+}

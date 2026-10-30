@@ -1,0 +1,28 @@
+# v05 — Fred's day: hops, reads, writes, texts, builds, rows the boat through the air. The 3D turn and a
+# path. Questions: do activities read at phone size? Does the boat path stay off the face and captions?
+name: v05
+voice: iP95p4xoKVk53GoZ742B
+script: >-
+  Meet Fred. Fred is busy. He reads the docs, he writes the script, he texts the client,
+  and he builds the whole thing. Then he rows home. In 3D, obviously.
+plan:
+  layout: [{word: 0, layout: full}]
+  punches: ["obviously"]
+  props:
+    - id: fred
+      art: fred
+      word: "Fred"
+      until: "obviously"
+      at: lap
+      size: 0.2
+      style: illustrated
+      enter: drop
+      beats:
+        - {word: "busy", do: jump}
+        - {word: "reads", hold: book}
+        - {word: "writes", hold: pencil}
+        - {word: "texts", hold: phone}
+        - {word: "builds", hold: hammer}
+        - {word: "rows", hold: none, ride: boat, path: [shoulder_left, above, shoulder_right]}
+        - {word: "3D", style: toon3d}
+        - {word: "obviously", ride: none, move: lap}

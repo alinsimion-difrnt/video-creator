@@ -1,0 +1,65 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "dace00f7025972265cf5e4f8706d0be2ffaff8702a6fb5efb7f7309c5c6d3ba9",
+    "created_at": "2026-10-05T06:47:08.088147Z"
+  },
+  "video": "raycast-new-raycast-coming-2026",
+  "event": "e006",
+  "task": "a2-e006",
+  "elements": [
+    {
+      "box": "b02", "manual_box": null, "manual_reason": null,
+      "label": "Selection highlight bar (moves to Personal Assistant row)", "role": "other", "role_other": "selection_highlight",
+      "change_types": ["highlight", "slide_down"], "change_other": null,
+      "is_text": false, "text": null, "text_unit": null,
+      "estimates": {"duration_ms": 70, "easing_class": "step"}
+    },
+    {
+      "box": "b16", "manual_box": null, "manual_reason": null,
+      "label": "Shortcut badge (now Cmd 2 on selected row)", "role": "label", "role_other": null,
+      "change_types": ["fade"], "change_other": null,
+      "is_text": true, "text": "2", "text_unit": "whole",
+      "estimates": {"duration_ms": 70, "easing_class": "step"}
+    },
+    {
+      "box": "b09", "manual_box": null, "manual_reason": null,
+      "label": "Ask Anything row (loses selection)", "role": "list_item", "role_other": null,
+      "change_types": ["color_shift"], "change_other": null,
+      "is_text": true, "text": "Ask Anything", "text_unit": "whole",
+      "estimates": {"duration_ms": 70, "easing_class": "step"}
+    },
+    {
+      "box": "b05", "manual_box": null, "manual_reason": null,
+      "label": "Personal Assistant row (gains selection)", "role": "list_item", "role_other": null,
+      "change_types": ["color_shift"], "change_other": null,
+      "is_text": true, "text": "Personal Assistant", "text_unit": "whole",
+      "estimates": {"duration_ms": 70, "easing_class": "step"}
+    },
+    {
+      "box": "b01", "manual_box": null, "manual_reason": null,
+      "label": "Chat window with popover (slow upward drift)", "role": "ui_panel", "role_other": null,
+      "change_types": ["slide_up"], "change_other": null,
+      "is_text": false, "text": null, "text_unit": null,
+      "estimates": {"duration_ms": 200, "easing_class": "linear"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "spotlight_focus",
+    "proposed_name": null,
+    "description": "Arrow-key navigation in the preset popover: the selection bar and its Cmd-number badge step from 'Ask Anything' down to 'Personal Assistant' in one frame, while the whole window keeps a slow upward drift.",
+    "why_premium": "The focus step is an instant native UI state change (no fake tween), and the shortcut badge travelling with the selection teaches the keyboard shortcut for free; the continuous drift keeps the frame alive between steps."
+  },
+  "build_hint": {
+    "gsap": "Drift: gsap.to('.chat-window', {y: '-=20', duration: 2, ease: 'none'}). Step: tl.set('.preset-row', {className: 'preset-row'}).set('.preset-row:nth-child(2)', {className: 'preset-row selected'}) at the beat; the badge is part of the selected-row template so it appears with it (instant).",
+    "remotion": "selectedIndex = frame >= stepFrame ? 1 : 0; render the highlight bar and Cmd badge on rows[selectedIndex] with no interpolation. Window translateY = interpolate(frame, [0, 60], [0, -20], {extrapolateRight: 'clamp'}) (linear)."
+  },
+  "confidence": "medium",
+  "notes": "Energy spike on the first burst frame is the selection step; the later ramp is the slow drift (camera verdict none). b01 is a broad diff box used for the drifting window. Same interaction type as e004 (selection hop) in another UI."
+}

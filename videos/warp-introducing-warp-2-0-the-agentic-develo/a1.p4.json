@@ -1,0 +1,113 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "caaca74050b18594d6625ccd2928e87ebca7dcab7176388641675cb0574a0733",
+    "created_at": "2026-10-05T07:45:12.144503Z"
+  },
+  "video": "warp-introducing-warp-2-0-the-agentic-develo",
+  "task": "a1-p4",
+  "shots": [
+    {
+      "shot": "s017",
+      "shot_type": "presenter",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Founder (Zach) speaking to camera, medium shot, in a dark studio with two vintage computers on plinths either side",
+      "transition_in": "other",
+      "transition_other": "Detector reports a non-cut transition; the previous shot's UI overlay appears to clear back to the full presenter frame (exact mechanism not visible in this packet)",
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": ["blur"],
+      "what_happens": "Presenter delivers 'Warp's coding capabilities are state-of-the-art' (w186-w193) with open-hand gestures; in the last frame a dark stat card with a smeared pink/green backdrop starts rising from the bottom edge to cover him.",
+      "build_rebuild": "Show a centered talking-head clip on a dark set with shallow depth of field, then at the end tween a full-frame overlay layer up from y=100% to y=0 to begin the next stat card.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s018",
+      "shot_type": "data_viz",
+      "shot_type_other": null,
+      "composition": "split",
+      "composition_other": null,
+      "focal_element": "Big '71%' benchmark stat card, later joined by a '#1' card",
+      "transition_in": "slide",
+      "transition_other": null,
+      "on_screen_text": ["71%", "SWE Bench Verified", "#1", "Terminal Bench"],
+      "text_word_count": 7,
+      "typography": "Very large italic sans-serif numerals (bold/semibold) with a lighter, upright, smaller percent sign; small regular sentence/title-case grey sans labels beneath; green outlined verified-badge check icon under each label; geometric grotesk, font unknown",
+      "depth_cues": ["blur"],
+      "what_happens": "A single wide rounded dark card with '71%' / 'SWE Bench Verified' and a green check fills the frame over a smeared, blurred pink-green texture while VO says 'scored over 70 on Sweetbench Verified' (w194-w200); around w203-w206 ('number one on Terminalbench') the card narrows to the left and a second card '#1' / 'Terminal Bench' slides in from the right; at the end both cards dissolve with a vertical pixel-smear effect into the next shot.",
+      "build_rebuild": "Render a full-width rounded dark card with a huge italic numeral and caption on a blurred gradient backdrop, then animate its width to 50% while a second identical card slides in from the right edge, timed to the second benchmark mention.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s019",
+      "shot_type": "other",
+      "shot_type_other": "presenter with floating UI overlay (picture-in-picture product panel)",
+      "composition": "split",
+      "composition_other": null,
+      "focal_element": "Floating Warp agent panel on the right showing the agent working on the server codebase, presenter on the left",
+      "transition_in": "other",
+      "transition_other": "Vertical pixel-smear/glitch dissolve out of the stat cards into the presenter-plus-panel frame",
+      "on_screen_text": [
+        "I see the change made to authentication on the client. Let me implement the change on the server...",
+        "Searching in ~/projects/warp-internal",
+        "~/projects/warp/app/src/auth/auth-manager.rs",
+        "I have a good grasp on how your client works. Now I'll begin implementing the changes...",
+        "~/projects/warp-server",
+        "auto"
+      ],
+      "text_word_count": 38,
+      "typography": "UI-native text: regular-weight sans-serif in sentence case, light grey on near-black, small size; file paths in the same sans with a lilac tint for the folder path and a green check prefix for the resolved file; no motion typography",
+      "depth_cues": ["blur", "shadow"],
+      "what_happens": "Presenter (left, shallow focus background) says 'Warp's agents work across multiple projects and handle large, real-world codebases' (w207-w218) while a rounded agent panel on a pink-to-white gradient frame (right, cropped at the right edge) streams its reply word by word, shows a 'Searching in ~/projects/warp-internal' status that resolves to a checked auth-manager.rs path, then streams a second message; input bar shows the ~/projects/warp-server context chip and toolbar icons.",
+      "build_rebuild": "Composite the presenter clip on the left and a rounded, gradient-bordered agent panel anchored to the right edge, then stream two assistant messages word by word with a 'Searching in…' status row that swaps to a green-check file path between them.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s020",
+      "shot_type": "other",
+      "shot_type_other": "presenter with floating UI overlay (scrolling code editor panel)",
+      "composition": "split",
+      "composition_other": null,
+      "focal_element": "Terminal-style code editor (vi tab) scrolling through a very long Rust file at line ~10,000+",
+      "transition_in": "slide",
+      "transition_other": null,
+      "on_screen_text": [
+        "vi",
+        "fn open_workflow_modal_from_ai_generated_workflow(",
+        "pub fn open_workflow_modal_with_existing("
+      ],
+      "text_word_count": 6,
+      "typography": "Monospace code with syntax highlighting (keywords, types, macros in distinct hues), line numbers in a dim gutter; small tab label; only representative lines are transcribed because the code scrolls continuously and is too small on the contact sheet to quote fully",
+      "depth_cues": ["shadow", "blur"],
+      "what_happens": "The agent panel is replaced by a peach-gradient card that slides in from the right, and a macOS-style window with a 'vi' tab and Rust source (line numbers around 10373-10403 in the keyframe) scrolls upward continuously while the presenter says 'we've been using Warp to build Warp and have made it work on our biggest files, which are, I'm ashamed to say,' (w219-w242); the high line numbers visually prove the 'biggest files' claim.",
+      "build_rebuild": "Slide a gradient-backed window card in from the right over the presenter clip and auto-scroll a syntax-highlighted Rust file inside it with line numbers starting above 10,000 at a constant upward speed.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s021",
+      "shot_type": "presenter",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Tight close-up of the founder's face delivering the punchline",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": ["none"],
+      "what_happens": "Hard cut to a tighter close-up on a plain dark background as he finishes 'over 20,000 lines of Rust' (w243-w248); the punch-in lands on the self-deprecating confession, aligned with an impact SFX candidate near the cut.",
+      "build_rebuild": "Hard cut from the wide presenter-plus-panel layout to a tight centered face close-up exactly at the start of the punchline word.",
+      "confidence": "high"
+    }
+  ],
+  "summary": null
+}

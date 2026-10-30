@@ -1,0 +1,53 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T13:58:46+00:00"
+  },
+  "id": "celeste",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "cool",
+    "notes": "From text: red-haired hero in a blue jacket on cooler, darker mountain scenes; hair colour is the dash signal; Badeline is a monochrome double. All 3 TikTok sheets were off-subject (cosplay, news), so frames could not confirm."
+  },
+  "lighting": "Not seen in frames. Per text: flat sprite lighting; mood from per-chapter background colour and glow effects rather than shading on the tiny hero.",
+  "silhouette": "Per text: tiny hero that still reads: big hair blob, clear head/body split, backpack bump. Badeline uses the same silhouette in monochrome so the double reads instantly.",
+  "motion": {
+    "timing": "Not measured and no on-subject frames. Per reviews and design: snappy, very short anticipation, fast dashes, brief holds on landings.",
+    "principles": [
+      "squash and stretch",
+      "anticipation",
+      "secondary motion (trailing hair)",
+      "screen shake on impact",
+      "afterimage trail on dash"
+    ]
+  },
+  "texture": "Per text: clean tiles, little dithering; particles (dust, snow, dash sparks) carry the texture and energy. Team chose pixel art because it shows gameplay information clearly.",
+  "camera": "Single-screen rooms with cuts between screens; screen shake punctuates dashes and hits. Cutscenes use a simpler, separate portrait art style.",
+  "sound": "Lena Raine's score; the music informed the look of some levels.",
+  "acting": {
+    "enters": "Arrives on a fresh screen from the edge, mid-move, so each room starts with energy.",
+    "acts": "Whole-body acting on a tiny sprite: squash on landing, hair colour showing state, dust puffs on each step and wall-slide; emotion goes to cutscene portraits.",
+    "exits": "Leaves through the screen edge and the room cuts; no lingering exit.",
+    "comes_back": true,
+    "depth": "One play plane; the monochrome double appearing in that same plane is the staging trick, plus close-up portraits in cutscenes."
+  },
+  "techniques": [
+    "hair as a state signal: colour change tells if the dash is ready",
+    "landing squash: 1-2 flattened frames before standing",
+    "afterimage trail of the silhouette on a fast move",
+    "dust and spark particles on every ground or wall contact",
+    "monochrome palette swap for an evil twin",
+    "short screen shake on big impacts"
+  ],
+  "feel": "tiny saturated hero + trailing hair + squash on every landing + shake on impact = big personality in a few pixels",
+  "for_fred": "Give Fred one readable state signal (fin colour or glow) instead of more animations, and squash him 1-2 frames whenever he lands or stops. A monochrome 'shadow Fred' that pops in, copies him and leaves is a cheap second character that can come back later in the reel.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Celeste_(video_game)",
+    "studies/pixel-art/sources.yaml"
+  ]
+}

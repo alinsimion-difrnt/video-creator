@@ -1,0 +1,178 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "f1d2054df8bac1e091db5e954183d9738f9d9f99e05f30e01b027924711e53a1",
+    "created_at": "2026-10-05T06:59:46.714747Z"
+  },
+  "video": "attio-introducing-ask-attio",
+  "task": "a1-p2",
+  "shots": [
+    {
+      "shot": "s005",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Data-source labels on the scrolling tick-mark ruler, then the line 'Everything is context' on a dark stage",
+      "transition_in": "push",
+      "transition_other": null,
+      "on_screen_text": [
+        "People record",
+        "Pylon conversation",
+        "Everything is context"
+      ],
+      "text_word_count": 7,
+      "typography": "Neo-grotesque sans (low-confidence guess: Inter), medium weight, sentence case, default tracking; dark labels on light for the ruler, then light regular-weight text on dark.",
+      "what_happens": "The last pass of the timeline ruler: 'People record' and 'Pylon conversation' slide left over taller ticks with a further label entering cut off at the right edge ('Transa...', unreadable); within under a second the frame flips to the dark stage with 'Everything is context' centred and a faint dotted line low in frame.",
+      "depth_cues": ["none"],
+      "build_rebuild": "Keep translating the tick ruler leftward for about 0.5 s, then swap to a full-bleed dark background with a centred white sentence and a low-opacity dotted baseline drawn across the lower third.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s006",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The centred coined term 'Universal Context' with a trademark mark, over a rising field of thin vertical lines",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "Everything is context",
+        "Universal Context™",
+        "Ask Attio"
+      ],
+      "text_word_count": 7,
+      "typography": "Same neo-grotesque sans, regular weight, light text on dark; 'Universal Context' set in title case with a small superscript ™; 'Ask Attio' dark regular weight on light at the end.",
+      "what_happens": "'Everything is context' holds centred and dims slightly, then is replaced by 'Universal Context™'; at the same moment a field of thin vertical lines of varying height rises from the bottom edge, capped by a dotted arc that bulges in the middle like a spectrum or data skyline, and settles; in the final frame the stage is light again with 'Ask Attio' left of centre.",
+      "depth_cues": ["glow"],
+      "build_rebuild": "On a dark stage, crossfade the centred line to 'Universal Context' with a superscript TM, and animate ~100 hairline vertical bars up from the bottom with staggered heights following a bell-shaped envelope, topped by a dotted arc, before cutting to a light stage.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s007",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The fixed prefix 'Ask Attio' with a cycling grey use-case suffix, resolving to the tagline and the attio wordmark",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Ask Attio",
+        "to brief my day.",
+        "to summarize this call.",
+        "to hand off to success.",
+        "to draft a follow-up.",
+        "to gather feedback.",
+        "to handle objections.",
+        "to find warm intros.",
+        "to celebrate this win.",
+        "Ask more from CRM.",
+        "attio",
+        "attio.com/ask"
+      ],
+      "text_word_count": 39,
+      "typography": "Neo-grotesque sans, sentence case, default tracking; prefix 'Ask Attio' in dark regular/medium weight, suffix in lighter grey regular weight on the same baseline; tagline dark regular; logo is the bold lowercase attio wordmark with its mark; URL tiny grey text below.",
+      "what_happens": "On a light stage 'Ask Attio' sits left of centre while the grey suffix swaps roughly every half second through eight use cases; on the last ('to celebrate this win.') the suffix erases from the left, 'Ask Attio' slides to centre and then appears larger, holds, and is replaced by 'Ask more from CRM.'; the attio wordmark fades in from grey to black at centre and the URL 'attio.com/ask' fades in below and holds to the end.",
+      "depth_cues": ["none"],
+      "build_rebuild": "Render a fixed dark 'Ask Attio' span followed by a grey suffix span whose text swaps on each music beat from an array of eight phrases, then delete the suffix, tween the prefix to centre and scale it up, crossfade to the tagline, and end on a centred logo fade-in with a small URL fading in beneath.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001"], "words": null},
+      {"beat": "mechanism", "shots": ["s002", "s003", "s004", "s005", "s006"], "words": null},
+      {"beat": "outcome", "shots": ["s007"], "words": null},
+      {"beat": "cta", "shots": ["s007"], "words": null}
+    ],
+    "hook": {
+      "text": "Good morning. / How do I win this deal (typed into the Ask Attio prompt, then 'Thinking...')",
+      "technique": "demo_first",
+      "technique_other": null,
+      "shots": ["s001"],
+      "words": null
+    },
+    "cta": {
+      "text": "attio.com/ask",
+      "shots": ["s007"]
+    },
+    "tone": "Minimal, confident, monochrome typographic launch teaser: music-led, no voice-over, quiet sentence-case copy alternating light and dark stages.",
+    "signature_moments": [
+      {
+        "shots": ["s001", "s002"],
+        "description": "The typed question resolves to a scaling 'Thinking...' label and a black circle that zooms through to a dark stage reading 'Everything creates signal'.",
+        "why_premium": "The product's own waiting state becomes the transition, so the jump from UI to manifesto feels motivated rather than cut."
+      },
+      {
+        "shots": ["s003", "s004", "s005"],
+        "description": "'Every email / call / note / web search' with bespoke micro-illustrations, then a scrolling tick-mark ruler streaming data-source labels (records, payments, events, conversations).",
+        "why_premium": "Each data type gets its own small visual metaphor and the ruler turns an integrations list into a timeline, conveying breadth without logos or screenshots."
+      },
+      {
+        "shots": ["s007"],
+        "description": "'Ask Attio' with a grey suffix that cycles through eight use cases on the beat, collapsing into 'Ask more from CRM.' and the wordmark.",
+        "why_premium": "A single typographic device carries the whole feature list, keeps rhythm with the music and lands the tagline as wordplay on the product name."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 4,
+        "evidence": "Opens directly on a product moment (greeting, prompt typed 'How do I win this deal', 'Thinking...') that poses a relatable sales question; no stat or bold claim, and the first seconds are calm rather than arresting.",
+        "refs": ["s001"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "The argument is easy to follow in text alone: everything creates signal, every data source listed, everything is context, Universal Context, then concrete use cases; the product's actual answer UI is never shown, so what the output looks like stays implied.",
+        "refs": ["s002", "s003", "s006", "s007"]
+      },
+      "ui_showcase": {
+        "score": 2,
+        "evidence": "Only s001 shows a simplified recreated UI (prompt box, chips, meetings list); the rest of the video is kinetic type and abstract graphics, with no answer, record or workflow screen.",
+        "refs": ["s001"]
+      },
+      "motion_polish": {
+        "score": 4,
+        "evidence": "Motivated transitions (zoom-through circle, light panel wipe, push), per-noun micro-animations, rising line field and a clean suffix-cycle resolve; at 2 fps I cannot judge easing or frame-level finish, so not scored 5.",
+        "refs": ["s001", "s002", "s003", "s006", "s007"]
+      },
+      "sound_design": {
+        "score": 4,
+        "evidence": "Judged from anchors, not listening: a 129.2 BPM music bed at -12.37 integrated LUFS drives the edit, and word swaps land about every 0.5 s, matching the beat spacing; SFX are sparse but placed on key moments (glitch-like impact x001 at the s002 zoom-through, risers x002/x003 in the s003 build, chime-like x004 at the 'Universal Context' reveal in s006); three of four SFX labels are 'unsure' and detected beats stop after 36.76 s.",
+        "refs": ["s002", "s003", "s006", "s007"]
+      },
+      "vo_script_quality": {
+        "score": null,
+        "evidence": "No voice-over: anchors contain no transcript words.",
+        "refs": []
+      },
+      "brand_consistency": {
+        "score": 5,
+        "evidence": "One sans typeface, a strictly monochrome palette, sentence-case copy and alternating light/dark stages throughout, ending on the attio wordmark and URL; the 'Ask Attio' prompt recurs at the start and end.",
+        "refs": ["s001", "s006", "s007"]
+      },
+      "works_muted": {
+        "score": 4,
+        "evidence": "With no voice-over, every idea is carried by on-screen text and visuals, so the story survives muted; only the beat-locked rhythm and SFX accents are lost.",
+        "refs": ["s002", "s003", "s007"]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "A tight 47 s typographic launch teaser with a clear manifesto-to-use-cases arc, strong brand discipline and inventive transitions; held back by almost no real product UI.",
+        "refs": ["s001", "s003", "s006", "s007"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 3,
+      "baked_in_text": true,
+      "vo_dependent": false,
+      "notes": "No voice-over, so no dubbing needed, but the whole story is baked-in English kinetic type (about 120 on-screen words), including the 'Ask Attio ... / Ask more from CRM.' wordplay that will not translate directly; text is simple centred type on flat stages, so re-rendering per locale is straightforward if the source project is available."
+    }
+  }
+}

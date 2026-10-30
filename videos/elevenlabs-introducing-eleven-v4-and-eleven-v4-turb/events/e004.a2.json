@@ -1,0 +1,47 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "49cb148ea41dc7ee1785c595ed3607609123e6436f0be915b7e8fbff50e16ee4",
+    "created_at": "2026-10-05T06:44:13.799841Z"
+  },
+  "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+  "event": "e004",
+  "task": "a2-e004",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Gradient orb (orange/green grain)",
+      "role": "other",
+      "role_other": "hero_orb",
+      "change_types": ["scale_up", "color_shift"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 900, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x026", "verdict": "override", "label": "whoosh", "note": "Broadband noise onset at ~51.48s with no tonal partials, as the point-cloud heads dissolve; reads as a soft whoosh rather than a chime."},
+    {"id": "x027", "verdict": "unsure", "label": "unsure", "note": "No distinct transient at 51.71s; energy is a continuation of the swell and music bed."}
+  ],
+  "pattern": {
+    "id": "scale_dissolve_transition",
+    "proposed_name": null,
+    "description": "The two point-cloud heads fade and blur away while a small grainy gradient orb appears at centre and scales up smoothly to fill the middle of the frame, its internal gradient drifting as it grows.",
+    "why_premium": "The transition stays inside one continuous shot: the outgoing scene dissolves while the incoming hero shape grows from a point, with a decelerating scale and a living gradient inside the orb instead of a static fill."
+  },
+  "build_hint": {
+    "gsap": "Timeline: heads to {opacity: 0, filter: 'blur(8px)', duration: 0.4, ease: 'power1.in'}; orb fromTo {scale: 0.15, opacity: 0} -> {scale: 1, opacity: 1, duration: 0.9, ease: 'power3.out'} overlapping by 0.25s; animate the orb gradient's background-position or rotation slowly (sine.inOut) throughout.",
+    "remotion": "orbScale = spring({frame: frame - 8, fps, config: {damping: 30, stiffness: 90, mass: 1}}) mapped to [0.15, 1] (no overshoot); headsOpacity = interpolate(frame, [0, 12], [1, 0], {extrapolateRight: 'clamp'}); gradient angle = interpolate(frame, [0, 40], [0, 25])."
+  },
+  "confidence": "medium",
+  "notes": "The point-cloud heads that fade out at the start are gone by the end frame and have no candidate box, so they are not listed as an element. Camera verdict is none; the raw scale sum reflects the orb growing, not a camera move."
+}

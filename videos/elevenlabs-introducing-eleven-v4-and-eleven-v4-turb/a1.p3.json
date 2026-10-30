@@ -1,0 +1,87 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "e561a918246a126e7aa057fb63a57849825569330c73354c1efc1953b9212340",
+    "created_at": "2026-10-05T07:00:15.733210Z"
+  },
+  "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+  "task": "a1-p3",
+  "shots": [
+    {
+      "shot": "s006",
+      "shot_type": "abstract",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Particle-speckled green/coral gradient orb, filling the frame as the camera flies into it",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "straight. [sarcastic chuckle] You know, honestly, at this point, just give the pigeon a set of keys."
+      ],
+      "text_word_count": 17,
+      "typography": "Centered two-line lower caption in a clean geometric/grotesque sans (guess: Inter-like), regular weight, sentence case, normal tracking; words tinted progressively as karaoke-style highlight, bracketed audio tag shown in a muted tone. Caption seen only in the keyframe, not on the contact sheet frame.",
+      "depth_cues": ["blur", "grain"],
+      "what_happens": "A ~0.2 s bridge: the soft gradient orb carrying the closing caption of the previous demo (ends at w218 'keys.') is zoomed through until its blurred, speckled surface fills the frame edge to edge, clearing the caption.",
+      "build_rebuild": "Scale a blurred radial-gradient orb with a particle-noise overlay from ~1x to ~4x over 6 frames with a strong ease-in while fading the caption out, so the orb surface becomes a full-bleed background.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s007",
+      "shot_type": "abstract",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Wireframe orbit rings that resolve into nested concentric spheres with a glowing white core",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": ["blur", "grain", "glow", "perspective_tilt"],
+      "what_happens": "Inside the full-bleed grainy green/coral gradient, thin hairline ellipses rotate like a gyroscope/orbit model; the residual particles fade, then shaded spheres nest inside one another toward the centre and a small bright core light appears, while the VO starts the feature list with w219-w221 'Voice consistency over'.",
+      "build_rebuild": "Over a blurred two-colour mesh gradient with film grain, draw 3-4 thin 1px light-cream ellipses rotating on different 3D axes, then scale in three concentric gradient-shaded circles (each slightly offset) and fade up a radial white glow at the centre on the last ~0.5 s.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s008",
+      "shot_type": "abstract",
+      "shot_type_other": null,
+      "composition": "grid",
+      "composition_other": null,
+      "focal_element": "Glowing sphere core that bursts into a regular 5x3 grid of white dots",
+      "transition_in": "other",
+      "transition_other": "Camera pushes into the glowing core of the nested spheres; the white glow blooms to fill the centre and a tight dot cluster inside it expands out into the grid (bloom/burst reveal).",
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": ["blur", "grain", "glow", "parallax"],
+      "what_happens": "Starting on the nested spheres with a bright core, the view dives into the core; a cluster of small dots inside the white bloom spreads out into an evenly spaced 5x3 dot grid over a shifting grainy gradient, holds while the VO says w221-w228 'over an infinite text duration, native across 100', then additional smaller dots appear between and behind the grid in depth, suggesting multiplication/scale.",
+      "build_rebuild": "Bloom a radial white glow to ~40% of the frame, spawn ~20 dots clustered inside it, tween them with ease-out to a 5x3 grid of positions over ~0.5 s, hold ~1.5 s, then stagger-fade in a second and third layer of smaller, blurred dots at intermediate positions with slight parallax drift.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s009",
+      "shot_type": "abstract",
+      "shot_type_other": null,
+      "composition": "grid",
+      "composition_other": null,
+      "focal_element": "Dense multi-depth dot lattice with a highlighted central row, ending on a tiny gradient orb on an off-white field",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": ["blur", "grain", "parallax"],
+      "what_happens": "The dot field becomes a dense 3D lattice with bokeh dots at several depths and a bright horizontal centre row streaking slightly, as the VO says w228-w232 '100 languages, with an ultra'; by ~1:40.0 the frame has switched to a flat off-white background with a small gradient orb at left and a faint thin horizontal line to its right, setting up the next segment.",
+      "build_rebuild": "Duplicate the dot grid into 3-4 depth layers with increasing gaussian blur and parallax offset, add horizontal motion blur to the middle row, then cut/fade to an off-white canvas with a ~24px gradient orb at left-of-centre and a 1px low-opacity line extending right.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

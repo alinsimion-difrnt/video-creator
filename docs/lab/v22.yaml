@@ -1,0 +1,27 @@
+# v22 — the fish beat on Robert's own take (85.6-108.6 s, his voice, Scribe's words): the photo between his
+# hands, 3D, pixel with blocky Robert, Fred named, moustache and hat, then "I will just leave Fred here": Fred
+# rides his hand down to the floor right of the chair (follow: hand, from the pose) and stays where he lets go.
+name: v22
+take: {project: fred-and-pixie, from: 85.6, to: 108.6, x: 0.555}
+assets: [data/fred/carp.png]
+plan:
+  layout: [{word: 0, layout: full}]
+  props:
+    - id: fred
+      art: fred
+      image: carp.png
+      word: "fish"
+      until: "whatever"
+      at: [0.6, 0.6]
+      size: 0.22
+      style: photo
+      exit: none
+      beats:
+        - {word: "3D", style: toon3d}
+        - {word: "pixel", style: pixel}
+        - {word: "Fred", style: illustrated, do: wave, tag: Fred}
+        - {word: "mustache", add: [moustache]}
+        - {word: "hat", add: [top_hat]}
+        - {word: "leave", follow: hand}
+  fx:
+    - {word: "pixel", until: "this#2", kind: blocky, spec: {block: 22}}

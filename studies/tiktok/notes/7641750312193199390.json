@@ -1,0 +1,37 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "df1820fb3792906d5ea33bb9fe01caf044dd4170e669c17945d5c613725b257f",
+                 "created_at": "2026-10-13T12:00:00+00:00"},
+  "id": "7641750312193199390",
+  "format": "talking_head",
+  "hook": {"type": "callout",
+           "line": "I'm an AI engineer at Google and this is what scares me about AI.",
+           "visual": "Selfie close-up in a sunlit car under a glass roof, a fixed 'scared of AI' label at the top and a typewriter caption with a cursor near her chin."},
+  "beats": [
+    {"t": 0.0, "what": "Credential plus fear in one sentence, typed out as she speaks"},
+    {"t": 3.13, "what": "Jump cut to a tighter frame for reason one: AI deployed faster than its failure modes are understood"},
+    {"t": 16.49, "what": "Finger count gesture for reason two: policy makers have never built a model"},
+    {"t": 28.2, "what": "Jump cut for reason three: AI sounds right without being right"},
+    {"t": 38.6, "what": "Reframe and quick head move for reason four: today's behavioural data trains future models"},
+    {"t": 49.48, "what": "Specific dates: 2026 blind spots baked into 2034 models"},
+    {"t": 54.73, "what": "Camera tilts, wide frame showing the car roof as she softens into 'I do believe in AI'"},
+    {"t": 60.48, "what": "Cuts off mid-sentence, which loops back to the opening"}
+  ],
+  "graphics": {"captions": "sentence", "caption_position": "bottom",
+               "devices": ["title_text", "jump_cut"],
+               "density": "minimal", "per_minute_estimate": 2},
+  "characters": [],
+  "cta": {"kind": "none", "t": null},
+  "why_it_works": [
+    "Insider credential plus a fear in the first sentence, so the viewer expects information others don't have",
+    "Numbered reasons ('the first thing', 'the second thing') tell the viewer there is a list to finish",
+    "Big face (median height 0.385) in a casual car setting reads as an honest, unscripted aside",
+    "Ending mid-sentence pushes a rewatch (loop 0.734)"
+  ],
+  "weaknesses": [
+    "No visuals support the points; every reason is told, none shown",
+    "All text sits outside the safe area (share 1.0), so TikTok UI can cover captions",
+    "No CTA despite a strong opinion that invites comments"
+  ],
+  "for_robert": "Open with his credential and a feeling in one line ('I build X and this worries me'); a mascot could hold up a finger-count sign for each numbered reason."
+}

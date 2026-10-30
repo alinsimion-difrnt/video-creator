@@ -1,0 +1,253 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a3_pattern_cards",
+  "annotator": "claude-code",
+  "skill": "write-archetype-cards@a75a12f0ca91",
+  "model": null,
+  "input_hash": "23dad5abee9cd2c77fceba88cdf592f2f66370272e3fed09f7879c0b81bd77cb",
+  "created_at": "2026-10-05T19:10:16.331271Z"
+ },
+ "id": "stat_count_up",
+ "name": "Stat Count Up",
+ "summary": "A big number counts or ticks up at the centre of a styled backdrop and lands on the headline figure, with a short label, timed to the narration saying it. It turns a claim into proof the viewer can feel.",
+ "when_to_use": [
+  "Backing a claim with a single headline metric such as scale, speed or coverage",
+  "Showing an outcome as a before and after number",
+  "Landing a proof beat right after a feature has been shown"
+ ],
+ "slots": [
+  {"name": "stat_value", "what": "the final figure, with an optional suffix such as plus, percent or times", "required": true},
+  {"name": "start_value", "what": "where the count begins; a lower number, or zero", "required": false},
+  {"name": "label", "what": "a short caption saying what the number measures", "required": true},
+  {"name": "backdrop", "what": "a gradient or brand field, with optional ambient shapes, logos or chips drifting behind", "required": true},
+  {"name": "second_stat", "what": "an optional second figure that joins the first side by side", "required": false},
+  {"name": "context_ui", "what": "a dashboard or card the number lives in, when the stat sits inside product interface", "required": false}
+ ],
+ "steps": [
+  "Reveal the backdrop with its slow ambient drift",
+  "Fade or blur the number in at the centre",
+  "Count it up quickly, easing out, to land on the final figure as the narration says it",
+  "Bring in the label and hold while the backdrop keeps drifting",
+  "Optionally reframe to make room for a second stat",
+  "Exit with a zoom through, a wipe, a flash or a slide"
+ ],
+ "patterns": [
+  "metric_count_up",
+  "layout_reframe",
+  "parallax_layers"
+ ],
+ "build": {
+  "gsap": "One timeline per scene. Tween a plain object's value and write it into the number element on update, rounded and formatted with tabular figures, using a power or expo out ease so the count slows as it lands; blur and fade the number in just before. Loop slow linear or sine drifts on the backdrop layers at different speeds. For a second stat, tween the first card's width and slide the second card in from the edge with a power out ease.",
+  "remotion": "A Sequence for the stat where interpolate maps frame to value with an ease-out and the number is formatted per frame; a spring drives the number's entrance scale; background layers use per-layer interpolate on translate for parallax; a later Sequence handles the reframe or the exit."
+ },
+ "sound": "Music carries the scene; a chime is the most common clear cue and tends to land as the number settles, and a reverse swoosh often builds into the reveal. Impacts are occasional, later in the scene.",
+ "numbers": {
+  "id": "stat_count_up",
+  "shots": 10,
+  "videos": 7,
+  "weight": 5.8,
+  "duration_s": {
+   "n": 10,
+   "videos": 7,
+   "weight": 5.8,
+   "median": 3.448,
+   "p25": 2.833,
+   "p75": 5.429,
+   "ci": [
+    2.833,
+    5.4
+   ]
+  },
+  "events_per_shot": {
+   "n": 10,
+   "videos": 7,
+   "weight": 5.8,
+   "median": 0.125,
+   "p25": 0.0,
+   "p75": 1.0,
+   "ci": [
+    0.0,
+    1.0
+   ]
+  },
+  "first_motion_s": {
+   "n": 3,
+   "videos": 3,
+   "weight": 2.6,
+   "median": 2.307,
+   "p25": 1.597,
+   "p75": 2.791,
+   "ci": null
+  },
+  "pattern_mix": {
+   "metric_count_up": 0.2778,
+   "other": 0.2778,
+   "layout_reframe": 0.2222,
+   "parallax_layers": 0.2222
+  },
+  "transition_mix": {
+   "other": 0.5172,
+   "mask_wipe": 0.1379,
+   "slide": 0.1379,
+   "zoom_through": 0.1379,
+   "blur": 0.069
+  },
+  "shot_type_mix": {
+   "data_viz": 0.6552,
+   "kinetic_type": 0.2759,
+   "ui_recreated": 0.069
+  },
+  "beat_mix": {
+   "proof": 0.5161,
+   "outcome": 0.2903,
+   "mechanism": 0.1935
+  },
+  "sfx_label_mix": {
+   "music": 0.2626,
+   "unsure": 0.2323,
+   "chime": 0.1919,
+   "swoosh_reverse": 0.1717,
+   "impact": 0.0808,
+   "whoosh": 0.0404,
+   "click": 0.0202
+  },
+  "sfx_offset_s_by_label": {
+   "chime": {
+    "n": 5,
+    "videos": 2,
+    "weight": 3.8,
+    "median": 2.161,
+    "p25": 1.223,
+    "p75": 3.007,
+    "ci": [
+     1.183,
+     3.242
+    ]
+   },
+   "click": {
+    "n": 1,
+    "videos": 1,
+    "weight": 0.4,
+    "median": 1.646,
+    "p25": 1.646,
+    "p75": 1.646,
+    "ci": null
+   },
+   "impact": {
+    "n": 4,
+    "videos": 3,
+    "weight": 1.6,
+    "median": 3.02,
+    "p25": 1.67,
+    "p75": 3.404,
+    "ci": null
+   },
+   "music": {
+    "n": 10,
+    "videos": 4,
+    "weight": 5.2,
+    "median": 3.572,
+    "p25": 1.734,
+    "p75": 5.165,
+    "ci": [
+     2.064,
+     5.114
+    ]
+   },
+   "swoosh_reverse": {
+    "n": 6,
+    "videos": 3,
+    "weight": 3.4,
+    "median": 2.064,
+    "p25": 0.587,
+    "p75": 2.733,
+    "ci": [
+     0.462,
+     2.839
+    ]
+   },
+   "unsure": {
+    "n": 8,
+    "videos": 4,
+    "weight": 4.6,
+    "median": 2.231,
+    "p25": 0.833,
+    "p75": 9.118,
+    "ci": [
+     0.785,
+     8.838
+    ]
+   },
+   "whoosh": {
+    "n": 1,
+    "videos": 1,
+    "weight": 0.8,
+    "median": 0.899,
+    "p25": 0.899,
+    "p75": 0.899,
+    "ci": null
+   }
+  },
+  "examples": [
+   {
+    "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+    "shot": "s006",
+    "score": 5.0
+   },
+   {
+    "video": "hubspot-what-is-hubspot",
+    "shot": "s016",
+    "score": 4.0
+   },
+   {
+    "video": "warp-introducing-warp-2-0-the-agentic-develo",
+    "shot": "s018",
+    "score": 4.0
+   },
+   {
+    "video": "loom-introducing-loom-ai",
+    "shot": "s008",
+    "score": 4.0
+   },
+   {
+    "video": "ahrefs-ahrefs-brand-radar-see-any-brand-s-ai-v",
+    "shot": "s015",
+    "score": 4.0
+   }
+  ]
+ },
+ "examples": [
+  {
+   "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+   "shot": "s006",
+   "score": 5.0
+  },
+  {
+   "video": "hubspot-what-is-hubspot",
+   "shot": "s016",
+   "score": 4.0
+  },
+  {
+   "video": "warp-introducing-warp-2-0-the-agentic-develo",
+   "shot": "s018",
+   "score": 4.0
+  },
+  {
+   "video": "loom-introducing-loom-ai",
+   "shot": "s008",
+   "score": 4.0
+  },
+  {
+   "video": "ahrefs-ahrefs-brand-radar-see-any-brand-s-ai-v",
+   "shot": "s015",
+   "score": 4.0
+  }
+ ],
+ "caveats": [
+  "Few shots, and first-motion timing comes from only a handful of them.",
+  "Members are mixed: some count up, some count down or flip cards, and some hold a static stat card with no count.",
+  "Clear sound cues such as the chime come from only a couple of videos."
+ ]
+}

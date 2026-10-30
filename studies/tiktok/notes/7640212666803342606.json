@@ -1,0 +1,39 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "7cae6248d9de6d119bcf4261143875a32384f949cd79f774b4b60cc3661b4ade",
+                 "created_at": "2026-10-13T13:00:00+00:00"},
+  "id": "7640212666803342606",
+  "format": "talking_head",
+  "hook": {"type": "list_promise",
+           "line": "Five Claude commands almost nobody uses, and they change the model.",
+           "visual": "Bearded man holding a mic in an office; yellow/white title '5 Claude commands cut tokens by 75%' on top; he holds up five fingers as captions start."},
+  "beats": [
+    {"t": 0.0, "what": "Title card promises 5 commands and a 75% token cut; five fingers raised."},
+    {"t": 6.3, "what": "Problem framing: people run Claude on default and it sounds generic."},
+    {"t": 18.89, "what": "Setup: the switches already exist, they just look like terminal commands."},
+    {"t": 25.18, "what": "Command 1, /caveman: strips around 75% of response tokens."},
+    {"t": 31.48, "what": "Command 2, ultrathink, shown as a dark UI pill sticker at the top."},
+    {"t": 37.78, "what": "Command 3, /ghost, pill sticker 'strips AI tells'; lists no preamble, no em dashes."},
+    {"t": 50.37, "what": "Command 4, deepthink: slower but higher quality on complex questions."},
+    {"t": 56.67, "what": "Bonus: drop a side request into a running job without breaking it."},
+    {"t": 62.96, "what": "Close-up after a cut: payoff restated, 75% of token bill gone with /caveman."}
+  ],
+  "graphics": {"captions": "word_by_word", "caption_position": "middle",
+               "devices": ["title_text", "sticker_emoji", "product_ui", "jump_cut", "prop"],
+               "density": "minimal", "per_minute_estimate": 4},
+  "characters": [],
+  "cta": {"kind": "none", "t": null},
+  "why_it_works": [
+    "Number and result in the title from frame one (5 commands, 75% fewer tokens), so the viewer knows the payoff and counts along.",
+    "Five fingers held up while saying 'five' turns the list promise into a physical gesture in the first second.",
+    "Each command gets a small UI-style pill at the top, giving a scannable visual anchor that looks like the real product.",
+    "Ends by repeating the biggest number, which loops back to the title (loop 0.855)."
+  ],
+  "weaknesses": [
+    "One static shot for 35.6 s; only 2 cuts, so energy rests entirely on the speaker.",
+    "Promises five commands but only some get a pill graphic; the list is hard to track without a counter.",
+    "Captions sit over the chest in the middle band, mostly outside the safe area (0.932 share).",
+    "No explicit CTA at the end."
+  ],
+  "for_robert": "Pop a small product-UI pill (the command name) near the top each time a list item starts; Fred could carry or point at that pill instead of it appearing flat, and hold up fins as a counter."
+}

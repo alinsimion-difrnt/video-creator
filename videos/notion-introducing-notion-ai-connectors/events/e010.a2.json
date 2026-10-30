@@ -1,0 +1,54 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "aea2eba9f3368e0e351226d505f3fde1b8bffa6c745e78dab0ef78eef6a22533",
+    "created_at": "2026-10-05T06:47:04.481952Z"
+  },
+  "video": "notion-introducing-notion-ai-connectors",
+  "event": "e010",
+  "task": "a2-e010",
+  "elements": [
+    {"box": "b07", "manual_box": null, "manual_reason": null, "label": "Word 'Can't'", "role": "headline",
+     "role_other": null, "change_types": ["fade", "color_shift", "slide_left"], "change_other": null,
+     "is_text": true, "text": "Can't", "text_unit": "word",
+     "estimates": {"duration_ms": 300, "easing_class": "ease_out", "source": "model_estimate"}},
+    {"box": "b08", "manual_box": null, "manual_reason": null, "label": "Word 'find'", "role": "headline",
+     "role_other": null, "change_types": ["fade", "color_shift"], "change_other": null,
+     "is_text": true, "text": "find", "text_unit": "word",
+     "estimates": {"duration_ms": 300, "easing_class": "ease_out", "source": "model_estimate"}},
+    {"box": "b06", "manual_box": null, "manual_reason": null, "label": "Word 'what'", "role": "headline",
+     "role_other": null, "change_types": ["fade", "color_shift"], "change_other": null,
+     "is_text": true, "text": "what", "text_unit": "word",
+     "estimates": {"duration_ms": 300, "easing_class": "ease_out", "source": "model_estimate"}},
+    {"box": "b05", "manual_box": null, "manual_reason": null, "label": "Word 'you're'", "role": "headline",
+     "role_other": null, "change_types": ["fade", "color_shift"], "change_other": null,
+     "is_text": true, "text": "you're", "text_unit": "word",
+     "estimates": {"duration_ms": 300, "easing_class": "ease_out", "source": "model_estimate"}},
+    {"box": "b04", "manual_box": null, "manual_reason": null, "label": "Word 'looking'", "role": "headline",
+     "role_other": null, "change_types": ["fade", "color_shift"], "change_other": null,
+     "is_text": true, "text": "looking", "text_unit": "word",
+     "estimates": {"duration_ms": 300, "easing_class": "ease_out", "source": "model_estimate"}},
+    {"box": "b09", "manual_box": null, "manual_reason": null, "label": "Word 'for?'", "role": "headline",
+     "role_other": null, "change_types": ["fade", "color_shift"], "change_other": null,
+     "is_text": true, "text": "for?", "text_unit": "word",
+     "estimates": {"duration_ms": 300, "easing_class": "ease_out", "source": "model_estimate"}}
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "kinetic_word_reveal",
+    "proposed_name": null,
+    "description": "Centered two-line question builds word by word in sync with narration: each new word fades in light grey and darkens to near-black while the centered lines re-center and wrap as words are added.",
+    "why_premium": "Word-paced reveal locks the text to the voice, and the grey-to-black settle gives each word a soft landing instead of a hard pop; the live re-centering keeps the composition balanced at every frame."
+  },
+  "build_hint": {
+    "gsap": "Split headline into words; tl.fromTo(words, {opacity: 0, color: '#9a9a9a'}, {opacity: 1, color: '#111', duration: 0.3, ease: 'power2.out', stagger: 0.17}); animate the line container's x/y with Flip (or a short power2.inOut tween) so the centered block re-centers as each word lands.",
+    "remotion": "Per word i: start = i*5 frames at 30fps; opacity = interpolate(frame-start, [0, 4], [0, 1]); color = interpolateColors(frame-start, [0, 9], ['#9a9a9a', '#111']); recompute centered layout from visible words and smooth its offset with spring({damping: 200}) (no overshoot)."
+  },
+  "confidence": "high",
+  "notes": "Word order of reveal: Can't, find, what, you're, looking, for?. Earlier words drift slightly as the centered layout reflows (camera.move none; scale 1.03 reflects reflow, not a camera move). No SFX candidates."
+}

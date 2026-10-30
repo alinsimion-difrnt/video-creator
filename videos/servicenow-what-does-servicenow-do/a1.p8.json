@@ -1,0 +1,143 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "247a6d8c5f148b5266577e9f761acdfedb1aaf9f7a5b8b542e6c45627bd3bbcd",
+    "created_at": "2026-10-05T07:46:44.792133Z"
+  },
+  "video": "servicenow-what-does-servicenow-do",
+  "task": "a1-p8",
+  "shots": [
+    {
+      "shot": "s035",
+      "shot_type": "footage",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Derrick the boom operator on the green ladder, boom pole held overhead with both hands, headphones on, a studio LED light at the right edge",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": ["perspective_tilt"],
+      "what_happens": "Short low-angle reaction beat: after failing to summarise what Nick does, the boom operator shrugs it off with 'Yeah, basically, it's a lot of that.' (w382-w388). The 2:15.000 sheet frame already shows the s036 gradient title card, so the cut lands a few frames before the anchor boundary on the sheet.",
+      "build_rebuild": "Hard-cut to a 1.2 s locked low-angle medium shot of the crew member on the ladder for a one-line deadpan button, then hard-cut to the end card on the last word.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s036",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "Sequence of two-line, left-aligned headlines over a slowly drifting blurred teal-to-navy mesh gradient, ending on a centred ServiceNow wordmark",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": ["No one knows what Nick does", "But now you know what we do", "Put AI to work for people", "servicenow"],
+      "text_word_count": 20,
+      "typography": "Heavy geometric sans-serif display (same system as the s008 title card; low-confidence guess: ServiceNow brand sans), bold/extra-bold, sentence case, tight tracking; line 1 of each card in the green accent, line 2 in white; left-aligned in the left third. The closing wordmark is the lowercase 'servicenow' logo, white, centred and much smaller.",
+      "depth_cues": ["blur"],
+      "what_happens": "No-VO end card (about 9 s, music only): 'No one knows / what Nick does' holds, then at about 2:16.5 the next headline 'But now you know / what we do' is caught half-revealed with its lower half clipped, which reads as a masked line rise; an empty gradient frame at about 2:18.5 separates it from 'Put AI to work / for people' (2:19.0-2:20.5); after about 1 s of empty gradient the 'servicenow' wordmark rises in through a mask at about 2:22.0 and holds centred to the end. Exact easing is not visible at 2 fps.",
+      "build_rebuild": "On an animated blurred mesh-gradient background, reveal three two-line left-aligned headlines (green line 1, white line 2) one after another with a masked slide-up, each held about 1.5-2 s and separated by a short empty beat, then mask-reveal a small centred white wordmark and hold it for about 2 s.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001", "s002", "s003", "s004", "s005", "s006", "s007", "s008"], "words": [0, 44]},
+      {"beat": "problem", "shots": ["s009", "s010", "s011"], "words": [45, 80]},
+      {"beat": "outcome", "shots": ["s012", "s013", "s014", "s015", "s016"], "words": [81, 132]},
+      {"beat": "mechanism", "shots": ["s017", "s018", "s019", "s020", "s021"], "words": [133, 182]},
+      {"beat": "outcome", "shots": ["s022", "s023", "s024", "s025", "s026", "s027", "s028", "s029"], "words": [183, 268]},
+      {"beat": "mechanism", "shots": ["s030", "s031", "s032", "s033", "s034", "s035"], "words": [269, 388]},
+      {"beat": "cta", "shots": ["s036"], "words": null}
+    ],
+    "hook": {
+      "text": "Self-aware cold open on a film set ('I've never been asked to be in a customer film'), with a censor-pixelation gag and a groan, resolved by the title question card 'What does ServiceNow do?' under the VO 'So what does ServiceNow do for your company?'",
+      "technique": "question",
+      "technique_other": null,
+      "shots": ["s001", "s002", "s003", "s004", "s005", "s006", "s007", "s008"],
+      "words": [0, 44]
+    },
+    "cta": {
+      "text": null,
+      "shots": ["s036"]
+    },
+    "tone": "Deadpan mockumentary office comedy: real-feeling employees with joke job titles, a self-aware 'customer film' frame and fourth-wall-breaking crew, wrapping the product message in punchlines and closing on a calm, branded gradient end card.",
+    "signature_moments": [
+      {
+        "shots": ["s006", "s007"],
+        "description": "A pixelation mosaic covers a cast member's mouth as he starts naming the previous customer film, followed by a colleague's groan.",
+        "why_premium": "A cheap-to-make edit gag that tells the viewer within 10 s that this film is self-aware and funny, earning attention before any product claim."
+      },
+      {
+        "shots": ["s031", "s032", "s033", "s034", "s035"],
+        "description": "The boom operator, a crew member, gives the product summary and 'any AI, any data, any workflow' list, cut with whip pans to the stunned employee, who then asks him what Nick does.",
+        "why_premium": "Handing the core message to an unexpected crew character and cutting it with energetic whip pans makes the summary memorable, and the role reversal sets up the closing joke."
+      },
+      {
+        "shots": ["s030", "s036"],
+        "description": "The Nick runner (he cannot summarise ServiceNow) pays off on the end card: 'No one knows what Nick does / But now you know what we do', then the tagline 'Put AI to work for people'.",
+        "why_premium": "A callback that ties the comedy to the brand promise in the typography itself, so the sign-off feels written rather than bolted on."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 4,
+        "evidence": "Opens with a meta line about being in a customer film (w0-w9), a censor-mosaic gag (s006) and a groan (w36), then asks the title question on a branded card by about 10 s (s008, w37-w44). It is engaging, but the product value only arrives later.",
+        "refs": ["s001", "s006", "s007", "s008", "w0", "w36", "w37"]
+      },
+      "clarity": {
+        "score": 3,
+        "evidence": "The message (one AI platform connecting departments, agents fixing issues automatically) is said clearly in dialogue (w133-w169, w286-w314, w332-w352). It stays abstract, though: no product, UI or diagram is ever shown, and the jokes compete with the claims.",
+        "refs": ["s017", "s018", "s031", "s033", "w286", "w332"]
+      },
+      "ui_showcase": {
+        "score": null,
+        "evidence": "Does not apply: across all 36 shots no product UI, screen recording or recreated interface appears. The film is live-action and kinetic type only.",
+        "refs": []
+      },
+      "motion_polish": {
+        "score": 3,
+        "evidence": "Cinematic live action with shallow depth of field, punch-ins and whip-pan chains (s024, s031-s034). Motion graphics are limited to plain lower thirds and two gradient title cards with simple masked line reveals (s008, s036). Competent and clean, but not ambitious.",
+        "refs": ["s024", "s031", "s032", "s033", "s034", "s036"]
+      },
+      "sound_design": {
+        "score": 3,
+        "evidence": "Judged from anchors audio facts plus visuals. Integrated loudness is -23.16 LUFS under a ~166.7 BPM music bed. SFX candidates cluster as chimes under the spoken lists (about 62-71 s and 120-127 s), whooshes sit around the whip pans (x110-x112, 116.8-117.7 s), and an impact lands near the logo (x147, 142.36 s). Supportive and tidy, mostly music plus dialogue, with no standout sonic signature.",
+        "refs": ["s022", "s025", "s033", "s036"]
+      },
+      "vo_script_quality": {
+        "score": 4,
+        "evidence": "Tight character-driven dialogue with escalating jokes ('super exciting automation' w200-w202, 'free food notifications' w212-w224, 'warm and fuzzy' w248-w254). The summary is clear (w286-w314), and the Nick runner (w269-w279, w372-w388) is paid off on the end card. Some lines are hard to parse and the transcript is garbled around w176-w179.",
+        "refs": ["w200", "w212", "w248", "w286", "w372", "s036"]
+      },
+      "brand_consistency": {
+        "score": 4,
+        "evidence": "The same lower-third system (bold name, regular role, white, no plate) is used for every character (s009, s014, s017, s022, s027, s030, s031). Matching gradient title cards with green and white heavy sans bookend the film (s008, s036), and it ends on the wordmark. The live-action grade is consistent teal-green throughout.",
+        "refs": ["s008", "s009", "s017", "s030", "s036"]
+      },
+      "works_muted": {
+        "score": 2,
+        "evidence": "With sound off only the title question (s008), the joke job titles in the lower thirds and the end card read. The product claims and all the comedy are carried by dialogue, and there are no captions, so the story mostly does not come across muted.",
+        "refs": ["s008", "s014", "s036"]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "A high-production, genuinely funny mockumentary that makes an abstract enterprise platform likeable and ends on a smart callback card. As a SaaS explainer it is held back by showing no product at all and by depending on dialogue.",
+        "refs": ["s006", "s031", "s034", "s036"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 2,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "Lip-synced on-camera dialogue carries almost all the meaning and the comedy, so localization needs subtitles or a full reshoot or dub. English text is baked into the title cards (s008, s036) and the lower thirds. The end-card callback 'what Nick does' depends on the English dialogue."
+    }
+  }
+}

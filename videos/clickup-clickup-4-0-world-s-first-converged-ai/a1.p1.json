@@ -1,0 +1,141 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "a81500324518bacb9895c5b1c598b14adf496efeab6e92d8166e3baa9203fbed",
+    "created_at": "2026-10-05T06:23:06.601466Z"
+  },
+  "video": "clickup-clickup-4-0-world-s-first-converged-ai",
+  "task": "a1-p1",
+  "shots": [
+    {
+      "shot": "s001",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Large black headline 'Work Sprawl / is killing us.' surrounded by a pink flowchart of pain-point boxes, then a travelling black line that leads into 'Too many apps...' with orbiting app icons",
+      "transition_in": "other",
+      "transition_other": "video start: opens on a near-blank light frame with a soft pink gradient at the bottom; the headline builds on (no incoming transition)",
+      "on_screen_text": [
+        "Work Sprawl",
+        "is killing us.",
+        "Ideas",
+        "Executive Direction",
+        "Requests",
+        "Files",
+        "1. Is this a PRIORITY? 2. HOW will work get done? 3. WHO will do the work? 4. Do we have all the REQUIRED info?",
+        "Approvals take FOREVER",
+        "Decisions get LOST",
+        "EXECS CAN'T SEE to unblock",
+        "8 HOURS SPENT and still unsure if it moved the needle",
+        "REWORK happens causing delays",
+        "Productivity VANISHES",
+        "NAVIGATING A MAZE of disconnected apps",
+        "Context is MISSING",
+        "Feedback is SCATTERED",
+        "Too many apps..."
+      ],
+      "text_word_count": 74,
+      "typography": "Headline in a heavy geometric sans (low-confidence guess: Plus Jakarta Sans or similar), sentence/title case, tight negative tracking; words appear one by one with the not-yet-spoken word in light grey then turning black (karaoke-style emphasis). Diagram boxes use small regular-weight text with ALL-CAPS bold keywords in the accent colour. Small grey ClickUp wordmark watermark bottom-right throughout.",
+      "depth_cues": ["shadow", "blur"],
+      "what_happens": "Words 'Work Sprawl is killing us.' type on word-by-word in sync with the VO (w0-w4) while a pink flowchart of workplace pain points draws in around them with arrows; the camera pushes right into the diagram, a black line with a dot head sweeps the frame clean, 'Too many' builds word-by-word on the line (w8-w10) and app logo tiles with red notification badges swirl in on tangled curves around 'Too many apps...'; at the end a dark organic ink shape wipes in from the left carrying 'Too many AI...'.",
+      "build_rebuild": "Stack a bold headline whose words flip from grey to black on VO word timestamps, stagger-draw an SVG flowchart of rounded pink boxes with stroke-dashoffset arrows behind it, then animate a thick black path with a circular head across the frame (motion-path) that wipes to a second line of kinetic type ringed by app-icon cards orbiting on bezier paths.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s002",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "White headline text on a dark grainy purple-navy background ('Too many AI tools...', then 'Context is lost.') wrapped by a single white continuous line",
+      "transition_in": "mask_wipe",
+      "transition_other": null,
+      "on_screen_text": [
+        "Too many AI tools...",
+        "Context is lost.",
+        "Who approved this?",
+        "Who said what now?",
+        "What was the decision?",
+        "Can you send me the Q4 numbers?",
+        "You didn't see the report?",
+        "Is that accurate?",
+        "How do I do this?",
+        "Who would know?"
+      ],
+      "text_word_count": 41,
+      "typography": "Headlines in the same heavy geometric sans, white, sentence case, tight tracking; 'Context is lost.' enters with a strong horizontal motion blur. Question chips are small medium-weight white text inside translucent grey rounded pills with a chat icon; several are too small to read with certainty.",
+      "depth_cues": ["blur", "grain", "glow"],
+      "what_happens": "The white line from the previous shot loops into large hairpin curves carrying circular AI-tool logo badges beside 'Too many AI tools...' (w11-w14); the line straightens into a branching circuit-like tree as 'Context is lost.' slides in with motion blur (w15-w18); question chips pop onto the branch ends and the line spirals into overlapping loops below; the camera then tracks along a branch to a 'How do I do this?' chip and a line end-dot swells into a large white circle that fills the frame.",
+      "build_rebuild": "On a dark grain-textured gradient, animate one white SVG stroke with stroke-dashoffset through hairpin loops then a branching tree, pop rounded translucent chat-chip labels at branch tips with a short stagger, slide the headline in with a horizontal blur filter, and end by scaling the line's end-dot up to cover the screen.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s003",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Rotated two-line type lockup 'Work sprawl kills / human productivity'",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Work sprawl kills",
+        "human productivity"
+      ],
+      "text_word_count": 5,
+      "typography": "Small grey medium-weight kicker 'Work sprawl kills' above a large heavy black 'human productivity', lowercase sentence case, tight tracking; letters of 'productivity' arrive individually with wide spacing and shrinking scale before settling, the whole lockup set on a diagonal tilt.",
+      "depth_cues": ["grain", "perspective_tilt"],
+      "what_happens": "On a white grain-speckled background the tilted lockup scales up while the letters of 'productivity' fly in one by one and tighten into place in time with the VO (w19-w23); a black line with a dot head swoops in from the top right.",
+      "build_rebuild": "Render a rotated (about -10 degrees) two-line text group on a white noise-textured background, scale the group up over the shot and stagger each letter of the second line in from wide letter-spacing and small scale to rest, while a black SVG path with a circular head draws in from the corner.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s004",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Extreme close-up of the black letters of 'productivity' and the black line that dives into the letter 'o'",
+      "transition_in": "push",
+      "transition_other": null,
+      "on_screen_text": [
+        "Work sprawl kills",
+        "human productivity",
+        "AI productivity"
+      ],
+      "text_word_count": 7,
+      "typography": "Same heavy black geometric sans at very large scale with letters bouncing on an uneven baseline; grey kicker partly cropped. At the end the lockup re-forms small as 'Work sprawl kills / AI productivity'.",
+      "depth_cues": ["blur", "grain"],
+      "what_happens": "The camera pushes into 'human productivity' as the black line drops into the 'o'; the frame dives through the blurred 'o' ring (which reads as a giant black donut at about 12.0 s) revealing a small new lockup inside, which resolves as 'Work sprawl kills / AI productivity' while the line curls away (w24-w25).",
+      "build_rebuild": "Scale the type group about 8x toward the 'o' with a heavy ease-in and growing gaussian blur so the letter's counter becomes a portal, then cut to the same lockup with 'human' swapped for 'AI' scaling down from the portal centre to rest.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s005",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Tilted lockup 'Work sprawl kills / AI productivity' with the black line passing through the 'o'",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Work sprawl kills",
+        "AI productivity"
+      ],
+      "text_word_count": 5,
+      "typography": "Grey medium-weight kicker over a large heavy black 'AI productivity', sentence case, tight tracking, slight diagonal tilt; letters of 'productivity' wobble on the baseline before settling.",
+      "depth_cues": ["grain", "perspective_tilt"],
+      "what_happens": "The 'AI productivity' lockup settles with letters jostling into line as the VO says w25-w26; the black line threads up into the 'o' (which briefly glows pale blue) and then swings away along a curve toward the lower left, setting up the next zoom.",
+      "build_rebuild": "Hold the rotated two-line lockup on the textured white background, settle each letter of 'productivity' with a small overshoot spring on y and rotation, and animate a black SVG path with a dot head that passes through the 'o' counter and exits on a curve.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

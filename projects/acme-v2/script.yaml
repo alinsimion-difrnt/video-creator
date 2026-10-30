@@ -1,0 +1,79 @@
+provenance:
+  schema_version: 1
+  tool_version: 0.1.0
+  stage: c2_script
+  annotator: claude-code
+  skill: null
+  model: null
+  input_hash: '0000000000000000000000000000000000000000000000000000000000000000'
+  created_at: '2026-10-06T12:00:00Z'
+project: acme-v2
+scenes:
+- id: s01
+  beat: hook
+  spoken: People ask AI about everything now. Where to buy running shoes. Where to eat tonight. Which CRM a small
+    agency should use.
+  on_screen: []
+  facts: []
+- id: s02
+  beat: problem
+  spoken: '[curious] And when someone asks ChatGPT for the best CRM? They get a short list. Four, maybe five names.
+    Is yours one of them?'
+  on_screen: []
+  facts: []
+- id: s03
+  beat: mechanism
+  spoken: That's what Ack-me is for. It tracks which brands AI recommends, in ChatGPT, Gemini and Perplexity.
+    Every day, against the competitors you pick.
+  on_screen: []
+  facts:
+  - engines
+  - daily
+  - competitors
+- id: s04
+  beat: demo
+  spoken: Here's how it works. First, your questions. You add the ones your customers actually ask, and we suggest
+    a few more. Then we ask them as different people, because a CEO and a student don't get the same answer.
+  on_screen: []
+  facts:
+  - prompt_suggestions
+  - personas
+- id: s05
+  beat: demo
+  spoken: Second, real browser runs. We open the actual apps, the way your customers do, so we see the answers they
+    see.
+  on_screen: []
+  facts:
+  - real_browser
+- id: s06
+  beat: demo
+  spoken: Third, we read the answers. Who got mentioned, in what order, and how the AI talks about you, topic by
+    topic. So a bank sees if the AI likes its interest rates. A restaurant, if it rates the burger.
+  on_screen: []
+  facts:
+  - metrics
+  - sentiment
+  - topic_sentiment
+- id: s07
+  beat: outcome
+  spoken: And fourth, where the AI gets its answers. The sources go far beyond search results. Reddit threads. Parent
+    groups on Facebook, if you sell children's products. Student forums, if you're a college. Those are the places
+    to show up next.
+  on_screen: []
+  facts:
+  - sources
+  - source_types
+- id: s08
+  beat: proof
+  spoken: And if you run an agency, you know pitching is a lot of work. So send a prospect a real report, as a link.
+    And you only pay if they sign with you.
+  on_screen: []
+  facts:
+  - pitch_reports
+  - pitch_pay_on_sign
+- id: s09
+  beat: cta
+  spoken: Ack-me. There's a free plan, and you don't even need a card.
+  on_screen: []
+  facts:
+  - free_plan

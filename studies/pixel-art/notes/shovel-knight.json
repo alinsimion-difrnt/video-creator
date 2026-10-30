@@ -1,0 +1,54 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T13:58:46+00:00"
+  },
+  "id": "shovel-knight",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "cool",
+    "notes": "Frames: NES-like flat colour blocks: royal-blue hero, saturated orange/red sunset skies, black voids, icy cyan and white levels. Per text: NES palette plus four extra colours to smooth shade steps."
+  },
+  "lighting": "Flat NES lighting with one or two shade steps; mood from bold background colour (sunset orange, ice blue, snowy mountain sky) rather than light on the sprite.",
+  "silhouette": "Horned helmet and shovel make the hero read at a glance even very small; each boss has one signature shape (King Knight's crown and ruff, Kratos on a pillar in the crossover).",
+  "motion": {
+    "timing": "Not measured. Frames show few-frame NES-style sprites and long held poses during dialogue; action is short bursts between holds.",
+    "principles": [
+      "key poses with strong holds",
+      "anticipation on the shovel swing",
+      "impact shake"
+    ]
+  },
+  "texture": "Clean tiles, chunky pixel bricks and pillars, crisp black outlines; detail by colour blocks, not noise. Text boxes are black with a white border and a small portrait icon.",
+  "camera": "Side-scrolling, wide shot with the play plane low in frame; parallax mountain or sky layers behind. Per text: extra horizontal room and parallax beyond NES limits, no sprite flicker.",
+  "sound": "Chiptune score by Jake Kaufman for an expanded NES sound chip.",
+  "acting": {
+    "enters": "Boss stands on a pillar or ledge while a text box with a portrait icon plays the intro; the fight starts after the talk.",
+    "acts": "Strong held key poses; dialogue boxes carry the personality; a get-item box pops up mid-scene for the gag.",
+    "exits": "Defeated foes blink or explode and leave a short readable beat; the hero holds a victory pose.",
+    "comes_back": true,
+    "depth": "Action on one plane; parallax backgrounds and big sky give depth. Characters are small in the frame."
+  },
+  "techniques": [
+    "restricted NES palette with a few extra colours",
+    "few frames, exaggerated key poses, crisp holds",
+    "black outline for readable sprites on busy backgrounds",
+    "dialogue box with a tiny portrait icon over the scene",
+    "item pop-up box as a comic beat",
+    "parallax and camera shake on an NES look",
+    "staged boss intro before action"
+  ],
+  "feel": "flat NES palette + iconic horned silhouette + held poses with text-box banter = retro charm with modern timing",
+  "for_fred": "Don't add frames to Fred; pick a few exaggerated key poses and hold them. Use an NES-style text box with a tiny Fred portrait for his lines, and give him a staged re-entrance (pose, beat, box) each time he comes back.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Shovel_Knight",
+    "data/study/pixel/work/shovel-knight/clip2-7567331028688325910.jpg",
+    "data/study/pixel/work/shovel-knight/clip3-7640040262563007765.jpg",
+    "studies/pixel-art/sources.yaml"
+  ]
+}

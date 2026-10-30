@@ -1,0 +1,44 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a2_annotate_event",
+  "annotator": "claude-code",
+  "skill": "annotate-event@3dad117bd85a",
+  "model": null,
+  "input_hash": "a5bb5b6bc310a3fa1412c894f0284f0e06b5bd1937ce7ff9270b3ab4c4ca73f6",
+  "created_at": "2026-10-05T06:38:31.934631Z"
+ },
+ "video": "atlassian-introduction-to-jira-product-discovery",
+ "event": "e072",
+ "task": "a2-e072",
+ "elements": [
+  {
+   "box": null,
+   "manual_box": [458, 617, 514, 708],
+   "manual_reason": "The only candidate b01 is a union box over the static sidebar and cards (changed_share 0.0004); the visible change is the focus ring / caret flicker at the Copy link button, which lies mostly above b01.",
+   "label": "Copy link button focus ring",
+   "role": "button",
+   "role_other": null,
+   "change_types": ["highlight"],
+   "change_other": null,
+   "is_text": false,
+   "text": null,
+   "text_unit": null,
+   "estimates": {"duration_ms": 250, "easing_class": "step"}
+  }
+ ],
+ "sfx_review": [],
+ "pattern": {
+  "id": "cursor_guided_demo",
+  "proposed_name": null,
+  "description": "Screen-recorded share flow: after the cursor clicks Copy link, the button's focus outline flickers while the 'Copied' toast stays on screen; the rest of the Roadmap view is static.",
+  "why_premium": "Minimal; this is raw screen-capture UI feedback rather than authored motion. Its value is that the click result (focus state plus toast) is held long enough for the narration to land."
+ },
+ "build_hint": {
+  "gsap": "On click, gsap.fromTo('.copy-link', {boxShadow:'0 0 0 0px rgba(255,255,255,0)'}, {boxShadow:'0 0 0 2px #fff', duration:0.15, ease:'steps(1)'}); no stagger, single element.",
+  "remotion": "Toggle the focus outline with a frame threshold (frame >= clickFrame ? 2 : 0 px ring) or interpolate over 4 frames with Easing.linear; no spring."
+ },
+ "confidence": "low",
+ "notes": "Near-zero motion burst (changed_share 0.0004, camera none). Likely a micro UI repaint/focus flicker in the screen recording; could be a compression artefact. No SFX candidates."
+}

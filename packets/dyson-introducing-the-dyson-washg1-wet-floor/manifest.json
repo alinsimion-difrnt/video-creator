@@ -1,0 +1,90 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "s5_packets",
+    "annotator": "code",
+    "skill": null,
+    "model": null,
+    "input_hash": "a424cab73dee3e1a8c92fe555fdc3132a8cf3c9a157e609f167afbfaa17cfeb6",
+    "created_at": "2026-10-05T06:17:47.918728Z"
+  },
+  "video": "dyson-introducing-the-dyson-washg1-wet-floor",
+  "tier": "reference",
+  "max_images_per_task": 12,
+  "event_images": 4,
+  "tasks": [
+    {
+      "id": "a1-p1",
+      "kind": "a1",
+      "images": [
+        "pass1/sheets/shot_s001_1.jpg",
+        "pass1/sheets/shot_s001_2.jpg",
+        "pass1/keyframes/shot_s001.jpg",
+        "pass1/sheets/shot_s002_1.jpg",
+        "pass1/keyframes/shot_s002.jpg",
+        "pass1/keyframes/shot_s003.jpg",
+        "pass1/sheets/shot_s004_1.jpg",
+        "pass1/keyframes/shot_s004.jpg",
+        "pass1/sheets/shot_s005_1.jpg",
+        "pass1/keyframes/shot_s005.jpg",
+        "pass1/sheets/shot_s006_1.jpg",
+        "pass1/keyframes/shot_s006.jpg"
+      ],
+      "files": [
+        "pass1/anchors.json"
+      ],
+      "shots": [
+        "s001",
+        "s002",
+        "s003",
+        "s004",
+        "s005",
+        "s006"
+      ],
+      "event": null,
+      "siblings": [],
+      "output": "videos/dyson-introducing-the-dyson-washg1-wet-floor/a1.p1.json",
+      "input_hash": "e8e37123b7bcd42e2a1d293f83328a2fa29ec40ff6a4a193e5fa2d28b975363d"
+    },
+    {
+      "id": "a1-p2",
+      "kind": "a1",
+      "images": [
+        "pass1/sheets/shot_s007_1.jpg",
+        "pass1/sheets/shot_s007_2.jpg",
+        "pass1/keyframes/shot_s007.jpg"
+      ],
+      "files": [
+        "pass1/anchors.json"
+      ],
+      "shots": [
+        "s007"
+      ],
+      "event": null,
+      "siblings": [],
+      "output": "videos/dyson-introducing-the-dyson-washg1-wet-floor/a1.p2.json",
+      "input_hash": "d610a83eaac2f2938ef644fadf31075ab5803fe301873cbba511c0aca4dddc83"
+    },
+    {
+      "id": "a2-e001",
+      "kind": "a2",
+      "images": [
+        "events/e001/filmstrip.jpg",
+        "events/e001/end_marked.jpg",
+        "events/e001/end_clean.jpg",
+        "events/e001/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e001/facts.json",
+        "events/e001/candidates.json"
+      ],
+      "shots": [],
+      "event": "e001",
+      "siblings": [],
+      "output": "videos/dyson-introducing-the-dyson-washg1-wet-floor/events/e001.a2.json",
+      "input_hash": "dac5939824117da6151f26d40398497b60d5a332824363c866c72ce4972c6fb8"
+    }
+  ],
+  "skipped": []
+}

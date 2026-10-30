@@ -1,0 +1,164 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "s7_measure",
+    "annotator": "code",
+    "skill": null,
+    "model": null,
+    "input_hash": "cf2d4f287950bd8e7426ea674c19a0173346f7315c278b5071b039da37db7b0a",
+    "created_at": "2026-10-05T09:17:16.530685Z"
+  },
+  "video": "anthropic-introducing-claude-design-by-anthropic-l",
+  "event": "e006",
+  "fps": 24.0,
+  "elements": [
+    {
+      "box": "b01",
+      "xyxy": [
+        94,
+        49,
+        1280,
+        624
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.243,
+      "channels": [],
+      "timing": null,
+      "stagger": null,
+      "sfx_offset_ms": {},
+      "source": "model_estimate",
+      "quality": 0.0
+    },
+    {
+      "box": "b02",
+      "xyxy": [
+        337,
+        274,
+        1053,
+        350
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.4,
+      "channels": [
+        {
+          "name": "x",
+          "start_f": 738,
+          "end_f": 743,
+          "start_value": 658.5,
+          "end_value": 695.0,
+          "observed_start": false,
+          "cls": "ease_out",
+          "gsap": {
+            "ease": "circ.out",
+            "duration_ms": 356.1,
+            "rmse": 0.08707
+          },
+          "bezier": "cubic-bezier(1.000, 1.760, 0.000, 0.490)",
+          "bezier_rmse": 0.00817,
+          "spring": {
+            "zeta": 2.9899,
+            "omega0": 67.099,
+            "settle_ms": 342.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 4502.299,
+              "damping": 401.234
+            },
+            "remotion_exact": false,
+            "rmse": 0.10927
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 359.1,
+          "fit_quality": 0.9992
+        },
+        {
+          "name": "y",
+          "start_f": 738,
+          "end_f": 743,
+          "start_value": 295.0,
+          "end_value": 312.0,
+          "observed_start": false,
+          "cls": "ease_out",
+          "gsap": {
+            "ease": "circ.out",
+            "duration_ms": 335.8,
+            "rmse": 0.09221
+          },
+          "bezier": "cubic-bezier(0.172, 1.404, 0.293, 0.378)",
+          "bezier_rmse": 0.0,
+          "spring": {
+            "zeta": 2.2379,
+            "omega0": 52.767,
+            "settle_ms": 319.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 2784.376,
+              "damping": 236.179
+            },
+            "remotion_exact": false,
+            "rmse": 0.113
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 229.7,
+          "fit_quality": 1.0
+        },
+        {
+          "name": "scale",
+          "start_f": 738,
+          "end_f": 743,
+          "start_value": 0.938,
+          "end_value": 1.0,
+          "observed_start": false,
+          "cls": "linear",
+          "gsap": {
+            "ease": "circ.out",
+            "duration_ms": 410.7,
+            "rmse": 0.08576
+          },
+          "bezier": "cubic-bezier(0.232, 1.180, 0.000, 0.084)",
+          "bezier_rmse": 0.03595,
+          "spring": {
+            "zeta": 2.9998,
+            "omega0": 56.23,
+            "settle_ms": 409.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 3161.861,
+              "damping": 337.359
+            },
+            "remotion_exact": false,
+            "rmse": 0.10773
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 317.8,
+          "fit_quality": 0.7794
+        }
+      ],
+      "timing": {
+        "ease": "circ.out",
+        "start_s": 30.7083,
+        "duration_ms": 368.2,
+        "rmse": 0.09108
+      },
+      "stagger": {
+        "unit": "all",
+        "stagger_ms": 0.0,
+        "reveal_frames": [
+          743,
+          743,
+          743,
+          739,
+          743,
+          743
+        ]
+      },
+      "sfx_offset_ms": {
+        "x021": -168.6
+      },
+      "source": "measured",
+      "quality": 1.0
+    }
+  ],
+  "failed": {}
+}

@@ -1,0 +1,208 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a3_pattern_cards",
+    "annotator": "claude-code",
+    "skill": "write-archetype-cards@a75a12f0ca91",
+    "model": null,
+    "input_hash": "54edb70a62c9b32c39b33eeed8a54934f57b9fe3aab7d6fc9b74a98912a885ce",
+    "created_at": "2026-10-05T19:09:22.799069Z"
+  },
+  "id": "bars_ring",
+  "name": "Chart Card Build",
+  "summary": "A clean chart card appears and its data builds on screen: bars grow, a line draws across, or a ring fills in, often with a tooltip value following along. It turns a product claim into visible proof during the demo.",
+  "when_to_use": [
+    "Showing a trend, share or comparison the product tracks",
+    "Proving a claim with data right after the narration names it",
+    "Singling out one bar, segment or series to make a point"
+  ],
+  "slots": [
+    {"name": "chart_kind", "what": "bars, line, stacked area, donut or ring", "required": true},
+    {"name": "data_series", "what": "the values or series to plot, kept short and readable", "required": true},
+    {"name": "chart_label", "what": "a short all-caps label or panel title above the chart", "required": false},
+    {"name": "highlight_item", "what": "one bar, segment or tooltip row to single out with colour or an outline", "required": false},
+    {"name": "tooltip_value", "what": "a value that follows the line tip and counts up", "required": false},
+    {"name": "legend_items", "what": "legend labels for each series or segment", "required": false},
+    {"name": "background", "what": "a solid brand field or dark gradient stage behind the card", "required": false}
+  ],
+  "steps": [
+    "The chart card or panel slides or fades into frame on a simple background",
+    "The axes or baseline settle and the label appears",
+    "The data builds: bars grow from the baseline in a stagger, a line draws left to right, or a ring sweeps clockwise",
+    "A tooltip or value rides the leading edge and counts up as the data lands",
+    "One item is singled out with a colour change or outline on the narration cue",
+    "The card holds briefly, then exits with a push, slide or blur into the next scene"
+  ],
+  "patterns": [],
+  "build": {
+    "gsap": "One timeline per scene. Bring the card in with a short ease-out slide or an opacity-and-blur fade. Grow bars with scaleY from zero, transform-origin at the bottom, staggered left to right with power2.out or a soft back.out. Draw lines and rings with a stroke-dashoffset tween on an SVG path (sine.inOut or power1.inOut). Tween a tooltip along the path end with a counter tween on its number, snapped to integers. Add the highlight as a colour or outline tween placed at the narration word's time, then exit with a fast horizontal slide plus blur.",
+    "remotion": "A Sequence for the card entrance, a Sequence for the data build and a Sequence for the highlight and exit. Drive bar heights with spring() offset per bar index (high damping, no overshoot) and line or ring drawing with interpolate() over strokeDashoffset. The tooltip value is interpolate() on the same progress, rounded. The highlight Sequence starts on the narration word's frame."
+  },
+  "sound": "No typical sound. Labels are mixed and often unsure; when a cue is heard it is usually a soft impact or a reverse swoosh near the start as the card lands, with the occasional glitch or click later on a highlight.",
+  "numbers": {
+    "id": "bars_ring",
+    "shots": 10,
+    "videos": 5,
+    "weight": 5.2,
+    "duration_s": {
+      "n": 10,
+      "videos": 5,
+      "weight": 5.2,
+      "median": 2.967,
+      "p25": 1.633,
+      "p75": 4.094,
+      "ci": [
+        1.5,
+        3.604
+      ]
+    },
+    "events_per_shot": {
+      "n": 10,
+      "videos": 5,
+      "weight": 5.2,
+      "median": 0.0,
+      "p25": 0.0,
+      "p75": 0.0,
+      "ci": [
+        0.0,
+        0.0
+      ]
+    },
+    "first_motion_s": {
+      "n": 0,
+      "videos": 0,
+      "weight": 0.0,
+      "median": null,
+      "p25": null,
+      "p75": null,
+      "ci": null
+    },
+    "pattern_mix": {},
+    "transition_mix": {
+      "other": 0.6154,
+      "push": 0.1538,
+      "blur": 0.0769,
+      "slide": 0.0769,
+      "zoom_through": 0.0769
+    },
+    "shot_type_mix": {
+      "data_viz": 0.3846,
+      "ui_recreated": 0.3846,
+      "ui_closeup": 0.2308
+    },
+    "beat_mix": {
+      "demo": 0.9231,
+      "hook": 0.0769
+    },
+    "sfx_label_mix": {
+      "unsure": 0.3429,
+      "impact": 0.2857,
+      "swoosh_reverse": 0.1714,
+      "glitch": 0.0857,
+      "click": 0.0571,
+      "music": 0.0571
+    },
+    "sfx_offset_s_by_label": {
+      "click": {
+        "n": 2,
+        "videos": 1,
+        "weight": 0.8,
+        "median": 4.857,
+        "p25": 3.359,
+        "p75": 6.354,
+        "ci": null
+      },
+      "glitch": {
+        "n": 2,
+        "videos": 2,
+        "weight": 1.2,
+        "median": 1.869,
+        "p25": 0.575,
+        "p75": 2.732,
+        "ci": null
+      },
+      "impact": {
+        "n": 7,
+        "videos": 2,
+        "weight": 4.0,
+        "median": 0.636,
+        "p25": 0.566,
+        "p75": 2.708,
+        "ci": [
+          0.487,
+          2.708
+        ]
+      },
+      "music": {
+        "n": 2,
+        "videos": 1,
+        "weight": 0.8,
+        "median": 3.134,
+        "p25": 1.421,
+        "p75": 4.848,
+        "ci": null
+      },
+      "swoosh_reverse": {
+        "n": 4,
+        "videos": 2,
+        "weight": 2.4,
+        "median": 0.431,
+        "p25": 0.146,
+        "p75": 1.433,
+        "ci": null
+      },
+      "unsure": {
+        "n": 6,
+        "videos": 2,
+        "weight": 4.8,
+        "median": 1.339,
+        "p25": 0.826,
+        "p75": 1.574,
+        "ci": [
+          0.826,
+          1.778
+        ]
+      }
+    },
+    "examples": [
+      {
+        "video": "anthropic-introducing-claude-design-by-anthropic-l",
+        "shot": "s025",
+        "score": 4.0
+      },
+      {
+        "video": "duolingo-introducing-duolingo-chess",
+        "shot": "s036",
+        "score": 4.0
+      },
+      {
+        "video": "ahrefs-ahrefs-brand-radar-see-any-brand-s-ai-v",
+        "shot": "s010",
+        "score": 4.0
+      },
+      {
+        "video": "conductor-conductor-ai-get-found-in-ai-search",
+        "shot": "s004",
+        "score": 4.0
+      },
+      {
+        "video": "profound-introducing-profound",
+        "shot": "s052",
+        "score": 4.0
+      }
+    ]
+  },
+  "examples": [
+    {"video": "anthropic-introducing-claude-design-by-anthropic-l", "shot": "s025", "score": 4.0},
+    {"video": "duolingo-introducing-duolingo-chess", "shot": "s036", "score": 4.0},
+    {"video": "ahrefs-ahrefs-brand-radar-see-any-brand-s-ai-v", "shot": "s010", "score": 4.0},
+    {"video": "conductor-conductor-ai-get-found-in-ai-search", "shot": "s004", "score": 4.0},
+    {"video": "profound-introducing-profound", "shot": "s052", "score": 4.0}
+  ],
+  "caveats": [
+    "No measured motion events or patterns for these shots; the build is drawn from the shot descriptions, and the chart draw-on pattern has no card yet.",
+    "Mixed members: bar, line, stacked area and donut charts are grouped together.",
+    "Sound labels are mixed and largely unsure, so there is no reliable sound cue."
+  ]
+}

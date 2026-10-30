@@ -1,0 +1,148 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "e85886cb4ffed41c446e6ee654d03a88314236525a807305243c7437dbe5dd1a",
+    "created_at": "2026-10-05T07:45:11.933822Z"
+  },
+  "video": "raycast-new-raycast-coming-2026",
+  "task": "a1-p3",
+  "shots": [
+    {
+      "shot": "s012",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Two-word uppercase title pair 'NEW' + a cycling feature name, resolving to 'NEW RAYCAST / COMING 2026' and then a small Raycast logo mark",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "NEW",
+        "LAUNCHER DESIGN",
+        "COMPACT MODE",
+        "HOTKEY TYPES",
+        "VOICE FEATURES",
+        "SETTINGS DESIGN",
+        "AI CHAT",
+        "FILE SEARCH",
+        "RAYCAST",
+        "NEW RAYCAST",
+        "COMING 2026"
+      ],
+      "text_word_count": 20,
+      "typography": "Small monospaced sans (a Geist Mono or JetBrains Mono style face, low-confidence guess), regular weight, all caps, normal to slightly open tracking, near-white on pure black; 'COMING 2026' set in the italic of the same mono face on a second line",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "Flat black end card. 'NEW' stays fixed left of centre while the word to its right swaps about every 0.5 s through the feature list (LAUNCHER DESIGN, COMPACT MODE, HOTKEY TYPES, VOICE FEATURES, SETTINGS DESIGN, AI CHAT, FILE SEARCH) and lands on 'RAYCAST' at 32.0 s. From 32.5 to 34.0 s the gap between the two words closes until they read 'NEW RAYCAST' centred; by 34.5 s an italic second line 'COMING 2026' sits below, held until about 36.0 s. From 36.5 s to the end only a small white Raycast logo glyph is centred on black (small at contact-sheet scale; read as the logo, not verified in detail).",
+      "build_rebuild": "On a black 1920x1080 frame, set a fixed mono uppercase 'NEW' and a second text slot that hard-swaps through an array of feature names every ~0.5 s, then tween the slot's x so the gap closes to one space over ~1.5 s with an ease-in-out, add an italic 'COMING 2026' line below with a hard cut-in, hold 1.5 s, then hard-cut to a ~40px centred white logo mark held for 2 s.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {
+        "beat": "hook",
+        "shots": ["s001"],
+        "words": null
+      },
+      {
+        "beat": "demo",
+        "shots": ["s002", "s003", "s004", "s005", "s006", "s007", "s008", "s009", "s010", "s011"],
+        "words": null
+      },
+      {
+        "beat": "outcome",
+        "shots": ["s012"],
+        "words": null
+      }
+    ],
+    "hook": {
+      "text": "Search",
+      "technique": "demo_first",
+      "technique_other": null,
+      "shots": ["s001"],
+      "words": null
+    },
+    "cta": {
+      "text": null,
+      "shots": []
+    },
+    "tone": "Restrained, confident product teaser: dark grainy draped backdrops, recreated UI in macro close-ups, no voice-over, ending on a minimalist mono-type feature roll and a release year rather than an explicit call to action.",
+    "signature_moments": [
+      {
+        "shots": ["s006", "s007"],
+        "description": "The emoji-grid selection steps onto a microphone emoji, the grid blurs away and the tile shrinks into a circular dictation button that stretches into a voice-input pill with a live waveform, which leads straight into the typed AI prompt.",
+        "why_premium": "One continuous object morph links two unrelated features (emoji picker and voice/AI input) without a cut, which reads as custom-built motion rather than stitched screen captures."
+      },
+      {
+        "shots": ["s001"],
+        "description": "Opens on an extreme, edge-cropped macro of the search bar with a blinking caret drifting over a grainy fabric backdrop, then pulls back fast to the normal-size launcher.",
+        "why_premium": "Treating the most familiar UI element as a hero object at huge scale creates intrigue with almost no content, and the pull-back gives a clean reveal of scale."
+      },
+      {
+        "shots": ["s012"],
+        "description": "A mono-type end card cycles 'NEW' + seven feature names every half second, then closes the gap to 'NEW RAYCAST', adds 'COMING 2026' in italic and resolves to the logo.",
+        "why_premium": "It recaps every feature shown in a few seconds with pure typography and restraint, giving the visual demo a verbal label without voice-over."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 4,
+        "evidence": "Macro close-up of the search bar with blinking caret and a fast pull-back is intriguing and on-brand, but it states no claim or benefit; it relies on curiosity alone.",
+        "refs": ["s001"]
+      },
+      "clarity": {
+        "score": 3,
+        "evidence": "Each feature is shown as a short, legible UI moment (clipboard, hotkeys, emoji, voice, AI chat), but with no voice-over or captions during the demo the feature names only appear in the end-card roll; several steps (s009, s010) pass in about 2 s each.",
+        "refs": ["s002", "s003", "s007", "s009", "s010", "s012"]
+      },
+      "ui_showcase": {
+        "score": 5,
+        "evidence": "Recreated UI is crisp and art-directed: typed queries, action menus, hotkey dialog with success state, staggered lists, masked scrolls and tool-call rows revealed through gradient masks, all at large crops.",
+        "refs": ["s002", "s003", "s004", "s005", "s008", "s009"]
+      },
+      "motion_polish": {
+        "score": 5,
+        "evidence": "Continuous reframes and morphs instead of cuts (tile to mic button to pill, list to emoji grid inside one panel mask), consistent eased camera drift and well-timed reveals across shots.",
+        "refs": ["s001", "s005", "s007", "s009", "s012"]
+      },
+      "sound_design": {
+        "score": 3,
+        "evidence": "Judged from anchors only, not heard: a music track at 129.2 BPM with beats detected only up to about 24.7 s (none during most of the s011-s012 end section), integrated loudness -13.2 LUFS, no SFX candidates detected and no speech. The end-card word swaps at roughly 0.5 s are close to the beat period but sync cannot be confirmed.",
+        "refs": ["s011", "s012"]
+      },
+      "vo_script_quality": {
+        "score": null,
+        "evidence": "No voice-over: the anchors transcript has no words.",
+        "refs": []
+      },
+      "brand_consistency": {
+        "score": 5,
+        "evidence": "One dark, grainy draped-fabric backdrop, one UI sans face and the native Raycast dark UI throughout, closing on a mono-type card and the logo.",
+        "refs": ["s001", "s007", "s011", "s012"]
+      },
+      "works_muted": {
+        "score": 4,
+        "evidence": "Nothing depends on audio (no voice-over, no SFX detected); the demo reads visually and the end card names the features, though their purpose is left for viewers to infer.",
+        "refs": ["s002", "s007", "s012"]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "Best-in-class UI craft and motion for a teaser, held back by limited explanation of what each feature does and by no explicit call to action beyond 'COMING 2026'.",
+        "refs": ["s001", "s007", "s012"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 4,
+      "baked_in_text": true,
+      "vo_dependent": false,
+      "notes": "No voice-over, so no dubbing is needed; but all UI strings in the demo and the end-card feature roll are baked into the picture, so a localized version would need the UI recreations and the end card re-rendered."
+    }
+  }
+}

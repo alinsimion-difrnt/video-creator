@@ -1,0 +1,244 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a3_pattern_cards",
+  "annotator": "claude-code",
+  "skill": "write-archetype-cards@a75a12f0ca91",
+  "model": null,
+  "input_hash": "9778cb581a143561f9328b1563148f058ba89041a6433e3185c3a7f7c33728ab",
+  "created_at": "2026-10-05T19:09:26.585920Z"
+ },
+ "id": "chat_demo_panel",
+ "name": "Chat Demo Panel",
+ "summary": "A cropped chat or agent panel plays a scripted conversation: messages pop in one at a time, the assistant's answer streams in, and the thread scrolls up as it grows. It is the longer demo scene that shows the product actually doing the work.",
+ "when_to_use": [
+  "Demonstrating an AI assistant or support agent answering a real request.",
+  "Showing reasoning steps or tool calls alongside a conversation.",
+  "Walking through a multi-turn exchange that ends in a resolved outcome."
+ ],
+ "slots": [
+  {"name": "panel_chrome", "what": "the chat window or panel frame, cropped and placed on a branded background", "required": true},
+  {"name": "messages", "what": "a short scripted list of user and assistant turns in plain language", "required": true},
+  {"name": "answer_body", "what": "the assistant's longest reply, as bullets or short lines that stream in", "required": true},
+  {"name": "source_chips", "what": "optional small chips or citations appended to answer lines", "required": false},
+  {"name": "side_panel", "what": "an optional card beside the chat showing reasoning steps or a mascot", "required": false},
+  {"name": "avatars", "what": "small avatars marking who is speaking", "required": false}
+ ],
+ "steps": [
+  "The panel slides or pushes into frame over the background, sometimes opened by a cursor click.",
+  "The user's message types on or pops in as a bubble.",
+  "The assistant's reply streams in line by line, with chips or status rows appended as it goes.",
+  "Older bubbles scroll up and out behind a mask as new turns arrive.",
+  "An optional side card fills in step with each assistant turn.",
+  "The exchange ends on the resolved outcome before a cut."
+ ],
+ "patterns": ["masked_scroll", "stagger_list_reveal", "ai_answer_stream", "notification_pop", "chip_append", "prompt_type_on", "ui_camera_push_in"],
+ "build": {
+  "gsap": "One timeline per scene built from a scripted message array. For each turn, pop the bubble in with a small scale-up and fade on a back or expo ease-out, then tween the inner thread container's y inside an overflow-hidden mask so the stack scrolls up. Stream answer lines with a stagger on opacity and a short upward move, or reveal them left to right with a gradient mask tween, and pop each chip right after its line. Drive the side card's bullets with the same timeline labels so they land with each assistant turn. A slow scale on the panel wrapper gives the gentle camera push.",
+  "remotion": "One Sequence per turn, offset by the script's timing. Inside each, a stiff spring drives the bubble's scale and opacity, and a damped spring drives the thread's scroll offset. Stream answer lines with staggered springs or an interpolated mask width, and render the side card from the same turn index."
+ },
+ "sound": "Music carries most of the scene. Reversed swooshes and impacts tend to come later, as panels or answers land deep into the scene rather than at its start; a pop or click occasionally marks a single bubble or a send. Many cues are unclassified.",
+ "numbers": {
+  "id": "chat_demo_panel",
+  "shots": 18,
+  "videos": 8,
+  "weight": 10.6,
+  "duration_s": {
+   "n": 18,
+   "videos": 8,
+   "weight": 10.6,
+   "median": 6.177,
+   "p25": 3.444,
+   "p75": 11.176,
+   "ci": [
+    3.925,
+    10.332
+   ]
+  },
+  "events_per_shot": {
+   "n": 18,
+   "videos": 8,
+   "weight": 10.6,
+   "median": 1.0,
+   "p25": 0.0,
+   "p75": 2.938,
+   "ci": [
+    0.0,
+    2.0
+   ]
+  },
+  "first_motion_s": {
+   "n": 8,
+   "videos": 4,
+   "weight": 6.2,
+   "median": 0.146,
+   "p25": 0.0,
+   "p75": 0.618,
+   "ci": [
+    0.0,
+    0.652
+   ]
+  },
+  "pattern_mix": {
+   "masked_scroll": 0.2526,
+   "stagger_list_reveal": 0.2105,
+   "other": 0.1684,
+   "ai_answer_stream": 0.1263,
+   "notification_pop": 0.1263,
+   "chip_append": 0.0421,
+   "prompt_type_on": 0.0421,
+   "ui_camera_push_in": 0.0316
+  },
+  "transition_mix": {
+   "hard_cut": 0.6038,
+   "other": 0.3585,
+   "zoom_through": 0.0377
+  },
+  "shot_type_mix": {
+   "ui_recreated": 0.4906,
+   "ui_closeup": 0.3396,
+   "screen_recording": 0.0943,
+   "ui_full": 0.0755
+  },
+  "beat_mix": {
+   "demo": 0.8113,
+   "hook": 0.0755,
+   "outcome": 0.0755,
+   "proof": 0.0377
+  },
+  "sfx_label_mix": {
+   "music": 0.348,
+   "unsure": 0.2819,
+   "swoosh_reverse": 0.2203,
+   "impact": 0.1057,
+   "click": 0.0176,
+   "chime": 0.0132,
+   "pop": 0.0088,
+   "glitch": 0.0044
+  },
+  "sfx_offset_s_by_label": {
+   "chime": {
+    "n": 2,
+    "videos": 1,
+    "weight": 1.2,
+    "median": 5.639,
+    "p25": 5.558,
+    "p75": 5.72,
+    "ci": null
+   },
+   "click": {
+    "n": 4,
+    "videos": 1,
+    "weight": 1.6,
+    "median": 6.368,
+    "p25": 4.324,
+    "p75": 10.785,
+    "ci": null
+   },
+   "glitch": {
+    "n": 1,
+    "videos": 1,
+    "weight": 0.4,
+    "median": 3.261,
+    "p25": 3.261,
+    "p75": 3.261,
+    "ci": null
+   },
+   "impact": {
+    "n": 14,
+    "videos": 3,
+    "weight": 9.6,
+    "median": 16.924,
+    "p25": 10.256,
+    "p75": 22.041,
+    "ci": [
+     12.543,
+     21.539
+    ]
+   },
+   "music": {
+    "n": 58,
+    "videos": 5,
+    "weight": 31.6,
+    "median": 7.639,
+    "p25": 3.527,
+    "p75": 10.949,
+    "ci": [
+     5.706,
+     9.289
+    ]
+   },
+   "pop": {
+    "n": 1,
+    "videos": 1,
+    "weight": 0.8,
+    "median": 0.056,
+    "p25": 0.056,
+    "p75": 0.056,
+    "ci": null
+   },
+   "swoosh_reverse": {
+    "n": 32,
+    "videos": 3,
+    "weight": 20.0,
+    "median": 12.793,
+    "p25": 3.937,
+    "p75": 17.98,
+    "ci": [
+     6.42,
+     14.061
+    ]
+   },
+   "unsure": {
+    "n": 43,
+    "videos": 5,
+    "weight": 25.6,
+    "median": 7.06,
+    "p25": 3.626,
+    "p75": 13.538,
+    "ci": [
+     5.457,
+     10.011
+    ]
+   }
+  },
+  "examples": [
+   {
+    "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+    "shot": "s003",
+    "score": 4.0
+   },
+   {
+    "video": "notion-introducing-the-new-notion-ai",
+    "shot": "s006",
+    "score": 4.0
+   },
+   {
+    "video": "salesforce-what-is-agentforce-and-how-businesses-us",
+    "shot": "s004",
+    "score": 3.0
+   },
+   {
+    "video": "raycast-new-raycast-coming-2026",
+    "shot": "s009",
+    "score": 4.0
+   },
+   {
+    "video": "clickup-clickup-4-0-just-changed-work-ai-softwar",
+    "shot": "s033",
+    "score": 4.0
+   }
+  ]
+ },
+ "examples": [
+  {"video": "zendesk-meet-zendesk-ai-agents-the-most-autonom", "shot": "s003", "score": 4.0},
+  {"video": "notion-introducing-the-new-notion-ai", "shot": "s006", "score": 4.0},
+  {"video": "raycast-new-raycast-coming-2026", "shot": "s009", "score": 4.0},
+  {"video": "clickup-clickup-4-0-just-changed-work-ai-softwar", "shot": "s033", "score": 4.0}
+ ],
+ "caveats": [
+  "Sound counts are dominated by a few long shots from a handful of videos, so cue offsets mostly reflect those shots.",
+  "One member is a real screen recording and another is several scenes merged into one shot, so lengths vary widely."
+ ]
+}

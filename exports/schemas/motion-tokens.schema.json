@@ -1,0 +1,290 @@
+{
+  "$defs": {
+    "Annotator": {
+      "enum": [
+        "code",
+        "claude-code",
+        "human"
+      ],
+      "title": "Annotator",
+      "type": "string"
+    },
+    "EasingClass": {
+      "additionalProperties": false,
+      "properties": {
+        "css": {
+          "title": "Css",
+          "type": "string"
+        },
+        "gsap": {
+          "title": "Gsap",
+          "type": "string"
+        },
+        "share": {
+          "title": "Share",
+          "type": "number"
+        }
+      },
+      "required": [
+        "gsap",
+        "css",
+        "share"
+      ],
+      "title": "EasingClass",
+      "type": "object"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "description": "Carried by every output JSON (BUILD_PLAN section 2.7).",
+      "properties": {
+        "annotator": {
+          "$ref": "#/$defs/Annotator"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "input_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Input Hash",
+          "type": "string"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "schema_version": {
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "skill": {
+          "anyOf": [
+            {
+              "pattern": "^[a-z0-9-]+@[0-9a-f]{8,64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Skill"
+        },
+        "stage": {
+          "title": "Stage",
+          "type": "string"
+        },
+        "tool_version": {
+          "title": "Tool Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool_version",
+        "stage",
+        "annotator",
+        "input_hash",
+        "created_at"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "Range": {
+      "additionalProperties": false,
+      "description": "A measured value for building: the weighted median and the typical (25-75%) range.",
+      "properties": {
+        "high": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "High"
+        },
+        "low": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Low"
+        },
+        "median": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Median"
+        },
+        "n": {
+          "minimum": 0,
+          "title": "N",
+          "type": "integer"
+        },
+        "videos": {
+          "minimum": 0,
+          "title": "Videos",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "median",
+        "low",
+        "high",
+        "n",
+        "videos"
+      ],
+      "title": "Range",
+      "type": "object"
+    },
+    "SpringPreset": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "remotion": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Remotion",
+          "type": "object"
+        },
+        "settle_ms": {
+          "$ref": "#/$defs/Range"
+        },
+        "share": {
+          "title": "Share",
+          "type": "number"
+        },
+        "zeta": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Zeta"
+        }
+      },
+      "required": [
+        "name",
+        "remotion",
+        "zeta",
+        "settle_ms",
+        "share"
+      ],
+      "title": "SpringPreset",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "all_at_once_share": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "All At Once Share"
+    },
+    "duration_ms_by_change": {
+      "additionalProperties": {
+        "$ref": "#/$defs/Range"
+      },
+      "title": "Duration Ms By Change",
+      "type": "object"
+    },
+    "duration_ms_by_role": {
+      "additionalProperties": {
+        "$ref": "#/$defs/Range"
+      },
+      "title": "Duration Ms By Role",
+      "type": "object"
+    },
+    "easing": {
+      "additionalProperties": {
+        "$ref": "#/$defs/EasingClass"
+      },
+      "title": "Easing",
+      "type": "object"
+    },
+    "easing_by_role": {
+      "additionalProperties": {
+        "additionalProperties": {
+          "type": "number"
+        },
+        "type": "object"
+      },
+      "title": "Easing By Role",
+      "type": "object"
+    },
+    "overshoot_pct": {
+      "$ref": "#/$defs/Range"
+    },
+    "overshoot_share": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Overshoot Share"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    },
+    "springs": {
+      "items": {
+        "$ref": "#/$defs/SpringPreset"
+      },
+      "title": "Springs",
+      "type": "array"
+    },
+    "word_stagger_ms": {
+      "$ref": "#/$defs/Range"
+    }
+  },
+  "required": [
+    "provenance",
+    "duration_ms_by_role",
+    "duration_ms_by_change",
+    "easing",
+    "easing_by_role",
+    "springs",
+    "overshoot_share",
+    "overshoot_pct",
+    "word_stagger_ms",
+    "all_at_once_share"
+  ],
+  "title": "MotionTokens",
+  "type": "object"
+}

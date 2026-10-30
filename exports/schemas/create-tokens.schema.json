@@ -1,0 +1,678 @@
+{
+  "$defs": {
+    "Annotator": {
+      "enum": [
+        "code",
+        "claude-code",
+        "human"
+      ],
+      "title": "Annotator",
+      "type": "string"
+    },
+    "CaptionStyle": {
+      "additionalProperties": false,
+      "description": "How burned-in captions look on one frame (brand video.yaml `captions.<frame>`).",
+      "properties": {
+        "active": {
+          "title": "Active",
+          "type": "string"
+        },
+        "background": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Background"
+        },
+        "background_alpha": {
+          "default": 1.0,
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "title": "Background Alpha",
+          "type": "number"
+        },
+        "dim_opacity": {
+          "default": 1.0,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Dim Opacity",
+          "type": "number"
+        },
+        "family": {
+          "default": "body",
+          "title": "Family",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "pill",
+            "karaoke"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "line_height": {
+          "exclusiveMinimum": 0,
+          "title": "Line Height",
+          "type": "number"
+        },
+        "max_width_px": {
+          "exclusiveMinimum": 0,
+          "title": "Max Width Px",
+          "type": "integer"
+        },
+        "padding_px": {
+          "default": [
+            13,
+            30
+          ],
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer"
+            }
+          ],
+          "title": "Padding Px",
+          "type": "array"
+        },
+        "radius_px": {
+          "default": 999,
+          "minimum": 0,
+          "title": "Radius Px",
+          "type": "integer"
+        },
+        "size_px": {
+          "exclusiveMinimum": 0,
+          "title": "Size Px",
+          "type": "number"
+        },
+        "stroke": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Stroke"
+        },
+        "stroke_px": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Stroke Px",
+          "type": "number"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "tracking_em": {
+          "default": 0,
+          "title": "Tracking Em",
+          "type": "number"
+        },
+        "uppercase": {
+          "default": false,
+          "title": "Uppercase",
+          "type": "boolean"
+        },
+        "weight": {
+          "maximum": 900,
+          "minimum": 100,
+          "title": "Weight",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "kind",
+        "weight",
+        "size_px",
+        "line_height",
+        "text",
+        "active",
+        "max_width_px"
+      ],
+      "title": "CaptionStyle",
+      "type": "object"
+    },
+    "ContrastPair": {
+      "additionalProperties": false,
+      "properties": {
+        "bg": {
+          "title": "Bg",
+          "type": "string"
+        },
+        "exception": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Exception"
+        },
+        "passes": {
+          "title": "Passes",
+          "type": "boolean"
+        },
+        "ratio": {
+          "minimum": 1,
+          "title": "Ratio",
+          "type": "number"
+        },
+        "required": {
+          "minimum": 1,
+          "title": "Required",
+          "type": "number"
+        },
+        "size": {
+          "enum": [
+            "normal",
+            "large",
+            "display"
+          ],
+          "title": "Size",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "use": {
+          "minLength": 1,
+          "title": "Use",
+          "type": "string"
+        }
+      },
+      "required": [
+        "text",
+        "bg",
+        "size",
+        "use",
+        "ratio",
+        "required",
+        "passes"
+      ],
+      "title": "ContrastPair",
+      "type": "object"
+    },
+    "FontFamily": {
+      "additionalProperties": false,
+      "properties": {
+        "fallback": {
+          "default": "system-ui, sans-serif",
+          "title": "Fallback",
+          "type": "string"
+        },
+        "family": {
+          "minLength": 1,
+          "title": "Family",
+          "type": "string"
+        },
+        "source": {
+          "const": "google",
+          "default": "google",
+          "title": "Source",
+          "type": "string"
+        },
+        "weights": {
+          "default": "400..700",
+          "pattern": "^\\d{3}(\\.\\.\\d{3})?$",
+          "title": "Weights",
+          "type": "string"
+        }
+      },
+      "required": [
+        "family"
+      ],
+      "title": "FontFamily",
+      "type": "object"
+    },
+    "GlyphCoverage": {
+      "additionalProperties": false,
+      "properties": {
+        "family": {
+          "title": "Family",
+          "type": "string"
+        },
+        "has": {
+          "additionalProperties": {
+            "type": "boolean"
+          },
+          "title": "Has",
+          "type": "object"
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        }
+      },
+      "required": [
+        "family",
+        "source",
+        "has"
+      ],
+      "title": "GlyphCoverage",
+      "type": "object"
+    },
+    "Layout": {
+      "additionalProperties": false,
+      "properties": {
+        "caption_band": {
+          "$ref": "#/$defs/Rect"
+        },
+        "caption_keepout_px": {
+          "minimum": 0,
+          "title": "Caption Keepout Px",
+          "type": "integer"
+        },
+        "card_padding": {
+          "minimum": 0,
+          "title": "Card Padding",
+          "type": "integer"
+        },
+        "card_radius": {
+          "minimum": 0,
+          "title": "Card Radius",
+          "type": "integer"
+        },
+        "card_shadow": {
+          "title": "Card Shadow",
+          "type": "string"
+        },
+        "chip_radius": {
+          "minimum": 0,
+          "title": "Chip Radius",
+          "type": "integer"
+        },
+        "hairline_width": {
+          "minimum": 1,
+          "title": "Hairline Width",
+          "type": "integer"
+        },
+        "height": {
+          "exclusiveMinimum": 0,
+          "title": "Height",
+          "type": "integer"
+        },
+        "safe": {
+          "items": {
+            "$ref": "#/$defs/Rect"
+          },
+          "minItems": 1,
+          "title": "Safe",
+          "type": "array"
+        },
+        "safe_margin": {
+          "minimum": 0,
+          "title": "Safe Margin",
+          "type": "integer"
+        },
+        "section_gap": {
+          "minimum": 0,
+          "title": "Section Gap",
+          "type": "integer"
+        },
+        "stack_gap": {
+          "minimum": 0,
+          "title": "Stack Gap",
+          "type": "integer"
+        },
+        "width": {
+          "exclusiveMinimum": 0,
+          "title": "Width",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "width",
+        "height",
+        "safe_margin",
+        "section_gap",
+        "stack_gap",
+        "card_padding",
+        "card_radius",
+        "chip_radius",
+        "hairline_width",
+        "card_shadow",
+        "caption_keepout_px",
+        "safe",
+        "caption_band"
+      ],
+      "title": "Layout",
+      "type": "object"
+    },
+    "Logo": {
+      "additionalProperties": false,
+      "description": "Logo files by use, relative to the brand folder (owner-supplied SVGs, ADR 0019/0022).",
+      "properties": {
+        "min_height_corner": {
+          "exclusiveMinimum": 0,
+          "title": "Min Height Corner",
+          "type": "integer"
+        },
+        "min_height_hero": {
+          "exclusiveMinimum": 0,
+          "title": "Min Height Hero",
+          "type": "integer"
+        },
+        "mono": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Mono"
+        },
+        "on_dark": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "On Dark"
+        },
+        "primary": {
+          "title": "Primary",
+          "type": "string"
+        }
+      },
+      "required": [
+        "primary",
+        "min_height_corner",
+        "min_height_hero"
+      ],
+      "title": "Logo",
+      "type": "object"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "description": "Carried by every output JSON (BUILD_PLAN section 2.7).",
+      "properties": {
+        "annotator": {
+          "$ref": "#/$defs/Annotator"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "input_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Input Hash",
+          "type": "string"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "schema_version": {
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "skill": {
+          "anyOf": [
+            {
+              "pattern": "^[a-z0-9-]+@[0-9a-f]{8,64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Skill"
+        },
+        "stage": {
+          "title": "Stage",
+          "type": "string"
+        },
+        "tool_version": {
+          "title": "Tool Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool_version",
+        "stage",
+        "annotator",
+        "input_hash",
+        "created_at"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "Rect": {
+      "additionalProperties": false,
+      "description": "A rectangle in frame pixels.",
+      "properties": {
+        "x0": {
+          "minimum": 0,
+          "title": "X0",
+          "type": "integer"
+        },
+        "x1": {
+          "exclusiveMinimum": 0,
+          "title": "X1",
+          "type": "integer"
+        },
+        "y0": {
+          "minimum": 0,
+          "title": "Y0",
+          "type": "integer"
+        },
+        "y1": {
+          "exclusiveMinimum": 0,
+          "title": "Y1",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "x0",
+        "y0",
+        "x1",
+        "y1"
+      ],
+      "title": "Rect",
+      "type": "object"
+    },
+    "TypeStyle": {
+      "additionalProperties": false,
+      "properties": {
+        "family": {
+          "minLength": 1,
+          "title": "Family",
+          "type": "string"
+        },
+        "line_height": {
+          "exclusiveMinimum": 0,
+          "title": "Line Height",
+          "type": "number"
+        },
+        "override": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Override"
+        },
+        "size_px": {
+          "exclusiveMinimum": 0,
+          "title": "Size Px",
+          "type": "number"
+        },
+        "tracking_em": {
+          "title": "Tracking Em",
+          "type": "number"
+        },
+        "uppercase": {
+          "default": false,
+          "title": "Uppercase",
+          "type": "boolean"
+        },
+        "weight": {
+          "maximum": 900,
+          "minimum": 100,
+          "title": "Weight",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "family",
+        "weight",
+        "size_px",
+        "line_height",
+        "tracking_em"
+      ],
+      "title": "TypeStyle",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "C3: the brand hand-off made ready for the video frame, with contrast and glyphs checked.",
+  "properties": {
+    "accent_tint_alpha": {
+      "exclusiveMaximum": 1,
+      "exclusiveMinimum": 0,
+      "title": "Accent Tint Alpha",
+      "type": "number"
+    },
+    "captions": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/CaptionStyle"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "colors": {
+      "additionalProperties": {
+        "pattern": "^#[0-9A-F]{6}$",
+        "type": "string"
+      },
+      "title": "Colors",
+      "type": "object"
+    },
+    "contrast": {
+      "items": {
+        "$ref": "#/$defs/ContrastPair"
+      },
+      "minItems": 1,
+      "title": "Contrast",
+      "type": "array"
+    },
+    "families": {
+      "additionalProperties": {
+        "$ref": "#/$defs/FontFamily"
+      },
+      "title": "Families",
+      "type": "object"
+    },
+    "fonts_css": {
+      "pattern": "^https://",
+      "title": "Fonts Css",
+      "type": "string"
+    },
+    "frame": {
+      "default": "landscape",
+      "title": "Frame",
+      "type": "string"
+    },
+    "glyph_fallback": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Glyph Fallback",
+      "type": "object"
+    },
+    "glyphs": {
+      "items": {
+        "$ref": "#/$defs/GlyphCoverage"
+      },
+      "title": "Glyphs",
+      "type": "array"
+    },
+    "layout": {
+      "$ref": "#/$defs/Layout"
+    },
+    "logo": {
+      "$ref": "#/$defs/Logo"
+    },
+    "project": {
+      "title": "Project",
+      "type": "string"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    },
+    "strings": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Strings",
+      "type": "object"
+    },
+    "type": {
+      "additionalProperties": {
+        "$ref": "#/$defs/TypeStyle"
+      },
+      "title": "Type",
+      "type": "object"
+    }
+  },
+  "required": [
+    "provenance",
+    "project",
+    "colors",
+    "contrast",
+    "type",
+    "families",
+    "fonts_css",
+    "glyphs",
+    "glyph_fallback",
+    "layout",
+    "logo",
+    "accent_tint_alpha"
+  ],
+  "title": "Tokens",
+  "type": "object"
+}

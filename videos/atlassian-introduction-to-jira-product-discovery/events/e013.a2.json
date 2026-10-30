@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "d67409003e998d8d926245a5f3fb18e08f8a5a637a7749b22bf15d72d4430f46",
+    "created_at": "2026-10-05T06:38:37.052257Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e013",
+  "task": "a2-e013",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Impact rating hover tooltip",
+      "role": "other",
+      "role_other": "tooltip",
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Medium (click to reset the value)",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 100, "easing_class": "step"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Table row hover highlight",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "step"}
+    },
+    {
+      "box": null,
+      "manual_box": [800, 518, 835, 536],
+      "manual_reason": "Cursor settles below the table, outside every candidate box.",
+      "label": "Mouse cursor",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 600, "easing_class": "ambiguous"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "Live screen recording: the cursor leaves the Impact rating cell, its tooltip disappears, and the pointer sweeps down the idea table, row hover highlights following it, as the narration says ideas are organised in views.",
+    "why_premium": "Real product interaction kept calm and short: one cursor sweep, no zoom, lets the viewer read the populated field columns while the narrator names them."
+  },
+  "build_hint": {
+    "gsap": "Recorded UI. To recreate: gsap.to('.tooltip', {autoAlpha: 0, duration: 0.1}); then gsap.to('.cursor', {x: -150, y: 380, duration: 0.6, ease: 'power2.inOut'}) with row hover states toggled via timeline callbacks as the cursor y crosses each row (step, no tween).",
+    "remotion": "Cursor position via interpolate(frame, [0, 18], [start, end], {easing: Easing.inOut(Easing.quad)}); tooltip opacity steps to 0 at frame 0; row background = rowIndexAt(cursorY) === i ? hover : transparent."
+  },
+  "confidence": "medium",
+  "notes": "Small interaction burst in a screen recording; row hover highlight is subtle and b01 is a broad union box. Cursor needs manual_box."
+}

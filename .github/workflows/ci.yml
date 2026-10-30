@@ -1,0 +1,48 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - name: Install ffmpeg (fixture tests)
+        run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg espeak-ng
+      - name: Cache local models (whisper)
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-${{ hashFiles('config/lens.yaml') }}
+          restore-keys: hf-
+      - name: Install
+        run: uv sync --frozen
+      - name: Lint
+        run: |
+          uv run ruff check .
+          uv run ruff format --check .
+      - name: Typecheck
+        run: uv run mypy lens create
+      - name: Tests
+        run: uv run pytest -q
+      - name: Stage registry is a strict DAG
+        run: uv run lens dag --check
+      - name: Committed files validate
+        run: uv run lens validate --all
+      - name: Exported schemas are current
+        run: uv run lens schemas export --check

@@ -1,0 +1,39 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "21883c9c0d2a53a47181890e57c5428a9e9fc2061be42d706605dbacd6fb4567",
+                 "created_at": "2026-10-13T11:02:00+00:00"},
+  "id": "7678329956136520973",
+  "format": "split_screen",
+  "hook": {"type": "news",
+           "line": "A new 27-billion-parameter Qwen model that you can actually run on a consumer computer.",
+           "visual": "Top half: Qwen logo, then branded promo clips and a viral tweet screenshot; bottom half: him at a podcast mic; label 'Qwen 3.8 27B'."},
+  "beats": [
+    {"t": 0.0, "what": "Model logo on top, face at the mic below, name of the model as the first caption."},
+    {"t": 0.6, "what": "Quick cut to the vendor's promo clips ('Qwen3.8 Always-on workmate')."},
+    {"t": 1.88, "what": "Screenshot of a viral post claiming the bigger model built a whole game from one prompt."},
+    {"t": 11.0, "what": "Top half switches to the LM Studio screen recording: 'download it here, it's free'."},
+    {"t": 22.1, "what": "The list of 4/5/6/8-bit quantization options while he explains compression in plain words."},
+    {"t": 25.87, "what": "Cut to a full-frame face shot for the 'you lose a bit of intelligence' explanation."},
+    {"t": 34.13, "what": "Back to split: download options with the app's 'will it run on your machine' badge."},
+    {"t": 51.56, "what": "Loads the model from 'my models' into a new chat and shows it working."},
+    {"t": 67.6, "what": "Wrap-up with rapid cuts back to promo footage: local models get better while getting smaller."},
+    {"t": 81.02, "what": "Ends on a full-frame face shot; no spoken CTA (the question is in the caption)."}
+  ],
+  "graphics": {"captions": "word_by_word", "caption_position": "middle",
+               "devices": ["split_screen", "screen_recording", "product_ui", "screenshot", "b_roll", "jump_cut"],
+               "density": "moderate", "per_minute_estimate": 14},
+  "characters": [],
+  "cta": {"kind": "none", "t": null},
+  "why_it_works": [
+    "Newsy name-drop as the first word, backed by the vendor's own polished promo clips and a viral-post screenshot inside 2 s, so it looks current and important.",
+    "The split puts proof (the real app) and the person on screen at the same time; the caption sits on the seam so the eye never has to jump far.",
+    "Jargon is translated on the spot (quantization = compression, higher bit = smarter) while the matching options list is on screen.",
+    "Ends on a big-picture takeaway (smaller models, better results), which gives viewers something to argue about in the comments."
+  ],
+  "weaknesses": [
+    "The middle stretch is one long screen recording (longest shot about 33 s) with tiny UI text that is unreadable on a phone and no zoom or highlight.",
+    "No spoken CTA; the engagement question lives only in the caption.",
+    "Showing the 'uncensored' model variant is a distraction from the main how-to."
+  ],
+  "for_robert": "Use the split with the caption on the seam: product UI on top, his face below, and let Fred sit on the seam pointing up at the part of the UI he names, since this video never highlights what to look at."
+}

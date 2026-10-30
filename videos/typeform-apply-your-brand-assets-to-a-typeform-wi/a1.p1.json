@@ -1,0 +1,193 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "acc1d399d2f7755a075e1d74309e8bc4accb758eddfba16bce52f8281e4fae8d",
+    "created_at": "2026-10-05T06:31:36.218270Z"
+  },
+  "video": "typeform-apply-your-brand-assets-to-a-typeform-wi",
+  "task": "a1-p1",
+  "shots": [
+    {
+      "shot": "s001",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "split",
+      "composition_other": null,
+      "focal_element": "Title text centred inside the right of two large squircle panels on a darker solid background, small Typeform wordmark below",
+      "transition_in": "other",
+      "transition_other": "none (video start; anchors give no transition_in)",
+      "on_screen_text": [
+        "Add brand assets to your typeforms with Brand Kit",
+        "Typeform"
+      ],
+      "text_word_count": 10,
+      "typography": "Geometric/grotesk sans, regular weight, sentence case, normal tracking, three centred lines; small bold wordmark below (font guess, low confidence: Typeform's own brand sans)",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "Static title card holds while the VO opens (w0-w6, 'Put your brand front and center with'); in the last half-second both squircle panels begin sliding to the right, starting the exit.",
+      "build_rebuild": "Render two 2-col squircle panels (large corner radius) on a solid background, centre a 3-line sans headline plus small wordmark in the right panel, hold ~2.7 s, then translate the panel row rightwards with an ease-in to hand off to the next shot.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s002",
+      "shot_type": "abstract",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Empty solid background gap between the departing squircle panels, then a light cream panel rising from the bottom",
+      "transition_in": "other",
+      "transition_other": "Panel row slides horizontally out of frame (push-like), detected as a cut by code",
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "The squircle panels continue sliding past (only edges and a sliver of the title's first letters remain visible), leaving the solid background; by 4.0 s a cream panel wipes up from the bottom to cover most of the frame. VO says 'Typeforms Brand' (w7-w8).",
+      "build_rebuild": "Continue the horizontal panel slide until the background is empty, then animate a full-width cream rectangle upward from the bottom edge (translateY 100% to 0) with an ease-out over ~0.5 s.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s003",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Typeform welcome screen card ('Thanks for staying at the Tropical Hotel!') centred on cream background",
+      "transition_in": "other",
+      "transition_other": "Cream panel wipes up from the bottom, then the white form card appears on it (mask/wipe-like reveal)",
+      "on_screen_text": [
+        "THG",
+        "Thanks for staying at the Tropical Hotel!",
+        "We'd love to hear about your experience!",
+        "Share your thoughts",
+        "press Enter ↵"
+      ],
+      "text_word_count": 20,
+      "typography": "Form UI in neutral sans: regular-weight sentence-case headline, smaller regular subline, bold white label on a solid button, tiny 'press Enter' hint; 'THG' logo in a bold slab/serif style added top-left",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Cream background holds briefly, then an unbranded white form card fades/scales in (~5.5 s) and settles slightly larger; a 'THG' logo pops into the top-left corner (~6.5 s, on 'Add your logo', w10-w12), and a small pink rounded square drops in at top-centre at the end (anticipating the colour-palette line, w13).",
+      "build_rebuild": "Show a centred white rounded card with headline, subline and primary button over a cream backdrop, scale it from ~0.9 to 1 with opacity fade, then pop a logo image into the card's top-left on the VO cue and drop a small coloured rounded square from the top edge as the shot ends.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s004",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Pink square sweeping across the form headline, restyling the text it covers into a serif font",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "THG",
+        "Thanks for staying at the Tropical Hotel!",
+        "We'd love to hear about your experience!",
+        "Share your thoughts",
+        "press Enter ↵"
+      ],
+      "text_word_count": 20,
+      "typography": "Same form text; inside the moving pink swatch the headline and subline render in a light serif with a contrasting text colour (a 'theme lens' effect); outside it stays in the original sans",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "Brief (0.76 s) moment: colour swatches (yellow and pink rounded squares, teal edge) drop onto the form; the pink square passes over the headline and subline, revealing a restyled serif/coloured version of the text underneath, as the VO says 'set a color palette' (w13-w16).",
+      "build_rebuild": "Stack the plain and themed versions of the form text, clip the themed layer to a moving rounded-square mask (pink fill) that travels across the headline, while additional swatch squares drop in from the top with a quick ease-out.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s005",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "other",
+      "composition_other": "Diagonal cascade of three overlapping form cards from top-left to bottom-right",
+      "focal_element": "Three themed versions of the same form (yellow, pink, teal) cascading diagonally",
+      "transition_in": "other",
+      "transition_other": "Themed fill expands to replace the white card (in-place restyle / morph-like change)",
+      "on_screen_text": [
+        "THG",
+        "Thanks for staying at the Tropical Hotel!",
+        "We'd love to hear about your experience!",
+        "Share your thoughts",
+        "press Enter ↵"
+      ],
+      "text_word_count": 20,
+      "typography": "Each card repeats the same form text (counted once) in a light serif, sentence case; small solid buttons with bold labels; 'THG' logo in bold slab/serif top-left of each card",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "The pink theme fills the form card, which then shrinks and splits into a diagonal cascade of three themed cards (yellow, pink, teal) during 'and create themes that you and others in your organization can apply' (w17-w28); at ~12.5 s the cascade collapses back to the single pink card, which then exits leaving an empty cream frame.",
+      "build_rebuild": "Scale the themed form card down, then animate two duplicates with different theme colours outward along a top-left to bottom-right diagonal (staggered translate with ease-out), hold ~2 s, reverse the stagger into the centre card and fade/scale it out.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s006",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Typeform workspace dashboard grid of form tiles, with the 'Brand kit Beta' entry in the bottom-left sidebar",
+      "transition_in": "other",
+      "transition_other": "Screen recording slides/scales in over the cream frame (cream edge visible at 14.0 s)",
+      "on_screen_text": [
+        "Suzie Q Corp.",
+        "Comment",
+        "Find workspace or typeform",
+        "PRIVATE",
+        "Marketing Campaigns",
+        "My workspace",
+        "Education Stuff",
+        "Lead Gen Forms",
+        "Test forms",
+        "New forms",
+        "Work Stuff",
+        "SHARED",
+        "Video Things",
+        "Shared Typeforms",
+        "Apps & Integrations",
+        "Brand kit Beta",
+        "My workspace",
+        "Share",
+        "Create typeform",
+        "Date created",
+        "Grid",
+        "List",
+        "Event Registration",
+        "Plant Classification Quiz",
+        "My Typeform quiz",
+        "My Typeform quiz",
+        "Event Feedback Form",
+        "Pizza Order Form",
+        "Plant Classification Quiz (QR Code)",
+        "Zen House Yoga",
+        "Plant Classification Quiz",
+        "Plant Classification Quiz",
+        "Pizza Order Form (copy)",
+        "Quiz your knowledge",
+        "Sneaker Purchase Form",
+        "Sneaker Purchase Form",
+        "Quiz your knowledge",
+        "Creative Brief",
+        "Product Feedback Form",
+        "Trip Feedback"
+      ],
+      "text_word_count": 96,
+      "typography": "Native product UI sans at UI sizes: small regular sidebar labels with counts, uppercase small-caps section headers (PRIVATE, SHARED), medium-weight page title, centred regular tile titles; tile footer response counts and sidebar counts omitted from the text list",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "Real screen recording of the Typeform workspace; the frame settles in and holds while the cursor rests in the grid, as the VO finishes 'to Typeforms' and starts 'To add a Brand Kit' (w29-w35), setting up the click on the 'Brand kit' sidebar item.",
+      "build_rebuild": "Cut to a full-bleed 1080p screen capture of the dashboard, entering with a short scale/slide from slightly inset to full frame, and hold it static so the next shot can direct attention to the bottom-left 'Brand kit' item.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

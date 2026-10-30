@@ -1,0 +1,65 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "7380b2a629d2c49402059432feef923879bc0e901686f18bb366582404dee0f7",
+    "created_at": "2026-10-05T06:43:14.950992Z"
+  },
+  "video": "datadog-datadog-overview-see-inside-the-platfor",
+  "event": "e004",
+  "task": "a2-e004",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Trace flame graph UI (zoomed toward the hovered rails.charge_payment span)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 550, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b06",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Span hover tooltip (rides the zoom, grows from small to legible)",
+      "role": "notification",
+      "role_other": null,
+      "change_types": ["scale_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "91.4 ms (6.92% of total Time)",
+      "text_unit": "whole",
+      "estimates": null
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x011",
+      "verdict": "confirm",
+      "label": "music",
+      "note": "440 ms before the burst; same periodic percussion as the rest of the bed."
+    }
+  ],
+  "pattern": {
+    "id": "ui_camera_push_in",
+    "proposed_name": null,
+    "description": "The camera pushes in about 1.4x on the trace flame graph, centring the hovered span and its tooltip while the error log panel below drops out of frame; the 'to a single transaction' caption stays fixed on top.",
+    "why_premium": "The zoom matches the line 'to a single transaction', narrowing from the full trace to one span so the viewer's eye goes straight to the detail, and the caption stays legible because it is not scaled."
+  },
+  "build_hint": {
+    "gsap": "gsap.fromTo('.ui-layer', {scale: 1, x: 0, y: 0}, {scale: 1.42, x: '-2%', y: '-3%', transformOrigin: '45% 25%', duration: 0.55, ease: 'expo.out'}); caption on a separate unscaled layer.",
+    "remotion": "const p = spring({frame, fps, config: {damping: 28, stiffness: 120, mass: 1}}); UI layer transform: scale(interpolate(p,[0,1],[1,1.42])) with transformOrigin '45% 25%'; caption rendered outside the scaled container."
+  },
+  "confidence": "high",
+  "notes": "Energy decays long after the peak, which suggests a strong ease-out tail; code timing will confirm. The caption is static, so it is not listed."
+}

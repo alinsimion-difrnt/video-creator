@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "3a91a8a0d2d94614e8da1c2dbe25851167b761e31d09b93d6986a133f19b2286",
+    "created_at": "2026-10-05T06:44:21.199685Z"
+  },
+  "video": "duolingo-introducing-duolingo-chess",
+  "event": "e008",
+  "task": "a2-e008",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "3D character (Oscar) in the chair, shrinking in frame as the camera snaps out",
+      "role": "other",
+      "role_other": "3d_character",
+      "change_types": ["scale_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 130, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Interviewer's microphone and hand entering at the left edge as the frame widens",
+      "role": "other",
+      "role_other": "set_prop",
+      "change_types": ["slide_right"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 130, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "comedic snap zoom",
+    "description": "A fast snap pull-out (about 0.80x scale over about 4 frames) from a close-up of the character to a medium shot that reveals the interviewer's mic at the left edge, landing on 'some big' in the narration.",
+    "why_premium": "Abrupt sitcom-style zoom cuts set comic rhythm without a hard cut, and the reveal of the off-screen mic adds context in the same move."
+  },
+  "build_hint": {
+    "gsap": "Camera container starts scaled: gsap.fromTo(camera, {scale: 1.25}, {scale: 1, duration: 0.13, ease: 'expo.out', transformOrigin: '50% 40%'}); the mic layer sits outside the initial crop so it enters naturally as the scale drops.",
+    "remotion": "scale = interpolate(frame, [start, start + 4], [1.25, 1], {easing: Easing.out(Easing.exp), extrapolateRight: 'clamp'}) on an AbsoluteFill wrapper; no spring (no overshoot visible)."
+  },
+  "confidence": "medium",
+  "notes": "Camera verdict pull_out (scale 0.80); the motion is almost all camera. Most diff boxes (b03, b05-b09) are curtain-fold slivers and are not listed. b04 is the closest box for the mic; it is a column strip, not a tight box. No SFX candidates."
+}

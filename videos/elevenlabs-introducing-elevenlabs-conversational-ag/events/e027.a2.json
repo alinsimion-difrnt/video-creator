@@ -1,0 +1,75 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "ba4e6056eadb0c537f5b1db24058a89e8c496064bed92444ee5cb8d016431626",
+    "created_at": "2026-10-05T06:46:58.533093Z"
+  },
+  "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+  "event": "e027",
+  "task": "a2-e027",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Agent message bubble (Welcome to DC Medical)",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Welcome to DC Medical. How can I help?",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 500, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "User message bubble (Hello. Hablas espanol?)",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Hello. ¿Hablas español?",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 500, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [606, 424, 793, 680],
+      "manual_reason": "No candidate box covers the new empty agent bubble at the bottom; b03 only overlaps its top edge and mostly covers the user bubble.",
+      "label": "New empty agent reply bubble",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["scale_up", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 350, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x046", "verdict": "override", "label": "music", "note": "Soft broadband smear 340 ms before the motion; matches the music bed, no visual change at that time."},
+    {"id": "x047", "verdict": "unsure", "label": "unsure", "note": "Faint transient around when the new bubble starts to grow; too weak to call a reverse swoosh."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "chat bubble append",
+    "description": "A new chat bubble grows from a small pill into a full card below the conversation while the existing bubbles drift up slightly to make room.",
+    "why_premium": "The reply slot appears before its text, so the conversation reads as live turn-taking; the gentle upward drift of the whole stack keeps the composition balanced instead of hard-jumping."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.bubble:not(.new)', {y: -30, duration: 0.5, ease: 'power2.inOut'}); tl.fromTo('.bubble.new', {scale: 0.3, opacity: 0, transformOrigin: '50% 0%'}, {scale: 1, opacity: 1, duration: 0.35, ease: 'power3.out'}, '<0.15');",
+    "remotion": "Existing bubbles: translateY = interpolate(spring({frame, fps, config: {damping: 200}}), [0,1], [0,-30]). New bubble: scale and opacity from spring({frame: frame-5, fps, config: {damping: 20, stiffness: 180}}) mapped 0.3->1, transform-origin top center."
+  },
+  "confidence": "medium",
+  "notes": "Upward drift of the existing bubbles is small (about 25-30 px); camera verdict is none so it is content movement. New bubble needed a manual box."
+}

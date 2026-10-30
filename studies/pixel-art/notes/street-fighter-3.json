@@ -1,0 +1,55 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T13:58:33Z"
+  },
+  "id": "street-fighter-3",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "cool",
+    "notes": "Each stage has a strong colour key: blue-violet New York street, green tea house, orange sunset savanna, teal market. Fighters keep saturated costume colours (white gi, red gi, purple) that stand out on it; a parry flashes the fighter (wiki), a hit flashes pale blue."
+  },
+  "lighting": "Stages are lit like paintings with their own key colour (sunset orange, cool blue dusk); fighters get soft shading and a dark cast shadow ellipse under the feet that grounds them.",
+  "silhouette": "Large fighters, about half the screen height, each a distinct shape: lanky, hulking, tiny and quick. Wide stances and long limbs read from the pose alone.",
+  "motion": {
+    "timing": "Smooth, many-drawing animation praised for clear personality (wiki); the sheet shows big arcs on kicks and jumps, knock-down poses, and long idle stances between hits. No frame timings measured.",
+    "principles": [
+      "anticipation",
+      "follow through",
+      "overlapping action",
+      "arcs",
+      "exaggeration"
+    ]
+  },
+  "texture": "Hand-drawn sprites with soft shading; stages are busy and detailed (graffiti, signs, market stalls) with animated crowds standing around.",
+  "camera": "Side-on two-shot that pans slightly to keep both fighters in view; big text cards (ROUND 1, FIGHT!) slam across the middle on a red band.",
+  "sound": "House, jungle and drum and bass soundtrack; character themes remixed in later versions (wiki).",
+  "acting": {
+    "enters": "Each fighter is already in stance on their own stage when the ROUND 1 card slams in; intro poses play first (wiki).",
+    "acts": "Personality in idle stance, hit reactions and win poses: one bounces, one sways, one stands still. Crowds in the back react while the fight goes on.",
+    "exits": "The loser falls and stays down; the winner holds a victory pose and a grade follows (wiki).",
+    "comes_back": true,
+    "depth": "Fighters on one plane; background crowds and passers-by (locals, a cart, bystanders) give life behind them."
+  },
+  "techniques": [
+    "idle stance as personality",
+    "colour flash on a successful parry or hit",
+    "cast shadow ellipse under the feet",
+    "one colour key per stage, saturated costumes on top",
+    "big text card slam on a red band",
+    "living crowd in the background"
+  ],
+  "feel": "colour-keyed stage + big readable silhouette + personal idle + flash on contact + crowd in back = character in every frame",
+  "for_fred": "Give Fred and Pixie each a signature idle (Fred sways, Pixie stays still and flicks her tail) and a win pose held before Fred exits. Put a small shadow under Fred so he sits in the scene, flash him a colour on surprise, and let one small background character react to what he does.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Street_Fighter_III:_3rd_Strike",
+    "studies/pixel-art/sources.yaml",
+    "data/study/pixel/work/street-fighter-3/clip1-7504399924457491754.jpg",
+    "data/study/pixel/work/street-fighter-3/clip3-7671915234826800405.jpg"
+  ]
+}

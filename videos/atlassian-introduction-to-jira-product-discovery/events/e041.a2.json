@@ -1,0 +1,33 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "ba747ad28254c13cd7bf6b2dec78b39aba06f8d5d7082f747b5a5e86c7657210",
+    "created_at": "2026-10-05T06:40:22.343906Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e041",
+  "task": "a2-e041",
+  "elements": [
+    {"box": null, "manual_box": [479, 406, 503, 417], "manual_reason": "The mouse cursor leaves the sidebar and comes to rest in the empty matrix plot; no candidate box covers its end position.", "label": "Mouse cursor", "role": "cursor", "role_other": null, "change_types": ["slide_right", "slide_down"], "change_other": null, "is_text": false, "text": null, "text_unit": null, "estimates": {"duration_ms": 300, "easing_class": "ease_out"}},
+    {"box": "b02", "manual_box": null, "manual_reason": null, "label": "Selected sidebar view item (hover state clears)", "role": "list_item", "role_other": null, "change_types": ["highlight"], "change_other": null, "is_text": true, "text": "Impact vs. Effort", "text_unit": "whole", "estimates": {"duration_ms": 33, "easing_class": "step"}},
+    {"box": null, "manual_box": [340, 140, 364, 150], "manual_reason": "The hover-only more-actions (vertical dots) button on the sidebar item disappears; its former position has no candidate box other than the broad b01 sidebar union.", "label": "Sidebar item more-actions button", "role": "button", "role_other": null, "change_types": ["fade"], "change_other": null, "is_text": false, "text": null, "text_unit": null, "estimates": {"duration_ms": 33, "easing_class": "step"}}
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "After selecting the Impact vs. Effort view, the cursor glides off the sidebar into the matrix plot; the sidebar item's hover tint and its more-actions button drop away, leaving only the blue selected outline.",
+    "why_premium": "Moving the pointer off the navigation removes hover clutter and points the eye at the matrix just as the voiceover says 'gives you a visual way', so attention follows the narration without a camera move."
+  },
+  "build_hint": {
+    "gsap": "gsap.to(cursor,{x:430,y:100,duration:0.3,ease:'power2.out'}); tl.set(navItem,{backgroundColor:'transparent'},0.05).set(navMoreBtn,{autoAlpha:0},0.05) as the cursor exits the item bounds.",
+    "remotion": "Cursor position = interpolate(frame,[0,9],[start,end],{easing:Easing.out(Easing.quad)}); hover background and more button visible only while the cursor is inside the nav item rect (instant toggle, no easing)."
+  },
+  "confidence": "medium",
+  "notes": "Small, low-energy UI event in a screen recording; the cursor travel spans several filmstrip frames (it passes through the plot via about x=280 before settling near the centre). The two manual boxes are approximate."
+}

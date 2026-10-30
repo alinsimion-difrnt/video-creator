@@ -1,0 +1,136 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "bfea8a077cceead6a9a1645bf5f40ea2d0a8e3b653d78452b7949805b9e25f43",
+    "created_at": "2026-10-05T06:28:57.383433Z"
+  },
+  "video": "profound-how-to-maximize-ai-visibility-analytics",
+  "task": "a1-p3",
+  "shots": [
+    {
+      "shot": "s010",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "A sequence of cropped Profound UI panels: a 'Create Content Brief' agent output document, an agent workflow canvas, and an AI-bot analytics table with signed deltas",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "Create Content Brief",
+        "Profound's 2026 Ultimate Guide to AI Visibility: How to Get Cited by AI Search Engines, Measure Impact, and Drive Revenue",
+        "Strategic Overview",
+        "Schema Generator",
+        "AI Citations",
+        "AI Indexing",
+        "AI Training",
+        "Total Visits",
+        "% of Bot Referrals",
+        "Export",
+        "Search pages",
+        "www.tryprofound.com"
+      ],
+      "text_word_count": 43,
+      "typography": "Native product UI type: clean grotesque sans (Inter-like guess, low confidence); bold sentence-case document heading, medium-weight panel titles, small regular body copy, tabular numerals in the table with red/green signed deltas; normal tracking.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Over the voice-over listing what agents do (w122-w145: write blog posts, generate meta descriptions, draft social content, all connected to first-party data), the camera slowly scrolls a generated content brief, cuts within the shot to an agent workflow canvas (Get Knowledge Base File -> Draft Social Copy -> End) with a side panel streaming output, then a tight crop of the AI Citations / AI Indexing / AI Training analytics table, which pulls out to the full tryprofound.com dashboard before fading out around 1:00.",
+      "build_rebuild": "Chain four recorded or recreated UI screens in one 10 s segment with short soft crossfades, each framed as a tight crop on a light card with a slow vertical scroll or gentle push, ending with a zoom-out from the table crop to the full dashboard.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s011",
+      "shot_type": "presenter",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Presenter in a beige sweater seated at a desk with a Shure microphone, in a dark studio with a 'Profound University' screen and a 'Profound' desk sign",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "Profound University",
+        "Profound"
+      ],
+      "text_word_count": 3,
+      "typography": "Set-dressing only: white sans-serif wordmark with logo glyph on the wall screen, and a bold white sans-serif 3D desk sign; no overlay captions.",
+      "depth_cues": [
+        "blur"
+      ],
+      "what_happens": "The shot resolves from a heavy blur into the presenter speaking to camera (w146-w163: 'One agent is powerful, but what if you need to do this across a hundred pages? A thousand?'), gesturing with open hands, then defocuses again at the end to hand off to the title card.",
+      "build_rebuild": "Film a locked-off medium shot of the presenter in a dark, warmly practical-lit set and animate a Gaussian blur from about 40px to 0 over the first 0.5 s and back up over the last 0.5 s to bracket the talking-head segment.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s012",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "A 'Sheets' product title with a spreadsheet icon centred over the blurred presenter footage",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "Sheets"
+      ],
+      "text_word_count": 1,
+      "typography": "Large white geometric/grotesque sans in title case, medium weight, normal tracking, paired with a white rounded-square table icon; the word reveals letter by letter left to right with trailing letters still fading in.",
+      "depth_cues": [
+        "blur"
+      ],
+      "what_happens": "On 'Meet Profound Sheets' (w164-w166) the product name 'Sheets' fades in letter by letter beside its icon over the defocused presenter, while thin white spreadsheet gridlines draw on from the bottom and spread up across the frame.",
+      "build_rebuild": "Over a blurred, darkened copy of the previous presenter footage, stagger-fade the letters of 'Sheets' left to right (about 60 ms per letter) next to a static icon and draw thin 1px white grid lines upward from the bottom edge to foreshadow the spreadsheet UI.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s013",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "The Profound Sheets spreadsheet UI: rows of URLs with agent columns showing Running... / Completed status and generated company highlights, then the Add column > Agent menu",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "Sheets",
+        "Add FAQs to Low Performing Citations",
+        "Settings",
+        "Import",
+        "Export",
+        "Prompt",
+        "CitationTag",
+        "Add Internal Linking (Sheets 1)",
+        "Company Highlights",
+        "Add column",
+        "Running...",
+        "Completed",
+        "SaaS Companies Sheet - Sheet1",
+        "platform.tryprofound.com/sheets",
+        "URLs",
+        "78 rows · 4 columns",
+        "Search column types...",
+        "Agent...",
+        "Text",
+        "Long Text",
+        "Number",
+        "Date Range",
+        "Dropdown"
+      ],
+      "text_word_count": 44,
+      "typography": "Product UI sans (Inter-like guess, low confidence): small regular cell text, medium-weight column headers with type icons, agent column header in a light accent tint, monospace-looking ID cells; the opening 'Sheets' title carries over from s012 in large white sans.",
+      "depth_cues": [
+        "blur",
+        "shadow"
+      ],
+      "what_happens": "The 'Sheets' title dissolves into a blurred grid that sharpens into a cropped sheet ('Add FAQs to Low Performing Citations'), then a close crop of an 'Add Internal Linking' agent column where rows flip from Running... spinners to green Completed ticks and highlight text fills in (w167-w192, rows as parallel agent runs); it pulls out to the full browser view of 'SaaS Companies Sheet - Sheet1', then a cursor opens Add column, picks Agent and a right-hand agent picker panel filters down to one agent (w193-w207, columns as chained agents).",
+      "build_rebuild": "Recreate the sheet as an HTML table, stagger each agent cell from a spinner 'Running...' state to a green check 'Completed' with its text filling in at random 150-400 ms offsets, frame it as a tight crop that eases out to the full browser chrome, then script a cursor click on 'Add column' that opens a dropdown and a slide-in agent list filtering as a query is typed.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

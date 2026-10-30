@@ -1,0 +1,238 @@
+{
+  "$defs": {
+    "Annotator": {
+      "enum": [
+        "code",
+        "claude-code",
+        "human"
+      ],
+      "title": "Annotator",
+      "type": "string"
+    },
+    "LoudnessSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "destination": {
+          "title": "Destination",
+          "type": "string"
+        },
+        "max_lufs": {
+          "title": "Max Lufs",
+          "type": "number"
+        },
+        "max_true_peak_dbtp": {
+          "title": "Max True Peak Dbtp",
+          "type": "number"
+        },
+        "min_lufs": {
+          "title": "Min Lufs",
+          "type": "number"
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        }
+      },
+      "required": [
+        "destination",
+        "min_lufs",
+        "max_lufs",
+        "max_true_peak_dbtp",
+        "source"
+      ],
+      "title": "LoudnessSpec",
+      "type": "object"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "description": "Carried by every output JSON (BUILD_PLAN section 2.7).",
+      "properties": {
+        "annotator": {
+          "$ref": "#/$defs/Annotator"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "input_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Input Hash",
+          "type": "string"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "schema_version": {
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "skill": {
+          "anyOf": [
+            {
+              "pattern": "^[a-z0-9-]+@[0-9a-f]{8,64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Skill"
+        },
+        "stage": {
+          "title": "Stage",
+          "type": "string"
+        },
+        "tool_version": {
+          "title": "Tool Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool_version",
+        "stage",
+        "annotator",
+        "input_hash",
+        "created_at"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "Range": {
+      "additionalProperties": false,
+      "description": "A measured value for building: the weighted median and the typical (25-75%) range.",
+      "properties": {
+        "high": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "High"
+        },
+        "low": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Low"
+        },
+        "median": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Median"
+        },
+        "n": {
+          "minimum": 0,
+          "title": "N",
+          "type": "integer"
+        },
+        "videos": {
+          "minimum": 0,
+          "title": "Videos",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "median",
+        "low",
+        "high",
+        "n",
+        "videos"
+      ],
+      "title": "Range",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "corpus_lra_lu": {
+      "$ref": "#/$defs/Range"
+    },
+    "corpus_lufs": {
+      "$ref": "#/$defs/Range"
+    },
+    "corpus_true_peak_dbtp": {
+      "$ref": "#/$defs/Range"
+    },
+    "ducking_db": {
+      "$ref": "#/$defs/Range"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    },
+    "sfx_mix": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "title": "Sfx Mix",
+      "type": "object"
+    },
+    "sfx_offset_ms_to_reveal": {
+      "additionalProperties": {
+        "$ref": "#/$defs/Range"
+      },
+      "title": "Sfx Offset Ms To Reveal",
+      "type": "object"
+    },
+    "sfx_on_beat_share": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Sfx On Beat Share"
+    },
+    "sfx_per_min": {
+      "$ref": "#/$defs/Range"
+    },
+    "targets": {
+      "items": {
+        "$ref": "#/$defs/LoudnessSpec"
+      },
+      "title": "Targets",
+      "type": "array"
+    }
+  },
+  "required": [
+    "provenance",
+    "sfx_per_min",
+    "sfx_mix",
+    "sfx_offset_ms_to_reveal",
+    "sfx_on_beat_share",
+    "corpus_lufs",
+    "corpus_true_peak_dbtp",
+    "corpus_lra_lu",
+    "ducking_db",
+    "targets"
+  ],
+  "title": "SoundSpec",
+  "type": "object"
+}

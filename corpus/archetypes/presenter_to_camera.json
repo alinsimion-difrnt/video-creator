@@ -1,0 +1,267 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a3_pattern_cards",
+  "annotator": "claude-code",
+  "skill": "write-archetype-cards@a75a12f0ca91",
+  "model": null,
+  "input_hash": "3fc61f07a4eb3e058b70a588d73f8df80f4342fa96936f03014d1bb2d9622539",
+  "created_at": "2026-10-05T19:09:56.941774Z"
+ },
+ "id": "presenter_to_camera",
+ "name": "Presenter To Camera",
+ "summary": "A person speaks directly to the viewer in a locked or gently drifting medium shot, sometimes with a name tag or a supporting graphic beside them. The scene gives the explainer a human voice and carries claims, reasons and proof in the speaker's own words.",
+ "when_to_use": [
+  "A founder or customer states the problem, the reason or the result in their own words.",
+  "To add trust and warmth between product demo scenes.",
+  "When a spoken claim needs a quick visual proof card next to the speaker."
+ ],
+ "slots": [
+  {"name": "presenter_clip", "what": "filmed footage of the speaker, medium or close framing", "required": true},
+  {"name": "spoken_line", "what": "the sentence or two the speaker says in this scene", "required": true},
+  {"name": "name_tag", "what": "a lower third with the speaker's name and role", "required": false},
+  {"name": "support_card", "what": "a window or card that slides in beside the speaker to prove the point", "required": false},
+  {"name": "keyword", "what": "one spoken word shown large behind or beside the speaker", "required": false}
+ ],
+ "steps": [
+  "Hard cut in on the speaker, usually on a sentence boundary.",
+  "The speaker talks with the frame locked or slowly drifting.",
+  "A name tag eases in at the lower left early in the first appearance.",
+  "Optionally a support card slides in and its content scrolls or appends to prove the claim.",
+  "Cut away to a tighter angle or the next scene at the end of the sentence."
+ ],
+ "patterns": [
+  "masked_scroll",
+  "chip_append"
+ ],
+ "build": {
+  "gsap": "One timeline per scene over the footage layer: a short opacity and y tween for the lower third with an ease-out (power family), an x tween sliding any support card in from the side with an ease-out, and a linear y tween for content scrolling inside a masked card; keep the footage itself untouched.",
+  "remotion": "An OffthreadVideo of the presenter in one Sequence; the lower third and support card are child Sequences starting on narration words, each entering with a critically damped spring on translate and opacity, and scrolling content driven by a linear interpolate over the Sequence's frames."
+ },
+ "sound": "Mostly the speaker's voice over a music bed. When an effect is used it is a reverse swoosh or impact landing on a graphic entrance or a punchy spoken word, with an occasional chime; otherwise no typical sound.",
+ "numbers": {
+  "id": "presenter_to_camera",
+  "shots": 98,
+  "videos": 10,
+  "weight": 59.8,
+  "duration_s": {
+   "n": 98,
+   "videos": 10,
+   "weight": 59.8,
+   "median": 3.759,
+   "p25": 2.528,
+   "p75": 6.071,
+   "ci": [
+    3.276,
+    4.662
+   ]
+  },
+  "events_per_shot": {
+   "n": 98,
+   "videos": 10,
+   "weight": 59.8,
+   "median": 0.0,
+   "p25": 0.0,
+   "p75": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ]
+  },
+  "first_motion_s": {
+   "n": 12,
+   "videos": 2,
+   "weight": 9.6,
+   "median": 0.983,
+   "p25": 0.272,
+   "p75": 2.544,
+   "ci": [
+    0.378,
+    2.503
+   ]
+  },
+  "pattern_mix": {
+   "other": 0.7222,
+   "masked_scroll": 0.2222,
+   "chip_append": 0.0556
+  },
+  "transition_mix": {
+   "hard_cut": 0.6505,
+   "other": 0.209,
+   "slide": 0.0535,
+   "crossfade": 0.0468,
+   "whip": 0.0268,
+   "push": 0.0134
+  },
+  "shot_type_mix": {
+   "presenter": 0.8261,
+   "footage": 0.1003,
+   "other": 0.0535,
+   "ui_recreated": 0.0201
+  },
+  "beat_mix": {
+   "demo": 0.2324,
+   "mechanism": 0.2209,
+   "outcome": 0.216,
+   "proof": 0.1375,
+   "hook": 0.1113,
+   "problem": 0.0573,
+   "agitate": 0.0131,
+   "cta": 0.0115
+  },
+  "sfx_label_mix": {
+   "music": 0.2519,
+   "unsure": 0.2442,
+   "swoosh_reverse": 0.187,
+   "impact": 0.1549,
+   "chime": 0.1263,
+   "click": 0.0143,
+   "whoosh": 0.0119,
+   "speech": 0.0095
+  },
+  "sfx_offset_s_by_label": {
+   "chime": {
+    "n": 28,
+    "videos": 3,
+    "weight": 21.2,
+    "median": 4.465,
+    "p25": 1.849,
+    "p75": 6.395,
+    "ci": [
+     3.054,
+     5.544
+    ]
+   },
+   "click": {
+    "n": 3,
+    "videos": 1,
+    "weight": 2.4,
+    "median": 1.557,
+    "p25": 0.488,
+    "p75": 3.116,
+    "ci": null
+   },
+   "impact": {
+    "n": 34,
+    "videos": 5,
+    "weight": 26.0,
+    "median": 1.77,
+    "p25": 0.988,
+    "p75": 3.213,
+    "ci": [
+     1.27,
+     2.398
+    ]
+   },
+   "music": {
+    "n": 63,
+    "videos": 5,
+    "weight": 42.3,
+    "median": 2.908,
+    "p25": 1.217,
+    "p75": 4.508,
+    "ci": [
+     2.32,
+     3.267
+    ]
+   },
+   "speech": {
+    "n": 2,
+    "videos": 1,
+    "weight": 1.6,
+    "median": 1.749,
+    "p25": 0.808,
+    "p75": 2.691,
+    "ci": null
+   },
+   "swoosh_reverse": {
+    "n": 43,
+    "videos": 5,
+    "weight": 31.4,
+    "median": 2.105,
+    "p25": 0.717,
+    "p75": 4.035,
+    "ci": [
+     1.562,
+     2.768
+    ]
+   },
+   "unsure": {
+    "n": 57,
+    "videos": 7,
+    "weight": 41.0,
+    "median": 2.406,
+    "p25": 1.108,
+    "p75": 4.012,
+    "ci": [
+     1.877,
+     2.882
+    ]
+   },
+   "whoosh": {
+    "n": 3,
+    "videos": 2,
+    "weight": 2.0,
+    "median": 1.662,
+    "p25": 1.459,
+    "p75": 1.948,
+    "ci": null
+   }
+  },
+  "examples": [
+   {
+    "video": "warp-introducing-warp-2-0-the-agentic-develo",
+    "shot": "s020",
+    "score": 4.0
+   },
+   {
+    "video": "cursor-introducing-cursor-3",
+    "shot": "s002",
+    "score": 4.0
+   },
+   {
+    "video": "servicenow-what-does-servicenow-do",
+    "shot": "s009",
+    "score": 4.0
+   },
+   {
+    "video": "clickup-clickup-4-0-just-changed-work-ai-softwar",
+    "shot": "s002",
+    "score": 4.0
+   },
+   {
+    "video": "profound-how-to-maximize-ai-visibility-analytics",
+    "shot": "s001",
+    "score": 4.0
+   }
+  ]
+ },
+ "examples": [
+  {
+   "video": "cursor-introducing-cursor-3",
+   "shot": "s002",
+   "score": 4.0
+  },
+  {
+   "video": "servicenow-what-does-servicenow-do",
+   "shot": "s009",
+   "score": 4.0
+  },
+  {
+   "video": "clickup-clickup-4-0-just-changed-work-ai-softwar",
+   "shot": "s002",
+   "score": 4.0
+  },
+  {
+   "video": "warp-introducing-warp-2-0-the-agentic-develo",
+   "shot": "s020",
+   "score": 4.0
+  }
+ ],
+ "caveats": [
+  "Measured motion comes from very few videos; most presenter shots have no detected motion event.",
+  "Members are mixed: some are plain talking heads, others are graphics laid over or replacing the speaker.",
+  "Most of the pattern mix is unnamed, so the named patterns cover only overlay moments."
+ ]
+}

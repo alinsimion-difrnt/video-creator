@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "9b7e1e7a49c7d77b995e1049a7866395e425a9c9cc41fdf12ff8a7a90fe0b10e",
+    "created_at": "2026-10-05T06:55:56.684029Z"
+  },
+  "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+  "event": "e003",
+  "task": "a2-e003",
+  "elements": [
+    {"box": "b01", "manual_box": null, "manual_reason": null, "label": "AI agent chat panel",
+     "role": "ui_panel", "role_other": null, "change_types": ["slide_up"], "change_other": null,
+     "is_text": false, "text": null, "text_unit": null,
+     "estimates": {"duration_ms": 700, "easing_class": "ease_out"}},
+    {"box": "b05", "manual_box": null, "manual_reason": null, "label": "Panel header title",
+     "role": "label", "role_other": null, "change_types": ["slide_up"], "change_other": null,
+     "is_text": true, "text": "AI agent", "text_unit": "whole",
+     "estimates": {"duration_ms": 700, "easing_class": "ease_out"}},
+    {"box": "b03", "manual_box": null, "manual_reason": null, "label": "Customer message bubble, line 1",
+     "role": "body_text", "role_other": null, "change_types": ["pop", "slide_up"], "change_other": null,
+     "is_text": true, "text": "I’d like to return my", "text_unit": "whole",
+     "estimates": {"duration_ms": 400, "easing_class": "ease_out"}},
+    {"box": "b04", "manual_box": null, "manual_reason": null, "label": "Customer message bubble, line 2",
+     "role": "body_text", "role_other": null, "change_types": ["pop", "slide_up"], "change_other": null,
+     "is_text": true, "text": "order #44433.", "text_unit": "whole",
+     "estimates": {"duration_ms": 400, "easing_class": "ease_out"}},
+    {"box": null, "manual_box": [378, 525, 503, 595],
+     "manual_reason": "No candidate box covers the customer avatar circle right of the bubble.",
+     "label": "Customer avatar", "role": "avatar", "role_other": null, "change_types": ["pop", "slide_up"],
+     "change_other": null, "is_text": false, "text": null, "text_unit": null,
+     "estimates": {"duration_ms": 400, "easing_class": "ease_out"}}
+  ],
+  "sfx_review": [
+    {"id": "x005", "verdict": "override", "label": "music",
+     "note": "Before the event, during the title card; one of a regular train of percussive music transients."},
+    {"id": "x006", "verdict": "unsure", "label": "unsure",
+     "note": "Coincides with the panel rising, but the transient looks like the same rhythmic music hits."},
+    {"id": "x007", "verdict": "unsure", "label": "unsure", "note": "Panel settling; spectrogram resembles music beat."},
+    {"id": "x008", "verdict": "unsure", "label": "unsure",
+     "note": "Near the chat bubble appearing; strongest CLAP score but shape is a short broadband hit like the beat grid."},
+    {"id": "x009", "verdict": "unsure", "label": "unsure", "note": "After the bubble settles; outside the visual change."},
+    {"id": "x010", "verdict": "unsure", "label": "unsure", "note": "After the event; low score."}
+  ],
+  "pattern": {"id": "other", "proposed_name": "chat panel rise",
+    "description": "After a hard cut from the title card to a flat green field, a dark-headed chat panel rises from below the frame and settles left of centre; then the customer's message bubble and avatar pop in and drift up into place.",
+    "why_premium": "Two-step build: the container lands first with a long decelerating ease, and only after it is fully settled does the content arrive, so the eye reads the UI frame before the message. Flat background and generous negative space keep focus on one bubble."},
+  "build_hint": {
+    "gsap": "tl.fromTo(panel, {yPercent: 110}, {yPercent: 0, duration: 0.7, ease: 'power3.out'}); then tl.fromTo([bubble, avatar], {autoAlpha: 0, scale: 0.9, y: 20}, {autoAlpha: 1, scale: 1, y: 0, duration: 0.4, ease: 'back.out(1.4)', stagger: 0.05}, '+=0.3').",
+    "remotion": "panel translateY = interpolate(spring({frame, fps, config: {damping: 200, stiffness: 100, mass: 1}}), [0,1], [height, 0]); bubble and avatar use spring({frame: frame - delay, config: {damping: 14, stiffness: 160}}) driving opacity, scale 0.9->1 and translateY 20->0."
+  },
+  "confidence": "medium",
+  "notes": "Energy spike at frame ~90 is the hard cut from the title card; the main motion is the panel rise. b02 is a diff region on empty green in the end frame (likely a transient position), so not used. SFX candidates sit on a regular percussive grid that looks like music; no clear designed SFX."
+}

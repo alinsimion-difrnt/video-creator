@@ -1,0 +1,36 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "61baa050306a837897f777287b42c7b03818213086116c83726fe53c61a1be0e",
+                 "created_at": "2026-10-13T12:35:00+00:00"},
+  "id": "7644577129769897234",
+  "format": "green_screen",
+  "hook": {"type": "result_first",
+           "line": "A student's second account hit six digits days after the SEO class (paraphrased, Taglish).",
+           "visual": "Creator cut out at bottom right over a black screenshot of a student's message and a sales dashboard, with word-by-word captions."},
+  "beats": [
+    {"t": 0.0, "what": "Student testimonial screenshot behind her face: second account, sales dashboard, long thank-you message"},
+    {"t": 22.16, "what": "Announces the class runs from January to December 2026"},
+    {"t": 39.27, "what": "First cut after 39 s of one continuous take, same testimonial background"},
+    {"t": 67.07, "what": "Background switches to her community chat answering a question about the class length and templates"},
+    {"t": 99.72, "what": "Background becomes a 'How to join the classes' 3-step list (tap Subscription, pay monthly, start learning)"},
+    {"t": 110.8, "what": "Her profile with the Subscribe button shown behind her, offering a first-time discount"},
+    {"t": 121.88, "what": "Ends laughing over the join steps"}
+  ],
+  "graphics": {"captions": "word_by_word",
+               "caption_position": "bottom",
+               "devices": ["green_screen_bg", "screenshot", "title_text", "product_ui", "chart_or_number", "music_bed", "jump_cut"],
+               "density": "minimal", "per_minute_estimate": 4},
+  "characters": [],
+  "cta": {"kind": "product", "t": 99.72},
+  "why_it_works": [
+    "Opens on a student's proof (a dashboard and a thank-you message) instead of a claim, so the result sells the class before she says what it is",
+    "The background changes job with the script: proof, then FAQ answer, then the join steps, so the face never needs cuts to show progress",
+    "The join steps are written as a numbered list on screen, so the sales part is skimmable for anyone who stayed"
+  ],
+  "weaknesses": [
+    "Two minutes with almost no cuts (first cut at 39 s, median shot 7.8 s); energy rests entirely on her delivery",
+    "Rambling middle with repeated lines; the pitch could be half as long",
+    "The testimonial text is too small to read without pausing"
+  ],
+  "for_robert": "Swap the green-screen background to match each part of the script (proof screenshot, then FAQ, then numbered steps); Fred can 'pin up' each new background, but avoid her long uncut stretches."
+}

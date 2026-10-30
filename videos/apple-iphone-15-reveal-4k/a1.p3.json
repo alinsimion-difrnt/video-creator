@@ -1,0 +1,152 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "ac90491868cd95a69a48de350127ab7d4d96461cc088fbebc352d7aa016d74cf",
+    "created_at": "2026-10-05T06:57:29.738602Z"
+  },
+  "video": "apple-iphone-15-reveal-4k",
+  "task": "a1-p3",
+  "shots": [
+    {
+      "shot": "s012",
+      "shot_type": "3d",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Dual-camera bumps of successive phone colour variants, then the Dynamic Island on a pink phone's screen",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": ["shadow", "blur", "perspective_tilt"],
+      "what_happens": "From a low angle just above the back glass, camera bumps in different finishes (pink, yellow, green, blue) slide past one after another, each overlapping the last. Then a dark camera bump in the foreground reveals a pink phone's screen behind it. The Dynamic Island cycles through compact states: an AirPods icon with a green ring, a navigation arrow with an avatar split into a separate bubble, and finally an expansion that is blurred mid-morph. The text in that last expanded state is too blurred to read.",
+      "build_rebuild": "Keep the camera fixed just above a phone's back-glass plane and slide a stack of colour-variant phone models across in sequence (about 0.5 s each, overlapping). Then reveal a front-facing screen behind a dark model and animate a black pill shape that morphs between compact, split and expanded states.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s013",
+      "shot_type": "3d",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The Dynamic Island pill at the top of the pink phone's screen, above the dark camera bump",
+      "transition_in": "other",
+      "transition_other": "A cut hidden inside the Dynamic Island's expand blur: s012 ends on the blurred expanding pill and s013 opens on the sharp incoming-call card, with unchanged framing.",
+      "on_screen_text": ["iPhone", "Rody Albuerne", "0:01"],
+      "text_word_count": 4,
+      "typography": "System UI sans-serif (low-confidence guess: SF Pro). A small regular grey label 'iPhone' sits above a bold white caller name in sentence case. The call timer is medium-weight green with tabular numerals, next to a small phone glyph and an animated waveform.",
+      "depth_cues": ["shadow", "blur"],
+      "what_happens": "The expanded Dynamic Island shows an incoming-call card with an avatar, caller name and red decline and green accept buttons. It collapses through a blurred state into a wide active-call pill showing '0:01' and a waveform, then shrinks to the plain resting pill, which holds for the rest of the shot. Anchors list one event in this shot.",
+      "build_rebuild": "Render a black rounded-rect pill at the top of a phone screen and spring-morph its width, height and corner radius from a call card (avatar, two-line text, two round buttons) to a wide timer pill and then to the compact resting pill. Cross-blur the contents during each morph.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s014",
+      "shot_type": "3d",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The dimming phone with its resting Dynamic Island, fading to a black frame",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": ["none"],
+      "what_happens": "The final framing of the phone is already darkened at 35.0 s and fades fully to black by 35.5 s. The black holds until the end. No logo, end card or call to action is visible.",
+      "build_rebuild": "Fade the last product frame to black over about 0.5 s and hold black for about 1.2 s with no end card.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001", "s002", "s003", "s004", "s005", "s006", "s007", "s008", "s009", "s010"], "words": null},
+      {"beat": "demo", "shots": ["s011", "s012", "s013"], "words": null}
+    ],
+    "hook": {
+      "text": "There is no copy or voice-over. An unidentified, macro-scale 3D world of rose-tinted rounded forms and light streaks invites the viewer to guess what the object is, until the blur bridge in s010 resolves into the phone in s011.",
+      "technique": "other",
+      "technique_other": "Abstract macro mystery: the product is shown at a microscopic scale as architecture, and its identity is withheld until the reveal.",
+      "shots": ["s001", "s002", "s003", "s004", "s005", "s006", "s007", "s008", "s009", "s010"],
+      "words": null
+    },
+    "cta": {"text": null, "shots": []},
+    "tone": "Minimal, sensual and confident product teaser. It is music-driven, with no voice-over, headline copy or end card. Soft pastels and slow, luxurious camera moves give way to crisp UI micro-animation.",
+    "signature_moments": [
+      {
+        "shots": ["s010", "s011"],
+        "description": "A fast dolly down the symmetrical pink tunnel dissolves into full-frame bloom, and the phone's edge and camera rings resolve out of that blur. The abstract world turns out to have been the product all along.",
+        "why_premium": "A single continuous-feeling move pays off 17 s of withheld identity. The hidden transition makes the reveal feel inevitable rather than cut together."
+      },
+      {
+        "shots": ["s012"],
+        "description": "The camera bumps of each colour variant slide past one after another from a fixed low angle just above the back glass.",
+        "why_premium": "It shows the whole colour range in about 3 s without a grid or a label. Keeping a constant camera position makes the variants read as one choreographed object."
+      },
+      {
+        "shots": ["s012", "s013"],
+        "description": "The Dynamic Island cycles through AirPods, navigation and incoming-call states, collapses to a live call timer and then returns to rest. A cut is hidden inside one of its morph blurs.",
+        "why_premium": "Real UI states shown as fluid shape morphs prove the software feature without any explanation. The hidden cut keeps the sequence seamless."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 4,
+        "evidence": "The abstract macro world in s001-s006 is beautiful and creates real curiosity. It stays unexplained for about 10 s with no claim or text, which demands patience from a viewer scrolling past.",
+        "refs": ["s001", "s002", "s004", "s007", "s010"]
+      },
+      "clarity": {
+        "score": 3,
+        "evidence": "By the end it is clear this is a new phone shown in several colours with a Dynamic Island. However, the first 17 s are abstract, and no feature is named or explained anywhere. The intent is inferable but not stated.",
+        "refs": ["s001", "s011", "s012", "s013"]
+      },
+      "ui_showcase": {
+        "score": 4,
+        "evidence": "Several genuine Dynamic Island states are shown sharply and in context: AirPods, navigation with an avatar, an incoming call, an active-call timer and the resting pill. They are brief, and the s012 expanded state is too blurred to read.",
+        "refs": ["s012", "s013"]
+      },
+      "motion_polish": {
+        "score": 5,
+        "evidence": "Camera moves are continuous and eased throughout, with zoom-through and blur-bridge transitions in s007, s010, s011 and s012. The colour-variant cascade is tightly choreographed, the UI morphs are fluid and the cut in s013 is hidden. Nothing in the frames looks janky.",
+        "refs": ["s007", "s010", "s011", "s012", "s013"]
+      },
+      "sound_design": {
+        "score": 4,
+        "evidence": "Judged from the anchors' audio facts plus visuals. There are 29 SFX candidates at 114.84 BPM, and integrated loudness is -12.25 LUFS. Swoosh_reverse hits fall at shot changes (x002 at 8.394 s at the start of s005, x009 at 17.452 s just after s011 begins). A glitch (x022, 28.874 s) falls near the colour-to-dark-phone switch in s012, and an impact (x028, 34.394 s) lands just before the fade to black. A vocal music track drives the pace. Many candidates are labelled 'unsure', so the precise sync is not confirmed.",
+        "refs": ["s005", "s011", "s012", "s013", "s014"]
+      },
+      "vo_script_quality": {
+        "score": null,
+        "evidence": "There is no voice-over. The transcript words (w0-w18) appear to be fragments of song lyrics recognised from the music track, not narration.",
+        "refs": ["w0", "w15", "w16"]
+      },
+      "brand_consistency": {
+        "score": 5,
+        "evidence": "A single rose-pink material language runs from the abstract world (s001-s010) into the pink product (s011-s013), with the same seamless light backdrop and restrained minimalism. Every shot belongs to one visual system.",
+        "refs": ["s001", "s007", "s011", "s013"]
+      },
+      "works_muted": {
+        "score": 5,
+        "evidence": "The story is entirely visual: a mystery world, the product reveal, the colour range and the Dynamic Island in use. Nothing depends on speech. The music adds energy but no information.",
+        "refs": ["s011", "s012", "s013"]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "The rendering, motion and continuity are best-in-class, and the reveal structure is a strong model. As an explainer reference, though, it names no features, states no benefit and has no end card or call to action (s014 is just black).",
+        "refs": ["s010", "s011", "s012", "s013", "s014"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 5,
+      "baked_in_text": true,
+      "vo_dependent": false,
+      "notes": "The only baked-in text is UI content inside the Dynamic Island ('iPhone', 'Rody Albuerne', '0:01') in s013, which is incidental and could be re-rendered easily. There is no voice-over, headline copy or end card, so the video works in any market unchanged."
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a2_annotate_event",
+  "annotator": "claude-code",
+  "skill": "annotate-event@3dad117bd85a",
+  "model": null,
+  "input_hash": "7b61b5880be91941790b5497c49a31420a427cc5200f8dbfebfe196a4f3bd8bd",
+  "created_at": "2026-10-05T06:39:40.652219Z"
+ },
+ "video": "anthropic-introducing-claude-design-by-anthropic-l",
+ "event": "e014",
+ "task": "a2-e014",
+ "elements": [
+  {
+   "box": "b01",
+   "manual_box": null,
+   "manual_reason": null,
+   "label": "Canvas with Hemlark Retreat cover page, dissolving in from a tighter framing",
+   "role": "ui_panel",
+   "role_other": null,
+   "change_types": ["fade", "slide_up", "scale_down"],
+   "change_other": null,
+   "is_text": false,
+   "text": null,
+   "text_unit": null,
+   "estimates": {"duration_ms": 330, "easing_class": "ease_out"}
+  },
+  {
+   "box": null,
+   "manual_box": [155, 581, 645, 900],
+   "manual_reason": "No candidate box covers the whole Export dropdown menu (b05 only covers part of it); the menu re-frames with the dissolve.",
+   "label": "Export dropdown menu",
+   "role": "ui_panel",
+   "role_other": null,
+   "change_types": ["fade", "slide_up"],
+   "change_other": null,
+   "is_text": true,
+   "text": "Download project as .zip / Export as PDF / Export as PPTX / Send to Canva / Export as standalone HTML / Handoff to Claude Code",
+   "text_unit": "whole",
+   "estimates": {"duration_ms": 330, "easing_class": "ease_out"}
+  },
+  {
+   "box": "b13",
+   "manual_box": null,
+   "manual_reason": null,
+   "label": "Hovered menu row (hover highlight moves from Export as PPTX to Send to Canva)",
+   "role": "list_item",
+   "role_other": null,
+   "change_types": ["highlight"],
+   "change_other": null,
+   "is_text": true,
+   "text": "Send to Canva",
+   "text_unit": "whole",
+   "estimates": {"duration_ms": 100, "easing_class": "step"}
+  },
+  {
+   "box": null,
+   "manual_box": [450, 723, 530, 766],
+   "manual_reason": "No candidate box covers the hand cursor; it moves down the menu across the dissolve.",
+   "label": "Hand cursor",
+   "role": "cursor",
+   "role_other": null,
+   "change_types": ["slide_down"],
+   "change_other": null,
+   "is_text": false,
+   "text": null,
+   "text_unit": null,
+   "estimates": {"duration_ms": 500, "easing_class": "ease_in_out"}
+  }
+ ],
+ "sfx_review": [
+  {"id": "x058", "verdict": "confirm", "label": "music", "note": "Tonal music bed before the event; no SFX transient."},
+  {"id": "x059", "verdict": "confirm", "label": "music", "note": "Inside the dissolve but harmonic and rhythmic like the surrounding music; no whoosh sweep."}
+ ],
+ "pattern": {
+  "id": "scale_dissolve_transition",
+  "proposed_name": null,
+  "description": "The tight framing on the open Export menu cross-dissolves (double image visible at f1577) into a slightly wider, lower framing of the same UI, while the cursor continues down the menu and the hover highlight steps from PPTX to Send to Canva.",
+  "why_premium": "A short dissolve between two framings of the same state hides a time jump in the screen recording while keeping the menu and cursor continuous, so the demo reads as one smooth take."
+ },
+ "build_hint": {
+  "gsap": "Two stacked layers of the same UI at different framings: tl.fromTo('.frame-b', {opacity: 0, scale: 1.035, y: 20}, {opacity: 1, scale: 1, y: 0, duration: 0.33, ease: 'power2.out'}).to('.frame-a', {opacity: 0, duration: 0.33, ease: 'power1.inOut'}, '<'); cursor tween y down the menu with ease 'power2.inOut'; hovered-row background swaps instantly (set) as the cursor crosses each row.",
+  "remotion": "Render two <Sequence> layers; opacity of layer B = interpolate(frame, [0, 8], [0, 1], {extrapolateRight: 'clamp'}), scale = interpolate(frame, [0, 8], [1.035, 1], {easing: Easing.out(Easing.quad)}); layer A fades out over the same frames. Cursor y via interpolate with Easing.inOut(Easing.cubic); row highlight switches on threshold frames."
+ },
+ "confidence": "medium",
+ "notes": "Could also be read as layout_reframe or a jump cut softened by a dissolve; code camera says tilt_down with scale 0.966, consistent with a reframe. The f1569 framing has a dark grey area on the left that is gone after the dissolve, so it may be two separate takes."
+}

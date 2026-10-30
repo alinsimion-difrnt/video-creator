@@ -1,0 +1,60 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "ca0a96b235490c207f32b6cd703f20b552fde138a5c23250e7b8defb43940190",
+    "created_at": "2026-10-05T06:45:08.259380Z"
+  },
+  "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+  "event": "e021",
+  "task": "a2-e021",
+  "elements": [
+    {"box": "b03", "manual_box": null, "manual_reason": null, "label": "Section headline",
+     "role": "headline", "role_other": null, "change_types": ["slide_up", "fade", "scale_up"],
+     "change_other": null, "is_text": true, "text": "Analyse your transcripts", "text_unit": "whole",
+     "estimates": {"duration_ms": 600, "easing_class": "ease_out"}},
+    {"box": "b06", "manual_box": null, "manual_reason": null, "label": "Gradient accent word 'Analyse'",
+     "role": "headline", "role_other": null, "change_types": ["color_shift", "highlight"],
+     "change_other": null, "is_text": true, "text": "Analyse", "text_unit": "word",
+     "estimates": {"duration_ms": 800, "easing_class": "ease_in_out"}},
+    {"box": "b04", "manual_box": null, "manual_reason": null, "label": "Upper transcript summary cards (1:40, 6:37)",
+     "role": "list_item", "role_other": null, "change_types": ["slide_up", "fade"],
+     "change_other": null, "is_text": true,
+     "text": "1:40 Client reported discrepancy in analytics data; investigated and found they were comparing different time zones, adjusted settings to match their local time zone. Success 6:37 User needed assistance setting up custom notifications; walked through alert configuration and tested successful delivery of test notification. Failure",
+     "text_unit": "whole", "estimates": {"duration_ms": 700, "easing_class": "ease_out"}},
+    {"box": "b08", "manual_box": null, "manual_reason": null, "label": "Upper transcript summary card (3:35)",
+     "role": "list_item", "role_other": null, "change_types": ["slide_up", "fade"],
+     "change_other": null, "is_text": true,
+     "text": "3:35 Customer experiencing error messages during team member invitation process; discovered email domain restriction was causing the issue and adjusted settings to resolve. Success",
+     "text_unit": "whole", "estimates": {"duration_ms": 700, "easing_class": "ease_out"}},
+    {"box": "b02", "manual_box": null, "manual_reason": null, "label": "Lower transcript summary cards (6:02, 3:33, 5:10)",
+     "role": "list_item", "role_other": null, "change_types": ["slide_up", "fade"],
+     "change_other": null, "is_text": true,
+     "text": "6:02 User needed assistance retrieving a booking reference number; The booking reference was found, and total fee for the hotel confirmed. Success 3:33 Customer requested refund due to double charging; verified duplicate transaction and initiated refund process with billing department. Success 5:10 User couldn't access dashboard after password reset; guided them through clearing browser cache and logging in successfully. Success",
+     "text_unit": "whole", "estimates": {"duration_ms": 700, "easing_class": "ease_out"}}
+  ],
+  "sfx_review": [
+    {"id": "x027", "verdict": "unsure", "label": "unsure",
+     "note": "At event start (64.87 s) the stem shows only a faint vertical line over steady music; no clear glitch texture, and on screen the agent's reply text is still completing, not glitching."},
+    {"id": "x028", "verdict": "unsure", "label": "unsure",
+     "note": "66.38 s is after the burst ends; a faint broadband streak near there but no clear reverse-swoosh build in the spectrogram."},
+    {"id": "x029", "verdict": "confirm", "label": "music",
+     "note": "Sustained tonal bands of the music bed; nothing visual coincides."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "scroll to section title",
+    "description": "After the agent's reply finishes, the chat thread scrolls up and away and the canvas resolves into a section title, 'Analyse your transcripts', with a blue gradient on 'Analyse', framed by staggered columns of call-summary cards top-left and bottom-right, under a slow push-in.",
+    "why_premium": "The section change happens without a cut: the conversation literally scrolls into its own analysed transcripts, so cause and effect read in one move. The gradient accent word and asymmetric card columns give an editorial title card, and the slow push keeps it alive while the voiceover catches up."
+  },
+  "build_hint": {
+    "gsap": "tl.to(chatThread, {y: -720, opacity: 0, duration: 0.6, ease: 'power3.in'}).fromTo(headline, {y: 40, opacity: 0}, {y: 0, opacity: 1, duration: 0.6, ease: 'power3.out'}, '-=0.2').fromTo([upperCards, lowerCards], {y: 60, opacity: 0}, {y: 0, opacity: 1, duration: 0.7, ease: 'power3.out', stagger: 0.08}, '<0.1').to(analyseWord, {backgroundPosition: '100% 0', duration: 0.8, ease: 'sine.inOut'}, '<'); wrap the scene in a stage and gsap.fromTo(stage, {scale: 1}, {scale: 1.05, duration: 3, ease: 'none'}) for the push-in.",
+    "remotion": "chat translateY = interpolate(frame, [0, 18], [0, -720], {easing: Easing.in(Easing.cubic), extrapolateRight: 'clamp'}); headline and card groups use spring({frame: frame - delay, fps, config: {damping: 200}}) driving translateY 40->0 and opacity 0->1 with 2-3 frame stagger; gradient position interpolated over ~24 frames; stage scale = interpolate(frame, [0, 90], [1, 1.05])."
+  },
+  "confidence": "low",
+  "notes": "Burst spans two phases: the last reply words ('right now.') appearing in the agent bubble, then the chat scrolling away into the title layout; the chat bubbles are gone in the end frame so they are not listed. camera.move is push_in (scale 1.35 over the burst) and is reported by code, not here. Entry direction of the transcript card columns is unclear from the filmstrip (they may slide in sideways). b05, b07, b18 overlap the headline or vacated chat positions and were not used."
+}

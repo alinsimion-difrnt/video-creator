@@ -1,0 +1,218 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "1e7879a46f1d19d5b669bad0a0f45e5640e4bac32bbfaa4afaf64fc8ffbccc13",
+    "created_at": "2026-10-05T06:55:55.057483Z"
+  },
+  "video": "anthropic-introducing-claude-design-by-anthropic-l",
+  "task": "a1-p2",
+  "shots": [
+    {
+      "shot": "s007",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "Tweaks popover with prompt input being typed into, anchored under the orange Tweaks button",
+      "transition_in": "other",
+      "transition_other": "Cut into a tight crop of the toolbar: cursor clicks Tweaks and the popover appears over the dark globe preview (exact transition type not visible at 2 fps)",
+      "on_screen_text": [
+        "Tweaks",
+        "Comment",
+        "Ask Claude to add tweakable sliders or options",
+        "e.g. slider for border radius, color picker for accent",
+        "Add controls for the globe and options to see different breakpoints",
+        "Cancel",
+        "Send"
+      ],
+      "text_word_count": 31,
+      "typography": "Clean geometric/grotesk sans, regular weight, sentence case, normal tracking; light grey helper label above a near-black input value; buttons in medium weight (font guess, low confidence: Anthropic Sans / Styrene-like)",
+      "depth_cues": [
+        "shadow",
+        "glow"
+      ],
+      "what_happens": "Cursor clicks the Tweaks button, a white rounded popover opens with a placeholder prompt; the request types on character by character until it wraps to two lines, then the cursor moves to and clicks Send. The glowing globe sits blurred-dark behind.",
+      "build_rebuild": "Render a toolbar crop at ~2x scale, pop a rounded white card (soft shadow) under the Tweaks button, type the prompt into its input at a steady per-character rate with the input growing to two lines, then animate a cursor to Send and press it.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s008",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "The sent prompt as a floating message bubble over the globe",
+      "transition_in": "other",
+      "transition_other": "The popover collapses into a standalone prompt bubble (input card loses its label and buttons), reading as an element morph",
+      "on_screen_text": [
+        "Tweaks",
+        "Comment",
+        "Add controls for the globe and options to see different breakpoints",
+        "Ulaanbaatar",
+        "Beijing"
+      ],
+      "text_word_count": 15,
+      "typography": "Same sans as s007, regular weight, sentence case inside the bubble; tiny tracked light-grey city labels on the globe",
+      "depth_cues": [
+        "glow"
+      ],
+      "what_happens": "Very short beat (about 0.6 s): the submitted prompt sits as a pale bubble on the left, then slides right and fades/greys as if being sent off; the globe rotates slightly underneath.",
+      "build_rebuild": "Replace the popover with a two-line rounded bubble holding the prompt, then translate it right by ~60% of frame width while lowering opacity over ~0.5 s with an ease-in.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s009",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Agent progress checklist (Progress 5/5) ticking off its tasks",
+      "transition_in": "push",
+      "transition_other": null,
+      "on_screen_text": [
+        "Soldering...",
+        "Claude",
+        "Plan",
+        "write_file",
+        "Progress 5/5",
+        "Read current page layout and components",
+        "Build tweaks state with defaults",
+        "Create floating tweaks panel UI",
+        "Add arc and city toggle controls",
+        "Add breakpoint viewport switcher"
+      ],
+      "text_word_count": 32,
+      "typography": "Loader word set in an italic serif with a shimmer sweep across the letters next to an orange dotted spinner; the agent panel uses the UI sans, regular weight, sentence case, with completed items struck through and greyed",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "On a warm off-white field a centered 'Soldering...' loader shimmers, then cuts to Claude's agent panel (Plan, write_file, Progress 5/5) and the camera pushes in while the five checklist items get checked and struck through one after another.",
+      "build_rebuild": "Show a centered italic-serif status word with a left-to-right shimmer gradient and dotted spinner for ~1 s, then swap to a stacked list of tool cards and push the camera in (scale ~1.0 to ~1.6) while each checkbox fills and its label gets a strike-through on a staggered ~0.25 s cadence.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s010",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "split",
+      "composition_other": null,
+      "focal_element": "The generated dark Tweaks control panel beside the glowing network globe",
+      "transition_in": "other",
+      "transition_other": "Cut from the light checklist to a dark close-up of the result (globe plus panel); exact transition not visible at 2 fps",
+      "on_screen_text": [
+        "THEME",
+        "DARK",
+        "LIGHT",
+        "BREAKPOINT",
+        "DESKTOP",
+        "TABLET",
+        "MOBILE",
+        "NETWORK",
+        "Arc color",
+        "Arc width",
+        "Arc glow",
+        "Arc density",
+        "City size",
+        "Pulse speed",
+        "Show arcs",
+        "Show cities",
+        "City labels",
+        "GLOBE",
+        "Grid opacity",
+        "Grid density",
+        "Country fill",
+        "Globe size",
+        "Rotation",
+        "Tilt",
+        "Outer rings",
+        "Back grid"
+      ],
+      "text_word_count": 41,
+      "typography": "Panel section headers in small uppercase sans with wide tracking (THEME, BREAKPOINT, NETWORK, GLOBE); control labels sentence case regular sans with right-aligned numeric values; city labels on the globe are tiny tracked sans. Numeric slider values and city names not listed individually",
+      "depth_cues": [
+        "glow"
+      ],
+      "what_happens": "Close-up of the result: a dark floating panel with theme and breakpoint segmented controls, network sliders and checkboxes, scrolls/pans vertically to reveal the Globe section, while the teal great-circle arcs and city nodes on the globe glow and pulse on the left.",
+      "build_rebuild": "Compose a dark globe (three.js or pre-render) on the left and a dark rounded settings panel on the right, then pan the camera downward over ~3.5 s so the panel's sections scroll past while arc pulses keep animating.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s011",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The full Claude Design workspace showing the landing page preview with the Tweaks panel and chat sidebar",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Every place has a story.",
+        "Discover how ideas, art, and culture flow between cities. 112 cities. 168 routes. One living map.",
+        "112",
+        "168",
+        "6",
+        "Help me design a...",
+        "Project",
+        "Interactive landing...",
+        "Share",
+        "Export",
+        "Tweaks",
+        "Comment",
+        "Edit text",
+        "Knobs",
+        "Draw",
+        "100%",
+        "You",
+        "Add controls for the globe and arc details, and testing different breakpoints",
+        "Claude",
+        "Verifier",
+        "Describe what you want to create...",
+        "Import",
+        "Send"
+      ],
+      "text_word_count": 63,
+      "typography": "Landing headline in a light serif, two centered lines, with 'story.' set in teal; subhead small grey sans; app chrome and chat in small regular sans, sentence case. Verifier bullet list and slider values are too small to quote reliably and are omitted",
+      "depth_cues": [
+        "shadow",
+        "glow"
+      ],
+      "what_happens": "Pulls out from the full-bleed landing page (headline, stats 112/168/6, globe, panel) to the app window on a warm off-white background; the cursor clicks the Tablet breakpoint and the preview animates narrower into a portrait canvas, stats drop away, and the cursor nudges a slider.",
+      "build_rebuild": "Zoom the camera out from the preview to the whole app window with a soft drop shadow, then animate the preview frame width from desktop to tablet (~1440 to ~768 logical px) with an ease-in-out while the layout reflows and a cursor clicks the segmented control.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s012",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "grid",
+      "composition_other": null,
+      "focal_element": "The globe project window at the center of a wall of other Claude Design project windows",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Every place has a story.",
+        "Proposal Pipeline",
+        "ACME",
+        "Miller residence",
+        "Afternoon Activities",
+        "Big Sur & Surroundings",
+        "Egg phone"
+      ],
+      "text_word_count": 17,
+      "typography": "Mostly unreadably small app UI sans; the window titles listed are the only legible blocks; serif headline repeated in the center window",
+      "depth_cues": [
+        "shadow",
+        "blur"
+      ],
+      "what_happens": "The camera pulls out further so the globe project becomes one tile in a grid of other projects (night-sky mobile app, architectural house scene, ACME proposal pipeline, egg-shaped phone, travel itinerary), with motion blur on the second frame as the zoom accelerates.",
+      "build_rebuild": "Lay out ~9 app-window screenshots in a staggered grid with soft shadows and scale the whole wall from ~1.0 to ~0.55 around the center tile over ~1 s with an ease-in and a brief motion blur.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

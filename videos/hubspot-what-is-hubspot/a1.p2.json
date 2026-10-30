@@ -1,0 +1,154 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "b28ed7b8ec154b84cfea64c0619070f76e5cc344b7fdc08f776c7db250611d52",
+    "created_at": "2026-10-05T07:37:12.274021Z"
+  },
+  "video": "hubspot-what-is-hubspot",
+  "task": "a1-p2",
+  "shots": [
+    {
+      "shot": "s006",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "HubSpot Marketing Email UI (Manage then Analyze tab), then the Deals pipeline board and one deal card",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "HubSpot Smart CRM",
+        "Powered by AI",
+        "Marketing Email",
+        "Compare emails",
+        "Create email",
+        "Manage",
+        "Analyze",
+        "Health",
+        "Recipient engagement",
+        "Delivery",
+        "Deals",
+        "Miller and Robinson",
+        "Orange Dot",
+        "De Bortoli Consulting",
+        "Urgent",
+        "Large deals"
+      ],
+      "text_word_count": 30,
+      "typography": "Product UI in a clean geometric sans (HubSpot's own UI font, low-confidence guess Lexend Deca): bold title-case page headers, regular-weight sentence-case labels, small uppercase metric labels with light tracking over large regular numerals; the opening 'HubSpot Smart CRM' card is a white logotype lockup with a bold title-case sub-line and a tiny 'Powered by AI' tag.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Over w71-w84 ('smart CRM. That's how the magic happens, especially when you use our products together.') the orange 'Smart CRM' card from s005 opens into a circular orange-edged reveal of the Marketing Email list (Manage tab); the cursor clicks Analyze and the view switches to Recipient engagement and Delivery metric cards; the view then changes to the Deals kanban board, the camera pushes in on a column of deal cards, sparkle particles pop beside 'De Bortoli Consulting' and the cursor clicks its 'Large deals' tag; at ~31.5 s an orange HubSpot-sprocket arrow wedge sweeps in from the left to exit. Small UI text is not fully legible on the 2 fps sheet; only large labels are quoted.",
+      "build_rebuild": "Mask a full-screen UI screenshot inside an expanding circle (clip-path circle 0% to 150%) over an orange card, animate a cursor sprite to the Analyze tab and swap screenshots on click, then cut to a Deals board screenshot and scale it ~2.5x toward one card while spawning 3-4 sparkle sprites and a cursor click on its tag.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s007",
+      "shot_type": "other",
+      "shot_type_other": "avatar network graphic (circular cut-out portrait photos on a node-and-line diagram)",
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "Three circular portrait avatars connected by node lines on a flat navy background",
+      "transition_in": "other",
+      "transition_other": "orange HubSpot-sprocket arrow wedge sweeps across from the end of s006 and reveals the navy network scene behind it",
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "Under w85-w86 ('With HubSpot,') three smiling portrait avatars sit on a connected node graph; the whole cluster drifts right and at ~32.5 s an orange panel edge enters from the right edge to set up s008.",
+      "build_rebuild": "On a flat navy full-frame, place three circular masked portrait photos on a static line-and-dot network SVG, translate the whole group ~150 px right over ~1 s with ease-out, and start an orange rectangle entering from the right edge at the end.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s008",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "grid",
+      "composition_other": null,
+      "focal_element": "Serif headline 'Transform how they work' building word by word on an orange panel",
+      "transition_in": "other",
+      "transition_other": "orange panel slides in from the right, compressing the avatar network from s007 into a narrow navy left column",
+      "on_screen_text": [
+        "Transform how they work"
+      ],
+      "text_word_count": 4,
+      "typography": "Large high-contrast display serif (low-confidence guess: HubSpot's brand serif), bold weight, sentence case, slightly tight tracking, two lines left-aligned; words fade/rise in one at a time from low to full opacity.",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "Synced to w87-w95 ('your teams will transform how they work. With easy'), 'Transform' appears first, then 'how', 'they', 'work' fade up word by word in sequence; the orange block then shifts up and a lower row of panels (darker orange block with a cut-out photo of a smiling man at a laptop, cream block with stripe lines) slides up into the grid while the avatar column stays on the left.",
+      "build_rebuild": "Build a 3-panel CSS grid (navy left column with the avatar network, orange headline panel, lower photo/cream panels), reveal the headline words with a 0.15 s stagger of opacity 0 to 1 plus 20 px rise, then translate the headline panel up and slide the lower panels up from below with ease-out.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s009",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "grid",
+      "composition_other": null,
+      "focal_element": "Serif headline 'Centralized Data' in a cream grid cell",
+      "transition_in": "other",
+      "transition_other": "grid re-layout: the s008 panels are replaced by a new 2x3 collage of cells sliding into place",
+      "on_screen_text": [
+        "Centralized Data"
+      ],
+      "text_word_count": 2,
+      "typography": "Same bold display serif as s008, title case, dark text on cream, two lines left-aligned, slightly tight tracking.",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "Over w96-w99 ('access to centralized data,') a collage grid shows 'Centralized' then 'Data' appear in a cream cell, a flat cursor-click icon in a navy cell, a flat laptop dashboard illustration that scales up in an orange cell, and a cut-out photo of a smiling woman with a tablet in the lower right.",
+      "build_rebuild": "Lay out a 2x3 grid of flat colour cells, type the second headline word in 0.4 s after the first, and scale the laptop illustration from 0.8 to 1.0 with ease-out while a cut-out PNG of a person sits overlapping the lower-right cell.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s010",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "grid",
+      "composition_other": null,
+      "focal_element": "Serif headline 'Incredible Insight' in the large lower-right cream cell",
+      "transition_in": "other",
+      "transition_other": "grid re-layout into a new collage; headline slides up into place from below its cell",
+      "on_screen_text": [
+        "Incredible Insight"
+      ],
+      "text_word_count": 2,
+      "typography": "Same bold display serif, title case, dark on cream, two lines left-aligned.",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "Under w100-w107 ('you'll gain incredible insight into each stage of') the headline slides up into the lower-right cell, a flat lightbulb icon with twinkling sparkles sits top-left, an orange striped panel top-centre, and a binoculars icon whose lenses fill with rising teal bar charts top-right; a cut-out photo of a smiling man in a cap sits lower left.",
+      "build_rebuild": "Reuse the collage grid, slide the two-line headline up 60 px with a short line stagger, and grow the bar-chart rects inside two circular binocular masks with scaleY 0 to 1 staggered 0.1 s, plus looping sparkle twinkles on the bulb.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s011",
+      "shot_type": "other",
+      "shot_type_other": "avatar lockup (row of circular portrait photos inside a pill on navy)",
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "A centred row of five circular customer portrait avatars inside a navy pill",
+      "transition_in": "other",
+      "transition_other": "camera pushes into the s010 collage toward the binoculars icon, whose yellow lens rings appear to become the avatar circles on navy (morph-like)",
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "Under w108-w112 ('the customer's journey, helping you') the s010 collage is pushed in and cropped (the outgoing 'Incredible' headline is only partly visible at the frame edge, not quoted), then on navy two large yellow-ringed portrait circles and smaller ones expand outward until five equal portrait circles sit in a single horizontal pill.",
+      "build_rebuild": "On a navy frame, scale five circular masked portraits from the centre outward with a 0.08 s stagger (the outer ones starting small), animate yellow ring outlines shrinking to nothing, and draw a rounded pill behind them that grows horizontally to enclose the row.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

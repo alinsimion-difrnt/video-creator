@@ -1,0 +1,135 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "cc59c7589a348e8b6fed2a4bc874c322fc484a53dac442006979195f40be4939",
+    "created_at": "2026-10-05T07:45:12.129690Z"
+  },
+  "video": "servicenow-what-are-servicenow-ai-agents",
+  "task": "a1-p14",
+  "shots": [
+    {
+      "shot": "s075",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "One centred line of type on a flat dark navy field ('Put AI Agents to work for ...', then 'The world works with ServiceNow.'), resolving to the centred servicenow wordmark",
+      "transition_in": "other",
+      "transition_other": "Anchors flag a non-hard-cut entry; the first sheet frame (2:35.500) shows a thin strip of the office footage at the left edge with the navy field covering the rest, which reads as a horizontal wipe or push off to the left. The direction and easing cannot be confirmed at 2 fps.",
+      "on_screen_text": [
+        "Put AI Agents to work for HR",
+        "Put AI Agents to work for IT",
+        "Put AI Agents to work for Customer Service",
+        "Put AI Agents to work for Development",
+        "Put AI Agents to work for People",
+        "The world works with ServiceNow.",
+        "servicenow"
+      ],
+      "text_word_count": 42,
+      "typography": "Bold rounded geometric sans (low-confidence guess: the ServiceNow brand face, Gilroy-like), sentence case with capitalised product and department names, normal tracking. The fixed phrase is set in the bright brand-green accent and the swapping last word in white/off-white at the same weight and size. The line re-centres as each word swaps. The closing wordmark is lowercase, with the 'o' drawn as a green ring icon. Under the logo sits a tiny legal line that is too small to read verbatim.",
+      "depth_cues": ["none"],
+      "what_happens": "End card in the letterbox frame, with no dialogue (the last word, w469, ends before this shot). 'Put AI Agents to work for' reveals left to right with a soft fade gradient (2:36.0). The final word then cycles about every 0.5 s: HR, IT, Customer Service, Development, then People, which holds (2:36.5-2:39.0). The line fades out left to right (2:39.5). 'The world works with ServiceNow.' fades in the same way (2:40.0-2:41.5), then fades out with the green part going first (2:42.0). After a brief empty navy frame (2:42.5), the servicenow wordmark fades in from a dim grey to white with a tiny legal line below (2:43.0) and holds to the end (2:46.3). Anchors list 4 events and dense music-labelled SFX candidates (x187-x202) under this card, with chimes near the logo hold (x203, x204).",
+      "build_rebuild": "On a flat navy full-frame card, gradient-mask-reveal a centred bold line with the fixed phrase in brand green, swap the white trailing word every ~0.5 s through a department list (re-centring the line each time), then wipe-fade it out and repeat the reveal for the brand tagline, and finish by fading in the centred wordmark with a small legal line for ~3 s.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001", "s002", "s003", "s004", "s005", "s006"], "words": [0, 18]},
+      {"beat": "mechanism", "shots": ["s006", "s007", "s008", "s009", "s010", "s011", "s012", "s013", "s014", "s015", "s016", "s017"], "words": [19, 110]},
+      {"beat": "demo", "shots": ["s018", "s019", "s020", "s021", "s022"], "words": [111, 147]},
+      {"beat": "mechanism", "shots": ["s023", "s024", "s025", "s026", "s027"], "words": [148, 201]},
+      {"beat": "demo", "shots": ["s028", "s029", "s030", "s031", "s032", "s033", "s034", "s035", "s036", "s037", "s038", "s039", "s040", "s041", "s042", "s043", "s044", "s045", "s046", "s047", "s048", "s049", "s050", "s051"], "words": [202, 322]},
+      {"beat": "demo", "shots": ["s052", "s053", "s054", "s055", "s056", "s057", "s058", "s059", "s060", "s061", "s062", "s063"], "words": [323, 412]},
+      {"beat": "outcome", "shots": ["s064", "s065", "s066", "s067", "s068", "s069", "s070", "s071", "s072", "s073", "s074"], "words": [413, 469]},
+      {"beat": "cta", "shots": ["s075"], "words": null}
+    ],
+    "hook": {
+      "text": "Cold-open office sketch: a manager demands urgent HR-portal access ('I need that access ASAP.') and her colleague deadpans 'Nope', before revealing her new agents are on it.",
+      "technique": "other",
+      "technique_other": "in-medias-res comedic sketch built on a relatable blocked-request pain point, with the product held back until w41-w43",
+      "shots": ["s001", "s002", "s003", "s004", "s005", "s006"],
+      "words": [0, 18]
+    },
+    "cta": {
+      "text": "Put AI Agents to work for HR / IT / Customer Service / Development / People. The world works with ServiceNow.",
+      "shots": ["s075"]
+    },
+    "tone": "Deadpan workplace comedy in a cinematic, letterboxed brand-film style. The jokes come from dry reactions and absurd tangents (fuchsia kitchens, geese). Product claims arrive as offhand dialogue backed by light glassmorphism UI cards, and it closes on a clean typographic brand card.",
+    "signature_moments": [
+      {
+        "shots": ["s016", "s021", "s047", "s049", "s051", "s058", "s063"],
+        "description": "A recurring frosted-glass 'AI Agents' card composited into the live-action office. Its task rows resolve from placeholder to spinner to check mark, and an 'Approve' pill pops in, each timed to the matching spoken line.",
+        "why_premium": "It shows what the agent is doing without leaving the story, and one consistent card system across seven shots makes an abstract product feel concrete and on-brand."
+      },
+      {
+        "shots": ["s075"],
+        "description": "The end card cycles the last word of 'Put AI Agents to work for ...' through HR, IT, Customer Service, Development and People, then resolves to the tagline and the wordmark.",
+        "why_premium": "Restrained two-colour kinetic type sums up the breadth claim in about 3 s and gives a calm, confident close after the busy sketch."
+      },
+      {
+        "shots": ["s029", "s030", "s031", "s032", "s033", "s034", "s035", "s036", "s037", "s038"],
+        "description": "A wordless, sub-second montage cut on the beat (feet, espresso, elevator buttons, door lever) as the manager rushes off to tell Jim, ending on a lateral parallax track into the next scene.",
+        "why_premium": "Commercial-grade macro inserts and fast cutting give the piece film-like energy and pacing variety that most SaaS explainers lack."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 3,
+        "evidence": "The deadpan 'Nope' gets a laugh at about 6 s, and the relatable access-request pain is clear. But the first 2 s is a plain building exterior, and the product is not named until w41-w43 (about 15 s).",
+        "refs": ["s001", "s005", "w18", "w41"]
+      },
+      "clarity": {
+        "score": 3,
+        "evidence": "The core idea (autonomous agents do the tasks, a human approves) gets across through dialogue plus the agent cards. Comedic tangents (fuchsia kitchen, gym TLC, geese) take a lot of runtime, and nothing ever shows how agents are built or configured.",
+        "refs": ["s016", "s021", "s047", "w138", "w214", "w427"]
+      },
+      "ui_showcase": {
+        "score": 2,
+        "evidence": "No real product UI is shown. The product appears only as small stylised overlay cards with one to three task rows and an Approve pill. On-set monitors show unreadable dashboards.",
+        "refs": ["s016", "s021", "s051", "s061"]
+      },
+      "motion_polish": {
+        "score": 3,
+        "evidence": "The card builds are clean and well synced (spinner-to-check, typed-on bullets), and the end-card type reveals are smooth. Elsewhere the edit is almost all hard cuts with static framing, and the cards use simple fade/scale entrances.",
+        "refs": ["s021", "s047", "s075", "s038"]
+      },
+      "sound_design": {
+        "score": 3,
+        "evidence": "Judged from the anchor audio facts plus visuals. Integrated loudness is -13.09 LUFS. A steady ~167 BPM beat grid runs under the whole piece. Most of the 204 SFX candidates are labelled chime or music rather than designed hits; the clearest designed accents are a whoosh (x084) and a click (x083) in the montage. The end card has dense music (x187-x202). Sound mostly supports dialogue rather than punctuating UI moments.",
+        "refs": ["s036", "s030", "s075"]
+      },
+      "vo_script_quality": {
+        "score": 3,
+        "evidence": "On-camera sketch dialogue, not voice-over. The jokes and catchphrases ('Fix it and forget it.', 'bada-boomin'') are memorable and the benefit lines are natural. Some product lines read as clunky exposition, and the tangents dilute the message.",
+        "refs": ["w18", "w166", "w303", "w330", "w427"]
+      },
+      "brand_consistency": {
+        "score": 4,
+        "evidence": "The green accent and the sparkle-icon 'AI Agents' card stay consistent across every overlay. The 'THE SERVICENOW PLATFORM' caption and the green-on-navy end card match the wordmark's green ring. The live-action grade stays consistent throughout.",
+        "refs": ["s016", "s023", "s047", "s063", "s075"]
+      },
+      "works_muted": {
+        "score": 2,
+        "evidence": "The story and every joke depend on spoken dialogue, and no subtitles appear in the frames. With sound off, only the agent cards and the end card carry meaning, so the premise and the product claims mostly disappear.",
+        "refs": ["s005", "s010", "s016", "s075"]
+      },
+      "overall": {
+        "score": 3,
+        "evidence": "A competent, well-produced comedic brand film with a consistent overlay system and a clean end card. As an explainer it is light on product, depends heavily on audio and spends much of its 166 s on tangents.",
+        "refs": ["s016", "s021", "s075", "s039", "s068"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 2,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "English on-camera dialogue carries the narrative and the humour (wordplay like 'gaggle', 'bada-bing'), so localising needs dubbing or subtitles. Baked-in English text appears in the composited agent cards, the 'THE SERVICENOW PLATFORM' caption and the end-card lines. These are short and graphic-based, so they could be re-rendered if the project files exist."
+    }
+  }
+}

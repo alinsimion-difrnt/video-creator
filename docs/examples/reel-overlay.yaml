@@ -1,0 +1,263 @@
+# Example reel.yaml (ADR 0026) for Robert's Budapest take: word indexes refer to that take's timeline.json.
+# look: motion editorial (names and steps on his own video: slides and wipes); see ADR 0033 and the draft-reel-plan skill.
+motion: {style: editorial}
+layout:
+- word: 0
+  layout: full
+- word: 111
+  layout: 'off'
+- word: 123
+  layout: full
+- word: 144
+  layout: 'off'
+- word: 148
+  layout: full
+- word: 218
+  layout: 'off'
+- word: 237
+  layout: full
+- word: 269
+  layout: 'off'
+captions: top
+overlay_zone: auto
+push: 1.05
+punches:
+- 9
+- 28
+- 72
+- 85
+- 182
+- 268
+grade:
+  contrast: 1.08
+  saturate: 1.15
+  brightness: 1.01
+  warmth: 0.06
+product_bg: ink
+items:
+- word: 0
+  until: 9
+  kind: search
+  position: chest
+  marks:
+  - 0
+  - 4
+  - 6
+  - 9
+  spec:
+    query: best restaurant
+    highlight: 0
+    results:
+    - '**Your restaurant** · top pick'
+- word: 11
+  until: 16
+  kind: chart
+  spec:
+    title: More sales
+  position: chest
+- word: 21
+  until: 26
+  kind: sticker
+  spec:
+    text: Robert Vîja, marketer
+    tilt: 2
+  position: left
+- word: 28
+  until: 31
+  kind: counter
+  spec:
+    value: 10
+    suffix: years
+    label: in marketing
+  position: left
+- word: 41
+  until: 47
+  kind: sticker
+  spec:
+    text: Budapest
+    icon: pin
+    accent: true
+    tilt: -3
+  position: left
+- word: 48
+  until: 52
+  kind: chat
+  marks:
+  - 48
+  - 50
+  - 51
+  - 52
+  spec:
+    app: ChatGPT
+    prompt: Things to do in Budapest
+    answer:
+    - Food, hotels, museums
+  position: chest
+- word: 53
+  until: 61
+  kind: sticker
+  position: left
+  spec:
+    text: Food · hotels · museums
+    icon: museum
+    tilt: 3
+- word: 70
+  until: 76
+  kind: sticker
+  spec:
+    text: Tourists ask AI
+    icon: sparkle
+    tilt: -3
+  position: left
+- word: 87
+  until: 105
+  kind: search
+  marks:
+  - 88
+  - 92
+  - 97
+  - 105
+  spec:
+    query: best restaurant near me
+    highlight: 0
+    results:
+    - '**Your restaurant?**'
+  position: chest
+- word: 111
+  until: 122
+  kind: chat
+  where: product
+  marks:
+  - 111
+  - 115
+  - 116
+  - 122
+  spec:
+    app: ChatGPT
+    prompt: Best Chinese restaurant in Budapest
+    answer:
+    - 'Budapest: **Jade Garden**'
+    - 'Bucharest: **Golden Dragon**'
+    - 'New York: **Jade Palace**'
+- word: 123
+  until: 142
+  kind: sources
+  marks:
+  - 134
+  - 135
+  - 137
+  spec:
+    title: AI assistants
+    icon: sparkle
+    items:
+    - name: ChatGPT
+      icon: sparkle
+    - name: Gemini
+      icon: sparkle
+    - name: Perplexity
+      icon: sparkle
+  position: chest
+- word: 144
+  until: 147
+  kind: sources
+  where: product
+  marks:
+  - 144
+  - 147
+  spec:
+    title: Sources
+    icon: search
+    highlight: 0
+    items:
+    - name: Google Maps
+      sub: 4.6 ★ · 2,180 reviews
+      icon: pin
+    - name: TripAdvisor
+      sub: '#12 in Budapest'
+      icon: star
+- word: 150
+  until: 163
+  kind: search
+  marks:
+  - 150
+  - 152
+  - 156
+  - 162
+  spec:
+    query: your restaurant
+    highlight: 0
+    results:
+    - '**4.1 ★ · needs reviews**'
+  position: chest
+- word: 166
+  until: 196
+  kind: review
+  marks:
+  - 172
+  - 186
+  - 191
+  spec:
+    name: Anna
+    label: Google Maps
+    stars: 5
+    text: Great view, really good duck.
+    highlights:
+    - Great view
+    - really good
+  position: chest
+- word: 197
+  until: 207
+  kind: sticker
+  spec:
+    text: What did they like?
+    icon: chat
+    accent: true
+    tilt: -3
+  position: left
+- word: 209
+  until: 217
+  kind: sticker
+  spec:
+    text: Not just “best”
+    icon: search
+    tilt: 2
+  position: left
+- word: 218
+  until: 236
+  kind: queries
+  where: product
+  marks:
+  - 218
+  - 222
+  - 229
+  spec:
+    vague: best restaurant
+    specific:
+    - best restaurant **with a view**
+    - best restaurant for **steak**
+- word: 242
+  until: 255
+  kind: chart
+  marks:
+  - 249
+  spec:
+    title: Cited by AI
+    to: 72
+    suffix: '%'
+  position: chest
+- word: 256
+  until: 268
+  kind: cta
+  marks:
+  - 262
+  spec:
+    text: Start free trial
+    url: acme.example
+  position: chest
+- word: 269
+  until: 277
+  kind: logo
+  where: product
+  spec:
+    height: 150
+    tagline: acme.example

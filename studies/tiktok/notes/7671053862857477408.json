@@ -1,0 +1,101 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "tiktok_notes",
+    "annotator": "claude-code",
+    "input_hash": "c6ff79d56cffd96cf08c8d533797da2d0bf0428ced5cba6b31b8a76488b6b69c",
+    "created_at": "2026-10-13T10:18:39+00:00"
+  },
+  "id": "7671053862857477408",
+  "format": "split_screen",
+  "hook": {
+    "type": "callout",
+    "line": "Don't use Claude Code unless you've installed these five plugins.",
+    "visual": "Yellow '5 CLAUDE CODE PLUGINS' title over the presenter; ASCII art resolves into pixel 'CLAUDE CODE' above; cut at 1.47 s to an installer card with arrows numbered 1-5."
+  },
+  "beats": [
+    {
+      "t": 0.0,
+      "what": "Callout spoken to camera; ASCII art assembles into pixel 'CLAUDE CODE' above the yellow title."
+    },
+    {
+      "t": 1.47,
+      "what": "Cut to an animated 'plugin installer' card: numbers 1 to 5 pop in with arrows pointing at a code icon, progress bar fills."
+    },
+    {
+      "t": 6.03,
+      "what": "Item 1: the orange pixel Claude mascot appears on white above a terminal with a looping particle swirl."
+    },
+    {
+      "t": 12.67,
+      "what": "Provider grid card ('251 AI Providers') shows the routing idea at a glance."
+    },
+    {
+      "t": 18.09,
+      "what": "'Switching model' card: model tiles swap while he says the usage limit runs out."
+    },
+    {
+      "t": 24.12,
+      "what": "Item 2 (memory plugin): GitHub readme in the top half, his face in the bottom half."
+    },
+    {
+      "t": 30.15,
+      "what": "Item 3 announced with a serif 'THE THIRD' heading and a pixel-font name card on white, full frame."
+    },
+    {
+      "t": 42.21,
+      "what": "'THE FOURTH' card with a pixel 'CLAUDE CODE' app icon, then a mock setup UI."
+    },
+    {
+      "t": 54.27,
+      "what": "'THE FIFTH' card: app-icon tile with the plugin name, then a task list beside the pixel mascot."
+    },
+    {
+      "t": 63.87,
+      "what": "Back to his face full frame for the link-in-description close."
+    }
+  ],
+  "graphics": {
+    "captions": "sentence",
+    "caption_position": "mixed",
+    "devices": [
+      "split_screen",
+      "screen_recording",
+      "product_ui",
+      "title_text",
+      "mascot",
+      "chart_or_number",
+      "progress_bar",
+      "music_bed",
+      "jump_cut"
+    ],
+    "density": "moderate",
+    "per_minute_estimate": 20
+  },
+  "characters": [
+    {
+      "who": "Orange pixel-art Claude mascot (block creature)",
+      "enters": "Pops onto a plain white card at item 1, centred above the terminal",
+      "acts": "Stands still as the brand marker while a particle loop animates below it",
+      "exits": "Hard cut to the provider grid",
+      "comes_back": true
+    }
+  ],
+  "cta": {
+    "kind": "link_in_bio",
+    "t": 63.87
+  },
+  "why_it_works": [
+    "Negative callout ('don't use X unless...') challenges people already using the tool, so they stay to check their setup.",
+    "Every item opens with the same ordinal title card ('THE THIRD', 'THE FOURTH', 'THE FIFTH'), so the viewer always knows where they are in the list.",
+    "Custom-made explainer cards (installer, provider grid, model switcher) replace raw screen recordings, so each idea is readable in under two seconds.",
+    "Pixel-art type and the pixel mascot tie all cards into one look that matches the Claude brand."
+  ],
+  "weaknesses": [
+    "Grey caption pills are small and low contrast against the white cards.",
+    "No zoom punches (0 per minute) and long talking-head stretches in the middle feel flat compared with the busy opening.",
+    "Link-in-description CTA is spoken only in the last 2 s, after most viewers have scrolled."
+  ],
+  "for_robert": "Use a recurring ordinal title card for each list item and let Fred be the one who carries it in, the way this video reuses its pixel mascot as a brand marker that comes back."
+}

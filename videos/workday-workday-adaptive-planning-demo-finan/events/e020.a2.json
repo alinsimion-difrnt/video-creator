@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "3252f93ac9f577576207542dd76e736c4ebf279b0dc3ae08f1db3ef518112236",
+    "created_at": "2026-10-05T06:52:29.379474Z"
+  },
+  "video": "workday-workday-adaptive-planning-demo-finan",
+  "event": "e020",
+  "task": "a2-e020",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Open navigation menu and submenu (UI card) scaling up toward the top-left",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b06",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Assumptions menu item hover highlight",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Assumptions",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 80, "easing_class": "step"}
+    },
+    {
+      "box": null,
+      "manual_box": [236, 190, 278, 208],
+      "manual_reason": "No candidate box isolates the cursor; it travels from the Workday logo down onto the Assumptions row.",
+      "label": "Mouse cursor moving onto Assumptions",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "position move (cursor travel)",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "ui_camera_push_in",
+    "proposed_name": null,
+    "description": "Following the cut to the opened navigation menu, the UI scales up about 27% anchored toward the top-left so the menu and Integration submenu fill the frame, settling with a fast-start, long-tail decel; the cursor then lands on a menu row and it highlights.",
+    "why_premium": "The zoom makes small screen-recording text legible and focuses attention on the navigation path being narrated, and the strong ease-out makes the move feel deliberate rather than mechanical."
+  },
+  "build_hint": {
+    "gsap": "gsap.fromTo(uiCard, {scale: 1}, {scale: 1.27, x: '+=4%', y: '+=3%', transformOrigin: '10% 10%', duration: 0.4, ease: 'expo.out'}); then cursor gsap.to(cursor, {x, y, duration: 0.3, ease: 'power2.out'}) and set the row highlight on arrival.",
+    "remotion": "const p = spring({frame, fps, config: {damping: 30, stiffness: 120, mass: 1}}); scale = interpolate(p, [0, 1], [1, 1.27]) with transformOrigin near the top-left (no overshoot); or interpolate over ~12 frames with Easing.out(Easing.exp)."
+  },
+  "confidence": "medium",
+  "notes": "Worth a human look: camera.move is 'none' but scale is 1.27 and the background curve also grows, so this may in fact be a whole-frame push-in that the camera detector missed (large flat dark area on the right). Annotated as the UI card scaling, with pattern ui_camera_push_in as the nearest canonical match. Cursor box is manual."
+}

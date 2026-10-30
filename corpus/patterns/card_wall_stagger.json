@@ -1,0 +1,138 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a3_pattern_cards",
+    "annotator": "claude-code",
+    "skill": "write-pattern-cards@e525a58fa6d8",
+    "model": null,
+    "input_hash": "f65ac4b8019c00bd4c656921fbfd4fcda58b97848115271d7499b02a1bd151c3",
+    "created_at": "2026-10-05T12:55:13.967576Z"
+  },
+  "id": "card_wall_stagger",
+  "name": "Cards Fill The Wall",
+  "summary": "A wall or grid of cards builds up piece by piece: each card fades, slides or grows into its spot a moment after the one before, softly coming into focus, until the whole layout settles.",
+  "when_to_use": [
+    "Showing breadth: a library, a set of use cases or a family of products",
+    "Building a hierarchy where parent cards arrive before their child items",
+    "Turning a single clip or screen into one item among many",
+    "Giving each item a brief moment to register before the full picture lands"
+  ],
+  "avoid_when": [
+    "Only a couple of items need to be shown",
+    "Each card needs to be read in detail while it is moving",
+    "The narration is about one specific item rather than the collection"
+  ],
+  "steps": [
+    "Lay out the final wall or grid first, then hide each card at its start state",
+    "Choose an order: from one corner, from the centre, parents before children, or random",
+    "Bring each card in with a fade plus a slide, scale or blur clearing, offset slightly from the previous card",
+    "Optionally scale the whole wall at the same time, as if the camera pulls back to reveal it",
+    "Bring in smaller satellite items, icons or connector lines after their parent cards",
+    "Land any headline last over the settled wall, and keep a slow drift going so it stays alive"
+  ],
+  "build": {
+    "gsap": "Use a timeline with gsap.fromTo on the card selector, animating opacity plus y/x, scale or filter blur, with a stagger object (each, from: 'start', 'center', 'end' or 'random', grid for tiled layouts). Ease-in and ease-out power curves dominate; use power ease-in-out for a container scale that pulls back the camera, a linear yoyo for idle drift, and back.out only for small pop-in icons. Overlap groups with position parameters so children start before parents fully settle.",
+    "remotion": "For each card, offset the frame by its index and drive a spring (high damping, no overshoot) mapped through interpolate to opacity, translate, scale and blur. Animate the container scale with interpolate and an Easing.inOut curve. Use a low-damping spring only for small icons that should pop."
+  },
+  "sound": "Sound is often absent or unclear; where present it is a whoosh or reverse swoosh that leads into the motion, starting ahead of the cards arriving. Treat it as optional.",
+  "why_premium": "The stagger turns a crowd of items into a sequence the eye can follow, so a dense layout fills the screen without ever feeling cluttered. Soft blur clearing and gentle scale changes make cards feel like they are coming into focus rather than popping on, and ordering them by hierarchy or from a clear origin explains the structure as it builds. Pulling back from a single item to a wall with depth and slow drift makes an abstract idea such as a content library or a platform of agents feel spatial and tangible.",
+  "numbers": {
+    "id": "card_wall_stagger",
+    "events": 3,
+    "videos": 3,
+    "weight": 2.4,
+    "duration_ms": {
+      "n": 17,
+      "videos": 2,
+      "weight": 10.8417,
+      "median": 1586.412,
+      "p25": 527.362,
+      "p75": 2680.161,
+      "ci": [
+        830.748,
+        2357.061
+      ]
+    },
+    "easing_mix": {
+      "ease_in": 0.33,
+      "ease_out": 0.3002,
+      "ease_in_out": 0.1764,
+      "linear": 0.1382,
+      "spring_overshoot": 0.0552
+    },
+    "change_mix": {
+      "fade": 0.3077,
+      "blur_in": 0.1775,
+      "scale_up": 0.1361,
+      "scale_down": 0.1006,
+      "slide_left": 0.0828,
+      "slide_up": 0.0828,
+      "slide_down": 0.0592,
+      "pop": 0.0296,
+      "slide_right": 0.0237
+    },
+    "role_mix": {
+      "card": 0.6353,
+      "list_item": 0.2118,
+      "headline": 0.0941,
+      "icon": 0.0588
+    },
+    "sfx_label_mix": {
+      "unsure": 0.5,
+      "swoosh_reverse": 0.25,
+      "whoosh": 0.25
+    },
+    "sfx_offset_ms": {
+      "n": 6,
+      "videos": 1,
+      "weight": 4.8,
+      "median": -464.9,
+      "p25": -464.9,
+      "p75": -464.9,
+      "ci": [
+        -464.9,
+        -422.9
+      ]
+    },
+    "examples": [
+      {
+        "video": "meta-this-is-meta-quest-3",
+        "event": "e006",
+        "score": 4.0
+      },
+      {
+        "video": "salesforce-what-is-agentforce-and-how-businesses-us",
+        "event": "e002",
+        "score": 3.0
+      },
+      {
+        "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+        "event": "e030",
+        "score": 5.0
+      }
+    ]
+  },
+  "examples": [
+    {
+      "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+      "event": "e030",
+      "score": 5.0
+    },
+    {
+      "video": "meta-this-is-meta-quest-3",
+      "event": "e006",
+      "score": 4.0
+    },
+    {
+      "video": "salesforce-what-is-agentforce-and-how-businesses-us",
+      "event": "e002",
+      "score": 3.0
+    }
+  ],
+  "caveats": [
+    "Seen in only 3 videos, with timing measured in only 2 of them",
+    "Sound timing comes from a single video, so the lead-in placement is a weak guide",
+    "Wide timing spread: quick tile entries and long wall reveals are grouped together"
+  ]
+}

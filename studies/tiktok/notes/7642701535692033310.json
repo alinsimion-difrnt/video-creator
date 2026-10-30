@@ -1,0 +1,36 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code",
+                 "input_hash": "595d2f410de9185e7876c4895e2a301cf6e78ad55f081fd6375a39378946af00",
+                 "created_at": "2026-10-13T09:31:00+00:00"},
+  "id": "7642701535692033310",
+  "format": "green_screen",
+  "hook": {"type": "news",
+           "line": "People are now asking ChatGPT to take a selfie of itself, and it's breaking the internet.",
+           "visual": "Creator cut out in the bottom right over a ChatGPT screenshot showing the blurry 'selfie' result, with a white title box 'ChatGPT just took a selfie of itself' and an emoji."},
+  "beats": [
+    {"t": 0.0, "what": "Result first: the strange selfie ChatGPT made fills the background behind the creator, under a boxed title."},
+    {"t": 4.0, "what": "Cut to the ChatGPT 'Create image' screen with '/image' typed: step one of how to do it."},
+    {"t": 7.0, "what": "The full prompt text appears as a card behind him."},
+    {"t": 9.98, "what": "Back to the blurry selfie result as he describes it."},
+    {"t": 11.93, "what": "Variation: a cat's face as someone else's ChatGPT selfie."},
+    {"t": 14.27, "what": "Variation: a robot with a glowing smiley face."},
+    {"t": 16.93, "what": "Cut to the creator alone in his room with a boxed title 'Follow and comment Selfie and I'll send it', pointing at the camera."}
+  ],
+  "graphics": {"captions": "word_by_word", "caption_position": "mixed",
+               "devices": ["green_screen_bg", "screenshot", "product_ui", "title_text", "sticker_emoji", "jump_cut"],
+               "density": "moderate", "per_minute_estimate": 20},
+  "characters": [],
+  "cta": {"kind": "comment", "t": 16.93},
+  "why_it_works": [
+    "Result shown in the first frame, so the viewer stays to learn how to get their own.",
+    "Fast speech (5 words/s) and a background change every ~2.7 s fit the whole trend into 22 s.",
+    "Different results (cat, robot) turn it into 'what will mine be?', a personal curiosity gap.",
+    "Comment-keyword CTA for the prompt drives comments (25.3k) and follows."
+  ],
+  "weaknesses": [
+    "Single-word captions sit right over his face and chest; most text is outside the safe area (0.933).",
+    "The prompt is shown on screen at 7 s, so the 'comment to get it' ask is partly redundant."
+  ],
+  "for_robert": "Put the payoff image behind him in the first frame and make the comment keyword the CTA; Fred could hold up a sign with the keyword at the end."
+}

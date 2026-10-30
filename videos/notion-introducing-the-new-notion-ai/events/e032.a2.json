@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "b6c0272f5fd44e67754d11683073cfd154eaa2cd319abcd06548ff53540ec96a",
+    "created_at": "2026-10-05T06:47:01.071379Z"
+  },
+  "video": "notion-introducing-the-new-notion-ai",
+  "event": "e032",
+  "task": "a2-e032",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Notion cube logomark",
+      "role": "logo",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Notion wordmark",
+      "role": "logo",
+      "role_other": null,
+      "change_types": ["fade", "color_shift"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Notion",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 200, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "logo_resolve",
+    "proposed_name": null,
+    "description": "The centred cube logomark shifts left to make room while the 'Notion' wordmark fades in beside it (mid-grey to solid black), resolving into the horizontal lockup.",
+    "why_premium": "Two-step lockup: the mark owns the frame alone first, then yields space so the wordmark arrives without a cut; fast, quiet resolve on a flat warm background with the music tail decaying underneath."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.mark', {x: -offset, duration: 0.3, ease: 'power2.inOut'}).fromTo('.wordmark', {opacity: 0}, {opacity: 1, duration: 0.2, ease: 'power2.out'}, '-=0.1'); wordmark starts after the mark has begun moving.",
+    "remotion": "markX = interpolate(spring({frame, fps, config: {damping: 200, stiffness: 120}}), [0, 1], [0, -offset]); wordmark opacity = interpolate(frame, [start+4, start+9], [0, 1], {extrapolateRight: 'clamp'}), delayed ~4 frames after the mark."
+  },
+  "confidence": "medium",
+  "notes": "Filmstrip panels appear framed on the logo (mark looks large); the end frame shows a small centred lockup. camera.move is none, so the scale/pan sums are read as the mark sliding and the wordmark appearing, not a camera move. b03 overlaps b02 (the same mark) and is not used."
+}

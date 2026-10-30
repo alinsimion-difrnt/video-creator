@@ -1,0 +1,44 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "4c8a05ffbaa3bcc0265f5865ae6e9b2b8f8f8bc7482f9dbdf9449aaa26899cdd",
+    "created_at": "2026-10-05T06:47:43.939671Z"
+  },
+  "video": "notion-introducing-the-new-notion-ai",
+  "event": "e001",
+  "task": "a2-e001",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Mouse cursor travelling to the Notion logo",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_up", "slide_right"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 700, "easing_class": "ease_in_out", "source": "model_estimate"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "Opening beat: on a bare off-white canvas with the centred Notion cube, a cursor enters from the lower left and glides diagonally up to rest on the logo's lower-right corner, setting up an interaction with it.",
+    "why_premium": "A single smooth, decelerating cursor path on an otherwise empty frame directs the eye to the brand mark and signals 'this is a product you use', with no extra UI noise."
+  },
+  "build_hint": {
+    "gsap": "gsap.fromTo(cursor, {x: -360, y: 260}, {x: 0, y: 0, duration: 0.7, ease: 'power2.inOut'}) ending at the logo's lower-right corner; logo stays static.",
+    "remotion": "const p = interpolate(frame, [0, 21], [0, 1], {easing: Easing.inOut(Easing.cubic), extrapolateRight: 'clamp'}); cursor translate = lerp([-360, 260], [0, 0], p). A critically damped spring (damping ~26, stiffness ~120, no overshoot) also fits."
+  },
+  "confidence": "medium",
+  "notes": "Only the cursor moves; the logo looks static across the filmstrip. b01 (diff box around logo + cursor end) chosen for the cursor; b02 is the union of the cursor's travel path. Camera scale sum 0.709 is content-only (move none)."
+}

@@ -1,0 +1,68 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "13d3580f4a3b94b506d0c08980df879ee7546defd72211896c907e98112b5a36",
+    "created_at": "2026-10-05T06:28:44.430128Z"
+  },
+  "video": "notion-what-is-notion",
+  "task": "a1-p1",
+  "shots": [
+    {
+      "shot": "s001",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "An oversized, near frame-height black text caret blinking on a plain white field",
+      "transition_in": "other",
+      "transition_other": "none: the video opens on this shot",
+      "on_screen_text": ["N"],
+      "text_word_count": 1,
+      "typography": "Single giant uppercase letter in a heavy geometric/grotesque sans (bold weight, tight); caret is a thick vertical bar. Font guess (low confidence): Inter or similar neo-grotesque.",
+      "depth_cues": ["none"],
+      "what_happens": "Extreme close-up of an empty text field: a giant caret blinks on and off (visible in the 0.5 s, 1.5 s and 2.0 s frames, absent in others) and appears at different horizontal positions across samples, while the voice-over asks the title question (w0-w2). At about 3.0 s the first letter 'N' is typed, filling the centre of the frame.",
+      "build_rebuild": "Render a white full-frame canvas with a 16px-wide black caret scaled to ~90% frame height, toggle its opacity on a ~0.5 s step blink, then at the end of the shot replace it with a centred bold 'N' at the same scale as if typed.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s002",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The giant bold letters 'No' filling the white frame",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": ["No"],
+      "text_word_count": 1,
+      "typography": "Very large bold sans, sentence case (capital N, lowercase o), tight default tracking, black on white. Font guess (low confidence): Inter Bold.",
+      "depth_cues": ["none"],
+      "what_happens": "A two-frame flash (about 0.08 s) in which the typed word has grown to 'No' at extreme magnification; it reads as the second keystroke of the typing sequence just before the framing pulls back.",
+      "build_rebuild": "Insert a 2-frame hold of centred bold 'No' at ~55% frame height on white, hard-cut between the 'N' frame and the zoomed-out 'Notion' line to fake a rapid typing zoom-out.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s003",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The centred typed line 'Notion is' with a thin blinking caret",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": ["Notion is..............."],
+      "text_word_count": 2,
+      "typography": "Medium-size bold sans, sentence case, normal tracking, black on white, centred single line with a thin text caret after the last character. Font guess (low confidence): Inter Semibold/Bold.",
+      "depth_cues": ["none"],
+      "what_happens": "Framing is now at normal reading scale: 'Notion' is typed, then ' is', and the caret blinks while the voice-over repeats 'Notion?' (w3) and hesitates 'Hmm.' (w4). Ellipsis dots are then typed, first three, then a long run of dots, dramatising the struggle to define the product; the line re-centres as it grows.",
+      "build_rebuild": "Centre a single bold text line on white and drive it with a typewriter effect (per-character reveal, re-centred each step) from 'Notion' to 'Notion is', hold with a 0.5 s caret blink, then append '...' and finally a rapid run of additional dots before the next shot.",
+      "confidence": "high"
+    }
+  ],
+  "summary": null
+}

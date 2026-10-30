@@ -1,0 +1,52 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T14:00:48+00:00"
+  },
+  "id": "sword-and-sworcery",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "unknown",
+    "notes": "None of the 3 clips show the game (occult book drawings, 80s fantasy paintings), so no palette was seen. Wiki gives no palette detail."
+  },
+  "lighting": "Not seen in frames; the wiki does not describe lighting. Its one visual award (IndieCade 2011 Visuals) is the only signal.",
+  "silhouette": "Per sources.yaml: minimal, tall-pixel characters. Cast is a few iconic figures (the Scythian warrior, Girl the shepherd, Logfella and his dog Dogfella, an antlered giant), each one simple shape (wiki).",
+  "motion": {
+    "timing": "No frame timings measured and no game frames seen. Wiki: actions are slow and deliberate (tap to walk, hold the hero to sing, tilt the device to draw the sword).",
+    "principles": [
+      "staging",
+      "timing"
+    ]
+  },
+  "texture": "Not seen. Reviewers compare its surface to a ~1995 point-and-click adventure (wiki).",
+  "camera": "Wiki: mobile versions use device orientation during play; tilting the device 90 degrees switches the hero into sword-drawn combat. The frame itself changes shape with the mode.",
+  "sound": "Jim Guthrie score is part of the play: holding the hero starts a song, boss attacks follow the music, a rock-concert scene (wiki).",
+  "acting": {
+    "enters": "Not seen in frames.",
+    "acts": "Wiki: the hero acts through few, ritual gestures (sleep at a hearth to switch to the dream world, sing to solve puzzles, raise the sword). Each gesture is a mode change, not a busy loop.",
+    "exits": "Leaving is by sleeping: the hero goes to a dream world and returns (wiki).",
+    "comes_back": true,
+    "depth": "Not seen in frames."
+  },
+  "techniques": [
+    "few iconic characters, each one simple tall shape",
+    "one held gesture per action (hold to sing, tilt to draw sword)",
+    "orientation change as a mode switch: wide for walking, tall for combat",
+    "music drives the action: attacks timed to the song",
+    "sleep/dream world as a clean way to leave and return"
+  ],
+  "feel": "few tall minimal figures + one ritual gesture per beat + music-led timing = calm, mythic, cinematic (from text only)",
+  "for_fred": "Give Fred one ritual gesture that means 'mode change' (e.g. a slow 3-frame pose before a gag) and use it only at turning points; in a vertical reel let a beat land on the music, not on every word. Note: written from the wiki only, no game frames were usable.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Superbrothers:_Sword_%26_Sworcery_EP",
+    "studies/pixel-art/sources.yaml",
+    "data/study/pixel/work/sword-and-sworcery/clip1-7692236039712296223.jpg (ignored: occult book drawings)",
+    "data/study/pixel/work/sword-and-sworcery/clip2-7655051592239992082.jpg (ignored: 80s fantasy paintings)",
+    "data/study/pixel/work/sword-and-sworcery/clip3-7694838120264617247.jpg (ignored: occult scroll drawings)"
+  ]
+}

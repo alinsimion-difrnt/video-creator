@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "b770cb85ac50ab4092ee66a7235eac7f593f41839b10b386651c510fb0b91544",
+    "created_at": "2026-10-05T06:52:52.201489Z"
+  },
+  "video": "salesforce-what-is-agentforce-and-how-businesses-us",
+  "event": "e018",
+  "task": "a2-e018",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Agentforce SDR card (hover border off)",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Agentforce Sales Coach card (hover border on)",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": null,
+      "manual_box": [560, 560, 610, 580],
+      "manual_reason": "No candidate box covers the cursor; it ends just right of the Sales Coach icon.",
+      "label": "Mouse cursor",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_right", "slide_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 600, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "The cursor glides from the Agentforce SDR card across to the Agentforce Sales Coach card. The hover border hands off from one card to the other the moment the cursor crosses the gap.",
+    "why_premium": "The cursor follows the narration through the catalog ('standard agents included'). Each card lights up as it is pointed at, so the viewer's eye is led card by card with no callouts or zooms."
+  },
+  "build_hint": {
+    "gsap": "gsap.timeline().to('.cursor', {x: 250, y: 5, duration: 0.6, ease: 'power2.inOut'}).set('.card-sdr', {className: '-=is-hover'}, 0.3).set('.card-coach', {className: '+=is-hover'}, 0.3); the border swap is an instant set timed to the cursor crossing the gap.",
+    "remotion": "Cursor x = interpolate(frame, [0, 18], [475, 725], {easing: Easing.inOut(Easing.cubic), extrapolateRight: 'clamp'}); hover = cursorX > 600 ? 'coach' : 'sdr' to toggle the card borders with a hard switch."
+  },
+  "confidence": "high",
+  "notes": "Motion energy is tiny (cursor and a 1 px border only). Cursor travel and timing are rough reads from the filmstrip."
+}

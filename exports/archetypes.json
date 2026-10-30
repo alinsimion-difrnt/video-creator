@@ -1,0 +1,2404 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "s10_export",
+  "annotator": "code",
+  "skill": null,
+  "model": null,
+  "input_hash": "52efe18647fd4c244300a2688f72497e7547ee88fd7142a04dd16747cf9eb796",
+  "created_at": "2026-10-05T19:13:48.265695Z"
+ },
+ "archetypes": [
+  {
+   "id": "abstract_shape_metaphor",
+   "name": "Abstract Shape Metaphor",
+   "summary": "A brief, full-frame abstract image of soft shapes, gradient orbs, outlines or dot fields stands in for an idea such as growth, voice or data. It bridges two scenes and gives the narration a visual metaphor instead of literal interface.",
+   "when_to_use": [
+    "Explaining how something works with a metaphor rather than a screen.",
+    "Bridging between scenes with a short visual beat that carries a shape forward.",
+    "Opening a video on mood before the product appears."
+   ],
+   "slots": [
+    {
+     "name": "metaphor_shape",
+     "what": "the main form, such as an orb, a growing stem, an outline circle or a dot field",
+     "required": true
+    },
+    {
+     "name": "background",
+     "what": "a flat or softly blurred pale or brand-coloured field",
+     "required": true
+    },
+    {
+     "name": "palette",
+     "what": "a few brand colours used for gradients or particles",
+     "required": false
+    },
+    {
+     "name": "carry_element",
+     "what": "the shape that continues into the next scene for a match cut",
+     "required": false
+    }
+   ],
+   "steps": [
+    "A soft, out-of-focus field appears with the shape just entering or barely visible.",
+    "The shape settles into place or multiplies into a field as the narration names the idea.",
+    "The camera flies into or scales past the shape.",
+    "The shape carries through to the next scene as a match cut or a zoom-through."
+   ],
+   "patterns": [
+    "match_cut_element"
+   ],
+   "build": {
+    "gsap": "One short timeline per scene. Build shapes as SVG or divs with radial gradients and a CSS blur filter, and tween their scale, position and blur on a sine in-out. For a dot field, generate many small circles and give each a tiny looping offset with a random stagger. End by tweening the container's scale well past full frame on an expo ease-in for a zoom-through, keeping the carry element's position for the next scene.",
+    "remotion": "One Sequence, usually short. Interpolate blur and scale from the frame index, drive the main shape with a soft, low-stiffness spring, and use seeded noise per particle for jitter. Place the carry element in a shared layer so the next Sequence starts from the same position."
+   },
+   "sound": "no typical sound",
+   "duration_s": {
+    "median": 1.585,
+    "low": 0.409,
+    "high": 2.685,
+    "n": 11,
+    "videos": 3
+   },
+   "first_motion_s": {
+    "median": 1.402,
+    "low": 0.676,
+    "high": 1.733,
+    "n": 4,
+    "videos": 1
+   },
+   "events_per_scene": {
+    "median": 0.0,
+    "low": 0.0,
+    "high": 1.0,
+    "n": 11,
+    "videos": 3
+   },
+   "way_in": {
+    "other": 0.5238,
+    "zoom_through": 0.381,
+    "crossfade": 0.0952
+   },
+   "beats": {
+    "mechanism": 0.6087,
+    "hook": 0.2174,
+    "demo": 0.1739
+   },
+   "sfx_cues_s": {
+    "chime": {
+     "median": 0.623,
+     "low": 0.623,
+     "high": 0.623,
+     "n": 1,
+     "videos": 1
+    },
+    "impact": {
+     "median": 3.056,
+     "low": 3.056,
+     "high": 3.056,
+     "n": 1,
+     "videos": 1
+    },
+    "music": {
+     "median": 2.307,
+     "low": 2.307,
+     "high": 2.307,
+     "n": 1,
+     "videos": 1
+    },
+    "swoosh_reverse": {
+     "median": 0.996,
+     "low": 0.996,
+     "high": 0.996,
+     "n": 1,
+     "videos": 1
+    },
+    "unsure": {
+     "median": 1.571,
+     "low": 0.339,
+     "high": 2.13,
+     "n": 10,
+     "videos": 2
+    }
+   },
+   "videos": 3,
+   "caveats": [
+    "Few shots from only a few videos; first motion is measured in a single video.",
+    "Sound cues are mostly unclassified, so no clear cue is recommended.",
+    "Most motion is labelled other, so the build notes lean on member descriptions."
+   ]
+  },
+  {
+   "id": "ai_working_loader",
+   "name": "AI Working Loader",
+   "summary": "A small status pill, card or row shows the AI at work: a spinner or sparkle turns, a shimmer sweeps the label, and the status words cycle through what it is doing. It is a short bridge between a request and its result that makes the wait feel purposeful.",
+   "when_to_use": [
+    "Between a sent prompt and the generated result",
+    "Showing the AI reaching into several connected tools or sources",
+    "A brief beat that builds anticipation before a reveal"
+   ],
+   "slots": [
+    {
+     "name": "status_label",
+     "what": "a short present-tense action, like designing or scanning",
+     "required": true
+    },
+    {
+     "name": "status_cycle",
+     "what": "a few alternative status labels to swap through",
+     "required": false
+    },
+    {
+     "name": "working_icon",
+     "what": "a sparkle, spinner ring, avatar or pulsing dots that move while working",
+     "required": true
+    },
+    {
+     "name": "source_icons",
+     "what": "app icons paired with each status row or label",
+     "required": false
+    },
+    {
+     "name": "backdrop",
+     "what": "the blurred or dimmed context behind the loader, or a living visual such as a rotating globe",
+     "required": false
+    },
+    {
+     "name": "result_view",
+     "what": "the finished output the loader resolves into",
+     "required": false
+    }
+   ],
+   "steps": [
+    "The request card collapses or the view cuts to a compact status pill or card",
+    "The working icon starts moving: a spin, pulse or animated face",
+    "A light shimmer sweeps across the label while the status words cycle or new status rows append",
+    "Finished rows dim to a muted colour to read as done",
+    "The loader blurs or fades away and the result resolves in, or the scene hard-cuts to it"
+   ],
+   "patterns": [],
+   "build": {
+    "gsap": "One timeline per scene. Loop the icon with a repeating linear rotation or a yoyo scale pulse on the dots. Run the shimmer as a repeating tween of a gradient mask position across the label (linear or sine.inOut). Swap status labels with short opacity crossfades on a fixed interval, or append each new status row with a left-to-right mask reveal (power2.out) and then tween the previous row's colour to grey. End with a blur-and-fade out of the loader overlapping a blur-in of the result view.",
+    "remotion": "One Sequence for the loader and one for the result. Drive rotation and shimmer from the frame number with interpolate() and modulo for looping. Each status label or row is its own Sequence with a short interpolate() fade or mask reveal; dimming is interpolate() on colour. The exit crossfades blur and opacity between the two Sequences; springs are not needed."
+   },
+   "sound": "No typical sound. The only measured cues are labelled unsure, scattered through the middle of the scene.",
+   "duration_s": {
+    "median": 2.083,
+    "low": 1.627,
+    "high": 2.383,
+    "n": 7,
+    "videos": 6
+   },
+   "first_motion_s": {
+    "median": null,
+    "low": null,
+    "high": null,
+    "n": 0,
+    "videos": 0
+   },
+   "events_per_scene": {
+    "median": 0.0,
+    "low": 0.0,
+    "high": 0.0,
+    "n": 7,
+    "videos": 6
+   },
+   "way_in": {
+    "hard_cut": 0.64,
+    "other": 0.36
+   },
+   "beats": {
+    "demo": 0.84,
+    "hook": 0.16
+   },
+   "sfx_cues_s": {
+    "unsure": {
+     "median": 1.213,
+     "low": 0.667,
+     "high": 1.862,
+     "n": 4,
+     "videos": 2
+    }
+   },
+   "videos": 6,
+   "caveats": [
+    "No measured motion events or patterns, so none are listed; the descriptions suggest input text cycle and blur crossfade.",
+    "Few shots, and the loader style varies: status pill, status rows, shimmer over a card, spinner card.",
+    "No reliable sound: every measured cue is labelled unsure."
+   ]
+  },
+  {
+   "id": "app_icon_orbit",
+   "name": "App Icon Orbit",
+   "summary": "App icons or interface cards gather in a ring around a central brand mark or headline, then turn, glow or change state together. It shows the product as the hub that connects or replaces many tools.",
+   "when_to_use": [
+    "Showing that the product connects to or replaces many other apps",
+    "Landing an outcome beat where scattered tools become one place",
+    "Turning a ring of broken or alerting tools into healthy ones"
+   ],
+   "slots": [
+    {
+     "name": "hub",
+     "what": "the central brand mark, ring or headline the icons orbit",
+     "required": true
+    },
+    {
+     "name": "icons",
+     "what": "a set of generic app icons, logo badges or small interface cards",
+     "required": true
+    },
+    {
+     "name": "status_badge",
+     "what": "a small badge on each icon, such as an alert dot that becomes a check",
+     "required": false
+    },
+    {
+     "name": "caption",
+     "what": "a short line beside or under the ring, built word by word with the narration",
+     "required": false
+    },
+    {
+     "name": "background",
+     "what": "a gradient field that can shift colour to mark the change",
+     "required": true
+    }
+   ],
+   "steps": [
+    "Start on the background, fading up from dark or out of the previous zoom",
+    "Bring in the hub at the centre",
+    "Fly or fan the icons into a ring around it, one after another",
+    "Change their state together: glow, swap to full colour, pop status badges, or shift the background",
+    "Rotate the ring slowly while the caption builds",
+    "Exit by drifting the ring out of frame, zooming through or flashing to white"
+   ],
+   "patterns": [],
+   "build": {
+    "gsap": "One timeline per scene. Position icons on a circle with trigonometry inside a rotating container; stagger them in with scale and opacity from small, using a back out ease for a slight overshoot, or along curved paths from the corners with motion blur. Tween the background gradient and swap icon filters on one beat, pop the status badges with a short back out stagger, then run a slow linear rotation on the container and a power in drift for the exit.",
+    "remotion": "One Sequence for the ring; each icon gets its own spring delayed by its index for the entrance, with position computed from its angle; the container's rotation is a linear interpolate over the scene; a nested Sequence drives the state change and badge springs; a final Sequence handles the drift or flash out."
+   },
+   "sound": "No typical sound. Music carries most of these scenes; a chime or click can mark icons arriving or a state change, but each comes from a single video.",
+   "duration_s": {
+    "median": 0.99,
+    "low": 0.165,
+    "high": 2.458,
+    "n": 12,
+    "videos": 4
+   },
+   "first_motion_s": {
+    "median": null,
+    "low": null,
+    "high": null,
+    "n": 0,
+    "videos": 0
+   },
+   "events_per_scene": {
+    "median": 0.0,
+    "low": 0.0,
+    "high": 0.0,
+    "n": 12,
+    "videos": 4
+   },
+   "way_in": {
+    "other": 0.4615,
+    "crossfade": 0.2308,
+    "zoom_through": 0.2308,
+    "hard_cut": 0.0769
+   },
+   "beats": {
+    "outcome": 0.6154,
+    "demo": 0.1538,
+    "hook": 0.1538,
+    "problem": 0.0769
+   },
+   "sfx_cues_s": {
+    "chime": {
+     "median": 1.079,
+     "low": 1.079,
+     "high": 1.079,
+     "n": 1,
+     "videos": 1
+    },
+    "click": {
+     "median": 0.737,
+     "low": 0.737,
+     "high": 0.737,
+     "n": 1,
+     "videos": 1
+    },
+    "impact": {
+     "median": 5.538,
+     "low": 4.525,
+     "high": 6.55,
+     "n": 2,
+     "videos": 1
+    },
+    "music": {
+     "median": 1.599,
+     "low": 0.498,
+     "high": 7.35,
+     "n": 4,
+     "videos": 2
+    },
+    "unsure": {
+     "median": 0.486,
+     "low": 0.119,
+     "high": 0.854,
+     "n": 2,
+     "videos": 1
+    }
+   },
+   "videos": 4,
+   "caveats": [
+    "Few videos, and several members are very short slivers split by the cut detector from one continuous move, so the measured length runs short.",
+    "No motion events or patterns were measured, so the build notes come from shot descriptions only.",
+    "Each sound cue comes from only one or two videos."
+   ]
+  },
+  {
+   "id": "bars_ring",
+   "name": "Chart Card Build",
+   "summary": "A clean chart card appears and its data builds on screen: bars grow, a line draws across, or a ring fills in, often with a tooltip value following along. It turns a product claim into visible proof during the demo.",
+   "when_to_use": [
+    "Showing a trend, share or comparison the product tracks",
+    "Proving a claim with data right after the narration names it",
+    "Singling out one bar, segment or series to make a point"
+   ],
+   "slots": [
+    {
+     "name": "chart_kind",
+     "what": "bars, line, stacked area, donut or ring",
+     "required": true
+    },
+    {
+     "name": "data_series",
+     "what": "the values or series to plot, kept short and readable",
+     "required": true
+    },
+    {
+     "name": "chart_label",
+     "what": "a short all-caps label or panel title above the chart",
+     "required": false
+    },
+    {
+     "name": "highlight_item",
+     "what": "one bar, segment or tooltip row to single out with colour or an outline",
+     "required": false
+    },
+    {
+     "name": "tooltip_value",
+     "what": "a value that follows the line tip and counts up",
+     "required": false
+    },
+    {
+     "name": "legend_items",
+     "what": "legend labels for each series or segment",
+     "required": false
+    },
+    {
+     "name": "background",
+     "what": "a solid brand field or dark gradient stage behind the card",
+     "required": false
+    }
+   ],
+   "steps": [
+    "The chart card or panel slides or fades into frame on a simple background",
+    "The axes or baseline settle and the label appears",
+    "The data builds: bars grow from the baseline in a stagger, a line draws left to right, or a ring sweeps clockwise",
+    "A tooltip or value rides the leading edge and counts up as the data lands",
+    "One item is singled out with a colour change or outline on the narration cue",
+    "The card holds briefly, then exits with a push, slide or blur into the next scene"
+   ],
+   "patterns": [],
+   "build": {
+    "gsap": "One timeline per scene. Bring the card in with a short ease-out slide or an opacity-and-blur fade. Grow bars with scaleY from zero, transform-origin at the bottom, staggered left to right with power2.out or a soft back.out. Draw lines and rings with a stroke-dashoffset tween on an SVG path (sine.inOut or power1.inOut). Tween a tooltip along the path end with a counter tween on its number, snapped to integers. Add the highlight as a colour or outline tween placed at the narration word's time, then exit with a fast horizontal slide plus blur.",
+    "remotion": "A Sequence for the card entrance, a Sequence for the data build and a Sequence for the highlight and exit. Drive bar heights with spring() offset per bar index (high damping, no overshoot) and line or ring drawing with interpolate() over strokeDashoffset. The tooltip value is interpolate() on the same progress, rounded. The highlight Sequence starts on the narration word's frame."
+   },
+   "sound": "No typical sound. Labels are mixed and often unsure; when a cue is heard it is usually a soft impact or a reverse swoosh near the start as the card lands, with the occasional glitch or click later on a highlight.",
+   "duration_s": {
+    "median": 2.967,
+    "low": 1.633,
+    "high": 4.094,
+    "n": 10,
+    "videos": 5
+   },
+   "first_motion_s": {
+    "median": null,
+    "low": null,
+    "high": null,
+    "n": 0,
+    "videos": 0
+   },
+   "events_per_scene": {
+    "median": 0.0,
+    "low": 0.0,
+    "high": 0.0,
+    "n": 10,
+    "videos": 5
+   },
+   "way_in": {
+    "other": 0.6154,
+    "push": 0.1538,
+    "blur": 0.0769,
+    "slide": 0.0769,
+    "zoom_through": 0.0769
+   },
+   "beats": {
+    "demo": 0.9231,
+    "hook": 0.0769
+   },
+   "sfx_cues_s": {
+    "click": {
+     "median": 4.857,
+     "low": 3.359,
+     "high": 6.354,
+     "n": 2,
+     "videos": 1
+    },
+    "glitch": {
+     "median": 1.869,
+     "low": 0.575,
+     "high": 2.732,
+     "n": 2,
+     "videos": 2
+    },
+    "impact": {
+     "median": 0.636,
+     "low": 0.566,
+     "high": 2.708,
+     "n": 7,
+     "videos": 2
+    },
+    "music": {
+     "median": 3.134,
+     "low": 1.421,
+     "high": 4.848,
+     "n": 2,
+     "videos": 1
+    },
+    "swoosh_reverse": {
+     "median": 0.431,
+     "low": 0.146,
+     "high": 1.433,
+     "n": 4,
+     "videos": 2
+    },
+    "unsure": {
+     "median": 1.339,
+     "low": 0.826,
+     "high": 1.574,
+     "n": 6,
+     "videos": 2
+    }
+   },
+   "videos": 5,
+   "caveats": [
+    "No measured motion events or patterns for these shots; the build is drawn from the shot descriptions, and the chart draw-on pattern has no card yet.",
+    "Mixed members: bar, line, stacked area and donut charts are grouped together.",
+    "Sound labels are mixed and largely unsure, so there is no reliable sound cue."
+   ]
+  },
+  {
+   "id": "cards_triptych",
+   "name": "Feature Cards Triptych",
+   "summary": "A small set of cards, panels or icon tiles enter together and settle side by side or in an overlapping cascade, each standing for one feature, theme or benefit. It lets the viewer take in a few parallel ideas at once before the video unpacks them.",
+   "when_to_use": [
+    "Previewing a few features or benefits that later scenes will explain",
+    "Showing variations of one thing, such as themes or page types",
+    "A summary beat that groups outcomes before a close"
+   ],
+   "slots": [
+    {
+     "name": "cards",
+     "what": "a few cards, panels or icon tiles, each standing for one idea",
+     "required": true
+    },
+    {
+     "name": "card_labels",
+     "what": "a short label or icon under or on each card",
+     "required": false
+    },
+    {
+     "name": "layout",
+     "what": "a side-by-side row, an overlapping collage or a diagonal cascade",
+     "required": true
+    },
+    {
+     "name": "background",
+     "what": "a solid or gradient stage that keeps the cards readable",
+     "required": false
+    },
+    {
+     "name": "cue_words",
+     "what": "narration words that introduce each card",
+     "required": false
+    }
+   ],
+   "steps": [
+    "The previous view pushes out or a single card shrinks to make room",
+    "The cards fly or slide in with a short stagger, often with blur clearing as they land",
+    "They settle into a row, collage or cascade, sometimes timed to the narration naming each one",
+    "The group holds with a slow drift or gentle rotation for depth",
+    "The cards collapse back together, push out or zoom through into the next scene"
+   ],
+   "patterns": [],
+   "build": {
+    "gsap": "One timeline per scene. Exit the previous view with a y or x translate plus motion blur. Enter the cards from below or the side with a staggered tween of y, opacity and a blur filter clearing to sharp (power3.out). For a carousel of icon tiles, scale the new tile into the centre while the previous one shrinks and moves to a side slot (power2.inOut). Hold with a slow linear or sine drift per card at different speeds for parallax, then reverse the stagger or push the group out.",
+    "remotion": "One Sequence for the entrance and hold and one for the exit. Offset each card's spring() by its index for the stagger, with damping high enough to avoid overshoot. Drive the slow drift with interpolate() over the full Sequence length at a different rate per card. Blur is interpolate() from a high value to zero on each card's own progress."
+   },
+   "sound": "No typical sound. Labels are mixed and often unsure; a soft impact or music hit may land as the cards settle, and chimes can mark each card in some videos.",
+   "duration_s": {
+    "median": 5.196,
+    "low": 1.758,
+    "high": 6.418,
+    "n": 8,
+    "videos": 5
+   },
+   "first_motion_s": {
+    "median": null,
+    "low": null,
+    "high": null,
+    "n": 0,
+    "videos": 0
+   },
+   "events_per_scene": {
+    "median": 0.0,
+    "low": 0.0,
+    "high": 0.0,
+    "n": 8,
+    "videos": 5
+   },
+   "way_in": {
+    "other": 0.5,
+    "push": 0.2667,
+    "zoom_through": 0.1333,
+    "crossfade": 0.1
+   },
+   "beats": {
+    "demo": 0.3235,
+    "agitate": 0.2353,
+    "outcome": 0.2353,
+    "mechanism": 0.2059
+   },
+   "sfx_cues_s": {
+    "chime": {
+     "median": 5.326,
+     "low": 2.966,
+     "high": 6.711,
+     "n": 5,
+     "videos": 1
+    },
+    "impact": {
+     "median": 1.221,
+     "low": 0.485,
+     "high": 1.755,
+     "n": 3,
+     "videos": 3
+    },
+    "music": {
+     "median": 1.403,
+     "low": 0.94,
+     "high": 3.001,
+     "n": 4,
+     "videos": 2
+    },
+    "swoosh_reverse": {
+     "median": 0.478,
+     "low": 0.478,
+     "high": 0.478,
+     "n": 1,
+     "videos": 1
+    },
+    "unsure": {
+     "median": 2.724,
+     "low": 1.735,
+     "high": 4.495,
+     "n": 9,
+     "videos": 3
+    }
+   },
+   "videos": 5,
+   "caveats": [
+    "No measured motion events or patterns, so none are listed; card wall stagger and parallax layers fit the descriptions.",
+    "Mixed members: overlapping web-page collages, rotating cubes, icon carousels and a plain screen recording are grouped together.",
+    "Few shots, and the chime cues come from a single video."
+   ]
+  },
+  {
+   "id": "chat_demo_panel",
+   "name": "Chat Demo Panel",
+   "summary": "A cropped chat or agent panel plays a scripted conversation: messages pop in one at a time, the assistant's answer streams in, and the thread scrolls up as it grows. It is the longer demo scene that shows the product actually doing the work.",
+   "when_to_use": [
+    "Demonstrating an AI assistant or support agent answering a real request.",
+    "Showing reasoning steps or tool calls alongside a conversation.",
+    "Walking through a multi-turn exchange that ends in a resolved outcome."
+   ],
+   "slots": [
+    {
+     "name": "panel_chrome",
+     "what": "the chat window or panel frame, cropped and placed on a branded background",
+     "required": true
+    },
+    {
+     "name": "messages",
+     "what": "a short scripted list of user and assistant turns in plain language",
+     "required": true
+    },
+    {
+     "name": "answer_body",
+     "what": "the assistant's longest reply, as bullets or short lines that stream in",
+     "required": true
+    },
+    {
+     "name": "source_chips",
+     "what": "optional small chips or citations appended to answer lines",
+     "required": false
+    },
+    {
+     "name": "side_panel",
+     "what": "an optional card beside the chat showing reasoning steps or a mascot",
+     "required": false
+    },
+    {
+     "name": "avatars",
+     "what": "small avatars marking who is speaking",
+     "required": false
+    }
+   ],
+   "steps": [
+    "The panel slides or pushes into frame over the background, sometimes opened by a cursor click.",
+    "The user's message types on or pops in as a bubble.",
+    "The assistant's reply streams in line by line, with chips or status rows appended as it goes.",
+    "Older bubbles scroll up and out behind a mask as new turns arrive.",
+    "An optional side card fills in step with each assistant turn.",
+    "The exchange ends on the resolved outcome before a cut."
+   ],
+   "patterns": [
+    "masked_scroll",
+    "stagger_list_reveal",
+    "ai_answer_stream",
+    "notification_pop",
+    "chip_append",
+    "prompt_type_on",
+    "ui_camera_push_in"
+   ],
+   "build": {
+    "gsap": "One timeline per scene built from a scripted message array. For each turn, pop the bubble in with a small scale-up and fade on a back or expo ease-out, then tween the inner thread container's y inside an overflow-hidden mask so the stack scrolls up. Stream answer lines with a stagger on opacity and a short upward move, or reveal them left to right with a gradient mask tween, and pop each chip right after its line. Drive the side card's bullets with the same timeline labels so they land with each assistant turn. A slow scale on the panel wrapper gives the gentle camera push.",
+    "remotion": "One Sequence per turn, offset by the script's timing. Inside each, a stiff spring drives the bubble's scale and opacity, and a damped spring drives the thread's scroll offset. Stream answer lines with staggered springs or an interpolated mask width, and render the side card from the same turn index."
+   },
+   "sound": "Music carries most of the scene. Reversed swooshes and impacts tend to come later, as panels or answers land deep into the scene rather than at its start; a pop or click occasionally marks a single bubble or a send. Many cues are unclassified.",
+   "duration_s": {
+    "median": 6.177,
+    "low": 3.444,
+    "high": 11.176,
+    "n": 18,
+    "videos": 8
+   },
+   "first_motion_s": {
+    "median": 0.146,
+    "low": 0.0,
+    "high": 0.618,
+    "n": 8,
+    "videos": 4
+   },
+   "events_per_scene": {
+    "median": 1.0,
+    "low": 0.0,
+    "high": 2.938,
+    "n": 18,
+    "videos": 8
+   },
+   "way_in": {
+    "hard_cut": 0.6038,
+    "other": 0.3585,
+    "zoom_through": 0.0377
+   },
+   "beats": {
+    "demo": 0.8113,
+    "hook": 0.0755,
+    "outcome": 0.0755,
+    "proof": 0.0377
+   },
+   "sfx_cues_s": {
+    "chime": {
+     "median": 5.639,
+     "low": 5.558,
+     "high": 5.72,
+     "n": 2,
+     "videos": 1
+    },
+    "click": {
+     "median": 6.368,
+     "low": 4.324,
+     "high": 10.785,
+     "n": 4,
+     "videos": 1
+    },
+    "glitch": {
+     "median": 3.261,
+     "low": 3.261,
+     "high": 3.261,
+     "n": 1,
+     "videos": 1
+    },
+    "impact": {
+     "median": 16.924,
+     "low": 10.256,
+     "high": 22.041,
+     "n": 14,
+     "videos": 3
+    },
+    "music": {
+     "median": 7.639,
+     "low": 3.527,
+     "high": 10.949,
+     "n": 58,
+     "videos": 5
+    },
+    "pop": {
+     "median": 0.056,
+     "low": 0.056,
+     "high": 0.056,
+     "n": 1,
+     "videos": 1
+    },
+    "swoosh_reverse": {
+     "median": 12.793,
+     "low": 3.937,
+     "high": 17.98,
+     "n": 32,
+     "videos": 3
+    },
+    "unsure": {
+     "median": 7.06,
+     "low": 3.626,
+     "high": 13.538,
+     "n": 43,
+     "videos": 5
+    }
+   },
+   "videos": 8,
+   "caveats": [
+    "Sound counts are dominated by a few long shots from a handful of videos, so cue offsets mostly reflect those shots.",
+    "One member is a real screen recording and another is several scenes merged into one shot, so lengths vary widely."
+   ]
+  },
+  {
+   "id": "comparison_split",
+   "name": "Comparison Split",
+   "summary": "Two sides share the frame, left and right or in stacked lanes, so the viewer compares the old way with the new one or the product against the alternatives. It sets up a contrast that the narration then resolves in the product's favour.",
+   "when_to_use": [
+    "Showing before and after, or old versus new, at a glance",
+    "Framing the problem as a matchup between the product and the usual alternatives",
+    "Backing a claim with a side-by-side result or score"
+   ],
+   "slots": [
+    {
+     "name": "left_side",
+     "what": "the first contender: an old version, an alternative or a person, as an image, icon or render",
+     "required": true
+    },
+    {
+     "name": "right_side",
+     "what": "the second contender, usually the product or the improved version",
+     "required": true
+    },
+    {
+     "name": "divider",
+     "what": "what separates the halves: a thin line, a diagonal band edge or a centred badge",
+     "required": false
+    },
+    {
+     "name": "verdict",
+     "what": "a short stat, label or status that says which side wins",
+     "required": false
+    },
+    {
+     "name": "footnote",
+     "what": "a small disclaimer under a claim",
+     "required": false
+    },
+    {
+     "name": "background",
+     "what": "two contrasting colour fields or a neutral canvas",
+     "required": false
+    }
+   ],
+   "steps": [
+    "Reveal both sides together, or bring them in from opposite edges",
+    "Hold the split so the viewer reads the contrast, with a slow push or a gentle drift toward the centre",
+    "Bring in the verdict between or under the sides as a stat, score bars or a status change",
+    "Clear everything except the winning side and carry it into the next shot with a scale-up, a zoom or a fast cut"
+   ],
+   "patterns": [],
+   "build": {
+    "gsap": "One timeline per scene. Tween the two side groups in from opposite edges with mirrored x values and a short stagger, using an expo or power out ease; add a slow scale push on the container with a sine in-out ease for the hold. Fade or blur the verdict in at the centre, fill any score bars left to right with a stagger, then fade the losing side and scale the winner up with a power in ease into the transition.",
+    "remotion": "One Sequence for the scene with two child layers for the sides, each driven by a mirrored spring on translateX; a nested Sequence starts the verdict after the sides settle, and a final Sequence interpolates opacity on the losing side and scale on the winning side into the next scene."
+   },
+   "sound": "No single clear cue. Impact hits are common and tend to land in the first part of the scene as the sides or the verdict arrive; a whoosh sometimes marks the entrance right at the start; music carries the rest.",
+   "duration_s": {
+    "median": 1.945,
+    "low": 1.587,
+    "high": 3.012,
+    "n": 12,
+    "videos": 5
+   },
+   "first_motion_s": {
+    "median": null,
+    "low": null,
+    "high": null,
+    "n": 0,
+    "videos": 0
+   },
+   "events_per_scene": {
+    "median": 0.0,
+    "low": 0.0,
+    "high": 0.0,
+    "n": 12,
+    "videos": 5
+   },
+   "way_in": {
+    "other": 0.6667,
+    "hard_cut": 0.1429,
+    "zoom_through": 0.1429,
+    "crossfade": 0.0476
+   },
+   "beats": {
+    "demo": 0.2857,
+    "problem": 0.2381,
+    "proof": 0.2381,
+    "hook": 0.1905,
+    "agitate": 0.0476
+   },
+   "sfx_cues_s": {
+    "impact": {
+     "median": 1.044,
+     "low": 0.302,
+     "high": 1.836,
+     "n": 11,
+     "videos": 3
+    },
+    "music": {
+     "median": 2.645,
+     "low": 1.794,
+     "high": 5.038,
+     "n": 9,
+     "videos": 4
+    },
+    "unsure": {
+     "median": 3.147,
+     "low": 1.808,
+     "high": 4.243,
+     "n": 9,
+     "videos": 3
+    },
+    "whoosh": {
+     "median": 0.386,
+     "low": 0.289,
+     "high": 0.483,
+     "n": 2,
+     "videos": 1
+    }
+   },
+   "videos": 5,
+   "caveats": [
+    "No motion events were measured in these shots, so there is no measured pattern mix or first-motion timing; the build notes come from shot descriptions.",
+    "Members are mixed: product renders, illustrated matchups, abstract lanes and footage all count as splits.",
+    "Much of the sound is labelled unsure, so the cue timing is loose."
+   ]
+  },
+  {
+   "id": "document_highlight",
+   "name": "Document Highlight Callout",
+   "summary": "A document, report, table or answer card fills the frame while the camera holds close and highlights or outline boxes land on the exact lines the narration talks about. It points the viewer's eye at the one detail that proves the point.",
+   "when_to_use": [
+    "Explaining how the product works by pointing at the part of a page that matters",
+    "Walking through a report or table one figure or line at a time",
+    "Showing what the product marks up, tags or finds inside content"
+   ],
+   "slots": [
+    {
+     "name": "document",
+     "what": "the page, report, table or answer card being shown",
+     "required": true
+    },
+    {
+     "name": "focus_regions",
+     "what": "the lines, columns or rows to highlight, in narration order",
+     "required": true
+    },
+    {
+     "name": "highlight_style",
+     "what": "a translucent colour bar, an outline box, or a colour tag flash",
+     "required": true
+    },
+    {
+     "name": "cue_words",
+     "what": "the narration words each highlight lands on",
+     "required": true
+    },
+    {
+     "name": "tags",
+     "what": "small badges or chips that pop onto the document to show markup",
+     "required": false
+    },
+    {
+     "name": "frame",
+     "what": "the window, card or tilted plane that holds the document",
+     "required": false
+    }
+   ],
+   "steps": [
+    "The document card settles in, or the view crossfades or cuts to the page",
+    "The camera pushes in close on the area of interest, sometimes with a slight tilt",
+    "Text or rows type or stream in where the content is being produced",
+    "A highlight sweeps or an outline box draws around the first region on its cue word",
+    "The highlight moves to the next region, or tags pop on, as the narration continues",
+    "The view holds while the narration lands, then blurs, crossfades or cuts out"
+   ],
+   "patterns": [],
+   "build": {
+    "gsap": "One timeline per scene, with labels at the narration word times. Push the document layer in with a scale and position tween (power2.out), optionally with a small rotationX or rotationY for tilt. Reveal a highlight as a translucent rect whose width or height tweens from zero (power2.out), or an outline drawn with stroke-dashoffset or faded in and out. Move the outline to the next region with a short position-and-size tween. Pop tags with a scale tween using back.out. Exit with a blur and opacity tween.",
+    "remotion": "A Sequence for the push-in and hold, and one Sequence per highlight starting on its cue word's frame. Use spring() with high damping for the camera push, interpolate() for highlight size and outline stroke, and a lightly underdamped spring() for tag pops. The final Sequence crossfades or blurs out."
+   },
+   "sound": "Mostly a music bed under the narration with sparse effects. Clicks and reverse swooshes come late in the scene as highlights move or the page changes; soft impacts can mark a highlight landing. A chime is rare.",
+   "duration_s": {
+    "median": 8.686,
+    "low": 3.69,
+    "high": 15.711,
+    "n": 10,
+    "videos": 6
+   },
+   "first_motion_s": {
+    "median": 0.0,
+    "low": 0.0,
+    "high": 0.0,
+    "n": 1,
+    "videos": 1
+   },
+   "events_per_scene": {
+    "median": 0.0,
+    "low": 0.0,
+    "high": 0.0,
+    "n": 10,
+    "videos": 6
+   },
+   "way_in": {
+    "other": 0.5128,
+    "crossfade": 0.1795,
+    "hard_cut": 0.1538,
+    "push": 0.0769,
+    "zoom_through": 0.0769
+   },
+   "beats": {
+    "demo": 0.4043,
+    "mechanism": 0.3617,
+    "agitate": 0.0851,
+    "proof": 0.0851,
+    "outcome": 0.0638
+   },
+   "sfx_cues_s": {
+    "chime": {
+     "median": 29.593,
+     "low": 29.593,
+     "high": 29.593,
+     "n": 1,
+     "videos": 1
+    },
+    "click": {
+     "median": 13.411,
+     "low": 11.433,
+     "high": 16.29,
+     "n": 9,
+     "videos": 2
+    },
+    "impact": {
+     "median": 6.047,
+     "low": 2.139,
+     "high": 9.651,
+     "n": 5,
+     "videos": 2
+    },
+    "music": {
+     "median": 5.479,
+     "low": 3.842,
+     "high": 22.361,
+     "n": 13,
+     "videos": 4
+    },
+    "swoosh_reverse": {
+     "median": 18.466,
+     "low": 12.768,
+     "high": 22.9,
+     "n": 5,
+     "videos": 1
+    },
+    "unsure": {
+     "median": 12.385,
+     "low": 1.968,
+     "high": 18.953,
+     "n": 6,
+     "videos": 2
+    }
+   },
+   "videos": 6,
+   "caveats": [
+    "Almost no measured motion events and the only pattern label is other, so no pattern cards are listed; spotlight focus and ui camera push in fit the descriptions.",
+    "Mixed members: some shots are long multi-phase scenes that also include typing, particle and logo moments.",
+    "Scene length varies widely, so sound offsets are spread out and hard to generalise."
+   ]
+  },
+  {
+   "id": "kinetic_statement_card",
+   "name": "Kinetic Statement Card",
+   "summary": "A short headline builds word by word on a clean background, sometimes with one word or chip that cycles through options or a small icon that supports it. The scene states one idea loudly between demos: the hook, the problem, the mechanism or the outcome.",
+   "when_to_use": [
+    "To open the video or a new section with one clear claim.",
+    "To name a problem or a payoff in words before showing it in the product.",
+    "When a list of things the product covers can be shown as one phrase with a cycling slot."
+   ],
+   "slots": [
+    {
+     "name": "headline",
+     "what": "one short claim, one or two lines",
+     "required": true
+    },
+    {
+     "name": "emphasis_word",
+     "what": "the word that gets an underline, colour or weight change",
+     "required": false
+    },
+    {
+     "name": "cycling_options",
+     "what": "a short list of words or chips that swap in one slot of the phrase",
+     "required": false
+    },
+    {
+     "name": "support_visual",
+     "what": "a small icon, logo or illustration that pops in near the text",
+     "required": false
+    },
+    {
+     "name": "background",
+     "what": "a plain light or dark field, optionally with soft drifting shapes",
+     "required": true
+    }
+   ],
+   "steps": [
+    "Start on the empty background, with motion beginning almost immediately.",
+    "The headline reveals word by word or line by line from a mask.",
+    "An emphasis touch lands: an underline draws on or one word changes colour.",
+    "Optionally a slot in the phrase cycles through options, or icons pop in beside the text.",
+    "The text resolves to its final state and holds briefly.",
+    "The card clears or reframes to make room for the next scene."
+   ],
+   "patterns": [
+    "kinetic_word_reveal",
+    "input_text_cycle",
+    "layout_reframe",
+    "logo_resolve",
+    "masked_scroll",
+    "stagger_list_reveal",
+    "chip_append"
+   ],
+   "build": {
+    "gsap": "One timeline per card: split the headline into words and tween each from a masked offset or low opacity with a short stagger and an expo or power ease-out; draw any underline with a stroke-dashoffset tween; for a cycling slot, chain y and blur tweens that swap the label on the beat; finish with a scale and translate tween on the text group to clear or reframe.",
+    "remotion": "A Sequence per card; each word's opacity and translate come from a spring offset by its index times a small frame delay; a cycling chip uses child Sequences per option with a spring slide in and out; a closing interpolate on scale and position hands off to the next scene."
+   },
+   "sound": "Often an unlabelled or reverse-swoosh hit as the text builds, with a soft impact on the key word and music carrying the rest; chimes appear in a few videos. No single dependable cue.",
+   "duration_s": {
+    "median": 3.234,
+    "low": 1.673,
+    "high": 4.593,
+    "n": 66,
+    "videos": 21
+   },
+   "first_motion_s": {
+    "median": 0.297,
+    "low": 0.046,
+    "high": 1.399,
+    "n": 14,
+    "videos": 7
+   },
+   "events_per_scene": {
+    "median": 0.0,
+    "low": 0.0,
+    "high": 1.0,
+    "n": 66,
+    "videos": 21
+   },
+   "way_in": {
+    "hard_cut": 0.4101,
+    "other": 0.3539,
+    "zoom_through": 0.1573,
+    "crossfade": 0.0337,
+    "push": 0.0225,
+    "blur": 0.0112,
+    "mask_wipe": 0.0112
+   },
+   "beats": {
+    "outcome": 0.1927,
+    "mechanism": 0.1875,
+    "hook": 0.1693,
+    "problem": 0.1432,
+    "demo": 0.1146,
+    "agitate": 0.0885,
+    "cta": 0.0729,
+    "proof": 0.0313
+   },
+   "sfx_cues_s": {
+    "chime": {
+     "median": 3.461,
+     "low": 1.779,
+     "high": 5.84,
+     "n": 20,
+     "videos": 4
+    },
+    "impact": {
+     "median": 1.483,
+     "low": 0.305,
+     "high": 3.277,
+     "n": 17,
+     "videos": 12
+    },
+    "music": {
+     "median": 0.727,
+     "low": 0.421,
+     "high": 3.261,
+     "n": 22,
+     "videos": 10
+    },
+    "swoosh_reverse": {
+     "median": 1.652,
+     "low": 1.082,
+     "high": 3.39,
+     "n": 26,
+     "videos": 7
+    },
+    "unsure": {
+     "median": 2.111,
+     "low": 0.961,
+     "high": 5.352,
+     "n": 73,
+     "videos": 13
+    }
+   },
+   "videos": 21,
+   "caveats": [
+    "First-motion timing comes from a minority of shots and videos.",
+    "Some members run several type cards and even a short UI moment inside one shot, so the mix is broad.",
+    "Nearly half of sound cues are unlabelled, so SFX timing is weak."
+   ]
+  },
+  {
+   "id": "logo_close",
+   "name": "Logo Close",
+   "summary": "The last scene: a closing tagline or call to action builds, then shapes or the final UI resolve into the brand mark and wordmark, which hold on a clean background. It leaves the viewer with the brand and one thing to do next.",
+   "when_to_use": [
+    "As the final scene of almost any explainer.",
+    "When the narration ends on a call to action or a payoff line.",
+    "To bookend a video whose opening used the same logo animation."
+   ],
+   "slots": [
+    {
+     "name": "tagline",
+     "what": "a short closing line or slogan",
+     "required": false
+    },
+    {
+     "name": "cta_line",
+     "what": "what to do next, such as try it, visit or availability",
+     "required": false
+    },
+    {
+     "name": "logo_mark",
+     "what": "the brand symbol as a vector",
+     "required": true
+    },
+    {
+     "name": "wordmark",
+     "what": "the brand or product name lockup",
+     "required": true
+    },
+    {
+     "name": "lead_in_visual",
+     "what": "the last product view or shapes that collapse into the logo",
+     "required": false
+    },
+    {
+     "name": "url_or_price",
+     "what": "a small line under the lockup with a web address, price or date",
+     "required": false
+    },
+    {
+     "name": "background",
+     "what": "a plain or gradient end-card field",
+     "required": true
+    }
+   ],
+   "steps": [
+    "The previous scene clears, shrinks or washes out to the end-card background.",
+    "A tagline or call to action builds word by word, with keywords tinted as they are spoken.",
+    "The tagline clears and shapes or the lead-in visual converge into the logo mark.",
+    "The wordmark slides or wipes out beside or below the mark as the lockup recentres.",
+    "An optional small line with the address, price or date fades in beneath.",
+    "The lockup holds while the music finishes, then fades out to the background."
+   ],
+   "patterns": [
+    "logo_resolve",
+    "kinetic_word_reveal",
+    "layout_reframe",
+    "prompt_type_on",
+    "input_text_cycle",
+    "whip_transition"
+   ],
+   "build": {
+    "gsap": "One timeline for the close: scale and opacity tweens to clear the last view, a per-word stagger for the tagline with an expo ease-out and colour tweens on keywords, then the logo built from shapes that tween position, scale and border radius into place with a back or expo ease-out, a mask or x tween revealing the wordmark, a long hold, and a final opacity fade.",
+    "remotion": "A Sequence for the tagline and a later Sequence for the lockup; tagline words and logo parts each enter on a spring offset by index, the wordmark reveal uses an interpolated clip or translate, and the end of the composition holds the lockup with a closing interpolate to fade."
+   },
+   "sound": "Music carries the close and usually resolves under the held logo; a reverse swoosh or chime often marks the logo resolving, with an occasional impact. Treat the music ending as the main cue.",
+   "duration_s": {
+    "median": 6.859,
+    "low": 4.354,
+    "high": 10.237,
+    "n": 55,
+    "videos": 49
+   },
+   "first_motion_s": {
+    "median": 0.574,
+    "low": 0.183,
+    "high": 1.644,
+    "n": 16,
+    "videos": 14
+   },
+   "events_per_scene": {
+    "median": 0.0,
+    "low": 0.0,
+    "high": 1.0,
+    "n": 55,
+    "videos": 49
+   },
+   "way_in": {
+    "other": 0.3239,
+    "hard_cut": 0.3176,
+    "zoom_through": 0.1698,
+    "crossfade": 0.1509,
+    "blur": 0.0126,
+    "push": 0.0126,
+    "whip": 0.0126
+   },
+   "beats": {
+    "cta": 0.7224,
+    "outcome": 0.2262,
+    "demo": 0.0411,
+    "proof": 0.0103
+   },
+   "sfx_cues_s": {
+    "chime": {
+     "median": 2.804,
+     "low": 1.689,
+     "high": 6.658,
+     "n": 20,
+     "videos": 11
+    },
+    "glitch": {
+     "median": 1.274,
+     "low": 0.216,
+     "high": 2.001,
+     "n": 4,
+     "videos": 3
+    },
+    "impact": {
+     "median": 3.176,
+     "low": 1.288,
+     "high": 11.732,
+     "n": 16,
+     "videos": 9
+    },
+    "music": {
+     "median": 5.056,
+     "low": 2.68,
+     "high": 12.318,
+     "n": 98,
+     "videos": 21
+    },
+    "swoosh_reverse": {
+     "median": 2.175,
+     "low": 1.015,
+     "high": 4.405,
+     "n": 29,
+     "videos": 16
+    },
+    "unsure": {
+     "median": 2.369,
+     "low": 0.914,
+     "high": 6.575,
+     "n": 74,
+     "videos": 28
+    },
+    "whoosh": {
+     "median": 0.385,
+     "low": 0.385,
+     "high": 0.385,
+     "n": 1,
+     "videos": 1
+    }
+   },
+   "videos": 49,
+   "caveats": [
+    "Members are mixed: some shots fold a whole closing montage or a final demo into the same shot as the logo.",
+    "First-motion timing comes from a minority of shots.",
+    "Some members are only a trailing blank fade after the logo, which lowers the motion stats."
+   ]
+  },
+  {
+   "id": "logo_intro_sting",
+   "name": "Logo Intro Sting",
+   "summary": "The brand mark or wordmark resolves at the centre of a clean background, often with a product line or tagline, and holds briefly before handing off to the first idea. It opens the video and tells the viewer whose story this is.",
+   "when_to_use": [
+    "As the cold open or first beat of a launch or explainer video",
+    "When the narration opens by naming the product",
+    "As a short brand moment before cutting into the product interface"
+   ],
+   "slots": [
+    {
+     "name": "logo",
+     "what": "the brand mark or wordmark as a vector",
+     "required": true
+    },
+    {
+     "name": "product_line",
+     "what": "a product name or short subline under the logo",
+     "required": false
+    },
+    {
+     "name": "tagline",
+     "what": "one short claim that follows the logo",
+     "required": false
+    },
+    {
+     "name": "background",
+     "what": "a solid colour, a soft gradient or near-black",
+     "required": true
+    },
+    {
+     "name": "decoration",
+     "what": "light accents such as drifting bands, sparkles or a faint grid",
+     "required": false
+    },
+    {
+     "name": "handoff_element",
+     "what": "the first piece of interface or layout that leads into the next scene",
+     "required": false
+    }
+   ],
+   "steps": [
+    "Start on the empty background, or fade up from dark",
+    "Resolve the logo: assemble it from fragments, wipe it on, draw its stroke or fade it up",
+    "Fade or slide in the product line or tagline under it",
+    "Hold the lockup briefly while the narration names the product",
+    "Hand off by blurring the logo out, reframing it into a page or interface, or zooming through"
+   ],
+   "patterns": [
+    "logo_resolve",
+    "blur_crossfade",
+    "layout_reframe"
+   ],
+   "build": {
+    "gsap": "One timeline per scene. Resolve the logo with a clip-path wipe, a stroke-dashoffset draw or a staggered gather of fragments into place, using a power or expo out ease; fade the subline up in parallel. Hold, then either tween blur and opacity on the logo while the next layer fades in, or tween the container's scale and position to reframe it into the next layout.",
+    "remotion": "A Sequence for the logo with a spring driving scale or a clip reveal and interpolate for opacity; a nested Sequence starts the subline or tagline after the logo settles; a closing Sequence overlaps the next scene and interpolates blur and opacity for the handoff."
+   },
+   "sound": "Mostly music and mixed accents. A reverse swoosh building into the logo is the most common clear cue, landing in the middle of the scene; a soft chime can mark the lockup, and an impact sometimes hits late as the handoff begins.",
+   "duration_s": {
+    "median": 2.586,
+    "low": 1.263,
+    "high": 3.881,
+    "n": 13,
+    "videos": 12
+   },
+   "first_motion_s": {
+    "median": 0.162,
+    "low": 0.126,
+    "high": 1.48,
+    "n": 5,
+    "videos": 4
+   },
+   "events_per_scene": {
+    "median": 0.5,
+    "low": 0.0,
+    "high": 1.071,
+    "n": 13,
+    "videos": 12
+   },
+   "way_in": {
+    "other": 0.6351,
+    "zoom_through": 0.1622,
+    "hard_cut": 0.0946,
+    "blur": 0.0541,
+    "crossfade": 0.0541
+   },
+   "beats": {
+    "hook": 0.7432,
+    "mechanism": 0.1486,
+    "demo": 0.0541,
+    "proof": 0.0541
+   },
+   "sfx_cues_s": {
+    "chime": {
+     "median": 2.367,
+     "low": 1.448,
+     "high": 2.868,
+     "n": 2,
+     "videos": 2
+    },
+    "impact": {
+     "median": 3.566,
+     "low": 2.729,
+     "high": 3.975,
+     "n": 3,
+     "videos": 2
+    },
+    "music": {
+     "median": 1.519,
+     "low": 1.064,
+     "high": 2.633,
+     "n": 5,
+     "videos": 4
+    },
+    "swoosh_reverse": {
+     "median": 1.661,
+     "low": 1.313,
+     "high": 2.222,
+     "n": 5,
+     "videos": 3
+    },
+    "unsure": {
+     "median": 2.175,
+     "low": 0.24,
+     "high": 2.787,
+     "n": 7,
+     "videos": 6
+    }
+   },
+   "videos": 12,
+   "caveats": [
+    "First-motion timing comes from only a few shots and has a wide spread.",
+    "Many sound cues are labelled unsure, and each specific cue type comes from only a few videos."
+   ]
+  },
+  {
+   "id": "presenter_to_camera",
+   "name": "Presenter To Camera",
+   "summary": "A person speaks directly to the viewer in a locked or gently drifting medium shot, sometimes with a name tag or a supporting graphic beside them. The scene gives the explainer a human voice and carries claims, reasons and proof in the speaker's own words.",
+   "when_to_use": [
+    "A founder or customer states the problem, the reason or the result in their own words.",
+    "To add trust and warmth between product demo scenes.",
+    "When a spoken claim needs a quick visual proof card next to the speaker."
+   ],
+   "slots": [
+    {
+     "name": "presenter_clip",
+     "what": "filmed footage of the speaker, medium or close framing",
+     "required": true
+    },
+    {
+     "name": "spoken_line",
+     "what": "the sentence or two the speaker says in this scene",
+     "required": true
+    },
+    {
+     "name": "name_tag",
+     "what": "a lower third with the speaker's name and role",
+     "required": false
+    },
+    {
+     "name": "support_card",
+     "what": "a window or card that slides in beside the speaker to prove the point",
+     "required": false
+    },
+    {
+     "name": "keyword",
+     "what": "one spoken word shown large behind or beside the speaker",
+     "required": false
+    }
+   ],
+   "steps": [
+    "Hard cut in on the speaker, usually on a sentence boundary.",
+    "The speaker talks with the frame locked or slowly drifting.",
+    "A name tag eases in at the lower left early in the first appearance.",
+    "Optionally a support card slides in and its content scrolls or appends to prove the claim.",
+    "Cut away to a tighter angle or the next scene at the end of the sentence."
+   ],
+   "patterns": [
+    "masked_scroll",
+    "chip_append"
+   ],
+   "build": {
+    "gsap": "One timeline per scene over the footage layer: a short opacity and y tween for the lower third with an ease-out (power family), an x tween sliding any support card in from the side with an ease-out, and a linear y tween for content scrolling inside a masked card; keep the footage itself untouched.",
+    "remotion": "An OffthreadVideo of the presenter in one Sequence; the lower third and support card are child Sequences starting on narration words, each entering with a critically damped spring on translate and opacity, and scrolling content driven by a linear interpolate over the Sequence's frames."
+   },
+   "sound": "Mostly the speaker's voice over a music bed. When an effect is used it is a reverse swoosh or impact landing on a graphic entrance or a punchy spoken word, with an occasional chime; otherwise no typical sound.",
+   "duration_s": {
+    "median": 3.759,
+    "low": 2.528,
+    "high": 6.071,
+    "n": 98,
+    "videos": 10
+   },
+   "first_motion_s": {
+    "median": 0.983,
+    "low": 0.272,
+    "high": 2.544,
+    "n": 12,
+    "videos": 2
+   },
+   "events_per_scene": {
+    "median": 0.0,
+    "low": 0.0,
+    "high": 0.0,
+    "n": 98,
+    "videos": 10
+   },
+   "way_in": {
+    "hard_cut": 0.6505,
+    "other": 0.209,
+    "slide": 0.0535,
+    "crossfade": 0.0468,
+    "whip": 0.0268,
+    "push": 0.0134
+   },
+   "beats": {
+    "demo": 0.2324,
+    "mechanism": 0.2209,
+    "outcome": 0.216,
+    "proof": 0.1375,
+    "hook": 0.1113,
+    "problem": 0.0573,
+    "agitate": 0.0131,
+    "cta": 0.0115
+   },
+   "sfx_cues_s": {
+    "chime": {
+     "median": 4.465,
+     "low": 1.849,
+     "high": 6.395,
+     "n": 28,
+     "videos": 3
+    },
+    "click": {
+     "median": 1.557,
+     "low": 0.488,
+     "high": 3.116,
+     "n": 3,
+     "videos": 1
+    },
+    "impact": {
+     "median": 1.77,
+     "low": 0.988,
+     "high": 3.213,
+     "n": 34,
+     "videos": 5
+    },
+    "music": {
+     "median": 2.908,
+     "low": 1.217,
+     "high": 4.508,
+     "n": 63,
+     "videos": 5
+    },
+    "speech": {
+     "median": 1.749,
+     "low": 0.808,
+     "high": 2.691,
+     "n": 2,
+     "videos": 1
+    },
+    "swoosh_reverse": {
+     "median": 2.105,
+     "low": 0.717,
+     "high": 4.035,
+     "n": 43,
+     "videos": 5
+    },
+    "unsure": {
+     "median": 2.406,
+     "low": 1.108,
+     "high": 4.012,
+     "n": 57,
+     "videos": 7
+    },
+    "whoosh": {
+     "median": 1.662,
+     "low": 1.459,
+     "high": 1.948,
+     "n": 3,
+     "videos": 2
+    }
+   },
+   "videos": 10,
+   "caveats": [
+    "Measured motion comes from very few videos; most presenter shots have no detected motion event.",
+    "Members are mixed: some are plain talking heads, others are graphics laid over or replacing the speaker.",
+    "Most of the pattern mix is unnamed, so the named patterns cover only overlay moments."
+   ]
+  },
+  {
+   "id": "product_ui_tour",
+   "name": "Product UI Tour",
+   "summary": "The viewer watches the real or recreated product interface being used: a cursor clicks through views while the frame pushes in on the part that matters. The scene shows how the product works rather than telling.",
+   "when_to_use": [
+    "Demo beats where the narration walks through a feature step by step.",
+    "When one workflow needs to be shown end to end inside the app.",
+    "To ground a claim from an earlier scene in the actual interface."
+   ],
+   "slots": [
+    {
+     "name": "ui_surface",
+     "what": "a screen recording or recreated app view, full-bleed or as a framed window",
+     "required": true
+    },
+    {
+     "name": "cursor_path",
+     "what": "the ordered clicks and hovers that carry the workflow",
+     "required": true
+    },
+    {
+     "name": "focus_regions",
+     "what": "the panels or controls the camera pushes in on",
+     "required": true
+    },
+    {
+     "name": "typed_input",
+     "what": "a prompt or field value typed on during the demo",
+     "required": false
+    },
+    {
+     "name": "result_state",
+     "what": "the new item, answer or status that appears after the action",
+     "required": true
+    },
+    {
+     "name": "caption",
+     "what": "an optional short on-screen label naming the feature",
+     "required": false
+    }
+   ],
+   "steps": [
+    "Open on the full app view so the viewer knows where they are.",
+    "The cursor moves to the first control and clicks it.",
+    "The camera pushes in on the region that changes, cropping away chrome.",
+    "Input types on or content streams or scrolls inside a masked panel.",
+    "The result appears: a new row, chip, toggle or answer resolves into place.",
+    "The frame reframes back out to the full view, ready for the next feature or a cut."
+   ],
+   "patterns": [
+    "cursor_guided_demo",
+    "layout_reframe",
+    "ui_camera_push_in",
+    "masked_scroll",
+    "scale_dissolve_transition",
+    "ai_answer_stream",
+    "skeleton_resolve",
+    "prompt_type_on"
+   ],
+   "build": {
+    "gsap": "Build the UI as one large DOM canvas inside a wrapper and drive a single timeline per scene: scale and translate tweens on the wrapper for push-ins and reframes (smooth power or expo in-out eases), a scripted cursor element tweened between targets with click pulses, text tweens for typed input, and a short stagger for streamed lines or list rows inside a masked, upward-scrolling container.",
+    "remotion": "One Sequence for the scene holding the app canvas; camera framing comes from interpolated scale and translate keyed to frame, with a critically damped spring for each push-in and reframe; child Sequences offset the cursor moves, typing and result reveals so each starts on its own narration word."
+   },
+   "sound": "Mostly music bed under the demo; when there is a cue it is a reverse swoosh or a soft impact landing on a camera push-in, with an occasional chime when a result appears and light clicks on cursor taps. Many cues are unlabelled, so treat sound as optional.",
+   "duration_s": {
+    "median": 3.099,
+    "low": 1.623,
+    "high": 5.298,
+    "n": 308,
+    "videos": 41
+   },
+   "first_motion_s": {
+    "median": 1.012,
+    "low": 0.42,
+    "high": 2.049,
+    "n": 57,
+    "videos": 14
+   },
+   "events_per_scene": {
+    "median": 0.0,
+    "low": 0.0,
+    "high": 0.0,
+    "n": 308,
+    "videos": 41
+   },
+   "way_in": {
+    "other": 0.3986,
+    "hard_cut": 0.2765,
+    "zoom_through": 0.1569,
+    "crossfade": 0.08,
+    "push": 0.0663,
+    "slide": 0.0074,
+    "morph": 0.005,
+    "mask_wipe": 0.0043,
+    "blur": 0.0025,
+    "whip": 0.0025
+   },
+   "beats": {
+    "demo": 0.6873,
+    "mechanism": 0.0969,
+    "outcome": 0.0682,
+    "hook": 0.0411,
+    "cta": 0.04,
+    "proof": 0.0344,
+    "problem": 0.0321
+   },
+   "sfx_cues_s": {
+    "chime": {
+     "median": 3.537,
+     "low": 1.109,
+     "high": 8.257,
+     "n": 56,
+     "videos": 17
+    },
+    "click": {
+     "median": 2.422,
+     "low": 1.17,
+     "high": 10.928,
+     "n": 24,
+     "videos": 12
+    },
+    "glitch": {
+     "median": 14.555,
+     "low": 7.027,
+     "high": 19.36,
+     "n": 4,
+     "videos": 2
+    },
+    "impact": {
+     "median": 2.235,
+     "low": 0.885,
+     "high": 4.651,
+     "n": 105,
+     "videos": 21
+    },
+    "music": {
+     "median": 3.292,
+     "low": 1.313,
+     "high": 11.157,
+     "n": 356,
+     "videos": 28
+    },
+    "swoosh_reverse": {
+     "median": 3.546,
+     "low": 1.019,
+     "high": 9.921,
+     "n": 132,
+     "videos": 22
+    },
+    "typing": {
+     "median": 4.198,
+     "low": 2.652,
+     "high": 7.078,
+     "n": 4,
+     "videos": 1
+    },
+    "unsure": {
+     "median": 2.919,
+     "low": 1.154,
+     "high": 10.123,
+     "n": 309,
+     "videos": 33
+    },
+    "whoosh": {
+     "median": 0.955,
+     "low": 0.6,
+     "high": 1.737,
+     "n": 4,
+     "videos": 3
+    }
+   },
+   "videos": 41,
+   "caveats": [
+    "Most shots have no code-detected motion event, so first-motion timing rests on a minority of shots and videos.",
+    "Members range from short close-ups to long continuous screen recordings; long members carry most of the pattern evidence.",
+    "A large share of sound cues are unlabelled or music, so specific SFX timing is weak."
+   ]
+  },
+  {
+   "id": "prompt_input_card",
+   "name": "Prompt Input Card",
+   "summary": "A clean, rounded prompt box sits on a calm background while a request types into it with a caret, often followed by a press on the send button. It shows the viewer how simply they ask the product for something, usually as the hook or the start of a demo.",
+   "when_to_use": [
+    "Opening an AI feature by showing the question a user would ask.",
+    "Starting a demo beat where the request leads into the product's answer.",
+    "Showing a menu of presets or modes attached to an input field."
+   ],
+   "slots": [
+    {
+     "name": "greeting",
+     "what": "an optional short line above the input that sets the tone",
+     "required": false
+    },
+    {
+     "name": "prompt_text",
+     "what": "the request the user types, one sentence in plain language",
+     "required": true
+    },
+    {
+     "name": "input_chrome",
+     "what": "the prompt box itself with its send button and small controls",
+     "required": true
+    },
+    {
+     "name": "context_ui",
+     "what": "simplified surrounding interface such as suggestion chips or a short list",
+     "required": false
+    },
+    {
+     "name": "preset_menu",
+     "what": "an optional popover of modes or presets with a moving highlight",
+     "required": false
+    },
+    {
+     "name": "handoff_element",
+     "what": "what the sent prompt turns into, such as a chat bubble or a thinking label",
+     "required": false
+    }
+   ],
+   "steps": [
+    "The background and an optional greeting fade up on their own.",
+    "The prompt box and any surrounding interface assemble beneath it with a gentle stagger.",
+    "The camera pushes in so the input fills more of the frame.",
+    "The request types on character by character with a blinking caret.",
+    "A cursor moves to the send button and presses it, or a preset highlight moves to the chosen option.",
+    "The interface clears and the prompt hands off to the next scene as a bubble or a thinking state."
+   ],
+   "patterns": [
+    "layout_reframe",
+    "spotlight_focus"
+   ],
+   "build": {
+    "gsap": "One timeline per scene. Stagger the interface pieces in with opacity and a small upward move on an expo or sine ease-out. Tween the camera wrapper's scale toward the prompt box on a slow sine in-out. Type the prompt with a stepped tween over a text counter plus a blinking caret, then tween the cursor to the send button and play a quick scale-down press. End with a fade of the surrounding interface and a scale of the prompt into its handoff element.",
+    "remotion": "One Sequence for the assembly, one for the push-in and typing, one for the send and handoff. Drive the push-in with a heavily damped spring, slice the prompt string by an interpolated character count for the typing, and use a stiff, short spring for the button press and popover entrance."
+   },
+   "sound": "Music usually carries the scene. When there are cues, a reversed swoosh tends to land early as the box arrives, and a soft click marks the send press shortly after; an impact or glitch occasionally punctuates the handoff. Many cues are unclassified, so treat sound as optional.",
+   "duration_s": {
+    "median": 2.739,
+    "low": 2.01,
+    "high": 5.055,
+    "n": 30,
+    "videos": 13
+   },
+   "first_motion_s": {
+    "median": 0.613,
+    "low": 0.25,
+    "high": 9.897,
+    "n": 4,
+    "videos": 4
+   },
+   "events_per_scene": {
+    "median": 0.0,
+    "low": 0.0,
+    "high": 0.0,
+    "n": 30,
+    "videos": 13
+   },
+   "way_in": {
+    "hard_cut": 0.3656,
+    "other": 0.3656,
+    "zoom_through": 0.1613,
+    "crossfade": 0.1075
+   },
+   "beats": {
+    "demo": 0.5556,
+    "hook": 0.3232,
+    "proof": 0.0808,
+    "agitate": 0.0202,
+    "outcome": 0.0202
+   },
+   "sfx_cues_s": {
+    "chime": {
+     "median": 7.044,
+     "low": 1.867,
+     "high": 10.495,
+     "n": 2,
+     "videos": 2
+    },
+    "click": {
+     "median": 1.465,
+     "low": 1.065,
+     "high": 1.704,
+     "n": 5,
+     "videos": 3
+    },
+    "glitch": {
+     "median": 1.794,
+     "low": 1.419,
+     "high": 2.169,
+     "n": 2,
+     "videos": 1
+    },
+    "impact": {
+     "median": 1.163,
+     "low": 0.634,
+     "high": 15.514,
+     "n": 3,
+     "videos": 3
+    },
+    "music": {
+     "median": 3.396,
+     "low": 0.898,
+     "high": 6.592,
+     "n": 23,
+     "videos": 4
+    },
+    "swoosh_reverse": {
+     "median": 0.933,
+     "low": 0.11,
+     "high": 2.62,
+     "n": 6,
+     "videos": 5
+    },
+    "unsure": {
+     "median": 1.601,
+     "low": 0.967,
+     "high": 2.515,
+     "n": 9,
+     "videos": 5
+    }
+   },
+   "videos": 13,
+   "caveats": [
+    "Most member shots have no counted motion event, so motion timing here is thin and first motion is measured on few shots.",
+    "The most common pattern label is other; the typing itself has no measured pattern in this set.",
+    "Sound cues are sparse and many are unclassified."
+   ]
+  },
+  {
+   "id": "stat_count_up",
+   "name": "Stat Count Up",
+   "summary": "A big number counts or ticks up at the centre of a styled backdrop and lands on the headline figure, with a short label, timed to the narration saying it. It turns a claim into proof the viewer can feel.",
+   "when_to_use": [
+    "Backing a claim with a single headline metric such as scale, speed or coverage",
+    "Showing an outcome as a before and after number",
+    "Landing a proof beat right after a feature has been shown"
+   ],
+   "slots": [
+    {
+     "name": "stat_value",
+     "what": "the final figure, with an optional suffix such as plus, percent or times",
+     "required": true
+    },
+    {
+     "name": "start_value",
+     "what": "where the count begins; a lower number, or zero",
+     "required": false
+    },
+    {
+     "name": "label",
+     "what": "a short caption saying what the number measures",
+     "required": true
+    },
+    {
+     "name": "backdrop",
+     "what": "a gradient or brand field, with optional ambient shapes, logos or chips drifting behind",
+     "required": true
+    },
+    {
+     "name": "second_stat",
+     "what": "an optional second figure that joins the first side by side",
+     "required": false
+    },
+    {
+     "name": "context_ui",
+     "what": "a dashboard or card the number lives in, when the stat sits inside product interface",
+     "required": false
+    }
+   ],
+   "steps": [
+    "Reveal the backdrop with its slow ambient drift",
+    "Fade or blur the number in at the centre",
+    "Count it up quickly, easing out, to land on the final figure as the narration says it",
+    "Bring in the label and hold while the backdrop keeps drifting",
+    "Optionally reframe to make room for a second stat",
+    "Exit with a zoom through, a wipe, a flash or a slide"
+   ],
+   "patterns": [
+    "layout_reframe",
+    "parallax_layers"
+   ],
+   "build": {
+    "gsap": "One timeline per scene. Tween a plain object's value and write it into the number element on update, rounded and formatted with tabular figures, using a power or expo out ease so the count slows as it lands; blur and fade the number in just before. Loop slow linear or sine drifts on the backdrop layers at different speeds. For a second stat, tween the first card's width and slide the second card in from the edge with a power out ease.",
+    "remotion": "A Sequence for the stat where interpolate maps frame to value with an ease-out and the number is formatted per frame; a spring drives the number's entrance scale; background layers use per-layer interpolate on translate for parallax; a later Sequence handles the reframe or the exit."
+   },
+   "sound": "Music carries the scene; a chime is the most common clear cue and tends to land as the number settles, and a reverse swoosh often builds into the reveal. Impacts are occasional, later in the scene.",
+   "duration_s": {
+    "median": 3.448,
+    "low": 2.833,
+    "high": 5.429,
+    "n": 10,
+    "videos": 7
+   },
+   "first_motion_s": {
+    "median": 2.307,
+    "low": 1.597,
+    "high": 2.791,
+    "n": 3,
+    "videos": 3
+   },
+   "events_per_scene": {
+    "median": 0.125,
+    "low": 0.0,
+    "high": 1.0,
+    "n": 10,
+    "videos": 7
+   },
+   "way_in": {
+    "other": 0.5172,
+    "mask_wipe": 0.1379,
+    "slide": 0.1379,
+    "zoom_through": 0.1379,
+    "blur": 0.069
+   },
+   "beats": {
+    "proof": 0.5161,
+    "outcome": 0.2903,
+    "mechanism": 0.1935
+   },
+   "sfx_cues_s": {
+    "chime": {
+     "median": 2.161,
+     "low": 1.223,
+     "high": 3.007,
+     "n": 5,
+     "videos": 2
+    },
+    "click": {
+     "median": 1.646,
+     "low": 1.646,
+     "high": 1.646,
+     "n": 1,
+     "videos": 1
+    },
+    "impact": {
+     "median": 3.02,
+     "low": 1.67,
+     "high": 3.404,
+     "n": 4,
+     "videos": 3
+    },
+    "music": {
+     "median": 3.572,
+     "low": 1.734,
+     "high": 5.165,
+     "n": 10,
+     "videos": 4
+    },
+    "swoosh_reverse": {
+     "median": 2.064,
+     "low": 0.587,
+     "high": 2.733,
+     "n": 6,
+     "videos": 3
+    },
+    "unsure": {
+     "median": 2.231,
+     "low": 0.833,
+     "high": 9.118,
+     "n": 8,
+     "videos": 4
+    },
+    "whoosh": {
+     "median": 0.899,
+     "low": 0.899,
+     "high": 0.899,
+     "n": 1,
+     "videos": 1
+    }
+   },
+   "videos": 7,
+   "caveats": [
+    "Few shots, and first-motion timing comes from only a handful of them.",
+    "Members are mixed: some count up, some count down or flip cards, and some hold a static stat card with no count.",
+    "Clear sound cues such as the chime come from only a couple of videos."
+   ]
+  },
+  {
+   "id": "tile_grid",
+   "name": "Tile Grid",
+   "summary": "Many tiles, such as app windows, integration icons, video clips or small UI widgets, sit in a grid or wall that the camera pulls out to reveal or glides across. The scene shows breadth: many use cases, integrations or projects at once.",
+   "when_to_use": [
+    "To show that the product covers many integrations, use cases or projects.",
+    "As a pull-out transition from one view into a wall of related views, then into the next one.",
+    "When one tile should grow to centre stage while the others make room."
+   ],
+   "slots": [
+    {
+     "name": "tiles",
+     "what": "a set of similar items: screenshots, icons, clips or widgets",
+     "required": true
+    },
+    {
+     "name": "hero_tile",
+     "what": "the tile the camera starts from, lands on or enlarges",
+     "required": false
+    },
+    {
+     "name": "caption",
+     "what": "a short headline over or beside the grid",
+     "required": false
+    },
+    {
+     "name": "status_chip",
+     "what": "a small label that pops onto the hero tile",
+     "required": false
+    },
+    {
+     "name": "background",
+     "what": "a plain dark or light field behind the grid",
+     "required": true
+    }
+   ],
+   "steps": [
+    "Start close on one tile or on an empty field.",
+    "Tiles stagger in, or the camera pulls out to reveal the full wall.",
+    "The wall drifts slowly or the camera glides across it.",
+    "Focus moves to one tile: it highlights, enlarges while others shrink, or gains a chip.",
+    "The camera pushes into the chosen tile or the grid clears for the next scene."
+   ],
+   "patterns": [
+    "layout_reframe",
+    "card_wall_stagger",
+    "parallax_layers",
+    "spotlight_focus",
+    "stagger_list_reveal",
+    "ui_camera_push_in",
+    "kinetic_word_reveal"
+   ],
+   "build": {
+    "gsap": "Lay the tiles out on one large canvas in a CSS grid inside a wrapper; one timeline per scene with a staggered from tween for tile entrances (opacity, y or scale, power ease-out), scale and x/y tweens on the wrapper for pull-outs and glides (power or expo in-out), a slow linear drift for the wall, and a grid-size or scale tween to enlarge the hero tile.",
+    "remotion": "A single Sequence holding the tile canvas; tile entrances use a spring delayed by tile index, the camera is an interpolated scale and translate on the wrapper keyed to frame, and a child Sequence on the narration cue springs the hero tile larger and pops its chip."
+   },
+   "sound": "Usually a reverse swoosh or unlabelled whoosh on the pull-out or reveal, with an occasional early impact as tiles land; music carries the rest.",
+   "duration_s": {
+    "median": 2.38,
+    "low": 1.042,
+    "high": 3.317,
+    "n": 33,
+    "videos": 15
+   },
+   "first_motion_s": {
+    "median": 0.6,
+    "low": 0.252,
+    "high": 0.987,
+    "n": 9,
+    "videos": 6
+   },
+   "events_per_scene": {
+    "median": 0.0,
+    "low": 0.0,
+    "high": 1.0,
+    "n": 33,
+    "videos": 15
+   },
+   "way_in": {
+    "other": 0.5093,
+    "zoom_through": 0.2222,
+    "hard_cut": 0.1944,
+    "slide": 0.037,
+    "blur": 0.0185,
+    "mask_wipe": 0.0185
+   },
+   "beats": {
+    "demo": 0.3929,
+    "outcome": 0.2054,
+    "proof": 0.1696,
+    "hook": 0.1071,
+    "mechanism": 0.0536,
+    "problem": 0.0536,
+    "agitate": 0.0179
+   },
+   "sfx_cues_s": {
+    "chime": {
+     "median": 1.553,
+     "low": 0.822,
+     "high": 1.621,
+     "n": 4,
+     "videos": 2
+    },
+    "impact": {
+     "median": 0.321,
+     "low": 0.259,
+     "high": 0.788,
+     "n": 6,
+     "videos": 4
+    },
+    "music": {
+     "median": 1.92,
+     "low": 0.632,
+     "high": 2.314,
+     "n": 12,
+     "videos": 6
+    },
+    "swoosh_reverse": {
+     "median": 1.761,
+     "low": 0.599,
+     "high": 2.234,
+     "n": 16,
+     "videos": 5
+    },
+    "unsure": {
+     "median": 1.014,
+     "low": 0.419,
+     "high": 2.756,
+     "n": 24,
+     "videos": 11
+    },
+    "whoosh": {
+     "median": 3.861,
+     "low": 3.861,
+     "high": 3.861,
+     "n": 1,
+     "videos": 1
+    }
+   },
+   "videos": 15,
+   "caveats": [
+    "Few shots and videos, and measured motion and sound come from only a handful of them.",
+    "Members are mixed: icon rows, video walls, bento widget grids and window walls, and some shots chain other scene types.",
+    "Most of the pattern mix is unnamed, and several members carry no pattern labels."
+   ]
+  },
+  {
+   "id": "title_card",
+   "name": "Title Card",
+   "summary": "A short, centred headline on a clean field reveals word by word or rises from a mask, sometimes with a small label pill or drifting media tiles around it. It names the product, feature or chapter so the viewer knows what comes next.",
+   "when_to_use": [
+    "Introducing the product or a new feature by name near the start.",
+    "Marking a chapter break before a new demo section.",
+    "Landing a short claim between demo beats while the narration names it."
+   ],
+   "slots": [
+    {
+     "name": "headline",
+     "what": "the feature or product name, or one short claim",
+     "required": true
+    },
+    {
+     "name": "eyebrow",
+     "what": "an optional small label above the headline, such as an introducing pill",
+     "required": false
+    },
+    {
+     "name": "background",
+     "what": "a solid or gradient field, or a tilted product screenshot behind the title",
+     "required": true
+    },
+    {
+     "name": "accent_media",
+     "what": "optional tiles, logos or cutouts that drift in around the title",
+     "required": false
+    },
+    {
+     "name": "accent_colour",
+     "what": "the brand colour the key word switches to as it lands",
+     "required": false
+    }
+   ],
+   "steps": [
+    "The field appears, often already in place from the previous cut.",
+    "An optional eyebrow dot grows into a pill and its label fades in.",
+    "The headline reveals word by word or slides up from a mask and its key word takes the accent colour.",
+    "Accent tiles or logos drift in from the edges with a light stagger and parallax.",
+    "The card holds briefly, then hands off with a cut or a soft blur crossfade."
+   ],
+   "patterns": [
+    "kinetic_word_reveal",
+    "logo_resolve",
+    "parallax_layers",
+    "ui_camera_push_in",
+    "blur_crossfade"
+   ],
+   "build": {
+    "gsap": "One timeline per scene. Wrap each headline line in an overflow-hidden mask and tween words from below with opacity on an expo ease-out, staggered per word. Tween the eyebrow from a dot to a pill by width on an ease-out, then fade its label. Add accent tiles as separate layers sliding from the edges at different speeds for parallax, staggered, and tween the key word's colour on its entry. Close with a hold and an optional blur-plus-opacity crossfade.",
+    "remotion": "One Sequence for the field and eyebrow, one for the headline with per-word staggered springs driving translateY and opacity, and one for the accent layers whose springs use different stiffness to read as depth. Use a crossfade with an interpolated blur at the end when not hard cutting."
+   },
+   "sound": "A soft chime is the most common cue, landing as the title settles; music often lifts early in the scene, and a reversed swoosh can lead in right at the start. An occasional impact marks the headline landing.",
+   "duration_s": {
+    "median": 2.7,
+    "low": 2.059,
+    "high": 3.442,
+    "n": 23,
+    "videos": 19
+   },
+   "first_motion_s": {
+    "median": 0.089,
+    "low": 0.039,
+    "high": 0.612,
+    "n": 8,
+    "videos": 6
+   },
+   "events_per_scene": {
+    "median": 0.188,
+    "low": 0.0,
+    "high": 1.0,
+    "n": 23,
+    "videos": 19
+   },
+   "way_in": {
+    "other": 0.4264,
+    "hard_cut": 0.3876,
+    "crossfade": 0.1008,
+    "slide": 0.062,
+    "push": 0.0233
+   },
+   "beats": {
+    "demo": 0.3696,
+    "hook": 0.3696,
+    "mechanism": 0.1232,
+    "proof": 0.087,
+    "outcome": 0.029,
+    "problem": 0.0217
+   },
+   "sfx_cues_s": {
+    "chime": {
+     "median": 2.564,
+     "low": 1.479,
+     "high": 4.04,
+     "n": 17,
+     "videos": 5
+    },
+    "impact": {
+     "median": 1.472,
+     "low": 0.652,
+     "high": 2.693,
+     "n": 5,
+     "videos": 4
+    },
+    "music": {
+     "median": 1.384,
+     "low": 0.913,
+     "high": 1.91,
+     "n": 13,
+     "videos": 7
+    },
+    "swoosh_reverse": {
+     "median": 0.333,
+     "low": 0.181,
+     "high": 1.299,
+     "n": 6,
+     "videos": 2
+    },
+    "unsure": {
+     "median": 1.097,
+     "low": 0.407,
+     "high": 1.375,
+     "n": 14,
+     "videos": 9
+    }
+   },
+   "videos": 19,
+   "caveats": [
+    "Members are mixed: pure kinetic type, titles over tilted product screenshots, and one very short transitional shot.",
+    "First motion is measured on only some of the shots."
+   ]
+  }
+ ]
+}

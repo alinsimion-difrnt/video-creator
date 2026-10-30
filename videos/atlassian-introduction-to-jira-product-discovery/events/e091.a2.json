@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "26b75776904052c57fb0210541eda9c93137388a5a4e9086f6864d8ad84e3232",
+    "created_at": "2026-10-05T06:38:40.748116Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e091",
+  "task": "a2-e091",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Mouse cursor sweeping down across the status lozenge column",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 500, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Templates row hover state (tint and remove 'x' icon flash on, then clear as cursor passes)",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "IN PROGRESS",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 200, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "Screen recording: the cursor drifts down over the delivery tickets' status lozenges, triggering transient row hover states, as the narration wraps up 'directly from Jira Product Discovery'.",
+    "why_premium": "Minor idle cursor motion; the premium element is restraint: the UI stays still so the newly added ticket and status column read clearly while the line lands."
+  },
+  "build_hint": {
+    "gsap": "tl.to(cursor,{y:'+=120',x:'-=10',duration:0.5,ease:'sine.inOut'}); tl.set(templatesRow,{backgroundColor:'rgba(9,30,66,0.04)'},0).set(removeIcon,{autoAlpha:1},0).set([templatesRow,removeIcon],{clearProps:'all'},0.2)",
+    "remotion": "Cursor y via interpolate(frame,[start,start+15],[y0,y1],{easing:Easing.inOut(Easing.sin),extrapolateRight:'clamp'}); row hover tint and remove icon rendered while frame < start+6."
+  },
+  "confidence": "low",
+  "notes": "Low-value event: cursor movement and hover feedback only. b02 is a union box over the cursor's path through the lozenge column, not a tight cursor box; the cursor in the end frame has moved off to the lower panel area. b01 text names the lozenge inside the hovered row. No SFX candidates."
+}

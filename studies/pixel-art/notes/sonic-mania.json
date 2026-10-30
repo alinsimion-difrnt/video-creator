@@ -1,0 +1,53 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T14:01:39+00:00"
+  },
+  "id": "sonic-mania",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "warm",
+    "notes": "Saturated Genesis-style palette: Mirage Saloon uses sand yellows and oranges, maroon/red patterned walls and a cool sky gradient; blue Sonic pops against the warm ground. Clip 1 is a reaction video, ignored."
+  },
+  "lighting": "Flat sprite lighting from above-left; depth comes from banded colour (sky gradient, mesa layers) rather than cast light.",
+  "silhouette": "Sonic is a compact blue ball with spikes; in rolls and spins he becomes a pure blue circle, readable at very small size against busy patterns.",
+  "motion": {
+    "timing": "Not measured (no metrics file). Frames show fast run/roll cycles and ball-form jumps; level art moves by parallax while the hero stays near centre.",
+    "principles": [
+      "squash and stretch",
+      "anticipation",
+      "follow through",
+      "appeal"
+    ]
+  },
+  "texture": "Clean Genesis-era sprite work with hard patterned tiles (Navajo-style diamonds on walls), dithered sky bands and small foreground props (cacti, barrels).",
+  "camera": "Side-scrolling camera following the hero with layered parallax mesas; title card ('Mirage Saloon Zone 2') with diagonal colour bands as a zone intro.",
+  "sound": "",
+  "acting": {
+    "enters": "Zone title card slides in on diagonal colour stripes, then the hero is already running.",
+    "acts": "Constant movement: runs, curls into a ball, bounces off springs, rides props; idle never lasts.",
+    "exits": "Exits by speed off the edge or into a loop or tube; story cutscenes between levels (by Tyson Hesse) carry the character acting.",
+    "comes_back": null,
+    "depth": "Mostly one gameplay plane; parallax background layers sell depth behind the hero."
+  },
+  "techniques": [
+    "shape-change pose: character becomes a simple ball for fast motion",
+    "warm patterned ground + cool sky so the blue hero reads",
+    "parallax background layers at different speeds",
+    "diagonal stripe title card as section intro",
+    "small foreground props passing in front for depth"
+  ],
+  "feel": "warm saturated tiles + cool blue hero + always-moving ball pose = pure energy",
+  "for_fred": "Give Fred a 'speed form': for fast travel collapse him into a simple shape (a tight orange arc or blur) instead of animating every swim frame, then pop back to full pose on arrival. Use a diagonal stripe card to open a new section of the reel.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Sonic_Mania",
+    "data/study/pixel/work/sonic-mania/clip1-7655436944666627341.jpg",
+    "data/study/pixel/work/sonic-mania/clip3-7640347021869632782.jpg",
+    "studies/pixel-art/sources.yaml"
+  ]
+}

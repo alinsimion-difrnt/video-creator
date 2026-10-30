@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "ab7d2b69ed36bccf4d1a3b09ec00a0178824f83b74538453a2640abc2379301f",
+    "created_at": "2026-10-05T06:44:25.494222Z"
+  },
+  "video": "datadog-datadog-overview-see-inside-the-platfor",
+  "event": "e020",
+  "task": "a2-e020",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Trace panel reframing to the Logs tab list",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_up", "scale_up", "other"],
+      "change_other": "tab content swaps from the error stack to the logs list while the view pans up",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 1000, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Caption line 2 extending with 'and logs'",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["mask_reveal", "color_shift"],
+      "change_other": null,
+      "is_text": true,
+      "text": "metrics, traces, and logs",
+      "text_unit": "word",
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Caption banner line 1 (background colour change)",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["color_shift"],
+      "change_other": null,
+      "is_text": true,
+      "text": "One-click pivot between",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 300, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "ui_camera_push_in",
+    "proposed_name": null,
+    "description": "The view pushes in slightly and pans up as the trace panel switches to its Logs tab, while the tilted caption banner extends its second line with 'and logs' and its fill shifts from teal-green to orange-magenta.",
+    "why_premium": "The caption's colour change and word extension are synchronised with the UI move to the new tab, so each product pillar (metrics, traces, logs) gets its own colour state and the copy and UI tell the same story in one beat."
+  },
+  "build_hint": {
+    "gsap": "Timeline: tl.to('.screen', {scale: 1.04, yPercent: -3, duration: 1.0, ease: 'power2.inOut'}, 0); tl.to('.caption-bg', {backgroundImage: 'linear-gradient(90deg,#f05a1a,#e8136f)', duration: 0.3, ease: 'power1.inOut'}, 0.2); tl.fromTo('.caption-ext', {clipPath: 'inset(0 100% 0 0)'}, {clipPath: 'inset(0 0% 0 0)', duration: 0.3, ease: 'power2.out'}, 0.2) with the banner width tweened alongside.",
+    "remotion": "Screen: scale/translateY from interpolate(frame, [0, 30], [0, 1], {easing: Easing.inOut(Easing.cubic)}). Caption: interpolateColors(frame, [6, 15], [teal, orange]) for the banner fill; 'and logs' revealed with a clip-path inset driven by spring({frame: frame - 6, fps, config: {damping: 30, stiffness: 180}}) (no overshoot)."
+  },
+  "confidence": "medium",
+  "notes": "Caption extension may be a word-by-word or wipe reveal (f3190 shows partially revealed 'and lo' mid-colour), so mask_reveal vs typewriter is ambiguous. UI content swap (errors -> logs list) happens during the pan; whether it is a scroll or a tab cut under motion is unclear. Pattern could arguably be layout_reframe."
+}

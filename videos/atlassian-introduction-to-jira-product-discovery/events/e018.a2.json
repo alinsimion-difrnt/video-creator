@@ -1,0 +1,114 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "0cff155ae1d5c7893eab11c0182be6b083d3579789315ef03649db42cd9b7670",
+    "created_at": "2026-10-05T06:38:40.687574Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e018",
+  "task": "a2-e018",
+  "elements": [
+    {
+      "box": null,
+      "manual_box": [505, 962, 535, 980],
+      "manual_reason": "Cursor sits inside b01, which is used for the row action icons; cursor needs its own tight box.",
+      "label": "Mouse cursor",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 100, "easing_class": "ambiguous"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Toggle tooltip (Hide in view, then Remove from view, jumping to the Insights row)",
+      "role": "other",
+      "role_other": "tooltip",
+      "change_types": ["fade", "slide_down"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Remove from view",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 60, "easing_class": "step"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Row action icons (settings, visibility) move from Impact row to Insights row",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 60, "easing_class": "step"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Impact field row hover highlight clears",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Impact",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 60, "easing_class": "step"}
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Insights field row hover highlight",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Insights",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 60, "easing_class": "step"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Field description hover card (Impact card closes, Insights 'No description' card flashes)",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Insights No description",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 100, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "The cursor hovers the Impact row's visibility icon and toggle (tooltips 'Hide in view' then 'Remove from view'), then slips down one row to Insights; hover highlight, action icons, tooltip and description card all hop to the new row.",
+    "why_premium": "Tooltips spell out the action ('Remove from view') right as the narrator says 'remove existing fields', so the UI captions itself."
+  },
+  "build_hint": {
+    "gsap": "Recorded UI, discrete state changes. To recreate: tl.set('.tooltip', {textContent: 'Remove from view'}); tl.to('.cursor', {y: 32, duration: 0.1, ease: 'power1.out'}); tl.set(['.row-impact'], {className: '-=is-hover'}).set('.row-insights', {className: '+=is-hover'}); tl.set('.tooltip', {y: 32}); tl.to('.desc-card', {autoAlpha: 0, duration: 0.1}).",
+    "remotion": "Derive hoveredRow from the cursor y = interpolate(frame, [10, 13], [rowImpactY, rowInsightsY]); render hover highlight, action icons and tooltip on hoveredRow (no tween); description card opacity steps 1 -> 0 over 3 frames."
+  },
+  "confidence": "low",
+  "notes": "Very short burst (about 0.1 s) with several tiny hover-state flips; the 'No description' card for Insights appears in only one frame. Element order is from the filmstrip and is uncertain."
+}

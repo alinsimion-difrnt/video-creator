@@ -1,0 +1,114 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@46647335d2ce",
+    "model": null,
+    "input_hash": "2f6077d6b49bcb5e7020b36add1c1f8cd92c83d1d607a1a48273cecec5d8255d",
+    "created_at": "2026-10-04T21:37:30.192501Z"
+  },
+  "video": "loom-introducing-loom-ai",
+  "event": "e004",
+  "task": "a2-e004",
+  "elements": [
+    {
+      "box": null,
+      "manual_box": [0, 0, 1000, 1000],
+      "manual_reason": "The multilingual greeting bubbles exit upward out of frame by f1045 and are absent from the end frame; box covers the full frame they occupied at f1038.",
+      "label": "Multilingual greeting bubbles ('Hallo!', 'Bonjour', 'Hey!', 'Привет!')",
+      "role": "other",
+      "role_other": "speech bubble group",
+      "change_types": ["slide_up", "blur_out"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Hallo! Bonjour Hey! Привет!",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 250, "easing_class": "ease_in"}
+    },
+    {
+      "box": "b09",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Headline line 1 'With Loom AI,'",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["fade", "slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "With Loom AI,",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b06",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Headline line 2 'make your first take' (dimmed)",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["fade", "slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "make your first take",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Large gradient sphere, left",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Large gradient sphere, right",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    },
+    {
+      "box": "b07",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Blurred sphere, top centre",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "whip_transition",
+    "proposed_name": null,
+    "description": "A fast vertical whip: the cluster of multilingual greeting bubbles shoots up out of frame (energy peaks in the first ~6 frames), leaving an empty field; fresh spheres drift up from below and the two-line headline 'With Loom AI, / make your first take' fades up line by line, the second line held at reduced opacity.",
+    "why_premium": "The whip reads as the whole world scrolling upward rather than a cut, keeping the floating-sphere universe continuous between scenes; the brief empty beat before the headline gives the line room to land, and the dimmed second line sets up a two-tone emphasis that later beats can complete."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.greeting-bubbles',{yPercent:-150,filter:'blur(6px)',duration:0.25,ease:'power3.in'}); tl.fromTo('.sphere',{y:300},{y:0,duration:0.9,ease:'power3.out',stagger:0.05},'-=0.05'); tl.fromTo('.line1',{opacity:0,y:16},{opacity:1,y:0,duration:0.4,ease:'power2.out'},'-=0.5'); tl.fromTo('.line2',{opacity:0,y:16},{opacity:0.45,y:0,duration:0.4,ease:'power2.out'},'-=0.2'); wrap scene in a container scaled 1→0.9 (pull-out) over the whole move.",
+    "remotion": "Bubbles: interpolate(frame,[0,7],[0,-1.5*height],{easing:Easing.in(Easing.cubic)}) on translateY. Spheres: spring({frame:frame-6-i, fps, config:{damping:26, stiffness:100}}) mapped to translateY 300→0. Lines: spring (no overshoot) delayed ~15 and ~25 frames mapped to opacity (line 2 capped at 0.45) and translateY 16→0. Container scale interpolate(frame,[0,42],[1,0.9])."
+  },
+  "confidence": "medium",
+  "notes": "No SFX candidates in the packet; the spectrogram shows only the music bed. The greeting bubbles are listed as one group with a full-frame manual box because they leave the frame; camera reports pull_out with a large vertical pan (pan_y -1.95), so the exit may be a camera tilt rather than object motion. Line 1 vs line 2 reveal could be word-level (diff boxes b10-b17 split words); filmstrip only shows line-level steps. Shot s009 starts at f1038 per the filmstrip header, so this event may straddle a cut-like whip."
+}

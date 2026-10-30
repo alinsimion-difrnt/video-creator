@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "a99a9339e4fb501b23381e60cb520c1e8fd3a70a9006a27d4d7eb74d2ad2c43c",
+    "created_at": "2026-10-05T06:52:58.356191Z"
+  },
+  "video": "workday-workday-adaptive-planning-demo-finan",
+  "event": "e022",
+  "task": "a2-e022",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Flyout submenu content swaps from Integration Management list to Reports list (scrollbar appears)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "instant content swap (hard replace of submenu items)",
+      "is_text": true,
+      "text": "Reports",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Reports menu row becomes active (dark highlight)",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Reports",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Integration menu row loses its active highlight",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["color_shift"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Integration",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "hover submenu swap",
+    "description": "In a zoomed screen recording, hovering a left-nav item instantly swaps the flyout submenu to that section's items while the active-row highlight moves from Integration to Reports.",
+    "why_premium": "Keeping the native, instant UI response on a zoomed, legible menu reads as authentic product proof; the swap lands on 'source systems' so the navigation path follows the narration."
+  },
+  "build_hint": {
+    "gsap": "tl.set(integrationRow, {backgroundColor: navBase}).set(reportsRow, {backgroundColor: navActive}).set(submenuIntegration, {autoAlpha: 0}).set(submenuReports, {autoAlpha: 1}) at the same time (no tween); optionally gsap.fromTo(submenuReports, {autoAlpha: 0}, {autoAlpha: 1, duration: 0.08, ease: 'none'}) for a softer swap.",
+    "remotion": "Hard switch on one frame: const showReports = frame >= swapFrame; render the Reports submenu and active-row styles conditionally (no interpolate or spring)."
+  },
+  "confidence": "medium",
+  "notes": "The cursor already sits on Reports at the burst start and does not visibly move, so it is not listed. The swap is a one-frame hard change (energy spike on a single frame)."
+}

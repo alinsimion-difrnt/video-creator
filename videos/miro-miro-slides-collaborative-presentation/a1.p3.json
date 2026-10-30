@@ -1,0 +1,138 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "3806593f1a4f11c5228699adc055756b2f6df67736998258b67b0d618ccf1ade",
+    "created_at": "2026-10-05T06:28:44.404515Z"
+  },
+  "video": "miro-miro-slides-collaborative-presentation",
+  "task": "a1-p3",
+  "shots": [
+    {
+      "shot": "s011",
+      "shot_type": "logo",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "White 'MIRO SLIDES' title pill over a drifting cloud of slide cards, resolving into the centered Miro logo lockup with the 'GET GREAT DONE' tagline",
+      "transition_in": "other",
+      "transition_other": "not visible in the sampled frames (the first frame at 46.5 s already shows the card cloud with the title typing on); anchors flag it only as 'other'",
+      "on_screen_text": [
+        "MIRO SLIDES",
+        "TEAM WORKSHOP",
+        "Icebreaker",
+        "HOW DO WE MAKE IT HAPPEN?",
+        "On the agenda:",
+        "How are users feeling?",
+        "2 Truths & 1 Lie",
+        "miro",
+        "GET GREAT DONE"
+      ],
+      "text_word_count": 26,
+      "typography": "Product name in heavy bold italic sans-serif, all caps, set letter by letter on a white rounded pill (reads 'MIRO SL' at 46.5 s, complete by 47.0 s); background slide cards carry condensed heavy all-caps and bold sentence-case headlines; end card uses the lowercase geometric sans 'miro' wordmark with a small bold italic all-caps tagline with tight tracking",
+      "depth_cues": [
+        "shadow",
+        "parallax"
+      ],
+      "what_happens": "Bookending s002, the six workshop slides float as cards at different depths around a white 'MIRO SLIDES' pill whose letters type on (46.5-47.0 s) while the cloud drifts with parallax; at about 48.0 s the camera pulls far back so the cloud and pill shrink to a small cluster on the dotted canvas. By 48.5 s the canvas is empty except a small yellow square beside a 'miro' wordmark; the square grows into the yellow app-icon logo mark (49.0 s), the 'GET GREAT DONE' tagline types in under the wordmark (partial at 49.5 s, complete by 50.0 s) and the lockup holds to the end. VO 'than talking at them. Try muroslides and see how great gets done.' (w100-w111) — the tagline lands on the spoken 'gets done' (w110-w111).",
+      "build_rebuild": "Reuse the 3D slide-card cloud with a typewriter reveal of the bold italic title in a white pill, pull the camera back until the cluster is small, cut to the dotted canvas, scale a yellow square into the rounded logo icon beside the wordmark, then type the all-caps tagline in beneath it on the VO word 'great' and hold for about 3.5 s.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001", "s002"], "words": [0, 16]},
+      {"beat": "mechanism", "shots": ["s003"], "words": [17, 36]},
+      {"beat": "demo", "shots": ["s004", "s005", "s006"], "words": [37, 56]},
+      {"beat": "problem", "shots": ["s006", "s007", "s008", "s009"], "words": [57, 79]},
+      {"beat": "outcome", "shots": ["s009", "s010", "s011"], "words": [80, 103]},
+      {"beat": "cta", "shots": ["s011"], "words": [104, 111]}
+    ],
+    "hook": {
+      "text": "Check this out, your presentation in the same space as your work. And boom, enter Miro Slides.",
+      "technique": "demo_first",
+      "technique_other": null,
+      "shots": ["s001", "s002"],
+      "words": [0, 16]
+    },
+    "cta": {
+      "text": "VO: 'Try Miro Slides and see how great gets done' (transcript renders it 'Try muroslides and see how great gets done', w104-w111); on screen only the Miro logo with 'GET GREAT DONE', no URL or button",
+      "shots": ["s011"]
+    },
+    "tone": "Upbeat, casual and confident: a conversational, slightly playful VO ('And boom', 'no more awkward pauses') over a bright, airy product world of mint slides on a light dotted canvas, with light music and continuous 3D camera moves rather than hard cuts.",
+    "signature_moments": [
+      {
+        "shots": ["s001", "s002"],
+        "description": "A cursor clicks 'Create slides' and the selected board frames burst into a floating 3D card cloud that resolves into the 'MIRO SLIDES' title pill.",
+        "why_premium": "The product action itself triggers the brand reveal in one continuous move, so the feature and the name are tied together without a cut."
+      },
+      {
+        "shots": ["s009", "s010"],
+        "description": "The camera pulls out of the presentation to show the slides living as frames on the board, then zooms into the Recap slide where an AI summary streams in.",
+        "why_premium": "One unbroken camera move proves the core claim (presentation and work share one space) visually instead of stating it."
+      },
+      {
+        "shots": ["s011"],
+        "description": "The ending reprises the s002 card cloud and title pill, pulls the camera back to a speck and resolves into the logo lockup with the tagline typing on in time with the VO's 'gets done'.",
+        "why_premium": "A bookended open and close gives the film a designed, deliberate structure and makes the end card feel earned."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 4,
+        "evidence": "Opens straight into the real product with a cursor action and a payoff (card burst plus title) inside 9 s; it is demo-first rather than a sharp pain or stat, so it relies on visual delight more than tension.",
+        "refs": ["s001", "s002", "w0", "w13", "w16"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "Clear flow: board to slides, co-editing, live presenting with interactive widgets, back to the board and AI recap. Some UI text (table cells, generated summary) is too small to read and the jumps between features are quick.",
+        "refs": ["s003", "s004", "s006", "s009", "s010"]
+      },
+      "ui_showcase": {
+        "score": 5,
+        "evidence": "Rich, realistic product states with multiple named cursors, reactions, timer, card flips, voting stickers and an AI summary streaming in, all staged on purpose-built demo content.",
+        "refs": ["s004", "s005", "s006", "s007", "s010"]
+      },
+      "motion_polish": {
+        "score": 5,
+        "evidence": "Almost no hard cuts: 3D card clouds, UI morphs, pushes and long camera pull-outs and zooms link every shot, with matched open and close; motion feels eased and continuous throughout.",
+        "refs": ["s001", "s002", "s004", "s009", "s011"]
+      },
+      "sound_design": {
+        "score": 3,
+        "evidence": "Judged from anchors plus visuals: a 105.5 BPM music bed at -14.92 LUFS integrated; of 50 detected SFX candidates most are labelled music, with a dense cluster of impacts and reverse swooshes in the first 7.5 s and a few swooshes around transitions (x021, x037-x039). Mostly music-driven, functional rather than distinctive.",
+        "refs": ["s001", "s008", "s009", "s011"]
+      },
+      "vo_script_quality": {
+        "score": 4,
+        "evidence": "Conversational, rhythmic script with a strong triple 'no more' list and a quotable turn ('don't just show your work. They flow from it'); a little generic in places ('engaging sessions').",
+        "refs": ["w57", "w66", "w80", "w92", "w103"]
+      },
+      "brand_consistency": {
+        "score": 5,
+        "evidence": "Consistent mint slide system, dotted Miro canvas, condensed all-caps display type and the bold italic product title, closing on the official logo and tagline.",
+        "refs": ["s002", "s006", "s008", "s011"]
+      },
+      "works_muted": {
+        "score": 3,
+        "evidence": "The visuals show creating, co-editing and presenting slides on the board with the product name on screen, but the benefit framing ('no more awkward pauses', 'talking with people') and the CTA live only in the VO; there are no captions.",
+        "refs": ["s002", "s006", "s011", "w58", "w104"]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "A highly polished, continuous-camera product film with excellent UI staging and bookended branding; held back slightly by a soft hook, generic sound design and a VO-only CTA without a destination.",
+        "refs": ["s001", "s009", "s011"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 3,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "Slide content, UI labels, the 'MIRO SLIDES' title and the 'GET GREAT DONE' tagline are baked into the visuals and would need re-rendering; the VO carries the benefits and CTA but no supers depend on it, so a VO swap plus rebuilt slide content would localise it."
+    }
+  }
+}

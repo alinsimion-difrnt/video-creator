@@ -1,0 +1,44 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "4bf72e956853ef773810a27ec6aea2f1d216f5864e0a4b049a67e4faac369693",
+    "created_at": "2026-10-05T06:57:35.757199Z"
+  },
+  "video": "workday-workday-adaptive-planning-demo-finan",
+  "event": "e028",
+  "task": "a2-e028",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Floating app window (Model Management page with module cards) scaling down and drifting left over the blue brand background",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["scale_down", "slide_left"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 600, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "layout_reframe",
+    "proposed_name": null,
+    "description": "On the new Model Management page, the whole app window shrinks to about 82% and slides left, so the window edges, drop shadow and blue background curve come back into view; motion is fastest at the start and settles smoothly.",
+    "why_premium": "Pulling the window back after the cut gives an overview of all six module cards at once, and the decaying ease-out lands softly instead of snapping to the new framing."
+  },
+  "build_hint": {
+    "gsap": "gsap.fromTo('.app-window', {scale: 1.21, x: 70, y: 15}, {scale: 1, x: 0, y: 0, duration: 0.6, ease: 'power3.out', transformOrigin: '50% 50%'}); background and window shadow stay put; cards move with the window (no stagger).",
+    "remotion": "Window scale = interpolate(frame, [0, 18], [1.21, 1], {easing: Easing.out(Easing.cubic), extrapolateRight: 'clamp'}) with matching translateX; or spring({frame, fps, config: {damping: 200, stiffness: 120, mass: 1}}) for a no-overshoot settle."
+  },
+  "confidence": "medium",
+  "notes": "Camera verdict is none: the window wrapper scales inside the frame (scale 0.8245) while the blue background stays still, so this is not a camera move. Energy decays steadily from the first frame, so the start is either a cut or a hard-start ease-out. b02 (card grid) and b03 (right window area) move only as part of the window, so they are not listed separately. Same scale-out continues from e026 and e027 across shots. No SFX candidates."
+}

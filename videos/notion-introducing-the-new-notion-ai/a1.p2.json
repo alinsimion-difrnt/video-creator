@@ -1,0 +1,169 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "2c4ee456962725671dc5808f9de67eeb712662a8726122c5e0810037b5d8abe3",
+    "created_at": "2026-10-05T07:39:48.689790Z"
+  },
+  "video": "notion-introducing-the-new-notion-ai",
+  "task": "a1-p2",
+  "shots": [
+    {
+      "shot": "s006",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "split",
+      "composition_other": null,
+      "focal_element": "Notion AI chat panel answering a project-status question, beside a large animated AI face mascot on a solid blue field",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Any updates on the mobile improvements project?",
+        "Beta Testing & Feedback Incorporation is currently in progress, assigned to Todd Walls",
+        "App Functionality Coding has been completed by Karl Robinson",
+        "App Wireframe development is done, completed by Joan Haney",
+        "Integration with Existing Support Channels is finished, handled by Daisy Morrison",
+        "11 sources found",
+        "Laura Smith in #mobile-ux",
+        "Mobile Roadmap July",
+        "Copy",
+        "Ask AI anything..."
+      ],
+      "text_word_count": 62,
+      "typography": "Native product UI sans (Inter-like, low confidence): regular-weight sentence-case body bullets, small grey labels; the user question sits in a grey pill bubble",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "The cropped AI chat panel (left, over a dashboard with bar and line charts) streams a bulleted answer that pushes the question bubble up and out of view, with numbered and Slack source chips appended to each bullet; on the right a hand-drawn line-art face in a white circle morphs through several expressions frame to frame. In the very last sampled frame a bold title ('Write smarter...') is already rising into a light-grey frame from a mask.",
+      "build_rebuild": "Place a cropped, drop-shadowed chat panel on the left half of a solid blue canvas and stream four bullet lines in one by one (each followed by a source chip pop) while a circular line-art mascot on the right swaps between SVG expression frames every ~0.5 s.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s007",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Two-line bold feature headline centred on an off-white background",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Write smarter, with AI that knows your style"
+      ],
+      "text_word_count": 8,
+      "typography": "Bold geometric/grotesk sans (Inter or Notion's own sans, low confidence), sentence case, tight default tracking, two centred lines with tight leading",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "A static chapter title card for the writing feature; the text holds still for the whole shot after appearing to slide up from a mask at the end of the previous shot.",
+      "build_rebuild": "Render a full-bleed off-white card with a centred two-line bold headline that slides up ~20 px inside an overflow-hidden mask with an ease-out, then holds for ~2 s.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s008",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "A Notion page window 'Podcast Release' floating on a red-orange background, with its brief bullets selected",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Marketing / Podcast Release",
+        "Share",
+        "Podcast Release",
+        "English Copy",
+        "Hype post!",
+        "Announce the new podcast (TechTalks) launching on Wednesday",
+        "Keep it light and fun.",
+        "Write",
+        "Recents",
+        "Revise post"
+      ],
+      "text_word_count": 27,
+      "typography": "Native Notion UI: bold large page title, semibold H2 'English Copy', regular sentence-case bullets with blue selection highlight; small grey menu labels",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "The full app window sits centred on a red-orange field; the cursor selects the three bullets, the inline AI prompt bar opens beneath them with a suggestions menu, and by the last frame the camera has pushed in tight on the page as 'Write' is typed into the prompt.",
+      "build_rebuild": "Show a rounded mac-style app window centred on a solid red-orange canvas, animate a blue text-selection over three bullets, pop an inline prompt bar with a dropdown below them, then scale the whole window up ~1.6x toward the prompt with an ease-in-out while a typewriter types 'Write'.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s009",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "The inline AI prompt bar and the AI-written post that streams in below the selected brief; ends on a 'Analyze PDFs and images' title card",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Podcast Release",
+        "English Copy",
+        "Hype post!",
+        "Announce the new podcast (TechTalks) launching on Wednesday",
+        "Keep it light and fun.",
+        "Write a post according to Acme Voice & Tone Guidelines",
+        "Link to page",
+        "Tech enthusiasts, get ready! Our new podcast, TechTalks, launches this Wednesday.",
+        "Join us for engaging discussions on the latest in tech, delivered with Acme's signature style. From coding wizards to tech-curious, TechTalks is your new go-to for insightful and entertaining tech talk.",
+        "Ask, search, write anything...",
+        "Accept",
+        "Discard",
+        "Insert below",
+        "Analyze PDFs and images"
+      ],
+      "text_word_count": 85,
+      "typography": "Native Notion UI (bold title, semibold H2, regular body; AI draft shown in blue text until accepted, then black); closing card uses the same bold centred two-line sans headline, sentence case",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Zoomed in on the page (red band visible at the bottom edge), the prompt 'Write a post according to' is typed, an @-style 'Link to page' popover appears and 'Acme Voice & Tone Guidelines' is inserted as a page chip; the send button is clicked, the page scrolls up slightly and a blue AI draft streams in line by line; an Accept / Discard / Insert below menu appears, Accept is clicked, the brief bullets vanish and the draft turns to black body text. Around 31.0-31.5 s the frame changes to an off-white title card 'Analyze PDFs and images' that holds to the end; the shot detector did not split this, so it is annotated inside s009.",
+      "build_rebuild": "On a zoomed-in page, type a prompt with a caret, pop a link-to-page popover and replace the typed query with an inline page chip, click send, stream two paragraphs of blue text word by word below the bullets, then show an Accept menu, collapse the bullets and recolour the text to black before cutting to a centred bold title card.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s010",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "split",
+      "composition_other": null,
+      "focal_element": "The Notion AI chat panel receiving a dropped PDF and returning a list of next steps, over a cropped dashboard on a blue field",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Hello Sam! How can I help?",
+        "Suggested",
+        "Summarize this page",
+        "Ask a question about this page",
+        "Find action items",
+        "Draft anything...",
+        "RFP_Sept2024.pdf",
+        "Recommend next steps for this proposal",
+        "All sources",
+        "Thinking",
+        "Based on this proposal, here's a list of next steps:",
+        "Review TransGlobal Solutions' capabilities in localization services",
+        "Develop a proposed project timeline",
+        "Schedule a project scope meeting with stakeholders",
+        "Analyze the proposed budget and pricing structure",
+        "Copy",
+        "Ask AI anything..."
+      ],
+      "text_word_count": 70,
+      "typography": "Native Notion UI sans: regular sentence-case greeting and suggestion rows with bold verbs ('Summarize', 'Ask a question', 'Find action items'), small grey 'Thinking' label, user prompt in a grey pill",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "The chat panel (right of a cropped dashboard with status pills, stacked bars and a donut chart, blue field on the right) shows a greeting and suggestions; a PDF file icon is dragged into the input and attaches as 'RFP_Sept2024.pdf', the prompt 'Recommend next steps for this proposal' is typed, sent as a bubble, a 'Thinking' indicator with coloured dots and the line-art avatar appear, then a bulleted list of next steps streams in line by line. In the final sampled frame a new bold title is rising into an off-white card; it is too clipped to read.",
+      "build_rebuild": "Animate a PDF icon dragging into a chat input and snapping into an attachment chip, typewrite the prompt, morph it into a right-aligned message bubble, show a three-dot 'Thinking' loader for ~1 s, then stream four bullet lines in with a short stagger.",
+      "confidence": "high"
+    }
+  ],
+  "summary": null
+}

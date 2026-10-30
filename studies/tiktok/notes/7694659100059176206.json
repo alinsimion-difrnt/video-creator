@@ -1,0 +1,38 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "88ca37ffa135642b4985ccbb11b855f2547186bdddce438f9de92d5e06de0189",
+                 "created_at": "2026-10-13T14:40:00+00:00"},
+  "id": "7694659100059176206",
+  "format": "talking_head",
+  "hook": {"type": "bold_claim",
+           "line": "A lot of you would crush if you made a video saying 'hey, I'm Paul'.",
+           "visual": "Speaker in a cap on a dark stage, gesturing mid-sentence; white-and-yellow title 'THE BEST WAY TO GET NEW CLIENTS' up top; big word captions pop at mid-frame, 'crush' scaled up."},
+  "beats": [
+    {"t": 0.0, "what": "Stage clip opens mid-thought under a two-line yellow/white title promising the best way to get clients"},
+    {"t": 1.12, "what": "Key word 'crush' pops in much larger than the other caption words"},
+    {"t": 5.13, "what": "Cut to a tighter angle as he role-plays the agent's intro video ('Hey, I'm Sara' shown as a quote)"},
+    {"t": 8.41, "what": "Small italic disclaimer appears: talking to real estate agents, but works for many"},
+    {"t": 16.81, "what": "The tactic: an email in the video, a dinner every two weeks for six to eight people"},
+    {"t": 28.8, "what": "Quick cutaway to him at a bar with wine bottles on 'wine dinner'"},
+    {"t": 30.67, "what": "Rapid cuts between angles as he lists golf, run club"},
+    {"t": 37.27, "what": "Cutaway to a pickleball court on the swear-word punchline"},
+    {"t": 38.93, "what": "Back on stage for the moral: use digital to go analog, stay honest"}
+  ],
+  "graphics": {"captions": "word_by_word", "caption_position": "middle",
+               "devices": ["title_text", "b_roll", "jump_cut", "music_bed"],
+               "density": "moderate", "per_minute_estimate": 12},
+  "characters": [],
+  "cta": {"kind": "save_or_share", "t": null},
+  "why_it_works": [
+    "Starts mid-sentence on 'you would crush', so the first word is a payoff aimed at the viewer, not a warm-up",
+    "Concrete, copyable tactic (an email in the video, a paid dinner every two weeks) beats generic advice; viewers can picture doing it",
+    "Literal b-roll cutaways on each example (wine bar, pickleball court) reward the list with a new picture, speeding up the back half",
+    "Live-audience stage setting lends authority and energy without any graphics work"
+  ],
+  "weaknesses": [
+    "First 28 s are one long stage shot (longest shot 23.7 s), all the visual change is crammed into the last third",
+    "Caption sits over his torso and 81% of text is outside the safe area",
+    "Ends abruptly mid-sentence with no on-screen call to action; the share ask only lives in the caption"
+  ],
+  "for_robert": "Use one literal cutaway per example in a list: when he names 'wine dinner' or 'pickleball', cut to a matching picture (or Fred dressed for it) for one second, then back to his face."
+}

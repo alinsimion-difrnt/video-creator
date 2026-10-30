@@ -1,0 +1,256 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a3_pattern_cards",
+  "annotator": "claude-code",
+  "skill": "write-archetype-cards@a75a12f0ca91",
+  "model": null,
+  "input_hash": "eea39bbece91ffd4bc0320a9f225c457d152216ae65803a4ff410a31fd642d81",
+  "created_at": "2026-10-05T19:11:22.586467Z"
+ },
+ "id": "tile_grid",
+ "name": "Tile Grid",
+ "summary": "Many tiles, such as app windows, integration icons, video clips or small UI widgets, sit in a grid or wall that the camera pulls out to reveal or glides across. The scene shows breadth: many use cases, integrations or projects at once.",
+ "when_to_use": [
+  "To show that the product covers many integrations, use cases or projects.",
+  "As a pull-out transition from one view into a wall of related views, then into the next one.",
+  "When one tile should grow to centre stage while the others make room."
+ ],
+ "slots": [
+  {"name": "tiles", "what": "a set of similar items: screenshots, icons, clips or widgets", "required": true},
+  {"name": "hero_tile", "what": "the tile the camera starts from, lands on or enlarges", "required": false},
+  {"name": "caption", "what": "a short headline over or beside the grid", "required": false},
+  {"name": "status_chip", "what": "a small label that pops onto the hero tile", "required": false},
+  {"name": "background", "what": "a plain dark or light field behind the grid", "required": true}
+ ],
+ "steps": [
+  "Start close on one tile or on an empty field.",
+  "Tiles stagger in, or the camera pulls out to reveal the full wall.",
+  "The wall drifts slowly or the camera glides across it.",
+  "Focus moves to one tile: it highlights, enlarges while others shrink, or gains a chip.",
+  "The camera pushes into the chosen tile or the grid clears for the next scene."
+ ],
+ "patterns": [
+  "layout_reframe",
+  "card_wall_stagger",
+  "parallax_layers",
+  "spotlight_focus",
+  "stagger_list_reveal",
+  "ui_camera_push_in",
+  "kinetic_word_reveal"
+ ],
+ "build": {
+  "gsap": "Lay the tiles out on one large canvas in a CSS grid inside a wrapper; one timeline per scene with a staggered from tween for tile entrances (opacity, y or scale, power ease-out), scale and x/y tweens on the wrapper for pull-outs and glides (power or expo in-out), a slow linear drift for the wall, and a grid-size or scale tween to enlarge the hero tile.",
+  "remotion": "A single Sequence holding the tile canvas; tile entrances use a spring delayed by tile index, the camera is an interpolated scale and translate on the wrapper keyed to frame, and a child Sequence on the narration cue springs the hero tile larger and pops its chip."
+ },
+ "sound": "Usually a reverse swoosh or unlabelled whoosh on the pull-out or reveal, with an occasional early impact as tiles land; music carries the rest.",
+ "numbers": {
+  "id": "tile_grid",
+  "shots": 33,
+  "videos": 15,
+  "weight": 21.6,
+  "duration_s": {
+   "n": 33,
+   "videos": 15,
+   "weight": 21.6,
+   "median": 2.38,
+   "p25": 1.042,
+   "p75": 3.317,
+   "ci": [
+    1.965,
+    2.919
+   ]
+  },
+  "events_per_shot": {
+   "n": 33,
+   "videos": 15,
+   "weight": 21.6,
+   "median": 0.0,
+   "p25": 0.0,
+   "p75": 1.0,
+   "ci": [
+    0.0,
+    1.0
+   ]
+  },
+  "first_motion_s": {
+   "n": 9,
+   "videos": 6,
+   "weight": 7.8,
+   "median": 0.6,
+   "p25": 0.252,
+   "p75": 0.987,
+   "ci": [
+    0.274,
+    0.966
+   ]
+  },
+  "pattern_mix": {
+   "other": 0.4286,
+   "layout_reframe": 0.1818,
+   "card_wall_stagger": 0.1169,
+   "parallax_layers": 0.0649,
+   "kinetic_word_reveal": 0.0519,
+   "spotlight_focus": 0.0519,
+   "stagger_list_reveal": 0.0519,
+   "ui_camera_push_in": 0.0519
+  },
+  "transition_mix": {
+   "other": 0.5093,
+   "zoom_through": 0.2222,
+   "hard_cut": 0.1944,
+   "slide": 0.037,
+   "blur": 0.0185,
+   "mask_wipe": 0.0185
+  },
+  "shot_type_mix": {
+   "other": 0.287,
+   "ui_recreated": 0.213,
+   "logo": 0.1667,
+   "kinetic_type": 0.1481,
+   "ui_full": 0.1111,
+   "abstract": 0.0556,
+   "3d": 0.0185
+  },
+  "beat_mix": {
+   "demo": 0.3929,
+   "outcome": 0.2054,
+   "proof": 0.1696,
+   "hook": 0.1071,
+   "mechanism": 0.0536,
+   "problem": 0.0536,
+   "agitate": 0.0179
+  },
+  "sfx_label_mix": {
+   "unsure": 0.3932,
+   "music": 0.2282,
+   "swoosh_reverse": 0.2233,
+   "impact": 0.0874,
+   "chime": 0.0485,
+   "whoosh": 0.0194
+  },
+  "sfx_offset_s_by_label": {
+   "chime": {
+    "n": 4,
+    "videos": 2,
+    "weight": 2.0,
+    "median": 1.553,
+    "p25": 0.822,
+    "p75": 1.621,
+    "ci": null
+   },
+   "impact": {
+    "n": 6,
+    "videos": 4,
+    "weight": 3.6,
+    "median": 0.321,
+    "p25": 0.259,
+    "p75": 0.788,
+    "ci": [
+     0.246,
+     0.854
+    ]
+   },
+   "music": {
+    "n": 12,
+    "videos": 6,
+    "weight": 9.4,
+    "median": 1.92,
+    "p25": 0.632,
+    "p75": 2.314,
+    "ci": [
+     0.661,
+     2.276
+    ]
+   },
+   "swoosh_reverse": {
+    "n": 16,
+    "videos": 5,
+    "weight": 9.2,
+    "median": 1.761,
+    "p25": 0.599,
+    "p75": 2.234,
+    "ci": [
+     0.616,
+     2.058
+    ]
+   },
+   "unsure": {
+    "n": 24,
+    "videos": 11,
+    "weight": 16.2,
+    "median": 1.014,
+    "p25": 0.419,
+    "p75": 2.756,
+    "ci": [
+     0.551,
+     1.761
+    ]
+   },
+   "whoosh": {
+    "n": 1,
+    "videos": 1,
+    "weight": 0.8,
+    "median": 3.861,
+    "p25": 3.861,
+    "p75": 3.861,
+    "ci": null
+   }
+  },
+  "examples": [
+   {
+    "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+    "shot": "s004",
+    "score": 5.0
+   },
+   {
+    "video": "datadog-datadog-overview-see-inside-the-platfor",
+    "shot": "s008",
+    "score": 4.0
+   },
+   {
+    "video": "notion-introducing-notion-ai-connectors",
+    "shot": "s001",
+    "score": 4.0
+   },
+   {
+    "video": "meta-introducing-meta-quest-3-coming-this-f",
+    "shot": "s028",
+    "score": 5.0
+   },
+   {
+    "video": "figma-introducing-figma-motion-your-canvas-no",
+    "shot": "s025",
+    "score": 5.0
+   }
+  ]
+ },
+ "examples": [
+  {
+   "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+   "shot": "s004",
+   "score": 5.0
+  },
+  {
+   "video": "figma-introducing-figma-motion-your-canvas-no",
+   "shot": "s025",
+   "score": 5.0
+  },
+  {
+   "video": "meta-introducing-meta-quest-3-coming-this-f",
+   "shot": "s028",
+   "score": 5.0
+  },
+  {
+   "video": "notion-introducing-notion-ai-connectors",
+   "shot": "s001",
+   "score": 4.0
+  }
+ ],
+ "caveats": [
+  "Few shots and videos, and measured motion and sound come from only a handful of them.",
+  "Members are mixed: icon rows, video walls, bento widget grids and window walls, and some shots chain other scene types.",
+  "Most of the pattern mix is unnamed, and several members carry no pattern labels."
+ ]
+}

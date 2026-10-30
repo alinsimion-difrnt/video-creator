@@ -1,0 +1,45 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "d5e7cd9f662694739dd6190aa87d6ab574411e2b72c56079144489749b8c43b5",
+    "created_at": "2026-10-05T06:47:00.611958Z"
+  },
+  "video": "notion-introducing-the-new-notion-ai",
+  "event": "e014",
+  "task": "a2-e014",
+  "elements": [
+    {"box": "b03", "manual_box": null, "manual_reason": null, "label": "Notion app logo", "role": "logo",
+     "role_other": null, "change_types": ["slide_up", "fade"], "change_other": null, "is_text": false,
+     "text": null, "text_unit": null, "estimates": {"duration_ms": 450, "easing_class": "ease_out"}},
+    {"box": "b06", "manual_box": null, "manual_reason": null, "label": "Slack app logo", "role": "logo",
+     "role_other": null, "change_types": ["slide_up", "fade"], "change_other": null, "is_text": false,
+     "text": null, "text_unit": null, "estimates": {"duration_ms": 450, "easing_class": "ease_out"}},
+    {"box": "b02", "manual_box": null, "manual_reason": null, "label": "Google Docs app icon", "role": "logo",
+     "role_other": null, "change_types": ["slide_up", "fade"], "change_other": null, "is_text": false,
+     "text": null, "text_unit": null, "estimates": {"duration_ms": 450, "easing_class": "ease_out"}},
+    {"box": "b05", "manual_box": null, "manual_reason": null, "label": "Google Slides app icon", "role": "logo",
+     "role_other": null, "change_types": ["slide_up", "fade"], "change_other": null, "is_text": false,
+     "text": null, "text_unit": null, "estimates": {"duration_ms": 450, "easing_class": "ease_out"}},
+    {"box": "b07", "manual_box": null, "manual_reason": null, "label": "Google Sheets app icon", "role": "logo",
+     "role_other": null, "change_types": ["slide_up", "fade"], "change_other": null, "is_text": false,
+     "text": null, "text_unit": null, "estimates": {"duration_ms": 450, "easing_class": "ease_out"}}
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "stagger_list_reveal",
+    "proposed_name": null,
+    "description": "After a hard cut from the headline to an empty light canvas, a horizontal row of five app logos (Notion, Slack, Docs, Slides, Sheets) rises into place from below, staggered left to right.",
+    "why_premium": "A short left-to-right stagger turns a flat logo row into a readable sequence, and every icon lands on the same baseline with a soft ease-out, so the 'one tool replaces many' idea reads in under a second."
+  },
+  "build_hint": {
+    "gsap": "gsap.fromTo('.app-logo', {y: 80, opacity: 0}, {y: 0, opacity: 1, duration: 0.45, ease: 'power3.out', stagger: 0.06}) after a hard cut to the empty canvas; order left to right.",
+    "remotion": "For each logo i: const p = spring({frame: frame - i * 2, fps, config: {damping: 200, stiffness: 120, mass: 1}}); translateY = interpolate(p, [0, 1], [80, 0]); opacity = interpolate(p, [0, 0.4], [0, 1], {extrapolateRight: 'clamp'})."
+  },
+  "confidence": "medium",
+  "notes": "Energy spike at frame 219 is the hard cut from the 'One AI tool to do it all.' headline; the logo rise follows. b01 (union), b04 (OCR misread) and b08 (empty motion trail beside Slides) are not separate elements. Fade component is inferred; logos may simply slide in from below the frame crop."
+}

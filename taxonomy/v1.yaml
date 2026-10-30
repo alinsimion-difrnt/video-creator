@@ -1,0 +1,82 @@
+# Controlled vocabularies (BUILD_PLAN Appendix C). Changes go through taxonomy/proposals.yaml and gate G4.
+format: [feature_reel, narrated_explainer, teaser, founder_talk, tutorial, other]
+shot_type: [ui_closeup, ui_full, ui_recreated, screen_recording, kinetic_type, 3d, abstract,
+            footage, presenter, logo, data_viz, other]
+composition: [centered, rule_of_thirds, split, grid, stacked, full_bleed, other]
+transition: [hard_cut, whip, scale_dissolve, crossfade, mask_wipe, match_cut, morph, slide,
+             zoom_through, blur, push, other]
+element_role: [headline, body_text, label, card, button, chart, metric, icon, cursor, ui_panel,
+               list_item, logo, background, avatar, notification, other]
+change_type: [fade, slide_up, slide_down, slide_left, slide_right, scale_up, scale_down, pop, rotate,
+              mask_reveal, draw_on, blur_in, blur_out, typewriter, count_up, color_shift, weight_shift,
+              morph, highlight, other]
+easing_class: [linear, ease_in, ease_out, ease_in_out, spring_no_overshoot, spring_overshoot,
+               bounce, step, ambiguous]
+camera_move: [none, push_in, pull_out, pan_left, pan_right, tilt_up, tilt_down, orbit, parallax, other]
+sfx: [whoosh, swoosh_reverse, click, tick, pop, riser, impact, chime, glitch, typing, none, music,
+      speech, unsure, other]
+music_event: [none, build, drop, stop, swell, beat_cut]
+depth_cue: [shadow, blur, parallax, glow, grain, perspective_tilt, none]
+hook_technique: [question, stat, bold_claim, pain, demo_first, other]
+beat: [hook, problem, agitate, mechanism, demo, proof, outcome, cta]
+patterns:
+  - stagger_list_reveal
+  - card_wall_stagger
+  - ui_camera_push_in
+  - spotlight_focus
+  - kinetic_word_reveal
+  - metric_count_up
+  - chart_draw_on
+  - match_cut_element
+  - scale_dissolve_transition
+  - whip_transition
+  - notification_pop
+  - cursor_guided_demo
+  - logo_resolve
+  - parallax_layers
+  # Added after the M5 trial (ADR 0013; approved by Robert when merged, an early G4): recurring
+  # "other" proposals on UI-demo explainers (Acme v1: 27 of 60 events).
+  - prompt_type_on        # text typed into an input or prompt field (typing caret, send button)
+  - ai_answer_stream      # an AI/terminal answer streams in line by line or word by word
+  - input_text_cycle      # an input's example text swaps through alternatives (query/category cycle)
+  - chip_append           # a tag, chip, badge or source pill pops onto an existing element
+  - skeleton_resolve      # placeholder bars resolve into real text or data
+  - masked_scroll         # content scrolls inside a fixed card or panel mask
+  - blur_crossfade        # one layout blurs out while the next blurs in (no scale)
+  - layout_reframe        # the composition re-lays out (elements shift/resize together) within a shot
+  # Approved at gate G4 (2026-10-05, taxonomy/proposals.yaml): recurring `other` patterns, 2+ brands.
+  - avatar_hero_expand    # an orb/avatar grows into a centre-stage hero, or docks back as the avatar
+  - chat_bubble_append    # a chat bubble pops or grows into a panel; older messages shift up
+  - diagonal_ui_wipe_in   # a screenshot or colour bands wipe across and cover the previous card
+  - footage_with_ui_overlay  # product UI floats over live-action footage, then slides away
+# Scene archetypes (BUILD_PLAN 8.5, seed list from docs/handoff-v1.md 7.3): reusable whole-scene templates.
+# A3 sorts every annotated shot into one of these or `other` (+ proposed name); clusters go to G4.
+scene_archetype:
+  - question_relay        # questions or prompts cycle one after another on a simple stage
+  - shortlist_card        # a ranked or short list card (options, results, picks)
+  - stat_count_up         # one big number or metric is the hero of the scene
+  - title_step_rail       # a title with a row or rail of steps/stages
+  - comparison_split      # two sides compared (before/after, us/them, old/new)
+  - document_highlight    # a document, page or answer with parts highlighted
+  - bars_ring             # a chart scene: bars, rings, gauges
+  - cards_triptych        # three (or a few) feature cards side by side
+  - tile_grid             # a grid or wall of tiles, logos or cards
+  - logo_close            # the closing brand/logo card
+  # Approved at gate G4 part 2 (2026-10-05, taxonomy/scene_proposals.yaml): corpus scene types, 2+ brands.
+  - product_ui_tour       # the product's screens walked through: panels open, the view moves around the app
+  - kinetic_statement_card  # a short bold statement in big moving type between demo scenes
+  - title_card            # the opening title: product or feature name on a clean background
+  - prompt_input_card     # a prompt or search field on a clean stage; a question is typed and sent
+  - chat_demo_panel       # a chat window where a question and the AI's answer appear
+  - logo_intro_sting      # a short animated logo at the start
+  - app_icon_orbit        # app or integration icons circle or gather around the product logo
+  - abstract_shape_metaphor  # abstract shapes illustrate an idea (connecting, growing, flowing)
+  - ai_working_loader     # a thinking/progress indicator shows the AI at work before the result
+  - presenter_to_camera   # a person talks to camera, sometimes with a UI card beside them
+# Aliases to the v1 HyperFrames animation blueprints (docs/handoff-v1.md section 3.5),
+# so the catalog speaks the Create phase's vocabulary from day one.
+pattern_aliases:
+  kinetic_word_reveal: [kinetic-type-beats]
+  card_wall_stagger: [grid-card-assemble]
+  metric_count_up: [dataviz-countup]
+  logo_resolve: [logo-assemble-lockup]

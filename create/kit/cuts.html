@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cuts: {{PROJECT}}</title>
+<!-- Cut decisions on the phone (create/footage/cutpage.py, `create cuts <p> --page`). Self-contained. -->
+<style>
+  :root { --bg: #0b1220; --card: #141d2e; --fg: #eef2f6; --dim: #8796a8; --cut: #ff6b4a; --keep: #3ecf8e; }
+  html, body { margin: 0; background: var(--bg); color: var(--fg); font: 400 17px/1.6 system-ui, -apple-system, sans-serif; }
+  header { position: sticky; top: 0; background: rgba(11,18,32,.96); padding: 14px 16px 10px; border-bottom: 1px solid #22304a; }
+  h1 { font-size: 18px; margin: 0; }
+  #sum { color: var(--dim); font-size: 14px; margin-top: 2px; }
+  main { padding: 16px 16px 190px; }
+  .help { color: var(--dim); font-size: 14px; margin: 0 0 14px; }
+  .w { white-space: pre-wrap; }
+  .filler { color: var(--dim); font-style: italic; }
+  .x { text-decoration: line-through; text-decoration-color: var(--cut); text-decoration-thickness: 2px; color: var(--cut);
+    border-radius: 6px; padding: 0 2px; cursor: pointer; }
+  .x.kept { text-decoration: none; color: var(--keep); background: rgba(62,207,142,.12); }
+  .pause { display: inline-block; font-size: 12px; padding: 0 6px; margin: 0 2px; border-radius: 999px; background: rgba(255,107,74,.15); }
+  .pause.kept { background: rgba(62,207,142,.15); }
+  footer { position: fixed; left: 0; right: 0; bottom: 0; background: var(--card); padding: 12px 16px;
+    padding-bottom: max(12px, env(safe-area-inset-bottom)); border-top: 1px solid #22304a; }
+  #cmd { font: 500 13px/1.4 ui-monospace, Menlo, monospace; background: #0b1220; border-radius: 8px; padding: 10px;
+    word-break: break-all; }
+  .row { display: flex; gap: 8px; margin-top: 10px; }
+  button { flex: 1; font: 600 16px system-ui, sans-serif; color: #fff; background: #2b3a55; border: 0; border-radius: 10px; padding: 12px; }
+  #copy { background: #00AA90; }
+</style></head>
+<body>
+<header><h1>Cuts for {{PROJECT}}</h1><div id="sum"></div></header>
+<main>
+  <p class="help">Struck-through parts will be cut. Tap one to keep it in (green); tap again to cut it.</p>
+  <div id="text"></div>
+</main>
+<footer>
+  <div id="cmd"></div>
+  <div class="row"><button id="copy">Copy</button><button id="all">Cut all</button><button id="none">Keep all</button></div>
+</footer>
+<script type="application/json" id="data">{{DATA}}</script>
+<script>
+(function () {
+  const D = JSON.parse(document.getElementById("data").textContent);
+  const kept = new Set();
+  const byId = Object.fromEntries(D.cuts.map(c => [c.id, c]));
+  const text = document.getElementById("text");
+  const nodes = {};
+  D.items.forEach(function (it) {
+    const s = document.createElement("span");
+    if (it.kind === "pause") { s.className = "pause"; s.textContent = it.text; }
+    else { s.className = "w" + (it.kind !== "word" ? " filler" : ""); s.textContent = it.text; }
+    if (it.cut) {
+      s.classList.add("x"); s.title = byId[it.cut].reason; s.dataset.cut = it.cut;
+      s.onclick = () => toggle(it.cut);
+      (nodes[it.cut] = nodes[it.cut] || []).push(s);
+    }
+    text.appendChild(s); text.appendChild(document.createTextNode(" "));
+  });
+  function toggle(id) { kept.has(id) ? kept.delete(id) : kept.add(id); render(); }
+  function render() {
+    Object.entries(nodes).forEach(([id, ns]) => ns.forEach(n => n.classList.toggle("kept", kept.has(id))));
+    const cut = D.cuts.filter(c => !kept.has(c.id)).reduce((a, c) => a + c.s, 0);
+    document.getElementById("sum").textContent =
+      `${D.cuts.length - kept.size} of ${D.cuts.length} cuts · ${D.duration} s → about ${(D.duration - cut).toFixed(0)} s`;
+    const rej = [...kept].sort();
+    document.getElementById("cmd").textContent =
+      `uv run create cuts ${D.project} --approve all` + (rej.length ? ` --reject ${rej.join(",")}` : "");
+  }
+  document.getElementById("copy").onclick = function () {
+    const t = document.getElementById("cmd").textContent;
+    (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(
+      () => { this.textContent = "Copied"; setTimeout(() => (this.textContent = "Copy"), 1500); },
+      () => { const r = document.createRange(); r.selectNode(document.getElementById("cmd"));
+              getSelection().removeAllRanges(); getSelection().addRange(r); });
+  };
+  document.getElementById("all").onclick = () => { kept.clear(); render(); };
+  document.getElementById("none").onclick = () => { D.cuts.forEach(c => kept.add(c.id)); render(); };
+  render();
+})();
+</script>
+</body></html>

@@ -1,0 +1,33 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "74a47f8e528fe49ffbdcb5290e8444246c674a18d179b31b6daf12b969830b00",
+    "created_at": "2026-10-05T06:58:06.673961Z"
+  },
+  "video": "workday-workday-adaptive-planning-demo-finan",
+  "event": "e054",
+  "task": "a2-e054",
+  "elements": [
+    {"box": "b01", "manual_box": null, "manual_reason": null, "label": "Version 1 dropdown panel closing", "role": "ui_panel", "role_other": null, "change_types": ["fade"], "change_other": null, "is_text": false, "text": null, "text_unit": null, "estimates": {"duration_ms": 42, "easing_class": "step"}},
+    {"box": "b13", "manual_box": null, "manual_reason": null, "label": "Version 1 selector value", "role": "button", "role_other": null, "change_types": ["other"], "change_other": "text_swap", "is_text": true, "text": "Working Budget", "text_unit": "whole", "estimates": {"duration_ms": 42, "easing_class": "step"}},
+    {"box": null, "manual_box": [208, 427, 238, 444], "manual_reason": "The run (play) toolbar icon changes tint after the selection; no candidate box covers it.", "label": "Run report icon", "role": "icon", "role_other": null, "change_types": ["color_shift"], "change_other": null, "is_text": false, "text": null, "text_unit": null, "estimates": {"duration_ms": 42, "easing_class": "step"}}
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "The cursor moves down the open version list from Budget Pass 1 to Working Budget (hover highlight follows), clicks, and the dropdown snaps shut leaving Version 1 set to Working Budget and the run icon highlighted.",
+    "why_premium": "A real, unhurried click path with the hover highlight visible lets the viewer follow the exact selection, and the instant close keeps the beat tight before narration moves on."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.cursor', {y:'+=24', duration:0.3, ease:'power1.inOut'}); tl.set('.dropdown li.hover', {className:'+=hover'}, '<0.15'); tl.set('.dropdown', {autoAlpha:0}, '+=0.1'); tl.set('.version1 .value', {textContent:'Working Budget'}, '<'); tl.to('.run-icon', {color:'#f39200', duration:0.1}, '<').",
+    "remotion": "Cursor y = interpolate(frame, [0, 8], [y0, y1], {easing: Easing.inOut(Easing.quad)}); dropdown opacity = frame >= clickFrame ? 0 : 1 (hard cut); swap the selector label on the same frame; no spring."
+  },
+  "confidence": "medium",
+  "notes": "Energy is a single-frame spike (hard state change), so the dropdown close is a cut, not an animated fade. The cursor also moves but has no candidate box and was not listed. Run icon tint change is subtle; verify."
+}

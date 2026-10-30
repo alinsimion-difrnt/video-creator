@@ -1,0 +1,54 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T14:01:39+00:00"
+  },
+  "id": "game-boy",
+  "kind": "style",
+  "palette": {
+    "colours_estimate": 4,
+    "shadows": "cool",
+    "notes": "Four shades from dark blue-green to pale green (bgb: #081820 #346856 #88c070 #e0f8d0). Clip 3 shows the same 4-value rule recoloured pink, green or red. Clip 1 (full colour dance) and clip 2 (hardware) are off-subject."
+  },
+  "lighting": "Light is a value decision: four steps only, so the lightest shade is the lit side and the darkest the outline/shadow; no gradients.",
+  "silhouette": "Designed at 160x144: characters and props must read as dark shapes on a light ground (or the reverse) with one inner mid-tone.",
+  "motion": {
+    "timing": "Not measured (no metrics file). Original LCD had visible motion blur/ghosting at about 59.7 Hz, so classic GB animation uses few frames and holds.",
+    "principles": [
+      "limited animation",
+      "value contrast",
+      "holds"
+    ]
+  },
+  "texture": "Repeating tile patterns (diamonds, grass clumps), checker dithers for mid-values, a slightly green, lower-contrast screen tint.",
+  "camera": "Fixed small screen, side or top-down tile views; homebrew shown as framed windows on a dark surround.",
+  "sound": "Four channels: two pulse, one wave, one noise; chiptune trackers in clip 3.",
+  "acting": {
+    "enters": "",
+    "acts": "Clip 3 homebrew scenes: a character standing on ice pillars, a DJ behind decks; small figures framed in the centre of the screen.",
+    "exits": "",
+    "comes_back": null,
+    "depth": "Depth by value only: background tiles in the two middle shades, actors in the darkest and lightest."
+  },
+  "techniques": [
+    "4-value structure before colour",
+    "palette swap: same 4 values recoloured as a mood change",
+    "darkest value as outline and shadow",
+    "checker dither for in-between values",
+    "small fixed 160x144-style frame"
+  ],
+  "feel": "four greens + value-first shapes + fixed tiny screen = nostalgic, instantly readable",
+  "for_fred": "Check Fred and Pixie in 4 values only: if they do not read, fix shape before colour. In a reel, a palette-swap to Game Boy greens is a cheap 'flashback' or 'retro' beat; keep Fred in the darkest/lightest pair so he stays the hero.",
+  "sources": [
+    "https://lospec.com/palette-list/nintendo-gameboy-bgb",
+    "https://en.wikipedia.org/wiki/Game_Boy",
+    "data/study/pixel/work/game-boy/clip1-7525972122347244805.jpg",
+    "data/study/pixel/work/game-boy/clip2-7670108147184422164.jpg",
+    "data/study/pixel/work/game-boy/clip3-7295890812150484270.jpg",
+    "studies/pixel-art/sources.yaml"
+  ]
+}

@@ -1,0 +1,257 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a3_pattern_cards",
+  "annotator": "claude-code",
+  "skill": "write-archetype-cards@a75a12f0ca91",
+  "model": null,
+  "input_hash": "37079ed8f9cf667ac81974debc1e5043a98fc86e9a27301d2daf6805e7f652da",
+  "created_at": "2026-10-05T19:10:25.794925Z"
+ },
+ "id": "kinetic_statement_card",
+ "name": "Kinetic Statement Card",
+ "summary": "A short headline builds word by word on a clean background, sometimes with one word or chip that cycles through options or a small icon that supports it. The scene states one idea loudly between demos: the hook, the problem, the mechanism or the outcome.",
+ "when_to_use": [
+  "To open the video or a new section with one clear claim.",
+  "To name a problem or a payoff in words before showing it in the product.",
+  "When a list of things the product covers can be shown as one phrase with a cycling slot."
+ ],
+ "slots": [
+  {"name": "headline", "what": "one short claim, one or two lines", "required": true},
+  {"name": "emphasis_word", "what": "the word that gets an underline, colour or weight change", "required": false},
+  {"name": "cycling_options", "what": "a short list of words or chips that swap in one slot of the phrase", "required": false},
+  {"name": "support_visual", "what": "a small icon, logo or illustration that pops in near the text", "required": false},
+  {"name": "background", "what": "a plain light or dark field, optionally with soft drifting shapes", "required": true}
+ ],
+ "steps": [
+  "Start on the empty background, with motion beginning almost immediately.",
+  "The headline reveals word by word or line by line from a mask.",
+  "An emphasis touch lands: an underline draws on or one word changes colour.",
+  "Optionally a slot in the phrase cycles through options, or icons pop in beside the text.",
+  "The text resolves to its final state and holds briefly.",
+  "The card clears or reframes to make room for the next scene."
+ ],
+ "patterns": [
+  "kinetic_word_reveal",
+  "input_text_cycle",
+  "layout_reframe",
+  "logo_resolve",
+  "masked_scroll",
+  "stagger_list_reveal",
+  "chip_append"
+ ],
+ "build": {
+  "gsap": "One timeline per card: split the headline into words and tween each from a masked offset or low opacity with a short stagger and an expo or power ease-out; draw any underline with a stroke-dashoffset tween; for a cycling slot, chain y and blur tweens that swap the label on the beat; finish with a scale and translate tween on the text group to clear or reframe.",
+  "remotion": "A Sequence per card; each word's opacity and translate come from a spring offset by its index times a small frame delay; a cycling chip uses child Sequences per option with a spring slide in and out; a closing interpolate on scale and position hands off to the next scene."
+ },
+ "sound": "Often an unlabelled or reverse-swoosh hit as the text builds, with a soft impact on the key word and music carrying the rest; chimes appear in a few videos. No single dependable cue.",
+ "numbers": {
+  "id": "kinetic_statement_card",
+  "shots": 66,
+  "videos": 21,
+  "weight": 35.6,
+  "duration_s": {
+   "n": 66,
+   "videos": 21,
+   "weight": 35.6,
+   "median": 3.234,
+   "p25": 1.673,
+   "p75": 4.593,
+   "ci": [
+    2.836,
+    3.57
+   ]
+  },
+  "events_per_shot": {
+   "n": 66,
+   "videos": 21,
+   "weight": 35.6,
+   "median": 0.0,
+   "p25": 0.0,
+   "p75": 1.0,
+   "ci": [
+    0.0,
+    0.0
+   ]
+  },
+  "first_motion_s": {
+   "n": 14,
+   "videos": 7,
+   "weight": 11.4,
+   "median": 0.297,
+   "p25": 0.046,
+   "p75": 1.399,
+   "ci": [
+    0.1,
+    1.283
+   ]
+  },
+  "pattern_mix": {
+   "kinetic_word_reveal": 0.3475,
+   "input_text_cycle": 0.1418,
+   "other": 0.1418,
+   "layout_reframe": 0.0851,
+   "logo_resolve": 0.0851,
+   "masked_scroll": 0.0851,
+   "chip_append": 0.0284,
+   "cursor_guided_demo": 0.0284,
+   "parallax_layers": 0.0284,
+   "stagger_list_reveal": 0.0284
+  },
+  "transition_mix": {
+   "hard_cut": 0.4101,
+   "other": 0.3539,
+   "zoom_through": 0.1573,
+   "crossfade": 0.0337,
+   "push": 0.0225,
+   "blur": 0.0112,
+   "mask_wipe": 0.0112
+  },
+  "shot_type_mix": {
+   "kinetic_type": 0.8652,
+   "abstract": 0.0674,
+   "other": 0.0506,
+   "footage": 0.0084,
+   "ui_full": 0.0084
+  },
+  "beat_mix": {
+   "outcome": 0.1927,
+   "mechanism": 0.1875,
+   "hook": 0.1693,
+   "problem": 0.1432,
+   "demo": 0.1146,
+   "agitate": 0.0885,
+   "cta": 0.0729,
+   "proof": 0.0313
+  },
+  "sfx_label_mix": {
+   "unsure": 0.4862,
+   "swoosh_reverse": 0.1422,
+   "chime": 0.1376,
+   "music": 0.1307,
+   "impact": 0.1032
+  },
+  "sfx_offset_s_by_label": {
+   "chime": {
+    "n": 20,
+    "videos": 4,
+    "weight": 12.0,
+    "median": 3.461,
+    "p25": 1.779,
+    "p75": 5.84,
+    "ci": [
+     2.719,
+     5.672
+    ]
+   },
+   "impact": {
+    "n": 17,
+    "videos": 12,
+    "weight": 9.0,
+    "median": 1.483,
+    "p25": 0.305,
+    "p75": 3.277,
+    "ci": [
+     0.393,
+     3.253
+    ]
+   },
+   "music": {
+    "n": 22,
+    "videos": 10,
+    "weight": 11.4,
+    "median": 0.727,
+    "p25": 0.421,
+    "p75": 3.261,
+    "ci": [
+     0.525,
+     2.806
+    ]
+   },
+   "swoosh_reverse": {
+    "n": 26,
+    "videos": 7,
+    "weight": 12.4,
+    "median": 1.652,
+    "p25": 1.082,
+    "p75": 3.39,
+    "ci": [
+     1.286,
+     2.356
+    ]
+   },
+   "unsure": {
+    "n": 73,
+    "videos": 13,
+    "weight": 42.4,
+    "median": 2.111,
+    "p25": 0.961,
+    "p75": 5.352,
+    "ci": [
+     1.434,
+     2.488
+    ]
+   }
+  },
+  "examples": [
+   {
+    "video": "attio-introducing-ask-attio",
+    "shot": "s003",
+    "score": 4.0
+   },
+   {
+    "video": "notion-introducing-the-new-notion-ai",
+    "shot": "s003",
+    "score": 4.0
+   },
+   {
+    "video": "notion-introducing-notion-ai-connectors",
+    "shot": "s004",
+    "score": 4.0
+   },
+   {
+    "video": "meta-introducing-meta-quest-3-coming-this-f",
+    "shot": "s016",
+    "score": 5.0
+   },
+   {
+    "video": "loom-introducing-loom-ai",
+    "shot": "s001",
+    "score": 4.0
+   }
+  ]
+ },
+ "examples": [
+  {
+   "video": "meta-introducing-meta-quest-3-coming-this-f",
+   "shot": "s016",
+   "score": 5.0
+  },
+  {
+   "video": "notion-introducing-the-new-notion-ai",
+   "shot": "s003",
+   "score": 4.0
+  },
+  {
+   "video": "attio-introducing-ask-attio",
+   "shot": "s003",
+   "score": 4.0
+  },
+  {
+   "video": "notion-introducing-notion-ai-connectors",
+   "shot": "s004",
+   "score": 4.0
+  },
+  {
+   "video": "loom-introducing-loom-ai",
+   "shot": "s001",
+   "score": 4.0
+  }
+ ],
+ "caveats": [
+  "First-motion timing comes from a minority of shots and videos.",
+  "Some members run several type cards and even a short UI moment inside one shot, so the mix is broad.",
+  "Nearly half of sound cues are unlabelled, so SFX timing is weak."
+ ]
+}

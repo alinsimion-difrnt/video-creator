@@ -1,0 +1,75 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "351609f4c9e255b2749f2cc8d99396496702ecf985900f3d27a41aaf13c54044",
+    "created_at": "2026-10-05T06:47:02.417983Z"
+  },
+  "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+  "event": "e033",
+  "task": "a2-e033",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Video tile collage (kayak, suitcase, parcel hand-off, AI game character)",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["slide_up", "other"],
+      "change_other": "continuous slow drift of the tile group plus live video playback inside each tile",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 2000, "easing_class": "linear"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Purchase confirmed status pill",
+      "role": "notification",
+      "role_other": null,
+      "change_types": ["color_shift"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Purchase confirmed",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "SDK language icon column (Python, JS, React, Swift)",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 2000, "easing_class": "linear"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x057", "verdict": "unsure", "label": "unsure", "note": "No distinct transient at 95.89s; spectrogram shows only the continuous music bed, before the visual burst."},
+    {"id": "x058", "verdict": "confirm", "label": "music", "note": "Sustained harmonic bands of the music bed; no visual change aligned."}
+  ],
+  "pattern": {
+    "id": "parallax_layers",
+    "proposed_name": null,
+    "description": "A collage of rounded video tiles and an SDK icon column drifts slowly upward while the 'Purchase confirmed' pill holds its position in front with a soft gradient glow shifting on its border.",
+    "why_premium": "The constant low-speed drift keeps a dense collage alive without competing with the narration, and the foreground pill staying put against the moving back layer gives depth and a clear focal anchor."
+  },
+  "build_hint": {
+    "gsap": "Collage group: gsap.to('.collage', {y: '-=12', duration: 4, ease: 'none'}) as a continuous drift, icons inside the same group; pill on a separate layer: gsap.to('.pill-glow', {backgroundPosition: '100% 0', duration: 1.2, ease: 'sine.inOut', repeat: -1, yoyo: true}). Videos autoplay in tiles.",
+    "remotion": "translateY = interpolate(frame, [0, 120], [0, -12], {extrapolateRight: 'extend'}) on the collage container (linear); pill glow gradient angle interpolated with Easing.inOut(Easing.sin); <OffthreadVideo> in each tile."
+  },
+  "confidence": "low",
+  "notes": "Very low-energy burst (100 ms); motion is a subtle drift plus in-tile video playback. Camera verdict none, so the small pan_y is content drift, not a camera move. Pill change is a faint border glow shift and may be compression noise."
+}

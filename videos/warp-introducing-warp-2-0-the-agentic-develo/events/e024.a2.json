@@ -1,0 +1,61 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "cadaac60d34fa9448d96891724457d93b3473a6e34fe4af857193c8ce5f1a499",
+    "created_at": "2026-10-05T06:52:29.061040Z"
+  },
+  "video": "warp-introducing-warp-2-0-the-agentic-develo",
+  "event": "e024",
+  "task": "a2-e024",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Tweet card header (avatar, name, handle, first line)",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "rapid hard-cut swap between different tweet screenshots every 2-3 frames",
+      "is_text": true,
+      "text": "Hardik Pithva @hardikpthv · May 10, 2 Did you try @warpdotdev? I just love it!",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 80, "easing_class": "step"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Tweet body paragraph",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "swapped in with the tweet card on each hard cut",
+      "is_text": true,
+      "text": "Super #easy and #fast to #share CLI #out much more. Thanks @psybercity for recom",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 80, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x053", "verdict": "unsure", "label": "unsure", "note": "184 ms before the montage cycle starts; decaying low-band onset that looks like a music bass/kick hit rather than a reverse swoosh. Also reviewed in e023."},
+    {"id": "x054", "verdict": "unsure", "label": "unsure", "note": "1.6 s after the event, at the spectrogram edge; CLAP says music, plausibly a music onset, but not verifiable here."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "social proof flash montage",
+    "description": "About ten cropped user tweets hard-cut every 2-3 frames over roughly one second and settle on one tweet; the same sequence repeats from e022 and e023.",
+    "why_premium": "Runs under 'half million active developers' so the stream of real testimonials visualises scale; locked camera, dark theme and tight crops keep the strobe cut rate cohesive."
+  },
+  "build_hint": {
+    "gsap": "Timeline of N tweet layers: tl.set(layers[i], {autoAlpha: 1}, i * 0.083).set(layers[i - 1], {autoAlpha: 0}, i * 0.083), no tween easing (step cuts); last tweet holds; repeat the timeline for each beat.",
+    "remotion": "<Series> of <Series.Sequence durationInFrames={2}> tweet frames at 24 fps (some 3 frames), final Sequence holds; wrap in a <Loop> if reused per beat."
+  },
+  "confidence": "medium",
+  "notes": "Third occurrence of the identical tweet montage (e022, e023, e024) about 1.5 s apart, each ending on the same tweet; may be a deliberate repeated loop or a detection artefact. Camera move none here, unlike e022/e023."
+}

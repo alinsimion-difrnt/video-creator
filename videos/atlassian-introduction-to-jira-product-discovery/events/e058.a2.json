@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "2e92f5b4a1109b2ca16028a98079fe00de44daf554975d552ce32994b85cda7e",
+    "created_at": "2026-10-05T06:38:30.901090Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e058",
+  "task": "a2-e058",
+  "elements": [
+    {"box": "b06", "manual_box": null, "manual_reason": null, "label": "Delighter bucket chip (emoji icon appears, label shifts right)",
+     "role": "label", "role_other": null, "change_types": ["pop", "slide_right"], "change_other": null,
+     "is_text": true, "text": "Delighter", "text_unit": "whole",
+     "estimates": {"duration_ms": 70, "easing_class": "step"}},
+    {"box": "b05", "manual_box": null, "manual_reason": null, "label": "Customer request chip, TS-2 Enterprise row",
+     "role": "label", "role_other": null, "change_types": ["pop", "slide_right"], "change_other": null,
+     "is_text": true, "text": "Customer requ", "text_unit": "whole",
+     "estimates": {"duration_ms": 70, "easing_class": "step"}},
+    {"box": "b04", "manual_box": null, "manual_reason": null, "label": "Customer request chip, TS-3 Enterprise row",
+     "role": "label", "role_other": null, "change_types": ["pop", "slide_right"], "change_other": null,
+     "is_text": true, "text": "Customer requ", "text_unit": "whole",
+     "estimates": {"duration_ms": 70, "easing_class": "step"}},
+    {"box": "b03", "manual_box": null, "manual_reason": null, "label": "Customer request chip, TS-2 Legacy row",
+     "role": "label", "role_other": null, "change_types": ["pop", "slide_right"], "change_other": null,
+     "is_text": true, "text": "Customer requ", "text_unit": "whole",
+     "estimates": {"duration_ms": 70, "easing_class": "step"}},
+    {"box": "b02", "manual_box": null, "manual_reason": null, "label": "Metric mover chip, TS-4 Legacy row",
+     "role": "label", "role_other": null, "change_types": ["pop", "slide_right"], "change_other": null,
+     "is_text": true, "text": "Metric mover", "text_unit": "whole",
+     "estimates": {"duration_ms": 70, "easing_class": "step"}},
+    {"box": "b08", "manual_box": null, "manual_reason": null, "label": "Mouse cursor moving up from Bucket column toward Fields",
+     "role": "cursor", "role_other": null, "change_types": ["slide_up"], "change_other": null,
+     "is_text": false, "text": null, "text_unit": null,
+     "estimates": {"duration_ms": 300, "easing_class": "ease_in_out"}},
+    {"box": "b10", "manual_box": null, "manual_reason": null, "label": "Fields toolbar button hover state",
+     "role": "button", "role_other": null, "change_types": ["highlight"], "change_other": null,
+     "is_text": true, "text": "Fields", "text_unit": "whole",
+     "estimates": {"duration_ms": 100, "easing_class": "step"}}
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "chip_append",
+    "proposed_name": null,
+    "description": "In a grouped Jira Product Discovery list, emoji icons pop into the Bucket column chips (Delighter, Customer request, Metric mover), nudging their labels right, while the cursor drifts up to the Fields toolbar button and briefly hovers it.",
+    "why_premium": "Every chip in the column gains its icon on the same frame, so the column reads as one consistent, finished state change rather than a jittery load; the cursor then leads the eye to the next control without a cut."
+  },
+  "build_hint": {
+    "gsap": "Set the chip icons with gsap.fromTo('.bucket-chip .icon', {scale: 0, autoAlpha: 0}, {scale: 1, autoAlpha: 1, duration: 0.15, ease: 'back.out(1.6)', stagger: 0.02}) together with gsap.fromTo('.bucket-chip .label', {x: -8}, {x: 0, duration: 0.15, ease: 'power2.out', stagger: 0.02}); then move the cursor with gsap.to('.cursor', {x: fieldsX, y: fieldsY, duration: 0.35, ease: 'power2.inOut'}) and toggle the Fields hover class on arrival.",
+    "remotion": "Per chip i, const s = spring({frame: frame - i, fps, config: {damping: 14, stiffness: 220, mass: 0.6}}); icon scale = s, label translateX = interpolate(s, [0, 1], [-8, 0]). Cursor position = interpolate(frame, [start, start + 10], [chipPos, fieldsPos], {easing: Easing.inOut(Easing.cubic)}); Fields background toggles when the cursor overlaps it."
+  },
+  "confidence": "low",
+  "notes": "The icon change happens on a single frame (f3305 to f3306) and is likely the screen recording catching emoji images loading, not a designed animation. Second energy peak (~f3316-3318) is row hover highlights (TS-9, TS-4 drag handle) and the cursor; row hovers have no candidate box and are transient, so they are not listed. Pattern could equally be read as cursor_guided_demo. No SFX candidates."
+}

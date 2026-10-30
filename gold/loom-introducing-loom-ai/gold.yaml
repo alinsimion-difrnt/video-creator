@@ -1,0 +1,375 @@
+provenance:
+  schema_version: 1
+  tool_version: 0.1.0
+  stage: g2_gold
+  annotator: human
+  skill: null
+  model: null
+  input_hash: de8aa5f17d78ea514c034f9e1adb263472646592594b0f9b451d69ee193a0161
+  created_at: '2026-10-05T10:59:21.135141Z'
+video: loom-introducing-loom-ai
+watch_url: https://www.youtube.com/watch?v=apqd3aEMnuY
+shots:
+- shot: s001
+  start_s: 0.0
+  end_s: 11.2667
+  shot_type: other
+  composition: centered
+  transition_in: other
+  depth_cues:
+  - blur
+  - glow
+  - shadow
+  - parallax
+  status: pending
+  note: null
+- shot: s002
+  start_s: 11.2667
+  end_s: 15.0667
+  shot_type: ui_recreated
+  composition: stacked
+  transition_in: other
+  depth_cues:
+  - blur
+  - glow
+  status: pending
+  note: null
+- shot: s003
+  start_s: 15.0667
+  end_s: 17.2333
+  shot_type: ui_recreated
+  composition: centered
+  transition_in: other
+  depth_cues:
+  - blur
+  - glow
+  - shadow
+  status: pending
+  note: null
+- shot: s004
+  start_s: 17.2333
+  end_s: 20.4
+  shot_type: ui_recreated
+  composition: stacked
+  transition_in: other
+  depth_cues:
+  - blur
+  - glow
+  status: pending
+  note: null
+- shot: s005
+  start_s: 20.4
+  end_s: 26.7667
+  shot_type: ui_recreated
+  composition: centered
+  transition_in: other
+  depth_cues:
+  - blur
+  - glow
+  - shadow
+  status: pending
+  note: null
+- shot: s006
+  start_s: 26.7667
+  end_s: 30.7667
+  shot_type: ui_recreated
+  composition: split
+  transition_in: other
+  depth_cues:
+  - blur
+  - glow
+  - shadow
+  status: pending
+  note: null
+- shot: s007
+  start_s: 30.7667
+  end_s: 31.3667
+  shot_type: ui_recreated
+  composition: other
+  transition_in: other
+  depth_cues:
+  - glow
+  - shadow
+  status: pending
+  note: null
+- shot: s008
+  start_s: 31.3667
+  end_s: 34.4
+  shot_type: kinetic_type
+  composition: centered
+  transition_in: other
+  depth_cues:
+  - blur
+  - glow
+  - parallax
+  status: pending
+  note: null
+- shot: s009
+  start_s: 34.4
+  end_s: 47.0
+  shot_type: other
+  composition: centered
+  transition_in: other
+  depth_cues:
+  - blur
+  - glow
+  - parallax
+  status: pending
+  note: null
+events:
+- event: e001
+  shot: s001
+  start_s: 1.2333
+  end_s: 2.0667
+  elements:
+  - id: b05
+    label: Title line 'Introducing Loom AI'
+    role: headline
+    change_types:
+    - fade
+    - scale_up
+    moves: true
+  - id: b08
+    label: Four-point AI sparkle
+    role: icon
+    change_types:
+    - slide_right
+    - scale_down
+    moves: true
+  - id: b02
+    label: Large gradient sphere, left
+    role: background
+    change_types:
+    - slide_left
+    - scale_up
+    moves: true
+  - id: b03
+    label: Large gradient sphere, right
+    role: background
+    change_types:
+    - slide_right
+    - scale_up
+    moves: true
+  - id: b06
+    label: Blurred gradient sphere, top
+    role: background
+    change_types:
+    - slide_up
+    - blur_in
+    moves: true
+  - id: b07
+    label: Small gradient sphere, left
+    role: background
+    change_types:
+    - slide_left
+    moves: true
+  missed: []
+  pattern: kinetic_word_reveal
+  sfx:
+  - id: x003
+    sync_s: 0.9335
+    label: unsure
+  - id: x004
+    sync_s: 1.3316
+    label: unsure
+  - id: x005
+    sync_s: 1.5315
+    label: unsure
+  - id: x006
+    sync_s: 2.1383
+    label: unsure
+  - id: x007
+    sync_s: 2.4497
+    label: unsure
+  status: pending
+  note: null
+- event: e002
+  shot: s001
+  start_s: 6.2667
+  end_s: 6.8667
+  elements:
+  - id: b02
+    label: Gradient orb that becomes the circular presenter video bubble
+    role: avatar
+    change_types:
+    - slide_up
+    - scale_up
+    - morph
+    - mask_reveal
+    moves: true
+  - id: m02
+    label: Headline 'Record better, faster video messages'
+    role: headline
+    change_types:
+    - fade
+    moves: true
+  - id: b09
+    label: Red record/stop button badge
+    role: button
+    change_types:
+    - pop
+    moves: true
+  - id: b03
+    label: Blurred gradient sphere, lower left
+    role: background
+    change_types:
+    - slide_up
+    - blur_in
+    moves: true
+  - id: b04
+    label: Gradient sphere, top right
+    role: background
+    change_types:
+    - slide_up
+    moves: true
+  - id: b08
+    label: Small sphere, upper left
+    role: background
+    change_types:
+    - slide_up
+    moves: true
+  - id: b07
+    label: Sphere entering, bottom right
+    role: background
+    change_types:
+    - slide_up
+    moves: true
+  missed: []
+  pattern: other
+  sfx:
+  - id: x013
+    sync_s: 5.6717
+    label: unsure
+  - id: x014
+    sync_s: 5.896
+    label: unsure
+  - id: x015
+    sync_s: 6.4796
+    label: unsure
+  - id: x016
+    sync_s: 7.2198
+    label: unsure
+  status: pending
+  note: null
+- event: e003
+  shot: s001
+  start_s: 9.1667
+  end_s: 9.7
+  elements:
+  - id: b02
+    label: Shared video player card ('Market Trends' recording with play button)
+    role: ui_panel
+    change_types:
+    - fade
+    - scale_up
+    - slide_up
+    moves: true
+  - id: m02
+    label: Presenter camera bubble shrinking into the player corner
+    role: avatar
+    change_types:
+    - scale_down
+    - slide_down
+    - slide_right
+    moves: true
+  - id: m03
+    label: Red stop-recording button
+    role: button
+    change_types:
+    - scale_down
+    - fade
+    moves: true
+  - id: m04
+    label: Hand cursor clicking stop, then exiting right
+    role: cursor
+    change_types:
+    - slide_right
+    - slide_up
+    moves: true
+  - id: b09
+    label: Video title being typed ('Wi...')
+    role: headline
+    change_types:
+    - typewriter
+    moves: true
+  - id: b10
+    label: Author byline 'Deja Harris · 1 minute ago'
+    role: label
+    change_types:
+    - fade
+    moves: true
+  - id: b03
+    label: Blurred sphere, left
+    role: background
+    change_types:
+    - slide_up
+    moves: true
+  - id: b04
+    label: Sphere, lower right
+    role: background
+    change_types:
+    - slide_up
+    moves: true
+  missed: []
+  pattern: cursor_guided_demo
+  sfx:
+  - id: x020
+    sync_s: 8.8183
+    label: unsure
+  - id: x021
+    sync_s: 9.0538
+    label: unsure
+  - id: x022
+    sync_s: 9.6443
+    label: unsure
+  status: pending
+  note: null
+- event: e004
+  shot: s009
+  start_s: 34.9
+  end_s: 35.7333
+  elements:
+  - id: m01
+    label: Multilingual greeting bubbles ('Hallo!', 'Bonjour', 'Hey!', 'Привет!')
+    role: other
+    change_types:
+    - slide_up
+    - blur_out
+    moves: true
+  - id: b09
+    label: Headline line 1 'With Loom AI,'
+    role: headline
+    change_types:
+    - fade
+    - slide_up
+    moves: true
+  - id: b06
+    label: Headline line 2 'make your first take' (dimmed)
+    role: headline
+    change_types:
+    - fade
+    - slide_up
+    moves: true
+  - id: b02
+    label: Large gradient sphere, left
+    role: background
+    change_types:
+    - slide_up
+    moves: true
+  - id: b03
+    label: Large gradient sphere, right
+    role: background
+    change_types:
+    - slide_up
+    moves: true
+  - id: b07
+    label: Blurred sphere, top centre
+    role: background
+    change_types:
+    - slide_up
+    moves: true
+  missed: []
+  pattern: whip_transition
+  sfx: []
+  status: pending
+  note: null

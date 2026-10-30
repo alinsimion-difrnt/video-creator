@@ -1,0 +1,51 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "c6c432c2e269e4405b856891f4227fc2c4c73ad478ac16336f3511f1a1a8ca05",
+    "created_at": "2026-10-05T06:47:26.391314Z"
+  },
+  "video": "notion-introducing-the-new-notion-ai",
+  "event": "e015",
+  "task": "a2-e015",
+  "elements": [
+    {"box": "b04", "manual_box": null, "manual_reason": null, "label": "Headline line 1", "role": "headline",
+     "role_other": null, "change_types": ["mask_reveal", "slide_up"], "change_other": null, "is_text": true,
+     "text": "Find answers", "text_unit": "line", "estimates": {"duration_ms": 350, "easing_class": "ease_out"}},
+    {"box": "b02", "manual_box": null, "manual_reason": null, "label": "Headline line 2", "role": "headline",
+     "role_other": null, "change_types": ["mask_reveal", "slide_up"], "change_other": null, "is_text": true,
+     "text": "from all your apps", "text_unit": "line", "estimates": {"duration_ms": 350, "easing_class": "ease_out"}},
+    {"box": "b14", "manual_box": null, "manual_reason": null, "label": "Notion logo", "role": "logo",
+     "role_other": null, "change_types": ["scale_down", "slide_down"], "change_other": null, "is_text": false,
+     "text": null, "text_unit": null, "estimates": {"duration_ms": 400, "easing_class": "ease_in_out"}},
+    {"box": "b13", "manual_box": null, "manual_reason": null, "label": "Slack logo", "role": "logo",
+     "role_other": null, "change_types": ["scale_down", "slide_down"], "change_other": null, "is_text": false,
+     "text": null, "text_unit": null, "estimates": {"duration_ms": 400, "easing_class": "ease_in_out"}},
+    {"box": "b11", "manual_box": null, "manual_reason": null, "label": "Google Docs icon", "role": "logo",
+     "role_other": null, "change_types": ["scale_down", "slide_down"], "change_other": null, "is_text": false,
+     "text": null, "text_unit": null, "estimates": {"duration_ms": 400, "easing_class": "ease_in_out"}},
+    {"box": "b10", "manual_box": null, "manual_reason": null, "label": "Google Slides icon", "role": "logo",
+     "role_other": null, "change_types": ["scale_down", "slide_down"], "change_other": null, "is_text": false,
+     "text": null, "text_unit": null, "estimates": {"duration_ms": 400, "easing_class": "ease_in_out"}},
+    {"box": "b12", "manual_box": null, "manual_reason": null, "label": "Google Sheets icon", "role": "logo",
+     "role_other": null, "change_types": ["scale_down", "slide_down"], "change_other": null, "is_text": false,
+     "text": null, "text_unit": null, "estimates": {"duration_ms": 400, "easing_class": "ease_in_out"}}
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "layout_reframe",
+    "proposed_name": null,
+    "description": "The full-size row of five app logos shrinks and drops below centre, converging inward, while a two-line headline rises into the freed space above it through a line mask.",
+    "why_premium": "The logos are kept and re-laid out as a supporting row rather than cut away, so the headline inherits context from the previous beat; scale-down and text reveal share one move, keeping continuity without a transition."
+  },
+  "build_hint": {
+    "gsap": "const tl = gsap.timeline(); tl.to('.logo-row', {scale: 0.45, y: 110, duration: 0.4, ease: 'power2.inOut'}) .fromTo('.headline .line', {yPercent: 100}, {yPercent: 0, duration: 0.35, ease: 'power3.out', stagger: 0.04}, '<0.1'); lines sit in overflow:hidden wrappers.",
+    "remotion": "const p = spring({frame, fps, config: {damping: 200, stiffness: 140}}); logo row transform: scale(interpolate(p,[0,1],[1,0.45])) translateY(interpolate(p,[0,1],[0,110])); each headline line i: translateY(interpolate(spring({frame: frame - 3 - i*2, fps, config: {damping: 200}}),[0,1],[100,0]) + '%') inside overflow:hidden."
+  },
+  "confidence": "medium",
+  "notes": "Frame 259 shows the headline lines partly clipped, suggesting a per-line mask reveal; could also be a plain fade+slide. b01/b03/b05/b07/b09 are word/region fragments of the headline; b06/b08 are vacated old logo positions; b15 is an OCR fragment inside Sheets icon."
+}

@@ -1,0 +1,163 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "fb70fd049ff796bcf507f7229bb9e558853fa13309cde7ee4d1cc6815d7cf628",
+    "created_at": "2026-10-05T06:26:51.989748Z"
+  },
+  "video": "fullstory-behavioral-data-made-simple-by-fullstory",
+  "task": "a1-p5",
+  "shots": [
+    {
+      "shot": "s017",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "A glass-framed browser mockup of the fictional TreadWave store showing the order confirmation 'THANK YOU, ALEX!' on a vivid pink/purple/orange/green gradient",
+      "transition_in": "other",
+      "transition_other": "Pull-back from the s016 card close-up: the browser frame arrives perspective-tilted and motion-blurred, then swings flat and sharpens (no visible cut at 2 fps)",
+      "on_screen_text": [
+        "TreadWave",
+        "treadwave.com/successfulpurchase",
+        "TREADWAVE",
+        "THANK YOU, ALEX!",
+        "Your purchase was successful! Check your email for an order confirmation.",
+        "Track Shipment",
+        "Back to Shopping"
+      ],
+      "text_word_count": 22,
+      "typography": "Confirmation headline in a bold all-caps condensed rounded display face with slightly quirky letterforms (the 'Y'); body line in a light mixed-case sans of the same family; buttons in small medium-weight title case inside pill shapes (one outlined, one filled dark); store wordmark two-weight caps (bold 'TREAD', light 'WAVE'); browser chrome in small system sans.",
+      "depth_cues": [
+        "perspective_tilt",
+        "blur",
+        "shadow"
+      ],
+      "what_happens": "The browser frame enters tilted in 3D and heavily motion-blurred (a blurred element with a purple shape at the right edge, probably the heart mascot leaving, low confidence), swings flat by 126.5 s while briefly showing the Athena 1 product page in a washed-out state, then switches to the successful-purchase page with a confetti-popper icon and 'THANK YOU, ALEX!' that holds from about 127 s to the end while the VO says 'Now, your business can move closer to your customers' (w302-w310), closing the Alex/Sam story with the happy outcome.",
+      "build_rebuild": "Over the animated multi-stop gradient, rotate the glass-framed browser card from rotateY(~25deg) with blur(10px) to flat and sharp over ~0.6 s, crossfade its inner screenshot from the product page to a confirmation page (icon, all-caps headline, one sentence, two pill buttons) and hold for ~2 s.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s018",
+      "shot_type": "logo",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The fullstory wordmark with its sunburst mark, centred on white with three soft blurred colour blobs, above the line 'Schedule a demo' (later 'fullstory.com')",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "THANK YOU, ALEX!",
+        "fullstory",
+        "Schedule a demo",
+        "fullstory.com"
+      ],
+      "text_word_count": 8,
+      "typography": "Lowercase brand wordmark in a heavy geometric sans with the sunburst symbol to its left; subline 'Schedule a demo' and then 'fullstory.com' in a small medium-weight geometric sans, sentence case, normal tracking. The 'THANK YOU, ALEX!' headline is only visible motion-blurred during the zoom-through.",
+      "depth_cues": [
+        "blur"
+      ],
+      "what_happens": "The camera zooms through the confirmation page into the confetti-popper icon (headline smears with zoom blur), the popper becomes a large dark outline cone on white, a short line pops and a burst of dots in the four brand colours sprays out of it (130-131 s, over w311-w314 'and closer to success'), the dots trail off to the right while the fullstory logo blurs in and settles centred by 132 s with 'Schedule a demo' beneath as soft red, green and orange blobs drift in the corners (w315-w321 'Schedule a demo today to learn more'); around 134 s the subline swaps to 'fullstory.com' and holds to the end. Anchors list 2 events.",
+      "build_rebuild": "Scale the previous page about 6x into the popper icon with radial zoom blur, swap to a large SVG outline cone on white, emit ~30 coloured circles from its mouth with randomised velocities and gravity, then fade/deblur the centred wordmark in over ~0.5 s with a small subline beneath, add three large blurred radial-gradient blobs drifting slowly at the corners, and crossfade the subline text from the CTA to the URL after ~2 s.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001"], "words": [0, 9]},
+      {"beat": "problem", "shots": ["s002", "s003", "s004", "s005"], "words": [10, 57]},
+      {"beat": "agitate", "shots": ["s005", "s006"], "words": [58, 97]},
+      {"beat": "mechanism", "shots": ["s006"], "words": [98, 123]},
+      {"beat": "proof", "shots": ["s006"], "words": [124, 131]},
+      {"beat": "demo", "shots": ["s007", "s008", "s009", "s010", "s011", "s012"], "words": [132, 219]},
+      {"beat": "outcome", "shots": ["s013", "s014", "s015", "s016", "s017"], "words": [220, 314]},
+      {"beat": "cta", "shots": ["s018"], "words": [315, 321]}
+    ],
+    "hook": {
+      "text": "Access to customer behavioral data is transforming today's digital experiences.",
+      "technique": "bold_claim",
+      "technique_other": null,
+      "shots": ["s001"],
+      "words": [0, 9]
+    },
+    "cta": {
+      "text": "Schedule a demo today to learn more.",
+      "shots": ["s018"]
+    },
+    "tone": "Warm, optimistic and playful: a relatable two-shopper story (Alex converts, Sam gives up) told with live-action cut-outs, recreated storefront UI and a confetti-like four-colour dot motif, resolving into confident benefit-led product claims.",
+    "signature_moments": [
+      {
+        "shots": ["s005"],
+        "description": "Live-action shoppers sit beneath a large recreated store UI; a blurred glow halo behind each person shifts to a success tone when Alex checks out and to an alarm tone when Sam hits the availability error.",
+        "why_premium": "Turns an abstract metric (conversion vs abandonment) into an emotional, instantly readable cue that carries the story without any added text, and the mixed-media compositing looks bespoke rather than templated."
+      },
+      {
+        "shots": ["s006"],
+        "description": "Under 'Manual Tagging' only the bold verbs are legible while the rest is blurred; the header rolls to 'True Behavior', the text sharpens and colour highlights sweep the sentences, then dissolve into the falling dots that become the video's visual language.",
+        "why_premium": "Demonstrates the product's core differentiator (seeing everything between the clicks) as a single visual metaphor, and the hand-off from highlights to particles ties the whole film's motion system together."
+      },
+      {
+        "shots": ["s010", "s011", "s012"],
+        "description": "Captured sessions zoom into a full-frame dot field that sorts itself into labelled sentiment bands (Delight, Engagement, Trepidation, Rage), and the orange stream then flows node by node through a journey map, resolving skeleton cards into a 'Dead Click Add to Cart' insight.",
+        "why_premium": "Continuous particle choreography across shots (no hard cuts) makes data processing feel physical and intelligent, a level of custom simulation work most SaaS explainers do not attempt."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 3,
+        "evidence": "Opens on a broad category claim (w0-w9) with a doodled kinetic headline; well crafted but generic, and the real tension (two shoppers, different outcomes) only arrives at s002-s005 and the question at w58-w65.",
+        "refs": ["s001", "w0", "w9", "s005", "w58"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "Clear problem-to-solution arc built on one concrete story (Alex vs Sam) that returns as payoff (w290-w292, s017); the middle outcome stretch (s014) compresses many abstract benefits into a fast list and is harder to follow.",
+        "refs": ["s005", "s006", "s014", "s017", "w290"]
+      },
+      "ui_showcase": {
+        "score": 4,
+        "evidence": "Product is shown as simplified recreations (replay player, live event log, sentiment bands, journey map, metric cards, Slack hand-off) that map each feature to the story; real product UI is never shown in detail and in-UI labels are small.",
+        "refs": ["s007", "s009", "s012", "s014", "s015"]
+      },
+      "motion_polish": {
+        "score": 4,
+        "evidence": "Consistent motion system: zoom-through transitions, 3D tilts of a glass frame, blur-to-sharp reveals and a four-colour dot swarm that links nearly every shot; at 2 fps easing cannot be verified, and a few transitions are long continuous transforms rather than crisp cuts.",
+        "refs": ["s006", "s010", "s013", "s016", "s018"]
+      },
+      "sound_design": {
+        "score": 3,
+        "evidence": "Judged from anchors plus visuals: a music bed at about 112 BPM with dense detected SFX (130 candidates in 135.7 s, mostly swoosh_reverse/impact/unsure) that cluster around transitions and particle moments; integrated loudness is quiet at -22.4 LUFS. Competent support, but many detections are low-confidence and none stands out as a signature sound.",
+        "refs": ["s006", "s014", "s018"]
+      },
+      "vo_script_quality": {
+        "score": 4,
+        "evidence": "Story-led script with a named-character question (w58-w65) and a callback payoff (w290-w301); clear pain framing (w88-w97). Weaker spots: jargon-dense benefit lists (w257-w273) and generic proof without names (w124-w131).",
+        "refs": ["w58", "w88", "w124", "w257", "w290"]
+      },
+      "brand_consistency": {
+        "score": 5,
+        "evidence": "The same four-colour dot motif, vivid gradient backgrounds, glass-framed player, geometric sans and fullstory wordmark recur from s006 to the end card, and the confetti burst in s018 reuses the dot palette to land on the logo.",
+        "refs": ["s006", "s007", "s013", "s015", "s018"]
+      },
+      "works_muted": {
+        "score": 3,
+        "evidence": "The Alex/Sam conversion story, outcome headlines and end card read without sound (s005, s013, s017, s018), but there are no captions and the mechanism (dot field, sentiment bands, journey map) relies on VO to explain what is happening.",
+        "refs": ["s005", "s010", "s011", "s013", "s018"]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "A polished mixed-media explainer with a strong unifying particle language and a relatable story arc that pays off; held back from best-in-class by a generic opening claim, a dense benefit-list middle section and limited real product UI.",
+        "refs": ["s001", "s005", "s006", "s014", "s018"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 2,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "Much English text is baked into kinetic headlines (s001, s006, s013), caption pills (s014) and dense recreated UI (storefront, event log, journey cards, metrics, end card), and the story's mechanism relies on the VO; localising would need re-rendering most scenes plus a new voice track, though the live-action and particle scenes are language-neutral."
+    }
+  }
+}

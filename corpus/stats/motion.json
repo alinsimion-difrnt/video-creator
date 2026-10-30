@@ -1,0 +1,744 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "s9_synth",
+  "annotator": "code",
+  "skill": null,
+  "model": null,
+  "input_hash": "7a4a3de258d7b002574f3f9a20266de5a7ab1a8e688d3577527313566b4fce2e",
+  "created_at": "2026-10-05T19:10:02.072135Z"
+ },
+ "weighting": {
+  "tier": {
+   "reference": 1.0,
+   "average": 0.5,
+   "competitor": 0.5,
+   "own": 0.0
+  },
+  "score_from": "overall",
+  "score_missing": 0.6,
+  "quality": true
+ },
+ "videos": 54,
+ "elements": 837,
+ "duration_ms_by_role": {
+  "avatar": {
+   "n": 22,
+   "videos": 4,
+   "weight": 16.2458,
+   "median": 643.557,
+   "p25": 489.898,
+   "p75": 756.362,
+   "ci": [
+    547.295,
+    696.242
+   ]
+  },
+  "background": {
+   "n": 56,
+   "videos": 14,
+   "weight": 43.1714,
+   "median": 472.388,
+   "p25": 291.194,
+   "p75": 921.289,
+   "ci": [
+    403.265,
+    627.428
+   ]
+  },
+  "body_text": {
+   "n": 48,
+   "videos": 11,
+   "weight": 35.2783,
+   "median": 484.594,
+   "p25": 369.946,
+   "p75": 797.662,
+   "ci": [
+    447.897,
+    578.18
+   ]
+  },
+  "button": {
+   "n": 35,
+   "videos": 13,
+   "weight": 26.6334,
+   "median": 464.855,
+   "p25": 161.804,
+   "p75": 747.797,
+   "ci": [
+    311.7,
+    638.072
+   ]
+  },
+  "card": {
+   "n": 63,
+   "videos": 14,
+   "weight": 48.0241,
+   "median": 717.178,
+   "p25": 507.472,
+   "p75": 1185.461,
+   "ci": [
+    649.7,
+    852.074
+   ]
+  },
+  "chart": {
+   "n": 3,
+   "videos": 3,
+   "weight": 2.1975,
+   "median": 164.699,
+   "p25": 60.76,
+   "p75": 551.306,
+   "ci": null
+  },
+  "cursor": {
+   "n": 37,
+   "videos": 10,
+   "weight": 26.2427,
+   "median": 547.481,
+   "p25": 248.75,
+   "p75": 871.475,
+   "ci": [
+    438.055,
+    717.796
+   ]
+  },
+  "headline": {
+   "n": 106,
+   "videos": 16,
+   "weight": 83.1713,
+   "median": 558.119,
+   "p25": 393.96,
+   "p75": 757.961,
+   "ci": [
+    500.247,
+    645.9
+   ]
+  },
+  "icon": {
+   "n": 60,
+   "videos": 15,
+   "weight": 45.8167,
+   "median": 390.7,
+   "p25": 222.952,
+   "p75": 786.034,
+   "ci": [
+    323.882,
+    662.23
+   ]
+  },
+  "label": {
+   "n": 39,
+   "videos": 14,
+   "weight": 28.9936,
+   "median": 524.718,
+   "p25": 318.615,
+   "p75": 717.421,
+   "ci": [
+    370.133,
+    646.8
+   ]
+  },
+  "list_item": {
+   "n": 115,
+   "videos": 9,
+   "weight": 80.6914,
+   "median": 492.698,
+   "p25": 170.642,
+   "p75": 754.99,
+   "ci": [
+    398.095,
+    565.67
+   ]
+  },
+  "logo": {
+   "n": 52,
+   "videos": 8,
+   "weight": 39.5952,
+   "median": 576.686,
+   "p25": 319.0,
+   "p75": 829.952,
+   "ci": [
+    423.9,
+    677.746
+   ]
+  },
+  "metric": {
+   "n": 23,
+   "videos": 6,
+   "weight": 15.354,
+   "median": 133.299,
+   "p25": 41.7,
+   "p75": 523.593,
+   "ci": [
+    49.23,
+    233.1
+   ]
+  },
+  "notification": {
+   "n": 2,
+   "videos": 1,
+   "weight": 1.5994,
+   "median": 565.591,
+   "p25": 330.5,
+   "p75": 800.741,
+   "ci": null
+  },
+  "other": {
+   "n": 90,
+   "videos": 15,
+   "weight": 65.2855,
+   "median": 584.256,
+   "p25": 230.22,
+   "p75": 840.029,
+   "ci": [
+    488.094,
+    653.0
+   ]
+  },
+  "ui_panel": {
+   "n": 86,
+   "videos": 16,
+   "weight": 58.9806,
+   "median": 409.155,
+   "p25": 168.899,
+   "p75": 672.091,
+   "ci": [
+    344.768,
+    529.587
+   ]
+  }
+ },
+ "duration_ms_by_change": {
+  "blur_in": {
+   "n": 52,
+   "videos": 12,
+   "weight": 40.9797,
+   "median": 473.942,
+   "p25": 239.69,
+   "p75": 985.325,
+   "ci": [
+    394.366,
+    573.823
+   ]
+  },
+  "blur_out": {
+   "n": 15,
+   "videos": 8,
+   "weight": 11.848,
+   "median": 458.78,
+   "p25": 342.529,
+   "p75": 789.375,
+   "ci": [
+    416.029,
+    678.834
+   ]
+  },
+  "color_shift": {
+   "n": 96,
+   "videos": 15,
+   "weight": 72.276,
+   "median": 579.944,
+   "p25": 292.106,
+   "p75": 734.078,
+   "ci": [
+    469.78,
+    658.7
+   ]
+  },
+  "count_up": {
+   "n": 3,
+   "videos": 3,
+   "weight": 2.6,
+   "median": 188.8,
+   "p25": 129.406,
+   "p75": 734.638,
+   "ci": null
+  },
+  "draw_on": {
+   "n": 9,
+   "videos": 3,
+   "weight": 6.7551,
+   "median": 633.784,
+   "p25": 569.266,
+   "p75": 945.811,
+   "ci": [
+    583.3,
+    945.2
+   ]
+  },
+  "fade": {
+   "n": 486,
+   "videos": 23,
+   "weight": 361.4438,
+   "median": 583.234,
+   "p25": 292.998,
+   "p75": 838.401,
+   "ci": [
+    538.235,
+    626.793
+   ]
+  },
+  "highlight": {
+   "n": 32,
+   "videos": 10,
+   "weight": 22.2124,
+   "median": 399.008,
+   "p25": 171.064,
+   "p75": 733.935,
+   "ci": [
+    288.293,
+    667.3
+   ]
+  },
+  "mask_reveal": {
+   "n": 24,
+   "videos": 10,
+   "weight": 17.7702,
+   "median": 574.52,
+   "p25": 400.481,
+   "p75": 1134.706,
+   "ci": [
+    477.5,
+    819.785
+   ]
+  },
+  "morph": {
+   "n": 35,
+   "videos": 13,
+   "weight": 27.1839,
+   "median": 545.667,
+   "p25": 368.087,
+   "p75": 749.983,
+   "ci": [
+    385.9,
+    651.148
+   ]
+  },
+  "other": {
+   "n": 83,
+   "videos": 16,
+   "weight": 58.0409,
+   "median": 391.596,
+   "p25": 209.837,
+   "p75": 672.439,
+   "ci": [
+    342.922,
+    482.622
+   ]
+  },
+  "pop": {
+   "n": 31,
+   "videos": 11,
+   "weight": 24.0995,
+   "median": 564.653,
+   "p25": 436.537,
+   "p75": 832.32,
+   "ci": [
+    528.102,
+    720.985
+   ]
+  },
+  "rotate": {
+   "n": 24,
+   "videos": 10,
+   "weight": 18.7188,
+   "median": 569.141,
+   "p25": 170.712,
+   "p75": 757.579,
+   "ci": [
+    327.013,
+    661.034
+   ]
+  },
+  "scale_down": {
+   "n": 134,
+   "videos": 21,
+   "weight": 103.6785,
+   "median": 486.422,
+   "p25": 274.995,
+   "p75": 798.994,
+   "ci": [
+    429.0,
+    623.4
+   ]
+  },
+  "scale_up": {
+   "n": 328,
+   "videos": 22,
+   "weight": 241.1141,
+   "median": 620.702,
+   "p25": 293.399,
+   "p75": 915.999,
+   "ci": [
+    576.1,
+    653.0
+   ]
+  },
+  "slide_down": {
+   "n": 294,
+   "videos": 21,
+   "weight": 213.2845,
+   "median": 517.382,
+   "p25": 232.204,
+   "p75": 839.921,
+   "ci": [
+    472.656,
+    575.963
+   ]
+  },
+  "slide_left": {
+   "n": 312,
+   "videos": 23,
+   "weight": 231.4984,
+   "median": 565.618,
+   "p25": 274.942,
+   "p75": 865.647,
+   "ci": [
+    516.577,
+    625.0
+   ]
+  },
+  "slide_right": {
+   "n": 282,
+   "videos": 23,
+   "weight": 208.5374,
+   "median": 533.743,
+   "p25": 236.704,
+   "p75": 854.253,
+   "ci": [
+    467.995,
+    583.308
+   ]
+  },
+  "slide_up": {
+   "n": 447,
+   "videos": 22,
+   "weight": 337.7144,
+   "median": 572.591,
+   "p25": 326.715,
+   "p75": 855.655,
+   "ci": [
+    529.287,
+    602.819
+   ]
+  },
+  "typewriter": {
+   "n": 10,
+   "videos": 6,
+   "weight": 7.4209,
+   "median": 695.39,
+   "p25": 357.988,
+   "p75": 961.776,
+   "ci": [
+    351.6,
+    959.3
+   ]
+  }
+ },
+ "easing_mix": {
+  "ease_out": 0.3488,
+  "ease_in_out": 0.2318,
+  "ease_in": 0.163,
+  "spring_overshoot": 0.1396,
+  "linear": 0.1167
+ },
+ "easing_by_role": {
+  "avatar": {
+   "ease_out": 0.6852,
+   "ease_in_out": 0.1698,
+   "linear": 0.0985,
+   "spring_overshoot": 0.0465
+  },
+  "background": {
+   "ease_out": 0.3223,
+   "ease_in_out": 0.2048,
+   "spring_overshoot": 0.1845,
+   "linear": 0.1608,
+   "ease_in": 0.1276
+  },
+  "body_text": {
+   "ease_out": 0.3385,
+   "ease_in_out": 0.2946,
+   "ease_in": 0.1731,
+   "linear": 0.107,
+   "spring_overshoot": 0.0869
+  },
+  "button": {
+   "ease_out": 0.2991,
+   "ease_in": 0.2552,
+   "ease_in_out": 0.2508,
+   "spring_overshoot": 0.1051,
+   "linear": 0.0898
+  },
+  "card": {
+   "ease_out": 0.4338,
+   "spring_overshoot": 0.1819,
+   "ease_in": 0.1373,
+   "linear": 0.1264,
+   "ease_in_out": 0.1206
+  },
+  "chart": {
+   "ease_in": 0.364,
+   "linear": 0.3629,
+   "ease_out": 0.273
+  },
+  "cursor": {
+   "ease_out": 0.4101,
+   "spring_overshoot": 0.2151,
+   "ease_in_out": 0.1586,
+   "ease_in": 0.1098,
+   "linear": 0.1064
+  },
+  "headline": {
+   "ease_out": 0.5005,
+   "ease_in_out": 0.2448,
+   "spring_overshoot": 0.1008,
+   "ease_in": 0.1003,
+   "linear": 0.0535
+  },
+  "icon": {
+   "ease_in_out": 0.281,
+   "ease_out": 0.2708,
+   "ease_in": 0.1999,
+   "spring_overshoot": 0.1614,
+   "linear": 0.0868
+  },
+  "label": {
+   "ease_out": 0.4195,
+   "ease_in_out": 0.2458,
+   "ease_in": 0.1439,
+   "spring_overshoot": 0.1372,
+   "linear": 0.0537
+  },
+  "list_item": {
+   "ease_out": 0.3231,
+   "ease_in": 0.2382,
+   "ease_in_out": 0.1718,
+   "spring_overshoot": 0.149,
+   "linear": 0.1179
+  },
+  "logo": {
+   "ease_in_out": 0.3784,
+   "ease_out": 0.3723,
+   "linear": 0.1286,
+   "ease_in": 0.0606,
+   "spring_overshoot": 0.0602
+  },
+  "metric": {
+   "ease_in": 0.5312,
+   "ease_in_out": 0.2343,
+   "ease_out": 0.1172,
+   "spring_overshoot": 0.1172
+  },
+  "notification": {
+   "ease_out": 0.5001,
+   "ease_in_out": 0.4999
+  },
+  "other": {
+   "ease_in_out": 0.2535,
+   "linear": 0.2303,
+   "spring_overshoot": 0.1878,
+   "ease_out": 0.1756,
+   "ease_in": 0.1528
+  },
+  "ui_panel": {
+   "ease_out": 0.2901,
+   "ease_in_out": 0.2429,
+   "ease_in": 0.1782,
+   "spring_overshoot": 0.1522,
+   "linear": 0.1366
+  }
+ },
+ "ease_mix": {
+  "circ.out": 0.1722,
+  "none": 0.1167,
+  "back.out(3)": 0.0682,
+  "circ.in": 0.0598,
+  "back.inOut(2.5)": 0.0589,
+  "circ.inOut": 0.0581,
+  "power2.out": 0.0448,
+  "power1.out": 0.0393,
+  "sine.inOut": 0.0389,
+  "power1.in": 0.0387,
+  "expo.out": 0.0332,
+  "sine.out": 0.0316,
+  "elastic.out(1,0.3)": 0.025,
+  "sine.in": 0.0232,
+  "power1.inOut": 0.022,
+  "power3.out": 0.0193,
+  "expo.in": 0.0183,
+  "power2.in": 0.0165,
+  "power2.inOut": 0.0152,
+  "elastic.out(1,0.4)": 0.0121,
+  "power3.inOut": 0.0113,
+  "back.inOut(1.7)": 0.011,
+  "power4.out": 0.0084,
+  "back.out(2.5)": 0.0083,
+  "back.inOut(1.2)": 0.0081,
+  "expo.inOut": 0.0062,
+  "elastic.out(1,0.5)": 0.0051,
+  "back.out(2)": 0.0044,
+  "back.out(0.8)": 0.0039,
+  "power4.in": 0.0036,
+  "elastic.out(1,0.75)": 0.0035,
+  "back.out(1.4)": 0.0035,
+  "power3.in": 0.0029,
+  "back.out(1)": 0.0025,
+  "back.out(1.2)": 0.0023,
+  "power4.inOut": 0.0023,
+  "back.out(1.7)": 0.0009
+ },
+ "ease_by_class": {
+  "ease_in": "circ.in",
+  "ease_in_out": "back.inOut(2.5)",
+  "ease_out": "circ.out",
+  "linear": "none",
+  "spring_overshoot": "back.out(3)"
+ },
+ "bezier_by_class": {
+  "ease_in": "cubic-bezier(0.411, 0.129, 0.667, 0.806)",
+  "ease_in_out": "cubic-bezier(0.501, 0.314, 0.415, 0.828)",
+  "ease_out": "cubic-bezier(0.318, 0.656, 0.530, 0.903)",
+  "linear": "cubic-bezier(0.422, 0.322, 0.563, 0.569)",
+  "spring_overshoot": "cubic-bezier(0.420, 0.480, 0.509, 0.895)"
+ },
+ "overshoot_share": 0.1325,
+ "overshoot_pct": {
+  "n": 111,
+  "videos": 22,
+  "weight": 81.7698,
+  "median": 9.345,
+  "p25": 2.245,
+  "p75": 23.401,
+  "ci": [
+   6.2,
+   13.33
+  ]
+ },
+ "springs": [
+  {
+   "n": 85,
+   "zeta": {
+    "n": 85,
+    "videos": 19,
+    "weight": 60.1431,
+    "median": 0.05,
+    "p25": 0.05,
+    "p75": 0.162,
+    "ci": [
+     0.05,
+     0.05
+    ]
+   },
+   "settle_ms": {
+    "n": 85,
+    "videos": 19,
+    "weight": 60.1431,
+    "median": 426.926,
+    "p25": 236.446,
+    "p75": 693.505,
+    "ci": [
+     386.1,
+     494.346
+    ]
+   },
+   "remotion": {
+    "mass": 1.0,
+    "stiffness": 59.71,
+    "damping": 0.89
+   }
+  },
+  {
+   "n": 194,
+   "zeta": {
+    "n": 194,
+    "videos": 21,
+    "weight": 138.9556,
+    "median": 0.809,
+    "p25": 0.659,
+    "p75": 0.87,
+    "ci": [
+     0.779,
+     0.831
+    ]
+   },
+   "settle_ms": {
+    "n": 194,
+    "videos": 21,
+    "weight": 138.9556,
+    "median": 127.163,
+    "p25": 73.957,
+    "p75": 182.128,
+    "ci": [
+     107.965,
+     136.7
+    ]
+   },
+   "remotion": {
+    "mass": 1.0,
+    "stiffness": 15236.28,
+    "damping": 166.78
+   }
+  },
+  {
+   "n": 558,
+   "zeta": {
+    "n": 558,
+    "videos": 23,
+    "weight": 418.1823,
+    "median": 0.836,
+    "p25": 0.738,
+    "p75": 1.062,
+    "ci": [
+     0.814,
+     0.857
+    ]
+   },
+   "settle_ms": {
+    "n": 558,
+    "videos": 23,
+    "weight": 418.1823,
+    "median": 666.388,
+    "p25": 477.603,
+    "p75": 918.9,
+    "ci": [
+     646.087,
+     686.8
+    ]
+   },
+   "remotion": {
+    "mass": 1.0,
+    "stiffness": 210.08,
+    "damping": 26.16
+   }
+  }
+ ],
+ "stagger_ms_by_unit": {
+  "all": {
+   "n": 102,
+   "videos": 13,
+   "weight": 74.3599,
+   "median": 0.0,
+   "p25": 0.0,
+   "p75": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ]
+  },
+  "word": {
+   "n": 61,
+   "videos": 16,
+   "weight": 44.8521,
+   "median": 83.826,
+   "p25": 42.0,
+   "p75": 168.0,
+   "ci": [
+    75.393,
+    105.0
+   ]
+  }
+ }
+}

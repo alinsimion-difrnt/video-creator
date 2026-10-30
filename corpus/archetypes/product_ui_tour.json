@@ -1,0 +1,310 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a3_pattern_cards",
+  "annotator": "claude-code",
+  "skill": "write-archetype-cards@a75a12f0ca91",
+  "model": null,
+  "input_hash": "3b66ae3ecf4281c1cbbad3597fe84ab76ca000e41889f324f50890dd3d43f4e1",
+  "created_at": "2026-10-05T19:09:22.800941Z"
+ },
+ "id": "product_ui_tour",
+ "name": "Product UI Tour",
+ "summary": "The viewer watches the real or recreated product interface being used: a cursor clicks through views while the frame pushes in on the part that matters. The scene shows how the product works rather than telling.",
+ "when_to_use": [
+  "Demo beats where the narration walks through a feature step by step.",
+  "When one workflow needs to be shown end to end inside the app.",
+  "To ground a claim from an earlier scene in the actual interface."
+ ],
+ "slots": [
+  {"name": "ui_surface", "what": "a screen recording or recreated app view, full-bleed or as a framed window", "required": true},
+  {"name": "cursor_path", "what": "the ordered clicks and hovers that carry the workflow", "required": true},
+  {"name": "focus_regions", "what": "the panels or controls the camera pushes in on", "required": true},
+  {"name": "typed_input", "what": "a prompt or field value typed on during the demo", "required": false},
+  {"name": "result_state", "what": "the new item, answer or status that appears after the action", "required": true},
+  {"name": "caption", "what": "an optional short on-screen label naming the feature", "required": false}
+ ],
+ "steps": [
+  "Open on the full app view so the viewer knows where they are.",
+  "The cursor moves to the first control and clicks it.",
+  "The camera pushes in on the region that changes, cropping away chrome.",
+  "Input types on or content streams or scrolls inside a masked panel.",
+  "The result appears: a new row, chip, toggle or answer resolves into place.",
+  "The frame reframes back out to the full view, ready for the next feature or a cut."
+ ],
+ "patterns": [
+  "cursor_guided_demo",
+  "layout_reframe",
+  "ui_camera_push_in",
+  "masked_scroll",
+  "scale_dissolve_transition",
+  "ai_answer_stream",
+  "skeleton_resolve",
+  "prompt_type_on"
+ ],
+ "build": {
+  "gsap": "Build the UI as one large DOM canvas inside a wrapper and drive a single timeline per scene: scale and translate tweens on the wrapper for push-ins and reframes (smooth power or expo in-out eases), a scripted cursor element tweened between targets with click pulses, text tweens for typed input, and a short stagger for streamed lines or list rows inside a masked, upward-scrolling container.",
+  "remotion": "One Sequence for the scene holding the app canvas; camera framing comes from interpolated scale and translate keyed to frame, with a critically damped spring for each push-in and reframe; child Sequences offset the cursor moves, typing and result reveals so each starts on its own narration word."
+ },
+ "sound": "Mostly music bed under the demo; when there is a cue it is a reverse swoosh or a soft impact landing on a camera push-in, with an occasional chime when a result appears and light clicks on cursor taps. Many cues are unlabelled, so treat sound as optional.",
+ "numbers": {
+  "id": "product_ui_tour",
+  "shots": 308,
+  "videos": 41,
+  "weight": 161.3,
+  "duration_s": {
+   "n": 308,
+   "videos": 41,
+   "weight": 161.3,
+   "median": 3.099,
+   "p25": 1.623,
+   "p75": 5.298,
+   "ci": [
+    2.7,
+    3.481
+   ]
+  },
+  "events_per_shot": {
+   "n": 308,
+   "videos": 41,
+   "weight": 161.3,
+   "median": 0.0,
+   "p25": 0.0,
+   "p75": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ]
+  },
+  "first_motion_s": {
+   "n": 57,
+   "videos": 14,
+   "weight": 39.6,
+   "median": 1.012,
+   "p25": 0.42,
+   "p75": 2.049,
+   "ci": [
+    0.786,
+    1.39
+   ]
+  },
+  "pattern_mix": {
+   "cursor_guided_demo": 0.224,
+   "other": 0.216,
+   "layout_reframe": 0.1293,
+   "ui_camera_push_in": 0.1173,
+   "masked_scroll": 0.1027,
+   "scale_dissolve_transition": 0.04,
+   "ai_answer_stream": 0.032,
+   "skeleton_resolve": 0.028,
+   "prompt_type_on": 0.0227,
+   "stagger_list_reveal": 0.02,
+   "blur_crossfade": 0.0187,
+   "chip_append": 0.0173,
+   "kinetic_word_reveal": 0.016,
+   "spotlight_focus": 0.016
+  },
+  "transition_mix": {
+   "other": 0.3986,
+   "hard_cut": 0.2765,
+   "zoom_through": 0.1569,
+   "crossfade": 0.08,
+   "push": 0.0663,
+   "slide": 0.0074,
+   "morph": 0.005,
+   "mask_wipe": 0.0043,
+   "blur": 0.0025,
+   "whip": 0.0025
+  },
+  "shot_type_mix": {
+   "screen_recording": 0.2877,
+   "ui_recreated": 0.261,
+   "ui_closeup": 0.2405,
+   "ui_full": 0.1835,
+   "other": 0.0136,
+   "footage": 0.0074,
+   "abstract": 0.0062
+  },
+  "beat_mix": {
+   "demo": 0.6873,
+   "mechanism": 0.0969,
+   "outcome": 0.0682,
+   "hook": 0.0411,
+   "cta": 0.04,
+   "proof": 0.0344,
+   "problem": 0.0321
+  },
+  "sfx_label_mix": {
+   "unsure": 0.3484,
+   "music": 0.2933,
+   "swoosh_reverse": 0.1369,
+   "impact": 0.1177,
+   "chime": 0.0739,
+   "click": 0.0192,
+   "whoosh": 0.0052,
+   "glitch": 0.0031,
+   "typing": 0.0023
+  },
+  "sfx_offset_s_by_label": {
+   "chime": {
+    "n": 56,
+    "videos": 17,
+    "weight": 38.5,
+    "median": 3.537,
+    "p25": 1.109,
+    "p75": 8.257,
+    "ci": [
+     2.808,
+     5.629
+    ]
+   },
+   "click": {
+    "n": 24,
+    "videos": 12,
+    "weight": 10.0,
+    "median": 2.422,
+    "p25": 1.17,
+    "p75": 10.928,
+    "ci": [
+     1.713,
+     8.218
+    ]
+   },
+   "glitch": {
+    "n": 4,
+    "videos": 2,
+    "weight": 1.6,
+    "median": 14.555,
+    "p25": 7.027,
+    "p75": 19.36,
+    "ci": null
+   },
+   "impact": {
+    "n": 105,
+    "videos": 21,
+    "weight": 61.3,
+    "median": 2.235,
+    "p25": 0.885,
+    "p75": 4.651,
+    "ci": [
+     1.756,
+     2.867
+    ]
+   },
+   "music": {
+    "n": 356,
+    "videos": 28,
+    "weight": 152.7,
+    "median": 3.292,
+    "p25": 1.313,
+    "p75": 11.157,
+    "ci": [
+     2.844,
+     3.806
+    ]
+   },
+   "swoosh_reverse": {
+    "n": 132,
+    "videos": 22,
+    "weight": 71.3,
+    "median": 3.546,
+    "p25": 1.019,
+    "p75": 9.921,
+    "ci": [
+     2.478,
+     4.464
+    ]
+   },
+   "typing": {
+    "n": 4,
+    "videos": 1,
+    "weight": 1.2,
+    "median": 4.198,
+    "p25": 2.652,
+    "p75": 7.078,
+    "ci": null
+   },
+   "unsure": {
+    "n": 309,
+    "videos": 33,
+    "weight": 181.4,
+    "median": 2.919,
+    "p25": 1.154,
+    "p75": 10.123,
+    "ci": [
+     2.579,
+     3.342
+    ]
+   },
+   "whoosh": {
+    "n": 4,
+    "videos": 3,
+    "weight": 2.7,
+    "median": 0.955,
+    "p25": 0.6,
+    "p75": 1.737,
+    "ci": null
+   }
+  },
+  "examples": [
+   {
+    "video": "atlassian-introduction-to-jira-product-discovery",
+    "shot": "s004",
+    "score": 3.0
+   },
+   {
+    "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+    "shot": "s002",
+    "score": 5.0
+   },
+   {
+    "video": "anthropic-introducing-claude-design-by-anthropic-l",
+    "shot": "s013",
+    "score": 4.0
+   },
+   {
+    "video": "datadog-datadog-overview-see-inside-the-platfor",
+    "shot": "s012",
+    "score": 4.0
+   },
+   {
+    "video": "warp-introducing-warp-2-0-the-agentic-develo",
+    "shot": "s012",
+    "score": 4.0
+   }
+  ]
+ },
+ "examples": [
+  {
+   "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+   "shot": "s002",
+   "score": 5.0
+  },
+  {
+   "video": "anthropic-introducing-claude-design-by-anthropic-l",
+   "shot": "s013",
+   "score": 4.0
+  },
+  {
+   "video": "datadog-datadog-overview-see-inside-the-platfor",
+   "shot": "s012",
+   "score": 4.0
+  },
+  {
+   "video": "warp-introducing-warp-2-0-the-agentic-develo",
+   "shot": "s012",
+   "score": 4.0
+  },
+  {
+   "video": "atlassian-introduction-to-jira-product-discovery",
+   "shot": "s004",
+   "score": 3.0
+  }
+ ],
+ "caveats": [
+  "Most shots have no code-detected motion event, so first-motion timing rests on a minority of shots and videos.",
+  "Members range from short close-ups to long continuous screen recordings; long members carry most of the pattern evidence.",
+  "A large share of sound cues are unlabelled or music, so specific SFX timing is weak."
+ ]
+}

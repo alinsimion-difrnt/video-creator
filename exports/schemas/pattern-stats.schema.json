@@ -1,0 +1,335 @@
+{
+  "$defs": {
+    "Annotator": {
+      "enum": [
+        "code",
+        "claude-code",
+        "human"
+      ],
+      "title": "Annotator",
+      "type": "string"
+    },
+    "PatternExample": {
+      "additionalProperties": false,
+      "properties": {
+        "event": {
+          "title": "Event",
+          "type": "string"
+        },
+        "score": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Score"
+        },
+        "video": {
+          "title": "Video",
+          "type": "string"
+        }
+      },
+      "required": [
+        "video",
+        "event",
+        "score"
+      ],
+      "title": "PatternExample",
+      "type": "object"
+    },
+    "PatternStats": {
+      "additionalProperties": false,
+      "properties": {
+        "change_mix": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Change Mix",
+          "type": "object"
+        },
+        "duration_ms": {
+          "$ref": "#/$defs/Stat"
+        },
+        "easing_mix": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Easing Mix",
+          "type": "object"
+        },
+        "events": {
+          "minimum": 0,
+          "title": "Events",
+          "type": "integer"
+        },
+        "examples": {
+          "items": {
+            "$ref": "#/$defs/PatternExample"
+          },
+          "title": "Examples",
+          "type": "array"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "role_mix": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Role Mix",
+          "type": "object"
+        },
+        "sfx_label_mix": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Sfx Label Mix",
+          "type": "object"
+        },
+        "sfx_offset_ms": {
+          "$ref": "#/$defs/Stat"
+        },
+        "videos": {
+          "minimum": 0,
+          "title": "Videos",
+          "type": "integer"
+        },
+        "weight": {
+          "minimum": 0,
+          "title": "Weight",
+          "type": "number"
+        }
+      },
+      "required": [
+        "id",
+        "events",
+        "videos",
+        "weight",
+        "duration_ms",
+        "easing_mix",
+        "change_mix",
+        "role_mix",
+        "sfx_label_mix",
+        "sfx_offset_ms",
+        "examples"
+      ],
+      "title": "PatternStats",
+      "type": "object"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "description": "Carried by every output JSON (BUILD_PLAN section 2.7).",
+      "properties": {
+        "annotator": {
+          "$ref": "#/$defs/Annotator"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "input_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Input Hash",
+          "type": "string"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "schema_version": {
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "skill": {
+          "anyOf": [
+            {
+              "pattern": "^[a-z0-9-]+@[0-9a-f]{8,64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Skill"
+        },
+        "stage": {
+          "title": "Stage",
+          "type": "string"
+        },
+        "tool_version": {
+          "title": "Tool Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool_version",
+        "stage",
+        "annotator",
+        "input_hash",
+        "created_at"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "Stat": {
+      "additionalProperties": false,
+      "properties": {
+        "ci": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Ci"
+        },
+        "median": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Median"
+        },
+        "n": {
+          "minimum": 0,
+          "title": "N",
+          "type": "integer"
+        },
+        "p25": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "P25"
+        },
+        "p75": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "P75"
+        },
+        "videos": {
+          "minimum": 0,
+          "title": "Videos",
+          "type": "integer"
+        },
+        "weight": {
+          "minimum": 0,
+          "title": "Weight",
+          "type": "number"
+        }
+      },
+      "required": [
+        "n",
+        "videos",
+        "weight",
+        "median",
+        "p25",
+        "p75",
+        "ci"
+      ],
+      "title": "Stat",
+      "type": "object"
+    },
+    "Weighting": {
+      "additionalProperties": false,
+      "properties": {
+        "quality": {
+          "title": "Quality",
+          "type": "boolean"
+        },
+        "score_from": {
+          "title": "Score From",
+          "type": "string"
+        },
+        "score_missing": {
+          "title": "Score Missing",
+          "type": "number"
+        },
+        "tier": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Tier",
+          "type": "object"
+        }
+      },
+      "required": [
+        "tier",
+        "score_from",
+        "score_missing",
+        "quality"
+      ],
+      "title": "Weighting",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "other_events": {
+      "title": "Other Events",
+      "type": "integer"
+    },
+    "patterns": {
+      "items": {
+        "$ref": "#/$defs/PatternStats"
+      },
+      "title": "Patterns",
+      "type": "array"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    },
+    "weighting": {
+      "$ref": "#/$defs/Weighting"
+    }
+  },
+  "required": [
+    "provenance",
+    "weighting",
+    "patterns",
+    "other_events"
+  ],
+  "title": "PatternsFile",
+  "type": "object"
+}

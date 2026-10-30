@@ -1,0 +1,187 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "710bc641cabd4e32252ed77c7c1f6a626680ef19df86cdb8e3d4fea3a3b84021",
+    "created_at": "2026-10-05T06:55:56.100811Z"
+  },
+  "video": "anthropic-introducing-claude-design-by-anthropic-l",
+  "task": "a1-p3",
+  "shots": [
+    {
+      "shot": "s013",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "other",
+      "composition_other": "camera travels through one continuous canvas: a wall of app windows, the full app window centered, then macro crops of the chat panel, toolbar and Tweaks panel",
+      "focal_element": "the Claude Design workspace for the 'Meditation app.html' prototype: chat panel, phone preview and Tweaks panel",
+      "transition_in": "other",
+      "transition_other": "continuous zoom from a wall of tiled project windows into one window (camera move rather than a cut)",
+      "on_screen_text": [
+        "Let's prototype...",
+        "You",
+        "Prototype a serene mobile meditation app. It should have calming typography, subtle nature-inspired colors, and a clean layout.",
+        "Claude",
+        "Read, Write ×3",
+        "Verifier",
+        "I've built a serene meditation app with 3 screens inside an iOS phone frame. The prototype features:",
+        "Japandi-inspired palette with warm gold accents on cream",
+        "Home screen with session cards, daily intention, and category tiles",
+        "Meditation player with an enso-style progress ring",
+        "Profile screen with weekly stats and milestone tracking",
+        "Custom frosted glass tab bar",
+        "Tweaks",
+        "Comment",
+        "Edit text",
+        "TWEAKS",
+        "THEME",
+        "Stone Moss Mist Clay Dusk Sakura Ink",
+        "TYPOGRAPHY",
+        "Heading size 100%",
+        "Body size 100%",
+        "Forest Rain",
+        "Comment",
+        "Add a dark mode toggle",
+        "Discard Queue Send",
+        "Dimming...",
+        "Dark mode"
+      ],
+      "text_word_count": 115,
+      "typography": "Product UI in a clean geometric/grotesque sans (low-confidence guess: a Styrene- or Inter-like face), sentence case, regular body weight with semibold labels; small-caps tracked-out uppercase section labels in the Tweaks panel (TWEAKS, THEME, TYPOGRAPHY); the 'Dimming...' status card uses a contrasting italic serif at large display size next to a spark/asterisk mark (low-confidence guess: a Tiempos-like serif).",
+      "depth_cues": [
+        "shadow",
+        "blur"
+      ],
+      "what_happens": "The camera pulls from a wall of tiled project windows into one workspace; it then rides down the chat column as the prompt and Claude's answer type in line by line (feature bullets stream in). It pulls back to the full app, the cursor taps through the phone's tabs (home, journey stats, player), selects the Moss theme in Tweaks, macro-zooms onto the toolbar where the cursor clicks Comment (button fills), a Comment popover gets 'Add a dark mode toggle' typed and Send clicked; a full-frame 'Dimming...' status card with the spark mark shimmers, then the Tweaks panel returns with a new 'Dark mode' toggle that the cursor reaches for.",
+      "build_rebuild": "Build the app UI as one large DOM canvas and drive a single GSAP camera timeline (scale/translate on a wrapper) through keyframed framings: wall to window, chat column (with ai_answer_stream text reveals), full app with a scripted cursor, toolbar macro for the Comment click, popover typing, a full-frame 'Dimming...' interstitial with a shimmer gradient on the text, and back to the Tweaks panel where a new toggle row slides in.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s014",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "split",
+      "composition_other": null,
+      "focal_element": "the Dark mode toggle in the Tweaks panel and the phone preview now rendered dark",
+      "transition_in": "other",
+      "transition_other": "instant cut on the toggle click: the same framing switches from the light theme to the dark theme",
+      "on_screen_text": [
+        "9:41",
+        "NOW PLAYING",
+        "12:45",
+        "17:15 remaining",
+        "Forest Rain",
+        "Soundscape",
+        "TWEAKS",
+        "Dark mode",
+        "THEME",
+        "Stone Moss Mist Clay Dusk Sakura Ink",
+        "TYPOGRAPHY",
+        "Heading size 100%",
+        "Body size 100%"
+      ],
+      "text_word_count": 27,
+      "typography": "Same UI sans as s013 at close-up scale; light-weight large numerals for the 12:45 timer, tracked uppercase micro-labels (NOW PLAYING, TWEAKS, THEME, TYPOGRAPHY), sentence-case control labels.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "The toggle is on and the whole prototype (phone player and Tweaks panel) has flipped to a dark, moss-tinted theme; the cursor moves off the toggle toward the typography sliders.",
+      "build_rebuild": "Hold the s013 close-up framing and on the click frame swap a CSS theme class (light to dark tokens) on both the phone mock and the Tweaks panel with no tween, while the toggle knob slides right and the cursor drifts down-right.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s015",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "grid",
+      "composition_other": null,
+      "focal_element": "the 'Company offsite.html' Hemlark Retreat '26 project window inside the wall of projects",
+      "transition_in": "other",
+      "transition_other": "zoom-out from the dark meditation window into the project wall, then a lateral glide and push-in onto another tile",
+      "on_screen_text": [
+        "Can you help me t...",
+        "Company offsite.html",
+        "TEAM OFFSITE",
+        "Hemlark",
+        "Retreat '26",
+        "Three days of workshops, hikes, and real talk — because the best ideas happen away from the screen.",
+        "Afternoon Activities",
+        "Big Sur & Surroundings",
+        "Coffee Bag Packaging",
+        "Instagram Presence",
+        "Brand Book",
+        "Miller residence"
+      ],
+      "text_word_count": 43,
+      "typography": "Wall tiles are mostly too small to read; the target document uses a bold geometric sans display headline with the second line set in an accent colour, small tracked uppercase eyebrow ('TEAM OFFSITE'), and regular sans body copy.",
+      "depth_cues": [
+        "shadow",
+        "blur"
+      ],
+      "what_happens": "The camera pulls out from the now-dark meditation project to reveal the wall of many project windows (3D house, globe, editorial article, brand book), glides across it and settles on the Hemlark offsite document project, centring the full app window.",
+      "build_rebuild": "Lay out ~9 pre-rendered project window screenshots in a 3-column grid on a large canvas and tween the wrapper's scale and x/y from the previous window (scale ~3) out to scale ~1 then into the target tile (scale ~1.6) with ease-in-out, adding a slight motion blur during the fastest frames.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s016",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "the toolbar Comment button under a hand cursor",
+      "transition_in": "other",
+      "transition_other": "cut to a macro crop of the toolbar (scale jump, same UI)",
+      "on_screen_text": [
+        "Comment",
+        "Edit text",
+        "K"
+      ],
+      "text_word_count": 4,
+      "typography": "Toolbar labels in the UI sans at macro size, medium weight, sentence case; 'Knobs' is cropped to 'K' at the frame edge.",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "Macro on the toolbar: the hand cursor clicks Comment and the button fills with the accent colour, inverting its label to light text; a slight leftward drift follows.",
+      "build_rebuild": "Render the toolbar at ~4x scale and on the click frame tween the Comment button's background to the accent and its label/icon to white over ~100 ms, with a small press-scale on the hand cursor and a slow horizontal drift on the wrapper.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s017",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "the Comment popover over the selected hero photo of the Hemlark document",
+      "transition_in": "other",
+      "transition_other": "cut to a close-up of the document with the comment popover already open",
+      "on_screen_text": [
+        "TEAM OFFSITE",
+        "Hemlark",
+        "Retreat '26",
+        "Three days of workshops, hikes, and real talk — because the best ideas happen away from the screen.",
+        "Oct 7 – 9, 2026",
+        "Big Sur, CA",
+        "Fern Hollow Lodge",
+        "48 people",
+        "Comment",
+        "Swap this to the coastline photo",
+        "Discard",
+        "Queue",
+        "Send"
+      ],
+      "text_word_count": 44,
+      "typography": "Popover title in bold sans, input text in regular sans at large size, pill buttons in medium sans with the primary Send filled in the accent; document schedule column in small sans with accent-coloured times.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "With the forest photo selected (blue outline), 'Swap this to the coastline photo' finishes typing in the Comment popover, the cursor clicks Send, the popover collapses into a thin loading bar and the photo is replaced by a coastline image.",
+      "build_rebuild": "Overlay a comment popover on the selected image, type the string with a caret (prompt_type_on), press-animate Send, then scale the popover down to a thin progress pill and crossfade the image source to the new photo as the pill disappears.",
+      "confidence": "high"
+    }
+  ],
+  "summary": null
+}

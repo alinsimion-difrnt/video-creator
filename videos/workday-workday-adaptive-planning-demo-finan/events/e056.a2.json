@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "def4b8e05067944fdb12dbabb2d0d460672d1ca50cdc03ded0b84fc69ab84657",
+    "created_at": "2026-10-05T06:55:56.952116Z"
+  },
+  "video": "workday-workday-adaptive-planning-demo-finan",
+  "event": "e056",
+  "task": "a2-e056",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "App window frame",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["scale_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 900, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Loading spinner",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["rotate"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    },
+    {
+      "box": "b08",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Loading status text",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "text_swap",
+      "is_text": true,
+      "text": "Transmitting data...",
+      "text_unit": "whole",
+      "estimates": null
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "ui_camera_push_in",
+    "proposed_name": null,
+    "description": "Reverse of a UI push-in: the zoomed screen recording pulls out to reveal the full app window floating on a white canvas with a blue arc, while a loading spinner keeps turning and its status line swaps from '0% Complete' to 'Transmitting data...'.",
+    "why_premium": "The pull-out reframes a raw screen recording as a framed product card with shadow and brand-colour backdrop, giving context during an otherwise dead loading state instead of cutting."
+  },
+  "build_hint": {
+    "gsap": "gsap.fromTo('.app-window', {scale: 1.5, xPercent: 10, yPercent: 10}, {scale: 1, xPercent: 0, yPercent: 0, duration: 0.9, ease: 'power2.inOut'}); spinner runs a continuous rotation tween (repeat: -1, ease: 'none'); status text swapped with a quick opacity crossfade.",
+    "remotion": "Interpolate scale 1.5 -> 1 and translate on the window container over ~27 frames with Easing.inOut(Easing.cubic) (or spring {damping: 200} for no overshoot); spinner rotate = frame * 12deg; status text switched by frame threshold."
+  },
+  "confidence": "medium",
+  "notes": "camera.move is pull_out; modelled as the window card scaling down. Pattern ui_camera_push_in used for the inverse (pull-out) move as no pull-out pattern exists. b03 marks where the spinner sat before the pull-out (empty at end), not a separate element."
+}

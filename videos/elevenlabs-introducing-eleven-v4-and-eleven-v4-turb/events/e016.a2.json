@@ -1,0 +1,89 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "a826dc3cae779489b9cc8eea6fcb1b63be3789432f627598696c054821f3954e",
+    "created_at": "2026-10-05T06:44:13.356243Z"
+  },
+  "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+  "event": "e016",
+  "task": "a2-e016",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Oversized gradient letter V",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["slide_down", "slide_right", "scale_up", "blur_in"],
+      "change_other": null,
+      "is_text": true,
+      "text": "V",
+      "text_unit": "char",
+      "estimates": {"duration_ms": 600, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Blurred green shape entering from right edge (likely next glyph)",
+      "role": "other",
+      "role_other": "letterform",
+      "change_types": ["slide_left", "blur_in"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Previous-scene subtitle line",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "具体剂量请遵照医生的指示。",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 250, "easing_class": "ease_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [150, 330, 850, 700],
+      "manual_reason": "The particle orb dissolves before the end frame, so no candidate box marks it; box is its position in the first frames.",
+      "label": "Particle voice orb dispersing",
+      "role": "other",
+      "role_other": "particle_field",
+      "change_types": ["fade", "scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 500, "easing_class": "ease_in"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x093", "verdict": "unsure", "label": "unsure", "note": "At the end of the burst; mild broadband lift but no sharp impact transient. Weak CLAP score (0.33)."},
+    {"id": "x094", "verdict": "confirm", "label": "swoosh_reverse", "note": "Energy builds into the line just before 'The next frontier'; consistent with a reverse swoosh leading into the next beat."}
+  ],
+  "pattern": {
+    "id": "kinetic_word_reveal",
+    "proposed_name": null,
+    "description": "The particle orb disperses while an oversized, out-of-focus gradient 'V' sweeps in from the upper left and racks toward focus, with a second blurred green glyph sliding in from the right edge; the previous subtitle fades out.",
+    "why_premium": "Type used at architectural scale with depth-of-field blur and film grain turns a product name into a cinematic object; crossing from particles to letterform links the voice visual to the 'v4' brand mark."
+  },
+  "build_hint": {
+    "gsap": "Timeline: orb gsap.to({opacity:0, scale:1.2, duration:0.5, ease:'power2.in'}); subtitle gsap.to({opacity:0, duration:0.25}); V gsap.fromTo({x:-300, y:-200, scale:0.8, filter:'blur(30px)', opacity:0}, {x:0, y:0, scale:1, filter:'blur(6px)', opacity:1, duration:0.7, ease:'power3.out'}) at '-=0.3'; second glyph fromTo({x:200, filter:'blur(30px)'}, {x:0, filter:'blur(14px)', duration:0.5, ease:'power3.out'}) at '-=0.3'.",
+    "remotion": "spring({frame: frame - 6, fps, config:{damping:200, stiffness:90}}) drives V translate (-300,-200 -> 0), scale 0.8 -> 1 and blur 30 -> 6px (no overshoot); second glyph same spring delayed ~10 frames from the right; orb opacity interpolate(frame, [0, 15], [1, 0]) with Easing.in(Easing.quad)."
+  },
+  "confidence": "medium",
+  "notes": "Subtitle (b03) is small Chinese text read from the first filmstrip frame; only the second clause is legible, so the text is partial and should be checked. The green right-edge shape is likely the '4' of 'v4' but is too blurred to confirm. Camera move is none; the 1.2 scale sum is the V growing, not a camera push."
+}

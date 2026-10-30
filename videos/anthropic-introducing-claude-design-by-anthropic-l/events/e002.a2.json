@@ -1,0 +1,55 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "5e5e9d7490cbd94b636510eaa9f70708acf78aed05c3d82a7076a8a067b0af1a",
+    "created_at": "2026-10-05T06:39:17.464359Z"
+  },
+  "video": "anthropic-introducing-claude-design-by-anthropic-l",
+  "event": "e002",
+  "task": "a2-e002",
+  "elements": [
+    {"box": "b01", "manual_box": null, "manual_reason": null, "label": "Claude chat column (Plan, write_file, Progress card)",
+     "role": "ui_panel", "role_other": null, "change_types": ["slide_up", "scale_down"], "change_other": null,
+     "is_text": false, "text": null, "text_unit": null,
+     "estimates": {"duration_ms": 500, "easing_class": "ease_out"}},
+    {"box": "b14", "manual_box": null, "manual_reason": null, "label": "First task checkbox",
+     "role": "icon", "role_other": null, "change_types": ["pop", "color_shift"], "change_other": null,
+     "is_text": false, "text": null, "text_unit": null,
+     "estimates": {"duration_ms": 120, "easing_class": "ease_out"}},
+    {"box": "b03", "manual_box": null, "manual_reason": null, "label": "Task 1 strikethrough",
+     "role": "list_item", "role_other": null, "change_types": ["draw_on", "color_shift"], "change_other": "strikethrough line draws left to right, text greys out",
+     "is_text": true, "text": "Read current page layout and components", "text_unit": "whole",
+     "estimates": {"duration_ms": 300, "easing_class": "linear"}},
+    {"box": "b06", "manual_box": null, "manual_reason": null, "label": "Task 2 strikethrough",
+     "role": "list_item", "role_other": null, "change_types": ["draw_on", "color_shift"], "change_other": "strikethrough line draws left to right, text greys out",
+     "is_text": true, "text": "Build tweaks state with defaults", "text_unit": "whole",
+     "estimates": {"duration_ms": 300, "easing_class": "linear"}},
+    {"box": "b05", "manual_box": null, "manual_reason": null, "label": "Task 3 strikethrough (in progress)",
+     "role": "list_item", "role_other": null, "change_types": ["draw_on"], "change_other": "strikethrough line begins drawing",
+     "is_text": true, "text": "Create floating tweaks panel UI", "text_unit": "whole",
+     "estimates": {"duration_ms": 300, "easing_class": "linear"}}
+  ],
+  "sfx_review": [
+    {"id": "x007", "verdict": "unsure", "label": "unsure",
+     "note": "Broadband onset near the first checkbox tick; similar regularly spaced onsets appear before the event, so it may be a music beat rather than a tick/chime."},
+    {"id": "x008", "verdict": "unsure", "label": "unsure",
+     "note": "Same broadband shape as x007, after the burst; not tonal enough to confirm chime. Could be a tick for the next checklist item or a music beat."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "checklist strikethrough cascade",
+    "description": "Hard cut from a 'Soldering...' loader into a close-up of the agent's progress card; the camera tilts down through the chat column while task rows are checked and struck through one after another, the strike line drawing left to right and the text greying out.",
+    "why_premium": "Progress reads as real agent work: a sequential strike-through cascade gives a satisfying completion rhythm, and the tilt keeps the next unchecked task entering frame just as the previous one completes."
+  },
+  "build_hint": {
+    "gsap": "tl.fromTo('.chat', {y: 0, scale: 1}, {y: -120, scale: 0.97, duration: 0.6, ease: 'power2.out'}); then per row: tl.fromTo('.row .strike', {scaleX: 0, transformOrigin: 'left'}, {scaleX: 1, duration: 0.3, ease: 'none', stagger: 0.25}, '<0.1') with a parallel color tween to grey and a checkbox fill (scale 0.8->1, ease 'back.out(2)') at each row start.",
+    "remotion": "translateY = interpolate(frame, [0, 15], [0, -120], {easing: Easing.out(Easing.cubic)}); per row i: strike width = interpolate(frame - i*6, [0, 8], [0, 100], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})%; checkbox scale = spring({frame: frame - i*6, fps, config: {damping: 14, stiffness: 200}})."
+  },
+  "confidence": "medium",
+  "notes": "Burst starts on a hard cut from the 'Soldering...' loader (f449). Camera verdict is tilt_down with slight scale-down; I describe it as the chat column sliding up. Rows 4-5 (b07, b04) only move with the column and are not listed separately."
+}

@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "1d9f4d7d2fda4bb6f3a6320f6f994093fb27639a1b7b5595d0c2a790407ee4b6",
+    "created_at": "2026-10-05T06:38:39.795938Z"
+  },
+  "video": "attio-introducing-ask-attio",
+  "event": "e006",
+  "task": "a2-e006",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Light panel wiping up over dark scene",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["slide_up", "mask_reveal"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 130, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "'Every email' headline replacing 'creates signal'",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["slide_up", "color_shift"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Every email",
+      "text_unit": "word",
+      "estimates": {"duration_ms": 200, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "slide up wipe",
+    "description": "A light panel slides up from the bottom edge over the dark 'creates signal' scene, wiping it away. The new headline 'Every email' rides up with it, its two words slightly offset in height, then settles at centre with a stacked inbox mock-up below.",
+    "why_premium": "A fast directional wipe that carries the new headline with it flips the scene from dark to light in about 130 ms with no dead frame. The per-word offset makes the type feel kinetic rather than pasted."
+  },
+  "build_hint": {
+    "gsap": "tl.fromTo('.light-panel', {yPercent: 100}, {yPercent: 0, duration: 0.13, ease: 'power3.out'}); tl.fromTo('.headline .word', {y: 40}, {y: 0, duration: 0.2, ease: 'power3.out', stagger: 0.03}, '<'); tl.to('.prev-headline', {y: -40, autoAlpha: 0, duration: 0.12, ease: 'power2.in'}, '<').",
+    "remotion": "Panel translateY = interpolate(frame, [0, 4], [720, 0], {easing: Easing.out(Easing.cubic), extrapolateRight: 'clamp'}); each word i: translateY = interpolate(frame - i, [0, 6], [40, 0], {easing: Easing.out(Easing.cubic), extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})."
+  },
+  "confidence": "medium",
+  "notes": "Wipe vs push is ambiguous: the dark scene may also slide up (a push) rather than being covered. Close candidates are slide transition and masked_scroll, so I proposed a new name. The spectrogram shows a music sweep tailing off at about 10.6 s, but there are no SFX candidates. The inbox card stack below is mostly outside b01, and its movement is unclear in this burst, so it is not listed."
+}

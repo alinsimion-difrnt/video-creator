@@ -1,0 +1,134 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "43e2583247b0e254348603facb698848f964b7e36aace2e0d6d133d468b02c80",
+    "created_at": "2026-10-05T06:56:24.232950Z"
+  },
+  "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+  "event": "e009",
+  "task": "a2-e009",
+  "elements": [
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Agent greeting bubble (scrolls out)",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["slide_up", "mask_reveal"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Hi! How can I help you?",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 1300, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b06",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Agent avatar, first message (scrolls out)",
+      "role": "avatar",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 1300, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Customer issue bubble (scrolls out)",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["slide_up", "mask_reveal"],
+      "change_other": null,
+      "is_text": true,
+      "text": "A reward from my last purchase seems to be missing",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 1300, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Agent reply bubble (scrolls out)",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["slide_up", "mask_reveal"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Oh no! Let me check on that for you.",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 1300, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b07",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Agent avatar, reply message (scrolls out)",
+      "role": "avatar",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 1300, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b08",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Customer 'Thank you' bubble (scrolls in)",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Thank you",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 1300, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Customer avatar next to 'Thank you' (scrolls in)",
+      "role": "avatar",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 1300, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x033", "verdict": "unsure", "label": "unsure", "note": "Coincides with scroll start, but the streak looks like the recurring music transients across the window."},
+    {"id": "x034", "verdict": "confirm", "label": "music", "note": null},
+    {"id": "x035", "verdict": "override", "label": "music", "note": "Same vertical streak shape as the surrounding music hits; nothing visual starts at 34.80 (mid-scroll)."},
+    {"id": "x036", "verdict": "confirm", "label": "music", "note": null},
+    {"id": "x037", "verdict": "unsure", "label": "unsure", "note": "At the right edge of the spectrogram window, after the event."}
+  ],
+  "pattern": {
+    "id": "masked_scroll",
+    "proposed_name": null,
+    "description": "The whole chat thread scrolls upward inside the 'Customer conversation' column; earlier messages slide out under a top mask beneath the heading while a new customer 'Thank you' message rises in from below and settles near the top.",
+    "why_premium": "One continuous eased scroll replaces a cut, so the conversation feels like a real live thread advancing in time; the fixed heading and soft top mask keep the layout stable while content changes."
+  },
+  "build_hint": {
+    "gsap": "Wrap messages in an overflow-hidden column with a top gradient mask; gsap.to('.thread', {y: -scrollDistance, duration: 1.3, ease: 'power2.inOut'}); the new '.msg-thankyou' row is part of the thread (or gsap.fromTo it with {y: 80} → {y: 0}, same ease) so all rows move as one.",
+    "remotion": "const p = interpolate(frame - start, [0, 1.3 * fps], [0, 1], {easing: Easing.inOut(Easing.cubic), extrapolateRight: 'clamp'}); <div style={{transform: `translateY(${-scrollDistance * p}px)`, maskImage: 'linear-gradient(to bottom, transparent, black 10%)'}}>…thread…</div>"
+  },
+  "confidence": "medium",
+  "notes": "Exiting-message boxes (b02, b03, b04, b06, b07) mark where those elements started; they are empty in the end frame. b05 is the diff box covering both the old and new customer avatar positions; it is used for the new avatar, the old customer avatar is not listed separately. Energy rises gradually then decays long, suggesting ease-in-out with a long tail."
+}

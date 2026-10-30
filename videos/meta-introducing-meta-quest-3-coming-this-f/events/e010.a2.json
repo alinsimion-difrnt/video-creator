@@ -1,0 +1,85 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "bdae5bfccce5a64aad6abf3d872bc2bd2f8ba693a09d300d86f39e11e16d58cf",
+    "created_at": "2026-10-05T06:49:15.483753Z"
+  },
+  "video": "meta-introducing-meta-quest-3-coming-this-f",
+  "event": "e010",
+  "task": "a2-e010",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Hero shot: cut from lifestyle footage to a macro of the headset lenses, which spins and pulls back to the front-facing Quest 3 headset on a dark blue gradient",
+      "role": "other",
+      "role_other": "product_hero",
+      "change_types": ["rotate", "scale_down", "blur_in"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 450, "easing_class": "ease_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [610, 164, 880, 322],
+      "manual_reason": "Only the full-frame diff box exists; the left controller moves independently of the headset.",
+      "label": "Left Touch controller slides in from the left edge and rotates to rest",
+      "role": "other",
+      "role_other": "product_accessory",
+      "change_types": ["slide_right", "rotate", "scale_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 350, "easing_class": "ease_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [620, 685, 880, 845],
+      "manual_reason": "Only the full-frame diff box exists; the right controller moves independently of the headset.",
+      "label": "Right Touch controller slides in from the right edge and rotates to rest",
+      "role": "other",
+      "role_other": "product_accessory",
+      "change_types": ["slide_left", "rotate", "scale_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 350, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x071",
+      "verdict": "unsure",
+      "label": "unsure",
+      "note": "Marker sits about 400 ms before the cut, just ahead of a broadband transient near 70.78 s; no clear crescendo shape into the marker, and nothing visual happens there. Could be a music beat rather than a reverse swoosh."
+    },
+    {
+      "id": "x072",
+      "verdict": "unsure",
+      "label": "unsure",
+      "note": "Lands about 50 ms before the hard cut to the lens macro; followed by a broadband hit and a rising tonal sweep (about 71.1-71.4 s) that matches the headset spin. A reverse swoosh into the cut is plausible but the build-up before the marker is weak."
+    }
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "product orbit reveal",
+    "description": "Hard cut from lifestyle footage into an extreme close-up of the headset's lenses; the product then rotates and pulls back in one continuous move while the two controllers sweep in from the frame edges and settle symmetrically below it, ending on a clean hero lockup on a dark gradient.",
+    "why_premium": "Starting inside the product (the lenses) and orbiting out to the full silhouette turns a static packshot into a reveal; the controllers converging from the edges create a balanced triangular lockup, and motion blur plus a decelerating settle make the 3D render feel physical."
+  },
+  "build_hint": {
+    "gsap": "Hard cut (tl.set) to the hero layer; tl.fromTo(headset, {scale: 3, rotationY: -70, filter: 'blur(8px)'}, {scale: 1, rotationY: 0, filter: 'blur(0px)', duration: 0.45, ease: 'power3.out'}); tl.fromTo([ctrlL, ctrlR], {x: (i) => i ? 400 : -400, rotation: (i) => i ? 25 : -25, scale: 1.6}, {x: 0, rotation: 0, scale: 1, duration: 0.35, ease: 'power3.out', stagger: 0}, '<0.1').",
+    "remotion": "Headset: const s = spring({frame, fps, config: {damping: 200, stiffness: 120}}); scale interpolate(s, [0, 1], [3, 1]), rotateY interpolate(s, [0, 1], [-70, 0]) deg, blur 8->0px. Controllers start 3 frames later with spring damping 200 stiffness 160, translateX +/-400 -> 0 and rotate +/-25 -> 0 deg. No overshoot."
+  },
+  "confidence": "medium",
+  "notes": "camera.move is pan_right; visually it reads as a 3D product orbit/pull-back in a render, so motion is assigned to the product layers rather than a separate camera element. Controller manual boxes are estimated on the end frame. Both SFX left unsure."
+}

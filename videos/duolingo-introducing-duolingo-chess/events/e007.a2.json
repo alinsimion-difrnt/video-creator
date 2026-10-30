@@ -1,0 +1,60 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "f3fccbd31495bc134e09fcec473933e80b7e0ce09f91e1484caa1bc96ad67641",
+    "created_at": "2026-10-05T06:43:56.344197Z"
+  },
+  "video": "duolingo-introducing-duolingo-chess",
+  "event": "e007",
+  "task": "a2-e007",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "3D character (Oscar) at the microphone, enlarged by the snap zoom; eyes go from half-open to closed",
+      "role": "other",
+      "role_other": "3d_character",
+      "change_types": ["scale_up", "other"],
+      "change_other": "facial expression change (eyes close)",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 130, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "'THE MASTER' poster on an easel, pushed partly out of frame left by the zoom",
+      "role": "other",
+      "role_other": "set_prop",
+      "change_types": ["scale_up", "slide_left"],
+      "change_other": null,
+      "is_text": true,
+      "text": "MASTER",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 130, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x023", "verdict": "confirm", "label": "swoosh_reverse", "note": "Faint swell over the zoom that ends at about 40.0 s, just after the push-in settles; consistent with a reverse swoosh but quiet under the music."}
+  ],
+  "pattern": {
+    "id": "ui_camera_push_in",
+    "proposed_name": null,
+    "description": "A fast snap push-in (about 1.28x scale over about 4 frames) on the 3D character at the mic, cutting the poster off at the left edge, timed to the end of his name 'Oscar.' before the next line.",
+    "why_premium": "A sitcom-style snap zoom does the comedic beat in about 130 ms with no new assets. The character's eyes close in the same moment, which sells the smug reaction."
+  },
+  "build_hint": {
+    "gsap": "Wrap the scene in a camera container: gsap.to(camera, {scale: 1.28, x: '-2%', y: '-4%', duration: 0.13, ease: 'expo.out', transformOrigin: '60% 40%'}); swap the eye sprite or texture to closed at the same time with tl.set(eyes, {...}, '<').",
+    "remotion": "scale = interpolate(frame, [start, start + 4], [1, 1.28], {easing: Easing.out(Easing.exp), extrapolateRight: 'clamp'}) applied to an AbsoluteFill wrapper with a matching translate; a Sequence swaps the eye state on the same frame."
+  },
+  "confidence": "medium",
+  "notes": "Camera verdict push_in (scale 1.277); motion is almost all camera, not element animation. The pattern is a UI id applied to a 3D/live-style scene because it is the closest canonical one. b03-b07 are thin slivers at the right edge (curtain folds) and are not listed."
+}

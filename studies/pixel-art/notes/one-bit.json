@@ -1,0 +1,53 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T14:01:39+00:00"
+  },
+  "id": "one-bit",
+  "kind": "style",
+  "palette": {
+    "colours_estimate": 2,
+    "shadows": "neutral",
+    "notes": "Two colours by definition, e.g. lospec 1bit-monitor-glow: a slightly cyan near-black and a slightly green near-white so the contrast pings. Clip 3 uses cream on navy, same idea."
+  },
+  "lighting": "Light is expressed by pattern density: dot and checker dithers stand in for mid-tones and shadow; the moon and windows are solid white against black.",
+  "silhouette": "Everything depends on shape: big hair masses, stars, a moon crescent, a fisher with a rod on a pier all read as solid shapes before detail.",
+  "motion": {
+    "timing": "Not measured (no metrics file). Clip 2 is frame-by-frame animation with slow eye blinks and a star that grows and pops; clip 3 is a slow horizontal pan over a night harbour.",
+    "principles": [
+      "silhouette first",
+      "pose-to-pose",
+      "slow pan"
+    ]
+  },
+  "texture": "Ordered dithering (dot screens, checkerboards) for greys; manga-like halftone on hair; stars as single pixels or tiny crosses.",
+  "camera": "Close-ups pushed into faces and eyes (clip 2); a long side pan across a wide diorama where tiny details appear (clip 3).",
+  "sound": "",
+  "acting": {
+    "enters": "Shapes appear from black (a star, the moon) or the camera pans into a figure.",
+    "acts": "Small life in the scene: a fisher on the pier, a small boat drifting below the dock, a blinking face.",
+    "exits": "Pan carries the scene away; scenes end on a single symbol (star in a circle).",
+    "comes_back": true,
+    "depth": "Clip 3 layers a dotted tree line behind the house and a tiny boat in front; scale and dither density separate the planes."
+  },
+  "techniques": [
+    "two-colour palette with tinted black and white",
+    "ordered dither for mid-tones",
+    "dither density to separate depth planes",
+    "silhouette-first shapes",
+    "slow pan over a diorama with tiny background actors"
+  ],
+  "feel": "two tinted colours + dither for greys + tiny actors in a wide night diorama = quiet, crafted charm",
+  "for_fred": "Try a 1-bit 'night' beat: whole frame in two colours, Fred as a solid silhouette fishing or swimming small in a wide diorama while the camera pans; he drifts out of frame and is found again further along the pan.",
+  "sources": [
+    "https://lospec.com/palette-list/1bit-monitor-glow",
+    "https://en.wikipedia.org/wiki/Minit_(video_game)",
+    "data/study/pixel/work/one-bit/clip2-7538879349643136262.jpg",
+    "data/study/pixel/work/one-bit/clip3-7343716594398383403.jpg",
+    "studies/pixel-art/sources.yaml"
+  ]
+}

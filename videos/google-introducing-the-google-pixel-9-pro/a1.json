@@ -1,0 +1,136 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "11176b2f071ad3f4d84e6839c4a4d352ce8ad9d75f07e531bc34e76d1eb7ccf6",
+    "created_at": "2026-10-05T07:37:13.830849Z"
+  },
+  "video": "google-introducing-the-google-pixel-9-pro",
+  "task": "a1-p1",
+  "shots": [
+    {
+      "shot": "s001",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "A Gemini prompt typed character by character in large white sans text on pure black, under a small gradient 'Gemini' wordmark",
+      "transition_in": "other",
+      "transition_other": "video start (no incoming transition)",
+      "on_screen_text": [
+        "Hello.",
+        "How can I help you today?",
+        "Gemini",
+        "Write me a breakup letter. Tell them I’ve found something new. That actually feels magical. Not just the same old thing. Oh, and have it start, “Dear Old Phone.”",
+        "Screen simulated. Limitations apply. Check responses for accuracy."
+      ],
+      "text_word_count": 43,
+      "typography": "Geometric humanist sans (low-confidence guess: Google Sans), sentence case, regular/medium weight, normal tracking; 'Hello.' in a blue-to-pink gradient with grey secondary line; prompt in large white left-aligned text block with a thin blinking caret; tiny centred disclaimer at bottom",
+      "depth_cues": ["glow"],
+      "what_happens": "A Gemini greeting 'Hello. How can I help you today?' fades in and out, then the 'Gemini' label appears and a long humorous prompt types on letter by letter with a caret, wrapping into six lines; near the end the text dims, a glowing phone edge rises from the bottom right and the prompt shrinks into a chat bubble on the phone screen with gradient placeholder answer bars streaming beneath it.",
+      "build_rebuild": "On a black canvas, fade in a gradient 'Hello.' plus grey subline, swap to a small gradient 'Gemini' label, then type the prompt with a per-character typewriter and blinking caret, and finally scale the text block down into a chat bubble inside a phone mockup that slides up with a rim glow while three skeleton bars animate in below.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s002",
+      "shot_type": "3d",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The Pixel 9 Pro rear camera bar, the phone rendered upright and centred",
+      "transition_in": "other",
+      "transition_other": "cut on motion from the phone screen in s001 to the phone in profile rotating toward its back (detected as other; exact mechanism not clear at 2 fps)",
+      "on_screen_text": [
+        "Oh hi, AI.",
+        "Google",
+        "Pixel 9 Pro"
+      ],
+      "text_word_count": 7,
+      "typography": "Large rounded geometric sans, sentence case, medium weight, glowing blue-to-pink gradient for 'Oh hi, AI.' behind the phone; later dark grey 'Google' and 'Pixel 9 Pro' in medium weight flanking the phone",
+      "depth_cues": ["glow", "blur", "shadow"],
+      "what_happens": "The phone rotates from profile to show its back while a glowing gradient headline 'Oh hi, AI.' resolves behind it (the phone occludes the middle of the line, so any word between 'hi,' and 'AI.' cannot be seen); the background brightens from dark to light cream, the glow text fades, and 'Google' and 'Pixel 9 Pro' appear left and right of the camera bar as a product lockup.",
+      "build_rebuild": "Render a 3D phone rotating from side to back view in front of a blurred, glowing gradient headline, then cross-fade the background from near-black to off-white while replacing the headline with a two-sided 'Google' / 'Pixel 9 Pro' lockup.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s003",
+      "shot_type": "logo",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Launch date 'August 13th' then the Google G logo with the store URL",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Google",
+        "Pixel 9 Pro",
+        "August 13th",
+        "Learn more at GoogleStore.com"
+      ],
+      "text_word_count": 10,
+      "typography": "Same geometric sans; 'August 13th' small, centred, medium weight with a blue-to-pink gradient fill that animates; small dark grey two-line URL under the logo",
+      "depth_cues": ["blur"],
+      "what_happens": "The product lockup blurs out as the camera pushes through, revealing a centred gradient 'August 13th' on off-white; it disappears, a small four-point Gemini-style sparkle grows at centre and resolves into the full-colour Google G, and 'Learn more at GoogleStore.com' fades in beneath it.",
+      "build_rebuild": "Zoom-blur the previous frame out into an off-white canvas, fade in a centred gradient date label, then scale a small sparkle up and morph it into the Google G logo while fading in a two-line URL below.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001"], "words": null},
+      {"beat": "demo", "shots": ["s001"], "words": null},
+      {"beat": "outcome", "shots": ["s002"], "words": null},
+      {"beat": "cta", "shots": ["s003"], "words": null}
+    ],
+    "hook": {
+      "text": "Write me a breakup letter. Tell them I’ve found something new.",
+      "technique": "other",
+      "technique_other": "witty typed AI prompt that builds curiosity (a breakup letter addressed to the viewer's old phone)",
+      "shots": ["s001"],
+      "words": null
+    },
+    "cta": {
+      "text": "Learn more at GoogleStore.com",
+      "shots": ["s003"]
+    },
+    "tone": "Playful, minimal and confident: a deadpan typed joke on black that pays off in a glossy hardware reveal and a clean light-mode brand close.",
+    "signature_moments": [
+      {
+        "shots": ["s001"],
+        "description": "The long prompt types on in real time with a caret, then shrinks into a chat bubble on a phone screen that rises in with a rim glow.",
+        "why_premium": "One continuous typographic idea carries the story and transitions seamlessly from abstract text into the product UI without a cut."
+      },
+      {
+        "shots": ["s002"],
+        "description": "The phone rotates in front of a glowing gradient 'Oh hi, AI.' while the scene shifts from dark to light.",
+        "why_premium": "Layering product render over soft glowing type with depth blur and a lighting shift gives a cinematic reveal that feels expensive and on-brand."
+      },
+      {
+        "shots": ["s003"],
+        "description": "A tiny sparkle grows and resolves into the Google G.",
+        "why_premium": "A small, precise logo morph ties the Gemini AI motif to the master brand in under a second."
+      }
+    ],
+    "scores": {
+      "hook": {"score": 4, "evidence": "The breakup-letter prompt is unexpected and funny, and the payoff ('Dear Old Phone') is held back until the end of the typing, creating sustained curiosity; it starts slowly with a generic greeting.", "refs": ["s001"]},
+      "clarity": {"score": 4, "evidence": "Single message (new AI phone replaces your old one) with a date and URL; what the AI actually does is only implied by placeholder bars, not shown.", "refs": ["s001", "s002", "s003"]},
+      "ui_showcase": {"score": 2, "evidence": "Gemini UI appears only as a simplified prompt and skeleton answer bars marked 'Screen simulated'; the focus is hardware, not interface.", "refs": ["s001"]},
+      "motion_polish": {"score": 5, "evidence": "Smooth typewriter with caret, text-to-phone-screen hand-off, 3D phone rotation with glow and lighting shift, zoom-through blur and sparkle-to-logo morph are all clean and continuous.", "refs": ["s001", "s002", "s003"]},
+      "sound_design": {"score": 4, "evidence": "Judged from anchor audio facts: music bed at 117.45 BPM, integrated loudness -14.58 LUFS, no speech; an impact (x005) lands just before the phone reveal cut and a chime/swoosh_reverse cluster (x011, x012) accents the logo resolve. SFX are sparse and mostly music-labelled, so detail beyond that cannot be judged.", "refs": ["s001", "s002", "s003"]},
+      "vo_script_quality": {"score": null, "evidence": "No voice-over: the transcript has no words; the script is carried entirely by on-screen text.", "refs": []},
+      "brand_consistency": {"score": 5, "evidence": "Consistent Google sans typography, Gemini blue-to-pink gradient across 'Hello.', 'Gemini', 'Oh hi, AI.' and 'August 13th', ending on the Google G and store URL.", "refs": ["s001", "s002", "s003"]},
+      "works_muted": {"score": 5, "evidence": "The whole story is told in on-screen text and product visuals with no voice-over, so it is fully understandable muted.", "refs": ["s001", "s002", "s003"]},
+      "overall": {"score": 4, "evidence": "A tight 30 s teaser with a memorable typed-prompt concept, premium motion and strong brand cohesion; light on actual product or UI substance.", "refs": ["s001", "s002", "s003"]}
+    },
+    "localization_friendliness": {
+      "score": 2,
+      "baked_in_text": true,
+      "vo_dependent": false,
+      "notes": "No voice-over, but the entire narrative is an English wordplay prompt typed on screen plus a glowing headline composited behind a 3D render, so localizing means re-rendering text animations and rewriting the joke; the date and URL are also baked in."
+    }
+  }
+}

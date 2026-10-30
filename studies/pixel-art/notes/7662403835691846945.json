@@ -1,0 +1,53 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0039c2c6713a0601b7a918dac7c5b6e06c377ce3f8619f1d5130b38bf0e3c1be",
+    "created_at": "2026-10-13T13:07:39+00:00"
+  },
+  "id": "7662403835691846945",
+  "kind": "clip",
+  "palette": {
+    "colours_estimate": 4,
+    "shadows": "cool",
+    "notes": "Code: 4 colours on the still, one 4-step ramp with 9 deg shift. Cream background, navy outline, one accent per gag (lilac, pink, orange) used for both sprite shading and the caption word."
+  },
+  "lighting": "Flat with a single shadow tone along the bottom of each shape, as if lit from above.",
+  "silhouette": "The joke is silhouette: a ball, a pillow and a loaf of bread that pop into a cat by adding ears, face and tail. Navy outline, simple round shapes.",
+  "motion": {
+    "timing": "Code: median hold 233.3 ms (p25 100, p75 633.3), 2.0 drawings/s, on 7s: held poses and pop-in transformations, timed to the chiptune lyric.",
+    "principles": [
+      "held pose",
+      "transformation pop",
+      "timing to music"
+    ]
+  },
+  "texture": "Clean pixels, almost no dither (0.0001); big chunky pixel font; lots of empty cream space.",
+  "camera": "Static centred frame; the sprite stays in the middle, text above, handle below. A blank beat at 3.1 s separates gags.",
+  "sound": "",
+  "acting": {
+    "enters": "Each object appears plain in the centre with a question caption.",
+    "acts": "On the answer line the object transforms into a cat (ears and face pop out, tail flicks) and holds smugly.",
+    "exits": "Cuts to blank cream between gags, then the next object appears.",
+    "comes_back": true,
+    "depth": "None; one centred hero on an empty field."
+  },
+  "techniques": [
+    "question / answer captions synced to the song",
+    "shape-to-cat transformation gag repeated three times",
+    "accent colour shared by sprite and caption word",
+    "4-colour palette with one shadow tone",
+    "blank beat between gags as a reset",
+    "held smug pose after the reveal"
+  ],
+  "feel": "4 colours + empty cream field + ball/pillow/bread that pops into a cat on the beat = rule-of-three cozy gag",
+  "for_fred": "Pixie can do a disguise gag: sit still as an object (a loaf, a cushion) while the caption asks what it is, then pop ears and face on the answer and hold. Repeat with a twist on the third go; blank beat between each.",
+  "sources": [
+    "data/study/pixel/work/7662403835691846945/sheet.jpg",
+    "studies/pixel-art/clips/7662403835691846945.json",
+    "studies/pixel-art/tiktok.yaml",
+    "https://www.tiktok.com/@siegfriedcroes/video/7662403835691846945"
+  ]
+}

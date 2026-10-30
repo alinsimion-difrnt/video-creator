@@ -1,0 +1,39 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "594b73322d94829bcece7b1f8e5da67af16355d065dda86a849f901f54bec56a",
+                 "created_at": "2026-10-13T15:10:00+00:00"},
+  "id": "7611169482157100302",
+  "format": "talking_head",
+  "hook": {"type": "result_first",
+           "line": "A brand went from $0 to $400K in a month, and it wasn't from Google Ads.",
+           "visual": "Low-angle handheld selfie on a porch, fuzzy mic held at her chin, white text '$0 → $400K/mo' beside the mic."},
+  "beats": [
+    {"t": 0.0, "what": "Result first: '$0 → $400K/mo' text next to the mic while she states the number"},
+    {"t": 4.87, "what": "Jump cut; top title 'Business owners... this is for you' calls out the audience"},
+    {"t": 12.65, "what": "Mock AI chat input bar with a typed product question appears at the mic, showing the new search habit"},
+    {"t": 23.8, "what": "She turns to the article's example: brand went from 0 to 41 of 50 AI answers"},
+    {"t": 31.62, "what": "Article quote card about the channel's monthly revenue pops in at the bottom"},
+    {"t": 37.95, "what": "Sky-angle cut, small label 'purchase-intent queries' as she says AI buyers convert better"},
+    {"t": 41.6, "what": "Steps start: top title '1. Check if you show up' while she holds up one finger"},
+    {"t": 47.47, "what": "'2. Create an Answer Hub' title with two fingers"},
+    {"t": 56.92, "what": "Big 'GEO' title names the practice after the steps are given"},
+    {"t": 67.0, "what": "'follow me' text as she closes on the homework line"}
+  ],
+  "graphics": {"captions": "title_only", "caption_position": "mixed",
+               "devices": ["title_text", "chart_or_number", "screenshot", "jump_cut", "camera_move"],
+               "density": "minimal", "per_minute_estimate": 8},
+  "characters": [],
+  "cta": {"kind": "follow", "t": 67.0},
+  "why_it_works": [
+    "The revenue jump is the first sentence, so the viewer stays to learn the channel that wasn't ads",
+    "Audience callout 'Business owners... this is for you' at 5 s filters in the buyers and makes them feel addressed",
+    "The term 'GEO' is named only after the steps, so the jargon never blocks the opening",
+    "Numbered steps with finger counts give a clear structure without heavy graphics"
+  ],
+  "weaknesses": [
+    "Very quiet mix (-29.5 LUFS) and handheld low angles make it feel rough",
+    "Fast talking (4.35 words/s) with few captions; viewers with sound off lose most of it",
+    "Step 3 gets no title card, so the list is inconsistent"
+  ],
+  "for_robert": "Open with the before-and-after number as one line of text beside him, and let Fred hold up the step number (one, two, three) on his fins as Robert counts on his fingers."
+}

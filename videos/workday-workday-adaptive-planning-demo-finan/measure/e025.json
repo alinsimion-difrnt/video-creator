@@ -1,0 +1,236 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "s7_measure",
+    "annotator": "code",
+    "skill": null,
+    "model": null,
+    "input_hash": "ea5a51aee13bc2c869e5de899d4b88fce524aa8d38459ba40cc9eb1a36629270",
+    "created_at": "2026-10-05T10:11:07.854731Z"
+  },
+  "video": "workday-workday-adaptive-planning-demo-finan",
+  "event": "e025",
+  "fps": 23.976,
+  "elements": [
+    {
+      "box": "m01",
+      "xyxy": [
+        279,
+        477,
+        303,
+        512
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.845,
+      "channels": [
+        {
+          "name": "x",
+          "start_f": 1761,
+          "end_f": 1782,
+          "start_value": 330.5,
+          "end_value": 291.0,
+          "observed_start": true,
+          "cls": "ease_out",
+          "gsap": {
+            "ease": "back.out(3)",
+            "duration_ms": 1027.4,
+            "rmse": 1.30608
+          },
+          "bezier": "cubic-bezier(0.000, 2.500, 0.000, 2.500)",
+          "bezier_rmse": 0.86113,
+          "spring": {
+            "zeta": 0.05,
+            "omega0": 3.551,
+            "settle_ms": 19741.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 12.609,
+              "damping": 0.355
+            },
+            "remotion_exact": true,
+            "rmse": 1.08099
+          },
+          "overshoot_pct": 317.72,
+          "duration_ms": 1014.0,
+          "fit_quality": 0.6233
+        },
+        {
+          "name": "y",
+          "start_f": 1760,
+          "end_f": 1781,
+          "start_value": 369.5,
+          "end_value": 494.5,
+          "observed_start": true,
+          "cls": "linear",
+          "gsap": {
+            "ease": "back.inOut(2.5)",
+            "duration_ms": 1626.6,
+            "rmse": 0.83916
+          },
+          "bezier": "cubic-bezier(0.000, -1.000, 0.682, -1.000)",
+          "bezier_rmse": 0.56897,
+          "spring": {
+            "zeta": 0.8094,
+            "omega0": 10.25,
+            "settle_ms": 374.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 105.065,
+              "damping": 16.592
+            },
+            "remotion_exact": true,
+            "rmse": 0.87174
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 285.1,
+          "fit_quality": 0.151
+        },
+        {
+          "name": "scale",
+          "start_f": 1760,
+          "end_f": 1781,
+          "start_value": 0.755,
+          "end_value": 1.0,
+          "observed_start": true,
+          "cls": "linear",
+          "gsap": {
+            "ease": "expo.out",
+            "duration_ms": 221.4,
+            "rmse": 0.09359
+          },
+          "bezier": "cubic-bezier(0.029, 1.821, 0.400, 0.432)",
+          "bezier_rmse": 0.07258,
+          "spring": {
+            "zeta": 1.9528,
+            "omega0": 113.726,
+            "settle_ms": 128.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 12933.685,
+              "damping": 444.181
+            },
+            "remotion_exact": false,
+            "rmse": 0.09354
+          },
+          "overshoot_pct": 18.97,
+          "duration_ms": 87.5,
+          "fit_quality": 0.955
+        },
+        {
+          "name": "opacity",
+          "start_f": 1760,
+          "end_f": 1782,
+          "start_value": 0.0,
+          "end_value": 1.0,
+          "observed_start": true,
+          "cls": "linear",
+          "gsap": {
+            "ease": "expo.out",
+            "duration_ms": 634.1,
+            "rmse": 0.08402
+          },
+          "bezier": "cubic-bezier(0.000, 1.668, 0.300, 0.317)",
+          "bezier_rmse": 0.0386,
+          "spring": {
+            "zeta": 3.0,
+            "omega0": 64.887,
+            "settle_ms": 355.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 4210.349,
+              "damping": 389.323
+            },
+            "remotion_exact": false,
+            "rmse": 0.08212
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 133.4,
+          "fit_quality": 0.9526
+        }
+      ],
+      "timing": {
+        "ease": "back.inOut(2.5)",
+        "start_s": 73.3799,
+        "duration_ms": 112.7,
+        "rmse": 0.99134
+      },
+      "stagger": null,
+      "sfx_offset_ms": {},
+      "source": "measured",
+      "quality": 0.955
+    },
+    {
+      "box": "b03",
+      "xyxy": [
+        128,
+        60,
+        344,
+        460
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.994,
+      "channels": [],
+      "timing": null,
+      "stagger": null,
+      "sfx_offset_ms": {},
+      "source": "model_estimate",
+      "quality": 0.0
+    },
+    {
+      "box": "b01",
+      "xyxy": [
+        125,
+        466,
+        349,
+        510
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.959,
+      "channels": [
+        {
+          "name": "opacity",
+          "start_f": 1780,
+          "end_f": 1782,
+          "start_value": 0.0,
+          "end_value": 1.0,
+          "observed_start": true,
+          "cls": "ease_in",
+          "gsap": {
+            "ease": "expo.in",
+            "duration_ms": 148.9,
+            "rmse": 0.015
+          },
+          "bezier": "cubic-bezier(0.778, 0.339, 0.991, -0.312)",
+          "bezier_rmse": 0.00108,
+          "spring": {
+            "zeta": 0.9032,
+            "omega0": 136.735,
+            "settle_ms": 35.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 18696.356,
+              "damping": 247.004
+            },
+            "remotion_exact": true,
+            "rmse": 0.01672
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 126.1,
+          "fit_quality": 1.0
+        }
+      ],
+      "timing": {
+        "ease": "expo.in",
+        "start_s": 74.1754,
+        "duration_ms": 148.9,
+        "rmse": 0.015
+      },
+      "stagger": null,
+      "sfx_offset_ms": {},
+      "source": "measured",
+      "quality": 1.0
+    }
+  ],
+  "failed": {}
+}

@@ -1,0 +1,36 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a2_annotate_event",
+  "annotator": "claude-code",
+  "skill": "annotate-event@3dad117bd85a",
+  "model": null,
+  "input_hash": "8fc4895ef748531368e55bbdf311852cdea6c522c37a5733722d2ec8d0e57a23",
+  "created_at": "2026-10-05T06:47:26.767929Z"
+ },
+ "video": "notion-introducing-the-new-notion-ai",
+ "event": "e007",
+ "task": "a2-e007",
+ "elements": [
+  {"box": null, "manual_box": [444, 59, 556, 475],
+   "manual_reason": "No single candidate covers exactly the headline 'One AI tool to': b01 also includes the pill, the others are word fragments.",
+   "label": "Headline 'One AI tool to'", "role": "headline", "role_other": null,
+   "change_types": ["other"], "change_other": "hard_cut (replaces 'Meet the new Notion AI' in one frame)",
+   "is_text": true, "text": "One AI tool to", "text_unit": "whole", "estimates": null},
+  {"box": "b04", "manual_box": null, "manual_reason": null, "label": "'Ask a question' pill",
+   "role": "button", "role_other": null, "change_types": ["slide_up", "blur_in", "fade"], "change_other": null,
+   "is_text": true, "text": "Ask a question", "text_unit": "whole",
+   "estimates": {"duration_ms": 300, "easing_class": "ease_out"}}
+ ],
+ "sfx_review": [],
+ "pattern": {"id": "input_text_cycle", "proposed_name": null,
+  "description": "After a hard cut to the sentence stem 'One AI tool to', a rounded pill with an icon and the first option 'Ask a question' rises into the slot from below while unblurring; the next pill is already faintly visible below, setting up a vertical cycle of options.",
+  "why_premium": "The sentence stem stays fixed while the completion arrives as a real UI chip with soft blur and lift, so the claim reads as both copy and product, and the queued blurred pill promises more options without clutter."},
+ "build_hint": {
+  "gsap": "tl.set('.stem', {opacity:1}); tl.fromTo('.pill', {y:30, opacity:0, filter:'blur(8px)'}, {y:0, opacity:1, filter:'blur(0px)', duration:0.3, ease:'power3.out'}); keep the next pill below at opacity:0.1, blur(6px) ready to cycle up.",
+  "remotion": "Stem rendered from the cut frame. Pill: const p = spring({frame: frame - start, fps, config:{damping:200, stiffness:170}}); translateY = interpolate(p,[0,1],[30,0]); opacity = p; filter = `blur(${interpolate(p,[0,1],[8,0])}px)`."
+ },
+ "confidence": "medium",
+ "notes": "The single-frame energy spike at f105 is the hard cut from the title card; the pill motion follows. A faint, blurred second pill sits below the first (around y~470), probably the next cycle item, not annotated since it barely changes here."
+}

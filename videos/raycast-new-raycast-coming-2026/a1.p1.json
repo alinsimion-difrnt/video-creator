@@ -1,0 +1,188 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "d32d3c4483daba550d6fcedfd3bb6b2468970ace9c6356072623097ee903e5d0",
+    "created_at": "2026-10-05T07:40:03.696535Z"
+  },
+  "video": "raycast-new-raycast-coming-2026",
+  "task": "a1-p1",
+  "shots": [
+    {
+      "shot": "s001",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "Oversized pill-shaped Raycast search bar with the logo glyph, a blinking text caret and the grey placeholder 'Search'",
+      "transition_in": "other",
+      "transition_other": "video start (anchors give no transition); opens on an empty dark draped-fabric background for about a second before the search bar is on screen",
+      "on_screen_text": [
+        "Search",
+        "Search for apps and comman"
+      ],
+      "text_word_count": 6,
+      "typography": "Clean geometric/neo-grotesk sans (Inter-like, low-confidence guess), regular weight, sentence case, normal tracking; placeholder set very large in muted grey next to a tall rounded caret; last frame shows it at normal UI size, cropped at the right edge",
+      "depth_cues": [
+        "grain",
+        "blur",
+        "shadow"
+      ],
+      "what_happens": "Dark, grainy fabric-like abstract background; from about 1.0 s an extreme close-up of the search bar sits right of centre, cropped by the frame edge, with the caret blinking and the bar drifting slowly so more placeholder text shows ('Search f' by 3.0 s). Around 3.5 s the view pulls back fast to a smaller full search bar reading 'Search for apps and comman...' (cut off at the frame edge) over a lighter, angled backdrop.",
+      "build_rebuild": "Render a rounded-pill search field (logo icon, 4px rounded caret blinking at ~1 Hz, grey placeholder) at about 3x scale cropped off the right edge over a grainy dark gradient backdrop, translate it slowly left over 2 s, then scale it down to 1x with an ease-out pull-back in about 0.4 s.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s002",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "Search input being typed into ('clipboard') with the single 'Clipboard History' result row below",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "clipboard",
+        "Results",
+        "Clipboard History",
+        "Raycast",
+        "ch",
+        "Configure Command",
+        "Set Hotkey...",
+        "Set Alias...",
+        "Manage Keywords...",
+        "Open Command Settings",
+        "Search for actions...",
+        "Command"
+      ],
+      "text_word_count": 21,
+      "typography": "Same sans UI face; the typed query is large, regular weight, lowercase, in near-white; the 'Results' section label is medium weight; the result row pairs a white title with a muted grey 'Raycast' subtitle and a small rounded 'ch' alias chip; the action menu uses small regular-weight sentence case with a smaller muted header",
+      "depth_cues": [
+        "grain",
+        "blur",
+        "shadow"
+      ],
+      "what_happens": "Close-up of the Raycast window, cropped at the bottom-right: the query types out letter by letter ('cl' at 4.0 s, 'clipb' at 4.5 s, 'clipboard' at 5.0 s) while the 'Clipboard History' result stays highlighted. At about 5.5 s the frame pulls back to show the action panel ('Configure Command' with Set Hotkey..., Set Alias..., Manage Keywords..., Open Command Settings) over the dimmed command list.",
+      "build_rebuild": "Show a cropped launcher window at about 2x scale, typewriter the query 'clipboard' over about 1.3 s (one character per 2 to 3 frames) with a solid caret, keep one highlighted result row with icon, title, subtitle and alias chip, then cut or zoom out to a 1x action-menu popover anchored bottom-right with its first item highlighted.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s003",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "'Set Hotkey' dialog whose keycap row fills in with the recorded shortcut, then switches to a 'Saved' success state",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Configure Command",
+        "Set Hotkey...",
+        "Set Alias...",
+        "Manage Keywords...",
+        "Open Command Settings",
+        "Search for actions...",
+        "Command",
+        "Set Hotkey",
+        "e.g. ⇧ ⌘ A",
+        "⌥ ⌘ V",
+        "Clipboard History",
+        "Save ↵",
+        "Close Esc",
+        "Saved ✓"
+      ],
+      "text_word_count": 32,
+      "typography": "Small sans UI text, regular weight, title case for menu items and buttons; dialog title in a muted small label; modifier glyphs on small rounded keycaps; footer actions pair a label with a key hint ('Save ↵', 'Close Esc')",
+      "depth_cues": [
+        "grain",
+        "blur",
+        "shadow",
+        "glow"
+      ],
+      "what_happens": "The action menu with 'Set Hotkey...' highlighted gives way (around 6.5 s) to the 'Set Hotkey' dialog showing the placeholder 'e.g. ⇧ ⌘ A'. The recorded keys appear one after another (the keyframe shows only ⌥; by 7.5 s it reads ⌥ ⌘ V), the 'Save ↵' button turns highlighted as if pressed (8.0 s), then the dialog moves to centre and takes on a tinted success state with the keycaps tinted and 'Saved ✓' in the footer (8.5 s).",
+      "build_rebuild": "Build a modal card with title, centred keycap row and footer actions; swap the placeholder keycaps for the recorded keys with a quick pop-in for each (~150 ms apart), flash the Save button's pressed state, then tween the card to centre while cross-fading in a tinted background, tinted keycaps and a 'Saved ✓' label.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s004",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "Clipboard History list's first entry 'Raycast-Wallpaper@2x.png' with its thumbnail",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Type to filter entries...",
+        "Today",
+        "Raycast-Wallpaper@2x.png",
+        "Cleanshot 2025-11-12 at 11.4..."
+      ],
+      "text_word_count": 11,
+      "typography": "Large sans UI face: grey regular-weight placeholder in sentence case, a muted medium-weight section label 'Today', list entries in near-white regular weight; long filenames truncated with an ellipsis",
+      "depth_cues": [
+        "grain",
+        "blur",
+        "shadow"
+      ],
+      "what_happens": "Hard cut to a close-up of the Clipboard History view (shown as the result of the hotkey just saved). The first row starts dim and transparent, then brightens into a highlighted row while the next entry ('Cleanshot 2025-11-12 at 11.4...') fades and rises in below and the panel drifts up a little.",
+      "build_rebuild": "Cut to a cropped list panel at about 2x scale and stagger in its rows (opacity 0 to 1 plus a ~20px upward move, ~120 ms stagger, ease-out), with the first row taking a rounded highlight background as it lands.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s005",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "The clipboard list, then the Emoji & Symbols grid of large rounded emoji tiles with a floating 'Search Emoji & Symbols' pill",
+      "transition_in": "other",
+      "transition_other": "continuous reframe of the same clipboard panel (pulls back and shifts) rather than a visible cut; flagged as non-cut by the detector",
+      "on_screen_text": [
+        "Type to filter entries...",
+        "Today",
+        "Raycast-Wallpaper@2x.png",
+        "Cleanshot 2025-11-12 at 11.4...",
+        "#FF6363",
+        "#56C2FF",
+        "styles.css",
+        "Search Emoji & Symbols"
+      ],
+      "text_word_count": 18,
+      "typography": "Sans UI face, regular weight; list entries in near-white sentence/filename case; the emoji search pill uses medium-grey regular-weight title case next to an app icon",
+      "depth_cues": [
+        "grain",
+        "blur",
+        "shadow"
+      ],
+      "what_happens": "The clipboard list, now fully populated (two images, two hex colour entries, a styles.css file), scrolls up past the frame (10.0 to 10.5 s). Around 11.0 s the panel content changes to a grid of large emoji tiles that slides upward as the camera moves through it, while a 'Search Emoji & Symbols' pill stays fixed at the bottom of the panel. By 13.0 to 13.5 s the grid settles.",
+      "build_rebuild": "Inside a fixed rounded panel mask, scroll the list content up by its height, swap it for a 3-column grid of 280px rounded emoji tiles that keeps scrolling upward with an ease-out to rest, and keep a pinned frosted search pill at the bottom.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s006",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "grid",
+      "composition_other": null,
+      "focal_element": "Selected emoji tile (face with hand over eyes) with a thick rounded selection outline, then the fire emoji tile",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": [
+        "blur",
+        "shadow"
+      ],
+      "what_happens": "Extreme close-up on the emoji grid: robot, face-with-hand-over-eyes and fire emoji in a row with neighbouring tiles cropped above and below. The middle tile is selected with a tinted outline and fill; by 14.5 s the selection jumps to the fire tile on the right with a different outline tint, as if navigating with arrow keys.",
+      "build_rebuild": "Render a 3-wide row of rounded tiles at about 3x scale and move a selection state (thick rounded border plus faint tinted fill) from one tile to the next with a ~100 ms step and a tint matched to each emoji.",
+      "confidence": "high"
+    }
+  ],
+  "summary": null
+}

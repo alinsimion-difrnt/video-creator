@@ -1,0 +1,86 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "24d6dc634ca72ab00ee63bb178e5e5c972f3ead8b9c4dc693b2b08c6cd468f7c",
+    "created_at": "2026-10-05T06:44:50.569830Z"
+  },
+  "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+  "event": "e010",
+  "task": "a2-e010",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Chat thread (user + agent bubbles) zooming and sliding out to the right",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["scale_up", "slide_right", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 500, "easing_class": "ease_in"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Last agent bubble with Call Status / Success row exiting",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["scale_up", "slide_right", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Your order is due to arrive at around 2pm.",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 500, "easing_class": "ease_in"}
+    },
+    {
+      "box": null,
+      "manual_box": [381, 425, 642, 572],
+      "manual_reason": "No candidate box matches the Transcription tile outline; b10 covers only its label and b02 is a wider diff region.",
+      "label": "Transcription feature tile",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["scale_up", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 350, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b10",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Tile label",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["fade", "scale_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Transcription",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "scale_dissolve_transition",
+    "proposed_name": null,
+    "description": "The finished chat demo pushes in and drifts off to the right while fading, and a single 'Transcription' feature tile (mic-on-document icon) scales up from a tiny glyph at centre on an empty canvas, starting the feature-list section.",
+    "why_premium": "The outgoing UI and incoming tile overlap in one continuous scale move, so the topic change (demo -> capability list) needs no cut; the stark single tile on whitespace resets attention right on the narration word 'Building'."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.chat', {scale: 1.2, x: '+=260', opacity: 0, duration: 0.5, ease: 'power2.in'}); tl.fromTo('.tile', {scale: 0.15, opacity: 0}, {scale: 1, opacity: 1, duration: 0.35, ease: 'power3.out'}, '-=0.2'); tile label inherits the tile transform.",
+    "remotion": "Chat: interpolate(frame, [0, 15], [1, 1.2]) scale + translateX and opacity 1->0 with Easing.in(Easing.cubic). Tile: spring({damping: 200, stiffness: 160}) driving scale 0.15->1 and opacity, starting ~9 frames in."
+  },
+  "confidence": "medium",
+  "notes": "Camera verdict push_in (scale 1.20, pan_x 0.20) describes the outgoing chat; the incoming tile scales independently, so this reads as a transition rather than a pure camera move."
+}

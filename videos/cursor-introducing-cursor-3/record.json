@@ -1,0 +1,3613 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "s8_reconcile",
+    "annotator": "code",
+    "skill": null,
+    "model": null,
+    "input_hash": "865de8a278a70084395dadf3369ec02c2fe5abbedb3a99b51fe793dc5faa5bad",
+    "created_at": "2026-10-05T12:18:17.569084Z"
+  },
+  "video": "cursor-introducing-cursor-3",
+  "brand": "Cursor",
+  "title": "Introducing Cursor 3",
+  "format": "feature_reel",
+  "tier": "reference",
+  "duration_s": 90.3402,
+  "fps": 23.81,
+  "frame_size": [
+    1280,
+    720
+  ],
+  "palette": [
+    "#f3f3f3",
+    "#5c4638",
+    "#986647",
+    "#ad937d",
+    "#ccbfb1",
+    "#2a1d1a"
+  ],
+  "summary": {
+    "beats": [
+      {
+        "beat": "hook",
+        "shots": [
+          "s001",
+          "s002"
+        ],
+        "words": [
+          0,
+          34
+        ]
+      },
+      {
+        "beat": "mechanism",
+        "shots": [
+          "s003",
+          "s004",
+          "s005",
+          "s006"
+        ],
+        "words": [
+          35,
+          101
+        ]
+      },
+      {
+        "beat": "demo",
+        "shots": [
+          "s007",
+          "s008",
+          "s009",
+          "s010",
+          "s011",
+          "s012",
+          "s013",
+          "s014",
+          "s015",
+          "s016"
+        ],
+        "words": [
+          102,
+          245
+        ]
+      },
+      {
+        "beat": "proof",
+        "shots": [
+          "s017",
+          "s018",
+          "s019",
+          "s020",
+          "s021"
+        ],
+        "words": [
+          246,
+          291
+        ]
+      },
+      {
+        "beat": "outcome",
+        "shots": [
+          "s022",
+          "s023",
+          "s024",
+          "s025"
+        ],
+        "words": [
+          292,
+          337
+        ]
+      },
+      {
+        "beat": "cta",
+        "shots": [
+          "s026",
+          "s027"
+        ],
+        "words": null
+      }
+    ],
+    "hook": {
+      "text": "Coding is changing, and it's changing for the better. The gap between imagination and reality is shrinking to an instant.",
+      "technique": "bold_claim",
+      "technique_other": null,
+      "shots": [
+        "s001"
+      ],
+      "words": [
+        0,
+        19
+      ]
+    },
+    "cta": {
+      "text": null,
+      "shots": [
+        "s026"
+      ]
+    },
+    "tone": "Calm, warm and understated founder conversation. It is confident and optimistic without hype, shot as a cinematic documentary in a book-lined office and intercut with honest, real product captures. It ends on a minimal monochrome logo card.",
+    "signature_moments": [
+      {
+        "shots": [
+          "s026"
+        ],
+        "description": "End card: a dark square tumbles in 3D, folds through an arrow shard into the cube mark, then the wordmark joins and the lockup settles centred on off-white.",
+        "why_premium": "It is the only designed motion in the film, so the brand mark gets a crafted, physical-feeling resolve that contrasts with the live footage. The quiet background and long hold read as confident rather than salesy."
+      },
+      {
+        "shots": [
+          "s009",
+          "s013",
+          "s019"
+        ],
+        "description": "Real UI captures are punched in on the exact control the founders name, cut to the spoken words: 'Commit & Create PR' as they say 'merge PR', 'Move to > Cloud' as they say 'zap it back up onto the cloud', and the Composer 2 tooltip as they name Composer 2.",
+        "why_premium": "Tight word-to-UI sync makes each claim visibly true in the real product without any mock-up, and the punch-ins keep small UI text legible."
+      },
+      {
+        "shots": [
+          "s016"
+        ],
+        "description": "One continuous full-window capture hops through about five sidebar agents, roughly one click per beat, and each click swaps the pane (plans, video artifacts, a live run).",
+        "why_premium": "It shows 'all these different agents' as real, parallel work at a glance, with rhythm instead of explanation."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 3,
+        "evidence": "It opens on a bold-claim line delivered to camera in a well-lit, cinematic two-shot with name supers (w0-w19). The claim is broad and the first product visual does not arrive until about 13.6 s, so the hook relies on the founders' credibility rather than a visual surprise.",
+        "refs": [
+          "s001",
+          "s002",
+          "w0",
+          "w19",
+          "s004"
+        ]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "The script names one capability at a time (look at changes, merge PR, go to definition, local/cloud handoff, parallel agents, Cloud, Composer 2), and nearly every claim is followed by a matching real UI capture. Some captures run unzoomed (s011, s016), so detail is hard to read, and the model/product/runtime framing (w309-w312) is only spoken.",
+        "refs": [
+          "s009",
+          "s011",
+          "s013",
+          "s016",
+          "s019",
+          "w309",
+          "w312"
+        ]
+      },
+      "ui_showcase": {
+        "score": 4,
+        "evidence": "It uses the real product throughout, with no mock-ups. Punch-ins and pans on the key controls (Commit & Create PR, Move to > Cloud, model picker tooltip) are timed to VO. Unzoomed full-window shots leave the body text too small at 1080p, and there are no UI motion-graphics callouts.",
+        "refs": [
+          "s005",
+          "s009",
+          "s013",
+          "s016",
+          "s019"
+        ]
+      },
+      "motion_polish": {
+        "score": 3,
+        "evidence": "The edit is mostly clean hard cuts between two or three camera angles and screen captures, with occasional reframes or punch-ins. The logo resolve is the only crafted motion graphic. Several cuts land a few frames before the detected boundaries, and s023 is a very short 0.3 s fragment. This is competent and restrained but not motion-led.",
+        "refs": [
+          "s023",
+          "s021",
+          "s026"
+        ]
+      },
+      "sound_design": {
+        "score": 3,
+        "evidence": "Judged from anchors plus visuals. There is a music bed at about 103 BPM under clean presenter audio, and integrated loudness is -27.31 LUFS (quiet for online delivery). The 128 SFX candidates are mostly 'swoosh_reverse'/'impact' with moderate CLAP scores and fall almost on the beat grid (e.g. candidate x001 at 2.299 s vs beat 2.298 s), which suggests music transients rather than designed SFX. Nothing in the visuals implies hits on UI actions or the logo, so the sound design reads as music plus voice only.",
+        "refs": [
+          "s001",
+          "s026"
+        ]
+      },
+      "vo_script_quality": {
+        "score": 4,
+        "evidence": "The script is conversational and specific, and the two founders trade lines naturally. It moves from a thesis (w0-w34) to the announcement (w42-w44), then concrete features, and ends on an aspirational vision ('agents really feel like colleagues', w321-w325). It has some filler and repetition ('really, really seamless', w175-w177) and the 'We announced...' recap stretch (w246-w291) is list-like.",
+        "refs": [
+          "w0",
+          "w44",
+          "w175",
+          "w246",
+          "w321",
+          "w337"
+        ]
+      },
+      "brand_consistency": {
+        "score": 4,
+        "evidence": "The warm, book-lined set, the light off-white product UI and the off-white monochrome end card share one restrained, warm-neutral look. The UI consistently shows the same light theme and the same task ('Add group by option None for sidebar in Glass'). No brand graphics appear between the open and the end card.",
+        "refs": [
+          "s001",
+          "s005",
+          "s019",
+          "s026"
+        ]
+      },
+      "works_muted": {
+        "score": 2,
+        "evidence": "The story is carried almost entirely by the on-camera VO. There are no captions or kinetic type, and with sound off the viewer sees founders talking and UI clicks without knowing what is claimed. Only the lower-thirds, the UI button labels and the logo give muted context.",
+        "refs": [
+          "s001",
+          "s009",
+          "s013",
+          "s026"
+        ]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "This is a well-shot, credible founder-led launch film: cinematic lighting and set, honest real-product demos synced to the script, and a crisp logo resolve. It is held back from best-in-class by sparse motion design, a slow-to-visual opening, small UI text in unzoomed captures, and weak muted and localization performance.",
+        "refs": [
+          "s001",
+          "s009",
+          "s013",
+          "s016",
+          "s026"
+        ]
+      }
+    },
+    "localization_friendliness": {
+      "score": 2,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "Very little baked-in motion type (two lower-thirds and the logo), but the real English product UI is baked into every screen capture. The film is fully dependent on on-camera speech, so dubbing would break lip sync and subtitles are the only practical route. Re-recording the screen captures in another UI language would be needed for full localization."
+    }
+  },
+  "shots": [
+    {
+      "id": "s001",
+      "start_s": 0.0,
+      "end_s": 5.7119,
+      "transition_in": null,
+      "motion_energy": 0.002228,
+      "wpm": 210.1,
+      "annotation": {
+        "shot": "s001",
+        "shot_type": "presenter",
+        "shot_type_other": null,
+        "composition": "rule_of_thirds",
+        "composition_other": null,
+        "focal_element": "Two co-founders seated at a wooden table in front of a full bookshelf wall; the speaker on the right addresses camera while the other sits behind an open laptop on the left",
+        "transition_in": "other",
+        "transition_other": "none: opening shot, video starts directly on picture",
+        "on_screen_text": [
+          "Sualeh Asif Co-Founder",
+          "Michael Truell Co-Founder"
+        ],
+        "text_word_count": 6,
+        "typography": "Two-line lower-third name supers, white, clean geometric/grotesque sans (low-confidence guess: Cursor's brand sans), regular-to-medium weight, title case, normal tracking; name line above role line, set bottom-left and bottom-right over each person without box or shadow, fading in early in the shot",
+        "depth_cues": [
+          "blur"
+        ],
+        "what_happens": "Static locked-off wide two-shot in a warm, lived-in office: the right founder opens the voice-over on camera (w0-w19, 'Coding is changing...shrinking to an instant.') with open-hand gestures while the left founder glances at him then at camera; name supers fade in under both people part-way through and stay to the end of the shot.",
+        "build_rebuild": "Place a static 16:9 two-shot video, then fade in two white sans lower-thirds (name over role, title case, no background plate) anchored bottom-left and bottom-right with ~0.3 s opacity ramps and hold them until the cut.",
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "s002",
+      "start_s": 5.7119,
+      "end_s": 9.4498,
+      "transition_in": "hard_cut",
+      "motion_energy": 0.009134,
+      "wpm": 240.8,
+      "annotation": {
+        "shot": "s002",
+        "shot_type": "presenter",
+        "shot_type_other": null,
+        "composition": "centered",
+        "composition_other": null,
+        "focal_element": "Medium close-up of the right-hand founder speaking, bookshelf background softly out of focus, edge of the other founder's shoulder at left frame",
+        "transition_in": "hard_cut",
+        "transition_other": null,
+        "on_screen_text": [],
+        "text_word_count": 0,
+        "typography": null,
+        "depth_cues": [
+          "blur"
+        ],
+        "what_happens": "Hard cut in from the wide to a tighter second-camera angle on the same speaker as he continues 'And it's because coding agents are getting so good. They're getting smarter. They're getting faster.' (w20-w34); slight handheld or slow drift, hand gestures early, no graphics.",
+        "build_rebuild": "Cut from the wide two-shot to a 2-camera medium close-up of the speaker (shallow depth of field, subject centred-right) on a sentence boundary with no overlay graphics.",
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "s003",
+      "start_s": 9.4498,
+      "end_s": 13.6077,
+      "transition_in": "hard_cut",
+      "motion_energy": 0.001428,
+      "wpm": 230.9,
+      "annotation": {
+        "shot": "s003",
+        "shot_type": "presenter",
+        "shot_type_other": null,
+        "composition": "rule_of_thirds",
+        "composition_other": null,
+        "focal_element": "Back to the wide two-shot of both founders; the right founder delivers the product announcement",
+        "transition_in": "hard_cut",
+        "transition_other": null,
+        "on_screen_text": [],
+        "text_word_count": 0,
+        "typography": null,
+        "depth_cues": [
+          "blur"
+        ],
+        "what_happens": "Hard cut back to the wide angle (no lower-thirds now) as the speaker says 'And so that's why we're excited to announce Cursor 3. It's a home for your agents,' (w35-w50) while the left founder smiles to camera; the product name is spoken only, not shown as a title card.",
+        "build_rebuild": "Return to the same locked-off wide two-shot without supers and let the spoken announcement line carry the product reveal with no title graphic.",
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "s004",
+      "start_s": 13.6077,
+      "end_s": 14.8257,
+      "transition_in": "hard_cut",
+      "motion_energy": 0.002128,
+      "wpm": 197.0,
+      "annotation": {
+        "shot": "s004",
+        "shot_type": "footage",
+        "shot_type_other": null,
+        "composition": "rule_of_thirds",
+        "composition_other": null,
+        "focal_element": "Over-the-shoulder view of a founder at a laptop showing the light-themed Cursor 3 agent window (sidebar plus central composer)",
+        "transition_in": "hard_cut",
+        "transition_other": null,
+        "on_screen_text": [],
+        "text_word_count": 0,
+        "typography": "On-screen UI text is too small and soft to read at this framing; only the light app chrome, left sidebar list and a central prompt field are discernible",
+        "depth_cues": [
+          "blur",
+          "perspective_tilt"
+        ],
+        "what_happens": "Short (about 1.2 s) B-roll bridge: hard cut to an over-the-shoulder shot of a hand on the keyboard in front of the laptop screen, out-of-focus shoulder and head in the foreground, angled screen, as the voice-over continues 'and it combines' (w51-w53), leading the viewer into the screen.",
+        "build_rebuild": "Insert a ~1 s over-the-shoulder B-roll clip of the product on a real laptop (foreground shoulder defocused, screen angled toward camera) as the bridge from talking head to full-screen UI.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "id": "s005",
+      "start_s": 14.8257,
+      "end_s": 21.9656,
+      "transition_in": "hard_cut",
+      "motion_energy": 0.001187,
+      "wpm": 226.9,
+      "annotation": {
+        "shot": "s005",
+        "shot_type": "screen_recording",
+        "shot_type_other": null,
+        "composition": "full_bleed",
+        "composition_other": null,
+        "focal_element": "Full-frame Cursor 3 app: an agent's completed task summary, then a diff/changes panel, then the composer's model-picker dropdown with a model info tooltip",
+        "transition_in": "hard_cut",
+        "transition_other": null,
+        "on_screen_text": [
+          "Add group by option None for sidebar in Glass",
+          "Mark as Ready",
+          "Plan, Build, / for commands, @ for context",
+          "MAX Mode",
+          "GPT-5.4",
+          "OpenAI's latest flagship model. Great for complex tasks.",
+          "1M context window",
+          "The cost is 2x when the input exceeds 272k tokens.",
+          "Version: medium reasoning effort"
+        ],
+        "text_word_count": 46,
+        "typography": "Native product UI: small regular-weight system-style sans for body and list items (low-confidence guess: SF Pro / Inter), semibold section headings ('Summary', 'Testing'), monospace for code and inline file names in the diff panel, sentence case throughout, default tracking; tooltip uses a bold model name over regular body with an accent-coloured warning line and an italic version note. Dense agent-summary and code text is only partly legible and was not quoted in full.",
+        "depth_cues": [
+          "shadow"
+        ],
+        "what_happens": "Hard cut to a full-screen recording: an agent conversation shows a completed task with a bulleted Summary and Testing checklist while the cursor drifts; the right-hand Changes panel then slides open showing a PR header and file diffs with green/red line highlights (around 'language servers, files, remote SSH', w61-w65); the view then resets to an empty composer on a near-blank canvas which scales up/zooms in as the model dropdown opens, MAX Mode toggle and model list appear and a GPT-5.4 info tooltip is shown (around 'with all of the models', w66-w70), holding to the end of the shot under w71-w81.",
+        "build_rebuild": "Record the real app at full bleed and stitch three beats in one shot: an agent summary view, a side panel sliding in with a diff, then a scaled-up crop of the composer whose model dropdown and hover tooltip open, each beat timed to the matching spoken feature word.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "id": "s006",
+      "start_s": 21.9656,
+      "end_s": 26.6275,
+      "transition_in": "hard_cut",
+      "motion_energy": 0.001415,
+      "wpm": 257.4,
+      "annotation": {
+        "shot": "s006",
+        "shot_type": "presenter",
+        "shot_type_other": null,
+        "composition": "split",
+        "composition_other": null,
+        "focal_element": "Red-haired presenter (right) speaking to camera, hands on a wooden table; a second presenter sits left behind an open laptop",
+        "transition_in": "hard_cut",
+        "transition_other": null,
+        "on_screen_text": [],
+        "text_word_count": 0,
+        "typography": null,
+        "depth_cues": [
+          "blur"
+        ],
+        "what_happens": "Locked-off wide two-shot in a warm, book-lined office set; the right presenter delivers VO words w82-w101 ('anywhere, either quickly on your computer, or you can hand off entire projects to agents that run in the cloud') with small hand gestures while the left presenter listens. No graphics or overlays. The last contact-sheet frame (0:26.500) already shows the next shot's close-up, so the cut sits a few frames before the stamped boundary.",
+        "build_rebuild": "Static 16:9 wide two-shot of two seated presenters at a wooden desk in front of a lit bookshelf with a warm pendant lamp in frame, shallow-ish depth of field, played as plain live footage with no overlay.",
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "s007",
+      "start_s": 26.6275,
+      "end_s": 29.1054,
+      "transition_in": "hard_cut",
+      "motion_energy": 0.007068,
+      "wpm": 339.0,
+      "annotation": {
+        "shot": "s007",
+        "shot_type": "presenter",
+        "shot_type_other": null,
+        "composition": "rule_of_thirds",
+        "composition_other": null,
+        "focal_element": "Bearded presenter with glasses in a medium close-up, placed right of centre, laptop lid edge in the lower-left foreground",
+        "transition_in": "hard_cut",
+        "transition_other": null,
+        "on_screen_text": [],
+        "text_word_count": 0,
+        "typography": null,
+        "depth_cues": [
+          "blur"
+        ],
+        "what_happens": "Cut to a side-angle medium close-up of the second presenter speaking w102-w115 ('In the new Cursor, the way you build software is you're talking to agents.'), glancing off-camera toward his co-host; bookshelf background heavily defocused. One measured event in the shot; it may be slight handheld/reframe drift, which I cannot confirm from stills. The 0:29.000 sheet frame shows the following two-shot, again suggesting the cut lands slightly before the stamped boundary.",
+        "build_rebuild": "Medium close-up of the speaker framed on the right third from a second camera angle, shallow depth of field turning the bookshelf into soft colour blocks, laptop edge as a foreground frame on the left.",
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "s008",
+      "start_s": 29.1054,
+      "end_s": 30.7854,
+      "transition_in": "hard_cut",
+      "motion_energy": 0.00252,
+      "wpm": 321.4,
+      "annotation": {
+        "shot": "s008",
+        "shot_type": "presenter",
+        "shot_type_other": null,
+        "composition": "split",
+        "composition_other": null,
+        "focal_element": "Both presenters turned toward each other in conversation, the left one gesturing over the laptop",
+        "transition_in": "hard_cut",
+        "transition_other": null,
+        "on_screen_text": [],
+        "text_word_count": 0,
+        "typography": null,
+        "depth_cues": [
+          "blur"
+        ],
+        "what_happens": "Tighter two-shot than s006: the presenters face each other, the left one gestures toward the table while saying w116-w124 ('You have all of your agents in one place.') and the right one listens, hands clasped. It plays as a conversation rather than a pitch to camera.",
+        "build_rebuild": "Medium two-shot from slightly closer than the opening wide, both subjects in profile toward each other, with the laptop on the left as an anchor and warm side light on the table.",
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "s009",
+      "start_s": 30.7854,
+      "end_s": 35.2793,
+      "transition_in": "hard_cut",
+      "motion_energy": 0.023528,
+      "wpm": 280.4,
+      "annotation": {
+        "shot": "s009",
+        "shot_type": "ui_closeup",
+        "shot_type_other": null,
+        "composition": "full_bleed",
+        "composition_other": null,
+        "focal_element": "Agent's numbered plan (file paths highlighted) in Cursor's chat panel, then the diff view with the 'Commit & Create PR' button",
+        "transition_in": "hard_cut",
+        "transition_other": null,
+        "on_screen_text": [
+          "Review +2392 -1",
+          "Commit & Push",
+          "Send follow-up",
+          "Composer 2 Fast",
+          "9 Uncommitted Changes",
+          "Commit & Create PR"
+        ],
+        "text_word_count": 18,
+        "typography": "Product UI text: a small, regular-weight sans-serif in sentence case for the chat body, with bold numbered headings in a blue monospace for file paths and inline monospace code chips; the diff pane uses a monospace code font with syntax colouring. The UI font looks like the system San Francisco face (low confidence).",
+        "depth_cues": [
+          "none"
+        ],
+        "what_happens": "Screen recording, scaled up so the chat text fills the frame, synced to w125-w145 ('look at changes, test them out, and then take them all the way to a merge PR'). The cursor hovers 'Review +2392 -1' (around 0:32), the view slides across to a split with the code diff (0:33.0 frame is mid-move), then lands on the changes list with route.ts imports, and the cursor moves to and clicks 'Commit & Create PR' (0:34-0:35). Two measured events match the reframe and the button hover or click. Exact pan easing is not visible from 2 fps stills.",
+        "build_rebuild": "Record the real app at high resolution, show it zoomed about 2x on the chat plan, then animate a horizontal camera pan onto the diff panel and end on a cursor click on the 'Commit & Create PR' button, timed to the VO line about merging.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "id": "s010",
+      "start_s": 35.2793,
+      "end_s": 36.9173,
+      "transition_in": "hard_cut",
+      "motion_energy": 0.001605,
+      "wpm": 293.0,
+      "annotation": {
+        "shot": "s010",
+        "shot_type": "presenter",
+        "shot_type_other": null,
+        "composition": "split",
+        "composition_other": null,
+        "focal_element": "Left presenter talking and gesturing at the table toward his co-host, who listens",
+        "transition_in": "hard_cut",
+        "transition_other": null,
+        "on_screen_text": [],
+        "text_word_count": 0,
+        "typography": null,
+        "depth_cues": [
+          "blur"
+        ],
+        "what_happens": "A brief return to the conversational two-shot (a slightly wider version of s008, with the pendant lamp visible at top right) under w146-w153 ('You can dive deep when you really need'). It is a short human breather between two UI inserts.",
+        "build_rebuild": "Cut back for about 1.6 s to the same medium-wide two-shot of both presenters facing each other, so the UI demos are bracketed by live conversation.",
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "s011",
+      "start_s": 36.9173,
+      "end_s": 40.3612,
+      "transition_in": "hard_cut",
+      "motion_energy": 0.000255,
+      "wpm": 174.2,
+      "annotation": {
+        "shot": "s011",
+        "shot_type": "ui_full",
+        "shot_type_other": null,
+        "composition": "split",
+        "composition_other": null,
+        "focal_element": "Full Cursor window: agent chat on the left (prompt, demo video thumbnail, Summary and Testing lists) and a TSX editor on the right with a hover tooltip on MAX_PREFERRED_NAME_LENGTH",
+        "transition_in": "hard_cut",
+        "transition_other": null,
+        "on_screen_text": [
+          "User naming preference",
+          "Add a new preference in dashboard for what the user should be called and use that in the system prompt. Show a demo of the UI when you're done",
+          "Summary",
+          "Testing",
+          "Commit & Create PR",
+          "Send follow-up",
+          "Composer 2 Fast",
+          "CloudAgentPreferredNameSection.tsx"
+        ],
+        "text_word_count": 44,
+        "typography": "Product UI at native scale: a small regular sans-serif in sentence case in the chat pane with bold section headings ('Summary', 'Testing') and emoji status ticks; the editor uses a monospace code font with syntax colours, an inline grey git-blame annotation and a code hover tooltip. The face looks like the system San Francisco (low confidence).",
+        "depth_cues": [
+          "none"
+        ],
+        "what_happens": "Unzoomed screen recording of the whole app window, timed to w154-w163 ('to, looking at changes, clicking around, going to a definition'). The cursor hovers a symbol to show its definition tooltip ('const MAX_PREFERRED_NAME_LENGTH: 128'), and around 0:38.5-0:39 the editor jumps to the top of the file, showing the import block and the constant's declaration line highlighted (go-to-definition). The chat pane stays static. The small code text is not fully legible on the sheet, so on_screen_text lists only the legible chrome and prompt.",
+        "build_rebuild": "Show the real IDE window full-frame with no zoom, hover a symbol to show its type tooltip, then trigger go-to-definition so the editor scrolls to the declaration with a line highlight, synced to the 'going to a definition' VO.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "id": "s012",
+      "start_s": 40.3612,
+      "end_s": 45.0231,
+      "transition_in": "hard_cut",
+      "motion_energy": 0.001488,
+      "wpm": 205.9,
+      "annotation": {
+        "shot": "s012",
+        "shot_type": "presenter",
+        "shot_type_other": null,
+        "composition": "rule_of_thirds",
+        "composition_other": null,
+        "focal_element": "Two presenters seated at a wooden table in front of a bookshelf; the bearded presenter on the left beside an open laptop talks to the red-haired presenter on the right",
+        "transition_in": "hard_cut",
+        "transition_other": null,
+        "on_screen_text": [],
+        "text_word_count": 0,
+        "typography": null,
+        "depth_cues": [
+          "none"
+        ],
+        "what_happens": "Locked-off wide two-shot of a conversation. The left presenter gestures and turns to his co-host while the voice-over line plays (w164-w180, 'Probably the most exciting part is that local and cloud are really, really seamless. You can pull'). There are no graphics or overlays, and a warm practical lamp sits top right.",
+        "build_rebuild": "Film a static wide two-shot of two people at a table with a laptop in front of a lit bookshelf and a warm practical lamp, then hard-cut into the product recording on the spoken line about pulling an agent locally.",
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "s013",
+      "start_s": 45.0231,
+      "end_s": 51.029,
+      "transition_in": "hard_cut",
+      "motion_energy": 0.001198,
+      "wpm": 279.7,
+      "annotation": {
+        "shot": "s013",
+        "shot_type": "screen_recording",
+        "shot_type_other": null,
+        "composition": "full_bleed",
+        "composition_other": null,
+        "focal_element": "The Cursor 3 agent window: the 'Move to Local' button, then the PR changes diff pane, then a sidebar context menu with 'Move to' > '/Users/eric/dev/site' / 'Cloud'",
+        "transition_in": "hard_cut",
+        "transition_other": null,
+        "on_screen_text": [
+          "Move to Local",
+          "Add group by option None for sidebar in Glass",
+          "feat(glass): add None group-by option for sidebar",
+          "Mark as Ready",
+          "Move to",
+          "/Users/eric/dev/site",
+          "Cloud"
+        ],
+        "text_word_count": 26,
+        "typography": "Native app UI type: a neutral system sans (possibly SF Pro, low confidence), sentence case, regular weight with semibold section headings ('Summary', 'Testing') and monospace inline code chips and diff lines, all at small UI sizes with normal tracking. No added motion-graphics type.",
+        "depth_cues": [
+          "shadow"
+        ],
+        "what_happens": "Real product capture shown while the line 'agent locally, ... zap it back up onto the cloud when you want to let it work on its own' plays (w181-w207). It opens framed tightly on a chat with the cursor clicking 'Move to Local'. Next it shows the full window with the Changes pane (PR #89985, 7 files changed, diffs). Around 0:48 a tighter framing shows a right-click context menu on a sidebar agent, where 'Move to' opens a submenu with '/Users/eric/dev/site' and 'Cloud', and the cursor moves to 'Cloud'. The menu then closes on the chat ('Here's what changed:'). The framing changes inside the shot look like digital punch-ins or reframes, but at 2 fps I cannot tell whether they are animated zooms or cuts the detector missed.",
+        "build_rebuild": "Screen-record the real app at high resolution, then in the edit punch in (scale about 1.5-2x around the cursor) on the 'Move to Local' button and later on the context menu 'Move to > Cloud' submenu, pulling back to the full window in between so the menu items stay legible.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "id": "s014",
+      "start_s": 51.029,
+      "end_s": 54.3049,
+      "transition_in": "hard_cut",
+      "motion_energy": 0.007961,
+      "wpm": 146.5,
+      "annotation": {
+        "shot": "s014",
+        "shot_type": "presenter",
+        "shot_type_other": null,
+        "composition": "rule_of_thirds",
+        "composition_other": null,
+        "focal_element": "The bearded presenter in glasses and a plum sweater speaking, with the red-haired co-host's shoulder and head soft in the right foreground",
+        "transition_in": "hard_cut",
+        "transition_other": null,
+        "on_screen_text": [],
+        "text_word_count": 0,
+        "typography": null,
+        "depth_cues": [
+          "blur"
+        ],
+        "what_happens": "Medium close-up of the left presenter speaking ('It's really fun to work with agents locally,', w208-w215), looking down towards the laptop and then to camera-left. The co-host in the foreground frames the shot over the shoulder, and the bookshelf behind is shallow-focus bokeh. Anchors list one event in this shot, but I could not identify a specific UI or graphic change in the frames.",
+        "build_rebuild": "Shoot a second, tighter camera angle (about 85mm equivalent, shallow depth of field) on the speaker with the co-host's shoulder as an out-of-focus foreground frame, and hard-cut to it from the wide.",
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "s015",
+      "start_s": 54.3049,
+      "end_s": 56.8249,
+      "transition_in": "hard_cut",
+      "motion_energy": 0.001722,
+      "wpm": 333.3,
+      "annotation": {
+        "shot": "s015",
+        "shot_type": "presenter",
+        "shot_type_other": null,
+        "composition": "rule_of_thirds",
+        "composition_other": null,
+        "focal_element": "The left presenter typing on the laptop while the red-haired presenter watches the screen",
+        "transition_in": "hard_cut",
+        "transition_other": null,
+        "on_screen_text": [],
+        "text_word_count": 0,
+        "typography": null,
+        "depth_cues": [
+          "none"
+        ],
+        "what_happens": "Wide two-shot from a slightly different framing than s012. The left presenter types on and gestures at the laptop as he says 'but then at the end of the day, you want to be in a' (w216-w229), and his co-host looks on. This sets up the cut back to the screen.",
+        "build_rebuild": "Cut back to a wide static two-shot showing hands on the laptop keyboard, timed so the next screen-recording cut lands on the key word ('Zen').",
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "s016",
+      "start_s": 56.8249,
+      "end_s": 62.2848,
+      "transition_in": "hard_cut",
+      "motion_energy": 0.00058,
+      "wpm": 186.8,
+      "annotation": {
+        "shot": "s016",
+        "shot_type": "screen_recording",
+        "shot_type_other": null,
+        "composition": "full_bleed",
+        "composition_other": null,
+        "focal_element": "The full Cursor 3 agent window, with the cursor clicking through agents in the left sidebar while the main chat pane swaps content",
+        "transition_in": "hard_cut",
+        "transition_other": null,
+        "on_screen_text": [
+          "Can you record an artifact for me?",
+          "Record a demo",
+          "Slash Menu Smoketest Xvfb Demo",
+          "Slash Menu Actions Section Smoketest Demo",
+          "Flaky tests root cause",
+          "Review +54 -5",
+          "Move to Local",
+          "Commit & Push"
+        ],
+        "text_word_count": 34,
+        "typography": "Native app UI type: a neutral system sans (possibly SF Pro, low confidence), sentence case, regular body with bold headings ('Walkthrough', 'Summary', 'Testing'), monospace for paths and commands, small pill-button labels, normal tracking. No added motion-graphics type.",
+        "depth_cues": [
+          "none"
+        ],
+        "what_happens": "Un-zoomed full-window capture under the line 'Zen state where you're interacting with all these different agents that are running on different machines. We' (w230-w246). The cursor hops through about five sidebar agents roughly every 0.5-1.5 s. Each click swaps the chat pane: a migration plan, an artifact request with an embedded video card, 'Record a demo' with two playable video cards ('Slash Menu Smoketest Xvfb Demo', 'Slash Menu Actions Section Smoketest Demo'), and finally a running agent showing 'Thought briefly' step lines and a spinner in the sidebar. At 2 fps most body text is too small to read; I quoted only text that is legible on the keyframe.",
+        "build_rebuild": "Record one continuous full-window capture of real parallel agents and click a different sidebar item on roughly every second beat, so the main pane swaps instantly and shows variety (plans, video artifacts, a live run) without any zoom.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "id": "s017",
+      "start_s": 62.2848,
+      "end_s": 63.4187,
+      "transition_in": "hard_cut",
+      "motion_energy": 0.026921,
+      "wpm": 264.6,
+      "annotation": {
+        "shot": "s017",
+        "shot_type": "presenter",
+        "shot_type_other": null,
+        "composition": "centered",
+        "composition_other": null,
+        "focal_element": "Close-up of the red-haired presenter in a grey sweater speaking",
+        "transition_in": "hard_cut",
+        "transition_other": null,
+        "on_screen_text": [],
+        "text_word_count": 0,
+        "typography": null,
+        "depth_cues": [
+          "blur"
+        ],
+        "what_happens": "A short (about 1.1 s) close-up on the second presenter as he picks up the line 'announced Cloud a month ago,' (w247-w251). The bookshelf behind is in soft bokeh. This hands the narration to the second speaker. Anchors list one event, but I saw no graphic or overlay change in the two frames.",
+        "build_rebuild": "Cut to a tight single on the second speaker with shallow depth of field, held only for his first phrase, to mark the speaker handoff before the next segment.",
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "s018",
+      "start_s": 63.4187,
+      "end_s": 68.2486,
+      "transition_in": "hard_cut",
+      "motion_energy": 0.002356,
+      "wpm": 223.6,
+      "annotation": {
+        "shot": "s018",
+        "shot_type": "presenter",
+        "shot_type_other": null,
+        "composition": "rule_of_thirds",
+        "composition_other": null,
+        "focal_element": "The red-haired presenter in a grey sweater (right of frame) speaking and gesturing, while the bearded co-host beside the open laptop (left) turns to listen",
+        "transition_in": "hard_cut",
+        "transition_other": null,
+        "on_screen_text": [],
+        "text_word_count": 0,
+        "typography": null,
+        "depth_cues": [
+          "none"
+        ],
+        "what_happens": "Locked-off wide two-shot at the table in front of the lit bookshelf, with the warm pendant lamp top right. The second presenter continues the Cloud line ('where agents can now run code end-to-end with their own sandbox and work on full projects.', w252-w269), resting his hands on the table and gesturing with an open palm. The co-host looks at him, then to camera. The last sheet frame (1:08.000) already shows the white Cursor composer UI, so the real cut seems to land slightly before the detected boundary. That UI belongs to the next shot's content.",
+        "build_rebuild": "Hold a static wide two-shot of both presenters (same set-up as s012) for the full spoken sentence, then hard-cut to the screen recording at the end of the sentence ('projects').",
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "s019",
+      "start_s": 68.2486,
+      "end_s": 71.1046,
+      "transition_in": "hard_cut",
+      "motion_energy": 0.000365,
+      "wpm": 189.1,
+      "annotation": {
+        "shot": "s019",
+        "shot_type": "screen_recording",
+        "shot_type_other": null,
+        "composition": "centered",
+        "composition_other": null,
+        "focal_element": "The Cursor composer prompt box with the model picker dropdown open, the cursor hovering 'Composer 2 Fast' and its info tooltip",
+        "transition_in": "hard_cut",
+        "transition_other": null,
+        "on_screen_text": [
+          "anysphere/everysphere",
+          "Add group by option None for sidebar in Glass",
+          "Composer 2 Fast",
+          "Search models",
+          "MAX Mode",
+          "Auto Efficiency",
+          "Premium Intelligence",
+          "Composer 2 Fast Edit",
+          "Composer 1.5",
+          "Codex 5.3 High Fast",
+          "GPT-5.4 Medium 1M",
+          "Sonnet 4.6 1M Medium",
+          "Opus 4.6 1M High",
+          "Premium",
+          "Composer 2 (Fast)",
+          "Cursor's latest agentic coding model.",
+          "200k context window"
+        ],
+        "text_word_count": 54,
+        "typography": "Native app UI type: a neutral system sans (possibly SF Pro, low confidence), sentence case. Model names are regular weight in dark grey, with lighter grey secondary labels ('Fast', 'High Fast', 'Efficiency'). The tooltip title is bold. Small UI sizes, normal tracking. No added motion-graphics type.",
+        "depth_cues": [
+          "shadow"
+        ],
+        "what_happens": "Under the line 'We announced Composer 2 a couple of weeks ago,' (w270-w278), a clean, mostly empty off-white canvas shows the new-agent prompt box with the task 'Add group by option None for sidebar in Glass' typed in. The cursor clicks the 'Composer 2 Fast' model chip, and a dropdown opens with the model list and a MAX Mode toggle. Hovering the checked 'Composer 2' row brings up a tooltip card ('Composer 2 (Fast)', 'Cursor's latest agentic coding model.', '200k context window'). On the sheet the first frames are a wide view, and the keyframe is a much tighter crop on the dropdown, so the shot seems to punch in or zoom on the menu. At 2 fps I cannot tell whether that is an animated zoom or a hard reframe. The last sheet frame (1:11.000) already shows the presenter close-up, so the detected boundary is slightly late.",
+        "build_rebuild": "Screen-record the prompt box on an empty light canvas, click the model chip to open the picker, hover the 'Composer 2' row until its tooltip shows, and in the edit scale about 2x around the dropdown so the model names and tooltip are legible at 1080p.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "id": "s020",
+      "start_s": 71.1046,
+      "end_s": 72.1966,
+      "transition_in": "hard_cut",
+      "motion_energy": 0.00915,
+      "wpm": 329.7,
+      "annotation": {
+        "shot": "s020",
+        "shot_type": "presenter",
+        "shot_type_other": null,
+        "composition": "centered",
+        "composition_other": null,
+        "focal_element": "Close-up of the red-haired presenter speaking, against a shallow-focus bookshelf",
+        "transition_in": "hard_cut",
+        "transition_other": null,
+        "on_screen_text": [],
+        "text_word_count": 0,
+        "typography": null,
+        "depth_cues": [
+          "blur"
+        ],
+        "what_happens": "A short (about 1.1 s) single on the second presenter for 'which was a frontier model with' (w279-w284). He looks slightly off-camera, towards the interviewer side. The bookshelf, framed print and lamp glow behind him are soft bokeh. There are no graphics.",
+        "build_rebuild": "Hard-cut from the screen recording to a tight shallow-depth-of-field single on the speaker for the subordinate clause, so the product claim is delivered face to camera.",
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "s021",
+      "start_s": 72.1966,
+      "end_s": 75.3045,
+      "transition_in": "other",
+      "motion_energy": 0.008914,
+      "wpm": 135.1,
+      "annotation": {
+        "shot": "s021",
+        "shot_type": "presenter",
+        "shot_type_other": null,
+        "composition": "rule_of_thirds",
+        "composition_other": null,
+        "focal_element": "The same red-haired presenter in close-up, framed slightly differently and drifting within the frame",
+        "transition_in": "other",
+        "transition_other": "Jump cut / reframe on the same close-up angle; the subject's size and position change between s020 and s021 without a change of camera position. Anchors flag this boundary as 'other'.",
+        "on_screen_text": [],
+        "text_word_count": 0,
+        "typography": null,
+        "depth_cues": [
+          "blur"
+        ],
+        "what_happens": "He continues 'incredibly high limits and very quick speeds.' (w285-w291) with animated expressions (eyebrows up on 'incredibly'), then looks down as he finishes. Across the sheet his framing shifts: he is smaller and left of centre at the start, larger in the keyframe, and smaller again near the end. This suggests a slow digital push or handheld drift, or a reframe, but at 2 fps I cannot tell which. The background stays in soft focus throughout.",
+        "build_rebuild": "Jump-cut within the same close-up take (or punch in by about 10-15% in post) to cut out a pause and keep the delivery tight, keeping the shallow depth of field.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "id": "s022",
+      "start_s": 75.3045,
+      "end_s": 80.3024,
+      "transition_in": "hard_cut",
+      "motion_energy": 0.003135,
+      "wpm": 252.1,
+      "annotation": {
+        "shot": "s022",
+        "shot_type": "presenter",
+        "shot_type_other": null,
+        "composition": "rule_of_thirds",
+        "composition_other": null,
+        "focal_element": "The red-haired presenter (right) speaking with both hands gesturing, next to the smiling bearded co-host behind the laptop (left)",
+        "transition_in": "hard_cut",
+        "transition_other": null,
+        "on_screen_text": [],
+        "text_word_count": 0,
+        "typography": null,
+        "depth_cues": [
+          "none"
+        ],
+        "what_happens": "Back to the locked-off wide two-shot for the summary line 'And now we have Cursor 3 out into the world. And so with these pieces together of model, product, and runtime,' (w292-w312). He brings his hands together as if assembling pieces on 'pieces together', then lays them flat on the table. The co-host smiles at camera. There are no graphics or overlays.",
+        "build_rebuild": "Return to the static wide two-shot for the wrap-up sentence and let the speaker's hand gesture carry 'model, product, and runtime' with no on-screen graphics, then cut away on the comma before 'we're excited'.",
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "s023",
+      "start_s": 80.3024,
+      "end_s": 80.5964,
+      "transition_in": "hard_cut",
+      "motion_energy": 0.009089,
+      "wpm": 408.2,
+      "annotation": {
+        "shot": "s023",
+        "shot_type": "presenter",
+        "shot_type_other": null,
+        "composition": "centered",
+        "composition_other": null,
+        "focal_element": "Close-up of the red-haired presenter (same angle as s020/s021), with the co-host's shoulder just visible bottom left",
+        "transition_in": "hard_cut",
+        "transition_other": null,
+        "on_screen_text": [],
+        "text_word_count": 0,
+        "typography": null,
+        "depth_cues": [
+          "blur"
+        ],
+        "what_happens": "A very short flash (about 0.3 s, a single sheet frame) of the close-up angle on 'we're excited' (w313-w314), before the next detected boundary. It is too short to read any action. It may be a deliberate quick cut, or a fragment the detector split off the following shot. I cannot tell from one frame.",
+        "build_rebuild": "Cut to the close-up single on the first syllables of the closing sentence, holding it for only about seven frames before moving on to the next shot.",
+        "confidence": "low"
+      }
+    },
+    {
+      "id": "s024",
+      "start_s": 80.5964,
+      "end_s": 84.0403,
+      "transition_in": "other",
+      "motion_energy": 0.00962,
+      "wpm": 278.8,
+      "annotation": {
+        "shot": "s024",
+        "shot_type": "presenter",
+        "shot_type_other": null,
+        "composition": "centered",
+        "composition_other": null,
+        "focal_element": "Close-up of the red-haired presenter in a grey sweater speaking, against a shallow-focus bookshelf with the warm pendant lamp glow at top right",
+        "transition_in": "other",
+        "transition_other": "Anchors flag this boundary as 'other'. The framing is the same close-up angle as s023, so this looks like a continuation or jump within the same take. I see no wipe, dissolve or flash in the stills.",
+        "on_screen_text": [],
+        "text_word_count": 0,
+        "typography": null,
+        "depth_cues": [
+          "blur"
+        ],
+        "what_happens": "He delivers the vision line 'to build toward a world where agents really feel like colleagues and where you can build' (w315-w330) to an off-camera point slightly left of the lens. Expression and small head movements change, but the framing stays static. There are no graphics. The last sheet frame (1:24.000) already shows the wide two-shot, so the real cut lands slightly before the detected boundary. Anchors list two events in the shot, but I could not identify a matching visual change in the stills beyond the speaker's head movement.",
+        "build_rebuild": "Hold the shallow-depth-of-field close-up single on the speaker for the full closing vision sentence with no overlay, then hard-cut to the wide on 'anything'.",
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "s025",
+      "start_s": 84.0403,
+      "end_s": 86.3083,
+      "transition_in": "hard_cut",
+      "motion_energy": 0.002853,
+      "wpm": 185.2,
+      "annotation": {
+        "shot": "s025",
+        "shot_type": "presenter",
+        "shot_type_other": null,
+        "composition": "rule_of_thirds",
+        "composition_other": null,
+        "focal_element": "Locked-off wide two-shot: the red-haired presenter (right) with both hands flat on the table, and the smiling bearded co-host behind the open laptop (left)",
+        "transition_in": "hard_cut",
+        "transition_other": null,
+        "on_screen_text": [],
+        "text_word_count": 0,
+        "typography": null,
+        "depth_cues": [
+          "none"
+        ],
+        "what_happens": "Back to the wide set-up for the final words 'anything you like on a computer instantly.' (w331-w337). The speaker gestures once, then settles both palms on the table and looks to camera. The co-host smiles at camera. The shot holds briefly in silence after the last word, giving a natural button before the end card. There are no graphics.",
+        "build_rebuild": "End the live footage on the static wide two-shot, let the speaker finish and hold about 0.4 s of settled silence, then hard-cut to the white logo card.",
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "s026",
+      "start_s": 86.3083,
+      "end_s": 89.2902,
+      "transition_in": "hard_cut",
+      "motion_energy": 0.001669,
+      "wpm": null,
+      "annotation": {
+        "shot": "s026",
+        "shot_type": "logo",
+        "shot_type_other": null,
+        "composition": "centered",
+        "composition_other": null,
+        "focal_element": "The Cursor hexagonal cube mark, then the mark plus 'CURSOR' wordmark lockup, centred on an off-white canvas",
+        "transition_in": "hard_cut",
+        "transition_other": null,
+        "on_screen_text": [
+          "CURSOR"
+        ],
+        "text_word_count": 1,
+        "typography": "Wordmark in all caps, bold geometric sans with wide, squarish letterforms and slightly open tracking, dark on off-white, set to the right of the icon at roughly cap-height of the mark. This is the brand's logo artwork, not live type.",
+        "depth_cues": [
+          "perspective_tilt"
+        ],
+        "what_happens": "Hard cut to a clean off-white end card with no voice-over. At 1:26.5 a dark rounded square tumbles in 3D (a lit bevel edge is visible). At 1:27.0 it has folded or morphed into an angular arrow shard, and at 1:27.5 it resolves into the centred hexagonal cube mark (the keyframe). By 1:28.0 the 'CURSOR' wordmark has appeared to the right, with the icon shifted left so the full lockup is centred, and the lockup holds still to 1:29. At 2 fps I cannot tell whether the wordmark is a mask reveal, a slide or a fade, or what easing the morph uses.",
+        "build_rebuild": "On an off-white full-frame card, rotate a dark rounded square in 3D, morph it through an arrow shape into the cube icon over about 1 s, then slide the icon left while revealing the wordmark so the lockup ends centred, and hold for about 1 s.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "id": "s027",
+      "start_s": 89.2902,
+      "end_s": 90.3402,
+      "transition_in": "hard_cut",
+      "motion_energy": 0.0,
+      "wpm": null,
+      "annotation": {
+        "shot": "s027",
+        "shot_type": "other",
+        "shot_type_other": "Black end frame (empty tail)",
+        "composition": "other",
+        "composition_other": "Empty black frame, no elements",
+        "focal_element": "Solid black frame",
+        "transition_in": "hard_cut",
+        "transition_other": null,
+        "on_screen_text": [],
+        "text_word_count": 0,
+        "typography": null,
+        "depth_cues": [
+          "none"
+        ],
+        "what_happens": "About 1 s of pure black after the logo card, until the video ends at 1:30.34. The 1:29.0 frame is still the logo and 1:29.5 is already black. I cannot tell from the stills whether this is a hard cut or a very fast fade.",
+        "build_rebuild": "Cut from the logo card to black and hold it for about 1 s as the tail of the video.",
+        "confidence": "high"
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "e001",
+      "shot": "s002",
+      "kind": "motion",
+      "start_s": 6.2159,
+      "end_s": 7.0139,
+      "camera_move": "none",
+      "status": "annotated",
+      "skip_reason": null,
+      "of": null,
+      "pattern": {
+        "id": "other",
+        "proposed_name": "presenter talking head",
+        "description": "A live-action founder speaks to camera in a medium close-up against a soft-focus bookshelf, gesturing with both hands. The motion comes from the person, not from any graphic or camera move.",
+        "why_premium": "Shallow depth of field, warm practical lighting and a styled set make the talking head feel cinematic rather than webcam-like. Off-axis framing with a second person's shoulder in the foreground suggests an interview."
+      },
+      "build_hint": {
+        "gsap": "Not an animation: live-action footage. Place the clip on its own track (no tweens). An optional, very slow scale drift adds life to a static shot: gsap.fromTo(video,{scale:1},{scale:1.02,duration:shotLength,ease:'none'}).",
+        "remotion": "Use <OffthreadVideo> for the footage. Optional slow drift: scale = interpolate(frame,[0,durationInFrames],[1,1.02]) with no easing."
+      },
+      "confidence": "low",
+      "notes": "The motion is live-action gesture only. Camera move is none, and the small pan values come from the presenter's body motion and slight handheld drift. The only candidate box is the full frame (b01). All three SFX candidates are labelled swoosh_reverse, but they fit speech or music residue rather than designed SFX.",
+      "elements": [
+        {
+          "id": "b01",
+          "box": [
+            0,
+            0,
+            1280,
+            720
+          ],
+          "box_source": "candidate",
+          "label": "Presenter gesturing on camera (hands, head, torso)",
+          "role": "other",
+          "role_other": "presenter",
+          "change_types": [
+            "other"
+          ],
+          "change_other": "live-action gesture and head movement",
+          "is_text": false,
+          "text": null,
+          "text_unit": null,
+          "timing": {
+            "source": "measured",
+            "duration_ms": 1136.3,
+            "start_s": 6.1887,
+            "ease": "sine.in",
+            "easing_class": "ease_in",
+            "bezier": "cubic-bezier(0.404, 0.139, 0.668, 0.931)",
+            "spring": {
+              "mass": 1.0,
+              "stiffness": 6.014,
+              "damping": 3.123
+            },
+            "overshoot_pct": 1.92,
+            "quality": 0.9996,
+            "channels": [
+              "x",
+              "y"
+            ],
+            "changes": [
+              "slide_down",
+              "slide_right"
+            ],
+            "stagger_unit": null,
+            "stagger_ms": null
+          },
+          "sfx_offset_ms": {
+            "x011": -494.4
+          }
+        }
+      ],
+      "sfx": [
+        "x010",
+        "x011",
+        "x012"
+      ]
+    },
+    {
+      "id": "e002",
+      "shot": "s002",
+      "kind": "motion",
+      "start_s": 7.1819,
+      "end_s": 7.3499,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "overlap",
+      "of": "e001",
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e003",
+      "shot": "s002",
+      "kind": "motion",
+      "start_s": 8.9878,
+      "end_s": 9.0718,
+      "camera_move": "none",
+      "status": "annotated",
+      "skip_reason": null,
+      "of": null,
+      "pattern": {
+        "id": "other",
+        "proposed_name": "presenter talking head",
+        "description": "A live-action founder speaking to camera in a medium close-up. The event is a small head turn and nod in time with the words 'getting faster.'",
+        "why_premium": "Cinematic interview lighting and a shallow-focus set dressing (bookshelf, warm lamp in the corner) give the talking head a produced, editorial feel."
+      },
+      "build_hint": {
+        "gsap": "Not an animation: live-action footage. Place the clip on its own track with no tweens.",
+        "remotion": "Use <OffthreadVideo> for the footage. No animated properties."
+      },
+      "confidence": "low",
+      "notes": "The motion is the presenter's head only. Camera move is none. The diff box b02 (yellow lamp, top-right corner) shows only slight shimmer or handheld drift and is not listed as an element. None of the three SFX candidates matches a visual moment.",
+      "elements": [
+        {
+          "id": "b01",
+          "box": [
+            0,
+            0,
+            1280,
+            720
+          ],
+          "box_source": "candidate",
+          "label": "Presenter head turn and nod while speaking",
+          "role": "other",
+          "role_other": "presenter",
+          "change_types": [
+            "other"
+          ],
+          "change_other": "live-action head movement",
+          "is_text": false,
+          "text": null,
+          "text_unit": null,
+          "timing": {
+            "source": "measured",
+            "duration_ms": 840.0,
+            "start_s": 8.6241,
+            "ease": "circ.inOut",
+            "easing_class": "ease_in_out",
+            "bezier": "cubic-bezier(0.924, 0.364, 0.343, 1.306)",
+            "spring": {
+              "mass": 1.0,
+              "stiffness": 82.194,
+              "damping": 11.883
+            },
+            "overshoot_pct": 6.25,
+            "quality": 0.9983,
+            "channels": [
+              "x",
+              "y"
+            ],
+            "changes": [
+              "slide_right",
+              "slide_up"
+            ],
+            "stagger_unit": null,
+            "stagger_ms": null
+          },
+          "sfx_offset_ms": {
+            "x016": 299.5
+          }
+        }
+      ],
+      "sfx": [
+        "x014",
+        "x015",
+        "x016"
+      ]
+    },
+    {
+      "id": "e004",
+      "shot": "s007",
+      "kind": "motion",
+      "start_s": 27.0055,
+      "end_s": 27.2995,
+      "camera_move": "none",
+      "status": "annotated",
+      "skip_reason": null,
+      "of": null,
+      "pattern": {
+        "id": "other",
+        "proposed_name": "presenter talking head",
+        "description": "A live-action interview shot of a second team member behind a laptop. On 'In the new Cursor,' he turns his head from an off-camera interlocutor toward the lens.",
+        "why_premium": "A documentary interview setup (shallow focus on a bookshelf background, a laptop as a foreground layer, the subject's eyeline moving to the lens) makes the launch feel candid and human rather than scripted."
+      },
+      "build_hint": {
+        "gsap": "Not an animation: live-action footage. Place the clip on its own track with no tweens.",
+        "remotion": "Use <OffthreadVideo> for the footage. No animated properties."
+      },
+      "confidence": "low",
+      "notes": "Camera move is none. The many small diff boxes on the bookshelf (b02 to b19) are background shimmer or slight handheld drift from the presenter's movement, not separate moving elements. The scale of 1.0108 may hint at a very slow drift, but the camera verdict says none. No SFX candidates.",
+      "elements": [
+        {
+          "id": "b01",
+          "box": [
+            0,
+            0,
+            1280,
+            705
+          ],
+          "box_source": "candidate",
+          "label": "Second presenter turning his head from off-camera toward the lens while speaking",
+          "role": "other",
+          "role_other": "presenter",
+          "change_types": [
+            "other"
+          ],
+          "change_other": "live-action head turn",
+          "is_text": false,
+          "text": null,
+          "text_unit": null,
+          "timing": {
+            "source": "measured",
+            "duration_ms": 1050.0,
+            "start_s": 26.8487,
+            "ease": "power1.out",
+            "easing_class": "ease_out",
+            "bezier": "cubic-bezier(0.656, 1.268, 0.550, 0.087)",
+            "spring": {
+              "mass": 1.0,
+              "stiffness": 206.755,
+              "damping": 86.274
+            },
+            "overshoot_pct": 0.0,
+            "quality": 0.9206,
+            "channels": [
+              "y"
+            ],
+            "changes": [
+              "slide_down"
+            ],
+            "stagger_unit": null,
+            "stagger_ms": null
+          },
+          "sfx_offset_ms": {}
+        }
+      ],
+      "sfx": []
+    },
+    {
+      "id": "e005",
+      "shot": "s009",
+      "kind": "camera",
+      "start_s": 31.1214,
+      "end_s": 31.6674,
+      "camera_move": "push_in",
+      "status": "annotated",
+      "skip_reason": null,
+      "of": null,
+      "pattern": {
+        "id": "ui_camera_push_in",
+        "proposed_name": null,
+        "description": "From a full-window view of the Cursor 3 agent reply, the frame pushes in about 2x toward the lower-left, ending on the summary list, the sidebar and the Review / Commit & Push buttons, where the pointer hovers on Review as the voice-over says 'You can look at changes'.",
+        "why_premium": "A fast, eased push-in turns a dense full-screen UI into a legible close-up and lands on the exact control the narration names (Review). The viewer never has to search the screen."
+      },
+      "build_hint": {
+        "gsap": "gsap.fromTo(uiWrapper,{scale:1,xPercent:0,yPercent:0},{scale:2,xPercent:17,yPercent:-16,transformOrigin:'30% 85%',duration:0.45,ease:'power2.inOut'}); then tween the pointer to the Review button: gsap.to(pointer,{x:reviewX,y:reviewY,duration:0.4,ease:'power2.out'},'-=0.1')",
+        "remotion": "const p = spring({frame, fps, config:{damping:200, stiffness:100, mass:1}}) (no overshoot, critically damped feel). scale = interpolate(p,[0,1],[1,2]). Translate the wrapper toward the lower-left with interpolate on the same p. Pointer position interpolates to the Review button with Easing.out(Easing.cubic)."
+      },
+      "confidence": "medium",
+      "notes": "Camera verdict is push_in (scale about 1.99), so the UI scale-up is a camera/zoom move on a screen recording rather than element animation. The energy curve shows a near-instant start at f742 and a stop at f754, which suggests an ease_in_out or even a near-linear zoom, so measure it. The pointer's motion is uncertain (it may only ride the zoom). All four SFX candidates are unsure; the reverse-swoosh CLAP labels are probably speech or music residue.",
+      "elements": [
+        {
+          "id": "b01",
+          "box": [
+            8,
+            0,
+            1227,
+            720
+          ],
+          "box_source": "candidate",
+          "label": "Cursor 3 app window (agent sidebar plus agent reply pane) scaling up as the view pushes in toward the lower-left",
+          "role": "ui_panel",
+          "role_other": null,
+          "change_types": [
+            "scale_up"
+          ],
+          "change_other": null,
+          "is_text": false,
+          "text": null,
+          "text_unit": null,
+          "timing": {
+            "source": "measured",
+            "duration_ms": 534.5,
+            "start_s": 31.13,
+            "ease": "none",
+            "easing_class": "linear",
+            "bezier": "cubic-bezier(0.000, 0.026, 0.726, 0.701)",
+            "spring": {
+              "mass": 1.0,
+              "stiffness": 22.534,
+              "damping": 6.762
+            },
+            "overshoot_pct": 0.0,
+            "quality": 1.0,
+            "channels": [
+              "x",
+              "y",
+              "scale"
+            ],
+            "changes": [
+              "scale_up",
+              "slide_right",
+              "slide_up"
+            ],
+            "stagger_unit": null,
+            "stagger_ms": null
+          },
+          "sfx_offset_ms": {
+            "x036": -242.8,
+            "x037": 50.8
+          }
+        },
+        {
+          "id": "m02",
+          "box": [
+            527,
+            583,
+            553,
+            618
+          ],
+          "box_source": "manual",
+          "label": "Mouse pointer arriving on the Review button",
+          "role": "cursor",
+          "role_other": null,
+          "change_types": [
+            "other"
+          ],
+          "change_other": "pointer travel and hover (hand cursor)",
+          "is_text": false,
+          "text": null,
+          "text_unit": null,
+          "timing": null,
+          "sfx_offset_ms": {}
+        }
+      ],
+      "sfx": [
+        "x035",
+        "x036",
+        "x037",
+        "x038"
+      ]
+    },
+    {
+      "id": "e006",
+      "shot": "s009",
+      "kind": "camera",
+      "start_s": 32.7173,
+      "end_s": 33.7253,
+      "camera_move": "pan_right",
+      "status": "annotated",
+      "skip_reason": null,
+      "of": null,
+      "pattern": {
+        "id": "other",
+        "proposed_name": "ui camera pan",
+        "description": "The virtual camera pans right across a wide app canvas, sliding the agent plan off the left and settling on the diff panel with a slight zoom, then the cursor parks on the primary action.",
+        "why_premium": "One continuous move connects the narration step 'test them out' to the next UI surface without a cut, keeping spatial continuity; the slight scale and eased settle feel like a directed camera instead of a screen recording."
+      },
+      "build_hint": {
+        "gsap": "gsap.fromTo('.canvas', {x: 0, scale: 1}, {x: '-55%', scale: 1.03, duration: 1.0, ease: 'power2.inOut'}); then gsap.to('.cursor', {x: btnX, y: btnY, duration: 0.5, ease: 'power3.out'}, '-=0.2').",
+        "remotion": "const p = interpolate(frame, [0, 24], [0, 1], {easing: Easing.bezier(0.45, 0, 0.55, 1), extrapolateRight: 'clamp'}); translateX = -0.55 * width * p, scale = 1 + 0.03 * p; cursor position via spring({frame: frame - 18, fps, config: {damping: 200}})."
+      },
+      "confidence": "medium",
+      "notes": "Camera verdict is pan_right (content slides left). Hard to tell whether this is a true camera pan or the diff panel sliding in over the plan; treated as a camera pan per facts.json. All four SFX candidates are ambiguous against the music bed.",
+      "elements": [
+        {
+          "id": "b01",
+          "box": [
+            8,
+            0,
+            1280,
+            720
+          ],
+          "box_source": "candidate",
+          "label": "Editor canvas panning from the plan/chat column to the uncommitted-changes diff panel",
+          "role": "ui_panel",
+          "role_other": null,
+          "change_types": [
+            "slide_left"
+          ],
+          "change_other": null,
+          "is_text": false,
+          "text": null,
+          "text_unit": null,
+          "timing": {
+            "source": "measured",
+            "duration_ms": 924.0,
+            "start_s": 32.8162,
+            "ease": "sine.in",
+            "easing_class": "ease_in",
+            "bezier": "cubic-bezier(0.316, 1.408, 1.000, 1.601)",
+            "spring": {
+              "mass": 1.0,
+              "stiffness": 202.586,
+              "damping": 11.168
+            },
+            "overshoot_pct": 34.96,
+            "quality": 0.9232,
+            "channels": [
+              "x",
+              "y",
+              "scale"
+            ],
+            "changes": [
+              "scale_down",
+              "slide_left",
+              "slide_up"
+            ],
+            "stagger_unit": null,
+            "stagger_ms": null
+          },
+          "sfx_offset_ms": {
+            "x040": 361.6
+          }
+        },
+        {
+          "id": "b11",
+          "box": [
+            1036,
+            66,
+            1236,
+            98
+          ],
+          "box_source": "candidate",
+          "label": "Cursor arriving on the Commit & Create PR button",
+          "role": "cursor",
+          "role_other": null,
+          "change_types": [
+            "other"
+          ],
+          "change_other": "cursor travels to and rests on the button (hover)",
+          "is_text": false,
+          "text": null,
+          "text_unit": null,
+          "timing": {
+            "source": "measured",
+            "duration_ms": 210.1,
+            "start_s": 33.5284,
+            "ease": "sine.inOut",
+            "easing_class": "ease_in_out",
+            "bezier": "cubic-bezier(0.348, 0.450, 0.934, 1.109)",
+            "spring": {
+              "mass": 1.0,
+              "stiffness": 770.879,
+              "damping": 44.238
+            },
+            "overshoot_pct": 0.0,
+            "quality": 1.0,
+            "channels": [
+              "x",
+              "y"
+            ],
+            "changes": [
+              "slide_down",
+              "slide_left"
+            ],
+            "stagger_unit": "all",
+            "stagger_ms": 0.0
+          },
+          "sfx_offset_ms": {
+            "x040": 319.6
+          }
+        }
+      ],
+      "sfx": [
+        "x038",
+        "x039",
+        "x040",
+        "x041"
+      ]
+    },
+    {
+      "id": "e007",
+      "shot": "s014",
+      "kind": "camera",
+      "start_s": 51.995,
+      "end_s": 52.5409,
+      "camera_move": "pull_out",
+      "status": "annotated",
+      "skip_reason": null,
+      "of": null,
+      "pattern": {
+        "id": "other",
+        "proposed_name": "documentary handheld drift",
+        "description": "Natural handheld/documentary camera drift on a live-action founder conversation: small pull-out and reframe as the speaker shifts his head and gaze.",
+        "why_premium": "Shallow depth of field, warm practical set and a subtly breathing camera make the product talk feel candid and human rather than staged, contrasting with the crisp UI sections."
+      },
+      "build_hint": {
+        "gsap": "For a live-footage plate: gsap.fromTo('.footage', {scale: 1.04, x: 0}, {scale: 1.0, x: '-0.5%', duration: 0.6, ease: 'sine.inOut'}) to simulate a gentle handheld pull-out; no stagger.",
+        "remotion": "scale = interpolate(frame, [0, 14], [1.04, 1.0], {easing: Easing.inOut(Easing.sin), extrapolateRight: 'clamp'}) on an <OffthreadVideo> wrapper; optionally add low-amplitude noise to translate for handheld feel."
+      },
+      "confidence": "medium",
+      "notes": "Motion is mostly subject movement plus mild camera pull_out (scale 0.96) in live footage; b02/b03 are small sweater-region diffs, not distinct elements. SFX candidates look like music bed peaks.",
+      "elements": [
+        {
+          "id": "b01",
+          "box": [
+            0,
+            0,
+            1280,
+            720
+          ],
+          "box_source": "candidate",
+          "label": "Live-action two-shot of the speaker and colleague; handheld camera eases back slightly while the speaker turns toward lens",
+          "role": "other",
+          "role_other": "presenter footage",
+          "change_types": [
+            "scale_down"
+          ],
+          "change_other": null,
+          "is_text": false,
+          "text": null,
+          "text_unit": null,
+          "timing": {
+            "source": "measured",
+            "duration_ms": 1302.0,
+            "start_s": 51.7713,
+            "ease": "circ.out",
+            "easing_class": "ease_out",
+            "bezier": "cubic-bezier(0.847, 0.736, 0.608, 0.823)",
+            "spring": {
+              "mass": 1.0,
+              "stiffness": 3.75,
+              "damping": 1.769
+            },
+            "overshoot_pct": 0.0,
+            "quality": 0.9996,
+            "channels": [
+              "x",
+              "y"
+            ],
+            "changes": [
+              "slide_right",
+              "slide_up"
+            ],
+            "stagger_unit": null,
+            "stagger_ms": null
+          },
+          "sfx_offset_ms": {
+            "x076": -404.0,
+            "x077": 328.8
+          }
+        }
+      ],
+      "sfx": [
+        "x075",
+        "x076",
+        "x077"
+      ]
+    },
+    {
+      "id": "e008",
+      "shot": "s017",
+      "kind": "camera",
+      "start_s": 62.2848,
+      "end_s": 63.3767,
+      "camera_move": "tilt_up",
+      "status": "annotated",
+      "skip_reason": null,
+      "of": null,
+      "pattern": {
+        "id": "other",
+        "proposed_name": "documentary handheld drift",
+        "description": "Natural handheld camera drift and reframing on a talking-head interview single while the speaker talks; the camera tilts up slightly and the subject settles lower in frame.",
+        "why_premium": "Shallow depth of field, warm practical background and a softly moving camera give the founder testimony a candid documentary feel instead of a locked-off corporate interview."
+      },
+      "build_hint": {
+        "gsap": "For a live-footage plate: gsap.fromTo('.footage', {y: '-1%', scale: 1.02}, {y: '1%', scale: 1.0, duration: 1.1, ease: 'sine.inOut'}) to simulate a slow handheld tilt/reframe; no stagger.",
+        "remotion": "y = interpolate(frame, [0, 26], [-0.01, 0.01] * height, {easing: Easing.inOut(Easing.sin)}) and scale 1.02 -> 1.0 on an <OffthreadVideo> wrapper; add low-amplitude noise for handheld feel."
+      },
+      "confidence": "medium",
+      "notes": "Camera verdict tilt_up with tiny shifts (pan_y 0.10, scale 0.985); motion is mostly handheld drift plus subject head movement. Labelled slide_down because the content moves down as the camera tilts up. All SFX candidates look like music bed peaks.",
+      "elements": [
+        {
+          "id": "b01",
+          "box": [
+            0,
+            0,
+            1280,
+            720
+          ],
+          "box_source": "candidate",
+          "label": "Live-action interview single; handheld camera drifts and reframes on the speaker against a defocused bookshelf",
+          "role": "other",
+          "role_other": "presenter footage",
+          "change_types": [
+            "slide_down"
+          ],
+          "change_other": null,
+          "is_text": false,
+          "text": null,
+          "text_unit": null,
+          "timing": {
+            "source": "measured",
+            "duration_ms": 1057.2,
+            "start_s": 62.3077,
+            "ease": "none",
+            "easing_class": "linear",
+            "bezier": "cubic-bezier(0.554, 0.541, 0.201, 0.323)",
+            "spring": {
+              "mass": 1.0,
+              "stiffness": 5.676,
+              "damping": 3.123
+            },
+            "overshoot_pct": 0.0,
+            "quality": 0.9999,
+            "channels": [
+              "x",
+              "y"
+            ],
+            "changes": [
+              "slide_down",
+              "slide_left"
+            ],
+            "stagger_unit": null,
+            "stagger_ms": null
+          },
+          "sfx_offset_ms": {}
+        }
+      ],
+      "sfx": [
+        "x095",
+        "x096",
+        "x097"
+      ]
+    },
+    {
+      "id": "e009",
+      "shot": "s024",
+      "kind": "motion",
+      "start_s": 82.1504,
+      "end_s": 82.5283,
+      "camera_move": "none",
+      "status": "annotated",
+      "skip_reason": null,
+      "of": null,
+      "pattern": {
+        "id": "other",
+        "proposed_name": "candid interview soundbite",
+        "description": "A locked-off live-action interview single; the only motion is the speaker's natural head turn and posture shift while delivering the line.",
+        "why_premium": "Soft key light, shallow depth of field and a warm out-of-focus set let the founder's own delivery carry the emotional claim ('agents really feel like colleagues') between UI sections."
+      },
+      "build_hint": {
+        "gsap": "No graphic animation; place the live footage clip with a hard cut in and out. If a subtle life is wanted: gsap.fromTo('.footage', {scale: 1.0}, {scale: 1.01, duration: 2, ease: 'none'}).",
+        "remotion": "<Sequence> with <OffthreadVideo>; optional scale = interpolate(frame, [0, 48], [1, 1.01]) for a barely-perceptible drift; no springs."
+      },
+      "confidence": "medium",
+      "notes": "Camera verdict is none: motion is the subject moving inside the frame. b02 is the face (OCR text is noise) and b03 a corner plant region; not listed separately. SFX candidates look like music pulses.",
+      "elements": [
+        {
+          "id": "b01",
+          "box": [
+            0,
+            0,
+            1280,
+            720
+          ],
+          "box_source": "candidate",
+          "label": "Interview speaker shifting posture and turning his head while talking (camera locked; subject motion only)",
+          "role": "other",
+          "role_other": "presenter footage",
+          "change_types": [
+            "other"
+          ],
+          "change_other": "natural subject movement (head turn, body sway) in live footage",
+          "is_text": false,
+          "text": null,
+          "text_unit": null,
+          "timing": {
+            "source": "measured",
+            "duration_ms": 1134.0,
+            "start_s": 81.8602,
+            "ease": "power2.out",
+            "easing_class": "ease_out",
+            "bezier": "cubic-bezier(0.806, 0.634, 0.508, 0.663)",
+            "spring": {
+              "mass": 1.0,
+              "stiffness": 4.311,
+              "damping": 1.622
+            },
+            "overshoot_pct": 0.0,
+            "quality": 0.9994,
+            "channels": [
+              "x",
+              "y"
+            ],
+            "changes": [
+              "slide_left",
+              "slide_up"
+            ],
+            "stagger_unit": null,
+            "stagger_ms": null
+          },
+          "sfx_offset_ms": {
+            "x114": -134.4,
+            "x115": 157.9,
+            "x116": 441.0
+          }
+        }
+      ],
+      "sfx": [
+        "x113",
+        "x114",
+        "x115"
+      ]
+    },
+    {
+      "id": "e010",
+      "shot": "s024",
+      "kind": "motion",
+      "start_s": 83.3263,
+      "end_s": 83.4943,
+      "camera_move": "none",
+      "status": "annotated",
+      "skip_reason": null,
+      "of": null,
+      "pattern": {
+        "id": "other",
+        "proposed_name": "candid interview soundbite",
+        "description": "Continuation of the locked-off live-action interview single; the speaker's head turn is the only motion while he delivers the line.",
+        "why_premium": "Holding on an unhurried, well-lit founder close-up lets the spoken vision ('build anything you want') land with authenticity instead of a graphic."
+      },
+      "build_hint": {
+        "gsap": "No graphic animation; keep the live footage clip uncut through the line. Optional barely-visible drift: gsap.fromTo('.footage', {scale: 1.0}, {scale: 1.01, duration: 2, ease: 'none'}).",
+        "remotion": "<Sequence> with <OffthreadVideo>; optional scale = interpolate(frame, [0, 48], [1, 1.01]) for a slow drift; no springs."
+      },
+      "confidence": "medium",
+      "notes": "Same shot (s024) as e009; camera verdict none, so motion is the subject inside the frame. b02 is a small corner region, not a distinct element. SFX candidates look like music pulses; x115 is shared with e009.",
+      "elements": [
+        {
+          "id": "b01",
+          "box": [
+            0,
+            0,
+            1280,
+            720
+          ],
+          "box_source": "candidate",
+          "label": "Interview speaker turning his head back toward the interviewer while talking (camera locked; subject motion only)",
+          "role": "other",
+          "role_other": "presenter footage",
+          "change_types": [
+            "other"
+          ],
+          "change_other": "natural subject movement (head turn, body sway) in live footage",
+          "is_text": false,
+          "text": null,
+          "text_unit": null,
+          "timing": {
+            "source": "measured",
+            "duration_ms": 778.0,
+            "start_s": 82.9664,
+            "ease": "power1.inOut",
+            "easing_class": "ease_in_out",
+            "bezier": "cubic-bezier(0.656, 0.381, 0.416, 0.881)",
+            "spring": {
+              "mass": 1.0,
+              "stiffness": 31.655,
+              "damping": 7.688
+            },
+            "overshoot_pct": 0.0,
+            "quality": 0.9996,
+            "channels": [
+              "x",
+              "y"
+            ],
+            "changes": [
+              "slide_down",
+              "slide_left"
+            ],
+            "stagger_unit": null,
+            "stagger_ms": null
+          },
+          "sfx_offset_ms": {
+            "x116": -441.0,
+            "x117": 147.0
+          }
+        }
+      ],
+      "sfx": [
+        "x115",
+        "x116",
+        "x117"
+      ]
+    }
+  ],
+  "sfx": [
+    {
+      "id": "x001",
+      "sync_s": 2.2991,
+      "classifier_label": "impact",
+      "clap_label": "click",
+      "clap_score": 0.619,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x002",
+      "sync_s": 2.8807,
+      "classifier_label": "unsure",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.429,
+      "label": "unsure",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x003",
+      "sync_s": 3.4647,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.638,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x004",
+      "sync_s": 3.7548,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.441,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x005",
+      "sync_s": 4.0357,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.832,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x006",
+      "sync_s": 4.3292,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.768,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x007",
+      "sync_s": 4.6223,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.641,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x008",
+      "sync_s": 4.9217,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.646,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x009",
+      "sync_s": 5.2027,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.505,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x010",
+      "sync_s": 5.6337,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.598,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": "unsure",
+      "events": [
+        "e001"
+      ],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x011",
+      "sync_s": 6.5195,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.836,
+      "label": "speech",
+      "label_source": "claude",
+      "verdict": "override",
+      "events": [
+        "e001"
+      ],
+      "on_beat": false,
+      "reveal_offset_ms": 303.6
+    },
+    {
+      "id": "x012",
+      "sync_s": 7.5365,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.606,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": "unsure",
+      "events": [
+        "e001"
+      ],
+      "on_beat": true,
+      "reveal_offset_ms": 186.6
+    },
+    {
+      "id": "x013",
+      "sync_s": 8.1237,
+      "classifier_label": "impact",
+      "clap_label": "whoosh",
+      "clap_score": 0.311,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x014",
+      "sync_s": 8.4027,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.58,
+      "label": "speech",
+      "label_source": "claude",
+      "verdict": "override",
+      "events": [
+        "e003"
+      ],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x015",
+      "sync_s": 8.6987,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.549,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": "unsure",
+      "events": [
+        "e003"
+      ],
+      "on_beat": true,
+      "reveal_offset_ms": -289.1
+    },
+    {
+      "id": "x016",
+      "sync_s": 9.5813,
+      "classifier_label": "click",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.772,
+      "label": "click",
+      "label_source": "code",
+      "verdict": "unsure",
+      "events": [
+        "e003"
+      ],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x017",
+      "sync_s": 9.8585,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.676,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x018",
+      "sync_s": 10.4459,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.488,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x019",
+      "sync_s": 10.7463,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.727,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x020",
+      "sync_s": 11.0116,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.642,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x021",
+      "sync_s": 11.3235,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.531,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x022",
+      "sync_s": 11.6038,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.47,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x023",
+      "sync_s": 12.1976,
+      "classifier_label": "unsure",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.489,
+      "label": "unsure",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x024",
+      "sync_s": 13.938,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.575,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x025",
+      "sync_s": 14.4544,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.629,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x026",
+      "sync_s": 15.6946,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.517,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x027",
+      "sync_s": 16.8605,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.584,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x028",
+      "sync_s": 19.1903,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.562,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x029",
+      "sync_s": 19.319,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.513,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x030",
+      "sync_s": 22.6844,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.596,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x031",
+      "sync_s": 22.9753,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.592,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x032",
+      "sync_s": 25.6011,
+      "classifier_label": "click",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.612,
+      "label": "click",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x033",
+      "sync_s": 28.5047,
+      "classifier_label": "unsure",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.299,
+      "label": "unsure",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x034",
+      "sync_s": 30.2587,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.725,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x035",
+      "sync_s": 30.8405,
+      "classifier_label": "unsure",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.376,
+      "label": "unsure",
+      "label_source": "code",
+      "verdict": "unsure",
+      "events": [
+        "e005"
+      ],
+      "on_beat": true,
+      "reveal_offset_ms": -280.9
+    },
+    {
+      "id": "x036",
+      "sync_s": 31.4246,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.615,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": "unsure",
+      "events": [
+        "e005"
+      ],
+      "on_beat": true,
+      "reveal_offset_ms": -242.8
+    },
+    {
+      "id": "x037",
+      "sync_s": 31.7182,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.644,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": "unsure",
+      "events": [
+        "e005"
+      ],
+      "on_beat": false,
+      "reveal_offset_ms": 50.8
+    },
+    {
+      "id": "x038",
+      "sync_s": 32.2978,
+      "classifier_label": "unsure",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.453,
+      "label": "unsure",
+      "label_source": "code",
+      "verdict": "unsure",
+      "events": [
+        "e005",
+        "e006"
+      ],
+      "on_beat": false,
+      "reveal_offset_ms": -419.5
+    },
+    {
+      "id": "x039",
+      "sync_s": 32.8816,
+      "classifier_label": "click",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.41,
+      "label": "click",
+      "label_source": "code",
+      "verdict": "unsure",
+      "events": [
+        "e006"
+      ],
+      "on_beat": false,
+      "reveal_offset_ms": 164.3
+    },
+    {
+      "id": "x040",
+      "sync_s": 34.0449,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.68,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": "unsure",
+      "events": [
+        "e006"
+      ],
+      "on_beat": false,
+      "reveal_offset_ms": 319.6
+    },
+    {
+      "id": "x041",
+      "sync_s": 34.3345,
+      "classifier_label": "click",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.487,
+      "label": "click",
+      "label_source": "code",
+      "verdict": "unsure",
+      "events": [
+        "e006"
+      ],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x042",
+      "sync_s": 34.9238,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.511,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x043",
+      "sync_s": 35.5007,
+      "classifier_label": "unsure",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.439,
+      "label": "unsure",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x044",
+      "sync_s": 36.0837,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.736,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x045",
+      "sync_s": 36.3742,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.714,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x046",
+      "sync_s": 36.9575,
+      "classifier_label": "unsure",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.393,
+      "label": "unsure",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x047",
+      "sync_s": 37.538,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.716,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x048",
+      "sync_s": 37.8134,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.606,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x049",
+      "sync_s": 38.4143,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.519,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x050",
+      "sync_s": 39.145,
+      "classifier_label": "impact",
+      "clap_label": "music",
+      "clap_score": 0.371,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x051",
+      "sync_s": 39.5816,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.607,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x052",
+      "sync_s": 39.8583,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.524,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x053",
+      "sync_s": 40.1567,
+      "classifier_label": "unsure",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.49,
+      "label": "unsure",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x054",
+      "sync_s": 40.7415,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.559,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x055",
+      "sync_s": 41.0266,
+      "classifier_label": "unsure",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.434,
+      "label": "unsure",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x056",
+      "sync_s": 41.6146,
+      "classifier_label": "unsure",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.319,
+      "label": "unsure",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x057",
+      "sync_s": 42.0549,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.659,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x058",
+      "sync_s": 42.4866,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.591,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x059",
+      "sync_s": 43.0674,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.641,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x060",
+      "sync_s": 43.3612,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.634,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x061",
+      "sync_s": 43.8024,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.58,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x062",
+      "sync_s": 44.2334,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.383,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x063",
+      "sync_s": 45.4067,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.343,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x064",
+      "sync_s": 45.698,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.595,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x065",
+      "sync_s": 45.9746,
+      "classifier_label": "unsure",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.462,
+      "label": "unsure",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x066",
+      "sync_s": 46.4055,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.536,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x067",
+      "sync_s": 47.13,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.729,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x068",
+      "sync_s": 47.7268,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.63,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x069",
+      "sync_s": 48.0298,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.564,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x070",
+      "sync_s": 48.8992,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.428,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x071",
+      "sync_s": 50.359,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.41,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x072",
+      "sync_s": 50.6344,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.516,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x073",
+      "sync_s": 51.0702,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.577,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x074",
+      "sync_s": 51.2042,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.516,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x075",
+      "sync_s": 51.8042,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.536,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": "unsure",
+      "events": [
+        "e007"
+      ],
+      "on_beat": true,
+      "reveal_offset_ms": -190.8
+    },
+    {
+      "id": "x076",
+      "sync_s": 52.3889,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.377,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": "unsure",
+      "events": [
+        "e007"
+      ],
+      "on_beat": true,
+      "reveal_offset_ms": -152.0
+    },
+    {
+      "id": "x077",
+      "sync_s": 53.1217,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.653,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": "unsure",
+      "events": [
+        "e007"
+      ],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x078",
+      "sync_s": 53.5475,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.688,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x079",
+      "sync_s": 54.1363,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.651,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x080",
+      "sync_s": 54.4339,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.506,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x081",
+      "sync_s": 54.9991,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.509,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x082",
+      "sync_s": 55.2942,
+      "classifier_label": "unsure",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.438,
+      "label": "unsure",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x083",
+      "sync_s": 55.8902,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.549,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x084",
+      "sync_s": 56.4559,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.65,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x085",
+      "sync_s": 56.7639,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.378,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x086",
+      "sync_s": 57.4912,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.668,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x087",
+      "sync_s": 57.7808,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.528,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x088",
+      "sync_s": 58.2186,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.65,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x089",
+      "sync_s": 58.7745,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.659,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x090",
+      "sync_s": 59.0936,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.49,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x091",
+      "sync_s": 59.5287,
+      "classifier_label": "unsure",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.419,
+      "label": "unsure",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x092",
+      "sync_s": 59.9621,
+      "classifier_label": "unsure",
+      "clap_label": "whoosh",
+      "clap_score": 0.267,
+      "label": "unsure",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x093",
+      "sync_s": 60.5445,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.8,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x094",
+      "sync_s": 61.1155,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.64,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x095",
+      "sync_s": 62.1472,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.514,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": "unsure",
+      "events": [
+        "e008"
+      ],
+      "on_beat": true,
+      "reveal_offset_ms": -137.6
+    },
+    {
+      "id": "x096",
+      "sync_s": 62.5498,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.698,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": "unsure",
+      "events": [
+        "e008"
+      ],
+      "on_beat": false,
+      "reveal_offset_ms": 265.0
+    },
+    {
+      "id": "x097",
+      "sync_s": 62.8747,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.599,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": "unsure",
+      "events": [
+        "e008"
+      ],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x098",
+      "sync_s": 65.2136,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.498,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x099",
+      "sync_s": 66.3783,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.832,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x100",
+      "sync_s": 66.6679,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.452,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x101",
+      "sync_s": 67.454,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.711,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x102",
+      "sync_s": 68.7062,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.641,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x103",
+      "sync_s": 69.8739,
+      "classifier_label": "click",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.411,
+      "label": "click",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x104",
+      "sync_s": 71.0407,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.534,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x105",
+      "sync_s": 71.6044,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.679,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x106",
+      "sync_s": 76.8616,
+      "classifier_label": "click",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.603,
+      "label": "click",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x107",
+      "sync_s": 78.5956,
+      "classifier_label": "unsure",
+      "clap_label": "click",
+      "clap_score": 0.26,
+      "label": "unsure",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x108",
+      "sync_s": 79.4767,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.591,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x109",
+      "sync_s": 79.7671,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.626,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x110",
+      "sync_s": 80.2103,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.647,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x111",
+      "sync_s": 81.0848,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.773,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x112",
+      "sync_s": 81.5205,
+      "classifier_label": "impact",
+      "clap_label": "music",
+      "clap_score": 0.283,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x113",
+      "sync_s": 82.089,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.618,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": "unsure",
+      "events": [
+        "e009"
+      ],
+      "on_beat": true,
+      "reveal_offset_ms": -61.4
+    },
+    {
+      "id": "x114",
+      "sync_s": 82.6879,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.452,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": "unsure",
+      "events": [
+        "e009"
+      ],
+      "on_beat": true,
+      "reveal_offset_ms": 159.6
+    },
+    {
+      "id": "x115",
+      "sync_s": 82.9802,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.775,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": "unsure",
+      "events": [
+        "e009",
+        "e010"
+      ],
+      "on_beat": false,
+      "reveal_offset_ms": -346.1
+    },
+    {
+      "id": "x116",
+      "sync_s": 83.2633,
+      "classifier_label": "unsure",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.443,
+      "label": "unsure",
+      "label_source": "code",
+      "verdict": "unsure",
+      "events": [
+        "e010"
+      ],
+      "on_beat": true,
+      "reveal_offset_ms": -63.0
+    },
+    {
+      "id": "x117",
+      "sync_s": 83.8513,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.7,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": "unsure",
+      "events": [
+        "e010"
+      ],
+      "on_beat": true,
+      "reveal_offset_ms": 357.0
+    },
+    {
+      "id": "x118",
+      "sync_s": 84.4166,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.57,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x119",
+      "sync_s": 85.0155,
+      "classifier_label": "impact",
+      "clap_label": "music",
+      "clap_score": 0.487,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x120",
+      "sync_s": 85.3104,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.708,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x121",
+      "sync_s": 85.8906,
+      "classifier_label": "swoosh_reverse",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.586,
+      "label": "swoosh_reverse",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x122",
+      "sync_s": 86.7564,
+      "classifier_label": "unsure",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.416,
+      "label": "unsure",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x123",
+      "sync_s": 87.3455,
+      "classifier_label": "impact",
+      "clap_label": "music",
+      "clap_score": 0.404,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x124",
+      "sync_s": 87.6391,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.454,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x125",
+      "sync_s": 87.9212,
+      "classifier_label": "unsure",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.447,
+      "label": "unsure",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x126",
+      "sync_s": 88.5112,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.529,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x127",
+      "sync_s": 89.0811,
+      "classifier_label": "unsure",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.397,
+      "label": "unsure",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x128",
+      "sync_s": 89.9684,
+      "classifier_label": "impact",
+      "clap_label": "swoosh_reverse",
+      "clap_score": 0.364,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    }
+  ],
+  "coverage": {
+    "events": 10,
+    "annotated": 9,
+    "propagated": 0,
+    "skipped": 1,
+    "pending": 0,
+    "elements": 11,
+    "measured": 10,
+    "estimated": 0
+  },
+  "checks": [
+    {
+      "name": "a1_shots",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "a1_summary",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "a2_events",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "events_in_shots",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "sfx_ids",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "sfx_labels",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "measure_boxes",
+      "ok": true,
+      "detail": null
+    }
+  ]
+}

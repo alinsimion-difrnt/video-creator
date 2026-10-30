@@ -1,0 +1,61 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "da179c2d03f33f7beb2e2941140a6c653befcb5a01085be569b8cccaf4002d0b",
+    "created_at": "2026-10-05T06:56:38.208863Z"
+  },
+  "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+  "event": "e014",
+  "task": "a2-e014",
+  "elements": [
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "AI agent avatar",
+      "role": "avatar",
+      "role_other": null,
+      "change_types": ["fade", "slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 450, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "AI agent closing reply bubble",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["fade", "slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Sure thing! Let me know if I can be of any more assistance.",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 450, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x058", "verdict": "override", "label": "music", "note": "Lands ~1s after the bubble has settled, on one of the evenly spaced percussive streaks of the music bed; no visual change at that moment."},
+    {"id": "x059", "verdict": "unsure", "label": "unsure", "note": "At the right edge of the spectrogram window, well after the event; cannot judge its shape."}
+  ],
+  "pattern": {
+    "id": "notification_pop",
+    "proposed_name": null,
+    "description": "A new AI agent chat bubble and its avatar appear below the existing thread in one beat: instant fade-in with a short upward drift that decelerates into place.",
+    "why_premium": "The message lands right after the narration line 'here's the best part', with a fast attack and long ease-out tail so it reads as arriving rather than cutting in, while the rest of the thread stays still."
+  },
+  "build_hint": {
+    "gsap": "gsap.fromTo([avatar, bubble], {autoAlpha: 0, y: 16}, {autoAlpha: 1, y: 0, duration: 0.45, ease: 'expo.out', stagger: 0}).",
+    "remotion": "const p = spring({frame, fps, config: {damping: 200, stiffness: 180}}); opacity = interpolate(p, [0, 0.3], [0, 1], {extrapolateRight: 'clamp'}); translateY = interpolate(p, [0, 1], [16, 0]) on avatar and bubble together."
+  },
+  "confidence": "medium",
+  "notes": "Filmstrip crops show small positional jitter between frames; the entrance direction (slide_up vs slight scale) is uncertain. camera.move is none. Both SFX candidates fall after the burst ends."
+}

@@ -1,0 +1,52 @@
+# v14 — the long version: the Fred opener, then the process as cutaways (shredder, the code edit that
+# recolours the video, the R2 bucket, the agents), Fred reacting between them, the cat payoff. Questions:
+# does Fred survive the cutaways (he lives in room space)? Is 40 s too long?
+name: v14
+voice: iP95p4xoKVk53GoZ742B
+script: >-
+  This fish is AI. So is everything else in this video. Here's how. I feed it the best explainers online,
+  and it shreds them into frames. I change one line of code, and the whole video changes colour.
+  Everything lands in a bucket. Three agents review every cut, and I get the final say.
+  Fred approves. Pixie does not.
+plan:
+  layout:
+    - {word: 0, layout: full}
+    - {word: "feed", layout: "off"}
+    - {word: "Fred", layout: full}
+  punches: ["everything"]
+  items:
+    - {word: "feed", until: "frames", kind: shredder, where: product, marks: ["explainers", "shreds", "frames"],
+       spec: {videos: ["Notion AI", "Linear intro", "Arc tour"], label: "a frame every 0.5 s", machine: "lens"}}
+    - {word: "change", until: "colour", kind: code, where: product, marks: ["line"],
+       spec: {file: "brand/video.yaml", lines: ["accent: \"#f97316\"", "font: Inter", "pace: calm"],
+              edits: [{line: 0, to: "\"#22c55e\""}]}}
+    - {word: "Everything#2", until: "bucket", kind: bucket, where: product, marks: ["lands", "bucket"],
+       spec: {title: "R2 bucket", name: "lens-media", folders: [{name: inbox, count: 12}, {name: frames, count: 4210}]}}
+    - {word: "Three", until: "say", kind: agents, where: product, marks: ["Three", "review", "I#3", "say"],
+       spec: {maker: "Claude", reviewers: ["motion", "audio", "story"], scores: [8, 7, 9], you: "Robert",
+              verdict: up, meter: "premium", meter_value: 0.82}}
+  props:
+    - id: fred
+      art: fred
+      word: "fish"
+      until: "not"
+      at: lap
+      size: 0.2
+      style: photo
+      beats:
+        - {word: "everything", style: illustrated}
+        - {word: "approves", do: clap, add: [top_hat]}
+    - id: pixie
+      art: cat
+      word: "Pixie"
+      until: "not"
+      at: floor_right
+      size: 0.3
+      enter: walk_right
+      exit: run_left
+      beats:
+        - {word: "does", move: lap}
+        - {word: "not", carry: fred}
+  fx:
+    - {word: "line", until: "say", kind: caption_font, spec: {accent: "#22c55e"}}
+    - {word: "not", kind: shake}

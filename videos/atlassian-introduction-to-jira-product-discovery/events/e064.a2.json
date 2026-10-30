@@ -1,0 +1,40 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "bd6ee1481ccf4de553ccddbaaa2db464b95731ad1cf2efa667bfa5be8b96c27d",
+    "created_at": "2026-10-05T06:38:37.850212Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e064",
+  "task": "a2-e064",
+  "elements": [
+    {"box": "b01", "manual_box": null, "manual_reason": null, "label": "Onboarding templates card snapping into the Next column on drop, then taking the hover tint",
+     "role": "card", "role_other": null, "change_types": ["slide_left", "highlight"], "change_other": null,
+     "is_text": true, "text": "Onboarding templates", "text_unit": "whole",
+     "estimates": {"duration_ms": 120, "easing_class": "ease_out"}},
+    {"box": null, "manual_box": [489, 420, 517, 432],
+     "manual_reason": "No candidate box isolates the cursor; it sits between the Goal label (b08) and the Delight users chip (b05).",
+     "label": "Cursor switching from grab hand to arrow to pointer hand after the drop",
+     "role": "cursor", "role_other": null, "change_types": ["morph"], "change_other": null,
+     "is_text": false, "text": null, "text_unit": null,
+     "estimates": null}
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "The tail of the drag-and-drop from e062: the presenter releases the Onboarding templates card, it snaps a few pixels left into the Next column's slot, the cursor reverts from grab hand to arrow, and the card then shows its hover tint as the pointer rests on it.",
+    "why_premium": "The crisp snap and immediate hover feedback confirm the drop landed, closing the prioritisation gesture cleanly just as the narrator moves on to board views."
+  },
+  "build_hint": {
+    "gsap": "On release: gsap.to('.card-onboarding', {x: slotX, y: slotY, scale: 1, boxShadow: 'none', duration: 0.12, ease: 'power3.out'}); swap the cursor sprite to arrow at drop and to pointer ~0.3s later, then gsap.to('.card-onboarding', {backgroundColor: hoverTint, duration: 0.05}).",
+    "remotion": "const settle = spring({frame: frame - drop, fps, config: {damping: 24, stiffness: 320, mass: 0.6}}); translateX = interpolate(settle, [0, 1], [dragX, slotX]); cursor sprite chosen by frame ranges; background tint toggles on at drop + ~10 frames."
+  },
+  "confidence": "medium",
+  "notes": "Continuation of the e062 drag; the energy peaks are the drop snap (~f3518) and the hover tint/cursor change (~f3529). Column counts also change between e062 and this end frame (Later 3 to 2, Next 1 to 2), but there is no candidate box for them and the exact frame is not visible in the filmstrip crop, so they are not listed. No SFX candidates."
+}

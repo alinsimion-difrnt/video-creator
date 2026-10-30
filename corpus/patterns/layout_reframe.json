@@ -1,0 +1,177 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a3_pattern_cards",
+  "annotator": "claude-code",
+  "skill": "write-pattern-cards@e525a58fa6d8",
+  "model": null,
+  "input_hash": "e4510460e0539e87a72ae891fdedd3416524eaca3187b412589b417d1329feeb",
+  "created_at": "2026-10-05T12:52:01.842013Z"
+ },
+ "id": "layout_reframe",
+ "name": "Layout Shifts Into Place",
+ "summary": "Without a cut, everything on screen moves together into a new arrangement: elements slide, shrink or grow to make room, and new pieces fade in to fill the gaps, so one layout becomes the next.",
+ "when_to_use": [
+  "Turning a title card or single line into the real product screen",
+  "Showing the immediate result of an action, such as a new row appearing in a table",
+  "Making room for a headline or answer while keeping earlier content as the anchor"
+ ],
+ "avoid_when": [
+  "The new state has nothing in common with the old one, so a transition would read better",
+  "Elements move on different eases and the shift starts to feel like several unrelated motions"
+ ],
+ "steps": [
+  "Group the elements that stay on screen so they can move as one unit",
+  "Decide the anchor element the viewer should track from the old layout into the new one",
+  "Move, shrink or grow the group to its new position on one shared ease",
+  "Fade and lift new elements into the space that opens, with a light stagger",
+  "Fade out or collapse anything that no longer belongs at the same time",
+  "Let the frame settle before the next action starts"
+ ],
+ "build": {
+  "gsap": "Use one timeline with to() or fromTo() tweens on x, y, yPercent and scale for the moving group, sharing an ease_out family (power2.out or power3.out) or ease_in_out (power2.inOut) for the main move. Add fromTo() tweens on autoAlpha and y for incoming items with a small stagger, positioned with '<' so they overlap the main move. For a shape that turns into another shape, GSAP Flip.from() captures the old state. Use back.out only for small accent pops (spring_overshoot), and linear for spinners or counters riding along.",
+  "remotion": "Drive the shared move with one spring() at high damping (no overshoot) or with interpolate() and Easing.out or Easing.inOut, and map that single progress value to every element's translate and scale so they move together. Fade incoming children with interpolate() on opacity, offset by a frame or so per item. Reserve low-damping springs for a small reward pop."
+ },
+ "sound": "No single typical sound: most detected audio is music or unclear. When an effect is used it is usually a reverse swoosh landing just after the shift begins, occasionally a chime or click.",
+ "why_premium": "The screen never cuts: one shared ease moves every layer at once, so the change reads as a single deliberate gesture rather than a set of separate animations. Something the viewer is already looking at (a greeting, a prompt, a table) stays as the anchor and becomes part of the new layout, which keeps attention continuous and makes the product feel responsive, as when a table makes room in place for a new item instead of opening a modal. New content arriving with a soft fade and rise lets the interface build around the message calmly and in step with the narration.",
+ "numbers": {
+  "id": "layout_reframe",
+  "events": 47,
+  "videos": 14,
+  "weight": 33.2,
+  "duration_ms": {
+   "n": 106,
+   "videos": 11,
+   "weight": 79.8286,
+   "median": 623.78,
+   "p25": 304.493,
+   "p75": 814.426,
+   "ci": [
+    477.208,
+    660.6
+   ]
+  },
+  "easing_mix": {
+   "ease_out": 0.4295,
+   "ease_in_out": 0.2698,
+   "linear": 0.1279,
+   "spring_overshoot": 0.0875,
+   "ease_in": 0.0853
+  },
+  "change_mix": {
+   "fade": 0.2695,
+   "slide_left": 0.1653,
+   "slide_down": 0.1035,
+   "scale_down": 0.0946,
+   "slide_up": 0.0834,
+   "scale_up": 0.0774,
+   "slide_right": 0.0603,
+   "color_shift": 0.032,
+   "other": 0.0253,
+   "morph": 0.0194,
+   "pop": 0.0186,
+   "highlight": 0.0149,
+   "mask_reveal": 0.0112,
+   "count_up": 0.0104,
+   "draw_on": 0.0067,
+   "typewriter": 0.0045,
+   "rotate": 0.003
+  },
+  "role_mix": {
+   "label": 0.1594,
+   "ui_panel": 0.1508,
+   "card": 0.1356,
+   "list_item": 0.1074,
+   "icon": 0.09,
+   "button": 0.0629,
+   "headline": 0.0564,
+   "chart": 0.0412,
+   "body_text": 0.0401,
+   "logo": 0.039,
+   "cursor": 0.0239,
+   "avatar": 0.0217,
+   "other": 0.0206,
+   "metric": 0.0206,
+   "background": 0.0163,
+   "notification": 0.0141
+  },
+  "sfx_label_mix": {
+   "music": 0.4432,
+   "swoosh_reverse": 0.2955,
+   "unsure": 0.1477,
+   "chime": 0.0682,
+   "click": 0.0455
+  },
+  "sfx_offset_ms": {
+   "n": 49,
+   "videos": 3,
+   "weight": 40.6,
+   "median": 120.2,
+   "p25": -228.0,
+   "p75": 245.2,
+   "ci": [
+    77.9,
+    162.031
+   ]
+  },
+  "examples": [
+   {
+    "video": "figma-introducing-figma-motion-your-canvas-no",
+    "event": "e002",
+    "score": 5.0
+   },
+   {
+    "video": "attio-introducing-ask-attio",
+    "event": "e001",
+    "score": 4.0
+   },
+   {
+    "video": "duolingo-introducing-duolingo-chess",
+    "event": "e004",
+    "score": 4.0
+   },
+   {
+    "video": "google-introducing-the-google-pixel-9-pro",
+    "event": "e001",
+    "score": 4.0
+   },
+   {
+    "video": "hubspot-what-is-hubspot",
+    "event": "e002",
+    "score": 4.0
+   }
+  ]
+ },
+ "examples": [
+  {
+   "video": "figma-introducing-figma-motion-your-canvas-no",
+   "event": "e002",
+   "score": 5.0
+  },
+  {
+   "video": "attio-introducing-ask-attio",
+   "event": "e001",
+   "score": 4.0
+  },
+  {
+   "video": "duolingo-introducing-duolingo-chess",
+   "event": "e004",
+   "score": 4.0
+  },
+  {
+   "video": "google-introducing-the-google-pixel-9-pro",
+   "event": "e001",
+   "score": 4.0
+  },
+  {
+   "video": "hubspot-what-is-hubspot",
+   "event": "e002",
+   "score": 4.0
+  }
+ ],
+ "caveats": [
+  "Sound timing comes from only a few videos, so the sound guidance is weak",
+  "A broad pattern: it covers both large title-to-product reframes and small in-product table reflows, which run at quite different speeds"
+ ]
+}

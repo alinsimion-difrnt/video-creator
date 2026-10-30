@@ -1,0 +1,231 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "afb7865a44703d9a3da6d8564ac2fe7d5cbfcbde2a63f4bb538362d14706bce0",
+    "created_at": "2026-10-05T06:28:44.520390Z"
+  },
+  "video": "moz-create-a-perfect-content-brief-in-second",
+  "task": "a1-p5",
+  "shots": [
+    {
+      "shot": "s018",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Single centred caption line on a full-bleed coral-to-lavender gradient, typed on phrase by phrase with the voice-over",
+      "transition_in": "other",
+      "transition_other": "Detector flags 'other'; reads as the s017 caption pill expanding to fill the frame (same pill-to-background move as s011 to s012), not resolvable at 2 fps",
+      "on_screen_text": ["saving you hours", "and making you", "an indispensable", "content strategist."],
+      "text_word_count": 10,
+      "typography": "Bold humanist sans-serif in near-black (low-confidence guess: Lato), all lowercase fragments, normal tracking, centred; mixed-weight emphasis in 'and making you' with 'and' regular, 'making' bold and 'you' bold italic. Text types on letter by letter.",
+      "depth_cues": ["none"],
+      "what_happens": "On a full-frame gradient whose angle slowly rotates, the caption types 'saving you ho' to 'saving you hours' (w203-w205), clears to an empty gradient at 1:24.5, then types 'and making you' (w206-w208) with weight/italic emphasis on 'you', 'an indispen' to 'an indispensable' (w209-w210) and finally 'content strategist.' (w211-w212), which holds to the end of the shot.",
+      "build_rebuild": "Full-frame linear gradient with a slowly animating angle, and a centred caption whose text is revealed character by character from word start times, cleared at each VO pause, with per-word font-weight and italic spans for emphasis.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s019",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The exported PDF brief (05 Keywords to Focus On table) inside an inset white rounded card floating on a pink-to-purple gradient background",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "04 Primary Search Intent",
+        "Transactional - Consider creating or optimizing a product or service page to drive conversions.",
+        "MOZ",
+        "CONTENT TOPIC reusable ice packs",
+        "CONTENT TYPE Blog Post",
+        "LOCALE en-US",
+        "05 Keywords to Focus On",
+        "Use these keywords in your content to help it rank in search engines.",
+        "Content Topic Keyword (For your H1 Headings)",
+        "Relevance Volume Difficulty",
+        "reusable ice packs 100.0% 2.5k 49",
+        "Suggested Supporting Keywords (For your H2s and H3s)",
+        "reusable ice packs target",
+        "reusable ice packs for knees",
+        "reusable ice pack",
+        "reusable ice pack sheets",
+        "reusable ice bag",
+        "sports ice packs",
+        "ice packs reusable",
+        "reusable ice packs for injuries",
+        "reusable ice packs for coolers",
+        "medical ice packs",
+        "06 What's Already Ranking",
+        "Examples of successful content on this topic. Use them to inspire structure, tone, or what to cover.",
+        "Content Title / URL",
+        "2 of 3"
+      ],
+      "text_word_count": 136,
+      "typography": "Native PDF/UI text only: clean humanist sans (Lato-like, low-confidence guess), numbered title-case section headings in medium weight, regular grey helper copy, small uppercase tracked field labels, tabular figures in the keyword table; no added caption.",
+      "depth_cues": ["shadow"],
+      "what_happens": "With no caption on screen, the PDF preview now sits as an inset rounded white card on a pink-to-purple gradient and scrolls steadily upward from 04 Primary Search Intent through the Moz page break into the 05 Keywords to Focus On table and the start of 06 What's Already Ranking, while the VO delivers the closing line 'Generate a content brief in seconds with MozPro' (w213-w220). A static cursor sits top right and a '2 of 3' page badge on the right edge.",
+      "build_rebuild": "Inset the PDF page in a rounded white card (about 6% margin) over a diagonal pink-to-purple gradient with a soft shadow, and tween its content translateY upward linearly over the 2.5 s shot.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s020",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The PDF card being washed out by a semi-opaque pink-to-purple gradient overlay",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "Suggested Supporting Keywords (For your H2s and H3s)",
+        "06 What's Already Ranking",
+        "Content Title / URL",
+        "Ice Packs in First Aid(1000+)",
+        "Gel Ice Packs",
+        "Reusable Cold Packs",
+        "ICEWRAPS: Shop All Products",
+        "The 7 Best Ice Packs for Coolers, Reviewed",
+        "2 of 3"
+      ],
+      "text_word_count": 41,
+      "typography": "Native PDF text only, ghosted under the overlay (Lato-like sans, low confidence); URLs under each ranking title are present but too faint to quote.",
+      "depth_cues": ["none"],
+      "what_happens": "The PDF continues to scroll up into the What's Already Ranking list while a pink-to-purple gradient fades in over the whole frame, leaving the document as a faint ghost under 'MozPro today!' (w220-w221). Only one sampled frame (0.67 s shot), so the fade curve is not visible.",
+      "build_rebuild": "Fade a full-frame diagonal gradient layer from 0 to ~80% opacity over the scrolling PDF card in ~0.6 s to clear the stage for the end card.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s021",
+      "shot_type": "abstract",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Full-frame field of thin pink-to-purple outlined chevrons on a flat sky-blue background, wiping into the Moz subscribe end card",
+      "transition_in": "other",
+      "transition_other": "Chevron graphic wipe: a blue field of right-pointing outlined chevrons replaces the gradient (cut or very fast wipe, not resolvable at 2 fps), then a blue chevron edge exits right revealing the end card",
+      "on_screen_text": ["MOZ", "SUBSCRIBE"],
+      "text_word_count": 2,
+      "typography": "End card: Moz wordmark in its brand geometric caps; 'SUBSCRIBE' in white uppercase regular-weight sans on a red rounded rectangle (YouTube-style button), normal tracking.",
+      "depth_cues": ["none"],
+      "what_happens": "At 1:31.0 the frame is a flat blue field of repeating outlined chevrons pointing right; by 1:31.5 a large blue chevron shape is sliding off to the right, uncovering a pale end card with the MOZ logo, a red SUBSCRIBE button, a blue circle placeholder and the Roger robot mascot peeking in from the right. No VO (speech ends at w221).",
+      "build_rebuild": "Slide a full-frame blue panel patterned with 4-5 outlined chevron strokes left-to-right across the frame over ~0.5 s, its leading edge cut as a chevron point, revealing the end-card composition underneath.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s022",
+      "shot_type": "other",
+      "shot_type_other": "Channel subscribe end card: brand logo, subscribe button and illustrated mascot",
+      "composition": "split",
+      "composition_other": null,
+      "focal_element": "Grey 'SUBSCRIBED' button with a ringing bell icon under the MOZ logo, with the Roger robot mascot gesturing toward a blue circle on the right",
+      "transition_in": "other",
+      "transition_other": "Detector split within the end-card animation: the red SUBSCRIBE button switches to the grey SUBSCRIBED state, no camera cut",
+      "on_screen_text": ["MOZ", "SUBSCRIBED"],
+      "text_word_count": 2,
+      "typography": "Moz wordmark in brand geometric caps; 'SUBSCRIBED' in light grey uppercase regular-weight sans on a dark-grey rounded rectangle.",
+      "depth_cues": ["none"],
+      "what_happens": "The button has flipped to 'SUBSCRIBED'; a bell icon appears beside it outlined at 1:32.5, then fills blue with ring marks from 1:33.0. The Roger mascot slides from the right edge toward centre-right, points its arm-cannon at the blue circle (probably an end-screen slot for a YouTube element) and bobs gently with its antenna swaying until the video ends. No VO; music only.",
+      "build_rebuild": "Static pale end card with the logo top-left, a button that swaps from red 'SUBSCRIBE' to grey 'SUBSCRIBED' with a bell icon that pops in and wiggles, a blue circular slot below, and a mascot illustration that eases in from the right and loops a slow 2-3 px bob.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001", "s002"], "words": [0, 5]},
+      {"beat": "problem", "shots": ["s003", "s004", "s005", "s006", "s007", "s008", "s009", "s010"], "words": [6, 29]},
+      {"beat": "agitate", "shots": ["s011", "s012"], "words": [30, 45]},
+      {"beat": "mechanism", "shots": ["s013"], "words": [46, 71]},
+      {"beat": "demo", "shots": ["s014", "s015", "s016"], "words": [72, 189]},
+      {"beat": "outcome", "shots": ["s017", "s018"], "words": [190, 212]},
+      {"beat": "cta", "shots": ["s019", "s020", "s021", "s022"], "words": [213, 221]}
+    ],
+    "hook": {
+      "text": "AI Content Brief title card, then 'Tired of the content creation grind,' over stock footage of a stressed woman buried in document windows",
+      "technique": "pain",
+      "technique_other": null,
+      "shots": ["s001", "s002"],
+      "words": [0, 5]
+    },
+    "cta": {
+      "text": "Generate a content brief in seconds with MozPro today! (VO), followed by a YouTube subscribe end card",
+      "shots": ["s019", "s020", "s021", "s022"]
+    },
+    "tone": "Friendly, upbeat and reassuring: an empathetic pain-to-relief arc that moves from stressed stock footage to a calm, methodical product walkthrough wrapped in a soft coral-to-lavender gradient look, ending on a playful mascot end card.",
+    "signature_moments": [
+      {
+        "shots": ["s016"],
+        "description": "Zoomed walkthrough of the generated brief where each section is wrapped by a purple-to-pink gradient outline that draws on as the VO names it, with a lavender highlight behind the heading, ending on a glowing Export PDF button.",
+        "why_premium": "Ties every spoken feature to a precise on-screen target, so a 44 s screen recording reads as guided and intentional rather than a raw capture, and the gradient strokes reuse the brand palette."
+      },
+      {
+        "shots": ["s003", "s011", "s012", "s017", "s018"],
+        "description": "VO-synced typewriter captions on slowly rotating full-frame gradients (or gradient pills over footage/PDF), with phrase swaps on pauses and weight/italic emphasis on key words like 'you'.",
+        "why_premium": "Turns the narration itself into the motion design, keeps the problem and outcome beats readable muted, and the shared gradient system makes caption cards, highlights and backgrounds feel like one brand language."
+      },
+      {
+        "shots": ["s013"],
+        "description": "Slow scroll down the finished brief with a soft gradient highlight sweeping over the Summary and Structure blocks and a 'Moz AI' pill popping in, before blurring into the live app.",
+        "why_premium": "Shows the end result before the how-to, so the viewer knows the payoff up front; the restrained highlight and pill add polish without clutter."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 3,
+        "evidence": "Clean animated title card, but the VO does not start until 2.9 s and the pain line 'Tired of the content creation grind' is a familiar opener carried by generic stressed-worker stock footage.",
+        "refs": ["s001", "s002", "w0", "w5"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "Clear problem, mechanism, step-by-step demo, outcome structure; each UI step is named in the VO and highlighted on screen at the same time (Keyword Research, AI Content Brief, keyword input, Generate, each brief section, Export PDF).",
+        "refs": ["s014", "s015", "s016", "w72", "w189"]
+      },
+      "ui_showcase": {
+        "score": 4,
+        "evidence": "Real product UI shown large via zooms with gradient outline draw-ons, hover/click rings and highlight sweeps; the result document is shown both up front and as the exported PDF. Held back from 5 by the single long 44 s screen-recording take and plain linear scrolls.",
+        "refs": ["s013", "s014", "s016", "s019"]
+      },
+      "motion_polish": {
+        "score": 3,
+        "evidence": "Smooth gradient caption cards, typewriter text and stroke draw-ons are competent and consistent, but the problem section is a run of abrupt jump cuts within one stock clip (s004-s010), much of the demo is plain scrolling, and the chevron wipe into the end card is stylistically disconnected.",
+        "refs": ["s004", "s010", "s016", "s021"]
+      },
+      "sound_design": {
+        "score": 2,
+        "evidence": "Judged from anchor audio facts plus visuals: a steady ~112 BPM music bed under VO at -18.1 LUFS integrated (quiet for online delivery); detected SFX candidates are mostly 'music' with chime/impact hits only in the first ~3.7 s intro (x001-x006) and around the end card (x014-x018); no click or whoosh SFX were detected for the many cursor clicks, highlights and transitions in the demo.",
+        "refs": ["s001", "s016", "s022"]
+      },
+      "vo_script_quality": {
+        "score": 4,
+        "evidence": "Tight, benefit-led script: relatable pain, one-sentence mechanism, imperative step list that matches the UI labels exactly, then outcome and a direct closing line; a few stock phrases ('indispensable content strategist', 'confidence-boosting roadmap').",
+        "refs": ["w0", "w46", "w71", "w83", "w212", "w221"]
+      },
+      "brand_consistency": {
+        "score": 3,
+        "evidence": "Coral/pink-to-lavender gradient system is used consistently on captions, UI highlights, the Moz AI pill and the PDF backdrop, but the stock footage and the blue chevron/mascot end card (stock channel outro) break from that look.",
+        "refs": ["s012", "s016", "s019", "s021", "s022"]
+      },
+      "works_muted": {
+        "score": 3,
+        "evidence": "Problem and outcome beats are captioned verbatim and the demo highlights show where to click, but the 44 s demo (s016) and mechanism (s013) carry no captions, so the step explanations and benefits are lost without sound.",
+        "refs": ["s003", "s012", "s013", "s016", "s018"]
+      },
+      "overall": {
+        "score": 3,
+        "evidence": "A competent, clear product tutorial with a cohesive gradient caption/highlight language and strong VO-to-UI sync, held back by generic stock footage, long plain scroll stretches, thin sound design and an off-style outro.",
+        "refs": ["s002", "s016", "s018", "s022"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 2,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "English captions are typed on frame by frame in sync with VO word timings (s003, s011, s012, s017, s018), so re-voicing needs re-timed caption animations; the product UI, PDF and example keywords are English with an en-US locale; the demo relies on the VO to explain each step. Footage, gradients and end card are language-neutral except 'SUBSCRIBE(D)'."
+    }
+  }
+}

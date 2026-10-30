@@ -1,0 +1,69 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "67aa9b80a30b5716b11c78540d76c1efd512efd857b15a8305b3e5ce47704f6b",
+    "created_at": "2026-10-13T13:02:05+00:00"
+  },
+  "id": "saint11-timing",
+  "kind": "tutorial",
+  "palette": {
+    "colours_estimate": 16,
+    "shadows": "mixed",
+    "notes": "Measured 14-22 colours per sheet (impact 14, attack 15, loop 16, subpixel 16, easings 17, motion blur 17, squash 22), UI included. Ramps hue-shift both ways; impact and attack carry strong white accent colours. Dithering 0.5-1.9%."
+  },
+  "lighting": "Flat sprite lighting; light is used as timing: white impact flashes, a bright smear arc on the slash, and a glowing star on contact.",
+  "silhouette": "Small readable figures (an orange runner, a red swordsman, a ninja) whose poses change shape strongly between key frames; the smear frames turn the weapon into a large white crescent.",
+  "motion": {
+    "timing": "Most sheets hold 80 ms (squash 19 frames, easings 23, motion blur 32); impact mixes 80 ms with one 20 ms flash frame; attacks hold 100 ms with 300 ms holds on the wind-up (36 frames, 33 drawings, 4.4 s); loop 16 at 100 ms; subpixel 17 at 100 ms.",
+    "principles": [
+      "squash and stretch",
+      "slow in and slow out",
+      "anticipation",
+      "smear / motion blur frame",
+      "hit stop (freeze frame)",
+      "loop"
+    ]
+  },
+  "texture": "Clean flat clusters; motion is sold with shapes (smears, speed lines, afterimages) and a few debris pixels instead of noise.",
+  "camera": "Static panels; the impact sheet adds a short screen shake and a frame freeze to sell the hit.",
+  "sound": "",
+  "acting": {
+    "enters": "The runner dashes into the panel and squashes as he stops; the easing ball travels across, slow at the ends and fast in the middle.",
+    "acts": "Attack: long held wind-up, one smear frame on the swing, a hold on the follow-through, recover to idle. Impact: a brief freeze, flash, particles, then the target is pushed back.",
+    "exits": "The runner leaves the panel and the cycle restarts; after the attack the swordsman settles back into his idle.",
+    "comes_back": true,
+    "depth": "One plane; close crops of a face show squash on the head while the full figure plays below."
+  },
+  "techniques": [
+    "300 ms hold on the wind-up, then a fast swing at 100 ms",
+    "one smear frame: the weapon drawn as a wide crescent across its path",
+    "20 ms white flash plus a brief freeze on impact",
+    "squash on stop, stretch on start, volume kept",
+    "ease in and out: spacing tight at both ends, wide in the middle",
+    "subpixel motion: shift colour on edge pixels to move less than a pixel",
+    "motion blur: afterimage copies and speed lines instead of real blur",
+    "seamless loop: last frame leads straight into the first"
+  ],
+  "feel": "long hold before + 1 smear frame + 20 ms flash on contact = hits that feel heavy at 12 frames a second",
+  "for_fred": "Time Fred's big moves as hold, snap, hold: a 300 ms wind-up pose, one smear frame on the move, a squash and a short freeze on contact, then settle. Use it once or twice per reel on the key word, not on every gesture, and keep the rest of his motion soft and eased so the hits stand out.",
+  "sources": [
+    "https://saint11.art/img/pixel-tutorials/Squash.gif",
+    "https://saint11.art/img/pixel-tutorials/Easings.gif",
+    "https://saint11.art/img/pixel-tutorials/Impact-export.gif",
+    "https://saint11.art/img/pixel-tutorials/AttackSheet.gif",
+    "https://saint11.art/img/pixel-tutorials/loop.gif",
+    "https://saint11.art/img/pixel-tutorials/MotionBlur.gif",
+    "https://saint11.art/img/pixel-tutorials/Subpixel.gif",
+    "studies/pixel-art/metrics/saint11-timing.json",
+    "data/study/pixel/work/saint11-timing/AttackSheet.png",
+    "data/study/pixel/work/saint11-timing/Easings.png",
+    "data/study/pixel/work/saint11-timing/Impact-export.png",
+    "data/study/pixel/work/saint11-timing/MotionBlur.png",
+    "data/study/pixel/work/saint11-timing/Squash.png",
+    "data/study/pixel/work/saint11-timing/Subpixel.png",
+    "data/study/pixel/work/saint11-timing/loop.png"
+  ]
+}

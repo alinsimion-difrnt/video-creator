@@ -1,0 +1,273 @@
+# Example reel.yaml (ADR 0026) for Robert's Budapest take: word indexes refer to that take's timeline.json.
+# look: motion paper (a how-to: paper cards that become each other); see ADR 0033 and the draft-reel-plan skill.
+motion: {style: paper}
+layout:
+- word: 0
+  layout: split
+- word: 17
+  layout: full
+- word: 38
+  layout: split
+split_seam: 1040
+captions: top
+push: 1.05
+punches:
+- 21
+- 28
+grade:
+  contrast: 1.08
+  saturate: 1.14
+  brightness: 1.01
+  warmth: 0.05
+product_bg: ink
+items:
+- word: 0
+  until: 9
+  kind: search
+  where: product
+  marks:
+  - 0
+  - 4
+  - 6
+  - 9
+  spec:
+    query: best restaurant
+    highlight: 0
+    results:
+    - '**Your restaurant** · top pick'
+    - Jade Garden
+- word: 10
+  until: 16
+  kind: chart
+  where: product
+  spec:
+    title: More sales
+    label: From AI answers
+- word: 38
+  until: 47
+  kind: pins
+  where: product
+  marks:
+  - 41
+  spec:
+    city: Budapest
+    river: Danube
+    places:
+    - name: Food
+      icon: fork
+    - name: Hotels
+      icon: bed
+    - name: Museums
+      icon: museum
+- word: 48
+  until: 61
+  kind: tiles
+  where: product
+  marks:
+  - 55
+  - 56
+  - 59
+  spec:
+    step: AI
+    kicker: Found with ChatGPT
+    items:
+    - name: Restaurants
+      icon: fork
+    - name: Hotels
+      icon: bed
+    - name: Museums
+      icon: museum
+- word: 62
+  until: 86
+  kind: chat
+  where: product
+  marks:
+  - 63
+  - 70
+  - 72
+  - 80
+  spec:
+    step: AI
+    kicker: Tourists ask AI
+    app: ChatGPT
+    prompt: Where should I eat in Budapest tonight?
+    answer:
+    - 1. **Jade Garden**
+    - 2. **Your restaurant?**
+- word: 87
+  until: 109
+  kind: tiles
+  where: product
+  marks:
+  - 97
+  - 105
+  spec:
+    step: '1'
+    kicker: Your type of place
+    items:
+    - name: Restaurant
+      icon: fork
+    - name: Hotel
+      icon: bed
+- word: 110
+  until: 122
+  kind: chat
+  where: product
+  marks:
+  - 111
+  - 115
+  - 116
+  - 122
+  spec:
+    step: '1'
+    kicker: Ask ChatGPT
+    app: ChatGPT
+    prompt: Best Chinese restaurant in Budapest
+    answer:
+    - 'Budapest: **Jade Garden**'
+    - 'Bucharest: **Golden Dragon**'
+    - 'New York: **Jade Palace**'
+- word: 123
+  until: 140
+  kind: sources
+  where: product
+  w: 760
+  marks:
+  - 134
+  - 135
+  - 137
+  spec:
+    step: '2'
+    kicker: Check the sources
+    title: AI assistants
+    icon: sparkle
+    items:
+    - name: ChatGPT
+      icon: sparkle
+    - name: Gemini
+      icon: sparkle
+    - name: Perplexity
+      icon: sparkle
+- word: 141
+  until: 147
+  kind: sources
+  where: product
+  w: 760
+  marks:
+  - 144
+  - 147
+  - 145
+  spec:
+    step: '2'
+    kicker: Check the sources
+    title: Their sources
+    icon: search
+    highlight: 0
+    items:
+    - name: Google Maps
+      sub: 4.6 ★ · 2,180 reviews
+      icon: pin
+    - name: TripAdvisor
+      sub: '#12 in Budapest'
+      icon: star
+- word: 148
+  until: 163
+  kind: search
+  where: product
+  w: 760
+  marks:
+  - 148
+  - 150
+  - 156
+  - 162
+  spec:
+    step: '2'
+    kicker: Main source? Improve it
+    query: your restaurant · Google Maps
+    highlight: 1
+    results:
+    - 4.1 ★ · 38 reviews
+    - '**Needs more reviews**'
+- word: 164
+  until: 187
+  kind: review
+  where: product
+  marks:
+  - 172
+  - 177
+  - 186
+  spec:
+    step: '3'
+    kicker: Ask for reviews
+    name: Anna
+    label: Google Maps
+    stars: 5
+    text: Amazing view of the Danube and the duck was really good.
+    highlights:
+    - view of the Danube
+    - really good
+- word: 188
+  until: 208
+  kind: sources
+  where: product
+  w: 760
+  marks:
+  - 196
+  - 202
+  - 205
+  spec:
+    step: '3'
+    kicker: Ask for context
+    title: Ask them to mention
+    icon: chat
+    items:
+    - name: What they liked
+      icon: check
+    - name: How it felt
+      icon: sparkle
+    - name: What they ate
+      icon: fork
+- word: 209
+  until: 236
+  kind: queries
+  where: product
+  marks:
+  - 212
+  - 222
+  - 229
+  spec:
+    step: '3'
+    kicker: People ask for more
+    vague: best restaurant
+    specific:
+    - best restaurant **with a view**
+    - best restaurant for **steak**
+- word: 237
+  until: 255
+  kind: chart
+  where: product
+  marks:
+  - 249
+  spec:
+    step: '4'
+    kicker: Track it
+    title: Cited in AI answers
+    to: 72
+    suffix: '%'
+    label: Then improve your sources
+- word: 256
+  until: 268
+  kind: cta
+  where: product
+  marks:
+  - 262
+  spec:
+    text: Start free trial
+    url: acme.example
+- word: 269
+  until: 277
+  kind: logo
+  where: product
+  spec:
+    height: 150
+    tagline: acme.example

@@ -1,0 +1,86 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "0bc39edd960f949592920bda626e1c028fb25d4b00e65e7fa701fa71c9ad953a",
+    "created_at": "2026-10-05T06:51:45.455469Z"
+  },
+  "video": "workday-workday-adaptive-planning-demo-finan",
+  "event": "e012",
+  "task": "a2-e012",
+  "elements": [
+    {
+      "box": null,
+      "manual_box": [362, 456, 406, 474],
+      "manual_reason": "No candidate box isolates the mouse cursor; b01 is the whole row band and only partly covers the pointer.",
+      "label": "Mouse cursor",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 330, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Hovered row highlight (Import Actuals from Workday via CCDS)",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Transient hover highlights on rows passed by the cursor",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Column-header tooltip disappearing",
+      "role": "other",
+      "role_other": "tooltip",
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "The cursor glides down a task list in a real product screen; each row it crosses lights up with a hover band until it settles on the target row 'Import Actuals from Workday via CCDS'.",
+    "why_premium": "The hover band travels row by row with the pointer, so the viewer's eye is led to the exact integration task the narration names ('integrates') without any added overlay."
+  },
+  "build_hint": {
+    "gsap": "gsap.fromTo('.cursor', {y: -100}, {y: 0, duration: 0.33, ease: 'power2.out'}); row highlights as a timeline of instant set() calls: tl.set('.row', {backgroundColor: 'transparent'}).set('.row:nth-child(n)', {backgroundColor: '#d5d9e0'}) at the moment the cursor y crosses each row (about 80 ms apart); tooltip gsap.set('.tooltip', {autoAlpha: 0}) at start.",
+    "remotion": "Cursor y = interpolate(frame, [0, 10], [-100, 0], {easing: Easing.out(Easing.quad), extrapolateRight: 'clamp'}); highlighted row index = the row under cursor y, background toggled with no easing; tooltip opacity 0 from frame 1."
+  },
+  "confidence": "medium",
+  "notes": "Screen-recorded UI hover, not designed motion. The small column-header tooltip visible at f617 near b04 is illegible at filmstrip size, so it is marked non-text. b02 also contains the header row, which does not change."
+}

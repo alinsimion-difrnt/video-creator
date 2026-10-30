@@ -1,0 +1,37 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes", "annotator": "claude-code",
+                 "input_hash": "f7980da4577590028c25496c30f18f671893a2e5667b2da49390314b2c246020",
+                 "created_at": "2026-10-13T14:50:00+00:00"},
+  "id": "7673507819026418952",
+  "format": "tutorial_demo",
+  "hook": {"type": "news",
+           "line": "Turnitin got a new update that lets lecturers set what responsible AI use looks like.",
+           "visual": "Man in a blue robe talking to camera at home; two-line title 'How to Turnitin/GPTzero proof your essay BEFORE you submit!' on top, Turnitin and GPTZero logo cards bottom."},
+  "beats": [
+    {"t": 0.0, "what": "Face with a big how-to title on top and Turnitin and GPTZero logo screenshots in the lower third"},
+    {"t": 5.87, "what": "Logos drop away; he explains the risk: strict settings can still flag you"},
+    {"t": 14.77, "what": "Promises a way to make work detector-proof: 'here's how you do that'"},
+    {"t": 18.2, "what": "Cut to a phone-filmed laptop: finger points at the humanizer site's dashboard URL"},
+    {"t": 26.13, "what": "Zoom punch on the humanized output with a 'passes major AI detectors' badge row"},
+    {"t": 37.6, "what": "Cut to the detector's homepage to test the text"},
+    {"t": 44.32, "what": "Pastes the text into the detector and clicks Scan"},
+    {"t": 47.87, "what": "Zoom on the result: 'highly confident this text is entirely human'"}
+  ],
+  "graphics": {"captions": "title_only", "caption_position": "top",
+               "devices": ["title_text", "screenshot", "screen_recording", "product_ui", "zoom_punch", "jump_cut"],
+               "density": "moderate", "per_minute_estimate": 12},
+  "characters": [],
+  "cta": {"kind": "product", "t": 18.2},
+  "why_it_works": [
+    "Opens on a news hook (a new Turnitin update) that creates fear in a specific audience: students about to submit",
+    "Brand logos in frame one tell the target viewer instantly that this is about their tools",
+    "Ends on the proof: the detector's own 'entirely human' verdict on screen, so the claim is shown, not told"
+  ],
+  "weaknesses": [
+    "Ethically shaky: teaches bypassing academic integrity checks, a brand risk to copy",
+    "No captions for the voice; screen is filmed with a phone and hard to read",
+    "Ends abruptly on the result with no follow or save ask",
+    "Product plug is undisclosed, which reads as a hidden ad"
+  ],
+  "for_robert": "End the demo on the third-party verdict screen as proof, with a zoom punch on the key line; avoid promising to beat a detector or policy."
+}

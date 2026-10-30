@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "d8b31999498dd34a9a4dd881102d215d4801848c7083025ab7d54d35ba23bb9b",
+    "created_at": "2026-10-05T06:43:15.361131Z"
+  },
+  "video": "datadog-datadog-overview-see-inside-the-platfor",
+  "event": "e005",
+  "task": "a2-e005",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Network service map (camera pushes in toward the hovered service)",
+      "role": "chart",
+      "role_other": null,
+      "change_types": ["scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 500, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b07",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Unrelated service nodes dimming (auth-dotnet as representative)",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["fade", "color_shift"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 350, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Service hover tooltip with flow metrics",
+      "role": "notification",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "product-recommendation-lite",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 150, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "spotlight_focus",
+    "proposed_name": null,
+    "description": "As a service node is hovered, its metrics tooltip appears and every unrelated node and edge fades to a pale ghost, leaving the focused service and its connections at full colour while the camera pushes in about 1.35x; the 'From millions of network flows' caption stays fixed.",
+    "why_premium": "Dimming the context and zooming together cuts a dense, unreadable graph down to one legible path without removing the surrounding network, so scale and focus read at the same time."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.tooltip', {opacity: 1, duration: 0.15}); tl.to('.node:not(.related), .edge:not(.related)', {opacity: 0.25, filter: 'saturate(0.4)', duration: 0.35, ease: 'power2.out'}, '<'); tl.fromTo('.map-layer', {scale: 1}, {scale: 1.36, xPercent: -5, yPercent: -2, transformOrigin: '55% 60%', duration: 0.5, ease: 'expo.out'}, '<'); caption on an unscaled layer.",
+    "remotion": "const p = spring({frame, fps, config: {damping: 30, stiffness: 120, mass: 1}}); map scale interpolate(p,[0,1],[1,1.36]); unrelated opacity interpolate(frame,[0,10],[1,0.25],{easing: Easing.out(Easing.quad)}); tooltip opacity interpolate(frame,[0,4],[0,1])."
+  },
+  "confidence": "medium",
+  "notes": "Two motions overlap: spotlight dimming and a camera push_in (scale 1.36). spotlight_focus chosen over ui_camera_push_in because the dimming is the distinctive part; either is defensible. No whole-node candidate box for the focused red service, so it is not listed."
+}

@@ -1,0 +1,12 @@
+# v23 — "without losing maybe an arm and a leg in costs" on Robert's own take (64.4-71.0 s): the Fullmetal
+# Alchemist homage on Robert, not Fred. As Edward's automail: his right arm turns to steel on "arm", his left
+# leg on "leg" (keyed to the pose, create/footage/pose.py), a transmutation circle under the chair, sparks, a flash.
+name: v23
+take: {project: fred-and-pixie, from: 64.4, to: 71.0, x: 0.555}
+plan:
+  layout: [{word: 0, layout: full}]
+  fx:
+    - {word: "arm", kind: alchemy, spec: {at: [0.5, 0.86], size: 0.42}}
+    - {word: "arm", kind: automail, spec: {limbs: [right_arm]}}
+    - {word: "leg", kind: automail, spec: {limbs: [left_leg]}}
+    - {word: "leg", kind: shake, spec: {amp: 10}}

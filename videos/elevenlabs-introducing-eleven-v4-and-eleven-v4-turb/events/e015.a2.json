@@ -1,0 +1,61 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "c8b175e039eb973ba3c90d13dd826becc8ad2b5b07ca6fc53439899b6e1ced05",
+    "created_at": "2026-10-05T06:43:49.273169Z"
+  },
+  "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+  "event": "e015",
+  "task": "a2-e015",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "White dot field resolving into a 3D lattice",
+      "role": "other",
+      "role_other": "particle_field",
+      "change_types": ["morph", "scale_up", "blur_in"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 2500, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [0, 0, 1000, 1000],
+      "manual_reason": "The only candidate (b01) is the whole frame and is used for the dot field; the gradient background also changes across the full frame.",
+      "label": "Blurred red/green gradient background",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["color_shift", "slide_left"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 2500, "easing_class": "linear"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x059", "verdict": "unsure", "label": "unsure", "note": "487 ms before the burst; music harmonics without a clear rising sweep."},
+    {"id": "x060", "verdict": "unsure", "label": "unsure", "note": "At the burst end; faint broadband onset, could be a soft swoosh or music change. Weak CLAP score (0.31)."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "particle grid resolve",
+    "description": "Loosely scattered white dots drift and rotate in 3D until they snap into an ordered lattice, while the camera pushes in and depth of field blurs the near and far dots, over a slowly shifting grainy gradient.",
+    "why_premium": "Chaos settling into order is a clear visual metaphor for scale ('infinite duration, 100 languages'); real depth of field, grain and slow camera drift give it a filmic 3D feel rather than flat motion graphics."
+  },
+  "build_hint": {
+    "gsap": "Three.js points in a grid; per-point gsap.fromTo(position, {random offset}, {grid position, duration:2.2, ease:'power2.inOut', stagger:{each:0.005, from:'random'}}); parallel gsap.to(camera.position, {z:'-=3', x:'+=0.6', duration:2.5, ease:'sine.inOut'}) plus a slight group rotation; bokeh via depth-based blur/size in the shader; background gradient tween ease 'none'.",
+    "remotion": "@remotion/three: t = interpolate(frame, [0, 75], [0, 1], {easing: Easing.inOut(Easing.cubic), extrapolateRight:'clamp'}); point pos = mix(randomPos, gridPos, t); camera z = interpolate(frame, [0, 75], [z0, z0 - 3]); point size/opacity from depth to fake depth of field. No spring; slow eased interpolation."
+  },
+  "confidence": "medium",
+  "notes": "Camera verdict push_in (scale 1.68); it may be a 3D camera inside a rendered scene rather than a 2D zoom. Background uses a full-frame manual box because the single candidate b01 was already used for the dots."
+}

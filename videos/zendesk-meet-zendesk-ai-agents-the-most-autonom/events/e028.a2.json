@@ -1,0 +1,116 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "b1add05c8727ebe7b532d15c3a2d5090827fe22015bdfabad1178ece45436972",
+    "created_at": "2026-10-05T06:56:57.845464Z"
+  },
+  "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+  "event": "e028",
+  "task": "a2-e028",
+  "elements": [
+    {
+      "box": "b08",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Word 'That's'",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["fade", "slide_left"],
+      "change_other": null,
+      "is_text": true,
+      "text": "That's",
+      "text_unit": "word",
+      "estimates": {"duration_ms": 200, "easing_class": "ease_out", "source": "model_estimate"}
+    },
+    {
+      "box": "b09",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Word 'the'",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["fade", "slide_left"],
+      "change_other": null,
+      "is_text": true,
+      "text": "the",
+      "text_unit": "word",
+      "estimates": {"duration_ms": 200, "easing_class": "ease_out", "source": "model_estimate"}
+    },
+    {
+      "box": "b07",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Word 'power'",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["fade", "slide_left"],
+      "change_other": null,
+      "is_text": true,
+      "text": "power",
+      "text_unit": "word",
+      "estimates": {"duration_ms": 200, "easing_class": "ease_out", "source": "model_estimate"}
+    },
+    {
+      "box": "b10",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Word 'of'",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["fade", "slide_left"],
+      "change_other": null,
+      "is_text": true,
+      "text": "of",
+      "text_unit": "word",
+      "estimates": {"duration_ms": 200, "easing_class": "ease_out", "source": "model_estimate"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Words 'Zendesk AI'",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["fade", "slide_left"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Zendesk AI",
+      "text_unit": "word",
+      "estimates": {"duration_ms": 200, "easing_class": "ease_out", "source": "model_estimate"}
+    },
+    {
+      "box": "b06",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Word 'agents.'",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "agents.",
+      "text_unit": "word",
+      "estimates": {"duration_ms": 200, "easing_class": "ease_out", "source": "model_estimate"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x093", "verdict": "unsure", "label": "unsure", "note": "Sharp broadband transient at about 104.06 s, about 0.5 s after the burst ends; no visible change then, and it may be a music hit rather than a reverse swoosh (no rising sweep visible)."}
+  ],
+  "pattern": {
+    "id": "kinetic_word_reveal",
+    "proposed_name": null,
+    "description": "A centred headline builds word by word on a soft gradient; each new word fades in at the right end while the line re-centres, sliding the earlier words left.",
+    "why_premium": "The line stays optically centred at every step, so the build reads as calm and deliberate, and the word cadence roughly tracks the voice-over 'That's the power of Zendesk AI agents'."
+  },
+  "build_hint": {
+    "gsap": "Split the line into words; tl.fromTo(words, {autoAlpha: 0}, {autoAlpha: 1, duration: 0.2, ease: 'power2.out', stagger: 0.1}) while a parallel tween animates the line container x so the visible words stay centred (ease 'power2.out' per step).",
+    "remotion": "Per word i: opacity = interpolate(frame, [i*3, i*3+6], [0,1], {extrapolateRight: 'clamp'}); container translateX = -(visibleWidth/2) driven by a spring({damping: 200}) retargeted on each word reveal."
+  },
+  "confidence": "medium",
+  "notes": "The words appear before their spoken times in the transcript (text leads voice by about 0.3 s). b04 covers 'Zendesk AI' as a single box; the per-word stagger inside it was not resolved."
+}

@@ -1,0 +1,37 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "e0a1ea90e59c8a0b149e998b4bd4524b3d263362bcb6b10b5b8b39a19e51bf02",
+    "created_at": "2026-10-05T06:48:59.649046Z"
+  },
+  "video": "notion-introducing-the-new-notion-ai",
+  "event": "e019",
+  "task": "a2-e019",
+  "elements": [
+    {"box": "b02", "manual_box": null, "manual_reason": null, "label": "Notion AI mascot face (large)", "role": "icon",
+     "role_other": null, "change_types": ["morph"], "change_other": null, "is_text": false,
+     "text": null, "text_unit": null, "estimates": {"duration_ms": 450, "easing_class": "step"}},
+    {"box": null, "manual_box": [729, 123, 785, 156], "manual_reason": "Small mascot avatar in the answer toolbar mirrors the large face's expression change; only the union box b01 touches it and that box spans the whole panel.",
+     "label": "Notion AI mascot avatar (small)", "role": "avatar",
+     "role_other": null, "change_types": ["morph"], "change_other": null, "is_text": false,
+     "text": null, "text_unit": null, "estimates": {"duration_ms": 450, "easing_class": "step"}}
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "mascot expression swap",
+    "description": "After the answer has finished streaming, the hand-drawn mascot face cycles through a few expression poses (brows and eyes shift, settling on a raised-brow, squinting look) on twos, with the small toolbar avatar mirroring it; the UI is otherwise static.",
+    "why_premium": "A brief, frame-by-frame expression beat after the answer lands gives the AI a reaction moment, adding personality and a natural pause before the next point without moving the UI."
+  },
+  "build_hint": {
+    "gsap": "Hold the UI; on the mascot, swap between 3-4 SVG expression states with a stepped timeline: gsap.timeline().set('.face-a', {autoAlpha: 0}).set('.face-b', {autoAlpha: 1}, 0.17).set('.face-b', {autoAlpha: 0}, 0.33).set('.face-c', {autoAlpha: 1}, 0.33); or morph brow/eye paths with ease: 'steps(4)'. Mirror the same timeline on the toolbar avatar.",
+    "remotion": "const pose = poses[Math.min(poses.length - 1, Math.floor(frame / 4))]; render <Mascot pose={pose} /> for both the large face and the toolbar avatar (frame-by-frame swap, no spring)."
+  },
+  "confidence": "medium",
+  "notes": "Energy spikes on alternate frames suggest hand-drawn pose swaps on twos rather than a tween. Small avatar change is inferred from the filmstrip at low resolution; manual box reused from the same position in e017."
+}

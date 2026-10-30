@@ -1,0 +1,104 @@
+# Written by s9_synth (pattern clustering). Reviewed by Robert at gate G4.
+- id: documentary_handheld_drift
+  name: documentary handheld drift
+  members:
+  - cursor-introducing-cursor-3/e007
+  - cursor-introducing-cursor-3/e008
+  - servicenow-what-are-servicenow-ai-agents/e001
+  videos: 2
+  names:
+  - documentary handheld drift
+  - cinematic footage drift
+  nearest_pattern: ui_camera_push_in
+  similarity: 0.424
+  suggestion: new
+  plain: The camera gently drifts and re-frames, like a handheld documentary shot, on filmed people or buildings.
+  recommendation: reject
+  why: It is a way of filming live action, not something we animate. Our camera-move labels already cover it.
+  status: rejected
+- id: avatar_hero_expand
+  name: avatar hero expand
+  members:
+  - elevenlabs-introducing-elevenlabs-conversational-ag/e001
+  - elevenlabs-introducing-elevenlabs-conversational-ag/e019
+  - loom-introducing-loom-ai/e002
+  videos: 2
+  names:
+  - avatar hero expand
+  - orb docks to avatar
+  - orb to avatar morph
+  nearest_pattern: ui_camera_push_in
+  similarity: 0.291
+  suggestion: new
+  plain: A small round 'orb' or avatar grows into a big centre-stage hero, or the big orb shrinks and docks into
+    a corner as the assistant's avatar.
+  recommendation: add
+  why: It appears in two brands' AI launches and is a clear, reusable way to introduce an AI assistant as a character.
+  status: approved
+- id: chat_bubble_append
+  name: chat bubble append
+  members:
+  - elevenlabs-introducing-elevenlabs-conversational-ag/e027
+  - zendesk-meet-zendesk-ai-agents-the-most-autonom/e003
+  - zendesk-meet-zendesk-ai-agents-the-most-autonom/e004
+  videos: 2
+  names:
+  - chat bubble append
+  - chat bubble pop
+  - chat panel rise
+  nearest_pattern: notification_pop
+  similarity: 0.36
+  suggestion: new
+  plain: A new chat message bubble pops or grows into a chat panel while the older messages slide up to make room.
+  recommendation: add
+  why: Very common in AI-product explainers (two brands here) and not covered by the current list.
+  status: approved
+- id: ui_camera_pan
+  name: ui camera pan
+  members:
+  - cursor-introducing-cursor-3/e006
+  - workday-workday-adaptive-planning-demo-finan/e014
+  videos: 2
+  names:
+  - ui camera pan
+  - ui camera pull out
+  nearest_pattern: ui_camera_push_in
+  similarity: 0.692
+  suggestion: merge:ui_camera_push_in
+  plain: A virtual camera glides sideways across a wide app screen, or pulls back to show the whole window.
+  recommendation: merge:ui_camera_push_in
+  why: Same idea as the existing 'camera push-in' (a virtual camera moving over the UI). Better as one 'virtual
+    camera move' pattern covering in, out and sideways.
+  status: merged:ui_camera_push_in
+- id: diagonal_ui_wipe_in
+  name: diagonal ui wipe in
+  members:
+  - datadog-datadog-overview-see-inside-the-platfor/e014
+  - hubspot-what-is-hubspot/e009
+  videos: 2
+  names:
+  - diagonal ui wipe in
+  - stacked panel wipe
+  nearest_pattern: layout_reframe
+  similarity: 0.351
+  suggestion: new
+  plain: A screenshot or coloured bands sweep across the frame and cover the previous card, like a wipe.
+  recommendation: add
+  why: Two brands use it as a bold scene change between a title and the product.
+  status: approved
+- id: footage_with_ui_overlay
+  name: footage with ui overlay
+  members:
+  - servicenow-what-are-servicenow-ai-agents/e026
+  - warp-introducing-warp-2-0-the-agentic-develo/e010
+  videos: 2
+  names:
+  - footage with ui overlay
+  - ui overlay slide reveal
+  nearest_pattern: ui_camera_push_in
+  similarity: 0.42
+  suggestion: new
+  plain: A piece of product UI floats over real filmed footage, then slides away.
+  recommendation: add
+  why: A clean way to mix live action with product (two brands); not in the list yet.
+  status: approved

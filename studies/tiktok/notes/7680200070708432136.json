@@ -1,0 +1,86 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "tiktok_notes",
+    "annotator": "claude-code",
+    "input_hash": "3a3a257698c4df9c4b0ebff8ada1c9453208dce0c001b1774deb5f42fe0f744f",
+    "created_at": "2026-10-13T13:56:06+00:00"
+  },
+  "id": "7680200070708432136",
+  "format": "listicle_text",
+  "hook": {
+    "type": "list_promise",
+    "line": "Cover card: 99 viral image prompts for ChatGPT.",
+    "visual": "Black frame, then a glitch reveal of a cream cover: big green '99 VIRAL IMAGE PROMPTS for ChatGPT' over a 3D ChatGPT logo with hand-written arrows."
+  },
+  "beats": [
+    {
+      "t": 0.0,
+      "what": "Black frame, glitch transition into the cover card"
+    },
+    {
+      "t": 0.38,
+      "what": "Cover: 99 viral image prompts for ChatGPT"
+    },
+    {
+      "t": 2.62,
+      "what": "Slide 1: numbered pill list of camera-angle commands (/4k, /cinematic, /aerialview)"
+    },
+    {
+      "t": 4.8,
+      "what": "Slide 2: close-up and framing commands (12-22)"
+    },
+    {
+      "t": 7.33,
+      "what": "Slide 3: weather and light commands (23-33)"
+    },
+    {
+      "t": 9.8,
+      "what": "Slide 4: lighting commands (34-44)"
+    },
+    {
+      "t": 12.33,
+      "what": "Slide 5: photo style commands (45-55)"
+    },
+    {
+      "t": 17.27,
+      "what": "Slide 7: genre commands (67-77)"
+    },
+    {
+      "t": 19.8,
+      "what": "Slide 8: art-medium commands (78-88)"
+    },
+    {
+      "t": 22.27,
+      "what": "Last slide: effect commands (89-99), held to the end"
+    }
+  ],
+  "graphics": {
+    "captions": "none",
+    "caption_position": "none",
+    "devices": [
+      "title_text",
+      "screenshot",
+      "music_bed"
+    ],
+    "density": "moderate",
+    "per_minute_estimate": 22
+  },
+  "characters": [],
+  "cta": {
+    "kind": "save_or_share",
+    "t": null
+  },
+  "why_it_works": [
+    "Each slide is too dense to read in 2.5 s, so viewers save or share to read later (2609 shares)",
+    "A big number in the cover promises a complete resource up front",
+    "Slides change on a steady 2.5 s rhythm (measured events every ~2.5 s) to a trending track"
+  ],
+  "weaknesses": [
+    "No voice and no face; nothing personal ties the list to the creator",
+    "Text is tiny and much of it sits outside the safe area (measured outside_safe_share 0.616)",
+    "Last slide is shown twice, wasting the end"
+  ],
+  "for_robert": "Close a reel with one saveable cheat-sheet slide of the prompts he used, so viewers save it; don't make the whole reel a silent slideshow."
+}

@@ -1,0 +1,135 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "0863f2555798fcb381df24545d58648febbb8d10e59bb6123d96eb463545b1dd",
+    "created_at": "2026-10-05T06:52:58.909919Z"
+  },
+  "video": "salesforce-what-is-agentforce-and-how-businesses-us",
+  "event": "e013",
+  "task": "a2-e013",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Gmail thread content scrolling up in the reading pane",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 1100, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Simon Fraser reply message",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Yes, I would like to meet with Heather.",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 1100, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b13",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Einstein sender avatar",
+      "role": "avatar",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 1100, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Heather Cartino booking avatar",
+      "role": "avatar",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 1100, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b12",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Book a meeting caption",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Book a meeting with Heather Cartino",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 1100, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Meeting time-slot button grid (Wed/Thu columns) revealed from below",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "10:00 AM - 10:30 AM 10:30 AM - 11:00 AM 11:00 AM - 11:30 AM",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 1100, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Friday time-slot column",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "10:00 AM - 10:30 AM 10:30 AM - 11:00 AM 11:00 AM - 11:30 AM",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 1100, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x019",
+      "verdict": "confirm",
+      "label": "chime",
+      "note": "New tonal line appears around the marker, about 1.5 s after the scroll settles; not tied to this motion."
+    }
+  ],
+  "pattern": {
+    "id": "masked_scroll",
+    "proposed_name": null,
+    "description": "The Gmail reading pane scrolls up through the email thread, moving the earlier messages out of view and revealing the agent's 'Book a meeting with Heather Cartino' time-slot grid while the sidebar and top bar stay fixed.",
+    "why_premium": "A long, decelerating scroll lands exactly on the scheduling widget as the voiceover says 'scheduling meetings', so the proof point is framed without a cut."
+  },
+  "build_hint": {
+    "gsap": "Clip the thread inside the reading pane; gsap.to('.thread', {y: '-=~170px', duration: 1.1, ease: 'power2.out'}) with sidebar/header static; slow tail so the slot grid settles in frame.",
+    "remotion": "translateY = interpolate(frame, [0, 33], [0, -170], {easing: Easing.out(Easing.quad), extrapolateRight: 'clamp'}) on the thread container inside an overflow-hidden pane; or spring({damping: 200, stiffness: 60})."
+  },
+  "confidence": "medium",
+  "notes": "facts.json camera.move says pull_out (scale 0.956, pan_y -0.237), but the sidebar, Gmail header and toolbar look static in the filmstrip, so this reads as an in-pane scroll rather than a camera move. Worth a human check for a slight zoom-out layered on the scroll."
+}

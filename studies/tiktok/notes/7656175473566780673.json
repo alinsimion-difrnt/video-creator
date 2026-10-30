@@ -1,0 +1,38 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "751c053a2eedec17c69d2223c40f75f156e788e9023fd244540e5496a3ca5668",
+                 "created_at": "2026-10-13T15:00:00+00:00"},
+  "id": "7656175473566780673",
+  "format": "split_screen",
+  "hook": {"type": "callout",
+           "line": "Please don't post another blog post until you watch this.",
+           "visual": "Top half: Search Console screen under a green 'Why your blogs don't rank in AI' card. Bottom half: man in red headphones gesturing hard. Highlighted caption on the seam."},
+  "beats": [
+    {"t": 0.0, "what": "Warning not to post another blog, green title card over a Search Console screenshot"},
+    {"t": 14.42, "what": "Shows 'Crawled - currently not indexed' with 282 affected pages as the proof of the problem"},
+    {"t": 35.47, "what": "Names the cause: optimizing for one keyword instead of fan-out queries"},
+    {"t": 43.25, "what": "Screen switches to a keyword tool's fan-out query page with 'seo content' typed in"},
+    {"t": 59.07, "what": "Zoom on the results table of fan-out queries (22 found)"},
+    {"t": 72.08, "what": "Mind-map diagram: one prompt branching into the AI's hidden follow-up questions"},
+    {"t": 100.92, "what": "Diagram converges the branches into a 'best answer possible' box"},
+    {"t": 134.73, "what": "Pivot to his free seven-lesson course; lesson list shown on screen"},
+    {"t": 158.59, "what": "Points to the 'learn more' button below"}
+  ],
+  "graphics": {"captions": "sentence", "caption_position": "middle",
+               "devices": ["split_screen", "screen_recording", "screenshot", "product_ui", "title_text", "chart_or_number", "zoom_punch", "music_bed"],
+               "density": "moderate", "per_minute_estimate": 4},
+  "characters": [],
+  "cta": {"kind": "product", "t": 158.59},
+  "why_it_works": [
+    "Direct 'stop before you post' callout targets anyone who blogs and implies they are wasting effort right now",
+    "Proof on screen early (282 not-indexed pages in his own Search Console) makes the problem concrete before the fix",
+    "Hand-drawn style mind map of one prompt fanning into sub-questions explains an invisible AI process visually",
+    "Upper half always shows a screen while the lower half keeps the face, so there is no dead visual even with zero cuts"
+  ],
+  "weaknesses": [
+    "158 s in one take with no cuts; the middle explanation (65-125 s) repeats the definition",
+    "Ends as a course pitch; the 'how to write it' payoff is held back behind the link",
+    "Quiet mix (-26.0 LUFS) and small on-screen UI text that is hard to read on a phone"
+  ],
+  "for_robert": "Use the top-screen, bottom-face split with the caption on the seam, and draw the hidden process as a simple branching diagram Fred can swim along; but cut it well under 158 s."
+}

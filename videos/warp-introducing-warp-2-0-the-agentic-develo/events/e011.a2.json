@@ -1,0 +1,57 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "dd67a9182327cca52589a36a486e494c6060071e37c845afcc332d0c323a0570",
+    "created_at": "2026-10-05T06:52:48.927136Z"
+  },
+  "video": "warp-introducing-warp-2-0-the-agentic-develo",
+  "event": "e011",
+  "task": "a2-e011",
+  "elements": [
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "'Edit' keyboard-shortcut pill with E keycap, rising over the presenter's chest",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["slide_up", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Edit E",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 250, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x027",
+      "verdict": "override",
+      "label": "music",
+      "note": "This is one of a regular series of broadband percussive hits (about 66.38s, 66.6s, 66.88s). It falls about 100 ms before the pill appears, so it reads as a music-bed beat, not an SFX tied to the pill."
+    },
+    {
+      "id": "x028",
+      "verdict": "unsure",
+      "label": "unsure",
+      "note": "There is no clear transient at 67.15s on the spectrogram and no visual change in the burst at that moment. The CLAP chime score (0.385) is weak."
+    }
+  ],
+  "pattern": {
+    "id": "chip_append",
+    "proposed_name": null,
+    "description": "A dark rounded pill reading 'Edit' with an 'E' keycap slides up from the bottom of the frame and settles over the presenter's chest just as he says 'Warp now has a code editor'.",
+    "why_premium": "A product shortcut hint dropped straight onto live-action footage tells the viewer what the feature is called and how to invoke it, without cutting away from the speaker. The quick rise-and-settle keeps it light and in sync with the narration."
+  },
+  "build_hint": {
+    "gsap": "gsap.fromTo(pill, {yPercent: 60, autoAlpha: 0}, {yPercent: 0, autoAlpha: 1, duration: 0.25, ease: 'power3.out'}). If the label and keycap are separate nodes, optionally stagger them by 0.03.",
+    "remotion": "const p = spring({frame: frame - s, fps, config: {damping: 200, stiffness: 180, mass: 1}}); translateY = interpolate(p, [0, 1], [40, 0]); opacity = interpolate(p, [0, 0.4], [0, 1], {extrapolateRight: 'clamp'}). Overdamped, no overshoot."
+  },
+  "confidence": "medium",
+  "notes": "The filmstrip is a crop around the pill. b03 is the OCR box ('Edit. E'); the visible text is 'Edit E'. The full pill extends a bit beyond b03 (about y 500-640 px). b01 and b02 are diff boxes, partly driven by the presenter's mouth moving while he speaks, so they are not listed. Whether there is a fade on top of the slide is uncertain. chip_append was chosen over notification_pop because the pill is a shortcut badge laid onto the footage."
+}

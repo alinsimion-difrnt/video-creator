@@ -1,0 +1,85 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "a1c6b443142c437d6155a70ccd6c1bf53e1b51aa3c0994569808bacb6e3c0be4",
+    "created_at": "2026-10-05T06:48:21.976231Z"
+  },
+  "video": "meta-this-is-meta-quest-3",
+  "event": "e010",
+  "task": "a2-e010",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Footage swap behind a white light-streak sweep (VR tennis capture to player in blue-lit room)",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["other", "blur_out"],
+      "change_other": "light-streak sweep that wipes one footage clip into the next",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 170, "easing_class": "ease_out", "source": "model_estimate"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Caption 'your world' over footage",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["blur_in", "scale_down", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "your world",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 200, "easing_class": "ease_out", "source": "model_estimate"}
+    },
+    {
+      "box": null,
+      "manual_box": [928, 458, 960, 542],
+      "manual_reason": "The 'Captured on PC.' disclaimer from the gameplay clip is gone in the end frame, so no candidate covers it; the box marks where it sat (candidate b03 in e009).",
+      "label": "'Captured on PC.' disclaimer removed with the gameplay clip",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "cut out together with the gameplay clip",
+      "is_text": true,
+      "text": "Captured on PC.",
+      "text_unit": "whole",
+      "estimates": null
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x048",
+      "verdict": "override",
+      "label": "music",
+      "note": "In the recurring music pulse about 410 ms before the sweep; CLAP says music. Same candidate as reviewed in e009."
+    },
+    {
+      "id": "x049",
+      "verdict": "unsure",
+      "label": "unsure",
+      "note": "Sharp onset about 120 ms after the sweep, as the caption lands; could be an impact accent on the caption or a music downbeat (CLAP says music 0.522)."
+    }
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "light streak transition",
+    "description": "White light streaks sweep across frame and hide the cut from gameplay capture to live-action footage; the next caption phrase arrives with horizontal motion blur, slightly oversized, and settles centred as the streaks clear.",
+    "why_premium": "The cut is hidden inside a branded light effect and the caption lands in the same few frames, so each phrase of the caption sentence gets a single punchy beat that matches the music."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.streaks', {opacity: 1, scaleX: 1.4, duration: 0.1, ease: 'power2.in'}).set('.clipA, .disclaimer', {autoAlpha: 0}).set('.clipB', {autoAlpha: 1}).to('.streaks', {opacity: 0, duration: 0.15, ease: 'power2.out'}).fromTo('.caption', {opacity: 0, scale: 1.15, filter: 'blur(10px)'}, {opacity: 1, scale: 1, filter: 'blur(0px)', duration: 0.2, ease: 'power3.out'}, '<')",
+    "remotion": "Streak overlay opacity via interpolate(frame, [0,2,5], [0,1,0]); switch <Sequence> clips at the peak; caption scale from spring({frame: frame-2, fps, config: {damping: 28, stiffness: 240, mass: 1}}) mapped 1.15 to 1; blur and opacity via interpolate over 5 frames with Easing.out(Easing.cubic). A horizontal-only blur needs an SVG feGaussianBlur stdDeviation='10 0'."
+  },
+  "confidence": "medium",
+  "notes": "Same light-streak device as e007 and e008. The caption's blur looks horizontal (directional), not uniform, so blur_in is approximate."
+}

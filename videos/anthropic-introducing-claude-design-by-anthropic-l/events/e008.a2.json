@@ -1,0 +1,51 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "ef23bf3ab0dbf71444c889064c64ee537617aac01c67a83fc0e1b4b01c67627f",
+    "created_at": "2026-10-05T06:38:38.084041Z"
+  },
+  "video": "anthropic-introducing-claude-design-by-anthropic-l",
+  "event": "e008",
+  "task": "a2-e008",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Whole Claude Design workspace (chat panel plus phone prototype canvas) shrinking from the chat close-up to the wide view",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["scale_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x024",
+      "verdict": "unsure",
+      "label": "unsure",
+      "note": "592 ms before the pull-out, at the very edge of the spectrogram; the surrounding audio is regular broadband music hits and nothing visual happens at that moment, but the onset shape is cut off."
+    }
+  ],
+  "pattern": {
+    "id": "ui_camera_push_in",
+    "proposed_name": null,
+    "description": "Reverse push-in: the camera pulls out from the close-up of Claude's finished answer to reveal the whole workspace, with the generated meditation-app prototype in an iOS frame beside the chat and the Tweaks panel at the right.",
+    "why_premium": "The reveal pays off the prompt: you read 'I've built a serene meditation app' and the pull-out immediately shows the built app, cause and result in one continuous move with no cut."
+  },
+  "build_hint": {
+    "gsap": "gsap.fromTo('.workspace', {scale: 2.1, xPercent: 20, yPercent: -6}, {scale: 1, xPercent: 0, yPercent: 0, duration: 0.4, ease: 'power3.inOut'}).",
+    "remotion": "const p = interpolate(frame, [0, 10], [0, 1], {easing: Easing.inOut(Easing.cubic), extrapolateRight: 'clamp'}); scale = 2.1 - 1.1 * p; translateX = 20 * (1 - p) + '%'; or spring({frame, fps, config: {damping: 30, stiffness: 120}}) for a no-overshoot settle."
+  },
+  "confidence": "medium",
+  "notes": "Taxonomy has no pull-out pattern; ui_camera_push_in is used for its reverse (camera.move = pull_out, scale 0.48). The phone prototype has no candidate box of its own, so it is covered by b01."
+}

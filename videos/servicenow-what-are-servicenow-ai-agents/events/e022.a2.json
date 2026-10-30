@@ -1,0 +1,62 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "08b4bac696834571270679e5f8ed5ca3c03a81cdba947df420d89357f3f67003",
+    "created_at": "2026-10-05T06:51:50.184219Z"
+  },
+  "video": "servicenow-what-are-servicenow-ai-agents",
+  "event": "e022",
+  "task": "a2-e022",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Two-shot of seated actors (subtle head and body movement)",
+      "role": "other",
+      "role_other": "live-action actors",
+      "change_types": ["other"],
+      "change_other": "natural actor movement while speaking; no graphic animation",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "ambiguous"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Man's jaw and collar as he speaks and turns slightly",
+      "role": "other",
+      "role_other": "live-action actor",
+      "change_types": ["other"],
+      "change_other": "speaking / slight head turn",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "ambiguous"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x116", "verdict": "confirm", "label": "music", "note": "Harmonic music onset before the event."},
+    {"id": "x117", "verdict": "confirm", "label": "music", "note": "Softer music onset just before the event; no visual sync."},
+    {"id": "x118", "verdict": "override", "label": "music", "note": "Sustained low tonal note starting ~97.07 s after the line 'You need a hobby.'; same timbre as the surrounding score, no visual hit, so a music note rather than a UI chime."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "live action dialogue beat",
+    "description": "Static locked-off two-shot of live-action actors; the man speaks ('You need a hobby.') with small head movement while the woman listens.",
+    "why_premium": "Restrained, cinematically graded dialogue footage with shallow depth of field gives the explainer a scripted, comedic narrative tone rather than a stock UI walkthrough."
+  },
+  "build_hint": {
+    "gsap": "Footage only; no tween. Keep the clip locked off and cut on dialogue; if anything, a near-imperceptible gsap.to(clip, {scale: 1.01, duration: 3, ease: 'none'}).",
+    "remotion": "Single <OffthreadVideo> in a <Sequence>; no spring or interpolate needed beyond the footage itself."
+  },
+  "confidence": "medium",
+  "notes": "Very low motion energy event (actor movement only); camera verdict none. b03-b06 are small patches on the man's sweater and were folded into b01/b02 rather than listed separately."
+}

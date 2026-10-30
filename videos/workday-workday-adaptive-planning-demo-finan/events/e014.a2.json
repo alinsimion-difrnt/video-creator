@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "e1e36a4ef27d5c42f18c2fe52900d8401aa57db3708becf8cbcab550b3994b38",
+    "created_at": "2026-10-05T06:51:46.645264Z"
+  },
+  "video": "workday-workday-adaptive-planning-demo-finan",
+  "event": "e014",
+  "task": "a2-e014",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Browser window with the task parameter form, framed as a floating card",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["scale_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 1100, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Mouse cursor over the Actuals Data Version dropdown, gone by the settled frame",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 200, "easing_class": "ambiguous"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "ui camera pull out",
+    "description": "A smooth virtual-camera pull-out from a cropped screen recording to the full browser window, which ends up as a shadowed card floating on a white background with a blue brand curve below. It is the reverse of ui_camera_push_in.",
+    "why_premium": "The ease-in-out pull-out (about 1.1 s, scale near 0.67) reveals the whole product window and the brand backdrop together, landing as the narration lists 'ERP, CRM, and HCM systems', so the viewer gets the big picture after the close-up click."
+  },
+  "build_hint": {
+    "gsap": "gsap.fromTo('.screen-stage', {scale: 1.48, x: '6%', y: '5%'}, {scale: 1, x: 0, y: 0, duration: 1.1, ease: 'power2.inOut', transformOrigin: '50% 50%'}); window card carries a static drop shadow and rounded corners; fade the cursor with gsap.to('.cursor', {autoAlpha: 0, duration: 0.2}) near the start.",
+    "remotion": "const p = interpolate(frame, [0, 33], [0, 1], {easing: Easing.inOut(Easing.cubic), extrapolateRight: 'clamp'}); scale = interpolate(p, [0, 1], [1.48, 1]); translate the stage from (6%, 5%) to 0 with the same p. Plain ease, no spring overshoot."
+  },
+  "confidence": "medium",
+  "notes": "camera.move is pull_out (scale 0.674), so this is a camera move, not element motion inside the frame. Whether the blue background curve is part of the scaled stage or a separate static layer is unclear from the filmstrip. The cursor identification for b02 is a best guess from the diff region where the pointer sat in the prior event."
+}

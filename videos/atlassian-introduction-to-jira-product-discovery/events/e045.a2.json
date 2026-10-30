@@ -1,0 +1,114 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "fb9c333bfa842af09c726ec31bb1965ba3c90d2f31f3b5df91363995f0e61366",
+    "created_at": "2026-10-05T06:38:59.807111Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e045",
+  "task": "a2-e045",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Sidebar VIEWS list (reflows as a scrollbar appears and the list grows)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "layout reflow: the panel narrows for a scrollbar and items re-lay out",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 70, "easing_class": "step"}
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "New 'New View' list item inserted above 'Create a view'",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "New View",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 70, "easing_class": "step"}
+    },
+    {
+      "box": "b07",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "'Impact Assessment' label wraps onto two lines",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "text re-wraps from one line to two",
+      "is_text": true,
+      "text": "Assessment",
+      "text_unit": "line",
+      "estimates": null
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "'Roadmap - VP Product' item pushed down",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["slide_down"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Roadmap - VP",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 70, "easing_class": "step"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "'Stakeholder Feedback' item pushed down",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["slide_down"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Stakeholder",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 70, "easing_class": "step"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "'Create a view' row pushed down and outlined as focused",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["slide_down", "highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Create a view",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 70, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "layout_reframe",
+    "proposed_name": null,
+    "description": "After the user clicks 'Create a view', the 'Create a new section' popover closes, a 'New View' item is inserted into the sidebar list, and the rest of the list re-lays out: a scrollbar appears, labels re-wrap and the rows below move down.",
+    "why_premium": "This is a raw screen-recording state change, not designed motion. The cut lands on a pause in the narration ('yourself. / So'), which hides the instant re-layout. Its value as a reference is the timing, not the motion craft."
+  },
+  "build_hint": {
+    "gsap": "Use Flip: const state = Flip.getState('.nav-item'); insert the new item; Flip.from(state, {duration: 0.3, ease: 'power2.out', absolute: false}); the new item gets gsap.from(newItem, {autoAlpha: 0, height: 0, duration: 0.25, ease: 'power2.out'}). The source snaps instantly; a premium remake would animate it this way.",
+    "remotion": "Animate the new item's height and opacity with spring({frame: frame - insertFrame, fps, config: {damping: 200}}) and offset the rows below by translateY = (1 - progress) * -rowHeight, so the list pushes down smoothly instead of snapping."
+  },
+  "confidence": "medium",
+  "notes": "The source change looks like a near-instant DOM re-layout (energy peaks in one or two frames), not an eased animation. The 'Create a new section' popover seen in the first frame disappears, but it has no box on the end frame, so it is not listed. b10 is the New View icon and moves with b05."
+}

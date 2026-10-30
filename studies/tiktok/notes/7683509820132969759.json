@@ -1,0 +1,38 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "c5a2ba540aef1d49b1531cddb26b3f3540475243312d9b0dff19ef49643d07fb",
+                 "created_at": "2026-10-13T12:00:00+00:00"},
+  "id": "7683509820132969759",
+  "format": "split_screen",
+  "hook": {"type": "news",
+           "line": "A new type of content is starting to crush on social media.",
+           "visual": "Light grid board titled 'This New Type Of Content Is Going Crazy Viral' fills with a 3x2 grid of video thumbnails, each getting a green view-count badge; his face sits below."},
+  "beats": [
+    {"t": 0.13, "what": "Thumbnail grid animates in, green view-count badges (4.1M, 3.1M...) stamp on one by one"},
+    {"t": 4.6, "what": "Cut to dark board 'This Is How Social Media Used To Look Like Before': profile grid splits into Entertainment and Educational boxes"},
+    {"t": 16.57, "what": "Timeline scrolls sideways to 2024 with red dots marking each year"},
+    {"t": 24.85, "what": "Example storytelling video card dropped onto the timeline"},
+    {"t": 33.13, "what": "Title switches to 'This Is How AI Changed Social Media Forever', timeline moves to 2026"},
+    {"t": 41.42, "what": "Education splits into three boxes: Application, Tactical Edu, and a blurred third"},
+    {"t": 47.4, "what": "Graphics drop away; cut to full-frame face for the definitions"},
+    {"t": 82.84, "what": "Full map returns with Storytelling, Application and Tactical Edu highlighted green"},
+    {"t": 91.12, "what": "Red-banner 'Comment Format To Get The Doc' over a grid of document pages"}
+  ],
+  "graphics": {"captions": "word_by_word", "caption_position": "mixed",
+               "devices": ["split_screen", "screenshot", "chart_or_number", "title_text", "jump_cut", "b_roll"],
+               "density": "heavy", "per_minute_estimate": 12},
+  "characters": [],
+  "cta": {"kind": "comment", "t": 91.12},
+  "why_it_works": [
+    "View-count badges on a wall of thumbnails prove the trend is real before he names it",
+    "A timeline that scrolls from 2023 to 2026 turns an abstract idea into a story with a before and after",
+    "Third category left blurred, so the viewer waits for it to be named (edu slop)",
+    "Comment-a-keyword lead magnet with a visible stack of pages makes the reward concrete"
+  ],
+  "weaknesses": [
+    "The middle stretch (about 47-82 s) is plain talking head after a heavy graphic opening, so energy dips",
+    "Face is small in the split-screen part (median height 0.12), so expression carries little",
+    "Low loop score (0.554): the end board looks nothing like the opening"
+  ],
+  "for_robert": "Use a simple animated diagram above his head (timeline or boxes) that builds as he talks; keep one item blurred or hidden so the reveal holds attention, and let Fred point at it."
+}

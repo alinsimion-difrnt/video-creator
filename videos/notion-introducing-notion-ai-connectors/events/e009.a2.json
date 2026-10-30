@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "a64721c091750a2bdb416e72bc1631a6f773c6af8af92ba3d94a0cb0ebb94dda",
+    "created_at": "2026-10-05T06:48:37.632620Z"
+  },
+  "video": "notion-introducing-notion-ai-connectors",
+  "event": "e009",
+  "task": "a2-e009",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Notion and Jira icon tiles (sequential grey flash)",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["color_shift", "highlight"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 70, "easing_class": "step", "source": "model_estimate"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "GitHub icon tile grey flash (cropped at right edge)",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["color_shift", "highlight"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 70, "easing_class": "step", "source": "model_estimate"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "beat synced icon flash",
+    "description": "In a tight crop (shot s003) of the connector tray, three tiles flash to a darkened grey state in left-to-right order on successive music transients: Notion at f208, Jira at f212, GitHub from f217 (still grey at the end frame).",
+    "why_premium": "Beat-locked, step-timed flashes give a static logo row a percussive, tactile rhythm and lead the eye across each integration with no layout motion; the ever-tighter crops across shots raise the energy."
+  },
+  "build_hint": {
+    "gsap": "Per tile in order, `.set(tile, {filter: 'brightness(0.55) saturate(0.6)'}, beatTimes[i])` then `.set(tile, {filter: 'none'}, beatTimes[i] + 0.067)`; step changes only, spaced by beat times (about 0.13 to 0.17 s here) rather than a fixed stagger.",
+    "remotion": "Per tile index i, `const on = frame >= beatFrames[i] && frame < beatFrames[i] + 2;` and `filter: on ? 'brightness(0.55)' : 'none'`, no interpolate; beatFrames from the music beat list."
+  },
+  "confidence": "medium",
+  "notes": "b02 is a union box spanning Notion, Jira and GitHub; used for the Notion and Jira pair because no separate boxes exist and b01 (GitHub diff box) is taken. GitHub is still grey at end frame f224, so its flash duration is unclear. Same recurring pattern as e002, e004, e006 and e008; a human may want to treat the whole run as one pattern instance."
+}

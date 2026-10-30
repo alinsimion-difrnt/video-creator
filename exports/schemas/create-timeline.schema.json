@@ -1,0 +1,204 @@
+{
+  "$defs": {
+    "Annotator": {
+      "enum": [
+        "code",
+        "claude-code",
+        "human"
+      ],
+      "title": "Annotator",
+      "type": "string"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "description": "Carried by every output JSON (BUILD_PLAN section 2.7).",
+      "properties": {
+        "annotator": {
+          "$ref": "#/$defs/Annotator"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "input_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Input Hash",
+          "type": "string"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "schema_version": {
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "skill": {
+          "anyOf": [
+            {
+              "pattern": "^[a-z0-9-]+@[0-9a-f]{8,64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Skill"
+        },
+        "stage": {
+          "title": "Stage",
+          "type": "string"
+        },
+        "tool_version": {
+          "title": "Tool Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool_version",
+        "stage",
+        "annotator",
+        "input_hash",
+        "created_at"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "TimelineScene": {
+      "additionalProperties": false,
+      "properties": {
+        "end_s": {
+          "exclusiveMinimum": 0,
+          "title": "End S",
+          "type": "number"
+        },
+        "scene": {
+          "pattern": "^s\\d{2}$",
+          "title": "Scene",
+          "type": "string"
+        },
+        "start_s": {
+          "minimum": 0,
+          "title": "Start S",
+          "type": "number"
+        },
+        "voice_end_s": {
+          "exclusiveMinimum": 0,
+          "title": "Voice End S",
+          "type": "number"
+        },
+        "voice_start_s": {
+          "minimum": 0,
+          "title": "Voice Start S",
+          "type": "number"
+        }
+      },
+      "required": [
+        "scene",
+        "start_s",
+        "end_s",
+        "voice_start_s",
+        "voice_end_s"
+      ],
+      "title": "TimelineScene",
+      "type": "object"
+    },
+    "TimelineWord": {
+      "additionalProperties": false,
+      "properties": {
+        "end_s": {
+          "minimum": 0,
+          "title": "End S",
+          "type": "number"
+        },
+        "i": {
+          "minimum": 0,
+          "title": "I",
+          "type": "integer"
+        },
+        "scene": {
+          "pattern": "^s\\d{2}$",
+          "title": "Scene",
+          "type": "string"
+        },
+        "start_s": {
+          "minimum": 0,
+          "title": "Start S",
+          "type": "number"
+        },
+        "text": {
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "i",
+        "text",
+        "start_s",
+        "end_s",
+        "scene"
+      ],
+      "title": "TimelineWord",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "C5: scene bounds and every word on one clock (seconds from the start of the video).",
+  "properties": {
+    "fps": {
+      "exclusiveMinimum": 0,
+      "title": "Fps",
+      "type": "integer"
+    },
+    "project": {
+      "title": "Project",
+      "type": "string"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    },
+    "scenes": {
+      "items": {
+        "$ref": "#/$defs/TimelineScene"
+      },
+      "minItems": 1,
+      "title": "Scenes",
+      "type": "array"
+    },
+    "total_s": {
+      "exclusiveMinimum": 0,
+      "title": "Total S",
+      "type": "number"
+    },
+    "words": {
+      "items": {
+        "$ref": "#/$defs/TimelineWord"
+      },
+      "minItems": 1,
+      "title": "Words",
+      "type": "array"
+    }
+  },
+  "required": [
+    "provenance",
+    "project",
+    "fps",
+    "total_s",
+    "scenes",
+    "words"
+  ],
+  "title": "Timeline",
+  "type": "object"
+}

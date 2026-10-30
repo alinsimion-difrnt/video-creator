@@ -1,0 +1,127 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "c73fcb3fb77eefea16ef3ffdb789e1a2431a7e7f84f0878ce26252ebe6c5f7f4",
+    "created_at": "2026-10-05T07:39:47.485657Z"
+  },
+  "video": "duolingo-introducing-duolingo-chess",
+  "task": "a1-p9",
+  "shots": [
+    {
+      "shot": "s049",
+      "shot_type": "other",
+      "shot_type_other": "end card: 3D plush figures on a flat brand-green field under a headline lockup",
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Oscar plush standing on a round green base, centred under the 'LEARN CHESS' headline, with 'on duolingo' below him",
+      "transition_in": "other",
+      "transition_other": "Cut from the Duo eye close-up (s048) to the green end card, which opens tight on Oscar and pulls back. The cut itself is not visible at 2 fps.",
+      "on_screen_text": ["LEARN CHESS", "on duolingo"],
+      "text_word_count": 4,
+      "typography": "Headline in heavy rounded italic sans, all caps, tight tracking, plain white with no outline. In the first frame the last 'S' is still offset, so the letters seem to pop in one by one. The 'on duolingo' tag is a smaller bold rounded lowercase wordmark, also white. Font guess (low confidence): Duolingo's Feather Bold.",
+      "depth_cues": ["blur", "shadow"],
+      "what_happens": "Behind a fixed 'LEARN CHESS' headline, the camera pulls back from a close-up of Oscar until he stands small on a round green base in the centre. A blurred plush crosses the foreground at about 82.5 s. Around 86 s 'on duolingo' appears below him and copies of Oscar start flying in from the edges. They tumble and land face-down around him while the VO reads the CTA and the joke disclaimer ('download Duolingo for free in the app store, side effects include ... handsome digital mustache included', w133-w155). After w155 (88.1 s) the last ~23 s are music only. More plushes keep dropping in, including large defocused ones close to the lens near 108-110 s, until the pile fills the lower two-thirds of the frame. The central Oscar keeps turning on the spot to look around.",
+      "build_rebuild": "Lock a white italic all-caps headline (letters pop in with a short stagger) and a lowercase wordmark on a flat green plate. Ease a camera pull-out from a close-up to a small centred hero figure on a disc base. Then run a rigid-body rain of the same character model from off-screen, with depth of field so near drops blur, and let the pile build until the end on a music-only tail.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001", "s002", "s003", "s004", "s005", "s006", "s007", "s008", "s009", "s010"], "words": [0, 11]},
+      {"beat": "demo", "shots": ["s011", "s012", "s013", "s014", "s015", "s016", "s017", "s018", "s019", "s020"], "words": [12, 35]},
+      {"beat": "demo", "shots": ["s021", "s022", "s023", "s024", "s025"], "words": [36, 54]},
+      {"beat": "demo", "shots": ["s026", "s027", "s028", "s029"], "words": [55, 69]},
+      {"beat": "demo", "shots": ["s030", "s031", "s032", "s033", "s034", "s035", "s036", "s037", "s038", "s039"], "words": [70, 111]},
+      {"beat": "demo", "shots": ["s040", "s041", "s042", "s043", "s044"], "words": [112, 128]},
+      {"beat": "outcome", "shots": ["s045", "s046", "s047", "s048"], "words": [129, 132]},
+      {"beat": "cta", "shots": ["s049"], "words": [133, 155]}
+    ],
+    "hook": {
+      "text": "A fighting-game 'DUO vs OSCAR' card, whip pans between the two plush rivals, and Oscar shattering Duo's king, followed by 'Another win for Oscar, but hey we all have to start somewhere.'",
+      "technique": "other",
+      "technique_other": "cold-open comedy sketch: a rival mascot beats the brand mascot at chess before any product is shown",
+      "shots": ["s001", "s002", "s003", "s004", "s005", "s006", "s007", "s008", "s009", "s010"],
+      "words": [0, 11]
+    },
+    "cta": {
+      "text": "LEARN CHESS on duolingo (spoken: 'download Duolingo for free in the app store', w133-w139)",
+      "shots": ["s049"]
+    },
+    "tone": "Playful, absurdist, self-aware comedy. A smug mascot narrates in character, with a fast mixed-media pace (plush puppetry, 3D, recreated app UI, flat illustration) and pop-culture parodies (talk show, music video, keynote 'one more thing').",
+    "signature_moments": [
+      {
+        "shots": ["s021", "s022", "s023"],
+        "description": "A crown drops onto the throned Oscar against a starburst flash. A zoom-through lands on a gold-framed board where a knight forks him ('Fork, baby. Fork.') and topples the throne under an outlined 'ADVANCED TACTICS' label.",
+        "why_premium": "A feature name is turned into a staged, sound-synced visual gag (whoosh and impact on the crown) instead of a screenshot, so the feature is remembered and the craft reads as expensive."
+      },
+      {
+        "shots": ["s033", "s034", "s035"],
+        "description": "Oscar spins next to a boombox and raises the phone. A lightning bolt strikes it in a darkened frame, and he is left scorched with a smoking, burning moustache while the phone plays the app's animations.",
+        "why_premium": "Practical-looking VFX (exposure dip, additive glow, fire and smoke sims) on a soft plush character give an ordinary feature like new animations a cinematic payoff."
+      },
+      {
+        "shots": ["s049"],
+        "description": "On the end card, copies of Oscar rain down and pile up around the hero figure under 'LEARN CHESS on duolingo', ending on a long music-only tail.",
+        "why_premium": "A physics-sim payoff in a single locked lockup keeps the brand name on screen for 30 s, and the motion stays lively with no extra copy."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 4,
+        "evidence": "Within 7 s it sets up a versus card and a rival, whip pans between the plush players on reverse-swoosh SFX, and pays off with the king shattering on an impact (x007). The first VO line lands the premise. The product itself does not appear until s010/s011.",
+        "refs": ["s002", "s004", "s007", "w0", "w11"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "Each feature gets its own labelled beat: lessons on the course path, basic moves, ADVANCED TACTICS, THOUSANDS OF PUZZLES, playing a match, animations, ELO PROGRESS, STALEMATE HELPER!, and coming-soon play against other learners. The comic density and very fast cuts (many shots under 1 s) sometimes bury the UI, and the closing twist (s045-s048) is not obvious.",
+        "refs": ["s015", "s016", "s022", "s024", "s036", "s038", "s042", "s045"]
+      },
+      "ui_showcase": {
+        "score": 3,
+        "evidence": "The UI is recreated cleanly and on-brand (course switcher, lesson path, move-hint dots, ELO chart, stalemate helper board, opponent cards), but each screen is brief and the characters dominate it. Real app capture appears only small, on in-hand phones.",
+        "refs": ["s011", "s014", "s016", "s027", "s036", "s038", "s042"]
+      },
+      "motion_polish": {
+        "score": 5,
+        "evidence": "Very well-crafted mixed media: puppeted plush footage with shallow focus, 3D throne and lightning scenes, zoom-through and push transitions, a circular iris mask into the keynote parody, a WINNER/LOSER triptych with an RGB-split stamp-in, and a rigid-body plush rain on the end card. Motion blur is used consistently on every fast move.",
+        "refs": ["s004", "s022", "s035", "s040", "s044", "s049"]
+      },
+      "sound_design": {
+        "score": 4,
+        "evidence": "Judged from anchor audio facts plus visuals. 89 SFX candidates over 111 s, with reverse swooshes on almost every opening cut (x002-x006), impacts on the king shatter (x007), the crown (x015) and the boom/lightning beats, and a music bed at about 94 BPM. Integrated loudness is -15.83 LUFS. The end card is about 23 s of music only. Many candidates are labelled 'unsure', so the exact SFX mapping is uncertain.",
+        "refs": ["s004", "s007", "s021", "s033", "s049"]
+      },
+      "vo_script_quality": {
+        "score": 4,
+        "evidence": "In-character VO that is tight and joke-driven: 'Fork, baby. Fork.', 'Whoopsie! I won.', the 'one more thing' parody, and a mock side-effects disclaimer in the CTA. Every feature line is short and lands on its visual. The transcript is garbled in places (e.g. w72, w82, w139), so some lines could not be checked.",
+        "refs": ["w47", "w49", "w67", "w69", "w114", "w141", "w155"]
+      },
+      "brand_consistency": {
+        "score": 5,
+        "evidence": "Duolingo green dominates and the outlined heavy italic all-caps label style recurs throughout. Duo and Oscar come from the app's own cast, the recreated UI matches the app, and the end card uses the brand wordmark. The tone fits the brand's known mascot-comedy voice.",
+        "refs": ["s002", "s022", "s024", "s038", "s041", "s049"]
+      },
+      "works_muted": {
+        "score": 3,
+        "evidence": "Baked-in labels carry several features (ADVANCED TACTICS, THOUSANDS OF PUZZLES, STALEMATE HELPER!, ONE MORE THING..., WINNER/LOSER, LEARN CHESS on duolingo) and the visual gags read without sound. However, the lessons, basic moves, real match, animations and ELO beats, the coming-soon framing, and 'download for free' exist only in the VO.",
+        "refs": ["s016", "s022", "s024", "s036", "s038", "s041", "s049"]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "A premium-crafted, very entertaining launch that turns a feature list into a chain of mascot sketches with consistent branding and strong motion and VFX. It falls short of best-in-class as a product explainer because the UI appears only briefly, it relies on the VO, and the 30 s end card is long.",
+        "refs": ["s007", "s022", "s035", "s041", "s049"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 2,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "Feature titles are baked into stylised outlined artwork (ADVANCED TACTICS, THOUSANDS OF PUZZLES, STALEMATE HELPER!, ONE MORE THING..., WINNER/LOSER, LEARN CHESS), and the recreated UI holds English strings. The humour depends on puns in a character voice ('Fork, baby', the side-effects disclaimer), which are hard to translate. Localizing it would mean re-rendering the type, re-casting the voice and rewriting jokes. The plush and 3D visuals themselves are language-neutral."
+    }
+  }
+}

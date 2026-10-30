@@ -1,0 +1,160 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "0dbf0004c39d8b391579bcf4519fdc95b6e9d689a62f37aec55b05d2881d8742",
+    "created_at": "2026-10-05T06:42:54.750790Z"
+  },
+  "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+  "event": "e022",
+  "task": "a2-e022",
+  "elements": [
+    {
+      "box": null,
+      "manual_box": [440, 210, 560, 800],
+      "manual_reason": "The 'Evaluate your transcripts' headline scrolls up and fades out; it is absent from the end frame, so the box marks its position at the start of the burst (frame f2021).",
+      "label": "Section headline 'Evaluate your transcripts' (gradient on 'Evaluate')",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["slide_up", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Evaluate your transcripts",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 600, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Outgoing conversation-summary list (small text rows with status badges) that scrolls up and fades out",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["slide_up", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 500, "easing_class": "ease_in"}
+    },
+    {
+      "box": "b06",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Tab bar 'Transcription' / 'Another tab'",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["fade", "slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Transcription Another tab",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "First agent bubble",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["fade", "slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Hello, thank you for calling Customer Support. How can I assist you today?",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b09",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "First user bubble with highlighted phrase",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["fade", "slide_up", "highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Hi, I need to check the status of my booking. The reference number is REF123456.",
+      "text_unit": "word",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Second agent bubble",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["fade", "slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Sure, let me pull up that information. Could you confirm the booking date for me?",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b13",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Second user bubble with highlighted word",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["fade", "slide_up", "highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Yes, the booking was made on November 1st, 2024.",
+      "text_unit": "word",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Third agent bubble",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["fade", "slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "I see here that your booking for John Doe at Hotel California is confirmed. Check-in is scheduled for December 15th, 2024.",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b07",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Third user bubble",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["fade", "slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Perfect, thank you. And the total amount was $500?",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x031", "verdict": "override", "label": "music", "note": "Before the burst; lines up with a periodic percussive transient in the music bed, no sweep shape."},
+    {"id": "x032", "verdict": "unsure", "label": "unsure", "note": "Lands mid-scroll, but the spectrogram shows no clear rising or falling sweep, only faint broadband energy like the music hits around it."},
+    {"id": "x033", "verdict": "unsure", "label": "unsure", "note": "At burst end as the transcript settles; weak score, no distinct transient visible."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "scroll lift crossfade",
+    "description": "The section headline and the summary list underneath it lift upward together and fade out (the view scrolls down the page). The transcript view (tab bar plus chat bubbles) fades in, rising slightly, into the space they leave.",
+    "why_premium": "One continuous upward motion carries the eye from the section title to the content it introduces, with no hard cut. The overlap of the fade-out and fade-in keeps the white canvas steady, so the change feels like scrolling one page and not like a scene change."
+  },
+  "build_hint": {
+    "gsap": "tl.to(['.headline','.summaryList'], {y: -260, opacity: 0, duration: 0.5, ease: 'power2.in'}); tl.fromTo(['.tabs','.bubble'], {y: 40, opacity: 0}, {y: 0, opacity: 1, duration: 0.45, ease: 'power3.out', stagger: 0.03}, '-=0.2'); highlighted spans keep their gradient colour (static).",
+    "remotion": "Outgoing: translateY = interpolate(frame, [0, 15], [0, -260], {easing: Easing.in(Easing.quad)}) and opacity 1 to 0. Incoming: spring({frame: frame - 9 - i, fps, config: {damping: 200, stiffness: 120}}) drives translateY 40 to 0 and opacity 0 to 1 for the tabs and each bubble i."
+  },
+  "confidence": "medium",
+  "notes": "camera.move is tilt_down, but this looks like a scroll of the content (it moves up) mixed with a crossfade, not a true camera move. The headline is not on the end frame, so it uses manual_box. b01 is a union box standing in for the outgoing list region. The bubble stagger is hard to see at this sampling and may really be one block fade."
+}

@@ -1,0 +1,93 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "77a9575e77d27f3a9a3842f28312eb09f631c11cf355620cb327cf8eadba75eb",
+    "created_at": "2026-10-05T07:00:11.929431Z"
+  },
+  "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+  "task": "a1-p2",
+  "shots": [
+    {
+      "shot": "s002",
+      "shot_type": "abstract",
+      "shot_type_other": null,
+      "composition": "split",
+      "composition_other": null,
+      "focal_element": "Empty thin-outline circle centred on an off-white field, flanked by two grainy gradient orbs cropped at the left and right frame edges",
+      "transition_in": "other",
+      "transition_other": "Detector could not classify the boundary from s001 (anchors: other); s001 is not in this packet, so the cut itself is not visible",
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": ["grain"],
+      "what_happens": "A sub-half-second bridge frame under the end of the line 'you embody it' (w134-w135): two gradient orbs sit at the edges while a hairline outline circle occupies the centre, setting up the orb-merging motif of s003.",
+      "build_rebuild": "On a flat off-white canvas place a centred 1px light-grey outline circle at ~110% of frame height and two noise-grained radial-gradient circles half-cropped at the left and right edges, holding for ~13 frames before the next shot.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s003",
+      "shot_type": "abstract",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Two hairline outline circles whose overlap region is filled with a grainy gradient, converging into a single filled orb inside a ring",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": ["grain", "blur"],
+      "what_happens": "Visual metaphor for 'significantly better speaker similarity' (w136-w140): two outline circles (a tiny dot between them) move together and rotate; only their lens-shaped intersection is filled with gradient, and as they overlap fully the fill becomes a whole orb framed by a ring while a soft blurred colour glow blooms in the background.",
+      "build_rebuild": "Animate two outline circles from side-by-side to fully concentric while rotating the pair ~90deg, render a gradient layer clipped to the intersection of both circle masks so the fill grows from a vesica to a full disc, and fade in a large blurred gradient vignette behind it over the last ~1s.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s004",
+      "shot_type": "abstract",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Grainy gradient orb filling the frame, which then dissolves into a sparse dot/particle sphere with a caption beneath",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "[fast pace cheerful announcement] g'day Melbourne, hope you're all doing well this morning, [building"
+      ],
+      "text_word_count": 14,
+      "typography": "Small centred two-line caption in a regular-weight neo-grotesque sans (low-confidence guess: Inter-like), sentence/lower case as written in the prompt, normal tracking; bracketed audio tags set in a lighter tone than the spoken words, with the first spoken words emphasised.",
+      "depth_cues": ["grain", "blur"],
+      "what_happens": "The camera pushes through into the orb so it nearly fills the frame, then in under a second the orb breaks into a scattered particle sphere and the first caption block of the next demo appears, bridging into the s005 voice sample (demo audio starts at w141).",
+      "build_rebuild": "Scale the s003 orb up ~3x with an ease-in zoom, then cross-dissolve it into a particle system of a few thousand dots sampled from the orb's disc while fading in a bottom-centred two-line caption.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s005",
+      "shot_type": "abstract",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Audio-reactive dot-particle sphere (forms a loose head/face-like shape) above a two-line karaoke caption showing the prompt text being spoken",
+      "transition_in": "other",
+      "transition_other": "No visible cut: the boundary falls inside the continuous orb-to-particle dissolve that began in s004 (anchors: other)",
+      "on_screen_text": [
+        "[fast pace cheerful announcement] g'day Melbourne, hope you're all doing well this morning, [building",
+        "tension] because city hall's just confirmed that the mystery alarm going off every night has finally been",
+        "solved, and it turns out to be... W- wait, am I reading this right? Yeah, so it says right here that it's [chuckle]",
+        "no... a pigeon? [laughs] Well, apparently it's been setting off the motion sensor every night for a week",
+        "straight. [sarcastic chuckle] You know, honestly, at this point, just give the pigeon a set of keys."
+      ],
+      "text_word_count": 89,
+      "typography": "Small centred two-line caption block at the lower third in a regular-weight neo-grotesque sans (low-confidence guess: Inter-like), mixed/lower case exactly as the prompt is written, normal tracking; karaoke-style word highlighting where the currently spoken words switch to a darker accent tone and spoken/unspoken words stay muted; bracketed audio tags ([laughs], [chuckle]) shown inline in a lighter tone; blocks swap every ~4-6s.",
+      "depth_cues": ["blur"],
+      "what_happens": "The 24s Eleven v4 audio-tag demo (w141-w218, a news-reader style 'G'day Melbourne... a pigeon?' monologue): the dot sphere ripples and reshapes continuously with the voice while the prompt text, including its bracketed emotion tags, is revealed word by word in sync with speech, proving the clip was generated from the prompt shown.",
+      "build_rebuild": "Render a ~4k-dot point cloud on a sphere whose per-dot displacement and opacity are driven by the narration amplitude/FFT, and below it show the prompt in two-line pages whose words change from muted to highlighted at each word's transcript start time, paging to the next block when the line is consumed.",
+      "confidence": "high"
+    }
+  ],
+  "summary": null
+}

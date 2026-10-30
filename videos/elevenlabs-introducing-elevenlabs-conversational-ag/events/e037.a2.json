@@ -1,0 +1,76 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "521965cc967b59d6e1fa618c675ad9e6b4ff923dedb43b7be7e9b2146cc6bf3a",
+    "created_at": "2026-10-05T06:47:06.018494Z"
+  },
+  "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+  "event": "e037",
+  "task": "a2-e037",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Swarm of small gradient orbs orbiting in a ring",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["scale_down", "rotate", "morph", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 1900, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Single agent orb (swarm collapses into it; it glides right leaving a fading ghost)",
+      "role": "logo",
+      "role_other": null,
+      "change_types": ["morph", "slide_right", "scale_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 500, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "AI wordmark text starting to appear right of the orb",
+      "role": "logo",
+      "role_other": null,
+      "change_types": ["fade", "blur_in"],
+      "change_other": null,
+      "is_text": true,
+      "text": "AI",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 500, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x069", "verdict": "confirm", "label": "impact", "note": "Broadband onset with a long decaying noise tail ~550 ms before the burst, as the large orb is on screen; reads as an impact/hit rather than a reverse swoosh."},
+    {"id": "x070", "verdict": "confirm", "label": "swoosh_reverse", "note": "Airy broadband noise layer right as the big orb bursts into the orbiting swarm; strong CLAP score. Shape partly overlaps x069 tail."},
+    {"id": "x071", "verdict": "confirm", "label": "chime", "note": "Tonal bands brighten as the ring re-gathers toward a single orb."}
+  ],
+  "pattern": {
+    "id": "logo_resolve",
+    "proposed_name": null,
+    "description": "A large soft gradient orb splits into a dozen small spinning orbs that sweep around the frame in an orbiting ring, then the ring gathers back into one orb that glides to the left of centre while the 'AI' wordmark fades in to its right, starting the end lockup.",
+    "why_premium": "The product's voice-orb motif is used as the hero: a playful orbit of many agents resolving into one mark communicates scale-then-focus, and soft motion-blurred gradients with an airy SFX bed make the outro feel crafted rather than a static logo slap."
+  },
+  "build_hint": {
+    "gsap": "tl = gsap.timeline(); tl.to('.orb-big', {scale: 0.3, autoAlpha: 0, duration: 0.3, ease: 'power2.in'}).fromTo('.orb-mini', {scale: 0, x: 0, y: 0}, {scale: 1, duration: 0.3, ease: 'back.out(1.4)', stagger: {each: 0.03, from: 'center'}}, '<0.1').to('.orb-ring', {rotation: 360, duration: 1.6, ease: 'power1.inOut'}, '<') (minis placed on a circle via MotionPath or transformOrigin at ring centre; each mini also spins its own conic gradient) .to('.orb-mini', {x: 0, y: 0, scale: 0.4, autoAlpha: 0, duration: 0.4, ease: 'power3.in', stagger: 0.02}).fromTo('.orb-final', {scale: 1.4, x: -120, autoAlpha: 0}, {scale: 1, x: 0, autoAlpha: 1, duration: 0.5, ease: 'power3.out'}, '<0.2').fromTo('.wordmark', {autoAlpha: 0, filter: 'blur(8px)'}, {autoAlpha: 1, filter: 'blur(0px)', duration: 0.5, ease: 'power2.out'}, '<0.1').",
+    "remotion": "Ring angle = interpolate(frame, [s, s + 48], [0, 2 * Math.PI], {easing: Easing.inOut(Easing.sin)}); radius = interpolate(frame, [s, s + 8, s + 48, s + 60], [0, R, R, 0]); each mini at angle + i * 2PI/n, rotated conic-gradient; mini scale via spring({frame: frame - s - i, fps, config: {damping: 12, stiffness: 160}}) (slight overshoot); final orb translateX via spring({damping: 200}) (no overshoot); wordmark opacity and blur interpolated over 15 frames with Easing.out(Easing.cubic)."
+  },
+  "confidence": "medium",
+  "notes": "b02 is a union box covering the orbit area (orbs extend beyond it at times). b03 overlaps the same 'AI' glyphs as b04 and was not used. The wordmark is only partly faded in at the end frame; the full lockup text is likely in a later event. Large pan/scale sums are content motion (camera verdict none)."
+}

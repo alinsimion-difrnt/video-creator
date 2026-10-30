@@ -1,0 +1,45 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "9265ccbec38107dff8ecd4b48b8538cd61ea9d0c31e9f96804e469fe4ebcb59c",
+                 "created_at": "2026-10-13T15:00:00+00:00"},
+  "id": "7678037082534677773",
+  "format": "skit",
+  "hook": {"type": "pattern_interrupt",
+           "line": "Three clones of him: one says he is like getting your book on the front shelf.",
+           "visual": "Three copies of the creator in a living room, orange SEO/AEO/GEO labels over their heads, a bookshop photo in the frame on the wall, a 1-2 word caption mid-screen."},
+  "beats": [
+    {"t": 0.0, "what": "SEO clone speaks first; wall frame shows a bookshop shelf (the 'front shelf' analogy)."},
+    {"t": 3.45, "what": "AEO clone takes over; wall frame switches to a teacher calling on a raised hand."},
+    {"t": 6.91, "what": "GEO clone gives the 'teacher writes your name on the board' analogy; frame goes blank white."},
+    {"t": 10.36, "what": "Second round: each clone says where it matters, starting with SEO for Google and Bing."},
+    {"t": 17.26, "what": "AEO round: the Siri logo appears in the wall frame as voice assistants are named."},
+    {"t": 20.72, "what": "GEO round: the Perplexity logo fills the frame as AI answer engines are named."},
+    {"t": 24.17, "what": "Third round, how to optimise: a search autocomplete list in the frame for 'keywords'."},
+    {"t": 27.62, "what": "AEO optimisation: an FAQ page screenshot in the frame for 'direct answers'."},
+    {"t": 31.07, "what": "GEO optimisation: a painting of a head full of books for 'original research'."},
+    {"t": 34.53, "what": "Frame shows orange text 'I'll send you what I use. Comment Marketing' as he asks."}
+  ],
+  "graphics": {"captions": "word_by_word", "caption_position": "middle",
+               "devices": ["costume_or_skit", "title_text", "screenshot", "product_ui", "b_roll"],
+               "density": "moderate", "per_minute_estimate": 18},
+  "characters": [
+    {"who": "Three clones of the creator labelled SEO, AEO and GEO",
+     "enters": "All three are on screen from frame one, standing in fixed spots with their labels.",
+     "acts": "Take turns speaking in a fixed SEO-AEO-GEO order across three rounds; the wall frame shows the matching picture.",
+     "exits": "Never leave; all three stand in place to the last frame.",
+     "comes_back": true}
+  ],
+  "cta": {"kind": "comment", "t": 34.53},
+  "why_it_works": [
+    "Three labelled clones turn an abstract comparison into who-is-talking, so the viewer tracks three ideas by position.",
+    "A repeating three-round structure (what it is, where it matters, how to optimise) sets up a rhythm the viewer can predict.",
+    "Each analogy (bookshop shelf, teacher calling on a kid, name on the board) is shown as a picture in the wall frame as it is said.",
+    "Comment-keyword CTA ('Marketing') drives comments with a promised tool."
+  ],
+  "weaknesses": [
+    "Only 3 cuts in 38 s; one locked shot runs 28 s, so the picture changes come only from the small wall frame.",
+    "Face is small (6% of frame height) because three bodies share the frame.",
+    "The wall frame goes blank white for several seconds around 7-15 s, losing the visual support."
+  ],
+  "for_robert": "Give Fred a labelled role and let him and Robert trade lines in a fixed order (e.g. Robert = SEO, Fred = GEO), with a picture frame in the scene that changes per line; avoid leaving that frame empty."
+}

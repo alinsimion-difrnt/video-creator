@@ -1,0 +1,59 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "b25ba0d43981882a86be19a71b7ee4c7594be0728fee4b9a319918fed4d427d0",
+    "created_at": "2026-10-05T07:00:11.410959Z"
+  },
+  "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+  "task": "a1-p4",
+  "shots": [
+    {
+      "shot": "s010",
+      "shot_type": "abstract",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Two small split-colour orbs that converge around a typed-on 'v4 Turbo' label, then a centred dotted-particle face/head that shimmers while a two-line karaoke caption beneath it highlights the spoken words",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "v4 Turbo",
+        "[friendly] Uh, hi there, I'm calling to check on a prior authorization for medication for my mother. It should",
+        "be under Doctor Zhihao Qin , and the medication is \"Semaglutide\". [checking] Okay, Doctor Zhihao Qin ,",
+        "semaglutide. Got it. [professional] Okay, great. So the request came through on Monday, one milligram",
+        "weekly, and it's been approved for twelve months. Thank you. Actually, would you be able to provide the",
+        "medicine information in Mandarin so that my mother can understand it? Her English is not so good.",
+        "v4"
+      ],
+      "text_word_count": 89,
+      "typography": "'v4 Turbo' in a small bold geometric sans, sentence/mixed case, typed on character by character; captions in a small regular-weight grotesque sans, sentence case, normal tracking, centred two-line blocks with the currently spoken words switched to a darker/saturated weight and bracketed audio-tag cues ([friendly], [checking], [professional]) inline; later caption blocks are Chinese characters (too small to quote verbatim, not counted). Closing giant 'v4' glyphs in a heavy rounded sans. Font names unknown (low-confidence guess: a neo-grotesque like Inter).",
+      "depth_cues": ["blur"],
+      "what_happens": "Opening on a flat off-white field, two small half-and-half orbs emit fading ring pulses at the left and right edges and slide inward while 'v4 Turbo' types on between them (words w236-w237 '11V4 turbo'); the label breaks into a dispersing particle cloud that resolves into a dotted, shimmering face. For the rest of the shot a phone-call demo plays (w238-w316: prior authorization, Dr. Zhihao Qing, semaglutide, request in Mandarin) with karaoke captions paging every two lines; from about 2:16 the captions switch to Chinese for the untranscribed Mandarin reply. Near the end the particle face dissolves and huge blurred 'v' and '4' glyphs sweep into frame, leading into s011.",
+      "build_rebuild": "On an off-white canvas, animate a canvas/WebGL point cloud sampled from a face mesh with per-point noise jitter, and below it render a two-line caption that pages by line pair and toggles each word's colour/weight active as its word timestamp (w238-w316) is reached.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s011",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "An oversized, heavily defocused '4' glyph with a green-to-black gradient filling most of the frame, with the edge of the red 'v' stroke at left",
+      "transition_in": "other",
+      "transition_other": "Continuation of the giant-glyph camera sweep begun at the end of s010; the cut detector split the motion-blurred move rather than a designed cut",
+      "on_screen_text": ["4"],
+      "text_word_count": 1,
+      "typography": "Single giant numeral in a heavy, rounded geometric sans, extremely out of focus with film grain; colour from code.",
+      "depth_cues": ["blur", "grain"],
+      "what_happens": "A brief (about 0.6 s) camera pass across the enormous, blurred '4' of the 'v4' mark with a swoosh in the audio (x094), bridging from the turbo demo into the closing line that begins at w317 'The next frontier'.",
+      "build_rebuild": "Scale a 'v4' text layer to roughly 8x the frame, apply a strong Gaussian blur plus grain overlay, and tween its x-position across the frame in about 0.6 s with an ease-in-out so the '4' fills the screen mid-move.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

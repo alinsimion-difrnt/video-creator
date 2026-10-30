@@ -1,0 +1,44 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "95db406329df9f000130d5608a699fefc5bbbeda41cc91367290ebea7d83f484",
+    "created_at": "2026-10-05T06:39:05.128953Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e032",
+  "task": "a2-e032",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Browser viewport and tab strip: Jira Product Discovery idea view replaced by a Medium article (uxdesign.cc) via a blank white loading frame",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "hard swap through a one-to-two-frame white flash (browser tab switch / page load)",
+      "is_text": true,
+      "text": "Templates increase user engagement and productivity",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 70, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "browser tab switch",
+    "description": "The screen recording switches from the Jira Product Discovery tab to a second browser tab showing an external article; the viewport goes white for about a frame while the page paints, then the article appears fully formed. Lands on 'or better again' after 'dropping a link'.",
+    "why_premium": "Shows the real source of an insight (an external article) in the same browser chrome, so the cut reads as the user's own workflow rather than an edit; timed to the narration pivot so the context switch feels motivated."
+  },
+  "build_hint": {
+    "gsap": "Faithful replica: tl.set(jiraView, {autoAlpha: 0}).set(whiteFlash, {autoAlpha: 1}).set(articleView, {autoAlpha: 1}, '+=0.033').set(whiteFlash, {autoAlpha: 0}); plus tl.set(tabA, {className: 'tab'}).set(tabB, {className: 'tab active'}, 0). Polished alternative: gsap.fromTo(articleView, {autoAlpha: 0}, {autoAlpha: 1, duration: 0.15, ease: 'power1.out'}) with no flash.",
+    "remotion": "Sequence switch at the event frame: render <JiraView/> before, a 1-2 frame white <AbsoluteFill/>, then <ArticleView/>; active tab styling switches on the same frame. No spring (step change)."
+  },
+  "confidence": "medium",
+  "notes": "Screen-recording tab switch, not an authored transition; the whole frame changes so all OCR text boxes are part of one swapped page and are not listed individually. Could arguably be logged as a shot-level hard_cut rather than an event. No SFX candidates."
+}

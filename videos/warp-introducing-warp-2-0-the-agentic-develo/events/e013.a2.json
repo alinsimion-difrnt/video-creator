@@ -1,0 +1,44 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "0fc9819327eb726dfc85f540cbd4ea67e3dc23a463cdacdaeffddaccc5b00105",
+    "created_at": "2026-10-05T06:54:05.139098Z"
+  },
+  "video": "warp-introducing-warp-2-0-the-agentic-develo",
+  "event": "e013",
+  "task": "a2-e013",
+  "elements": [
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Rust source in the Warp vi editor pane, scrolling upward continuously",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 800, "easing_class": "linear"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "masked_scroll",
+    "proposed_name": null,
+    "description": "In a split frame, the presenter talks on the left while, on the right, a Warp window on a peach gradient shows Warp's own Rust source (line numbers around 10349-10378). The code scrolls steadily upward inside the fixed window as he says 'using Warp to build Warp'.",
+    "why_premium": "A constant-speed code scroll behind a talking head is real proof of 'we build Warp with Warp' without needing to be read line by line. The fixed window mask and gradient frame keep it tidy and on-brand next to the live footage."
+  },
+  "build_hint": {
+    "gsap": "Put the code inside an overflow-hidden window. gsap.to(codeColumn, {y: '-=lineHeight*N', duration: totalDuration, ease: 'none'}); optionally snap to whole line heights (snap: {y: lineHeight}) to match the stepped feel. The presenter and window frame stay static.",
+    "remotion": "translateY = -(frame - s) * pxPerFrame on the code column inside an overflow-hidden <div>. Use a linear interpolate with extrapolateRight 'extend', or Math.round to line multiples for stepped scrolling. No spring."
+  },
+  "confidence": "medium",
+  "notes": "The energy curve alternates high and low frame to frame, which suggests the scroll advances in discrete steps (frame-cadence or line steps), not a smooth sub-pixel glide. Sibling e014 likely continues the same scroll. b02 (left half) changes only because the presenter moves while speaking, so it is not listed. No SFX candidates."
+}

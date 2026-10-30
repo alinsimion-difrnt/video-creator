@@ -1,0 +1,62 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "50cb307acb70038dd907302df100e066c25e791054beb1ff6442dc59eb7e253c",
+    "created_at": "2026-10-05T06:42:57.502552Z"
+  },
+  "video": "datadog-datadog-overview-see-inside-the-platfor",
+  "event": "e006",
+  "task": "a2-e006",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Security Signals UI screen (incoming, replaces network map)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["rotate", "scale_down", "other"],
+      "change_other": "3D perspective tilt that swings flat to full frame after a push-in through the outgoing network map",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 700, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Caption pill (text swap)",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["morph", "color_shift"],
+      "change_other": null,
+      "is_text": true,
+      "text": "and global security threats",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 100, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x015", "verdict": "unsure", "label": "unsure", "note": "507 ms before the burst; broadband onset that lines up with the periodic music percussion, no visual change at that moment"},
+    {"id": "x016", "verdict": "override", "label": "music", "note": "a sustained harmonic line starts here (music note), not an impact transient; coincides with the scene swap but reads as part of the bed"},
+    {"id": "x017", "verdict": "confirm", "label": "chime", "note": "bright transient near the UI settling flat; could be a music hit on the same periodic grid"}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "perspective ui settle",
+    "description": "The camera pushes into the network-flow map, then cuts to the Security Signals UI entering in a strong 3D perspective tilt that rotates and scales down to sit flat, full frame. The caption pill stays fixed in screen space and only swaps its text and gradient colour.",
+    "why_premium": "A fixed caption anchors the eye while the product UI swings in under it, so the scene change feels continuous. The decelerating 3D tilt gives a flat screenshot depth and momentum without a hard cut."
+  },
+  "build_hint": {
+    "gsap": "Outgoing scene: gsap.to(map, {scale: 1.12, duration: 0.25, ease: 'power2.in'}). Incoming UI: gsap.fromTo(ui, {rotationX: 35, rotationY: -25, rotationZ: -8, scale: 1.4, transformPerspective: 1200}, {rotationX: 0, rotationY: 0, rotationZ: 0, scale: 1, duration: 0.7, ease: 'expo.out'}). Caption: swap the textContent and the background gradient at the cut (set, no tween).",
+    "remotion": "Interpolate rotateX/rotateY/rotateZ and scale with spring({frame, fps, config: {damping: 200, stiffness: 120, mass: 1}}) (no overshoot) inside a perspective(1200px) container. Pick the caption text with a frame threshold at the cut."
+  },
+  "confidence": "medium",
+  "notes": "The outgoing network map is not on the end frame, so it has no box; its push-in is described under b01/pattern. Code reports camera push_in for the burst; the main visible motion is the UI 3D untilt. Inner boxes b03-b20 move only with the whole UI, so they are not listed separately."
+}

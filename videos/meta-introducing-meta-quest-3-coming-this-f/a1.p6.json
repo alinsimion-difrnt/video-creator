@@ -1,0 +1,195 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "0884e8b6a06a323b86928f544ba53383d3fdd2a0589315b1fc1c3eb740e5afe7",
+    "created_at": "2026-10-05T07:39:47.233664Z"
+  },
+  "video": "meta-introducing-meta-quest-3-coming-this-f",
+  "task": "a1-p6",
+  "shots": [
+    {
+      "shot": "s030",
+      "shot_type": "other",
+      "shot_type_other": "kinetic-type gradient card intercut with a short lifestyle footage insert, ending on the next type card",
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Centred white caption 'Get ready for the most' on a dark purple-to-teal gradient, then a man in the headset playing, then the word 'Powerful'",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": ["Get ready for the most", "Powerful"],
+      "text_word_count": 6,
+      "typography": "Bold geometric sans-serif, sentence case, white, normal tracking, single centred line; 'Powerful' arrives larger and motion-blurred. Same family as all earlier captions (low-confidence guess: Meta's Optimistic Display).",
+      "depth_cues": ["blur"],
+      "what_happens": "The closing line 'Get ready for the most' holds centred on the dark gradient card, then about a second of handheld footage shows a man in the headset swinging his arm in a blue-lit room, and the shot returns to the gradient card as 'Powerful' blurs in larger.",
+      "build_rebuild": "Hold a centred white bold sans caption on a dark radial gradient for ~0.5 s, hard cut to ~1 s of lifestyle footage, then cut back to the same gradient and blur-in the next single word at a larger size.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s031",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The single word 'Powerful' centred on the dark gradient",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": ["Powerful"],
+      "text_word_count": 1,
+      "typography": "Large bold geometric sans-serif, sentence case, white, normal tracking, centred; noticeably larger than the preceding sentence line to give the word emphasis.",
+      "depth_cues": ["none"],
+      "what_happens": "'Powerful' holds sharp and static in the centre of the purple-to-teal gradient card for under a second (one sampled frame).",
+      "build_rebuild": "Show one oversized centred white bold word on the dark gradient card and hold it static for about 0.9 s, roughly two music beats.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s032",
+      "shot_type": "footage",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "A woman in the white headset lunging and swinging the controllers in a warm, sunlit living room",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": ["glow", "blur"],
+      "what_happens": "Low-angle live-action shot of a player dancing/lunging in a mid-century living room, with backlit curtains and a sun flare behind her; the camera drifts slightly as she moves. No text.",
+      "build_rebuild": "Cut to a ~1 s low-angle warm-graded lifestyle clip with the subject left of centre and a backlit window flare on the right.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s033",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Caption 'Meta Quest yet' on the dark gradient, then a woman putting the headset on",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": ["Meta Quest yet"],
+      "text_word_count": 3,
+      "typography": "Bold geometric sans-serif, title-case product name plus lowercase 'yet', white, normal tracking, single centred line; 'yet' blurs in last.",
+      "depth_cues": ["blur"],
+      "what_happens": "'Meta Quest' sits centred while 'yet' arrives with a blur and settles, completing the line 'Get ready for the most Powerful Meta Quest yet'; in the last sampled frame the shot has already moved to a wide-angle shot of a smiling woman lowering the headset over her eyes.",
+      "build_rebuild": "Show the product name centred on the gradient card, blur-in the final word over ~0.2 s, hold ~0.5 s, then cut to a wide-lens lifestyle clip of a user putting on the headset.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s034",
+      "shot_type": "other",
+      "shot_type_other": "lifestyle footage into a product-render push through the lenses, a product hero lockup with logo and price, then a title end card",
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Headset and two controllers floating on the dark gradient above the 'Meta Quest 3 / From $499' lockup, then the end line 'Coming this fall'",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": ["Meta Quest 3", "From $499", "Meta Quest is for ages 13+.", "Coming this fall"],
+      "text_word_count": 14,
+      "typography": "'Meta Quest 3' is the brand wordmark lockup with the infinity mark, regular/medium weight, title case; 'From $499' bold sans directly below (it builds in, 'From' first); the age note is a small light sans footnote near the bottom; 'Coming this fall' is a bold sentence-case white line centred on the gradient, entering with a heavy horizontal motion-blur smear.",
+      "depth_cues": ["shadow", "blur", "perspective_tilt"],
+      "what_happens": "The woman finishes pulling the headset on, cut to a render looking into the lenses, then the headset and controllers settle from a three-quarter angle to front-on on the dark gradient; the Meta Quest 3 lockup, 'From $499' and an age footnote appear and hold for about 2 s. At about 1:15 everything clears and 'Coming this fall' smears in horizontally and holds to the end.",
+      "build_rebuild": "Rotate a headset render with controllers left and right from three-quarter to front view over ~1 s with ease-out, fade in a centred logo lockup with price line and small footnote below, hold ~2 s, then cut to the bare gradient and slide in the end line with a horizontal motion-blur streak and hold ~2 s.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001", "s002", "s003"], "words": null},
+      {"beat": "proof", "shots": ["s004", "s005"], "words": null},
+      {"beat": "mechanism", "shots": ["s006", "s007", "s008", "s009", "s010", "s011", "s012", "s013"], "words": null},
+      {"beat": "demo", "shots": ["s014", "s015", "s016", "s017", "s018", "s019", "s020", "s021"], "words": null},
+      {"beat": "mechanism", "shots": ["s022", "s023"], "words": null},
+      {"beat": "proof", "shots": ["s024", "s025", "s026", "s027", "s028"], "words": null},
+      {"beat": "outcome", "shots": ["s029", "s030", "s031", "s032", "s033"], "words": null},
+      {"beat": "cta", "shots": ["s034"], "words": null}
+    ],
+    "hook": {
+      "text": "Introducing Meta Quest 3 / Reimagined and redesigned / From the inside out",
+      "technique": "other",
+      "technique_other": "cinematic product reveal: brand mark zoom-through into a hero 3D render with an exploded view",
+      "shots": ["s001", "s002", "s003"],
+      "words": null
+    },
+    "cta": {
+      "text": "Meta Quest 3 From $499 / Coming this fall",
+      "shots": ["s034"]
+    },
+    "tone": "Energetic, aspirational consumer-hardware launch: polished pastel and dark-gradient 3D product renders alternate with warm lifestyle and gameplay footage, driven by music and short kinetic captions rather than narration.",
+    "signature_moments": [
+      {
+        "shots": ["s001", "s002", "s003"],
+        "description": "The Meta mark zooms through into a macro product render, pulls back to the hero headset with controllers, and ends in an exploded view with 'From the inside out' set in the gap between the layers.",
+        "why_premium": "One continuous camera move links brand, product and engineering story, and putting text inside the exploded geometry reads as designed for the product rather than overlaid."
+      },
+      {
+        "shots": ["s016"],
+        "description": "The camera pushes into the headset's centre sensor pill, which becomes a glowing tunnel that 'Breakthrough' flies out of before it smears into 'Meta Reality'.",
+        "why_premium": "Using a real product detail as the transition portal (a match-cut style zoom-through) makes the cut feel motivated and gives the feature reveal energy."
+      },
+      {
+        "shots": ["s019"],
+        "description": "'With natural depth perception' is placed word by word in 3D space inside a mixed-reality tabletop battle, camera-tracked and occluded by the figurines.",
+        "why_premium": "The typography itself shows the feature (depth); 3D tracking and roto occlusion are expensive craft that flat captions cannot match."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 4,
+        "evidence": "The cold open goes straight from the brand mark into a striking product reveal and exploded view within about 8 s. It is visually strong but a classic launch reveal rather than a tension or problem hook.",
+        "refs": ["s001", "s002", "s003"]
+      },
+      "clarity": {
+        "score": 5,
+        "evidence": "Each shot carries one short benefit caption (40% slimmer, double the GPU power, full-color passthrough, TruTouch haptics, 500+ titles), backed by a matching visual, and it closes on product, price and launch window.",
+        "refs": ["s004", "s010", "s018", "s022", "s028", "s034"]
+      },
+      "ui_showcase": {
+        "score": 3,
+        "evidence": "This is a hardware launch, so there is no software UI. The showcase is product renders plus gameplay and mixed-reality footage, which is competent but shows no interface flows; the game-tile wall is the nearest thing to UI.",
+        "refs": ["s011", "s024", "s028"]
+      },
+      "motion_polish": {
+        "score": 5,
+        "evidence": "Caption motion is consistent throughout (blur-in, word-by-word builds, horizontal smear exits), with motivated zoom-throughs (logo, sensor pill, lens) and 3D-tracked occluded type. The closing kinetic line is cut on the music.",
+        "refs": ["s002", "s016", "s019", "s024", "s030", "s034"]
+      },
+      "sound_design": {
+        "score": 3,
+        "evidence": "Judged from anchors only (not heard): a 126 BPM music bed at -16.5 LUFS integrated, with 73 SFX candidates that are mostly 'unsure' or 'swoosh_reverse' and cluster on transitions and caption smears (e.g. 1.8-8.4 s, 47.9-52.6 s, 65-71 s). This suggests a music-led mix with whoosh accents, but quality cannot be confirmed beyond that.",
+        "refs": ["s002", "s022", "s030", "s034"]
+      },
+      "vo_script_quality": {
+        "score": null,
+        "evidence": "There is no voice-over. The transcript is 12 fragmentary words (w0-w11), probably song lyrics or ambient vocal, and all of the copy is on-screen text.",
+        "refs": ["w0", "w11"]
+      },
+      "brand_consistency": {
+        "score": 5,
+        "evidence": "One sans family and centred caption system throughout, recurring pastel and dark purple-teal gradient backdrops, the Meta mark at the open and in the end lockup, and a consistent product render style.",
+        "refs": ["s001", "s014", "s030", "s034"]
+      },
+      "works_muted": {
+        "score": 5,
+        "evidence": "Every claim is carried by on-screen captions and visuals, and there is no narration, so the story, price and launch window are fully readable with the sound off.",
+        "refs": ["s009", "s020", "s028", "s034"]
+      },
+      "overall": {
+        "score": 5,
+        "evidence": "A tightly paced 77 s launch film that combines high-end 3D product renders, lifestyle and gameplay footage, and a disciplined kinetic caption system. Each feature gets one clear beat, and it ends on a crisp price-and-date end card.",
+        "refs": ["s002", "s016", "s019", "s028", "s034"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 2,
+      "baked_in_text": true,
+      "vo_dependent": false,
+      "notes": "Not dependent on VO, but all copy is baked into the picture as animated captions, some of it 3D-tracked and occluded inside the footage (s019), plus price and age footnotes. Localising means re-rendering the type layers, and the per-word kinetic builds would need re-timing for longer languages."
+    }
+  }
+}

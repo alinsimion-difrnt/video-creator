@@ -1,0 +1,192 @@
+{
+  "$defs": {
+    "Annotator": {
+      "enum": [
+        "code",
+        "claude-code",
+        "human"
+      ],
+      "title": "Annotator",
+      "type": "string"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "description": "Carried by every output JSON (BUILD_PLAN section 2.7).",
+      "properties": {
+        "annotator": {
+          "$ref": "#/$defs/Annotator"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "input_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Input Hash",
+          "type": "string"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "schema_version": {
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "skill": {
+          "anyOf": [
+            {
+              "pattern": "^[a-z0-9-]+@[0-9a-f]{8,64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Skill"
+        },
+        "stage": {
+          "title": "Stage",
+          "type": "string"
+        },
+        "tool_version": {
+          "title": "Tool Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool_version",
+        "stage",
+        "annotator",
+        "input_hash",
+        "created_at"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "Range": {
+      "additionalProperties": false,
+      "description": "A measured value for building: the weighted median and the typical (25-75%) range.",
+      "properties": {
+        "high": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "High"
+        },
+        "low": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Low"
+        },
+        "median": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Median"
+        },
+        "n": {
+          "minimum": 0,
+          "title": "N",
+          "type": "integer"
+        },
+        "videos": {
+          "minimum": 0,
+          "title": "Videos",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "median",
+        "low",
+        "high",
+        "n",
+        "videos"
+      ],
+      "title": "Range",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "caption_words_per_group": {
+      "$ref": "#/$defs/Range"
+    },
+    "cuts_on_beat_share": {
+      "$ref": "#/$defs/Range"
+    },
+    "duration_s_by_format": {
+      "additionalProperties": {
+        "$ref": "#/$defs/Range"
+      },
+      "title": "Duration S By Format",
+      "type": "object"
+    },
+    "pace_cv": {
+      "$ref": "#/$defs/Range"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    },
+    "scene_s_by_archetype": {
+      "additionalProperties": {
+        "$ref": "#/$defs/Range"
+      },
+      "title": "Scene S By Archetype",
+      "type": "object"
+    },
+    "shot_s": {
+      "$ref": "#/$defs/Range"
+    },
+    "shot_s_by_format": {
+      "additionalProperties": {
+        "$ref": "#/$defs/Range"
+      },
+      "title": "Shot S By Format",
+      "type": "object"
+    },
+    "time_to_first_ui_s": {
+      "$ref": "#/$defs/Range"
+    }
+  },
+  "required": [
+    "provenance",
+    "shot_s",
+    "shot_s_by_format",
+    "duration_s_by_format",
+    "scene_s_by_archetype",
+    "pace_cv",
+    "cuts_on_beat_share",
+    "time_to_first_ui_s",
+    "caption_words_per_group"
+  ],
+  "title": "PacingSpec",
+  "type": "object"
+}

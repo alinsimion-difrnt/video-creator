@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "4c156e4dbbda18040ae536499a4c38da6c931557a1e18e0f3d962dc9adf2ddec",
+    "created_at": "2026-10-05T06:47:52.975296Z"
+  },
+  "video": "notion-introducing-notion-ai-connectors",
+  "event": "e006",
+  "task": "a2-e006",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Slack and Notion icon tiles (sequential grey flash)",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["color_shift", "highlight"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 70, "easing_class": "step", "source": "model_estimate"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Google Drive tile right edge (residual flash at burst start)",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["color_shift"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 35, "easing_class": "step", "source": "model_estimate"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "beat synced icon flash",
+    "description": "In the tight crop of the connector tray, tiles flash to a darkened grey state one at a time for a frame or two (Slack at f145, Notion at f154), then snap back, continuing the left-to-right flash run from earlier events.",
+    "why_premium": "Each flash lands on a music transient, so the static logo row pulses in rhythm and the eye is walked across each integration without any layout motion or extra graphics."
+  },
+  "build_hint": {
+    "gsap": "For each tile in order, `.set(tile, {filter: 'brightness(0.55) saturate(0.6)'}, beatTime)` then `.set(tile, {filter: 'none'}, beatTime + 0.067)`; no tween or ease, beat-spaced (about 0.27 s here) rather than a fixed stagger.",
+    "remotion": "Per tile index i, `const on = frame >= beatFrames[i] && frame < beatFrames[i] + 2;` and `filter: on ? 'brightness(0.55)' : 'none'` with no interpolate; beatFrames from the music beat list."
+  },
+  "confidence": "medium",
+  "notes": "b02 is a union box spanning both Slack and Notion, which flash at different frames; kept as one element rather than inventing boxes. b01 is a thin sliver at the Drive tile's right edge; the f143 filmstrip crop shows a grey tile edge there, but it is unclear whether Drive flashed or this is a crop or encode artefact. Part of a recurring run with e002 and e004."
+}

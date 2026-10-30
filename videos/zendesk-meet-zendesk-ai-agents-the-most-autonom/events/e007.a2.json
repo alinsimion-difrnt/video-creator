@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "9906ff359b95e4655507067b7447109ef3914a2cfc6550366933b2b5256140fe",
+    "created_at": "2026-10-05T07:35:56.098108Z"
+  },
+  "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+  "event": "e007",
+  "task": "a2-e007",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Customer chat bubble",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["fade", "scale_up", "slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "A reward from my last purchase seems to be missing",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 500, "easing_class": "ease_out", "source": "model_estimate"}
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Customer avatar",
+      "role": "avatar",
+      "role_other": null,
+      "change_types": ["fade", "scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 500, "easing_class": "ease_out", "source": "model_estimate"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "notification_pop",
+    "proposed_name": null,
+    "description": "The customer's message bubble and avatar pop into the conversation column below the agent greeting, arriving as one unit with a fast onset and a long settle.",
+    "why_premium": "Text arrives already whole inside the bubble (no typing), timed on the narration's 'Imagine a customer', with a sharp entrance and long decay that settles with no overshoot, so the chat reads as calm and real."
+  },
+  "build_hint": {
+    "gsap": "tl.fromTo([bubble, avatar], {autoAlpha: 0, scale: 0.92, y: 16, transformOrigin: 'right bottom'}, {autoAlpha: 1, scale: 1, y: 0, duration: 0.5, ease: 'power3.out', stagger: 0.03}) at the narration word 'a' (~25.11s); text is static inside the bubble.",
+    "remotion": "const p = spring({frame: frame - start, fps, config: {damping: 26, stiffness: 180, mass: 1}}); bubble and avatar style {opacity: interpolate(p,[0,0.4],[0,1],{extrapolateRight:'clamp'}), transform: `translateY(${(1-p)*16}px) scale(${0.92+0.08*p})`}; avatar delayed 1 frame; critically damped, no overshoot."
+  },
+  "confidence": "medium",
+  "notes": "Filmstrip crops track the bubble, so its exact travel direction (slide_up vs pure scale) is uncertain; camera.move is none, and the scale 0.96 sum is the bubble growing in, not a camera move. Text lines b03/b04 move with the bubble and are not listed separately. The spectrogram shows rhythmic music transients but no SFX candidates."
+}

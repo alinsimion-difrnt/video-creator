@@ -1,0 +1,1543 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "s8_reconcile",
+    "annotator": "code",
+    "skill": null,
+    "model": null,
+    "input_hash": "6905d062c7c848157afaf6c846bfe21a8b4751800a23978be22d8f2a0ed27735",
+    "created_at": "2026-10-05T12:18:14.996266Z"
+  },
+  "video": "notion-what-is-notion",
+  "brand": "Notion",
+  "title": "What is Notion?",
+  "format": "narrated_explainer",
+  "tier": "average",
+  "duration_s": 86.8543,
+  "fps": 23.81,
+  "frame_size": [
+    1280,
+    720
+  ],
+  "palette": [
+    "#fcfcfc",
+    "#dde2e6",
+    "#7a899d",
+    "#030303",
+    "#3c4041",
+    "#eeee71"
+  ],
+  "summary": {
+    "beats": [
+      {
+        "beat": "hook",
+        "shots": [
+          "s001",
+          "s002",
+          "s003"
+        ],
+        "words": [
+          0,
+          4
+        ]
+      },
+      {
+        "beat": "problem",
+        "shots": [
+          "s004"
+        ],
+        "words": [
+          5,
+          24
+        ]
+      },
+      {
+        "beat": "mechanism",
+        "shots": [
+          "s004"
+        ],
+        "words": [
+          25,
+          55
+        ]
+      },
+      {
+        "beat": "demo",
+        "shots": [
+          "s004"
+        ],
+        "words": [
+          56,
+          99
+        ]
+      },
+      {
+        "beat": "proof",
+        "shots": [
+          "s004"
+        ],
+        "words": [
+          100,
+          115
+        ]
+      },
+      {
+        "beat": "outcome",
+        "shots": [
+          "s004",
+          "s005"
+        ],
+        "words": [
+          116,
+          136
+        ]
+      }
+    ],
+    "hook": {
+      "text": "What is Notion? ... Notion? Hmm. (a giant blinking caret types 'Notion is' and trails off into dots)",
+      "technique": "question",
+      "technique_other": null,
+      "shots": [
+        "s001",
+        "s002",
+        "s003"
+      ],
+      "words": [
+        0,
+        4
+      ]
+    },
+    "cta": {
+      "text": null,
+      "shots": []
+    },
+    "tone": "Confident, witty and minimal: a calm, self-aware voice-over that admits the product is hard to define, on a quiet monochrome canvas with a playful hand-drawn mascot, ending on a warm reframe rather than a hard sell.",
+    "signature_moments": [
+      {
+        "shots": [
+          "s001",
+          "s002",
+          "s003"
+        ],
+        "description": "The video opens on a frame-high blinking caret that types 'N', flashes 'No', then pulls back to a normal-size 'Notion is...' whose dots keep running while the voice-over hesitates.",
+        "why_premium": "Turns the product's own core interaction (typing in a blank page) into the hook with nothing but type and scale, which shows confidence and restraint and sets up a question the film pays off."
+      },
+      {
+        "shots": [
+          "s004"
+        ],
+        "description": "A 67 s single continuous take where scenes (negation lines, workspace, AI prompt, transcript, kanban, search, chat, logo wall, roadmap) hand off through camera pushes and morphs with no cuts, guided by a persistent line-drawn mascot.",
+        "why_premium": "Cut-free choreography of 36 timed events in one shared space reads as one coherent product, not a montage of screenshots, and needs careful timeline engineering that cheap explainers skip."
+      },
+      {
+        "shots": [
+          "s005"
+        ],
+        "description": "Bookend: 'Notion is...' is retyped, deleted back to 'Notion' and rewritten as 'Notion does', while a checklist of busywork ticks itself off and ends on one empty 'To-do' with the cursor resting on it before the logo lockup.",
+        "why_premium": "The edit-in-place answer to its own opening question gives the script a clear payoff, and leaving the last to-do unticked visually lands 'so you can do your life's work' without extra copy."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 4,
+        "evidence": "Pure typographic hook: a giant caret and a typed 'Notion is...' with the spoken question and a self-aware 'Hmm.' Intriguing and on-brand, but it takes about 7 s before any claim is made.",
+        "refs": [
+          "s001",
+          "s002",
+          "s003",
+          "w0",
+          "w4"
+        ]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "Clear arc: three negations, a one-line positioning ('a better way to work... all in one place'), then concrete vignettes each tied to a 'Where every...' line, and a bookend answer. Vignettes move fast and much UI text is too small to read, so the details lean on the voice-over.",
+        "refs": [
+          "s004",
+          "s005",
+          "w5",
+          "w25",
+          "w57",
+          "w69",
+          "w83",
+          "w125"
+        ]
+      },
+      "ui_showcase": {
+        "score": 5,
+        "evidence": "Simplified recreated UI shows real end-to-end workflows (prompt builds a project tracker, live meeting transcript becomes a summary, a kanban card flips to Merged, enterprise search answers, AI replies in chat, roadmap flips to Launched), each staged at readable zoom with a camera push to the key element.",
+        "refs": [
+          "s004",
+          "w44",
+          "w57",
+          "w69",
+          "w83",
+          "w93"
+        ]
+      },
+      "motion_polish": {
+        "score": 5,
+        "evidence": "Anchors detect no cut across 67 s of s004 yet 36 motion events; per the sheets every scene change is a push, zoom or morph in one space, and s005 reuses the typewriter, checklist and camera-push language cleanly. Easing curves were not measured in this pass, so this is judged from sampled frames only.",
+        "refs": [
+          "s004",
+          "s005"
+        ]
+      },
+      "sound_design": {
+        "score": 3,
+        "evidence": "Judged from anchors plus visuals: a 152 BPM music bed at -14.34 LUFS integrated; of 23 SFX candidates nearly all classify as music, with only three chimes (x014 at 57.6 s near the search answer, x021 at 73.3 s before 'So,', x022 at 81.0 s during the checklist) and one impact (x015). Typing and clicks on screen have no detected matching SFX, so sound reads as a competent music-led mix rather than designed sound.",
+        "refs": [
+          "s004",
+          "s005",
+          "w93",
+          "w116",
+          "w128"
+        ]
+      },
+      "vo_script_quality": {
+        "score": 5,
+        "evidence": "Tight, rhythmic script: rule-of-three negations, anaphoric 'Where every meeting... Where every project... Where everyone...', and a bookend reframe ('Maybe that's the wrong question. Notion does the busy work, so you can do your life's work.') that pays off the opening question.",
+        "refs": [
+          "w5",
+          "w24",
+          "w56",
+          "w69",
+          "w83",
+          "w120",
+          "w136"
+        ]
+      },
+      "brand_consistency": {
+        "score": 5,
+        "evidence": "One near-white monochrome canvas, one sans family, Notion's hand-drawn mascot recurring through s004, recreated Notion UI and a closing logo lockup; opening and closing shots share the same typed-line device.",
+        "refs": [
+          "s001",
+          "s003",
+          "s004",
+          "s005"
+        ]
+      },
+      "works_muted": {
+        "score": 4,
+        "evidence": "The negations ('Notion is not an AI chatbot' etc.), the demos and the closing 'Notion does' plus self-ticking checklist read without sound. The positioning lines ('a better way to work', 'does the work for you') and the 'life's work' payoff are voice-over only.",
+        "refs": [
+          "s004",
+          "s005",
+          "w25",
+          "w50",
+          "w135"
+        ]
+      },
+      "overall": {
+        "score": 5,
+        "evidence": "Best-in-class brand explainer: a type-only hook, a seamless single-take product tour with real workflows, and a script that answers its own question in a visual bookend. Held back only by music-led sound design and dense, fast UI vignettes.",
+        "refs": [
+          "s001",
+          "s004",
+          "s005",
+          "w124",
+          "w136"
+        ]
+      }
+    },
+    "localization_friendliness": {
+      "score": 2,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "English kinetic lines ('Notion is not a...', 'Notion does') and every recreated UI string (prompts, transcript, kanban, chat, checklist) are baked into the animation, and the positioning and payoff lines exist only in voice-over. Localising means re-rendering the motion graphics and re-recording VO timed to the typing beats; the monochrome, logo-light layout does make a re-render practical."
+    }
+  },
+  "shots": [
+    {
+      "id": "s001",
+      "start_s": 0.0,
+      "end_s": 3.3179,
+      "transition_in": null,
+      "motion_energy": 0.002142,
+      "wpm": 54.3,
+      "annotation": {
+        "shot": "s001",
+        "shot_type": "kinetic_type",
+        "shot_type_other": null,
+        "composition": "full_bleed",
+        "composition_other": null,
+        "focal_element": "An oversized, near frame-height black text caret blinking on a plain white field",
+        "transition_in": "other",
+        "transition_other": "none: the video opens on this shot",
+        "on_screen_text": [
+          "N"
+        ],
+        "text_word_count": 1,
+        "typography": "Single giant uppercase letter in a heavy geometric/grotesque sans (bold weight, tight); caret is a thick vertical bar. Font guess (low confidence): Inter or similar neo-grotesque.",
+        "depth_cues": [
+          "none"
+        ],
+        "what_happens": "Extreme close-up of an empty text field: a giant caret blinks on and off (visible in the 0.5 s, 1.5 s and 2.0 s frames, absent in others) and appears at different horizontal positions across samples, while the voice-over asks the title question (w0-w2). At about 3.0 s the first letter 'N' is typed, filling the centre of the frame.",
+        "build_rebuild": "Render a white full-frame canvas with a 16px-wide black caret scaled to ~90% frame height, toggle its opacity on a ~0.5 s step blink, then at the end of the shot replace it with a centred bold 'N' at the same scale as if typed.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "id": "s002",
+      "start_s": 3.3179,
+      "end_s": 3.4019,
+      "transition_in": "hard_cut",
+      "motion_energy": 0.00001,
+      "wpm": null,
+      "annotation": {
+        "shot": "s002",
+        "shot_type": "kinetic_type",
+        "shot_type_other": null,
+        "composition": "centered",
+        "composition_other": null,
+        "focal_element": "The giant bold letters 'No' filling the white frame",
+        "transition_in": "hard_cut",
+        "transition_other": null,
+        "on_screen_text": [
+          "No"
+        ],
+        "text_word_count": 1,
+        "typography": "Very large bold sans, sentence case (capital N, lowercase o), tight default tracking, black on white. Font guess (low confidence): Inter Bold.",
+        "depth_cues": [
+          "none"
+        ],
+        "what_happens": "A two-frame flash (about 0.08 s) in which the typed word has grown to 'No' at extreme magnification; it reads as the second keystroke of the typing sequence just before the framing pulls back.",
+        "build_rebuild": "Insert a 2-frame hold of centred bold 'No' at ~55% frame height on white, hard-cut between the 'N' frame and the zoomed-out 'Notion' line to fake a rapid typing zoom-out.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "id": "s003",
+      "start_s": 3.4019,
+      "end_s": 6.9719,
+      "transition_in": "hard_cut",
+      "motion_energy": 0.000526,
+      "wpm": 33.6,
+      "annotation": {
+        "shot": "s003",
+        "shot_type": "kinetic_type",
+        "shot_type_other": null,
+        "composition": "centered",
+        "composition_other": null,
+        "focal_element": "The centred typed line 'Notion is' with a thin blinking caret",
+        "transition_in": "hard_cut",
+        "transition_other": null,
+        "on_screen_text": [
+          "Notion is..............."
+        ],
+        "text_word_count": 2,
+        "typography": "Medium-size bold sans, sentence case, normal tracking, black on white, centred single line with a thin text caret after the last character. Font guess (low confidence): Inter Semibold/Bold.",
+        "depth_cues": [
+          "none"
+        ],
+        "what_happens": "Framing is now at normal reading scale: 'Notion' is typed, then ' is', and the caret blinks while the voice-over repeats 'Notion?' (w3) and hesitates 'Hmm.' (w4). Ellipsis dots are then typed, first three, then a long run of dots, dramatising the struggle to define the product; the line re-centres as it grows.",
+        "build_rebuild": "Centre a single bold text line on white and drive it with a typewriter effect (per-character reveal, re-centred each step) from 'Notion' to 'Notion is', hold with a 0.5 s caret blink, then append '...' and finally a rapid run of additional dots before the next shot.",
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "s004",
+      "start_s": 6.9719,
+      "end_s": 74.6325,
+      "transition_in": "push",
+      "motion_energy": 0.006387,
+      "wpm": 100.2,
+      "annotation": {
+        "shot": "s004",
+        "shot_type": "ui_recreated",
+        "shot_type_other": null,
+        "composition": "centered",
+        "composition_other": null,
+        "focal_element": "A simplified, recreated Notion UI card on a near-white canvas with Notion's line-drawn mascot face overlapping its top edge (keyframe: the 'Meeting @Today' page card).",
+        "transition_in": "push",
+        "transition_other": null,
+        "on_screen_text": [
+          "Meeting @Today",
+          "@Today"
+        ],
+        "text_word_count": 3,
+        "typography": "Clean grotesk UI sans (low-confidence guess: Inter or Notion's UI sans); page title in semibold sentence case at near-headline size, mention placeholder '@Today' in regular weight, grey, normal tracking.",
+        "depth_cues": [
+          "shadow"
+        ],
+        "what_happens": "This part only received the mid-shot keyframe for s004 (about 41 s in): a rounded white page card titled 'Meeting @Today' with a calendar icon, the mascot face partly covering the title, just before transcription starts (around w57-w68). The full 67 s single-take content of this shot is described in part a1-p2; this entry is consistent with it but adds nothing beyond the keyframe.",
+        "build_rebuild": "Render a 900x490 rounded card with a 1px light border on white, a calendar icon plus semibold 'Meeting @Today' title and grey '@Today' placeholder, and pin an SVG circular mascot face so it overlaps the card's top-left edge.",
+        "confidence": "low"
+      }
+    },
+    {
+      "id": "s005",
+      "start_s": 74.6325,
+      "end_s": 86.8543,
+      "transition_in": "crossfade",
+      "motion_energy": 0.006296,
+      "wpm": 93.3,
+      "annotation": {
+        "shot": "s005",
+        "shot_type": "kinetic_type",
+        "shot_type_other": null,
+        "composition": "centered",
+        "composition_other": null,
+        "focal_element": "The typed line 'Notion does' paired with a white checklist card whose to-dos tick themselves off, ending on a single empty 'To-do' and the Notion logo lockup.",
+        "transition_in": "crossfade",
+        "transition_other": null,
+        "on_screen_text": [
+          "Notion is...",
+          "Notion does",
+          "Busywork",
+          "Triage tasks",
+          "Update roadmap",
+          "Collect bug reports",
+          "Tag action items",
+          "Archive old ta",
+          "Review check",
+          "C",
+          "Compile m",
+          "To-do",
+          "Notion"
+        ],
+        "text_word_count": 25,
+        "typography": "Same bold grotesk sans as the opening, sentence case, normal tracking, black on near-white for the kinetic line; checklist items in regular weight, completed items grey with strike-through; 'To-do' in large grey regular weight; closing wordmark is Notion's own logotype in bold beside the cube logo. Font guess (low confidence): Inter.",
+        "depth_cues": [
+          "shadow"
+        ],
+        "what_happens": "Bookend to the opening: 'Notion' is typed with a caret, then 'is.' and 'is...' as the voice-over asks again 'what is Notion?' (w117-w119). The dots and 'is' are deleted back to 'Notion' ('Maybe that's the wrong question', w120-w124) and 'does' is typed (w125-w129). The line shifts left as a shadowed checklist card pops in beside it; items ('Busywork', 'Triage tasks', 'Update roadmap', 'Collect bug reports', 'Tag action items') append one by one and each checkbox fills blue and its text is struck through on its own. The camera pushes into the list, more items ('Archive old ta...', 'Review check...') check off at large scale, then the list fades to a single empty checkbox 'To-do'; a cursor glides onto it (around w130-w136, 'so you can do your life's work') without checking it. It cuts to a typed 'N' beside the Notion cube logo, completing to the 'Notion' lockup that holds to the end.",
+        "build_rebuild": "On a near-white canvas, typewriter 'Notion is...' then backspace to 'Notion' and type 'does'; slide the line left while a shadowed rounded checklist card scales in, append rows with a ~0.4 s stagger and, per row, fill the checkbox blue and draw a strike-through left to right; scale-push the camera into the list, crossfade to a lone empty 'To-do' row with a cursor easing onto its box, then type the 'Notion' wordmark next to the cube logo and hold.",
+        "confidence": "high"
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "e001",
+      "shot": "s003",
+      "kind": "motion",
+      "start_s": 3.9899,
+      "end_s": 4.1579,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e002",
+      "shot": "s004",
+      "kind": "motion",
+      "start_s": 8.1058,
+      "end_s": 8.6938,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e003",
+      "shot": "s004",
+      "kind": "motion",
+      "start_s": 11.4238,
+      "end_s": 11.7598,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e004",
+      "shot": "s004",
+      "kind": "motion",
+      "start_s": 14.1537,
+      "end_s": 14.4897,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e005",
+      "shot": "s004",
+      "kind": "camera",
+      "start_s": 16.0857,
+      "end_s": 16.4217,
+      "camera_move": "pan_left",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e006",
+      "shot": "s004",
+      "kind": "motion",
+      "start_s": 19.9496,
+      "end_s": 20.1176,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e007",
+      "shot": "s004",
+      "kind": "motion",
+      "start_s": 20.3276,
+      "end_s": 20.7476,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e008",
+      "shot": "s004",
+      "kind": "camera",
+      "start_s": 25.0315,
+      "end_s": 25.6615,
+      "camera_move": "push_in",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e009",
+      "shot": "s004",
+      "kind": "motion",
+      "start_s": 29.4834,
+      "end_s": 29.8194,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e010",
+      "shot": "s004",
+      "kind": "motion",
+      "start_s": 29.9454,
+      "end_s": 30.5754,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e011",
+      "shot": "s004",
+      "kind": "motion",
+      "start_s": 30.7434,
+      "end_s": 31.1634,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e012",
+      "shot": "s004",
+      "kind": "motion",
+      "start_s": 31.4574,
+      "end_s": 31.9614,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e013",
+      "shot": "s004",
+      "kind": "motion",
+      "start_s": 32.9693,
+      "end_s": 33.1793,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e014",
+      "shot": "s004",
+      "kind": "camera",
+      "start_s": 35.1113,
+      "end_s": 35.6573,
+      "camera_move": "push_in",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e015",
+      "shot": "s004",
+      "kind": "camera",
+      "start_s": 36.6233,
+      "end_s": 37.0433,
+      "camera_move": "pull_out",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e016",
+      "shot": "s004",
+      "kind": "motion",
+      "start_s": 39.1432,
+      "end_s": 39.4792,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e017",
+      "shot": "s004",
+      "kind": "motion",
+      "start_s": 40.1512,
+      "end_s": 40.4032,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e018",
+      "shot": "s004",
+      "kind": "motion",
+      "start_s": 40.6552,
+      "end_s": 41.3692,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e019",
+      "shot": "s004",
+      "kind": "motion",
+      "start_s": 41.4952,
+      "end_s": 41.7052,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e020",
+      "shot": "s004",
+      "kind": "motion",
+      "start_s": 42.7131,
+      "end_s": 43.5111,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e021",
+      "shot": "s004",
+      "kind": "motion",
+      "start_s": 44.6031,
+      "end_s": 45.6531,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e022",
+      "shot": "s004",
+      "kind": "camera",
+      "start_s": 45.9471,
+      "end_s": 46.5771,
+      "camera_move": "push_in",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e023",
+      "shot": "s004",
+      "kind": "camera",
+      "start_s": 47.711,
+      "end_s": 48.803,
+      "camera_move": "pull_out",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e024",
+      "shot": "s004",
+      "kind": "camera",
+      "start_s": 49.979,
+      "end_s": 50.735,
+      "camera_move": "pull_out",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e025",
+      "shot": "s004",
+      "kind": "motion",
+      "start_s": 51.701,
+      "end_s": 52.247,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e026",
+      "shot": "s004",
+      "kind": "camera",
+      "start_s": 52.9609,
+      "end_s": 53.8009,
+      "camera_move": "push_in",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e027",
+      "shot": "s004",
+      "kind": "camera",
+      "start_s": 54.2209,
+      "end_s": 55.3129,
+      "camera_move": "pull_out",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e028",
+      "shot": "s004",
+      "kind": "motion",
+      "start_s": 57.5388,
+      "end_s": 57.8328,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e029",
+      "shot": "s004",
+      "kind": "motion",
+      "start_s": 58.8828,
+      "end_s": 59.0088,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e030",
+      "shot": "s004",
+      "kind": "motion",
+      "start_s": 59.4708,
+      "end_s": 59.7228,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e031",
+      "shot": "s004",
+      "kind": "motion",
+      "start_s": 59.8908,
+      "end_s": 60.3108,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e032",
+      "shot": "s004",
+      "kind": "camera",
+      "start_s": 61.4028,
+      "end_s": 62.0748,
+      "camera_move": "pull_out",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e033",
+      "shot": "s004",
+      "kind": "camera",
+      "start_s": 62.6627,
+      "end_s": 63.5027,
+      "camera_move": "push_in",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e034",
+      "shot": "s004",
+      "kind": "motion",
+      "start_s": 67.4927,
+      "end_s": 68.1226,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e035",
+      "shot": "s004",
+      "kind": "camera",
+      "start_s": 69.2146,
+      "end_s": 69.7606,
+      "camera_move": "push_in",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e036",
+      "shot": "s004",
+      "kind": "motion",
+      "start_s": 71.1886,
+      "end_s": 73.4985,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e037",
+      "shot": "s004",
+      "kind": "motion",
+      "start_s": 74.4645,
+      "end_s": 74.5485,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e038",
+      "shot": "s005",
+      "kind": "motion",
+      "start_s": 74.8425,
+      "end_s": 74.9265,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e039",
+      "shot": "s005",
+      "kind": "motion",
+      "start_s": 75.3045,
+      "end_s": 75.4305,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e040",
+      "shot": "s005",
+      "kind": "motion",
+      "start_s": 76.9005,
+      "end_s": 77.0685,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e041",
+      "shot": "s005",
+      "kind": "motion",
+      "start_s": 78.3284,
+      "end_s": 78.6224,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e042",
+      "shot": "s005",
+      "kind": "motion",
+      "start_s": 79.5464,
+      "end_s": 80.0084,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e043",
+      "shot": "s005",
+      "kind": "motion",
+      "start_s": 80.6384,
+      "end_s": 80.7644,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e044",
+      "shot": "s005",
+      "kind": "motion",
+      "start_s": 81.0584,
+      "end_s": 81.2264,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e045",
+      "shot": "s005",
+      "kind": "motion",
+      "start_s": 81.3944,
+      "end_s": 82.7383,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e046",
+      "shot": "s005",
+      "kind": "motion",
+      "start_s": 84.4603,
+      "end_s": 84.5443,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    }
+  ],
+  "sfx": [
+    {
+      "id": "x001",
+      "sync_s": 10.2254,
+      "classifier_label": "unsure",
+      "clap_label": "music",
+      "clap_score": 0.471,
+      "label": "unsure",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x002",
+      "sync_s": 10.737,
+      "classifier_label": "music",
+      "clap_label": "music",
+      "clap_score": 0.53,
+      "label": "music",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x003",
+      "sync_s": 11.1431,
+      "classifier_label": "music",
+      "clap_label": "music",
+      "clap_score": 0.665,
+      "label": "music",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": -280.7
+    },
+    {
+      "id": "x004",
+      "sync_s": 13.337,
+      "classifier_label": "music",
+      "clap_label": "music",
+      "clap_score": 0.562,
+      "label": "music",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x005",
+      "sync_s": 27.8872,
+      "classifier_label": "music",
+      "clap_label": "music",
+      "clap_score": 0.738,
+      "label": "music",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x006",
+      "sync_s": 28.58,
+      "classifier_label": "music",
+      "clap_label": "music",
+      "clap_score": 0.843,
+      "label": "music",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x007",
+      "sync_s": 30.5376,
+      "classifier_label": "music",
+      "clap_label": "music",
+      "clap_score": 0.908,
+      "label": "music",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": -37.8
+    },
+    {
+      "id": "x008",
+      "sync_s": 31.0535,
+      "classifier_label": "music",
+      "clap_label": "music",
+      "clap_score": 0.975,
+      "label": "music",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": -109.9
+    },
+    {
+      "id": "x009",
+      "sync_s": 39.8206,
+      "classifier_label": "music",
+      "clap_label": "music",
+      "clap_score": 0.854,
+      "label": "music",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": -330.6
+    },
+    {
+      "id": "x010",
+      "sync_s": 42.9526,
+      "classifier_label": "music",
+      "clap_label": "music",
+      "clap_score": 0.865,
+      "label": "music",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": 239.5
+    },
+    {
+      "id": "x011",
+      "sync_s": 43.4097,
+      "classifier_label": "music",
+      "clap_label": "music",
+      "clap_score": 0.849,
+      "label": "music",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": -101.4
+    },
+    {
+      "id": "x012",
+      "sync_s": 45.7665,
+      "classifier_label": "music",
+      "clap_label": "music",
+      "clap_score": 0.945,
+      "label": "music",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": 113.4
+    },
+    {
+      "id": "x013",
+      "sync_s": 47.7054,
+      "classifier_label": "unsure",
+      "clap_label": "music",
+      "clap_score": 0.45,
+      "label": "unsure",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": -5.6
+    },
+    {
+      "id": "x014",
+      "sync_s": 57.6203,
+      "classifier_label": "chime",
+      "clap_label": "chime",
+      "clap_score": 0.69,
+      "label": "chime",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": 81.5
+    },
+    {
+      "id": "x015",
+      "sync_s": 65.0733,
+      "classifier_label": "impact",
+      "clap_label": "music",
+      "clap_score": 0.733,
+      "label": "impact",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x016",
+      "sync_s": 65.5499,
+      "classifier_label": "music",
+      "clap_label": "music",
+      "clap_score": 0.59,
+      "label": "music",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x017",
+      "sync_s": 70.9137,
+      "classifier_label": "music",
+      "clap_label": "music",
+      "clap_score": 0.808,
+      "label": "music",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": -274.9
+    },
+    {
+      "id": "x018",
+      "sync_s": 71.2272,
+      "classifier_label": "music",
+      "clap_label": "music",
+      "clap_score": 0.831,
+      "label": "music",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": 38.6
+    },
+    {
+      "id": "x019",
+      "sync_s": 71.5987,
+      "classifier_label": "music",
+      "clap_label": "music",
+      "clap_score": 0.677,
+      "label": "music",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": 410.1
+    },
+    {
+      "id": "x020",
+      "sync_s": 72.1676,
+      "classifier_label": "music",
+      "clap_label": "music",
+      "clap_score": 0.966,
+      "label": "music",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": null
+    },
+    {
+      "id": "x021",
+      "sync_s": 73.3402,
+      "classifier_label": "chime",
+      "clap_label": "chime",
+      "clap_score": 0.582,
+      "label": "chime",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": true,
+      "reveal_offset_ms": -158.3
+    },
+    {
+      "id": "x022",
+      "sync_s": 81.0413,
+      "classifier_label": "chime",
+      "clap_label": "chime",
+      "clap_score": 0.612,
+      "label": "chime",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": -17.1
+    },
+    {
+      "id": "x023",
+      "sync_s": 81.6298,
+      "classifier_label": "music",
+      "clap_label": "music",
+      "clap_score": 0.883,
+      "label": "music",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": 235.4
+    }
+  ],
+  "coverage": {
+    "events": 46,
+    "annotated": 0,
+    "propagated": 0,
+    "skipped": 46,
+    "pending": 0,
+    "elements": 0,
+    "measured": 0,
+    "estimated": 0
+  },
+  "checks": [
+    {
+      "name": "a1_shots",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "a1_summary",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "a2_events",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "events_in_shots",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "sfx_ids",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "sfx_labels",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "measure_boxes",
+      "ok": true,
+      "detail": null
+    }
+  ]
+}

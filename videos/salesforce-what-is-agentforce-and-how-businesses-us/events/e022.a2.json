@@ -1,0 +1,61 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "00104aabdfc95a03a1858b77ab74a4eee3e74922e5fef56199454224c0ac2858",
+    "created_at": "2026-10-05T06:52:07.088417Z"
+  },
+  "video": "salesforce-what-is-agentforce-and-how-businesses-us",
+  "event": "e022",
+  "task": "a2-e022",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Agent reply first line",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "faint pixel-level settle of already-visible text (no visible translate or fade)",
+      "is_text": true,
+      "text": "These time slots are available for Friday, September 20, 2024:",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 500, "easing_class": "ambiguous"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Time slot bullet list",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "faint pixel-level settle of already-visible text (no visible translate or fade)",
+      "is_text": true,
+      "text": "12:00pm - 2:00pm 2:30pm - 3:30pm",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 500, "easing_class": "ambiguous"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x038", "verdict": "confirm", "label": "music", "note": "About 1 s after the event; matches the recurring music pulse."},
+    {"id": "x039", "verdict": "unsure", "label": "unsure", "note": "Over 1.1 s after the event, at the right edge of the spectrogram; onset looks tonal but nothing visual happens in this packet to anchor it."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "reply settle hold",
+    "description": "After the agent reply has scrolled in, the frame holds while the reply text and time-slot list show only a very faint residual change (sub-pixel settle or re-render); no element visibly enters or moves.",
+    "why_premium": "The demo holds on the finished answer long enough for the narration to land on it, rather than cutting away the moment the reply arrives."
+  },
+  "build_hint": {
+    "gsap": "No authored tween needed; if reproducing the settle, end the previous reply tween with a long ease tail (e.g. ease: 'expo.out', duration 0.9) so the last 1-2 px resolve over ~0.5 s.",
+    "remotion": "Hold the frame; if reproducing, let the previous reply translateY spring settle with a slightly overdamped config (damping ~30, stiffness ~120) so the tail runs into this window."
+  },
+  "confidence": "low",
+  "notes": "Motion energy is very low (max ~0.024) and the filmstrip frames look identical; camera.move is none. Possibly the residual tail of the e021 scroll or video-encoding shimmer. Worth a human look on whether this event should be kept."
+}

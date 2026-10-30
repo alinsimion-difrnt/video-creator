@@ -1,0 +1,60 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "b041e548846f1997e9ca506be849444e65a18361f884d300b7caecba2429b491",
+    "created_at": "2026-10-05T06:27:19.905184Z"
+  },
+  "video": "moz-how-to-find-keyword-opportunties-with-ke",
+  "task": "a1-p1",
+  "shots": [
+    {
+      "shot": "s001",
+      "shot_type": "other",
+      "shot_type_other": "branded title card (flat illustrated layout with wordmark, title and an animated 'voiced by AI' badge)",
+      "composition": "split",
+      "composition_other": null,
+      "focal_element": "Bold headline 'Find Keywords Fast!' under the MOZ wordmark on the left blue blob, balanced by the audio-waveform badge with robot mascot at lower right",
+      "transition_in": "other",
+      "transition_other": "video start (no incoming transition; anchors give none)",
+      "on_screen_text": [
+        "MOZ",
+        "Find Keywords Fast!",
+        "With Keyword Overview in Moz Pro",
+        "From the Moz Learning Center Voiced by AI"
+      ],
+      "text_word_count": 16,
+      "typography": "Headline in a bold slab serif, title case with exclamation, normal tracking; subtitle in the same slab serif at regular weight, two centred lines; badge text in a small semibold humanist sans, white on a dark pill, two centred lines; the MOZ wordmark is a heavy geometric logotype. Font guesses (low confidence): Roboto Slab for headline/subtitle, Lato for the badge.",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "Static flat-vector title card: a large blue blob with a yellow arc stroke, small dots and asterisk sparkles holds the MOZ wordmark and title; in the first ~1 s a tilted light card slides in at lower right, a dark pill bar extends from left to right and the robot mascot circle appears, then a purple audio waveform above the pill animates with the voice-over for the rest of the shot (w0-w38). Around 10.5 s a blue vertical panel enters from the right edge, starting the wipe into s002.",
+      "build_rebuild": "Render a static SVG title layout (blue blob, yellow arc, sparkles, wordmark, two-line slab-serif title), then at t=0.2-1.0 s slide in a rotated badge card from the right and scale a dark pill from scaleX 0 to 1 with ease-out, pop in a circular mascot avatar, and drive a row of ~40 thin purple bars' heights from the voice-over amplitude envelope until the outgoing wipe.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s002",
+      "shot_type": "abstract",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Full-frame flat colour panels (light blue, dark navy, mid navy) sweeping across, then a purple-to-blue horizontal gradient",
+      "transition_in": "other",
+      "transition_other": "layered colour-panel wipe: stacked brand-colour vertical panels slide in from the right over the title card",
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "One-second graphic transition with no text: solid vertical bands in brand blues slide horizontally across the full frame (at 11.0 s light blue, dark navy and mid navy bands are visible side by side; the keyframe shows a darker band at left over mid navy), and by 11.5 s a purple-to-light-blue left-to-right gradient sweeps in behind a remaining navy band. VO 'Let's jump right in' (w39-w41) starts during it.",
+      "build_rebuild": "Build a 1 s transition of three or four full-height solid-colour rectangles in brand blues that translateX from 100% to -100% with staggered starts (~80 ms apart) and ease-in-out, followed by a purple-to-light-blue linear-gradient layer that slides in last and reveals the next scene.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

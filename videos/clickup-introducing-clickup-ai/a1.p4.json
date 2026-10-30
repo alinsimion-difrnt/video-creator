@@ -1,0 +1,92 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "63de0f40d5d5d6ccd77829cb534227cf51cc340c8b1060aaf9e57e68ef585dd1",
+    "created_at": "2026-10-05T06:24:20.407153Z"
+  },
+  "video": "clickup-introducing-clickup-ai",
+  "task": "a1-p4",
+  "shots": [
+    {
+      "shot": "s017",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The ClickUp AI 'Blog post' panel floating over the 'Go-To-Market Launch Plan' doc, where a generated blog post streams in and is then re-prompted",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Go-To-Market Launch Plan",
+        "USE CLICKUP AI TO: Create Blog Posts",
+        "Blog post",
+        "Introducing the FocusMaster5000: The Ultimate Tool for Enhanced Productivity",
+        "Make it more exciting",
+        "USE CLICKUP AI TO: Re-prompt"
+      ],
+      "text_word_count": 30,
+      "typography": "Product UI sans (Inter-like guess, low confidence): large bold sentence-case doc title, small regular body copy, bold headline in the generated post. Bottom-left callout card: tiny all-caps tracked-out accent label 'USE CLICKUP AI TO:' above a bold sentence-case feature name in a rounded outlined card. Panel buttons (Insert, Edit Input, Regenerate, Copy, Close ESC) are UI chrome and not counted.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Tight crop on the doc with a named cursor badge ('David, Product Manager'). The 'Create Blog Posts' callout card appears bottom-left; the cursor opens AI Tools, picks a category (Marketing) from a dropdown, chooses Blog post, and a form fills with topic and audience text before Generate is clicked. The panel empties, then a full blog post streams in and scrolls (Insert/Edit Input/Regenerate/Copy row below). The callout swaps to 'Re-prompt', 'Make it more exciting' is typed into 'Tell AI what to do next', and the regenerated post scrolls again. Speech is the reacting user (w106-w123: 'announcement blog? Okay, let's give this a shot ... maybe a little more exciting').",
+      "build_rebuild": "Render a scaled-up doc screenshot with a floating AI panel (rounded, soft drop shadow), animate a labelled cursor through menu picks, stream the generated text into the panel with a masked scroll, then type a follow-up prompt into the bottom input while a bottom-left 'USE CLICKUP AI TO:' callout card swaps its feature label from 'Create Blog Posts' to 'Re-prompt'.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s018",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The full ClickUp doc window floating on a teal/blue gradient wave background, then the 'New Product Launch - Overview' task window",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Go-To-Market Launch Plan",
+        "New Product Launch - Overview",
+        "David Product Manager"
+      ],
+      "text_word_count": 10,
+      "typography": "Product UI sans (low-confidence guess Inter): bold sentence-case window titles at medium size since the camera is pulled back; small regular body text; the cursor name badge uses a bold name over a lighter role line.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Camera pulls back from the AI panel to reveal the whole doc window, now with the blog post inserted into the doc, floating over an abstract gradient background. The cursor moves to the window's close (X) button; the doc is replaced by the 'New Product Launch - Overview' task window with a comment thread on the right, setting up the next feature. The only speech is 'nice' (w124).",
+      "build_rebuild": "Scale the UI layer from ~180% to ~75% with an ease-out so the app window sits centred with a soft shadow over a looping gradient-wave backdrop, move the cursor to the close icon, then crossfade the doc screenshot into the task-view screenshot at the same window frame.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s019",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "split",
+      "composition_other": null,
+      "focal_element": "The comment thread on the right of the task view, where the 'Summarize this' AI panel appears and a new comment is typed and posted",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "USE CLICKUP AI TO: Summarize Threads",
+        "Summarize this",
+        "Incredible job to everyone involved! This was the fastest we've ever done anything like this!",
+        "Couldn't have done it without ClickUp AI",
+        "Couldn't have done it without our amazing team!"
+      ],
+      "text_word_count": 38,
+      "typography": "Product UI sans (low-confidence guess Inter): regular sentence-case comment body text, bold author names, small grey timestamps; the AI panel header 'Summarize this' is medium weight. The callout card repeats the system from s017: tiny all-caps tracked accent label over a bold sentence-case feature name.",
+      "depth_cues": [
+        "shadow",
+        "blur"
+      ],
+      "what_happens": "Close crop on the task view split between description/attachments (left) and comments (right). The reply count on Amy's comment ticks up (to '16 replies, 16 new'), the 'Summarize Threads' callout appears bottom-left, the cursor clicks Summarize and a 'Summarize this' panel overlays the thread with a one-line summary streaming in. The panel dismisses (blurred cursor badge as it exits), then a new comment is typed: 'Couldn't have done it without ClickUp AI' is backspaced and replaced with 'Couldn't have done it without our amazing team!', posted, and a thumbs-up reaction pops with a burst and counts up. Speech: 'Sweet. Oh, wow. That is a lot of praise' (w125-w133) and 'Way to go team' (w134-w137).",
+      "build_rebuild": "Hold a cropped task-view screenshot, increment a reply-count label, pop in a bottom-left 'USE CLICKUP AI TO: Summarize Threads' card, slide a shadowed AI panel over the comment list and stream its one-line summary, then fade it out and type-on a comment with a backspace-and-retype gag before appending it to the list and popping a reaction emoji with a small particle burst.",
+      "confidence": "high"
+    }
+  ],
+  "summary": null
+}

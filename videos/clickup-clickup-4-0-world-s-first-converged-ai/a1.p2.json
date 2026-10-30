@@ -1,0 +1,187 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "27d4d194949f3a5661a9fbd24e39ffe81ba2a5a643f2321692ad04377809e338",
+    "created_at": "2026-10-05T06:23:20.550933Z"
+  },
+  "video": "clickup-clickup-4-0-world-s-first-converged-ai",
+  "task": "a1-p2",
+  "shots": [
+    {
+      "shot": "s006",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Centered single-line kinetic headlines that resolve into the ClickUp 4.0 logo lockup, then the 'The first / Converged / AI Workspace' word sequence",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "It's time to kill sprawl.",
+        "Meet",
+        "ClickUp 4.0",
+        "The first",
+        "Converged",
+        "AI Workspace",
+        "ClickUp"
+      ],
+      "text_word_count": 14,
+      "typography": "Geometric sans throughout. 'It's time to kill sprawl' is small, bold, sentence case, tight tracking, black; 'Meet' is a large heavy black word; the logo lockup pairs a bold wordmark with a monospace '4.0' in a dark rounded pill; 'The first / Converged / AI Workspace' are large bold title-case words in a deep navy-purple, one phrase at a time. Persistent small grey logo watermark bottom-right. Font guess (low confidence): a Plus Jakarta / Manrope-style geometric sans.",
+      "depth_cues": [
+        "blur",
+        "perspective_tilt"
+      ],
+      "what_happens": "Enters by zooming through the counter of a giant blurred letter from the previous word to reveal 'It's time to kill sprawl' (w27-w31) on a pale sky-blue gradient; a hand-drawn line snakes in from the right to the word 'sprawl', whose letters then scribble and scatter into debris. 'Meet' slams in with horizontal motion blur (w32), the background shifts to a soft blue/purple/peach corner gradient, and the ClickUp logo and '4.0' pill de-blur into focus on 'ClickUp 4.0' (w33-w35). Words then swap in place on a near-white field: 'The first', 'Converged', 'AI Workspace' (w36-w40), each landing on the spoken word. In the last second a tilted, blurred product UI collage (sidebar, profile card, app icons) fades and sharpens in as the next scene begins.",
+      "build_rebuild": "Centered text layer swapped per VO word timestamp: zoom-through scale on the incoming frame, a SVG path draw-on line ending at 'sprawl' followed by per-letter random translate/rotate scatter, 'Meet' entering with a horizontal motion-blur slide, the logo lockup animating blur(20px)->0 with opacity, then three title-case word cards cross-swapped on a soft radial-gradient background, finishing with a 3D-tilted UI collage blur-fading in.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s007",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The phrase 'kill Sprawl' with 'Sprawl' rising in and then being struck through",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Built to",
+        "kill Sprawl",
+        "ClickUp"
+      ],
+      "text_word_count": 5,
+      "typography": "Bold black geometric/grotesque sans, sentence/title case ('Sprawl' capitalised), tight tracking, medium-large size on white; a horizontal strike-through bar is drawn across 'Sprawl'. Small grey logo watermark bottom-right.",
+      "depth_cues": [
+        "blur"
+      ],
+      "what_happens": "On a white field, 'Built to' appears (w41-w42), is replaced by 'kill' (w43), then 'Sprawl' rises up from a baseline mask with vertical motion blur beside it (w44); a strike-through line wipes across 'Sprawl' as the word is spoken. In the final frame a blurred UI card on a saturated magenta/orange/blue grain gradient is already flashing in, leading into the next shots.",
+      "build_rebuild": "Word-by-word text swap timed to VO, with 'Sprawl' sliding up from an overflow-hidden mask with a vertical blur filter, followed by a strike-through line whose scaleX animates 0->1 from the left.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s008",
+      "shot_type": "abstract",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Full-frame grainy magenta-to-orange-to-blue gradient background",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "ClickUp"
+      ],
+      "text_word_count": 1,
+      "typography": "Only the small grey logo watermark bottom-right.",
+      "depth_cues": [
+        "grain"
+      ],
+      "what_happens": "A two-frame (about 66 ms) flash of the bare vivid noise-textured gradient background with no foreground element; it acts as the colour-pop reset between the white kinetic-type section and the floating UI card section, landing on the music beat/SFX near 25.02 s.",
+      "build_rebuild": "Insert a 2-frame full-bleed multi-stop gradient plate (magenta top-left, orange top-right, blue bottom-left) with a film-grain noise overlay between the type scene and the card scene.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s009",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "A single floating rounded product card (Chat, then Calendar, then Teams Hub) centered on the gradient",
+      "transition_in": "other",
+      "transition_other": "3D card flip/swing-in with heavy motion blur from the gradient flash",
+      "on_screen_text": [
+        "Chat",
+        "Anyone have ideas on how we could handle this animation?",
+        "We could make it appear only when the user hovers.",
+        "Write to Marketing",
+        "Calendar",
+        "Weekly planning",
+        "Amy / Andrew",
+        "Teams Hub",
+        "Highest Priorities",
+        "Schedule Quarterly Audit",
+        "Approve Purchase Order",
+        "Update Compliance Checklist",
+        "No Priorities",
+        "ClickUp"
+      ],
+      "text_word_count": 45,
+      "typography": "Simplified UI typography: coloured bold title-case card headers with matching icons, small regular-weight sentence-case body text in dark grey, small timestamps and labels in lighter grey. Small grey logo watermark bottom-right. Smaller labels (times, names, reply counts) are only partially legible at this resolution.",
+      "depth_cues": [
+        "shadow",
+        "blur",
+        "perspective_tilt",
+        "grain"
+      ],
+      "what_happens": "Over the grain gradient, one simplified product card at a time flips into center: a Chat thread card (w45), then a Calendar card with 'Weekly planning' and 'Amy / Andrew' blocks (w46-w48), then a rapid vertical whip with smeared cards, landing on a Teams Hub priorities card (w49-w50). Card changes are punchy and appear to align with the impact SFX cluster (x023, x024, x025).",
+      "build_rebuild": "Stack of recreated, simplified UI cards (rounded 24px corners, soft drop shadow, white fill) on a grainy gradient; every ~0.6 s rotateX/rotateY the current card out and the next one in with a short directional motion blur, synced to the impact SFX.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s010",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The 'Brain' AI chat card with the 'Create an agent' prompt and assistant reply",
+      "transition_in": "other",
+      "transition_other": "Tilted cards whip vertically through frame with motion blur, settling on the next card",
+      "on_screen_text": [
+        "Brain",
+        "Create an agent",
+        "Let's create your Agent together. To get started, could you tell me a bit more about what you'd like your Agent to do?",
+        "Ask, write, or search for anything",
+        "ClickUp"
+      ],
+      "text_word_count": 34,
+      "typography": "Bold title-case card header 'Brain' beside a multicolour flower icon; user prompt in a pale pill bubble, regular weight sentence case; assistant reply in regular grey sentence case with generous line height; input placeholder in light grey. Small grey logo watermark bottom-right.",
+      "depth_cues": [
+        "blur",
+        "perspective_tilt",
+        "shadow",
+        "grain"
+      ],
+      "what_happens": "A tilted Teams Hub card exits upward while the Brain card swings in from below with motion blur, then the camera pushes in close so the user prompt 'Create an agent' and the AI reply fill the frame (w50-w52, 'work and AI'). The card remains slightly blurred, implying continuous camera drift.",
+      "build_rebuild": "Animate the outgoing card off the top with rotateZ and blur while the Brain card enters from the bottom with a rotation easing to zero, then scale the card from ~1.0 to ~1.6 for a slow camera push-in on the chat bubbles.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s011",
+      "shot_type": "3d",
+      "shot_type_other": null,
+      "composition": "grid",
+      "composition_other": null,
+      "focal_element": "A wall of product-module cards that pulls out into a grid, then collapses into a 3D stack that becomes the ClickUp logo tile",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Forms",
+        "Brain",
+        "Docs",
+        "Calendar",
+        "Dashboards",
+        "Whiteboards",
+        "Tasks",
+        "Chat",
+        "Teams Hub",
+        "ClickUp"
+      ],
+      "text_word_count": 11,
+      "typography": "Coloured bold title-case card headers with module icons; card body text is too small/blurred to read at sheet resolution. Small grey logo watermark bottom-right.",
+      "depth_cues": [
+        "blur",
+        "shadow",
+        "perspective_tilt",
+        "grain"
+      ],
+      "what_happens": "The camera zooms out from the Brain card to reveal a grid of module cards (Forms, Brain, Docs, Calendar, Dashboards, Whiteboards, Tasks, Chat, Teams Hub) drifting on the gradient (w53-w54). The background then switches to a pale lavender studio floor and the cards, seen in isometric 3D, drop one by one onto a growing stack whose coloured edges show as layers; the stack compresses into a single white tile carrying the ClickUp logo mark over a glowing magenta/orange/blue radial bloom as 'converged' is spoken (w55).",
+      "build_rebuild": "Pull-back scale from the focused card to a 3x3 card wall with slight drift, then cut to an isometric 3D scene where card planes fall with staggered translateY onto a stack, collapse to one rounded logo tile, and fade a blurred radial gradient bloom in behind it.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

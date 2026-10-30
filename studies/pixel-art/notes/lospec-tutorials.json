@@ -1,0 +1,49 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T13:03:02+00:00"
+  },
+  "id": "lospec-tutorials",
+  "kind": "tutorial",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "unknown",
+    "notes": "An index, not one artwork. The palette list holds thousands of palettes filterable by exact or max colour count and tags (hardware, artist, gameboy); popular ones range from 4 to 31 colours."
+  },
+  "lighting": "No dedicated lighting tutorial in the index; the closest entry is a shading tutorial by Pedro Medeiros.",
+  "silhouette": "Not covered directly; the index points to beginner guides (e.g. Pixel Logic) that cover basic forms.",
+  "motion": {
+    "timing": "No timing of its own; links tutorials tagged animation and walkcycle (e.g. saint11 walk cycle, fabric/flags). No idle-specific tutorial listed.",
+    "principles": [
+      "walk cycle",
+      "fabric/flag secondary motion"
+    ]
+  },
+  "texture": "Tutorial tags include dithering, texture, grass, rocks, water, trees and tilesets, so texture is treated per material.",
+  "camera": "No camera content; background and tileset tutorials are listed for scene building.",
+  "sound": "",
+  "acting": {
+    "enters": "",
+    "acts": "No characters shown; as a staging lesson it suggests treating character, background and material as separate, learnable pieces.",
+    "exits": "",
+    "comes_back": null,
+    "depth": ""
+  },
+  "techniques": [
+    "pick a fixed palette by exact colour count before drawing",
+    "filter palettes by tag (hardware look like gameboy vs artist-made)",
+    "learn materials one at a time (water, grass, fabric) from tagged tutorials",
+    "use Aseprite's outline feature for quick consistent outlines"
+  ],
+  "feel": "fixed small palette from a shared library + one tutorial per material = consistent look without reinventing",
+  "for_fred": "Lock Fred, Pixie and every background to one Lospec palette of a fixed size (e.g. 16-32 colours) so props added later never clash. For new motion, look up the tagged material tutorial (water for Fred's tank, fabric for flags) instead of inventing a new loop.",
+  "sources": [
+    "https://lospec.com/pixel-art-tutorials",
+    "https://lospec.com/palette-list",
+    "studies/pixel-art/sources.yaml"
+  ]
+}

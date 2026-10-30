@@ -1,0 +1,48 @@
+# v03 — real 3D Fred (ray-marched turntable), motion fixes from the v02 review rendered.
+name: v03
+voice: iP95p4xoKVk53GoZ742B   # ElevenLabs "Chris – Charming, Down-to-Earth" (a stand-in for Robert)
+cut_at: "Claude"
+script: >-
+  Hi, my name is Robert, and this video is entirely edited by AI. Even this fish? AI.
+  It can be 3D, illustrated, or pixel art. I think I'll call him Fred.
+  Claude, give Fred a moustache and a top hat. Much better.
+  I built a process that doesn't cost an arm and a leg in tokens. I write the jokes, Claude does the alchemy.
+  Hey, my name is Robert, and that's... wait. What is this cat? Cute. I'll call her Pixie. Pixie, no!
+plan:
+  layout: [{word: 0, layout: full}]
+  punches: ["entirely", "Fred"]
+  props:
+    - id: fred
+      art: fred
+      word: "fish"
+      until: "no"
+      at: lap
+      size: 0.2
+      style: photo
+      beats:
+        - {word: "3D", style: toon3d}
+        - {word: "illustrated", style: illustrated}
+        - {word: "pixel", style: pixel}
+        - {word: "Fred", style: illustrated, do: wave, tag: Fred}
+        - {word: "moustache", add: [moustache]}
+        - {word: "hat", add: [top_hat]}
+        - {word: "arm", add: [automail]}
+        - {word: "alchemy", do: clap}
+        - {word: "Hey", hold: phone}
+        - {word: "wait", hold: none}
+    - id: pixie
+      art: cat
+      word: "cat"
+      until: "no"
+      at: floor_right
+      size: 0.3
+      enter: walk_right
+      exit: run_left
+      beats:
+        - {word: "Pixie", tag: Pixie}
+        - {word: "Pixie#2", move: lap}
+        - {word: "no", carry: fred}
+  fx:
+    - {word: "alchemy", kind: alchemy, spec: {at: fred}}
+    - {word: "no", kind: shake}
+    - {word: "no", kind: fade_black}

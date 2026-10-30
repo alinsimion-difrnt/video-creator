@@ -1,0 +1,264 @@
+{
+  "$defs": {
+    "Annotator": {
+      "enum": [
+        "code",
+        "claude-code",
+        "human"
+      ],
+      "title": "Annotator",
+      "type": "string"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "description": "Carried by every output JSON (BUILD_PLAN section 2.7).",
+      "properties": {
+        "annotator": {
+          "$ref": "#/$defs/Annotator"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "input_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Input Hash",
+          "type": "string"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "schema_version": {
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "skill": {
+          "anyOf": [
+            {
+              "pattern": "^[a-z0-9-]+@[0-9a-f]{8,64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Skill"
+        },
+        "stage": {
+          "title": "Stage",
+          "type": "string"
+        },
+        "tool_version": {
+          "title": "Tool Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool_version",
+        "stage",
+        "annotator",
+        "input_hash",
+        "created_at"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "Stat": {
+      "additionalProperties": false,
+      "properties": {
+        "ci": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Ci"
+        },
+        "median": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Median"
+        },
+        "n": {
+          "minimum": 0,
+          "title": "N",
+          "type": "integer"
+        },
+        "p25": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "P25"
+        },
+        "p75": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "P75"
+        },
+        "videos": {
+          "minimum": 0,
+          "title": "Videos",
+          "type": "integer"
+        },
+        "weight": {
+          "minimum": 0,
+          "title": "Weight",
+          "type": "number"
+        }
+      },
+      "required": [
+        "n",
+        "videos",
+        "weight",
+        "median",
+        "p25",
+        "p75",
+        "ci"
+      ],
+      "title": "Stat",
+      "type": "object"
+    },
+    "Weighting": {
+      "additionalProperties": false,
+      "properties": {
+        "quality": {
+          "title": "Quality",
+          "type": "boolean"
+        },
+        "score_from": {
+          "title": "Score From",
+          "type": "string"
+        },
+        "score_missing": {
+          "title": "Score Missing",
+          "type": "number"
+        },
+        "tier": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Tier",
+          "type": "object"
+        }
+      },
+      "required": [
+        "tier",
+        "score_from",
+        "score_missing",
+        "quality"
+      ],
+      "title": "Weighting",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "ducking_db": {
+      "$ref": "#/$defs/Stat"
+    },
+    "integrated_lufs": {
+      "$ref": "#/$defs/Stat"
+    },
+    "lra_lu": {
+      "$ref": "#/$defs/Stat"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    },
+    "reveal_offset_ms_by_label": {
+      "additionalProperties": {
+        "$ref": "#/$defs/Stat"
+      },
+      "title": "Reveal Offset Ms By Label",
+      "type": "object"
+    },
+    "sfx_label_mix": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "title": "Sfx Label Mix",
+      "type": "object"
+    },
+    "sfx_on_beat_share": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Sfx On Beat Share"
+    },
+    "sfx_per_min": {
+      "$ref": "#/$defs/Stat"
+    },
+    "true_peak_dbtp": {
+      "$ref": "#/$defs/Stat"
+    },
+    "videos": {
+      "title": "Videos",
+      "type": "integer"
+    },
+    "weighting": {
+      "$ref": "#/$defs/Weighting"
+    }
+  },
+  "required": [
+    "provenance",
+    "weighting",
+    "videos",
+    "sfx_per_min",
+    "sfx_label_mix",
+    "reveal_offset_ms_by_label",
+    "sfx_on_beat_share",
+    "integrated_lufs",
+    "true_peak_dbtp",
+    "lra_lu",
+    "ducking_db"
+  ],
+  "title": "SoundStats",
+  "type": "object"
+}

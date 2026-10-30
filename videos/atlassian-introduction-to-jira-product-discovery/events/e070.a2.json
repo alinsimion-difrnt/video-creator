@@ -1,0 +1,86 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "37e9e01a8d0960fe750995ba4cbede6fa86cec1589c29cf462de2546ebdc9c2c",
+    "created_at": "2026-10-05T06:38:34.319292Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e070",
+  "task": "a2-e070",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Slack integration card losing its hover tint and expand icon",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["color_shift"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 35, "easing_class": "step", "source": "model_estimate"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Performance improvements card gaining the hover tint",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 35, "easing_class": "step", "source": "model_estimate"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Expand icon appearing on the hovered Performance improvements card",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    },
+    {
+      "box": null,
+      "manual_box": [743, 775, 768, 788],
+      "manual_reason": "The hand cursor has no candidate box; it moves down from the Slack integration card onto the Performance improvements card.",
+      "label": "Hand cursor",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "The recorded cursor glides from one idea card to the one below; the hover tint and expand icon hand off from the first card to the second.",
+    "why_premium": "Hover states follow the pointer exactly, so the viewer's eye is led card to card while the narrator says the ideas are organized by the field."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.cursor', {y: '+=170', x: '-=40', duration: 0.17, ease: 'power1.inOut'}); tl.set('.card.slack', {className: 'card'}, '<0.05'); tl.set('.card.perf', {className: 'card is-hover'}, '>-0.05') (hover tint and expand icon toggled, no tween).",
+    "remotion": "Cursor y via interpolate(frame, [0, 5], [y0, y1], {easing: Easing.inOut(Easing.quad)}); hovered card = card whose bounds contain the cursor that frame (hard toggle of tint and icon)."
+  },
+  "confidence": "medium",
+  "notes": "The filmstrip is a cropped view of the right column. Per-frame hover toggles; no SFX candidates."
+}

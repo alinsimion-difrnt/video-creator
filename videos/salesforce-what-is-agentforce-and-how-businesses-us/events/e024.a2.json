@@ -1,0 +1,172 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "a5408c3d0f0d4a1c344ecf943dc26fca2333b8282ff3d81e929b125edec1aa87",
+    "created_at": "2026-10-05T06:53:01.569535Z"
+  },
+  "video": "salesforce-what-is-agentforce-and-how-businesses-us",
+  "event": "e024",
+  "task": "a2-e024",
+  "elements": [
+    {
+      "box": "b12",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Plan trace header query",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "instant content replace (previous request text swapped for the new one)",
+      "is_text": true,
+      "text": "\"how would I make an explosive using this product?\"",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": "b14",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "User Prompt card text",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "instant content replace; card shrinks from three lines to one",
+      "is_text": true,
+      "text": "how would I make an explosive using this product?",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Select Topic card (Inappropriate_Content)",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["slide_up", "other"],
+      "change_other": "topic name and description swapped in place",
+      "is_text": true,
+      "text": "Select Topic Inappropriate_Content Used when a message contains any of the following content: violence, sexual, misinformation, harassment, illegal activities, suicide and self harm, sensitive events, harmful behaviors, bias, toxicity, or offensive language",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Instructions/Actions rows and Agent Response card",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_up", "other"],
+      "change_other": "Select Action step replaced by Agent Response step",
+      "is_text": true,
+      "text": "Instructions Actions 0 Agent Response",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": "b18",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Trace panel scrollbar thumb",
+      "role": "other",
+      "role_other": "scrollbar",
+      "change_types": ["other"],
+      "change_other": "thumb resizes/moves as the trace content length changes",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    },
+    {
+      "box": "b20",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Agent greeting message",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Hi! I'm your Service Agent",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Earlier user request and agent reply",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Hi, my email address is mrichards@example.com and I have an order arriving soon, but I have not yet scheduled installation. If possible, I'd love to schedule installation for that Fri after delivery, but not mornings. Do you have appointments available? These time slots are available for Friday, September 20, 2024: 12:00pm - 2:00pm 2:30pm - 3:30pm",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b15",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Agent follow-up question",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Which time slot would you prefer?",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b11",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Off-topic user message",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "how would I make an explosive using this product?",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b10",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Agent refusal reply",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["slide_up", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "I'm sorry, but I can't assist with that request.",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x040", "verdict": "confirm", "label": "music", "note": "About 0.9 s after the event; broadband music onset, not tied to a visual change."}
+  ],
+  "pattern": {
+    "id": "masked_scroll",
+    "proposed_name": null,
+    "description": "The agent's refusal lands in the Conversation Preview and the chat thread scrolls up inside its fixed panel; at the same moment the left reasoning trace swaps to the new plan (Inappropriate_Content topic, Agent Response step).",
+    "why_premium": "Two synced panels update together on the narration's 'respond to requests', so the viewer sees the answer and the reasoning that produced it in one beat without a cut or a camera move."
+  },
+  "build_hint": {
+    "gsap": "Timeline at t=0: gsap.fromTo(chatThread, {y: 0}, {y: -replyHeight, duration: 0.4, ease: 'power2.out'}) with gsap.fromTo(refusal, {autoAlpha: 0, y: 12}, {autoAlpha: 1, y: 0, duration: 0.35, ease: 'power2.out'}); near the end (~0.35 s) tl.set(traceOld, {display: 'none'}).set(traceNew, {display: 'block'}) for the instant left-panel swap.",
+    "remotion": "Chat wrapper translateY = interpolate(spring({frame, fps, config: {damping: 26, stiffness: 170}}), [0, 1], [0, -replyHeight]); refusal opacity on the same spring; render the old trace before frame ~10 and the new trace after it (hard switch, no interpolation)."
+  },
+  "confidence": "medium",
+  "notes": "camera.move is none. The left trace panel appears to switch content in one frame (around f1744) rather than animate; its boxes are listed as content swaps. The pattern could also read as a two-panel sync update; masked_scroll picked for the chat motion."
+}

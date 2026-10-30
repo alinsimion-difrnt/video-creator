@@ -1,0 +1,37 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes", "annotator": "claude-code",
+                 "input_hash": "acbd1722d87ebc83ec5c7b14bd2012902553ab487df3732bd4e84d078957477d",
+                 "created_at": "2026-10-13T14:40:00+00:00"},
+  "id": "7681385878668889365",
+  "format": "split_screen",
+  "hook": {"type": "bold_claim",
+           "line": "This is the perfect AI co-founder for launching a solo startup.",
+           "visual": "Top half: illustrated retro computer surrounded by 'website, outreach, branding' cards; bottom half: faceless presenter in cap and yellow neck gaiter; title pill 'AI co-founder for your BUSINESS'."},
+  "beats": [
+    {"t": 0.0, "what": "Split screen: concept illustration on top, masked presenter below, title pill with a shocked emoji"},
+    {"t": 2.4, "what": "Top image swaps to a man at a monitor wall as he says 'for launching'"},
+    {"t": 4.76, "what": "Top shows the product's logo as he names it"},
+    {"t": 7.0, "what": "Full-frame screen recording of the site on a yellow background: 'Let's build something'"},
+    {"t": 9.73, "what": "Zoom punch into the 'What's your idea?' input box"},
+    {"t": 14.47, "what": "Dashboard with task list and an Auto Mode dialog while he lists what it runs"},
+    {"t": 21.53, "what": "Documents view: daily CEO reports, ads, business stats"},
+    {"t": 23.73, "what": "Back to the presenter; a fake comment-reply bubble with the product name slides in"}
+  ],
+  "graphics": {"captions": "word_by_word", "caption_position": "bottom",
+               "devices": ["split_screen", "screen_recording", "product_ui", "zoom_punch", "title_text", "sticker_emoji", "b_roll"],
+               "density": "heavy", "per_minute_estimate": 30},
+  "characters": [],
+  "cta": {"kind": "comment", "t": 23.8},
+  "why_it_works": [
+    "A fixed title pill keeps the promise on screen the whole time, so late joiners get the point",
+    "Faceless masked presenter is a recognisable brand mark without showing a face",
+    "Switches from presenter to full-frame UI after 7 s, showing the steps (type idea, it builds) as proof",
+    "Mock comment-reply bubble at the end shows viewers exactly what to type"
+  ],
+  "weaknesses": [
+    "Screen recordings are small text on white; most UI is unreadable at phone size",
+    "Feature list (plans, codes, launches, markets) is told rather than shown with results",
+    "Low comment count (73) for 46k plays suggests the comment-for-link CTA undersold"
+  ],
+  "for_robert": "Keep a persistent title pill and end on a mock comment bubble with the keyword; Fred could carry that bubble in and point at it."
+}

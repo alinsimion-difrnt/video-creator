@@ -1,0 +1,54 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T14:00:39Z"
+  },
+  "id": "castlevania-sotn",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "cool",
+    "notes": "No clip shows the game: all three are fan edits of the Netflix anime. They only confirm the franchise split: fire reds and oranges against cold blue-greys, Alucard's pale hair as the brightest value. Players describe the game as deep blues, purples and blood reds on stone greys."
+  },
+  "lighting": "From the wiki: translucent effects (mist, waterfalls, glows) over sprites; the Saturn port swapped them for dithering, so the look depends on translucency. The anime clips push the same idea: one fire or glow source lights the figure, the rest falls to dark blue.",
+  "silhouette": "Ayami Kojima's tall, slim designs; Alucard's flowing cape and long hair give a clear vertical silhouette and secondary motion. In the anime clip his pale hair framing the face reads even at thumbnail size.",
+  "motion": {
+    "timing": "No metrics file and no game footage: describe only. Critics praised smooth animation with many in-between frames, though reviewers disagreed on how smooth.",
+    "principles": [
+      "follow-through",
+      "overlap",
+      "secondary motion",
+      "arcs"
+    ]
+  },
+  "texture": "Backgrounds drawn with the same sprite methods as characters (the hardware lacked scrolling), so walls and props carry sprite-level detail.",
+  "camera": "Side-scrolling, follows the hero; scrolling backgrounds; occasional 3D for special effects.",
+  "sound": "",
+  "acting": {
+    "enters": "Enemies emerge from walls, floors and the background rather than just walking in.",
+    "acts": "Alucard turns into bat, wolf or mist and re-enters in a new form; familiars act on their own. The anime dialogue clip: one talks while the other holds still, eyes closed; a small smirk is the whole reaction.",
+    "exits": "Exits by transforming (mist drifts away, bat flies off) instead of walking off.",
+    "comes_back": true,
+    "depth": "Layered backgrounds with figures and props in the far plane; companions orbit the hero in front and behind."
+  },
+  "techniques": [
+    "cape and hair as secondary motion that trails the body",
+    "translucent effects (mist, glow) over sprites",
+    "transformation as an exit and re-entry",
+    "familiar sidekick that hovers and acts on its own beat",
+    "single warm light source in a cold scene",
+    "backgrounds drawn with sprite-level detail"
+  ],
+  "feel": "dark cool gothic set + slim pale high-contrast hero + trailing cape overlap = elegant, smooth menace",
+  "for_fred": "Let Pixie be Fred's familiar: she floats near him and acts on her own beat (looks away, bats at something) while Fred talks. Give Fred a trailing fin as overlap so his stops settle, and try an exit by transformation (a splash or bubble burst) instead of sliding off.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Castlevania:_Symphony_of_the_Night",
+    "data/study/pixel/work/castlevania-sotn/clip1-7578321098039725326.jpg",
+    "data/study/pixel/work/castlevania-sotn/clip2-7460969937541106986.jpg",
+    "data/study/pixel/work/castlevania-sotn/clip3-7692124392385563912.jpg"
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "5c97c15e944c6c0cf11d95005c375eda8ade7bcf1ec8210021919240b9de4425",
+    "created_at": "2026-10-05T07:42:34.038597Z"
+  },
+  "video": "salesforce-what-is-agentforce-and-how-businesses-us",
+  "task": "a1-p2",
+  "shots": [
+    {
+      "shot": "s006",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "split",
+      "composition_other": null,
+      "focal_element": "Gmail thread where the AI agent answers a pricing question and offers a meeting, pushing in from the right over the Salesforce Leads list",
+      "transition_in": "push",
+      "transition_other": null,
+      "on_screen_text": [
+        "How much does your solution cost?",
+        "Sent by Heather Cartino's AI Agent",
+        "Book a meeting with Heather Cartino"
+      ],
+      "text_word_count": 18,
+      "typography": "Native product UI text only (Salesforce Lightning and Gmail sans-serif, small regular weight, sentence case, bold for edition names and sender names); no designed overlay type.",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "A 0.34 s transitional frame: the Salesforce Leads list view slides out to the left while a Gmail window showing the Einstein agent's email reply (pricing editions, meeting offer, booking card) slides in from the right; VO is on 'by contacting' (w65-w66).",
+      "build_rebuild": "Place two full-frame UI screenshots side by side in a strip and translate the strip left by one frame width over about 0.4 s with an ease-in-out so the Gmail screenshot replaces the Salesforce one.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s007",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "The Einstein agent's email offering a 'Book a meeting with Heather Cartino' card with a grid of time-slot buttons",
+      "transition_in": "push",
+      "transition_other": null,
+      "on_screen_text": [
+        "Yes, I would like to meet with Heather.",
+        "Sure! Just select your availability with Heather Cartino",
+        "Book a meeting with Heather Cartino",
+        "Wednesday, August 2",
+        "Thursday, August 3",
+        "Friday, August 4"
+      ],
+      "text_word_count": 31,
+      "typography": "Native Gmail UI text: small regular sans-serif in sentence case, bold sender names and day headers, blue time-slot labels in outlined buttons; no added captions.",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "Full-screen Gmail thread scrolls up slowly: the AI agent's pricing reply moves off the top, the prospect's 'Yes, I would like to meet with Heather' reply and the agent's booking card with a three-day grid of time slots scroll into view while VO says 'contacting customers, responding to their questions, and scheduling meetings' (w66-w74); a push to the next shot begins at the right edge in the last frame.",
+      "build_rebuild": "Render a static Gmail thread mockup taller than the viewport and tween its translateY upward by roughly one third of the frame over 4 s with a gentle ease-out so the booking card lands on screen as VO reaches 'scheduling meetings'.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s008",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "split",
+      "composition_other": null,
+      "focal_element": "Video call between two people with a Salesforce/Agentforce side panel whose Real Time Insights card changes from 'Scanning.' to a 'Competitor Mention' alert",
+      "transition_in": "push",
+      "transition_other": null,
+      "on_screen_text": [
+        "Negotiation Call",
+        "Welo - $25k New Business",
+        "Real Time Insights",
+        "Scanning.",
+        "Looking for insights.",
+        "Competitor Mention",
+        "Sales Coach",
+        "Agentforce"
+      ],
+      "text_word_count": 18,
+      "typography": "Native UI text: video-call client labels in small white sans-serif on dark, Salesforce panel in small blue and dark-grey sans-serif, bold title-case card headings; no designed overlay type.",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "Pushes in from the right over the Gmail frame to a video call (two live-action participants side by side, a 'Sales Coach' agent tile among the thumbnails) with a Salesforce panel on the right; the Real Time Insights card reads 'Scanning. Looking for insights.' during 'an AI sales coach agent ... calls with your new sales reps' (w75-w93), then around 40 s swaps to a 'Competitor Mention' alert card with Summarize/Explore buttons as VO says 'provides helpful real-time tips and objection handling' (w95-w102); at the end the panel starts pushing left as a new Salesforce steps screen enters.",
+      "build_rebuild": "Compose a 1280x720 frame with a dark video-call layout (two footage tiles plus thumbnail row) on the left 78% and a white side-panel mockup on the right, then at about 40 s crossfade the panel's insights card from the 'Scanning' placeholder to the alert card in roughly 0.3 s.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

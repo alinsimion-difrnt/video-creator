@@ -1,0 +1,40 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code",
+                 "input_hash": "75a6d3f0b344d0107dec28840a4a725b19b4c09a8c9bd408670f20368936323a",
+                 "created_at": "2026-10-13T09:31:00+00:00"},
+  "id": "7421469061520821521",
+  "format": "talking_head",
+  "hook": {"type": "bold_claim",
+           "line": "This 19-year-old can make anything go viral.",
+           "visual": "Split screen: creator in a red-lit room on top, photos of the subject below swapping almost every word (plaque, car, chef costume), then her own clip."},
+  "beats": [
+    {"t": 0.0, "what": "Top/bottom split: creator speaking over a photo of the subject; four cuts in the first 2.5 s swap the bottom photo."},
+    {"t": 2.47, "what": "Full-screen clip of the subject herself saying she can make anything viral (social proof in her own voice)."},
+    {"t": 6.73, "what": "Zoom punch on the subject with a big red arrow pointing up at her as her name is said."},
+    {"t": 12.87, "what": "YouTube channel card with '5.53M subscribers' slides in over the creator as proof."},
+    {"t": 21.53, "what": "Promise: three things she does that you can steal."},
+    {"t": 32.87, "what": "Tip 1 (set expectations) shown with her pizza-challenge clip in a rounded card on a white background."},
+    {"t": 44.87, "what": "Tip 2 (foreshadowing and FOMO), explained back on the creator's face."},
+    {"t": 54.8, "what": "Tip 3: end the video right after the payoff."},
+    {"t": 62.2, "what": "Example clip in a rounded card: the subject at a drive-through asking what a dollar buys."},
+    {"t": 67.67, "what": "Creator ends abruptly on 'they won't click away just like this', using the tip on his own video."}
+  ],
+  "graphics": {"captions": "word_by_word", "caption_position": "mixed",
+               "devices": ["split_screen", "b_roll", "screenshot", "arrow_or_circle", "zoom_punch", "jump_cut", "music_bed"],
+               "density": "heavy", "per_minute_estimate": 24},
+  "characters": [],
+  "cta": {"kind": "none", "t": null},
+  "why_it_works": [
+    "Borrowed authority: a known creator's clips and subscriber count prove the claim before any advice is given.",
+    "Numbered list promise at 21 s ('three things you can steal') tells the viewer how long to stay.",
+    "Each tip is followed immediately by the subject's own clip, so the claim and the evidence arrive together.",
+    "The video ends on its own third tip, cutting right after the payoff, which pushes the loop back to the hook (loop 0.811)."
+  ],
+  "weaknesses": [
+    "69 s with an 11.7 s longest shot of the creator talking; the middle stretch sags compared with the fast first 3 s.",
+    "Tip 2 is explained in words with little on screen to show it.",
+    "No ask at the end, so the 3.3M plays convert to few follows or comments (727)."
+  ],
+  "for_robert": "Copy the meta ending: have Fred deliver the last tip and the video cut off mid-reaction right after the payoff, so the reel proves its own advice and loops."
+}

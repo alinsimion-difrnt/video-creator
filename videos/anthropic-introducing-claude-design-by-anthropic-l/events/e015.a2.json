@@ -1,0 +1,114 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a2_annotate_event",
+  "annotator": "claude-code",
+  "skill": "annotate-event@3dad117bd85a",
+  "model": null,
+  "input_hash": "e6fbd4ff902dc44f079c51b4cfef488e621060ac36d3462fc7e193980a45a7e0",
+  "created_at": "2026-10-05T06:40:10.276171Z"
+ },
+ "video": "anthropic-introducing-claude-design-by-anthropic-l",
+ "event": "e015",
+ "task": "a2-e015",
+ "elements": [
+  {
+   "box": "b01",
+   "manual_box": null,
+   "manual_reason": null,
+   "label": "Canvas content: dark-mode phone app dissolves into a glowing globe route-map design",
+   "role": "ui_panel",
+   "role_other": null,
+   "change_types": ["fade", "scale_down"],
+   "change_other": null,
+   "is_text": false,
+   "text": null,
+   "text_unit": null,
+   "estimates": {"duration_ms": 350, "easing_class": "ease_out"}
+  },
+  {
+   "box": null,
+   "manual_box": [153, 581, 643, 900],
+   "manual_reason": "No candidate box covers the whole Export dropdown; it stays open and re-frames across the dissolve.",
+   "label": "Export dropdown menu",
+   "role": "ui_panel",
+   "role_other": null,
+   "change_types": ["fade", "slide_up"],
+   "change_other": null,
+   "is_text": true,
+   "text": "Download project as .zip / Export as PDF / Export as PPTX / Send to Canva / Export as standalone HTML / Handoff to Claude Code",
+   "text_unit": "whole",
+   "estimates": {"duration_ms": 350, "easing_class": "ease_out"}
+  },
+  {
+   "box": null,
+   "manual_box": [550, 589, 630, 893],
+   "manual_reason": "No candidate box covers the hovered Handoff to Claude Code row (b09 is a fragment of it).",
+   "label": "Hovered menu row (highlight moves from Export as standalone HTML to Handoff to Claude Code)",
+   "role": "list_item",
+   "role_other": null,
+   "change_types": ["highlight"],
+   "change_other": null,
+   "is_text": true,
+   "text": "Handoff to Claude Code",
+   "text_unit": "whole",
+   "estimates": {"duration_ms": 100, "easing_class": "step"}
+  },
+  {
+   "box": "b07",
+   "manual_box": null,
+   "manual_reason": null,
+   "label": "Hand cursor",
+   "role": "cursor",
+   "role_other": null,
+   "change_types": ["slide_down"],
+   "change_other": null,
+   "is_text": false,
+   "text": null,
+   "text_unit": null,
+   "estimates": {"duration_ms": 500, "easing_class": "ease_in_out"}
+  },
+  {
+   "box": "b02",
+   "manual_box": null,
+   "manual_reason": null,
+   "label": "Tweaks control (toggle switch in the outgoing take, plain button in the incoming one)",
+   "role": "button",
+   "role_other": null,
+   "change_types": ["fade"],
+   "change_other": null,
+   "is_text": true,
+   "text": "Tweaks",
+   "text_unit": "whole",
+   "estimates": null
+  },
+  {
+   "box": "b03",
+   "manual_box": null,
+   "manual_reason": null,
+   "label": "Comment button (orange active state in the outgoing take, neutral after)",
+   "role": "button",
+   "role_other": null,
+   "change_types": ["color_shift"],
+   "change_other": null,
+   "is_text": true,
+   "text": "Comment",
+   "text_unit": "whole",
+   "estimates": null
+  }
+ ],
+ "sfx_review": [],
+ "pattern": {
+  "id": "scale_dissolve_transition",
+  "proposed_name": null,
+  "description": "With the Export menu held open, the shot cross-dissolves from one project (dark-mode phone app) to another (globe route map) while pulling out slightly; the cursor keeps travelling down the menu and lands on Handoff to Claude Code.",
+  "why_premium": "Keeping the menu and cursor as a continuous anchor while the canvas behind swaps projects implies 'this works for every design' in a third of a second, without a cut."
+ },
+ "build_hint": {
+  "gsap": "Stack take A and take B; tl.fromTo('.take-b', {opacity: 0, scale: 1.06, y: 24}, {opacity: 1, scale: 1, y: 0, duration: 0.35, ease: 'power2.out'}).to('.take-a', {opacity: 0, scale: 0.98, duration: 0.35, ease: 'power1.inOut'}, '<'); cursor y tween down the menu (ease 'power2.inOut'); row highlight set instantly as the cursor crosses rows.",
+  "remotion": "Two layers in one <Sequence>; B opacity = interpolate(frame, [0, 9], [0, 1], {extrapolateRight: 'clamp'}), B scale = interpolate(frame, [0, 9], [1.06, 1], {easing: Easing.out(Easing.quad)}); A opacity mirrors it. Cursor position via interpolate with Easing.inOut(Easing.cubic); no spring needed (no overshoot)."
+ },
+ "confidence": "medium",
+ "notes": "No SFX candidates in this window. Code camera verdict is pull_out (scale 0.944), consistent with the visual. Same construction as e014 (dissolve between takes with the Export menu as anchor); toolbar state differences (Tweaks, Comment) are take differences, not authored animations."
+}

@@ -1,0 +1,61 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "d5c30ab178c1747cb111b178ca48449e5a14d3e502b82ec834858c4bcdb216e6",
+    "created_at": "2026-10-05T06:57:24.937508Z"
+  },
+  "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+  "event": "e029",
+  "task": "a2-e029",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "URL pill",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["mask_reveal", "scale_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "zendesk.com/service/ai/ai-agents",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 450, "easing_class": "ease_out", "source": "model_estimate"}
+    },
+    {
+      "box": null,
+      "manual_box": [410, 406, 472, 592],
+      "manual_reason": "Candidates b02 and b03 cover only thin strips along the bottom of the letters; this box covers the whole 'Learn more' line.",
+      "label": "'Learn more' caption",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Learn more",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out", "source": "model_estimate"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x095", "verdict": "unsure", "label": "unsure", "note": "Falls during the pill expansion but sits just after a regular music beat column; harmonic bands that look musical, with no clear swoosh sweep."},
+    {"id": "x096", "verdict": "unsure", "label": "unsure", "note": "Broadband onset with a sustained tail about 0.3 s after the pill settles; no visual change then. It may be a music hit or a soft outro accent."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "cta pill expand",
+    "description": "The end-card URL pill grows horizontally out from its centre, and its text is revealed by the expanding pill edges as if masked; 'Learn more' sits above it.",
+    "why_premium": "The CTA builds from one point to full width in about half a second, so the eye lands on the URL as it reads out instead of the whole card cutting in at once."
+  },
+  "build_hint": {
+    "gsap": "tl.fromTo(pill, {clipPath: 'inset(0 50% 0 50% round 12px)'}, {clipPath: 'inset(0 0% 0 0% round 12px)', duration: 0.45, ease: 'power3.out'}).fromTo(pillText, {scale: 0.96}, {scale: 1, duration: 0.45, ease: 'power3.out'}, '<').fromTo(caption, {autoAlpha: 0}, {autoAlpha: 1, duration: 0.3, ease: 'power2.out'}, '<')",
+    "remotion": "p = spring({frame, fps, config: {damping: 200, stiffness: 120}}); pill clipPath inset(0 ${50*(1-p)}% 0 ${50*(1-p)}%); text scale interpolate(p, [0,1], [0.96,1]); caption opacity interpolate(frame, [0,9], [0,1])."
+  },
+  "confidence": "medium",
+  "notes": "The 'Learn more' caption is cut off at the top of the filmstrip crop, so whether it fades or slides in is uncertain. Both SFX candidates are ambiguous between music and a light accent."
+}

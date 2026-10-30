@@ -1,0 +1,447 @@
+provenance:
+  schema_version: 1
+  tool_version: 0.1.0
+  stage: g2_gold
+  annotator: human
+  skill: null
+  model: null
+  input_hash: 0c89b83b53bc54f94537998e2658ab79be00a38425907a157716ad9089a9ecb7
+  created_at: '2026-10-05T10:59:21.112518Z'
+video: notion-introducing-notion-ai-connectors
+watch_url: https://www.youtube.com/watch?v=6QmV5TtPyZE
+shots:
+- shot: s001
+  start_s: 0.0
+  end_s: 6.3063
+  shot_type: logo
+  composition: centered
+  transition_in: other
+  depth_cues:
+  - shadow
+  - blur
+  status: pending
+  note: null
+- shot: s002
+  start_s: 6.3063
+  end_s: 6.8735
+  shot_type: logo
+  composition: full_bleed
+  transition_in: hard_cut
+  depth_cues:
+  - shadow
+  status: pending
+  note: null
+- shot: s003
+  start_s: 6.8735
+  end_s: 7.5075
+  shot_type: logo
+  composition: full_bleed
+  transition_in: hard_cut
+  depth_cues:
+  - shadow
+  status: pending
+  note: null
+- shot: s004
+  start_s: 7.5075
+  end_s: 17.5175
+  shot_type: kinetic_type
+  composition: other
+  transition_in: hard_cut
+  depth_cues:
+  - shadow
+  status: pending
+  note: null
+- shot: s005
+  start_s: 17.5175
+  end_s: 32.032
+  shot_type: other
+  composition: centered
+  transition_in: crossfade
+  depth_cues:
+  - shadow
+  - blur
+  status: pending
+  note: null
+events:
+- event: e001
+  shot: s001
+  start_s: 0.0334
+  end_s: 1.6016
+  elements:
+  - id: b02
+    label: Google Drive app icon tile (1st in row)
+    role: logo
+    change_types:
+    - slide_up
+    - blur_in
+    - fade
+    moves: true
+  - id: b05
+    label: Slack app icon tile (2nd)
+    role: logo
+    change_types:
+    - slide_up
+    - blur_in
+    - fade
+    moves: true
+  - id: b03
+    label: Notion app icon (3rd)
+    role: logo
+    change_types:
+    - slide_up
+    - blur_in
+    - fade
+    moves: true
+  - id: b06
+    label: Jira app icon tile (4th)
+    role: logo
+    change_types:
+    - slide_up
+    - blur_in
+    - fade
+    moves: true
+  - id: b08
+    label: GitHub app icon tile (5th)
+    role: logo
+    change_types:
+    - slide_up
+    - blur_in
+    - fade
+    moves: true
+  - id: b04
+    label: Salesforce app icon tile (6th, last)
+    role: logo
+    change_types:
+    - slide_up
+    - blur_in
+    - fade
+    moves: true
+  - id: m07
+    label: Rounded translucent tray behind the icon row
+    role: ui_panel
+    change_types:
+    - fade
+    moves: true
+  missed: []
+  pattern: stagger_list_reveal
+  sfx: []
+  status: pending
+  note: null
+- event: e004
+  shot: s001
+  start_s: 4.4711
+  end_s: 4.5712
+  elements:
+  - id: b01
+    label: Connector logo tray (Drive, Slack, Notion, Jira) snapping to a tight framing
+    role: ui_panel
+    change_types:
+    - scale_up
+    moves: true
+  - id: b02
+    label: Slack icon tile flashing to grey
+    role: icon
+    change_types:
+    - color_shift
+    - highlight
+    moves: true
+  missed: []
+  pattern: layout_reframe
+  sfx: []
+  status: pending
+  note: null
+- event: e006
+  shot: s001
+  start_s: 5.0717
+  end_s: 5.1718
+  elements:
+  - id: b02
+    label: Slack and Notion icon tiles (sequential grey flash)
+    role: icon
+    change_types:
+    - color_shift
+    - highlight
+    moves: true
+  - id: b01
+    label: Google Drive tile right edge (residual flash at burst start)
+    role: icon
+    change_types:
+    - color_shift
+    moves: true
+  missed: []
+  pattern: other
+  sfx: []
+  status: pending
+  note: null
+- event: e009
+  shot: s003
+  start_s: 6.9069
+  end_s: 7.2739
+  elements:
+  - id: b02
+    label: Notion and Jira icon tiles (sequential grey flash)
+    role: icon
+    change_types:
+    - color_shift
+    - highlight
+    moves: true
+  - id: b01
+    label: GitHub icon tile grey flash (cropped at right edge)
+    role: icon
+    change_types:
+    - color_shift
+    - highlight
+    moves: true
+  missed: []
+  pattern: other
+  sfx: []
+  status: pending
+  note: null
+- event: e010
+  shot: s004
+  start_s: 7.6076
+  end_s: 8.642
+  elements:
+  - id: b07
+    label: Word 'Can't'
+    role: headline
+    change_types:
+    - fade
+    - color_shift
+    - slide_left
+    moves: true
+  - id: b08
+    label: Word 'find'
+    role: headline
+    change_types:
+    - fade
+    - color_shift
+    moves: true
+  - id: b06
+    label: Word 'what'
+    role: headline
+    change_types:
+    - fade
+    - color_shift
+    moves: true
+  - id: b05
+    label: Word 'you're'
+    role: headline
+    change_types:
+    - fade
+    - color_shift
+    moves: true
+  - id: b04
+    label: Word 'looking'
+    role: headline
+    change_types:
+    - fade
+    - color_shift
+    moves: true
+  - id: b09
+    label: Word 'for?'
+    role: headline
+    change_types:
+    - fade
+    - color_shift
+    moves: true
+  missed: []
+  pattern: kinetic_word_reveal
+  sfx: []
+  status: pending
+  note: null
+- event: e012
+  shot: s004
+  start_s: 11.6116
+  end_s: 12.0787
+  elements:
+  - id: b01
+    label: Notion logo flashes (dims to grey and back) then cuts out
+    role: logo
+    change_types:
+    - color_shift
+    - fade
+    moves: true
+  - id: b02
+    label: Word 'Introducing'
+    role: headline
+    change_types:
+    - fade
+    - color_shift
+    moves: true
+  - id: b03
+    label: Word 'Notion' (second line, still mid-reveal)
+    role: headline
+    change_types:
+    - fade
+    - color_shift
+    moves: true
+  missed: []
+  pattern: kinetic_word_reveal
+  sfx: []
+  status: pending
+  note: null
+- event: e014
+  shot: s004
+  start_s: 13.1465
+  end_s: 13.7471
+  elements:
+  - id: b06
+    label: Title line 'Introducing' shifts left
+    role: headline
+    change_types:
+    - slide_left
+    moves: true
+  - id: b03
+    label: Title line 'Notion AI connectors' shifts left
+    role: headline
+    change_types:
+    - slide_left
+    moves: true
+  - id: m03
+    label: Slack 'Select channels to connect' dialog slides in from the right
+    role: ui_panel
+    change_types:
+    - slide_left
+    - fade
+    moves: true
+  - id: m04
+    label: Mouse cursor travels into the dialog channel list
+    role: cursor
+    change_types:
+    - slide_right
+    - slide_up
+    moves: true
+  - id: m05
+    label: '''# all-company'' checkbox becomes checked'
+    role: button
+    change_types:
+    - color_shift
+    moves: true
+  missed: []
+  pattern: layout_reframe
+  sfx: []
+  status: pending
+  note: null
+- event: e016
+  shot: s005
+  start_s: 19.8198
+  end_s: 20.6874
+  elements:
+  - id: b01
+    label: Headline line 'without leaving Notion'
+    role: headline
+    change_types:
+    - fade
+    - slide_up
+    moves: true
+  - id: b02
+    label: Final word 'Notion'
+    role: headline
+    change_types:
+    - fade
+    - slide_up
+    - color_shift
+    moves: true
+  missed: []
+  pattern: kinetic_word_reveal
+  sfx: []
+  status: pending
+  note: null
+- event: e017
+  shot: s005
+  start_s: 22.2556
+  end_s: 22.9229
+  elements:
+  - id: b01
+    label: Notion Projects board window (kanban columns)
+    role: ui_panel
+    change_types:
+    - scale_up
+    - slide_left
+    - slide_up
+    - blur_out
+    moves: true
+  - id: b02
+    label: Mouse cursor
+    role: cursor
+    change_types:
+    - fade
+    moves: true
+  missed: []
+  pattern: ui_camera_push_in
+  sfx: []
+  status: pending
+  note: null
+- event: e020
+  shot: s005
+  start_s: 25.7925
+  end_s: 26.0594
+  elements:
+  - id: b02
+    label: Prompt input text (cleared on send)
+    role: body_text
+    change_types:
+    - fade
+    moves: true
+  - id: b03
+    label: Sent user message bubble
+    role: card
+    change_types:
+    - fade
+    - slide_up
+    moves: true
+  - id: m03
+    label: Faint AI response row starting to appear
+    role: other
+    change_types:
+    - fade
+    moves: true
+  missed: []
+  pattern: prompt_type_on
+  sfx: []
+  status: pending
+  note: null
+- event: e022
+  shot: s005
+  start_s: 27.4274
+  end_s: 27.8278
+  elements:
+  - id: b02
+    label: Mouse cursor gliding to the Slack citation chip
+    role: cursor
+    change_types:
+    - slide_up
+    - slide_left
+    moves: true
+  missed: []
+  pattern: cursor_guided_demo
+  sfx:
+  - id: x002
+    sync_s: 28.1078
+    label: music
+  status: pending
+  note: null
+- event: e024
+  shot: s005
+  start_s: 30.5639
+  end_s: 31.031
+  elements:
+  - id: b02
+    label: Notion cube logomark
+    role: logo
+    change_types:
+    - slide_left
+    moves: true
+  - id: b01
+    label: Notion wordmark
+    role: logo
+    change_types:
+    - fade
+    - slide_left
+    moves: true
+  missed: []
+  pattern: logo_resolve
+  sfx: []
+  status: pending
+  note: null

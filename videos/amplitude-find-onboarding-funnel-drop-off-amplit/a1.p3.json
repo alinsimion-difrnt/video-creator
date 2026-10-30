@@ -1,0 +1,48 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "87ea40b3116b309475f6a86d9d32323065e36e09a7d73d91955db43821b420b3",
+    "created_at": "2026-10-05T06:21:29.300768Z"
+  },
+  "video": "amplitude-find-onboarding-funnel-drop-off-amplit",
+  "task": "a1-p3",
+  "shots": [
+    {
+      "shot": "s006",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Funnel bar chart (Welcome, User Sign Up, Follow Playlist, Play Song or Video) with the Total Conversion headline metric, plus the 'Completed within' conversion-window control in the left rail",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Total Conversion",
+        "19.5%",
+        "6.11%",
+        "From Welcome to Play Song or Video within the last 30 days.",
+        "Welcome",
+        "User Sign Up",
+        "Follow Playlist",
+        "Play Song or Video",
+        "Completed within 1 days",
+        "Completed within 30 minutes",
+        "Optimize your conversion funnel"
+      ],
+      "text_word_count": 38,
+      "typography": "Native product UI text only (no added captions or titles): neutral geometric/grotesque sans (low-confidence guess: Inter-like), large bold headline metric, medium-weight sentence-case labels, small regular-weight body and axis labels, default tracking.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Unbroken ~60 s full-screen recording of the Amplitude funnel chart. Opens with the fourth event (Play Song or Video) being added via the event dropdown; the chart reloads and Total Conversion changes from 22.1% to 19.5%. While the voice-over explains default settings and the conversion window (w150-w214), red outline boxes call out the 30d date-range toggle and the 'Completed within 1 days' control. The cursor opens that control and sets it to 30 minutes (w233-w242); the chart greys out, reloads, and the headline drops to 6.11%, which gets a red callout box (w243-w265). A red box then frames the User Sign Up and Follow Playlist bars as the biggest drop-off (w266-w285), and the cursor hovers the upper (dropped-off) part of the Follow Playlist bar to raise a tooltip (w286-w294). In the final frame the whole UI appears to begin scaling up, leading into the next shot's zoom.",
+      "build_rebuild": "Play a full-bleed 1080p UI capture at 1x with no camera moves, and on cue with specific VO word indices overlay 2 px red rounded-rectangle outline callouts (hard on/off, no animation) around the control or metric being discussed.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

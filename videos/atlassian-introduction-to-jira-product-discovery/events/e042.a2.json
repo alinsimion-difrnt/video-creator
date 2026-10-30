@@ -1,0 +1,37 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "1533903e8e637e98fc24108e85ce74f353a7c6abe8c43cec9d4fddd68cb7f1f0",
+    "created_at": "2026-10-05T06:40:46.294204Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e042",
+  "task": "a2-e042",
+  "elements": [
+    {"box": null, "manual_box": [592, 676, 650, 709], "manual_reason": "The dragged idea bubble with the cursor on it ends at about (886,447); candidate boxes b01/b02 are broad unions that also cover the tooltip card, so none isolates the bubble.", "label": "Dragged idea bubble with cursor", "role": "chart", "role_other": null, "change_types": ["slide_right", "slide_up"], "change_other": null, "is_text": false, "text": null, "text_unit": null, "estimates": {"duration_ms": 270, "easing_class": "ease_out"}},
+    {"box": "b01", "manual_box": null, "manual_reason": null, "label": "Idea tooltip card", "role": "card", "role_other": null, "change_types": ["slide_right", "fade"], "change_other": null, "is_text": false, "text": null, "text_unit": null, "estimates": {"duration_ms": 200, "easing_class": "ease_out"}},
+    {"box": "b04", "manual_box": null, "manual_reason": null, "label": "Tooltip idea title", "role": "label", "role_other": null, "change_types": ["slide_right", "fade"], "change_other": null, "is_text": true, "text": "Authentication options", "text_unit": "whole", "estimates": {"duration_ms": 200, "easing_class": "ease_out"}},
+    {"box": "b07", "manual_box": null, "manual_reason": null, "label": "Tooltip Impact label", "role": "label", "role_other": null, "change_types": ["slide_right", "fade"], "change_other": null, "is_text": true, "text": "Impact:", "text_unit": "whole", "estimates": {"duration_ms": 200, "easing_class": "ease_out"}},
+    {"box": "b08", "manual_box": null, "manual_reason": null, "label": "Tooltip Effort label", "role": "label", "role_other": null, "change_types": ["slide_right", "fade"], "change_other": null, "is_text": true, "text": "Effort:", "text_unit": "whole", "estimates": {"duration_ms": 200, "easing_class": "ease_out"}},
+    {"box": null, "manual_box": [530, 664, 556, 720], "manual_reason": "The Effort rating dots in the tooltip go from four to five as the bubble is dragged right along the Effort axis; no candidate box covers just the dots.", "label": "Tooltip Effort rating dots", "role": "metric", "role_other": null, "change_types": ["slide_right", "other"], "change_other": "rating_increment", "is_text": false, "text": null, "text_unit": null, "estimates": {"duration_ms": 33, "easing_class": "step"}},
+    {"box": "b05", "manual_box": null, "manual_reason": null, "label": "Previous tooltip position (ghost fading out)", "role": "card", "role_other": null, "change_types": ["fade"], "change_other": null, "is_text": false, "text": null, "text_unit": null, "estimates": {"duration_ms": 200, "easing_class": "ease_out"}}
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "On the Impact vs. Effort matrix the cursor drags the 'Authentication options' bubble right and slightly up; the hover tooltip crossfades from its old spot to follow the bubble, and its Effort rating goes from four dots to five as the bubble crosses into the next Effort bucket.",
+    "why_premium": "Direct manipulation with live feedback (tooltip follows, rating updates as you drag) shows the matrix is editable, not a static chart, right as the voiceover says 'compare ideas'; the crossfading tooltip avoids a jarring jump."
+  },
+  "build_hint": {
+    "gsap": "tl.to([bubble,cursor],{x:120,y:-20,duration:0.27,ease:'power2.out'}); tl.to(tooltipOld,{autoAlpha:0,x:40,duration:0.2,ease:'power1.out'},0.05).fromTo(tooltipNew,{autoAlpha:0,x:-40},{autoAlpha:1,x:0,duration:0.2,ease:'power1.out'},'<'); tl.set(effortDots[4],{backgroundColor:'#F87462'},0.15).",
+    "remotion": "Bubble/cursor x,y = interpolate(frame,[0,8],[start,end],{easing:Easing.out(Easing.quad)}); tooltip crossfade: old opacity interpolate(frame,[1,7],[1,0]), new opacity interpolate(frame,[1,7],[0,1]) with translateX following the bubble; effort dot count switches from 4 to 5 when bubble x passes the bucket boundary (frame-step, no easing)."
+  },
+  "confidence": "medium",
+  "notes": "Screen-recorded drag. Mid-burst frames show two overlapping tooltip copies (old fading, new appearing), so the tooltip motion reads as a crossfade plus drift rather than a clean slide. The two manual boxes are approximate. The tooltip card is semi-transparent at the end frame (still fading in)."
+}

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="{{LANG}}"><head><meta charset="utf-8">
+<!-- A split cover (create/cover.py, `create cover --split`) for a presenter video on a split base: the title in
+     the top half on the brand's paper, the presenter untouched below the seam (Robert, facebook-algorithm:
+     "You put the text on my face"). -->
+<link rel="stylesheet" href="fonts.css">
+<style>
+  {{CSS_VARS}}
+  html, body { margin: 0; width: var(--w); height: var(--h); overflow: hidden; background: var(--paper); }
+  #frame { position: absolute; left: 0; top: 0; width: var(--w); height: var(--h); }
+  #top { position: absolute; left: 0; top: 0; width: var(--w); height: var(--seam); background: var(--paper);
+    background-image: radial-gradient(var(--dots) 1.5px, transparent 1.5px); background-size: 36px 36px; }
+  #seam { position: absolute; left: 0; top: calc(var(--seam) - 2px); width: var(--w); height: 4px; background: var(--ink); }
+  #wrap { position: absolute; left: var(--x0); width: var(--tw); top: var(--y0); height: var(--band); display: flex;
+    flex-direction: column; justify-content: flex-end; align-items: flex-start; font-family: var(--body); }
+  .kick { display: inline-flex; align-items: center; gap: 14px; font: 600 34px/1 var(--body); letter-spacing: .08em;
+    text-transform: uppercase; color: #fff; background: var(--accent); padding: 14px 22px; border-radius: 8px; }
+  .kick img { width: 40px; height: 40px; object-fit: contain; background: #fff; border-radius: 8px; padding: 4px;
+    box-sizing: border-box; }
+  h1 { margin: 28px 0 0; font: 700 var(--size)/0.98 var(--heading); letter-spacing: -0.045em; color: var(--ink);
+    text-wrap: balance; }
+  h1 b { font-weight: inherit; color: var(--accent); }
+  .sub { margin: 28px 0 0; font: 500 48px/1.2 var(--body); color: var(--lede); }
+  #logo { position: absolute; left: var(--x0); top: var(--logo-y); height: var(--logo-h); }
+</style></head>
+<body>
+<img id="frame" src="frame.png" alt="">
+<div id="top"></div><div id="seam"></div>
+<div id="wrap">{{KICK}}<h1>{{TITLE}}</h1>{{SUB}}</div>
+<img id="logo" src="logo.svg" alt="">
+</body></html>

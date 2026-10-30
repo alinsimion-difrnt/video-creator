@@ -1,0 +1,136 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "afed62608a73ec6269d8a365c83f0d5e5d39ae7b7119964b8d19d6c4c2501bd9",
+    "created_at": "2026-10-05T06:25:10.021746Z"
+  },
+  "video": "clickup-clickup-4-0-world-s-first-converged-ai",
+  "task": "a1-p5",
+  "shots": [
+    {
+      "shot": "s025",
+      "shot_type": "logo",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Centered ClickUp logo lockup with a dark '4.0' pill and the tagline 'Experience Convergence today' beneath, under a soft pink-lavender-blue haze along the top edge",
+      "transition_in": "other",
+      "transition_other": "Continuation of s024 with no visible cut: the rotating card ring and the 'Convergence' line have faded out, leaving 'A New Era of' alone on the pale lavender-white background",
+      "on_screen_text": [
+        "A New Era of",
+        "Tasks",
+        "Chat",
+        "Brain",
+        "Forms",
+        "ClickUp",
+        "Stop the Sprawl",
+        "4.0",
+        "Experience Convergence today"
+      ],
+      "text_word_count": 16,
+      "typography": "'A New Era of' in a dark semibold geometric sans, title case, tight tracking. The end-card wordmark is very heavy and dark, set beside a monospace '4.0' in a dark rounded pill (the same lockup as s006). Taglines are small and centered under the wordmark, with weights mixed word by word: 'Stop the' heavier and 'Sprawl' lighter; later 'Experience' bold, 'Convergence' medium and 'today' regular, slightly dropped. This suggests a per-word weight or slide-in settle. Card titles are bold, in module accent colours. The small grey ClickUp watermark stays bottom-right. Font guess (low confidence): Plus Jakarta Sans-like geometric sans.",
+      "depth_cues": ["perspective_tilt", "shadow", "blur"],
+      "what_happens": "'A New Era of' holds alone on the pale background while the VO says 'a new era of' (w87-w90). At about 51.5 s a fanned row of tilted 3D module cards (Tasks first, then Projects, Chat, Whiteboards, Dashboards, Brain, Teams, Forms) sweeps across from the left and covers the headline. At about 52.5 s it sweeps off to the right and uncovers the ClickUp logo, timed to VO 'click-up' (w91-w92), while a pink-violet-blue gradient haze blooms along the top. 'Stop the Sprawl' builds under the logo by about 53.0 s. From about 53.5 s the '4.0' pill fades in from translucent grey through lavender to solid dark by 54.5 s, and the logo shifts left to make room. This is near the music SFX x058 at 53.6 s. The tagline changes to 'Experience Convergence today', and the end card then holds static for about 5 s to the end (59.4 s).",
+      "build_rebuild": "On a pale background with a blurred multi-stop gradient haze along the top, wipe a row of rotateY-tilted 3D UI cards across the frame from left to right to uncover a centered logo. Animate a '4.0' pill's opacity and fill from translucent to solid dark while the logo group slides left to stay centered. Swap the tagline under it word by word with staggered y-offset and font-weight settles. Hold the final lockup for about 5 s.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001"], "words": [0, 4]},
+      {"beat": "problem", "shots": ["s001", "s002"], "words": [5, 18]},
+      {"beat": "agitate", "shots": ["s003", "s004", "s005"], "words": [19, 26]},
+      {"beat": "mechanism", "shots": ["s006", "s007"], "words": [27, 44]},
+      {"beat": "demo", "shots": ["s008", "s009", "s010", "s011", "s012"], "words": [45, 60]},
+      {"beat": "outcome", "shots": ["s013", "s014", "s015", "s016", "s017", "s018", "s019", "s020", "s021", "s022", "s023", "s024"], "words": [61, 86]},
+      {"beat": "cta", "shots": ["s025"], "words": [87, 92]}
+    ],
+    "hook": {
+      "text": "Work Sprawl is killing us.",
+      "technique": "pain",
+      "technique_other": null,
+      "shots": ["s001"],
+      "words": [0, 4]
+    },
+    "cta": {
+      "text": "Experience Convergence today",
+      "shots": ["s025"]
+    },
+    "tone": "A bold, high-energy launch manifesto. It opens on a named pain ('Work Sprawl'), then moves into confident, almost luxury-brand product theatre: kinetic type synced word by word to a punchy VO, grain-gradient colour pops, and 3D card choreography. It is aspirational rather than instructional, with an 'a new era of...' anaphora finale.",
+    "signature_moments": [
+      {
+        "shots": ["s003", "s004", "s005"],
+        "description": "The camera dives through the counter of the 'o' in 'productivity', and the letter becomes a portal. Inside, the lockup re-forms with 'human' swapped for 'AI' ('Work sprawl kills AI productivity').",
+        "why_premium": "It turns a copy beat into a spatial transition, so the cut itself carries the argument ('both kinds of productivity'). Getting the scale and blur ramp this precise looks bespoke, not templated."
+      },
+      {
+        "shots": ["s001", "s002"],
+        "description": "One continuous drawn line with a dot head runs through the problem section. It sweeps frames clean, carries app and AI-tool badges, branches into a tree of question chips, and finally swells into a full-frame circle.",
+        "why_premium": "A single through-line motif joins many messy ideas into one camera move. That makes 'sprawl' feel designed and controlled, and it shows strong art direction and continuity planning."
+      },
+      {
+        "shots": ["s018", "s019", "s020", "s021", "s022", "s023", "s024"],
+        "description": "A ring of thick-rimmed, edge-lit 3D product cards orbits a fixed 'A New Era of...' headline. The spin slows until each module is readable, then the background flips from vivid grain gradient to light on the word 'convergence' (w86).",
+        "why_premium": "Motion blur that eases out to legibility shows off the breadth of the product without a feature list. The theme flip on the key brand word lands the concept with a material, device-launch-level finish."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 4,
+        "evidence": "It opens on a blunt, named pain stated in the first 2.4 s ('Work Sprawl is killing us.', w0-w4). The words flip grey to black in sync with the VO while a dense pain-point flowchart draws in, so the frame is busy from the first second. The claim is strong but not novel, and the headline stays the hero for longer than a scroll-stopping visual would.",
+        "refs": ["s001", "w0", "w4"]
+      },
+      "clarity": {
+        "score": 3,
+        "evidence": "The problem and the positioning are clear ('too many apps, too many AI tools', 'Meet ClickUp 4.0, the first converged AI workspace'). What the product actually does is shown only as fleeting module cards, and the middle relies on abstract jargon ('convergence unlocks maximum productivity and performance', w65-w70). A viewer learns the claim, not the workflow.",
+        "refs": ["s002", "s006", "s009", "s016", "w36", "w40", "w65", "w70"]
+      },
+      "ui_showcase": {
+        "score": 3,
+        "evidence": "The UI is shown as simplified recreated cards (Chat, Calendar, Teams Hub, Brain), a brief Inbox window, a tilted 'pixel precision' close-up, and a 3D card ring. It is beautifully rendered but shown in short flashes (s009-s010 change cards about every 0.6 s), and nothing is demonstrated in use: no cursor and no task completed.",
+        "refs": ["s009", "s010", "s011", "s012", "s015", "s023"]
+      },
+      "motion_polish": {
+        "score": 5,
+        "evidence": "There is best-in-class craft throughout: a zoom-through letter portal, a continuous line motif, per-letter type springs, motion-blurred 3D card flips timed to impacts, a slot-machine word roll, a card ring easing to legibility, and a clean logo reveal behind a card wipe. Several detector shot splits (s018-s023) come from continuous blurred camera moves, not cuts.",
+        "refs": ["s002", "s004", "s009", "s016", "s020", "s023", "s025"]
+      },
+      "sound_design": {
+        "score": 4,
+        "evidence": "This is judged from the anchors' audio facts plus the visuals, without listening. There are 61 SFX candidates in 59.4 s, mostly swoosh_reverse, so nearly every transition is sweetened. A cluster of impacts (x023-x025) lines up with the s009 card flips. The track runs at a steady 123 BPM with beats through about 56.5 s, and a music sting (x058, 53.6 s) lands on the '4.0' end-card reveal. Integrated loudness is -13.83 LUFS, loud and social-ready. Density is high enough that the SFX may blur together, and mix quality cannot be judged from the data.",
+        "refs": ["s009", "s016", "s025"]
+      },
+      "vo_script_quality": {
+        "score": 4,
+        "evidence": "The script is tight, rhythmic and about 60 s long. It has a memorable motif ('kill sprawl', w30-w31 and w43-w44), a parallel 'human productivity / AI productivity' turn (w19-w26) and an 'a new era of...' anaphora build to the brand name (w71-w92). The middle drifts into buzzwords (w65-w70), and the line 'everything you need for work and AI' (w45-w52) is vague.",
+        "refs": ["w19", "w26", "w30", "w43", "w65", "w70", "w71", "w92"]
+      },
+      "brand_consistency": {
+        "score": 5,
+        "evidence": "One geometric sans family is used throughout. The grain gradient echoes the logo's pink-orange-violet-blue mark, and a grey watermark stays bottom-right in every shot. The '4.0' monospace pill lockup is introduced in s006 and pays off in s025, and the 'sprawl' motif recurs from s001 to the end-card tagline 'Stop the Sprawl'.",
+        "refs": ["s001", "s006", "s008", "s024", "s025"]
+      },
+      "works_muted": {
+        "score": 4,
+        "evidence": "Almost every VO line is mirrored as on-screen kinetic type (s001-s007, s012-s025), so the story of pain, product, promise and end card reads with sound off. The demo cards in s009-s011 carry no headline, so 'everything you need for work and AI' (w45-w52) is lost when muted.",
+        "refs": ["s001", "s006", "s009", "s016", "s025"]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "It is a premium, highly art-directed launch film with exceptional motion and brand cohesion and a clear pain-to-promise arc. It is held back from a 5 by thin product demonstration and abstract 'convergence' messaging that tells the viewer more than it shows.",
+        "refs": ["s001", "s004", "s011", "s020", "s025"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 2,
+      "baked_in_text": true,
+      "vo_dependent": false,
+      "notes": "The on-screen kinetic type is the animation itself: per-letter springs on 'productivity', a letter-counter portal, a strike-through on 'Sprawl', the slot-roll on 'Maximum ...' and the 'A New Era of' lockups. Every language would need a re-animated, re-timed render, not a subtitle swap. English wordplay ('kill sprawl', 'Stop the Sprawl') and the word-synced reveals would need copy rewrites. Because the text mirrors the VO, a muted, subtitle-free cut is feasible once re-rendered."
+    }
+  }
+}

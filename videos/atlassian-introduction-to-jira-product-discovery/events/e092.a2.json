@@ -1,0 +1,114 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "a5ba134d1f1139964000abf5dd2297d669bba1389f8538f11f9f71a92eec403d",
+    "created_at": "2026-10-05T06:38:31.802215Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e092",
+  "task": "a2-e092",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Idea detail side panel closes, revealing Goal / Delivery status / Assignee columns",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 100, "easing_class": "step"}
+    },
+    {
+      "box": "b12",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Collaborator avatar stack appears in view header",
+      "role": "avatar",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 100, "easing_class": "step"}
+    },
+    {
+      "box": "b13",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Share / About this view header actions appear",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Share About this view",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 100, "easing_class": "step"}
+    },
+    {
+      "box": "b06",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Find-an-idea search field appears",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Find an idea in this view",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 100, "easing_class": "step"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Browser URL changes from idea detail to view URL",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "text_swap",
+      "is_text": true,
+      "text": "christest567.atlassian.net/jira/polaris/projects/TS/ideas/view/311512",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Row hover highlight as cursor passes over lower rows",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 200, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "layout_reframe",
+    "proposed_name": null,
+    "description": "Screen recording: the idea detail side panel is dismissed and the Delivery list view re-lays out to full width, exposing extra columns and header actions; cursor then hovers rows.",
+    "why_premium": "Closing the detail panel returns to the full table in one beat, so the viewer sees the delivery fields in context right as the narration says 'surface this delivery field'."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.detail-panel', {xPercent: 100, autoAlpha: 0, duration: 0.25, ease: 'power2.in'}).fromTo(['.col-goal', '.col-status', '.col-assignee', '.header-actions'], {autoAlpha: 0}, {autoAlpha: 1, duration: 0.2, ease: 'power1.out', stagger: 0.03}, '<0.1')",
+    "remotion": "panelX = interpolate(frame, [0, 8], [0, 100], {easing: Easing.in(Easing.quad), extrapolateRight: 'clamp'}); column opacity = interpolate(frame, [3, 9], [0, 1], {extrapolateRight: 'clamp'}); no spring, UI state swap."
+  },
+  "confidence": "medium",
+  "notes": "Raw screen recording; panel close appears as a near-instant swap (single energy spike), so fade/step is approximate. Hover tooltip on rows is cursor interaction, not authored motion."
+}

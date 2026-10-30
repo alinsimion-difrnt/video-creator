@@ -1,0 +1,71 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "9d5f57c3625e39129863bc8c8e73f3ab58e011811ec656f526b7f18e126df4bd",
+    "created_at": "2026-10-05T06:53:46.446497Z"
+  },
+  "video": "salesforce-what-is-agentforce-and-how-businesses-us",
+  "event": "e020",
+  "task": "a2-e020",
+  "elements": [
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Agent greeting message (avatar + text)",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Hi! I'm your Service Agent",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 350, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Customer message bubble (avatar + multi-line text)",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["slide_up", "mask_reveal"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Hi, my email address is mrichards@example.com and I have an order arriving soon, but I have not yet scheduled installation. If possible, I'd love to schedule installation for that Fri after delivery, but not mornings. Do you have appointments available?",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 350, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x031",
+      "verdict": "unsure",
+      "label": "unsure",
+      "note": "Two short bright tonal blips in the upper mids around 63.45-63.55 s sit between x031 and x032; they look like a single chime that the detector split. x031's onset comes before any visual motion."
+    },
+    {
+      "id": "x032",
+      "verdict": "confirm",
+      "label": "chime",
+      "note": "Lines up with the start of the message slide (offset +20 ms); tonal, harmonic shape consistent with a message-arrival chime."
+    }
+  ],
+  "pattern": {
+    "id": "masked_scroll",
+    "proposed_name": null,
+    "description": "Inside the fixed Conversation Preview panel, the customer's message enters from the bottom edge and pushes the agent greeting upward, so the thread scrolls up under the panel mask as the new bubble settles above the input field.",
+    "why_premium": "The chat thread grows the way a real messenger does: the content scrolls inside its own mask, the frame stays still, and a soft chime marks the arrival. The demo feels live without any cursor or typing filler."
+  },
+  "build_hint": {
+    "gsap": "Clip the thread container (overflow: hidden). On new message: gsap.timeline().fromTo('.thread', {y: 0}, {y: -messageHeight, duration: 0.35, ease: 'power3.out'}).fromTo('.msg-new', {autoAlpha: 1, y: 40}, {y: 0, duration: 0.35, ease: 'power3.out'}, '<'); no stagger; the chime fires at t=0.",
+    "remotion": "const p = spring({frame: frame - start, fps, config: {damping: 200, stiffness: 170, mass: 1}}); thread translateY = interpolate(p, [0, 1], [0, -messageHeight]); render inside an overflow: hidden container so the new bubble is revealed by the panel edge."
+  },
+  "confidence": "medium",
+  "notes": "Energy ramps up and drops off abruptly at about frame 1523, which may be ease-in-out rather than ease-out. Camera move is none; scale 0.96 reflects the scrolling thread content, not a zoom. x031 and x032 may be one sound."
+}

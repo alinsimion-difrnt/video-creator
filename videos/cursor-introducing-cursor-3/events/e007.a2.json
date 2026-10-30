@@ -1,0 +1,48 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "8b3867e08601a540e2275e58710cf0b8c27a6951cf9c7e50f01edb18bf876212",
+    "created_at": "2026-10-05T06:43:29.211599Z"
+  },
+  "video": "cursor-introducing-cursor-3",
+  "event": "e007",
+  "task": "a2-e007",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Live-action two-shot of the speaker and colleague; handheld camera eases back slightly while the speaker turns toward lens",
+      "role": "other",
+      "role_other": "presenter footage",
+      "change_types": ["scale_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 600, "easing_class": "ambiguous", "source": "model_estimate"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x075", "verdict": "unsure", "label": "unsure", "note": "190 ms before the burst, broadband bloom over the music bed; no designed visual hit in live footage."},
+    {"id": "x076", "verdict": "unsure", "label": "unsure", "note": "Low-frequency bloom mid-burst; reads as a music beat rather than an impact, nothing lands visually."},
+    {"id": "x077", "verdict": "unsure", "label": "unsure", "note": "After the event; similar bloom, likely part of the music pattern."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "documentary handheld drift",
+    "description": "Natural handheld/documentary camera drift on a live-action founder conversation: small pull-out and reframe as the speaker shifts his head and gaze.",
+    "why_premium": "Shallow depth of field, warm practical set and a subtly breathing camera make the product talk feel candid and human rather than staged, contrasting with the crisp UI sections."
+  },
+  "build_hint": {
+    "gsap": "For a live-footage plate: gsap.fromTo('.footage', {scale: 1.04, x: 0}, {scale: 1.0, x: '-0.5%', duration: 0.6, ease: 'sine.inOut'}) to simulate a gentle handheld pull-out; no stagger.",
+    "remotion": "scale = interpolate(frame, [0, 14], [1.04, 1.0], {easing: Easing.inOut(Easing.sin), extrapolateRight: 'clamp'}) on an <OffthreadVideo> wrapper; optionally add low-amplitude noise to translate for handheld feel."
+  },
+  "confidence": "medium",
+  "notes": "Motion is mostly subject movement plus mild camera pull_out (scale 0.96) in live footage; b02/b03 are small sweater-region diffs, not distinct elements. SFX candidates look like music bed peaks."
+}

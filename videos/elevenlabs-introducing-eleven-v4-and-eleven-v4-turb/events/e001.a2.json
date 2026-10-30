@@ -1,0 +1,75 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "7129ec88c2da56067cd6f5ee631616d56f9012d84cd877fa44acdcc4fd1c9a84",
+    "created_at": "2026-10-05T06:42:55.307239Z"
+  },
+  "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+  "event": "e001",
+  "task": "a2-e001",
+  "elements": [
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Left waveform bar (green-to-orange gradient)",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["morph", "scale_up", "color_shift"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 450, "easing_class": "spring_overshoot"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Middle waveform bars and dot (group of three)",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["morph", "scale_up", "color_shift"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 450, "easing_class": "spring_overshoot"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Right waveform bar",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["morph", "scale_up", "color_shift"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 450, "easing_class": "spring_overshoot"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x004", "verdict": "confirm", "label": "swoosh_reverse", "note": "Broadband rising noise from ~10.82s into the orb-to-bars split; fits a reversed swoosh leading the morph."},
+    {"id": "x005", "verdict": "unsure", "label": "unsure", "note": "After the burst while bars keep oscillating; no distinct transient visible in the spectrogram, may be music texture."}
+  ],
+  "pattern": {
+    "id": "logo_resolve",
+    "proposed_name": null,
+    "description": "A gradient orb contracts, then splits into five rounded pill bars that grow and oscillate in height like an audio equalizer before settling into the voice-waveform mark.",
+    "why_premium": "One continuous shape morph (orb to waveform) instead of a cut; grainy gradient colours carry across the morph, and bars overshoot and settle with springy staggered heights that read as speech energy."
+  },
+  "build_hint": {
+    "gsap": "Timeline: orb scale 1 -> 0.5 (power2.in, 0.15s); swap to 5 pill bars at orb centre with scaleY 0.2 -> random target heights, then animate each bar's scaleY through 2-3 keyframes (elastic.out(1,0.5) or back.out(1.6)), stagger 0.03s from center; animate gradient background-position for colour drift.",
+    "remotion": "Per bar: height = interpolate(spring({frame: frame - i*1, fps, config: {damping: 10, stiffness: 180, mass: 0.6}}), [0,1], [dotSize, targetHeight_i]); orb scale via spring with damping 20 before the split; width fixed, borderRadius = width/2."
+  },
+  "confidence": "medium",
+  "notes": "b02 groups three middle elements (dot and two bars) because no per-bar candidate exists; b01 (union) omitted. Pattern could also be 'other' (shape morph into audio bars); logo_resolve chosen as the mark resembles the product's voice-waveform glyph."
+}

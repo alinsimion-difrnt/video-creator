@@ -1,0 +1,202 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a3_pattern_cards",
+  "annotator": "claude-code",
+  "skill": "write-archetype-cards@a75a12f0ca91",
+  "model": null,
+  "input_hash": "3daaa5d39920621a5053c6c38df81fba190a4c0697b89a29725567d1cc3f86c8",
+  "created_at": "2026-10-05T19:10:44.652569Z"
+ },
+ "id": "app_icon_orbit",
+ "name": "App Icon Orbit",
+ "summary": "App icons or interface cards gather in a ring around a central brand mark or headline, then turn, glow or change state together. It shows the product as the hub that connects or replaces many tools.",
+ "when_to_use": [
+  "Showing that the product connects to or replaces many other apps",
+  "Landing an outcome beat where scattered tools become one place",
+  "Turning a ring of broken or alerting tools into healthy ones"
+ ],
+ "slots": [
+  {"name": "hub", "what": "the central brand mark, ring or headline the icons orbit", "required": true},
+  {"name": "icons", "what": "a set of generic app icons, logo badges or small interface cards", "required": true},
+  {"name": "status_badge", "what": "a small badge on each icon, such as an alert dot that becomes a check", "required": false},
+  {"name": "caption", "what": "a short line beside or under the ring, built word by word with the narration", "required": false},
+  {"name": "background", "what": "a gradient field that can shift colour to mark the change", "required": true}
+ ],
+ "steps": [
+  "Start on the background, fading up from dark or out of the previous zoom",
+  "Bring in the hub at the centre",
+  "Fly or fan the icons into a ring around it, one after another",
+  "Change their state together: glow, swap to full colour, pop status badges, or shift the background",
+  "Rotate the ring slowly while the caption builds",
+  "Exit by drifting the ring out of frame, zooming through or flashing to white"
+ ],
+ "patterns": [],
+ "build": {
+  "gsap": "One timeline per scene. Position icons on a circle with trigonometry inside a rotating container; stagger them in with scale and opacity from small, using a back out ease for a slight overshoot, or along curved paths from the corners with motion blur. Tween the background gradient and swap icon filters on one beat, pop the status badges with a short back out stagger, then run a slow linear rotation on the container and a power in drift for the exit.",
+  "remotion": "One Sequence for the ring; each icon gets its own spring delayed by its index for the entrance, with position computed from its angle; the container's rotation is a linear interpolate over the scene; a nested Sequence drives the state change and badge springs; a final Sequence handles the drift or flash out."
+ },
+ "sound": "No typical sound. Music carries most of these scenes; a chime or click can mark icons arriving or a state change, but each comes from a single video.",
+ "numbers": {
+  "id": "app_icon_orbit",
+  "shots": 12,
+  "videos": 4,
+  "weight": 5.2,
+  "duration_s": {
+   "n": 12,
+   "videos": 4,
+   "weight": 5.2,
+   "median": 0.99,
+   "p25": 0.165,
+   "p75": 2.458,
+   "ci": [
+    0.165,
+    2.383
+   ]
+  },
+  "events_per_shot": {
+   "n": 12,
+   "videos": 4,
+   "weight": 5.2,
+   "median": 0.0,
+   "p25": 0.0,
+   "p75": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ]
+  },
+  "first_motion_s": {
+   "n": 0,
+   "videos": 0,
+   "weight": 0.0,
+   "median": null,
+   "p25": null,
+   "p75": null,
+   "ci": null
+  },
+  "pattern_mix": {},
+  "transition_mix": {
+   "other": 0.4615,
+   "crossfade": 0.2308,
+   "zoom_through": 0.2308,
+   "hard_cut": 0.0769
+  },
+  "shot_type_mix": {
+   "3d": 0.5385,
+   "ui_recreated": 0.2308,
+   "other": 0.1538,
+   "abstract": 0.0769
+  },
+  "beat_mix": {
+   "outcome": 0.6154,
+   "demo": 0.1538,
+   "hook": 0.1538,
+   "problem": 0.0769
+  },
+  "sfx_label_mix": {
+   "music": 0.4167,
+   "chime": 0.1667,
+   "impact": 0.1667,
+   "unsure": 0.1667,
+   "click": 0.0833
+  },
+  "sfx_offset_s_by_label": {
+   "chime": {
+    "n": 1,
+    "videos": 1,
+    "weight": 0.8,
+    "median": 1.079,
+    "p25": 1.079,
+    "p75": 1.079,
+    "ci": null
+   },
+   "click": {
+    "n": 1,
+    "videos": 1,
+    "weight": 0.4,
+    "median": 0.737,
+    "p25": 0.737,
+    "p75": 0.737,
+    "ci": null
+   },
+   "impact": {
+    "n": 2,
+    "videos": 1,
+    "weight": 0.8,
+    "median": 5.538,
+    "p25": 4.525,
+    "p75": 6.55,
+    "ci": null
+   },
+   "music": {
+    "n": 4,
+    "videos": 2,
+    "weight": 2.0,
+    "median": 1.599,
+    "p25": 0.498,
+    "p75": 7.35,
+    "ci": null
+   },
+   "unsure": {
+    "n": 2,
+    "videos": 1,
+    "weight": 0.8,
+    "median": 0.486,
+    "p25": 0.119,
+    "p75": 0.854,
+    "ci": null
+   }
+  },
+  "examples": [
+   {
+    "video": "datadog-datadog-overview-see-inside-the-platfor",
+    "shot": "s010",
+    "score": 4.0
+   },
+   {
+    "video": "clickup-clickup-4-0-just-changed-work-ai-softwar",
+    "shot": "s036",
+    "score": 4.0
+   },
+   {
+    "video": "clickup-clickup-4-0-world-s-first-converged-ai",
+    "shot": "s018",
+    "score": 4.0
+   },
+   {
+    "video": "zapier-zapier-s-newest-product-features-build",
+    "shot": "s001",
+    "score": 4.0
+   }
+  ]
+ },
+ "examples": [
+  {
+   "video": "datadog-datadog-overview-see-inside-the-platfor",
+   "shot": "s010",
+   "score": 4.0
+  },
+  {
+   "video": "clickup-clickup-4-0-just-changed-work-ai-softwar",
+   "shot": "s036",
+   "score": 4.0
+  },
+  {
+   "video": "clickup-clickup-4-0-world-s-first-converged-ai",
+   "shot": "s018",
+   "score": 4.0
+  },
+  {
+   "video": "zapier-zapier-s-newest-product-features-build",
+   "shot": "s001",
+   "score": 4.0
+  }
+ ],
+ "caveats": [
+  "Few videos, and several members are very short slivers split by the cut detector from one continuous move, so the measured length runs short.",
+  "No motion events or patterns were measured, so the build notes come from shot descriptions only.",
+  "Each sound cue comes from only one or two videos."
+ ]
+}

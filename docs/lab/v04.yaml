@@ -1,0 +1,46 @@
+# v04 — the process beats (shredder, code edit recolours the video, R2 bucket, agents loop) with Fred reacting
+# in the corner. Questions: do widgets and a prop share the frame? Does Pixie read entering from the left?
+name: v04
+voice: iP95p4xoKVk53GoZ742B
+script: >-
+  Here's how it works. I feed it the best explainers on the internet, and it shreds them into frames.
+  Then I change one line of code, and the whole video changes colour. Everything lands in an R2 bucket.
+  Three agents review every cut, and I get the final say. Fred approves. Pixie does not.
+plan:
+  layout: [{word: 0, layout: full}, {word: "feed", layout: split}, {word: "Fred", layout: full}]
+  punches: ["whole"]
+  items:
+    - {word: "feed", until: "frames", kind: shredder, where: product, marks: ["explainers", "shreds", "frames"],
+       spec: {videos: ["Notion AI", "Linear intro", "Arc tour"], label: "a frame every 0.5 s", machine: "lens"}}
+    - {word: "change", until: "colour", kind: code, where: product, marks: ["line"],
+       spec: {file: "brand/video.yaml", lines: ["accent: \"#3b82f6\"", "font: Inter", "pace: calm"],
+              edits: [{line: 0, to: "\"#22c55e\""}]}}
+    - {word: "Everything", until: "bucket", kind: bucket, where: product, marks: ["lands", "R2"],
+       spec: {title: "R2 bucket", name: "lens-media", folders: [{name: inbox, count: 12}, {name: frames, count: 4210}]}}
+    - {word: "Three", until: "say", kind: agents, where: product, marks: ["Three", "review", "I#3", "say"],
+       spec: {maker: "Claude", reviewers: ["motion", "audio", "story"], scores: [8, 7, 9], you: "Robert",
+              verdict: up, meter: "premium", meter_value: 0.82}}
+  props:
+    - id: fred
+      art: fred
+      word: "Fred"
+      until: "not"
+      at: lap
+      size: 0.2
+      style: illustrated
+      beats:
+        - {word: "approves", do: clap, add: [top_hat]}
+    - id: pixie
+      art: cat
+      word: "Pixie"
+      until: "not"
+      at: floor_left
+      size: 0.3
+      enter: walk_left
+      exit: run_right
+      beats:
+        - {word: "does", move: lap}
+        - {word: "not", carry: fred}
+  fx:
+    - {word: "line", until: "say", kind: caption_font, spec: {accent: "#22c55e"}}
+    - {word: "not", kind: shake}

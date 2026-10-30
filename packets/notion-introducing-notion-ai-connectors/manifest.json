@@ -1,0 +1,441 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "s5_packets",
+    "annotator": "code",
+    "skill": null,
+    "model": null,
+    "input_hash": "34139b674f66d28065275eeefd702848a995451ea947c12300f425487713bf12",
+    "created_at": "2026-10-05T06:20:22.593585Z"
+  },
+  "video": "notion-introducing-notion-ai-connectors",
+  "tier": "reference",
+  "max_images_per_task": 12,
+  "event_images": 4,
+  "tasks": [
+    {
+      "id": "a1-p1",
+      "kind": "a1",
+      "images": [
+        "pass1/sheets/shot_s001_1.jpg",
+        "pass1/sheets/shot_s001_2.jpg",
+        "pass1/keyframes/shot_s001.jpg",
+        "pass1/sheets/shot_s002_1.jpg",
+        "pass1/keyframes/shot_s002.jpg",
+        "pass1/sheets/shot_s003_1.jpg",
+        "pass1/keyframes/shot_s003.jpg",
+        "pass1/sheets/shot_s004_1.jpg",
+        "pass1/sheets/shot_s004_2.jpg",
+        "pass1/keyframes/shot_s004.jpg"
+      ],
+      "files": [
+        "pass1/anchors.json"
+      ],
+      "shots": [
+        "s001",
+        "s002",
+        "s003",
+        "s004"
+      ],
+      "event": null,
+      "siblings": [],
+      "output": "videos/notion-introducing-notion-ai-connectors/a1.p1.json",
+      "input_hash": "4a73c7001b617c8f4ac29b97b7c90cc49aac88140bade0a9851967d6a966ff98"
+    },
+    {
+      "id": "a1-p2",
+      "kind": "a1",
+      "images": [
+        "pass1/sheets/shot_s005_1.jpg",
+        "pass1/sheets/shot_s005_2.jpg",
+        "pass1/sheets/shot_s005_3.jpg",
+        "pass1/keyframes/shot_s005.jpg"
+      ],
+      "files": [
+        "pass1/anchors.json"
+      ],
+      "shots": [
+        "s005"
+      ],
+      "event": null,
+      "siblings": [],
+      "output": "videos/notion-introducing-notion-ai-connectors/a1.p2.json",
+      "input_hash": "0e14969d0d61d32367a3a3395a09d5f45b7cdca1194d967e3b2c8cd5764dbda5"
+    },
+    {
+      "id": "a2-e001",
+      "kind": "a2",
+      "images": [
+        "events/e001/filmstrip.jpg",
+        "events/e001/end_marked.jpg",
+        "events/e001/end_clean.jpg",
+        "events/e001/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e001/facts.json",
+        "events/e001/candidates.json"
+      ],
+      "shots": [],
+      "event": "e001",
+      "siblings": [],
+      "output": "videos/notion-introducing-notion-ai-connectors/events/e001.a2.json",
+      "input_hash": "f91f63dbc38c38f49ee9b158c64783b3433b390dde75abd59434ba4f961f0e67"
+    },
+    {
+      "id": "a2-e002",
+      "kind": "a2",
+      "images": [
+        "events/e002/filmstrip.jpg",
+        "events/e002/end_marked.jpg",
+        "events/e002/end_clean.jpg",
+        "events/e002/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e002/facts.json",
+        "events/e002/candidates.json"
+      ],
+      "shots": [],
+      "event": "e002",
+      "siblings": [],
+      "output": "videos/notion-introducing-notion-ai-connectors/events/e002.a2.json",
+      "input_hash": "ed3e09b53018a63a770dfad247c2732cd582646f8f8e7ee56339c7d6379be2d9"
+    },
+    {
+      "id": "a2-e004",
+      "kind": "a2",
+      "images": [
+        "events/e004/filmstrip.jpg",
+        "events/e004/end_marked.jpg",
+        "events/e004/end_clean.jpg",
+        "events/e004/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e004/facts.json",
+        "events/e004/candidates.json"
+      ],
+      "shots": [],
+      "event": "e004",
+      "siblings": [],
+      "output": "videos/notion-introducing-notion-ai-connectors/events/e004.a2.json",
+      "input_hash": "d55638bccc4f3805f73b76635d54afcd9b93e74b380b4652538e4c01b6796efc"
+    },
+    {
+      "id": "a2-e006",
+      "kind": "a2",
+      "images": [
+        "events/e006/filmstrip.jpg",
+        "events/e006/end_marked.jpg",
+        "events/e006/end_clean.jpg",
+        "events/e006/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e006/facts.json",
+        "events/e006/candidates.json"
+      ],
+      "shots": [],
+      "event": "e006",
+      "siblings": [],
+      "output": "videos/notion-introducing-notion-ai-connectors/events/e006.a2.json",
+      "input_hash": "4c156e4dbbda18040ae536499a4c38da6c931557a1e18e0f3d962dc9adf2ddec"
+    },
+    {
+      "id": "a2-e008",
+      "kind": "a2",
+      "images": [
+        "events/e008/filmstrip.jpg",
+        "events/e008/end_marked.jpg",
+        "events/e008/end_clean.jpg",
+        "events/e008/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e008/facts.json",
+        "events/e008/candidates.json"
+      ],
+      "shots": [],
+      "event": "e008",
+      "siblings": [],
+      "output": "videos/notion-introducing-notion-ai-connectors/events/e008.a2.json",
+      "input_hash": "01a1b19d5077dcbae39f4212965b882cfbf2423f6f391f62d64455f734b61d64"
+    },
+    {
+      "id": "a2-e009",
+      "kind": "a2",
+      "images": [
+        "events/e009/filmstrip.jpg",
+        "events/e009/end_marked.jpg",
+        "events/e009/end_clean.jpg",
+        "events/e009/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e009/facts.json",
+        "events/e009/candidates.json"
+      ],
+      "shots": [],
+      "event": "e009",
+      "siblings": [],
+      "output": "videos/notion-introducing-notion-ai-connectors/events/e009.a2.json",
+      "input_hash": "a64721c091750a2bdb416e72bc1631a6f773c6af8af92ba3d94a0cb0ebb94dda"
+    },
+    {
+      "id": "a2-e010",
+      "kind": "a2",
+      "images": [
+        "events/e010/filmstrip.jpg",
+        "events/e010/end_marked.jpg",
+        "events/e010/end_clean.jpg",
+        "events/e010/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e010/facts.json",
+        "events/e010/candidates.json"
+      ],
+      "shots": [],
+      "event": "e010",
+      "siblings": [],
+      "output": "videos/notion-introducing-notion-ai-connectors/events/e010.a2.json",
+      "input_hash": "aea2eba9f3368e0e351226d505f3fde1b8bffa6c745e78dab0ef78eef6a22533"
+    },
+    {
+      "id": "a2-e011",
+      "kind": "a2",
+      "images": [
+        "events/e011/filmstrip.jpg",
+        "events/e011/end_marked.jpg",
+        "events/e011/end_clean.jpg",
+        "events/e011/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e011/facts.json",
+        "events/e011/candidates.json"
+      ],
+      "shots": [],
+      "event": "e011",
+      "siblings": [],
+      "output": "videos/notion-introducing-notion-ai-connectors/events/e011.a2.json",
+      "input_hash": "ee5dc513eabfa5cf77c4224c5f259e36573c365294d8d1841a7a9547543d158c"
+    },
+    {
+      "id": "a2-e012",
+      "kind": "a2",
+      "images": [
+        "events/e012/filmstrip.jpg",
+        "events/e012/end_marked.jpg",
+        "events/e012/end_clean.jpg",
+        "events/e012/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e012/facts.json",
+        "events/e012/candidates.json"
+      ],
+      "shots": [],
+      "event": "e012",
+      "siblings": [],
+      "output": "videos/notion-introducing-notion-ai-connectors/events/e012.a2.json",
+      "input_hash": "5ee6e39ba231367d89c52c171148d3543c9afe74e61d4697021e09129eae9e93"
+    },
+    {
+      "id": "a2-e014",
+      "kind": "a2",
+      "images": [
+        "events/e014/filmstrip.jpg",
+        "events/e014/end_marked.jpg",
+        "events/e014/end_clean.jpg",
+        "events/e014/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e014/facts.json",
+        "events/e014/candidates.json"
+      ],
+      "shots": [],
+      "event": "e014",
+      "siblings": [],
+      "output": "videos/notion-introducing-notion-ai-connectors/events/e014.a2.json",
+      "input_hash": "c1c6b6e4dee48c6ece978a19bf31f092d26595636ae0e1b6fc300c0d39c51f05"
+    },
+    {
+      "id": "a2-e015",
+      "kind": "a2",
+      "images": [
+        "events/e015/filmstrip.jpg",
+        "events/e015/end_marked.jpg",
+        "events/e015/end_clean.jpg",
+        "events/e015/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e015/facts.json",
+        "events/e015/candidates.json"
+      ],
+      "shots": [],
+      "event": "e015",
+      "siblings": [],
+      "output": "videos/notion-introducing-notion-ai-connectors/events/e015.a2.json",
+      "input_hash": "ce874c8067b625dfc2d367e8278613ab3bc7adca00de3fd340a921494aeb5a83"
+    },
+    {
+      "id": "a2-e016",
+      "kind": "a2",
+      "images": [
+        "events/e016/filmstrip.jpg",
+        "events/e016/end_marked.jpg",
+        "events/e016/end_clean.jpg",
+        "events/e016/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e016/facts.json",
+        "events/e016/candidates.json"
+      ],
+      "shots": [],
+      "event": "e016",
+      "siblings": [],
+      "output": "videos/notion-introducing-notion-ai-connectors/events/e016.a2.json",
+      "input_hash": "ecf12659bfee900924edb0c9884017f93890059e9316462cf5ba57d824ba7a37"
+    },
+    {
+      "id": "a2-e017",
+      "kind": "a2",
+      "images": [
+        "events/e017/filmstrip.jpg",
+        "events/e017/end_marked.jpg",
+        "events/e017/end_clean.jpg",
+        "events/e017/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e017/facts.json",
+        "events/e017/candidates.json"
+      ],
+      "shots": [],
+      "event": "e017",
+      "siblings": [],
+      "output": "videos/notion-introducing-notion-ai-connectors/events/e017.a2.json",
+      "input_hash": "3f78cf3947c0dc2c0853281c6a1a3d9933d7dc9555f5f2dc310f8fca154f137f"
+    },
+    {
+      "id": "a2-e019",
+      "kind": "a2",
+      "images": [
+        "events/e019/filmstrip.jpg",
+        "events/e019/end_marked.jpg",
+        "events/e019/end_clean.jpg",
+        "events/e019/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e019/facts.json",
+        "events/e019/candidates.json"
+      ],
+      "shots": [],
+      "event": "e019",
+      "siblings": [],
+      "output": "videos/notion-introducing-notion-ai-connectors/events/e019.a2.json",
+      "input_hash": "7943e561c33a66b76abbf27802fe9143a8a0de876e9db216f1b0160f6337e029"
+    },
+    {
+      "id": "a2-e020",
+      "kind": "a2",
+      "images": [
+        "events/e020/filmstrip.jpg",
+        "events/e020/end_marked.jpg",
+        "events/e020/end_clean.jpg",
+        "events/e020/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e020/facts.json",
+        "events/e020/candidates.json"
+      ],
+      "shots": [],
+      "event": "e020",
+      "siblings": [],
+      "output": "videos/notion-introducing-notion-ai-connectors/events/e020.a2.json",
+      "input_hash": "28345c213610061c377147e81699e6172b68f388d4c81e0edf672b814363bd64"
+    },
+    {
+      "id": "a2-e022",
+      "kind": "a2",
+      "images": [
+        "events/e022/filmstrip.jpg",
+        "events/e022/end_marked.jpg",
+        "events/e022/end_clean.jpg",
+        "events/e022/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e022/facts.json",
+        "events/e022/candidates.json"
+      ],
+      "shots": [],
+      "event": "e022",
+      "siblings": [],
+      "output": "videos/notion-introducing-notion-ai-connectors/events/e022.a2.json",
+      "input_hash": "d55a28ec0f73c29f95035342fee95b8447646a60d791281759b885a62ad86373"
+    },
+    {
+      "id": "a2-e023",
+      "kind": "a2",
+      "images": [
+        "events/e023/filmstrip.jpg",
+        "events/e023/end_marked.jpg",
+        "events/e023/end_clean.jpg",
+        "events/e023/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e023/facts.json",
+        "events/e023/candidates.json"
+      ],
+      "shots": [],
+      "event": "e023",
+      "siblings": [],
+      "output": "videos/notion-introducing-notion-ai-connectors/events/e023.a2.json",
+      "input_hash": "18f71524a7e84caf1ec519a994f9f147a577c5f09cbe1dc4eadc1b30aa75f304"
+    },
+    {
+      "id": "a2-e024",
+      "kind": "a2",
+      "images": [
+        "events/e024/filmstrip.jpg",
+        "events/e024/end_marked.jpg",
+        "events/e024/end_clean.jpg",
+        "events/e024/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e024/facts.json",
+        "events/e024/candidates.json"
+      ],
+      "shots": [],
+      "event": "e024",
+      "siblings": [],
+      "output": "videos/notion-introducing-notion-ai-connectors/events/e024.a2.json",
+      "input_hash": "0259bc19114ed3112b072e9d1c4bef0e736faa627516c6870546bd540d859d9a"
+    }
+  ],
+  "skipped": [
+    {
+      "event": "e003",
+      "reason": "overlap",
+      "of": "e002"
+    },
+    {
+      "event": "e005",
+      "reason": "overlap",
+      "of": "e004"
+    },
+    {
+      "event": "e007",
+      "reason": "overlap",
+      "of": "e006"
+    },
+    {
+      "event": "e013",
+      "reason": "overlap",
+      "of": "e012"
+    },
+    {
+      "event": "e018",
+      "reason": "overlap",
+      "of": "e017"
+    },
+    {
+      "event": "e021",
+      "reason": "overlap",
+      "of": "e020"
+    }
+  ]
+}

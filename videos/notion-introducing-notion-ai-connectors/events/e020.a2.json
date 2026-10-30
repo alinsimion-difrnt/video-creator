@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "28345c213610061c377147e81699e6172b68f388d4c81e0edf672b814363bd64",
+    "created_at": "2026-10-05T06:47:07.567354Z"
+  },
+  "video": "notion-introducing-notion-ai-connectors",
+  "event": "e020",
+  "task": "a2-e020",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Prompt input text (cleared on send)",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "What is the mobile team working on this week?",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 35, "easing_class": "step"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Sent user message bubble",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["fade", "slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "What is the mobile team working on this week?",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 220, "easing_class": "ease_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [688, 445, 764, 711],
+      "manual_reason": "A faint ghosted row (the AI response starting to appear) between the bubble and the 'Find in' chip. It has no candidate box of its own; b01 is the union of the input and the bubble.",
+      "label": "Faint AI response row starting to appear",
+      "role": "other",
+      "role_other": "ai_response_placeholder",
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "prompt_type_on",
+    "proposed_name": null,
+    "description": "The send step of the prompt: the typed question disappears from the focused input in one frame, and the same text appears as a right-aligned grey chat bubble above the 'Find in' chip, fading in with a small upward drift. At the end of the burst a faint response row begins to ghost in below it.",
+    "why_premium": "Clearing the input and fading the bubble in quickly reads as an instant 'sent' without a literal button press, and the soft rise of the bubble plus the hint of a coming answer keeps momentum into the AI response."
+  },
+  "build_hint": {
+    "gsap": "tl.set('.input-text', {textContent: ''}); tl.fromTo('.user-bubble', {opacity: 0, y: 8}, {opacity: 1, y: 0, duration: 0.22, ease: 'power2.out'}, '<'); tl.fromTo('.answer-ghost', {opacity: 0}, {opacity: 0.15, duration: 0.3, ease: 'power1.out'}, '+=0.25').",
+    "remotion": "Input text hidden from frame 0. Bubble: const p = spring({frame, fps, config: {damping: 200, stiffness: 180}}); opacity = p, translateY = interpolate(p, [0,1], [8,0]). Ghost row opacity = interpolate(frame, [22, 30], [0, 0.15], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})."
+  },
+  "confidence": "medium",
+  "notes": "The pattern is the send step of prompt_type_on (it could also be seen as the start of ai_answer_stream). The bubble's small rise is inferred from where it sits relative to the 'Find in' chip across the filmstrip. The faint row at the end of the burst (energy spike at f789) is very low contrast; its box and role are guesses."
+}

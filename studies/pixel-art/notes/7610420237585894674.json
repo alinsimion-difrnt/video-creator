@@ -1,0 +1,50 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "d2bf0ea8de6b858b8804c36fb80a12b5cd4a83ad80f4ae602358ecb8fe5e9b6b",
+    "created_at": "2026-10-13T13:05:28+00:00"
+  },
+  "id": "7610420237585894674",
+  "kind": "clip",
+  "palette": {
+    "colours_estimate": 18,
+    "shadows": "mixed",
+    "notes": "Measured on one still: palette_size 18, one ramp with hue shift ~80 over 18 colours, native 36x64 at 16x scale (likely the final green abstract card). Each piece shown has its own palette: dusk pinks and blues, a black-and-orange forest, foggy greys, cyan winter."
+  },
+  "lighting": "Strong single-source mood lighting per piece: city lights glowing under a night sky, sunset backlighting on a tower and a giant disc, warm lamp in a dark doorway; atmosphere by fog and value layering.",
+  "silhouette": "Big simple landmark shapes (towers, a huge disc, a mountain) read first; small figures sit as dark silhouettes against bright skies.",
+  "motion": {
+    "timing": "Measured 12.67 drawings/s, median hold 33.3 ms, but this is a live-action intro (~0-5 s) then a slideshow of finished pieces roughly every 1.7 s on the sheet; the art itself is mostly still.",
+    "principles": [
+      "setup then payoff",
+      "fast cut slideshow"
+    ]
+  },
+  "texture": "Painterly pixel clusters with little dithering (dither_share 0.0 on the measured still); fog and clouds built from soft value steps.",
+  "camera": "Phone camera on the artist for the intro, then hard cuts to full-screen pieces; no moves within the art.",
+  "sound": "",
+  "acting": {
+    "enters": "The artist holds a canvas and counts down an 'art reveal' to camera, then reaches toward the lens.",
+    "acts": "The countdown joke sets up the twist that the artist works in pixels; then the portfolio does the talking.",
+    "exits": "The live-action person leaves with a cut to the first artwork.",
+    "comes_back": false,
+    "depth": "Inside the pieces, tiny people sit small in the foreground or mid-ground against huge landscapes, which sells scale."
+  },
+  "techniques": [
+    "live-action countdown hook with pixel-font captions before the art",
+    "hard-cut slideshow ~every 1.7 s",
+    "tiny dark figures against oversized landmarks for scale",
+    "hue-shifted ramp measured (~80 degrees) on the final still",
+    "one strong light per scene: city glow, sunset rim, doorway lamp"
+  ],
+  "feel": "real-world countdown + pixel-font caption + rapid moody pieces = 'wait, that's pixel art' surprise",
+  "for_fred": "Put Fred tiny in the background of a big moody scene (a small silhouette against a huge lit backdrop) for one beat, then cut close; scale contrast makes him feel like he lives in a world.",
+  "sources": [
+    "studies/pixel-art/clips/7610420237585894674.json",
+    "data/study/pixel/work/7610420237585894674/sheet.jpg",
+    "studies/pixel-art/tiktok.yaml"
+  ]
+}

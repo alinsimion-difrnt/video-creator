@@ -1,0 +1,47 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "fccdf77d23f5b6161167b122deb72a6b1cbea6c2fc8f8e12c720c3763649f7fb",
+    "created_at": "2026-10-05T06:51:28.611981Z"
+  },
+  "video": "servicenow-what-are-servicenow-ai-agents",
+  "event": "e003",
+  "task": "a2-e003",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Presenter walking through office",
+      "role": "other",
+      "role_other": "presenter",
+      "change_types": ["other"],
+      "change_other": "live-action subject motion (walking, slight head turn)",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 130, "easing_class": "linear"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x006", "verdict": "confirm", "label": "chime", "note": "Tonal onset with sustained low harmonic band just before the burst; reads as a soft musical chime/pad, not tied to an on-screen action."},
+    {"id": "x007", "verdict": "unsure", "label": "unsure", "note": "Falls ~616 ms after the event; tonal band continuation, could be score rather than a discrete SFX."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "live action presenter walk",
+    "description": "Live-action footage: a presenter walks through an open-plan office toward camera; the only motion is natural subject movement inside a static frame.",
+    "why_premium": "Cinematic letterboxed live-action with shallow depth and soft practical lighting grounds the abstract AI topic in a real workplace before the UI demo."
+  },
+  "build_hint": {
+    "gsap": "Not a graphic animation: place the footage clip on a timeline track (e.g. tl.set(video, {autoAlpha: 1}) at shot start) and let it play; no tweened properties. Optional subtle letterbox bars held static.",
+    "remotion": "<OffthreadVideo> inside a <Sequence> for the shot duration; no interpolate/spring needed, letterbox via static black <AbsoluteFill> bars."
+  },
+  "confidence": "high",
+  "notes": "Camera verdict is none; the small pan/scale sums come from the subject walking inside the frame, not a camera move. Energy burst is very short (~130 ms) and is just a slice of continuous live-action motion."
+}

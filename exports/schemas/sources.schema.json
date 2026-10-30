@@ -1,0 +1,164 @@
+{
+  "$defs": {
+    "Media": {
+      "enum": [
+        "full",
+        "frames_only",
+        "audio_only"
+      ],
+      "title": "Media",
+      "type": "string"
+    },
+    "Segment": {
+      "additionalProperties": false,
+      "properties": {
+        "end": {
+          "exclusiveMinimum": 0,
+          "title": "End",
+          "type": "number"
+        },
+        "start": {
+          "minimum": 0,
+          "title": "Start",
+          "type": "number"
+        }
+      },
+      "required": [
+        "start",
+        "end"
+      ],
+      "title": "Segment",
+      "type": "object"
+    },
+    "SourceEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "brand": {
+          "title": "Brand",
+          "type": "string"
+        },
+        "format": {
+          "title": "Format",
+          "type": "string"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "media": {
+          "$ref": "#/$defs/Media",
+          "default": "full"
+        },
+        "page_url": {
+          "anyOf": [
+            {
+              "pattern": "^https://\\S+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Page Url"
+        },
+        "refetchable": {
+          "default": true,
+          "title": "Refetchable",
+          "type": "boolean"
+        },
+        "segment": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Segment"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "status": {
+          "$ref": "#/$defs/Status",
+          "default": "ready"
+        },
+        "tags": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Tags",
+          "type": "array"
+        },
+        "tier": {
+          "$ref": "#/$defs/Tier"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "transcript_hint": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Transcript Hint"
+        },
+        "url": {
+          "anyOf": [
+            {
+              "pattern": "^(https://|r2://inbox/|file://)\\S+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Url"
+        },
+        "why": {
+          "title": "Why",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "brand",
+        "title",
+        "format",
+        "tier",
+        "why"
+      ],
+      "title": "SourceEntry",
+      "type": "object"
+    },
+    "Status": {
+      "enum": [
+        "ready",
+        "draft"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "Tier": {
+      "enum": [
+        "reference",
+        "average",
+        "own",
+        "competitor"
+      ],
+      "title": "Tier",
+      "type": "string"
+    }
+  },
+  "items": {
+    "$ref": "#/$defs/SourceEntry"
+  },
+  "title": "SourcesFile",
+  "type": "array"
+}

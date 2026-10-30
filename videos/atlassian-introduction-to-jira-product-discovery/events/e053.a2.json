@@ -1,0 +1,100 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "552240643cd95e5e52a4ac167a0f22848fd1fbbb8bba9f6fe94bf21356e7cedd",
+    "created_at": "2026-10-05T06:38:34.999900Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e053",
+  "task": "a2-e053",
+  "elements": [
+    {
+      "box": "b06",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Fields toolbar button (clicked, becomes active)",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["color_shift", "highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Fields 2",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Group by button (deactivates)",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["color_shift"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Group by Key customers",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Side panel header and field search box",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["pop"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Search all project fields",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Fields panel list with toggles (replaces Group by panel)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["pop"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Fields in this view (2) Key Summary Other fields (36) Toggle a field to add it to this view. Assignee Bucket Comments competitive differentiator Created Creator Customers interested Delivery progress",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b09",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Panel scrollbar",
+      "role": "other",
+      "role_other": "scrollbar",
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "The cursor clicks the Fields toolbar button: Fields turns dark navy with a focus ring, Group by drops back to light blue, and the right-hand side panel swaps from the Group by settings to a wider Fields panel (search, fields in view, other fields with toggles) in one frame, narrowing the table.",
+    "why_premium": "One click, one clear state change synced to 'and then I can quickly edit this'; the active-button colour moves with the panel content so viewers always know which control owns the panel."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.btn-fields', {backgroundColor: '#1d2b4f', color: '#fff', outline: '2px solid #0c66e4', duration: 0.04, ease: 'none'}).to('.btn-groupby', {backgroundColor: '#e9f2ff', color: '#172b4d', duration: 0.04, ease: 'none'}, '<').set('.panel-groupby', {display: 'none'}, '<').set('.panel-fields', {display: 'block'}, '<'); a designed recreation could add fromTo('.panel-fields > *', {autoAlpha: 0, x: 8}, {autoAlpha: 1, x: 0, stagger: 0.02, ease: 'power2.out', duration: 0.25}).",
+    "remotion": "Hard state switch at the click frame (conditional render keyed on frame >= click); button colours via interpolateColors over 1-2 frames. No spring."
+  },
+  "confidence": "high",
+  "notes": "Instant UI swap (energy concentrated in 1-2 frames). The table also narrows because the Fields panel is wider than the Group by panel; no single candidate box isolates that reflow, so it is not listed separately."
+}

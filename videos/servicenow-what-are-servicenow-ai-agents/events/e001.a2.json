@@ -1,0 +1,47 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "f58679e6b8101e23c7e875389e2f95e51b195b4cdb49612f9c67f5ef2bc5d296",
+    "created_at": "2026-10-05T06:53:13.729148Z"
+  },
+  "video": "servicenow-what-are-servicenow-ai-agents",
+  "event": "e001",
+  "task": "a2-e001",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Low-angle skyscraper footage inside letterbox",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["scale_down", "slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 2180, "easing_class": "linear"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x001", "verdict": "override", "label": "music", "note": "Harmonic stack of short tonal notes repeating on a regular grid across the whole window; part of the melodic music bed, not a discrete chime tied to a visual."},
+    {"id": "x002", "verdict": "override", "label": "music", "note": "Another note onset of the same plucked melodic pattern; no visual event at 1.23 s (continuous footage drift)."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "cinematic footage drift",
+    "description": "Opening shot: letterboxed low-angle stock footage of a glass skyscraper with a slow, continuous camera pull-out and slight tilt, under a soft plucked music bed before the first spoken line.",
+    "why_premium": "Letterbox bars plus a slow, constant camera drift on real footage give a film-like cold open that sets a premium, enterprise tone before any product appears."
+  },
+  "build_hint": {
+    "gsap": "Footage in a 2.39:1 masked container (static black bars); gsap.fromTo(footage, {scale: 1.04, yPercent: 0}, {scale: 1, yPercent: -3, duration: 2.2, ease: 'none'}) for a constant drift.",
+    "remotion": "<OffthreadVideo> inside a letterbox mask; transform scale = interpolate(frame, [0, 66], [1.04, 1]) and translateY = interpolate(frame, [0, 66], [0, -20]) with linear easing; no spring."
+  },
+  "confidence": "medium",
+  "notes": "camera.move is pull_out (scale 0.9645) with a vertical pan component; this is most likely camera motion baked into the stock footage rather than an applied transform. The alternating energy values suggest frame-rate conversion (duplicated frames). Small boxes b02-b04 are sky-edge diff noise and not listed. No existing pattern fits live-footage camera drift."
+}

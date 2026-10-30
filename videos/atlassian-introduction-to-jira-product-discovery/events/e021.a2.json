@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "88fffbba71e2fefa94611dbac770d7ac5e6e0bfa4dfb2467d93f390706552e70",
+    "created_at": "2026-10-05T06:38:37.016717Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e021",
+  "task": "a2-e021",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Field description hover cards (Delivery status, Impact/Effort, Importance) flash in and out",
+      "role": "notification",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "The status of delivery tickets from Jira Software (epics, issues) that are linked to the idea. For more details open each idea and the \"Deliver\" section",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 60, "easing_class": "step"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Delivery status toggle: cursor and 'Add to view' tooltip leave",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_down", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Delivery status row hover highlight clears",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Delivery status",
+      "text_unit": "whole",
+      "estimates": null
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "The cursor slides down the Fields panel; each field row it passes pops a short-lived description hover card to its left, which disappears as the cursor moves on and leaves the panel at rest.",
+    "why_premium": "Incidental, not designed: the hover cards flash for a frame or two each and read as noise. A premium rebuild would hold one card long enough to read or drop them entirely."
+  },
+  "build_hint": {
+    "gsap": "If recreated: gsap.to(cursor, {y: '+=70', duration: 0.3, ease: 'power1.inOut'}); per hovered row, a timeline of gsap.fromTo(card, {autoAlpha: 0, x: 8}, {autoAlpha: 1, x: 0, duration: 0.12, ease: 'power2.out'}) followed by autoAlpha 0 on leave; row background highlight toggled with a 0.1s fade.",
+    "remotion": "Cursor y = interpolate(frame, [0, 9], [y0, y1], {easing: Easing.inOut(Easing.quad)}); hovered row index from cursor y; card opacity = interpolate(frame - enterFrame, [0, 3], [0, 1]) and back to 0 on exit; highlight via a conditional background colour."
+  },
+  "confidence": "low",
+  "notes": "Hover cards are transient and absent from the end frame; b01 is the union box that covers the area where they appeared to the left of the panel. Cursor is not clearly visible at the end frame. Not a meaningful designed motion; mostly incidental screen-recording hover noise."
+}

@@ -1,0 +1,415 @@
+{
+  "$defs": {
+    "Annotator": {
+      "enum": [
+        "code",
+        "claude-code",
+        "human"
+      ],
+      "title": "Annotator",
+      "type": "string"
+    },
+    "BaselineCheck": {
+      "additionalProperties": false,
+      "properties": {
+        "expected": {
+          "title": "Expected",
+          "type": "number"
+        },
+        "measured": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Measured"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "ok": {
+          "title": "Ok",
+          "type": "boolean"
+        },
+        "tolerance": {
+          "minimum": 0,
+          "title": "Tolerance",
+          "type": "number"
+        }
+      },
+      "required": [
+        "name",
+        "measured",
+        "expected",
+        "tolerance",
+        "ok"
+      ],
+      "title": "BaselineCheck",
+      "type": "object"
+    },
+    "Fix": {
+      "additionalProperties": false,
+      "properties": {
+        "change": {
+          "title": "Change",
+          "type": "string"
+        },
+        "effort": {
+          "enum": [
+            "S",
+            "M",
+            "L"
+          ],
+          "title": "Effort",
+          "type": "string"
+        },
+        "evidence": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "metric": {
+          "title": "Metric",
+          "type": "string"
+        },
+        "problem": {
+          "title": "Problem",
+          "type": "string"
+        },
+        "refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Refs",
+          "type": "array"
+        },
+        "severity": {
+          "minimum": 0,
+          "title": "Severity",
+          "type": "number"
+        },
+        "target": {
+          "title": "Target",
+          "type": "string"
+        },
+        "timestamps_s": {
+          "items": {
+            "type": "number"
+          },
+          "title": "Timestamps S",
+          "type": "array"
+        }
+      },
+      "required": [
+        "metric",
+        "problem",
+        "evidence",
+        "target",
+        "change",
+        "effort",
+        "severity"
+      ],
+      "title": "Fix",
+      "type": "object"
+    },
+    "MetricResult": {
+      "additionalProperties": false,
+      "properties": {
+        "cohort_median": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cohort Median"
+        },
+        "cohort_n": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cohort N"
+        },
+        "gap": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Gap"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "max": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Max"
+        },
+        "min": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Min"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Note"
+        },
+        "percentile": {
+          "anyOf": [
+            {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Percentile"
+        },
+        "section": {
+          "anyOf": [
+            {
+              "enum": [
+                "voice",
+                "sound",
+                "motion",
+                "rhythm"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Section"
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "pass",
+            "fail",
+            "n/a"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "unit": {
+          "title": "Unit",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Value"
+        }
+      },
+      "required": [
+        "id",
+        "value",
+        "unit",
+        "min",
+        "max",
+        "status",
+        "gap",
+        "source",
+        "note"
+      ],
+      "title": "MetricResult",
+      "type": "object"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "description": "Carried by every output JSON (BUILD_PLAN section 2.7).",
+      "properties": {
+        "annotator": {
+          "$ref": "#/$defs/Annotator"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "input_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Input Hash",
+          "type": "string"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "schema_version": {
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "skill": {
+          "anyOf": [
+            {
+              "pattern": "^[a-z0-9-]+@[0-9a-f]{8,64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Skill"
+        },
+        "stage": {
+          "title": "Stage",
+          "type": "string"
+        },
+        "tool_version": {
+          "title": "Tool Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool_version",
+        "stage",
+        "annotator",
+        "input_hash",
+        "created_at"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "baseline": {
+      "anyOf": [
+        {
+          "items": {
+            "$ref": "#/$defs/BaselineCheck"
+          },
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Baseline"
+    },
+    "cohort": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Cohort",
+      "type": "array"
+    },
+    "destination": {
+      "title": "Destination",
+      "type": "string"
+    },
+    "fixes": {
+      "items": {
+        "$ref": "#/$defs/Fix"
+      },
+      "maxItems": 10,
+      "title": "Fixes",
+      "type": "array"
+    },
+    "metrics": {
+      "items": {
+        "$ref": "#/$defs/MetricResult"
+      },
+      "title": "Metrics",
+      "type": "array"
+    },
+    "mode": {
+      "enum": [
+        "targets-only",
+        "corpus"
+      ],
+      "title": "Mode",
+      "type": "string"
+    },
+    "not_yet_measured": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Not Yet Measured",
+      "type": "array"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    },
+    "video_id": {
+      "title": "Video Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "provenance",
+    "video_id",
+    "mode",
+    "destination",
+    "metrics",
+    "fixes",
+    "baseline",
+    "not_yet_measured"
+  ],
+  "title": "CompareReport",
+  "type": "object"
+}

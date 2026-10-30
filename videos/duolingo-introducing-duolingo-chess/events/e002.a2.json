@@ -1,0 +1,44 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "90afad8430488e03f65c10f174a2afe204d2285e68e1a5e415522e08f9937c9b",
+    "created_at": "2026-10-05T06:43:02.076277Z"
+  },
+  "video": "duolingo-introducing-duolingo-chess",
+  "event": "e002",
+  "task": "a2-e002",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Duo owl plush mascot hopping behind the chessboard",
+      "role": "other",
+      "role_other": "mascot_character",
+      "change_types": ["slide_up", "slide_down", "rotate"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 350, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "mascot hop beat",
+    "description": "The out-of-focus Duo plush hops up behind the white pieces, tilting slightly mid-air, and drops back to its starting spot within roughly a third of a second, with heavy motion blur; the foreground pieces stay put.",
+    "why_premium": "A quick, physical character hop puts brand personality into a product beat: the mascot reacts like a living opponent, and the shallow focus plus real motion blur make the tabletop scene feel tactile and handmade instead of flat CG."
+  },
+  "build_hint": {
+    "gsap": "gsap.timeline().to(mascot, {y: -90, rotation: -4, duration: 0.17, ease: 'power2.out'}).to(mascot, {y: 0, rotation: 0, duration: 0.18, ease: 'power2.in'}).to(mascot, {scaleY: 0.96, scaleX: 1.03, duration: 0.06, yoyo: true, repeat: 1, ease: 'sine.inOut', transformOrigin: '50% 100%'}); add motion blur via a short filter: 'blur(3px)' at peak velocity.",
+    "remotion": "const hop = Math.sin(Math.PI * Math.min(1, frame / 11)); translateY = -90 * hop; rotate = -4 * hop; on landing apply a squash with spring({frame: frame - 11, fps, config: {damping: 12, stiffness: 300}}) mapped to scaleY 0.96->1."
+  },
+  "confidence": "medium",
+  "notes": "facts.json reports camera.move = tilt_down, but the foreground chess pieces look stationary across the filmstrip; the motion appears to be the mascot hopping (live-action/stop-motion plush), so the tilt verdict is probably driven by the large moving mascot. Worth a human check. Only one full-frame candidate box (b01) exists. No SFX candidates."
+}

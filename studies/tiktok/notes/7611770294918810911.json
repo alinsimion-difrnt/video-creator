@@ -1,0 +1,36 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code",
+                 "input_hash": "f4427a5b6f5e0d6809bc8ad55fd3e2903242d17fd5889f4acf9b32a5edbf3859",
+                 "created_at": "2026-10-13T09:31:00+00:00"},
+  "id": "7611770294918810911",
+  "format": "news_reaction",
+  "hook": {"type": "news",
+           "line": "Anthropic told the government you can't use our AI to kill people.",
+           "visual": "Extreme close-up of the creator's face talking, then at 0.67 s a cut to a medium shot with a Claude by Anthropic logo card at the top."},
+  "beats": [
+    {"t": 0.0, "what": "Extreme close-up, mouth filling the frame, keyword 'ANTHROPIC' highlighted yellow in the caption."},
+    {"t": 0.67, "what": "Cut to a medium shot; a Claude logo card appears at the top as the subject is named."},
+    {"t": 4.67, "what": "Cut to an angled shot with open-hand gestures on the 'mass surveillance' line."},
+    {"t": 11.02, "what": "New York Times headline card about agencies being ordered to stop using Anthropic appears as proof."},
+    {"t": 14.87, "what": "Cut to green screen: creator cut out over a Huawei phone web page as he compares it to the 'Huawei treatment'."},
+    {"t": 24.23, "what": "Ends on one word, 'crazy', with no outro."}
+  ],
+  "graphics": {"captions": "word_by_word", "caption_position": "middle",
+               "devices": ["screenshot", "title_text", "green_screen_bg", "jump_cut", "music_bed"],
+               "density": "moderate", "per_minute_estimate": 12},
+  "characters": [],
+  "cta": {"kind": "none", "t": null},
+  "why_it_works": [
+    "Hard news with a moral frame in the first sentence (AI used to kill people); stakes are clear before a second passes.",
+    "Logo and headline cards appear exactly when the company and the claim are named, so each fact has visual proof.",
+    "A familiar comparison (the Huawei treatment) with its own background makes the news easy to place.",
+    "Cinematic score under the voice (music bed -27.2 dB) makes a 24 s phone video feel like a news segment."
+  ],
+  "weaknesses": [
+    "No events or punches at all (0 per minute); the last 9 s is one static green-screen background.",
+    "No CTA; high likes but few comments (527) for a provocative topic.",
+    "Opinion stated as fact with only one source card shown."
+  ],
+  "for_robert": "When he names a company or claim, pop its logo or headline card at the top of the frame on that exact word; Fred can hold the card up instead of it just appearing."
+}

@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "30c15d0332095a46adce5a3c5f4a897540040603a0579a4dce4e371059eebd0b",
+    "created_at": "2026-10-05T06:40:15.607599Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e006",
+  "task": "a2-e006",
+  "elements": [
+    {
+      "box": null,
+      "manual_box": [268, 500, 302, 526],
+      "manual_reason": "The only candidate (b01) is a union strip over the whole Effort column. The spinner is a tiny arc in the pending row at the top of that strip, so it gets its own tight box.",
+      "label": "Loading spinner in pending new-idea row",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["rotate"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 800, "easing_class": "linear"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Row hover highlight following the cursor down the table",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 60, "easing_class": "step"}
+    },
+    {
+      "box": null,
+      "manual_box": [898, 380, 930, 397],
+      "manual_reason": "The cursor ends below the table, outside every candidate box.",
+      "label": "Mouse cursor drifting down and out of the table",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "While the new idea saves, a small loading spinner turns in the grey pending row at the top of the table. The cursor drifts down through the Effort column and out below the table, and each row it passes over picks up a light grey hover tint.",
+    "why_premium": "This is a calm hold between actions. The spinner shows the system working, and the cursor moves out of the way so the viewer can read the table while the narrator lists 'user problems and possible solutions'. Nothing in the frame competes for attention."
+  },
+  "build_hint": {
+    "gsap": "gsap.to(spinner, {rotation: '+=360', duration: 0.8, ease: 'none', repeat: -1}); tl.to(cursor, {x: '-=40', y: '+=440', duration: 0.5, ease: 'power2.out'}); for row hover use a ScrollTrigger-free approach: tl.call(() => setHoverRow(i)) at the times the cursor crosses each row, or .to(rowBg[i], {backgroundColor: '#f4f5f7', duration: 0.05}) / .to(rowBg[i], {backgroundColor: 'transparent', duration: 0.05}) in sequence.",
+    "remotion": "Spinner: rotate = (frame * 360 / (0.8 * fps)) deg, linear. Cursor y = interpolate(frame, [s, s + 15], [y0, y1], {easing: Easing.out(Easing.quad)}). Hovered row index = Math.floor((cursorY - tableTop) / rowH); tint only that row's background."
+  },
+  "confidence": "low",
+  "notes": "Very low-energy event (changed_share 0.001): mostly incidental UI motion (spinner, cursor, hover tint), not an authored animation. cursor_guided_demo is a loose fit; this could reasonably be treated as an idle/loading hold."
+}

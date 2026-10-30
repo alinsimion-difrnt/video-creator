@@ -1,0 +1,142 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "62a0b6db8f882d786c2dbe49e6ba42d124d8872d76983c6d3dd6a665c58a4747",
+    "created_at": "2026-10-05T06:38:32.623434Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e066",
+  "task": "a2-e066",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Whole app UI zooming out from a cropped close-up to the full browser frame",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["scale_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 350, "easing_class": "ease_in_out", "source": "model_estimate"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Columns toolbar button switching its value from Roadmap to Impact",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["morph"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Columns Impact",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 50, "easing_class": "step", "source": "model_estimate"}
+    },
+    {
+      "box": null,
+      "manual_box": [243, 789, 444, 992],
+      "manual_reason": "No candidate covers the Columns side panel field picker; the open field list closes and is replaced by the Impact value preview rows.",
+      "label": "Columns panel field dropdown closing into the Impact value preview",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 50, "easing_class": "step", "source": "model_estimate"}
+    },
+    {
+      "box": "b08",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Authentication options card regrouped into the first Impact column",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Authentication options",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": "b18",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Automation card regrouped into the second Impact column",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Automation",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": "b09",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Add MS teams function card regrouped under Automation",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Add MS teams function",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": "b12",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Slack integration card regrouped into the third Impact column",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Slack integration",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": "b11",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Performance improvements card regrouped under Slack integration",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Performance improvi",
+      "text_unit": "whole",
+      "estimates": null
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "layout_reframe",
+    "proposed_name": null,
+    "description": "Selecting Impact as the column field instantly regroups the board: lane headers turn into green Impact-dot columns, cards re-sort into them, the toolbar button reads Impact and the picker closes, while the edit zooms back out from the dropdown close-up to the full UI.",
+    "why_premium": "The zoom-out lands exactly as the board regroups, so the viewer first reads the choice up close and then sees its whole-board consequence in one continuous move, with no cut."
+  },
+  "build_hint": {
+    "gsap": "Timeline: tl.fromTo('.app', {scale: 1.2, transformOrigin: '85% 15%'}, {scale: 1, duration: 0.35, ease: 'power2.inOut'}); at the same label swap board state with tl.set('.board', {className: 'board grouped-impact'}) and tl.fromTo('.card', {opacity: 0}, {opacity: 1, duration: 0.12, ease: 'none'}); tl.set('.columns-btn .value', {textContent: 'Impact'}) and tl.set('.field-dropdown', {autoAlpha: 0}).",
+    "remotion": "scale = interpolate(frame, [0, 10], [1.2, 1], {easing: Easing.inOut(Easing.cubic), extrapolateRight: 'clamp'}) on the app wrapper with transformOrigin near the panel; render the regrouped board from the switch frame onward (hard state swap), card opacity interpolate over 3-4 frames."
+  },
+  "confidence": "medium",
+  "notes": "facts.json reports camera.move none, yet the filmstrip shows a post-production zoom-out (crop of the dropdown back to full frame, raw scale 0.842). Logged as a scale_down on the whole-UI box b01 rather than as a camera move; a human should decide whether this is really a pull_out. Board regroup is a hard state swap within one or two frames."
+}

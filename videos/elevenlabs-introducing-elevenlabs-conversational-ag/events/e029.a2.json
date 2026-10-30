@@ -1,0 +1,114 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "c14ea210dd31758843e6294e576ee0f4fa8c518ec05c64493034e8256ff19972",
+    "created_at": "2026-10-05T06:47:23.792900Z"
+  },
+  "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+  "event": "e029",
+  "task": "a2-e029",
+  "elements": [
+    {
+      "box": null,
+      "manual_box": [399, 345, 600, 654],
+      "manual_reason": "The widget card has no own candidate; b01 is a wide diff region covering the whole former embed card area.",
+      "label": "Widget card (morphs from the Embed code card)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["morph", "scale_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 600, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [442, 370, 556, 434],
+      "manual_reason": "No candidate covers the agent orb inside the widget.",
+      "label": "Agent orb (shrinks into the widget)",
+      "role": "avatar",
+      "role_other": null,
+      "change_types": ["scale_down", "slide_right"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 600, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [482, 452, 558, 630],
+      "manual_reason": "The black call pill has no candidate; b02 and b05 cover only its label and icon.",
+      "label": "Start a call button pill (grows from a dot)",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["scale_up", "morph"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 350, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Button label",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Start a call",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 200, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Phone icon",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 200, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Need help? prompt",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Need help?",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 250, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "ui card morph",
+    "description": "The Embed code card collapses: its text blurs out while the card shrinks into a compact rounded widget, the large orb shrinks into the widget's avatar slot, a dot grows into the black Start a call pill, and the labels fade in.",
+    "why_premium": "One shape continuously becomes the next component, so the viewer sees the embed snippet turn into the live widget it produces; cause and effect is shown without a cut."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.embed-content', {opacity: 0, filter: 'blur(6px)', duration: 0.2}); tl.to('.card', {width: 396, height: 145, borderRadius: 40, duration: 0.6, ease: 'power3.inOut'}, '<'); tl.to('.orb', {scale: 0.22, x: 470, duration: 0.6, ease: 'power3.inOut'}, '<'); tl.fromTo('.call-pill', {width: 24, height: 24}, {width: 228, height: 55, duration: 0.35, ease: 'back.out(1.2)'}, '-=0.25'); tl.fromTo('.widget-label, .call-pill > *', {opacity: 0}, {opacity: 1, duration: 0.2, stagger: 0.05}, '-=0.1');",
+    "remotion": "Shared progress p = spring({frame, fps, config: {damping: 200}}) drives card width/height/radius, orb scale/translateX via interpolate(p, ...). Pill size from spring({frame: frame-10, fps, config: {damping: 14, stiffness: 200}}); labels opacity interpolate(frame, [14,20], [0,1])."
+  },
+  "confidence": "medium",
+  "notes": "Camera verdict is none; the raw scale 0.40 reflects the card shrinking inside the frame, not a pull-out. The cursor and Copied! tooltip from the start frames exit and are not in the end frame. No SFX candidates."
+}

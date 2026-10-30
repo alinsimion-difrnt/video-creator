@@ -1,0 +1,221 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a3_pattern_cards",
+    "annotator": "claude-code",
+    "skill": "write-archetype-cards@a75a12f0ca91",
+    "model": null,
+    "input_hash": "82685a18cf290e75b098313b38d100d9d85fea4569435ff0be456ae22b2a9ab7",
+    "created_at": "2026-10-05T19:10:22.702868Z"
+  },
+  "id": "document_highlight",
+  "name": "Document Highlight Callout",
+  "summary": "A document, report, table or answer card fills the frame while the camera holds close and highlights or outline boxes land on the exact lines the narration talks about. It points the viewer's eye at the one detail that proves the point.",
+  "when_to_use": [
+    "Explaining how the product works by pointing at the part of a page that matters",
+    "Walking through a report or table one figure or line at a time",
+    "Showing what the product marks up, tags or finds inside content"
+  ],
+  "slots": [
+    {"name": "document", "what": "the page, report, table or answer card being shown", "required": true},
+    {"name": "focus_regions", "what": "the lines, columns or rows to highlight, in narration order", "required": true},
+    {"name": "highlight_style", "what": "a translucent colour bar, an outline box, or a colour tag flash", "required": true},
+    {"name": "cue_words", "what": "the narration words each highlight lands on", "required": true},
+    {"name": "tags", "what": "small badges or chips that pop onto the document to show markup", "required": false},
+    {"name": "frame", "what": "the window, card or tilted plane that holds the document", "required": false}
+  ],
+  "steps": [
+    "The document card settles in, or the view crossfades or cuts to the page",
+    "The camera pushes in close on the area of interest, sometimes with a slight tilt",
+    "Text or rows type or stream in where the content is being produced",
+    "A highlight sweeps or an outline box draws around the first region on its cue word",
+    "The highlight moves to the next region, or tags pop on, as the narration continues",
+    "The view holds while the narration lands, then blurs, crossfades or cuts out"
+  ],
+  "patterns": [],
+  "build": {
+    "gsap": "One timeline per scene, with labels at the narration word times. Push the document layer in with a scale and position tween (power2.out), optionally with a small rotationX or rotationY for tilt. Reveal a highlight as a translucent rect whose width or height tweens from zero (power2.out), or an outline drawn with stroke-dashoffset or faded in and out. Move the outline to the next region with a short position-and-size tween. Pop tags with a scale tween using back.out. Exit with a blur and opacity tween.",
+    "remotion": "A Sequence for the push-in and hold, and one Sequence per highlight starting on its cue word's frame. Use spring() with high damping for the camera push, interpolate() for highlight size and outline stroke, and a lightly underdamped spring() for tag pops. The final Sequence crossfades or blurs out."
+  },
+  "sound": "Mostly a music bed under the narration with sparse effects. Clicks and reverse swooshes come late in the scene as highlights move or the page changes; soft impacts can mark a highlight landing. A chime is rare.",
+  "numbers": {
+    "id": "document_highlight",
+    "shots": 10,
+    "videos": 6,
+    "weight": 3.9,
+    "duration_s": {
+      "n": 10,
+      "videos": 6,
+      "weight": 3.9,
+      "median": 8.686,
+      "p25": 3.69,
+      "p75": 15.711,
+      "ci": [
+        3.767,
+        15.867
+      ]
+    },
+    "events_per_shot": {
+      "n": 10,
+      "videos": 6,
+      "weight": 3.9,
+      "median": 0.0,
+      "p25": 0.0,
+      "p75": 0.0,
+      "ci": [
+        0.0,
+        0.0
+      ]
+    },
+    "first_motion_s": {
+      "n": 1,
+      "videos": 1,
+      "weight": 0.6,
+      "median": 0.0,
+      "p25": 0.0,
+      "p75": 0.0,
+      "ci": null
+    },
+    "pattern_mix": {
+      "other": 1.0
+    },
+    "transition_mix": {
+      "other": 0.5128,
+      "crossfade": 0.1795,
+      "hard_cut": 0.1538,
+      "push": 0.0769,
+      "zoom_through": 0.0769
+    },
+    "shot_type_mix": {
+      "ui_closeup": 0.4359,
+      "ui_recreated": 0.4103,
+      "screen_recording": 0.1538
+    },
+    "beat_mix": {
+      "demo": 0.4043,
+      "mechanism": 0.3617,
+      "agitate": 0.0851,
+      "proof": 0.0851,
+      "outcome": 0.0638
+    },
+    "sfx_label_mix": {
+      "music": 0.3113,
+      "click": 0.2384,
+      "unsure": 0.1589,
+      "impact": 0.1325,
+      "swoosh_reverse": 0.1325,
+      "chime": 0.0265
+    },
+    "sfx_offset_s_by_label": {
+      "chime": {
+        "n": 1,
+        "videos": 1,
+        "weight": 0.4,
+        "median": 29.593,
+        "p25": 29.593,
+        "p75": 29.593,
+        "ci": null
+      },
+      "click": {
+        "n": 9,
+        "videos": 2,
+        "weight": 3.6,
+        "median": 13.411,
+        "p25": 11.433,
+        "p75": 16.29,
+        "ci": [
+          11.746,
+          16.168
+        ]
+      },
+      "impact": {
+        "n": 5,
+        "videos": 2,
+        "weight": 2.0,
+        "median": 6.047,
+        "p25": 2.139,
+        "p75": 9.651,
+        "ci": [
+          0.695,
+          20.127
+        ]
+      },
+      "music": {
+        "n": 13,
+        "videos": 4,
+        "weight": 4.7,
+        "median": 5.479,
+        "p25": 3.842,
+        "p75": 22.361,
+        "ci": [
+          4.113,
+          18.048
+        ]
+      },
+      "swoosh_reverse": {
+        "n": 5,
+        "videos": 1,
+        "weight": 2.0,
+        "median": 18.466,
+        "p25": 12.768,
+        "p75": 22.9,
+        "ci": [
+          9.41,
+          25.449
+        ]
+      },
+      "unsure": {
+        "n": 6,
+        "videos": 2,
+        "weight": 2.4,
+        "median": 12.385,
+        "p25": 1.968,
+        "p75": 18.953,
+        "ci": [
+          1.968,
+          23.371
+        ]
+      }
+    },
+    "examples": [
+      {
+        "video": "workday-workday-adaptive-planning-demo-finan",
+        "shot": "s010",
+        "score": 3.0
+      },
+      {
+        "video": "ahrefs-ahrefs-brand-radar-see-any-brand-s-ai-v",
+        "shot": "s006",
+        "score": 4.0
+      },
+      {
+        "video": "conductor-conductor-ai-get-found-in-ai-search",
+        "shot": "s009",
+        "score": 4.0
+      },
+      {
+        "video": "fullstory-behavioral-data-made-simple-by-fullstory",
+        "shot": "s006",
+        "score": 4.0
+      },
+      {
+        "video": "amplitude-find-onboarding-funnel-drop-off-amplit",
+        "shot": "s007",
+        "score": 3.0
+      }
+    ]
+  },
+  "examples": [
+    {"video": "workday-workday-adaptive-planning-demo-finan", "shot": "s010", "score": 3.0},
+    {"video": "ahrefs-ahrefs-brand-radar-see-any-brand-s-ai-v", "shot": "s006", "score": 4.0},
+    {"video": "conductor-conductor-ai-get-found-in-ai-search", "shot": "s009", "score": 4.0},
+    {"video": "fullstory-behavioral-data-made-simple-by-fullstory", "shot": "s006", "score": 4.0},
+    {"video": "amplitude-find-onboarding-funnel-drop-off-amplit", "shot": "s007", "score": 3.0}
+  ],
+  "caveats": [
+    "Almost no measured motion events and the only pattern label is other, so no pattern cards are listed; spotlight focus and ui camera push in fit the descriptions.",
+    "Mixed members: some shots are long multi-phase scenes that also include typing, particle and logo moments.",
+    "Scene length varies widely, so sound offsets are spread out and hard to generalise."
+  ]
+}

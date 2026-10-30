@@ -1,0 +1,192 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "4f6e7b44ac2bd6898747f0a3ab3157a5edcbcd7d60e33b966824aada7e429e55",
+    "created_at": "2026-10-05T06:33:51.908264Z"
+  },
+  "video": "zapier-zapier-on-off",
+  "task": "a1-p6",
+  "shots": [
+    {
+      "shot": "s041",
+      "shot_type": "other",
+      "shot_type_other": "flat 2D vector illustration animation (outlined shapes, icon objects)",
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Close, low framing of the cream cone/funnel with a lime rim and spiky lime starburst, shopping bags and a document sinking into its opening",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": ["zapier"],
+      "text_word_count": 1,
+      "typography": "Persistent brand wordmark top-right: bold lowercase geometric sans, tight tracking, with an orange underscore-like bar before it; no other text",
+      "depth_cues": ["none"],
+      "what_happens": "8-frame closer view of the funnel at the end of 'convert more customers,' (after w36 ends, no speech in this window): bags and a document drop into the lime opening while a cursor arrow, plus/check badges, a pie chart and a pink envelope fly out along lavender and cream jagged rays on a navy field. One motion event is counted. Only a keyframe was available (no contact sheet), so the motion inside the shot is not visible.",
+      "build_rebuild": "Scale the cone group up so its rim fills the upper half, and tween bag and document sprites down into the rim ellipse (masked by it) while badge, cursor and envelope sprites fly outward along the ray polygons.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s042",
+      "shot_type": "other",
+      "shot_type_other": "flat 2D vector illustration animation (outlined shapes, icon objects)",
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The cone on a flat lavender field, either wide with an orange cap-like shape pressed on its rim (sheet frame) or close with items bursting from its lime rim (keyframe)",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": ["zapier"],
+      "text_word_count": 1,
+      "typography": "Persistent brand wordmark top-right: bold lowercase geometric sans with orange bar prefix; in the keyframe a flying icon overlaps the wordmark",
+      "depth_cues": ["none"],
+      "what_happens": "2-frame transition beat as the background switches from navy to lavender. The two images disagree: the 20.5 s sheet frame shows a smaller centred cone with an orange cap/hand shape on top, a navy spiky halo and small lightning sparks, while the keyframe shows a close cone with navy rays and an hourglass, envelope, bags, calendar and badges bursting out. Reads as a fast mixed-frame hand-off into the next scene; exact motion not visible.",
+      "build_rebuild": "Hard-cut the background from navy to lavender for 2 frames while the cone scales down from close-up to mid-frame and its contents burst outward, setting up the hand pressing on the cone.",
+      "confidence": "low"
+    },
+    {
+      "shot": "s043",
+      "shot_type": "other",
+      "shot_type_other": "flat 2D vector illustration animation (outlined shapes, character and icon objects)",
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The cone as a magic hat: pressed by a hand, flipped, turning a coin into a clock, then landing as a wizard hat on a smiling character's head",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": ["zapier"],
+      "text_word_count": 1,
+      "typography": "Persistent brand wordmark top-right: bold lowercase geometric sans with orange bar prefix; no other text",
+      "depth_cues": ["none"],
+      "what_happens": "5.3 s centred magic-trick sequence on flat lavender under 'and turn your processes into profits. Like a wizard.' (w37-w45): a hand presses down on the cone (21.0 s), the cone turns lime with a navy rim and flips over like a magician's hat (21.5-22.0 s), lightning bolts drop out of the small hovering hat (22.5 s), a gold dollar coin appears beneath it on 'profits' (23.0 s), the coin spins edge-on revealing a clock face and then a thin edge with a hand (23.5-24.0 s), a round smiling character in a zig-zag sweater pops up with hands raised (24.5-25.0 s) and the lime hat lands on its head as it winks on 'wizard' (25.5 s). Sparkles, x/plus badges and small bolts pop around each object; 4 motion events counted and impact/chime SFX (x010-x013) fall in this shot.",
+      "build_rebuild": "On a flat lavender stage keep a lime cone 'hat' centred at the top and sequence object reveals below it on each phrase (coin pop with overshoot, a scaleX flip of the coin to reveal a clock face, then a character pop), finishing by tweening the hat down onto the character's head with a wink swap and small sparkle bursts on each change.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s044",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Two-line centred statement 'Automation isn't magic' on a flat teal field",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": ["Automation isn't magic"],
+      "text_word_count": 3,
+      "typography": "Large centred two-line headline in a medium-bold grotesque sans, sentence case, tight tracking and tight leading, dark ink; low-confidence guess Zapier's brand sans (Degular-like). The corner wordmark is no longer shown.",
+      "depth_cues": ["none"],
+      "what_happens": "After the crossfade the background turns teal and only the small lime hat remains at upper-left (26.0 s); then the headline 'Automation isn't magic' appears centred with sparkles, small lines and a pink lightning bolt scattered around it (26.5 s), and the decorations clear so the text holds alone (27.0-27.5 s). VO says the same words (w46-w48); an impact SFX (x014) lands near the text reveal.",
+      "build_rebuild": "Crossfade to a flat teal frame, exit the leftover hat sprite, then reveal the two-line headline on the first spoken word with a quick burst of sparkle and bolt sprites that scale out and disappear within ~0.5 s, holding the clean text to the end of the shot.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s045",
+      "shot_type": "logo",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Centred '_zapier' logo lockup with the tagline 'Start automating for free' below",
+      "transition_in": "whip",
+      "transition_other": null,
+      "on_screen_text": ["zapier", "Start automating for free"],
+      "text_word_count": 5,
+      "typography": "Wordmark: large heavy lowercase geometric sans with an orange underscore bar leading it; tagline: small medium-weight sans, sentence case, normal tracking, centred under the wordmark.",
+      "depth_cues": ["none"],
+      "what_happens": "End card on the same teal: the orange underscore bar appears alone (28.0 s), then the full 'zapier' wordmark and the tagline 'Start automating for free' resolve beside and under it by 28.5 s as the VO says 'It's Zapier.' (w49-w50), timed to an impact SFX (x015); the lockup holds to 30.0 s. The incoming whip comes from the anchors; the motion of the whip itself is not visible in the 2 fps stills.",
+      "build_rebuild": "After a whip transition onto teal, draw the orange bar first at centre-left, then reveal the wordmark to its right (mask wipe from the bar) and fade up the tagline below on the brand-name word, holding the lockup about 1.5 s.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001"], "words": [0, 6]},
+      {"beat": "problem", "shots": ["s002"], "words": [7, 11]},
+      {"beat": "mechanism", "shots": ["s003", "s004", "s005", "s006", "s007", "s008", "s009", "s010", "s011", "s012", "s013", "s014", "s015", "s016", "s017"], "words": [12, 23]},
+      {"beat": "outcome", "shots": ["s018", "s019", "s020", "s021", "s022", "s023", "s024", "s025", "s026", "s027", "s028", "s029", "s030", "s031", "s032", "s033", "s034", "s035", "s036", "s037", "s038", "s039", "s040", "s041", "s042", "s043"], "words": [24, 45]},
+      {"beat": "cta", "shots": ["s044", "s045"], "words": [46, 50]}
+    ],
+    "hook": {
+      "text": "If only you could conjure some magic to turn manual tasks into smooth systems automatically.",
+      "technique": "other",
+      "technique_other": "wishful 'if only' hypothetical voiced over an overwhelmed illustrated character and chaotic office (pain shown, wish spoken)",
+      "shots": ["s001", "s002", "s003", "s004", "s005", "s006"],
+      "words": [0, 14]
+    },
+    "cta": {
+      "text": "Start automating for free",
+      "shots": ["s045"]
+    },
+    "tone": "Playful, high-energy and whimsical: a hand-drawn-feeling magic/wizard metaphor with rapid on-twos cuts, bold flat illustration and a confident, punchy voice-over that ends on a wry tagline.",
+    "signature_moments": [
+      {
+        "shots": ["s006", "s007"],
+        "description": "The sun over the city morphs into an on/off toggle that switches on during 'automatically', and its knob drops out of the toggle onto the tower and bounces into the chaotic office.",
+        "why_premium": "One shape carries the product idea (automation switched on) across scenes, so the transition is the message; that continuity of objects across cuts is costly to design and reads as authored, not templated."
+      },
+      {
+        "shots": ["s043"],
+        "description": "The funnel becomes a magician's hat: pressed, flipped, it produces a dollar coin that spins into a clock, then lands as a wizard hat on a winking character on 'Like a wizard'.",
+        "why_premium": "A single centred object transforms on each spoken phrase (processes, profits, wizard), giving tight word-to-picture sync and a visual payoff rather than literal icons."
+      },
+      {
+        "shots": ["s044", "s045"],
+        "description": "The chaos stops on a clean teal card 'Automation isn't magic', then the orange underscore bar appears alone and resolves into the zapier lockup on 'It's Zapier.'",
+        "why_premium": "The script calls back to the opening 'conjure some magic' and the frantic pace drops to calm, restrained type; building the logo from its own brand mark is an economical, ownable logo resolve."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 4,
+        "evidence": "Opens instantly on an expressive character whose face cycles through stress while work icons orbit it, under a relatable 'If only you could conjure some magic' wish; strong curiosity and pain, but no bold claim or product in the first seconds.",
+        "refs": ["s001", "s002", "w0", "w6"]
+      },
+      "clarity": {
+        "score": 3,
+        "evidence": "The arc (manual chaos, switch on, magic results, 'Automation isn't magic. It's Zapier.') is easy to follow, but the benefits are abstract metaphors (beams of cursors, envelopes, a funnel, a coin) and the video never shows what Zapier actually does or how it works.",
+        "refs": ["s006", "s017", "s040", "s043", "w46", "w50"]
+      },
+      "ui_showcase": {
+        "score": null,
+        "evidence": "No product UI appears anywhere; it is a fully illustrated brand spot, so a UI showcase score does not apply.",
+        "refs": []
+      },
+      "motion_polish": {
+        "score": 5,
+        "evidence": "Cel-style vector animation with boiling lines, stepped on-twos rays, squash-and-stretch, a stepped camera pull-out and object continuity across cuts (sun to toggle to knob, cone to funnel to hat); many 2-4 frame cuts are deliberate energy accents and the end slows to calm type and a logo resolve.",
+        "refs": ["s003", "s006", "s017", "s028", "s043", "s045"]
+      },
+      "sound_design": {
+        "score": 4,
+        "evidence": "From the anchors: a driving 143.55 BPM track at -15.41 LUFS integrated, and 15 SFX candidates including impacts at roughly 2.5 s intervals (x006 11.09 s, x007 13.59 s, x008 16.09 s, x009 18.60 s, x010 21.07 s, x014 26.09 s, x015 28.58 s) that land on phrase starts, the brand name and the end card, plus chimes during the magic beats. Visually the cuts and bursts are paced to these hits. Judged from the audio facts, not by listening; impact labels are partly uncertain (CLAP often says music).",
+        "refs": ["s010", "s022", "s037", "s043", "s044", "s045"]
+      },
+      "vo_script_quality": {
+        "score": 4,
+        "evidence": "Tight 51-word script with a clear magic metaphor that opens on 'conjure some magic' and closes with the twist 'Automation isn't magic. It's Zapier.'; the middle benefit list (collect leads, notify sales, convert customers, processes into profits) is rhythmic but generic.",
+        "refs": ["w0", "w6", "w24", "w42", "w46", "w50"]
+      },
+      "brand_consistency": {
+        "score": 5,
+        "evidence": "The zapier wordmark stays top-right through the illustrated shots, the code-measured six-colour palette is used throughout, one consistent outlined flat illustration style, and the end card builds the logo from its own orange underscore bar.",
+        "refs": ["s001", "s043", "s045"]
+      },
+      "works_muted": {
+        "score": 3,
+        "evidence": "With sound off the chaos-to-magic-to-money story and the closing 'Automation isn't magic' card and 'Start automating for free' end card still come through, but the specific benefits (leads, sales team, customers, profits) are only spoken and there are no captions.",
+        "refs": ["s002", "s043", "s044", "s045"]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "A highly crafted, on-brand 30 s illustrated spot with excellent motion and a memorable bookended script; it sells a feeling (automation as effortless magic) rather than explaining the product, and shows no UI.",
+        "refs": ["s006", "s043", "s044", "s045"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 4,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "Baked-in text is limited to the corner wordmark, one two-line title card (s044) and the end-card tagline (s045), all on flat backgrounds and easy to re-typeset. The benefit list relies on the voice-over, so each market needs a new VO, timed so the visual changes still land on the beats; the illustration itself has no text to translate."
+    }
+  }
+}

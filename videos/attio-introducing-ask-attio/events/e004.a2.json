@@ -1,0 +1,51 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "be1146958f9d26a73e7f8609456f4c68e39b8fd4b9e42f3f8348ed66f40118a1",
+    "created_at": "2026-10-05T06:38:37.458565Z"
+  },
+  "video": "attio-introducing-ask-attio",
+  "event": "e004",
+  "task": "a2-e004",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Black dot",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["pop", "scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 150, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x001",
+      "verdict": "confirm",
+      "label": "impact",
+      "note": "Low broadband onset with no sharp high transient, right after the dot lands and as the dot starts filling the frame (e005); the music texture changes at the same moment. CLAP said glitch, but the shape reads as a soft impact."
+    }
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "zoom through to dot",
+    "description": "The 'Thinking...' text zooms in so fast that letters fly past the edges ('inking' -> 'kin'), then cuts to a solid black dot that pops in at the centre of the grid and keeps growing (it goes on to fill the frame in e005).",
+    "why_premium": "A zoom through the type into a single geometric dot is a clean, graphic bridge between the UI moment and the next title card. It reads as one continuous move into the product's 'mind' rather than a hard cut."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.thinking', {scale: 12, duration: 0.15, ease: 'power3.in', transformOrigin: '50% 50%'}); tl.set('.thinking', {autoAlpha: 0}); tl.fromTo('.dot', {scale: 0}, {scale: 1, duration: 0.15, ease: 'power3.out'}); then continue into the e005 dot expansion with the same ease family.",
+    "remotion": "Text scale = interpolate(frame, [0, 5], [1, 12], {easing: Easing.in(Easing.cubic)}); from frame 6 render the dot with scale = interpolate(frame, [6, 11], [0, 1], {easing: Easing.out(Easing.cubic), extrapolateRight: 'clamp'}); a stiff spring ({stiffness: 300, damping: 30}) also fits the dot."
+  },
+  "confidence": "medium",
+  "notes": "The zooming text exits the frame and is absent from the end frame, so it is not listed. Camera verdict is none despite scale 1.97, so no camera move is reported; the zoom may be a cut plus element scale. x001 is shared with e005 and falls about 160 ms after this burst ends."
+}

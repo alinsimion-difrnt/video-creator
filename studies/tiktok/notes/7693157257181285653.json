@@ -1,0 +1,69 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "tiktok_notes",
+    "annotator": "claude-code",
+    "input_hash": "9f312a80a3ed0bb63868d07a8d37495be7f211775dba08d45ff4cc52b19bf9df",
+    "created_at": "2026-10-13T13:56:06+00:00"
+  },
+  "id": "7693157257181285653",
+  "format": "other",
+  "hook": {
+    "type": "pattern_interrupt",
+    "line": "No speech; on-screen text says the OGs fell in love with AEO through this song.",
+    "visual": "Selfie close-up of a young woman, phone tilting as she steps back, ceiling light behind; small white text 'The OGs fell in love with AEO from this song (Nazarene)'."
+  },
+  "beats": [
+    {
+      "t": 0.0,
+      "what": "Handheld close-up, she backs away from the phone as the song builds"
+    },
+    {
+      "t": 5.36,
+      "what": "Full-body framing in her room, starts miming and gesturing to the lyrics"
+    },
+    {
+      "t": 10.72,
+      "what": "Hands on head on the emotional line"
+    },
+    {
+      "t": 26.79,
+      "what": "Smiling, hands to chest on 'see me as I am'"
+    },
+    {
+      "t": 37.5,
+      "what": "Raises open hands, mouthing the chorus"
+    },
+    {
+      "t": 58.27,
+      "what": "Leans back into the phone to end the take"
+    }
+  ],
+  "graphics": {
+    "captions": "title_only",
+    "caption_position": "bottom",
+    "devices": [
+      "title_text",
+      "music_bed"
+    ],
+    "density": "minimal",
+    "per_minute_estimate": 1
+  },
+  "characters": [],
+  "cta": {
+    "kind": "comment",
+    "t": null
+  },
+  "why_it_works": [
+    "One continuous take (no cuts measured) of lip-sync and gestures lets the song carry the whole video",
+    "Caption asks which song made you discover the artist, which invites comments from fans",
+    "Song-led audio (music bed at -17.3 dB, near full loudness) taps an existing fan community"
+  ],
+  "weaknesses": [
+    "'AEO' here is the artist Anendlessocean, not answer-engine optimisation, so it is off-topic for the study",
+    "First spoken word only at 8.56 s; the hook relies entirely on the song",
+    "Small on-screen text sits low and outside the safe area (measured outside_safe_share 1.0)"
+  ],
+  "for_robert": "Not a model for explainer reels; the only takeaway is ending the caption with a direct question to pull comments."
+}

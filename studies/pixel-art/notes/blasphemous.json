@@ -1,0 +1,54 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T13:59:40+00:00"
+  },
+  "id": "blasphemous",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "cool",
+    "notes": "Frames: near-monochrome grey-blue background (sky, ruined city, gravestones) and a hero in steel blue, dusty purple and one strong red (sash, blood pool). The red is the only saturated colour on screen."
+  },
+  "lighting": "Flat diffuse overcast light on a pale misty ground, so the darker hero reads by value. Influences are Murillo, Goya, Ribera, Velazquez and Zurbaran (wiki), painters of dark grounds; here the ground is pale instead.",
+  "silhouette": "The Penitent One: tall pointed capirote helmet wrapped in thorns, a face mask, cloak and a long sword held low in a wide stance (frames). Reads at any size; cosplay clips show the same shape is recognisable off-screen too.",
+  "motion": {
+    "timing": "No frame timings measured. Clip 1 is a near-still idle held for 12 s: breathing and cloth only, while a slow push-in grows the hero from small to large over ~5 s.",
+    "principles": [
+      "weight",
+      "anticipation",
+      "follow-through",
+      "slow in and slow out"
+    ]
+  },
+  "texture": "Ornate, painterly: many small value steps on armour, rough dithered stone and mist in the background, sky with clustered clouds. Religious Seville iconography (wiki).",
+  "camera": "Side view; the edit uses a slow zoom/push-in onto the idle hero and then holds still, letting the pose sit.",
+  "sound": "Score by Carlos Viola; English voices, Spanish dub added later.",
+  "acting": {
+    "enters": "Starts small and far in the frame, grows as the camera pushes in (frames 0.5-5.7 s).",
+    "acts": "Silent knight holds a low guard stance and breathes; blood drips into a small red pool. Stillness is the acting.",
+    "exits": "Not shown.",
+    "comes_back": null,
+    "depth": "Pale far city and gravestones in low contrast behind a dark, detailed hero in the foreground."
+  },
+  "techniques": [
+    "one iconic headpiece as the silhouette hook",
+    "low-contrast desaturated background, dark detailed hero",
+    "one saturated accent colour (red) on a near-grey screen",
+    "long subtle idle (breath, cloth) held instead of new actions",
+    "slow push-in to grow a still character",
+    "heavy, weighted animation on a silent hero"
+  ],
+  "feel": "grey misty ground + dark ornate hero + one red accent + long breathing idle = solemn, iconic",
+  "for_fred": "Give Fred one beat of doing nothing: a held breathing idle (2 slow frames) while the camera pushes in from small to big, on a desaturated background with one red accent. Use it once as a pause between busy gags, not as filler.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Blasphemous_(video_game)",
+    "studies/pixel-art/sources.yaml",
+    "data/study/pixel/work/blasphemous/clip1-7326849818398149906.jpg",
+    "data/study/pixel/work/blasphemous/clip2-7467667429137616134.jpg (cosplay, used only for silhouette)"
+  ]
+}

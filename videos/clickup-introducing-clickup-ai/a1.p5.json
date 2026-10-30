@@ -1,0 +1,178 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "24161f301729472506011fc79e5f1803551617a785bfad303b41e51368bba342",
+    "created_at": "2026-10-05T06:25:52.897624Z"
+  },
+  "video": "clickup-introducing-clickup-ai",
+  "task": "a1-p5",
+  "shots": [
+    {
+      "shot": "s020",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "A single 'Write with AI' prompt card centred on a pink/violet wave wallpaper, with more prompt cards flying in around it",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "Write with AI",
+        "Create a Go-To-Market launch plan.",
+        "Generate"
+      ],
+      "text_word_count": 9,
+      "typography": "Product UI sans (Inter-like, low confidence): medium-weight title-case card header 'Write with AI' next to the gradient ring icon, regular sentence-case prompt text typed with a caret, white label on a filled purple 'Generate' button with return-key glyph. The surrounding satellite cards' prompts are too small in the sheets to quote.",
+      "depth_cues": ["shadow", "blur"],
+      "what_happens": "The task view from s019 crossfades away (its own small 'Write with AI' card dissolving) into a clean pink-violet wave wallpaper with one centred 'Write with AI' card; the prompt 'Create a Go-To-Market launch plan.' types on character by character. From ~1:46 smaller translucent 'Write with AI' cards with other prompts slide in from the edges at different depths, building a card wall around the hero card. No speech; a reverse-swoosh (x147) sits at the cut-in and glitch candidates (x149, x150) during the build.",
+      "build_rebuild": "Crossfade to a gradient-wave background with one centred rounded prompt card, type the prompt into it with a blinking caret over ~2.5 s, and from 1.5 s onward stagger-in a dozen smaller semi-transparent copies of the card from the frame edges at varied scales and depth blur so they surround the hero card.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s021",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The hero 'Write with AI' card with the completed prompt, as the camera rushes through it into white",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Write with AI",
+        "Create a Go-To-Market launch plan.",
+        "Generate",
+        "Prepare a presentation on the benefits of implementing AI technology."
+      ],
+      "text_word_count": 19,
+      "typography": "Same card styling as s020; the satellite card prompt is read from the keyframe through motion blur (medium confidence); other satellite prompts are illegible.",
+      "depth_cues": ["blur", "shadow", "parallax"],
+      "what_happens": "A short 1.3 s bridge: the card wall is now dense, the hero card shows the finished prompt with caret, and the camera pushes hard into the card with heavy directional motion blur so the frame washes out to near-white by 1:48.5, setting up the end card.",
+      "build_rebuild": "Scale the whole card-wall group up ~3x in ~0.8 s with an ease-in and a horizontal/radial motion blur, letting the hero card's white body fill the frame before cutting to the end card.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s022",
+      "shot_type": "logo",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "'ClickUp AI' lockup with the gradient ring mark, a cycling 'AI, purpose-built for ...' tagline and the URL on black",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "ClickUp AI",
+        "AI, purpose-built for Marketing",
+        "AI, purpose-built for Product",
+        "AI, purpose-built for Design",
+        "AI, purpose-built for Operations",
+        "AI, purpose-built for your team.",
+        "clickup.com/features/ai"
+      ],
+      "text_word_count": 24,
+      "typography": "Lockup: geometric sans, bold, title case, tight tracking; 'AI' starts as an outlined/gradient glyph and fills to solid white (mirrors s001). Tagline: bold sentence case, medium size, normal tracking; the final department word swaps in place via a short vertical roll (a further word under 'Marketing' at 1:49.5 is illegible). URL: smaller medium-weight lowercase in a light lavender tint. Font guess (low confidence): ClickUp's geometric brand sans.",
+      "depth_cues": ["glow"],
+      "what_happens": "End card: the ClickUp AI lockup sits centred on black; the tagline 'AI, purpose-built for' rolls its last word through Marketing, Product, Design and Operations (~0.5 s each) before landing on 'your team.' at ~1:51.5, while the URL fades in below by 1:49.5. The card then holds static for ~7.5 s to the end over the music bed (glitch candidate x151 at the cut-in). No speech.",
+      "build_rebuild": "On black, show the logo lockup with the 'AI' glyph cross-fading from outline to solid, place a tagline whose final word is a vertical roll-ticker cycling department names every ~0.5 s before settling on 'your team.', fade the lavender URL in underneath, then hold for ~7 s.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001", "s002", "s003"], "words": [0, 6]},
+      {"beat": "problem", "shots": ["s003"], "words": [0, 6]},
+      {"beat": "demo", "shots": ["s004", "s005"], "words": [7, 29]},
+      {"beat": "demo", "shots": ["s006", "s007", "s008", "s009", "s010", "s011", "s012", "s013", "s014", "s015", "s016"], "words": [30, 105]},
+      {"beat": "demo", "shots": ["s017", "s018"], "words": [106, 124]},
+      {"beat": "outcome", "shots": ["s019"], "words": [125, 137]},
+      {"beat": "proof", "shots": ["s020", "s021"], "words": null},
+      {"beat": "cta", "shots": ["s022"], "words": null}
+    ],
+    "hook": {
+      "text": "After a 2 s logo sting, a CEO 'CODE RED' comment demands the launch be pulled in to next week, and the product manager reacts 'Are you kidding me? There's no way.'",
+      "technique": "pain",
+      "technique_other": null,
+      "shots": ["s001", "s002", "s003"],
+      "words": [0, 6]
+    },
+    "cta": {
+      "text": "clickup.com/features/ai",
+      "shots": ["s022"]
+    },
+    "tone": "Playful, upbeat workplace mini-story: in-character reactions instead of a narrator, a multiplayer team relay across colourful wave-wallpaper scenes, fast blurred camera moves on a ~132 BPM music bed, and a calm black end card.",
+    "signature_moments": [
+      {
+        "shots": ["s006", "s008", "s011", "s013"],
+        "description": "A relay of name-tagged multiplayer cursors (Wilson, Tanya, Drew) each picking their department in AI Tools, every persona on its own wallpaper colourway, with a recurring 'USE CLICKUP AI FOR:' eyebrow-plus-headline callout card naming the feature.",
+        "why_premium": "Turns a feature list into a cast of characters with a repeatable visual system, so every new feature reads instantly and the video feels designed rather than screen-recorded."
+      },
+      {
+        "shots": ["s020", "s021"],
+        "description": "A hero 'Write with AI' prompt types on while a wall of satellite prompt cards streams in at different depths, then the camera zooms through the card into white.",
+        "why_premium": "Communicates breadth (many prompts) in three seconds without words, and the depth-layered stagger plus zoom-through gives a cinematic climb into the end card."
+      },
+      {
+        "shots": ["s001", "s022"],
+        "description": "Bookended logo treatment: the 'AI' glyph draws on as an outline and fills solid in both the opener and the end card, where the tagline rolls through Marketing, Product, Design and Operations before landing on 'your team.'",
+        "why_premium": "The matching bookends and the roll-ticker tagline recap the whole story's multi-role idea in one restrained, on-brand typographic beat."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 4,
+        "evidence": "A concrete, relatable pain (CEO demands a launch next week) is on screen by ~4 s and voiced as a reaction within 7 s; the 2 s logo sting and zoom-through slightly delay it.",
+        "refs": ["s001", "s003", "w0", "w6"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "Simple arc (impossible deadline, AI drafts plan, each team member uses role-based tools, team praise) with each feature named by a callout card; streamed AI answers and dense doc text scroll too fast to read, and the long s017/s019 holds pack several actions.",
+        "refs": ["s004", "s008", "s017", "s019"]
+      },
+      "ui_showcase": {
+        "score": 4,
+        "evidence": "Crisp recreated product UI with tight crops on modals, typed form fields, streamed answers, named cursors and a backspace-and-retype comment gag; showcases plans, role-based requests, blog posts, re-prompting and thread summaries. Some text is too small to read at 1x.",
+        "refs": ["s004", "s010", "s015", "s019"]
+      },
+      "motion_polish": {
+        "score": 4,
+        "evidence": "Motion-blurred zoom-throughs and whips link scenes, cursors move with blur, sparkle bursts on cursor and reaction pops, depth-staggered card wall; long static UI holds in s017 and s019 lower the rhythm.",
+        "refs": ["s002", "s006", "s012", "s020", "s021"]
+      },
+      "sound_design": {
+        "score": 4,
+        "evidence": "Judged from anchors plus visuals: a continuous music bed at ~132.5 BPM, integrated loudness -17.54 LUFS, and dense SFX candidates where reverse-swooshes land on scene cuts (x147 at s020's start, x081 at s016's start) and glitch hits on the end transitions (x149-x151); chime candidate x115 near s018. I cannot hear the mix, so SFX labels are candidates, not confirmed.",
+        "refs": ["s016", "s018", "s020", "s022"]
+      },
+      "vo_script_quality": {
+        "score": 3,
+        "evidence": "No narrator: short in-character lines and spoken UI commands ('select engineering, write technical specifications doc') give personality and pace but never state the value proposition; the benefit is carried by on-screen text.",
+        "refs": ["w0", "w49", "w55", "w125", "w137"]
+      },
+      "brand_consistency": {
+        "score": 5,
+        "evidence": "Matching ClickUp AI lockup bookends, one purple accent across buttons and callouts, a single callout-card system, and a consistent wave-wallpaper language whose colourways vary deliberately per persona.",
+        "refs": ["s001", "s008", "s017", "s022"]
+      },
+      "works_muted": {
+        "score": 4,
+        "evidence": "The CEO note, callout cards, typed prompts, cursor name tags and the end-card tagline carry the story without sound; only the comedic reactions are lost.",
+        "refs": ["s003", "s008", "s019", "s022"]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "A polished, character-driven feature tour with a strong visual system and premium transitions; held back by dense, long UI holds mid-video and a script that leaves the value proposition to on-screen text.",
+        "refs": ["s003", "s008", "s020", "s022"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 2,
+      "baked_in_text": true,
+      "vo_dependent": false,
+      "notes": "Almost all meaning lives in baked-in English UI text (docs, forms, streamed answers, callout cards, cycling end-card tagline), so localising means rebuilding every UI scene; the sparse in-character VO is easy to re-dub or drop."
+    }
+  }
+}

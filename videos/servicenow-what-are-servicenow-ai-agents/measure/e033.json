@@ -1,0 +1,98 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "s7_measure",
+    "annotator": "code",
+    "skill": null,
+    "model": null,
+    "input_hash": "aca11486c52273f1c966782ecc5a15e4b11af345992079e14a361c31fa9685a4",
+    "created_at": "2026-10-05T10:12:15.273124Z"
+  },
+  "video": "servicenow-what-are-servicenow-ai-agents",
+  "event": "e033",
+  "fps": 23.81,
+  "elements": [
+    {
+      "box": "b02",
+      "xyxy": [
+        686,
+        317,
+        942,
+        410
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.799,
+      "channels": [],
+      "timing": null,
+      "stagger": {
+        "unit": "none",
+        "stagger_ms": null,
+        "reveal_frames": [
+          null,
+          3773
+        ]
+      },
+      "sfx_offset_ms": {},
+      "source": "model_estimate",
+      "quality": 0.0
+    },
+    {
+      "box": "b01",
+      "xyxy": [
+        745,
+        336,
+        1094,
+        392
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.73,
+      "channels": [
+        {
+          "name": "y",
+          "start_f": 3775,
+          "end_f": 3778,
+          "start_value": 376.0,
+          "end_value": 364.0,
+          "observed_start": false,
+          "cls": "ease_out",
+          "gsap": {
+            "ease": "circ.out",
+            "duration_ms": 210.4,
+            "rmse": 0.00568
+          },
+          "bezier": "cubic-bezier(0.002, 0.331, 0.556, 0.942)",
+          "bezier_rmse": 0.0,
+          "spring": {
+            "zeta": 0.8784,
+            "omega0": 17.221,
+            "settle_ms": 260.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 296.562,
+              "damping": 30.252
+            },
+            "remotion_exact": true,
+            "rmse": 0.01194
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 168.1,
+          "fit_quality": 1.0
+        }
+      ],
+      "timing": {
+        "ease": "circ.out",
+        "start_s": 158.4863,
+        "duration_ms": 210.4,
+        "rmse": 0.00568
+      },
+      "stagger": null,
+      "sfx_offset_ms": {
+        "x193": -121.9
+      },
+      "source": "measured",
+      "quality": 1.0
+    }
+  ],
+  "failed": {}
+}

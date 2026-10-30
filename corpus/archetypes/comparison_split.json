@@ -1,0 +1,212 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a3_pattern_cards",
+  "annotator": "claude-code",
+  "skill": "write-archetype-cards@a75a12f0ca91",
+  "model": null,
+  "input_hash": "4e33e32926ea5a1bfcaf55024cff3a4c43ce202e3c04ce467265703a5b2a21bb",
+  "created_at": "2026-10-05T19:09:22.793571Z"
+ },
+ "id": "comparison_split",
+ "name": "Comparison Split",
+ "summary": "Two sides share the frame, left and right or in stacked lanes, so the viewer compares the old way with the new one or the product against the alternatives. It sets up a contrast that the narration then resolves in the product's favour.",
+ "when_to_use": [
+  "Showing before and after, or old versus new, at a glance",
+  "Framing the problem as a matchup between the product and the usual alternatives",
+  "Backing a claim with a side-by-side result or score"
+ ],
+ "slots": [
+  {"name": "left_side", "what": "the first contender: an old version, an alternative or a person, as an image, icon or render", "required": true},
+  {"name": "right_side", "what": "the second contender, usually the product or the improved version", "required": true},
+  {"name": "divider", "what": "what separates the halves: a thin line, a diagonal band edge or a centred badge", "required": false},
+  {"name": "verdict", "what": "a short stat, label or status that says which side wins", "required": false},
+  {"name": "footnote", "what": "a small disclaimer under a claim", "required": false},
+  {"name": "background", "what": "two contrasting colour fields or a neutral canvas", "required": false}
+ ],
+ "steps": [
+  "Reveal both sides together, or bring them in from opposite edges",
+  "Hold the split so the viewer reads the contrast, with a slow push or a gentle drift toward the centre",
+  "Bring in the verdict between or under the sides as a stat, score bars or a status change",
+  "Clear everything except the winning side and carry it into the next shot with a scale-up, a zoom or a fast cut"
+ ],
+ "patterns": [],
+ "build": {
+  "gsap": "One timeline per scene. Tween the two side groups in from opposite edges with mirrored x values and a short stagger, using an expo or power out ease; add a slow scale push on the container with a sine in-out ease for the hold. Fade or blur the verdict in at the centre, fill any score bars left to right with a stagger, then fade the losing side and scale the winner up with a power in ease into the transition.",
+  "remotion": "One Sequence for the scene with two child layers for the sides, each driven by a mirrored spring on translateX; a nested Sequence starts the verdict after the sides settle, and a final Sequence interpolates opacity on the losing side and scale on the winning side into the next scene."
+ },
+ "sound": "No single clear cue. Impact hits are common and tend to land in the first part of the scene as the sides or the verdict arrive; a whoosh sometimes marks the entrance right at the start; music carries the rest.",
+ "numbers": {
+  "id": "comparison_split",
+  "shots": 12,
+  "videos": 5,
+  "weight": 8.4,
+  "duration_s": {
+   "n": 12,
+   "videos": 5,
+   "weight": 8.4,
+   "median": 1.945,
+   "p25": 1.587,
+   "p75": 3.012,
+   "ci": [
+    1.617,
+    2.94
+   ]
+  },
+  "events_per_shot": {
+   "n": 12,
+   "videos": 5,
+   "weight": 8.4,
+   "median": 0.0,
+   "p25": 0.0,
+   "p75": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ]
+  },
+  "first_motion_s": {
+   "n": 0,
+   "videos": 0,
+   "weight": 0.0,
+   "median": null,
+   "p25": null,
+   "p75": null,
+   "ci": null
+  },
+  "pattern_mix": {},
+  "transition_mix": {
+   "other": 0.6667,
+   "hard_cut": 0.1429,
+   "zoom_through": 0.1429,
+   "crossfade": 0.0476
+  },
+  "shot_type_mix": {
+   "other": 0.381,
+   "3d": 0.2381,
+   "abstract": 0.1905,
+   "ui_recreated": 0.1429,
+   "footage": 0.0476
+  },
+  "beat_mix": {
+   "demo": 0.2857,
+   "problem": 0.2381,
+   "proof": 0.2381,
+   "hook": 0.1905,
+   "agitate": 0.0476
+  },
+  "sfx_label_mix": {
+   "music": 0.3093,
+   "unsure": 0.3093,
+   "impact": 0.299,
+   "whoosh": 0.0825
+  },
+  "sfx_offset_s_by_label": {
+   "impact": {
+    "n": 11,
+    "videos": 3,
+    "weight": 5.8,
+    "median": 1.044,
+    "p25": 0.302,
+    "p75": 1.836,
+    "ci": [
+     0.299,
+     1.805
+    ]
+   },
+   "music": {
+    "n": 9,
+    "videos": 4,
+    "weight": 6.0,
+    "median": 2.645,
+    "p25": 1.794,
+    "p75": 5.038,
+    "ci": [
+     2.012,
+     5.004
+    ]
+   },
+   "unsure": {
+    "n": 9,
+    "videos": 3,
+    "weight": 6.0,
+    "median": 3.147,
+    "p25": 1.808,
+    "p75": 4.243,
+    "ci": [
+     1.811,
+     4.197
+    ]
+   },
+   "whoosh": {
+    "n": 2,
+    "videos": 1,
+    "weight": 1.6,
+    "median": 0.386,
+    "p25": 0.289,
+    "p75": 0.483,
+    "ci": null
+   }
+  },
+  "examples": [
+   {
+    "video": "meta-introducing-meta-quest-3-coming-this-f",
+    "shot": "s004",
+    "score": 5.0
+   },
+   {
+    "video": "duolingo-introducing-duolingo-chess",
+    "shot": "s001",
+    "score": 4.0
+   },
+   {
+    "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+    "shot": "s004",
+    "score": 4.0
+   },
+   {
+    "video": "fullstory-behavioral-data-made-simple-by-fullstory",
+    "shot": "s002",
+    "score": 4.0
+   },
+   {
+    "video": "profound-introducing-profound",
+    "shot": "s045",
+    "score": 4.0
+   }
+  ]
+ },
+ "examples": [
+  {
+   "video": "meta-introducing-meta-quest-3-coming-this-f",
+   "shot": "s004",
+   "score": 5.0
+  },
+  {
+   "video": "duolingo-introducing-duolingo-chess",
+   "shot": "s001",
+   "score": 4.0
+  },
+  {
+   "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+   "shot": "s004",
+   "score": 4.0
+  },
+  {
+   "video": "fullstory-behavioral-data-made-simple-by-fullstory",
+   "shot": "s002",
+   "score": 4.0
+  },
+  {
+   "video": "profound-introducing-profound",
+   "shot": "s045",
+   "score": 4.0
+  }
+ ],
+ "caveats": [
+  "No motion events were measured in these shots, so there is no measured pattern mix or first-motion timing; the build notes come from shot descriptions.",
+  "Members are mixed: product renders, illustrated matchups, abstract lanes and footage all count as splits.",
+  "Much of the sound is labelled unsure, so the cue timing is loose."
+ ]
+}

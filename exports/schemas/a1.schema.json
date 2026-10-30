@@ -1,0 +1,577 @@
+{
+  "$defs": {
+    "Annotator": {
+      "enum": [
+        "code",
+        "claude-code",
+        "human"
+      ],
+      "title": "Annotator",
+      "type": "string"
+    },
+    "Beat": {
+      "additionalProperties": false,
+      "properties": {
+        "beat": {
+          "title": "Beat",
+          "type": "string"
+        },
+        "shots": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Shots",
+          "type": "array"
+        },
+        "words": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Words"
+        }
+      },
+      "required": [
+        "beat",
+        "shots"
+      ],
+      "title": "Beat",
+      "type": "object"
+    },
+    "Cta": {
+      "additionalProperties": false,
+      "properties": {
+        "shots": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Shots",
+          "type": "array"
+        },
+        "text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Text"
+        }
+      },
+      "required": [
+        "text",
+        "shots"
+      ],
+      "title": "Cta",
+      "type": "object"
+    },
+    "Hook": {
+      "additionalProperties": false,
+      "properties": {
+        "shots": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Shots",
+          "type": "array"
+        },
+        "technique": {
+          "title": "Technique",
+          "type": "string"
+        },
+        "technique_other": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Technique Other"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "words": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Words"
+        }
+      },
+      "required": [
+        "text",
+        "technique",
+        "shots"
+      ],
+      "title": "Hook",
+      "type": "object"
+    },
+    "Localization": {
+      "additionalProperties": false,
+      "properties": {
+        "baked_in_text": {
+          "title": "Baked In Text",
+          "type": "boolean"
+        },
+        "notes": {
+          "title": "Notes",
+          "type": "string"
+        },
+        "score": {
+          "maximum": 5,
+          "minimum": 1,
+          "title": "Score",
+          "type": "integer"
+        },
+        "vo_dependent": {
+          "title": "Vo Dependent",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "score",
+        "baked_in_text",
+        "vo_dependent",
+        "notes"
+      ],
+      "title": "Localization",
+      "type": "object"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "description": "Carried by every output JSON (BUILD_PLAN section 2.7).",
+      "properties": {
+        "annotator": {
+          "$ref": "#/$defs/Annotator"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "input_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Input Hash",
+          "type": "string"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "schema_version": {
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "skill": {
+          "anyOf": [
+            {
+              "pattern": "^[a-z0-9-]+@[0-9a-f]{8,64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Skill"
+        },
+        "stage": {
+          "title": "Stage",
+          "type": "string"
+        },
+        "tool_version": {
+          "title": "Tool Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool_version",
+        "stage",
+        "annotator",
+        "input_hash",
+        "created_at"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "Score": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence": {
+          "minLength": 1,
+          "title": "Evidence",
+          "type": "string"
+        },
+        "refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Refs",
+          "type": "array"
+        },
+        "score": {
+          "anyOf": [
+            {
+              "maximum": 5,
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Score"
+        }
+      },
+      "required": [
+        "score",
+        "evidence"
+      ],
+      "title": "Score",
+      "type": "object"
+    },
+    "Scores": {
+      "additionalProperties": false,
+      "properties": {
+        "brand_consistency": {
+          "$ref": "#/$defs/Score"
+        },
+        "clarity": {
+          "$ref": "#/$defs/Score"
+        },
+        "hook": {
+          "$ref": "#/$defs/Score"
+        },
+        "motion_polish": {
+          "$ref": "#/$defs/Score"
+        },
+        "overall": {
+          "$ref": "#/$defs/Score"
+        },
+        "sound_design": {
+          "$ref": "#/$defs/Score"
+        },
+        "ui_showcase": {
+          "$ref": "#/$defs/Score"
+        },
+        "vo_script_quality": {
+          "$ref": "#/$defs/Score"
+        },
+        "works_muted": {
+          "$ref": "#/$defs/Score"
+        }
+      },
+      "required": [
+        "hook",
+        "clarity",
+        "ui_showcase",
+        "motion_polish",
+        "sound_design",
+        "vo_script_quality",
+        "brand_consistency",
+        "works_muted",
+        "overall"
+      ],
+      "title": "Scores",
+      "type": "object"
+    },
+    "Shot": {
+      "additionalProperties": false,
+      "properties": {
+        "build_rebuild": {
+          "minLength": 1,
+          "title": "Build Rebuild",
+          "type": "string"
+        },
+        "composition": {
+          "title": "Composition",
+          "type": "string"
+        },
+        "composition_other": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Composition Other"
+        },
+        "confidence": {
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ],
+          "title": "Confidence",
+          "type": "string"
+        },
+        "depth_cues": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Depth Cues",
+          "type": "array"
+        },
+        "focal_element": {
+          "minLength": 1,
+          "title": "Focal Element",
+          "type": "string"
+        },
+        "on_screen_text": {
+          "items": {
+            "type": "string"
+          },
+          "title": "On Screen Text",
+          "type": "array"
+        },
+        "shot": {
+          "pattern": "^s\\d{3,}$",
+          "title": "Shot",
+          "type": "string"
+        },
+        "shot_type": {
+          "title": "Shot Type",
+          "type": "string"
+        },
+        "shot_type_other": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Shot Type Other"
+        },
+        "text_word_count": {
+          "minimum": 0,
+          "title": "Text Word Count",
+          "type": "integer"
+        },
+        "transition_in": {
+          "title": "Transition In",
+          "type": "string"
+        },
+        "transition_other": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Transition Other"
+        },
+        "typography": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Typography"
+        },
+        "what_happens": {
+          "minLength": 1,
+          "title": "What Happens",
+          "type": "string"
+        }
+      },
+      "required": [
+        "shot",
+        "shot_type",
+        "composition",
+        "focal_element",
+        "transition_in",
+        "on_screen_text",
+        "text_word_count",
+        "typography",
+        "depth_cues",
+        "what_happens",
+        "build_rebuild",
+        "confidence"
+      ],
+      "title": "Shot",
+      "type": "object"
+    },
+    "SignatureMoment": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "shots": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Shots",
+          "type": "array"
+        },
+        "why_premium": {
+          "minLength": 1,
+          "title": "Why Premium",
+          "type": "string"
+        }
+      },
+      "required": [
+        "shots",
+        "description",
+        "why_premium"
+      ],
+      "title": "SignatureMoment",
+      "type": "object"
+    },
+    "VideoSummary": {
+      "additionalProperties": false,
+      "description": "Per-video judgement; written by the last A1 part (it reads the earlier parts).",
+      "properties": {
+        "beats": {
+          "items": {
+            "$ref": "#/$defs/Beat"
+          },
+          "minItems": 1,
+          "title": "Beats",
+          "type": "array"
+        },
+        "cta": {
+          "$ref": "#/$defs/Cta"
+        },
+        "hook": {
+          "$ref": "#/$defs/Hook"
+        },
+        "localization_friendliness": {
+          "$ref": "#/$defs/Localization"
+        },
+        "scores": {
+          "$ref": "#/$defs/Scores"
+        },
+        "signature_moments": {
+          "items": {
+            "$ref": "#/$defs/SignatureMoment"
+          },
+          "maxItems": 3,
+          "title": "Signature Moments",
+          "type": "array"
+        },
+        "tone": {
+          "minLength": 1,
+          "title": "Tone",
+          "type": "string"
+        }
+      },
+      "required": [
+        "beats",
+        "hook",
+        "cta",
+        "tone",
+        "signature_moments",
+        "scores",
+        "localization_friendliness"
+      ],
+      "title": "VideoSummary",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    },
+    "shots": {
+      "items": {
+        "$ref": "#/$defs/Shot"
+      },
+      "minItems": 1,
+      "title": "Shots",
+      "type": "array"
+    },
+    "summary": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/VideoSummary"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "task": {
+      "pattern": "^a1-p\\d+$",
+      "title": "Task",
+      "type": "string"
+    },
+    "video": {
+      "title": "Video",
+      "type": "string"
+    }
+  },
+  "required": [
+    "provenance",
+    "video",
+    "task",
+    "shots"
+  ],
+  "title": "A1File",
+  "type": "object"
+}

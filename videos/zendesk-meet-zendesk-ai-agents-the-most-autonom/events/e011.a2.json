@@ -1,0 +1,119 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "f0d41438c0e8f6f3bf476e322185bd1ceb7152119f55249c7e300329b12224a5",
+    "created_at": "2026-10-05T06:57:31.225619Z"
+  },
+  "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+  "event": "e011",
+  "task": "a2-e011",
+  "elements": [
+    {
+      "box": null,
+      "manual_box": [354, 283, 417, 375],
+      "manual_reason": "The exiting 'Thank you' bubble's start position lies inside b02 (the new bubble's diff box); no separate candidate box covers it.",
+      "label": "Customer 'Thank you' bubble (scrolls out)",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["slide_up", "mask_reveal"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Thank you",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 1300, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b09",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Customer avatar (scrolls out)",
+      "role": "avatar",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 1300, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Previous agent reply bubble (scrolls out)",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["slide_up", "mask_reveal"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Of course! Your 03/15/2025 purchase qualifies but is marked ineligible. Let me check the details.",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 1300, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b08",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Previous agent avatar (scrolls out)",
+      "role": "avatar",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 1300, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "New agent reply bubble (scrolls in)",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Looks like your purchase was mistakenly marked ineligible for rewards. Want me to fix that and update your balance?",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 1300, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b07",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "New agent avatar (scrolls in)",
+      "role": "avatar",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 1300, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x041", "verdict": "confirm", "label": "music", "note": null},
+    {"id": "x042", "verdict": "confirm", "label": "music", "note": null},
+    {"id": "x043", "verdict": "unsure", "label": "unsure", "note": "Lands as the scroll settles; streak shape resembles the music hits and the classifiers disagree (impact vs music)."},
+    {"id": "x044", "verdict": "unsure", "label": "unsure", "note": "After the event; no visual change in this packet at 41.12 to tie it to."}
+  ],
+  "pattern": {
+    "id": "masked_scroll",
+    "proposed_name": null,
+    "description": "The chat thread scrolls upward inside the 'Customer conversation' column: the 'Thank you' row and the previous agent reply slide out under the top mask while the new agent reply rises in from below and settles at the top.",
+    "why_premium": "A single eased scroll with a soft top mask advances the conversation without a cut, keeping the fixed heading and two-column layout stable while the story moves forward."
+  },
+  "build_hint": {
+    "gsap": "Overflow-hidden thread column with a top gradient mask; gsap.to('.thread', {y: -scrollDistance, duration: 1.3, ease: 'power2.inOut'}); the new agent row is already in the thread below the fold so it rises with the same tween.",
+    "remotion": "const p = interpolate(frame - start, [0, 1.3 * fps], [0, 1], {easing: Easing.inOut(Easing.cubic), extrapolateRight: 'clamp'}); <div style={{transform: `translateY(${-scrollDistance * p}px)`, maskImage: 'linear-gradient(to bottom, transparent, black 10%)'}}>…thread…</div>"
+  },
+  "confidence": "medium",
+  "notes": "Repeat of the e009 scroll. Exiting-element boxes mark start positions (empty in the end frame); the 'Thank you' bubble needed a manual_box. The right-hand reasoning card shows more bullets than in e010 but is outside the changed boxes, so it is not listed."
+}

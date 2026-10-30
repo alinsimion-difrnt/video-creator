@@ -1,0 +1,54 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T14:00:48+00:00"
+  },
+  "id": "chained-echoes",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "warm",
+    "notes": "Frames (clip 2): warm brown wood interior, orange curtains, red-haired hero and mother in red/blue; airship sky in peach, pink and cream with dark teal-brown ships. Shadows go to dark warm brown, not black."
+  },
+  "lighting": "Soft daylight from a window lights the room; wood planks get a lighter top edge and a dark brown gap line. Sky scene uses bands of warm haze fading to cream near the horizon.",
+  "silhouette": "Small 3/4 top-down chibi sprites (about 2.5 heads tall) with big hair as the identity shape: red spiky hair for Glenn, long red hair for the mother; a blue lizard-like crew member. Close-up portraits carry the face in dialogue.",
+  "motion": {
+    "timing": "No frame timings measured. Clip 2: the mother walks down from the window to the bed over ~15 s of dialogue, then stands next to the hero; the hero mostly holds still while text plays.",
+    "principles": [
+      "staging",
+      "timing",
+      "secondary action"
+    ]
+  },
+  "texture": "Clean 16-bit tiles: wood plank floors and barrels with 2-3 value steps, banded dithered clouds in the sky; no noise. Wiki: art inspired by the 16-bit era, modern and nostalgic.",
+  "camera": "Fixed 3/4 top-down room view, held still during dialogue; airship scene is a side view with parallax cloud bands. Dialogue boxes top and bottom with a hand-drawn portrait.",
+  "sound": "Eddie Marianukroh score, 50 tracks over about two hours (wiki).",
+  "acting": {
+    "enters": "Mother enters the hero's space by walking across the room toward him while she talks (clip 2, 1.7-19 s).",
+    "acts": "Comedy in staging: she nags in text, the sleepy hero answers with a portrait close-up, then she walks right next to him for the punchline line.",
+    "exits": "Cut to a title card and a wide airship shot, then a new room with a new character.",
+    "comes_back": null,
+    "depth": "Small sprites in a wide room; the portrait close-up gives the near shot. Airship scene: ships small in the distance in hazy sky."
+  },
+  "techniques": [
+    "walk-closer staging: speaker moves toward the listener as the line escalates",
+    "portrait close-up cut-in for the reaction, sprite stays small",
+    "warm brown ramps, shadows to deep warm brown",
+    "big hair as the character identity shape at small size",
+    "banded haze sky with layered ship silhouettes",
+    "enemies and fights on the same screen as exploration (wiki)"
+  ],
+  "feel": "warm wood room + small chibi sprites + portrait reaction cut-ins + walk-closer staging = cozy JRPG comedy",
+  "for_fred": "Stage Pixie's nag like this: Fred stays small and still, Pixie walks closer in two or three steps on each line, then cut to a big Fred reaction face for one beat. Distance closing = escalation, no extra animation needed.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Chained_Echoes",
+    "studies/pixel-art/sources.yaml",
+    "data/study/pixel/work/chained-echoes/clip2-7183860591788936494.jpg",
+    "data/study/pixel/work/chained-echoes/clip1-7377831392215977248.jpg (ignored: a different game, SacriFire)",
+    "data/study/pixel/work/chained-echoes/clip3-7536305094317378847.jpg (ignored: talking head over key art)"
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "51325e14dee493a753113f206fbf8eb3675a58c6a8c3321c20be99f965c57cbf",
+    "created_at": "2026-10-05T06:21:30.637711Z"
+  },
+  "video": "ahrefs-ahrefs-brand-radar-see-any-brand-s-ai-v",
+  "task": "a1-p3",
+  "shots": [
+    {
+      "shot": "s011",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "Search form input fields: the 'Your brand' field with an 'Ahrefs' chip, then the 'Market or niche (optional)' field filling with chips",
+      "transition_in": "other",
+      "transition_other": "Anchors report a non-cut transition; its onset is not visible on the contact sheet (first frame at 0:59.0 is already inside the UI close-up).",
+      "on_screen_text": [
+        "Your brand",
+        "Ahrefs",
+        "Overview",
+        "Market or niche (optional)",
+        "e.g. artificial intelligence",
+        "SEO",
+        "Marketing"
+      ],
+      "text_word_count": 13,
+      "typography": "Product UI sans-serif (Inter-like, low-confidence guess); regular-weight sentence-case field labels, chip text slightly larger, light grey placeholder; normal tracking.",
+      "depth_cues": [
+        "perspective_tilt"
+      ],
+      "what_happens": "Tilted macro close-up of a dark search form: the 'Ahrefs' brand chip is removed from 'Your brand' (w156-w159, 'go beyond branded terms'), the camera slides right past an 'AI re...' header to the 'Market or niche (optional)' field, whose placeholder is replaced by an 'SEO' chip and then a 'Marketing' chip that pops in small and scales up (w161-w166, 'search for your entire niche').",
+      "build_rebuild": "Render the form panel with a slight 3D tilt and 2x zoom, remove the brand chip with a quick fade/scale-down, pan the camera horizontally to the niche field, then append two chips in sequence with a small-to-full scale pop (chip_append) timed to the voice-over.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s012",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Topics results table ('127,126 results') with its list of topic rows",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Topics",
+        "How to use",
+        "United States",
+        "AI Overviews",
+        "Your brand",
+        "Filter",
+        "127,126 results",
+        "4 Dec 2025",
+        "Topic",
+        "seo",
+        "crm",
+        "how to start a business",
+        "business plan template",
+        "small business ideas",
+        "how to advertise your business",
+        "keyword research",
+        "marketing"
+      ],
+      "text_word_count": 38,
+      "typography": "Product UI sans-serif (Inter-like, low-confidence guess); bold 'Topics' title and '127,126 results' count, bold column header 'Topic', regular lowercase link-style topic rows; small filter-chip labels; normal tracking.",
+      "depth_cues": [
+        "perspective_tilt",
+        "shadow"
+      ],
+      "what_happens": "After a zoom-through, the Topics report appears as a perspective-tilted light UI (filters: United States, AI Overviews, Your brand, Filter; '127,126 results', date '4 Dec 2025'); the camera drifts down and in so the filter bar leaves the top of frame and the topic rows (seo, crm, how to start a business, ...) scroll up to fill the screen while the VO says 'discover topics that could potentially strengthen your topical authority' (w167-w176).",
+      "build_rebuild": "Show a tilted, slightly zoomed screenshot of the results table and animate a slow continuous camera tilt-down/push-in (eased translateY plus scale) so the list rows scroll up through the frame over about 5 s.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s013",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Topic list rows scrolling upward",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "how to start a business",
+        "business plan template",
+        "small business ideas",
+        "how to advertise your business",
+        "keyword research",
+        "marketing",
+        "seo software",
+        "spyfu",
+        "4 ps of marketing",
+        "marketing strategy"
+      ],
+      "text_word_count": 28,
+      "typography": "Product UI sans-serif (low-confidence guess Inter); regular-weight lowercase link-style rows; normal tracking. A further row at the bottom edge is cropped and not reliably legible.",
+      "depth_cues": [
+        "perspective_tilt"
+      ],
+      "what_happens": "Continuation of the topic-list scroll at a tighter angle after a crossfade: more rows (seo software, spyfu, 4 ps of marketing, marketing strategy) scroll up through the tilted frame as the VO ends 'chances to be surfaced by LLMs' (w177-w184).",
+      "build_rebuild": "Crossfade into a second, tighter crop of the same tilted list and keep the list translating upward at constant speed so it reads as one continuous scroll.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s014",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Centered statement text 'No setup' then 'No waiting time'",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "No setup",
+        "No waiting time"
+      ],
+      "text_word_count": 5,
+      "typography": "Clean geometric/grotesk sans-serif, regular-to-medium weight, sentence case, normal-to-slightly-wide tracking; text has a subtle left-to-right tonal gradient fill. Font name not identifiable.",
+      "depth_cues": [
+        "glow",
+        "blur"
+      ],
+      "what_happens": "Hard cut to a dark background with a large soft gradient glow arc rising from the bottom-left; 'No setup' sits centered (w185-w187), swaps to 'No waiting time' (w188-w191), and in the final frame the text scales up and blurs as the shot exits.",
+      "build_rebuild": "On a black canvas with a large blurred radial-gradient arc in the lower-left, show a centered text line, swap it to the second phrase on the VO word 'zero' (w189), then scale it up about 15% with a blur-out to hand off to the next shot.",
+      "confidence": "high"
+    }
+  ],
+  "summary": null
+}

@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "2cfe1ae04eaa5e0d32ac008cbe76682b085f00fcafae3bcd0d5bb486d6ca9466",
+    "created_at": "2026-10-05T06:38:33.848017Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e007",
+  "task": "a2-e007",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Quick-add input row collapses into new 'Add dark mode' row",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["fade", "slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 150, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Idea table rows reflow up one row",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 150, "easing_class": "ease_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [265, 300, 300, 320],
+      "manual_reason": "No candidate box covers the cursor; it travels from the Onboarding/Authentication rows up to the Goal cell of 'Add dark mode'.",
+      "label": "Mouse cursor",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "layout_reframe",
+    "proposed_name": null,
+    "description": "After the idea is submitted, the inline 'Add a quick summary' input row closes and the new 'Add dark mode' row (with placeholder skeleton cells) takes its place; the rows below shift up together while the cursor moves to the new row.",
+    "why_premium": "Real product micro-interaction shown at true speed: the table reflows as one unit with no jump, and the cursor immediately directs attention to the freshly created row."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.quick-add-row', {height: 0, opacity: 0, duration: 0.15, ease: 'power2.out'}).to('.idea-row', {y: '-=45', duration: 0.15, ease: 'power2.out'}, '<'); then tl.to('.cursor', {x: 398, y: 203, duration: 0.4, ease: 'power1.inOut'}) and set .new-row background to hover grey.",
+    "remotion": "Interpolate input-row height/opacity over ~5 frames with Easing.out(Easing.quad); translateY all following rows by -rowHeight with the same progress; move the cursor along an eased path over ~12 frames (Easing.inOut)."
+  },
+  "confidence": "medium",
+  "notes": "Very short burst; the reflow appears to happen between f237 and f247 (possibly near-instant UI re-render rather than a tween). camera.move is none, so the small pan_y is the rows shifting. No SFX candidates."
+}

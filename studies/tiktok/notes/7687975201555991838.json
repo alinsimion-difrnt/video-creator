@@ -1,0 +1,36 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "843006709d4032d68d67a875889d3671508553da42cd0562cebee6142d2b99d2",
+                 "created_at": "2026-10-13T09:30:32+00:00"},
+  "id": "7687975201555991838",
+  "format": "screen_recording",
+  "hook": {"type": "curiosity_gap",
+           "line": "Your sign to ask ChatGPT what they look like",
+           "visual": "Phone screen recording of the ChatGPT app in dark mode, keyboard up, with a red two-line title at the top; the user types 'Hey' and the bot answers with emojis."},
+  "beats": [
+    {"t": 0.0, "what": "Red title text over the ChatGPT app; user sends 'Hey'."},
+    {"t": 2.0, "what": "ChatGPT replies 'what do u want' with emojis, a playful personality beat."},
+    {"t": 4.27, "what": "Long pasted prompt appears asking for a casual, failed iPhone selfie of itself."},
+    {"t": 9.16, "what": "Image generation starts: the dotted placeholder shows 'Making the first draft'."},
+    {"t": 11.45, "what": "Second red title says the full prompt is in the caption, while the progress dots build."},
+    {"t": 16.04, "what": "Status changes through 'Finishing up' and 'Adding final touches' as the dot pattern fills."},
+    {"t": 22.07, "what": "Reveal: a blurry, badly lit selfie of a young woman appears as 'ChatGPT's' face."},
+    {"t": 25.2, "what": "Keyboard returns as she starts typing a reply, then the video ends."}
+  ],
+  "graphics": {"captions": "title_only", "caption_position": "top",
+               "devices": ["screen_recording", "product_ui", "title_text", "music_bed"],
+               "density": "minimal", "per_minute_estimate": 5},
+  "characters": [],
+  "cta": {"kind": "other", "t": 11.45},
+  "why_it_works": [
+    "Built-in suspense: about 13 s of 'making the first draft' progress dots make viewers wait for the face reveal.",
+    "'Your sign to' framing is a direct invitation to try it, so comments fill with people's own results (12k comments).",
+    "Prompt hidden in the caption pushes viewers to open the caption and save the video for later."
+  ],
+  "weaknesses": [
+    "No voice and no face, so nothing distinguishes the creator; anyone could post the same recording.",
+    "Most of the runtime is a loading animation with small UI text (median text height 2.6% of frame).",
+    "The payoff only appears at 22 s, so viewers who scroll early never see it."
+  ],
+  "for_robert": "Steal the progress-bar suspense: let Fred wait impatiently beside a generating image and react at the reveal, but compress the wait to a few seconds instead of 13."
+}

@@ -1,0 +1,129 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "252c2fe4c040e3bc72e822317718150d8ca78eee9cfa8f5b5bf01d7eed1cee0b",
+    "created_at": "2026-10-05T06:27:06.610726Z"
+  },
+  "video": "hubspot-introducing-form-shortening-with-breeze",
+  "task": "a1-p3",
+  "shots": [
+    {
+      "shot": "s009",
+      "shot_type": "presenter",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Large centered 'Spotlight' wordmark with a small 'FALL '24' kicker above it, overlaid across the chest of the frontal presenter",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "FALL '24",
+        "Spotlight"
+      ],
+      "text_word_count": 3,
+      "typography": "'Spotlight' in a high-contrast display serif with sweeping swash terminals, regular-to-medium weight, title case, default tracking, very large and centered; 'FALL '24' kicker in a small geometric sans, medium weight, all caps, wide tracking, left-aligned above the wordmark. Font guess (low confidence): a Recoleta/Ogg-style display serif plus a geometric sans.",
+      "depth_cues": [
+        "blur"
+      ],
+      "what_happens": "Back to the frontal angle with hands clasped on the desk while he says the closing line 'Check out the fall spotlight for all the updates on Breeze Intelligence' (w207-w218). The 'Spotlight' wordmark fades in from low opacity (about 1:01.0) to semi-opaque (1:01.5) and fully solid white by 1:02.0, with 'FALL '24' appearing above it; the wordmark then holds to the end while the presenter plate goes softly out of focus (the keyframe shows the background blurred behind the title). The HubSpot sprocket bug stays top right. No explicit URL or button is shown.",
+      "build_rebuild": "Over the frontal presenter plate, fade a centered white display-serif 'Spotlight' wordmark with a small tracked caps 'FALL '24' kicker from 0 to 100% opacity over about 1s on the CTA line, then animate a gentle background blur (0 to ~8px) on the plate and hold the lockup to the final frame.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001"], "words": [0, 20]},
+      {"beat": "mechanism", "shots": ["s001", "s002", "s003", "s004"], "words": [21, 107]},
+      {"beat": "demo", "shots": ["s005", "s006"], "words": [108, 151]},
+      {"beat": "outcome", "shots": ["s007", "s008"], "words": [152, 206]},
+      {"beat": "cta", "shots": ["s009"], "words": [207, 218]}
+    ],
+    "hook": {
+      "text": "Presenter opens on the pain that short or long website forms are losing customer data, while the 'FORM SHORTENING' title types on over a racking-focus plate.",
+      "technique": "pain",
+      "technique_other": null,
+      "shots": ["s001"],
+      "words": [0, 20]
+    },
+    "cta": {
+      "text": "VO: check out the fall spotlight for all the Breeze Intelligence updates; on screen: 'FALL '24 Spotlight' end lockup (no URL shown).",
+      "shots": ["s009"]
+    },
+    "tone": "Calm, confident, conversational product-launch talk from a VP to camera; warm natural light, editorial typography, unhurried pacing.",
+    "signature_moments": [
+      {
+        "shots": ["s001"],
+        "description": "Cold open with the presenter out of focus while 'FORM SHORTENING' reveals letter by letter, then a focus rack onto him before the title wipes off.",
+        "why_premium": "Combining an in-camera style focus pull with synced kinetic type makes a talking head feel like a produced title sequence from the first second."
+      },
+      {
+        "shots": ["s002", "s003"],
+        "description": "Keyword captions in condensed caps reveal on the exact spoken words, alternate between left and right negative space, and are underlined or looped by a hand-drawn accent stroke before wiping off.",
+        "why_premium": "Tight word-level sync plus a consistent caption system and drawn accents turns VO into scannable headlines and shows deliberate art direction rather than generic subtitles."
+      },
+      {
+        "shots": ["s006", "s008"],
+        "description": "Overhead live-action shots of a real tablet on the desk show the form collapsing to a single email field and then the enriched CRM record, motivated by the presenter reaching for the tablet in s005.",
+        "why_premium": "Grounding the UI in a physical prop on the same set keeps the demo inside the presenter's world and avoids a jarring cut to flat screen capture."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 3,
+        "evidence": "Relatable pain line (w0-w20) with an attractive kinetic title and focus rack, but it is a conventional talking-head opening with no surprising stat, visual or demo-first moment.",
+        "refs": ["s001", "w0", "w20"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "Simple problem-mechanism-demo-outcome arc; keyword captions reinforce each claim and the demo shows the form collapsing to one field then the enriched record. Some detail (extra field label, enriched values) is too small to read on the overhead tablet.",
+        "refs": ["s002", "s003", "s006", "s008"]
+      },
+      "ui_showcase": {
+        "score": 3,
+        "evidence": "UI appears only as overhead footage of a tablet: credible and on-set, but small in frame with no zooms, callouts or highlights beyond one in-product tooltip, so the key collapse and enrichment moments are easy to miss.",
+        "refs": ["s006", "s008"]
+      },
+      "motion_polish": {
+        "score": 4,
+        "evidence": "Consistent caption system with per-letter reveals, warm-to-neutral colour settle, drawn SVG-like accent strokes, clean left-to-right wipes, a staggered lower third and a soft end lockup fade with background blur. UI shots themselves have no motion design.",
+        "refs": ["s001", "s002", "s003", "s009"]
+      },
+      "sound_design": {
+        "score": 3,
+        "evidence": "From anchors: no SFX candidates detected, a music bed at about 123 BPM under the voice, integrated loudness -15.06 LUFS (appropriate for web). Visually, caption reveals and wipes are not accented by any detected sound, so audio is a clean VO-plus-bed mix rather than designed sound.",
+        "refs": ["s001", "s009"]
+      },
+      "vo_script_quality": {
+        "score": 4,
+        "evidence": "Concise, plain-spoken script in about 64 s: pain, product name, data source, a 'let's take a look' handoff, concrete example (personal phone numbers), outcome for both customer and business, then CTA. Slightly generic benefit phrasing ('everything you need').",
+        "refs": ["w0", "w108", "w146", "w181", "w207"]
+      },
+      "brand_consistency": {
+        "score": 4,
+        "evidence": "HubSpot sprocket bug throughout, one consistent condensed caps caption style, a matched muted teal/wood set palette and a branded 'FALL '24 Spotlight' series lockup at the end; the end serif differs from the caption face but reads as the series brand.",
+        "refs": ["s001", "s002", "s009"]
+      },
+      "works_muted": {
+        "score": 3,
+        "evidence": "Keyword captions ('FORM SHORTENING', 'BREEZE INTELLIGENCE DATASET', 'FRESHEST POSSIBLE DATA') and the form-collapse demo carry the gist, but the explanation of how the form shortens and why it matters lives in the VO; s004, s005 and s007 have no text at all.",
+        "refs": ["s001", "s002", "s003", "s004", "s006", "s007"]
+      },
+      "overall": {
+        "score": 3,
+        "evidence": "A well-produced presenter-led feature spotlight with above-average kinetic captions and a cohesive set; held back by a small, uncallouted on-tablet UI demo and a VO-dependent story.",
+        "refs": ["s001", "s002", "s006", "s009"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 2,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "On-camera English presenter (no dubbing without lip-sync issues), word-synced captions baked into the plates, and UI filmed on a physical tablet so its text cannot be swapped; localization would need subtitles or a reshoot."
+    }
+  }
+}

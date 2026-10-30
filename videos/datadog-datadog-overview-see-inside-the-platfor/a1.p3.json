@@ -1,0 +1,172 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "361f5050bdc33f82b1af0009f3f935d9b49c2768dbfc2938aced038dd5ba3c27",
+    "created_at": "2026-10-05T07:37:12.311399Z"
+  },
+  "video": "datadog-datadog-overview-see-inside-the-platfor",
+  "task": "a1-p3",
+  "shots": [
+    {
+      "shot": "s011",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Centred white headline on a blue-to-teal gradient, first 'Shared, single pane of glass' then 'Resolve issues at lightning speed'",
+      "transition_in": "other",
+      "transition_other": "graphic continuation: radiating light lines converge on a glowing orb that resolves into the headline (anchors label it other)",
+      "on_screen_text": ["Shared, single pane of glass", "Resolve issues at lightning speed"],
+      "text_word_count": 10,
+      "typography": "Bold rounded humanist sans, sentence case, normal tracking, white with a soft shadow; first line single-line, second headline set on two centred lines",
+      "depth_cues": ["glow", "blur"],
+      "what_happens": "Thin light streaks radiate from a glowing lens-like orb in which the first headline is refracted, then the headline resolves clear while one horizontal light line sweeps through it and the gradient brightens from deep blue to sky-teal; around 45 s the text swaps (blur/fade) to 'Resolve issues at lightning speed' while translucent diagonal parallelogram bars slide across the background.",
+      "build_rebuild": "On a full-bleed blue-to-teal gradient, burst thin radial light lines from a blurred glowing circle that scales away to reveal a centred bold white headline, sweep one 1px light line horizontally across it, then blur-crossfade to a second two-line headline while staggered translucent 30-degree parallelogram bars translate diagonally behind it.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s012",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Dark-theme Datadog service page, trace and logs views under a growing centred caption banner, then the Incidents list and timeline",
+      "transition_in": "other",
+      "transition_other": "the service dashboard enters on a tilted perspective plane that swings flat (anchors label it other)",
+      "on_screen_text": [
+        "One-click pivot between metrics",
+        "One-click pivot between metrics, traces",
+        "One-click pivot between metrics, traces, and logs",
+        "The right response for every incident and error"
+      ],
+      "text_word_count": 24,
+      "typography": "Bold rounded humanist sans, sentence case, white, two centred lines on a parallelogram banner with cut corners; the banner gradient changes as words are appended (blue-teal for metrics, green-teal for traces, orange-to-magenta for logs, violet-to-magenta for incidents)",
+      "depth_cues": ["perspective_tilt", "shadow"],
+      "what_happens": "A web-store service dashboard (requests, errors, latency charts) swings flat; a context menu opens on a chart ('View related traces'), the view jumps to the ShoppingCartController#checkout flame graph with a 500 error, then the Logs (25) tab is clicked and the log list is pushed in on; the caption grows word by word ('metrics' > 'metrics, traces' > 'metrics, traces, and logs') with a colour change at each step. Around 57 s the log view tilts away and an Incidents list (IR-260 'Checkouts are failing', SEV-2) appears with a new caption, then the camera pans into the incident timeline with a latency chart and responder notes; the banner exits before the end.",
+      "build_rebuild": "Play a dark product screen recording in a container that swings in from a ~20-degree 3D tilt, add camera push-ins on each clicked element (context menu, Logs tab), and keep one centred skewed gradient caption whose text is appended phrase by phrase with a gradient-colour tween per step, then tilt-swap to a second recording with a new caption and a slow pan to its timeline panel.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s013",
+      "shot_type": "other",
+      "shot_type_other": "multi-scene outro within one detected shot: tilted mobile app mockup, outline icon trio kinetic type, underlined kinetic slogan, logo lockup and URL end card",
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Sequentially: a tilted phone showing a mobile dashboard, three outline icons (clock, dollar, exclamation) with labels, the underlined slogan words, then the Datadog logo and 'datadog.com'",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Wherever you are",
+        "Speed up",
+        "Avoid downtime",
+        "Reduce costs",
+        "See inside any stack",
+        "any app",
+        "at any scale",
+        "anywhere",
+        "DATADOG",
+        "datadog.com"
+      ],
+      "text_word_count": 21,
+      "typography": "Bold rounded humanist sans, sentence case/lowercase, white, centred; icon labels smaller bold under each icon; slogan keywords ('stack', 'app', 'scale', 'anywhere') bold with a thick underline; logo wordmark in uppercase geometric sans; URL in medium-weight lowercase sans",
+      "depth_cues": ["perspective_tilt", "shadow"],
+      "what_happens": "The incident timeline shrinks into a tilted phone frame on a magenta-to-violet gradient and becomes a mobile 'Shop.ist Dashboard' whose charts swap while 'Wherever you are' sits over it; then white outline icons draw on one at a time (a clock with circular arrow 'Speed up', an exclamation in a circle 'Avoid downtime', a dollar with burst rays 'Reduce costs'), each scaling up at centre while the previous one shrinks to the side, before the trio shrinks and a diagonal magenta panel wipes across; a kinetic slogan follows phrase by phrase with underlined keywords ('See inside any stack', 'any app', 'at any scale', 'anywhere'), then the white dog logo with DATADOG wordmark holds, and the video ends on 'datadog.com' over drifting diagonal bars.",
+      "build_rebuild": "Scale the last UI into a rotated phone mockup with a headline overlay, then sequence three SVG outline icons that draw-on (stroke-dashoffset) at centre and shift/shrink sideways as the next arrives, wipe with a diagonal panel, cycle four short centred phrases with an underline that draws under the keyword, and finish with a fade-in logo lockup followed by a URL end card on the same drifting-bar gradient.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001"], "words": null},
+      {"beat": "mechanism", "shots": ["s002", "s003", "s004", "s005"], "words": null},
+      {"beat": "proof", "shots": ["s006", "s007", "s008"], "words": null},
+      {"beat": "demo", "shots": ["s009", "s010", "s011", "s012"], "words": null},
+      {"beat": "outcome", "shots": ["s013"], "words": null},
+      {"beat": "cta", "shots": ["s013"], "words": null}
+    ],
+    "hook": {
+      "text": "Datadog logo, then the tagline 'Modern monitoring for a complex world' over an animated gradient that hands off to hexagon host tiles",
+      "technique": "bold_claim",
+      "technique_other": null,
+      "shots": ["s001"],
+      "words": null
+    },
+    "cta": {"text": "datadog.com", "shots": ["s013"]},
+    "tone": "Confident, fast and polished brand-led feature reel; music-driven with no voice-over, energetic gradient motion graphics alternating with dark product UI, captions phrased as one running sentence of benefit claims.",
+    "signature_moments": [
+      {
+        "shots": ["s002", "s003", "s004"],
+        "description": "A zoom from one red host hexagon out to 10,000+ hosts that regroup by availability zone, then a swing into a single trace, all tied together by the running caption 'From 10,000+ hosts / to a single transaction'.",
+        "why_premium": "Shows scale and depth in one continuous camera move using real product data, and the split-sentence captions give the edit a narrative spine without any voice-over."
+      },
+      {
+        "shots": ["s012"],
+        "description": "The 'One-click pivot between metrics, traces, and logs' caption grows by one word with each click through metrics, traces and logs, and the banner gradient changes colour at every step.",
+        "why_premium": "The caption tracks the on-screen navigation step by step, so the claim is proven by the UI it sits on; the colour changes mark each step without extra graphics."
+      },
+      {
+        "shots": ["s013"],
+        "description": "Outline icon trio (Speed up / Avoid downtime / Reduce costs) drawing on and handing off centre stage, followed by the underlined kinetic slogan 'See inside any stack, any app, at any scale, anywhere' into the logo lockup.",
+        "why_premium": "One consistent line-icon language and underline device sums up the benefits in about 10 seconds and ends on the brand with no clutter."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 3,
+        "evidence": "A logo-first open with a generic bold claim tagline; well crafted (blur-out, line-by-line reveal, hexagon handoff) but it takes ~5 s before product value appears.",
+        "refs": ["s001", "s002"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "Each beat pairs one short caption with one product view, and the captions read as a continuous sentence (hosts to transaction, flows, threats, services, pivot, incidents). Dense dark UI flashes by fast, so details are hard to read, but the message holds.",
+        "refs": ["s003", "s004", "s005", "s012"]
+      },
+      "ui_showcase": {
+        "score": 5,
+        "evidence": "Real product UI throughout (host map regroup, flame graph, network and service maps, security signals, Watchdog, logs, incidents, mobile) with targeted push-ins on the exact element each caption names.",
+        "refs": ["s002", "s003", "s005", "s008", "s012"]
+      },
+      "motion_polish": {
+        "score": 5,
+        "evidence": "Consistent 3D tilt-to-flat swings, motivated push-ins, the hexagon scatter-and-regroup, diagonal panel wipes and icon draw-ons; transitions are mostly graphic continuations rather than cuts.",
+        "refs": ["s003", "s005", "s007", "s011", "s013"]
+      },
+      "sound_design": {
+        "score": 4,
+        "evidence": "From the audio anchors: a 120 BPM music bed at -16.0 LUFS integrated and 48 SFX candidates (mostly chimes and impacts) densely clustered in the opening 30 s, sparser later; the visual cuts and caption swaps read as beat-timed. No voice-over. Judged from anchor data, not by listening.",
+        "refs": ["s001", "s005", "s008"]
+      },
+      "vo_script_quality": {
+        "score": null,
+        "evidence": "No voice-over: the anchors transcript has no words; the story is carried by on-screen captions and music.",
+        "refs": []
+      },
+      "brand_consistency": {
+        "score": 5,
+        "evidence": "One bold rounded sans, recurring skewed gradient caption banners, diagonal bar motif and the purple-magenta brand gradient bookend the video from logo open to logo close.",
+        "refs": ["s001", "s004", "s012", "s013"]
+      },
+      "works_muted": {
+        "score": 5,
+        "evidence": "No voice-over; every claim is on screen as a caption, so the story is fully understandable with sound off.",
+        "refs": ["s002", "s005", "s012", "s013"]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "A highly polished, brand-consistent feature reel with excellent UI showcasing and motion; held back from best-in-class by a generic logo-first hook and the fast, dense UI that viewers cannot really read.",
+        "refs": ["s001", "s003", "s012", "s013"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 2,
+      "baked_in_text": true,
+      "vo_dependent": false,
+      "notes": "No voice-over, but all messaging is baked-in kinetic type and caption banners (about 100 words across 13 shots) plus English product UI recordings; localizing means re-rendering every caption and banner width, and the UI stays English."
+    }
+  }
+}

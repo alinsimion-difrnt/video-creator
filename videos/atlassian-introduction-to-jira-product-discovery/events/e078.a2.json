@@ -1,0 +1,86 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "fcb937f2307ac95a5bd223a4c0b6daff5baca5f0860af1bc783949bbd84631b5",
+    "created_at": "2026-10-05T06:38:33.592633Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e078",
+  "task": "a2-e078",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Screen recording frame (zoomed Timeline view pulling out to full browser UI)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["scale_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 130, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b06",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Delivery table view replacing the Timeline view (Create an idea toolbar and rows)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "instant view swap after sidebar click (page navigation)",
+      "is_text": true,
+      "text": "Create an idea",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": null,
+      "manual_box": [475, 4, 527, 160],
+      "manual_reason": "Selected 'Delivery' sidebar item highlight has no candidate box",
+      "label": "Delivery sidebar item selection highlight",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Delivery",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": null,
+      "manual_box": [488, 82, 518, 96],
+      "manual_reason": "Mouse cursor has no candidate box",
+      "label": "Mouse cursor moving to and clicking Delivery",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "cursor travel and click",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "ui_camera_push_in",
+    "proposed_name": null,
+    "description": "Reverse of a UI push-in: a zoomed crop of the Timeline view quickly pulls out to the full browser UI, then the cursor clicks the Delivery view in the sidebar and the table view swaps in.",
+    "why_premium": "The fast pull-out re-establishes spatial context (sidebar of views) right before navigation, so the viewer sees where the click happens instead of a disorienting jump between zoomed crops."
+  },
+  "build_hint": {
+    "gsap": "gsap.fromTo('.ui-frame', {scale: 1.13, xPercent: -6, yPercent: 6}, {scale: 1, xPercent: 0, yPercent: 0, duration: 0.15, ease: 'power2.inOut'}); then after ~0.4s move cursor to sidebar item, add highlight class, and hard-swap .timeline-view for .delivery-view (set autoAlpha) on the click frame.",
+    "remotion": "scale = interpolate(frame, [0, 4], [1.13, 1], {easing: Easing.inOut(Easing.quad), extrapolateRight: 'clamp'}) with matching translate; cursor path via interpolate; at click frame (~12 frames later) switch rendered view component from Timeline to Delivery with no transition."
+  },
+  "confidence": "medium",
+  "notes": "Two motions in one burst: a pull-out (camera verdict pull_out, frames 4337-4340) and a hard view swap at ~4352 after a sidebar click. Pattern chosen for the dominant pull-out; cursor_guided_demo would also fit. Pull-out may be an editor zoom in the source recording."
+}

@@ -1,0 +1,47 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T13:02:41+00:00"
+  },
+  "id": "sly-palettes",
+  "kind": "tutorial",
+  "palette": {
+    "colours_estimate": 128,
+    "shadows": "cool",
+    "notes": "Article's example master palette: 8 hue ramps x 9 swatches plus desaturated neutrals (128 colours); each step brighter shifts hue about +20 degrees so lights drift warm and darks drift cool; saturation peaks mid-ramp and drops near the brightest step. Article figures, not measured."
+  },
+  "lighting": "Not covered directly; the ramp itself encodes light: dark end cooler and deeper, light end warmer and desaturated, so any shape shaded along one ramp already reads as lit by a warm light.",
+  "silhouette": "Not covered; the advice is that harmonious, hue-shifted ramps keep separate objects distinct yet unified, which helps a hero stand apart from neutrals.",
+  "motion": {
+    "timing": "No animation in this article.",
+    "principles": []
+  },
+  "texture": "Neutrals made from the middle of the ramps (flipped and desaturated) fill backgrounds so colourful ramps can be saved for focal objects; texture itself is left to another post.",
+  "camera": "No camera; scene examples are static.",
+  "sound": "",
+  "acting": {
+    "enters": "No characters in the article.",
+    "acts": "Staging lesson: a scene reads when backgrounds use the desaturated neutral section and only the subject uses a vivid mid-ramp colour.",
+    "exits": "No characters.",
+    "comes_back": null,
+    "depth": "Distance can be pushed by stepping toward the neutral, desaturated end of the palette; close things take the saturated middle swatches."
+  },
+  "techniques": [
+    "hue-shifted ramp: about +20 degrees hue per brighter step, lights warm, darks cool",
+    "saturation peaks in the middle swatch and falls off toward the brightest step to avoid eye-burning highlights",
+    "smaller brightness steps near white, larger saturation steps at both ends",
+    "one master ramp rotated 45 degrees around the wheel to make 8 matching ramps",
+    "neutral section: middle columns flipped and desaturated for backgrounds",
+    "never pure black or pure white unless wanted; never 0 or 100% saturation"
+  ],
+  "feel": "one master palette + hue-shifted ramps + desaturated neutrals behind = every colour belongs, hero still pops",
+  "for_fred": "Build Fred's orange-gold ramp and Pixie's ramp from one shared hue-shifted master (darks toward red-purple, lights toward yellow), and paint backgrounds only from the desaturated neutral row so both characters pop on a busy vertical frame. Avoid bright-and-saturated highlights on Fred's scales.",
+  "sources": [
+    "https://www.slynyrd.com/blog/2018/1/10/pixelblog-1-color-palettes",
+    "studies/pixel-art/sources.yaml"
+  ]
+}

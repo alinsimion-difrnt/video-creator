@@ -1,0 +1,79 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "74ab828e8dd48a038d67c291f3aa8850043cc8543bc499d48bce0ec55b9f02da",
+    "created_at": "2026-10-05T06:43:47.971256Z"
+  },
+  "video": "duolingo-introducing-duolingo-chess",
+  "event": "e012",
+  "task": "a2-e012",
+  "elements": [
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Mascot plush falling from top right and landing in the foreground",
+      "role": "other",
+      "role_other": "character",
+      "change_types": ["slide_down", "rotate"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_in"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Next mascot plush entering from the top edge (falling)",
+      "role": "other",
+      "role_other": "character",
+      "change_types": ["slide_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "ease_in"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Left group of fallen mascot plushes tumbling and settling",
+      "role": "other",
+      "role_other": "character_group",
+      "change_types": ["rotate", "slide_right"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 500, "easing_class": "bounce"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x060",
+      "verdict": "confirm",
+      "label": "music",
+      "note": "Broadband onset ~424 ms after the burst lines up with the rhythmic music pulses seen across the spectrogram; no distinct transient tied to a landing."
+    }
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "mascot rain pileup",
+    "description": "Duplicate mascot plushes keep dropping into frame from the top, bouncing and tumbling around the static hero figure on its pedestal while the 'LEARN CHESS' / 'on duolingo' lockup stays fixed.",
+    "why_premium": "Physical, gravity-driven chaos around a calm, static hero and title creates comedic energy in the end card; real objects with motion blur and contact shadows feel tactile and on-brand rather than templated."
+  },
+  "build_hint": {
+    "gsap": "Keep title, subtitle and hero static. For each drop: gsap.fromTo(item, {y: -800, rotation: gsap.utils.random(-40, 40)}, {y: 0, rotation: gsap.utils.random(-90, 90), duration: 0.45, ease: 'bounce.out'}) with a staggered, irregular start (stagger: {each: 0.3, from: 'random'}); add a small x drift and blur(4px)->0 during the fall.",
+    "remotion": "Per item: const s = spring({frame: frame - delay, fps, config: {mass: 1, stiffness: 180, damping: 9}}); translateY = interpolate(s, [0, 1], [-800, 0]); rotate = interpolate(s, [0, 1], [r0, r1]); irregular delays per item; hero and text layers untouched."
+  },
+  "confidence": "medium",
+  "notes": "Live-action/puppet compositing on green; camera verdict none (scale 1.097 reflects the large foreground plush, not a camera move). b01 is a union box spanning several items, not used. The left cluster b02 contains several plushes; treated as one group."
+}

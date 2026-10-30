@@ -1,0 +1,35 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "8ecdb38d758e9ecad1471fed1a392676bc4343f4aacd9d947875c8a93f7649d4",
+                 "created_at": "2026-10-13T15:00:00+00:00"},
+  "id": "7693222538838707479",
+  "format": "talking_head",
+  "hook": {"type": "problem",
+           "line": "Does anyone else see the massive problem with this?",
+           "visual": "Close selfie of a woman at her desk, sceptical side-glance then wide-eyed; red label 'New Google SEO Ranking Signal' mid-frame, small word captions below."},
+  "beats": [
+    {"t": 0.0, "what": "Rhetorical question with a red 'New Google SEO Ranking Signal' label over her chest"},
+    {"t": 6.0, "what": "Graphic of the Google 'Add as a preferred source' button replaces the label while she explains it"},
+    {"t": 13.07, "what": "Jump cut; predicts Google will use preferred-source picks as a ranking factor"},
+    {"t": 23.73, "what": "Jump cut; the turn: 'this is gonna be so easy to abuse'"},
+    {"t": 27.0, "what": "Bold prediction with a pointed finger: a spam update in mid-2027"},
+    {"t": 33.0, "what": "Ends asking viewers to tell her if she is wrong"}
+  ],
+  "graphics": {"captions": "word_by_word", "caption_position": "middle",
+               "devices": ["title_text", "screenshot", "product_ui", "jump_cut"],
+               "density": "moderate", "per_minute_estimate": 7},
+  "characters": [],
+  "cta": {"kind": "comment", "t": 33.0},
+  "why_it_works": [
+    "Opens on 'the problem with this' before saying what 'this' is, so the viewer waits for the object",
+    "Shows the actual Google button as a clean graphic at 6 s, so the abstract feature becomes recognisable",
+    "A dated, falsifiable prediction (mid-2027 spam update) plus 'tell me if I'm wrong' invites disagreement in comments (27 comments on 7391 plays)",
+    "Fast delivery (4.36 words/s) with expressive face and hands in a tight selfie frame, only 33 s long"
+  ],
+  "weaknesses": [
+    "Audio is quiet (-27.1 LUFS) and has no music bed",
+    "Word captions are tiny (0.034 of frame height) next to the large label",
+    "Only two cuts; the middle stretch has no new visual after the button graphic leaves at 15 s"
+  ],
+  "for_robert": "Open with 'the problem with this' and show the feature as one clean graphic, ideally held up by Fred, then end on a dated prediction and 'tell me if I'm wrong' to pull comments."
+}

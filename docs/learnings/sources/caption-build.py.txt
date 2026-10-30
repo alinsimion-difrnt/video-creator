@@ -1,0 +1,23 @@
+# Copied 2026-10-09 from the Acme v2 session scratchpad: $S/final/captions/src/build.py. $S paths are ephemeral (archived in R2 create/acme-v2/). See ../readme.md.
+"""Build comp/index.html + comp/captions.js from the template, captions JSON and the plate's duration."""
+import json, subprocess, sys
+from pathlib import Path
+
+here = Path(__file__).resolve().parent
+comp = here.parent / "comp"
+captions = Path(sys.argv[1])
+plate = comp / "plate.mp4"
+out = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-count_packets",
+                      "-show_entries", "stream=nb_read_packets,r_frame_rate", "-of", "json", str(plate)],
+                     check=True, capture_output=True, text=True).stdout
+st = json.loads(out)["streams"][0]
+num, den = (int(x) for x in st["r_frame_rate"].split("/"))
+if (num, den) != (30, 1):
+    sys.exit(f"plate must be 30 fps, got {num}/{den}")
+frames = int(st["nb_read_packets"])
+dur = f"{frames / 30:.6f}"
+groups = json.loads(captions.read_text())
+(comp / "captions.js").write_text("window.CAPTIONS = " + json.dumps(groups, separators=(",", ":")) + ";\n")
+(comp / "index.html").write_text((here / "index.tpl.html").read_text().replace("{{DURATION}}", dur))
+print(f"plate {frames} frames, duration {dur}s, {len(groups)} caption groups")
+print(frames)

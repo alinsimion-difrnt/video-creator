@@ -1,0 +1,174 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "bdc137952105d04c69642b83d0b08569a17b1fa3e4748394367036640b9f2318",
+    "created_at": "2026-10-05T06:26:08.445901Z"
+  },
+  "video": "miro-miro-interactive-presentation-mode-your",
+  "task": "a1-p1",
+  "shots": [
+    {
+      "shot": "s001",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Floating 'Present' dropdown menu (Board / All frames / Smart Meeting) under a toolbar strip with a blue Share button",
+      "transition_in": "other",
+      "transition_other": "none (video start)",
+      "on_screen_text": [
+        "Present",
+        "Share",
+        "Board",
+        "Guide others through your board",
+        "All frames",
+        "Present every frame as a slide",
+        "Smart Meeting",
+        "Run a collaborative session with apps and activities",
+        "Look at those awsome new stickers!",
+        "Share"
+      ],
+      "text_word_count": 33,
+      "typography": "Product UI sans (Miro-like, low-confidence guess: Open Sans/Roobert) in sentence case; menu titles regular weight dark grey, descriptions smaller lighter grey; oversized Share button label in medium-weight white on blue; sticky-note text in a hand-written-feel sans.",
+      "depth_cues": [
+        "shadow",
+        "blur"
+      ],
+      "what_happens": "Opens mid-motion on an isolated, enlarged Present menu on a white canvas; within about half a second the camera pulls back so the menu shrinks toward centre while other floating UI fragments (a sticker sticky note, a large Share button, a coral card edge) drift in from the edges, establishing a collage.",
+      "build_rebuild": "Place a recreated Present-menu component at 1.0 scale on a white canvas and tween the whole canvas group from scale 1.6 to 1.0 over ~0.6 s with a strong ease-out, while 3-4 satellite UI cards (sticky note, Share button, coral card) slide in from the frame edges with slight motion blur.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s002",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Centered bold title 'Interactive presentations' surrounded by floating product elements (sticky notes with vote badges, reaction bar, emoji, Present menu, 3D smartwatch render)",
+      "transition_in": "push",
+      "transition_other": null,
+      "on_screen_text": [
+        "Interactive presentations",
+        "More clarity",
+        "1",
+        "Better work scoping",
+        "2",
+        "Raise",
+        "Leave",
+        "Data analysed"
+      ],
+      "text_word_count": 13,
+      "typography": "Title in a heavy geometric sans (low-confidence guess: Roobert/Gilroy Bold), sentence case, two stacked lines, tight leading, normal tracking, near-black; sticky-note labels in a regular sans, centered; reaction-bar labels small medium-weight UI sans.",
+      "depth_cues": [
+        "shadow",
+        "blur"
+      ],
+      "what_happens": "Title card: the camera keeps drifting/pushing across a collage so peripheral elements slide out left (Present menu, 'Data analysed' card) while yellow voting sticky notes with confetti, a raised-hand icon, a reaction toolbar with floating heart and fire emoji, and a 3D smartwatch settle around the static centered title; by the end a blue hand icon and a timer card enter from the right.",
+      "build_rebuild": "Fix a two-line bold title at frame centre and translate a larger background layer of absolutely positioned UI props (sticky notes, reaction bar, emoji, product render) slowly right-to-left with ease-in-out over ~3 s, adding a short confetti burst around the vote stickies and floating the emoji upward with a gentle yoyo.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s003",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Miro board 'Awesome Smartwatch – Product launch analysis' with a horizontal row of presentation frames and Ashley's labeled cursor",
+      "transition_in": "push",
+      "transition_other": null,
+      "on_screen_text": [
+        "Switch presenter",
+        "05:02",
+        "+5m",
+        "miro",
+        "Awesome Smartwatch – Product launch analysis",
+        "Present",
+        "Share",
+        "Ashley",
+        "Smartwatch Post-Launch Review",
+        "awesomewatch",
+        "Goals for today",
+        "Review early feedback",
+        "Align on the problem statement and next steps",
+        "Non-goals for today",
+        "Data analysed",
+        "User feedback",
+        "100%"
+      ],
+      "text_word_count": 39,
+      "typography": "Native Miro product UI: small regular sans in the top bar and toolbars; board title in medium weight; frames use bold white sans headings in sentence case with small bullet body text; cursor tag is a small medium-weight label on a yellow pill.",
+      "depth_cues": [
+        "shadow",
+        "blur"
+      ],
+      "what_happens": "Starts with the collage continuing (timer widget push-in to a large '02' with pause/stop controls), then a fast transition lands on the Miro board UI: the camera pans/zooms down from a chart area to a row of slide frames, settles to a framing of four frames as narration starts (w0 'Ashley, the product manager...'), Ashley's cursor moves up to the top-right Present button (w14-w18 'clicks on the present button'), and the last frame begins a zoom into the first slide.",
+      "build_rebuild": "Show a full-frame board screenshot/recording inside a scalable camera container, tween its translate/scale from an overview of the chart area to the frame row (~1.5 s ease-in-out), hold while a labeled custom cursor animates along a curved path to the Present button synced to word w17, then start a zoom-in toward the first frame.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s004",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "First presentation slide 'Smartwatch Post-Launch Review' with the 3D smartwatch render and presenter avatars",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "awesomewatch™",
+        "Smartwatch Post-Launch Review",
+        "Ashley",
+        "Product Manager",
+        "Sophia",
+        "Product Marketing Manager",
+        "Ashley"
+      ],
+      "text_word_count": 12,
+      "typography": "Slide content: wordmark 'awesomewatch' with bold 'awesome' and light 'watch'; title in bold geometric sans, title case, two lines, white; names in bold small white with roles in regular weight beneath; cursor tag small medium-weight on yellow pill.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Presentation mode: the first frame fills the screen almost edge to edge with a slim vertical tool strip at left and Ashley's cursor near the watch; the frame holds nearly static while VO says she can present any content on the board (w19-w28); at the end the camera pulls back slightly revealing the white board and the edge of the next frame on the right.",
+      "build_rebuild": "Display the slide frame full-bleed with a minimal 3-icon toolbar overlay on the left and a labeled cursor, hold ~3.5 s with a very slow scale drift, then tween scale down to ~0.8 and translate left over ~0.5 s so the next frame peeks in from the right.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s005",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "split",
+      "composition_other": null,
+      "focal_element": "Two adjacent frames (title slide and 'Goals for today / Non-goals for today' slide) with the presentation toolbar at bottom centre",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Goals for today",
+        "Review early feedback",
+        "Align on the problem statement and next steps",
+        "Non-goals for today",
+        "Discuss a precise roadmap",
+        "No design critiques",
+        "The launch was a cross-functional effort. Today we are focused on product feedback, not marketing activities",
+        "Sophia Product Marketing Manager",
+        "Ashley",
+        "1/10",
+        "5",
+        "Stop"
+      ],
+      "text_word_count": 48,
+      "typography": "Slide headings bold white sans in sentence case, two lines; bullets in small regular/medium white sans; presentation toolbar in tiny regular grey UI sans.",
+      "depth_cues": [
+        "blur"
+      ],
+      "what_happens": "Brief (~0.4 s) in-between move: the camera has pulled out and is sliding left from the title frame to the Goals/Non-goals frame, with the presentation toolbar ('1/10', attendee count, Stop) visible at the bottom, illustrating 'choose certain frames' (w32-w34).",
+      "build_rebuild": "Tween the board container's translateX by one frame width (~0.4 s, ease-in-out) at a reduced scale so two frames are visible mid-move, with a fixed bottom-centre pill toolbar showing a '1/10' page counter, next arrow, attendee count and Stop button.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

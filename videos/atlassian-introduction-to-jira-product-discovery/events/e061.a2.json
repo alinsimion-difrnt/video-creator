@@ -1,0 +1,44 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "08e94d99e885d72efb98e293d95c17cfd683e873b98b97192206fe90c94e2cef",
+    "created_at": "2026-10-05T06:38:35.902999Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e061",
+  "task": "a2-e061",
+  "elements": [
+    {"box": "b01", "manual_box": null, "manual_reason": null, "label": "Roadmap board view (Later / Next / Now columns) filling the frame as the camera pushes in",
+     "role": "ui_panel", "role_other": null, "change_types": ["scale_up"], "change_other": null,
+     "is_text": false, "text": null, "text_unit": null,
+     "estimates": {"duration_ms": 350, "easing_class": "ease_out"}},
+    {"box": "b09", "manual_box": null, "manual_reason": null, "label": "Onboarding templates card hover state (tint and expand icon)",
+     "role": "card", "role_other": null, "change_types": ["highlight"], "change_other": null,
+     "is_text": true, "text": "Onboarding templates", "text_unit": "whole",
+     "estimates": {"duration_ms": 100, "easing_class": "step"}},
+    {"box": null, "manual_box": [489, 117, 521, 131],
+     "manual_reason": "No candidate box isolates the cursor; it rests beside the Goal label of the Onboarding templates card.",
+     "label": "Mouse cursor moving from the sidebar onto the Onboarding templates card",
+     "role": "cursor", "role_other": null, "change_types": ["slide_right"], "change_other": null,
+     "is_text": false, "text": null, "text_unit": null,
+     "estimates": {"duration_ms": 300, "easing_class": "ease_in_out"}}
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "ui_camera_push_in",
+    "proposed_name": null,
+    "description": "After switching to the Roadmap view, a post-production camera push-in (about 1.19x, drifting up and slightly left) crops away the browser chrome and sidebar so the three-column Later / Next / Now board fills the frame.",
+    "why_premium": "The push-in removes navigation clutter and enlarges the idea cards to legible size exactly when the narrator talks about communicating across the company, so the viewer's attention lands on the board without a cut."
+  },
+  "build_hint": {
+    "gsap": "Wrap the recording in a stage and gsap.fromTo('.stage', {scale: 1, xPercent: 0, yPercent: 0}, {scale: 1.19, xPercent: 2, yPercent: 7, transformOrigin: '50% 0%', duration: 0.4, ease: 'power3.out'}); fire the card hover class and cursor move (gsap.to('.cursor', {x, y, duration: 0.3, ease: 'power2.inOut'})) during the settle.",
+    "remotion": "const p = spring({frame: frame - start, fps, config: {damping: 26, stiffness: 140, mass: 1}}) (critically damped, no overshoot); transform: scale(interpolate(p, [0, 1], [1, 1.19])) translate(interpolate(p, [0, 1], [0, 2])%, interpolate(p, [0, 1], [0, 7])%) with transformOrigin '50% 0%'."
+  },
+  "confidence": "high",
+  "notes": "camera.move is push_in (scale 1.19, pan_y -0.14); energy ramps down monotonically over ~10 frames, consistent with an ease-out zoom. Individual cards and toolbar buttons only move because of the camera, so they are not listed separately. No SFX candidates."
+}

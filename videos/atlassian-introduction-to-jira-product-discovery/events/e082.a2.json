@@ -1,0 +1,100 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "bd514151b376f541172b5c37d0890e1a18b27db0c451400e2418d007dae0c3bf",
+    "created_at": "2026-10-05T06:39:48.293341Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e082",
+  "task": "a2-e082",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Idea detail side panel opening over the right half of the Delivery table",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "instant panel appear (no slide) on click",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 35, "easing_class": "step"}
+    },
+    {
+      "box": "b06",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Idea title in the side panel",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "appears with panel",
+      "is_text": true,
+      "text": "Onboarding templates",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": "b10",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Overview tab selected in the panel tab bar",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "appears with panel in selected state",
+      "is_text": true,
+      "text": "Overview",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Pinned field values (status and goal chips) settling in after the panel opens",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "PARKING LOT Delight users",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": null,
+      "manual_box": [447, 213, 476, 334],
+      "manual_reason": "Hover tooltip under the Onboarding row has no candidate box",
+      "label": "Full-title hover tooltip under the truncated row name",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Onboarding templates",
+      "text_unit": "whole",
+      "estimates": null
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "Clicking the Onboarding row in the live UI opens the idea's detail side panel in a single frame (title, tabs, skeleton description, pinned fields), while a hover tooltip with the full title appears under the cursor.",
+    "why_premium": "Shows the real click-to-detail flow exactly as narration says 'link ideas to the development work', keeping the table visible on the left for context."
+  },
+  "build_hint": {
+    "gsap": "tl.set('.side-panel', {autoAlpha: 1}) on the click frame (or a short fromTo xPercent: 4 -> 0, autoAlpha 0 -> 1, 0.2s 'power2.out' for a polished remake); tl.fromTo('.pinned-values', {autoAlpha: 0}, {autoAlpha: 1, duration: 0.15}, '+=0.05'); tooltip tl.fromTo('.tooltip', {autoAlpha: 0}, {autoAlpha: 1, duration: 0.1}).",
+    "remotion": "panel visible when frame >= clickFrame (optionally spring({frame: frame - clickFrame, fps, config: {damping: 200}}) driving translateX 24px -> 0 and opacity); pinned values opacity = interpolate(frame - clickFrame, [2, 6], [0, 1])."
+  },
+  "confidence": "medium",
+  "notes": "Panel appears in one frame (single energy spike at f4458); description area stays as skeleton bars through the end frame, so this is not a skeleton_resolve. Pinned-field value fade (b03) is inferred from low trailing energy; may just be compression noise."
+}

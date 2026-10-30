@@ -1,0 +1,51 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "a311721971bc680962f00fb920324f8fe9d90cbb839c50eb85afd6e1fed56b10",
+    "created_at": "2026-10-05T06:52:23.125003Z"
+  },
+  "video": "servicenow-what-are-servicenow-ai-agents",
+  "event": "e017",
+  "task": "a2-e017",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Woman seen from behind walking forward into the elevator car",
+      "role": "other",
+      "role_other": "live_action_subject",
+      "change_types": ["scale_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 420, "easing_class": "linear"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x084",
+      "verdict": "unsure",
+      "label": "unsure",
+      "note": "About 0.6 s after this event; a short broadband vertical transient with harmonic lines, similar to the transient at ~77.4 s, so possibly a music hit rather than a whoosh (no sweep visible). Lines up with the button press in the next shot (e018)."
+    }
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "footage action insert",
+    "description": "A brief live-action shot from behind as the subject walks into a lit elevator; she recedes into the frame while the camera holds.",
+    "why_premium": "A static, symmetrical door-frame composition with the subject receding gives a calm cinematic beat within a fast montage, and the warm-lit interior draws the eye forward."
+  },
+  "build_hint": {
+    "gsap": "Footage clip, no element tweens; hard-cut insert of ~0.4 s (tl.set(clip, {autoAlpha: 1})). To mimic the recede on a still: tl.fromTo(subject, {scale: 1}, {scale: 0.97, duration: 0.42, ease: 'none'}).",
+    "remotion": "<Sequence durationInFrames={~10}> with <OffthreadVideo>; for a still-based version, scale interpolate(frame, [0, 10], [1, 0.97]) linear; no spring."
+  },
+  "confidence": "medium",
+  "notes": "Live-action footage. Camera verdict is none; the 0.97 scale sum is the subject walking away. b02 and b03 are tiny diffs at her jacket hem and are part of the same walking motion, so not listed separately."
+}

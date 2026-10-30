@@ -1,0 +1,40 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a2_annotate_event",
+  "annotator": "claude-code",
+  "skill": "annotate-event@3dad117bd85a",
+  "model": null,
+  "input_hash": "553ae462685171d5b759f8d84e01217039581deebdbcb37e2b86e0411401573d",
+  "created_at": "2026-10-05T06:46:59.129056Z"
+ },
+ "video": "notion-introducing-the-new-notion-ai",
+ "event": "e006",
+ "task": "a2-e006",
+ "elements": [
+  {"box": "b02", "manual_box": null, "manual_reason": null, "label": "Headline line 1",
+   "role": "headline", "role_other": null, "change_types": ["fade", "scale_down"], "change_other": null,
+   "is_text": true, "text": "Meet the new", "text_unit": "line",
+   "estimates": {"duration_ms": 250, "easing_class": "ease_out"}},
+  {"box": "b04", "manual_box": null, "manual_reason": null, "label": "Headline line 2",
+   "role": "headline", "role_other": null, "change_types": ["fade", "scale_down"], "change_other": null,
+   "is_text": true, "text": "Notion AI", "text_unit": "line",
+   "estimates": {"duration_ms": 250, "easing_class": "ease_out"}},
+  {"box": null, "manual_box": [479, 577, 503, 652],
+   "manual_reason": "No candidate box isolates the thin brush underline under 'new'; b03/b09 also cover the letters 'new' and 'AI'.",
+   "label": "Brush underline under 'new'", "role": "other", "role_other": "hand-drawn underline accent",
+   "change_types": ["draw_on"], "change_other": null, "is_text": false, "text": null, "text_unit": null,
+   "estimates": {"duration_ms": 300, "easing_class": "ease_out"}}
+ ],
+ "sfx_review": [],
+ "pattern": {"id": "kinetic_word_reveal", "proposed_name": null,
+  "description": "Two-line title card appears from blank, settling from a slightly larger scale to rest; a hand-drawn brush underline then draws on beneath the italic word 'new'.",
+  "why_premium": "Fast, confident scale settle keeps the title crisp, and the single hand-drawn accent on the italic keyword adds human warmth and directs the eye to the key word without extra chrome."},
+ "build_hint": {
+  "gsap": "tl.fromTo('.title-line', {opacity:0, scale:1.15}, {opacity:1, scale:1, duration:0.25, ease:'power3.out'}); then tl.fromTo('.underline path', {strokeDashoffset:len}, {strokeDashoffset:0, duration:0.3, ease:'power2.out'}, '+=0.25').",
+  "remotion": "Title: scale = interpolate(spring({frame, fps, config:{damping:200, stiffness:200, mass:1}}), [0,1], [1.15,1]) with opacity 0->1 over 6 frames; underline: SVG strokeDashoffset interpolated over ~9 frames, starting ~8 frames after the title settles, Easing.out(Easing.cubic)."
+ },
+ "confidence": "medium",
+ "notes": "Thumbnails are centre-cropped, so the entry reads as a scale-down from larger; could partly be a slide_up. Underline lands at the very end of the burst (f78) and may belong to the following event."
+}

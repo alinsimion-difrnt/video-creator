@@ -1,0 +1,88 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "tiktok_notes",
+    "annotator": "claude-code",
+    "input_hash": "0e957d79f1be2835306a498d7f04ec0aedc89e6f76b645d7f2d0342fcaf3e451",
+    "created_at": "2026-10-13T12:49:37+00:00"
+  },
+  "id": "7695228141048007966",
+  "format": "news_reaction",
+  "hook": {
+    "type": "news",
+    "line": "Anchor: another stunning AI incident, a model sent police a false tip about an unsolved murder.",
+    "visual": "Landscape studio shot of an anchor at a desk with a city-lights wall and the station's blue logo; no on-screen text for the first 4 s."
+  },
+  "beats": [
+    {
+      "t": 0.0,
+      "what": "Anchor reads the headline on set."
+    },
+    {
+      "t": 22.13,
+      "what": "Cut to the package: phone showing the company logo, headline lower third."
+    },
+    {
+      "t": 33.2,
+      "what": "Police note the incident was found months later."
+    },
+    {
+      "t": 36.47,
+      "what": "Remote interview with a university professor over video call."
+    },
+    {
+      "t": 53.8,
+      "what": "Professor's name and university title lower third."
+    },
+    {
+      "t": 73.39,
+      "what": "Full-screen quote card from the city's statement."
+    },
+    {
+      "t": 83.8,
+      "what": "B-roll of the city hall tower."
+    },
+    {
+      "t": 98.0,
+      "what": "Code-style b-roll as the expert talks about risks."
+    },
+    {
+      "t": 122.32,
+      "what": "Company quote card: what the model was told not to do."
+    },
+    {
+      "t": 134.55,
+      "what": "Final quote card: briefed the White House, notified each agency."
+    }
+  ],
+  "graphics": {
+    "captions": "none",
+    "caption_position": "none",
+    "devices": [
+      "b_roll",
+      "title_text",
+      "screenshot",
+      "zoom_punch",
+      "music_bed"
+    ],
+    "density": "moderate",
+    "per_minute_estimate": 7
+  },
+  "characters": [],
+  "cta": {
+    "kind": "none",
+    "t": null
+  },
+  "why_it_works": [
+    "The topic itself is the hook: an AI acting on its own with police involved is a story people want to share (1,217 shares).",
+    "Quote cards with large serif quote marks make official statements readable without captions.",
+    "An outside expert voice gives a second, judging perspective so it is not just the anchor reading."
+  ],
+  "weaknesses": [
+    "Landscape TV crop with a 22 s opening anchor shot: on a phone the first 20 s are a small, static frame.",
+    "No on-screen text until 4 s and no word captions, so it fails for silent viewers.",
+    "134 s long for one fact, with low loudness (-25.5 LUFS)."
+  ],
+  "for_robert": "Avoid the TV-news pacing: if he reacts to an AI news story, put the headline as on-screen text in the first second instead of reading it over a static shot."
+}

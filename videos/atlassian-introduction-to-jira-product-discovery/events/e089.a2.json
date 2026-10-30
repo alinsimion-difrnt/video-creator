@@ -1,0 +1,100 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "b44a64d2e92c045b9c6ce4b69c648e06948edda6fd3c4b93bd45dbd5a0305dff",
+    "created_at": "2026-10-05T06:38:40.133086Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e089",
+  "task": "a2-e089",
+  "elements": [
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Create a delivery ticket button (returns as the inline create form closes)",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "instant swap: inline create form replaced by action buttons",
+      "is_text": true,
+      "text": "Create a delivery ticket",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 33, "easing_class": "step"}
+    },
+    {
+      "box": "b06",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Delivery progress row (reappears below the buttons)",
+      "role": "chart",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "instant reappearance after form collapse",
+      "is_text": true,
+      "text": "Delivery progress",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 33, "easing_class": "step"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Delivery tickets tree (jumps up as the form collapses; parent row shows hover tint and remove icon)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Delivery tickets TES-3 Templates IN PROGRESS",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 33, "easing_class": "step"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Child task rows (shift up with the tree)",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Task 3 / Task 2 / Task 1",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 33, "easing_class": "step"}
+    },
+    {
+      "box": null,
+      "manual_box": [271, 868, 298, 886],
+      "manual_reason": "No candidate box covers the Delivery tab count badge, which increments from 1 to 2 one frame after the form closes.",
+      "label": "Delivery tab count badge",
+      "role": "metric",
+      "role_other": null,
+      "change_types": ["count_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "2",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 33, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "layout_reframe",
+    "proposed_name": null,
+    "description": "Screen recording: after submitting the inline 'Create a delivery ticket' form, the form collapses and the panel re-lays out in one frame: action buttons and progress bar return and the ticket tree jumps up, then the Delivery tab badge ticks from 1 to 2.",
+    "why_premium": "The confirmation is shown through the product's own state change (form gone, badge incremented) rather than an overlay, giving the viewer proof that the action worked while the narration continues uninterrupted."
+  },
+  "build_hint": {
+    "gsap": "tl.set(createForm,{display:'none'}).set([actionButtons,progressRow],{autoAlpha:1}).set(ticketTree,{y:0}) at submit; for a polished recreation use tl.to(ticketTree,{y:0,duration:0.35,ease:'power3.out'}) from the old offset, then tl.set(badge,{textContent:2},'+=0.03') or a short pop: fromTo(badge,{scale:1.2},{scale:1,duration:0.2,ease:'back.out(2)'})",
+    "remotion": "Render form or buttons via frame >= submitFrame conditional; ticketTree translateY via spring({frame:frame-submitFrame,fps,config:{damping:26,stiffness:220,mass:1}}) mapped from old offset to 0 for a recreation (source is an instant jump); badge text switches 1->2 one frame later."
+  },
+  "confidence": "medium",
+  "notes": "In the source the reflow is instantaneous (single-frame energy spike), so change_types slide_up describes displacement, not an animated tween. Badge count increment uses a manual box. No SFX candidates; a short transient in the spectrogram just before the box is not a flagged candidate."
+}

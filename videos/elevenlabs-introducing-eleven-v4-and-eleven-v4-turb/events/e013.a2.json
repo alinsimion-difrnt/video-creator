@@ -1,0 +1,47 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "6c6dad2fb263dc6001d5dd4acf45b0a39ae767191dec47360dc7e49b0ef5ac12",
+    "created_at": "2026-10-05T06:42:54.495204Z"
+  },
+  "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+  "event": "e013",
+  "task": "a2-e013",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Particle sphere (upper region)",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["morph", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 100, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x035", "verdict": "unsure", "label": "unsure", "note": "No distinct transient at the line; steady tonal bands of the music bed. 367 ms before the visual burst."},
+    {"id": "x036", "verdict": "confirm", "label": "music", "note": "Sustained harmonic bands; music bed continues."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "particle voice orb",
+    "description": "A loose sphere of soft red/grey dots continuously drifts and re-densifies as an audio-reactive visual for the voice; the burst is the dots in the upper half shifting and thinning while the narration starts.",
+    "why_premium": "An organic, audio-reactive particle form gives the abstract voice a living presence without any UI chrome; soft depth-of-field dots and a restrained palette keep it calm and branded."
+  },
+  "build_hint": {
+    "gsap": "Render dots on canvas; per-dot gsap.to({x,y,opacity,scale}) driven by a noise field, duration 0.6-1.2s, ease 'sine.inOut', stagger {each: 0.002, from: 'random'}; modulate radius/opacity with the voice amplitude via gsap.quickTo.",
+    "remotion": "Canvas/Three points; per-dot position = base + noise(seed, frame/fps) * amplitude, where amplitude = interpolate(audio volume from useAudioData/visualizeAudio, [0,1], [2,12]); opacity via interpolate with clamp, no spring."
+  },
+  "confidence": "low",
+  "notes": "Very short burst (~100 ms) inside a continuously animated particle orb; boxes b01/b02 cover the same moving dots so only b01 is used. Filmstrip frames are crops of the b01 region. Camera move is none; the 0.91 scale sum reflects dot drift, not a camera pull-out."
+}

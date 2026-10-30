@@ -1,0 +1,119 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "268f229514f3cfed24ef323dc3e669e83fe288c8b0ef46a844a491f238a7997f",
+    "created_at": "2026-10-05T06:58:08.079716Z"
+  },
+  "video": "attio-introducing-ask-attio",
+  "task": "a1-p1",
+  "shots": [
+    {
+      "shot": "s001",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The Ask Attio prompt box with the query 'How do I win this deal' being typed in",
+      "transition_in": "other",
+      "transition_other": "none (opening shot; anchors give no transition)",
+      "on_screen_text": [
+        "Good morning.",
+        "Ask or search anything",
+        "Auto",
+        "Prep next meeting",
+        "Recap last meeting",
+        "Meetings",
+        "Today, Nov 17",
+        "Basepoint x Stripe",
+        "Ashley & Martin",
+        "Greenleaf // Basepoint",
+        "Details",
+        "How do I win this deal",
+        "How do I win this deal",
+        "Thinking..."
+      ],
+      "text_word_count": 40,
+      "typography": "Clean neo-grotesque sans (low-confidence guess: Inter); bold sentence-case greeting, regular-weight input and chip labels, small grey list text with meeting times; 'Thinking...' set large in medium-grey regular weight with default tracking.",
+      "depth_cues": ["shadow"],
+      "what_happens": "A greeting 'Good morning.' fades up alone, then a simplified home screen (prompt box, two suggestion chips, meetings list) assembles beneath it; the camera pushes in on the prompt box while 'How do I win this deal' types on with a caret; the UI clears to a lone right-aligned chat bubble with the query, a small 'Thinking...' appears and scales up to a large centred label over faint grid lines, then a dark circle appears at centre (start of the zoom-through into s002).",
+      "build_rebuild": "Render a light UI mock (greeting, rounded prompt card with soft shadow, two chip buttons, meeting rows), stagger it in, scale the camera toward the prompt card while typing the query character by character, then fade the UI to a single chat bubble and scale a 'Thinking...' label from 14px to ~48px before scaling a black circle up from centre to fill the frame.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s002",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Centred light words on a dark dot-grid background",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Everything",
+        "creates signal"
+      ],
+      "text_word_count": 3,
+      "typography": "Same neo-grotesque sans, regular/medium weight, sentence case, light text on a dark stage, default tracking; words swap one at a time and 'signal' appears to shift baseline slightly near the end.",
+      "depth_cues": ["none"],
+      "what_happens": "After the dark circle zooms through to fill the frame, 'Everything' sits centred, is replaced by 'creates', then 'signal' joins to read 'creates signal'; a faint dot grid fades up across the background, and at the end a bright band rises from the bottom edge to start the move back to the light stage.",
+      "build_rebuild": "On a full-bleed dark stage, swap centred single words on the beat (one per ~0.5 s), fade in a low-opacity dot-grid pattern behind them, and finish by sliding a light panel up from the bottom edge to cover the frame.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s003",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The centred 'Every ___' phrase, whose noun and accompanying illustration change each beat",
+      "transition_in": "other",
+      "transition_other": "light panel wipes up from the bottom of the dark frame (band visible at 0:10.000); exact mechanics not visible at 2 fps",
+      "on_screen_text": [
+        "Every email",
+        "Every call",
+        "Every note",
+        "Every web search",
+        "and every",
+        "User record",
+        "Stripe payment",
+        "Posthog event"
+      ],
+      "text_word_count": 17,
+      "typography": "Neo-grotesque sans, regular weight, sentence case, dark text on a light stage, default tracking; labels on the timeline ruler are slightly larger and medium weight.",
+      "depth_cues": ["shadow"],
+      "what_happens": "A list montage on a light stage: 'Every email' with a stack of faint email cards rising beneath; 'Every call' whose letters dissolve into an audio waveform; 'Every note' with a dark app-icon tile popping in between the words and cycling through several note-app icons over a light square grid; 'Every web search' typed on with a caret and then sliding down; vertical bars sweep in, then 'and every' sits above a horizontal tick-mark ruler that scrolls left while data labels ('User record', 'Stripe payment', 'Posthog event') slide in with a taller tick marking each.",
+      "build_rebuild": "Build one light scene with a fixed 'Every' word and a swappable noun slot changed on the music beat, pairing each noun with a small illustration (stacked cards, waveform morph, cycling icon tile, typed text), then end on a horizontally scrolling tick ruler whose labelled ticks pass under a centre marker.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s004",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Data-source labels riding a horizontally scrolling tick-mark ruler",
+      "transition_in": "push",
+      "transition_other": null,
+      "on_screen_text": [
+        "Posthog event",
+        "Company record",
+        "Polytomic data",
+        "Workspace",
+        "Deal",
+        "Hightouch data"
+      ],
+      "text_word_count": 10,
+      "typography": "Neo-grotesque sans, medium weight, sentence case, dark text on a light stage, default tracking; labels larger than in s003 (the camera is closer).",
+      "depth_cues": ["none"],
+      "what_happens": "Continuation of the timeline: the ruler scrolls left quickly and labels for record and data-source types pass across, each sitting over a taller tick, with the pace accelerating so labels change roughly every half second.",
+      "build_rebuild": "Translate a long row of evenly spaced thin ticks leftward with an accelerating ease, placing a text label above every Nth tick (taller, darker tick under each label) so labels stream past the frame centre.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

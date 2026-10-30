@@ -1,0 +1,38 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "55276234eb90c0fb6236f9003a0fa72552b8529bd5b86193a93ee33c022704e5",
+                 "created_at": "2026-10-13T12:45:00+00:00"},
+  "id": "7290622532493888798",
+  "format": "green_screen",
+  "hook": {"type": "result_first",
+           "line": "Let's talk about how I got these results on Pinterest.",
+           "visual": "Woman cut out over a Pinterest Analytics screenshot (impressions +205%, saves +450%), with the title 'How I Grew My Pinterest Account' across her chest."},
+  "beats": [
+    {"t": 0.0, "what": "30-day analytics screenshot behind her with green growth percentages, title text over her"},
+    {"t": 7.74, "what": "Small sentence captions replace the title: brand-new account, only fresh content"},
+    {"t": 23.21, "what": "Explains posting 3-6 fresh pins a day while gesturing with her hands"},
+    {"t": 38.68, "what": "Keyword-optimised profile, pin titles and boards"},
+    {"t": 55.07, "what": "Cut: background becomes a 90-day impressions graph; she shrinks to the bottom-left corner"},
+    {"t": 69.62, "what": "She points up at the curve where it starts to climb in September"},
+    {"t": 77.36, "what": "Payoff: growth takes three to six months, as the graph shows"},
+    {"t": 85.09, "what": "Asks for questions in the comments and a follow, over the graph"}
+  ],
+  "graphics": {"captions": "sentence",
+               "caption_position": "middle",
+               "devices": ["green_screen_bg", "screenshot", "chart_or_number", "title_text", "product_ui"],
+               "density": "minimal", "per_minute_estimate": 3},
+  "characters": [],
+  "cta": {"kind": "comment", "t": 85.09},
+  "why_it_works": [
+    "Real analytics with big green percentages sit behind her from frame one, so the proof is on screen before the first sentence ends",
+    "She saves the honest part ('what people won't show you': the flat first month) for the second half and shows it as a graph, which rewards viewers who stayed",
+    "Shrinking herself into the corner at the cut hands the frame to the chart, so the one layout change marks the payoff",
+    "Ends on a question prompt, which invites comments from people with their own Pinterest problems"
+  ],
+  "weaknesses": [
+    "55 s before the first cut with a static screenshot; the middle tips run long",
+    "Captions are small (about 2.6% of frame height) and sit over busy UI text",
+    "Fast talking (3.75 words/s) with dense tips; hard to retain without saving"
+  ],
+  "for_robert": "Hold one layout for the tips, then make a single big layout change for the proof: Robert shrinks to a corner and Fred points at the graph's turning point."
+}

@@ -1,0 +1,39 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "adeeff9ca14154589257d6fdb110fa1eff0b0b312bb234f1601fd166cd825451",
+                 "created_at": "2026-10-13T13:15:00+00:00"},
+  "id": "7497269213980085512",
+  "format": "tutorial_demo",
+  "hook": {"type": "curiosity_gap",
+           "line": "(Filipino) Maybe this SEO is what will make your videos go viral.",
+           "visual": "Black frame, then a man on a pink wall points a finger at camera; one-word captions and an orange 3D 'Search Engine Optimization' sticker flips in at 1.5 s."},
+  "beats": [
+    {"t": 0.2, "what": "Punch-in on the presenter pointing at camera as he names SEO."},
+    {"t": 1.5, "what": "Orange 'Search Engine Optimization' word-art animates in under the 'SEO' caption."},
+    {"t": 8.2, "what": "Cut to a hand holding a phone over a dark topographic background: the demo starts."},
+    {"t": 12.16, "what": "White hand-drawn arrow points at the TikTok search bar with 'selfiestick tripod' typed."},
+    {"t": 18.25, "what": "Copies the suggested search phrases into a note for the caption."},
+    {"t": 24.33, "what": "Pastes the keywords into the post caption screen."},
+    {"t": 30.41, "what": "Adds hashtags, picking ones with the most posts from the suggestion list."},
+    {"t": 38.4, "what": "Cut back to the presenter to wrap up, with zoom punches on key words."},
+    {"t": 66.9, "what": "Red 'Like & Follow' sticker with like/heart/thumb icons pops in."}
+  ],
+  "graphics": {"captions": "word_by_word", "caption_position": "middle",
+               "devices": ["screen_recording", "arrow_or_circle", "zoom_punch", "sticker_emoji", "title_text", "green_screen_bg", "jump_cut", "music_bed"],
+               "density": "heavy", "per_minute_estimate": 18},
+  "characters": [],
+  "cta": {"kind": "follow", "t": 66.9},
+  "why_it_works": [
+    "The acronym is decoded on screen (SEO -> big animated 'Search Engine Optimization') within 2 s, so a beginner is not lost.",
+    "Real phone UI held in a hand over a textured background shows the exact taps to copy, making it a save-worthy how-to.",
+    "Zoom punches (4.48 per min) and many motion events (15.22 per min) keep the face segments moving even though the speech is slow.",
+    "Hand-drawn arrow points at the one field that matters in the search screen."
+  ],
+  "weaknesses": [
+    "Opens on a black frame, wasting the first fraction of a second.",
+    "Over half the runtime is silent (silence share 0.534); the screen demo runs on music alone.",
+    "Weak loop (0.278) and a generic like-and-follow ending.",
+    "Phone UI text is tiny and hard to read at phone size."
+  ],
+  "for_robert": "Decode jargon with one big animated word-art sticker right as he says it (SEO -> Search Engine Optimization); Fred could pop up holding that sticker. Avoid opening on black."
+}

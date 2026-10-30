@@ -1,0 +1,128 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a3_pattern_cards",
+  "annotator": "claude-code",
+  "skill": "write-pattern-cards@e525a58fa6d8",
+  "model": null,
+  "input_hash": "fc6369a6ddab96b7bff8d526f70919c40e1f192e66b3e8df2efa9a83d7038fb4",
+  "created_at": "2026-10-05T13:25:33.365173Z"
+ },
+ "id": "avatar_hero_expand",
+ "name": "Avatar Grows Into Hero",
+ "summary": "A small round avatar or decorative orb lifts out of its place and grows into a large centred hero object while the surrounding UI shrinks and fades behind it. The reverse also appears: the hero shrinks back down to become a small avatar badge on a message.",
+ "when_to_use": [
+  "Moving from a UI choice (a clicked card or template) to the product concept it represents",
+  "Turning a brand visual into the concrete product object without a cut",
+  "Introducing an agent or presenter whose face or orb should carry identity across scenes"
+ ],
+ "avoid_when": [
+  "There is no recognisable small object to start from; the handoff then reads as a random zoom",
+  "The surrounding UI still needs to be read while the hero grows"
+ ],
+ "steps": [
+  "Measure the small avatar's on-screen position and size so the hero can start exactly there",
+  "Fade out or shrink back the surrounding headline or panel to make room and add depth",
+  "Move the avatar towards centre while scaling it up into the hero size",
+  "If the hero becomes something else (a video bubble, a voice orb), reveal the new content inside the circle as it grows",
+  "Let a small finishing detail, such as a status badge, pop onto the rim last",
+  "For the reverse, shrink the hero towards a corner and fade the message bubble in beneath it so it lands as the badge"
+ ],
+ "build": {
+  "gsap": "A timeline with FLIP-style fromTo on the avatar: start from its measured rect (small scale, offset x/y) and tween to centre at full scale. Run a parallel tween scaling down and fading the panel or headline. The hero travel is mostly linear or ease-out, with ease-in-out (power inOut) for the combined move; finishing badges use a slight overshoot ease (back.out). Text lines inside a following bubble can stagger softly.",
+  "remotion": "One spring (high damping, no overshoot) as shared progress, interpolated into the orb's scale and translate and the panel's scale and opacity. A delayed spring with a circular overflow mask reveals the inner content; a separate lower-damping spring gives the badge its small overshoot. An outer scene wrapper can scale with a gentle interpolate for a camera push."
+ },
+ "sound": "A soft chime is the typical cue, sometimes a reverse swoosh, landing just after the move starts.",
+ "why_premium": "The object the viewer was already looking at becomes the star. Rather than cutting from a UI or brand world to a product shot, one continuous shape carries identity across the change: a tiny template avatar swells into the agent's hero orb, or a background orb turns into the presenter's camera bubble. The receding panel behind it adds depth, and saving a small product cue such as a record badge for last gives the move a clear landing. Played in reverse, the same object becoming an avatar badge on a chat message hands the concept back into a concrete demo.",
+ "numbers": {
+  "id": "avatar_hero_expand",
+  "events": 3,
+  "videos": 2,
+  "weight": 2.8,
+  "duration_ms": {
+   "n": 7,
+   "videos": 1,
+   "weight": 5.5913,
+   "median": 1160.493,
+   "p25": 1071.703,
+   "p75": 1249.151,
+   "ci": [
+    1066.7,
+    1268.492
+   ]
+  },
+  "easing_mix": {
+   "linear": 0.4277,
+   "ease_out": 0.2861,
+   "ease_in_out": 0.1431,
+   "spring_overshoot": 0.143
+  },
+  "change_mix": {
+   "fade": 0.2437,
+   "scale_down": 0.2101,
+   "slide_up": 0.2101,
+   "slide_right": 0.1261,
+   "scale_up": 0.0756,
+   "blur_in": 0.0336,
+   "mask_reveal": 0.0336,
+   "morph": 0.0336,
+   "pop": 0.0336
+  },
+  "role_mix": {
+   "background": 0.2759,
+   "avatar": 0.2414,
+   "body_text": 0.1724,
+   "card": 0.0862,
+   "ui_panel": 0.0862,
+   "button": 0.069,
+   "headline": 0.069
+  },
+  "sfx_label_mix": {
+   "chime": 0.5714,
+   "swoosh_reverse": 0.2381,
+   "unsure": 0.1905
+  },
+  "sfx_offset_ms": {
+   "n": 7,
+   "videos": 1,
+   "weight": 5.6,
+   "median": 86.5,
+   "p25": 86.5,
+   "p75": 153.1,
+   "ci": [
+    86.5,
+    153.1
+   ]
+  },
+  "examples": [
+   {
+    "video": "loom-introducing-loom-ai",
+    "event": "e002",
+    "score": 4.0
+   },
+   {
+    "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+    "event": "e001",
+    "score": 5.0
+   }
+  ]
+ },
+ "examples": [
+  {
+   "video": "loom-introducing-loom-ai",
+   "event": "e002",
+   "score": 4.0
+  },
+  {
+   "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+   "event": "e001",
+   "score": 5.0
+  }
+ ],
+ "caveats": [
+  "Seen in only two videos",
+  "Timing and sound offset were measured in a single video",
+  "Mixes forward (grow into hero) and reverse (shrink into badge) events"
+ ]
+}

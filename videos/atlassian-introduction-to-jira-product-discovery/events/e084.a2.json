@@ -1,0 +1,86 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "bc3765bee2eccfc7ba2f0c7dccfa5705f07a5980c0af061fd4b83b261d4e90c9",
+    "created_at": "2026-10-05T06:40:15.300874Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e084",
+  "task": "a2-e084",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Onboarding row title returning from hover-truncated state as the cursor leaves",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "hover state cleared (Onboar... back to Onboarding templ...; edit/expand icons removed)",
+      "is_text": true,
+      "text": "Onboarding templ...",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Table rows and panel tabs flicking through hover tints as the cursor crosses them",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Delivery tab hovered (cursor arrives on it)",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Delivery 1",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": null,
+      "manual_box": [272, 836, 296, 856],
+      "manual_reason": "Mouse cursor has no dedicated candidate box (b03 is the tab it lands on)",
+      "label": "Mouse cursor travelling from the Onboarding row up and right to the Delivery tab",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "cursor travel",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "Live cursor travels from the table row to the side panel's Delivery tab, passing over rows and tabs whose hover states flick on and off, landing on Delivery as narration says 'development work happening in Jira Software'.",
+    "why_premium": "The cursor lands on the Delivery tab exactly on the narration cue, directing the eye to where linked development work lives before the click."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.cursor', {motionPath: [{x: 300, y: 270}, {x: 1080, y: 205}], duration: 0.6, ease: 'power2.inOut'}); toggle hover classes on rows/tabs with tl.set at crossing times; end with tl.set('.tab-delivery', {className: '+=is-hover'}).",
+    "remotion": "cursor position = interpolate(frame, [0, 20], [start, end], {easing: Easing.inOut(Easing.cubic)}) on x and y; hover tint rendered when cursor is inside an element's bounds; no spring."
+  },
+  "confidence": "medium",
+  "notes": "Low-energy event made of incidental hover states; cursor path inferred from filmstrip (it crosses the tab bar via Overview/Comments/Insights before Delivery)."
+}

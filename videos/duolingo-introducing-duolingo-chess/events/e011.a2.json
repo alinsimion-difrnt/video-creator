@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "95077b4c5e8c25fb9f972c884fd9c1cb4af3ffe6c2c89b1083e64264ef411816",
+    "created_at": "2026-10-05T06:43:23.944089Z"
+  },
+  "video": "duolingo-introducing-duolingo-chess",
+  "event": "e011",
+  "task": "a2-e011",
+  "elements": [
+    {
+      "box": null,
+      "manual_box": [650, 250, 1000, 750],
+      "manual_reason": "The close-up foreground puppet drops down and exits below the frame, so it is absent from the end frame; box marks its exit path at the bottom edge.",
+      "label": "Close-up foreground mascot puppet dropping out of frame",
+      "role": "other",
+      "role_other": "character",
+      "change_types": ["slide_down", "blur_in"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 130, "easing_class": "ease_in"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Small full-body mascot figure on green base (revealed)",
+      "role": "other",
+      "role_other": "character",
+      "change_types": ["other"],
+      "change_other": "revealed_by_occluder_exit",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "foreground drop reveal",
+    "description": "A large close-up of the mascot in front of the 'LEARN CHESS' title drops rapidly downward with heavy motion blur, exiting the bottom of the frame and revealing a small full-body version of the same character standing on a base beneath the static title.",
+    "why_premium": "Gravity-driven exit of the foreground subject reframes from close-up to hero lockup without a cut; the motion blur sells speed and the static title anchors the composition, giving a playful, tactile end-card resolve."
+  },
+  "build_hint": {
+    "gsap": "Title stays static. gsap.to('.closeup', {yPercent: 120, duration: 0.13, ease: 'power3.in', filter: 'blur(6px)'}); small figure already in place behind (z-index below) or gsap.set visible at the same moment; optional tiny settle on the small figure with back.out.",
+    "remotion": "const y = interpolate(frame, [0, 4], [0, 120], {easing: Easing.in(Easing.cubic), extrapolateRight: 'clamp'}); closeup style transform: translateY(y%) plus filter blur proportional to velocity; render the small figure underneath, static."
+  },
+  "confidence": "medium",
+  "notes": "Live-action/puppet compositing on green background. Before the drop the close-up wobbles/turns (energy from frame 1). Camera verdict none. Spectrogram shows a downward sweep around 82.72s that may be a whoosh, but no SFX candidates were given, so none reviewed. The close-up element uses manual_box because it has left the frame by the end frame."
+}

@@ -1,0 +1,88 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a2_annotate_event",
+  "annotator": "claude-code",
+  "skill": "annotate-event@3dad117bd85a",
+  "model": null,
+  "input_hash": "87741cc63fd5f25f948b6cc6f0dcb8d3acf9aa098a2355a23fb08de94d16603b",
+  "created_at": "2026-10-05T06:40:38.222945Z"
+ },
+ "video": "apple-iphone-15-reveal-4k",
+ "event": "e001",
+ "task": "a2-e001",
+ "elements": [
+  {
+   "box": null,
+   "manual_box": [145, 266, 280, 731],
+   "manual_reason": "b01 covers the whole upper screen; the Dynamic Island pill itself has no candidate box. It morphs from the tall incoming-call pill to the slim in-call pill.",
+   "label": "Dynamic Island pill container",
+   "role": "notification",
+   "role_other": null,
+   "change_types": ["morph", "scale_down"],
+   "change_other": null,
+   "is_text": false,
+   "text": null,
+   "text_unit": null,
+   "estimates": {"duration_ms": 400, "easing_class": "spring_no_overshoot"}
+  },
+  {
+   "box": null,
+   "manual_box": [100, 40, 300, 280],
+   "manual_reason": "Outgoing incoming-call content (avatar, 'iPhone / Rody Albuerne', decline and accept buttons) is gone in the end frame; box marks where it sat inside the pill.",
+   "label": "Incoming call content: avatar, caller name, decline/accept buttons",
+   "role": "notification",
+   "role_other": null,
+   "change_types": ["blur_out", "fade", "scale_down"],
+   "change_other": null,
+   "is_text": true,
+   "text": "iPhone Rody Albuerne",
+   "text_unit": "whole",
+   "estimates": {"duration_ms": 200, "easing_class": "ease_in"}
+  },
+  {
+   "box": "b03",
+   "manual_box": null,
+   "manual_reason": null,
+   "label": "In-call timer with green phone glyph",
+   "role": "label",
+   "role_other": null,
+   "change_types": ["blur_in", "fade"],
+   "change_other": null,
+   "is_text": true,
+   "text": "0:01",
+   "text_unit": "whole",
+   "estimates": {"duration_ms": 200, "easing_class": "ease_out"}
+  },
+  {
+   "box": null,
+   "manual_box": [180, 630, 240, 715],
+   "manual_reason": "No candidate box covers the audio waveform icon on the right of the pill.",
+   "label": "Live audio waveform",
+   "role": "icon",
+   "role_other": null,
+   "change_types": ["blur_in", "fade"],
+   "change_other": null,
+   "is_text": false,
+   "text": null,
+   "text_unit": null,
+   "estimates": {"duration_ms": 200, "easing_class": "ease_out"}
+  }
+ ],
+ "sfx_review": [
+  {"id": "x025", "verdict": "confirm", "label": "music", "note": "~0.56 s after the morph; tonal music texture, no UI sound shape."}
+ ],
+ "pattern": {
+  "id": "other",
+  "proposed_name": "pill morph crossfade",
+  "description": "A pill-shaped container (Dynamic Island) changes size and shape from one state to another while its old content blurs and fades out and the new content blurs in at the new size, so one element reads as transforming rather than being replaced.",
+  "why_premium": "Shape morph plus blur crossfade gives object permanence: the viewer sees the same surface adapt from 'incoming call' to 'in call' with no hard swap, the signature fluid feel of Apple system UI."
+ },
+ "build_hint": {
+  "gsap": "tl.to('.pill', {width: W2, height: H2, borderRadius: H2/2, duration: 0.4, ease: 'expo.out'}).to('.call-content', {opacity: 0, filter: 'blur(8px)', scale: 0.9, duration: 0.18, ease: 'power2.in'}, 0).fromTo('.incall-content', {opacity: 0, filter: 'blur(8px)', scale: 1.05}, {opacity: 1, filter: 'blur(0px)', scale: 1, duration: 0.22, ease: 'power2.out'}, 0.16)",
+  "remotion": "const s = spring({frame, fps, config: {damping: 26, stiffness: 220, mass: 1}}); width/height/borderRadius = interpolate(s, [0, 1], [state1, state2]) (critically damped, no overshoot). Old content opacity/blur = interpolate(frame, [0, 5], [1, 0]) / [0, 8px]; new content opacity/blur = interpolate(frame, [5, 11], [0, 1]) / [8px, 0]."
+ },
+ "confidence": "medium",
+ "notes": "blur_crossfade is the nearest canonical id but it excludes scale, and here the container visibly shrinks/morphs. The outgoing-content manual box is a location estimate since that content is absent from the end frame. Apple Dynamic Island uses a spring; easing_class is a guess."
+}

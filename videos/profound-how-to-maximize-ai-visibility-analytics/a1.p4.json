@@ -1,0 +1,126 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "71f196c594e4b487e83815820e3d4224eca9f9359f1845b1122ff15fd0c823b3",
+    "created_at": "2026-10-05T06:29:26.392438Z"
+  },
+  "video": "profound-how-to-maximize-ai-visibility-analytics",
+  "task": "a1-p4",
+  "shots": [
+    {
+      "shot": "s014",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Agent-run spreadsheet columns whose cells flip from a spinner 'Running...' state to a green-check 'Completed' state while text outputs fill the next column",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "FAQ — Shopify (customer-facing)",
+        "What is Shopify and who is it for?",
+        "How do I get started and how much does it cost?",
+        "Regional Analysis (Sheets 2)",
+        "Market Localization",
+        "Add column",
+        "Running...",
+        "Completed",
+        "Focus on tourists-facing micro-mer...",
+        "Position Zendesk as the Spanish-l...",
+        "Target Australia by focusing on mi...",
+        "LLM Response",
+        "Add FAQs to Low Performing Citations"
+      ],
+      "text_word_count": 55,
+      "typography": "All text is native product UI: neutral grotesque sans (possibly Inter, low confidence), regular weight body, medium-weight sentence-case column headers with a small type icon, bold question headings in the FAQ document, default tracking; truncated cell text with ellipses.",
+      "depth_cues": [
+        "blur"
+      ],
+      "what_happens": "Montage of real product captures under the VO list (w208-w251): a generated Shopify FAQ document scrolls upward, then a crossfade to a wide view of a sheet; the camera pushes in on a 'Regional Analysis (Sheets 2)' agent column where rows resolve from 'Running...' to 'Completed' and 'Market Localization' outputs appear; it reframes to an 'FAQ + Competitor Analysis' / 'LLM Response' area doing the same, then a customer-feedback sheet with company rows completing, a motion-blurred vertical scroll, and finally a fully completed 'Add FAQs to Low Performing Citations' sheet as the VO lands on 'minutes instead of weeks' (w248-w251).",
+      "build_rebuild": "Build a table component whose status cells start as a spinner plus 'Running...' and, on a staggered random schedule, swap to a green check plus 'Completed' while the adjacent output cell types in truncated text, then animate a CSS scale/translate camera push-in from the full table to the two active columns and blur-crossfade between three such sheets.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s015",
+      "shot_type": "presenter",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Presenter seated at a desk, centered, addressing camera",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "Profound University",
+        "Profound"
+      ],
+      "text_word_count": 3,
+      "typography": "Only physical set branding: a wall screen with a white logomark plus 'Profound University' in a geometric sans and a white desk sign 'Profound' in bold sans; no overlay text.",
+      "depth_cues": [
+        "glow",
+        "blur"
+      ],
+      "what_happens": "The UI montage blurs out into a medium-wide shot of the presenter in a dark, warmly lit studio set (neon-style lamp, shelves, branded wall screen, desk sign, Shure mic) who says 'And because it's all inside profound,' (w252-w257) with open hand gestures.",
+      "build_rebuild": "Transition from the last UI frame by animating a gaussian blur up to roughly 30px while crossfading to a locked-off centered presenter clip, so the set reads as a branded studio with the logo screen above the speaker's left shoulder.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s016",
+      "shot_type": "presenter",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "Presenter's face in a tighter, off-axis angle, placed on the left third",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": [
+        "blur"
+      ],
+      "what_happens": "Hard cut to a second, closer camera angle from the presenter's left side, with a soft dark background showing the logo object and bust on the shelf, as he finishes the line 'you can measure what actually works.' (w258-w263).",
+      "build_rebuild": "Cut on the comma between clauses from the wide A-cam to a tighter B-cam angle (subject on the left third, shallow depth of field) to reset attention without any graphic overlay.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s017",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Agent Analytics dashboard: AI Citations metric card with a line chart, then a 'Platform to Page Journey' Sankey diagram",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "Sheets",
+        "Optimize blog posts",
+        "Competitive analysis",
+        "LinkedIn ad generator",
+        "Product page FAQs",
+        "ABM research",
+        "Agent Analytics",
+        "www.tryprofound.com",
+        "Overview Pages Bot Visits Human Visits Google Analytics Logs",
+        "AI Citations 54.9k +26.6k",
+        "AI Training 10.6k +2.6k",
+        "Human Referrals 868 +157",
+        "Platform to Page Journey"
+      ],
+      "text_word_count": 42,
+      "typography": "Native product UI: neutral sans (possibly Inter, low confidence); small regular-weight sidebar labels with 'Beta'/'Alpha' pill badges, bold sentence-case page titles, large medium-weight metric numerals with smaller green delta values, default tracking.",
+      "depth_cues": [
+        "blur",
+        "shadow"
+      ],
+      "what_happens": "The presenter blurs out into a Sheets list page; the cursor moves down the sidebar and clicks 'Agent Analytics' as the VO says 'Use agent analytics' (w264-w266); the dashboard appears and the camera pushes in on the AI Citations card and its spiking line chart; it then dissolves to a 'Platform to Page Journey' Sankey diagram whose bands flow from AI platforms to pages, the cursor hovers a toggle at top right, and the frame fades lighter toward the next shot on 'stop guessing.' (w286-w287).",
+      "build_rebuild": "Show a sidebar app frame, animate a cursor to the 'Agent Analytics' nav item and trigger a click state, swap to a dashboard and tween a scale-up push-in centered on the metric card and line chart, then crossfade to an SVG Sankey diagram whose ribbons are revealed left to right.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

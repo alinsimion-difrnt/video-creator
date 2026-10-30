@@ -1,0 +1,103 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "s5_packets",
+    "annotator": "code",
+    "skill": null,
+    "model": null,
+    "input_hash": "5df1d997af8f66573e5f19811ef8223e59f5f1c8db2dcbfee3dc53d9500b3f7e",
+    "created_at": "2026-10-05T06:19:07.849678Z"
+  },
+  "video": "google-introducing-the-google-pixel-9-pro",
+  "tier": "reference",
+  "max_images_per_task": 12,
+  "event_images": 4,
+  "tasks": [
+    {
+      "id": "a1-p1",
+      "kind": "a1",
+      "images": [
+        "pass1/sheets/shot_s001_1.jpg",
+        "pass1/sheets/shot_s001_2.jpg",
+        "pass1/sheets/shot_s001_3.jpg",
+        "pass1/sheets/shot_s001_4.jpg",
+        "pass1/keyframes/shot_s001.jpg",
+        "pass1/sheets/shot_s002_1.jpg",
+        "pass1/keyframes/shot_s002.jpg",
+        "pass1/sheets/shot_s003_1.jpg",
+        "pass1/keyframes/shot_s003.jpg"
+      ],
+      "files": [
+        "pass1/anchors.json"
+      ],
+      "shots": [
+        "s001",
+        "s002",
+        "s003"
+      ],
+      "event": null,
+      "siblings": [],
+      "output": "videos/google-introducing-the-google-pixel-9-pro/a1.json",
+      "input_hash": "11176b2f071ad3f4d84e6839c4a4d352ce8ad9d75f07e531bc34e76d1eb7ccf6"
+    },
+    {
+      "id": "a2-e001",
+      "kind": "a2",
+      "images": [
+        "events/e001/filmstrip.jpg",
+        "events/e001/end_marked.jpg",
+        "events/e001/end_clean.jpg",
+        "events/e001/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e001/facts.json",
+        "events/e001/candidates.json"
+      ],
+      "shots": [],
+      "event": "e001",
+      "siblings": [],
+      "output": "videos/google-introducing-the-google-pixel-9-pro/events/e001.a2.json",
+      "input_hash": "47c86d0f4a8973215a473309082bda6597a6c2a0c8f7a101559be100bc850f76"
+    },
+    {
+      "id": "a2-e002",
+      "kind": "a2",
+      "images": [
+        "events/e002/filmstrip.jpg",
+        "events/e002/end_marked.jpg",
+        "events/e002/end_clean.jpg",
+        "events/e002/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e002/facts.json",
+        "events/e002/candidates.json"
+      ],
+      "shots": [],
+      "event": "e002",
+      "siblings": [],
+      "output": "videos/google-introducing-the-google-pixel-9-pro/events/e002.a2.json",
+      "input_hash": "98b1225218b001e90e503fc211e64eb8bb7f08a0ab694242984d576659082983"
+    },
+    {
+      "id": "a2-e003",
+      "kind": "a2",
+      "images": [
+        "events/e003/filmstrip.jpg",
+        "events/e003/end_marked.jpg",
+        "events/e003/end_clean.jpg",
+        "events/e003/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e003/facts.json",
+        "events/e003/candidates.json"
+      ],
+      "shots": [],
+      "event": "e003",
+      "siblings": [],
+      "output": "videos/google-introducing-the-google-pixel-9-pro/events/e003.a2.json",
+      "input_hash": "26ee607cc969a208be5f87a90b945397385977402e40c68b6f0348236b4cfd83"
+    }
+  ],
+  "skipped": []
+}

@@ -1,0 +1,55 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T13:59:40+00:00"
+  },
+  "id": "sea-of-stars",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "cool",
+    "notes": "Frames: rich saturated palette per place: teal water, sand beige, orange autumn, violet night cliffs. Shadows hue-shift to blue-purple; light sides warm (orange sun, yellow grass). Dark scenes stay deep navy, not black."
+  },
+  "lighting": "Dynamic light tuned to the pixel art (wiki), tied to sun and moon. Frames: torches and crystals cast coloured pools (blue, green, orange), a glowing green circle lights the ground in battle, starry night towers lit by sparkle points, eclipse shots with a burning rim.",
+  "silhouette": "Small chibi heroes (about 1/8 of frame height) with big hair shapes and one bright colour each (blue-haired Valere, blond Zale); a separate high-res character art pose for intros, blue line art filling in to full colour.",
+  "motion": {
+    "timing": "No frame timings measured. Battle frames show quick strikes with white arc slashes and big damage numbers that pop and hang; enemies bob in idle.",
+    "principles": [
+      "anticipation",
+      "smear",
+      "staging",
+      "secondary action"
+    ]
+  },
+  "texture": "SNES-era clusters (Chrono Trigger vein, wiki) with dark outlines on characters and soft outline on terrain; rock and grass get dense patterned texture, water stays flat with highlight streaks.",
+  "camera": "Fixed 3/4 top-down view; the overworld shown at small scale, towns at close scale (wiki). Frames: slow vertical pans up waterfalls and towers, a sailboat crossing open sea seen from high above.",
+  "sound": "Chiptune-style score by Eric W. Brown with tracks by Yasunori Mitsuda; signature instrument and ambience per island.",
+  "acting": {
+    "enters": "Character intro: wireframe blue outline draws on, then fills to full colour pose, then cuts to the sprite in a dialogue box with a portrait.",
+    "acts": "Battle: hero steps out of the party ring, strikes with a white arc, number pops; others idle-bob. Town: musicians play, NPCs sit and fish. Characters climb, swim, run freely (wiki).",
+    "exits": "Strikers step back to their spot; scenes cut out to black.",
+    "comes_back": true,
+    "depth": "Two scales: tiny sailing boat on the world map, chibi sprites in towns, full illustration in intros. Same hero read at three sizes."
+  },
+  "techniques": [
+    "hue-shifted ramps: shadows to blue-purple, lights to orange-yellow",
+    "coloured light pools from torches and crystals",
+    "line-art to colour fill reveal for a character intro",
+    "white arc slash + popping damage number on the hit",
+    "same hero shown at map, sprite and portrait scales",
+    "dynamic light over pixel sprites tied to the theme (sun/moon)"
+  ],
+  "feel": "saturated hue-shifted world + coloured light pools + chibi heroes stepping out to strike = warm SNES nostalgia, alive",
+  "for_fred": "Introduce Fred like the Sea of Stars intro: outline draws on in one colour, fills to full colour, then cut to small Fred in the scene. In action beats, have him step out of his spot, strike, and step back, so the return reads as part of the move.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Sea_of_Stars",
+    "studies/pixel-art/sources.yaml",
+    "data/study/pixel/work/sea-of-stars/clip1-7272007848274529541.jpg",
+    "data/study/pixel/work/sea-of-stars/clip2-7626775278697811222.jpg",
+    "data/study/pixel/work/sea-of-stars/clip3-7276122953413102891.jpg"
+  ]
+}

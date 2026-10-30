@@ -1,0 +1,49 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "52cf34bd21278bfe785e8e347a90330e515478c4e5b657d67c5a8aa1cb360910",
+    "created_at": "2026-10-05T06:53:05.959257Z"
+  },
+  "video": "servicenow-what-are-servicenow-ai-agents",
+  "event": "e029",
+  "task": "a2-e029",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Whole live-action frame: colleague walks off right behind the seated pair while the camera slowly tilts down",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["slide_right", "slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 1800, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x168", "verdict": "override", "label": "music", "note": "Plucked harmonic note in a regular rhythmic series; part of the score, no visual trigger."},
+    {"id": "x169", "verdict": "override", "label": "music", "note": "Same repeating plucked-note pattern as its neighbours; no on-screen event at that moment."},
+    {"id": "x170", "verdict": "override", "label": "music", "note": "High CLAP chime score, but the shape matches the rhythmic score notes around it; nothing pops in visually."},
+    {"id": "x171", "verdict": "confirm", "label": "music", "note": "Broadband onset after the event, near the next spoken line; reads as a musical accent or phrase change."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "footage camera drift",
+    "description": "Live-action office shot over about 1.8 s: the standing colleague finishes walking out of frame right while the camera slowly tilts down and settles on the seated pair (deadpan 'Great.'). No graphics.",
+    "why_premium": "A slow, motivated operator move with shallow depth of field and defocused foreground props gives the comedic reaction beat a cinematic finish instead of a static locked shot."
+  },
+  "build_hint": {
+    "gsap": "No graphic build; footage plays as is. For a synthetic version on a still plate: gsap.fromTo(plate, {yPercent: -4}, {yPercent: 0, duration: 1.8, ease: 'sine.inOut'}) with the plate scaled to about 1.08 to hide edges.",
+    "remotion": "<OffthreadVideo> clip; synthetic version: translateY = interpolate(frame, [0, 54], [-28, 0], {easing: Easing.inOut(Easing.sin)}) on a 1.08-scaled still."
+  },
+  "confidence": "medium",
+  "notes": "camera.move is tilt_down (pan_y -0.18), so the move is reported as a camera tilt. The exiting colleague has no box of his own (he is gone by the end frame), so he is folded into the whole-frame b01. b02 (OCR 'M', mug/hand area) only shifts with the camera, so it is not listed. x168 is also reviewed in e028."
+}

@@ -1,0 +1,55 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T14:00:39Z"
+  },
+  "id": "mother-3",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "neutral",
+    "notes": "Clip3 is real footage, clip1 mixes Smash 3D with real sprite scenes, clip2 is fan art (ignored). Sprites: flat fills plus one darker shade, warm pastels. Backdrops carry the colour: a screen of yellow sunflowers, magenta or blue radial glows, a grey-white flashback, a mauve banded sea."
+  },
+  "lighting": "No light on sprites at all; mood is set by swapping the whole backdrop: concentric radial glow rings (magenta for menace, blue for a sacred moment with a single vertical light beam), a near-monochrome grey-white flashback room, a sunset-banded sea.",
+  "silhouette": "Round heads about as big as the body, stubby limbs, clean dark 1px outline all round; characters told apart by one feature (Lucas's blond bowl cut, Kumatora's pink hair, cowboy hats in the funeral crowd). Readable even when the sprite is 12-16 px tall in a wide shot.",
+  "motion": {
+    "timing": "No metrics file: describe only. Bespoke cutscene animations; comedy and drama rely on pauses and repeated gags that escalate. In the footage most frames are still, posed characters with the backdrop doing the moving (rings pulse, waves scroll).",
+    "principles": [
+      "timing",
+      "exaggeration",
+      "staging",
+      "anticipation"
+    ]
+  },
+  "texture": "Flat pastel fills on characters with a soft dark oval contact shadow under each sprite; backgrounds are banded, wavy or patterned (layered wave stripes, radial rings, dense flower tiles) and animate as the battle and story backdrops.",
+  "camera": "Top-down 3/4 for exploration with mostly locked frames; battles in first person against distorted animated backgrounds. Cutscenes hold wide on a static stage and let the characters move inside it.",
+  "sound": "Combo hits are timed to each enemy's music beat; the main theme is simple enough to play with one finger.",
+  "acting": {
+    "enters": "Characters arrive in small walk-ons; at the funeral the mourners stand in a loose ring with backs to camera and the hero walks up into the middle.",
+    "acts": "Comic and sad timing from a beat of stillness, then a short sharp reaction; dialogue boxes carry the emotion while the sprite barely moves. Running gags come back each time a bit sillier.",
+    "exits": "Walk off mid-scene or simply stop being in frame, letting an empty backdrop (an empty sea, a white flash) land the moment.",
+    "comes_back": true,
+    "depth": "Extreme scale for emotion: Lucas tiny alone in a screen of sunflowers; mourners from behind in front frame the hero; party small at the bottom under a huge boss machine."
+  },
+  "techniques": [
+    "pause-then-react comic timing",
+    "running gag that escalates each time it returns",
+    "flat unshaded pastel sprites with 1px dark outline and an oval contact shadow",
+    "radial glow-ring backdrop recoloured per mood (magenta threat, blue sacred)",
+    "whole-scene monochrome wash for a flashback",
+    "tiny hero in a huge field of one colour for loneliness",
+    "foreground figures seen from behind framing the hero"
+  ],
+  "feel": "flat pastel actors + loud single-colour backdrop + beat of stillness before the gag = warm deadpan comedy that can turn sad",
+  "for_fred": "Make Fred a running gag: he exits, comes back later doing the same bit slightly sillier each time, and once appears tiny alone in a big empty field of colour while Robert talks. Hold still a beat before every reaction, and change the backdrop (radial glow ring in a new colour) instead of animating Fred more.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Mother_3",
+    "data/study/pixel/work/mother-3/clip1-7625333611155197197.jpg",
+    "data/study/pixel/work/mother-3/clip2-7495868893865512200.jpg",
+    "data/study/pixel/work/mother-3/clip3-7604926309101309197.jpg"
+  ]
+}

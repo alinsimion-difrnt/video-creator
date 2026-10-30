@@ -1,0 +1,86 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "b15bcf32c780bd27c49587708ba9450d247d7ba177c6feb42fcd43408c8b0b00",
+    "created_at": "2026-10-05T06:55:59.968627Z"
+  },
+  "video": "workday-workday-adaptive-planning-demo-finan",
+  "event": "e042",
+  "task": "a2-e042",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "App page body: Version admin content (with nav drawer) clears to a blank white loading page",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "hard swap to blank page (navigation)",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b07",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Breadcrumb changes from 'Modeling' to 'Sheets / P&L'",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "text swap",
+      "is_text": true,
+      "text": "Sheets / P&L",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": null,
+      "manual_box": [472, 484, 525, 516],
+      "manual_reason": "No candidate box covers the loading spinner that appears at the page centre.",
+      "label": "Circular loading spinner",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["fade", "rotate"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Mouse cursor after clicking the P&L menu entry",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "page load spinner",
+    "description": "After the P&L entry is clicked, the page body cuts to blank white, the breadcrumb updates to 'Sheets / P&L' and a spinner appears while the sheet loads.",
+    "why_premium": "Not premium as recorded: an unedited loading state left in the demo. The breadcrumb update does confirm the navigation; a polished cut would trim the wait or replace it with a skeleton or crossfade."
+  },
+  "build_hint": {
+    "gsap": "Better to skip the loading state: tl.to(oldPage, {opacity: 0, duration: 0.2, ease: 'power1.in'}).set(breadcrumb, {textContent: 'Sheets / P&L'}).fromTo(newSheet, {opacity: 0, y: 8}, {opacity: 1, y: 0, duration: 0.35, ease: 'power2.out'}); if the spinner is kept, gsap.to(spinner, {rotation: 360, repeat: -1, duration: 0.8, ease: 'none'}).",
+    "remotion": "Crossfade old page to new sheet: opacity = interpolate(frame, [0, 6], [1, 0]) for the old page and interpolate(frame, [6, 16], [0, 1], {easing: Easing.out(Easing.cubic)}) for the new; spinner rotate = (frame / fps) * 450 deg if shown."
+  },
+  "confidence": "medium",
+  "notes": "Diff boxes b02-b04 sit on blank white areas (residue of the cleared page) and are not listed separately. The cursor moves only slightly; its direction is uncertain."
+}

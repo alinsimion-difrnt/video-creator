@@ -1,0 +1,36 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes", "annotator": "claude-code",
+                 "input_hash": "92fcc5f30d65581508f4105b729a746b1486835b999aa3af12ab6b40dd994210",
+                 "created_at": "2026-10-13T11:56:31+00:00"},
+  "id": "7393364579683732743",
+  "format": "split_screen",
+  "hook": {"type": "pattern_interrupt",
+           "line": "No gatekeeping. This is gonna annoy a lot of developers, but I want to share it.",
+           "visual": "He swings into frame in an orange hoodie at a podcast mic on a purple wall; label 'End of Front-End devs?' and yellow-highlighted word captions on top."},
+  "beats": [
+    {"t": 0.0, "what": "Lunges into frame; persistent 'End of Front-End devs?' label and 'Gatekeeping.' caption"},
+    {"t": 1.88, "what": "Teases controversy: this will annoy developers"},
+    {"t": 4.07, "what": "Cut to a UI/UX landing-page image on a neon-light background: 'convert this image to code?'"},
+    {"t": 6.6, "what": "Split screen: him on the left, tool screen recording on the right; drags the screenshot in"},
+    {"t": 11.11, "what": "Picks the output language from a dropdown (React, Vue, Svelte...)"},
+    {"t": 14.27, "what": "Result: the rebuilt landing page and its code appear side by side"},
+    {"t": 17.87, "what": "Floating code window over neon lines as he says copy or download"},
+    {"t": 18.52, "what": "CTA: comment a word to get the tool's name"}
+  ],
+  "graphics": {"captions": "word_by_word", "caption_position": "mixed",
+               "devices": ["split_screen", "screen_recording", "product_ui", "title_text", "b_roll", "jump_cut", "music_bed"],
+               "density": "heavy", "per_minute_estimate": 24},
+  "characters": [],
+  "cta": {"kind": "comment", "t": 18.52},
+  "why_it_works": [
+    "Physical entrance (he lunges into frame at 0 s) plus 'no gatekeeping' creates motion and a secret in the first second",
+    "Fear-based label 'End of Front-End devs?' stays on screen as a standing question that the demo answers",
+    "Input image shown first, then the generated page: a clear before/after in under 20 s",
+    "Comment-a-word-for-the-name CTA withholds the tool name, which explains 3,052 comments"
+  ],
+  "weaknesses": [
+    "Tool name is deliberately hidden, which frustrates viewers and buries the value in the comments",
+    "Code and UI text in the split-screen recording are tiny on a phone"
+  ],
+  "for_robert": "Copy the entrance: start with Fred physically swimming or crashing into frame at 0 s instead of a static first frame, and keep a short provocative question label pinned on screen while the demo answers it."
+}

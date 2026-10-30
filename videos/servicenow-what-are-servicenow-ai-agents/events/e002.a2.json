@@ -1,0 +1,47 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "c12d39d60114c80adc5e5f7dba3afccab54a086c35f4d2ad7020675f0b8a3d3d",
+    "created_at": "2026-10-05T06:53:40.590397Z"
+  },
+  "video": "servicenow-what-are-servicenow-ai-agents",
+  "event": "e002",
+  "task": "a2-e002",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Out-of-focus foreground person passing out of frame left, revealing the office background",
+      "role": "other",
+      "role_other": "footage foreground occluder",
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 250, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x004", "verdict": "override", "label": "music", "note": "Tonal harmonic onset with sustained low partials, same timbre as the soft plucked music bed in e001; before the burst and with no visual hit at 5.68 s."},
+    {"id": "x005", "verdict": "confirm", "label": "music", "note": "Continuing music bed note at the start of the burst; not a designed SFX for the foreground move."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "foreground occluder reveal",
+    "description": "Live-action office footage: a blurred foreground figure slides out of frame to the left, uncovering a colleague and the window behind while the in-focus subject stays put; letterbox bars stay static.",
+    "why_premium": "Shooting through a shallow-focus foreground and letting it clear acts as a natural, in-camera wipe that adds depth and a cinematic reveal without any graphic transition."
+  },
+  "build_hint": {
+    "gsap": "For a graphic recreation: a blurred foreground layer (filter: blur(20px)) over the scene; gsap.to(foreground, {xPercent: -60, duration: 0.3, ease: 'power2.out'}) while the scene layer stays static.",
+    "remotion": "Layer a blurred foreground <Img>/<OffthreadVideo> above the scene; translateX = interpolate(frame, [start, start+8], [0, -700], {easing: Easing.out(Easing.quad), extrapolateRight: 'clamp'}); scene untouched."
+  },
+  "confidence": "medium",
+  "notes": "Motion is inside the stock/live footage (camera.move none), not an applied animation; the build hint is only for a graphic recreation. b01 marks the revealed area, since the occluder itself has left frame by the end frame."
+}

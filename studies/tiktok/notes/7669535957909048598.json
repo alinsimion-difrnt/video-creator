@@ -1,0 +1,40 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "875b367a7935f549a9635ecb69ff07bbe476b74a9fd86be9fbaf1f01bf686cd9",
+                 "created_at": "2026-10-13T12:00:00+00:00"},
+  "id": "7669535957909048598",
+  "format": "animation",
+  "hook": {"type": "bold_claim",
+           "line": "AI engineering is the highest paying entry-level job in tech right now.",
+           "visual": "Black screen with a fixed white title on top; a 16:9 card on a grid background animates a purple bar chart of top tech salaries growing from zero."},
+  "beats": [
+    {"t": 0.0, "what": "Bar chart 'Highest Paying Tech Jobs in 2026' animates in under a fixed series title"},
+    {"t": 10.3, "what": "'Barrier To Entry' card with a striped boom gate that lifts"},
+    {"t": 20.6, "what": "'The Conventional Roadmap' card with a progress line about to fill"},
+    {"t": 30.9, "what": "Two cards: one stamped red 'IGNORED', the other '0 courses, started building'"},
+    {"t": 51.49, "what": "'Day 1: Start Building.' in green over a dark code window for Developer 2"},
+    {"t": 61.79, "what": "Glowing red '8 Months Later... 0 Callbacks' card"},
+    {"t": 72.09, "what": "Side by side result: 4 certificates and 0 offers vs 3 public projects and $150,000"},
+    {"t": 82.39, "what": "Cartoon superhero meme cutaway on 'the market pays for what you shipped'"},
+    {"t": 102.98, "what": "'PROJECT-FIRST' badge over two resource cards (fast.ai, Python For Everybody)"},
+    {"t": 113.28, "what": "Screenshot of the scikit-learn site as the next step; video ends mid-roadmap"}
+  ],
+  "graphics": {"captions": "title_only", "caption_position": "top",
+               "devices": ["title_text", "chart_or_number", "meme_cutaway", "screenshot", "b_roll", "music_bed", "sticker_emoji"],
+               "density": "heavy", "per_minute_estimate": 10},
+  "characters": [],
+  "cta": {"kind": "none", "t": null},
+  "why_it_works": [
+    "Salary numbers on an animated chart in the first 2 s answer 'why should I care' before any explanation",
+    "Two-developer comparison with the same start and different outcomes turns advice into a story with a verdict",
+    "A new motion card about every 10 s (9.03 events/min with zero cuts) keeps the eye busy without a face",
+    "'Part 1' in the title and ending mid-roadmap pulls viewers to the next part"
+  ],
+  "weaknesses": [
+    "Content sits in a small 16:9 strip, leaving most of the vertical frame black",
+    "No spoken-word captions, so sound-off viewers only get the fixed title",
+    "No face (face share 0.053), so there is no personal trust signal",
+    "Ends abruptly with no follow or part 2 prompt"
+  ],
+  "for_robert": "Borrow the two-person comparison: Fred plays 'developer 1' who does it the slow way while Robert plays the winner, each with a big result card at the end."
+}

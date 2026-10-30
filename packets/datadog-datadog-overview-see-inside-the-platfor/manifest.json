@@ -1,0 +1,639 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "s5_packets",
+    "annotator": "code",
+    "skill": null,
+    "model": null,
+    "input_hash": "7cb6db366342398d094b32833e9b0165f01006382e3c544bc00b342cf20e2dec",
+    "created_at": "2026-10-05T06:18:05.459575Z"
+  },
+  "video": "datadog-datadog-overview-see-inside-the-platfor",
+  "tier": "reference",
+  "max_images_per_task": 12,
+  "event_images": 4,
+  "tasks": [
+    {
+      "id": "a1-p1",
+      "kind": "a1",
+      "images": [
+        "pass1/sheets/shot_s001_1.jpg",
+        "pass1/keyframes/shot_s001.jpg",
+        "pass1/sheets/shot_s002_1.jpg",
+        "pass1/keyframes/shot_s002.jpg",
+        "pass1/sheets/shot_s003_1.jpg",
+        "pass1/keyframes/shot_s003.jpg",
+        "pass1/sheets/shot_s004_1.jpg",
+        "pass1/keyframes/shot_s004.jpg",
+        "pass1/sheets/shot_s005_1.jpg",
+        "pass1/sheets/shot_s005_2.jpg",
+        "pass1/keyframes/shot_s005.jpg"
+      ],
+      "files": [
+        "pass1/anchors.json"
+      ],
+      "shots": [
+        "s001",
+        "s002",
+        "s003",
+        "s004",
+        "s005"
+      ],
+      "event": null,
+      "siblings": [],
+      "output": "videos/datadog-datadog-overview-see-inside-the-platfor/a1.p1.json",
+      "input_hash": "bb7f0027ff42518211fe8c41b5b539f757d68ee72c64f0bfaa87fa67dd80a9ac"
+    },
+    {
+      "id": "a1-p2",
+      "kind": "a1",
+      "images": [
+        "pass1/sheets/shot_s006_1.jpg",
+        "pass1/keyframes/shot_s006.jpg",
+        "pass1/sheets/shot_s007_1.jpg",
+        "pass1/keyframes/shot_s007.jpg",
+        "pass1/sheets/shot_s008_1.jpg",
+        "pass1/sheets/shot_s008_2.jpg",
+        "pass1/keyframes/shot_s008.jpg",
+        "pass1/sheets/shot_s009_1.jpg",
+        "pass1/keyframes/shot_s009.jpg",
+        "pass1/sheets/shot_s010_1.jpg",
+        "pass1/keyframes/shot_s010.jpg"
+      ],
+      "files": [
+        "pass1/anchors.json"
+      ],
+      "shots": [
+        "s006",
+        "s007",
+        "s008",
+        "s009",
+        "s010"
+      ],
+      "event": null,
+      "siblings": [],
+      "output": "videos/datadog-datadog-overview-see-inside-the-platfor/a1.p2.json",
+      "input_hash": "d3f04df27c34cd160cc91593ec51d2efe02ed1a44cf737fc9c2b92b70d2d717d"
+    },
+    {
+      "id": "a1-p3",
+      "kind": "a1",
+      "images": [
+        "pass1/sheets/shot_s011_1.jpg",
+        "pass1/keyframes/shot_s011.jpg",
+        "pass1/sheets/shot_s012_1.jpg",
+        "pass1/sheets/shot_s012_2.jpg",
+        "pass1/sheets/shot_s012_3.jpg",
+        "pass1/keyframes/shot_s012.jpg",
+        "pass1/sheets/shot_s013_1.jpg",
+        "pass1/sheets/shot_s013_2.jpg",
+        "pass1/sheets/shot_s013_3.jpg",
+        "pass1/sheets/shot_s013_4.jpg",
+        "pass1/keyframes/shot_s013.jpg"
+      ],
+      "files": [
+        "pass1/anchors.json"
+      ],
+      "shots": [
+        "s011",
+        "s012",
+        "s013"
+      ],
+      "event": null,
+      "siblings": [],
+      "output": "videos/datadog-datadog-overview-see-inside-the-platfor/a1.p3.json",
+      "input_hash": "361f5050bdc33f82b1af0009f3f935d9b49c2768dbfc2938aced038dd5ba3c27"
+    },
+    {
+      "id": "a2-e001",
+      "kind": "a2",
+      "images": [
+        "events/e001/filmstrip.jpg",
+        "events/e001/end_marked.jpg",
+        "events/e001/end_clean.jpg",
+        "events/e001/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e001/facts.json",
+        "events/e001/candidates.json"
+      ],
+      "shots": [],
+      "event": "e001",
+      "siblings": [],
+      "output": "videos/datadog-datadog-overview-see-inside-the-platfor/events/e001.a2.json",
+      "input_hash": "6383b9f465ef3879f5bfc92ac5a5a2c6799b62c3df56328a209c7389208e562b"
+    },
+    {
+      "id": "a2-e002",
+      "kind": "a2",
+      "images": [
+        "events/e002/filmstrip.jpg",
+        "events/e002/end_marked.jpg",
+        "events/e002/end_clean.jpg",
+        "events/e002/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e002/facts.json",
+        "events/e002/candidates.json"
+      ],
+      "shots": [],
+      "event": "e002",
+      "siblings": [],
+      "output": "videos/datadog-datadog-overview-see-inside-the-platfor/events/e002.a2.json",
+      "input_hash": "ae127cf38e36dbe3488b4f6a39675821481ac473f9f03e8107409aaa7e4db92d"
+    },
+    {
+      "id": "a2-e003",
+      "kind": "a2",
+      "images": [
+        "events/e003/filmstrip.jpg",
+        "events/e003/end_marked.jpg",
+        "events/e003/end_clean.jpg",
+        "events/e003/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e003/facts.json",
+        "events/e003/candidates.json"
+      ],
+      "shots": [],
+      "event": "e003",
+      "siblings": [],
+      "output": "videos/datadog-datadog-overview-see-inside-the-platfor/events/e003.a2.json",
+      "input_hash": "24751b3b23c5e8cec4f7c3360e232d4d72c5db56308c5719de3c62d28ba36929"
+    },
+    {
+      "id": "a2-e004",
+      "kind": "a2",
+      "images": [
+        "events/e004/filmstrip.jpg",
+        "events/e004/end_marked.jpg",
+        "events/e004/end_clean.jpg",
+        "events/e004/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e004/facts.json",
+        "events/e004/candidates.json"
+      ],
+      "shots": [],
+      "event": "e004",
+      "siblings": [],
+      "output": "videos/datadog-datadog-overview-see-inside-the-platfor/events/e004.a2.json",
+      "input_hash": "7380b2a629d2c49402059432feef923879bc0e901686f18bb366582404dee0f7"
+    },
+    {
+      "id": "a2-e005",
+      "kind": "a2",
+      "images": [
+        "events/e005/filmstrip.jpg",
+        "events/e005/end_marked.jpg",
+        "events/e005/end_clean.jpg",
+        "events/e005/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e005/facts.json",
+        "events/e005/candidates.json"
+      ],
+      "shots": [],
+      "event": "e005",
+      "siblings": [],
+      "output": "videos/datadog-datadog-overview-see-inside-the-platfor/events/e005.a2.json",
+      "input_hash": "d8b31999498dd34a9a4dd881102d215d4801848c7083025ab7d54d35ba23bb9b"
+    },
+    {
+      "id": "a2-e006",
+      "kind": "a2",
+      "images": [
+        "events/e006/filmstrip.jpg",
+        "events/e006/end_marked.jpg",
+        "events/e006/end_clean.jpg",
+        "events/e006/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e006/facts.json",
+        "events/e006/candidates.json"
+      ],
+      "shots": [],
+      "event": "e006",
+      "siblings": [],
+      "output": "videos/datadog-datadog-overview-see-inside-the-platfor/events/e006.a2.json",
+      "input_hash": "50cb307acb70038dd907302df100e066c25e791054beb1ff6442dc59eb7e253c"
+    },
+    {
+      "id": "a2-e007",
+      "kind": "a2",
+      "images": [
+        "events/e007/filmstrip.jpg",
+        "events/e007/end_marked.jpg",
+        "events/e007/end_clean.jpg",
+        "events/e007/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e007/facts.json",
+        "events/e007/candidates.json"
+      ],
+      "shots": [],
+      "event": "e007",
+      "siblings": [],
+      "output": "videos/datadog-datadog-overview-see-inside-the-platfor/events/e007.a2.json",
+      "input_hash": "78b7965d6c406b7faa9b67e99c123e1a47c46bf27a6af9cf6dddc66b2b111402"
+    },
+    {
+      "id": "a2-e008",
+      "kind": "a2",
+      "images": [
+        "events/e008/filmstrip.jpg",
+        "events/e008/end_marked.jpg",
+        "events/e008/end_clean.jpg",
+        "events/e008/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e008/facts.json",
+        "events/e008/candidates.json"
+      ],
+      "shots": [],
+      "event": "e008",
+      "siblings": [],
+      "output": "videos/datadog-datadog-overview-see-inside-the-platfor/events/e008.a2.json",
+      "input_hash": "ed64338f015cb396c3f16b211430d313c59024e6f9ae980dc54784094828ecad"
+    },
+    {
+      "id": "a2-e009",
+      "kind": "a2",
+      "images": [
+        "events/e009/filmstrip.jpg",
+        "events/e009/end_marked.jpg",
+        "events/e009/end_clean.jpg",
+        "events/e009/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e009/facts.json",
+        "events/e009/candidates.json"
+      ],
+      "shots": [],
+      "event": "e009",
+      "siblings": [],
+      "output": "videos/datadog-datadog-overview-see-inside-the-platfor/events/e009.a2.json",
+      "input_hash": "a690a73c3efd1dc3670fab46c746674a59bb3bca7deccddd66d29db68b99a54a"
+    },
+    {
+      "id": "a2-e010",
+      "kind": "a2",
+      "images": [
+        "events/e010/filmstrip.jpg",
+        "events/e010/end_marked.jpg",
+        "events/e010/end_clean.jpg",
+        "events/e010/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e010/facts.json",
+        "events/e010/candidates.json"
+      ],
+      "shots": [],
+      "event": "e010",
+      "siblings": [],
+      "output": "videos/datadog-datadog-overview-see-inside-the-platfor/events/e010.a2.json",
+      "input_hash": "c3fc9623291fe7be1c1c8a252722eaec11771aebe97237ebb694018a18dab3c8"
+    },
+    {
+      "id": "a2-e011",
+      "kind": "a2",
+      "images": [
+        "events/e011/filmstrip.jpg",
+        "events/e011/end_marked.jpg",
+        "events/e011/end_clean.jpg",
+        "events/e011/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e011/facts.json",
+        "events/e011/candidates.json"
+      ],
+      "shots": [],
+      "event": "e011",
+      "siblings": [],
+      "output": "videos/datadog-datadog-overview-see-inside-the-platfor/events/e011.a2.json",
+      "input_hash": "ba3ee1201f1502816954145d191156d7a7f2a56bb7591a1ddd3f5e17ad1bcbe2"
+    },
+    {
+      "id": "a2-e012",
+      "kind": "a2",
+      "images": [
+        "events/e012/filmstrip.jpg",
+        "events/e012/end_marked.jpg",
+        "events/e012/end_clean.jpg",
+        "events/e012/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e012/facts.json",
+        "events/e012/candidates.json"
+      ],
+      "shots": [],
+      "event": "e012",
+      "siblings": [],
+      "output": "videos/datadog-datadog-overview-see-inside-the-platfor/events/e012.a2.json",
+      "input_hash": "0672a6bfd6f0cf571a3a614c2b9722a05b8ffae047d6defcb5883db5ab9ad6fd"
+    },
+    {
+      "id": "a2-e013",
+      "kind": "a2",
+      "images": [
+        "events/e013/filmstrip.jpg",
+        "events/e013/end_marked.jpg",
+        "events/e013/end_clean.jpg",
+        "events/e013/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e013/facts.json",
+        "events/e013/candidates.json"
+      ],
+      "shots": [],
+      "event": "e013",
+      "siblings": [],
+      "output": "videos/datadog-datadog-overview-see-inside-the-platfor/events/e013.a2.json",
+      "input_hash": "9c023764d9f47c718e26b37bdf5225f48b5211a6a62b0b134bc68b572b288714"
+    },
+    {
+      "id": "a2-e014",
+      "kind": "a2",
+      "images": [
+        "events/e014/filmstrip.jpg",
+        "events/e014/end_marked.jpg",
+        "events/e014/end_clean.jpg",
+        "events/e014/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e014/facts.json",
+        "events/e014/candidates.json"
+      ],
+      "shots": [],
+      "event": "e014",
+      "siblings": [],
+      "output": "videos/datadog-datadog-overview-see-inside-the-platfor/events/e014.a2.json",
+      "input_hash": "7cb4d87502b06906efb82526f49a89108c27b858b9a3fe11ac21e383ce1bdafa"
+    },
+    {
+      "id": "a2-e015",
+      "kind": "a2",
+      "images": [
+        "events/e015/filmstrip.jpg",
+        "events/e015/end_marked.jpg",
+        "events/e015/end_clean.jpg",
+        "events/e015/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e015/facts.json",
+        "events/e015/candidates.json"
+      ],
+      "shots": [],
+      "event": "e015",
+      "siblings": [],
+      "output": "videos/datadog-datadog-overview-see-inside-the-platfor/events/e015.a2.json",
+      "input_hash": "41496091c8befb0cecd53aada2fe8e055e31e755b5a3b31be6eb06c0c01f3969"
+    },
+    {
+      "id": "a2-e016",
+      "kind": "a2",
+      "images": [
+        "events/e016/filmstrip.jpg",
+        "events/e016/end_marked.jpg",
+        "events/e016/end_clean.jpg",
+        "events/e016/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e016/facts.json",
+        "events/e016/candidates.json"
+      ],
+      "shots": [],
+      "event": "e016",
+      "siblings": [],
+      "output": "videos/datadog-datadog-overview-see-inside-the-platfor/events/e016.a2.json",
+      "input_hash": "dd857347ddf9427c6c094ff8f1958b763528c12bfa4c3cf93fd2c75e9c70448a"
+    },
+    {
+      "id": "a2-e017",
+      "kind": "a2",
+      "images": [
+        "events/e017/filmstrip.jpg",
+        "events/e017/end_marked.jpg",
+        "events/e017/end_clean.jpg",
+        "events/e017/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e017/facts.json",
+        "events/e017/candidates.json"
+      ],
+      "shots": [],
+      "event": "e017",
+      "siblings": [],
+      "output": "videos/datadog-datadog-overview-see-inside-the-platfor/events/e017.a2.json",
+      "input_hash": "e9cfe23b52957b4446e69a8be2d873421375bdd43ef3e14d28ad2b61eb512003"
+    },
+    {
+      "id": "a2-e018",
+      "kind": "a2",
+      "images": [
+        "events/e018/filmstrip.jpg",
+        "events/e018/end_marked.jpg",
+        "events/e018/end_clean.jpg",
+        "events/e018/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e018/facts.json",
+        "events/e018/candidates.json"
+      ],
+      "shots": [],
+      "event": "e018",
+      "siblings": [],
+      "output": "videos/datadog-datadog-overview-see-inside-the-platfor/events/e018.a2.json",
+      "input_hash": "64f1bc2fb1014e569349a655109bf339d7f9ed56fceca0293b767a55308206ad"
+    },
+    {
+      "id": "a2-e019",
+      "kind": "a2",
+      "images": [
+        "events/e019/filmstrip.jpg",
+        "events/e019/end_marked.jpg",
+        "events/e019/end_clean.jpg",
+        "events/e019/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e019/facts.json",
+        "events/e019/candidates.json"
+      ],
+      "shots": [],
+      "event": "e019",
+      "siblings": [],
+      "output": "videos/datadog-datadog-overview-see-inside-the-platfor/events/e019.a2.json",
+      "input_hash": "895fde1a43c61eedf6c3f5d06be450a95c2db5c427a20600bacda2e3c879e498"
+    },
+    {
+      "id": "a2-e020",
+      "kind": "a2",
+      "images": [
+        "events/e020/filmstrip.jpg",
+        "events/e020/end_marked.jpg",
+        "events/e020/end_clean.jpg",
+        "events/e020/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e020/facts.json",
+        "events/e020/candidates.json"
+      ],
+      "shots": [],
+      "event": "e020",
+      "siblings": [],
+      "output": "videos/datadog-datadog-overview-see-inside-the-platfor/events/e020.a2.json",
+      "input_hash": "ab7d2b69ed36bccf4d1a3b09ec00a0178824f83b74538453a2640abc2379301f"
+    },
+    {
+      "id": "a2-e021",
+      "kind": "a2",
+      "images": [
+        "events/e021/filmstrip.jpg",
+        "events/e021/end_marked.jpg",
+        "events/e021/end_clean.jpg",
+        "events/e021/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e021/facts.json",
+        "events/e021/candidates.json"
+      ],
+      "shots": [],
+      "event": "e021",
+      "siblings": [],
+      "output": "videos/datadog-datadog-overview-see-inside-the-platfor/events/e021.a2.json",
+      "input_hash": "41f991e9b81384aa913c66deeff64e5a90522f1e3de14203bda06045496ef666"
+    },
+    {
+      "id": "a2-e023",
+      "kind": "a2",
+      "images": [
+        "events/e023/filmstrip.jpg",
+        "events/e023/end_marked.jpg",
+        "events/e023/end_clean.jpg",
+        "events/e023/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e023/facts.json",
+        "events/e023/candidates.json"
+      ],
+      "shots": [],
+      "event": "e023",
+      "siblings": [],
+      "output": "videos/datadog-datadog-overview-see-inside-the-platfor/events/e023.a2.json",
+      "input_hash": "328b0b028bb228be94ac9a48c5767ea7b5201636515e8fbd4b30fe1cc2f1b6a3"
+    },
+    {
+      "id": "a2-e025",
+      "kind": "a2",
+      "images": [
+        "events/e025/filmstrip.jpg",
+        "events/e025/end_marked.jpg",
+        "events/e025/end_clean.jpg",
+        "events/e025/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e025/facts.json",
+        "events/e025/candidates.json"
+      ],
+      "shots": [],
+      "event": "e025",
+      "siblings": [],
+      "output": "videos/datadog-datadog-overview-see-inside-the-platfor/events/e025.a2.json",
+      "input_hash": "256b7b078b8f28197f1c79844c1f34135282e6ad574e8d7767874610f773bc6c"
+    },
+    {
+      "id": "a2-e026",
+      "kind": "a2",
+      "images": [
+        "events/e026/filmstrip.jpg",
+        "events/e026/end_marked.jpg",
+        "events/e026/end_clean.jpg",
+        "events/e026/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e026/facts.json",
+        "events/e026/candidates.json"
+      ],
+      "shots": [],
+      "event": "e026",
+      "siblings": [],
+      "output": "videos/datadog-datadog-overview-see-inside-the-platfor/events/e026.a2.json",
+      "input_hash": "e7231d23e4b7a88b200f22025c99dff13c121312e4b155cdac26e40b446d3cd9"
+    },
+    {
+      "id": "a2-e027",
+      "kind": "a2",
+      "images": [
+        "events/e027/filmstrip.jpg",
+        "events/e027/end_marked.jpg",
+        "events/e027/end_clean.jpg",
+        "events/e027/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e027/facts.json",
+        "events/e027/candidates.json"
+      ],
+      "shots": [],
+      "event": "e027",
+      "siblings": [],
+      "output": "videos/datadog-datadog-overview-see-inside-the-platfor/events/e027.a2.json",
+      "input_hash": "69a601d1fa6d21960ffd2290794596022b9d387953497d3936beac15c64c33d4"
+    },
+    {
+      "id": "a2-e029",
+      "kind": "a2",
+      "images": [
+        "events/e029/filmstrip.jpg",
+        "events/e029/end_marked.jpg",
+        "events/e029/end_clean.jpg",
+        "events/e029/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e029/facts.json",
+        "events/e029/candidates.json"
+      ],
+      "shots": [],
+      "event": "e029",
+      "siblings": [],
+      "output": "videos/datadog-datadog-overview-see-inside-the-platfor/events/e029.a2.json",
+      "input_hash": "bb17b5122ec26faf1d86b25fe357f769b64288ea204f83028bbf21dd5d288173"
+    },
+    {
+      "id": "a2-e030",
+      "kind": "a2",
+      "images": [
+        "events/e030/filmstrip.jpg",
+        "events/e030/end_marked.jpg",
+        "events/e030/end_clean.jpg",
+        "events/e030/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e030/facts.json",
+        "events/e030/candidates.json"
+      ],
+      "shots": [],
+      "event": "e030",
+      "siblings": [],
+      "output": "videos/datadog-datadog-overview-see-inside-the-platfor/events/e030.a2.json",
+      "input_hash": "fc7e9369f63528140a357687d824732c09a260d399192e84c42fdb8550c7d6c2"
+    }
+  ],
+  "skipped": [
+    {
+      "event": "e022",
+      "reason": "overlap",
+      "of": "e021"
+    },
+    {
+      "event": "e024",
+      "reason": "overlap",
+      "of": "e023"
+    },
+    {
+      "event": "e028",
+      "reason": "overlap",
+      "of": "e027"
+    }
+  ]
+}

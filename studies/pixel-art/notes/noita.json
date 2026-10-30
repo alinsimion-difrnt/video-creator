@@ -1,0 +1,53 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T14:00:48+00:00"
+  },
+  "id": "noita",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "cool",
+    "notes": "Frames: dark blue-grey and brown cave rock, near-black voids; the light comes from the simulated matter: orange-yellow fire, sparks, red blood, pink crystal, blue water. Small blue-purple witch."
+  },
+  "lighting": "Darkness with emissive matter: fire, explosions and sparks light the area around them in a warm glow (clip 1, 5.7-8.3 s), the rest of the cave stays dim. Light moves with the effect.",
+  "silhouette": "Tiny robed witch (minä, wiki) only a few pixels tall, readable by colour (blue-purple) against brown rock and by the wand flash. Enemies are small too; the world is the star.",
+  "motion": {
+    "timing": "No frame timings measured. Effects run per pixel each frame: sand falls and piles (clip 2), fire spreads, explosions throw particles that settle over ~2 s (clip 1).",
+    "principles": [
+      "follow-through",
+      "secondary action",
+      "arcs"
+    ]
+  },
+  "texture": "Every pixel is simulated material (falling-sand engine, wiki): sand, liquid, smoke, steam, blood. Walls are noisy speckled rock that breaks into loose pixels; burnt wood disappears into smoke (wiki).",
+  "camera": "Side view that follows the witch; the explosion fills the screen and the camera holds while debris settles.",
+  "sound": "",
+  "acting": {
+    "enters": "Witch walks in small from the edge of a big dark cave (clip 1).",
+    "acts": "Cause and effect is the acting: one wand shot sets off a chain of fire and explosion far bigger than the character.",
+    "exits": "Death screen is the punchline (clip 3, 'cause of death' card).",
+    "comes_back": null,
+    "depth": "Character stays tiny; scale comes from the effect blooming large around her."
+  },
+  "techniques": [
+    "particle pixels that obey gravity: sand piles, smoke rises, steam rains back as water",
+    "emissive fire and sparks as the only bright light in a dark scene",
+    "tiny hero, huge consequence: small action, screen-filling effect",
+    "debris settles after the burst instead of vanishing",
+    "materials react: lava + water make rock and steam (wiki)"
+  ],
+  "feel": "dark cave + tiny witch + glowing pixel fire that spreads and settles = chaotic, cause-and-effect comedy",
+  "for_fred": "Use one small Fred action that triggers a big pixel consequence (a splash that spreads, sparks that fall and pile up), then hold 1 s while the particles settle and Fred looks at it. The aftermath is the gag.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Noita_(video_game)",
+    "studies/pixel-art/sources.yaml",
+    "data/study/pixel/work/noita/clip1-7056068659198020910.jpg",
+    "data/study/pixel/work/noita/clip2-7639424539415399710.jpg",
+    "data/study/pixel/work/noita/clip3-7479640671985437957.jpg"
+  ]
+}

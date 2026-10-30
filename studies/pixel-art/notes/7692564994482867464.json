@@ -1,0 +1,52 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0d40095571aaff5bb8b1e30ecf18738f3851524649dde1e47f620f27a6d83fa6",
+    "created_at": "2026-10-13T13:05:37+00:00"
+  },
+  "id": "7692564994482867464",
+  "kind": "clip",
+  "palette": {
+    "colours_estimate": 3,
+    "shadows": "cool",
+    "notes": "Measured palette_size 3 (black field dominates; the small sprite's colours count as rare), 1 ramp, hue shift 0. Visually: pure black ground, emerald-to-mint greens for the costume and glow, skin and hair accents."
+  },
+  "lighting": "The ring is the light source: a green glow on the hand lights the hero's front from inside an otherwise black frame. Ends on a full green flash and a glowing emblem that fades to black.",
+  "silhouette": "Small sprite on black: arm extended forward with the glowing ring is the readable pose; costume swaps (different Lanterns) keep the same pose silhouette.",
+  "motion": {
+    "timing": "Code: 114 changes in 19.37 s, 5.89 drawings/s, hold median 33.3 ms (p25 and p75 the same), on 1s. Character-swap beats roughly every 1.6 s on the sheet, then flash, emblem, fade.",
+    "principles": [
+      "pose-to-pose",
+      "anticipation",
+      "glow pulse",
+      "match cut"
+    ]
+  },
+  "texture": "Clean low-res sprite (clean_pixels true, dither 0.0001) on flat black; soft additive glow halo around the ring; flat green fill with soft emblem glow at the end.",
+  "camera": "Static. The sprite is placed small in the middle, later shifted lower; the reveal is a full-frame colour flash, then a centred emblem.",
+  "sound": "Caption: the oath animation, so the beats are timed to the spoken oath.",
+  "acting": {
+    "enters": "Each Lantern fades or cuts in already in the same ring-out pose; one figure turns into the next.",
+    "acts": "Hold the ring out, glow pulses; the cast cycles through several characters on the same mark, ending with one raising the ring overhead.",
+    "exits": "Characters dissolve into the next one; the last one is wiped by a full green flash.",
+    "comes_back": true,
+    "depth": "One plane, small figure in a huge black field; scale comes only from the full-screen emblem at the end."
+  },
+  "techniques": [
+    "match cut: same pose, swap the character",
+    "glow as the only light in a black frame",
+    "small sprite in negative space so the glow reads",
+    "full-frame colour flash to transition to the logo",
+    "emblem reveal then slow fade to black as the button"
+  ],
+  "feel": "black void + small sprite + green ring glow + same-pose character swaps = epic oath on a tiny budget",
+  "for_fred": "Use the same-pose swap: Fred and Pixie hit the identical pose on the same mark and the reel cuts between them on the beat, then a full-colour flash into the logo. Keep the sprite small and give it one glowing prop as the light source so it reads on a dark frame.",
+  "sources": [
+    "data/study/pixel/work/7692564994482867464/sheet.jpg",
+    "studies/pixel-art/clips/7692564994482867464.json",
+    "studies/pixel-art/tiktok.yaml"
+  ]
+}

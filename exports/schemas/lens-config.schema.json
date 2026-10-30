@@ -1,0 +1,4446 @@
+{
+  "$defs": {
+    "Analysis": {
+      "additionalProperties": false,
+      "properties": {
+        "audio_sample_rate": {
+          "exclusiveMinimum": 0,
+          "title": "Audio Sample Rate",
+          "type": "integer"
+        },
+        "base_fps": {
+          "exclusiveMinimum": 0,
+          "title": "Base Fps",
+          "type": "number"
+        },
+        "base_frame_width": {
+          "exclusiveMinimum": 0,
+          "title": "Base Frame Width",
+          "type": "integer"
+        },
+        "duplicate_max_distance": {
+          "maximum": 64,
+          "minimum": 0,
+          "title": "Duplicate Max Distance",
+          "type": "number"
+        },
+        "jpeg_quality": {
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Jpeg Quality",
+          "type": "integer"
+        },
+        "max_minutes": {
+          "exclusiveMinimum": 0,
+          "title": "Max Minutes",
+          "type": "number"
+        },
+        "palette_colors": {
+          "maximum": 16,
+          "minimum": 1,
+          "title": "Palette Colors",
+          "type": "integer"
+        },
+        "palette_pixels_per_frame": {
+          "minimum": 100,
+          "title": "Palette Pixels Per Frame",
+          "type": "integer"
+        },
+        "phash_frames": {
+          "minimum": 1,
+          "title": "Phash Frames",
+          "type": "integer"
+        },
+        "proxy_crf": {
+          "maximum": 51,
+          "minimum": 0,
+          "title": "Proxy Crf",
+          "type": "integer"
+        },
+        "proxy_duration_tolerance_s": {
+          "exclusiveMinimum": 0,
+          "title": "Proxy Duration Tolerance S",
+          "type": "number"
+        },
+        "proxy_max_width": {
+          "exclusiveMinimum": 0,
+          "title": "Proxy Max Width",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "max_minutes",
+        "proxy_max_width",
+        "base_fps",
+        "base_frame_width",
+        "jpeg_quality",
+        "palette_colors",
+        "palette_pixels_per_frame",
+        "proxy_crf",
+        "proxy_duration_tolerance_s",
+        "audio_sample_rate",
+        "phash_frames",
+        "duplicate_max_distance"
+      ],
+      "title": "Analysis",
+      "type": "object"
+    },
+    "Annotate": {
+      "additionalProperties": false,
+      "properties": {
+        "a2_tiers": {
+          "items": {
+            "type": "string"
+          },
+          "title": "A2 Tiers",
+          "type": "array"
+        },
+        "event_images": {
+          "minimum": 1,
+          "title": "Event Images",
+          "type": "integer"
+        },
+        "events_per_subagent": {
+          "minimum": 1,
+          "title": "Events Per Subagent",
+          "type": "integer"
+        },
+        "max_images_per_task": {
+          "minimum": 1,
+          "title": "Max Images Per Task",
+          "type": "integer"
+        },
+        "max_turns": {
+          "minimum": 1,
+          "title": "Max Turns",
+          "type": "integer"
+        },
+        "spot_review_fraction": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Spot Review Fraction",
+          "type": "number"
+        },
+        "task_retries": {
+          "minimum": 0,
+          "title": "Task Retries",
+          "type": "integer"
+        },
+        "validate_retries": {
+          "minimum": 0,
+          "title": "Validate Retries",
+          "type": "integer"
+        },
+        "videos_per_run": {
+          "minimum": 1,
+          "title": "Videos Per Run",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "videos_per_run",
+        "max_turns",
+        "max_images_per_task",
+        "event_images",
+        "events_per_subagent",
+        "validate_retries",
+        "task_retries",
+        "a2_tiers",
+        "spot_review_fraction"
+      ],
+      "title": "Annotate",
+      "type": "object"
+    },
+    "AnswerKeyEval": {
+      "additionalProperties": false,
+      "properties": {
+        "event_pad_s": {
+          "minimum": 0,
+          "title": "Event Pad S",
+          "type": "number"
+        },
+        "min_iou": {
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "title": "Min Iou",
+          "type": "number"
+        },
+        "path": {
+          "title": "Path",
+          "type": "string"
+        },
+        "sfx_labels": {
+          "additionalProperties": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "title": "Sfx Labels",
+          "type": "object"
+        },
+        "sfx_window_s": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Sfx Window S",
+          "type": "array"
+        },
+        "video": {
+          "title": "Video",
+          "type": "string"
+        }
+      },
+      "required": [
+        "video",
+        "path",
+        "min_iou",
+        "event_pad_s",
+        "sfx_window_s",
+        "sfx_labels"
+      ],
+      "title": "AnswerKeyEval",
+      "type": "object"
+    },
+    "AudioSignalsConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "beat_grid_tolerance_ms": {
+          "minimum": 0,
+          "title": "Beat Grid Tolerance Ms",
+          "type": "number"
+        },
+        "beat_min_confidence": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Beat Min Confidence",
+          "type": "number"
+        },
+        "click_max_ms": {
+          "exclusiveMinimum": 0,
+          "title": "Click Max Ms",
+          "type": "number"
+        },
+        "impact_max_attack_ms": {
+          "exclusiveMinimum": 0,
+          "title": "Impact Max Attack Ms",
+          "type": "number"
+        },
+        "impact_min_low_ratio": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Impact Min Low Ratio",
+          "type": "number"
+        },
+        "noise_min_flatness": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Noise Min Flatness",
+          "type": "number"
+        },
+        "repet_margin": {
+          "exclusiveMinimum": 0,
+          "title": "Repet Margin",
+          "type": "number"
+        },
+        "repet_periods": {
+          "minimum": 1,
+          "title": "Repet Periods",
+          "type": "integer"
+        },
+        "riser_min_attack_ms": {
+          "exclusiveMinimum": 0,
+          "title": "Riser Min Attack Ms",
+          "type": "number"
+        },
+        "sfx_backtrack_s": {
+          "minimum": 0,
+          "title": "Sfx Backtrack S",
+          "type": "number"
+        },
+        "sfx_decay_db": {
+          "exclusiveMinimum": 0,
+          "title": "Sfx Decay Db",
+          "type": "number"
+        },
+        "sfx_edge_guard_s": {
+          "minimum": 0,
+          "title": "Sfx Edge Guard S",
+          "type": "number"
+        },
+        "sfx_max_below_loudest_db": {
+          "exclusiveMinimum": 0,
+          "title": "Sfx Max Below Loudest Db",
+          "type": "number"
+        },
+        "sfx_min_gap_s": {
+          "exclusiveMinimum": 0,
+          "title": "Sfx Min Gap S",
+          "type": "number"
+        },
+        "swell_min_attack_ms": {
+          "exclusiveMinimum": 0,
+          "title": "Swell Min Attack Ms",
+          "type": "number"
+        }
+      },
+      "required": [
+        "beat_grid_tolerance_ms",
+        "beat_min_confidence",
+        "sfx_decay_db",
+        "repet_periods",
+        "repet_margin",
+        "sfx_backtrack_s",
+        "sfx_edge_guard_s",
+        "sfx_min_gap_s",
+        "sfx_max_below_loudest_db",
+        "click_max_ms",
+        "impact_min_low_ratio",
+        "impact_max_attack_ms",
+        "swell_min_attack_ms",
+        "riser_min_attack_ms",
+        "noise_min_flatness"
+      ],
+      "title": "AudioSignalsConfig",
+      "type": "object"
+    },
+    "Baseline": {
+      "additionalProperties": false,
+      "description": "Known values of a reference render; `lens compare` must reproduce them (BUILD_PLAN section 9).",
+      "properties": {
+        "duration_s": {
+          "$ref": "#/$defs/KnownValue"
+        },
+        "fps": {
+          "exclusiveMinimum": 0,
+          "title": "Fps",
+          "type": "number"
+        },
+        "frames": {
+          "exclusiveMinimum": 0,
+          "title": "Frames",
+          "type": "integer"
+        },
+        "integrated_lufs": {
+          "$ref": "#/$defs/KnownValue"
+        },
+        "sample_peak_dbfs": {
+          "$ref": "#/$defs/KnownValue"
+        },
+        "scenes": {
+          "exclusiveMinimum": 0,
+          "title": "Scenes",
+          "type": "integer"
+        },
+        "sfx_at_scene_start_min_share": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Sfx At Scene Start Min Share",
+          "type": "number"
+        },
+        "transition_tolerance_frames": {
+          "minimum": 0,
+          "title": "Transition Tolerance Frames",
+          "type": "integer"
+        },
+        "transitions": {
+          "minimum": 0,
+          "title": "Transitions",
+          "type": "integer"
+        },
+        "transitions_min_detected": {
+          "minimum": 0,
+          "title": "Transitions Min Detected",
+          "type": "integer"
+        },
+        "video": {
+          "title": "Video",
+          "type": "string"
+        },
+        "wpm": {
+          "$ref": "#/$defs/KnownValue"
+        }
+      },
+      "required": [
+        "video",
+        "fps",
+        "frames",
+        "duration_s",
+        "integrated_lufs",
+        "sample_peak_dbfs",
+        "scenes",
+        "transitions",
+        "transitions_min_detected",
+        "transition_tolerance_frames",
+        "wpm",
+        "sfx_at_scene_start_min_share"
+      ],
+      "title": "Baseline",
+      "type": "object"
+    },
+    "Batch": {
+      "additionalProperties": false,
+      "properties": {
+        "fetch_max_seconds": {
+          "exclusiveMinimum": 0,
+          "title": "Fetch Max Seconds",
+          "type": "integer"
+        },
+        "max_parallel": {
+          "exclusiveMinimum": 0,
+          "title": "Max Parallel",
+          "type": "integer"
+        },
+        "per_run": {
+          "exclusiveMinimum": 0,
+          "title": "Per Run",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "fetch_max_seconds",
+        "per_run",
+        "max_parallel"
+      ],
+      "title": "Batch",
+      "type": "object"
+    },
+    "CaptionPlate": {
+      "additionalProperties": false,
+      "description": "create reel, plan `caption_plate`: captions on a white plate (Robert, seo-budget).",
+      "properties": {
+        "alpha": {
+          "maximum": 1,
+          "minimum": 0.9,
+          "title": "Alpha",
+          "type": "number"
+        },
+        "color": {
+          "pattern": "^#[0-9a-fA-F]{6}$",
+          "title": "Color",
+          "type": "string"
+        },
+        "max_width_px": {
+          "minimum": 300,
+          "title": "Max Width Px",
+          "type": "integer"
+        },
+        "pad_x": {
+          "minimum": 0,
+          "title": "Pad X",
+          "type": "integer"
+        },
+        "pad_y": {
+          "minimum": 0,
+          "title": "Pad Y",
+          "type": "integer"
+        },
+        "radius_px": {
+          "minimum": 0,
+          "title": "Radius Px",
+          "type": "integer"
+        },
+        "shadow": {
+          "title": "Shadow",
+          "type": "string"
+        },
+        "size_px": {
+          "minimum": 56,
+          "title": "Size Px",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "color",
+        "alpha",
+        "size_px",
+        "pad_y",
+        "pad_x",
+        "radius_px",
+        "max_width_px",
+        "shadow"
+      ],
+      "title": "CaptionPlate",
+      "type": "object"
+    },
+    "CaptionRules": {
+      "additionalProperties": false,
+      "description": "How narration words are grouped into burned-in captions on one frame.",
+      "properties": {
+        "gap_split_s": {
+          "exclusiveMinimum": 0,
+          "title": "Gap Split S",
+          "type": "number"
+        },
+        "hold_s": {
+          "minimum": 0,
+          "title": "Hold S",
+          "type": "number"
+        },
+        "lead_s": {
+          "minimum": 0,
+          "title": "Lead S",
+          "type": "number"
+        },
+        "max_chars": {
+          "minimum": 1,
+          "title": "Max Chars",
+          "type": "integer"
+        },
+        "max_words": {
+          "minimum": 1,
+          "title": "Max Words",
+          "type": "integer"
+        },
+        "seam_s": {
+          "minimum": 0,
+          "title": "Seam S",
+          "type": "number"
+        }
+      },
+      "required": [
+        "max_words",
+        "max_chars",
+        "lead_s",
+        "hold_s",
+        "seam_s",
+        "gap_split_s"
+      ],
+      "title": "CaptionRules",
+      "type": "object"
+    },
+    "CaptionsConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "analysis_width": {
+          "exclusiveMinimum": 0,
+          "title": "Analysis Width",
+          "type": "integer"
+        },
+        "band_change_min": {
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "title": "Band Change Min",
+          "type": "number"
+        },
+        "band_fraction": {
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "title": "Band Fraction",
+          "type": "number"
+        },
+        "band_ratio": {
+          "exclusiveMinimum": 1,
+          "title": "Band Ratio",
+          "type": "number"
+        },
+        "enabled": {
+          "title": "Enabled",
+          "type": "boolean"
+        },
+        "min_group_frames": {
+          "minimum": 1,
+          "title": "Min Group Frames",
+          "type": "integer"
+        },
+        "min_groups": {
+          "minimum": 1,
+          "title": "Min Groups",
+          "type": "integer"
+        },
+        "ocr_min_score": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Ocr Min Score",
+          "type": "number"
+        },
+        "sync_tolerance_frames": {
+          "minimum": 0,
+          "title": "Sync Tolerance Frames",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "enabled",
+        "band_fraction",
+        "analysis_width",
+        "band_change_min",
+        "band_ratio",
+        "min_group_frames",
+        "ocr_min_score",
+        "min_groups",
+        "sync_tolerance_frames"
+      ],
+      "title": "CaptionsConfig",
+      "type": "object"
+    },
+    "ClapConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "batch_size": {
+          "minimum": 1,
+          "title": "Batch Size",
+          "type": "integer"
+        },
+        "enabled": {
+          "title": "Enabled",
+          "type": "boolean"
+        },
+        "min_clip_s": {
+          "exclusiveMinimum": 0,
+          "title": "Min Clip S",
+          "type": "number"
+        },
+        "min_score": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Min Score",
+          "type": "number"
+        },
+        "model": {
+          "title": "Model",
+          "type": "string"
+        },
+        "post_s": {
+          "minimum": 0,
+          "title": "Post S",
+          "type": "number"
+        },
+        "pre_s": {
+          "minimum": 0,
+          "title": "Pre S",
+          "type": "number"
+        }
+      },
+      "required": [
+        "enabled",
+        "model",
+        "min_score",
+        "pre_s",
+        "post_s",
+        "min_clip_s",
+        "batch_size"
+      ],
+      "title": "ClapConfig",
+      "type": "object"
+    },
+    "Cluster": {
+      "additionalProperties": false,
+      "properties": {
+        "merge_similarity": {
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "title": "Merge Similarity",
+          "type": "number"
+        },
+        "min_brands": {
+          "minimum": 1,
+          "title": "Min Brands",
+          "type": "integer"
+        },
+        "min_members": {
+          "minimum": 1,
+          "title": "Min Members",
+          "type": "integer"
+        },
+        "model": {
+          "title": "Model",
+          "type": "string"
+        },
+        "revision": {
+          "title": "Revision",
+          "type": "string"
+        },
+        "threshold": {
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "title": "Threshold",
+          "type": "number"
+        }
+      },
+      "required": [
+        "model",
+        "revision",
+        "threshold",
+        "merge_similarity",
+        "min_members",
+        "min_brands"
+      ],
+      "title": "Cluster",
+      "type": "object"
+    },
+    "Compare": {
+      "additionalProperties": false,
+      "properties": {
+        "corpus_metrics": {
+          "items": {
+            "$ref": "#/$defs/CorpusMetric"
+          },
+          "minItems": 1,
+          "title": "Corpus Metrics",
+          "type": "array"
+        },
+        "max_gap": {
+          "exclusiveMinimum": 0,
+          "title": "Max Gap",
+          "type": "number"
+        },
+        "min_cohort": {
+          "minimum": 2,
+          "title": "Min Cohort",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "min_cohort",
+        "max_gap",
+        "corpus_metrics"
+      ],
+      "title": "Compare",
+      "type": "object"
+    },
+    "ConsistencyEval": {
+      "additionalProperties": false,
+      "properties": {
+        "events": {
+          "minimum": 1,
+          "title": "Events",
+          "type": "integer"
+        },
+        "videos": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Videos",
+          "type": "array"
+        }
+      },
+      "required": [
+        "videos",
+        "events"
+      ],
+      "title": "ConsistencyEval",
+      "type": "object"
+    },
+    "CorpusMetric": {
+      "additionalProperties": false,
+      "properties": {
+        "effort": {
+          "enum": [
+            "S",
+            "M",
+            "L"
+          ],
+          "title": "Effort",
+          "type": "string"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "section": {
+          "enum": [
+            "voice",
+            "sound",
+            "motion",
+            "rhythm"
+          ],
+          "title": "Section",
+          "type": "string"
+        },
+        "unit": {
+          "title": "Unit",
+          "type": "string"
+        },
+        "weight": {
+          "exclusiveMinimum": 0,
+          "title": "Weight",
+          "type": "number"
+        }
+      },
+      "required": [
+        "id",
+        "section",
+        "unit",
+        "weight",
+        "effort"
+      ],
+      "title": "CorpusMetric",
+      "type": "object"
+    },
+    "Create": {
+      "additionalProperties": false,
+      "description": "Phase 2 (`create`): defaults every project uses unless its brief says otherwise.",
+      "properties": {
+        "design": {
+          "$ref": "#/$defs/CreateDesign"
+        },
+        "footage": {
+          "$ref": "#/$defs/CreateFootage"
+        },
+        "lab": {
+          "$ref": "#/$defs/CreateLab"
+        },
+        "mix": {
+          "$ref": "#/$defs/CreateMix"
+        },
+        "motion": {
+          "$ref": "#/$defs/CreateMotion"
+        },
+        "music": {
+          "$ref": "#/$defs/CreateMusic"
+        },
+        "qa": {
+          "$ref": "#/$defs/CreateQa"
+        },
+        "render": {
+          "$ref": "#/$defs/CreateRender"
+        },
+        "script": {
+          "$ref": "#/$defs/CreateScript"
+        },
+        "timing": {
+          "$ref": "#/$defs/CreateTiming"
+        },
+        "voice": {
+          "$ref": "#/$defs/CreateVoice"
+        }
+      },
+      "required": [
+        "voice",
+        "footage",
+        "timing",
+        "design",
+        "script",
+        "qa",
+        "render",
+        "lab",
+        "motion",
+        "mix",
+        "music"
+      ],
+      "title": "Create",
+      "type": "object"
+    },
+    "CreateDesign": {
+      "additionalProperties": false,
+      "description": "C3 tokens: WCAG 2.1 AA thresholds and the frames (BUILD_PLAN 12b, handoff 7.4, ADR 0022).",
+      "properties": {
+        "accent_tint_alpha": {
+          "exclusiveMaximum": 1,
+          "exclusiveMinimum": 0,
+          "title": "Accent Tint Alpha",
+          "type": "number"
+        },
+        "audit_min_hold_s": {
+          "minimum": 0,
+          "title": "Audit Min Hold S",
+          "type": "number"
+        },
+        "audit_min_opacity": {
+          "exclusiveMaximum": 1,
+          "minimum": 0,
+          "title": "Audit Min Opacity",
+          "type": "number"
+        },
+        "audit_step_s": {
+          "exclusiveMinimum": 0,
+          "title": "Audit Step S",
+          "type": "number"
+        },
+        "audit_tolerance_px": {
+          "minimum": 0,
+          "title": "Audit Tolerance Px",
+          "type": "number"
+        },
+        "caption_face_gap": {
+          "minimum": 0,
+          "title": "Caption Face Gap",
+          "type": "number"
+        },
+        "caption_function_words": {
+          "additionalProperties": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "title": "Caption Function Words",
+          "type": "object"
+        },
+        "caption_seam_gap_px": {
+          "minimum": 0,
+          "title": "Caption Seam Gap Px",
+          "type": "number"
+        },
+        "captions": {
+          "additionalProperties": {
+            "$ref": "#/$defs/CaptionRules"
+          },
+          "title": "Captions",
+          "type": "object"
+        },
+        "contrast_large": {
+          "exclusiveMinimum": 1,
+          "title": "Contrast Large",
+          "type": "number"
+        },
+        "contrast_normal": {
+          "exclusiveMinimum": 1,
+          "title": "Contrast Normal",
+          "type": "number"
+        },
+        "destination_frames": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Destination Frames",
+          "type": "object"
+        },
+        "frames": {
+          "additionalProperties": {
+            "$ref": "#/$defs/CreateFrame"
+          },
+          "minProperties": 1,
+          "title": "Frames",
+          "type": "object"
+        },
+        "google_fonts_css": {
+          "pattern": "^https://",
+          "title": "Google Fonts Css",
+          "type": "string"
+        },
+        "large_bold_px": {
+          "exclusiveMinimum": 0,
+          "title": "Large Bold Px",
+          "type": "number"
+        },
+        "large_text_px": {
+          "exclusiveMinimum": 0,
+          "title": "Large Text Px",
+          "type": "number"
+        },
+        "required_glyphs": {
+          "minLength": 1,
+          "title": "Required Glyphs",
+          "type": "string"
+        }
+      },
+      "required": [
+        "contrast_normal",
+        "contrast_large",
+        "large_text_px",
+        "large_bold_px",
+        "frames",
+        "destination_frames",
+        "captions",
+        "caption_seam_gap_px",
+        "caption_face_gap",
+        "caption_function_words",
+        "audit_step_s",
+        "audit_tolerance_px",
+        "audit_min_opacity",
+        "audit_min_hold_s",
+        "required_glyphs",
+        "google_fonts_css",
+        "accent_tint_alpha"
+      ],
+      "title": "CreateDesign",
+      "type": "object"
+    },
+    "CreateFootage": {
+      "additionalProperties": false,
+      "description": "Presenter footage: conform, transcribe, cut proposals, edit (ADR 0025).",
+      "properties": {
+        "conjunctions": {
+          "additionalProperties": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "title": "Conjunctions",
+          "type": "object"
+        },
+        "count_in": {
+          "additionalProperties": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "title": "Count In",
+          "type": "object"
+        },
+        "crossfade_ms": {
+          "minimum": 0,
+          "title": "Crossfade Ms",
+          "type": "number"
+        },
+        "cuts": {
+          "$ref": "#/$defs/FootageCuts"
+        },
+        "depth": {
+          "$ref": "#/$defs/FootageDepth"
+        },
+        "edit_page": {
+          "$ref": "#/$defs/FootageEditPage"
+        },
+        "fillers": {
+          "additionalProperties": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "title": "Fillers",
+          "type": "object"
+        },
+        "fps": {
+          "exclusiveMinimum": 0,
+          "title": "Fps",
+          "type": "integer"
+        },
+        "gop": {
+          "minimum": 1,
+          "title": "Gop",
+          "type": "integer"
+        },
+        "keep_pad_s": {
+          "default": 1.0,
+          "minimum": 0,
+          "title": "Keep Pad S",
+          "type": "number"
+        },
+        "master_crf": {
+          "maximum": 51,
+          "minimum": 0,
+          "title": "Master Crf",
+          "type": "integer"
+        },
+        "matte": {
+          "$ref": "#/$defs/FootageMatte"
+        },
+        "max_height": {
+          "exclusiveMinimum": 0,
+          "title": "Max Height",
+          "type": "integer"
+        },
+        "music": {
+          "$ref": "#/$defs/FootageMusic"
+        },
+        "overlays": {
+          "$ref": "#/$defs/FootageOverlays"
+        },
+        "panel": {
+          "$ref": "#/$defs/FootagePanel"
+        },
+        "pose": {
+          "$ref": "#/$defs/FootagePose"
+        },
+        "reel": {
+          "$ref": "#/$defs/FootageReel"
+        },
+        "reframe": {
+          "$ref": "#/$defs/FootageReframe"
+        },
+        "resolve": {
+          "$ref": "#/$defs/FootageResolve"
+        },
+        "retake_cues": {
+          "additionalProperties": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "title": "Retake Cues",
+          "type": "object"
+        },
+        "scene_target_s": {
+          "exclusiveMinimum": 0,
+          "title": "Scene Target S",
+          "type": "number"
+        },
+        "sfx": {
+          "$ref": "#/$defs/FootageSfx"
+        },
+        "stt_engine": {
+          "enum": [
+            "elevenlabs",
+            "whisper"
+          ],
+          "title": "Stt Engine",
+          "type": "string"
+        },
+        "stt_model": {
+          "minLength": 1,
+          "title": "Stt Model",
+          "type": "string"
+        },
+        "surface": {
+          "$ref": "#/$defs/FootageSurface"
+        },
+        "voice": {
+          "$ref": "#/$defs/FootageVoice"
+        },
+        "whisper_model": {
+          "minLength": 1,
+          "title": "Whisper Model",
+          "type": "string"
+        }
+      },
+      "required": [
+        "fps",
+        "max_height",
+        "master_crf",
+        "gop",
+        "stt_engine",
+        "stt_model",
+        "whisper_model",
+        "fillers",
+        "retake_cues",
+        "count_in",
+        "conjunctions",
+        "cuts",
+        "crossfade_ms",
+        "voice",
+        "resolve",
+        "reframe",
+        "pose",
+        "overlays",
+        "sfx",
+        "music",
+        "reel",
+        "panel",
+        "matte",
+        "surface",
+        "depth",
+        "edit_page",
+        "scene_target_s"
+      ],
+      "title": "CreateFootage",
+      "type": "object"
+    },
+    "CreateFrame": {
+      "additionalProperties": false,
+      "description": "One output frame: size, text minimum, where critical content may go, where captions sit.",
+      "properties": {
+        "caption_band": {
+          "$ref": "#/$defs/Rect"
+        },
+        "caption_top": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Rect"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "cover_safe": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Rect"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "height": {
+          "exclusiveMinimum": 0,
+          "title": "Height",
+          "type": "integer"
+        },
+        "min_text_px": {
+          "exclusiveMinimum": 0,
+          "title": "Min Text Px",
+          "type": "number"
+        },
+        "safe": {
+          "items": {
+            "$ref": "#/$defs/Rect"
+          },
+          "minItems": 1,
+          "title": "Safe",
+          "type": "array"
+        },
+        "source": {
+          "minLength": 1,
+          "title": "Source",
+          "type": "string"
+        },
+        "width": {
+          "exclusiveMinimum": 0,
+          "title": "Width",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "width",
+        "height",
+        "min_text_px",
+        "safe",
+        "caption_band",
+        "source"
+      ],
+      "title": "CreateFrame",
+      "type": "object"
+    },
+    "CreateLab": {
+      "additionalProperties": false,
+      "description": "`create lab` (ADR 0029): test reels from a stand-in photo and an ElevenLabs voice.",
+      "properties": {
+        "brand_project": {
+          "title": "Brand Project",
+          "type": "string"
+        },
+        "breathe": {
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Breathe",
+          "type": "array"
+        },
+        "fps": {
+          "exclusiveMinimum": 0,
+          "title": "Fps",
+          "type": "integer"
+        },
+        "pre_s": {
+          "minimum": 0,
+          "title": "Pre S",
+          "type": "number"
+        },
+        "punch": {
+          "minimum": 1,
+          "title": "Punch",
+          "type": "number"
+        },
+        "review_images": {
+          "exclusiveMinimum": 0,
+          "title": "Review Images",
+          "type": "integer"
+        },
+        "study_rows": {
+          "exclusiveMinimum": 0,
+          "title": "Study Rows",
+          "type": "integer"
+        },
+        "tail_s": {
+          "minimum": 0,
+          "title": "Tail S",
+          "type": "number"
+        }
+      },
+      "required": [
+        "pre_s",
+        "tail_s",
+        "fps",
+        "breathe",
+        "punch",
+        "brand_project",
+        "study_rows",
+        "review_images"
+      ],
+      "title": "CreateLab",
+      "type": "object"
+    },
+    "CreateMix": {
+      "additionalProperties": false,
+      "description": "c12_mix: narration + ducked music bed + the build's SFX, at the destination's loudness.",
+      "properties": {
+        "audio_kbps": {
+          "exclusiveMinimum": 0,
+          "title": "Audio Kbps",
+          "type": "integer"
+        },
+        "bed_db": {
+          "maximum": 0,
+          "title": "Bed Db",
+          "type": "number"
+        },
+        "bed_fade_s": {
+          "minimum": 0,
+          "title": "Bed Fade S",
+          "type": "number"
+        },
+        "duck": {
+          "minLength": 1,
+          "title": "Duck",
+          "type": "string"
+        },
+        "lra": {
+          "exclusiveMinimum": 0,
+          "title": "Lra",
+          "type": "number"
+        },
+        "sfx_pan_width": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Sfx Pan Width",
+          "type": "number"
+        },
+        "true_peak_margin_db": {
+          "minimum": 0,
+          "title": "True Peak Margin Db",
+          "type": "number"
+        }
+      },
+      "required": [
+        "bed_db",
+        "duck",
+        "bed_fade_s",
+        "lra",
+        "true_peak_margin_db",
+        "audio_kbps",
+        "sfx_pan_width"
+      ],
+      "title": "CreateMix",
+      "type": "object"
+    },
+    "CreateMotion": {
+      "additionalProperties": false,
+      "description": "c6_direction, c8_motion, c8_grade (ADR 0032): Claude directs the motion inside our learnings.",
+      "properties": {
+        "build": {
+          "$ref": "#/$defs/MotionBuild"
+        },
+        "design_sections": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Design Sections",
+          "type": "array"
+        },
+        "final_hold_s": {
+          "minimum": 0,
+          "title": "Final Hold S",
+          "type": "number"
+        },
+        "grade": {
+          "$ref": "#/$defs/MotionGradeConfig"
+        },
+        "pattern_steps": {
+          "minimum": 1,
+          "title": "Pattern Steps",
+          "type": "integer"
+        },
+        "patterns": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Patterns",
+          "type": "array"
+        },
+        "rules": {
+          "items": {
+            "$ref": "#/$defs/MotionRule"
+          },
+          "minItems": 1,
+          "title": "Rules",
+          "type": "array"
+        },
+        "sfx": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Sfx",
+          "type": "array"
+        },
+        "sfx_gain_db": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Sfx Gain Db",
+          "type": "array"
+        }
+      },
+      "required": [
+        "patterns",
+        "pattern_steps",
+        "design_sections",
+        "rules",
+        "final_hold_s",
+        "sfx",
+        "sfx_gain_db",
+        "build",
+        "grade"
+      ],
+      "title": "CreateMotion",
+      "type": "object"
+    },
+    "CreateMusic": {
+      "additionalProperties": false,
+      "description": "c10_music: a bed built for the video (Eleven Music composition plan, one chunk per scene).",
+      "properties": {
+        "credits_per_s": {
+          "exclusiveMinimum": 0,
+          "title": "Credits Per S",
+          "type": "number"
+        },
+        "dropout_db": {
+          "exclusiveMaximum": 0,
+          "title": "Dropout Db",
+          "type": "number"
+        },
+        "ending_s": {
+          "minimum": 0,
+          "title": "Ending S",
+          "type": "number"
+        },
+        "max_chunk_ms": {
+          "exclusiveMinimum": 0,
+          "title": "Max Chunk Ms",
+          "type": "integer"
+        },
+        "min_chunk_ms": {
+          "exclusiveMinimum": 0,
+          "title": "Min Chunk Ms",
+          "type": "integer"
+        },
+        "model_id": {
+          "minLength": 1,
+          "title": "Model Id",
+          "type": "string"
+        },
+        "negative_styles": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Negative Styles",
+          "type": "array"
+        },
+        "output_format": {
+          "minLength": 1,
+          "title": "Output Format",
+          "type": "string"
+        },
+        "positive_styles": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Positive Styles",
+          "type": "array"
+        },
+        "sections": {
+          "$ref": "#/$defs/MusicSections"
+        }
+      },
+      "required": [
+        "model_id",
+        "output_format",
+        "min_chunk_ms",
+        "max_chunk_ms",
+        "dropout_db",
+        "ending_s",
+        "credits_per_s",
+        "positive_styles",
+        "sections"
+      ],
+      "title": "CreateMusic",
+      "type": "object"
+    },
+    "CreateQa": {
+      "additionalProperties": false,
+      "properties": {
+        "first_visual_max_s": {
+          "minimum": 0,
+          "title": "First Visual Max S",
+          "type": "number"
+        },
+        "first_word_max_s": {
+          "minimum": 0,
+          "title": "First Word Max S",
+          "type": "number"
+        },
+        "max_duration_s": {
+          "exclusiveMinimum": 0,
+          "title": "Max Duration S",
+          "type": "number"
+        },
+        "max_static_s": {
+          "exclusiveMinimum": 0,
+          "title": "Max Static S",
+          "type": "number"
+        },
+        "max_tail_s": {
+          "minimum": 0,
+          "title": "Max Tail S",
+          "type": "number"
+        },
+        "max_word_gap_s": {
+          "exclusiveMinimum": 0,
+          "title": "Max Word Gap S",
+          "type": "number"
+        },
+        "true_peak_max_db": {
+          "title": "True Peak Max Db",
+          "type": "number"
+        }
+      },
+      "required": [
+        "max_duration_s",
+        "first_word_max_s",
+        "first_visual_max_s",
+        "max_static_s",
+        "max_word_gap_s",
+        "max_tail_s",
+        "true_peak_max_db"
+      ],
+      "title": "CreateQa",
+      "type": "object"
+    },
+    "CreateRender": {
+      "additionalProperties": false,
+      "description": "HyperFrames (Apache-2.0) runs through npx at a pinned version; its telemetry is switched off first.",
+      "properties": {
+        "hyperframes_version": {
+          "pattern": "^\\d+\\.\\d+\\.\\d+$",
+          "title": "Hyperframes Version",
+          "type": "string"
+        },
+        "sketch_before_end_s": {
+          "minimum": 0,
+          "title": "Sketch Before End S",
+          "type": "number"
+        },
+        "sketch_columns": {
+          "minimum": 1,
+          "title": "Sketch Columns",
+          "type": "integer"
+        },
+        "timeout_s": {
+          "exclusiveMinimum": 0,
+          "title": "Timeout S",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "hyperframes_version",
+        "sketch_before_end_s",
+        "sketch_columns",
+        "timeout_s"
+      ],
+      "title": "CreateRender",
+      "type": "object"
+    },
+    "CreateScript": {
+      "additionalProperties": false,
+      "description": "C2 style guard (handoff 7.10): plain, specific narration; no slogans or rhetorical devices.",
+      "properties": {
+        "banned": {
+          "items": {
+            "$ref": "#/$defs/StyleRule"
+          },
+          "title": "Banned",
+          "type": "array"
+        },
+        "max_tags_per_scene": {
+          "minimum": 0,
+          "title": "Max Tags Per Scene",
+          "type": "integer"
+        },
+        "planning_wpm": {
+          "exclusiveMinimum": 0,
+          "title": "Planning Wpm",
+          "type": "number"
+        }
+      },
+      "required": [
+        "banned",
+        "max_tags_per_scene",
+        "planning_wpm"
+      ],
+      "title": "CreateScript",
+      "type": "object"
+    },
+    "CreateTiming": {
+      "additionalProperties": false,
+      "properties": {
+        "close_tail_s": {
+          "minimum": 0,
+          "title": "Close Tail S",
+          "type": "number"
+        },
+        "fps": {
+          "exclusiveMinimum": 0,
+          "title": "Fps",
+          "type": "integer"
+        },
+        "pre_roll_s": {
+          "minimum": 0,
+          "title": "Pre Roll S",
+          "type": "number"
+        },
+        "scene_tail_s": {
+          "minimum": 0,
+          "title": "Scene Tail S",
+          "type": "number"
+        }
+      },
+      "required": [
+        "fps",
+        "pre_roll_s",
+        "scene_tail_s",
+        "close_tail_s"
+      ],
+      "title": "CreateTiming",
+      "type": "object"
+    },
+    "CreateVoice": {
+      "additionalProperties": false,
+      "description": "Phase 2 voice (ADR 0018): ElevenLabs REST with-timestamps.",
+      "properties": {
+        "allowed_tags": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Allowed Tags",
+          "type": "array"
+        },
+        "model_id": {
+          "minLength": 1,
+          "title": "Model Id",
+          "type": "string"
+        },
+        "output_format": {
+          "minLength": 1,
+          "title": "Output Format",
+          "type": "string"
+        },
+        "provider": {
+          "const": "elevenlabs",
+          "title": "Provider",
+          "type": "string"
+        },
+        "select_on": {
+          "items": {
+            "enum": [
+              "wpm",
+              "articulation_wpm",
+              "pause_mean_ms",
+              "pitch_std_semitones",
+              "energy_std_db"
+            ],
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Select On",
+          "type": "array"
+        },
+        "takes": {
+          "minimum": 1,
+          "title": "Takes",
+          "type": "integer"
+        },
+        "voice_id": {
+          "minLength": 1,
+          "title": "Voice Id",
+          "type": "string"
+        },
+        "voice_name": {
+          "minLength": 1,
+          "title": "Voice Name",
+          "type": "string"
+        }
+      },
+      "required": [
+        "provider",
+        "voice_id",
+        "voice_name",
+        "model_id",
+        "output_format",
+        "takes",
+        "allowed_tags",
+        "select_on"
+      ],
+      "title": "CreateVoice",
+      "type": "object"
+    },
+    "Eval": {
+      "additionalProperties": false,
+      "properties": {
+        "answer_key": {
+          "$ref": "#/$defs/AnswerKeyEval"
+        },
+        "consistency": {
+          "$ref": "#/$defs/ConsistencyEval"
+        },
+        "measured_tier": {
+          "title": "Measured Tier",
+          "type": "string"
+        },
+        "min_measured_share": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Min Measured Share",
+          "type": "number"
+        }
+      },
+      "required": [
+        "answer_key",
+        "consistency",
+        "measured_tier",
+        "min_measured_share"
+      ],
+      "title": "Eval",
+      "type": "object"
+    },
+    "Evidence": {
+      "additionalProperties": false,
+      "properties": {
+        "box_merge_px": {
+          "minimum": 0,
+          "title": "Box Merge Px",
+          "type": "integer"
+        },
+        "box_min_area": {
+          "exclusiveMaximum": 1,
+          "exclusiveMinimum": 0,
+          "title": "Box Min Area",
+          "type": "number"
+        },
+        "box_nms_iou": {
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "title": "Box Nms Iou",
+          "type": "number"
+        },
+        "burst_pad_s": {
+          "minimum": 0,
+          "title": "Burst Pad S",
+          "type": "number"
+        },
+        "context_thumb_px": {
+          "exclusiveMinimum": 0,
+          "title": "Context Thumb Px",
+          "type": "integer"
+        },
+        "crop_margin": {
+          "minimum": 0,
+          "title": "Crop Margin",
+          "type": "number"
+        },
+        "crop_min_px": {
+          "exclusiveMinimum": 0,
+          "title": "Crop Min Px",
+          "type": "integer"
+        },
+        "filmstrip_quantiles": {
+          "items": {
+            "type": "number"
+          },
+          "maxItems": 15,
+          "minItems": 2,
+          "title": "Filmstrip Quantiles",
+          "type": "array"
+        },
+        "image_long_edge_px": {
+          "exclusiveMinimum": 0,
+          "maximum": 2000,
+          "title": "Image Long Edge Px",
+          "type": "integer"
+        },
+        "max_candidate_boxes": {
+          "minimum": 1,
+          "title": "Max Candidate Boxes",
+          "type": "integer"
+        },
+        "ocr_min_changed": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Ocr Min Changed",
+          "type": "number"
+        },
+        "ocr_min_score": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Ocr Min Score",
+          "type": "number"
+        },
+        "sheet_cols": {
+          "minimum": 1,
+          "title": "Sheet Cols",
+          "type": "integer"
+        },
+        "sheet_max_tiles": {
+          "minimum": 1,
+          "title": "Sheet Max Tiles",
+          "type": "integer"
+        },
+        "spectrogram_height_px": {
+          "exclusiveMinimum": 0,
+          "title": "Spectrogram Height Px",
+          "type": "integer"
+        },
+        "spectrogram_width_px": {
+          "exclusiveMinimum": 0,
+          "title": "Spectrogram Width Px",
+          "type": "integer"
+        },
+        "spectrogram_window_s": {
+          "exclusiveMinimum": 0,
+          "title": "Spectrogram Window S",
+          "type": "number"
+        }
+      },
+      "required": [
+        "burst_pad_s",
+        "filmstrip_quantiles",
+        "crop_margin",
+        "crop_min_px",
+        "context_thumb_px",
+        "image_long_edge_px",
+        "max_candidate_boxes",
+        "box_min_area",
+        "box_merge_px",
+        "box_nms_iou",
+        "ocr_min_score",
+        "ocr_min_changed",
+        "spectrogram_window_s",
+        "spectrogram_width_px",
+        "spectrogram_height_px",
+        "sheet_cols",
+        "sheet_max_tiles"
+      ],
+      "title": "Evidence",
+      "type": "object"
+    },
+    "FootageCuts": {
+      "additionalProperties": false,
+      "properties": {
+        "count_in_pause_s": {
+          "minimum": 0,
+          "title": "Count In Pause S",
+          "type": "number"
+        },
+        "keep_after_s": {
+          "minimum": 0,
+          "title": "Keep After S",
+          "type": "number"
+        },
+        "keep_before_s": {
+          "minimum": 0,
+          "title": "Keep Before S",
+          "type": "number"
+        },
+        "min_cut_s": {
+          "minimum": 0,
+          "title": "Min Cut S",
+          "type": "number"
+        },
+        "punch_hook_s": {
+          "exclusiveMinimum": 0,
+          "title": "Punch Hook S",
+          "type": "number"
+        },
+        "punch_max_s": {
+          "exclusiveMinimum": 0,
+          "title": "Punch Max S",
+          "type": "number"
+        },
+        "punch_min_s": {
+          "exclusiveMinimum": 0,
+          "title": "Punch Min S",
+          "type": "number"
+        },
+        "retake_max_tail_words": {
+          "minimum": 0,
+          "title": "Retake Max Tail Words",
+          "type": "integer"
+        },
+        "retake_min_words": {
+          "minimum": 2,
+          "title": "Retake Min Words",
+          "type": "integer"
+        },
+        "retake_pause_s": {
+          "minimum": 0,
+          "title": "Retake Pause S",
+          "type": "number"
+        },
+        "retake_window_words": {
+          "minimum": 2,
+          "title": "Retake Window Words",
+          "type": "integer"
+        },
+        "silence_max_s": {
+          "exclusiveMinimum": 0,
+          "title": "Silence Max S",
+          "type": "number"
+        }
+      },
+      "required": [
+        "silence_max_s",
+        "keep_before_s",
+        "keep_after_s",
+        "min_cut_s",
+        "retake_min_words",
+        "retake_window_words",
+        "retake_max_tail_words",
+        "retake_pause_s",
+        "count_in_pause_s",
+        "punch_max_s",
+        "punch_min_s",
+        "punch_hook_s"
+      ],
+      "title": "FootageCuts",
+      "type": "object"
+    },
+    "FootageDepth": {
+      "additionalProperties": false,
+      "description": "Bullet time (fx freeze, tournament n05): Depth Anything V2 Small as ONNX, run locally.",
+      "properties": {
+        "amp": {
+          "maximum": 200,
+          "minimum": 0,
+          "title": "Amp",
+          "type": "number"
+        },
+        "fps": {
+          "maximum": 60,
+          "minimum": 12,
+          "title": "Fps",
+          "type": "integer"
+        },
+        "model": {
+          "title": "Model",
+          "type": "string"
+        },
+        "push": {
+          "maximum": 0.5,
+          "minimum": 0,
+          "title": "Push",
+          "type": "number"
+        },
+        "sha256": {
+          "title": "Sha256",
+          "type": "string"
+        },
+        "side": {
+          "maximum": 1036,
+          "minimum": 140,
+          "title": "Side",
+          "type": "integer"
+        },
+        "url": {
+          "title": "Url",
+          "type": "string"
+        }
+      },
+      "required": [
+        "model",
+        "url",
+        "sha256",
+        "side",
+        "fps",
+        "amp",
+        "push"
+      ],
+      "title": "FootageDepth",
+      "type": "object"
+    },
+    "FootageEditPage": {
+      "additionalProperties": false,
+      "description": "create edits --page: the phone page where Robert sets crops, zooms and notes himself.",
+      "properties": {
+        "audio_kbps": {
+          "maximum": 256,
+          "minimum": 16,
+          "title": "Audio Kbps",
+          "type": "integer"
+        },
+        "max_mb": {
+          "exclusiveMinimum": 0,
+          "title": "Max Mb",
+          "type": "number"
+        },
+        "max_zoom": {
+          "exclusiveMinimum": 1,
+          "maximum": 3,
+          "title": "Max Zoom",
+          "type": "number"
+        },
+        "nudge": {
+          "exclusiveMinimum": 0,
+          "maximum": 0.5,
+          "title": "Nudge",
+          "type": "number"
+        },
+        "still_quality": {
+          "maximum": 31,
+          "minimum": 2,
+          "title": "Still Quality",
+          "type": "integer"
+        },
+        "still_width": {
+          "maximum": 1920,
+          "minimum": 120,
+          "title": "Still Width",
+          "type": "integer"
+        },
+        "video_crf": {
+          "maximum": 45,
+          "minimum": 18,
+          "title": "Video Crf",
+          "type": "integer"
+        },
+        "video_height": {
+          "maximum": 1920,
+          "minimum": 240,
+          "title": "Video Height",
+          "type": "integer"
+        },
+        "zoom_step": {
+          "exclusiveMinimum": 0,
+          "maximum": 0.5,
+          "title": "Zoom Step",
+          "type": "number"
+        }
+      },
+      "required": [
+        "still_width",
+        "still_quality",
+        "video_height",
+        "video_crf",
+        "audio_kbps",
+        "max_mb",
+        "zoom_step",
+        "max_zoom",
+        "nudge"
+      ],
+      "title": "FootageEditPage",
+      "type": "object"
+    },
+    "FootageMatte": {
+      "additionalProperties": false,
+      "description": "create matte: the presenter cut out of the edited video (HyperFrames remove-background, local model)\nonly where a reel plan needs it (props behind the presenter, anime backgrounds), ADR 0027.",
+      "properties": {
+        "device": {
+          "enum": [
+            "auto",
+            "cpu",
+            "coreml",
+            "cuda"
+          ],
+          "title": "Device",
+          "type": "string"
+        },
+        "pad_s": {
+          "minimum": 0,
+          "title": "Pad S",
+          "type": "number"
+        },
+        "quality": {
+          "enum": [
+            "fast",
+            "balanced",
+            "best"
+          ],
+          "title": "Quality",
+          "type": "string"
+        },
+        "timeout_s": {
+          "exclusiveMinimum": 0,
+          "title": "Timeout S",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "pad_s",
+        "device",
+        "quality",
+        "timeout_s"
+      ],
+      "title": "FootageMatte",
+      "type": "object"
+    },
+    "FootageMusic": {
+      "additionalProperties": false,
+      "description": "A music bed under the presenter (plan `music`, tournament n06): Eleven Music, its beats measured.",
+      "properties": {
+        "model": {
+          "title": "Model",
+          "type": "string"
+        },
+        "pulse_scale": {
+          "maximum": 1.1,
+          "minimum": 1,
+          "title": "Pulse Scale",
+          "type": "number"
+        },
+        "snap_s": {
+          "maximum": 0.5,
+          "minimum": 0,
+          "title": "Snap S",
+          "type": "number"
+        }
+      },
+      "required": [
+        "model",
+        "snap_s",
+        "pulse_scale"
+      ],
+      "title": "FootageMusic",
+      "type": "object"
+    },
+    "FootageOverlays": {
+      "additionalProperties": false,
+      "properties": {
+        "gap": {
+          "minimum": 0,
+          "title": "Gap",
+          "type": "number"
+        },
+        "margin": {
+          "minimum": 0,
+          "title": "Margin",
+          "type": "integer"
+        },
+        "max_width": {
+          "exclusiveMinimum": 0,
+          "title": "Max Width",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "margin",
+        "max_width",
+        "gap"
+      ],
+      "title": "FootageOverlays",
+      "type": "object"
+    },
+    "FootagePanel": {
+      "additionalProperties": false,
+      "description": "create panel (ADR 0034): a bespoke HTML panel stepped frame by frame and laid over a reel render.",
+      "properties": {
+        "caption_clear_px": {
+          "minimum": 0,
+          "title": "Caption Clear Px",
+          "type": "integer"
+        },
+        "composite_crf": {
+          "maximum": 51,
+          "minimum": 0,
+          "title": "Composite Crf",
+          "type": "integer"
+        },
+        "crf": {
+          "maximum": 51,
+          "minimum": 0,
+          "title": "Crf",
+          "type": "integer"
+        },
+        "jpeg_quality": {
+          "maximum": 100,
+          "minimum": 50,
+          "title": "Jpeg Quality",
+          "type": "integer"
+        },
+        "max_stills": {
+          "minimum": 1,
+          "title": "Max Stills",
+          "type": "integer"
+        },
+        "review_sheets": {
+          "minimum": 1,
+          "title": "Review Sheets",
+          "type": "integer"
+        },
+        "settle_ms": {
+          "minimum": 0,
+          "title": "Settle Ms",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "jpeg_quality",
+        "crf",
+        "composite_crf",
+        "settle_ms",
+        "review_sheets",
+        "max_stills",
+        "caption_clear_px"
+      ],
+      "title": "FootagePanel",
+      "type": "object"
+    },
+    "FootagePose": {
+      "additionalProperties": false,
+      "description": "The presenter's pose (create/footage/pose.py, ADR 0030): BlazePose ONNX, run locally.",
+      "properties": {
+        "body_below_face": {
+          "exclusiveMinimum": 0,
+          "title": "Body Below Face",
+          "type": "number"
+        },
+        "box_face_heights": {
+          "exclusiveMinimum": 0,
+          "title": "Box Face Heights",
+          "type": "number"
+        },
+        "hand_min_conf": {
+          "exclusiveMaximum": 1,
+          "exclusiveMinimum": 0,
+          "title": "Hand Min Conf",
+          "type": "number"
+        },
+        "hand_min_face": {
+          "exclusiveMinimum": 0,
+          "title": "Hand Min Face",
+          "type": "number"
+        },
+        "hand_model": {
+          "minLength": 1,
+          "title": "Hand Model",
+          "type": "string"
+        },
+        "hand_model_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Hand Model Sha256",
+          "type": "string"
+        },
+        "hand_model_url": {
+          "pattern": "^https://",
+          "title": "Hand Model Url",
+          "type": "string"
+        },
+        "hand_scale": {
+          "exclusiveMinimum": 0,
+          "title": "Hand Scale",
+          "type": "number"
+        },
+        "min_conf": {
+          "exclusiveMaximum": 1,
+          "exclusiveMinimum": 0,
+          "title": "Min Conf",
+          "type": "number"
+        },
+        "model": {
+          "minLength": 1,
+          "title": "Model",
+          "type": "string"
+        },
+        "model_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Model Sha256",
+          "type": "string"
+        },
+        "model_url": {
+          "pattern": "^https://",
+          "title": "Model Url",
+          "type": "string"
+        },
+        "sample_fps": {
+          "exclusiveMinimum": 0,
+          "title": "Sample Fps",
+          "type": "number"
+        },
+        "smooth": {
+          "minimum": 1,
+          "title": "Smooth",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "model",
+        "model_url",
+        "model_sha256",
+        "sample_fps",
+        "min_conf",
+        "body_below_face",
+        "box_face_heights",
+        "smooth",
+        "hand_model",
+        "hand_model_url",
+        "hand_model_sha256",
+        "hand_scale",
+        "hand_min_face",
+        "hand_min_conf"
+      ],
+      "title": "FootagePose",
+      "type": "object"
+    },
+    "FootageReel": {
+      "additionalProperties": false,
+      "description": "create reel: how widgets fill their boxes, and how a reel moves as a whole (ADR 0033).",
+      "properties": {
+        "bg_drift_s": {
+          "default": 18.0,
+          "exclusiveMinimum": 0,
+          "title": "Bg Drift S",
+          "type": "number"
+        },
+        "caption_dim": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Caption Dim",
+          "type": "number"
+        },
+        "caption_plate": {
+          "$ref": "#/$defs/CaptionPlate"
+        },
+        "check": {
+          "$ref": "#/$defs/ReelCheck"
+        },
+        "chest_chin_gap": {
+          "default": 0.0,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Chest Chin Gap",
+          "type": "number"
+        },
+        "cut_nudge_px": {
+          "default": 14,
+          "maximum": 60,
+          "minimum": 0,
+          "title": "Cut Nudge Px",
+          "type": "integer"
+        },
+        "draft_scale": {
+          "default": 0.5,
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "title": "Draft Scale",
+          "type": "number"
+        },
+        "fit_up": {
+          "maximum": 3,
+          "minimum": 1,
+          "title": "Fit Up",
+          "type": "number"
+        },
+        "frame_format": {
+          "enum": [
+            "png",
+            "jpg"
+          ],
+          "title": "Frame Format",
+          "type": "string"
+        },
+        "handover_s": {
+          "default": 0.55,
+          "exclusiveMinimum": 0,
+          "maximum": 1.5,
+          "title": "Handover S",
+          "type": "number"
+        },
+        "held_chin_gap": {
+          "default": 30,
+          "minimum": 0,
+          "title": "Held Chin Gap",
+          "type": "integer"
+        },
+        "held_h": {
+          "default": 340,
+          "maximum": 1000,
+          "minimum": 100,
+          "title": "Held H",
+          "type": "integer"
+        },
+        "held_lift": {
+          "default": 0.08,
+          "maximum": 0.5,
+          "minimum": 0,
+          "title": "Held Lift",
+          "type": "number"
+        },
+        "held_tilt": {
+          "default": 8.0,
+          "maximum": 30,
+          "minimum": 0,
+          "title": "Held Tilt",
+          "type": "number"
+        },
+        "held_tilt_k": {
+          "default": 0.02,
+          "minimum": 0,
+          "title": "Held Tilt K",
+          "type": "number"
+        },
+        "held_w": {
+          "default": 520,
+          "maximum": 1080,
+          "minimum": 200,
+          "title": "Held W",
+          "type": "integer"
+        },
+        "kicker_h": {
+          "default": 104,
+          "maximum": 200,
+          "minimum": 0,
+          "title": "Kicker H",
+          "type": "integer"
+        },
+        "overlay_aspect": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Overlay Aspect",
+          "type": "object"
+        },
+        "props": {
+          "$ref": "#/$defs/ReelProps"
+        },
+        "punch_scale": {
+          "maximum": 1.3,
+          "minimum": 1,
+          "title": "Punch Scale",
+          "type": "number"
+        },
+        "snap_cuts_s": {
+          "default": 0.3,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Snap Cuts S",
+          "type": "number"
+        },
+        "styles": {
+          "additionalProperties": {
+            "$ref": "#/$defs/ReelStyle"
+          },
+          "title": "Styles",
+          "type": "object"
+        }
+      },
+      "required": [
+        "fit_up",
+        "overlay_aspect",
+        "caption_dim",
+        "punch_scale",
+        "frame_format",
+        "caption_plate",
+        "check",
+        "props"
+      ],
+      "title": "FootageReel",
+      "type": "object"
+    },
+    "FootageReframe": {
+      "additionalProperties": false,
+      "properties": {
+        "eye_line": {
+          "exclusiveMaximum": 1,
+          "exclusiveMinimum": 0,
+          "title": "Eye Line",
+          "type": "number"
+        },
+        "hair_above_face": {
+          "default": 0.3,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Hair Above Face",
+          "type": "number"
+        },
+        "min_score": {
+          "exclusiveMaximum": 1,
+          "exclusiveMinimum": 0,
+          "title": "Min Score",
+          "type": "number"
+        },
+        "model": {
+          "minLength": 1,
+          "title": "Model",
+          "type": "string"
+        },
+        "model_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Model Sha256",
+          "type": "string"
+        },
+        "model_url": {
+          "pattern": "^https://",
+          "title": "Model Url",
+          "type": "string"
+        },
+        "pip_face_scale": {
+          "exclusiveMinimum": 1,
+          "title": "Pip Face Scale",
+          "type": "number"
+        },
+        "pip_margin": {
+          "minimum": 0,
+          "title": "Pip Margin",
+          "type": "integer"
+        },
+        "pip_ring": {
+          "minimum": 0,
+          "title": "Pip Ring",
+          "type": "integer"
+        },
+        "pip_size": {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "title": "Pip Size",
+          "type": "object"
+        },
+        "punch_in": {
+          "minimum": 1,
+          "title": "Punch In",
+          "type": "number"
+        },
+        "sample_fps": {
+          "exclusiveMinimum": 0,
+          "title": "Sample Fps",
+          "type": "number"
+        },
+        "split_face_offset": {
+          "minimum": 0,
+          "title": "Split Face Offset",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "model",
+        "model_url",
+        "model_sha256",
+        "sample_fps",
+        "min_score",
+        "eye_line",
+        "punch_in",
+        "pip_face_scale",
+        "pip_size",
+        "pip_margin",
+        "pip_ring",
+        "split_face_offset"
+      ],
+      "title": "FootageReframe",
+      "type": "object"
+    },
+    "FootageResolve": {
+      "additionalProperties": false,
+      "description": "Skill resolve-fix-take: grade and skin targets for a raw take fixed in DaVinci Resolve.",
+      "properties": {
+        "black": {
+          "exclusiveMaximum": 0.5,
+          "minimum": 0,
+          "title": "Black",
+          "type": "number"
+        },
+        "lut_size": {
+          "maximum": 65,
+          "minimum": 9,
+          "title": "Lut Size",
+          "type": "integer"
+        },
+        "regions": {
+          "additionalProperties": {
+            "maxItems": 4,
+            "minItems": 4,
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "title": "Regions",
+          "type": "object"
+        },
+        "saturation": {
+          "exclusiveMinimum": 0,
+          "maximum": 2,
+          "title": "Saturation",
+          "type": "number"
+        },
+        "skin_chroma": {
+          "exclusiveMinimum": 0,
+          "title": "Skin Chroma",
+          "type": "number"
+        },
+        "skin_chroma_mul": {
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "title": "Skin Chroma Mul",
+          "type": "number"
+        },
+        "skin_chroma_tol": {
+          "exclusiveMinimum": 0,
+          "title": "Skin Chroma Tol",
+          "type": "number"
+        },
+        "skin_hue": {
+          "exclusiveMaximum": 360,
+          "minimum": 0,
+          "title": "Skin Hue",
+          "type": "number"
+        },
+        "skin_hue_pull": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Skin Hue Pull",
+          "type": "number"
+        },
+        "skin_hue_to": {
+          "exclusiveMaximum": 360,
+          "minimum": 0,
+          "title": "Skin Hue To",
+          "type": "number"
+        },
+        "skin_hue_tol": {
+          "exclusiveMinimum": 0,
+          "title": "Skin Hue Tol",
+          "type": "number"
+        },
+        "skin_lift": {
+          "maximum": 0.2,
+          "minimum": 0,
+          "title": "Skin Lift",
+          "type": "number"
+        },
+        "skin_mask": {
+          "$ref": "#/$defs/SkinMask"
+        },
+        "skin_neutral": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Skin Neutral",
+          "type": "array"
+        },
+        "skin_saturated": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Skin Saturated",
+          "type": "array"
+        },
+        "skin_shadow": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Skin Shadow",
+          "type": "array"
+        },
+        "skin_window": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Skin Window",
+          "type": "array"
+        },
+        "white": {
+          "exclusiveMinimum": 0.5,
+          "maximum": 1,
+          "title": "White",
+          "type": "number"
+        },
+        "white_bg": {
+          "exclusiveMinimum": 0,
+          "title": "White Bg",
+          "type": "number"
+        },
+        "white_rg": {
+          "exclusiveMinimum": 0,
+          "title": "White Rg",
+          "type": "number"
+        }
+      },
+      "required": [
+        "black",
+        "white",
+        "white_rg",
+        "white_bg",
+        "saturation",
+        "skin_hue",
+        "skin_chroma",
+        "skin_hue_tol",
+        "skin_chroma_tol",
+        "skin_window",
+        "skin_hue_to",
+        "skin_hue_pull",
+        "skin_chroma_mul",
+        "skin_lift",
+        "skin_neutral",
+        "skin_saturated",
+        "skin_shadow",
+        "skin_mask",
+        "lut_size",
+        "regions"
+      ],
+      "title": "FootageResolve",
+      "type": "object"
+    },
+    "FootageSfx": {
+      "additionalProperties": false,
+      "description": "Soft UI sounds under the voice (create/footage/sfx.py).",
+      "properties": {
+        "level_db": {
+          "maximum": 0,
+          "title": "Level Db",
+          "type": "number"
+        },
+        "min_gap_s": {
+          "minimum": 0,
+          "title": "Min Gap S",
+          "type": "number"
+        },
+        "pop_offset_s": {
+          "default": 0.0,
+          "title": "Pop Offset S",
+          "type": "number"
+        },
+        "trim_db": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Trim Db",
+          "type": "object"
+        },
+        "whoosh_lead_s": {
+          "minimum": 0,
+          "title": "Whoosh Lead S",
+          "type": "number"
+        }
+      },
+      "required": [
+        "level_db",
+        "whoosh_lead_s",
+        "min_gap_s"
+      ],
+      "title": "FootageSfx",
+      "type": "object"
+    },
+    "FootageSurface": {
+      "additionalProperties": false,
+      "description": "Words painted on a room surface (fx wall, tournament n08): what counts as wood in the master frame.",
+      "properties": {
+        "card_aspect": {
+          "exclusiveMinimum": 0,
+          "title": "Card Aspect",
+          "type": "number"
+        },
+        "hue": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Hue",
+          "type": "array"
+        },
+        "rows": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Rows",
+          "type": "array"
+        },
+        "sat_min": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Sat Min",
+          "type": "number"
+        },
+        "val": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Val",
+          "type": "array"
+        }
+      },
+      "required": [
+        "hue",
+        "sat_min",
+        "val",
+        "rows",
+        "card_aspect"
+      ],
+      "title": "FootageSurface",
+      "type": "object"
+    },
+    "FootageVoice": {
+      "additionalProperties": false,
+      "properties": {
+        "compressor": {
+          "minLength": 1,
+          "title": "Compressor",
+          "type": "string"
+        },
+        "denoise_nf_db": {
+          "exclusiveMaximum": 0,
+          "title": "Denoise Nf Db",
+          "type": "number"
+        },
+        "highpass_hz": {
+          "exclusiveMinimum": 0,
+          "title": "Highpass Hz",
+          "type": "number"
+        },
+        "lra": {
+          "exclusiveMinimum": 0,
+          "title": "Lra",
+          "type": "number"
+        },
+        "true_peak_db": {
+          "exclusiveMaximum": 0,
+          "title": "True Peak Db",
+          "type": "number"
+        }
+      },
+      "required": [
+        "highpass_hz",
+        "denoise_nf_db",
+        "compressor",
+        "true_peak_db",
+        "lra"
+      ],
+      "title": "FootageVoice",
+      "type": "object"
+    },
+    "Gold": {
+      "additionalProperties": false,
+      "properties": {
+        "max_events_per_video": {
+          "minimum": 1,
+          "title": "Max Events Per Video",
+          "type": "integer"
+        },
+        "videos": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Videos",
+          "type": "array"
+        }
+      },
+      "required": [
+        "videos",
+        "max_events_per_video"
+      ],
+      "title": "Gold",
+      "type": "object"
+    },
+    "KnownValue": {
+      "additionalProperties": false,
+      "properties": {
+        "tolerance": {
+          "minimum": 0,
+          "title": "Tolerance",
+          "type": "number"
+        },
+        "value": {
+          "title": "Value",
+          "type": "number"
+        }
+      },
+      "required": [
+        "value",
+        "tolerance"
+      ],
+      "title": "KnownValue",
+      "type": "object"
+    },
+    "LoudnessTarget": {
+      "additionalProperties": false,
+      "properties": {
+        "max_lufs": {
+          "title": "Max Lufs",
+          "type": "number"
+        },
+        "max_true_peak_dbtp": {
+          "title": "Max True Peak Dbtp",
+          "type": "number"
+        },
+        "min_lufs": {
+          "title": "Min Lufs",
+          "type": "number"
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        }
+      },
+      "required": [
+        "min_lufs",
+        "max_lufs",
+        "max_true_peak_dbtp",
+        "source"
+      ],
+      "title": "LoudnessTarget",
+      "type": "object"
+    },
+    "Measure": {
+      "additionalProperties": false,
+      "properties": {
+        "gsap_class_ratio": {
+          "minimum": 1,
+          "title": "Gsap Class Ratio",
+          "type": "number"
+        },
+        "min_alpha_contrast": {
+          "minimum": 0,
+          "title": "Min Alpha Contrast",
+          "type": "number"
+        },
+        "min_fit_quality": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Min Fit Quality",
+          "type": "number"
+        },
+        "min_opacity_change": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Min Opacity Change",
+          "type": "number"
+        },
+        "min_position_change_px": {
+          "minimum": 0,
+          "title": "Min Position Change Px",
+          "type": "number"
+        },
+        "min_scale_change": {
+          "minimum": 0,
+          "title": "Min Scale Change",
+          "type": "number"
+        },
+        "model_selection_margin": {
+          "minimum": 0,
+          "title": "Model Selection Margin",
+          "type": "number"
+        },
+        "opacity_hold_max_travel": {
+          "minimum": 0,
+          "title": "Opacity Hold Max Travel",
+          "type": "number"
+        },
+        "progress_end_tolerance": {
+          "exclusiveMaximum": 1,
+          "exclusiveMinimum": 0,
+          "title": "Progress End Tolerance",
+          "type": "number"
+        },
+        "stagger_reveal_alpha": {
+          "exclusiveMaximum": 1,
+          "exclusiveMinimum": 0,
+          "title": "Stagger Reveal Alpha",
+          "type": "number"
+        },
+        "track_coarse_min_template_px": {
+          "minimum": 4,
+          "title": "Track Coarse Min Template Px",
+          "type": "integer"
+        },
+        "track_coarse_px": {
+          "minimum": 16,
+          "title": "Track Coarse Px",
+          "type": "integer"
+        },
+        "track_margin_px": {
+          "minimum": 0,
+          "title": "Track Margin Px",
+          "type": "integer"
+        },
+        "track_min_confidence": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Track Min Confidence",
+          "type": "number"
+        },
+        "track_scale_steps": {
+          "items": {
+            "type": "number"
+          },
+          "minItems": 1,
+          "title": "Track Scale Steps",
+          "type": "array"
+        }
+      },
+      "required": [
+        "progress_end_tolerance",
+        "min_fit_quality",
+        "model_selection_margin",
+        "gsap_class_ratio",
+        "track_margin_px",
+        "track_scale_steps",
+        "track_min_confidence",
+        "track_coarse_px",
+        "track_coarse_min_template_px",
+        "min_position_change_px",
+        "min_scale_change",
+        "min_opacity_change",
+        "min_alpha_contrast",
+        "opacity_hold_max_travel",
+        "stagger_reveal_alpha"
+      ],
+      "title": "Measure",
+      "type": "object"
+    },
+    "MetricTarget": {
+      "additionalProperties": false,
+      "properties": {
+        "effort": {
+          "pattern": "^[SML]$",
+          "title": "Effort",
+          "type": "string"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "max": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Max"
+        },
+        "min": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Min"
+        },
+        "path": {
+          "title": "Path",
+          "type": "string"
+        },
+        "requires": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Requires",
+          "type": "array"
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "unit": {
+          "title": "Unit",
+          "type": "string"
+        },
+        "weight": {
+          "exclusiveMinimum": 0,
+          "title": "Weight",
+          "type": "number"
+        }
+      },
+      "required": [
+        "id",
+        "path",
+        "unit",
+        "weight",
+        "effort",
+        "requires",
+        "source"
+      ],
+      "title": "MetricTarget",
+      "type": "object"
+    },
+    "MotionBuild": {
+      "additionalProperties": false,
+      "properties": {
+        "grades": {
+          "minimum": 1,
+          "title": "Grades",
+          "type": "integer"
+        },
+        "snapshot_frames": {
+          "minimum": 0,
+          "title": "Snapshot Frames",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "grades",
+        "snapshot_frames"
+      ],
+      "title": "MotionBuild",
+      "type": "object"
+    },
+    "MotionGradeConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "ambient_min_s": {
+          "exclusiveMinimum": 0,
+          "title": "Ambient Min S",
+          "type": "number"
+        },
+        "ease_min_moves": {
+          "minimum": 1,
+          "title": "Ease Min Moves",
+          "type": "integer"
+        },
+        "logo_at_close": {
+          "title": "Logo At Close",
+          "type": "boolean"
+        },
+        "max_accent_moments": {
+          "exclusiveMinimum": 0,
+          "title": "Max Accent Moments",
+          "type": "number"
+        },
+        "max_move_s": {
+          "exclusiveMinimum": 0,
+          "title": "Max Move S",
+          "type": "number"
+        },
+        "min_blur_px": {
+          "exclusiveMinimum": 0,
+          "title": "Min Blur Px",
+          "type": "number"
+        },
+        "min_ease_families": {
+          "minimum": 1,
+          "title": "Min Ease Families",
+          "type": "integer"
+        },
+        "min_visible_opacity": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Min Visible Opacity",
+          "type": "number"
+        },
+        "overlap_min_px": {
+          "minimum": 0,
+          "title": "Overlap Min Px",
+          "type": "number"
+        },
+        "overshoot_factor": {
+          "exclusiveMinimum": 0,
+          "title": "Overshoot Factor",
+          "type": "number"
+        },
+        "overshoot_max_area": {
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "title": "Overshoot Max Area",
+          "type": "number"
+        },
+        "persist_s": {
+          "minimum": 0,
+          "title": "Persist S",
+          "type": "number"
+        },
+        "sample_step_s": {
+          "exclusiveMinimum": 0,
+          "title": "Sample Step S",
+          "type": "number"
+        },
+        "seam_rest_s": {
+          "exclusiveMinimum": 0,
+          "title": "Seam Rest S",
+          "type": "number"
+        },
+        "seam_s": {
+          "minimum": 0,
+          "title": "Seam S",
+          "type": "number"
+        },
+        "tint_alpha_spread": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Tint Alpha Spread",
+          "type": "number"
+        },
+        "tint_max_alpha": {
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "title": "Tint Max Alpha",
+          "type": "number"
+        },
+        "tint_tokens": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Tint Tokens",
+          "type": "array"
+        },
+        "tint_tolerance": {
+          "maximum": 255,
+          "minimum": 0,
+          "title": "Tint Tolerance",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "max_move_s",
+        "ambient_min_s",
+        "min_blur_px",
+        "sample_step_s",
+        "max_accent_moments",
+        "overlap_min_px",
+        "persist_s",
+        "min_visible_opacity",
+        "logo_at_close",
+        "tint_tokens",
+        "tint_max_alpha",
+        "tint_tolerance",
+        "tint_alpha_spread",
+        "min_ease_families",
+        "ease_min_moves",
+        "overshoot_factor",
+        "overshoot_max_area",
+        "seam_s",
+        "seam_rest_s"
+      ],
+      "title": "MotionGradeConfig",
+      "type": "object"
+    },
+    "MotionRule": {
+      "additionalProperties": false,
+      "properties": {
+        "rule": {
+          "minLength": 1,
+          "title": "Rule",
+          "type": "string"
+        },
+        "source": {
+          "minLength": 1,
+          "title": "Source",
+          "type": "string"
+        }
+      },
+      "required": [
+        "rule",
+        "source"
+      ],
+      "title": "MotionRule",
+      "type": "object"
+    },
+    "MusicSections": {
+      "additionalProperties": false,
+      "properties": {
+        "first": {
+          "minLength": 1,
+          "title": "First",
+          "type": "string"
+        },
+        "last": {
+          "minLength": 1,
+          "title": "Last",
+          "type": "string"
+        },
+        "middle": {
+          "minLength": 1,
+          "title": "Middle",
+          "type": "string"
+        }
+      },
+      "required": [
+        "first",
+        "middle",
+        "last"
+      ],
+      "title": "MusicSections",
+      "type": "object"
+    },
+    "Originals": {
+      "additionalProperties": false,
+      "properties": {
+        "keep_tiers": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Keep Tiers",
+          "type": "array"
+        },
+        "lifecycle_days": {
+          "minimum": 0,
+          "title": "Lifecycle Days",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "lifecycle_days",
+        "keep_tiers"
+      ],
+      "title": "Originals",
+      "type": "object"
+    },
+    "Packets": {
+      "additionalProperties": false,
+      "properties": {
+        "dedupe_duration_ratio": {
+          "minimum": 0,
+          "title": "Dedupe Duration Ratio",
+          "type": "number"
+        },
+        "dedupe_max_distance": {
+          "maximum": 64,
+          "minimum": 0,
+          "title": "Dedupe Max Distance",
+          "type": "integer"
+        },
+        "min_event_area": {
+          "exclusiveMaximum": 1,
+          "minimum": 0,
+          "title": "Min Event Area",
+          "type": "number"
+        },
+        "min_event_energy": {
+          "minimum": 0,
+          "title": "Min Event Energy",
+          "type": "number"
+        },
+        "overlap_merge_min": {
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "title": "Overlap Merge Min",
+          "type": "number"
+        },
+        "skip_caption_band": {
+          "title": "Skip Caption Band",
+          "type": "boolean"
+        },
+        "words_window_s": {
+          "minimum": 0,
+          "title": "Words Window S",
+          "type": "number"
+        }
+      },
+      "required": [
+        "min_event_energy",
+        "min_event_area",
+        "skip_caption_band",
+        "dedupe_max_distance",
+        "dedupe_duration_ratio",
+        "words_window_s",
+        "overlap_merge_min"
+      ],
+      "title": "Packets",
+      "type": "object"
+    },
+    "Reconcile": {
+      "additionalProperties": false,
+      "properties": {
+        "shot_tolerance_frames": {
+          "minimum": 0,
+          "title": "Shot Tolerance Frames",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "shot_tolerance_frames"
+      ],
+      "title": "Reconcile",
+      "type": "object"
+    },
+    "Rect": {
+      "additionalProperties": false,
+      "description": "A rectangle in frame pixels.",
+      "properties": {
+        "x0": {
+          "minimum": 0,
+          "title": "X0",
+          "type": "integer"
+        },
+        "x1": {
+          "exclusiveMinimum": 0,
+          "title": "X1",
+          "type": "integer"
+        },
+        "y0": {
+          "minimum": 0,
+          "title": "Y0",
+          "type": "integer"
+        },
+        "y1": {
+          "exclusiveMinimum": 0,
+          "title": "Y1",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "x0",
+        "y0",
+        "x1",
+        "y1"
+      ],
+      "title": "Rect",
+      "type": "object"
+    },
+    "ReelCheck": {
+      "additionalProperties": false,
+      "description": "`create reel --check`: what the reviews of Robert's first take kept finding, caught before a render.",
+      "properties": {
+        "edge_tol_px": {
+          "minimum": 0,
+          "title": "Edge Tol Px",
+          "type": "number"
+        },
+        "max_beat_gap_s": {
+          "exclusiveMinimum": 0,
+          "title": "Max Beat Gap S",
+          "type": "number"
+        },
+        "max_product_empty_s": {
+          "minimum": 0,
+          "title": "Max Product Empty S",
+          "type": "number"
+        },
+        "max_static_s": {
+          "exclusiveMinimum": 0,
+          "title": "Max Static S",
+          "type": "number"
+        },
+        "max_sticker_chars": {
+          "exclusiveMinimum": 0,
+          "title": "Max Sticker Chars",
+          "type": "integer"
+        },
+        "min_card_text_px": {
+          "exclusiveMinimum": 0,
+          "title": "Min Card Text Px",
+          "type": "number"
+        }
+      },
+      "required": [
+        "max_beat_gap_s",
+        "max_static_s",
+        "max_product_empty_s",
+        "max_sticker_chars",
+        "min_card_text_px",
+        "edge_tol_px"
+      ],
+      "title": "ReelCheck",
+      "type": "object"
+    },
+    "ReelProps": {
+      "additionalProperties": false,
+      "description": "create reel props (characters in the room): where named spots are and how big a beat moves.",
+      "properties": {
+        "anchors": {
+          "additionalProperties": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "title": "Anchors",
+          "type": "object"
+        },
+        "approach": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Approach",
+          "type": "array"
+        },
+        "carry_max": {
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "title": "Carry Max",
+          "type": "number"
+        },
+        "exit_s": {
+          "exclusiveMinimum": 0,
+          "title": "Exit S",
+          "type": "number"
+        },
+        "flee_bolt": {
+          "default": 0.25,
+          "minimum": 0,
+          "title": "Flee Bolt",
+          "type": "number"
+        },
+        "flee_chase_s": {
+          "default": 1.5,
+          "exclusiveMinimum": 0,
+          "title": "Flee Chase S",
+          "type": "number"
+        },
+        "flee_gap": {
+          "default": 0.3,
+          "minimum": 0,
+          "title": "Flee Gap",
+          "type": "number"
+        },
+        "gag_scale": {
+          "default": 1.0,
+          "exclusiveMinimum": 0,
+          "title": "Gag Scale",
+          "type": "number"
+        },
+        "jump_rise": {
+          "exclusiveMinimum": 0,
+          "title": "Jump Rise",
+          "type": "number"
+        },
+        "lead_s": {
+          "maximum": 0.2,
+          "minimum": 0,
+          "title": "Lead S",
+          "type": "number"
+        },
+        "max_travel_s": {
+          "exclusiveMinimum": 0,
+          "title": "Max Travel S",
+          "type": "number"
+        },
+        "min_exit_s": {
+          "exclusiveMinimum": 0,
+          "title": "Min Exit S",
+          "type": "number"
+        },
+        "min_travel_s": {
+          "exclusiveMinimum": 0,
+          "title": "Min Travel S",
+          "type": "number"
+        },
+        "min_visible": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Min Visible",
+          "type": "number"
+        },
+        "move_s": {
+          "exclusiveMinimum": 0,
+          "title": "Move S",
+          "type": "number"
+        },
+        "path_leg_s": {
+          "exclusiveMinimum": 0,
+          "title": "Path Leg S",
+          "type": "number"
+        },
+        "peek_share": {
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "title": "Peek Share",
+          "type": "number"
+        },
+        "pixel_cells": {
+          "maximum": 128,
+          "minimum": 8,
+          "title": "Pixel Cells",
+          "type": "integer"
+        },
+        "safe_bottom": {
+          "exclusiveMinimum": 0,
+          "title": "Safe Bottom",
+          "type": "number"
+        },
+        "safe_right": {
+          "default": 1000000000.0,
+          "exclusiveMinimum": 0,
+          "title": "Safe Right",
+          "type": "number"
+        },
+        "speeds": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Speeds",
+          "type": "object"
+        },
+        "tag_cut_least_s": {
+          "default": 0.8,
+          "minimum": 0,
+          "title": "Tag Cut Least S",
+          "type": "number"
+        },
+        "tag_s": {
+          "exclusiveMinimum": 0,
+          "title": "Tag S",
+          "type": "number"
+        },
+        "tag_side_above": {
+          "default": 0.0,
+          "minimum": 0,
+          "title": "Tag Side Above",
+          "type": "number"
+        }
+      },
+      "required": [
+        "anchors",
+        "pixel_cells",
+        "move_s",
+        "exit_s",
+        "path_leg_s",
+        "speeds",
+        "peek_share",
+        "min_exit_s",
+        "min_travel_s",
+        "jump_rise",
+        "approach",
+        "carry_max",
+        "tag_s",
+        "max_travel_s",
+        "lead_s",
+        "safe_bottom",
+        "min_visible"
+      ],
+      "title": "ReelProps",
+      "type": "object"
+    },
+    "ReelStyle": {
+      "additionalProperties": false,
+      "description": "A motion style for a whole reel (ADR 0033): a plan names one (`motion: {style: paper}`) and code\napplies it, so two videos of one brand move differently and every video moves as one piece.",
+      "properties": {
+        "bg": {
+          "enum": [
+            "none",
+            "drift"
+          ],
+          "title": "Bg",
+          "type": "string"
+        },
+        "cards": {
+          "enum": [
+            "rise",
+            "pop",
+            "slide",
+            "flip",
+            "focus",
+            "pixel",
+            "wipe",
+            "unfold"
+          ],
+          "title": "Cards",
+          "type": "string"
+        },
+        "cut_nudge": {
+          "title": "Cut Nudge",
+          "type": "boolean"
+        },
+        "handover": {
+          "enum": [
+            "morph",
+            "push",
+            "stack",
+            "cut"
+          ],
+          "title": "Handover",
+          "type": "string"
+        },
+        "kicker": {
+          "enum": [
+            "each",
+            "run"
+          ],
+          "title": "Kicker",
+          "type": "string"
+        },
+        "note": {
+          "default": "",
+          "title": "Note",
+          "type": "string"
+        },
+        "numbers": {
+          "enum": [
+            "rise",
+            "pop",
+            "slide",
+            "flip",
+            "focus",
+            "pixel",
+            "wipe",
+            "unfold"
+          ],
+          "title": "Numbers",
+          "type": "string"
+        },
+        "push_alternate": {
+          "title": "Push Alternate",
+          "type": "boolean"
+        },
+        "snap_cuts": {
+          "title": "Snap Cuts",
+          "type": "boolean"
+        },
+        "stickers": {
+          "enum": [
+            "rise",
+            "pop",
+            "slide",
+            "flip",
+            "focus",
+            "pixel",
+            "wipe",
+            "unfold"
+          ],
+          "title": "Stickers",
+          "type": "string"
+        }
+      },
+      "required": [
+        "cards",
+        "stickers",
+        "numbers",
+        "handover",
+        "bg",
+        "kicker",
+        "push_alternate",
+        "cut_nudge",
+        "snap_cuts"
+      ],
+      "title": "ReelStyle",
+      "type": "object"
+    },
+    "Signals": {
+      "additionalProperties": false,
+      "properties": {
+        "audio": {
+          "$ref": "#/$defs/AudioSignalsConfig"
+        },
+        "captions": {
+          "$ref": "#/$defs/CaptionsConfig"
+        },
+        "clap": {
+          "$ref": "#/$defs/ClapConfig"
+        },
+        "cut_on_beat_tolerance_frames": {
+          "minimum": 0,
+          "title": "Cut On Beat Tolerance Frames",
+          "type": "integer"
+        },
+        "dead_hold_min_s": {
+          "exclusiveMinimum": 0,
+          "title": "Dead Hold Min S",
+          "type": "number"
+        },
+        "scene_start_tolerance_frames": {
+          "minimum": 0,
+          "title": "Scene Start Tolerance Frames",
+          "type": "integer"
+        },
+        "sfx_reveal_window_s": {
+          "exclusiveMinimum": 0,
+          "title": "Sfx Reveal Window S",
+          "type": "number"
+        },
+        "speech": {
+          "$ref": "#/$defs/SpeechConfig"
+        },
+        "speech_min_words": {
+          "minimum": 1,
+          "title": "Speech Min Words",
+          "type": "integer"
+        },
+        "stems": {
+          "$ref": "#/$defs/StemsConfig"
+        },
+        "video": {
+          "$ref": "#/$defs/VideoSignalsConfig"
+        }
+      },
+      "required": [
+        "stems",
+        "clap",
+        "captions",
+        "video",
+        "audio",
+        "speech",
+        "cut_on_beat_tolerance_frames",
+        "scene_start_tolerance_frames",
+        "sfx_reveal_window_s",
+        "speech_min_words",
+        "dead_hold_min_s"
+      ],
+      "title": "Signals",
+      "type": "object"
+    },
+    "SkinMask": {
+      "additionalProperties": false,
+      "description": "Which pixels inside a face box count as skin (Oklab).",
+      "properties": {
+        "hue": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Hue",
+          "type": "array"
+        },
+        "min_chroma": {
+          "minimum": 0,
+          "title": "Min Chroma",
+          "type": "number"
+        },
+        "min_l": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Min L",
+          "type": "number"
+        }
+      },
+      "required": [
+        "min_l",
+        "min_chroma",
+        "hue"
+      ],
+      "title": "SkinMask",
+      "type": "object"
+    },
+    "SpeechConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "language": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Language"
+        },
+        "pause_long_ms": {
+          "exclusiveMinimum": 0,
+          "title": "Pause Long Ms",
+          "type": "number"
+        },
+        "pause_medium_ms": {
+          "exclusiveMinimum": 0,
+          "title": "Pause Medium Ms",
+          "type": "number"
+        },
+        "pause_min_ms": {
+          "exclusiveMinimum": 0,
+          "title": "Pause Min Ms",
+          "type": "number"
+        },
+        "phrase_split_ms": {
+          "exclusiveMinimum": 0,
+          "title": "Phrase Split Ms",
+          "type": "number"
+        },
+        "pitch_fmax_hz": {
+          "exclusiveMinimum": 0,
+          "title": "Pitch Fmax Hz",
+          "type": "number"
+        },
+        "pitch_fmin_hz": {
+          "exclusiveMinimum": 0,
+          "title": "Pitch Fmin Hz",
+          "type": "number"
+        },
+        "voice_floor_db": {
+          "exclusiveMinimum": 0,
+          "title": "Voice Floor Db",
+          "type": "number"
+        },
+        "voice_range_db": {
+          "exclusiveMinimum": 0,
+          "title": "Voice Range Db",
+          "type": "number"
+        },
+        "whisper_compute_type": {
+          "title": "Whisper Compute Type",
+          "type": "string"
+        },
+        "whisper_model": {
+          "title": "Whisper Model",
+          "type": "string"
+        }
+      },
+      "required": [
+        "whisper_model",
+        "whisper_compute_type",
+        "language",
+        "pause_min_ms",
+        "pause_medium_ms",
+        "pause_long_ms",
+        "phrase_split_ms",
+        "pitch_fmin_hz",
+        "pitch_fmax_hz",
+        "voice_floor_db",
+        "voice_range_db"
+      ],
+      "title": "SpeechConfig",
+      "type": "object"
+    },
+    "StemsConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "ducking_guard_s": {
+          "minimum": 0,
+          "title": "Ducking Guard S",
+          "type": "number"
+        },
+        "enabled": {
+          "title": "Enabled",
+          "type": "boolean"
+        },
+        "model": {
+          "title": "Model",
+          "type": "string"
+        }
+      },
+      "required": [
+        "enabled",
+        "model",
+        "ducking_guard_s"
+      ],
+      "title": "StemsConfig",
+      "type": "object"
+    },
+    "StyleRule": {
+      "additionalProperties": false,
+      "properties": {
+        "pattern": {
+          "minLength": 1,
+          "title": "Pattern",
+          "type": "string"
+        },
+        "reason": {
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "pattern",
+        "reason"
+      ],
+      "title": "StyleRule",
+      "type": "object"
+    },
+    "Synth": {
+      "additionalProperties": false,
+      "properties": {
+        "bootstrap": {
+          "minimum": 100,
+          "title": "Bootstrap",
+          "type": "integer"
+        },
+        "card_members": {
+          "minimum": 1,
+          "title": "Card Members",
+          "type": "integer"
+        },
+        "ci": {
+          "exclusiveMaximum": 1,
+          "exclusiveMinimum": 0,
+          "title": "Ci",
+          "type": "number"
+        },
+        "cluster": {
+          "$ref": "#/$defs/Cluster"
+        },
+        "export_word_brands": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Export Word Brands",
+          "type": "array"
+        },
+        "g4_hold": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "G4 Hold",
+          "type": "object"
+        },
+        "g4_hold_archetypes": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "G4 Hold Archetypes",
+          "type": "object"
+        },
+        "max_examples": {
+          "minimum": 1,
+          "title": "Max Examples",
+          "type": "integer"
+        },
+        "min_n": {
+          "minimum": 1,
+          "title": "Min N",
+          "type": "integer"
+        },
+        "scene_batch": {
+          "minimum": 1,
+          "title": "Scene Batch",
+          "type": "integer"
+        },
+        "seed": {
+          "title": "Seed",
+          "type": "integer"
+        },
+        "spring_clusters": {
+          "minimum": 1,
+          "title": "Spring Clusters",
+          "type": "integer"
+        },
+        "weights": {
+          "$ref": "#/$defs/SynthWeights"
+        }
+      },
+      "required": [
+        "weights",
+        "min_n",
+        "bootstrap",
+        "ci",
+        "seed",
+        "spring_clusters",
+        "max_examples",
+        "scene_batch",
+        "card_members",
+        "cluster"
+      ],
+      "title": "Synth",
+      "type": "object"
+    },
+    "SynthWeights": {
+      "additionalProperties": false,
+      "properties": {
+        "quality": {
+          "title": "Quality",
+          "type": "boolean"
+        },
+        "score_from": {
+          "title": "Score From",
+          "type": "string"
+        },
+        "score_missing": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Score Missing",
+          "type": "number"
+        },
+        "tier": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Tier",
+          "type": "object"
+        }
+      },
+      "required": [
+        "tier",
+        "score_from",
+        "score_missing",
+        "quality"
+      ],
+      "title": "SynthWeights",
+      "type": "object"
+    },
+    "Targets": {
+      "additionalProperties": false,
+      "properties": {
+        "default_destination": {
+          "title": "Default Destination",
+          "type": "string"
+        },
+        "loudness": {
+          "additionalProperties": {
+            "$ref": "#/$defs/LoudnessTarget"
+          },
+          "title": "Loudness",
+          "type": "object"
+        },
+        "metrics": {
+          "items": {
+            "$ref": "#/$defs/MetricTarget"
+          },
+          "title": "Metrics",
+          "type": "array"
+        }
+      },
+      "required": [
+        "loudness",
+        "default_destination",
+        "metrics"
+      ],
+      "title": "Targets",
+      "type": "object"
+    },
+    "VideoSignalsConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "analysis_width": {
+          "exclusiveMinimum": 0,
+          "title": "Analysis Width",
+          "type": "integer"
+        },
+        "camera_min_area": {
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "title": "Camera Min Area",
+          "type": "number"
+        },
+        "camera_min_pan": {
+          "exclusiveMinimum": 0,
+          "title": "Camera Min Pan",
+          "type": "number"
+        },
+        "camera_min_zoom": {
+          "exclusiveMinimum": 0,
+          "title": "Camera Min Zoom",
+          "type": "number"
+        },
+        "continuous_min_s": {
+          "exclusiveMinimum": 0,
+          "title": "Continuous Min S",
+          "type": "number"
+        },
+        "crossfade_max_residual": {
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "title": "Crossfade Max Residual",
+          "type": "number"
+        },
+        "cut_min_diff": {
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "title": "Cut Min Diff",
+          "type": "number"
+        },
+        "cut_ratio": {
+          "exclusiveMinimum": 1,
+          "title": "Cut Ratio",
+          "type": "number"
+        },
+        "dissolve_baseline_s": {
+          "exclusiveMinimum": 0,
+          "title": "Dissolve Baseline S",
+          "type": "number"
+        },
+        "dissolve_max_residual": {
+          "exclusiveMinimum": 0,
+          "title": "Dissolve Max Residual",
+          "type": "number"
+        },
+        "dissolve_max_retention": {
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "title": "Dissolve Max Retention",
+          "type": "number"
+        },
+        "dissolve_max_s": {
+          "exclusiveMinimum": 0,
+          "title": "Dissolve Max S",
+          "type": "number"
+        },
+        "dissolve_min_change": {
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "title": "Dissolve Min Change",
+          "type": "number"
+        },
+        "empty_max_edge_density": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Empty Max Edge Density",
+          "type": "number"
+        },
+        "event_abs_min_diff": {
+          "exclusiveMinimum": 0,
+          "title": "Event Abs Min Diff",
+          "type": "number"
+        },
+        "event_noise_k": {
+          "exclusiveMinimum": 0,
+          "title": "Event Noise K",
+          "type": "number"
+        },
+        "ignore_bottom_fraction": {
+          "exclusiveMaximum": 1,
+          "minimum": 0,
+          "title": "Ignore Bottom Fraction",
+          "type": "number"
+        },
+        "mask_threshold": {
+          "maximum": 255,
+          "minimum": 1,
+          "title": "Mask Threshold",
+          "type": "integer"
+        },
+        "min_shot_s": {
+          "exclusiveMinimum": 0,
+          "title": "Min Shot S",
+          "type": "number"
+        },
+        "motion_gap_merge_s": {
+          "minimum": 0,
+          "title": "Motion Gap Merge S",
+          "type": "number"
+        },
+        "motion_min_s": {
+          "exclusiveMinimum": 0,
+          "title": "Motion Min S",
+          "type": "number"
+        },
+        "phase_min_response": {
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "title": "Phase Min Response",
+          "type": "number"
+        },
+        "push_min_shift": {
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "title": "Push Min Shift",
+          "type": "number"
+        },
+        "push_min_total": {
+          "exclusiveMinimum": 0,
+          "title": "Push Min Total",
+          "type": "number"
+        },
+        "transition_min_change": {
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "title": "Transition Min Change",
+          "type": "number"
+        },
+        "transition_min_diff": {
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "title": "Transition Min Diff",
+          "type": "number"
+        },
+        "transition_min_frames": {
+          "minimum": 2,
+          "title": "Transition Min Frames",
+          "type": "integer"
+        },
+        "zoom_min_frames": {
+          "minimum": 1,
+          "title": "Zoom Min Frames",
+          "type": "integer"
+        },
+        "zoom_min_scale_step": {
+          "exclusiveMinimum": 0,
+          "title": "Zoom Min Scale Step",
+          "type": "number"
+        }
+      },
+      "required": [
+        "analysis_width",
+        "mask_threshold",
+        "cut_min_diff",
+        "cut_ratio",
+        "transition_min_diff",
+        "transition_min_frames",
+        "transition_min_change",
+        "crossfade_max_residual",
+        "push_min_shift",
+        "zoom_min_scale_step",
+        "event_abs_min_diff",
+        "event_noise_k",
+        "motion_gap_merge_s",
+        "motion_min_s",
+        "continuous_min_s",
+        "camera_min_zoom",
+        "camera_min_pan",
+        "camera_min_area",
+        "phase_min_response",
+        "empty_max_edge_density",
+        "ignore_bottom_fraction",
+        "dissolve_baseline_s",
+        "dissolve_min_change",
+        "dissolve_max_retention",
+        "dissolve_max_residual",
+        "dissolve_max_s",
+        "min_shot_s",
+        "push_min_total",
+        "zoom_min_frames"
+      ],
+      "title": "VideoSignalsConfig",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "analysis": {
+      "$ref": "#/$defs/Analysis"
+    },
+    "annotate": {
+      "$ref": "#/$defs/Annotate"
+    },
+    "baselines": {
+      "items": {
+        "$ref": "#/$defs/Baseline"
+      },
+      "title": "Baselines",
+      "type": "array"
+    },
+    "batch": {
+      "$ref": "#/$defs/Batch"
+    },
+    "compare": {
+      "$ref": "#/$defs/Compare"
+    },
+    "create": {
+      "$ref": "#/$defs/Create"
+    },
+    "eval": {
+      "$ref": "#/$defs/Eval"
+    },
+    "evidence": {
+      "$ref": "#/$defs/Evidence"
+    },
+    "gold": {
+      "$ref": "#/$defs/Gold"
+    },
+    "measure": {
+      "$ref": "#/$defs/Measure"
+    },
+    "originals": {
+      "$ref": "#/$defs/Originals"
+    },
+    "packets": {
+      "$ref": "#/$defs/Packets"
+    },
+    "reconcile": {
+      "$ref": "#/$defs/Reconcile"
+    },
+    "schema_version": {
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "signals": {
+      "$ref": "#/$defs/Signals"
+    },
+    "synth": {
+      "$ref": "#/$defs/Synth"
+    },
+    "targets": {
+      "$ref": "#/$defs/Targets"
+    }
+  },
+  "required": [
+    "schema_version",
+    "analysis",
+    "originals",
+    "batch",
+    "signals",
+    "evidence",
+    "packets",
+    "annotate",
+    "measure",
+    "reconcile",
+    "synth",
+    "gold",
+    "eval",
+    "compare",
+    "targets",
+    "baselines",
+    "create"
+  ],
+  "title": "LensConfig",
+  "type": "object"
+}

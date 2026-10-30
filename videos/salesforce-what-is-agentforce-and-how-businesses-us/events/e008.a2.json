@@ -1,0 +1,42 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a2_annotate_event",
+  "annotator": "claude-code",
+  "skill": "annotate-event@3dad117bd85a",
+  "model": null,
+  "input_hash": "4e183b0d6c67b99228064d33252884de9308d990e942b240e9cc778708310a31",
+  "created_at": "2026-10-05T06:52:49.982625Z"
+ },
+ "video": "salesforce-what-is-agentforce-and-how-businesses-us",
+ "event": "e008",
+ "task": "a2-e008",
+ "elements": [
+  {"box": "b01", "manual_box": null, "manual_reason": null,
+   "label": "Agent chat history (date, joined notice, greeting bubble, avatar)",
+   "role": "list_item", "role_other": null, "change_types": ["slide_up"], "change_other": null,
+   "is_text": true,
+   "text": "Today • 11:53 AM / Cirrus Virtual Agent joined • 11:53 AM / Hi! I'm your Service Agent / Cirrus Virtual Agent • 11:53 AM",
+   "text_unit": "whole",
+   "estimates": {"duration_ms": 280, "easing_class": "ease_in_out", "source": "model_estimate"}},
+  {"box": "b02", "manual_box": null, "manual_reason": null, "label": "Customer message bubble entering from below",
+   "role": "card", "role_other": null, "change_types": ["slide_up"], "change_other": null,
+   "is_text": true,
+   "text": "I'd like to check on the status of my order. My email address is mrichards@example.com.",
+   "text_unit": "whole",
+   "estimates": {"duration_ms": 280, "easing_class": "ease_in_out", "source": "model_estimate"}}
+ ],
+ "sfx_review": [
+  {"id": "x010", "verdict": "confirm", "label": "music",
+   "note": "Lands ~460 ms after the scroll settles; spectrogram shows sustained harmonic bands continuing the music bed, no transient tied to the bubble."}
+ ],
+ "pattern": {"id": "masked_scroll", "proposed_name": null,
+  "description": "Inside the fixed Cirrus Virtual Agent chat panel, the existing history slides up as a new customer message bubble pushes in from the bottom, clipped by the panel bounds.",
+  "why_premium": "Reproduces real chat behaviour with a smooth, short scroll instead of a pop, so the conversation reads as live while the composition around the panel stays still."},
+ "build_hint": {
+  "gsap": "Inside an overflow:hidden chat body: gsap.to(chatStack, {y: '-=120', duration: 0.3, ease: 'power2.inOut'}) while gsap.from(newBubble, {y: 120, duration: 0.3, ease: 'power2.inOut'}) on the same timeline label; no stagger.",
+  "remotion": "translateY = interpolate(frame, [0, 9], [0, -120], {easing: Easing.inOut(Easing.quad), extrapolateRight: 'clamp'}) on the message list inside a clipped container; new bubble rides with the list."},
+ "confidence": "medium",
+ "notes": "b02 covers only the top part of the new bubble (the region that changed); no candidate box spans the full bubble. Treated the agent-side messages as one group (b01) rather than listing nested boxes b03-b07."
+}

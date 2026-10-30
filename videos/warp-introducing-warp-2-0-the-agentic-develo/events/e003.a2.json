@@ -1,0 +1,47 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "e260ad7d89c303f4fd5ebab47beb1ac81bece51e74e05d0cafe9658f472f68fa",
+    "created_at": "2026-10-05T06:51:35.509997Z"
+  },
+  "video": "warp-introducing-warp-2-0-the-agentic-develo",
+  "event": "e003",
+  "task": "a2-e003",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Presenter speaking to camera, raising both hands into frame in a gesture on 'And finally'",
+      "role": "other",
+      "role_other": "presenter",
+      "change_types": ["other"],
+      "change_other": "live-action presenter gesture (hands rise into frame, small head movement while speaking)",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ambiguous"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x010", "verdict": "confirm", "label": "music", "note": "Music bed onset ~500 ms after the gesture; tonal harmonic bands, no discrete SFX shape."},
+    {"id": "x011", "verdict": "confirm", "label": "music", "note": "Music bed onset at the edge of the window; nothing visual synced to it."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "presenter gesture beat",
+    "description": "Talking-head presenter on the left of a split composition (Agents UI card composited on the right) makes a natural two-hand gesture as he introduces the next point; the UI card is static during this burst.",
+    "why_premium": "A cinematic, dark-graded presenter shot with a floating product card keeps a human face and the product in one frame; the presenter's gesture, not a cut, carries the beat change into 'And finally'."
+  },
+  "build_hint": {
+    "gsap": "Not a designed animation: presenter footage as a video layer; the composited Agents card stays static (gsap.set(card, {x: 0, autoAlpha: 1})). Optionally a slow drift gsap.fromTo(footage, {scale: 1}, {scale: 1.02, duration: shotLength, ease: 'none'}).",
+    "remotion": "<OffthreadVideo> presenter in a <Sequence>, with the Agents card as a static AbsoluteFill overlay; optional interpolate(frame, [0, durationInFrames], [1, 1.02]) scale drift. No spring."
+  },
+  "confidence": "medium",
+  "notes": "Live-action presenter motion only; b02 (inner face/torso region) overlaps b01 and is the same element, so only b01 is used. The hands extend below b01 at the end frame. The measured scale 1.0178 with camera verdict none is the hands entering, not a camera push. The Agents card does not change in this burst."
+}

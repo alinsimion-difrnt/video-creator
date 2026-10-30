@@ -1,0 +1,44 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "e9cfe23b52957b4446e69a8be2d873421375bdd43ef3e14d28ad2b61eb512003",
+    "created_at": "2026-10-05T06:43:20.058311Z"
+  },
+  "video": "datadog-datadog-overview-see-inside-the-platfor",
+  "event": "e017",
+  "task": "a2-e017",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Diagonal translucent light-bar background",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["slide_right", "slide_up", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 500, "easing_class": "linear"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "parallax_layers",
+    "proposed_name": null,
+    "description": "Semi-transparent cyan and blue diagonal bars drift along the diagonal at different speeds and opacities behind a static two-line headline, creating a sense of fast motion.",
+    "why_premium": "Layered translucent bars moving at different rates give depth and a 'speed' feeling that reinforces the 'lightning speed' message while the headline stays perfectly legible."
+  },
+  "build_hint": {
+    "gsap": "Several absolutely positioned skewed bars (rotate ~-30deg, mix-blend screen, opacity 0.2-0.6); gsap.to(bars, {x: '+=320', y: '-=180', duration: (i) => 1.2 + i * 0.4, ease: 'none', repeat: -1}) with per-bar speed and opacity variance; optional autoAlpha fades on entry/exit. Headline static.",
+    "remotion": "Map frame linearly to translate for each bar: x = interpolate(frame, [0, 60], [0, 320 * speed_i]), y = -x * 0.56, with different speed_i per bar layer; opacity per layer constant or interpolate for fade in/out. No spring (constant drift)."
+  },
+  "confidence": "medium",
+  "notes": "Headline text (b03, b04) appears static; their changed_share comes from bars moving behind them. b02 is a sub-region of the same background motion, so not listed separately. Parallax vs simple drift is ambiguous."
+}

@@ -1,0 +1,110 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a3_pattern_cards",
+    "annotator": "claude-code",
+    "skill": "write-pattern-cards@e525a58fa6d8",
+    "model": null,
+    "input_hash": "059acb4a85a35f6bda3d1dc706d7d620aa4f6f1e3494129b8ef260c158637f3e",
+    "created_at": "2026-10-05T12:52:28.179741Z"
+  },
+  "id": "match_cut_element",
+  "name": "Match Cut On Shared Shape",
+  "summary": "A hard cut jumps to a new shot or a new framing, but a shared object or shape stays in the same place on screen, so the eye follows it across the cut and the change feels continuous.",
+  "when_to_use": [
+    "Linking two different shots or angles through a common object",
+    "Jumping in scale on a key word while keeping the composition locked",
+    "Giving a story-led, cinematic rhythm to a sequence of scenes"
+  ],
+  "avoid_when": [
+    "No element can sit in a matching position and shape in both shots",
+    "The viewer needs to track a precise spatial move, where a continuous transition reads better"
+  ],
+  "steps": [
+    "Choose the anchor element both shots share and note its screen position and size",
+    "Frame or lay out the incoming shot so that anchor lands in the same region",
+    "Cut instantly from the first shot to the second, ideally on a spoken word or beat",
+    "Right after the cut, add a short drift or settle (slight scale or outward move, a colour shift) so the new shot feels already in motion"
+  ],
+  "build": {
+    "gsap": "Use timeline set calls to swap visibility of the two layouts at the same time (no transition tween), then a short fromTo on the anchor and its neighbours animating scale, xPercent and gradient position with an ease-out (power-type) or ease-in-out family; a gentle back-type ease can add a small overshoot to the settle.",
+    "remotion": "Place the two shots in back-to-back Sequence blocks with no transition, aligning the anchor's position. Inside the second Sequence, interpolate with an ease-out curve drives a slight scale and translate drift; a spring with light overshoot is an option for the settle."
+  },
+  "sound": "no typical sound",
+  "why_premium": "Keeping one shape or object fixed in the frame across a cut gives the eye a handhold, so a jump in angle or scale reads as continuous action rather than a jarring edit. Landing the cut on a narrated word gives it purpose, and a short drift after the cut folds the edit into a sense of forward motion. The result feels cinematic and deliberate without needing any visible transition effect.",
+  "numbers": {
+    "id": "match_cut_element",
+    "events": 2,
+    "videos": 2,
+    "weight": 1.4,
+    "duration_ms": {
+      "n": 4,
+      "videos": 2,
+      "weight": 2.9196,
+      "median": 223.786,
+      "p25": 166.816,
+      "p75": 367.942,
+      "ci": null
+    },
+    "easing_mix": {
+      "ease_out": 0.274,
+      "spring_overshoot": 0.274,
+      "ease_in_out": 0.2465,
+      "ease_in": 0.2055
+    },
+    "change_mix": {
+      "scale_up": 0.3871,
+      "color_shift": 0.2581,
+      "slide_left": 0.129,
+      "slide_right": 0.129,
+      "other": 0.0968
+    },
+    "role_mix": {
+      "icon": 0.5333,
+      "background": 0.2667,
+      "other": 0.2
+    },
+    "sfx_label_mix": {
+      "unsure": 1.0
+    },
+    "sfx_offset_ms": {
+      "n": 3,
+      "videos": 1,
+      "weight": 2.4,
+      "median": -235.0,
+      "p25": -235.0,
+      "p75": -86.5,
+      "ci": null
+    },
+    "examples": [
+      {
+        "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+        "event": "e010",
+        "score": 4.0
+      },
+      {
+        "video": "servicenow-what-are-servicenow-ai-agents",
+        "event": "e015",
+        "score": 3.0
+      }
+    ]
+  },
+  "examples": [
+    {
+      "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+      "event": "e010",
+      "score": 4.0
+    },
+    {
+      "video": "servicenow-what-are-servicenow-ai-agents",
+      "event": "e015",
+      "score": 3.0
+    }
+  ],
+  "caveats": [
+    "Seen in only two videos with very few measured elements; no confidence interval could be computed",
+    "Measured durations describe the post-cut drift, since the cut itself is instant",
+    "All sound labels are unsure, so no sound guidance is given"
+  ]
+}

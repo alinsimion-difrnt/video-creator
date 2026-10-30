@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "1e31a2b2162ce1fbd4aa1320efebadf6ea8538e6511a5dd0dd311cba81cc8819",
+    "created_at": "2026-10-05T06:38:40.527284Z"
+  },
+  "video": "attio-introducing-ask-attio",
+  "event": "e007",
+  "task": "a2-e007",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Stacked email cards",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["slide_down", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 450, "easing_class": "ease_in"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Headline word swap 'email' -> 'call'",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["slide_down", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Every call",
+      "text_unit": "word",
+      "estimates": {"duration_ms": 250, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "input_text_cycle",
+    "proposed_name": null,
+    "description": "The stack of inbox cards under 'Every email' drifts down and out of frame. Then the second word swaps: 'call' drops in from above while 'email' exits, so 'Every' stays put and the headline becomes 'Every call'.",
+    "why_premium": "Keeping the anchor word fixed and swapping only the noun makes a list of data sources (email, call, ...) read as one sentence building up. Clearing the card stack first leaves room for the swap."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.card-stack .card', {y: 300, autoAlpha: 0, duration: 0.45, ease: 'power2.in', stagger: {each: 0.04, from: 'end'}}); tl.to('.swap-word.old', {y: 30, autoAlpha: 0, duration: 0.2, ease: 'power2.in'}, '-=0.15'); tl.fromTo('.swap-word.new', {y: -30, autoAlpha: 0}, {y: 0, autoAlpha: 1, duration: 0.25, ease: 'power3.out'}, '<0.05').",
+    "remotion": "Cards translateY = interpolate(frame, [0, 14], [0, 300], {easing: Easing.in(Easing.quad)}) with opacity 1->0; old word translateY 0->30 and opacity 1->0 over frames 16-21; new word spring({frame: frame - 18, fps, config: {damping: 200}}) mapping translateY -30->0 and opacity 0->1."
+  },
+  "confidence": "medium",
+  "notes": "input_text_cycle is used loosely: the cycling text is a headline word, not an input field (kinetic_word_reveal is the alternative). b02 overlaps the same text, so it is not used. b04 is a residual strip from the departing cards. Cards look like they slide down, but it could be a mask wipe. Clicks/ticks are visible at about 12.15, 12.25, 12.35 and 12.45 s on the spectrogram (likely music hits) but there are no SFX candidates."
+}

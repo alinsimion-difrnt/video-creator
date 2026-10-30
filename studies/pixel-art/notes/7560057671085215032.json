@@ -1,0 +1,51 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "78ce5d864789f120c27e9cb762cdacb7884813f775bac165776a61e383060b44",
+    "created_at": "2026-10-13T13:07:33+00:00"
+  },
+  "id": "7560057671085215032",
+  "kind": "clip",
+  "palette": {
+    "colours_estimate": 11,
+    "shadows": "neutral",
+    "notes": "Code: 11 colours, one ramp, no hue shift: the NES castle set (black, greys, lava red-orange, Mario red/skin/brown, Bowser green). The close-up cutaway reuses the same flat reds and skin, no shading ramps."
+  },
+  "lighting": "None: flat NES colours on black; the close-up is flat fills with one darker skin tone for the cheek/nose.",
+  "silhouette": "Tiny 16 px Mario vs. bigger Bowser on the bridge; in the cutaway Mario's head is blown up to fill the frame with a chunky low-res outline.",
+  "motion": {
+    "timing": "Code: median hold 33.3 ms, 29.61 changes/s (moving hammers and flames); Mario himself stands still in a held pose while hammers rain down.",
+    "principles": [
+      "held pose",
+      "reaction cut",
+      "contrast of scale"
+    ]
+  },
+  "texture": "Hard NES pixels, no dither (0.0008); the cutaway uses a much bigger pixel size, mixing pixel scales on purpose.",
+  "camera": "Locked NES scroll view; two hard cuts to a huge low-res close-up of Mario (a meme reaction shot) and back.",
+  "sound": "",
+  "acting": {
+    "enters": "Mario runs in through the castle, dodging fireballs.",
+    "acts": "Bowser jumps and throws a storm of hammers; Mario just stands; cut to big Mario face doing a smug/unbothered pose, cut back and he takes Bowser out.",
+    "exits": "",
+    "comes_back": true,
+    "depth": "Same plane game view; depth faked by cutting to a giant close-up of the tiny sprite."
+  },
+  "techniques": [
+    "meme cutaway: tiny game sprite cut to a giant chunky close-up",
+    "character ignores the danger (held pose) for comedy",
+    "mixed pixel scales: native sprite vs. 8x blown-up portrait",
+    "recognisable game UI kept as a context frame"
+  ],
+  "feel": "stock NES 11-colour scene + hero frozen under a hammer storm + giant close-up cutaway = deadpan meme punch",
+  "for_fred": "When chaos hits, keep Fred still (held pose) and cut once to a big chunky close-up of his face for the reaction, then cut back; one cutaway beats more animation.",
+  "sources": [
+    "data/study/pixel/work/7560057671085215032/sheet.jpg",
+    "studies/pixel-art/clips/7560057671085215032.json",
+    "studies/pixel-art/tiktok.yaml",
+    "https://www.tiktok.com/@matiarms/video/7560057671085215032"
+  ]
+}

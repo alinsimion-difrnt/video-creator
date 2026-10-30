@@ -1,0 +1,104 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "a0f2853ace66fea2ca2f69e2419b2cad698d37b584cf4e6923b114d552360293",
+    "created_at": "2026-10-05T06:42:57.669258Z"
+  },
+  "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+  "event": "e006",
+  "task": "a2-e006",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Row of white capsule tracks with gradient orbs",
+      "role": "other",
+      "role_other": "equalizer_track",
+      "change_types": ["scale_down", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 650, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Central gradient orb",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 450, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Right-hand orb shrinking to a dot",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["scale_down", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_in"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Left-hand orb shrinking to a dot",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["scale_down", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_in"}
+    },
+    {
+      "box": null,
+      "manual_box": [201, 475, 553, 673],
+      "manual_reason": "Pixel-mosaic square overlay appears over the orb at the end; no candidate box isolates it (b02 covers the orb, b01 is the whole row union).",
+      "label": "Pixelated mosaic square overlay",
+      "role": "other",
+      "role_other": "texture_overlay",
+      "change_types": ["other", "fade"],
+      "change_other": "pixel_mosaic_build",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 200, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x029", "verdict": "unsure", "label": "unsure", "note": "Precedes the burst by ~95 ms; no distinct transient visible in the stem, likely music texture."},
+    {"id": "x030", "verdict": "override", "label": "glitch", "note": "Broadband vertical streaks just as the pixel-mosaic square appears; reads as a digital glitch."},
+    {"id": "x031", "verdict": "unsure", "label": "unsure", "note": "1.2 s after the event start, beyond the filmstrip; classifier split impact/glitch, cannot tie to a visual."}
+  ],
+  "pattern": {
+    "id": "spotlight_focus",
+    "proposed_name": null,
+    "description": "A row of orbs riding in white capsule tracks collapses: capsules shrink away and outer orbs shrink to dots while the centre orb scales up to become the sole focus, then a pixel-mosaic square glitches on over it.",
+    "why_premium": "One continuous transform narrows attention from a many-voice equalizer to a single hero orb without a cut, and the pixel texture adds a material, tactile beat timed to the narration's 'tone, texture'."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.track', {scaleY:0, autoAlpha:0, duration:0.4, ease:'power2.inOut', stagger:{each:0.03, from:'center'}}).to('.orb:not(.hero)', {scale:0.1, autoAlpha:0, duration:0.4, ease:'power2.in', stagger:{each:0.04, from:'center'}}, '<').to('.orb.hero', {scale:3.5, duration:0.5, ease:'power3.out'}, '<0.15').fromTo('.mosaic-cell', {autoAlpha:0}, {autoAlpha:1, duration:0.05, ease:'steps(1)', stagger:{each:0.015, from:'random'}}, '>-0.1')",
+    "remotion": "Drive tracks and side orbs with interpolate(frame,[0,12],[1,0],{easing:Easing.inOut(Easing.cubic)}) on scale/opacity, staggered 1 frame from centre; hero orb scale via spring({damping:200, stiffness:120}) mapped 1 to 3.5; mosaic cells toggle opacity on random per-cell frame offsets (step, no interpolation)."
+  },
+  "confidence": "medium",
+  "notes": "Camera verdict is none; the large scale sum reflects the hero orb growing, not a push-in. Pattern could alternatively be 'other' (orb collapse to hero); spotlight_focus chosen as closest."
+}

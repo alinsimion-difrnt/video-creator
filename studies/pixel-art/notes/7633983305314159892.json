@@ -1,0 +1,50 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "59f47ab31405610d3f908153c6a0c51ea1ed4aacd58be0ed56801ae7203e0598",
+    "created_at": "2026-10-13T13:05:41+00:00"
+  },
+  "id": "7633983305314159892",
+  "kind": "clip",
+  "palette": {
+    "colours_estimate": 25,
+    "shadows": "cool",
+    "notes": "Code: 25 colours on the still, one ramp with 33.5 deg hue shift. Compilation of others' scenes: deep blue nights with warm windows/fires, one sunset, one red-orange city."
+  },
+  "lighting": "Mostly night scenes: cool blue ambient with small warm sources (street lamp, lantern, house windows, campfire); one dawn mountain scene with peach light.",
+  "silhouette": "Few characters; tiny dark figures (a man with a lantern and a dog, a girl on a car, pirates on a ship) read as black silhouettes against lighter skies.",
+  "motion": {
+    "timing": "Code: median hold 100 ms (3s), 3.75 changes/s. Each scene stays about 1.7 to 3.3 s on the sheet (some appear in two consecutive samples) before a hard cut.",
+    "principles": [
+      "ambient loop",
+      "held scenes"
+    ]
+  },
+  "texture": "Clean landscape pixel scenes with light dithering (share 0.001); stars, snow and waves give the only motion.",
+  "camera": "Static 4:3 frames, one per scene; hard cuts on the music, no pans.",
+  "sound": "Lo-fi music (caption credits a Shiloh Dynasty track); cuts follow the song.",
+  "acting": {
+    "enters": "Characters are already placed in each scene; no entrances.",
+    "acts": "Small still figures doing quiet things: walking a dog, sitting under stars, sailing.",
+    "exits": "Scene cuts away.",
+    "comes_back": false,
+    "depth": "Characters stay small in the foreground or mid-ground under huge skies; scale sells loneliness and calm."
+  },
+  "techniques": [
+    "cool night ambient + one small warm light source",
+    "tiny silhouette figure against a large sky",
+    "scene montage cut to music, about 2 s per scene",
+    "ambient particle loops: falling snow, stars, waves"
+  ],
+  "feel": "deep blue nights + one warm light + tiny silhouette + 2 s cuts on lo-fi = serene nostalgic mood (not original art; compilation)",
+  "for_fred": "Use a 'tiny Fred' shot: a wide night scene with Fred small in the corner holding one warm light, held 2 s between busier beats. It gives the reel a breath instead of another big animation.",
+  "sources": [
+    "data/study/pixel/work/7633983305314159892/sheet.jpg",
+    "studies/pixel-art/clips/7633983305314159892.json",
+    "studies/pixel-art/tiktok.yaml",
+    "https://www.tiktok.com/@k1rby_jka1/video/7633983305314159892"
+  ]
+}

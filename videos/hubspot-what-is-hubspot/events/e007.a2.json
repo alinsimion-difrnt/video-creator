@@ -1,0 +1,55 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "97732dc85cd8598b46352207a923a8d9fb8a927fa645a4577614415a3aac8660",
+    "created_at": "2026-10-05T06:46:59.434069Z"
+  },
+  "video": "hubspot-what-is-hubspot",
+  "event": "e007",
+  "task": "a2-e007",
+  "elements": [
+    {"box": "b02", "manual_box": null, "manual_reason": null, "label": "1,500+ stat", "role": "metric",
+     "role_other": null, "change_types": ["other"], "change_other": "subtle continuous drift",
+     "is_text": true, "text": "1,500+", "text_unit": "whole",
+     "estimates": {"duration_ms": 300, "easing_class": "linear"}},
+    {"box": "b05", "manual_box": null, "manual_reason": null, "label": "Caption line 'app'", "role": "headline",
+     "role_other": null, "change_types": ["other"], "change_other": "subtle continuous drift",
+     "is_text": true, "text": "app", "text_unit": "line", "estimates": null},
+    {"box": "b03", "manual_box": null, "manual_reason": null, "label": "Caption line 'integrations'",
+     "role": "headline", "role_other": null, "change_types": ["other"], "change_other": "subtle continuous drift",
+     "is_text": true, "text": "integrations", "text_unit": "line", "estimates": null},
+    {"box": "b04", "manual_box": null, "manual_reason": null, "label": "WordPress logo node", "role": "logo",
+     "role_other": null, "change_types": ["other"], "change_other": "floating drift",
+     "is_text": false, "text": null, "text_unit": null, "estimates": null},
+    {"box": "b06", "manual_box": null, "manual_reason": null, "label": "Google Calendar logo node", "role": "logo",
+     "role_other": null, "change_types": ["other"], "change_other": "floating drift",
+     "is_text": false, "text": null, "text_unit": null, "estimates": null},
+    {"box": "b07", "manual_box": null, "manual_reason": null, "label": "Facebook logo node", "role": "logo",
+     "role_other": null, "change_types": ["other"], "change_other": "floating drift",
+     "is_text": false, "text": null, "text_unit": null, "estimates": null},
+    {"box": "b08", "manual_box": null, "manual_reason": null, "label": "SMSit logo node", "role": "logo",
+     "role_other": null, "change_types": ["other"], "change_other": "floating drift",
+     "is_text": false, "text": null, "text_unit": null, "estimates": null},
+    {"box": "b09", "manual_box": null, "manual_reason": null, "label": "Plum logo node", "role": "logo",
+     "role_other": null, "change_types": ["other"], "change_other": "floating drift",
+     "is_text": false, "text": null, "text_unit": null, "estimates": null}
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "parallax_layers",
+    "proposed_name": null,
+    "description": "Hold on the '1,500+ app integrations' network: logo nodes and the stat lockup drift slightly at different rates while the camera stays still, keeping the static card alive.",
+    "why_premium": "Ambient sub-pixel drift on a hold keeps the frame breathing without distracting from the narration, and differing drift rates give the flat node graph a sense of depth."
+  },
+  "build_hint": {
+    "gsap": "During the hold, give each logo node gsap.to({y: '+=6', x: '+=3', duration: 3, ease: 'sine.inOut', yoyo: true, repeat: -1}) with randomised offsets/duration per node; drift the headline group more slowly (y: '+=3') so foreground and nodes separate.",
+    "remotion": "Per node, translateY = amplitude * Math.sin((frame / fps) * 2 * Math.PI / period + phase) with amplitude 3-6 px and period 2.5-4 s; headline group uses half the amplitude. No springs needed."
+  },
+  "confidence": "low",
+  "notes": "Motion is very subtle (peak energy ~0.03); no clear entrance or exit is visible in the filmstrip. Camera verdict is none, so the small pan_y is content drift, not a camera move. Exact direction of drift per node is uncertain; a ~51.85 s narrow spectrogram band falls inside the event but no SFX candidate was given."
+}

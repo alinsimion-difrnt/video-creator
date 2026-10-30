@@ -1,0 +1,174 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "f651ea3f964f18ae6cf6d73786739016d8ac202dda7f77ead326ca2bb11c126d",
+    "created_at": "2026-10-05T06:27:06.822722Z"
+  },
+  "video": "hubspot-introducing-breeze-social-content-agen",
+  "task": "a1-p2",
+  "shots": [
+    {
+      "shot": "s006",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Top-down view of the tablet set into the wooden desk showing the HubSpot Social Agent, tapped through by the presenter's hand",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": "No designed overlay text in this shot. In-UI text is HubSpot product UI in a small sans (e.g. 'Social Agent', 'Social post categories', 'Review post', 'Suggested social campaigns for Calendar events', rows 'Father's Day' and 'Summer Solstice' with 'Ready for review' status); it is mostly too small to read on the contact sheets, only legible on the keyframe.",
+      "depth_cues": [
+        "blur",
+        "perspective_tilt"
+      ],
+      "what_happens": "Overhead hard cut to the desk tablet. From 29.0 to 35.0 s a hand taps through the Social Agent: a 'Social post categories' list, a generated post list with thumbnails, a 'Review post' screen with an image post preview, then the 'Suggested social campaigns for Calendar events' table, while VO covers analysis, trends and strategy (w83-w101). From about 35.5 s the hand leaves and the campaigns screen holds static with no overlay or visible camera move for about 7 s while VO describes post creation and reach (w102-w119). The last sampled frame (42.5 s) already shows the next presenter shot, at the boundary.",
+      "build_rebuild": "Composite a sequence of product screen recordings (category list, generated posts, review screen, campaign table) into a tablet lying in a top-down wood-desk plate, add hand-tap footage for the first ~6 s, then hold the final screen to the end of the VO line.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s007",
+      "shot_type": "presenter",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "Presenter at a three-quarter angle on the left third, with single keyword captions cycling in the right negative space",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "EASY",
+        "SMART",
+        "FAST"
+      ],
+      "text_word_count": 3,
+      "typography": "Same condensed bold all-caps display face as earlier captions, one word at a time, right of centre. Each word reveals left to right with an accent-tinted leading edge (e.g. 'SMAR' + tinted 'T', 'FA' + tinted 'ST') that settles to the base colour, and exits by wiping from the left (frames show 'ASY', 'SMART' losing its 'S', and a lone 'T'). A hand-drawn accent stroke enters from the left at 43.5 s and loops into an ellipse around 'EASY' by 44.0 s, then trails off to the right as 'SMART' appears.",
+      "depth_cues": [
+        "blur"
+      ],
+      "what_happens": "Side-angle presenter delivers the payoff line 'It's all that easy, that smart, and built to get you results fast' (w120-w132). The captions 'EASY', 'SMART' and 'FAST' replace each other on the matching words, with a hand-drawn ellipse circling 'EASY'; captions are gone by about 46.5 s. The remainder of the shot is a clean talking head for 'Take your brand to the next level with Breeze Agents' (w133-w142).",
+      "build_rebuild": "Over a side-angle presenter clip, cue three single-word condensed caps captions to word indices w123, w125 and w132, each with an accent-tinted left-to-right mask reveal and a left-to-right mask exit, and draw an SVG stroke that sweeps in and loops into an ellipse around the first word.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s008",
+      "shot_type": "presenter",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Centred serif 'Spotlight' wordmark with a small 'FALL '24' kicker, over the frontal presenter who is defocused behind it",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "FALL '24",
+        "Spotlight"
+      ],
+      "text_word_count": 3,
+      "typography": "Event lockup: 'Spotlight' in a large high-contrast display serif, title case, with tight letter fit; above its left side a small kicker 'FALL '24' in a widely tracked all-caps sans. A clear departure from the condensed caption face used elsewhere. Font identity unknown (low confidence: a modern editorial serif).",
+      "depth_cues": [
+        "blur"
+      ],
+      "what_happens": "Hard cut to the frontal camera for the CTA 'Check out our Fall Spotlight and see what else is new with Breeze' (w143-w155). At 50.0 s the lockup is fading in semi-transparent over a sharp presenter; by 50.5 s it is fully opaque and the footage behind it is heavily defocused, holding as an end card while the presenter gestures and then settles with clasped hands. HubSpot logo bug remains top-right. The transcript's 'false' (w146) matches the on-screen 'FALL'.",
+      "build_rebuild": "On a frontal presenter clip, cross-fade in a centred serif 'Spotlight' wordmark with a small tracked 'FALL '24' kicker over ~0.5 s while animating a Gaussian blur on the footage from 0 to a strong defocus, then hold to the end.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001"], "words": [0, 18]},
+      {"beat": "mechanism", "shots": ["s002", "s003", "s004"], "words": [19, 44]},
+      {"beat": "problem", "shots": ["s004"], "words": [45, 69]},
+      {"beat": "mechanism", "shots": ["s005"], "words": [70, 82]},
+      {"beat": "demo", "shots": ["s006"], "words": [83, 119]},
+      {"beat": "outcome", "shots": ["s007"], "words": [120, 142]},
+      {"beat": "cta", "shots": ["s008"], "words": [143, 155]}
+    ],
+    "hook": {
+      "text": "For marketers, reaching the right audience at the right time can be hard. But Breeze AI makes it easy.",
+      "technique": "pain",
+      "technique_other": null,
+      "shots": ["s001"],
+      "words": [0, 18]
+    },
+    "cta": {
+      "text": "Check out our Fall Spotlight and see what else is new with Breeze. (On screen: FALL '24 Spotlight)",
+      "shots": ["s008"]
+    },
+    "tone": "Warm, confident, polished-corporate product launch: a single presenter on a calm set with a desk-embedded tablet, conversational VO and editorial kinetic captions; upbeat but restrained.",
+    "signature_moments": [
+      {
+        "shots": ["s007"],
+        "description": "Payoff line rendered as single-word captions 'EASY' / 'SMART' / 'FAST' synced to w123, w125 and w132, with a hand-drawn accent stroke looping into an ellipse around 'EASY'.",
+        "why_premium": "Word-exact kinetic type plus an organic hand-drawn mark adds human craft to a talking head and turns the claim into a memorable rhythm without cluttering the frame."
+      },
+      {
+        "shots": ["s001", "s002"],
+        "description": "Full-width condensed caps title and stacked list items reveal left to right with an accent-tinted leading edge that settles to the base colour, reused for every caption in the video.",
+        "why_premium": "One consistent, distinctive reveal treatment across all captions reads as a designed system rather than ad-hoc titles, which signals brand discipline."
+      },
+      {
+        "shots": ["s005", "s006"],
+        "description": "The presenter reaches for the tablet built into the desk, cutting to a top-down view where her hand taps through the real product.",
+        "why_premium": "Physically grounding the UI demo in the set motivates the cut and makes the software feel tangible instead of a pasted screen recording."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 3,
+        "evidence": "A clear but generic pain-then-promise opening line over a full-width animated title; competent and on-brand, but no surprise, stat or demo in the first seconds.",
+        "refs": ["s001", "w0", "w12", "w18"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "Simple linear story (content agent, then social pain, then social agent demo, then payoff, then CTA); keyword captions reinforce each claim. Slightly blurred by introducing two agents in under a minute.",
+        "refs": ["s002", "s004", "s005", "s007", "w45", "w70"]
+      },
+      "ui_showcase": {
+        "score": 2,
+        "evidence": "UI only appears as a real tablet filmed top-down, filling about half the frame; product text is small and soft, there are no zooms, callouts or highlights, and the campaigns screen sits static for about 7 s of s006 while VO continues.",
+        "refs": ["s003", "s006", "w102", "w119"]
+      },
+      "motion_polish": {
+        "score": 4,
+        "evidence": "Consistent accent-edge mask reveals and exits, word-synced captions, hand-drawn strokes and a defocus end card are well executed; the static second half of the demo and simple hard cuts throughout keep it from best-in-class.",
+        "refs": ["s001", "s002", "s007", "s008", "s006"]
+      },
+      "sound_design": {
+        "score": 3,
+        "evidence": "Judged from anchors plus visuals: music bed around 89.1 BPM, integrated loudness -10.84 LUFS (hot); only 12 SFX candidates, mostly music or unsure, with two swoosh_reverse hits early during the opening title (x001, x002) and little evidence of SFX accenting later captions. Clean, VO-led, but not designed around the motion.",
+        "refs": ["s001", "s007"]
+      },
+      "vo_script_quality": {
+        "score": 4,
+        "evidence": "Tight, conversational on-camera script with a rhythmic triad payoff ('that easy, that smart ... results fast') and a clean CTA; feature lines in the demo are generic benefit language.",
+        "refs": ["w0", "w120", "w132", "w143", "w87"]
+      },
+      "brand_consistency": {
+        "score": 4,
+        "evidence": "HubSpot logo bug on every shot, one caption typeface and reveal style, warm accent strokes and a coherent set; the end card switches to a separate serif 'Spotlight' event identity, which is intentional but a different system.",
+        "refs": ["s001", "s004", "s007", "s008"]
+      },
+      "works_muted": {
+        "score": 2,
+        "evidence": "No subtitles; captions are only keywords (e.g. 'HIGH QUALITY CONTENT', 'EASY/SMART/FAST'), the problem statement in s004 and the s005 setup have no text, and the demo UI is too small to read, so the social-agent story is largely lost muted.",
+        "refs": ["s003", "s004", "s005", "s006", "s007"]
+      },
+      "overall": {
+        "score": 3,
+        "evidence": "Premium-feeling live-action set, consistent kinetic type and a well-crafted end card, held back by a thin, hard-to-read product demo and VO dependence; a polished but standard presenter-led launch clip.",
+        "refs": ["s001", "s006", "s007", "s008"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 2,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "English keyword captions and the 'FALL '24 Spotlight' lockup are baked into the edit, the story is carried by an on-camera presenter (lip-synced, so dubbing is hard), and the demo UI is filmed on a physical tablet so it cannot be swapped for a localized UI without reshooting."
+    }
+  }
+}

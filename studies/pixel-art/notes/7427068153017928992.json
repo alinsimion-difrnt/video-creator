@@ -1,0 +1,50 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "281890979e121323768b09f942e26391b473c95214ca2f90b4a3b5951842d7d9",
+    "created_at": "2026-10-13T13:05:37+00:00"
+  },
+  "id": "7427068153017928992",
+  "kind": "clip",
+  "palette": {
+    "colours_estimate": 33,
+    "shadows": "cool",
+    "notes": "Measured 33 colours, 2 ramps, median ramp hue shift 4.3, ramp length 16.5. Skin and shadows built from a lavender-blue ramp; accents in pastel pink, yellow, teal hair strands; screen mixes with UI chrome."
+  },
+  "lighting": "Flat, graphic: skin is shaded with blue-violet tones on a white base, little directional light. Black line art does most of the form.",
+  "silhouette": "Profile of a girl's face with mechanical headphone/gear shapes behind her; strong profile line (nose, lips) and big eye read clearly.",
+  "motion": {
+    "timing": "Speedpaint screen recording, not an animation: code reads 486 changes, 24.28 changes/s, hold median 16.7 ms, on 0.5s, which is brush strokes and UI flicker, not drawings.",
+    "principles": [
+      "process reveal",
+      "build-up"
+    ]
+  },
+  "texture": "Clean pixel line art (clean_pixels true, dither 0.0008), flat fills with a few shade bands; transparency checkerboard visible as layers are filled.",
+  "camera": "Screen capture of the Aseprite canvas; zoom and pan change between sheet frames (canvas reframed from full face to an eye close-up at 9.17 s).",
+  "sound": "",
+  "acting": {
+    "enters": "No character acting. The image is built line by line: sketch, line art, flats, shading, hair colours.",
+    "acts": "Not a performance; the reveal of the drawing is the story. Caption says changes the artist forgot to record get skipped.",
+    "exits": "Not applicable.",
+    "comes_back": null,
+    "depth": "Single canvas; zoom-ins to the eye give a close-up beat inside the process."
+  },
+  "techniques": [
+    "speedpaint reveal: line art, then flats, then shading",
+    "cool lavender ramp for skin shading instead of warm skin tones",
+    "pastel accent strands on a mostly monochrome base",
+    "zoom in on the eye mid-process as a detail beat",
+    "transparent checkerboard background as a visual 'work in progress' cue"
+  ],
+  "feel": "black line art + lavender skin ramp + pastel hair accents + stroke-by-stroke reveal = satisfying build-up",
+  "for_fred": "Not a motion reference. One idea to borrow: reveal Fred's sprite being drawn (outline, then flats, then shading) as a 1-2 s intro or Easter egg, ending on him blinking to life. Keep the reveal fast; a 25 s build is too long for a reel beat.",
+  "sources": [
+    "data/study/pixel/work/7427068153017928992/sheet.jpg",
+    "studies/pixel-art/clips/7427068153017928992.json",
+    "studies/pixel-art/tiktok.yaml"
+  ]
+}

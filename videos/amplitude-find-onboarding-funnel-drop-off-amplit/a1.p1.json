@@ -1,0 +1,61 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "4d4b6ebc3fc9374b757e3b6d17f3fce2254dada4db8fe84bf25fd4684a6beb97",
+    "created_at": "2026-10-05T06:21:30.423048Z"
+  },
+  "video": "amplitude-find-onboarding-funnel-drop-off-amplit",
+  "task": "a1-p1",
+  "shots": [
+    {
+      "shot": "s001",
+      "shot_type": "logo",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Amplitude logo mark (circle with waveform A) that resolves into the Amplitude wordmark with an ACADEMY sub-label",
+      "transition_in": "other",
+      "transition_other": "none - first shot of the video (anchors give no incoming transition)",
+      "on_screen_text": ["Amplitude", "ACADEMY"],
+      "text_word_count": 2,
+      "typography": "Wordmark in a bold geometric sans, title case, tight tracking; 'ACADEMY' sub-label is a small bold all-caps sans with wide tracking, right-aligned under the wordmark.",
+      "depth_cues": ["none"],
+      "what_happens": "On a white background a plain filled circle appears, the waveform 'A' draws inside it, then the wordmark slides/reveals out from behind the mark while the lockup recentres; the 'ACADEMY' label appears beneath at about 3.0 s, the lockup holds, then fades out near 5.0 s. Anchors place a chime SFX (x001) during the reveal. No voice-over in this shot.",
+      "build_rebuild": "Scale-pop a solid circle in the centre, draw the waveform glyph inside it with a stroke draw-on, mask-reveal the wordmark sliding right out from behind the circle as the group re-centres, fade in a small all-caps tracked 'ACADEMY' sub-label under the right edge, hold about 1.5 s, then fade the whole lockup to white.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s002",
+      "shot_type": "other",
+      "shot_type_other": "multi-scene sequence joined by internal crossfades inside one detected shot: title card with 3D illustration (~6-8.5 s), kinetic definition card (~9-22 s), line-icon flow diagram (~22.5-41 s), then a screen recording of the Amplitude home dashboard (~41.5-51 s)",
+      "composition": "other",
+      "composition_other": "varies by scene: split (question text left, circular 3D illustration right) for the title card; left-aligned text block with a leader line for the definition card; horizontal left-to-right row of four icons for the flow diagram; full-bleed UI for the dashboard",
+      "focal_element": "In sequence: the question headline next to a 3D bar-chart illustration, the 'Onboarding' definition, the four-step 'AmpliTunes onboarding flow' icon row, and finally the Amplitude dashboard with a 'Create new' menu opening at the end",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "Amplitude ACADEMY",
+        "At what step of my onboarding funnel are most users dropping off?",
+        "Onboarding",
+        "Guides a new user through their first experience with the product and leads them to finding value",
+        "AmpliTunes onboarding flow",
+        "Welcome page",
+        "New user sign-up",
+        "Follow a playlist",
+        "Play a song or video"
+      ],
+      "text_word_count": 48,
+      "typography": "Clean humanist/grotesk sans throughout (low-confidence guess: IBM Plex Sans), regular weight, sentence case, normal tracking. Question headline is medium-size dark text, left-aligned in three lines; 'Onboarding' is a larger brand-blue regular-weight term with smaller dark body text below; flow-diagram title is small sentence-case dark text top-left and step labels are small centred two-line captions under each icon. Dashboard UI text is too small to read at contact-sheet resolution.",
+      "depth_cues": ["shadow"],
+      "what_happens": "After the logo fades, a title card fades in (small Amplitude Academy logo, the question 'At what step of my onboarding funnel are most users dropping off?' and a circular light-blue badge with a 3D staircase bar-chart illustration and a small chart icon) while the voice-over starts (w0). Around 8.5-9 s it crossfades to a definition card: a thin horizontal leader line from the left edge with a dot, the blue term 'Onboarding' and a two-line definition that mirrors the VO (w0-w25); it holds static through the friction / drop-off lines (w26-w45). At about 22.5 s it crossfades to the 'AmpliTunes onboarding flow' diagram, four outline icons (laptop with globe, person at laptop, plus-in-circle, music notes) linked by thin arrows, labelled with the funnel steps as the VO names them (w46-w99); the diagram is static. Near 41-41.5 s it crossfades into a screen recording of the Amplitude home dashboard (KPI cards, line charts, world map, event table) as the VO introduces funnel analysis (w100-w117); at about 51.0 s, on 'First, create a new funnel analysis chart' (w118-w124), a 'Create new' side menu opens with a dimmed backdrop. No cursor movement is legible in the frames.",
+      "build_rebuild": "Build four 1920x1080 scenes on a white background and chain them with ~0.5 s crossfades: a split title card (left-aligned question text, right circular 3D illustration), a left-aligned definition card with a leader line drawn in from the left edge, a static row of four line icons joined by arrows with centred captions, then a full-frame dashboard screen recording that ends with a left 'Create new' panel sliding in over a dimmed overlay.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

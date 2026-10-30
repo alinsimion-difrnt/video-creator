@@ -1,0 +1,140 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "f2beb67986acaa1c6897cdc6d3df0ed1c43c0b4ea638d5d43e6435516e0d333c",
+    "created_at": "2026-10-05T06:23:06.691973Z"
+  },
+  "video": "clickup-clickup-4-0-overview-a-new-era-of-craf",
+  "task": "a1-p2",
+  "shots": [
+    {
+      "shot": "s006",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Floating app window (list view, then Planner calendar) on a magenta-orange-blue gradient backdrop",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": ["shadow", "blur"],
+      "what_happens": "The rounded, drop-shadowed app window sits centred on a grainy gradient showing a grouped task list while VO says work flows 'without the context switching' (w55-w61); around 22.5-23.0 s the window content swaps with a horizontal motion blur to the Planner week calendar as VO introduces 'Calendar also gets a major upgrade' (w62-w67), and the cursor drags a backlog item into a 7 am slot, creating a time block.",
+      "build_rebuild": "Render a 1280x720 grainy diagonal gradient, place a ~70%-width rounded app-window screenshot with soft drop shadow centred, crossfade its content from the list screenshot to the calendar screenshot behind a 0.3 s horizontal motion blur, then animate a cursor dragging a card into a calendar cell.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s007",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Planner sidebar priorities list and the 7 am 'Work on Fall 2025' calendar block",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Work on Fall 2025 Brand Awareness Campaign Request",
+        "Auto-schedule this task",
+        "Time blocked in the next two weeks"
+      ],
+      "text_word_count": 18,
+      "typography": "Native product UI text: sans-serif (Inter-like, low confidence), regular/medium weight, sentence case, normal tracking; tooltips are small white-on-dark labels.",
+      "depth_cues": [],
+      "what_happens": "Camera is pushed in on the left half of the Planner: the cursor clicks the 7 am work block (it highlights solid blue) on 'Walk time for what matters most' (w71-w76), then moves to the 'Facebook retargeting' priority, hovers its icons revealing the 'Auto-schedule this task' and 'Time blocked in the next two weeks' tooltips on 'let AI auto-schedule' (w77-w80), and a new Facebook retargeting block appears below the work block.",
+      "build_rebuild": "Show a 2x-scaled crop of the Planner screenshot filling the frame, script a cursor path with click states on the calendar block, then reveal two small dark tooltips on hover and fade/scale in a new pink time block beneath the existing one.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s008",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "'AI suggestion' popover for Facebook retargeting with a dark 'Confirm work session' button",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "AI suggestion",
+        "Facebook retargeting",
+        "Confirm work session"
+      ],
+      "text_word_count": 7,
+      "typography": "Product UI sans-serif (Inter-like, low confidence); popover title semibold sentence case, button label white medium weight on near-black pill, normal tracking.",
+      "depth_cues": ["shadow", "blur"],
+      "what_happens": "Pulled back to the full window on the gradient: an AI-suggested dashed pink block (9:15-11:15) opens a detail popover; the cursor clicks 'Confirm work session' on 'your perfect day' (w82-w84), the popover closes and the block settles; as VO says 'Vacations, holidays' (w85-w86) the view motion-blurs and zooms toward the top-left create menu.",
+      "build_rebuild": "Scale the window from ~110% to ~80% centred on the gradient, pop in a shadowed popover card next to the dashed block, animate a cursor click on its button, fade the popover out, then end with a 0.25 s scale-up plus motion blur toward the top-left corner.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s009",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Planner 'Create' dropdown menu with Event, Focus time, Out of office, Task",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Create",
+        "Event",
+        "Focus time",
+        "Out of office",
+        "Task"
+      ],
+      "text_word_count": 8,
+      "typography": "Product UI sans-serif (Inter-like, low confidence), regular weight menu items in sentence case, small grey 'Create' label, normal tracking.",
+      "depth_cues": ["blur"],
+      "what_happens": "Zoomed in on the top-left of the window with the gradient visible above: the cursor moves down the open Create menu from Event to 'Out of office' and clicks on 'non-working days' (w87-w89); the camera then pans right with motion blur to the weekend columns where an all-day 'Out of Office' bar now sits, landing as VO says 'it's all in here' (w90-w93).",
+      "build_rebuild": "Crop the window at ~2x around the create menu, move the cursor through the menu items with a hover highlight, then tween the crop's x-position right over ~0.4 s with horizontal motion blur to frame the new all-day bar.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s010",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "'Out of Office' event detail popover, then the Marketing Teams Hub page",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Out of Office",
+        "Decline only new meetings",
+        "Declined because I am out of office"
+      ],
+      "text_word_count": 14,
+      "typography": "Product UI sans-serif (Inter-like, low confidence); popover title semibold sentence/title case, details regular weight, normal tracking.",
+      "depth_cues": ["shadow", "blur"],
+      "what_happens": "Full window on the gradient with the Out of Office event selected and its popover showing auto-decline settings during 'so your plans finally reflect reality' (w94-w99); around 38.5 s a strong horizontal whip blur swaps the window content to the Marketing Teams Hub page as VO says 'And execution' (w100-w101).",
+      "build_rebuild": "Hold the centred shadowed window with the popover card for ~2.5 s, then translate the window content left by one width over ~0.3 s with heavy horizontal motion blur, revealing the next screenshot.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s011",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Spotlit tab bar of the Marketing Teams Hub (Overview through Timesheet)",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Overview Analytics Priorities Feed Team StandUp Workload Timesheet",
+        "Welcome to the Marketing Team Hub!"
+      ],
+      "text_word_count": 14,
+      "typography": "Product UI sans-serif (Inter-like, low confidence); tab labels medium weight title case with coloured icons; page heading bold sentence case; normal tracking.",
+      "depth_cues": ["glow"],
+      "what_happens": "Close-up on the Teams Hub page: the whole UI is dimmed except a white, soft-edged spotlight rectangle over the tab bar, held while VO says 'that's where Teams Hub comes in' (w102-w107); at the end the dim lifts and the view pulls back slightly with a cursor visible.",
+      "build_rebuild": "Show a ~2x crop of the hub page, overlay a 40% grey dim layer with a rounded-rectangle cut-out (soft feathered edge) around the tab bar, hold ~1.8 s, then fade the dim out while scaling the crop down ~10%.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

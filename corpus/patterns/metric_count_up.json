@@ -1,0 +1,103 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a3_pattern_cards",
+    "annotator": "claude-code",
+    "skill": "write-pattern-cards@e525a58fa6d8",
+    "model": null,
+    "input_hash": "6c37b7092613d543599830bd03d87b65112e947c18754c013ac5c71db2c0da30",
+    "created_at": "2026-10-05T12:55:41.412967Z"
+  },
+  "id": "metric_count_up",
+  "name": "Number Counts To Target",
+  "summary": "A key number changes step by step on screen, counting toward its final value, and then settles a little larger with a small accent so the final figure lands as the takeaway.",
+  "when_to_use": [
+    "The narration makes a claim about a number: time saved, speed, growth or scale",
+    "Turning an abstract metric into something that feels physical and earned",
+    "Building tension toward a single headline figure"
+  ],
+  "avoid_when": [
+    "The exact figure matters less than the idea behind it",
+    "Several numbers would compete on screen at once",
+    "There is no time for the final value to rest and be read"
+  ],
+  "steps": [
+    "Show the starting value on a clear card or label with its caption",
+    "Step the number toward the target, for example by flipping or tearing off cards to reveal the next value",
+    "Speed the steps up as the count nears the end to build tension",
+    "Let the final value settle slightly larger than the steps before it",
+    "Draw a small accent line or mark near the final value to close the beat",
+    "Time the landing to the word in the narration that names the unit or claim"
+  ],
+  "build": {
+    "gsap": "Stack one node per value with only the top visible, and in a timeline tween each top node off with rotation, a small 3D tilt, translate and autoAlpha, overlapping successive tweens more and more (or ramp the timeline's timeScale) so the count accelerates. Settle the final node with a scale tween and a gentle overshoot, then draw the accent rule with a scaleX tween from a left transform origin. Easing was not measured for this pattern, so choose ease families by eye.",
+    "remotion": "Compute each step's start frame with shrinking gaps, and drive each outgoing card's rotate, translate and opacity with interpolate and an easing curve, clamped on both sides. Use a spring with slight overshoot for the final value's scale, and interpolate the accent rule's scaleX. For a plain digit counter, interpolate the value and round it per frame."
+  },
+  "sound": "Usually a light chime as the count lands; its exact placement relative to the motion was not measured.",
+  "why_premium": "Counting on screen makes a numeric claim feel physical rather than stated: each step is a small, tangible event, and an accelerating rhythm builds anticipation before a calm, enlarged landing on the final figure. Real-feeling details such as 3D tilt and contact shadows on the outgoing cards, plus a single accent drawn on at the end, give the moment weight, and syncing the landing to the narration lets the number and the claim hit together.",
+  "numbers": {
+    "id": "metric_count_up",
+    "events": 1,
+    "videos": 1,
+    "weight": 1.0,
+    "duration_ms": {
+      "n": 0,
+      "videos": 0,
+      "weight": 0.0,
+      "median": null,
+      "p25": null,
+      "p75": null,
+      "ci": null
+    },
+    "easing_mix": {},
+    "change_mix": {
+      "rotate": 0.25,
+      "scale_up": 0.25,
+      "count_up": 0.0833,
+      "draw_on": 0.0833,
+      "fade": 0.0833,
+      "other": 0.0833,
+      "slide_down": 0.0833,
+      "slide_right": 0.0833
+    },
+    "role_mix": {
+      "label": 0.4,
+      "card": 0.2,
+      "metric": 0.2,
+      "other": 0.2
+    },
+    "sfx_label_mix": {
+      "chime": 0.75,
+      "unsure": 0.25
+    },
+    "sfx_offset_ms": {
+      "n": 0,
+      "videos": 0,
+      "weight": 0.0,
+      "median": null,
+      "p25": null,
+      "p75": null,
+      "ci": null
+    },
+    "examples": [
+      {
+        "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+        "event": "e035",
+        "score": 5.0
+      }
+    ]
+  },
+  "examples": [
+    {
+      "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+      "event": "e035",
+      "score": 5.0
+    }
+  ],
+  "caveats": [
+    "Seen in only 1 video and 1 event, so this card describes a single example",
+    "Timing was not measured: duration, easing and sound offset are all missing",
+    "The only example counts down rather than up; the build applies in either direction"
+  ]
+}

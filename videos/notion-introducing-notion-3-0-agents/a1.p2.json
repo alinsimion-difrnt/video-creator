@@ -1,0 +1,152 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "1845349f2c3c8e468ee36b71b356d0e30b1c66aafbb38b83e5ad1da9dccfba8f",
+    "created_at": "2026-10-05T06:27:49.341275Z"
+  },
+  "video": "notion-introducing-notion-3-0-agents",
+  "task": "a1-p2",
+  "shots": [
+    {
+      "shot": "s006",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "Notion AI prompt input box in the right-hand agent panel, with the text being typed into it",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "How can I help you today?",
+        "Personalize Notion AI",
+        "Translate this page",
+        "Analyze for insights",
+        "New",
+        "New page",
+        "Create a bug tracking dashboard...populate with feedback from Slack and Notion and my emails.",
+        "All sources"
+      ],
+      "text_word_count": 35,
+      "typography": "Product UI sans-serif (likely Notion's Inter-style UI face, low confidence); semibold sentence-case panel heading, regular-weight sentence-case menu items and prompt text, normal tracking; tiny blue 'New' pill badge.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Cropped close-up of the Notion AI side panel (mascot avatar with hat, greeting, three suggestion rows) framed against a blue backdrop; the prompt is typed on character by character with a blinking caret, the line already starting mid-sentence with an ellipsis jump ('dashboard...populate'), then the cursor moves to and clicks the blue send button around 31 s. The very last sampled frame (0:32.000) already shows the next 'Thinking' screen, so the shot boundary is within a frame of it.",
+      "build_rebuild": "Render a static recreation of the agent panel cropped to the right two-thirds over a solid blue backdrop, animate the prompt string with a per-character typewriter (about 15-20 chars/s, skipping the middle via an ellipsis) plus blinking caret, then tween a cursor onto the send button and play a press state.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s007",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Notion AI mascot avatar in a white circle beside the status word with three coloured loading dots",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Thinking",
+        "Crafting"
+      ],
+      "text_word_count": 2,
+      "typography": "Large regular-to-medium weight sans-serif in title case, normal tracking, black on off-white; followed by three small coloured dots acting as an ellipsis.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Full-frame interstitial on an off-white background: the mascot face with cowboy hat sits beside 'Thinking' with animated dots; around 33.5 s the face swaps to a scribbled pen-stroke drawing and the label changes to 'Crafting', signalling the agent moving from reasoning to building.",
+      "build_rebuild": "Center a circular avatar with soft drop shadow next to a large label on an off-white canvas, loop three coloured dots in a staggered bounce, and at the state change crossfade the avatar illustration and swap the label text from 'Thinking' to 'Crafting'.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s008",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "other",
+      "composition_other": "Starts as a centered app window on a blue backdrop, then the virtual camera pushes in and reframes onto the right-hand agent chat column, then pulls back out to the full window.",
+      "focal_element": "The Bug Tracking Dashboard page being generated on the left while the agent's reasoning and search results stream into the right-hand chat panel",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Bug Tracking Dashboard",
+        "How to use this dashboard",
+        "Log new bugs directly below or paste links to messages, issues, or emails",
+        "Keep Status and Priority up to date",
+        "Link related specs and owners",
+        "Bug Tracker",
+        "Building your bug tracking database...",
+        "Thought",
+        "Compiling bug reports",
+        "I'll compile a concise list of each bug along with links to the specific Slack messages. I think that'll be clear and useful!",
+        "Searched for \"bug reports\"",
+        "62 results",
+        "Updating database..."
+      ],
+      "text_word_count": 74,
+      "typography": "Product UI sans-serif (Inter-like, low confidence): bold large title-case page heading with bug emoji, bold sentence-case section heads, regular body bullets; small grey regular text for agent status lines; truncated Slack message rows with light-grey channel labels.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "The full Notion window shows the new 'Bug Tracking Dashboard' page building itself (heading, how-to bullets, empty Bug Tracker table with view tabs) while the page scrolls up; the camera then pushes into the agent panel where 'Compiling bug reports' text streams in and a 'Searched for \"bug reports\"' card appears with source tabs (Notion, Slack, Notion Mail) whose result counters tick upward (7 to 62 results) and Slack message rows stack in; 'Updating database...' appears, the camera pulls back to the full window and the table fills row by row with bugs, status pills and priority tags. The final sampled frame (0:45.000) already shows the next 'What can I wrangle up for ya?' screen.",
+      "build_rebuild": "Build a static app-window mock on a blue backdrop, scroll the page content up as table rows mask-in, keyframe a camera scale/translate push into the chat column while streaming text word by word and counting result numbers up, then ease the camera back out and stagger-reveal table rows with their status and priority pills.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s009",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Isolated, enlarged prompt input box with the follow-up instruction being typed",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "What can I wrangle up for ya?",
+        "Bug Tracking Dashboard",
+        "...and assign the appropriate engineers",
+        "All sources"
+      ],
+      "text_word_count": 17,
+      "typography": "Semibold sentence-case sans-serif greeting beside the mascot avatar; regular-weight prompt text with a caret; small grey regular context-chip label; normal tracking throughout.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "On a plain off-white canvas, the mascot greets with a playful 'What can I wrangle up for ya?' above a blue-outlined prompt box scoped to the Bug Tracking Dashboard; the follow-up '...and assign the appropriate engineers' types on, the cursor clicks send at about 47.5 s, and the last sampled frame (0:48.500) already shows the next full-window shot.",
+      "build_rebuild": "Center a scaled-up prompt component with a context chip on an off-white background, typewriter the instruction with a caret at roughly 12-15 chars/s, then move a cursor onto the round blue send button and trigger a press state before cutting.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s010",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Bug Tracker table with a new Assignee column appearing, plus the agent status line in the side panel",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Log new bugs directly below or paste links to messages, issues, or emails",
+        "Keep Status and Priority up to date",
+        "Link related specs and owners",
+        "Bug Tracker",
+        "Assignee",
+        "...and assign the appropriate engineers",
+        "Updating database...",
+        "Adding engineers..."
+      ],
+      "text_word_count": 37,
+      "typography": "Product UI sans-serif (Inter-like, low confidence): bold title-case table heading, regular sentence-case bullets and row titles, small rounded status pills and P0-P2 priority tags, small grey agent status lines.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Back to the full app window on blue: the populated bug table is shown with the follow-up message now in the chat panel; within about a second an empty 'Assignee' column is inserted between Bug and Status and the agent status changes from 'Updating database...' to 'Adding engineers...'.",
+      "build_rebuild": "Show the window mock with the filled table, then animate a new column sliding in by widening the gap between the Bug and Status columns while swapping the side-panel status text from 'Updating database...' to 'Adding engineers...'.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

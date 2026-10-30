@@ -1,0 +1,65 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "5f825b8b29f33171cac148eaec6eb9ebd98cdb1679c7c9209ebc4c3c06deea00",
+    "created_at": "2026-10-05T06:39:49.792958Z"
+  },
+  "video": "anthropic-introducing-claude-design-by-anthropic-l",
+  "event": "e003",
+  "task": "a2-e003",
+  "elements": [
+    {"box": "b01", "manual_box": null, "manual_reason": null, "label": "Progress checklist card",
+     "role": "card", "role_other": null, "change_types": ["scale_up"], "change_other": null,
+     "is_text": false, "text": null, "text_unit": null,
+     "estimates": {"duration_ms": 800, "easing_class": "ease_in_out"}},
+    {"box": "b16", "manual_box": null, "manual_reason": null, "label": "Task 2 checkbox",
+     "role": "icon", "role_other": null, "change_types": ["pop", "color_shift"], "change_other": null,
+     "is_text": false, "text": null, "text_unit": null,
+     "estimates": {"duration_ms": 120, "easing_class": "ease_out"}},
+    {"box": "b07", "manual_box": null, "manual_reason": null, "label": "Task 2 strikethrough",
+     "role": "list_item", "role_other": null, "change_types": ["draw_on", "color_shift"], "change_other": null,
+     "is_text": true, "text": "Build tweaks state with defaults", "text_unit": "whole",
+     "estimates": {"duration_ms": 250, "easing_class": "linear"}},
+    {"box": "b15", "manual_box": null, "manual_reason": null, "label": "Task 3 checkbox",
+     "role": "icon", "role_other": null, "change_types": ["pop", "color_shift"], "change_other": null,
+     "is_text": false, "text": null, "text_unit": null,
+     "estimates": {"duration_ms": 120, "easing_class": "ease_out"}},
+    {"box": "b06", "manual_box": null, "manual_reason": null, "label": "Task 3 strikethrough",
+     "role": "list_item", "role_other": null, "change_types": ["draw_on", "color_shift"], "change_other": null,
+     "is_text": true, "text": "Create floating tweaks panel UI", "text_unit": "whole",
+     "estimates": {"duration_ms": 250, "easing_class": "linear"}},
+    {"box": "b14", "manual_box": null, "manual_reason": null, "label": "Task 4 checkbox",
+     "role": "icon", "role_other": null, "change_types": ["pop", "color_shift"], "change_other": null,
+     "is_text": false, "text": null, "text_unit": null,
+     "estimates": {"duration_ms": 120, "easing_class": "ease_out"}},
+    {"box": "b04", "manual_box": null, "manual_reason": null, "label": "Task 4 strikethrough",
+     "role": "list_item", "role_other": null, "change_types": ["draw_on", "color_shift"], "change_other": null,
+     "is_text": true, "text": "Add arc and city toggle controls", "text_unit": "whole",
+     "estimates": {"duration_ms": 250, "easing_class": "linear"}}
+  ],
+  "sfx_review": [
+    {"id": "x007", "verdict": "unsure", "label": "unsure",
+     "note": "Broadband onset before the burst; part of a regular ~0.25 s pulse train that could be per-item ticks or the music beat."},
+    {"id": "x008", "verdict": "unsure", "label": "unsure",
+     "note": "Lines up with the push-in start and a checkbox fill; spectrogram shape is a short broadband hit, not a tonal chime."},
+    {"id": "x009", "verdict": "unsure", "label": "unsure",
+     "note": "After the push-in settles; same pulse shape as the others, nothing in the frame reads as a reverse swoosh."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "checklist strikethrough cascade",
+    "description": "Continuous camera push-in (about 1.75x) onto the progress checklist while successive tasks get their checkbox filled green and a strike line drawn through the greyed label, leaving only the last task open.",
+    "why_premium": "The push-in and the completion cascade build together, so scale and rhythm both escalate toward the final unchecked item; the zoom makes small UI ticks legible and satisfying."
+  },
+  "build_hint": {
+    "gsap": "tl.fromTo('.checklist', {scale: 1}, {scale: 1.75, transformOrigin: '20% 60%', duration: 0.9, ease: 'power2.inOut'}); in parallel per row: tl.to('.row .box', {backgroundColor: '#6f8a5a', scale: 1, duration: 0.12, ease: 'back.out(2)', stagger: 0.2}, 0) and tl.fromTo('.row .strike', {scaleX: 0, transformOrigin: 'left'}, {scaleX: 1, duration: 0.25, ease: 'none', stagger: 0.2}, 0) with label colour to grey.",
+    "remotion": "scale = interpolate(frame, [0, 22], [1, 1.75], {easing: Easing.inOut(Easing.cubic)}); per row i: strike = interpolate(frame - i*5, [0, 6], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}); checkbox pop = spring({frame: frame - i*5, fps, config: {damping: 12, stiffness: 220}})."
+  },
+  "confidence": "medium",
+  "notes": "Continuation of e002's checklist cascade in the same shot. SFX pulses are evenly spaced, so they may be music rather than UI ticks; needs a listen."
+}

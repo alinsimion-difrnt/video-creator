@@ -1,0 +1,126 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "f198d1d11fd7fd912a31e95736d3d9174a8be2647379e4dfbc2010a58b0b0502",
+    "created_at": "2026-10-05T06:58:10.443127Z"
+  },
+  "video": "cursor-introducing-cursor-3",
+  "task": "a1-p1",
+  "shots": [
+    {
+      "shot": "s001",
+      "shot_type": "presenter",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "Two co-founders seated at a wooden table in front of a full bookshelf wall; the speaker on the right addresses camera while the other sits behind an open laptop on the left",
+      "transition_in": "other",
+      "transition_other": "none: opening shot, video starts directly on picture",
+      "on_screen_text": [
+        "Sualeh Asif Co-Founder",
+        "Michael Truell Co-Founder"
+      ],
+      "text_word_count": 6,
+      "typography": "Two-line lower-third name supers, white, clean geometric/grotesque sans (low-confidence guess: Cursor's brand sans), regular-to-medium weight, title case, normal tracking; name line above role line, set bottom-left and bottom-right over each person without box or shadow, fading in early in the shot",
+      "depth_cues": [
+        "blur"
+      ],
+      "what_happens": "Static locked-off wide two-shot in a warm, lived-in office: the right founder opens the voice-over on camera (w0-w19, 'Coding is changing...shrinking to an instant.') with open-hand gestures while the left founder glances at him then at camera; name supers fade in under both people part-way through and stay to the end of the shot.",
+      "build_rebuild": "Place a static 16:9 two-shot video, then fade in two white sans lower-thirds (name over role, title case, no background plate) anchored bottom-left and bottom-right with ~0.3 s opacity ramps and hold them until the cut.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s002",
+      "shot_type": "presenter",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Medium close-up of the right-hand founder speaking, bookshelf background softly out of focus, edge of the other founder's shoulder at left frame",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": [
+        "blur"
+      ],
+      "what_happens": "Hard cut in from the wide to a tighter second-camera angle on the same speaker as he continues 'And it's because coding agents are getting so good. They're getting smarter. They're getting faster.' (w20-w34); slight handheld or slow drift, hand gestures early, no graphics.",
+      "build_rebuild": "Cut from the wide two-shot to a 2-camera medium close-up of the speaker (shallow depth of field, subject centred-right) on a sentence boundary with no overlay graphics.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s003",
+      "shot_type": "presenter",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "Back to the wide two-shot of both founders; the right founder delivers the product announcement",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": [
+        "blur"
+      ],
+      "what_happens": "Hard cut back to the wide angle (no lower-thirds now) as the speaker says 'And so that's why we're excited to announce Cursor 3. It's a home for your agents,' (w35-w50) while the left founder smiles to camera; the product name is spoken only, not shown as a title card.",
+      "build_rebuild": "Return to the same locked-off wide two-shot without supers and let the spoken announcement line carry the product reveal with no title graphic.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s004",
+      "shot_type": "footage",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "Over-the-shoulder view of a founder at a laptop showing the light-themed Cursor 3 agent window (sidebar plus central composer)",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": "On-screen UI text is too small and soft to read at this framing; only the light app chrome, left sidebar list and a central prompt field are discernible",
+      "depth_cues": [
+        "blur",
+        "perspective_tilt"
+      ],
+      "what_happens": "Short (about 1.2 s) B-roll bridge: hard cut to an over-the-shoulder shot of a hand on the keyboard in front of the laptop screen, out-of-focus shoulder and head in the foreground, angled screen, as the voice-over continues 'and it combines' (w51-w53), leading the viewer into the screen.",
+      "build_rebuild": "Insert a ~1 s over-the-shoulder B-roll clip of the product on a real laptop (foreground shoulder defocused, screen angled toward camera) as the bridge from talking head to full-screen UI.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s005",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Full-frame Cursor 3 app: an agent's completed task summary, then a diff/changes panel, then the composer's model-picker dropdown with a model info tooltip",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Add group by option None for sidebar in Glass",
+        "Mark as Ready",
+        "Plan, Build, / for commands, @ for context",
+        "MAX Mode",
+        "GPT-5.4",
+        "OpenAI's latest flagship model. Great for complex tasks.",
+        "1M context window",
+        "The cost is 2x when the input exceeds 272k tokens.",
+        "Version: medium reasoning effort"
+      ],
+      "text_word_count": 46,
+      "typography": "Native product UI: small regular-weight system-style sans for body and list items (low-confidence guess: SF Pro / Inter), semibold section headings ('Summary', 'Testing'), monospace for code and inline file names in the diff panel, sentence case throughout, default tracking; tooltip uses a bold model name over regular body with an accent-coloured warning line and an italic version note. Dense agent-summary and code text is only partly legible and was not quoted in full.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Hard cut to a full-screen recording: an agent conversation shows a completed task with a bulleted Summary and Testing checklist while the cursor drifts; the right-hand Changes panel then slides open showing a PR header and file diffs with green/red line highlights (around 'language servers, files, remote SSH', w61-w65); the view then resets to an empty composer on a near-blank canvas which scales up/zooms in as the model dropdown opens, MAX Mode toggle and model list appear and a GPT-5.4 info tooltip is shown (around 'with all of the models', w66-w70), holding to the end of the shot under w71-w81.",
+      "build_rebuild": "Record the real app at full bleed and stitch three beats in one shot: an agent summary view, a side panel sliding in with a diff, then a scaled-up crop of the composer whose model dropdown and hover tooltip open, each beat timed to the matching spoken feature word.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

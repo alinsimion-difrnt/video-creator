@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "5d28503f989106ec3231166aa790a3e6ef348945fd57f5a8fccf552279505da2",
+    "created_at": "2026-10-05T06:39:05.315700Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e079",
+  "task": "a2-e079",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Delivery sidebar item focus ring clearing to a soft selected state",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["color_shift"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Delivery",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 70, "easing_class": "step"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Table rows briefly hover-highlighted as the cursor passes over them",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    },
+    {
+      "box": null,
+      "manual_box": [828, 449, 846, 461],
+      "manual_reason": "Mouse cursor has no candidate box",
+      "label": "Mouse cursor moving down and right off the table",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "cursor travel",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "Raw screen-recording micro-interaction: after clicking the Delivery view, the cursor sweeps away across the table, triggering row hover states while the sidebar focus ring settles into the selected state.",
+    "why_premium": "Low premium value on its own; it is a settle beat that clears the cursor from the content so the next narration line lands on a clean table."
+  },
+  "build_hint": {
+    "gsap": "gsap.to('.cursor', {x: 470, y: 245, duration: 0.2, ease: 'power1.inOut'}); toggle '.row.is-hover' via tl.set at times the cursor crosses each row; tl.set('.nav-delivery', {outlineColor: 'transparent', backgroundColor: '#f4f5f7'}).",
+    "remotion": "cursor x/y = interpolate(frame, [0, 6], [start, end], {easing: Easing.inOut(Easing.quad)}); row hover = cursorY within row bounds; nav outline switched off with a frame condition (no spring)."
+  },
+  "confidence": "medium",
+  "notes": "Filmstrip frames are a crop of the lower-left region; end frame is the full UI. Low-energy event, mostly incidental screen-recording UI states."
+}

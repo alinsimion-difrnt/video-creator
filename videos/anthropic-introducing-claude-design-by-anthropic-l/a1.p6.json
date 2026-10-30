@@ -1,0 +1,130 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "f154987d8d2f86c329f8c23234d56b4903427ee693831a515facecad1b54e48b",
+    "created_at": "2026-10-05T06:59:47.281064Z"
+  },
+  "video": "anthropic-introducing-claude-design-by-anthropic-l",
+  "task": "a1-p6",
+  "shots": [
+    {
+      "shot": "s030",
+      "shot_type": "logo",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The product lockup (palette icon + 'Design', then 'by Anthropic Labs'), which resolves into the Claude spark and 'Claude' wordmark",
+      "transition_in": "other",
+      "transition_other": "Continuation of the s029 card wall: the project windows drift outward/fade away around a palette icon left at centre (anchors: other)",
+      "on_screen_text": [
+        "Design",
+        "by Anthropic Labs",
+        "Claude"
+      ],
+      "text_word_count": 5,
+      "typography": "'Design' in a medium-weight sentence-case sans beside an outline palette icon; 'by Anthropic Labs' as a small regular-weight sans subline, centred under it; final 'Claude' wordmark in a bold sentence-case serif with normal tracking next to the spark mark. Font guesses (low confidence): Styrene-like sans for the product name, Anthropic's Claude serif wordmark.",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "The last project windows clear from the wall, leaving a palette icon at centre; 'Design' appears beside it to form the product lockup, which shifts up as 'by Anthropic Labs' fades in beneath (around 1:14.5). The lockup holds, then clears to the Claude spark alone (1:16.0), and 'Claude' appears beside it (1:16.5). The Claude wordmark then holds still on the flat off-white field until the video ends at 1:21.5.",
+      "build_rebuild": "On a flat off-white stage, fade the outer project cards out around a centred palette icon, slide-in the 'Design' label to its right, nudge the group up ~15 px while fading in a small 'by Anthropic Labs' subline, then crossfade to the spark mark alone and reveal the 'Claude' wordmark beside it, holding the final lockup for ~5 s.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001", "s002", "s003", "s004"], "words": null},
+      {"beat": "demo", "shots": ["s005", "s006", "s007", "s008", "s009", "s010", "s011", "s012", "s013", "s014", "s015", "s016", "s017", "s018", "s019", "s020", "s021", "s022", "s023", "s024", "s025"], "words": null},
+      {"beat": "outcome", "shots": ["s026", "s027", "s028"], "words": null},
+      {"beat": "proof", "shots": ["s029"], "words": null},
+      {"beat": "cta", "shots": ["s030"], "words": null}
+    ],
+    "hook": {
+      "text": "A 'Design' pill is clicked and morphs into a prompt card; a request for an interactive dark globe graphic types in, files are attached, Send is pressed and the globe builds itself behind a 'Designing...' status pill.",
+      "technique": "demo_first",
+      "technique_other": null,
+      "shots": ["s001", "s002", "s003", "s004"],
+      "words": null
+    },
+    "cta": {
+      "text": null,
+      "shots": ["s030"]
+    },
+    "tone": "Calm, confident and crafted: warm off-white minimalism, music-only (no voice-over), with the product itself telling the story through typed prompts and one continuous camera; an understated brand sign-off instead of a hard sell.",
+    "signature_moments": [
+      {
+        "shots": ["s001", "s003", "s004"],
+        "description": "The opening 'Design' pill morphs into the prompt card, which later collapses into a shimmering italic-serif status pill while the globe draws itself behind it.",
+        "why_premium": "One UI element is carried through several states by shape morphs rather than cuts, so the prompt-to-result loop reads as one continuous gesture and the product feels alive."
+      },
+      {
+        "shots": ["s012", "s013", "s015", "s022", "s029"],
+        "description": "A single virtual camera travels across a wall of project windows, dives into one workspace, macro-zooms onto toolbar buttons and pulls back out to the wall to move to the next project.",
+        "why_premium": "Building the whole film as one spatial canvas gives continuity and a sense of scale (many projects) that ordinary screen recordings with cuts cannot."
+      },
+      {
+        "shots": ["s024", "s025"],
+        "description": "The comment 'Make this a line graph instead?' is sent and the selected bar chart morphs bar-by-bar into a drawn line graph.",
+        "why_premium": "The request and its result are shown back to back with a data-aware morph, making the AI edit feel instant and precise instead of a page reload."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 4,
+        "evidence": "Opens directly on the product with a cursor click, a pill-to-card morph and a typed prompt that resolves into a glowing globe within ~11 s; strong and muted-friendly, but there is no stated claim or problem, so the 'why' is implicit.",
+        "refs": ["s001", "s002", "s003", "s004"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "Each feature is introduced by clicking a labelled toolbar button in macro close-up (Tweaks, Comment, Knobs, Edit text, Export) followed by its visible result, so the workflow is easy to follow; without voice-over or captions, the value proposition and feature names are never stated beyond UI labels.",
+        "refs": ["s006", "s007", "s016", "s019", "s021", "s026"]
+      },
+      "ui_showcase": {
+        "score": 5,
+        "evidence": "Rich, legible recreated UI across several projects (globe landing page, meditation app, offsite guide, feature deck), with real states: agent checklist, tweak sliders, theme toggle, property panel, export menu and handoff modal.",
+        "refs": ["s005", "s010", "s014", "s020", "s026", "s028"]
+      },
+      "motion_polish": {
+        "score": 5,
+        "evidence": "Shape morphs between UI states, continuous camera moves through one canvas with motion blur on fast zooms, shimmer text loaders, a chart morph and a restrained logo resolve; a cut detector even split continuous moves into separate shots.",
+        "refs": ["s001", "s004", "s013", "s019", "s025", "s030"]
+      },
+      "sound_design": {
+        "score": 3,
+        "evidence": "Judged from the audio facts in anchors, not listening: a music bed at 105.47 BPM with beats detected through ~75.8 s, integrated loudness -13.06 LUFS, and 65 SFX candidates, but most are labelled music or unsure with low CLAP scores, so distinct UI sounds are not confirmed; a swoosh_reverse candidate (x065) lands as the end lockup builds. Competent and loud enough for social, but no clear evidence of a crafted SFX layer.",
+        "refs": ["s001", "s013", "s030"]
+      },
+      "vo_script_quality": {
+        "score": null,
+        "evidence": "No voice-over: the anchors transcript is empty, so a script score does not apply.",
+        "refs": []
+      },
+      "brand_consistency": {
+        "score": 5,
+        "evidence": "Consistent warm off-white field, the same sans/italic-serif pairing for UI and status loaders, accent-filled pressed states throughout, the spark mark on loaders, and a closing 'Design by Anthropic Labs' then Claude lockup.",
+        "refs": ["s004", "s009", "s013", "s016", "s030"]
+      },
+      "works_muted": {
+        "score": 5,
+        "evidence": "There is no voice-over, so all of the story is carried by typed prompts, labelled buttons and visible results; nothing is lost with sound off.",
+        "refs": ["s001", "s007", "s017", "s023", "s030"]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "A best-in-class motion and UI piece that turns one continuous canvas into a tour of the prompt, tweak, comment, edit and export loop and ends on a clean brand lockup; it loses a point because it never states the value proposition and gives no explicit CTA (no URL or availability line).",
+        "refs": ["s001", "s013", "s025", "s028", "s029", "s030"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 4,
+      "baked_in_text": true,
+      "vo_dependent": false,
+      "notes": "No voice-over or caption track to translate; all text is baked into the recreated UI mocks (prompts, toolbar labels, chat answers, slide copy) and the end lockup, so a localized version means re-rendering the mocks with translated strings and re-timing the typing animations. Leaving the UI in English would still be understandable."
+    }
+  }
+}

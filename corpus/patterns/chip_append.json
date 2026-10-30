@@ -1,0 +1,153 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a3_pattern_cards",
+  "annotator": "claude-code",
+  "skill": "write-pattern-cards@e525a58fa6d8",
+  "model": null,
+  "input_hash": "0cff99c9cb31cbe883a01ad0503faff92e346206cc0865d2a61d326513721088",
+  "created_at": "2026-10-05T12:53:30.898490Z"
+ },
+ "id": "chip_append",
+ "name": "Chip Pops Onto Element",
+ "summary": "A small tag, chip, badge or attachment pill pops onto an existing input, field, list or headline, and the things around it shift aside to make room, showing that something was just added or selected.",
+ "when_to_use": [
+  "Showing a selection, mention or file attachment landing in an input after a click or drop",
+  "Labelling items in a list or column with a status, category or icon",
+  "Dropping a feature name or shortcut hint onto a scene without cutting away",
+  "Inserting a brand icon into a headline so it becomes part of the sentence"
+ ],
+ "avoid_when": [
+  "Many chips would arrive at once in different places, splitting attention",
+  "The chip's meaning is not clear without reading it closely"
+ ],
+ "steps": [
+  "Show the cause first: a click, a drag and drop, or the narrated line that introduces the item",
+  "Close any menu or dropdown at the same moment the chip appears",
+  "Pop the chip in from slightly smaller with a quick fade, or slide it up into place if it lands over footage",
+  "Shift neighbouring words, labels or form rows aside or down so the layout reflows around the chip",
+  "If several chips gain the same element, add them together or with a tiny stagger so they read as one state change",
+  "Move the cursor or focus straight on to the next control"
+ ],
+ "build": {
+  "gsap": "Use gsap.fromTo on the chip (scale and autoAlpha to rest) with a back-style overshoot ease for a pop, or ease-out for a calm insert, alongside ease-in-out or ease-out tweens that move neighbours aside; use gsap.set for instant UI swaps like closing the menu. Add a small stagger when several chips appear.",
+  "remotion": "Drive chip scale and opacity with a spring, a slightly bouncy config for a pop or a damped one for a quiet insert; move neighbours with interpolate or a damped spring from the same start frame. Switch menu and field states on the click frame without interpolation."
+ },
+ "sound": "No typical sound; moments sit under music or an unclear bed.",
+ "why_premium": "Each chip makes a cause and its effect visible together: a click, drop or spoken phrase instantly becomes attached context, a status or a named feature. Premium versions keep it tight, closing the menu and landing the chip in the same instant, while the surrounding words or rows shift aside so the chip feels like part of the layout rather than a sticker on top. When several chips change at once they move as one coordinated update, and the cursor moves straight on, so the demo never stalls.",
+ "numbers": {
+  "id": "chip_append",
+  "events": 7,
+  "videos": 4,
+  "weight": 5.0,
+  "duration_ms": {
+   "n": 8,
+   "videos": 3,
+   "weight": 6.2648,
+   "median": 281.147,
+   "p25": 134.448,
+   "p75": 685.625,
+   "ci": [
+    133.651,
+    688.708
+   ]
+  },
+  "easing_mix": {
+   "ease_out": 0.2554,
+   "ease_in_out": 0.2554,
+   "spring_overshoot": 0.2339,
+   "ease_in": 0.1277,
+   "linear": 0.1277
+  },
+  "change_mix": {
+   "fade": 0.25,
+   "slide_down": 0.1932,
+   "pop": 0.1705,
+   "slide_right": 0.1477,
+   "slide_up": 0.0739,
+   "highlight": 0.0511,
+   "morph": 0.0227,
+   "other": 0.0227,
+   "scale_up": 0.0227,
+   "slide_left": 0.0227,
+   "typewriter": 0.0227
+  },
+  "role_mix": {
+   "button": 0.237,
+   "label": 0.237,
+   "list_item": 0.1037,
+   "body_text": 0.0741,
+   "cursor": 0.0741,
+   "ui_panel": 0.0741,
+   "headline": 0.0593,
+   "background": 0.0296,
+   "card": 0.0296,
+   "icon": 0.0296,
+   "logo": 0.0296,
+   "other": 0.0222
+  },
+  "sfx_label_mix": {
+   "music": 0.5,
+   "unsure": 0.5
+  },
+  "sfx_offset_ms": {
+   "n": 2,
+   "videos": 1,
+   "weight": 1.6,
+   "median": -115.15,
+   "p25": -392.7,
+   "p75": 162.4,
+   "ci": null
+  },
+  "examples": [
+   {
+    "video": "attio-introducing-ask-attio",
+    "event": "e009",
+    "score": 4.0
+   },
+   {
+    "video": "notion-introducing-the-new-notion-ai",
+    "event": "e023",
+    "score": 4.0
+   },
+   {
+    "video": "warp-introducing-warp-2-0-the-agentic-develo",
+    "event": "e011",
+    "score": 4.0
+   },
+   {
+    "video": "atlassian-introduction-to-jira-product-discovery",
+    "event": "e009",
+    "score": 3.0
+   }
+  ]
+ },
+ "examples": [
+  {
+   "video": "attio-introducing-ask-attio",
+   "event": "e009",
+   "score": 4.0
+  },
+  {
+   "video": "notion-introducing-the-new-notion-ai",
+   "event": "e023",
+   "score": 4.0
+  },
+  {
+   "video": "warp-introducing-warp-2-0-the-agentic-develo",
+   "event": "e011",
+   "score": 4.0
+  },
+  {
+   "video": "atlassian-introduction-to-jira-product-discovery",
+   "event": "e009",
+   "score": 3.0
+  }
+ ],
+ "caveats": [
+  "Timing comes from few measured elements and the confidence interval is wide",
+  "Several members are screen recordings where the chip appears in a single frame, so measured motion mostly reflects surrounding reflow",
+  "No easing family dominates, and sound evidence comes from a single video"
+ ]
+}

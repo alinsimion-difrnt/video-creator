@@ -1,0 +1,55 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T13:58:46+00:00"
+  },
+  "id": "hyper-light-drifter",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "cool",
+    "notes": "Frames: whole scenes tinted one hue (blood red, magenta-pink, ochre-orange, lilac) with deep teal/navy shadows. Drifter's red-pink cape and cyan sword are the constant accents; boss eyes glow violet-white."
+  },
+  "lighting": "Light is colour: a full-scene tint does the mood, glowing points (violet eyes, white orbs, cyan blade) do the highlights. Blackout frames with only white lightning are used as dramatic beats.",
+  "silhouette": "Drifter is a tiny triangle of red cape with a dark head and a cyan line for the sword; it reads even at about 20 px tall against a screen-filling colossus. Bosses are huge, chunky, symmetric skulls.",
+  "motion": {
+    "timing": "Not measured. The boss reveal holds the Drifter still for many seconds while the giant's colours and debris change; action itself is quick dashes and slashes with particle bursts.",
+    "principles": [
+      "anticipation",
+      "smear on the sword swing",
+      "follow-through (cape)",
+      "contrast of fast action and slow ambience"
+    ]
+  },
+  "texture": "Big flat colour planes with stepped, blocky edges; the colossus breaks into scattered black pixel particles as it disintegrates. Ruins tiled with simple geometric glyphs; foliage as bold red/teal clusters.",
+  "camera": "Static, centred framing for set pieces: the hero small on a staircase at bottom, the threat filling the top. Top-down view in play rooms; occasional tight close-up of the hunched, coughing Drifter.",
+  "sound": "Moody synth score by Disasterpeace carries much of the story.",
+  "acting": {
+    "enters": "Appears as a tiny figure in total darkness, walks into place, then the lightning reveals the giant behind.",
+    "acts": "Stands still on the stairs, sword out, while the giant does the acting; in close-up he collapses and coughs. Talk is pictures, no words.",
+    "exits": "Dashes away, leaving the scene to dissolve or hold empty.",
+    "comes_back": true,
+    "depth": "Pure scale contrast: tiny hero at the bottom, colossus filling the frame behind; a companion dog or figure appears small beside him."
+  },
+  "techniques": [
+    "one-hue scene tint (red, magenta, ochre) with teal shadows",
+    "blackout + lightning flash to reveal the big threat",
+    "tiny hero vs screen-filling giant for scale",
+    "disintegration into scattered square particles",
+    "glowing points as the only highlights",
+    "smear frame on the sword swing",
+    "wordless picture dialogue"
+  ],
+  "feel": "one-hue scene tint + teal shadows + tiny still hero vs huge glowing giant = epic mood with almost no animation",
+  "for_fred": "Stage a reveal: black frame, Fred small at the bottom, a flash shows a huge shape behind him, Fred holds still while the scene tint changes. Let the big thing do the moving and Fred do the reaction; it needs very few frames.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Hyper_Light_Drifter",
+    "data/study/pixel/work/hyper-light-drifter/clip1-7058165715177819438.jpg",
+    "data/study/pixel/work/hyper-light-drifter/clip2-7476332744923008264.jpg",
+    "studies/pixel-art/sources.yaml"
+  ]
+}

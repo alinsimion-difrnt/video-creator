@@ -1,0 +1,65 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "bc82b8f37e42284445958ed2a7eecb0fa2f083a0e648e3a2efec475c91ea315d",
+    "created_at": "2026-10-05T06:49:05.222359Z"
+  },
+  "video": "meta-introducing-meta-quest-3-coming-this-f",
+  "event": "e005",
+  "task": "a2-e005",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Caption builds word by word: each word streaks in from the right with motion blur; the final word 'feel' arrives with letters bobbing at slightly different heights",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["slide_left", "blur_in", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "For experiences you can feel",
+      "text_unit": "word",
+      "estimates": {"duration_ms": 350, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Live-action footage of hands holding the controllers; a bright horizontal light streak washes over the frame at the start of the burst",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "light_streak_flash",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 80, "easing_class": "ambiguous"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x041",
+      "verdict": "unsure",
+      "label": "unsure",
+      "note": "Onset lands as the caption words streak in, which would fit a whoosh, but there is no rising build before the line (not a clear reverse-swoosh shape) and similar broadband columns repeat at regular intervals across the window, so it may be a music percussion hit."
+    }
+  ],
+  "pattern": {
+    "id": "kinetic_word_reveal",
+    "proposed_name": null,
+    "description": "Over live footage, a one-line caption assembles word by word: each word slides in from the right with a horizontal motion-blur smear and settles, and the last word ('feel') lands with a playful per-letter vertical offset that echoes its meaning.",
+    "why_premium": "Fast blurred slides give the type physical momentum to match the hand movement in the footage, and the per-letter wobble on the key word adds a tactile accent exactly on the feature being sold (haptic feel)."
+  },
+  "build_hint": {
+    "gsap": "Split caption into words (and the last word into chars). tl.from(words,{x:80,autoAlpha:0,filter:'blur(12px)',duration:0.2,ease:'power3.out',stagger:0.05}).from(lastWordChars,{y:()=>gsap.utils.random(-10,10),duration:0.35,ease:'back.out(2)',stagger:0.03},'>-0.1')",
+    "remotion": "Per word i: progress = spring({frame:frame-2*i,fps,config:{damping:200,stiffness:300,mass:0.6}}); translateX = interpolate(progress,[0,1],[80,0]); blur = interpolate(progress,[0,1],[12,0]); opacity = progress. For chars of the last word use spring with damping:10 (slight overshoot) on translateY from a per-char offset."
+  },
+  "confidence": "medium",
+  "notes": "Small diff boxes b03-b08 are incidental footage motion (fabric/background), not designed elements, so not listed. The letters of 'feel' in the end frame are still at uneven heights; whether this is a settled stylistic offset or still mid-animation is unclear. SFX x041 vs music beat is ambiguous."
+}

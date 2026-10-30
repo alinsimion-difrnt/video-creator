@@ -1,0 +1,39 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "9c9bc1c3b8ba4516a14f5611b30eccc02c14ca81c9a5266b02bdac9b4d68f727",
+                 "created_at": "2026-10-13T15:00:00+00:00"},
+  "id": "7693282332018543903",
+  "format": "split_screen",
+  "hook": {"type": "bold_claim",
+           "line": "The hottest job in AI can pay you $500K to a million dollars.",
+           "visual": "Top half: photo of a tech executive in an office with a navy banner 'This AI role pays $500K' and a US flag; bottom half: creator talking to camera."},
+  "beats": [
+    {"t": 0.0, "what": "Salary claim: executive photo with a big $500K banner over the talking head"},
+    {"t": 4.73, "what": "Cut to full-frame face; the role name 'FDE' appears as an italic title card"},
+    {"t": 9.89, "what": "Full navy graphic 'Make AI work': three numbered steps (model, customer workflow, working solution), face shrunk to a circle bubble"},
+    {"t": 14.83, "what": "Title text 'Solve the problem.' over the face while he lists the skills"},
+    {"t": 18.4, "what": "Five-step list starts: '01 Claude API' header with a screenshot of the free course page above the face"},
+    {"t": 25.53, "what": "Step 02 'Agentic AI': course syllabus screenshot, face again in a circle"},
+    {"t": 33.07, "what": "Step 03 'Hugging Face': screenshot of the agents course with its mascot"},
+    {"t": 38.6, "what": "Step 04 'Cloud certification': screenshot of a cloud certification page"},
+    {"t": 42.87, "what": "Step 05 title 'One real agent.' over the face: build and deploy one real project"},
+    {"t": 51.87, "what": "CTA card 'Comment GUIDE' in large serif type over the face"}
+  ],
+  "graphics": {"captions": "word_by_word", "caption_position": "mixed",
+               "devices": ["split_screen", "screenshot", "title_text", "chart_or_number", "jump_cut"],
+               "density": "heavy", "per_minute_estimate": 24},
+  "characters": [],
+  "cta": {"kind": "comment", "t": 51.87},
+  "why_it_works": [
+    "A dollar figure in the first frame, with a photo of a famous-looking executive, gives an instant reason to stay",
+    "A numbered five-step list ('01'-'04' headers) tells the viewer how much is left, so they wait for the last step",
+    "Each step gets a real screenshot of the course page, which makes free resources feel concrete and worth saving",
+    "Comment-keyword CTA ('GUIDE') turns the list into a lead magnet and drives comments (480) and shares (1022)"
+  ],
+  "weaknesses": [
+    "The executive photo implies an endorsement the video never explains",
+    "Talking head is static at the same framing throughout; the energy comes only from the graphics",
+    "Small screenshot text is unreadable at phone size and only works as decoration"
+  ],
+  "for_robert": "Use a numbered step header ('01', '02'...) in a fixed top slot and let Fred hold up or point at each number as it changes, so the list structure is visible without extra text."
+}

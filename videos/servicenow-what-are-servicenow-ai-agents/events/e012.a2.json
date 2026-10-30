@@ -1,0 +1,77 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "f4d05143086df196599b9d778d3ee660e11becc9a1cd651d357bf65f74963844",
+    "created_at": "2026-10-05T06:52:35.467489Z"
+  },
+  "video": "servicenow-what-are-servicenow-ai-agents",
+  "event": "e012",
+  "task": "a2-e012",
+  "elements": [
+    {
+      "box": null,
+      "manual_box": [130, 531, 680, 805],
+      "manual_reason": "b01 is the whole picture (camera tracking) and b02-b06 are small floor/background texture patches; none isolates the walking leg and loafer, which ends right of centre.",
+      "label": "Walking feet in loafers",
+      "role": "other",
+      "role_other": "live_action_person",
+      "change_types": ["other"],
+      "change_other": "live-action stride: foot lifts, swings forward and plants while the camera tracks alongside at floor level",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 600, "easing_class": "linear"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Background and carpet streaking past (tracking camera)",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["slide_right", "blur_in"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 600, "easing_class": "linear"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x081",
+      "verdict": "confirm",
+      "label": "music",
+      "note": "Harmonic score content before this shot."
+    },
+    {
+      "id": "x082",
+      "verdict": "override",
+      "label": "music",
+      "note": "Stacked partials matching the score, no visual hit; not a distinct chime SFX."
+    },
+    {
+      "id": "x083",
+      "verdict": "confirm",
+      "label": "click",
+      "note": "Falls 880 ms after this burst, inside the next shot (e013), where it syncs with a hand pressing a stapler shut: a mechanical click, not a glitch."
+    }
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "live action vignette",
+    "description": "Floor-level live-action tracking shot of the actor's feet striding, camera moving with her so the carpet and background smear past while the loafer stays roughly in place.",
+    "why_premium": "A low tracking insert on the feet compresses the walk into a purposeful, cinematic beat and builds momentum with motion blur and letterboxing instead of a plain cut."
+  },
+  "build_hint": {
+    "gsap": "Not a graphics build: place the clip as a <video> layer on the HyperFrames timeline; if recreating with graphics, tween a background layer with gsap.to(bg, {xPercent:-30, duration:0.6, ease:'none'}) plus a motion-blur filter while the subject layer stays put.",
+    "remotion": "Use <OffthreadVideo> in a <Sequence>; for a synthetic version interpolate background translateX linearly over ~18 frames with no spring, subject fixed."
+  },
+  "confidence": "medium",
+  "notes": "Camera verdict is pan_left (tracking with the walker); the background element records that apparent motion. b02-b06 are not distinct elements. All three SFX candidates sit outside this burst."
+}

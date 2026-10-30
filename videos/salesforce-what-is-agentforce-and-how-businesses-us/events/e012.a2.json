@@ -1,0 +1,93 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "505b65cc91b690a798d641201bdaa43c25d988ab9a83faf7385edffd104bae0f",
+    "created_at": "2026-10-05T06:52:27.683635Z"
+  },
+  "video": "salesforce-what-is-agentforce-and-how-businesses-us",
+  "event": "e012",
+  "task": "a2-e012",
+  "elements": [
+    {
+      "box": "b19",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Lead table row 1 (Dan Hawes) settling horizontally",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Marketing Manager",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b13",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Lead table row 4 (Roman Tindall) settling horizontally",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Chief Information Of...",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b14",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Lead table row 5 (Jeremie Alonso) settling horizontally",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Clarity Corporation",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b17",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Lead table row 6 (Smith Jack) settling horizontally",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": true,
+      "text": "EVP Business Devel...",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x017",
+      "verdict": "override",
+      "label": "music",
+      "note": "Only the sustained tonal music bed with soft periodic columns; no distinct chime onset at the marker."
+    }
+  ],
+  "pattern": {
+    "id": "stagger_list_reveal",
+    "proposed_name": null,
+    "description": "Rows of the My Leads table appear to shift a few pixels sideways and settle back into alignment one after another, top to bottom, while the page chrome stays still.",
+    "why_premium": "A subtle row-by-row wave draws the eye down the lead list as the narration says the agent works leads, adding life to a static CRM screen without a camera move."
+  },
+  "build_hint": {
+    "gsap": "gsap.fromTo('.lead-row', {x: 12}, {x: 0, duration: 0.3, ease: 'power2.out', stagger: 0.15}) top to bottom; no opacity change.",
+    "remotion": "Per row i: translateX = interpolate(spring({frame: frame - i*4, fps, config: {damping: 200}}), [0, 1], [12, 0]); rows already visible."
+  },
+  "confidence": "low",
+  "notes": "Motion is very small (low energy, camera none) and only readable at thumbnail scale; the filmstrip suggests rows offset horizontally in sequence (rows 1-3 early, 5-6 later) then realign. Direction and whether it is a deliberate stagger or a screen-recording reflow need a human look. b01 union and header diff boxes (b03-b12) show only faint change and are not listed."
+}

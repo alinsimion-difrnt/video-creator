@@ -1,0 +1,105 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "s7_measure",
+    "annotator": "code",
+    "skill": null,
+    "model": null,
+    "input_hash": "108a1d10dd5ac86210f4dc42e0a500da8e361c19816c54ae52a8ae67ca74a43a",
+    "created_at": "2026-10-05T09:51:50.844831Z"
+  },
+  "video": "salesforce-what-is-agentforce-and-how-businesses-us",
+  "event": "e001",
+  "fps": 23.81,
+  "elements": [
+    {
+      "box": "b01",
+      "xyxy": [
+        506,
+        266,
+        774,
+        454
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.975,
+      "channels": [
+        {
+          "name": "x",
+          "start_f": 2,
+          "end_f": 26,
+          "start_value": 1149.0,
+          "end_value": 640.0,
+          "observed_start": false,
+          "cls": "ease_out",
+          "gsap": {
+            "ease": "circ.out",
+            "duration_ms": 1224.7,
+            "rmse": 0.00361
+          },
+          "bezier": "cubic-bezier(0.001, 0.142, 0.092, 1.000)",
+          "bezier_rmse": 0.00048,
+          "spring": {
+            "zeta": 2.2341,
+            "omega0": 13.931,
+            "settle_ms": 1206.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 194.071,
+              "damping": 62.245
+            },
+            "remotion_exact": false,
+            "rmse": 0.0196
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 1334.6,
+          "fit_quality": 1.0
+        },
+        {
+          "name": "opacity",
+          "start_f": 3,
+          "end_f": 26,
+          "start_value": 0.29,
+          "end_value": 1.0,
+          "observed_start": false,
+          "cls": "ease_out",
+          "gsap": {
+            "ease": "circ.out",
+            "duration_ms": 1225.0,
+            "rmse": 0.0031
+          },
+          "bezier": "cubic-bezier(0.153, 0.639, 0.543, 1.000)",
+          "bezier_rmse": 0.00241,
+          "spring": {
+            "zeta": 0.9013,
+            "omega0": 2.668,
+            "settle_ms": 1768.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 7.116,
+              "damping": 4.809
+            },
+            "remotion_exact": true,
+            "rmse": 0.00807
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 1193.4,
+          "fit_quality": 0.9999
+        }
+      ],
+      "timing": {
+        "ease": "circ.out",
+        "start_s": 0.0412,
+        "duration_ms": 1224.6,
+        "rmse": 0.00444
+      },
+      "stagger": null,
+      "sfx_offset_ms": {
+        "x001": -314.1
+      },
+      "source": "measured",
+      "quality": 1.0
+    }
+  ],
+  "failed": {}
+}

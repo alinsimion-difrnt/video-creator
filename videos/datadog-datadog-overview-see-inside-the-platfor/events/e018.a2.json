@@ -1,0 +1,60 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "64f1bc2fb1014e569349a655109bf339d7f9ed56fceca0293b767a55308206ad",
+    "created_at": "2026-10-05T06:43:40.371608Z"
+  },
+  "video": "datadog-datadog-overview-see-inside-the-platfor",
+  "event": "e018",
+  "task": "a2-e018",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Dashboard screen (charts) behind the menu",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["scale_up", "color_shift"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 700, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [444, 88, 956, 366],
+      "manual_reason": "The whole context menu has no candidate box; candidates only cover its individual rows.",
+      "label": "Metric context menu",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["scale_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "METRIC sum:trace.rack.request.errors{en... store}.as_count() View related traces Copy tags to clipboard View related processes View related containers View related hosts View related logs View related profiles Create monitor Find correlated metrics",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 700, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x040", "verdict": "override", "label": "music", "note": "Broadband onset ~300 ms before the push; matches the regular beat pattern seen across the spectrogram rather than a discrete impact tied to the motion."}
+  ],
+  "pattern": {
+    "id": "ui_camera_push_in",
+    "proposed_name": null,
+    "description": "The camera pushes in (~14% scale) on a Datadog dashboard toward an open metric context menu while the surrounding dashboard dims, with a static tilted caption banner on top.",
+    "why_premium": "Combining a slow push-in with dimming of everything except the menu guides the eye to the one-click pivot options without a cursor or callout, keeping the real UI as the hero."
+  },
+  "build_hint": {
+    "gsap": "gsap.fromTo('.screen', {scale: 1, transformOrigin: '25% 60%'}, {scale: 1.14, duration: 0.7, ease: 'power2.inOut'}); simultaneously gsap.to('.dim-overlay', {opacity: 0.55, duration: 0.6, ease: 'power1.out'}) with the menu layered above the overlay. Caption banner stays fixed outside the scaled group.",
+    "remotion": "scale = interpolate(frame, [0, 21], [1, 1.14], {easing: Easing.inOut(Easing.cubic), extrapolateRight: 'clamp'}) on the screenshot container with transformOrigin near the menu; overlay opacity interpolate(frame, [0, 18], [0, 0.55]). No spring (smooth camera ease)."
+  },
+  "confidence": "medium",
+  "notes": "Dim of dashboard vs menu is inferred from filmstrip brightness; the energy curve peaks mid-burst consistent with an ease-in-out push. Menu has manual_box."
+}

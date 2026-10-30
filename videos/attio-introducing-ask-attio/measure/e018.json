@@ -1,0 +1,174 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "s7_measure",
+    "annotator": "code",
+    "skill": null,
+    "model": null,
+    "input_hash": "e0f4b9ec0e0f8dc9d097554ff5361ac5e209b06cd1f85cbc777a72a7977c7280",
+    "created_at": "2026-10-05T09:10:20.223293Z"
+  },
+  "video": "attio-introducing-ask-attio",
+  "event": "e018",
+  "fps": 30.303,
+  "elements": [
+    {
+      "box": "b01",
+      "xyxy": [
+        352,
+        316,
+        848,
+        400
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.518,
+      "channels": [
+        {
+          "name": "x",
+          "start_f": 1301,
+          "end_f": 1309,
+          "start_value": 667.0,
+          "end_value": 600.0,
+          "observed_start": false,
+          "cls": "spring",
+          "gsap": {
+            "ease": "power1.out",
+            "duration_ms": 324.0,
+            "rmse": 0.01001
+          },
+          "bezier": "cubic-bezier(0.461, 0.973, 1.000, 0.950)",
+          "bezier_rmse": 0.00633,
+          "spring": {
+            "zeta": 0.7834,
+            "omega0": 6.676,
+            "settle_ms": 544.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 44.572,
+              "damping": 10.46
+            },
+            "remotion_exact": true,
+            "rmse": 0.00652
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 544.0,
+          "fit_quality": 0.9996
+        }
+      ],
+      "timing": {
+        "ease": "power1.out",
+        "start_s": 42.8543,
+        "duration_ms": 366.8,
+        "rmse": 0.01001
+      },
+      "stagger": null,
+      "sfx_offset_ms": {},
+      "source": "measured",
+      "quality": 0.9996
+    },
+    {
+      "box": "b04",
+      "xyxy": [
+        510,
+        294,
+        625,
+        413
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.626,
+      "channels": [
+        {
+          "name": "x",
+          "start_f": 1301,
+          "end_f": 1309,
+          "start_value": 639.0,
+          "end_value": 567.5,
+          "observed_start": false,
+          "cls": "ease_out",
+          "gsap": {
+            "ease": "circ.out",
+            "duration_ms": 425.0,
+            "rmse": 0.01103
+          },
+          "bezier": "cubic-bezier(0.000, 0.118, 0.397, 0.837)",
+          "bezier_rmse": 0.00528,
+          "spring": {
+            "zeta": 0.8109,
+            "omega0": 7.057,
+            "settle_ms": 545.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 49.796,
+              "damping": 11.444
+            },
+            "remotion_exact": true,
+            "rmse": 0.01305
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 299.0,
+          "fit_quality": 0.9997
+        },
+        {
+          "name": "opacity",
+          "start_f": 1293,
+          "end_f": 1305,
+          "start_value": 0.0,
+          "end_value": 1.0,
+          "observed_start": true,
+          "cls": "ease_in_out",
+          "gsap": {
+            "ease": "circ.out",
+            "duration_ms": 146.0,
+            "rmse": 0.04448
+          },
+          "bezier": "cubic-bezier(1.000, -0.004, 0.000, 1.014)",
+          "bezier_rmse": 0.03348,
+          "spring": {
+            "zeta": 3.0,
+            "omega0": 166.38,
+            "settle_ms": 139.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 27682.427,
+              "damping": 998.282
+            },
+            "remotion_exact": false,
+            "rmse": 0.04436
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 575.1,
+          "fit_quality": 0.9945
+        }
+      ],
+      "timing": {
+        "ease": "circ.inOut",
+        "start_s": 42.5522,
+        "duration_ms": 675.2,
+        "rmse": 0.07087
+      },
+      "stagger": null,
+      "sfx_offset_ms": {},
+      "source": "measured",
+      "quality": 0.9997
+    },
+    {
+      "box": "b03",
+      "xyxy": [
+        615,
+        296,
+        837,
+        413
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.423,
+      "channels": [],
+      "timing": null,
+      "stagger": null,
+      "sfx_offset_ms": {},
+      "source": "model_estimate",
+      "quality": 0.0
+    }
+  ],
+  "failed": {}
+}

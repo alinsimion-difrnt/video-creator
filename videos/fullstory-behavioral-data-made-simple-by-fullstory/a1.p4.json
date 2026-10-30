@@ -1,0 +1,139 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "bb7605480ec50bf35b1516edab688faa18000014cbcdd681002ff741a69c4ebd",
+    "created_at": "2026-10-05T06:25:22.209388Z"
+  },
+  "video": "fullstory-behavioral-data-made-simple-by-fullstory",
+  "task": "a1-p4",
+  "shots": [
+    {
+      "shot": "s013",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "A swarm of coloured dots that sweeps left-to-right across a centred two/three-word outcome headline, inking it from grey to the scene colour",
+      "transition_in": "push",
+      "transition_other": null,
+      "on_screen_text": [
+        "Personalize Experiences",
+        "Increase Conversions",
+        "Increase Order Value",
+        "Mitigate Fraud"
+      ],
+      "text_word_count": 9,
+      "typography": "Geometric sans, bold/semibold, title case, normal tracking; text starts in a muted grey and is recoloured to a saturated tint matching the dot swarm as the swarm passes; motion-blurred on exit",
+      "depth_cues": [
+        "blur"
+      ],
+      "what_happens": "Four ~2 s outcome cards in sequence, each on its own pastel full-frame background (peach, pink, lavender, mint): a particle swarm enters from the left, travels across the grey headline recolouring it letter by letter, exits right while the headline motion-blurs, and the next coloured background pushes in from the left; VO over w220-w243 (integrating the tech stack ... win loyal customers for life).",
+      "build_rebuild": "For each of four outcome labels, render a centred grey bold headline on a pastel full-bleed background, animate a ~150-dot particle cluster along x from off-left to off-right over ~1.5 s while a left-to-right clip mask reveals a coloured copy of the text under the cluster, then push in the next coloured background from the left.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s014",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Simplified recreated product cards (text highlights, conversion map, revenue/conversion metric cards, a comment-to-Slack thread) floating over soft blurred colour blobs",
+      "transition_in": "push",
+      "transition_other": null,
+      "on_screen_text": [
+        "With better behavioral data",
+        "You have the details needed to",
+        "Text Highlights",
+        "Moon Walkers 819",
+        "Athena 1 317",
+        "Checkout 303",
+        "Force Restart",
+        "View previous sessions",
+        "Conversion Map",
+        "Lost Revenue $1.4M",
+        "Lost Conversions 917",
+        "Conversion Impact -10%",
+        "Affected Users 2,546",
+        "@techsupport Looks like there's a dead click here. Can you take a look?",
+        "Cancel",
+        "Save",
+        "Send to: Trello · Slack · Jira",
+        "Fullstory",
+        "Phil Anderson",
+        "Fixed it!"
+      ],
+      "text_word_count": 64,
+      "typography": "Geometric sans throughout; the VO-caption pills are medium weight, sentence case, black on white in a thin rounded outline; UI cards use small regular labels with bold large numerals for metrics; chat text is small regular sentence case",
+      "depth_cues": [
+        "blur",
+        "glow",
+        "shadow"
+      ],
+      "what_happens": "The multicoloured dot swarm (all four previous colours merged) drifts past an outlined caption pill whose text resolves from blur ('With better behavioral data', then 'You have the details needed to'), the swarm funnels into a rounded empty card that blooms into a cluster of UI cards (text highlights, Force Restart session note, product conversion map) over an orange/pink glow; this swaps to a metric dashboard (Lost Revenue bars, Lost Conversions, Conversion Impact, Affected Users) whose numbers count and charts draw while a green blob mascot looks on; finally an empty card becomes a comment box where '@techsupport ... dead click' is typed, sent to Slack, and a reply 'Fixed it!' with emoji reactions appears. VO w244-w274 (interpret nuance, sentiment signals, monitor KPIs, predict behavior, pinpoint issues, train AI models).",
+      "build_rebuild": "Over a white canvas with two large blurred radial-gradient blobs that slowly orbit, stage three card clusters in sequence, each born from a single outlined empty card that scales up and splits into staggered child cards, with metric numerals counted up and bar/line charts drawn on, ending with a typed comment that morphs into a Slack-style message thread.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s015",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "A perspective-tilted browser window of a fictional sneaker shop with journey-step cards ('Viewed Page White Sneakers') branching out to the right on connector lines",
+      "transition_in": "other",
+      "transition_other": "The empty outlined card that ends s014 appears to scale up into the glass frame around the browser, landing on a new vivid pink/orange/green gradient (exact mechanics not visible at 2 fps)",
+      "on_screen_text": [
+        "TREADWAVE",
+        "treadwave.com/athena1",
+        "ELEVATED CLASSICS",
+        "Viewed Page White Sneakers",
+        "100% · 1.2K",
+        "Viewed Page Athena 1",
+        "Clicked Add to Cart",
+        "Cliff Plus",
+        "Athena 1",
+        "Crystal Stride",
+        "Canvas Sneaker"
+      ],
+      "text_word_count": 26,
+      "typography": "Event cards: small regular grey sentence-case label over a bold title-case product name, small grey stats line; storefront wordmark in condensed caps; product names tiny and only partly legible",
+      "depth_cues": [
+        "perspective_tilt",
+        "shadow",
+        "blur"
+      ],
+      "what_happens": "A glass-framed browser showing the TreadWave catalogue floats on a saturated gradient and tilts into 3D perspective; a product page (Athena 1 white sneakers) loads and journey-event cards with rainbow top strips pop out of the page and fan to the right as a branching funnel tree linked by curved connector lines, the last branch resolving to 'Clicked Add to Cart'. VO w275-w289 (take action faster ... Behavioral Data Platform surfaces the data you need to make).",
+      "build_rebuild": "Place a browser mockup inside a rounded glass frame on an animated multi-stop gradient, rotate it ~15 deg on Y with perspective, then spawn white event cards with a gradient top bar that slide out to the right in two staggered columns, connected to their parent by stroke-drawn bezier paths.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s016",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "The final journey card 'Clicked Purchase' with a purple heart-shaped mascot face peeking from its right edge",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Clicked Purchase",
+        "100% · 1.4K"
+      ],
+      "text_word_count": 4,
+      "typography": "Regular-weight grey 'Clicked' over large bold black 'Purchase', small regular grey stats line; geometric sans, title case",
+      "depth_cues": [
+        "perspective_tilt",
+        "shadow"
+      ],
+      "what_happens": "The camera zooms through the funnel tree (motion-blurred) into a tight close-up of the last branch card, now reading 'Clicked Purchase', while a purple heart character with a happy face pops up behind its top-right corner and holds; VO w290-w298 (Sam and Alex feel like you've created an experience).",
+      "build_rebuild": "Scale the camera ~3x toward the bottom-right event card with a short motion blur, swap its label to 'Clicked Purchase', then pop a purple heart mascot SVG in from behind the card's top-right corner with an overshoot spring and a small idle bob.",
+      "confidence": "high"
+    }
+  ],
+  "summary": null
+}

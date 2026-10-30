@@ -1,0 +1,47 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a2_annotate_event",
+  "annotator": "claude-code",
+  "skill": "annotate-event@3dad117bd85a",
+  "model": null,
+  "input_hash": "def6451bc153d35d1624f311858156709a57151ec576064285682e81b3190f87",
+  "created_at": "2026-10-05T06:39:21.413571Z"
+ },
+ "video": "atlassian-introduction-to-jira-product-discovery",
+ "event": "e074",
+ "task": "a2-e074",
+ "elements": [
+  {
+   "box": "b01",
+   "label": "Whole Timeline view screen recording (camera push-in, sidebar and 'Copied' toast cropped out)",
+   "role": "ui_panel",
+   "change_types": ["scale_up", "slide_right", "slide_down"],
+   "is_text": false,
+   "text": null,
+   "text_unit": null,
+   "estimates": {"duration_ms": 330, "easing_class": "ease_out"}
+  }
+ ],
+ "sfx_review": [
+  {
+   "id": "x002",
+   "verdict": "unsure",
+   "label": "unsure",
+   "note": "Marked ~460 ms after the push-in settles; the stem shows a broadband onset rather than a clear reversed-swoosh build, and it overlaps the narration ('managers'), so it may be residue or music rather than a designed SFX."
+  }
+ ],
+ "pattern": {
+  "id": "ui_camera_push_in",
+  "proposed_name": null,
+  "description": "A post-production push-in on the screen recording (about 1.14x) toward the upper-left Timeline content, cropping the sidebar and the leftover 'Copied' toast so the timeline cards fill the frame.",
+  "why_premium": "The zoom removes the navigation chrome and the stale toast right after the view switch, steering attention to the timeline as the narration says 'timeline view'; the decelerating move feels like a deliberate camera rather than a raw capture."
+ },
+ "build_hint": {
+  "gsap": "gsap.fromTo('.screen', {scale:1, x:0, y:0}, {scale:1.136, xPercent:-6, yPercent:5.5, transformOrigin:'40% 30%', duration:0.35, ease:'power3.out'}).",
+  "remotion": "const p = spring({frame: frame - start, fps, config:{damping:200, stiffness:170, mass:1}}); apply transform `scale(${interpolate(p,[0,1],[1,1.136])})` with a matching translate; no overshoot."
+ },
+ "confidence": "medium",
+ "notes": "Camera verdict is push_in (scale 1.136). Energy decays steadily over the burst, suggesting an ease-out; code will measure. Sign of the pan is raw frame shift, described loosely here."
+}

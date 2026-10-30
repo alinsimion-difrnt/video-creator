@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "s7_measure",
+    "annotator": "code",
+    "skill": null,
+    "model": null,
+    "input_hash": "90dc2a71dab4b85035f32944f7fdd7006c671878d5d0fbab1b94e3f050570a99",
+    "created_at": "2026-10-05T09:04:59.687590Z"
+  },
+  "video": "cursor-introducing-cursor-3",
+  "event": "e004",
+  "fps": 23.81,
+  "elements": [
+    {
+      "box": "b01",
+      "xyxy": [
+        0,
+        0,
+        1280,
+        705
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.904,
+      "channels": [
+        {
+          "name": "y",
+          "start_f": 641,
+          "end_f": 657,
+          "start_value": 344.5,
+          "end_value": 352.5,
+          "observed_start": true,
+          "cls": "linear",
+          "gsap": {
+            "ease": "power1.out",
+            "duration_ms": 1050.0,
+            "rmse": 0.07989
+          },
+          "bezier": "cubic-bezier(0.656, 1.268, 0.550, 0.087)",
+          "bezier_rmse": 0.03536,
+          "spring": {
+            "zeta": 3.0,
+            "omega0": 14.379,
+            "settle_ms": 1598.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 206.755,
+              "damping": 86.274
+            },
+            "remotion_exact": false,
+            "rmse": 0.06911
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 892.0,
+          "fit_quality": 0.9206
+        }
+      ],
+      "timing": {
+        "ease": "power1.out",
+        "start_s": 26.8487,
+        "duration_ms": 1050.0,
+        "rmse": 0.07989
+      },
+      "stagger": null,
+      "sfx_offset_ms": {},
+      "source": "measured",
+      "quality": 0.9206
+    }
+  ],
+  "failed": {}
+}

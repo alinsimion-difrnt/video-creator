@@ -1,0 +1,50 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "6c131b3e126ebe7143a6e1904b59a6792586d91304d735a03cee45d2a1ecce2c",
+                 "created_at": "2026-10-13T15:05:00+00:00"},
+  "id": "7649027419445202206",
+  "format": "skit",
+  "hook": {"type": "story",
+           "line": "A crew member fixing his mic asks 'Everything all right, man?' and he says he'll feel better after he says this.",
+           "visual": "Tight shot of a man in a beige polo backstage while hands clip on his mic, then a wide of a crew member checking on him; short white captions."},
+  "beats": [
+    {"t": 0.0, "what": "Backstage mic fitting; nervous small talk sets up a confession-style announcement."},
+    {"t": 7.2, "what": "Cut to a sit-down confessional shot; a lower third names him as the brand's CEO."},
+    {"t": 17.8, "what": "Dramatic pause on 'as of today, officially...' as if announcing a breakup or shutdown."},
+    {"t": 22.2, "what": "Reveal: a product dashboard with a brand visibility gauge cuts in on 'HubSpot AEO'."},
+    {"t": 24.67, "what": "Back to him teasing the audience for thinking the brand was done."},
+    {"t": 37.8, "what": "Dashboard gauge rises from a low score to 16% on 'it was a mess... then HubSpot'."},
+    {"t": 41.33, "what": "Screen recording of a 'Recommended Actions' list (blog posts, social, outreach)."},
+    {"t": 45.07, "what": "Recommendation detail with tracked AI prompts and citing domains, a cursor pointing at it."},
+    {"t": 59.47, "what": "Off-camera director asks for another take; he swears, kicks the stool and storms out."},
+    {"t": 65.0, "what": "End card on deep red: product logo with 'Less Drama. More Leads.' and 'Try'."}
+  ],
+  "graphics": {"captions": "sentence", "caption_position": "bottom",
+               "devices": ["costume_or_skit", "product_ui", "screen_recording", "chart_or_number", "title_text", "jump_cut", "music_bed", "zoom_punch"],
+               "density": "moderate", "per_minute_estimate": 12},
+  "characters": [
+    {"who": "The brand founder playing a dramatic version of himself",
+     "enters": "Already on screen being mic'd backstage, then seated for the confessional.",
+     "acts": "Delivers a fake-serious announcement, teases the audience, then has a mock meltdown at the director's note.",
+     "exits": "Swears, knocks over the stool and walks out of frame.",
+     "comes_back": false},
+    {"who": "Crew member / off-camera director",
+     "enters": "Crew member's hands and face in the opening backstage shots; director only as a voice later.",
+     "acts": "Checks on him at the start; later asks for another take, which triggers the meltdown.",
+     "exits": "Crew leaves after the first shots; director stays off camera.",
+     "comes_back": true}
+  ],
+  "cta": {"kind": "product", "t": 65.0},
+  "why_it_works": [
+    "Fake-breakup announcement framing ('as of today, officially...') makes the viewer expect bad news, so the product reveal lands as a twist.",
+    "Product UI appears only as proof inside the story (a gauge going up, a to-do list), not as a separate pitch.",
+    "Meltdown blooper after the pitch is a second payoff that rewards watching to the end and fits the 'zero crash outs' joke.",
+    "Cuts every 3.4 s (median) keep a 72 s ad moving."
+  ],
+  "weaknesses": [
+    "37% of the runtime is silence; long dramatic pauses could lose scrollers before the reveal at 22 s.",
+    "73% of the on-screen text sits outside the safe area, so TikTok's UI can cover captions.",
+    "The product's name is not said until 22 s, so viewers who leave earlier never learn what it was for."
+  ],
+  "for_robert": "Use the 'serious announcement, then twist' setup: Robert announces gravely, cut to the proof on screen, and end with an out-of-character blooper where Fred breaks the take and storms out of frame."
+}

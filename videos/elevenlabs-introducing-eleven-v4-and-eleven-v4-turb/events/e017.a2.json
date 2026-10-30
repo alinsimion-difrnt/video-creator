@@ -1,0 +1,62 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "8d9da00947ea736fa2399e29bd714fca27b835d2807394225b0d5c00363b550d",
+    "created_at": "2026-10-05T06:44:43.484127Z"
+  },
+  "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+  "event": "e017",
+  "task": "a2-e017",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Oversized blurred numeral 4",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["slide_left", "color_shift", "blur_in"],
+      "change_other": null,
+      "is_text": true,
+      "text": "4",
+      "text_unit": "char",
+      "estimates": {"duration_ms": 200, "easing_class": "ease_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [0, 0, 600, 130],
+      "manual_reason": "The V remnant at the left edge has no candidate box of its own; b01 is used for the 4.",
+      "label": "Orange V edge exiting left",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": true,
+      "text": "V",
+      "text_unit": "char",
+      "estimates": {"duration_ms": 200, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x093", "verdict": "unsure", "label": "unsure", "note": "466 ms before the burst, during the previous V reveal; no sharp impact transient."},
+    {"id": "x094", "verdict": "confirm", "label": "swoosh_reverse", "note": "Builds into the cut to the '4' framing about 29 ms before the burst; lines up with the slide."},
+    {"id": "x095", "verdict": "unsure", "label": "unsure", "note": "730 ms after the burst while the 4 is static; no visual glitch at that moment."}
+  ],
+  "pattern": {
+    "id": "kinetic_word_reveal",
+    "proposed_name": null,
+    "description": "After a hard cut, the frame slides left from the blurred V onto an oversized '4'; the numeral's left stroke resolves from grey to deep green as it settles, still heavily defocused, so 'v4' is spelled one giant glyph at a time.",
+    "why_premium": "Revealing the product name glyph by glyph at a scale bigger than the frame, with motion blur and soft focus, makes the name feel monumental and lets the narration ('The next frontier') land on it."
+  },
+  "build_hint": {
+    "gsap": "Container of giant glyphs: gsap.fromTo(track, {x:'+=420'}, {x:0, duration:0.2, ease:'power3.out'}) right after the cut; on the 4 gsap.fromTo(leftStroke gradient stop, {color:'#9a9a9a'}, {color:'#0b3d12', duration:0.25, ease:'power2.out'}) and keep filter:'blur(14px)' constant (rack focus happens later).",
+    "remotion": "translateX = interpolate(spring({frame, fps, config:{damping:200, stiffness:200}}), [0, 1], [420, 0]) on a row of oversized glyphs (no overshoot); gradient colour mixes via interpolateColors(frame, [0, 8], ['#9a9a9a', '#0b3d12']); CSS blur fixed."
+  },
+  "confidence": "medium",
+  "notes": "The first energy spike is a cut into shot s011, so most of the change is the cut plus a short left slide. Candidate b02 is a thin sliver at b01's right edge with no distinct element, so it is not used. Camera move is none; pan_x -0.42 is the glyph track sliding."
+}

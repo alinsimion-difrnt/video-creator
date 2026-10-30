@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "20e7515f35370ead1f76652088af217b5cc665c4ada8229ebc4c36de544f695a",
+    "created_at": "2026-10-05T06:38:39.282335Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e015",
+  "task": "a2-e015",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Whole screen recording (zoomed crop pulls out to full browser window)",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["scale_down", "slide_right"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 350, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Fields toolbar button switches to selected (dark) state",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["color_shift"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Fields 7",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 100, "easing_class": "step"}
+    },
+    {
+      "box": null,
+      "manual_box": [118, 723, 1000, 1000],
+      "manual_reason": "No candidate covers the whole Fields side panel; only fragments inside it (b19 search box, b17 helper text, b05 a toggle row) were detected.",
+      "label": "Fields side panel opens on the right",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Fields",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 150, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "ui_camera_push_in",
+    "proposed_name": null,
+    "description": "Reverse of a UI push-in: the zoomed crop on the table pulls out (scale about 0.82, drifting right) to reveal the full browser window with nav and sidebar, while the Fields button is clicked and the Fields side panel opens.",
+    "why_premium": "The pull-out re-establishes context (app chrome, views sidebar) exactly when the click opens a new panel, so the viewer sees where the panel lives without a hard cut; it closes the narration beat 'more on that in a bit'."
+  },
+  "build_hint": {
+    "gsap": "gsap.fromTo('.screen', {scale: 1.22, xPercent: -10, yPercent: -4}, {scale: 1, xPercent: 0, yPercent: 0, duration: 0.35, ease: 'power2.inOut'}); at ~0.25s gsap.set('.fields-btn', {className: '+=is-selected'}); gsap.from('.fields-panel', {xPercent: 100, duration: 0.15, ease: 'power2.out'}).",
+    "remotion": "scale = interpolate(frame, [0, 10], [1.22, 1], {easing: Easing.inOut(Easing.quad), extrapolateRight: 'clamp'}) on the screen container with translate from (-10%, -4%) to 0; panel translateX = interpolate(frame, [7, 11], [100, 0]) %; button selected when frame >= 7. A spring({damping: 200}) also fits the pull-out."
+  },
+  "confidence": "medium",
+  "notes": "Camera verdict is pull_out; mapped to ui_camera_push_in as the reverse direction (no pull-out pattern exists). The panel appears within about two frames, so it may be a hard switch rather than a slide. Cursor moves with the zoom and was not listed separately."
+}

@@ -1,0 +1,43 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "c78aa7293503ed0c068a3369c1d00747ccb2786e51fb676bdb3c8379b9c63445",
+                 "created_at": "2026-10-13T09:30:34+00:00"},
+  "id": "7436068138912845099",
+  "format": "skit",
+  "hook": {"type": "pattern_interrupt",
+           "line": "Excuse me mate, what do you do for work? I work in digital marketing.",
+           "visual": "A man walks down an office corridor looking at his phone and is stopped by an off-camera street-interview style question; small native captions under his face."},
+  "beats": [
+    {"t": 0.0, "what": "Street-interview parody: Chris is stopped in the corridor and asked what he does."},
+    {"t": 2.46, "what": "He answers 'digital marketing'; asked 'what role?'."},
+    {"t": 7.2, "what": "Smash cut to a colour-tinted title card: 'CHRIS' in a slanted banner, film-credits style."},
+    {"t": 9.84, "what": "Red tint, 'Chris as Social Media Manager', filming himself on his phone."},
+    {"t": 12.3, "what": "Blue tint, 'Email Marketer', slumped over a laptop."},
+    {"t": 14.76, "what": "Orange tint, 'Influencer Manager', shouting into a phone."},
+    {"t": 17.22, "what": "Yellow, 'Graphic Designer'; then red 'Content Creator' with a shocked face."},
+    {"t": 22.15, "what": "Split frame: 'Confused Chris' and 'Happy Chris' side by side."},
+    {"t": 24.61, "what": "Orange, 'Copy Writer', at a laptop; cut to black end card."}
+  ],
+  "graphics": {"captions": "native_tiktok", "caption_position": "middle",
+               "devices": ["costume_or_skit", "title_text", "jump_cut", "music_bed", "zoom_punch", "split_screen"],
+               "density": "heavy", "per_minute_estimate": 40},
+  "characters": [
+    {"who": "Chris, an employee playing every marketing role",
+     "enters": "Walks into frame down a corridor, looking at his phone, then is stopped by the interviewer.",
+     "acts": "Answers one question, then reappears in a rapid montage of one-pose role vignettes, each with its own colour tint and slanted name banner.",
+     "exits": "The last vignette cuts to a black end card.",
+     "comes_back": true}
+  ],
+  "cta": {"kind": "none", "t": null},
+  "why_it_works": [
+    "Familiar street-interview format in the first second, then a hard break into a mock film-credits montage, so the twist lands as a surprise.",
+    "Each role is one exaggerated pose shown for under a second (median shot 0.86 s), so the joke is 'one person does everything' and marketers tag colleagues.",
+    "Consistent kit per vignette (new colour tint plus the same slanted banner with 'CHRIS as ...') makes a fast montage readable at a glance.",
+    "Speech stops after ~4 s; the rest is music and titles, so it works muted."
+  ],
+  "weaknesses": [
+    "No teaching or product, so it builds brand affinity but no reason to follow for value.",
+    "Ends on a black card with no payoff line or CTA, which wastes the last second."
+  ],
+  "for_robert": "Use the 'cast credits' montage: give Fred a slanted name banner per role ('Fred as SEO', 'Fred as copywriter') with a new background colour each beat, under a second apiece."
+}

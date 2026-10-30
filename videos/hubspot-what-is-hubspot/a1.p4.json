@@ -1,0 +1,206 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "bc873e0d3e61c0706b05ac8c4dd8f53efaf157ad29319088f99cbcbff2b19ed2",
+    "created_at": "2026-10-05T07:39:48.309036Z"
+  },
+  "video": "hubspot-what-is-hubspot",
+  "task": "a1-p4",
+  "shots": [
+    {
+      "shot": "s017",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "split",
+      "composition_other": null,
+      "focal_element": "Opening serif headline 'HubSpot makes growing your business easier for everyone', then a pricing UI with a left nav sidebar and a main panel cycling Create a Bundle, CRM Suite and Free Tools",
+      "transition_in": "other",
+      "transition_other": "not visible: the first sheet frame (52.5 s) already shows the headline mid-build; anchors give 'other' from the s016 integrations scene",
+      "on_screen_text": [
+        "HubSpot makes growing your business easier for everyone",
+        "Platform Solutions",
+        "CRM Suite",
+        "Free Tools",
+        "Create a Bundle",
+        "Products",
+        "Marketing",
+        "Sales",
+        "Customer Service",
+        "Content",
+        "Operations",
+        "Commerce",
+        "Create a Bundle",
+        "Grow your business in the areas that matter most with a custom toolkit.",
+        "Select products & add-ons",
+        "Marketing Hub",
+        "Starter",
+        "Professional",
+        "Enterprise",
+        "Includes 1 million free, non-marketing contacts.",
+        "Only pay for the contacts you want to market to.",
+        "Sales Hub",
+        "Bundle",
+        "billed monthly",
+        "CRM Suite cost:",
+        "Marketing Hub Starter",
+        "Includes 1,000 marketing contacts",
+        "Sales Hub Starter",
+        "Includes 2 paid users",
+        "Service Hub Starter",
+        "Includes 2 paid users",
+        "Content Hub Starter",
+        "Operations Hub Starter",
+        "Buy now",
+        "CRM Suite",
+        "Everything you need to scale your business, bundled together and discounted.",
+        "Professional",
+        "Comprehensive marketing, sales, customer service, content, and operations software.",
+        "Enterprise",
+        "Our most powerful marketing, sales, customer service, content, and operations software.",
+        "Starts at",
+        "Pay upfront",
+        "Commit annually",
+        "Talk to Sales",
+        "Free Tools",
+        "Get access to all of HubSpot's free foundational tools",
+        "Free Tools",
+        "Foundational tools to get you started.",
+        "$0",
+        "Get started free",
+        "Includes:",
+        "Free Marketing tools",
+        "Free Sales tools",
+        "Free Service tools",
+        "Free Content tools",
+        "Free Operations tools"
+      ],
+      "text_word_count": 186,
+      "typography": "Headline: high-contrast display serif, bold, sentence case, three centred lines with a smaller medium-weight 'HubSpot makes' and 'easier for everyone' around a large 'growing your business', words fading in left to right; slightly tight tracking. Pricing UI: clean geometric sans (low-confidence guess Lexend Deca), bold title-case page titles, semibold card titles, regular sentence-case descriptions, white medium labels on orange buttons, normal tracking. Prices are shown as grey placeholder bars, not numerals (except '$0').",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "On a cream canvas with peach and orange bands at the bottom, the serif headline builds word by word with VO 'HubSpot makes growing your business easier for everyone on your team' (w138-w148) while orange four-point sparkles pop beside it. At ~55.5 s the orange band sweeps up over the headline and wipes to a light pricing page. Over 'choose individual products or bundle them together for the best value' (w154-w164) the cursor clicks Marketing then Sales in the sidebar, adding hub cards, then clicks Create a Bundle and the full Bundle builder with a Buy now summary slides in. Around 59 s it clicks CRM Suite (crossfade to Professional/Enterprise tier cards with Talk to Sales buttons), and over 'start with our free tools and upgrade as you grow' (w165-w177) it clicks Free Tools, showing a $0 card with a Get started free button and five free tool rows; the camera pushes in on that card at the end. Tiny placeholder meta text under tier names is not legible and is not quoted.",
+      "build_rebuild": "Stagger-fade the three serif headline lines word by word (~0.12 s per word) on a cream frame, wipe to the pricing view by translating an orange band from the bottom to past the top, then build an HTML pricing page with a sidebar nav and swap three main-panel states (bundle builder, tier cards, free card) on scripted cursor clicks with 250 ms crossfades, ending with a 1.0 to 1.4 scale push-in on the Free Tools card.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s018",
+      "shot_type": "logo",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Orange sprocket disc at the centre of a navy radial wheel that expands to a full-frame orange field with the white HubSpot wordmark",
+      "transition_in": "other",
+      "transition_other": "radial clock wipe: navy wheel wedges with jagged leading edges sweep round from a small central sprocket disc over the light pricing page (reprises the s004 wipe)",
+      "on_screen_text": [
+        "HubSpot"
+      ],
+      "text_word_count": 1,
+      "typography": "Brand wordmark only: white rounded geometric sans logotype, bold, title case, with the sprocket forming the 'o'; normal tracking.",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "Under the sign-off 'All right, I'll let you get back to growing your business. See you around' (w178-w191), navy wedges separated by white spoke lines sweep round and cover the pricing page, leaving an orange sprocket disc in a white ring at the centre with a few white sparkles. Around 66.5 s the disc scales up past the frame edges, filling the screen with orange, and the white HubSpot wordmark resolves centred and holds to the end.",
+      "build_rebuild": "Reveal six navy SVG wedges with a conic-gradient mask sweeping 0 to 360 degrees over ~0.6 s around a 100 px orange sprocket disc, then scale the disc (with its white ring) from 1 to ~12 with ease-in over 0.5 s and fade in a centred white wordmark SVG that holds for 2 s.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001", "s002"], "words": [0, 19]},
+      {"beat": "mechanism", "shots": ["s002", "s003", "s004", "s005"], "words": [20, 70]},
+      {"beat": "demo", "shots": ["s006"], "words": [71, 84]},
+      {"beat": "outcome", "shots": ["s007", "s008", "s009", "s010", "s011", "s012"], "words": [85, 119]},
+      {"beat": "proof", "shots": ["s013", "s014", "s015", "s016"], "words": [120, 137]},
+      {"beat": "outcome", "shots": ["s017"], "words": [138, 148]},
+      {"beat": "cta", "shots": ["s017", "s018"], "words": [149, 191]}
+    ],
+    "hook": {
+      "text": "Welcome to the HubSpot customer platform featuring powerful, flexible, and easy to use software built to help grow your business.",
+      "technique": "other",
+      "technique_other": "brand welcome: logo resolve plus a direct product introduction, no question, stat or pain",
+      "shots": ["s001", "s002"],
+      "words": [0, 19]
+    },
+    "cta": {
+      "text": "It's easy to get started choose individual products or bundle them together for the best value You can also start with our free tools and upgrade as you grow (on screen: 'Get started free')",
+      "shots": ["s017", "s018"]
+    },
+    "tone": "Friendly, upbeat brand-tour voice: warm conversational narration, flat brand-colour motion graphics with an editorial serif for key ideas, real product UI for credibility, and a casual sign-off ('See you around').",
+    "signature_moments": [
+      {
+        "shots": ["s003", "s004", "s005"],
+        "description": "The Smart CRM badge is clicked and fills orange, the hubs connect to it, a radial wipe turns it into a labelled product wheel, and the wheel morphs into a row of hubs stacked on a single CRM bar with connector lines drawing down.",
+        "why_premium": "One continuous object carries the whole 'connected, unified platform' argument through three diagram states without a hard cut, so the abstract claim becomes a visible structure."
+      },
+      {
+        "shots": ["s008", "s009", "s010", "s011", "s012"],
+        "description": "A re-laying colour-block collage grid with word-by-word serif headlines ('Transform how they work', 'Centralized Data', 'Incredible Insight', 'Focus on your customers'), cut-out portraits and small animated illustrations.",
+        "why_premium": "An editorial serif against flat brand panels and constant grid reflow gives the benefit section a magazine-like rhythm and keeps each headline readable on its own."
+      },
+      {
+        "shots": ["s016", "s018"],
+        "description": "The integrations network with a count-up to '1,500 +', and a closing radial wheel wipe that reprises s004 before the sprocket disc expands into the full-frame logo.",
+        "why_premium": "A measured number lands on the spoken figure, and the bookended wheel motif ties the ending back to the platform diagram for a resolved, branded finish."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 2,
+        "evidence": "Opens on a logo resolve and a generic welcome line with stacked adjectives; no question, stat, pain or demo in the first seconds, so attention relies on brand familiarity.",
+        "refs": ["s001", "w0", "w7", "w19"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "Clear arc: what it is, why it is connected (wheel to stack diagram), product proof, benefits, support/integrations, pricing paths. Diagram states map one-to-one to the narration; the s006 demo moves fast through several UI views.",
+        "refs": ["s003", "s005", "s006", "s017"]
+      },
+      "ui_showcase": {
+        "score": 4,
+        "evidence": "Real product UI shown with cursor-guided clicks: Marketing Email analytics, Deals board push-in, Academy course page, and the pricing Bundle/CRM Suite/Free Tools flow. Clean and legible, though most screens are static pages with tab swaps rather than live interaction.",
+        "refs": ["s002", "s006", "s015", "s017"]
+      },
+      "motion_polish": {
+        "score": 4,
+        "evidence": "Inventive transitions (zoom_through into UI, radial clock wipes, disc-to-bar morph, sprocket arrow sweep, chevron wipe, orange band wipe) and consistent word-by-word serif reveals; motion is smooth at 2 fps sampling, but some UI segments are plain crossfades between screenshots.",
+        "refs": ["s004", "s005", "s006", "s016", "s018"]
+      },
+      "sound_design": {
+        "score": 3,
+        "evidence": "Judged from audio anchors plus visuals: a ~110 BPM music bed, 77 SFX candidates mostly labelled swoosh_reverse/music clustered in 0-50 s that line up with the many wipes and pops, but only one low-confidence candidate after 52 s so the pricing/CTA section is sparse. Integrated loudness is -24.61 LUFS, quiet for online delivery.",
+        "refs": ["s001", "s006", "s016", "s017"]
+      },
+      "vo_script_quality": {
+        "score": 3,
+        "evidence": "Warm, clearly paced narration that follows the visuals, but leans on generic marketing phrasing ('powerful, flexible, and easy to use', 'that's how the magic happens', 'incredible insight') and ends on an informal sign-off rather than a crisp ask.",
+        "refs": ["w7", "w76", "w102", "w178"]
+      },
+      "brand_consistency": {
+        "score": 5,
+        "evidence": "Tight brand system throughout: orange/navy/cream palette, sprocket motif reused in the badge, arrow wipe and closing disc, one display serif for every headline and one rounded sans for UI, and the wheel graphic bookending the video.",
+        "refs": ["s003", "s008", "s016", "s018"]
+      },
+      "works_muted": {
+        "score": 3,
+        "evidence": "Benefit headlines (s008-s012, s017) and the 1,500+ counter read without sound, and the product names are on screen, but the opening pitch, the 'connected/unified' explanation in s003-s006 and the pricing advice are carried only by the voice-over with no captions.",
+        "refs": ["s003", "s008", "s016", "s017"]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "A polished, very on-brand platform tour with a strong diagram sequence and editorial kinetic type; held back by a weak, generic hook, a fairly stock script and a quiet mix with thin sound in the last third.",
+        "refs": ["s001", "s005", "s010", "s018"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 2,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "English headlines are baked into the motion graphics (serif kinetic type in s008-s012 and s017, hub labels in s004-s005, '1,500 + app integrations') and all UI screens are English product screenshots; the explanation depends on the voice-over. Localising needs re-rendered type layers, localised UI captures and new narration."
+    }
+  }
+}

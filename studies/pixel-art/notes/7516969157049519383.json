@@ -1,0 +1,55 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "1541ba3c4cb25e393f95d056bac5ab69406f72fd82ed681d5bdc0b047b4fd14b",
+    "created_at": "2026-10-13T13:07:39+00:00"
+  },
+  "id": "7516969157049519383",
+  "kind": "clip",
+  "palette": {
+    "colours_estimate": 46,
+    "shadows": "cool",
+    "notes": "Code: 46 colours at 16x scale (36x64 native), one long ramp, 25 deg hue shift. Near-black blue-grey cave, crimson cape as the hero accent, gold spikes as hazard colour, white-cyan slash FX."
+  },
+  "lighting": "Dark ambient cave with no strong key; readability comes from value: pale slash FX and gold spikes glow against near-black stone, crimson cape is the only warm mid-tone.",
+  "silhouette": "Small knight with oversized flowing red cape and long sword; cape mass makes every pose read even at tiny size. Spikes are saw-tooth bands that read as danger instantly.",
+  "motion": {
+    "timing": "Code: median hold 50 ms (p25 33.3, p75 50), 20.57 drawings/s, about 1.5 on-frames: fast game action, largely on ones/twos with FX on ones.",
+    "principles": [
+      "smear",
+      "follow-through",
+      "anticipation",
+      "arcs",
+      "secondary action"
+    ]
+  },
+  "texture": "Clean pixels, dither share 0.005; flat stone blocks with chunky light edges, slash arcs drawn as crisp crescent shapes.",
+  "camera": "Gameplay camera following the hero vertically through a narrow shaft; quick screen-to-screen moves; enemy hit flashes the frame with white FX.",
+  "sound": "",
+  "acting": {
+    "enters": "Starts mid-action with a spin slash; no idle intro.",
+    "acts": "Chains slash, wall-cling, dash and pogo attacks between spike walls; hits a burrowing enemy with a white impact burst.",
+    "exits": "Dashes out of frame with long motion-streak afterimages, then the cut to the TikTok end card.",
+    "comes_back": true,
+    "depth": "Dim arched doors and pillars sit far back in low contrast; hero and spikes stay in the bright front layer."
+  },
+  "techniques": [
+    "crescent smear frames for sword swings",
+    "dash afterimage streaks trailing the sprite",
+    "oversized cape as follow-through and silhouette mass",
+    "one warm accent (red cape) on a cold near-black set",
+    "white hit-flash burst on contact",
+    "low-contrast background architecture, high-contrast hazards"
+  ],
+  "feel": "near-black cave + crimson cape hero + crescent smears and dash streaks = snappy, readable metroidvania flow",
+  "for_fred": "Give Fred one big trailing shape (a long tail fin) that lags and settles after every move, and when he dashes off screen leave 2-3 fading afterimages so the exit is a beat, not a vanish.",
+  "sources": [
+    "data/study/pixel/work/7516969157049519383/sheet.jpg",
+    "studies/pixel-art/clips/7516969157049519383.json",
+    "studies/pixel-art/tiktok.yaml",
+    "https://www.tiktok.com/@voraginegs/video/7516969157049519383"
+  ]
+}

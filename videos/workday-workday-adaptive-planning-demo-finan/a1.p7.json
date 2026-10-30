@@ -1,0 +1,160 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "be3bf12469a13720ad03229e1511a5cc515073512ee7874e92dd5b8bdcc1f863",
+    "created_at": "2026-10-05T07:48:37.050863Z"
+  },
+  "video": "workday-workday-adaptive-planning-demo-finan",
+  "task": "a1-p7",
+  "shots": [
+    {
+      "shot": "s030",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The re-run What If financial statement report comparing Working Budget with May Forecast, with $ Variance, % Variance and red/green Impact flags",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "2020 Release #2 Demo",
+        "Reports / What If - Financial Statement & Cash Impact",
+        "Version 1 Working Budget",
+        "Version 2 May Forecast",
+        "FY 2020",
+        "FY 2021",
+        "Actuals Working Budget May Forecast $ Variance % Variance Impact",
+        "INCOME STATEMENT",
+        "BALANCE SHEET",
+        "Report Notes",
+        "Director FP&A - Patrick O'Brien Moving up the hire date of one Account Executive will increase our Net Income by $186,532."
+      ],
+      "text_word_count": 59,
+      "typography": "Native app UI: dense small sans-serif table, all-caps regular-weight section labels, bold white column headers on blue bands, link-blue subtotal rows, right-aligned tabular figures; tiny report-note line at the bottom. Only the main labels are quoted; table figures omitted. No added motion type.",
+      "depth_cues": ["shadow"],
+      "what_happens": "A long static hold (about 11.5 s) on the full, centred, drop-shadowed app window over the white stage with the blue bottom arc, showing the finished variance report (Working Budget vs May Forecast) with red and green impact flags. No camera move and no visible cursor movement across the contact sheets while the VO wraps up the benefit: 'you can quickly tweak plans to accurately represent changes in the business and course correct as needed. With the forecast process kicked off, we can now proceed to preparing our monthly' (w382-w413).",
+      "build_rebuild": "Hold the finished report screenshot inside the centred drop-shadowed window over the white stage with the blue circular arc for about 11.5 s with no motion, then crossfade to the end-card.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s031",
+      "shot_type": "logo",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Workday wordmark with orange arc, 'Adaptive Planning' product line and the free-trial URL beneath",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "workday",
+        "Adaptive Planning",
+        "workday.com/adaptive-planning-free-trial"
+      ],
+      "text_word_count": 4,
+      "typography": "Lowercase rounded geometric sans brand wordmark with registered mark; product line in title-case medium-weight humanist sans; URL in smaller regular-weight lowercase sans, normal tracking, all stacked and centred",
+      "depth_cues": ["none"],
+      "what_happens": "The report crossfades to white (a faint ghost of the window is visible in the first frames); the 'workday' letters reveal left to right while 'Adaptive Planning' fades up from a pale tint, the arc draws on above the wordmark by ~2:36.5, then the URL fades in beneath at ~2:37.5-2:38.0 and the lockup holds to the end. VO finishes 'management reports.' (w414-w415). This mirrors the s001 logo build, bookending the video.",
+      "build_rebuild": "Crossfade to a white canvas over ~0.3 s, reuse the s001 logo build (left-to-right clip-path wipe on the wordmark, product line fading from 30% to 100%, arc stroke drawn with stroke-dashoffset), then fade the URL line up beneath over ~0.5 s and hold for about 5 s.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001", "s002", "s003"], "words": [0, 27]},
+      {"beat": "problem", "shots": ["s004", "s005"], "words": [28, 59]},
+      {"beat": "mechanism", "shots": ["s006", "s007", "s008", "s009", "s010"], "words": [60, 176]},
+      {"beat": "demo", "shots": ["s011", "s012", "s013", "s014", "s015", "s016", "s017", "s018", "s019"], "words": [177, 259]},
+      {"beat": "demo", "shots": ["s020", "s021", "s022", "s023", "s024"], "words": [260, 340]},
+      {"beat": "proof", "shots": ["s025", "s026", "s027", "s028", "s029"], "words": [341, 381]},
+      {"beat": "outcome", "shots": ["s030"], "words": [382, 413]},
+      {"beat": "cta", "shots": ["s031"], "words": [414, 415]}
+    ],
+    "hook": {
+      "text": "In this demo, we're going to quickly and easily create a rolling forecast, and do variance analysis on the latest actuals using an automated and error-free process.",
+      "technique": "other",
+      "technique_other": "agenda statement: the narrator announces what the demo will show over a logo build and a static title card, then the product dashboard scales in",
+      "shots": ["s001", "s002", "s003"],
+      "words": [0, 27]
+    },
+    "cta": {
+      "text": "workday.com/adaptive-planning-free-trial",
+      "shots": ["s031"]
+    },
+    "tone": "Calm, matter-of-fact corporate product walkthrough: a measured narrator walks an FP&A-director persona through a month-end forecast workflow in the real app, framed on a clean white-and-blue brand stage.",
+    "signature_moments": [
+      {
+        "shots": ["s004"],
+        "description": "The dashboard slides left to reveal a 'Situation' panel whose three bullets switch from a light tint to dark ink exactly as the VO names each one (w31-w33, w37-w39, w43-w46).",
+        "why_premium": "Word-synced highlighting turns the persona set-up into a readable, scannable brief and is the one place where on-screen text carries the story without sound."
+      },
+      {
+        "shots": ["s016", "s017", "s021"],
+        "description": "Camera push-ins on the recording card enlarge the Name field, date picker and version dropdown so the typed 'May Forecast' and the selected rows become legible.",
+        "why_premium": "Directing the eye with scale instead of showing a dense full-window capture is what separates an edited demo from a raw screen recording."
+      },
+      {
+        "shots": ["s001", "s031"],
+        "description": "The same animated logo build (wordmark wipe, product-line fade, arc draw-on) opens and closes the video, the end version adding the free-trial URL.",
+        "why_premium": "Bookending with an identical animated lockup gives the piece a finished, branded frame and a clean CTA."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 2,
+        "evidence": "Opens on a logo build and a static title card while the narrator reads an agenda ('In this demo, we're going to...'); no question, pain or visual payoff in the first seconds, and the title card is misspelled ('Financial Forcasting').",
+        "refs": ["s001", "s002", "w0", "w27"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "Clear linear story (situation, import actuals, copy budget to a May Forecast, review P&L, compare versions) with a persona panel, an orange callout on the Apr 2021 column and push-ins on key inputs; held back by dense full-window tables that are illegible at video scale.",
+        "refs": ["s004", "s010", "s016", "s021", "s030"]
+      },
+      "ui_showcase": {
+        "score": 3,
+        "evidence": "Real product in a drop-shadowed window over a branded blue-arc stage with several targeted zooms, but long static holds (s008 ~28 s, s023 ~10 s, s030 ~11.5 s) and many loading spinners and 'Please wait...' modals are left in.",
+        "refs": ["s008", "s014", "s018", "s022", "s023", "s025", "s029", "s030"]
+      },
+      "motion_polish": {
+        "score": 2,
+        "evidence": "Motion is limited to the logo builds, a few scale/zoom reframes of the recording card and the s004 panel slide; most of the runtime is raw recording with unedited load states and sub-second flash shots (s012, s014, s022), so pacing feels unedited.",
+        "refs": ["s004", "s012", "s014", "s016", "s022", "s031"]
+      },
+      "sound_design": {
+        "score": 2,
+        "evidence": "Judged from anchors plus visuals: only four SFX candidates in 163 s (x001 music, x002 and x004 unsure, x003 impact-like), integrated loudness -17.83 LUFS and a ~99 BPM detected beat suggest a quiet music bed under VO; no UI clicks or whooshes line up with the many on-screen state changes.",
+        "refs": ["s003", "s008", "s021", "s027"]
+      },
+      "vo_script_quality": {
+        "score": 3,
+        "evidence": "Clear, well-paced narration with a concrete persona and month-end scenario and some benefit lines ('It's that quick and easy', 'Instead of a slow and painful copy and paste exercise'), but it is mostly feature narration of clicks and ends on a hand-off to a next demo rather than a payoff.",
+        "refs": ["w28", "w255", "w259", "w373", "w382", "w406", "w415"]
+      },
+      "brand_consistency": {
+        "score": 4,
+        "evidence": "Identical animated logo lockup bookends the video and every UI shot sits on the same white stage with the brand-blue arc and shadowed window; the misspelled title card is the main lapse.",
+        "refs": ["s001", "s002", "s003", "s015", "s030", "s031"]
+      },
+      "works_muted": {
+        "score": 2,
+        "evidence": "No captions or callout copy beyond the s002 title, the s004 Situation bullets and one orange highlight in s010; the workflow steps and benefits are carried almost entirely by the voice-over.",
+        "refs": ["s002", "s004", "s010"]
+      },
+      "overall": {
+        "score": 3,
+        "evidence": "A competent, clear corporate product demo with a consistent branded frame and a few smart zooms and word-synced highlights, but long raw-recording holds, leftover loading states, a weak agenda hook and minimal sound design keep it well short of premium.",
+        "refs": ["s004", "s008", "s016", "s030", "s031"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 3,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "Added overlay text is small (title card, Situation bullets, end-card URL) and easy to replace, but the English product UI is baked into every screen recording and the story depends on the VO, so localising means re-recording the VO and ideally re-capturing the app in the target locale."
+    }
+  }
+}

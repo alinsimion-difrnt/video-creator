@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "8e7f082729cc231f812eedd1a406cd81b79978bebb6e427435f96912ffb0ab29",
+    "created_at": "2026-10-05T06:53:23.404835Z"
+  },
+  "video": "workday-workday-adaptive-planning-demo-finan",
+  "event": "e001",
+  "task": "a2-e001",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "workday wordmark",
+      "role": "logo",
+      "role_other": null,
+      "change_types": ["mask_reveal", "color_shift", "slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "workday",
+      "text_unit": "char",
+      "estimates": {"duration_ms": 450, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Adaptive Planning product name",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["fade", "slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Adaptive Planning",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b06",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Orange arc logo mark",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["draw_on", "color_shift"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 500, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "logo_resolve",
+    "proposed_name": null,
+    "description": "The workday letters wipe in left to right from light to brand blue while 'Adaptive Planning' fades up beneath; the whole lockup then rises slightly as the orange arc sweeps on above it, its gradient settling from red/yellow to solid orange.",
+    "why_premium": "Sequenced build (wordmark, product name, then signature arc) in brand colours on a clean white field gives a calm, confident open; the colour settle on the arc adds polish without extra motion."
+  },
+  "build_hint": {
+    "gsap": "tl.fromTo('.wd-char', {clipPath: 'inset(0 100% 0 0)', color: '#7fb4ff'}, {clipPath: 'inset(0 0% 0 0)', color: '#0b3fa0', duration: 0.4, stagger: 0.05, ease: 'power2.out'}).fromTo('.ap', {autoAlpha: 0, y: 20}, {autoAlpha: 1, y: 0, duration: 0.4, ease: 'power2.out'}, '<0.1').to('.lockup', {y: -60, duration: 0.4, ease: 'power2.inOut'}, '+=0.05').fromTo('.arc path', {drawSVG: '50% 50%'}, {drawSVG: '0% 100%', duration: 0.5, ease: 'power3.out'}, '<0.1').to('.arc path', {stroke: '#f26b0f', duration: 0.4}, '<0.2').",
+    "remotion": "Per-char clip reveal: width = interpolate(frame - i*1.5, [0, 10], [0, 100], {extrapolateRight: 'clamp', easing: Easing.out(Easing.quad)}); subtitle opacity/translateY from spring({frame: frame - 8, fps, config: {damping: 200}}); lockup translateY via spring({frame: frame - 18, fps, config: {damping: 200}}) * -60; arc strokeDashoffset interpolated with Easing.out(Easing.cubic) over 12 frames from frame 20, stroke colour interpolateColors to orange."
+  },
+  "confidence": "medium",
+  "notes": "Letter-level boxes b07-b12 exist; the wordmark is annotated once via b02 to avoid overlap. The lockup's upward shift (to make room for the arc) is inferred from filmstrip positions; code should confirm. Arc reveal direction (from centre vs one end) is unclear from the frames. No SFX candidates."
+}

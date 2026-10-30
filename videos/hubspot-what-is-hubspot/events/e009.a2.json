@@ -1,0 +1,50 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "f76c06d9f218ec4565aa8686c3ae6251c9ee1643c9b46084942a417210476b3f",
+    "created_at": "2026-10-05T06:47:57.577412Z"
+  },
+  "video": "hubspot-what-is-hubspot",
+  "event": "e009",
+  "task": "a2-e009",
+  "elements": [
+    {"box": "b01", "manual_box": null, "manual_reason": null,
+     "label": "Stacked colour panels (cream, orange, light grey) wiping up over the title card", "role": "background",
+     "role_other": null, "change_types": ["slide_up", "mask_reveal"], "change_other": null,
+     "is_text": false, "text": null, "text_unit": null,
+     "estimates": {"duration_ms": 450, "easing_class": "ease_in_out"}},
+    {"box": null, "manual_box": [0, 0, 1000, 219],
+     "manual_reason": "Whole left navigation panel slides in as one unit; only per-label OCR boxes exist.",
+     "label": "Left product navigation sidebar", "role": "ui_panel", "role_other": null,
+     "change_types": ["slide_right"], "change_other": null, "is_text": true,
+     "text": "Platform Solutions / CRM Suite / Free Tools / Create a Bundle / Products / Marketing / Sales / Customer Service / Content / Operations / Commerce",
+     "text_unit": "whole", "estimates": {"duration_ms": 350, "easing_class": "ease_out"}},
+    {"box": "b02", "manual_box": null, "manual_reason": null, "label": "Marketing Hub pricing card", "role": "card",
+     "role_other": null, "change_types": ["fade", "scale_up"], "change_other": null, "is_text": true,
+     "text": "Marketing Hub", "text_unit": "whole",
+     "estimates": {"duration_ms": 350, "easing_class": "ease_out"}},
+    {"box": null, "manual_box": [585, 117, 615, 138],
+     "manual_reason": "Cursor tip in the end frame has no candidate box; b03 lies on its travel path, not on it.",
+     "label": "Mouse cursor", "role": "cursor", "role_other": null, "change_types": ["slide_left", "slide_up"],
+     "change_other": null, "is_text": false, "text": null, "text_unit": null,
+     "estimates": {"duration_ms": 400, "easing_class": "ease_out"}}
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "stacked panel wipe",
+    "description": "On 'team.' the title card is pushed up and covered by a sequence of stacked full-width colour bands (cream, orange, light grey) rising from the bottom; the last band becomes the UI background, the nav sidebar slides in from the left and the Marketing Hub card fades in while the cursor travels toward the Marketing item.",
+    "why_premium": "Brand-coloured layered bands give a branded, physical scene change instead of a cut, and the UI assembles on top of the final band so the transition hands off directly into the product demo."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.title', {yPercent: -40, duration: 0.45, ease: 'power3.inOut'}).fromTo(['.band-cream', '.band-orange', '.band-ui'], {yPercent: 100}, {yPercent: 0, duration: 0.45, ease: 'power3.inOut', stagger: 0.08}, '<').fromTo('.sidebar', {xPercent: -100}, {xPercent: 0, duration: 0.35, ease: 'power3.out'}, '-=0.1').fromTo('.hub-card', {opacity: 0, scale: 0.96}, {opacity: 1, scale: 1, duration: 0.35, ease: 'power2.out'}, '<').to('.cursor', {x: targetX, y: targetY, duration: 0.4, ease: 'power2.out'}, '<')",
+    "remotion": "Bands: interpolate(frame, [i*2, i*2+11], [100, 0], {easing: Easing.bezier(0.65, 0, 0.35, 1), extrapolateRight: 'clamp'}) as translateY %; sidebar and card: spring({frame: frame - 9, fps, config: {damping: 26, stiffness: 180}}) driving translateX -100%->0 and opacity/scale 0.96->1; cursor position interpolated with an ease-out bezier."
+  },
+  "confidence": "medium",
+  "notes": "Camera verdict is tilt_down; visually this reads as panels pushing up over the title rather than a true camera tilt. The outgoing 'HubSpot makes growing your business easier for everyone' title also slides up and is covered, but it is not in the end frame so it is not listed. The nav may reveal via mask rather than slide; card entrance is small in the filmstrip."
+}

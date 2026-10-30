@@ -1,0 +1,51 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "f334f1c18a430ce2f853052771315fc68ec55955e1af0edb09b6482db7d1db0b",
+    "created_at": "2026-10-13T13:07:39+00:00"
+  },
+  "id": "7632686007300787477",
+  "kind": "clip",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "mixed",
+    "notes": "Code palette_size 3 is not the art (the still is probably a dark or end frame); not used. Each scene has its own scheme: amber sunset, cyan interior, deep blue night with red neon, teal city rain."
+  },
+  "lighting": "Strong mood lighting per scene: low sun backlighting, sunlit windows with cool shade, neon signs and lit windows as the only light at night.",
+  "silhouette": "Environments, not characters: houses, trees, shop fronts and skylines; a black cat silhouette sits in two scenes as a small reward to spot.",
+  "motion": {
+    "timing": "Code: median hold 100 ms (p75 166.7), 3.0 drawings/s, on 3s: mostly still images with slow ambient loops (rain, flicker) and hard cuts.",
+    "principles": [
+      "ambient loop",
+      "held pose"
+    ]
+  },
+  "texture": "Dense painterly pixel art at full canvas (pixel_scale 1 on the copy), clean pixels; foliage clusters, light rays and reflections do the detail.",
+  "camera": "Static wides, landscape 4:3 in a vertical post; slideshow of scenes cut to music, one split frame of twin city panels.",
+  "sound": "",
+  "acting": {
+    "enters": "No acting: a cat or a seated figure is already in place when the scene cuts in.",
+    "acts": "Figures sit still; only the world moves (rain, lights).",
+    "exits": "Hard cut to the next scene.",
+    "comes_back": true,
+    "depth": "Tiny figures and the cat are placed small in large environments so the place carries the mood."
+  },
+  "techniques": [
+    "one dominant colour per scene (amber, cyan, blue-red, teal)",
+    "light sources inside the scene (neon, windows) as focal points",
+    "small creature hidden in a big set as a spot-it reward",
+    "slideshow cut to music, scene changes on the beat",
+    "dense foliage clusters framing the edges"
+  ],
+  "feel": "one-colour mood per scene + tiny cat in a big lit set + cuts on the beat = nostalgic lofi slideshow",
+  "for_fred": "Use Fred as the tiny spot-it creature: hold a wide establishing scene for a second with him small in a window or corner doing one thing, then cut close. Give each scene one dominant colour.",
+  "sources": [
+    "data/study/pixel/work/7632686007300787477/sheet.jpg",
+    "studies/pixel-art/clips/7632686007300787477.json",
+    "studies/pixel-art/tiktok.yaml",
+    "https://www.tiktok.com/@pixei_021/video/7632686007300787477"
+  ]
+}

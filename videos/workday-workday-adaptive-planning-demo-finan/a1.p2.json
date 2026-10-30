@@ -1,0 +1,134 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "d6dd41c6404e6347f78d301cc4947bd264d99544d6b788d7d8b34ee4df09e24c",
+    "created_at": "2026-10-05T07:45:10.740584Z"
+  },
+  "video": "workday-workday-adaptive-planning-demo-finan",
+  "task": "a1-p2",
+  "shots": [
+    {
+      "shot": "s006",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "other",
+      "composition_other": "app window offset right and cropped by the frame edge on a white stage, with a large blue curved shape in the lower-left corner",
+      "focal_element": "Blue left navigation drawer of the Adaptive Planning app, overlaid on a dimmed dashboard",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "2020 Release #2 Demo",
+        "Dashboards",
+        "Home Sheets Assumptions Reports Dashboards Announcements Consolidation Processes Workflow Formulas Modeling Administration Integration Support",
+        "EBITDA",
+        "$2.4 M",
+        "Gross Margin %",
+        "Avg Win Size",
+        "55.9 k",
+        "Net Product Revenue Comparison"
+      ],
+      "text_word_count": 34,
+      "typography": "Native app UI type: clean sans-serif (Roboto-like, low-confidence guess), sentence/title case, regular weight in white on the blue nav; dashboard KPIs in large bold numerals, dimmed behind the drawer. No added motion-graphic titles.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "While the VO says 'Let's begin by importing' (w60-w63), the cursor moves down the open navigation drawer from Dashboards past Consolidation and Administration toward Integration; the dashboard behind is darkened by a modal scrim.",
+      "build_rebuild": "Render a screen-capture of the app in a soft-shadowed window, positioned so it bleeds off the top-right of a white 16:9 stage with a blue circular arc in the lower-left, and animate a cursor sprite down a left nav list while a 60% black scrim covers the content area.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s007",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "other",
+      "composition_other": "app window offset right and cropped by the frame edge on a white stage, with a blue curved shape in the lower-left corner",
+      "focal_element": "Integration flyout submenu (white panel) next to the blue nav drawer, with cursor hovering items",
+      "transition_in": "other",
+      "transition_other": "in-UI state change: the Integration flyout submenu opens inside the continuous recording (detector flagged a non-cut change)",
+      "on_screen_text": [
+        "2020 Release #2 Demo",
+        "Dashboards",
+        "Home Sheets Assumptions Reports Dashboards Announcements Consolidation Processes Workflow Formulas Modeling Administration Integration Support",
+        "Integration Management Run Tasks Notification Logs Manual Import Import Data Import Account Mappings Import Level Mappings Import Dimension Value Mappings Erase Actuals Import History Manual Export Export Data Export Account Mappings Export Level Mappings"
+      ],
+      "text_word_count": 53,
+      "typography": "Native app UI sans-serif (Roboto-like, low-confidence guess); submenu group headers (Integration Management, Manual Import, Manual Export) in bold, items in regular weight, title case, default tracking.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "The Integration flyout opens; the cursor travels over its items (Export Data, Erase Actuals, then up to Run Tasks / Notification Logs) during 'actuals for the month of April' (w66-w71). In the final sampled frame (~25.0 s) the menu is gone and a full, undimmed Company Summary dashboard briefly shows with a light wipe/flash overlay on the left, before the cut to s008.",
+      "build_rebuild": "Reveal a white flyout panel to the right of the nav drawer (instant or ~150 ms fade), move the cursor along its list with hover-row highlights, then clear the scrim to show the full dashboard for a few frames before cutting.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s008",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "other",
+      "composition_other": "starts with the app window cropped off the top-right edge, then reframes to a fully centered, inset window with a drop shadow over a large blue arc at the bottom of a white stage",
+      "focal_element": "The 'Import Actuals from Workday via CCDS' run-task parameters form and its status log",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "2020 Release #2 Demo",
+        "Integration / Run Tasks",
+        "Tasks Overview",
+        "Import Actuals from Workday via CCDS",
+        "Pending/Recent Runs",
+        "Launch New Task Instance",
+        "Parameters",
+        "Adjust the parameter values below and click Run to queue the task for execution.",
+        "Bypass Data Import:",
+        "Actuals Period Range:",
+        "Period: Apr 2021",
+        "Actuals Data Version:",
+        "Version: From Source System",
+        "Do not automap",
+        "Run",
+        "Cancel",
+        "Selected Run's Status",
+        "© 2020 Workday, Inc. All rights reserved. Proprietary and Confidential.",
+        "Privacy Policy"
+      ],
+      "text_word_count": 71,
+      "typography": "Dense native enterprise UI: small sans-serif (Arial/Roboto-like, low-confidence guess) in regular weight, title case labels, white bold title on a blue header bar; most text is too small to read at video scale. No added captions or callouts.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Long 28 s screen recording under the VO on integrations (w72-w132). It opens on the Run Tasks list; the cursor hovers rows and opens the 'Import Actuals from Workday via CCDS' task. The form loads (Apr 2021 period, From Source System version). Around 33.5-34 s the framing pulls out from a cropped close view to the whole window centered over a blue arc. Around 39.5 s Run is clicked and a status panel with a progress bar and log lines appears below, the bar filling over roughly 45-52 s while the cursor idles; near the end the cursor moves back to the top-left of the window.",
+      "build_rebuild": "Play a screen capture inside a shadowed window, then at the scale point tween the window from ~1.25x cropped to 1.0x centered over a blue circular arc (about 0.6 s ease-in-out), and let a determinate progress bar and log list fill in the lower panel after the Run click.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s009",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "other",
+      "composition_other": "app window offset right and cropped by the frame edge again (punched back in), blue curved shape lower-left",
+      "focal_element": "Nav drawer with the Reports flyout list, cursor on Reports",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "2020 Release #2 Demo",
+        "Integration / Run Tasks",
+        "Home Sheets Assumptions Reports Dashboards Announcements Consolidation Processes Workflow Formulas Modeling Administration Integration Support",
+        "Integration Management Run Tasks Notification Logs Manual Import Import Data Import Account Mappings Import Level Mappings Import Dimension Value Mappings Erase Actuals Import History Manual Export Export Data Export Account Mappings Export Level Mappings",
+        "Reports Overview What If - Financial Statement & Cas... Current Month Expense Variance A... Cost of Workforce Variance Analysi... P&L Version Variance Actuals Import Check Intelligent Planning - Expense Varia... Daily Order Detail - This Year vs. La... Budget Variance Due to FX Support Revenue – Missed Opportu... Expense Variance Analysis - Prior Y... Scenario Analysis Financial Summary Rolling 12 Month Report Income Statement - US Ops"
+      ],
+      "text_word_count": 115,
+      "typography": "Native app UI sans-serif (Roboto-like, low-confidence guess); bold flyout header ('Reports', 'Integration Management'), regular-weight title-case items truncated with ellipses; white on blue in the nav.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "The view punches back in to the cropped framing with the nav drawer open over a darkened page; the Integration flyout shows first, then the cursor moves up to Reports and the long Reports flyout replaces it, the cursor hovering items such as P&L Version Variance and Actuals Import Check, while the VO says 'extracts the data from the source systems. In this case,' (w133-w142).",
+      "build_rebuild": "Scale the app window from the centered 1.0x framing back to the ~1.25x cropped framing in about 0.4 s ease-out, then swap the flyout panel contents from the Integration list to a scrollable Reports list when the cursor hovers 'Reports'.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

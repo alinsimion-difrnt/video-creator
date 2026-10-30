@@ -1,0 +1,37 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "b68bec58b12bf6888aa4f74538bbaa4a5b429ffb2db81e6bcd4fe480b140aab8",
+                 "created_at": "2026-10-13T14:00:00+00:00"},
+  "id": "7649156784388803854",
+  "format": "talking_head",
+  "hook": {"type": "callout",
+           "line": "A marketing expert says you are not allowed to ask her to fix your strategy unless you already do these things.",
+           "visual": "Motion-blurred frame as she settles close to the phone, then a tight selfie shot; a 3-line white title across the top promises 'these four things' from frame one."},
+  "beats": [
+    {"t": 0.0, "what": "Callout line spoken with the four-things title already on screen at the top."},
+    {"t": 4.0, "what": "Only early cut: from the close phone framing to a wider seated shot in front of a shelf; this frame holds for most of the video."},
+    {"t": 32.81, "what": "Point one, consistency: 'I am your cheerleader, not your babysitter' with open-hand gestures."},
+    {"t": 65.63, "what": "Reframe line: consistency that needs motivation is just comfort; personal proof that she stayed consistent in bad times."},
+    {"t": 82.04, "what": "Point two, selling every day: listing features like a product manual is describing, not selling."},
+    {"t": 114.85, "what": "Point three: marketing that reads like an About page; she names the 'identity' sales-psychology idea."},
+    {"t": 147.67, "what": "Point four, urgency: not fake 'only a few spots left', but showing what the audience misses each day."},
+    {"t": 174.07, "what": "Cut to the close: asks how many of the four things the viewer already does."}
+  ],
+  "graphics": {"captions": "title_only", "caption_position": "top",
+               "devices": ["title_text", "jump_cut"],
+               "density": "minimal", "per_minute_estimate": 1},
+  "characters": [],
+  "cta": {"kind": "comment", "t": 174.07},
+  "why_it_works": [
+    "Gatekeeping callout ('you're not allowed to ask me') turns the list into a self-test, so viewers stay to score themselves.",
+    "A fixed top title promising four things acts as a progress counter; each 'number two/three' tells the viewer how far they are.",
+    "Each point uses a 'you say X, however Y' reversal that names a habit the viewer recognises, which triggers comments.",
+    "Ending on 'how many of these do you do?' turns the self-test into a comment prompt."
+  ],
+  "weaknesses": [
+    "Three minutes with one framing and only 3 cuts; nothing visual marks the change between points.",
+    "Title and handle sit outside the safe area for the whole video (measured outside_safe_share 1.0).",
+    "No live captions for 3.48 words/s speech, so muted viewers only get the title."
+  ],
+  "for_robert": "Pin a 'N things' title at the top for the whole reel and let Fred hold up a numbered card (1/4, 2/4...) at each point, giving a long single-shot talk the visual chapter marks this video lacks."
+}

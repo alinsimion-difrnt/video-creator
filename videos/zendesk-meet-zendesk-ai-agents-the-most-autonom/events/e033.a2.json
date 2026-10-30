@@ -1,0 +1,61 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "5afd72ea40e7b1e3d33e4a208bbce33100b01deb8bf714985a4852c4ae4997ee",
+    "created_at": "2026-10-05T06:55:57.562258Z"
+  },
+  "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+  "event": "e033",
+  "task": "a2-e033",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Zendesk logomark (glyph row collapses into the Z mark)",
+      "role": "logo",
+      "role_other": null,
+      "change_types": ["morph", "scale_down", "slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 130, "easing_class": "ease_in"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "zendesk wordmark",
+      "role": "logo",
+      "role_other": null,
+      "change_types": ["fade", "slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "zendesk",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x110", "verdict": "confirm", "label": "music", "note": "Percussive music beat ~330 ms before the collapse; part of the rhythmic bed, not a designed SFX."},
+    {"id": "x111", "verdict": "confirm", "label": "music", "note": "Beat ~120 ms before the collapse; same broadband streak pattern as the surrounding music hits."}
+  ],
+  "pattern": {
+    "id": "logo_resolve",
+    "proposed_name": null,
+    "description": "The wide glyph row (Z half, chat bubble, checkmark circle, K half) collapses inward: bubble and check shrink/morph away so the two halves meet as the Zendesk Z mark, which then rises while the 'zendesk' wordmark fades and slides up beneath it into the final lockup.",
+    "why_premium": "The product's own icons (chat, resolved check) physically fold into the brand mark, tying the story to the logo; a fast collapse followed by a softer wordmark ease-out gives a punchy-then-settled two-beat resolve."
+  },
+  "build_hint": {
+    "gsap": "tl.to(['.bubble','.check'], {scale: 0, duration: 0.1, ease: 'power2.in'}).to('.zLeft', {x: '+=offset', duration: 0.1, ease: 'power2.in'}, '<').to('.kRight', {x: '-=offset', duration: 0.1, ease: 'power2.in'}, '<').to('.mark', {y: -40, duration: 0.4, ease: 'power3.out'}, '+=0.2').fromTo('.wordmark', {autoAlpha: 0, y: 30}, {autoAlpha: 1, y: 0, duration: 0.4, ease: 'power3.out'}, '<');",
+    "remotion": "Collapse: interpolate(frame, [0, 3], [1, 0], {easing: Easing.in(Easing.quad)}) on bubble/check scale and glyph translateX. Lockup at ~frame 11: spring({frame: frame - 11, fps, config: {damping: 26, stiffness: 170, mass: 1}}) driving mark translateY and wordmark opacity/translateY (no overshoot)."
+  },
+  "confidence": "high",
+  "notes": "Two energy peaks: the collapse (frames ~3474-3475) and the lockup rise plus wordmark entrance (~3485-3491). b01 (union) and b04 (OCR padding of the wordmark) omitted as duplicates of b02/b03."
+}

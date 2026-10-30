@@ -1,0 +1,40 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "41e5995274ddac590445a1c248512d137189b8e2c6fd363b42e5bcebacf968d0",
+                 "created_at": "2026-10-13T12:00:00+00:00"},
+  "id": "7684385230118980886",
+  "format": "split_screen",
+  "hook": {"type": "list_promise",
+           "line": "Five secret codes for Claude that you need to know about.",
+           "visual": "Top half: a blob morphs into the Claude logo on black; bottom half: him at a podcast mic; a white '5 SECRET CLAUDE CODES' label sits on the seam, then an orange flash cuts to B-roll."},
+  "beats": [
+    {"t": 0.0, "what": "Morphing blob resolves into the Claude wordmark above his face, list title on the split line"},
+    {"t": 2.4, "what": "Orange flash transition into office B-roll"},
+    {"t": 5.06, "what": "Code one typed in huge yellow letters ('L99') over a warped grid above his face"},
+    {"t": 10.12, "what": "Full-screen scroll of a long Claude answer as proof"},
+    {"t": 15.18, "what": "Code two '/GHOST' typed in the same yellow-on-warped-grid style"},
+    {"t": 20.24, "what": "Chat box screen recording with the code typed into the prompt"},
+    {"t": 25.3, "what": "Code three 'OODA' card"},
+    {"t": 30.35, "what": "Screen recording of the Observe/Decide/Act output"},
+    {"t": 40.47, "what": "Cinematic B-roll of someone at a desk setup for code four"},
+    {"t": 45.53, "what": "Orange-tinted scroll of a full step-by-step plan, then a final architecture answer for code five"}
+  ],
+  "graphics": {"captions": "word_by_word", "caption_position": "bottom",
+               "devices": ["split_screen", "title_text", "screen_recording", "product_ui", "b_roll", "jump_cut", "music_bed", "sound_effect"],
+               "density": "heavy", "per_minute_estimate": 22},
+  "characters": [],
+  "cta": {"kind": "none", "t": null},
+  "why_it_works": [
+    "Numbered list of 'secret codes' promises five quick wins, so viewers stay to collect all five",
+    "Each code gets the same big yellow typed title, so the structure is readable with sound off",
+    "Fast pacing (19.4 cuts/min, median shot 2.2 s) alternates face, title card and proof screen",
+    "Every code is followed by a screen of real output, so the claim is shown, not just said"
+  ],
+  "weaknesses": [
+    "Face visible only about a third of the time (face share 0.304), so the presenter feels secondary",
+    "The 'secret codes' framing overstates what are plain prompt prefixes, which can draw skeptical comments",
+    "Output screens scroll too fast and too small to read",
+    "No CTA at the end; the last frame is black"
+  ],
+  "for_robert": "Give each list item the same typed title card over a moving background, with Fred popping in to 'type' it; keep his face on screen more than this creator does."
+}

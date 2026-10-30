@@ -1,0 +1,113 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a3_pattern_cards",
+  "annotator": "claude-code",
+  "skill": "write-pattern-cards@e525a58fa6d8",
+  "model": null,
+  "input_hash": "e7d6e25a4a40aeb4a8c6a3226442d2acfc80eaff8ac7c53991cf88eef55394e9",
+  "created_at": "2026-10-05T13:25:35.290370Z"
+ },
+ "id": "diagonal_ui_wipe_in",
+ "name": "UI Wipes Over Title",
+ "summary": "The product screen sweeps in over a title card along a moving edge, either a slanted diagonal edge or a stack of coloured bands rising from below. Once it lands, the rest of the UI and a caption assemble on top.",
+ "when_to_use": [
+  "Leaving a title or chapter card and handing straight into a product demo",
+  "Keeping scene changes branded and consistent when the video already uses a slash or band motif",
+  "Introducing a feature name over the screen it describes"
+ ],
+ "avoid_when": [
+  "The video has no matching transition style; a lone wipe looks out of place",
+  "Cuts are frequent and a wipe on each would slow the pace"
+ ],
+ "steps": [
+  "Keep the title card on screen and, for the band style, start nudging it up",
+  "Sweep the UI layer in with a moving mask: a diagonal clip edge from a corner, or full-width brand-coloured bands rising in quick succession",
+  "Let the UI land slightly over-scaled and settle to its normal size",
+  "Make the last band or the revealed screen become the UI background",
+  "Bring in secondary pieces on top, such as a sidebar sliding from the side or a card fading up",
+  "Wipe a caption banner across the UI to name the feature after the screen has landed"
+ ],
+ "build": {
+  "gsap": "A timeline tweening clipPath (a diagonal polygon, or inset for the caption) on the UI layer, together with a scale settling down to one; for bands, a fromTo on yPercent with a small stagger. Use ease-in-out (power inOut) for the sweep and ease-in where the outgoing title accelerates away. Follow with the sidebar slide and caption wipe overlapping the end of the sweep.",
+  "remotion": "Interpolate a wipe progress on frame with an in-out bezier curve and map it to a diagonal polygon clipPath and the UI's settling scale; bands are the same interpolate offset by a few frames each. The caption banner and sidebar use a delayed high-damping spring mapped to inset or translate."
+ },
+ "sound": "no typical sound",
+ "why_premium": "A branded wipe turns a scene change into a designed moment instead of a plain cut. Brand-coloured bands or a slash edge that repeats the video's own transition motif make every change feel part of one system, and the last band or revealed screen becomes the product background, so the hand-off into the demo is seamless. Landing the UI first and only then wiping in a bright caption lets viewers take in real product context before reading the feature name, and the banner stays legible on a busy screen without dimming it.",
+ "numbers": {
+  "id": "diagonal_ui_wipe_in",
+  "events": 2,
+  "videos": 2,
+  "weight": 1.6,
+  "duration_ms": {
+   "n": 2,
+   "videos": 1,
+   "weight": 1.5869,
+   "median": 579.793,
+   "p25": 173.2,
+   "p75": 987.743,
+   "ci": null
+  },
+  "easing_mix": {
+   "ease_in_out": 0.5017,
+   "ease_in": 0.4983
+  },
+  "change_mix": {
+   "mask_reveal": 0.3333,
+   "slide_right": 0.1667,
+   "slide_up": 0.1667,
+   "fade": 0.0833,
+   "scale_down": 0.0833,
+   "scale_up": 0.0833,
+   "slide_left": 0.0833
+  },
+  "role_mix": {
+   "ui_panel": 0.2857,
+   "background": 0.1429,
+   "card": 0.1429,
+   "cursor": 0.1429,
+   "headline": 0.1429,
+   "label": 0.1429
+  },
+  "sfx_label_mix": {},
+  "sfx_offset_ms": {
+   "n": 0,
+   "videos": 0,
+   "weight": 0.0,
+   "median": null,
+   "p25": null,
+   "p75": null,
+   "ci": null
+  },
+  "examples": [
+   {
+    "video": "hubspot-what-is-hubspot",
+    "event": "e009",
+    "score": 4.0
+   },
+   {
+    "video": "datadog-datadog-overview-see-inside-the-platfor",
+    "event": "e014",
+    "score": 4.0
+   }
+  ]
+ },
+ "examples": [
+  {
+   "video": "hubspot-what-is-hubspot",
+   "event": "e009",
+   "score": 4.0
+  },
+  {
+   "video": "datadog-datadog-overview-see-inside-the-platfor",
+   "event": "e014",
+   "score": 4.0
+  }
+ ],
+ "caveats": [
+  "Seen in only two videos, and timing comes from very few measured elements in one of them, with no confidence interval",
+  "No sound was measured for this pattern",
+  "The two examples differ in style (diagonal edge versus rising bands)"
+ ]
+}

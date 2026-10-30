@@ -1,0 +1,22 @@
+# Copied 2026-10-09 from the Acme v2 session scratchpad: $S/final/edges.py. $S paths are ephemeral (archived in R2 create/acme-v2/). See ../readme.md.
+import subprocess,numpy as np,sys
+W,H=480,270; f=sys.argv[1]
+p=subprocess.run(["ffmpeg","-v","error","-i",f,"-vf",f"fps=5,scale={W}:{H}","-f","rawvideo","-pix_fmt","rgb24","-"],capture_output=True).stdout
+fr=np.frombuffer(p,np.uint8).reshape(-1,H,W,3).astype(int)
+mx,my=int(W*0.04),int(H*0.04)   # 4% safe margin (~77px x 43px at 1080p)
+segs=[("A",0,19.667),("B",19.667,30.9),("C",30.9,45.967),("D",45.967,54.767),("E",54.767,86.167),("F",86.167,96.867),("G",96.867,105.133)]
+hits=[]
+for i,im in enumerate(fr):
+    lum=im.mean(axis=2); sat=im.max(axis=2)-im.min(axis=2)
+    ink=(lum<150)|(sat>90)   # dark text/logos or saturated orange
+    m=np.zeros_like(ink); m[:my,:]=1; m[-my:,:]=1; m[:,:mx]=1; m[:,-mx:]=1
+    n=(ink&m.astype(bool)).sum()
+    if n>40: hits.append(i/5)
+# group into ranges
+rng=[];
+for t in hits:
+    if rng and t-rng[-1][1]<=0.4: rng[-1][1]=t
+    else: rng.append([t,t])
+for a,b in rng:
+    s=[n for n,x,y in segs if x<=a<y][0]
+    print(f"{s} {a:6.1f}-{b:6.1f}s")

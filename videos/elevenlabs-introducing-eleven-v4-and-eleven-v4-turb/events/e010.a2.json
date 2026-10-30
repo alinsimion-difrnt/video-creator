@@ -1,0 +1,74 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "10c315a1daa6b20d02451599fcbbd52dc38a1c2b9ca47829695f8b935026d397",
+    "created_at": "2026-10-05T06:44:29.241351Z"
+  },
+  "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+  "event": "e010",
+  "task": "a2-e010",
+  "elements": [
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Left gradient orb (cropped at frame edge)",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["scale_up", "slide_left", "color_shift"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Right gradient orb (cropped at frame edge)",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["scale_up", "slide_right", "color_shift"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [0, 195, 1000, 805],
+      "manual_reason": "Central outline ring spans the full frame height; b01 is a union box and b04/b05 cover only tiny-change slivers that do not frame the ring.",
+      "label": "Central outline ring",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x034", "verdict": "unsure", "label": "unsure", "note": "Sits ~100 ms before the cut with no clear transient at the line; a brighter mid-frequency burst appears ~140 ms later, right after the cut, which may be the real accent."}
+  ],
+  "pattern": {
+    "id": "match_cut_element",
+    "proposed_name": null,
+    "description": "Hard cut from the wide two-orb orbit layout to a much tighter framing of the same two orbs and centre ring, positions matched left/right, followed by a short drift outward as the orbs keep growing and their gradients shift.",
+    "why_premium": "The cut lands on the word 'embody', jumping scale while keeping the composition aligned so the eye stays locked, and the continued post-cut drift hides the cut inside a feeling of forward motion."
+  },
+  "build_hint": {
+    "gsap": "At the cut: tl.set('.layout-wide', {autoAlpha:0}).set('.layout-tight', {autoAlpha:1}).fromTo('.orb-left', {xPercent:0, scale:1}, {xPercent:-6, scale:1.05, duration:0.4, ease:'power2.out'}).fromTo('.orb-right', {xPercent:0, scale:1}, {xPercent:6, scale:1.05, duration:0.4, ease:'power2.out'}, '<').fromTo('.ring', {scale:0.96}, {scale:1, duration:0.4, ease:'power2.out'}, '<'); animate gradient background-position on the orbs for the colour drift.",
+    "remotion": "Use <Sequence> boundary for the hard cut; in the tight layout, interpolate(frame,[0,12],[0,1],{easing:Easing.out(Easing.quad)}) drives orb translateX (+/-6%), scale 1 to 1.05 and ring scale 0.96 to 1; gradient shift via interpolated background-position."
+  },
+  "confidence": "medium",
+  "notes": "Code assigns this to shot s002 starting at the energy spike, so the cut itself may be a shot boundary rather than an in-shot event; the measurable motion after it is subtle (low energy). Orb gradient change could be a slowly rotating gradient rather than a deliberate colour shift."
+}

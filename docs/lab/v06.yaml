@@ -1,0 +1,37 @@
+# v06 — transformations on the presenter: anime mode and blocky mode, Fred matching each (illustrated in
+# anime, pixel in blocky), Pixie dropping in from above. Questions: do the presenter fx and the props agree in
+# style? Does a drop entrance land with weight?
+name: v06
+voice: iP95p4xoKVk53GoZ742B
+script: >-
+  Want me in anime? Done. Too much? Okay, blocky mode then. Fred likes this one.
+  And back to normal. Wait, who ordered a cat?
+plan:
+  layout: [{word: 0, layout: full}]
+  punches: ["Done"]
+  props:
+    - id: fred
+      art: fred
+      word: "Fred"
+      until: "cat"
+      at: lap
+      size: 0.2
+      style: pixel
+      beats:
+        - {word: "likes", do: wave}
+        - {word: "normal", style: illustrated}
+        - {word: "cat", do: look}
+    - id: pixie
+      art: cat
+      word: "who"
+      until: "cat"
+      at: shoulder_right
+      size: 0.26
+      enter: drop
+      exit: none
+      beats:
+        - {word: "ordered", tag: Pixie}
+  fx:
+    - {word: "anime", until: "much", kind: anime, spec: {label: "anime mode"}}
+    - {word: "blocky", until: "one", kind: blocky, spec: {block: 22}}
+    - {word: "Done", kind: flash}

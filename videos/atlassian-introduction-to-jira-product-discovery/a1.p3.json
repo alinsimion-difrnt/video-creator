@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "03cb79a0c4b835a3c32274c730aab4529823a034d043d8d9724b531641ccae6e",
+    "created_at": "2026-10-05T06:57:27.107011Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "task": "a1-p3",
+  "shots": [
+    {
+      "shot": "s004",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Jira Product Discovery views in a Chrome window: All Ideas list, Roadmap board, Timeline view, Impact vs. Effort matrix, a new 'Sales' list grouped by Key customers, and the Share popover",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Insight successfully added",
+        "Templates increase user engagement and productivity",
+        "Onboarding templates",
+        "All Ideas",
+        "Roadmap",
+        "Timeline view",
+        "Impact vs. Effort",
+        "Create a view",
+        "Create a new list",
+        "New View",
+        "Sales",
+        "Group by",
+        "Select a field. The different values of that field will be swimlanes in your list.",
+        "Key customers",
+        "Fields",
+        "Columns",
+        "Share",
+        "Share view in full screen",
+        "Copy link",
+        "Copied",
+        "URL copied to clipboard"
+      ],
+      "text_word_count": 63,
+      "typography": "Native product UI text only: sans-serif (Atlassian UI font, low-confidence guess), semibold view titles ('All Ideas', 'Roadmap', 'Sales'), regular small body and table text, sentence case, default tracking; no added captions, lower thirds or kinetic type",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Opens (hard cut) on a web article with the Chrome extension popover confirming 'Insight successfully added' (about 60-63 s), then returns to the 'Onboarding templates' idea and the full All Ideas list as the VO says all ideas and insights are in one place (w188-w200) and introduces prioritising with views (w201-w238). The cursor clicks through the sidebar views: Roadmap board (w239-w253), Timeline view (w254-w266), Impact vs. Effort matrix with hover tooltips on bubbles (w267-w289). It opens 'Create a view' > 'Create a new list' (w290-w328), the frame punches in as 'New View' is renamed 'Sales', Group by is set to 'Key customers' and fields are toggled in the Fields panel (w329-w356), then reframes out. On the Roadmap board it punches in again while a card is dragged between columns and the Columns field is switched to Impact (w381-w415), reframes out, and opens Share, toggles 'Share view in full screen' and clicks 'Copy link' to a 'Copied' toast (w416-w431). From about 132 s to the end of the shot (171.5 s; timeline sharing w432-w470 and Jira Software delivery linking w471-w555 in the VO) the frames were not in my packet, so those visuals are not described.",
+      "build_rebuild": "Play the continuous screen capture full-bleed and keyframe an eased CSS scale/translate crop (about 1.0 to 1.3) onto the active panel at each narration step (rename field, group-by panel, dragged card), easing back to the full browser frame between features while the real cursor performs the clicks.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

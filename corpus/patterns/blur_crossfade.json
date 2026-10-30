@@ -1,0 +1,152 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a3_pattern_cards",
+    "annotator": "claude-code",
+    "skill": "write-pattern-cards@e525a58fa6d8",
+    "model": null,
+    "input_hash": "902303179389d3c9dfcc5a144c52fd39daf24beb5827f6eb5dcb11f90ca5af50",
+    "created_at": "2026-10-05T12:52:35.278005Z"
+  },
+  "id": "blur_crossfade",
+  "name": "Blur Out, Blur In",
+  "summary": "The current layout softens, fades and drifts away while the next one comes into focus in its place, sharpening from a blur and settling gently. It replaces a hard cut with something that feels like a camera pulling focus.",
+  "when_to_use": [
+    "Changing section or page without breaking the feeling of one continuous session",
+    "Moving from a busy interface to a single centred statement",
+    "Handing off from an opening title or logo to the first product visual",
+    "Swapping a content pane while a sidebar or frame stays put"
+  ],
+  "avoid_when": [
+    "The change should feel sudden or dramatic, where a hard cut or whip lands better",
+    "Both layouts share an element that could carry a match cut instead",
+    "Rapid back-to-back scene changes, where repeated blurs feel mushy"
+  ],
+  "steps": [
+    "Decide what stays fixed (a sidebar, the canvas, the centre position) so the eye has an anchor.",
+    "Send the outgoing layout away: fade it, blur it and optionally drift it in one direction.",
+    "Slightly overlap the incoming layout so it starts appearing before the outgoing one is fully gone.",
+    "Bring the incoming elements in from a blur to sharp, with a small upward settle or a slight scale-down to rest.",
+    "Stagger the incoming items lightly so the new layout assembles rather than pops in as one block.",
+    "Optionally let the new headline deepen from a pale tint to its full colour as it sharpens."
+  ],
+  "build": {
+    "gsap": "Use a timeline: gsap.to on the outgoing group (opacity to zero, a blur filter up, an optional y or x drift) with a power ease-in, then gsap.fromTo on the incoming children (opacity, blur filter down to none, a small y or scale settle) with a power ease-out and a light stagger, overlapped using a negative position offset. A back.out spring-overshoot suits small incoming items; keep transforms subtle and avoid large scale changes.",
+    "remotion": "Drive the outgoing layer with interpolate on frame for opacity, blur and translate, using Easing.in. Drive incoming items with a spring (high damping, or a mild overshoot) or interpolate with Easing.out, mapping progress to opacity, blur radius and a small translateY, each item delayed a frame or so after the last."
+  },
+  "sound": "Often paired with a reverse swoosh, sometimes a soft chime, landing almost exactly on the visual change; many cases had no clearly identifiable cue.",
+  "why_premium": "Pulling focus instead of cutting keeps a scene change soft and continuous, so the story moves from one step to the next as a single gesture rather than a jolt. Premium explainers keep an anchor in place (a persistent sidebar, a fixed centre point, a clean background) while only the content swaps, and they keep the motion travelling in one consistent direction, so the handoff reads as the same product session continuing. The incoming layout sharpening from a blur, sometimes deepening from a tint to full brand colour, gives a polished settling finish that a plain opacity fade lacks.",
+  "numbers": {
+    "id": "blur_crossfade",
+    "events": 5,
+    "videos": 4,
+    "weight": 4.2,
+    "duration_ms": {
+      "n": 10,
+      "videos": 2,
+      "weight": 7.7007,
+      "median": 442.5,
+      "p25": 337.567,
+      "p75": 530.343,
+      "ci": [
+        366.061,
+        528.828
+      ]
+    },
+    "easing_mix": {
+      "ease_out": 0.5069,
+      "spring_overshoot": 0.2078,
+      "ease_in": 0.1039,
+      "linear": 0.1036,
+      "ease_in_out": 0.0779
+    },
+    "change_mix": {
+      "fade": 0.3976,
+      "slide_up": 0.1811,
+      "blur_in": 0.1496,
+      "blur_out": 0.0748,
+      "color_shift": 0.063,
+      "slide_down": 0.0512,
+      "slide_right": 0.0315,
+      "typewriter": 0.0197,
+      "highlight": 0.0157,
+      "scale_down": 0.0157
+    },
+    "role_mix": {
+      "card": 0.3051,
+      "headline": 0.178,
+      "body_text": 0.1186,
+      "background": 0.0847,
+      "cursor": 0.0763,
+      "button": 0.0678,
+      "list_item": 0.0678,
+      "ui_panel": 0.0424,
+      "label": 0.0339,
+      "logo": 0.0254
+    },
+    "sfx_label_mix": {
+      "swoosh_reverse": 0.4348,
+      "unsure": 0.3913,
+      "chime": 0.1739
+    },
+    "sfx_offset_ms": {
+      "n": 2,
+      "videos": 1,
+      "weight": 1.6,
+      "median": -10.0,
+      "p25": -10.0,
+      "p75": -10.0,
+      "ci": null
+    },
+    "examples": [
+      {
+        "video": "hubspot-what-is-hubspot",
+        "event": "e011",
+        "score": 4.0
+      },
+      {
+        "video": "workday-workday-adaptive-planning-demo-finan",
+        "event": "e002",
+        "score": 3.0
+      },
+      {
+        "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+        "event": "e007",
+        "score": 5.0
+      },
+      {
+        "video": "datadog-datadog-overview-see-inside-the-platfor",
+        "event": "e001",
+        "score": 4.0
+      }
+    ]
+  },
+  "examples": [
+    {
+      "video": "hubspot-what-is-hubspot",
+      "event": "e011",
+      "score": 4.0
+    },
+    {
+      "video": "workday-workday-adaptive-planning-demo-finan",
+      "event": "e002",
+      "score": 3.0
+    },
+    {
+      "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+      "event": "e007",
+      "score": 5.0
+    },
+    {
+      "video": "datadog-datadog-overview-see-inside-the-platfor",
+      "event": "e001",
+      "score": 4.0
+    }
+  ],
+  "caveats": [
+    "Durations were measured in only a couple of videos.",
+    "Sound offset rests on very few measurements from a single video and has no confidence interval.",
+    "Some member events are plain crossfades with little or no actual blur, so the blur share of changes is modest."
+  ]
+}

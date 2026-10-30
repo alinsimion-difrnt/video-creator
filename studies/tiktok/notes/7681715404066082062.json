@@ -1,0 +1,87 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "tiktok_notes",
+    "annotator": "claude-code",
+    "input_hash": "9bb0c3d1bd18ea36f2daedfe5dcefa240927498387156e55b95251ca8b25040a",
+    "created_at": "2026-10-13T13:56:32+00:00"
+  },
+  "id": "7681715404066082062",
+  "format": "split_screen",
+  "hook": {
+    "type": "callout",
+    "line": "Stop paying for Claude when you can try its top model for free.",
+    "visual": "Top half: Pro and Max pricing cards stack in one by one ($20, $17, from $100); bottom half: presenter in a cap at a mic. 2-3 word caption on the seam."
+  },
+  "beats": [
+    {
+      "t": 0.0,
+      "what": "Split screen: pricing cards pile up above the talking face while he says stop paying"
+    },
+    {
+      "t": 3.67,
+      "what": "Hard cut to a full-screen white X logo on black with the line there's a website"
+    },
+    {
+      "t": 5.33,
+      "what": "Cut to the site's model dropdown, green cursor moving down the list"
+    },
+    {
+      "t": 6.0,
+      "what": "Zoom punch onto the selected Claude Opus 4.7 pill as he names the model"
+    },
+    {
+      "t": 8.07,
+      "what": "Cut to full-frame face for no expensive subscription"
+    },
+    {
+      "t": 9.53,
+      "what": "Cut to a long Claude answer screenshot as proof of reasoning"
+    },
+    {
+      "t": 12.73,
+      "what": "Stock b-roll: a creator at a ring light, then a student at a desk, one per audience named"
+    },
+    {
+      "t": 15.0,
+      "what": "Back to the dropdown with the cursor on a model row"
+    },
+    {
+      "t": 17.73,
+      "what": "Cut to face for the comment-free CTA, ends mid-sentence to loop"
+    }
+  ],
+  "graphics": {
+    "captions": "word_by_word",
+    "caption_position": "mixed",
+    "devices": [
+      "split_screen",
+      "product_ui",
+      "screen_recording",
+      "screenshot",
+      "b_roll",
+      "zoom_punch",
+      "jump_cut"
+    ],
+    "density": "heavy",
+    "per_minute_estimate": 36
+  },
+  "characters": [],
+  "cta": {
+    "kind": "comment",
+    "t": 17.73
+  },
+  "why_it_works": [
+    "Price cards stacking up in the first second make the cost the viewer would save visible before any explanation",
+    "A cut roughly every 1.4 s, alternating face, UI and stock b-roll, so no shot outstays the line it illustrates",
+    "Comment-a-keyword CTA turns the link into a DM, which inflates comments (1.7k on 112k plays)",
+    "Ends mid-sentence on 'directly to', so the loop restarts straight into the hook"
+  ],
+  "weaknesses": [
+    "Stock b-roll of a creator and a student is generic and breaks the product thread",
+    "Never shows the site name, so the value depends entirely on commenting",
+    "Captions drift between top, middle and bottom, 70% of text outside the safe zone"
+  ],
+  "for_robert": "Open with the problem as an object: let Fred drop the price cards one by one onto the top half while Robert says stop paying, so the hook is seen as well as heard."
+}

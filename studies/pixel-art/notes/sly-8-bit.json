@@ -1,0 +1,53 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T13:02:39+00:00"
+  },
+  "id": "sly-8-bit",
+  "kind": "tutorial",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "unknown",
+    "notes": "Each 16x16 character uses 3 colours plus an outline (stated in the article); enemy variants are cheap colour swaps; red-tint and inverted frames are used for damage."
+  },
+  "lighting": "Not covered; flat NES-style shading inside the 3-colour budget.",
+  "silhouette": "16x16 characters on a 16x16 tile grid, outlined so they separate from the ground; slimes use one down-facing sprite for all directions.",
+  "motion": {
+    "timing": "Most actions use 2 frames; idle and walk reuse the same 2 frames at different speeds. Attack: strike, follow-through and overshoot at 0.08 s each, then 0.32 s before the next attack (stated in the article).",
+    "principles": [
+      "limited frames",
+      "follow-through and overshoot",
+      "hit flash",
+      "timing changes instead of new drawings"
+    ]
+  },
+  "texture": "Top-down tiles of grass, sand and water modelled on 8-bit Zelda, Pokemon and Final Fantasy; effects are tiny overlays (X strike spark, 3-frame puff, 2-frame blast).",
+  "camera": "Top-down, tile-based; no camera moves discussed.",
+  "sound": "",
+  "acting": {
+    "enters": "Not covered beyond area design: enemies that fit the setting so each newcomer is memorable.",
+    "acts": "Reactions do the acting: a hit alternates a red-tinted pain pose with an inverted one; strikes flash an X with a blank frame between.",
+    "exits": "Enemies vanish with a 3-frame circular puff overlaid while they flash away.",
+    "comes_back": false,
+    "depth": "Flat top-down plane; staging is by themed areas rather than depth."
+  },
+  "techniques": [
+    "3 colours + outline per 16x16 sprite",
+    "reuse the same 2 frames for idle and walk at different timing",
+    "0.08 s strike/follow-through/overshoot, then a 0.32 s pause",
+    "damage flash alternating red-tint and inverted frames",
+    "X-shaped strike spark with an empty frame between for a flash",
+    "3-frame puff to remove a character",
+    "colour-swap variants of one sprite"
+  ],
+  "feel": "3 colours + outline + 2-frame actions + loud hit flashes = instantly readable at tiny sizes",
+  "for_fred": "Give Fred a quick exit: flash, a 3-frame puff, gone; then pop him back somewhere else in the frame later. Reuse his 2-frame idle at a faster rate for excitement instead of drawing new loops.",
+  "sources": [
+    "https://www.slynyrd.com/blog/2022/1/25/pixelblog-36-8-bit-adventure",
+    "studies/pixel-art/sources.yaml"
+  ]
+}

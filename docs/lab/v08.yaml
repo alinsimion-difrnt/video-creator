@@ -1,0 +1,39 @@
+# v08 — Pixie variations: a black-and-white Pixie (colors) on the shoulder, a dance from Fred, speech bubbles,
+# and a carried *pixel* Fred (his pixel frame in her mouth). Questions: does recolouring keep her cute? Does
+# the carried pixel frame read?
+name: v08
+voice: iP95p4xoKVk53GoZ742B
+script: >-
+  Fred has a new friend. She sits on my shoulder and judges everything. Fred, say hi.
+  Now dance. Pixel mode. Uh oh. She's hungry.
+plan:
+  layout: [{word: 0, layout: full}]
+  props:
+    - id: fred
+      art: fred
+      word: "Fred"
+      until: "hungry"
+      at: lap
+      size: 0.2
+      style: illustrated
+      enter: pop
+      beats:
+        - {word: "hi", do: wave, say: "blub!"}
+        - {word: "dance", do: dance}
+        - {word: "Pixel", style: pixel}
+        - {word: "Uh", do: look}
+    - id: pixie
+      art: cat
+      word: "She"
+      until: "hungry"
+      at: shoulder_right
+      size: 0.24
+      enter: drop
+      exit: run_right
+      colors: {fur: "#f4f1ee", stripe: "#3a3540", iris: "#ffd36b", bandana: "#5aa7ff"}
+      beats:
+        - {word: "judges", tag: Pixie}
+        - {word: "Uh", move: floor_right}
+        - {word: "hungry", carry: fred}
+  fx:
+    - {word: "hungry", kind: shake}

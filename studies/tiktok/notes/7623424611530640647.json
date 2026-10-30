@@ -1,0 +1,42 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code",
+                 "input_hash": "d5dbe254c9abc693a840183b1029cff093e9e276d8c1c5018bb7cdcb8a62eeaa",
+                 "created_at": "2026-10-13T09:00:00+00:00"},
+  "id": "7623424611530640647",
+  "format": "news_reaction",
+  "hook": {"type": "news",
+           "line": "Claude Code source code just leaked, I read it all morning: three crazy things I found.",
+           "visual": "Webcam of the creator at the top, a torn-paper white card with big yellow-highlighted 'Claude Code Leaked' over the code editor; the card drops at 0.87 s to reveal the source file."},
+  "beats": [
+    {"t": 0.0, "what": "Torn-paper title card 'Claude Code Leaked' over the split layout while he states the news."},
+    {"t": 0.87, "what": "Only cut: title card gone, face cam on top, code editor (spinner verbs file) below on a skull-pattern backdrop."},
+    {"t": 3.87, "what": "List promise spoken: three crazy things he found."},
+    {"t": 5.77, "what": "Thing 1: the loading spinner verbs; the editor scrolls the hard-coded verb list."},
+    {"t": 11.53, "what": "Payoff number spoken (187 hard-coded verbs) while the list scrolls."},
+    {"t": 18.27, "what": "Thing 2: random five-letter channel ids; editor jumps to the alphabet constant."},
+    {"t": 23.13, "what": "Editor shows the blocklist of swear words filtered out of the ids."},
+    {"t": 27.93, "what": "A code comment quoting the launch thread is highlighted as the joke."},
+    {"t": 38.8, "what": "'Last one' plus a follow ask, then the negative-keywords regex function."},
+    {"t": 51.93, "what": "Punchline: the match only feeds an analytics log event; video ends on the joke with no outro."}
+  ],
+  "graphics": {"captions": "none",
+               "caption_position": "none",
+               "devices": ["split_screen", "screen_recording", "title_text", "jump_cut", "music_bed"],
+               "density": "minimal", "per_minute_estimate": 8},
+  "characters": [],
+  "cta": {"kind": "follow", "t": 38.8},
+  "why_it_works": [
+    "Timely leak news plus a numbered promise (three things) in the first 5 s, so the viewer stays to collect all three.",
+    "Each claim is proved on screen by the real code under his face, so the split layout turns talk into evidence.",
+    "Every item ends on a funny specific (a favourite silly verb, a swear blocklist, swearing logged to analytics), giving a small laugh roughly every 15 s.",
+    "Follow ask is tucked into 'last one' at 39 s, when the viewer is already committed to the final item."
+  ],
+  "weaknesses": [
+    "No burned-in captions; the on-screen code is tiny (median text height 1.7% of frame) and unreadable on a phone.",
+    "One cut in 63 s with no zooms or punches on the line he is talking about; the eye has nowhere to go.",
+    "Much of the text sits outside the safe zone (81%), under TikTok's UI.",
+    "Ends abruptly on a mumbled punchline with no visual payoff."
+  ],
+  "for_robert": "Use the 'three things I found' list promise with a proof panel under his face, but zoom into and circle the one line he is talking about, and let Fred point at or react to each find instead of leaving tiny static code."
+}

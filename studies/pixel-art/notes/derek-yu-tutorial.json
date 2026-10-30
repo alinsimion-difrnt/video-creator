@@ -1,0 +1,49 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T13:03:02+00:00"
+  },
+  "id": "derek-yu-tutorial",
+  "kind": "tutorial",
+  "palette": {
+    "colours_estimate": 32,
+    "shadows": "neutral",
+    "notes": "Uses the 32-colour UFO 50 palette; notes that 16 and 32 colours are common choices. Advises picking an existing palette rather than theorising; the orc ends with three shades of green on its skin."
+  },
+  "lighting": "One light source above and slightly in front of the sprite: tops and fronts bright, shades added to bottom and back. Check by removing saturation to see if shading still reads.",
+  "silhouette": "Squint test: large clusters of light and dark should read through details. At 32x32, colour shapes define the sprite more than outlines (Mario has no outline); chibi proportions buy expression.",
+  "motion": {
+    "timing": "Static sprite tutorial; no animation timing.",
+    "principles": []
+  },
+  "texture": "Sparing dithering, mostly for rough surfaces or large flat areas; shading done with unbroken clusters. Anti-aliasing smooths inner curves only.",
+  "camera": "None; single sprite placed in a game screenshot for scale (96x96 is large next to a 384x224 screen).",
+  "sound": "",
+  "acting": {
+    "enters": "",
+    "acts": "No acting; the lesson for staging is scale: a 96x96 sprite fills an arcade screen, a 32x32 one must lean on head size and colour.",
+    "exits": "",
+    "comes_back": null,
+    "depth": ""
+  },
+  "techniques": [
+    "single light from above-front; shade bottom and back",
+    "clean one-pixel lines with few jaggies",
+    "anti-alias inner corners only, never the outside edge",
+    "selective outline: light colours where light hits, shadow colours for inner segmentation",
+    "sketch small sprites with colour shapes, not outlines",
+    "chibi proportions for small expressive characters",
+    "flip horizontally and desaturate to check form",
+    "dither sparingly; save as PNG/GIF, never JPG"
+  ],
+  "feel": "one top-front light + selout instead of black lines + chunky clusters = solid, clean sprite that reads when squinting",
+  "for_fred": "Give Fred and Pixie selective outlines: dark only on the shadow side and under the body, light or none on top, and never anti-alias their outer edge since the reel background changes. Keep their heads big (chibi) so faces read at TikTok scale, and run the desaturate test on every new pose.",
+  "sources": [
+    "https://www.derekyu.com/makegames/pixelart.html",
+    "studies/pixel-art/sources.yaml"
+  ]
+}

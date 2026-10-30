@@ -1,0 +1,100 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "4c2df8a81c090c7bf086d2c47333f53b18c4ce93cdaa71c934206b7b154ed8b4",
+    "created_at": "2026-10-05T06:51:28.135921Z"
+  },
+  "video": "warp-introducing-warp-2-0-the-agentic-develo",
+  "event": "e015",
+  "task": "a2-e015",
+  "elements": [
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Code listing, upper function (open_workflow_modal_from_ai_generated_workflow)",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "fn open_workflow_modal_from_ai_generated_workflow(",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 290, "easing_class": "step"}
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Code listing, telemetry block",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "send_telemetry_from_ctx!(",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 290, "easing_class": "step"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Code listing, lower function (open_workflow_modal_with_existing)",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "pub fn open_workflow_modal_with_existing(",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 290, "easing_class": "step"}
+    },
+    {
+      "box": "b12",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Line-number gutter",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "10378-10407",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 290, "easing_class": "step"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Presenter head (talking)",
+      "role": "other",
+      "role_other": "presenter",
+      "change_types": ["other"],
+      "change_other": "natural presenter movement while speaking",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "masked_scroll",
+    "proposed_name": null,
+    "description": "A vi editor window composited beside the talking-head presenter scrolls its code listing upward in discrete line jumps inside the fixed rounded window mask while the presenter talks about large files.",
+    "why_premium": "Real code scrolling inside a clean, gradient-backed window gives live-product proof without cutting away from the presenter; the window frame stays perfectly still so only the content moves."
+  },
+  "build_hint": {
+    "gsap": "Keep the editor window static with overflow hidden; animate the inner code container's y in 3 quick steps: gsap.timeline().to(code, {y: '-=Nline', duration: 0.05, ease: 'none'}).to(code, {y: '-=Nline', duration: 0.05, ease: 'none'}, '+=0.06')... (or ease: 'steps(1)'), gutter numbers bound to the same y.",
+    "remotion": "Inside an overflow:hidden window, translateY of the code block = -lineHeight * Math.floor(interpolate(frame, [0, 20], [0, totalLines], {extrapolateRight: 'clamp'})) to reproduce stepped editor scrolling; no spring."
+  },
+  "confidence": "medium",
+  "notes": "Energy curve shows three distinct short bursts, consistent with stepped editor scrolling (key-repeat or page jumps) rather than a smooth eased scroll. b03/b05/b04 are parts of one scrolling code block. Camera move is none; the pan/scale sums reflect the in-window scroll only."
+}

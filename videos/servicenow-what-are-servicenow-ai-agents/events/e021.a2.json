@@ -1,0 +1,46 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "aae14961e3f7b760c6f161e30506c33ae67232f38eff0be550e17a22433e81c0",
+    "created_at": "2026-10-05T06:51:49.791036Z"
+  },
+  "video": "servicenow-what-are-servicenow-ai-agents",
+  "event": "e021",
+  "task": "a2-e021",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Woman turning her head toward her colleague (actor performance)",
+      "role": "other",
+      "role_other": "live-action actor",
+      "change_types": ["other"],
+      "change_other": "live-action head turn / reaction glance; no graphic animation",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 600, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x087", "verdict": "confirm", "label": "music", "note": "Broadband onset with sustained harmonics after the event (~81.8 s); a music note, nothing visual syncs with it."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "live action reaction beat",
+    "description": "Two-shot of live-action actors: the woman turns her head and gives a skeptical side-glance at her colleague as he starts speaking ('Jim, you won't believe this').",
+    "why_premium": "A held, naturally lit two-shot with a timed actor reaction lands the comedic/problem beat with human emotion instead of on-screen text."
+  },
+  "build_hint": {
+    "gsap": "Footage only: no tween on the scene itself. If recreated, hold the clip and let the cut timing carry it; optional gsap.to(clip, {scale: 1.0, duration: 0.6, ease: 'power2.out'}) for a subtle settle.",
+    "remotion": "Single <Sequence>/<OffthreadVideo> for the clip; no animation beyond the footage, cut on the dialogue line."
+  },
+  "confidence": "medium",
+  "notes": "Camera verdict is none; the scale 0.87 sum reflects the woman's head turn inside b01, not a camera move. b02/b03 are tiny changes on the man's sleeve at the frame edge and were not listed as separate elements."
+}

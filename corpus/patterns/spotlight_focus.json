@@ -1,0 +1,158 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a3_pattern_cards",
+    "annotator": "claude-code",
+    "skill": "write-pattern-cards@e525a58fa6d8",
+    "model": null,
+    "input_hash": "1804b394e6f4b60c3f3a32f6613095f21208d47e4007a2b28337ce7ea7ac8d05",
+    "created_at": "2026-10-05T12:54:42.545623Z"
+  },
+  "id": "spotlight_focus",
+  "name": "Spotlight On One Thing",
+  "summary": "Out of a busy screen, one item is singled out: the rest dims, shrinks or loses colour while the chosen item grows, lights up or gains a selection mark, often with a gentle camera push toward it.",
+  "when_to_use": [
+    "The narration names one item inside a dense interface, map or grid",
+    "Showing a selection or keyboard step as real product behaviour",
+    "Narrowing from many options to the single hero feature",
+    "Pointing at the one part of a view that matters before explaining it"
+  ],
+  "avoid_when": [
+    "Everything on screen is equally important to the message",
+    "The view is already sparse and the item is obvious",
+    "Several spotlights would follow each other too quickly to read"
+  ],
+  "steps": [
+    "Lay out the full context so the viewer sees the whole view first",
+    "Pick the one focus item and keep it on its own layer",
+    "Dim, desaturate or shrink everything else, keeping it faintly visible for context",
+    "Raise the focus item: scale it up, shift its colour to the accent or move the selection mark onto it",
+    "Optionally push the camera in toward the focus item at the same time",
+    "Keep captions on an unscaled layer, or clear them once the focus lands"
+  ],
+  "build": {
+    "gsap": "Build a timeline that tweens the context elements to low opacity and lower saturation (or smaller scale, staggered from the centre) with an ease-in or power ease-in-out, while the focus item tweens scale or colour with an ease-out; add a parallel scale tween on the parent layer with a transform origin on the focus for the camera push. For UI selection steps, use tl.set to swap the selected class instantly, and keep any background drift on a separate linear (ease: 'none') tween. Use back-style overshoot only on the hero item when it should feel lively.",
+    "remotion": "Drive context opacity and scale with interpolate and an ease-in or ease-in-out Easing curve, and the focus item or camera push with a spring (high damping for a calm settle, lower damping for a slight overshoot). For instant selection hops, derive the selected index from the frame with no interpolation, and keep any background drift as a linear interpolate."
+  },
+  "sound": "Often a short accent such as a chime, glitch or impact placed right around the moment focus lands, sometimes just before or just after it; in other cases only the music bed carries it. Treat sound as optional.",
+  "why_premium": "The spotlight cuts a crowded, unreadable view down to one legible thing without cutting away, so the viewer keeps a sense of scale while knowing exactly where to look. It does this with restraint: the surroundings fade to a ghost rather than vanishing, the accent colour is reserved for the focus, and selection changes happen as honest, instant interface steps rather than fake tweens. Layering two moves, such as a push-in plus dimming, or a zoom plus a small emphasis on the key element, guides the eye in stages instead of relying on boxes, arrows or callouts.",
+  "numbers": {
+    "id": "spotlight_focus",
+    "events": 6,
+    "videos": 4,
+    "weight": 4.8,
+    "duration_ms": {
+      "n": 16,
+      "videos": 3,
+      "weight": 12.745,
+      "median": 437.777,
+      "p25": 377.229,
+      "p75": 954.72,
+      "ci": [
+        388.668,
+        564.388
+      ]
+    },
+    "easing_mix": {
+      "ease_in": 0.3766,
+      "linear": 0.3135,
+      "ease_out": 0.1255,
+      "spring_overshoot": 0.1216,
+      "ease_in_out": 0.0627
+    },
+    "change_mix": {
+      "fade": 0.2286,
+      "color_shift": 0.2,
+      "highlight": 0.1143,
+      "scale_up": 0.1143,
+      "scale_down": 0.0857,
+      "slide_left": 0.0857,
+      "slide_up": 0.0571,
+      "draw_on": 0.0286,
+      "mask_reveal": 0.0286,
+      "other": 0.0286,
+      "slide_down": 0.0286
+    },
+    "role_mix": {
+      "icon": 0.3333,
+      "other": 0.1667,
+      "card": 0.0833,
+      "label": 0.0833,
+      "list_item": 0.0833,
+      "ui_panel": 0.0833,
+      "background": 0.0417,
+      "body_text": 0.0417,
+      "chart": 0.0417,
+      "notification": 0.0417
+    },
+    "sfx_label_mix": {
+      "chime": 0.2,
+      "glitch": 0.2,
+      "impact": 0.2,
+      "music": 0.2,
+      "unsure": 0.2
+    },
+    "sfx_offset_ms": {
+      "n": 10,
+      "videos": 2,
+      "weight": 8.0,
+      "median": 46.55,
+      "p25": -152.5,
+      "p75": 245.6,
+      "ci": [
+        -152.5,
+        245.6
+      ]
+    },
+    "examples": [
+      {
+        "video": "anthropic-introducing-claude-design-by-anthropic-l",
+        "event": "e006",
+        "score": 4.0
+      },
+      {
+        "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+        "event": "e006",
+        "score": 4.0
+      },
+      {
+        "video": "raycast-new-raycast-coming-2026",
+        "event": "e004",
+        "score": 4.0
+      },
+      {
+        "video": "datadog-datadog-overview-see-inside-the-platfor",
+        "event": "e005",
+        "score": 4.0
+      }
+    ]
+  },
+  "examples": [
+    {
+      "video": "anthropic-introducing-claude-design-by-anthropic-l",
+      "event": "e006",
+      "score": 4.0
+    },
+    {
+      "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+      "event": "e006",
+      "score": 4.0
+    },
+    {
+      "video": "raycast-new-raycast-coming-2026",
+      "event": "e004",
+      "score": 4.0
+    },
+    {
+      "video": "datadog-datadog-overview-see-inside-the-platfor",
+      "event": "e005",
+      "score": 4.0
+    }
+  ],
+  "caveats": [
+    "Seen in only four videos, and timing was measured in only three of them",
+    "Sound timing comes from just two videos and its spread is wide, so treat the sound placement as a loose guide",
+    "The pattern mixes instant selection hops with smooth zoom-and-dim moves, so the timing spread is wide"
+  ]
+}

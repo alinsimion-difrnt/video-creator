@@ -1,0 +1,120 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "s7_measure",
+    "annotator": "code",
+    "skill": null,
+    "model": null,
+    "input_hash": "f1446ebc9ed8728040d3228986a7f4ccce45b6f93e30ac5766ef6a3c2ce09ab2",
+    "created_at": "2026-10-05T10:04:32.698614Z"
+  },
+  "video": "salesforce-what-is-agentforce-and-how-businesses-us",
+  "event": "e014",
+  "fps": 23.81,
+  "elements": [
+    {
+      "box": "b01",
+      "xyxy": [
+        0,
+        0,
+        1280,
+        540
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.867,
+      "channels": [
+        {
+          "name": "x",
+          "start_f": 800,
+          "end_f": 800,
+          "start_value": -631.0,
+          "end_value": 640.0,
+          "observed_start": true,
+          "cls": "spring",
+          "gsap": {
+            "ease": "back.out(1)",
+            "duration_ms": 82.1,
+            "rmse": 0.0
+          },
+          "bezier": "cubic-bezier(0.104, 0.109, 0.505, 1.221)",
+          "bezier_rmse": 0.0,
+          "spring": {
+            "zeta": 0.8268,
+            "omega0": 125.897,
+            "settle_ms": 32.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 15849.957,
+              "damping": 208.194
+            },
+            "remotion_exact": true,
+            "rmse": 0.0
+          },
+          "overshoot_pct": 0.55,
+          "duration_ms": 32.0,
+          "fit_quality": 1.0
+        },
+        {
+          "name": "y",
+          "start_f": 800,
+          "end_f": 800,
+          "start_value": 969.0,
+          "end_value": 270.0,
+          "observed_start": true,
+          "cls": "spring",
+          "gsap": {
+            "ease": "power1.out",
+            "duration_ms": 42.0,
+            "rmse": 0.0
+          },
+          "bezier": "cubic-bezier(0.420, 0.000, 0.580, 1.000)",
+          "bezier_rmse": 0.0,
+          "spring": {
+            "zeta": 0.8469,
+            "omega0": 140.668,
+            "settle_ms": 30.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 19787.533,
+              "damping": 238.263
+            },
+            "remotion_exact": true,
+            "rmse": 0.0
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 30.0,
+          "fit_quality": 1.0
+        }
+      ],
+      "timing": {
+        "ease": "back.out(2)",
+        "start_s": 33.5581,
+        "duration_ms": 42.8,
+        "rmse": 0.00087
+      },
+      "stagger": null,
+      "sfx_offset_ms": {},
+      "source": "measured",
+      "quality": 1.0
+    },
+    {
+      "box": "b03",
+      "xyxy": [
+        1248,
+        333,
+        1280,
+        702
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.635,
+      "channels": [],
+      "timing": null,
+      "stagger": null,
+      "sfx_offset_ms": {},
+      "source": "model_estimate",
+      "quality": 0.0
+    }
+  ],
+  "failed": {}
+}

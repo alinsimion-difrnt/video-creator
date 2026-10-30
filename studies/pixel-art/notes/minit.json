@@ -1,0 +1,49 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T13:58:29+00:00"
+  },
+  "id": "minit",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": 2,
+    "shadows": "neutral",
+    "notes": "Pure black and white, a self-imposed limit by the team (per the wiki); the gameplay frames confirm only black and white. The black field dominates; white is used for lines, shapes and dither."
+  },
+  "lighting": "No light modelling; everything depends on figure-ground: white shapes on black, with interiors shown as small white-lined rooms floating in black.",
+  "silhouette": "Tiny duck-like hero (a white blob with a sword) and objects as bold white shapes; rocks are round white blobs that form walls, plants are tiny clustered marks, fences are dashed lines.",
+  "motion": {
+    "timing": "No metrics file. Each life lasts 60 seconds (40 in Second Run) per the wiki; the frames show screen-by-screen moves with the hero returning to the starting house again and again (seen at ~7, 27, 32 and 52 s of one clip).",
+    "principles": [
+      "simple loops",
+      "clear poses"
+    ]
+  },
+  "texture": "Checker dither on crates and blocks, line hatching on the roof and fences; otherwise solid black fields.",
+  "camera": "Top-down, flip-screen: each screen is a small room; interiors show as a framed room in a black void.",
+  "sound": "Music split into roughly one-minute segments that loop into the next track when the hero dies (per the wiki).",
+  "acting": {
+    "enters": "Wakes at the house (or last save) at the start of each life; the same house screen recurs in the frames.",
+    "acts": "Runs a short errand across a few screens, meets odd characters, picks up an item.",
+    "exits": "Dies when the timer runs out, mid-action, and is sent back.",
+    "comes_back": true,
+    "depth": "Single plane; the same screens repeat, so progress shows as small changes in a familiar place rather than as depth."
+  },
+  "techniques": [
+    "1-bit black and white with shape-only readability",
+    "checker dither as the only texture",
+    "timed loop: leave, return to the same spot, try again with new progress",
+    "the same home screen as a recurring anchor shot",
+    "music segmented to the loop length"
+  ],
+  "feel": "1-bit palette + bold tiny shapes + same home screen every 60 s = readable, funny persistence",
+  "for_fred": "Give Fred a home shot (the same framing every time) and build the reel on returns: he leaves, comes back to that exact frame, tries again with one visible change, leaves again. Each return advances the gag, never repeats it identically.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Minit_(video_game)",
+    "data/study/pixel/work/minit/clip3-6967362198607777030.jpg"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "f342e8295fef2ce0afef76dd623a72f8d22a8955ef91e60de1bae212cf7ca313",
+    "created_at": "2026-10-05T06:43:22.474622Z"
+  },
+  "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+  "event": "e001",
+  "task": "a2-e001",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Agent voice orb",
+      "role": "avatar",
+      "role_other": null,
+      "change_types": ["scale_up", "slide_right", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 600, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Create an AI agent template panel",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["scale_down", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Create an AI agent",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 600, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x002", "verdict": "unsure", "label": "unsure", "note": "Spectrogram shows the music bed's tonal lines dropping out at ~5.0s rather than a clear rising sweep; could be a soft reverse swoosh mixed under the music change as the orb lands."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "avatar hero expand",
+    "description": "After the cursor clicks a template card, the card's small avatar orb lifts out and grows into a large centred hero orb while the UI panel shrinks and fades behind it.",
+    "why_premium": "The click's result is shown as a continuous object transformation: the tiny avatar becomes the hero, linking the UI choice to the product concept without a cut, and the receding panel adds depth."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.panel', {scale:0.7, opacity:0, duration:0.6, ease:'power2.inOut'}, 0).fromTo('.orb', {scale:0.08, x:'-28vw', y:'-6vh', opacity:0.6}, {scale:1, x:0, y:0, opacity:1, duration:0.6, ease:'power3.inOut'}, 0.05); start the orb from the avatar's measured rect (FLIP) for an exact handoff.",
+    "remotion": "const p = spring({frame, fps, config: {damping: 200, stiffness: 120}}); orb scale = interpolate(p, [0,1], [0.08,1]) with translate from the avatar origin to centre; panel scale = interpolate(p, [0,1], [1,0.7]) and opacity = interpolate(p, [0,0.8], [1,0])."
+  },
+  "confidence": "medium",
+  "notes": "Small diff boxes b03-b07 are fragments of the panel's text fading out and are covered by the b02 panel element. The cursor leaves the frame early in the burst and has no candidate box on the end frame, so it is not listed. Could arguably be match_cut_element."
+}

@@ -1,0 +1,256 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "s7_measure",
+    "annotator": "code",
+    "skill": null,
+    "model": null,
+    "input_hash": "9b24482b0ed52562eaccc7634fa0756bf9bfa8988ea90c6676d6c5c85b086bc8",
+    "created_at": "2026-10-05T10:05:47.693385Z"
+  },
+  "video": "salesforce-what-is-agentforce-and-how-businesses-us",
+  "event": "e015",
+  "fps": 23.81,
+  "elements": [
+    {
+      "box": "b02",
+      "xyxy": [
+        52,
+        160,
+        1000,
+        540
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.96,
+      "channels": [
+        {
+          "name": "x",
+          "start_f": 818,
+          "end_f": 823,
+          "start_value": 672.0,
+          "end_value": 526.0,
+          "observed_start": true,
+          "cls": "linear",
+          "gsap": {
+            "ease": "power2.out",
+            "duration_ms": 300.5,
+            "rmse": 0.00238
+          },
+          "bezier": "cubic-bezier(0.459, 1.063, 0.999, 0.978)",
+          "bezier_rmse": 0.00001,
+          "spring": {
+            "zeta": 0.9326,
+            "omega0": 20.491,
+            "settle_ms": 248.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 419.89,
+              "damping": 38.221
+            },
+            "remotion_exact": true,
+            "rmse": 0.00783
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 185.3,
+          "fit_quality": 0.987
+        }
+      ],
+      "timing": {
+        "ease": "power2.out",
+        "start_s": 34.3167,
+        "duration_ms": 300.5,
+        "rmse": 0.00238
+      },
+      "stagger": null,
+      "sfx_offset_ms": {
+        "x020": 485.2
+      },
+      "source": "measured",
+      "quality": 0.987
+    },
+    {
+      "box": "b15",
+      "xyxy": [
+        385,
+        122,
+        463,
+        142
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.999,
+      "channels": [
+        {
+          "name": "x",
+          "start_f": 818,
+          "end_f": 823,
+          "start_value": 570.0,
+          "end_value": 424.0,
+          "observed_start": true,
+          "cls": "linear",
+          "gsap": {
+            "ease": "power2.out",
+            "duration_ms": 300.5,
+            "rmse": 0.00238
+          },
+          "bezier": "cubic-bezier(0.459, 1.063, 0.999, 0.978)",
+          "bezier_rmse": 0.00001,
+          "spring": {
+            "zeta": 0.9326,
+            "omega0": 20.491,
+            "settle_ms": 248.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 419.89,
+              "damping": 38.221
+            },
+            "remotion_exact": true,
+            "rmse": 0.00783
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 185.3,
+          "fit_quality": 0.987
+        }
+      ],
+      "timing": {
+        "ease": "power2.out",
+        "start_s": 34.3167,
+        "duration_ms": 300.5,
+        "rmse": 0.00238
+      },
+      "stagger": {
+        "unit": "word",
+        "stagger_ms": 168.0,
+        "reveal_frames": [
+          823,
+          819
+        ]
+      },
+      "sfx_offset_ms": {
+        "x020": 485.2
+      },
+      "source": "measured",
+      "quality": 0.987
+    },
+    {
+      "box": "b14",
+      "xyxy": [
+        205,
+        124,
+        284,
+        142
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.998,
+      "channels": [
+        {
+          "name": "x",
+          "start_f": 818,
+          "end_f": 823,
+          "start_value": 390.5,
+          "end_value": 244.5,
+          "observed_start": true,
+          "cls": "linear",
+          "gsap": {
+            "ease": "power2.out",
+            "duration_ms": 300.5,
+            "rmse": 0.00238
+          },
+          "bezier": "cubic-bezier(0.459, 1.063, 0.999, 0.978)",
+          "bezier_rmse": 0.00001,
+          "spring": {
+            "zeta": 0.9326,
+            "omega0": 20.491,
+            "settle_ms": 248.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 419.89,
+              "damping": 38.221
+            },
+            "remotion_exact": true,
+            "rmse": 0.00783
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 185.3,
+          "fit_quality": 0.987
+        }
+      ],
+      "timing": {
+        "ease": "power2.out",
+        "start_s": 34.3167,
+        "duration_ms": 300.5,
+        "rmse": 0.00238
+      },
+      "stagger": {
+        "unit": "all",
+        "stagger_ms": 0.0,
+        "reveal_frames": [
+          823,
+          823
+        ]
+      },
+      "sfx_offset_ms": {
+        "x020": 485.2
+      },
+      "source": "measured",
+      "quality": 0.987
+    },
+    {
+      "box": "m04",
+      "xyxy": [
+        998,
+        0,
+        1280,
+        720
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.967,
+      "channels": [
+        {
+          "name": "x",
+          "start_f": 818,
+          "end_f": 823,
+          "start_value": 1285.0,
+          "end_value": 1139.0,
+          "observed_start": true,
+          "cls": "linear",
+          "gsap": {
+            "ease": "power2.out",
+            "duration_ms": 300.5,
+            "rmse": 0.00238
+          },
+          "bezier": "cubic-bezier(0.459, 1.063, 0.999, 0.978)",
+          "bezier_rmse": 0.00001,
+          "spring": {
+            "zeta": 0.9326,
+            "omega0": 20.491,
+            "settle_ms": 248.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 419.89,
+              "damping": 38.221
+            },
+            "remotion_exact": true,
+            "rmse": 0.00783
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 185.3,
+          "fit_quality": 0.987
+        }
+      ],
+      "timing": {
+        "ease": "power2.out",
+        "start_s": 34.3167,
+        "duration_ms": 300.5,
+        "rmse": 0.00238
+      },
+      "stagger": null,
+      "sfx_offset_ms": {
+        "x020": 485.2
+      },
+      "source": "measured",
+      "quality": 0.987
+    }
+  ],
+  "failed": {}
+}

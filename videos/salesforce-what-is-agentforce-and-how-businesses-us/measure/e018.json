@@ -1,0 +1,137 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "s7_measure",
+    "annotator": "code",
+    "skill": null,
+    "model": null,
+    "input_hash": "8b3a58a1c740ab2b760d424f260478bc568e9131c77e44add785ed8fb2e0b5ca",
+    "created_at": "2026-10-05T10:07:05.299916Z"
+  },
+  "video": "salesforce-what-is-agentforce-and-how-businesses-us",
+  "event": "e018",
+  "fps": 23.81,
+  "elements": [
+    {
+      "box": "b02",
+      "xyxy": [
+        264,
+        385,
+        593,
+        564
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.646,
+      "channels": [],
+      "timing": null,
+      "stagger": null,
+      "sfx_offset_ms": {},
+      "source": "model_estimate",
+      "quality": 0.0
+    },
+    {
+      "box": "b03",
+      "xyxy": [
+        608,
+        385,
+        937,
+        564
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.61,
+      "channels": [],
+      "timing": null,
+      "stagger": null,
+      "sfx_offset_ms": {},
+      "source": "model_estimate",
+      "quality": 0.0
+    },
+    {
+      "box": "m03",
+      "xyxy": [
+        717,
+        403,
+        742,
+        439
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.911,
+      "channels": [
+        {
+          "name": "x",
+          "start_f": 1064,
+          "end_f": 1079,
+          "start_value": 496.5,
+          "end_value": 729.5,
+          "observed_start": true,
+          "cls": "linear",
+          "gsap": {
+            "ease": "none",
+            "duration_ms": 655.1,
+            "rmse": 0.03076
+          },
+          "bezier": "cubic-bezier(0.736, 0.883, 0.000, 0.025)",
+          "bezier_rmse": 0.0248,
+          "spring": {
+            "zeta": 0.5952,
+            "omega0": 3.498,
+            "settle_ms": 1697.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 12.239,
+              "damping": 4.164
+            },
+            "remotion_exact": true,
+            "rmse": 0.03273
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 655.1,
+          "fit_quality": 0.9902
+        },
+        {
+          "name": "y",
+          "start_f": 1064,
+          "end_f": 1077,
+          "start_value": 415.0,
+          "end_value": 421.0,
+          "observed_start": true,
+          "cls": "ease_in",
+          "gsap": {
+            "ease": "back.inOut(2.5)",
+            "duration_ms": 840.0,
+            "rmse": 0.41565
+          },
+          "bezier": "cubic-bezier(0.705, -1.000, 0.597, -1.000)",
+          "bezier_rmse": 0.11516,
+          "spring": {
+            "zeta": 0.7609,
+            "omega0": 21.652,
+            "settle_ms": 260.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 468.826,
+              "damping": 32.952
+            },
+            "remotion_exact": true,
+            "rmse": 0.44807
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 615.0,
+          "fit_quality": 0.9693
+        }
+      ],
+      "timing": {
+        "ease": "back.inOut(2.5)",
+        "start_s": 44.6995,
+        "duration_ms": 840.0,
+        "rmse": 0.38912
+      },
+      "stagger": null,
+      "sfx_offset_ms": {},
+      "source": "measured",
+      "quality": 0.9902
+    }
+  ],
+  "failed": {}
+}

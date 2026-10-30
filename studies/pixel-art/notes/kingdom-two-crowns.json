@@ -1,0 +1,54 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T13:58:29+00:00"
+  },
+  "id": "kingdom-two-crowns",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "cool",
+    "notes": "One palette per time/biome: day blues, pink/orange dusk, near-black night lit by yellow fire, lilac fog, snowy blue-greys (Norse Lands), ochre sand with teal water (Pharaoh Lands). The Greed glow magenta. Shadows mostly go blue/purple. No metrics file, so no count."
+  },
+  "lighting": "Light is the storyteller: the whole scene recolours with time of day; at night only torches, camp fires and the monarch's torch light the strip in warm yellow against cool darkness; a white lightning flash marks losing the crown. The water strip below mirrors everything, including the light sources.",
+  "silhouette": "Tiny mounted monarch with a gold crown (often holding a torch at night) reads as a dark shape against bright skies or a lit shape against dark woods; one close-up shows the monarch from behind on the throne, crown and armour only.",
+  "motion": {
+    "timing": "No metrics file. Slow, even pacing: the mount walks or gallops at constant speed, villagers idle and wander, fire flickers; the frames are mostly calm with occasional bursts (fire, lightning, Greed attack).",
+    "principles": [
+      "slow in and out",
+      "secondary motion",
+      "ambient idle"
+    ]
+  },
+  "texture": "Impressionistic (the creator's word per the wiki): soft pixel gradients in skies and fog, layered foliage, rippled and blurred reflections; atmospheric perspective makes far trees pale and blue, near ones dark and saturated.",
+  "camera": "Side-scrolling on one long horizontal strip with parallax; TikToks crop it to vertical by putting the strip in the middle with the reflection filling the lower ~40% and the sky the top, or by framing it inside a painted band.",
+  "sound": "The Norse Lands soundtrack by Kalandra uses Scandinavian and Celtic instruments (per the wiki).",
+  "acting": {
+    "enters": "The monarch rides in from the screen edge; villagers walk in from camps; at night the Greed emerge from a glowing portal in the woods and come from both edges.",
+    "acts": "Villagers idle until handed a tool, then do their job on their own (build, farm, shoot); the monarch pauses beside camps and structures.",
+    "exits": "Characters walk or ride off the edge of the strip; robbed villagers lose their role and drift away; the reign ends in a lightning flash when the crown is lost.",
+    "comes_back": true,
+    "depth": "Foreground reeds and grass frame the strip, the play strip holds one character scale, background layers fade into fog; the reflection doubles every figure below the horizon."
+  },
+  "techniques": [
+    "day-night palette shift recolours the whole scene while characters stay the same",
+    "warm torch/firelight pools against cool night",
+    "mirrored, rippled water reflection strip under the action",
+    "atmospheric perspective: far layers pale and blue, near layers dark and saturated",
+    "fog layers in soft pixel gradients",
+    "tiny characters against a big sky",
+    "vertical crop: horizon in the middle, sky above, reflection below"
+  ],
+  "feel": "cool muted world + warm fire pools + mirrored water + tiny rider = calm, atmospheric mood",
+  "for_fred": "Put Fred on a thin horizon strip with his reflection in water below (he is a carp, so the water line is his stage): he swims or walks in from the edge, does a small job, and leaves, while the background shifts from day to dusk between his visits.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Kingdom_Two_Crowns",
+    "data/study/pixel/work/kingdom-two-crowns/clip1-7559271881564556566.jpg",
+    "data/study/pixel/work/kingdom-two-crowns/clip2-7597069788036222263.jpg",
+    "data/study/pixel/work/kingdom-two-crowns/clip3-7694341623362358550.jpg"
+  ]
+}

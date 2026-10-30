@@ -1,0 +1,40 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code",
+                 "input_hash": "bb868f4f3b3662b819789b9a80ae4669f0edb347dcb62fd757f77bf753206977",
+                 "created_at": "2026-10-13T12:00:00+00:00"},
+  "id": "7693237246505291030",
+  "format": "green_screen",
+  "hook": {"type": "news",
+           "line": "There's a new marketing trend that looks like real-life Photoshop",
+           "visual": "Presenter cut out at the bottom over a clip of a man whose flat cardboard turns into giant hands holding a wrap and a red cup by 1.12 s; yellow-highlighted word captions at top"},
+  "beats": [
+    {"t": 0.0, "what": "Trend named over the reveal clip: cardboard flips into giant hands holding a wrap and a drink"},
+    {"t": 3.93, "what": "Fast cut run (shots under 1 s) showing how the cardboard hands are made in a print shop"},
+    {"t": 10.63, "what": "Stores leave the hands out; close-ups of cutting and assembling"},
+    {"t": 17.71, "what": "Back to the hero clip: 'share on social media'"},
+    {"t": 21.25, "what": "Second example: a giant hand holding a phone and a microphone"},
+    {"t": 24.8, "what": "Real store example: staff behind giant ice-cream hands, screen splits into two clips"},
+    {"t": 28.34, "what": "Payoff number: costs less than $100 to make"},
+    {"t": 35.42, "what": "Follow CTA over a last making-of clip, then an end card"}
+  ],
+  "graphics": {"captions": "word_by_word", "caption_position": "top",
+               "devices": ["green_screen_bg", "b_roll", "jump_cut", "chart_or_number", "split_screen"],
+               "density": "heavy", "per_minute_estimate": 36},
+  "characters": [
+    {"who": "Giant cardboard hands (the product prop)", "enters": "Flipped up from a flat sheet in the first second", "acts": "Hold oversized products in front of people's faces, then appear being printed and cut", "exits": "Hard cut to the next clip", "comes_back": true}
+  ],
+  "cta": {"kind": "follow", "t": 35.42},
+  "why_it_works": [
+    "Result first: the finished illusion is on screen in the first second, before any explanation, so viewers stay to learn how it's made",
+    "34 cuts per minute with a median shot of 0.87 s keeps the eye busy while the speaker stays on screen in the corner the whole time",
+    "A concrete, low number (under $100) turns a curiosity into something the viewer could copy",
+    "Word-by-word captions with one yellow word give a reading rhythm even with sound off"
+  ],
+  "weaknesses": [
+    "The presenter cutout is small and mostly decorative; he adds little beyond the voice",
+    "86% of the text sits outside the safe area at the very top edge",
+    "The CTA is a generic 'follow me' tacked onto the end"
+  ],
+  "for_robert": "Copy the prop reveal: open on Fred's prop already doing the trick in the first second (the result), then explain; keep his face in a fixed corner while the product clips change under it."
+}

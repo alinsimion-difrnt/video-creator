@@ -1,0 +1,44 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "41f991e9b81384aa913c66deeff64e5a90522f1e3de14203bda06045496ef666",
+    "created_at": "2026-10-05T06:42:55.658878Z"
+  },
+  "video": "datadog-datadog-overview-see-inside-the-platfor",
+  "event": "e021",
+  "task": "a2-e021",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Ribbon callout caption (exiting)",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["mask_reveal"],
+      "change_other": null,
+      "is_text": true,
+      "text": "One-click pivot between metrics, traces, and logs",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 350, "easing_class": "ease_in"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "ribbon caption wipe",
+    "description": "A two-line magenta/orange ribbon caption sitting over a live log view is wiped off left-to-right by a hard-edged mask: the left part of both lines disappears first while the right part stays put, the ribbon shape clipped with an angled edge.",
+    "why_premium": "The caption leaves by the same mask direction it entered, so the exit reads as part of the brand system rather than a fade; the UI underneath stays fully still, keeping the viewer's eye on the log rows the caption was pointing at."
+  },
+  "build_hint": {
+    "gsap": "Caption ribbon in a wrapper with clip-path: tl.to('.ribbon', {clipPath: 'inset(0 0 0 100%)', duration: 0.35, ease: 'power2.in'}); both lines share one mask so they wipe together (optionally line 2 delayed 0.03s). Background UI untouched.",
+    "remotion": "clipPath inset-left = interpolate(frame, [start, start+21], [0, 100], {easing: Easing.in(Easing.quad), extrapolateRight: 'clamp'}) applied to the ribbon container; no spring needed for a mask exit."
+  },
+  "confidence": "medium",
+  "notes": "No candidate box matches the caption exactly; b02 (diff region) is the closest and covers most of its swept area (caption right edge extends ~50px beyond b02). Energy spikes every ~5 frames suggest the underlying screen recording runs at a lower frame rate (duplicate frames), not separate events. camera.move is none; the small scale sum is the caption change, not a camera move."
+}

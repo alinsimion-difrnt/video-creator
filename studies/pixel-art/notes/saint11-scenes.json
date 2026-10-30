@@ -1,0 +1,57 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "f47d6b0f9616b79d41ccf01b2689df69cf99ea44dbbfc4ef1d448320e8823c59",
+    "created_at": "2026-10-13T13:03:02+00:00"
+  },
+  "id": "saint11-scenes",
+  "kind": "tutorial",
+  "palette": {
+    "colours_estimate": 22,
+    "shadows": "mixed",
+    "notes": "Measured palette sizes 17-22 per GIF (Parallax 19, Clouds 17, Stars 21, City 22, Vegetation 17); max shown. Ramps are hue-shifted both ways (about +44 to -47 degrees), long sky ramps of 9-11 colours."
+  },
+  "lighting": "Scene lighting by value bands: sky and clouds lit from one bright sun side, far layers lighter and bluer, near layers darker and more saturated; city uses dim grey-blue haze with small warm/cyan accents.",
+  "silhouette": "Background layers are flat silhouette bands (mountains, skyline, tree clumps) built up in steps: shape, light, detail. Clouds start as overlapping circles; trees as a dark blob, then light, then leaves.",
+  "motion": {
+    "timing": "Exact: Parallax 64 frames at 80 ms (5.12 s loop); Clouds 50 frames, 33 drawings, 100-700 ms; Stars 68 at 120 ms; Vegetation 16 at 120 ms (1.92 s); City 43 frames with holds up to 3000 ms.",
+    "principles": [
+      "parallax layering",
+      "step-by-step build-up",
+      "long holds on finished states",
+      "ambient loops (water, leaves, twinkle)"
+    ]
+  },
+  "texture": "Very little dithering (measured 0.9-2.0 % of pixels); texture comes from clustered pixel shapes: leaf clumps, cloud bumps, planet swirl patterns, building windows.",
+  "camera": "Parallax demo scrolls layers at different speeds to fake depth; other sheets are static boards where elements build in place and a car or tiny prop crosses the street.",
+  "sound": "",
+  "acting": {
+    "enters": "In City a small car drives in along the street and a tiny object drifts by; elements enter by being built up layer by layer.",
+    "acts": "The finished scene holds (City holds 1.5-3 s) while small things keep moving: car, smoke, clouds, twinkling stars.",
+    "exits": "The car leaves the frame and later returns; loops reset cleanly.",
+    "comes_back": true,
+    "depth": "Clear depth stack: lighter, bluer far layers, darker near layers moving faster, so a small element in the back reads as far away."
+  },
+  "techniques": [
+    "parallax: far layers lighter and slower, near layers darker and faster",
+    "atmospheric perspective: far layers shift toward the sky colour",
+    "clouds built from overlapping circles, then lit from the sun side",
+    "long hue-shifted sky ramp (9-11 colours) instead of dithering",
+    "trees: dark blob, light side, then leaf clusters",
+    "long holds (1.5-3 s) on the finished scene with small ambient motion",
+    "small vehicle or prop crossing the background to give the scene life"
+  ],
+  "feel": "lighter, bluer far layers + darker fast near layers + one small thing crossing the back = deep, alive scene with no hero",
+  "for_fred": "Give the reel a 3-layer parallax background, then use depth: Fred appears small and pale in the far layer doing his thing (like the car crossing the street), exits, and comes back big and dark in the near layer. Hold the scene still for 1.5-3 s with only one small ambient mover instead of animating everything.",
+  "sources": [
+    "studies/pixel-art/metrics/saint11-scenes.json",
+    "data/study/pixel/work/saint11-scenes/Parallax.png",
+    "data/study/pixel/work/saint11-scenes/CLouds.png",
+    "data/study/pixel/work/saint11-scenes/Stars.png",
+    "data/study/pixel/work/saint11-scenes/City.png",
+    "data/study/pixel/work/saint11-scenes/Vegetation.png"
+  ]
+}

@@ -1,0 +1,77 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a2_annotate_event",
+  "annotator": "claude-code",
+  "skill": "annotate-event@3dad117bd85a",
+  "model": null,
+  "input_hash": "573603a5e2149ecfb1fafa7cdd6927093664db2025d94f19b2afd2d84b8a1757",
+  "created_at": "2026-10-05T06:39:05.988460Z"
+ },
+ "video": "anthropic-introducing-claude-design-by-anthropic-l",
+ "event": "e013",
+ "task": "a2-e013",
+ "elements": [
+  {
+   "box": "b01",
+   "manual_box": null,
+   "manual_reason": null,
+   "label": "Full Claude Design app window (chat + Hemlark Retreat canvas) revealed as the view pulls out from the toolbar close-up",
+   "role": "ui_panel",
+   "role_other": null,
+   "change_types": ["scale_down", "slide_up"],
+   "change_other": null,
+   "is_text": false,
+   "text": null,
+   "text_unit": null,
+   "estimates": {"duration_ms": 350, "easing_class": "ease_out"}
+  },
+  {
+   "box": null,
+   "manual_box": [115, 703, 150, 765],
+   "manual_reason": "No candidate box covers the Edit text toolbar button; it turns from outlined to filled orange when clicked.",
+   "label": "Edit text toolbar button",
+   "role": "button",
+   "role_other": null,
+   "change_types": ["color_shift"],
+   "change_other": null,
+   "is_text": true,
+   "text": "Edit text",
+   "text_unit": "whole",
+   "estimates": {"duration_ms": 100, "easing_class": "step"}
+  },
+  {
+   "box": null,
+   "manual_box": [520, 572, 555, 590],
+   "manual_reason": "No candidate box covers the cursor; it changes from a hand pointer on the button to an I-beam over the subtitle text.",
+   "label": "Mouse cursor",
+   "role": "cursor",
+   "role_other": null,
+   "change_types": ["other"],
+   "change_other": "pointer to I-beam swap and reposition",
+   "is_text": false,
+   "text": null,
+   "text_unit": null,
+   "estimates": null
+  }
+ ],
+ "sfx_review": [
+  {"id": "x049", "verdict": "unsure", "label": "unsure", "note": "Before the click; spectrogram shows only rhythmic music columns, CLAP swoosh_reverse score is weak."},
+  {"id": "x050", "verdict": "unsure", "label": "unsure", "note": "Coincides with the Edit text click but no distinct click transient stands out of the music."},
+  {"id": "x051", "verdict": "unsure", "label": "unsure", "note": "Just before a falling-pitch sweep (~57.15-57.4s) that matches the pull-out; could be a whoosh or a synth line in the music."},
+  {"id": "x052", "verdict": "confirm", "label": "music", "note": null}
+ ],
+ "pattern": {
+  "id": "ui_camera_push_in",
+  "proposed_name": null,
+  "description": "Inverse of a UI push-in: a tight close-up of the toolbar shows the Edit text button being clicked (fills orange), then the view rapidly pulls out to reveal the whole app with the editable text block selected on the canvas.",
+  "why_premium": "The close-up makes a tiny toolbar click legible, and the pull-out immediately shows its consequence in context, so viewers follow cause and effect without a cursor hunt."
+ },
+ "build_hint": {
+  "gsap": "tl.to('.btn-edit', {backgroundColor: '#d9775a', color: '#fff', duration: 0.08, ease: 'none'}).fromTo('.app-stage', {scale: 3, xPercent: -40, yPercent: 30}, {scale: 1, xPercent: 0, yPercent: 0, duration: 0.35, ease: 'expo.out'}, '+=0.05').to('.cursor', {opacity: 1, duration: 0.01}, '<')",
+  "remotion": "Button colour switches on the click frame (step). Stage scale = interpolate(spring({frame: frame - clickFrame - 2, fps, config: {damping: 200, stiffness: 180, mass: 1}}), [0, 1], [3, 1]) with transformOrigin at the Edit text button, so the zoom anchors on it; no overshoot."
+ },
+ "confidence": "medium",
+ "notes": "Visually this is a strong pull-out (close-up toolbar to full app over ~2 frames, f1368-f1370), while code's camera verdict is tilt_down with scale ~1.0; the scale change may be too fast/cut-like for the camera estimator. Could alternatively be a hard cut followed by a small drift. Pattern is push-in family in reverse; a human may prefer a 'ui_camera_pull_out' proposal."
+}

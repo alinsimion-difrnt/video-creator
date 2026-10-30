@@ -1,0 +1,55 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T14:01:54+00:00"
+  },
+  "id": "nes-limits",
+  "kind": "style",
+  "palette": {
+    "colours_estimate": 25,
+    "shadows": "neutral",
+    "notes": "Wiki: 54-colour master palette; each 8x8/8x16 sprite gets 3 colours + transparent; max 25 on screen (13 bg + 12 sprite). Clips: flat grey stone, brown wood, one saturated hero colour (green tunic, red-blue suit)."
+  },
+  "lighting": "No real light: flat fills with one shade step; form comes from a dark outline and a single darker colour, not from a light source. Background bricks are one value darker than the floor.",
+  "silhouette": "Tiny chibi sprites with big heads, thick dark outline and one dominant costume colour, so the hero reads at 1x against a grey wall; HUD (hearts, item icons) sits in a hard band on top.",
+  "motion": {
+    "timing": "Few frames, held long: walk cycles are 2-3 poses, the guard swaps one pose per beat; the Spider-Man clip is a 3-shot loop (perch, web-swing, leap) repeating about every 7.5 s.",
+    "principles": [
+      "limited frames",
+      "pose-to-pose",
+      "looping gag",
+      "repetition with variation"
+    ]
+  },
+  "texture": "Tiled 8x8/16x16 brick and window patterns, no gradients; any shading is a flat second colour or dither. Attribute blocks (16x16 per subpalette) force colours to change only on tile edges.",
+  "camera": "Locked side-on screen, no zoom; scene changes are hard cuts between fixed screens (rooftop, wall, sky). The explainer clip punches in on sprites and a palette grid.",
+  "sound": "",
+  "acting": {
+    "enters": "Hero walks in from the left edge toward an NPC; Spider-Man appears perched, already in pose.",
+    "acts": "Zelda-style gag: hero walks up, a 'Speak' prompt appears, guard blocks with his axe, hero backs off and tries again; each try is a short beat.",
+    "exits": "Hero retreats to the left side of the frame rather than leaving it; the loop resets with a cut.",
+    "comes_back": true,
+    "depth": "None: everything sits on one floor line; scale never changes. Depth is faked only by background bricks behind a wooden frame."
+  },
+  "techniques": [
+    "3 colours + transparent per sprite: one dark outline, one base, one highlight",
+    "dark outline around the whole sprite so it reads on a busy tiled wall",
+    "tiled backgrounds on a 16x16 grid with colour changes only on tile edges",
+    "2-3 frame walk cycles held long, pose-to-pose",
+    "repeat-the-attempt gag: same approach, same refusal, small variation each time",
+    "HUD band as a framing device for the scene"
+  ],
+  "feel": "flat grey tiles + one saturated chibi hero + 3-colour sprites + repeat-the-attempt loop = readable retro comedy",
+  "for_fred": "Use the repeat-the-attempt gag: Fred swims up to Pixie (or a button), gets refused, backs off to the edge, tries again with a small change, and on the third try something different happens. Keep Fred to 3-4 colours with a dark outline so he reads at 1x on a busy background.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/List_of_video_game_console_palettes",
+    "https://lospec.com/palette-list/nintendo-entertainment-system",
+    "data/study/pixel/work/nes-limits/clip1-7668829928590200082.jpg",
+    "data/study/pixel/work/nes-limits/clip2-7671371603304779015.jpg",
+    "data/study/pixel/work/nes-limits/clip3-7581465462643428629.jpg"
+  ]
+}

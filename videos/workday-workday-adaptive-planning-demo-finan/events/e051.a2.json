@@ -1,0 +1,37 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "3bff319d5dbb988ff423219a7189c413313684056b9733e9d3694b6d2400fb53",
+    "created_at": "2026-10-05T06:57:34.815011Z"
+  },
+  "video": "workday-workday-adaptive-planning-demo-finan",
+  "event": "e051",
+  "task": "a2-e051",
+  "elements": [
+    {"box": null, "manual_box": [236, 143, 576, 395], "manual_reason": "No candidate box covers the Version 1 dropdown panel as a whole; only its individual list rows have OCR boxes.", "label": "Version 1 dropdown panel", "role": "ui_panel", "role_other": null, "change_types": ["mask_reveal", "fade"], "change_other": null, "is_text": false, "text": null, "text_unit": null, "estimates": {"duration_ms": 250, "easing_class": "ease_out"}},
+    {"box": "b07", "manual_box": null, "manual_reason": null, "label": "List item Strategic Plan Pass 1", "role": "list_item", "role_other": null, "change_types": ["fade"], "change_other": null, "is_text": true, "text": "Strategic Plan Pass 1", "text_unit": "whole", "estimates": {"duration_ms": 150, "easing_class": "step"}},
+    {"box": "b12", "manual_box": null, "manual_reason": null, "label": "List item Working Strategic Plan", "role": "list_item", "role_other": null, "change_types": ["fade"], "change_other": null, "is_text": true, "text": "Working Strategic Plan", "text_unit": "whole", "estimates": {"duration_ms": 150, "easing_class": "step"}},
+    {"box": "b04", "manual_box": null, "manual_reason": null, "label": "Selected list item Budget Pass 1", "role": "list_item", "role_other": null, "change_types": ["fade", "highlight"], "change_other": null, "is_text": true, "text": "Budget Pass 1", "text_unit": "whole", "estimates": {"duration_ms": 150, "easing_class": "step"}},
+    {"box": "b17", "manual_box": null, "manual_reason": null, "label": "List item Working Budget", "role": "list_item", "role_other": null, "change_types": ["fade"], "change_other": null, "is_text": true, "text": "Working Budget", "text_unit": "whole", "estimates": {"duration_ms": 150, "easing_class": "step"}},
+    {"box": "b18", "manual_box": null, "manual_reason": null, "label": "List item Working Forecast", "role": "list_item", "role_other": null, "change_types": ["fade"], "change_other": null, "is_text": true, "text": "Working Forecast", "text_unit": "whole", "estimates": {"duration_ms": 150, "easing_class": "step"}},
+    {"box": "b01", "manual_box": null, "manual_reason": null, "label": "Report window enlarging toward top-left", "role": "ui_panel", "role_other": null, "change_types": ["scale_up"], "change_other": null, "is_text": false, "text": null, "text_unit": null, "estimates": {"duration_ms": 300, "easing_class": "ease_out"}}
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "The cursor clicks the Version 1 selector; a dropdown with a search field, tabs and a list of plan versions (Budget Pass 1 highlighted, May Forecast visible) opens, while the report view enlarges so the dropdown fills more of the frame.",
+    "why_premium": "The scale-up and dropdown open land together right after 'the new May forecast we just created', so the viewer's eye goes straight to the version list instead of hunting a small UI control."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.report', {scale:1.13, transformOrigin:'15% 20%', duration:0.35, ease:'power2.out'}); tl.fromTo('.dropdown', {opacity:0, clipPath:'inset(0 0 100% 0)'}, {opacity:1, clipPath:'inset(0 0 0% 0)', duration:0.2, ease:'power2.out'}, '<'); tl.fromTo('.dropdown li', {opacity:0}, {opacity:1, duration:0.1, stagger:0.02}, '<0.05').",
+    "remotion": "const s = spring({frame, fps, config:{damping:30, stiffness:170, mass:1}}); scale = interpolate(s, [0,1], [1, 1.13]); dropdown clip reveal via interpolate(frame, [0, 5], [100, 0]) on inset bottom, with clamp."
+  },
+  "confidence": "medium",
+  "notes": "camera.move is 'none' although raw scale is 1.13; the enlargement is reported as the report panel (b01) scaling, not a camera push-in. Whether it is a screen-recording zoom or a UI scale is ambiguous. Item b07 OCR 'Strategic Pla' read as 'Strategic Plan Pass 1' from the frame (cursor overlaps). Energy decays steadily, consistent with an ease-out."
+}

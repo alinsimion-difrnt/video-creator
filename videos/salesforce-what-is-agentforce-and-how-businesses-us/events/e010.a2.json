@@ -1,0 +1,93 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "677dd3bb7a4293be2fefe4c06461cf98c8c1e72f3a32dd50caa26e2d7e6d5f1a",
+    "created_at": "2026-10-05T06:51:27.708339Z"
+  },
+  "video": "salesforce-what-is-agentforce-and-how-businesses-us",
+  "event": "e010",
+  "task": "a2-e010",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Agent order-status reply bubble scrolling up inside chat panel",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "- Order Number: 00000100 - Ordered Product: Solar Panel - Purchase Date: 2024-09-01 - Expected Arrival Date: September 7, 2024 - Shipping Address: 415 Mission Street Would you like any further assistance or have any other questions?",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 330, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b16",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Agent bot avatar riding up with the reply",
+      "role": "avatar",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 330, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b12",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Agent message timestamp",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Cirrus Virtual Agent · 11:54 AM",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 330, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "User reply bubble entering from the bottom of the panel",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Yes, if possible I'd like to schedule for 2:30pm that Fri. Do you have an appointment available then?",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 330, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x014",
+      "verdict": "unsure",
+      "label": "unsure",
+      "note": "Short tonal bands ~0.5 s before the scroll; no matching visual onset in the burst, possibly speech or music residue."
+    }
+  ],
+  "pattern": {
+    "id": "masked_scroll",
+    "proposed_name": null,
+    "description": "The chat transcript scrolls up inside the fixed Cirrus Virtual Agent panel, pushing the agent's order-status reply up and bringing the user's scheduling message into view.",
+    "why_premium": "Real product chat is shown with a smooth, eased auto-scroll clipped by the panel mask, so the conversation reads as live without cuts while the page around it stays still."
+  },
+  "build_hint": {
+    "gsap": "Clip the transcript in the panel (overflow hidden); gsap.to('.transcript', {y: '-=~190px', duration: 0.35, ease: 'power2.out'}) moving bubbles, avatar and timestamp as one group; the new user bubble is already in the stack below the fold and arrives with the scroll.",
+    "remotion": "Wrap the message stack in an overflow-hidden container; translateY = interpolate(spring({frame, fps, config: {damping: 200, stiffness: 170}}), [0, 1], [0, -190]) applied to the whole stack, no overshoot."
+  },
+  "confidence": "medium",
+  "notes": "b01 is the diff box covering the scrolling transcript; per-line OCR boxes (b05-b15, b17-b19) are parts of the same moving block and are not listed separately. User bubble lines b02/b04 belong to b03's bubble."
+}

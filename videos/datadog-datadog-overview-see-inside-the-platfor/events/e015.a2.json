@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "41496091c8befb0cecd53aada2fe8e055e31e755b5a3b31be6eb06c0c01f3969",
+    "created_at": "2026-10-05T06:44:48.013367Z"
+  },
+  "video": "datadog-datadog-overview-see-inside-the-platfor",
+  "event": "e015",
+  "task": "a2-e015",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Watchdog story UI screen (camera pushes in toward the top-right latency chart)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 550, "easing_class": "ease_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [104, 300, 361, 984],
+      "manual_reason": "No candidate box covers the whole top latency chart; b06 is only its right-hand fragment.",
+      "label": "Latency chart: grey line turns into a blue series with a red anomaly segment and a grey expected-bounds band",
+      "role": "chart",
+      "role_other": null,
+      "change_types": ["color_shift", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 150, "easing_class": "ease_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [111, 719, 153, 763],
+      "manual_reason": "No candidate box isolates the yellow binoculars badge above the highlighted anomaly window.",
+      "label": "Yellow binoculars '1' anomaly badge on the highlighted window",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["pop"],
+      "change_other": null,
+      "is_text": true,
+      "text": "1",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 150, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "ui_camera_push_in",
+    "proposed_name": null,
+    "description": "The camera pushes in on the Watchdog screen toward the latency chart while the orange caption banner stays fixed. As the push starts, the chart switches to a coloured view: a blue baseline, a red anomaly segment and a grey expected-bounds band, with a yellow binoculars badge marking the flagged window.",
+    "why_premium": "The push-in and the chart state change land together, so the camera points at exactly the evidence behind the 'AI-powered anomaly detection' caption. Keeping the caption fixed while the UI moves underneath keeps the claim readable all through the move."
+  },
+  "build_hint": {
+    "gsap": "Caption on a fixed overlay layer (no tween). tl.to('.ui-shot',{scale:1.48,x:'-=18%',y:'+=6%',transformOrigin:'80% 20%',duration:0.55,ease:'power3.out'}); tl.set('.chart-grey',{opacity:0},0.05); tl.fromTo('.chart-colored',{opacity:0},{opacity:1,duration:0.15,ease:'power1.out'},0.05); tl.fromTo('.badge',{scale:0},{scale:1,duration:0.2,ease:'back.out(2)'},0.1).",
+    "remotion": "uiScale = spring({frame,fps,config:{damping:200,stiffness:90}}) mapped 1->1.48, with transformOrigin at the chart's top-right; colored chart opacity = interpolate(frame,[1,5],[0,1]); badge scale = spring({frame:frame-3,fps,config:{damping:12,stiffness:200}})."
+  },
+  "confidence": "medium",
+  "notes": "Camera verdict is push_in (scale 1.48); the caption banner (b02 area) is static and is not listed. The chart colour change may be a cut to a second UI state rather than an animated transition. The badge may already be present but unreadable in the first, smaller frames."
+}

@@ -1,0 +1,88 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "ad1eccb7ddbd574aca6ce32a46fc4028a18fb2f5655dc3a5af0a806e4c900ba1",
+    "created_at": "2026-10-05T06:49:15.539577Z"
+  },
+  "video": "hubspot-what-is-hubspot",
+  "event": "e005",
+  "task": "a2-e005",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Deals kanban board (incoming screen)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["fade", "scale_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 330, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Deals page header bar (title, pipeline selectors, actions)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["fade", "scale_down"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Deals",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 330, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b15",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Dragged deal card De Bortoli Consulting",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["slide_right"],
+      "change_other": null,
+      "is_text": true,
+      "text": "De Bortoli Consulting",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 300, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [472, 662, 511, 684],
+      "manual_reason": "The grab-hand cursor has no candidate box; b15 covers only the card title.",
+      "label": "Grab-hand cursor dragging the card",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_right"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x045", "verdict": "unsure", "label": "unsure", "note": "574 ms before the screen change, near the end of 'happens,'. A broadband streak follows shortly after, but it does not line up with any visual change in this event."}
+  ],
+  "pattern": {
+    "id": "scale_dissolve_transition",
+    "proposed_name": null,
+    "description": "The Marketing Email analytics screen zooms and dissolves into the Deals kanban board, which arrives oversized and pulls back to full view. A grab-hand cursor is already dragging a deal card from Contract Sent toward Closed Won.",
+    "why_premium": "Using a scale dissolve between two real product screens keeps the sense of one continuous app instead of a hard cut, and arriving on a live drag puts the viewer straight into the action that shows the CRM pipeline."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.screen-email', {scale:1.15, opacity:0, duration:0.3, ease:'power2.in'}); tl.fromTo('.screen-deals', {scale:1.6, opacity:0}, {scale:1, opacity:1, duration:0.35, ease:'power3.out'}, '<0.05'); then tl.to(['.drag-card','.cursor'], {x:'+=60', duration:0.3, ease:'power1.inOut'}) for the drag.",
+    "remotion": "Outgoing: opacity interpolate(frame,[0,7],[1,0]), scale interpolate(frame,[0,7],[1,1.15],{easing:Easing.in(Easing.quad)}). Incoming: scale interpolate(frame,[1,9],[1.6,1],{easing:Easing.out(Easing.cubic)}), opacity interpolate(frame,[1,6],[0,1]). Drag: translateX interpolate(frame,[9,17],[0,60],{easing:Easing.inOut(Easing.quad)})."
+  },
+  "confidence": "medium",
+  "notes": "The outgoing Marketing Email dashboard is not in the end frame, so it has no box; it zooms in and fades out. camera.move is pull_out (scale 0.62), which matches the incoming board settling. The drag of the deal card may continue past this event (the energy rises again in the last frame)."
+}

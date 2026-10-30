@@ -1,0 +1,98 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "0aca6e428a9b5491c5fbafec51ca9cfb9142e3261fa2f588fe8a741db6eb673c",
+    "created_at": "2026-10-05T06:31:00.746118Z"
+  },
+  "video": "scrunch-many-brands-one-workspace-how-agencies",
+  "task": "a1-p2",
+  "shots": [
+    {
+      "shot": "s001",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Scrunch web app in a full browser window (new-brand setup form, then the Disney Plus Prompts dashboard) with a circular presenter webcam bubble and recorder control bar fixed bottom-left",
+      "transition_in": "other",
+      "transition_other": "none: video opens on this shot (anchors give no transition_in)",
+      "on_screen_text": [
+        "scrunch",
+        "Identity",
+        "Website",
+        "Enter any domain or page URL to get started.",
+        "https://www.disneyplus.com/",
+        "Brand name",
+        "Disney+",
+        "Brand description",
+        "Retrieving competitors.",
+        "Personas",
+        "Add Persona",
+        "Tech-Savvy Family",
+        "Franchise Enthusiast",
+        "Cost-Conscious Viewer",
+        "Competitors",
+        "Add Competitor",
+        "Netflix",
+        "Prime Video",
+        "Hulu",
+        "Max",
+        "Apple TV+",
+        "Key Topics",
+        "Prompts",
+        "Disney Plus"
+      ],
+      "text_word_count": 44,
+      "typography": "Native product UI text only, no added titles: small sentence-case and title-case sans-serif labels (regular weight body, semibold section headings like 'Personas', 'Competitors', 'Key Topics'), normal tracking, lowercase wordmark; looks like a system/Inter-style UI sans (low-confidence guess). Long persona description paragraphs and table cells are present but not quoted.",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "One continuous unedited webcam-plus-screen recording (0:00-1:51). In the frames visible to me the brand-creation form auto-fills from the Disney+ URL with a loader 'Retrieving competitors.' (keyframe ~0:54), then (~1:12-1:34) the presenter scrolls through generated Personas, Competitors and Key Topics chips while explaining them (w220-w268), clicks create (w273-w287), the page jumps to the populated Disney Plus Prompts dashboard (~1:34.5) with donut charts and a topic table that he describes (w292-w333), then he scrolls the table and opens the New Prompt control just before the shot ends (w334-w337).",
+      "build_rebuild": "Record the real app full-screen in a browser at 1280x720 with a circular webcam overlay pinned bottom-left (about 20% of frame height) and no cuts, zooms or added graphics; let page loads and scrolls play in real time under the voice-over.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s002",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Centered 'New Prompt' modal (question field, Persona and Tags dropdowns, checked platform list, disabled 'Create prompt' button) over a darkened dashboard, webcam bubble bottom-left",
+      "transition_in": "other",
+      "transition_other": "in-app modal open: the dashboard dims under a scrim as the dialog appears within the same continuous recording (shot detector split on the luminance drop)",
+      "on_screen_text": [
+        "New Prompt",
+        "A realistic question that a user might ask an AI platform to find or evaluate products or services.",
+        "A realistic user question",
+        "Minimum 10 characters.",
+        "Persona",
+        "Generic",
+        "Tags",
+        "Enter a tag",
+        "Platforms",
+        "Gemini",
+        "Meta AI",
+        "Perplexity",
+        "Google AI Mode",
+        "ChatGPT",
+        "AI Overviews",
+        "Claude",
+        "Create prompt"
+      ],
+      "text_word_count": 47,
+      "typography": "Native product UI: semibold sentence-case modal title, regular-weight small sans helper and label text, placeholder text in lighter weight, platform names in title case next to small brand icons and checkboxes, normal tracking; Inter-like sans (low-confidence guess).",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "The New Prompt modal sits open over the dimmed dashboard while the presenter says he can generate and build new prompts on the fly (w334-w353); nothing is typed and the cursor barely moves; at ~1:56 the modal closes and the bright Prompts dashboard returns, ending the shot.",
+      "build_rebuild": "Hold a static screen capture of a centered form modal over a 60%-dark scrim for about 5 s while the voice-over describes it, then close the modal to reveal the undimmed dashboard.",
+      "confidence": "high"
+    }
+  ],
+  "summary": null
+}

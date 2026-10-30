@@ -1,0 +1,75 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "1b47908e8af0ae8baf55b7b0e70c5f09e2330b7e630db8c6df45542522cca710",
+    "created_at": "2026-10-05T06:52:31.135174Z"
+  },
+  "video": "salesforce-what-is-agentforce-and-how-businesses-us",
+  "event": "e028",
+  "task": "a2-e028",
+  "elements": [
+    {
+      "box": null,
+      "manual_box": [299, 245, 618, 348],
+      "manual_reason": "No candidate box isolates the robot mascot; b01 is the whole lockup group and is used for nothing else, but listing it would duplicate the three parts.",
+      "label": "Robot mascot",
+      "role": "other",
+      "role_other": "mascot",
+      "change_types": ["slide_up", "other"],
+      "change_other": "character pose animation (waving arm to hands-on-hips)",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 1000, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Salesforce cloud logo",
+      "role": "logo",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "salesforce",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 450, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "CTA line",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Learn more at agentforce.com",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 450, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x053", "verdict": "override", "label": "music", "note": "Lands on one of the regular broadband beat pulses of the music bed mid-settle; no distinct chime shape."},
+    {"id": "x054", "verdict": "unsure", "label": "unsure", "note": "Pulse with a long decaying tail as the music winds down, after the motion has settled; could be a final music hit or a soft reverse swoosh."}
+  ],
+  "pattern": {
+    "id": "logo_resolve",
+    "proposed_name": null,
+    "description": "End-card lockup (robot mascot, Salesforce cloud logo, 'Learn more at agentforce.com' CTA) rises as one group from below into centre over an aurora-and-mountains backdrop and decelerates to rest, while the mascot keeps a looping pose animation.",
+    "why_premium": "A single grouped rise with a soft ease-out keeps the lockup calm and legible, and the living mascot adds character to an otherwise static CTA frame."
+  },
+  "build_hint": {
+    "gsap": "Group mascot, logo and CTA in one container; gsap.fromTo(lockup, {y: 60}, {y: 0, duration: 0.5, ease: 'power3.out'}); run the mascot pose as a separate sprite/Lottie timeline that keeps looping after the group lands.",
+    "remotion": "const s = spring({frame: frame - start, fps, config: {damping: 28, stiffness: 140, mass: 1}}); translateY = interpolate(s, [0, 1], [60, 0]) on the lockup container; mascot as an independent <Lottie>/<OffthreadVideo> loop."
+  },
+  "confidence": "medium",
+  "notes": "camera.move is none; the pan_y sum is content (the lockup) moving up, not a camera tilt. The energy tail after the slide is the mascot animating. Whether the group also fades in at the very start is unclear from the first frame (CTA already partly visible at the bottom)."
+}

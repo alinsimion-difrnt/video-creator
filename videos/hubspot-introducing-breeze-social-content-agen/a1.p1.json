@@ -1,0 +1,129 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "de55f3036ac5a446234effb395fce25dd757186978154d138464e37d85112ce1",
+    "created_at": "2026-10-05T06:25:52.766897Z"
+  },
+  "video": "hubspot-introducing-breeze-social-content-agen",
+  "task": "a1-p1",
+  "shots": [
+    {
+      "shot": "s001",
+      "shot_type": "presenter",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Presenter seated centred at a desk with an inset glass tablet, title text overlaid across her torso, then a lower-third name card",
+      "transition_in": "other",
+      "transition_other": "video start (first shot, no incoming transition)",
+      "on_screen_text": [
+        "BREEZE SOCIAL & CONTENT AGENTS",
+        "LEEYMAN YOUSUF",
+        "PRODUCT MANAGER, BREEZE"
+      ],
+      "text_word_count": 9,
+      "typography": "Tall condensed grotesque display face, bold, all caps, tight tracking; title spans nearly the full frame width; words wipe/colour-shift in left to right with a warmer accent tint on the leading edge before settling. Lower third uses the same condensed caps (name larger, role smaller) beside a small organic blob shape. Font guess (low confidence): a condensed sans such as Bebas/Oswald-like.",
+      "depth_cues": [
+        "blur"
+      ],
+      "what_happens": "Opens on a locked-off frontal medium shot of the presenter delivering the intro line (w0-w18). The full-width title 'BREEZE SOCIAL & CONTENT AGENTS' reveals left to right with an accent-coloured leading edge, holds, then clears right-to-left around 4.5 s; at about 5 s a lower-third name card with a blob accent writes on in the lower left, its role line colour-settling by 6.5 s. HubSpot logo bug sits top-right throughout.",
+      "build_rebuild": "Over a static presenter clip, animate a centred full-width condensed all-caps title with a left-to-right mask reveal whose leading characters are tinted an accent colour that fades to the base colour, hold ~3 s, mask it out, then mask-reveal a two-line lower third (name + role) next to a scaling blob shape at the lower left.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s002",
+      "shot_type": "presenter",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "Presenter at a three-quarter angle on the left third, with a stacked list of content types building in the right negative space",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "LEEYMAN YOUSUF",
+        "PRODUCT MANAGER, BREEZE",
+        "LANDING PAGES",
+        "BLOG POSTS",
+        "PODCASTS",
+        "& MORE"
+      ],
+      "text_word_count": 11,
+      "typography": "Same condensed bold all-caps display face; list items right-aligned and stacked tightly, each word revealing left to right with an accent-coloured leading edge that settles to the base colour; '& MORE' set noticeably smaller as a tag line. Lower third carried over from s001.",
+      "depth_cues": [
+        "blur"
+      ],
+      "what_happens": "Hard cut to a side-angle camera; the lower third from s001 persists, then dissolves out around 8.5 s as a hand-drawn wavy accent stroke sweeps across the frame. 'LANDING PAGES', 'BLOG POSTS', 'PODCASTS' and '& MORE' stack in on the right, timed to the spoken list (w24-w29). The final sampled frame (~11.0 s) already shows the top-down tablet view of s003, so the cut may sit slightly before the detected boundary.",
+      "build_rebuild": "On a side-angle presenter clip, fade out the lower third while a hand-drawn SVG squiggle draws on across the frame, then reveal right-aligned condensed caps list items one per spoken word (word-indexed cue times), each with an accent-tinted leading-edge mask reveal, finishing with a smaller '& MORE' line.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s003",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Top-down view of a tablet set into a wooden desk showing the HubSpot Breeze AI Content Agent page, scrolled by the presenter's hands",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "HIGH QUALITY CONTENT"
+      ],
+      "text_word_count": 3,
+      "typography": "Overlay in the same condensed bold all caps, two stacked centred lines in the upper right, revealed with the accent-tinted leading edge before settling. In-UI text (small product sans: 'Create landing pages', 'Create podcasts', 'Create case studies', nav items like 'Content Agent') is product UI, not designed overlay.",
+      "depth_cues": [
+        "blur",
+        "perspective_tilt"
+      ],
+      "what_happens": "Overhead shot of a real screen in the desk: hands swipe through the Content Agent list (Create blog posts, Create landing pages, Create podcasts, Create case studies) with motion blur on the hands while VO says 'all tailored to your brand tone and audience' (w30-w37). Around 15 s 'HIGH QUALITY CONTENT' reveals top-right as VO says w38-w41. The last sampled frame (16.0 s) is the next presenter shot, at the boundary.",
+      "build_rebuild": "Composite a product screen recording into a tablet mockup lying on a wood-texture desk viewed top-down, scroll the list as if swiped, optionally overlay hand footage, and reveal a two-line condensed caps caption in the upper right timed to the spoken phrase.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s004",
+      "shot_type": "presenter",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Presenter frontal and centred, talking with open-hand gestures; short keyword captions top-right early in the shot",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "FASTER",
+        "& EASIER"
+      ],
+      "text_word_count": 3,
+      "typography": "Condensed bold all caps, two short right-side stacked lines ('& EASIER' with smaller ampersand); accent-tinted leading-edge reveal then exit by wiping away from the left (frame at 18.0 s shows only 'EASIER'). A transient fragment 'NT' at 16.5 s looks like the exiting tail of 'CONTENT' from the previous caption.",
+      "depth_cues": [
+        "blur"
+      ],
+      "what_happens": "Back to the frontal camera; 'FASTER & EASIER' builds top-right on w42-w44 and clears by ~18.5 s. The rest of the shot is a clean talking head: the presenter introduces social media and the pain of keeping a relevant brand voice ('can be overwhelming', w45-w69), with expressive open-palm gestures and no graphics.",
+      "build_rebuild": "Hold a frontal presenter clip, word-cue a two-line condensed caps caption ('FASTER' / '& EASIER') in the upper right with a left-to-right mask reveal and matching mask exit, then leave the remaining ~5 s graphics-free.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s005",
+      "shot_type": "presenter",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "Presenter at three-quarter angle on the left third, ending by reaching toward the tablet built into the desk",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": [
+        "blur"
+      ],
+      "what_happens": "Side-angle presenter says 'That's where the Breeze social media agent comes in. Let's take a look.' (w70-w82) with no overlays; at about 27.5 s she leans in and touches the desk tablet, motivating the cut to the screen demo.",
+      "build_rebuild": "Cut to a side-angle presenter clip with no graphics and end the shot on a physical reach toward the device, so the next screen-demo shot reads as a motivated cut.",
+      "confidence": "high"
+    }
+  ],
+  "summary": null
+}

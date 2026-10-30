@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "3ca9c1df2321f313d559afebfd13e97d57f82f3a87dc4977ba88b82ef8adeb0c",
+    "created_at": "2026-10-05T06:48:29.581302Z"
+  },
+  "video": "notion-introducing-the-new-notion-ai",
+  "event": "e029",
+  "task": "a2-e029",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Notion AI face mascot logo",
+      "role": "logo",
+      "role_other": null,
+      "change_types": ["morph"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "step"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Outgoing CTA text replaced by logo card",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "hard_cut_out",
+      "is_text": true,
+      "text": "Try Notion AI for free at Notion.com",
+      "text_unit": "whole",
+      "estimates": null
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "logo_resolve",
+    "proposed_name": null,
+    "description": "The CTA end card hard-cuts to a centred Notion AI face mascot in a circle on a soft grey background; the face then animates its expression (brow lifts, eye squints into a wink) in hand-drawn, stepped frames.",
+    "why_premium": "Ending on a character beat gives the brand mark personality: a held-frame, on-twos expression change reads as hand-crafted illustration rather than a generic logo fade, and the hard cut keeps the ending crisp."
+  },
+  "build_hint": {
+    "gsap": "tl.set('.cta', {autoAlpha: 0}).set('.logo', {autoAlpha: 1}); then swap mascot pose frames with a stepped tween: tl.to('.mascot-frames', {backgroundPositionX: '-=N*w', duration: 0.4, ease: 'steps(5)'}) (or tl.set each pose layer every 2 frames).",
+    "remotion": "Use a <Sequence> hard cut from the CTA to the logo; inside, pick the mascot pose with Math.floor(frame / 2) % poses.length (animating on twos) for about 12 frames, then hold the final wink pose."
+  },
+  "confidence": "medium",
+  "notes": "Burst starts with a single-frame hard cut (energy spike at frame 8 of the burst) from the CTA text to the logo, followed by alternating-frame small spikes = expression animated on twos. b02 and b01 are diff boxes that include the vanished CTA text area; b03-b07 are residual glyph diffs of the old text and are not listed separately. The cut might be better treated as a shot transition (hard_cut) rather than an element change."
+}

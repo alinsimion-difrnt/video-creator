@@ -1,0 +1,55 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T13:58:33Z"
+  },
+  "id": "metal-slug",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "warm",
+    "notes": "Close-ups show khaki, olive and tan ramps of 3-4 steps that darken into warm brown, a single red or yellow vest as the hero accent, and near-black outlines. Stages are sepia ruins or dusky purple stone; muzzle flashes are pale yellow. No metrics file."
+  },
+  "lighting": "Painted-in top-left light on every sprite: highlights on hair, cheekbones and knuckles, warm brown shadow on the far side. Backgrounds are lit like illustrations; explosions and muzzle flashes briefly light the scene.",
+  "silhouette": "Big heads, huge hands and feet, a gun as long as the torso, wide stances; thick dark outline all around. Even at 1x the pose reads (thumbs-up, crouch-and-fire).",
+  "motion": {
+    "timing": "Hand-drawn, frame-rich arcade animation with lots of secondary motion on loose gear (known_for); the clip shows fire poses with a separate flash frame. No frame timings measured.",
+    "principles": [
+      "squash and stretch",
+      "secondary action",
+      "follow through",
+      "exaggeration",
+      "anticipation"
+    ]
+  },
+  "texture": "Dense hand-pixelled detail: rubble, crumbling balconies, broken walls; weapon pickups are chunky bevelled letter tiles (H, F, S, L) with a light top edge and dark bottom edge, read like buttons.",
+  "camera": "Side-scrolling view pushing forward; foes and a giant stone face fill the background while the hero stays small at the bottom.",
+  "sound": "",
+  "acting": {
+    "enters": "Enemies arrive mid-gag (busy, distracted) instead of ready to fight; the driver hops in and out of the tank (wiki).",
+    "acts": "Slapstick reactions: foes panic, flee, crowd around the hero. Personality is in poses: grinning thumbs-up, open-mouth shout while firing.",
+    "exits": "Characters bail with a gag, e.g. the driver jumps clear before the tank rams and explodes (wiki).",
+    "comes_back": true,
+    "depth": "One plane of play; background shows ruined streets, a parked car and a huge carved head looming behind the action."
+  },
+  "techniques": [
+    "thick dark outline + warm 3-4 step ramps",
+    "cartoon proportions: big head, hands, feet and gun",
+    "separate muzzle-flash frame over earthy palette",
+    "bevelled letter tile as a readable pickup icon",
+    "slapstick reaction poses",
+    "running gag: same character beaten and back again"
+  ],
+  "feel": "warm khaki ramps + thick outline + big head and hands + flash frame + slapstick = funny, alive action",
+  "for_fred": "Exaggerate Fred's pose sprites the Metal Slug way: bigger head and fins, a wide stance, one bright accent colour. Make him a running gag: knocked out of frame by the punchline, back next beat a little battered, with a new reaction pose each exit so the repeat never looks like a loop.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Metal_Slug_(video_game)",
+    "studies/pixel-art/sources.yaml",
+    "data/study/pixel/work/metal-slug/clip1-6984152984158473477.jpg",
+    "data/study/pixel/work/metal-slug/clip2-7682197396993969429.jpg"
+  ]
+}

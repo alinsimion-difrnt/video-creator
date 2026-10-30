@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "86a8eb8324517f37d0986a3e9a645dc02e7bed55d20412c17631705b492d1b66",
+    "created_at": "2026-10-05T06:43:01.665406Z"
+  },
+  "video": "attio-introducing-ask-attio",
+  "event": "e010",
+  "task": "a2-e010",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Words 'Every' and 'note' collapsing into the icon",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["slide_right", "slide_left", "mask_reveal"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Every note",
+      "text_unit": "word",
+      "estimates": {"duration_ms": 300, "easing_class": "ease_in"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "App icon morphing into a text caret",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["morph", "scale_down", "slide_left"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 250, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "collapse into caret",
+    "description": "The two words slide inward and disappear behind the central app icon, then the icon narrows into a thin vertical bar that settles left of centre as a blinking text caret, setting up a typed prompt.",
+    "why_premium": "The brand icon literally becomes the input cursor, turning the logo into the next UI state with no cut; the words being swallowed by the icon reads as the product absorbing the content."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.word-left', {x: 120, duration: 0.3, ease: 'power2.in'}).to('.word-right', {x: -120, duration: 0.3, ease: 'power2.in'}, '<').to('.icon', {width: 6, height: 56, borderRadius: 1, x: -120, duration: 0.25, ease: 'power3.inOut'}, '-=0.05') (words clipped behind the icon via overflow mask)",
+    "remotion": "const p = spring({frame, fps, config: {damping: 30, stiffness: 220, mass: 1}}); word translateX = interpolate(p, [0, 1], [0, +/-120]); icon width = interpolate(frame, [10, 17], [80, 6], {easing: Easing.inOut(Easing.cubic), extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}) and translateX to the caret position."
+  },
+  "confidence": "medium",
+  "notes": "Words exit is mostly hidden behind the icon (occlusion) rather than fading; b02 is used for both words together since neither has its own box in the end frame. Icon-to-caret is read as a morph; it may instead be a fast scale-down plus a separate caret fade-in. b03 OCR '1' is the caret."
+}

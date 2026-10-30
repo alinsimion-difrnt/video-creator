@@ -1,0 +1,44 @@
+# v07 — the full Fred story, compact, with 3D first and accessories while 3D (the hat and moustache in 3D
+# frames), the alchemy clap in illustrated, and Pixie's pounce. Questions: does 3D Fred keep his accessories?
+# Does the pounce read before the grab?
+name: v07
+voice: iP95p4xoKVk53GoZ742B
+script: >-
+  This is Fred. Fred is 3D now. Claude, give him a top hat. And a moustache. Very fancy.
+  Now flat again, and the arm? That cost him an arm and a leg. Alchemy!
+  Oh no. Here comes Pixie. Pixie, no!
+plan:
+  layout: [{word: 0, layout: full}]
+  punches: ["Alchemy"]
+  props:
+    - id: fred
+      art: fred
+      word: "Fred"
+      until: "no#2"
+      at: lap
+      size: 0.2
+      style: illustrated
+      beats:
+        - {word: "3D", style: toon3d}
+        - {word: "hat", add: [top_hat]}
+        - {word: "moustache", add: [moustache]}
+        - {word: "flat", style: illustrated}
+        - {word: "arm#2", add: [automail]}
+        - {word: "Alchemy", do: clap}
+        - {word: "Oh", do: look}
+    - id: pixie
+      art: cat
+      word: "Here"
+      until: "no#2"
+      at: floor_right
+      size: 0.28
+      enter: walk_right
+      exit: run_left
+      beats:
+        - {word: "Pixie", tag: Pixie}
+        - {word: "Pixie#2", move: lap}
+        - {word: "no#2", carry: fred}
+  fx:
+    - {word: "Alchemy", kind: alchemy, spec: {at: fred}}
+    - {word: "no#2", kind: shake}
+    - {word: "no#2", kind: fade_black}

@@ -1,0 +1,151 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "71d6b02559eeca040c5d40c12fbbf00c1a8de80a6fa2ebadbdb81c692bf04c43",
+    "created_at": "2026-10-04T21:35:33.936591Z"
+  },
+  "video": "loom-introducing-loom-ai",
+  "task": "a1-p1",
+  "shots": [
+    {
+      "shot": "s001",
+      "shot_type": "other",
+      "shot_type_other": "multi-phase sequence: abstract sparkle intro + kinetic type, then circular presenter bubble with record button, then recreated Loom player card",
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Centered headline text, then circular presenter-camera bubble, then floating video-player card",
+      "transition_in": "other",
+      "transition_other": "video start; no incoming transition",
+      "on_screen_text": [
+        "Introducing Loom AI",
+        "Record better, faster video messages",
+        "With titles that write themselves",
+        "Market Trends"
+      ],
+      "text_word_count": 14,
+      "typography": "Clean geometric sans, medium/semibold weight, sentence case, normal-to-slightly-tight tracking; words reveal one by one with dim-to-bright fade. Title pill uses a smaller semibold sans inside a gradient-outlined rounded pill. Font guess (low confidence): a grotesk such as Circular-like.",
+      "depth_cues": [
+        "blur",
+        "glow",
+        "shadow",
+        "parallax"
+      ],
+      "what_happens": "A small orb morphs into a four-point AI sparkle on a dark purple field while glossy gradient spheres drift in at different depths. 'Introducing Loom AI' types in word by word with the sparkle trailing, clears, then 'Record better, faster video messages' reveals word by word and fades out. A circular presenter webcam bubble pops in, a red stop-record button appears and a hand cursor clicks it; the bubble then resolves into a recreated Loom video-player card (Market Trends slide with presenter bubble) with a soft glow, and a gradient-outlined pill above it types 'With titles that write themselves' ending in a sparkle.",
+      "build_rebuild": "On a dark purple full-bleed background with blurred gradient spheres drifting at varied speeds, morph a dot into a 4-point star, reveal centered headlines word by word (opacity 0.4->1 per word on beat), then scale-in a circular avatar with a red stop button clicked by a cursor, and cross-morph it into a glowing rounded player card while a gradient-stroked pill above types its title character by character.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s002",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "stacked",
+      "composition_other": null,
+      "focal_element": "AI summary text box below the cropped player card",
+      "transition_in": "other",
+      "transition_other": "continuous upward camera pan/reframe: player card slides up and out of the top while new content appears below (no visible cut)",
+      "on_screen_text": [
+        "And AI-powered summaries",
+        "Shorten the distance from Record to Share with AI-powered summaries. Loom AI will generate a summary of your video right after you record, making it easy to get your message across."
+      ],
+      "text_word_count": 36,
+      "typography": "Heading in bold geometric sans, sentence case, left-aligned; body in small regular sans inside a rounded box whose gradient stroke draws on; body text types out character by character.",
+      "depth_cues": [
+        "blur",
+        "glow"
+      ],
+      "what_happens": "The frame pans up so the player card sits cropped at the top. 'And AI-powered summaries' types in left-aligned below it, a rounded box's gradient outline draws on, and the summary paragraph types out inside it typewriter-style; by the end the heading and box dim as the next move begins.",
+      "build_rebuild": "Translate the player card up ~60% of frame height, then type a bold left-aligned heading, draw a rounded rectangle's gradient stroke around its perimeter, and typewriter-reveal a two-line body paragraph inside it, finishing with a 0.3s opacity dim before the next reframe.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s003",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Player card's chapter progress bar segments with labels",
+      "transition_in": "other",
+      "transition_other": "continuous downward reframe: summary content leaves, card returns to center with new headline above (likely slide/pan; not a hard cut visually)",
+      "on_screen_text": [
+        "AI chapters add clarity to your videos",
+        "Market Trends",
+        "Introducing",
+        "Automatic"
+      ],
+      "text_word_count": 10,
+      "typography": "Headline in bold geometric sans, sentence case, centered, slightly open tracking; chapter labels in small medium-weight white sans above the segmented progress bar.",
+      "depth_cues": [
+        "blur",
+        "glow",
+        "shadow"
+      ],
+      "what_happens": "The player card is centered under the headline 'AI chapters add clarity to your videos'. The progress bar at the card's bottom is split into chapter segments; the first segment is filled and labelled 'Introducing', and the second fills as 'Automatic' appears. Background spheres drift slowly.",
+      "build_rebuild": "Center the glowing player card under a bold headline, divide its progress bar into 5 segments with gaps, and animate the playhead fill across segment 2 while its chapter label fades in above it.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s004",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "stacked",
+      "composition_other": null,
+      "focal_element": "Timestamped chapter list below the player card",
+      "transition_in": "other",
+      "transition_other": "continuous upward reframe: card slides up and a chapter list appears beneath (no visible cut)",
+      "on_screen_text": [
+        "Market Trends",
+        "Introducing",
+        "Automatic",
+        "AI-Powered",
+        "Chapters",
+        "00:00 Introducing",
+        "01:37 Automatic",
+        "03:19 AI-Powered",
+        "04:18 Chapters"
+      ],
+      "text_word_count": 16,
+      "typography": "Chapter timestamps in a monospaced face, tinted, regular weight; chapter titles in regular sans, title case; progress-bar labels in small medium sans.",
+      "depth_cues": [
+        "blur",
+        "glow"
+      ],
+      "what_happens": "The card moves up and a four-row chapter list (timestamp + title) staggers in below it. A hand cursor moves to the last row '04:18 Chapters' and clicks; the timestamp highlights and the progress bar fills to the 'Chapters' segment while the list dims.",
+      "build_rebuild": "Slide the card up, stagger-fade four list rows (mono timestamp + sans title) at ~0.15s offsets, move a hand cursor to row 4, highlight its timestamp on click and jump the progress-bar fill to the last segment as the list fades to 40% opacity.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s005",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Suggested Tasks side panel with 'For Addie' task pill, then the headline about trimming filler words",
+      "transition_in": "other",
+      "transition_other": "continuous reframe: card slides down to center while a Suggested Tasks panel enters from the right (no visible cut)",
+      "on_screen_text": [
+        "AI-assigned tasks keep your team in sync",
+        "Market Trends",
+        "Suggested Tasks",
+        "For Addie",
+        "Choose one concept for the intro",
+        "Automatically trim out filler words and long silent pauses"
+      ],
+      "text_word_count": 26,
+      "typography": "Headlines in bold geometric sans, sentence case, centered, slightly open tracking; second headline wraps to two centered lines. Panel label 'Suggested Tasks' in small semibold tinted sans; task pill title in medium sans with tiny regular subtext.",
+      "depth_cues": [
+        "blur",
+        "glow",
+        "shadow"
+      ],
+      "what_happens": "The card recenters with 'AI-assigned tasks keep your team in sync' above and a Suggested Tasks panel to its right listing tasks with check icons; the first task, a highlighted 'For Addie' pill, is clicked by a hand cursor and its check turns green. The headline and panel clear, then 'Automatically trim out filler words and long silent pauses' reveals word by word above the card while the progress bar shows all segments.",
+      "build_rebuild": "Recenter the player card, slide in a right-side task list whose first item is a filled rounded pill, animate a cursor click that swaps its check icon to a green filled state, then fade out the panel and headline and reveal a new two-line centered headline word by word.",
+      "confidence": "high"
+    }
+  ],
+  "summary": null
+}

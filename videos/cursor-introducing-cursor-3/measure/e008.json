@@ -1,0 +1,103 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "s7_measure",
+    "annotator": "code",
+    "skill": null,
+    "model": null,
+    "input_hash": "661608b8381891703adbda868c80b81b2c692fcbf6a7b230d91f2c2fc83c6763",
+    "created_at": "2026-10-05T09:12:06.090712Z"
+  },
+  "video": "cursor-introducing-cursor-3",
+  "event": "e008",
+  "fps": 23.81,
+  "elements": [
+    {
+      "box": "b01",
+      "xyxy": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.834,
+      "channels": [
+        {
+          "name": "x",
+          "start_f": 1484,
+          "end_f": 1509,
+          "start_value": 851.0,
+          "end_value": 640.0,
+          "observed_start": true,
+          "cls": "ease_out",
+          "gsap": {
+            "ease": "none",
+            "duration_ms": 1050.1,
+            "rmse": 0.01677
+          },
+          "bezier": "cubic-bezier(0.554, 0.541, 0.201, 0.323)",
+          "bezier_rmse": 0.00366,
+          "spring": {
+            "zeta": 0.6554,
+            "omega0": 2.382,
+            "settle_ms": 2523.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 5.676,
+              "damping": 3.123
+            },
+            "remotion_exact": true,
+            "rmse": 0.01414
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 1087.1,
+          "fit_quality": 0.9999
+        },
+        {
+          "name": "y",
+          "start_f": 1484,
+          "end_f": 1509,
+          "start_value": 258.5,
+          "end_value": 360.0,
+          "observed_start": true,
+          "cls": "ease_in",
+          "gsap": {
+            "ease": "none",
+            "duration_ms": 1042.9,
+            "rmse": 0.00944
+          },
+          "bezier": "cubic-bezier(0.169, 0.112, 0.000, -0.078)",
+          "bezier_rmse": 0.00547,
+          "spring": {
+            "zeta": 0.4741,
+            "omega0": 1.913,
+            "settle_ms": 4315.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 3.661,
+              "damping": 1.814
+            },
+            "remotion_exact": true,
+            "rmse": 0.01387
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 1098.0,
+          "fit_quality": 0.9997
+        }
+      ],
+      "timing": {
+        "ease": "none",
+        "start_s": 62.3077,
+        "duration_ms": 1057.2,
+        "rmse": 0.03103
+      },
+      "stagger": null,
+      "sfx_offset_ms": {},
+      "source": "measured",
+      "quality": 0.9999
+    }
+  ],
+  "failed": {}
+}

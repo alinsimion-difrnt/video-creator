@@ -1,0 +1,1271 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "s8_reconcile",
+    "annotator": "code",
+    "skill": null,
+    "model": null,
+    "input_hash": "65a5fa6ce89df4de30613dcae767e77b5c000bf0abb0768daae6346831d27221",
+    "created_at": "2026-10-05T12:18:16.003960Z"
+  },
+  "video": "amplitude-find-onboarding-funnel-drop-off-amplit",
+  "brand": "Amplitude",
+  "title": "Find Onboarding Funnel Drop-Off | Amplitude",
+  "format": "tutorial",
+  "tier": "average",
+  "duration_s": 156.4333,
+  "fps": 30.0,
+  "frame_size": [
+    1280,
+    720
+  ],
+  "palette": [
+    "#fafafb",
+    "#adc2f1",
+    "#1b4ce6",
+    "#5e5c5e",
+    "#a4a4aa",
+    "#101938"
+  ],
+  "summary": {
+    "beats": [
+      {
+        "beat": "hook",
+        "shots": [
+          "s001",
+          "s002"
+        ],
+        "words": [
+          0,
+          6
+        ]
+      },
+      {
+        "beat": "problem",
+        "shots": [
+          "s002"
+        ],
+        "words": [
+          7,
+          45
+        ]
+      },
+      {
+        "beat": "mechanism",
+        "shots": [
+          "s002"
+        ],
+        "words": [
+          46,
+          117
+        ]
+      },
+      {
+        "beat": "demo",
+        "shots": [
+          "s002",
+          "s003",
+          "s004",
+          "s005",
+          "s006"
+        ],
+        "words": [
+          118,
+          242
+        ]
+      },
+      {
+        "beat": "outcome",
+        "shots": [
+          "s006",
+          "s007"
+        ],
+        "words": [
+          243,
+          338
+        ]
+      },
+      {
+        "beat": "cta",
+        "shots": [
+          "s008",
+          "s009",
+          "s010"
+        ],
+        "words": [
+          339,
+          386
+        ]
+      }
+    ],
+    "hook": {
+      "text": "At what step of my onboarding funnel are most users dropping off?",
+      "technique": "question",
+      "technique_other": null,
+      "shots": [
+        "s002"
+      ],
+      "words": [
+        0,
+        6
+      ]
+    },
+    "cta": {
+      "text": "For more resources on how to use Amplitude, check out the Amplitude Help Center and Community.",
+      "shots": [
+        "s009"
+      ]
+    },
+    "tone": "Calm, neutral, instructional academy tutorial: friendly second-person voice-over over a white, brand-blue, uncluttered look; competent and practical rather than cinematic.",
+    "signature_moments": [
+      {
+        "shots": [
+          "s007",
+          "s008"
+        ],
+        "description": "Push-in on the Follow Playlist tooltip with a red outline that steps from the 80.5% drop-off line to the 90.7% from-previous-step line exactly as the VO reads each number, then a zoom back out to the full workspace.",
+        "why_premium": "Zooming plus word-synced callouts turns a dense analytics screen into one readable number at a time, so the payoff insight lands without the viewer hunting for it."
+      },
+      {
+        "shots": [
+          "s006"
+        ],
+        "description": "Live change of the conversion window from 1 day to 30 minutes, with the headline dropping to 6.11% and a red callout framing the new figure as the VO explains it.",
+        "why_premium": "Shows cause and effect inside the real product instead of describing it, which makes the abstract 'conversion window' concept concrete."
+      },
+      {
+        "shots": [
+          "s001",
+          "s009"
+        ],
+        "description": "Identical animated Amplitude Academy logo lockup (circle mark, waveform draw-on, wordmark slide-out, ACADEMY label) bookends the video.",
+        "why_premium": "A consistent, well-timed animated lockup frames an otherwise raw screen capture as part of a coherent branded series."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 2,
+        "evidence": "The hook is a clear, relevant on-screen question, but it only arrives after a ~5 s logo intro, sits on a static card for ~3 s, and the VO opens with a generic definition rather than a stat, pain or demo.",
+        "refs": [
+          "s001",
+          "s002",
+          "w0",
+          "w25"
+        ]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "Logical arc: define onboarding, show the example four-step flow diagram, build the funnel event by event, explain the conversion window, then read off the drop-off. Red callouts and the s007 zoom map the VO to the exact UI element.",
+        "refs": [
+          "s002",
+          "s005",
+          "s006",
+          "s007",
+          "w183",
+          "w299"
+        ]
+      },
+      "ui_showcase": {
+        "score": 3,
+        "evidence": "Real product UI is shown end to end and the s007 push-in makes the key tooltip readable, but most of the demo is a long, unzoomed full-frame capture (s006 runs ~60 s) with loading veils and small text left in.",
+        "refs": [
+          "s003",
+          "s005",
+          "s006",
+          "s007"
+        ]
+      },
+      "motion_polish": {
+        "score": 2,
+        "evidence": "Apart from the logo bookends and the s007/s008 zoom-through, the video is raw screen capture joined by hard cuts, with callouts that switch on and off with no animation, and visible chart-loading states.",
+        "refs": [
+          "s001",
+          "s003",
+          "s006",
+          "s007",
+          "s009"
+        ]
+      },
+      "sound_design": {
+        "score": 2,
+        "evidence": "Judged from anchors plus visuals: a single SFX (chime x001 at the intro logo), no UI clicks or whooshes for zooms and callouts, a steady ~126 BPM music bed under the VO, and integrated loudness of -18.07 LUFS, which is quiet for online playback. Clean, but minimal.",
+        "refs": [
+          "s001",
+          "s007",
+          "s009"
+        ]
+      },
+      "vo_script_quality": {
+        "score": 4,
+        "evidence": "Plain, accurate and well paced; defines terms ('conversion window', w183-w214), uses a concrete example (30 minutes, 6%, 80%, 90%) and a forward pointer to a follow-up video. Some filler ('you probably want to', 'let's say I want to') and the opening is generic.",
+        "refs": [
+          "w0",
+          "w183",
+          "w233",
+          "w252",
+          "w299",
+          "w339"
+        ]
+      },
+      "brand_consistency": {
+        "score": 4,
+        "evidence": "The matching Amplitude Academy logo lockup opens and closes the video, the title and diagram cards use the same white background, brand blue and sans type, and the product UI shares the blue. The only break is the plain red callout boxes.",
+        "refs": [
+          "s001",
+          "s002",
+          "s006",
+          "s009"
+        ]
+      },
+      "works_muted": {
+        "score": 2,
+        "evidence": "With sound off, the title question, definition card and flow diagram carry the setup and the red boxes point at the key numbers, but the how-to steps, the conversion-window explanation, the meaning of the 80%/90% figures and the CTA are voice-only. There are no captions.",
+        "refs": [
+          "s002",
+          "s006",
+          "s007",
+          "s009",
+          "w371"
+        ]
+      },
+      "overall": {
+        "score": 3,
+        "evidence": "A competent, clear product tutorial with good VO and a smart zoom-plus-callout payoff, held back by a slow opening, long unedited capture stretches, minimal motion and sound design, and a voice-only CTA.",
+        "refs": [
+          "s002",
+          "s006",
+          "s007",
+          "s009"
+        ]
+      }
+    },
+    "localization_friendliness": {
+      "score": 3,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "The intro title, definition and flow-diagram cards (s002) have English text baked in and would need re-rendering. The product UI in s003-s008 is English and would need localized captures or overlays. The VO carries the instructions and the CTA, so it needs re-dubbing or subtitles. The logo bookends and the callout-box approach are language-neutral."
+    }
+  },
+  "shots": [
+    {
+      "id": "s001",
+      "start_s": 0.0,
+      "end_s": 5.2,
+      "transition_in": null,
+      "motion_energy": 0.001884,
+      "wpm": null,
+      "annotation": {
+        "shot": "s001",
+        "shot_type": "logo",
+        "shot_type_other": null,
+        "composition": "centered",
+        "composition_other": null,
+        "focal_element": "Amplitude logo mark (circle with waveform A) that resolves into the Amplitude wordmark with an ACADEMY sub-label",
+        "transition_in": "other",
+        "transition_other": "none - first shot of the video (anchors give no incoming transition)",
+        "on_screen_text": [
+          "Amplitude",
+          "ACADEMY"
+        ],
+        "text_word_count": 2,
+        "typography": "Wordmark in a bold geometric sans, title case, tight tracking; 'ACADEMY' sub-label is a small bold all-caps sans with wide tracking, right-aligned under the wordmark.",
+        "depth_cues": [
+          "none"
+        ],
+        "what_happens": "On a white background a plain filled circle appears, the waveform 'A' draws inside it, then the wordmark slides/reveals out from behind the mark while the lockup recentres; the 'ACADEMY' label appears beneath at about 3.0 s, the lockup holds, then fades out near 5.0 s. Anchors place a chime SFX (x001) during the reveal. No voice-over in this shot.",
+        "build_rebuild": "Scale-pop a solid circle in the centre, draw the waveform glyph inside it with a stroke draw-on, mask-reveal the wordmark sliding right out from behind the circle as the group re-centres, fade in a small all-caps tracked 'ACADEMY' sub-label under the right edge, hold about 1.5 s, then fade the whole lockup to white.",
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "s002",
+      "start_s": 5.2,
+      "end_s": 51.1667,
+      "transition_in": "crossfade",
+      "motion_energy": 0.000179,
+      "wpm": 163.2,
+      "annotation": {
+        "shot": "s002",
+        "shot_type": "other",
+        "shot_type_other": "multi-scene sequence joined by internal crossfades inside one detected shot: title card with 3D illustration (~6-8.5 s), kinetic definition card (~9-22 s), line-icon flow diagram (~22.5-41 s), then a screen recording of the Amplitude home dashboard (~41.5-51 s)",
+        "composition": "other",
+        "composition_other": "varies by scene: split (question text left, circular 3D illustration right) for the title card; left-aligned text block with a leader line for the definition card; horizontal left-to-right row of four icons for the flow diagram; full-bleed UI for the dashboard",
+        "focal_element": "In sequence: the question headline next to a 3D bar-chart illustration, the 'Onboarding' definition, the four-step 'AmpliTunes onboarding flow' icon row, and finally the Amplitude dashboard with a 'Create new' menu opening at the end",
+        "transition_in": "crossfade",
+        "transition_other": null,
+        "on_screen_text": [
+          "Amplitude ACADEMY",
+          "At what step of my onboarding funnel are most users dropping off?",
+          "Onboarding",
+          "Guides a new user through their first experience with the product and leads them to finding value",
+          "AmpliTunes onboarding flow",
+          "Welcome page",
+          "New user sign-up",
+          "Follow a playlist",
+          "Play a song or video"
+        ],
+        "text_word_count": 48,
+        "typography": "Clean humanist/grotesk sans throughout (low-confidence guess: IBM Plex Sans), regular weight, sentence case, normal tracking. Question headline is medium-size dark text, left-aligned in three lines; 'Onboarding' is a larger brand-blue regular-weight term with smaller dark body text below; flow-diagram title is small sentence-case dark text top-left and step labels are small centred two-line captions under each icon. Dashboard UI text is too small to read at contact-sheet resolution.",
+        "depth_cues": [
+          "shadow"
+        ],
+        "what_happens": "After the logo fades, a title card fades in (small Amplitude Academy logo, the question 'At what step of my onboarding funnel are most users dropping off?' and a circular light-blue badge with a 3D staircase bar-chart illustration and a small chart icon) while the voice-over starts (w0). Around 8.5-9 s it crossfades to a definition card: a thin horizontal leader line from the left edge with a dot, the blue term 'Onboarding' and a two-line definition that mirrors the VO (w0-w25); it holds static through the friction / drop-off lines (w26-w45). At about 22.5 s it crossfades to the 'AmpliTunes onboarding flow' diagram, four outline icons (laptop with globe, person at laptop, plus-in-circle, music notes) linked by thin arrows, labelled with the funnel steps as the VO names them (w46-w99); the diagram is static. Near 41-41.5 s it crossfades into a screen recording of the Amplitude home dashboard (KPI cards, line charts, world map, event table) as the VO introduces funnel analysis (w100-w117); at about 51.0 s, on 'First, create a new funnel analysis chart' (w118-w124), a 'Create new' side menu opens with a dimmed backdrop. No cursor movement is legible in the frames.",
+        "build_rebuild": "Build four 1920x1080 scenes on a white background and chain them with ~0.5 s crossfades: a split title card (left-aligned question text, right circular 3D illustration), a left-aligned definition card with a leader line drawn in from the left edge, a static row of four line icons joined by arrows with centred captions, then a full-frame dashboard screen recording that ends with a left 'Create new' panel sliding in over a dimmed overlay.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "id": "s003",
+      "start_s": 51.1667,
+      "end_s": 53.1667,
+      "transition_in": "hard_cut",
+      "motion_energy": 0.002151,
+      "wpm": null,
+      "annotation": {
+        "shot": "s003",
+        "shot_type": "screen_recording",
+        "shot_type_other": null,
+        "composition": "other",
+        "composition_other": "left-docked slide-over panel (about a fifth of the frame) over a dimmed full-width dashboard",
+        "focal_element": "The 'New Chart' side panel listing chart types, with the cursor moving toward the Funnel card",
+        "transition_in": "hard_cut",
+        "transition_other": null,
+        "on_screen_text": [
+          "Create New",
+          "New Chart",
+          "Segmentation",
+          "Segment events by various filters and metrics.",
+          "Funnel",
+          "Investigate conversion through a series of events.",
+          "Data Table",
+          "Compare and break down multiple metrics.",
+          "Retention",
+          "Analyze how often users return.",
+          "Journeys",
+          "BETA",
+          "Analyze sequences of steps taken by users.",
+          "All chart types"
+        ],
+        "text_word_count": 46,
+        "typography": "Native product UI type: clean sans-serif (low-confidence guess: Inter-like), semibold sentence/title-case card titles over regular-weight grey descriptions, normal tracking; the panel heading 'New Chart' is the largest, semibold. No added motion-graphics type.",
+        "depth_cues": [
+          "shadow"
+        ],
+        "what_happens": "Fast 2-second unedited screen capture right after the VO finishes 'create a new funnel analysis chart' (w118-w124): the Create New menu (Chart, Cohort, Report, Experiment, Feature Flag) is open, then the New Chart panel with five chart-type cards slides over the dimmed dashboard; the cursor goes to Funnel and by 0:53.0 the screen is a blank loading page. No narration over the shot itself after w124.",
+        "build_rebuild": "Record the real UI at 1280x720, show a left drawer (about 280px wide) of five chart-type cards over the dashboard dimmed to about 60% white overlay, and move the cursor onto the 'Funnel' card before cutting on the page load.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "id": "s004",
+      "start_s": 53.1667,
+      "end_s": 57.7333,
+      "transition_in": "hard_cut",
+      "motion_energy": 0.000714,
+      "wpm": 183.9,
+      "annotation": {
+        "shot": "s004",
+        "shot_type": "screen_recording",
+        "shot_type_other": null,
+        "composition": "other",
+        "composition_other": "app layout: narrow left controls sidebar plus large right chart canvas, no zoom or reframe",
+        "focal_element": "The '+ Add Event' slot in the Events panel of the empty funnel chart, then the event picker dropdown",
+        "transition_in": "hard_cut",
+        "transition_other": null,
+        "on_screen_text": [
+          "Start by selecting two events",
+          "Choose up to 30 steps in your conversion funnel by selecting them in the Events panel above.",
+          "Check out our documentation or introductory video to learn more.",
+          "+ Add Event",
+          "Optimize your conversion funnel",
+          "100%",
+          "Welcome"
+        ],
+        "text_word_count": 30,
+        "typography": "Native product UI: sans-serif (low-confidence guess: Inter-like); empty-state headline in medium weight sentence case centred under a placeholder bar-chart illustration, small regular-weight grey helper text, link text in product blue; normal tracking. At the end a large bold '100%' conversion figure appears top-left of the chart.",
+        "depth_cues": [
+          "shadow"
+        ],
+        "what_happens": "Empty Funnel chart with an empty-state illustration while the VO says 'In the events module, you'll want to choose the events that correspond to your' (w125-w138). The cursor clicks '+ Add Event', a dropdown of suggested events opens with a side preview card ('Purchase Ticket'), the user types and picks 'Welcome', and the canvas switches to a single full-height blue bar labelled 100%.",
+        "build_rebuild": "Show a full-frame screen recording with no camera move: click the '+ Add Event' field, open a search dropdown with a hover-preview card, select the first event, and swap the empty-state illustration for a single 100% bar chart in the same layout.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "id": "s005",
+      "start_s": 57.7333,
+      "end_s": 62.2667,
+      "transition_in": "hard_cut",
+      "motion_energy": 0.003318,
+      "wpm": 145.6,
+      "annotation": {
+        "shot": "s005",
+        "shot_type": "screen_recording",
+        "shot_type_other": null,
+        "composition": "other",
+        "composition_other": "app layout: narrow left controls sidebar plus large right chart canvas, no zoom or reframe",
+        "focal_element": "The funnel bar chart growing from one to two steps (Welcome to User Sign Up, 88.9% total conversion) as events are added in the sidebar",
+        "transition_in": "hard_cut",
+        "transition_other": null,
+        "on_screen_text": [
+          "Total Conversion",
+          "88.9%",
+          "Last 30 Days",
+          "From Welcome to User Sign Up within the last 30 days.",
+          "Welcome",
+          "User Sign Up",
+          "+ Add Event",
+          "313,877",
+          "279,045",
+          "Follow Playlist"
+        ],
+        "text_word_count": 27,
+        "typography": "Native product UI: sans-serif (low-confidence guess: Inter-like); large bold numeric conversion headline ('88.9%'), small regular-weight caption lines below, white bold counts set inside the bars, event names in medium weight title case in the sidebar; normal tracking.",
+        "depth_cues": [
+          "shadow"
+        ],
+        "what_happens": "The VO continues 'onboarding funnel in the order you expect users to trigger them' (w139-w149). The user opens '+ Add Event' again, picks 'User Sign Up', and the chart redraws as two bars (313,877 to 279,045) with a hatched drop-off segment above the second bar and an 88.9% headline. The user then adds a third step ('Follow Playlist', label only partly legible), and at 1:02.0 the chart is greyed out while it recomputes.",
+        "build_rebuild": "Animate a funnel bar chart that adds one bar per selected event, filling each bar to its conversion height with a light hatched remainder segment above it and updating a large percent headline, while a loading veil dims the chart between updates.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "id": "s006",
+      "start_s": 62.2667,
+      "end_s": 122.6333,
+      "transition_in": "hard_cut",
+      "motion_energy": 0.000335,
+      "wpm": 144.1,
+      "annotation": {
+        "shot": "s006",
+        "shot_type": "screen_recording",
+        "shot_type_other": null,
+        "composition": "full_bleed",
+        "composition_other": null,
+        "focal_element": "Funnel bar chart (Welcome, User Sign Up, Follow Playlist, Play Song or Video) with the Total Conversion headline metric, plus the 'Completed within' conversion-window control in the left rail",
+        "transition_in": "hard_cut",
+        "transition_other": null,
+        "on_screen_text": [
+          "Total Conversion",
+          "19.5%",
+          "6.11%",
+          "From Welcome to Play Song or Video within the last 30 days.",
+          "Welcome",
+          "User Sign Up",
+          "Follow Playlist",
+          "Play Song or Video",
+          "Completed within 1 days",
+          "Completed within 30 minutes",
+          "Optimize your conversion funnel"
+        ],
+        "text_word_count": 38,
+        "typography": "Native product UI text only (no added captions or titles): neutral geometric/grotesque sans (low-confidence guess: Inter-like), large bold headline metric, medium-weight sentence-case labels, small regular-weight body and axis labels, default tracking.",
+        "depth_cues": [
+          "shadow"
+        ],
+        "what_happens": "Unbroken ~60 s full-screen recording of the Amplitude funnel chart. Opens with the fourth event (Play Song or Video) being added via the event dropdown; the chart reloads and Total Conversion changes from 22.1% to 19.5%. While the voice-over explains default settings and the conversion window (w150-w214), red outline boxes call out the 30d date-range toggle and the 'Completed within 1 days' control. The cursor opens that control and sets it to 30 minutes (w233-w242); the chart greys out, reloads, and the headline drops to 6.11%, which gets a red callout box (w243-w265). A red box then frames the User Sign Up and Follow Playlist bars as the biggest drop-off (w266-w285), and the cursor hovers the upper (dropped-off) part of the Follow Playlist bar to raise a tooltip (w286-w294). In the final frame the whole UI appears to begin scaling up, leading into the next shot's zoom.",
+        "build_rebuild": "Play a full-bleed 1080p UI capture at 1x with no camera moves, and on cue with specific VO word indices overlay 2 px red rounded-rectangle outline callouts (hard on/off, no animation) around the control or metric being discussed.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "id": "s007",
+      "start_s": 122.6333,
+      "end_s": 138.5,
+      "transition_in": "zoom_through",
+      "motion_energy": 0.001456,
+      "wpm": 166.4,
+      "annotation": {
+        "shot": "s007",
+        "shot_type": "ui_closeup",
+        "shot_type_other": null,
+        "composition": "other",
+        "composition_other": "zoomed crop of the funnel chart: bars fill the lower two thirds, the dark tooltip panel sits upper-centre-right next to the Follow Playlist bar",
+        "focal_element": "The dark 'Follow Playlist' tooltip over the hatched drop-off part of the bar, with a red outline box on its drop-off line and later on its 'from previous step' line",
+        "transition_in": "zoom_through",
+        "transition_other": null,
+        "on_screen_text": [
+          "Follow Playlist",
+          "(Drop-... : 80.5% (252,681 of 313,877)",
+          "90.7% from previous step (252,681 of 2...",
+          "Show User Journeys",
+          "Show User Paths",
+          "View Users",
+          "Explore Conversion Drivers",
+          "Create Cohort",
+          "Download Users",
+          "User Sign Up",
+          "Play Song or Video",
+          "Daily",
+          "7d 30d 60d 90d",
+          "More",
+          "Add to",
+          "Save",
+          "Share",
+          "Refresh"
+        ],
+        "text_word_count": 46,
+        "typography": "Native product UI only: neutral grotesque sans (low-confidence guess: Inter-like). Tooltip uses white text on a dark navy panel, bold numeric drop-off figure, regular-weight sentence/title-case menu items with small line icons; axis labels small regular dark grey; default tracking. No added captions.",
+        "depth_cues": [
+          "shadow"
+        ],
+        "what_happens": "The camera pushes in (the first frame at 2:03.0 is still wider, fully zoomed by 2:03.5) on the open tooltip of the Follow Playlist bar and then holds a static close-up for ~15 s. As the VO says '80% of the total users who entered the funnel ... dropped off by this step' (w295-w318) a red outline box frames the '80.5% (252,681 of 313,877)' drop-off line; around 2:11, on 'around 90% of all users who completed the user signup page dropped off before they followed a playlist' (w319-w338), the red box jumps to the '90.7% from previous step' line. The cursor rests on the hatched part of the bar; nothing else moves.",
+        "build_rebuild": "Push the camera in about 2x on the chart tooltip with an ease-out over ~0.5 s, hold, and toggle a 2 px red rounded-rectangle outline from the first metric row to the second row exactly at the VO word that introduces each number.",
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "s008",
+      "start_s": 138.5,
+      "end_s": 149.6,
+      "transition_in": "zoom_through",
+      "motion_energy": 0.002422,
+      "wpm": 173.0,
+      "annotation": {
+        "shot": "s008",
+        "shot_type": "screen_recording",
+        "shot_type_other": null,
+        "composition": "full_bleed",
+        "composition_other": null,
+        "focal_element": "The full Amplitude funnel workspace (left controls rail, 6.11% Total Conversion headline, four-bar funnel chart, 'Optimize your conversion funnel' suggestion cards below)",
+        "transition_in": "zoom_through",
+        "transition_other": null,
+        "on_screen_text": [
+          "6.11%",
+          "Total Conversion",
+          "Last 30 Days",
+          "From Welcome to Play Song or Video within the last 30 days.",
+          "Welcome",
+          "User Sign Up",
+          "Follow Playlist",
+          "Play Song or Video",
+          "313,877",
+          "278,488",
+          "25,807",
+          "19,187",
+          "Completed within 30 minutes",
+          "Optimize your conversion funnel",
+          "Understand what sequence of events users are taking based on the funnel above",
+          "What paths are users taking between conversion steps?",
+          "Explore Journey Map",
+          "Is this the most common path taken by users?",
+          "Explore Pathfinder",
+          "Create New",
+          "Events",
+          "Measured as",
+          "Segment by",
+          "All Users",
+          "Breakdown by:"
+        ],
+        "text_word_count": 86,
+        "typography": "Native product UI only: neutral grotesque sans (low-confidence guess: Inter-like); large bold headline metric '6.11%', medium-weight title-case event names in the rail, small regular-weight helper text and axis labels, white bold counts inside dark-blue bars; default tracking. Most UI text is too small to read on the contact sheet and only legible on the keyframe.",
+        "depth_cues": [
+          "shadow"
+        ],
+        "what_happens": "Zoom-through pulls out from the tooltip close-up to the whole app window (2:18.5 to 2:19.0) with the tooltip still open; by about 2:21.5 the cursor moves to empty canvas and the tooltip closes. The full funnel (dark-blue converted bars with light hatched drop-off segments) then sits static to 2:29.6 while the VO teases a follow-up: 'You might be wondering what users who drop off your funnel end up doing ... We'll cover what this looks like in Amplitude in another video' (w339-w370). The 'What paths are users taking...' and 'Explore Pathfinder' cards match that line but get no callout. The bars render in a lighter tint at the start of the shot and a darker blue after the pull-out (likely the tooltip hover state clearing; low confidence).",
+        "build_rebuild": "Reverse the earlier push-in with an ease-in-out scale from about 2x to 1x over ~0.5 s back to the full-bleed UI capture, dismiss the tooltip, then hold the static workspace under the VO for about 8 s before the outro.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "id": "s009",
+      "start_s": 149.6,
+      "end_s": 155.2667,
+      "transition_in": "crossfade",
+      "motion_energy": 0.002358,
+      "wpm": 169.4,
+      "annotation": {
+        "shot": "s009",
+        "shot_type": "logo",
+        "shot_type_other": null,
+        "composition": "centered",
+        "composition_other": null,
+        "focal_element": "Amplitude logo mark resolving into the Amplitude wordmark with the ACADEMY sub-label (same lockup as the opening s001)",
+        "transition_in": "crossfade",
+        "transition_other": null,
+        "on_screen_text": [
+          "Amplitude",
+          "ACADEMY"
+        ],
+        "text_word_count": 2,
+        "typography": "Wordmark in a bold geometric sans, title case, tight tracking; 'ACADEMY' sub-label small bold all-caps sans with wide tracking, right-aligned under the wordmark.",
+        "depth_cues": [
+          "none"
+        ],
+        "what_happens": "The funnel UI washes out toward white while a solid circle scales up over it (2:30.0); by 2:30.5 only the circle mark with its waveform glyph remains on white. The 'A' stroke completes (2:31.0), the wordmark slides out from behind the circle as the lockup recentres (2:31.5-2:32.0), 'ACADEMY' appears beneath at about 2:33.0, the lockup holds and starts fading at 2:35.0. The spoken CTA 'For more resources on how to use Amplitude, check out the Amplitude Help Center and Community' (w371-w386) plays over the logo; none of it appears as on-screen text.",
+        "build_rebuild": "Reuse the intro logo animation as a bookend: crossfade the last UI frame to white while scaling a solid circle up from centre, draw the waveform glyph, mask-reveal the wordmark sliding out to the right as the group recentres, fade in the tracked 'ACADEMY' label, hold ~2 s and fade the lockup to white.",
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "s010",
+      "start_s": 155.2667,
+      "end_s": 156.4333,
+      "transition_in": "crossfade",
+      "motion_energy": 0.000414,
+      "wpm": null,
+      "annotation": {
+        "shot": "s010",
+        "shot_type": "other",
+        "shot_type_other": "blank white tail frame after the logo fade-out",
+        "composition": "other",
+        "composition_other": "empty white frame; only a near-invisible ghost of the fading logo on the keyframe",
+        "focal_element": "Empty white frame (the residue of the logo lockup fading out)",
+        "transition_in": "crossfade",
+        "transition_other": null,
+        "on_screen_text": [],
+        "text_word_count": 0,
+        "typography": null,
+        "depth_cues": [
+          "none"
+        ],
+        "what_happens": "About 1.2 s of plain white as the logo lockup finishes fading out; the keyframe shows only a faint ghost of the wordmark. No voice-over (the last word w386 ends at 155.43 s, just after the shot starts) and no motion beyond the fade.",
+        "build_rebuild": "End on about 1 s of solid white after the logo fade so the video does not cut off mid-fade.",
+        "confidence": "high"
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "e001",
+      "shot": "s001",
+      "kind": "motion",
+      "start_s": 0.0333,
+      "end_s": 0.3,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e002",
+      "shot": "s001",
+      "kind": "motion",
+      "start_s": 1.0667,
+      "end_s": 2.1333,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e003",
+      "shot": "s001",
+      "kind": "motion",
+      "start_s": 2.7667,
+      "end_s": 3.2333,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e004",
+      "shot": "s001",
+      "kind": "motion",
+      "start_s": 4.8333,
+      "end_s": 5.1333,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e005",
+      "shot": "s002",
+      "kind": "motion",
+      "start_s": 5.5,
+      "end_s": 5.5667,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e006",
+      "shot": "s002",
+      "kind": "motion",
+      "start_s": 5.8667,
+      "end_s": 6.8667,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e007",
+      "shot": "s002",
+      "kind": "motion",
+      "start_s": 8.6,
+      "end_s": 9.6,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e008",
+      "shot": "s002",
+      "kind": "motion",
+      "start_s": 22.6667,
+      "end_s": 23.6667,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e009",
+      "shot": "s002",
+      "kind": "motion",
+      "start_s": 41.2,
+      "end_s": 42.2,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e010",
+      "shot": "s003",
+      "kind": "motion",
+      "start_s": 51.1667,
+      "end_s": 51.2333,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e011",
+      "shot": "s003",
+      "kind": "motion",
+      "start_s": 51.9667,
+      "end_s": 52.0667,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e012",
+      "shot": "s003",
+      "kind": "motion",
+      "start_s": 52.8333,
+      "end_s": 53.1333,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e013",
+      "shot": "s004",
+      "kind": "motion",
+      "start_s": 53.1667,
+      "end_s": 53.4333,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e014",
+      "shot": "s004",
+      "kind": "motion",
+      "start_s": 55.5333,
+      "end_s": 55.7,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e015",
+      "shot": "s004",
+      "kind": "motion",
+      "start_s": 57.5333,
+      "end_s": 57.6333,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e016",
+      "shot": "s005",
+      "kind": "motion",
+      "start_s": 57.8,
+      "end_s": 57.9333,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e017",
+      "shot": "s005",
+      "kind": "motion",
+      "start_s": 59.7,
+      "end_s": 60.0333,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e018",
+      "shot": "s005",
+      "kind": "motion",
+      "start_s": 62.0333,
+      "end_s": 62.2,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e019",
+      "shot": "s006",
+      "kind": "motion",
+      "start_s": 62.5667,
+      "end_s": 62.8,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e020",
+      "shot": "s006",
+      "kind": "motion",
+      "start_s": 65.2,
+      "end_s": 65.5667,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e021",
+      "shot": "s006",
+      "kind": "motion",
+      "start_s": 65.8333,
+      "end_s": 66.0333,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e022",
+      "shot": "s006",
+      "kind": "motion",
+      "start_s": 68.9333,
+      "end_s": 69.0,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e023",
+      "shot": "s006",
+      "kind": "motion",
+      "start_s": 94.4667,
+      "end_s": 94.8333,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e024",
+      "shot": "s006",
+      "kind": "motion",
+      "start_s": 95.1,
+      "end_s": 95.2333,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e025",
+      "shot": "s006",
+      "kind": "motion",
+      "start_s": 101.1333,
+      "end_s": 101.6,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e026",
+      "shot": "s006",
+      "kind": "motion",
+      "start_s": 101.7333,
+      "end_s": 102.0,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e027",
+      "shot": "s006",
+      "kind": "motion",
+      "start_s": 120.6333,
+      "end_s": 120.7667,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e028",
+      "shot": "s006",
+      "kind": "motion",
+      "start_s": 121.0,
+      "end_s": 121.0667,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e029",
+      "shot": "s006",
+      "kind": "motion",
+      "start_s": 121.2667,
+      "end_s": 121.3333,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e030",
+      "shot": "s007",
+      "kind": "motion",
+      "start_s": 123.4333,
+      "end_s": 123.5667,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e031",
+      "shot": "s007",
+      "kind": "motion",
+      "start_s": 138.3,
+      "end_s": 138.4667,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e032",
+      "shot": "s009",
+      "kind": "motion",
+      "start_s": 151.1333,
+      "end_s": 152.2,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e033",
+      "shot": "s009",
+      "kind": "motion",
+      "start_s": 152.8333,
+      "end_s": 153.3,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    },
+    {
+      "id": "e034",
+      "shot": "s009",
+      "kind": "motion",
+      "start_s": 154.9,
+      "end_s": 155.2,
+      "camera_move": "none",
+      "status": "skipped",
+      "skip_reason": "tier",
+      "of": null,
+      "pattern": null,
+      "build_hint": null,
+      "confidence": null,
+      "notes": null,
+      "elements": [],
+      "sfx": []
+    }
+  ],
+  "sfx": [
+    {
+      "id": "x001",
+      "sync_s": 1.0303,
+      "classifier_label": "chime",
+      "clap_label": "chime",
+      "clap_score": 0.927,
+      "label": "chime",
+      "label_source": "code",
+      "verdict": null,
+      "events": [],
+      "on_beat": false,
+      "reveal_offset_ms": -36.4
+    }
+  ],
+  "coverage": {
+    "events": 34,
+    "annotated": 0,
+    "propagated": 0,
+    "skipped": 34,
+    "pending": 0,
+    "elements": 0,
+    "measured": 0,
+    "estimated": 0
+  },
+  "checks": [
+    {
+      "name": "a1_shots",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "a1_summary",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "a2_events",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "events_in_shots",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "sfx_ids",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "sfx_labels",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "measure_boxes",
+      "ok": true,
+      "detail": null
+    }
+  ]
+}

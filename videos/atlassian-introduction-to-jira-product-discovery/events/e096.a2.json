@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "42efcc92743afe2b9d5bbf17088890fb8731e5e68086f056d85c18a8989d6996",
+    "created_at": "2026-10-05T06:38:39.187162Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e096",
+  "task": "a2-e096",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Mouse cursor travels from the text area up to the community link (I-beam to pointer)",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_up", "morph"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 350, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Community link underlines on hover",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Visit our community to learn tips, best practices and FAQ.",
+      "text_unit": "word",
+      "estimates": {"duration_ms": 30, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "Screen recording: the cursor glides up from the feedback text area to the 'community' link, which underlines on hover, pointing the viewer to the community resource as the narration wraps up.",
+    "why_premium": "The cursor acts as a pointer for the viewer's eye, landing on the exact link the closing line is about to reference."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.cursor', {x: -80, y: -110, duration: 0.35, ease: 'power2.inOut'}).set('.cursor', {className: 'cursor pointer'}).set('.link-community', {textDecoration: 'underline'})",
+    "remotion": "cursor position = interpolate(frame, [0, 11], [start, end], {easing: Easing.inOut(Easing.quad), extrapolateRight: 'clamp'}); swap cursor icon and underline the link when frame >= 11 (step)."
+  },
+  "confidence": "high",
+  "notes": "Only cursor movement and a hover underline; dialog itself is static. Cursor deltas in build_hint are approximate."
+}

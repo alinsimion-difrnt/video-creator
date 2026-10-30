@@ -1,0 +1,136 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "a2e7d6ed724821b127eb7f35faff2f598b3cb7bfa13a1646d4fa3d1bd4172c14",
+    "created_at": "2026-10-05T06:22:27.475766Z"
+  },
+  "video": "apollo-io-how-to-use-apollo-io-in-less-than-2-minu",
+  "task": "a1-p4",
+  "shots": [
+    {
+      "shot": "s011",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "The cursor moving through the Apollo app: Deals board, then the Analytics dashboards list, the Email Engagement Performance dashboard and its bar charts, then the Plays page and its All templates button",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Email Engagement Performance",
+        "Get started with your own custom Reports and Dashboards from the training videos or find a deeper dive within our Knowledge Base.",
+        "Reps With Most Effective Emails",
+        "Most Effective Email Sequences",
+        "Most Effective Email Templates",
+        "Hit companies that are scaling",
+        "Hit recently funded companies",
+        "All templates",
+        "No results found"
+      ],
+      "text_word_count": 52,
+      "typography": "Native product UI text only: small sans-serif (low-confidence guess: Inter or a similar system UI face), medium-weight sentence-case page titles, regular-weight labels and chart axes, normal tracking; no added captions or motion-graphic type.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "A long cursor-guided screen recording under the voice-over for Deal Intelligence, Analytics and Plays (w269-w339): the Deals kanban board is shown with slow digital zoom/pan reframes, the cursor clicks Analytics in the sidebar, the dashboards list appears, a search narrows it and Email Engagement Performance is opened (a brief loading state, then horizontal bar charts), a chart is opened in detail, then the cursor clicks Plays and moves to the All templates button, which opens a modal at the very end of the shot.",
+      "build_rebuild": "Play a real 1280x720 screen capture of the app and animate a CSS transform scale/translate on the capture layer (about 1.0 to 1.4x, ease-in-out over roughly 0.5 s) at each click so the camera pushes in on the clicked sidebar item and then pulls back to the full page.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s012",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "The Play templates modal card grid, cropped and zoomed so the cards fill the left two-thirds while the dimmed page and the All templates button sit at right",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Show when creating new play",
+        "All templates",
+        "Work companies researching your category",
+        "Hit companies that are scaling",
+        "Hit recently funded companies",
+        "Instantly hit new inbounds",
+        "Automatically hit no-shows",
+        "Upsell when users hit a limit",
+        "Try it"
+      ],
+      "text_word_count": 36,
+      "typography": "Native product UI: bold sans-serif sentence-case card titles, regular-weight centered body copy, small outlined button labels; no added type.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "A sub-half-second frame (about 0.38 s) of the Play templates modal appearing over a dimmed page while heavily zoomed in on its card grid; the cursor still rests on the All templates button. It reads as the first frames of the modal open plus the start of a zoom that resolves in s013.",
+      "build_rebuild": "Cut to the capture of the modal opening with the capture layer held at about 1.6x scale anchored to the top-left of the modal, ready to animate back toward 1.0x in the next shot.",
+      "confidence": "low"
+    },
+    {
+      "shot": "s013",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The full Play templates modal centered on a dimmed page, with its category sidebar and three-column card grid",
+      "transition_in": "other",
+      "transition_other": "digital zoom-out reframe continuing from s012: the zoomed-in modal crop pulls back to show the whole modal",
+      "on_screen_text": [
+        "Play templates",
+        "Search templates...",
+        "Show when creating new play",
+        "All templates",
+        "Recommended",
+        "New pipeline",
+        "Secure the meeting",
+        "Retention",
+        "System update",
+        "Upsell & cross-sell",
+        "Winback",
+        "Work companies researching your category",
+        "Hit companies that are scaling",
+        "Hit recently funded companies",
+        "Instantly hit new inbounds",
+        "Automatically hit no-shows",
+        "Upsell when users hit a limit",
+        "Ask happy customers for referrals",
+        "Get ahead of renewals",
+        "Ask happy customers for reviews",
+        "Try it",
+        "Create from scratch"
+      ],
+      "text_word_count": 69,
+      "typography": "Native product UI: medium-weight sans-serif modal title and section heading, regular-weight sidebar category labels with small count badges, bold sentence-case card titles, regular centered descriptions; normal tracking.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Under the line about streamlining with Apollo's plays and the 'So if you're ready to close more deals' setup (w336-w347), the view settles on the whole Play templates modal; the framing drifts slightly (a small zoom/pan) and the card grid scrolls down a little to reveal a third row, while the cursor stays parked at the top right. The last contact-sheet frame (1:56.000) already shows the presenter, so the cut to s014 lands within a frame or two of the detected boundary.",
+      "build_rebuild": "Hold the modal capture centered on a dimmed backdrop and run a slow 1.05x to 1.0x scale ease-out over about 4 s while the inner grid scrolls by about one card row.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s014",
+      "shot_type": "presenter",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The presenter seated at a wooden desk, hands clasped, speaking to camera, with a closed silver laptop at left, a plant and a ring light in the dark background",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": [
+        "blur"
+      ],
+      "what_happens": "Hard cut back to the presenter on a locked-off medium shot as he delivers the call to action, 'head over to apollo.io today and create an account for free' (w348-w359), smiling at the end; no on-screen URL or button is shown in this shot.",
+      "build_rebuild": "Cut to a locked-off 16:9 medium shot of the presenter centered at a desk against a dark set with a shallow-focus plant and ring light, and hold it for the full spoken CTA with no overlays.",
+      "confidence": "high"
+    }
+  ],
+  "summary": null
+}

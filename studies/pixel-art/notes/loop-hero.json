@@ -1,0 +1,54 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T13:58:29+00:00"
+  },
+  "id": "loop-hero",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "cool",
+    "notes": "Near-black void with a white starfield; grey cobble road; muted tiles (dark green, grey, rust/orange); knight in steel-blue with red boots and orange shield; lich in glowing pale cyan. Warm embers on cool blue-black. Critics cite an 80s look (wiki). No metrics file, so no count."
+  },
+  "lighting": "Mostly flat; the only light is glow: the lich and a golden saint figure carry a halo/aura and sparkle pixels, embers glow orange in the dark. Contrast between the black void and small lit shapes carries the mood.",
+  "silhouette": "Gameplay assets are tiny but each tile and enemy type has a distinct chunky shape; promo art scales the knight and the lich up big against black so the silhouette (helmet plume, shield disc, hooded robe with staff) carries the character.",
+  "motion": {
+    "timing": "No metrics file. Most of the screen is still; the hero walks the loop on his own, battles open in a separate black panel where two rows of small combatants face off with HP bars above and damage numbers popping; the lich dissolves into scattered pixels.",
+    "principles": [
+      "minimal motion",
+      "staging",
+      "pixel dissolve"
+    ]
+  },
+  "texture": "Heavy dithering and pixel noise on tiles (rubble, forests, rock), so the map looks gritty even when tiny; UI is chunky grey-metal frames and brown card borders.",
+  "camera": "Fixed top-down view of the whole loop, no scrolling; battles appear as a framed inset panel over the map; card hand along the bottom.",
+  "sound": "",
+  "acting": {
+    "enters": "The hero walks the loop on his own; enemies spawn on tiles the player placed; in the battle panel combatants are simply there, lined up facing each other.",
+    "acts": "Fights cut to a small framed panel: side-on rows, HP bars, red damage numbers, EVADE text; the boss lich floats and glows.",
+    "exits": "The hero retreats to camp between expeditions (per the wiki); defeated figures dissolve into pixels.",
+    "comes_back": true,
+    "depth": "One flat plane; scale comes from cutting between the tiny map and the closer battle panel, and in promo art from a big hero close against a starfield."
+  },
+  "techniques": [
+    "near-black void + starfield as the background for everything",
+    "glow aura and sparkle pixels instead of modelled light",
+    "dithered noise texture on tiny tiles",
+    "cut to a framed inset panel for close-up action",
+    "side-on face-off rows with HP bars and popping damage numbers",
+    "dissolve into scattered pixels on defeat/exit",
+    "mostly static screen with one moving hero"
+  ],
+  "feel": "black void + tiny dithered tiles + glowing hero + rationed motion = moody, readable",
+  "for_fred": "Keep Fred tiny walking a set path in the background while the main content runs, then cut to a small framed inset for his close-up gag; when he leaves, let him dissolve into scattered pixels instead of sliding off, so the exit itself is an event.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Loop_Hero",
+    "data/study/pixel/work/loop-hero/clip1-7333319792952216862.jpg",
+    "data/study/pixel/work/loop-hero/clip2-7659404302288571655.jpg",
+    "data/study/pixel/work/loop-hero/clip3-7301362522194562310.jpg"
+  ]
+}

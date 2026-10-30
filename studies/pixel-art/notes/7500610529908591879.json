@@ -1,0 +1,53 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "8763c057f492ad9d95e1af40ef3dac8c11eb56ce2888d473c95827dbfa915e77",
+    "created_at": "2026-10-13T13:07:32+00:00"
+  },
+  "id": "7500610529908591879",
+  "kind": "clip",
+  "palette": {
+    "colours_estimate": 49,
+    "shadows": "cool",
+    "notes": "Code: palette_size 49 on the still, 3 ramps, median hue shift 11.7 over 17 colours. Each scene has a narrow mood palette: orange-red sunset, cyan-green sky, sickly green bed, red/blue neon bar, amber skyline, navy night with orange window light. Shadows go to deep navy/purple, lights to warm orange."
+  },
+  "lighting": "Strong single motivated light per scene: sunset sky, window glow, neon sign, lit cafe at night, street lamps, a monitor in a dark room. Darks dominate; the light source is the focal point.",
+  "silhouette": "Small human figures (girl on a train seat, person on a bed from above, silhouette at a bar, figure outside a cafe) read as simple shapes against bright backgrounds; often seen from behind or in silhouette.",
+  "motion": {
+    "timing": "Code: median hold 66.7 ms (on twos), 6.74 drawings/s, 116 changes in 17.21 s: mostly still scenes with small ambient loops (clouds, lights) on twos.",
+    "principles": [
+      "ambient loop",
+      "held scene",
+      "slow pan"
+    ]
+  },
+  "texture": "Clean pixel clusters, little dithering (dither_share 0.0015); dense detail in props, soft gradients in skies.",
+  "camera": "Montage of about 9 scenes cut every 1.5-2 s; varied angles (street level, train interior, top-down bed, wide cafe at night). Some scenes hold for two sheet frames with a slight drift (skyline, park).",
+  "sound": "",
+  "acting": {
+    "enters": "Characters are already placed in each scene; they are small and passive.",
+    "acts": "Barely act: sit, lie, stand; the mood comes from light and setting.",
+    "exits": "Each scene simply cuts away.",
+    "comes_back": false,
+    "depth": "People are small in the mid-ground or in silhouette in the foreground; environments carry the frame."
+  },
+  "techniques": [
+    "one motivated light source per scene (neon, window, lamp)",
+    "dark navy shadows with warm orange lights",
+    "small characters in big environments for mood",
+    "silhouette figure against a bright bar",
+    "fast vignette montage, ~1.5 s per scene",
+    "ambient motion on twos"
+  ],
+  "feel": "dark navy world + one warm light per scene + tiny passive figures + 1.5 s cuts = cozy lofi longing",
+  "for_fred": "Put Fred small in a big dark scene lit by one warm light (a lamp or a screen) and let him just sit there for a beat before acting; the cut to a different lit scene does the work instead of extra animation.",
+  "sources": [
+    "data/study/pixel/work/7500610529908591879/sheet.jpg",
+    "studies/pixel-art/clips/7500610529908591879.json",
+    "studies/pixel-art/tiktok.yaml",
+    "https://www.tiktok.com/@pixei_021/video/7500610529908591879"
+  ]
+}

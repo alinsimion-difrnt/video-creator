@@ -1,0 +1,33 @@
+name: inbox
+
+# Lists which ready sources have their upload in r2://inbox/ (run by hand after uploading a batch).
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inbox:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_BUCKET: ${{ secrets.R2_BUCKET }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - name: Install
+        run: uv sync --frozen --no-dev
+      - name: Inbox report
+        run: |
+          uv run lens storage inbox | tee inbox.txt
+          {
+            echo '```'
+            cat inbox.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"

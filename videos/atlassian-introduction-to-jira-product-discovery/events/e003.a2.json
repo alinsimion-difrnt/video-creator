@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "d0de582d004919e30833b6e7c117564bcbf3132a86b8ffa28e1c04f680fbd821",
+    "created_at": "2026-10-05T06:38:54.954096Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e003",
+  "task": "a2-e003",
+  "elements": [
+    {
+      "box": null,
+      "manual_box": [125, 68, 162, 88],
+      "manual_reason": "No candidate box isolates the cursor. b03 is the button label OCR box and b01 is the focus outline, so the cursor gets its own small box where it ends up over the button.",
+      "label": "Mouse cursor (arrow, then hand pointer)",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_left", "morph"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Focus outline around 'Create an idea' button",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["highlight", "scale_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 200, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "The cursor glides left from the toolbar onto the primary 'Create an idea' button and turns into a hand pointer. A dark-blue focus outline then appears offset and slightly oversized, and settles tight around the button to signal the click.",
+    "why_premium": "The click target is set up before the action happens: the cursor arrives on the word 'demo' and the outline snaps in as a clear press cue. The viewer always knows where to look, and the UI behind stays still and readable."
+  },
+  "build_hint": {
+    "gsap": "tl.to(cursor, {x: target.x, y: target.y, duration: 0.3, ease: 'power2.inOut'}) then .set(cursor, {attr: {href: '#hand'}}) then .fromTo(focusRing, {opacity: 0, scale: 1.08, x: -4, y: 6}, {opacity: 1, scale: 1, x: 0, y: 0, duration: 0.2, ease: 'power3.out'}, '<0.05'). Optional .to(button, {scale: 0.97, yoyo: true, repeat: 1, duration: 0.08}) for the press.",
+    "remotion": "Cursor position: interpolate(frame, [s, s+9], [from, to], {easing: Easing.inOut(Easing.cubic)}). Swap the cursor sprite on arrival. Focus ring: const p = spring({frame: frame - (s+9), fps, config: {damping: 26, stiffness: 300}}); opacity = p, scale = interpolate(p, [0, 1], [1.08, 1]), no overshoot."
+  },
+  "confidence": "medium",
+  "notes": "At f86 a small smiley/emoji glyph flashes left of 'All Ideas' for about one frame (partly off frame). It is probably a cursor-sprite or capture artefact and is not listed. The focus outline looks offset and oversized at f93 before it settles at f96, so its in-motion shape could be a scale-down or a short draw-on."
+}

@@ -1,0 +1,48 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "855fdbaad6b05bead12b05be7c7d763b3d12674f5fab9ac03dbe49edcb3e94f3",
+    "created_at": "2026-10-05T06:52:55.693011Z"
+  },
+  "video": "warp-introducing-warp-2-0-the-agentic-develo",
+  "event": "e025",
+  "task": "a2-e025",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Presenter interview footage replacing the tweet montage",
+      "role": "other",
+      "role_other": "presenter footage",
+      "change_types": ["other"],
+      "change_other": "hard cut from the last flash-montage tweets to the presenter shot",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x054", "verdict": "override", "label": "impact", "note": "Lands on the cut to the presenter; downward-bending low-frequency onset with decay and the bright upper music texture drops out right after it, reading as a sub hit marking the montage end."},
+    {"id": "x055", "verdict": "unsure", "label": "unsure", "note": "Faint vertical line in a quiet passage over the static presenter shot; no clear SFX shape."},
+    {"id": "x056", "verdict": "unsure", "label": "unsure", "note": "Faint transient on the word 'is'; no visible chime harmonics, likely music texture."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "montage hard-cut out",
+    "description": "The tail of the 2-frame tweet flash montage hard-cuts to a calm, locked presenter interview shot, with a low hit and the music thinning out on the cut.",
+    "why_premium": "The sudden drop from strobe-speed social proof to a still, cinematically lit talking head plus an audio thin-out resets attention for the next line ('AI is completely...')."
+  },
+  "build_hint": {
+    "gsap": "tl.set(montage, {autoAlpha: 0}, cutTime).set(presenterClip, {autoAlpha: 1}, cutTime); no easing; trigger the impact SFX and duck the music bed at cutTime.",
+    "remotion": "<Series>: montage <Series.Sequence> ends, presenter <OffthreadVideo> Sequence starts on the next frame (hard cut); place <Audio> impact at the cut frame and interpolate music volume down over ~6 frames."
+  },
+  "confidence": "medium",
+  "notes": "Only one candidate box (whole frame). The presenter shot itself is static after the cut (camera none, slight scale 1.0037 likely natural footage motion)."
+}

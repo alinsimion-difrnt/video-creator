@@ -1,0 +1,245 @@
+{
+  "$defs": {
+    "Annotator": {
+      "enum": [
+        "code",
+        "claude-code",
+        "human"
+      ],
+      "title": "Annotator",
+      "type": "string"
+    },
+    "PacketTask": {
+      "additionalProperties": false,
+      "properties": {
+        "event": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Event"
+        },
+        "files": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Files",
+          "type": "array"
+        },
+        "id": {
+          "pattern": "^(a1-p\\d+|a2-e\\d{3,})$",
+          "title": "Id",
+          "type": "string"
+        },
+        "images": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Images",
+          "type": "array"
+        },
+        "input_hash": {
+          "title": "Input Hash",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "a1",
+            "a2"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "output": {
+          "title": "Output",
+          "type": "string"
+        },
+        "shots": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Shots",
+          "type": "array"
+        },
+        "siblings": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Siblings",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "images",
+        "files",
+        "output",
+        "input_hash"
+      ],
+      "title": "PacketTask",
+      "type": "object"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "description": "Carried by every output JSON (BUILD_PLAN section 2.7).",
+      "properties": {
+        "annotator": {
+          "$ref": "#/$defs/Annotator"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "input_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Input Hash",
+          "type": "string"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "schema_version": {
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "skill": {
+          "anyOf": [
+            {
+              "pattern": "^[a-z0-9-]+@[0-9a-f]{8,64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Skill"
+        },
+        "stage": {
+          "title": "Stage",
+          "type": "string"
+        },
+        "tool_version": {
+          "title": "Tool Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool_version",
+        "stage",
+        "annotator",
+        "input_hash",
+        "created_at"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "Skipped": {
+      "additionalProperties": false,
+      "properties": {
+        "event": {
+          "title": "Event",
+          "type": "string"
+        },
+        "of": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Of"
+        },
+        "reason": {
+          "enum": [
+            "low_energy",
+            "small",
+            "caption_band",
+            "tier",
+            "duplicate",
+            "overlap"
+          ],
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "event",
+        "reason"
+      ],
+      "title": "Skipped",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "`packets/<id>/manifest.json`, the only committed packet file. Status is derived from the\noutputs on disk by `lens status`, so this file never changes when annotation happens.",
+  "properties": {
+    "event_images": {
+      "minimum": 1,
+      "title": "Event Images",
+      "type": "integer"
+    },
+    "max_images_per_task": {
+      "minimum": 1,
+      "title": "Max Images Per Task",
+      "type": "integer"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    },
+    "skipped": {
+      "items": {
+        "$ref": "#/$defs/Skipped"
+      },
+      "title": "Skipped",
+      "type": "array"
+    },
+    "tasks": {
+      "items": {
+        "$ref": "#/$defs/PacketTask"
+      },
+      "title": "Tasks",
+      "type": "array"
+    },
+    "tier": {
+      "title": "Tier",
+      "type": "string"
+    },
+    "video": {
+      "title": "Video",
+      "type": "string"
+    }
+  },
+  "required": [
+    "provenance",
+    "video",
+    "tier",
+    "max_images_per_task",
+    "event_images",
+    "tasks",
+    "skipped"
+  ],
+  "title": "PacketManifest",
+  "type": "object"
+}

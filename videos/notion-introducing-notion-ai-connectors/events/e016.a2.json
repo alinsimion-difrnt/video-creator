@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "ecf12659bfee900924edb0c9884017f93890059e9316462cf5ba57d824ba7a37",
+    "created_at": "2026-10-05T06:47:04.412928Z"
+  },
+  "video": "notion-introducing-notion-ai-connectors",
+  "event": "e016",
+  "task": "a2-e016",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Headline line 'without leaving Notion'",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["fade", "slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "without leaving Notion",
+      "text_unit": "word",
+      "estimates": {"duration_ms": 850, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Final word 'Notion'",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["fade", "slide_up", "color_shift"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Notion",
+      "text_unit": "word",
+      "estimates": {"duration_ms": 500, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "kinetic_word_reveal",
+    "proposed_name": null,
+    "description": "After a hard cut from the previous headline to an empty off-white frame, the line 'without leaving Notion' builds word by word: each word fades in from light grey to near-black while rising a few pixels into place, staggered roughly 150-250 ms apart, with the last word 'Notion' landing last.",
+    "why_premium": "Words arrive in step with the voice-over rhythm, and the grey-to-black fade plus small rise gives soft, readable motion on a plain background without any distracting effects."
+  },
+  "build_hint": {
+    "gsap": "Split the line into words; gsap.fromTo(words, {opacity: 0, y: 12, color: '#b0b0b0'}, {opacity: 1, y: 0, color: '#111', duration: 0.5, ease: 'power3.out', stagger: 0.18}). Start it right after a hard cut from the previous headline.",
+    "remotion": "Per word i: const p = spring({frame: frame - i*5, fps, config: {damping: 200, stiffness: 120, mass: 1}}); opacity = p; translateY = interpolate(p, [0,1], [12,0]); color is interpolated from grey to black on p. No overshoot."
+  },
+  "confidence": "medium",
+  "notes": "The outgoing headline 'Access all your company's knowledge' hard-cuts out at f590 (energy spike). It is not on the end frame, so it has no box and is not listed. b02 ('Notion') sits inside b01; b01 is used for the line-level word stagger and b02 for the last word. The small rise is inferred from the filmstrip (at f612 'Notion' sits slightly lower and lighter)."
+}

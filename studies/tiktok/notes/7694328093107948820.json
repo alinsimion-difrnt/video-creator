@@ -1,0 +1,38 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code",
+                 "input_hash": "9f10759eaff26b03efa5073b649da7124b565a0c434a36820ec2127b4631d35e",
+                 "created_at": "2026-10-13T15:30:00+00:00"},
+  "id": "7694328093107948820",
+  "format": "split_screen",
+  "hook": {"type": "callout",
+           "line": "SEO and answer engine optimisation are complicated; there are no quick easy wins.",
+           "visual": "Head-on face cam, purple lights; a tilted yellow-on-black 'DODGY SEO SERVICES' sticker for one frame, then a white card 'BE CAREFUL OF DODGY SEO SERVICES' fills the lower half"},
+  "beats": [
+    {"t": 0.0, "what": "Opening frame: yellow 'DODGY SEO SERVICES' title slapped diagonally over the presenter"},
+    {"t": 0.07, "what": "Cut to the white 'BE CAREFUL' card in the lower half, kept on screen while he states the problem"},
+    {"t": 12.93, "what": "Card swaps to a screenshot of the Facebook ad he is calling out (before/after analytics)"},
+    {"t": 20.33, "what": "Zoom punch as he describes the 'before vs after using their software' screenshots"},
+    {"t": 29.93, "what": "Second zoom punch on 'look at the results they're promising'; screenshot shows the 'After' traffic curve"},
+    {"t": 32.32, "what": "Verdict line: calls the claims nonsense and fake, while the inflated graph stays visible"},
+    {"t": 45.25, "what": "Explains the backlinks and daily posts are spam; caption word 'SPAM' over the graph"},
+    {"t": 58.18, "what": "Returns to the 'BE CAREFUL OF DODGY SEO SERVICES' card for the closing warning"},
+    {"t": 71.11, "what": "Ends on 'be careful out there' with the same card, no CTA"}
+  ],
+  "graphics": {"captions": "word_by_word", "caption_position": "middle",
+               "devices": ["screenshot", "title_text", "split_screen", "zoom_punch", "chart_or_number"],
+               "density": "minimal", "per_minute_estimate": 4},
+  "characters": [],
+  "cta": {"kind": "none", "t": null},
+  "why_it_works": [
+    "A named villain (a real ad screenshot) gives the rant proof, so the viewer watches the graph instead of just a talking head",
+    "The warning card bookends the video, so the takeaway is the first and last thing seen",
+    "Protective tone ('I want to warn you') builds trust and invites comments from people who were burned"
+  ],
+  "weaknesses": [
+    "One continuous shot for 71 s with only two zoom punches; little visual change in the long middle",
+    "Small screenshot text is unreadable on a phone (most text sits outside the safe area)",
+    "No call to action, so the trust built is not converted into a follow or comment prompt"
+  ],
+  "for_robert": "Hold up the bad example as a screenshot card under the face and let Fred react to it (side-eye, poke the fake graph) instead of only describing it."
+}

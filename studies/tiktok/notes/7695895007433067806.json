@@ -1,0 +1,36 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "db9dc8b1cff07c9ab6ed42c8ff294484d489c2ddb5f0c544f90c10c3e76fa0b3",
+                 "created_at": "2026-10-13T15:20:00+00:00"},
+  "id": "7695895007433067806",
+  "format": "podcast_clip",
+  "hook": {"type": "news",
+           "line": "Team Tedder is not the only team taking advantage of this factory support.",
+           "visual": "A blurred dirt-bike still for one frame, then a host in a cap at a desk with a neon bolt; white title box 'AEO Powersports switches to Husqvarna' and green-highlighted captions."},
+  "beats": [
+    {"t": 0.0, "what": "Opens mid-show ('moving on to that same note') under a fixed news headline box."},
+    {"t": 3.16, "what": "Host at his desk names the factory support deal other teams are using."},
+    {"t": 9.47, "what": "Says two other teams are involved; an OpusClip watermark sits top-left."},
+    {"t": 18.94, "what": "Names the team (AEO Powersports, KTM soon becoming Husqvarna racing)."},
+    {"t": 22.73, "what": "First cut after 22.7 s: b-roll of a trophy wall in the team's in-house shop."},
+    {"t": 25.67, "what": "Fast b-roll cuts (about 1.5 s each) of the shop floor and people walking through."},
+    {"t": 30.0, "what": "Handheld b-roll of a doorway and a rider standing by an orange bike at the team HQ."}
+  ],
+  "graphics": {"captions": "word_by_word", "caption_position": "bottom",
+               "devices": ["title_text", "b_roll", "jump_cut", "music_bed"],
+               "density": "moderate", "per_minute_estimate": 8},
+  "characters": [],
+  "cta": {"kind": "none", "t": null},
+  "why_it_works": [
+    "A fixed headline box tells the viewer the news in one line before the host says anything.",
+    "Word-by-word captions with key nouns in green (team, services, KTM) carry the story sound-off.",
+    "B-roll arrives in a burst of short cuts at the end, refreshing attention after a long desk shot."
+  ],
+  "weaknesses": [
+    "Off-topic for this study: 'AEO' here is a motocross team, not answer engine optimisation.",
+    "The first 22.7 s is one locked desk shot; the visuals only change in the last 10 s.",
+    "Opens mid-thought ('moving on to that same note') and ends mid-sentence, with no CTA.",
+    "79% of on-screen text sits outside the safe area; the OpusClip watermark stays on screen."
+  ],
+  "for_robert": "Pin a one-line headline box above Robert for the whole reel so late joiners get the topic; avoid opening mid-thought and saving every visual change for the end."
+}

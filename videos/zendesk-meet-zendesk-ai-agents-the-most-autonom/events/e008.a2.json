@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "ee286d454e94f302248905e2a5d4859378cfa50bc3154088a3ba8bc2659024b0",
+    "created_at": "2026-10-05T06:55:57.796176Z"
+  },
+  "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+  "event": "e008",
+  "task": "a2-e008",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "AI agent reply bubble",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["fade", "slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Oh no! Let me check on that for you.",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 500, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "AI agent avatar",
+      "role": "avatar",
+      "role_other": null,
+      "change_types": ["fade", "slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 500, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "stagger_list_reveal",
+    "proposed_name": null,
+    "description": "A new AI-agent chat message (avatar plus reply bubble) appears below the existing conversation, fading in while drifting up a short distance and settling with a long decelerating tail.",
+    "why_premium": "The message lands as one unit with a soft expo-style deceleration instead of popping in, so the conversation reads as a calm, live exchange and the eye is led to the newest line."
+  },
+  "build_hint": {
+    "gsap": "gsap.fromTo('.msg-agent-3', {autoAlpha: 0, y: 24}, {autoAlpha: 1, y: 0, duration: 0.5, ease: 'expo.out'}); avatar and bubble move together (same tween, or avatar 0.02s ahead).",
+    "remotion": "const p = spring({frame: frame - start, fps, config: {damping: 200, stiffness: 120, mass: 1}}); style={{opacity: p, transform: `translateY(${interpolate(p, [0, 1], [24, 0])}px)`}} applied to the avatar+bubble row."
+  },
+  "confidence": "medium",
+  "notes": "Filmstrip is a crop around the new message row; the bubble also appears to grow slightly as it rises (camera.scale 0.98 reflects content change, camera.move none). Pattern is the closest canonical fit for a chat message append; a 'chat message append' pattern could be argued."
+}

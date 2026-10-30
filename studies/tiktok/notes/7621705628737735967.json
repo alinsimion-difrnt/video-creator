@@ -1,0 +1,39 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "613f86484f0bbc215edbd5b8b946040d5b13608e3697a463ba3b59decc06532b",
+                 "created_at": "2026-10-13T09:30:37+00:00"},
+  "id": "7621705628737735967",
+  "format": "tutorial_demo",
+  "hook": {"type": "list_promise",
+           "line": "Here are five secret codes for Claude.",
+           "visual": "Close face to camera with a white pill title 'Secret Codes for Claude' and a flushed emoji; he counts on his fingers, then the title swaps to '#1 /ghost' by 1.9 s"},
+  "beats": [
+    {"t": 0.0, "what": "Face to camera, white pill title with emoji"},
+    {"t": 1.88, "what": "Title switches to '#1 /ghost' while he is still on camera"},
+    {"t": 3.53, "what": "Screen recording of the Claude prompt box on an orange background, red box around the typed code"},
+    {"t": 7.53, "what": "Claude's answer scrolls as proof"},
+    {"t": 10.67, "what": "#2: red box around 'ARTIFACTS' at the end of the prompt"},
+    {"t": 14.1, "what": "A finished bubble-pop game appears as the result"},
+    {"t": 17.67, "what": "#3: 'OODA' boxed in red before the prompt; framework diagram in the answer"},
+    {"t": 23.53, "what": "Zoom punch on the L99 example answer"},
+    {"t": 27.6, "what": "Cut back to face with '#5 /godmode' title"},
+    {"t": 34.0, "what": "Face again with pill 'Comment \"Codes\" and I'll DM you a link'"}
+  ],
+  "graphics": {"captions": "word_by_word", "caption_position": "bottom",
+               "devices": ["screen_recording", "product_ui", "arrow_or_circle", "zoom_punch", "title_text", "sticker_emoji", "jump_cut"],
+               "density": "heavy", "per_minute_estimate": 25},
+  "characters": [],
+  "cta": {"kind": "comment", "t": 34.0},
+  "why_it_works": [
+    "Numbered list (#1 to #5) with each number in the title pill, so the viewer always knows how far is left",
+    "Each code is shown typed in the real product with a red box around it, then the result, so every claim has proof in 2-4 s",
+    "Fast pace: 25 cuts per minute and 4.1 words/s with almost no silence (7% measured)",
+    "Same formula per item ('just put this before your prompt and...'), so items are easy to follow at speed"
+  ],
+  "weaknesses": [
+    "Claims like 'passes AI detectors' are unverified and the codes are mostly placebo, which risks trust",
+    "Small word captions at the bottom compete with dense UI text in the screen-recording shots",
+    "Two CTAs (follow and comment) stacked at the end dilute each other"
+  ],
+  "for_robert": "Mark the exact thing to type with a red box on the screen recording and cut to the result within 3 s; Fred could swim to the boxed word and tap it instead of a static box."
+}

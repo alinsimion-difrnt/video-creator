@@ -1,0 +1,37 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code",
+                 "input_hash": "f348cd527d0bde6ecfb34fd169641c0c11e74c063a9546d3ae9880774046b4c0",
+                 "created_at": "2026-10-13T09:31:00+00:00"},
+  "id": "7685291121353723150",
+  "format": "screen_recording",
+  "hook": {"type": "curiosity_gap",
+           "line": "So I tried the ChatGPT trend...",
+           "visual": "Phone screen recording: a long 'show me what you look like' selfie prompt pasted into ChatGPT, sent within the first second, under a fixed title line."},
+  "beats": [
+    {"t": 0.0, "what": "Prompt already typed in the ChatGPT box with the keyboard open; title 'So I tried the chatgbt trend...' sits mid-screen the whole video."},
+    {"t": 0.13, "what": "Prompt is sent and scrolls up as a blue chat bubble."},
+    {"t": 1.2, "what": "Image generation starts: the 'Sketching it out' status and a dotted placeholder."},
+    {"t": 6.07, "what": "Status changes to 'Making the first draft'; nothing to see yet, only the wait."},
+    {"t": 10.47, "what": "Status 'Setting the scene'; the scroll back to the prompt keeps the screen moving."},
+    {"t": 15.73, "what": "Status 'Polishing details'."},
+    {"t": 21.73, "what": "Status 'Adding final touches': the countdown is nearly over."},
+    {"t": 26.93, "what": "Reveal: a blurry, low-angle selfie of a real young man, apparently the creator himself, appears as ChatGPT's 'self-portrait'."}
+  ],
+  "graphics": {"captions": "title_only", "caption_position": "top",
+               "devices": ["screen_recording", "product_ui", "title_text", "music_bed"],
+               "density": "minimal", "per_minute_estimate": 4},
+  "characters": [],
+  "cta": {"kind": "comment", "t": null},
+  "why_it_works": [
+    "The app's own progress messages act as a countdown, so a 27 s wait becomes suspense with a guaranteed payoff.",
+    "Payoff withheld to the last 5 s, and the video ends right after it, so it loops into the wait again (loop 0.86).",
+    "The ambiguous reveal (is that ChatGPT or the creator?) plus the 'Who is that' caption drives comments (22.6k).",
+    "Rides a named trend, so viewers already know what result to wait for."
+  ],
+  "weaknesses": [
+    "No voice and 27 s of near-static screen; it only works because the trend was already known.",
+    "Title text overlaps the prompt bubble and is cut off ('trend...'), and most text sits outside the safe area (0.929)."
+  ],
+  "for_robert": "Use a visible progress wait as suspense: show a tool 'thinking' while Fred fidgets or peeks at the screen, then cut out right after the reveal."
+}

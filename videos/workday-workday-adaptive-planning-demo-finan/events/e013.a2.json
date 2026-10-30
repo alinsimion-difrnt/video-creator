@@ -1,0 +1,93 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "bdbb0bea0e19ec550ad27dc322b35fc7aa529af2061ee102c168cc293d53cfdc",
+    "created_at": "2026-10-05T06:51:46.073387Z"
+  },
+  "video": "workday-workday-adaptive-planning-demo-finan",
+  "event": "e013",
+  "task": "a2-e013",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Main content panel: task list replaced by blank loading state, then the task parameter form",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "hard content swap (page navigation) via a blank loading frame",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 200, "easing_class": "step"}
+    },
+    {
+      "box": "b11",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "New tab for the opened task",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["pop"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Import Actuals from Workday via CCDS ×",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Blue header bar title changes from 'Tasks' to the task name",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "instant text swap",
+      "is_text": true,
+      "text": "Import Actuals from Workday via CCDS",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b06",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Selected 'Launch New Task Instance' row in the runs sidebar",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Launch New Task Instance",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x002",
+      "verdict": "unsure",
+      "label": "unsure",
+      "note": "Low CLAP score (tick 0.298); no clear isolated transient at the marker in the spectrogram, and the visible click happened earlier (row turns blue around f660). The stronger broadband transient sits just after the event window."
+    }
+  ],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "A click on the hovered task row selects it (row flashes blue), the panel blanks with a loading spinner, and the task's parameter form loads in a new tab while the cursor stays parked.",
+    "why_premium": "The recording is trimmed so the click-to-load round trip takes about a fifth of a second, landing the new screen right on 'cloud and on-premises' so the demo feels instant."
+  },
+  "build_hint": {
+    "gsap": "Timeline of instant steps: tl.set('.row.target', {backgroundColor: '#8fb8f5'}).set('.list-view', {autoAlpha: 0}, '+=0.13').set('.spinner', {autoAlpha: 1}).set('.spinner', {autoAlpha: 0}, '+=0.1').set(['.form-view', '.tab-new'], {autoAlpha: 1}); no easing, the cut is the motion.",
+    "remotion": "Use <Sequence> blocks: list view frames 0-4 (row highlighted from frame 1), blank panel with spinner frames 4-7, form view and new tab from frame 7; no interpolation, hard swaps at 30 fps."
+  },
+  "confidence": "medium",
+  "notes": "Screen-recorded navigation, mostly hard swaps rather than tweened motion. The blue click highlight on the list row exists only in pre-swap frames, so it has no end-frame box and is covered by b01. Cursor appears stationary across the event, so it is not listed."
+}

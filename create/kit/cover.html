@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="{{LANG}}"><head><meta charset="utf-8">
+<!-- A cover image (create/cover.py, `create cover`): a frame of the video and its hook, inside the cover-safe
+     area so it survives the platforms' grid and profile crops. -->
+<link rel="stylesheet" href="fonts.css">
+<style>
+  {{CSS_VARS}}
+  html, body { margin: 0; width: var(--w); height: var(--h); overflow: hidden; background: #000; }
+  #frame { position: absolute; inset: 0; width: var(--w); height: var(--h); object-fit: cover; filter: var(--grade); }
+  #shade { position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(62,8,99,0) 30%, rgba(62,8,99,.6) var(--fade0), rgba(62,8,99,.2) var(--fade1)); }
+  #title { position: absolute; left: var(--x0); width: var(--tw); top: var(--y0); display: flex; flex-direction: column;
+    align-items: center; text-align: center; gap: 18px; }
+  .t { font: 700 var(--size)/1.02 var(--heading); letter-spacing: -0.01em; text-transform: uppercase; color: #fff;
+    -webkit-text-stroke: 10px var(--ink); paint-order: stroke fill; text-wrap: balance; }
+  .t b { color: var(--accent); }
+  .tag { font: 700 40px/1 var(--body); color: #fff; background: var(--accent); padding: 14px 26px; border-radius: 999px; }
+</style></head>
+<body>
+<img id="frame" src="frame.jpg" alt="">
+<div id="shade"></div>
+<div id="title"><div class="t">{{TITLE}}</div>{{TAG}}</div>
+</body></html>

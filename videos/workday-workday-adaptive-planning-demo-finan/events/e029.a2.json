@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "a2174f33326ad9a0ea93ec6d299793fb16ccc3ac0bc70863e77686c3a4c2e130",
+    "created_at": "2026-10-05T06:55:56.661059Z"
+  },
+  "video": "workday-workday-adaptive-planning-demo-finan",
+  "event": "e029",
+  "task": "a2-e029",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Modeling tile grid (Versions and Time, Levels and Dimensions, Accounts, Rules, Sheets)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Others tile (second row) clears",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Page title bar 'Add, Edit, or Delete Version' appears",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Add, Edit, or Delete Version",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "ui page navigation",
+    "description": "Screen-recorded page change: after clicking 'Versions and Time', the Modeling tile grid clears to a blank page, then the blue title bar for the 'Add, Edit, or Delete Version' page snaps in while the body is still loading.",
+    "why_premium": "Not stylised motion; it is raw app navigation inside a framed browser mock on a brand-blue backdrop. The frame-and-backdrop treatment keeps the raw load readable, but the blank loading state is a missed polish opportunity (a crossfade or skeleton would read more premium)."
+  },
+  "build_hint": {
+    "gsap": "Hard state swap: gsap.set('.tile-grid', {autoAlpha: 0}); then gsap.set('.page-titlebar', {autoAlpha: 1}) about 2 frames later. To polish, use tl.to('.tile-grid', {autoAlpha: 0, duration: 0.15, ease: 'power1.in'}).fromTo('.page-titlebar', {autoAlpha: 0, y: -8}, {autoAlpha: 1, y: 0, duration: 0.25, ease: 'power2.out'}).",
+    "remotion": "Use a step: render the tile grid while frame < cutFrame and the title bar from cutFrame on. For a softer version, set opacity with interpolate(frame, [cut, cut+5], [1, 0]) for the grid and [0, 1] over 8 frames with Easing.out(Easing.cubic) for the bar."
+  },
+  "confidence": "medium",
+  "notes": "The change is a step page navigation over about 3 frames, not an animation. The cursor (b05) stays in place and is not listed. The cursor click on 'Versions and Time' happened before this burst."
+}

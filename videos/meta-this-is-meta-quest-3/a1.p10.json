@@ -1,0 +1,181 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "0835c167fe41498cd150d9967e2967f4dfd0e5be4292dac94c6f7a701531dc72",
+    "created_at": "2026-10-05T07:42:32.428846Z"
+  },
+  "video": "meta-this-is-meta-quest-3",
+  "task": "a1-p10",
+  "shots": [
+    {
+      "shot": "s050",
+      "shot_type": "footage",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "A red-haired person in a striped jacket lifting the white headset strap over their head, hand in soft focus in the foreground",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": ["blur", "glow"],
+      "what_happens": "Warm, window-lit close-up of a person pulling the headset on, with the strap and a ringed hand blurred close to the lens. The second sheet frame (1:40.500) shows a different person in an orange sweater pulling the headset down against a bright window flare, so there is probably a cut inside this shot that the detector missed. No lyric words and no code events fall in this shot.",
+      "build_rebuild": "Hard-cut on the beat to a 0.9 s shallow-focus close-up of a person putting on the headset with the strap close to the lens, then cut to a second wearer against a backlit window flare.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s051",
+      "shot_type": "footage",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "A man in a blue-and-white tie-dye sweatshirt settling the headset on top of his head with both hands, controllers hanging from wrist straps",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": ["blur"],
+      "what_happens": "A 0.46 s medium close-up of a man smiling as he fits the headset onto his head in a bright room with soft-focus windows. The single sheet frame (1:41.000) shows him; the keyframe for this shot shows the orange-sweater wearer instead, so the shot boundaries in this run of quick cuts are a little uncertain.",
+      "build_rebuild": "Hard-cut to a half-second centred medium close-up of a new wearer fitting the headset, high-key window light and shallow focus, no overlay.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s052",
+      "shot_type": "footage",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "A laughing woman in a grey T-shirt sweeping the headset off over her head, controllers dangling from her wrists",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": ["blur"],
+      "what_happens": "A 0.5 s burst of joy: a woman in a white living room pulls the headset off (or swings it on) with one arm, laughing, as the headset blurs with motion. The keyframe for this shot shows the tie-dye man from s051, so this is again a boundary I can only partly confirm.",
+      "build_rebuild": "Hard-cut to a half-second clip of a laughing wearer moving the headset with fast motion blur, the last of three rapid on-beat 'putting it on' cuts before the end card.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s053",
+      "shot_type": "3d",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Floating Meta Quest 3 headset render flanked by its two controllers, under the logo and wordmark, with a legal block at the bottom",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Meta Quest 3",
+        "See child safety guidance at meta.com/quest/parent-info; Meta accounts for 10+. Certain apps, games and experiences may be suitable for a more mature audience. Additional account registration, terms and fees may apply. Stranger Things:™/ © Netflix. Used with permission. Snapdragon branded products are products of Qualcomm Technologies, Inc. and/or its subsidiaries."
+      ],
+      "text_word_count": 53,
+      "typography": "Wordmark: rounded geometric sans, medium weight, title case, normal tracking, with the infinity-loop logo mark; it fades in from faint (1:44.0) to full (1:44.5), the same lockup as s001. Legal block: small regular-weight sentence-case sans, four centred lines at the bottom. Font guess (low confidence): Meta's Optimistic.",
+      "depth_cues": ["shadow", "blur"],
+      "what_happens": "Starts on the laughing woman full frame (1:42.0); the footage then shrinks into a tilted pill-shaped mask over a pastel gradient (1:42.5), splits into three rounded pills (1:43.0), and the pills give way to the floating headset and controllers (1:43.5). The logo and wordmark then fade in above the product and the end card holds with the legal block to the end. This mirrors the opening of s001 in reverse, closing the video as it began. Glitch and swoosh SFX candidates x052 to x056 fall in this shot.",
+      "build_rebuild": "Mask the last clip into a rotated rounded pill on a pastel gradient, split it into three pill windows, crossfade them to a centred transparent product render with two controllers, then fade in the logo+wordmark above over about 0.5 s and hold with a small four-line legal block at the bottom.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001", "s002"], "words": [0, 2]},
+      {"beat": "demo", "shots": ["s003", "s004", "s005", "s006", "s007", "s008", "s009", "s010", "s011", "s012", "s013", "s014"], "words": [3, 55]},
+      {"beat": "mechanism", "shots": ["s015", "s016", "s017", "s018", "s019", "s020", "s021", "s022", "s023", "s024", "s025", "s026", "s027", "s028", "s029", "s030"], "words": [56, 65]},
+      {"beat": "outcome", "shots": ["s031", "s032"], "words": null},
+      {"beat": "proof", "shots": ["s033", "s034"], "words": null},
+      {"beat": "demo", "shots": ["s035", "s036", "s037", "s038", "s039", "s040", "s041", "s042", "s043", "s044"], "words": null},
+      {"beat": "outcome", "shots": ["s045", "s046", "s047", "s048", "s049", "s050", "s051", "s052"], "words": [66, 70]},
+      {"beat": "cta", "shots": ["s053"], "words": null}
+    ],
+    "hook": {
+      "text": "Meta Quest 3 / Introducing / breakthrough / MIXED REALITY",
+      "technique": "bold_claim",
+      "technique_other": null,
+      "shots": ["s001", "s002", "s003"],
+      "words": null
+    },
+    "cta": {
+      "text": null,
+      "shots": ["s053"]
+    },
+    "tone": "Upbeat, playful, aspirational consumer-tech launch: sunlit lifestyle footage of diverse people at home, energetic sung pop track with no voice-over, short lowercase captions that read as one sentence across cuts, bookended by a clean pastel product hero.",
+    "signature_moments": [
+      {
+        "shots": ["s015", "s036", "s042"],
+        "description": "Card-tilt transition: the full-frame clip shrinks into a rotated rounded-corner card on a pale gradient and flies off while the next clip arrives as a counter-rotated card and straightens to full bleed.",
+        "why_premium": "It turns plain cuts between live-action clips into one designed motion system tied to the brand gradient, so the edit feels built rather than assembled, and it is used again and again as a recognisable signature."
+      },
+      {
+        "shots": ["s033", "s034"],
+        "description": "A continuous camera push into the headset's centre sensor that zooms through into a glowing chip, a light-streak tunnel, the speaker grille and finally through a lens into gameplay, with one spec caption per stop.",
+        "why_premium": "Specs are shown as a journey through the product instead of a bullet list; the unbroken camera move links abstract claims (GPU, audio, 4K) to the hardware itself."
+      },
+      {
+        "shots": ["s039", "s040"],
+        "description": "Gameplay shrinks into one card among dozens flying in 3D depth, the camera flies through a blurred headline into 'From the world's best library of immersive content', and then one Roblox card zooms through to full frame.",
+        "why_premium": "The card wall shows how big the library is in a single image with real depth and focus blur, and the zoom-through gives a smooth way into the next feature."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 4,
+        "evidence": "Opens on a clean product hero with the wordmark, then pill-shaped mask windows open into lifestyle footage while 'Introducing' and 'breakthrough' blur in on the beat, and 'MIXED REALITY' lands by 6 s. It looks strong and moves fast, but it is a brand intro rather than a problem or question that pulls the viewer in.",
+        "refs": ["s001", "s002", "s003"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "Each feature gets a short caption and footage that shows it: mixed reality, double-tap passthrough, the slimmer redesign, controllers and haptics, hand tracking, GPU, audio, 4K, the library, Roblox, Xbox. The fast cutting and many legal footnotes make some beats hard to read, and several captions are split across sub-second cuts.",
+        "refs": ["s004", "s013", "s014", "s019", "s028", "s033", "s039", "s042"]
+      },
+      "ui_showcase": {
+        "score": 3,
+        "evidence": "The OS UI only appears briefly: a YouTube VR window in the room, the app Library panel with a message notification and hand-tracked scrolling, and Game Pass on a virtual screen. It is shown well but it is not the focus; most screen time is lifestyle footage and gameplay.",
+        "refs": ["s007", "s029", "s030", "s043", "s044"]
+      },
+      "motion_polish": {
+        "score": 5,
+        "evidence": "There is a consistent designed motion language: blur-in kinetic words, captions held across cuts, the card-tilt transition used again and again, a camera push through the sensor into a chip tunnel, a zoom through the lens into gameplay, a 3D card wall with depth blur, and a pill-mask end card that mirrors the opening.",
+        "refs": ["s002", "s015", "s033", "s034", "s039", "s040", "s042", "s053"]
+      },
+      "sound_design": {
+        "score": 4,
+        "evidence": "Judged from the anchors' audio facts plus the visuals: a sung pop track at 129.2 BPM, cuts and caption swaps that sit on the beat grid, 56 SFX candidates (mostly swoosh_reverse and impact on transitions, glitch candidates on the end card), and an integrated loudness of -16.98 LUFS. Many SFX labels are 'unsure', and I cannot hear the mix itself.",
+        "refs": ["s012", "s034", "s048", "s053"]
+      },
+      "vo_script_quality": {
+        "score": null,
+        "evidence": "There is no voice-over. The transcribed words (w0-w70) are sung song lyrics, not a script, so this score does not apply.",
+        "refs": ["w0", "w70"]
+      },
+      "brand_consistency": {
+        "score": 5,
+        "evidence": "One caption style (white rounded geometric sans, lowercase sentence fragments) is used throughout. The pastel gradient and pill and card shapes recur in transitions, and the video opens and closes on the same product-hero lockup.",
+        "refs": ["s001", "s015", "s036", "s039", "s053"]
+      },
+      "works_muted": {
+        "score": 4,
+        "evidence": "The whole feature story is in the on-screen captions and the footage shows each one; the song lyrics carry no information. With sound off you lose the energy and beat sync, and the 3D audio claim is only stated in text.",
+        "refs": ["s013", "s019", "s034", "s048"]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "A highly produced launch film with best-in-class motion design and strong brand consistency that works without sound. It is held back by very fast cutting that splits captions across sub-second shots, heavy legal text on screen, and little real product UI.",
+        "refs": ["s015", "s033", "s039", "s053"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 3,
+      "baked_in_text": true,
+      "vo_dependent": false,
+      "notes": "There is no voice-over, so only the text needs translating. But every feature caption and legal line is baked over footage, and many English sentences are split word by word across beat-timed cuts ('Enjoy / incredible / new / adventures', 'Get ready / to expand / your world'). Other word orders or longer translations would need the caption layers re-timed and re-laid out. The end-card legal block is also region-specific."
+    }
+  }
+}

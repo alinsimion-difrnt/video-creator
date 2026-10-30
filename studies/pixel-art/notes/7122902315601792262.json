@@ -1,0 +1,54 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "8351972f14f101eb8e515406cbef089c91f3c331d00a6cee376e489b56cab42b",
+    "created_at": "2026-10-13T13:05:41+00:00"
+  },
+  "id": "7122902315601792262",
+  "kind": "clip",
+  "palette": {
+    "colours_estimate": 20,
+    "shadows": "cool",
+    "notes": "Code: 20 colours on the still, one ramp; the 158.6 deg hue shift likely mixes sky and grass. Saturated yellow-green grass, blue sky, grey fence; red and brown on the sprites."
+  },
+  "lighting": "Bright daylight, sun from upper left; background is painterly and soft-focused so the crisp sprites pop. A fade to black marks the bite.",
+  "silhouette": "Chunky human hero with backpack, side-on; zombie hunched over the fence. Clear contrasting silhouettes; pistol arm fully extended when aiming.",
+  "motion": {
+    "timing": "Code: median hold 16.7 ms and 12.39 changes/s, inflated by the moving camera and blurred background; sprite poses themselves read as a few held frames.",
+    "principles": [
+      "anticipation",
+      "reaction",
+      "held pose",
+      "camera push"
+    ]
+  },
+  "texture": "Pixel sprites over a high-res, depth-of-field blurred background (mixed resolution); grass in front is soft and tall, framing the sprites.",
+  "camera": "Side view; pushes in close for the grab, fades to black, cuts back wide; then a second push for the pistol standoff. Uses letterboxing.",
+  "sound": "",
+  "acting": {
+    "enters": "Zombie pops up from behind the fence as the hero walks by; name card 'Zombie McBite-Face' sets up the gag.",
+    "acts": "Zombie grabs and bites the hero (camera pushes in), fade to black; then the hero tries the pistol and the zombie keeps reaching.",
+    "exits": "Fade to black after the bite.",
+    "comes_back": true,
+    "depth": "Fence and tall grass sit in front of the zombie so it hides and pops out; hero stays mid-ground on the path."
+  },
+  "techniques": [
+    "hide-and-pop entrance from behind foreground cover",
+    "camera push-in on the hit, fade to black for the payoff",
+    "on-screen action label as joke setup (adventure-game verb text)",
+    "crisp sprites over blurred painterly background",
+    "repeat the encounter: same zombie, second attempt",
+    "letterbox bars for cutscene feel"
+  ],
+  "feel": "crisp sprites on soft blurred bg + hide-behind-fence pop-up + push-in and fade = comic horror beat",
+  "for_fred": "Let Fred hide behind a foreground object (a rock, a reel caption) and pop out on the punchline; push the camera in on his hit, cut to black, then come back wide for the second try.",
+  "sources": [
+    "data/study/pixel/work/7122902315601792262/sheet.jpg",
+    "studies/pixel-art/clips/7122902315601792262.json",
+    "studies/pixel-art/tiktok.yaml",
+    "https://www.tiktok.com/@hillfortgames/video/7122902315601792262"
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "f12c75f3ce0d833ea809c64898b3b0391c8e6e130765be12d910bc8ff437c86e",
+    "created_at": "2026-10-05T06:23:06.797061Z"
+  },
+  "video": "clickup-clickup-4-0-overview-a-new-era-of-craf",
+  "task": "a1-p3",
+  "shots": [
+    {
+      "shot": "s012",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Rounded, drop-shadowed app window of the Teams Hub (Marketing team overview, then Priorities and Workload tabs) floating on a grainy magenta-orange-blue gradient",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Welcome to the Marketing Team Hub!"
+      ],
+      "text_word_count": 6,
+      "typography": "No added captions; only native product UI text (small sans-serif, bold section headings, sentence case, normal tracking). Font guess (low confidence): Inter-like UI sans.",
+      "depth_cues": ["shadow", "grain", "blur"],
+      "what_happens": "Long 16.6 s demo over the Teams Hub VO (w108-w158): cursor hovers the Marketing overview (members, members-online chart), the page scrolls down to the Feed and back up, then the tab switches to a per-person Priorities card grid (around w119-w123) and to a colour-coded Workload capacity grid (around w144-w146); a horizontal motion-blur whip at about 55.5 s swaps to a different workspace's sprint list where the cursor opens a sidebar '+' menu, and the frame dims at the end as a modal begins to appear (subfolders line, w150-w158). The internal whip is inside this single code-detected shot.",
+      "build_rebuild": "Place a screen recording inside a 16:9 rounded window with a soft drop shadow, centred on an animated grainy multi-colour gradient, and switch tabs on VO keywords, using a 6-8 frame horizontal motion-blur whip to jump to the next recording.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s013",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Centred 'Create Folder' modal over a dimmed sprint list, with the Name field filled 'Releases'",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "Create Folder",
+        "Use Folders to organize your Lists, Docs, and more."
+      ],
+      "text_word_count": 11,
+      "typography": "Native UI only: modal title in semibold sans, sentence case; helper text and field labels in regular weight, small size, normal tracking. No added overlay type.",
+      "depth_cues": ["shadow", "grain"],
+      "what_happens": "As the VO says 'subfolders are finally here on Beta' (w159-w164), the Create Folder modal sits over a dimmed list; the name 'Releases' is typed, the location is 'Team | Kanban', and the cursor moves to click 'Create' (around w165-w170); the last frame shows the resulting empty list view.",
+      "build_rebuild": "Show the recorded app window centred on the gradient, dim the background layer to about 60% when the modal opens, and let the cursor travel to the primary 'Create' button timed to the 'add another layer' clause of the VO.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s014",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Sidebar hierarchy showing the new nested 'Releases' folder with a 'List' inside, under Team | Kanban",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": ["shadow", "grain"],
+      "what_happens": "The empty 'List' view inside the new Releases subfolder is shown (Import: Statuses / Views / Automations / Custom Fields bar); the cursor drifts left toward the sidebar tree, landing near 'Team | Scrum' by the end, under VO 'folders to organize projects, phases' (w172-w176).",
+      "build_rebuild": "Hold the centred window on the newly created nested folder for about 3 s while the cursor glides toward the sidebar, setting up the next zoom-in on the tree.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s015",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Zoomed-in sidebar tree: ClickUp 4.0 > Team | Kanban > Releases > List, and Team | Scrum > Multiplayer Mode > Sprint 1",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": ["none"],
+      "what_happens": "The camera pushes in so the sidebar fills the frame; the cursor expands 'Team | Scrum' and hovers 'Multiplayer Mode' (a 'Multiplayer Mode' tooltip appears), then opens Sprint 1, revealing its In Progress task list, illustrating nested folders keeping 'complex work structured' (w178-w186).",
+      "build_rebuild": "Scale the recording to about 2.5x, anchored on the sidebar so the nested folder tree fills the frame edge to edge, and keep the cursor clicks readable at that zoom.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s016",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Task detail page 'NovaCore Solutions' (Account task type) with its Custom Fields block and Activity panel",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "NovaCore Solutions",
+        "Custom Fields"
+      ],
+      "text_word_count": 4,
+      "typography": "Native UI only: task title in large bold sans, sentence case; field labels in small regular sans. No added overlay type.",
+      "depth_cues": ["shadow", "grain", "blur"],
+      "what_happens": "The zoomed sidebar view pulls back out to the full framed window (sprint list), then by about 70.5 s (near SFX x005) the content switches to the 'NovaCore Solutions' task; the cursor works the Custom Fields block (Account Owner, Account Tier 'Gold', Renewal Date) and scrolls to show Department and Summary fields, under 'Tasks themselves are smarter too' (w187-w192); a blur zoom starts at the end of the shot.",
+      "build_rebuild": "Pull the camera from 2.5x back to 1x on the framed window, cut to the task-detail recording on a beat, and finish with a 4-6 frame zoom-blur push into the Custom Fields block to hand off to the next shot.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

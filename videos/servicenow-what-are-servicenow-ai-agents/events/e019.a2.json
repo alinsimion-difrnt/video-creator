@@ -1,0 +1,57 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "4a9816b54fd76551f9916b9082e19e14c5fe2aad7fc5910e92ec79f026435fc8",
+    "created_at": "2026-10-05T06:53:24.774307Z"
+  },
+  "video": "servicenow-what-are-servicenow-ai-agents",
+  "event": "e019",
+  "task": "a2-e019",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Elevator doors sliding shut from both sides, covering the woman standing inside",
+      "role": "other",
+      "role_other": "live_action_doors",
+      "change_types": ["slide_left", "slide_right", "mask_reveal"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 380, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x084",
+      "verdict": "unsure",
+      "label": "unsure",
+      "note": "About 0.2 s before this shot starts (belongs to the e018 button press); broadband transient, no sweep, so not clearly a whoosh."
+    },
+    {
+      "id": "x085",
+      "verdict": "override",
+      "label": "impact",
+      "note": "Broadband onset lands as the doors meet and the frame settles on the closed doors; reads as a soft door-close thud or music hit rather than a chime. Medium confidence."
+    }
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "practical door wipe",
+    "description": "Live-action elevator doors slide in from both edges and meet in the centre, closing over the subject so the doors themselves act as a two-sided wipe that ends on a clean, neutral frame.",
+    "why_premium": "An in-world object performs the transition, so the cut to the next scene is motivated by the story; the converging doors also land on a beat and leave a calm empty frame to cut from."
+  },
+  "build_hint": {
+    "gsap": "Recreate as a split mask wipe: two panels tl.fromTo(leftDoor, {xPercent: -100}, {xPercent: 0, duration: 0.38, ease: 'power2.inOut'}) and tl.fromTo(rightDoor, {xPercent: 100}, {xPercent: 0, duration: 0.38, ease: 'power2.inOut'}, '<'), the scene behind static; land the meet on the audio hit.",
+    "remotion": "Two absolutely positioned door panels with translateX = interpolate(frame, [0, 10], [-100, 0], {easing: Easing.inOut(Easing.quad), extrapolateRight: 'clamp'}) percent (mirrored for the right); no spring, doors meet without overshoot."
+  },
+  "confidence": "medium",
+  "notes": "Live-action footage; camera verdict none. Only the doors move; the woman is static and gets covered. Pattern could alternatively be treated as a mask_wipe transition into the next shot."
+}

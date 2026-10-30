@@ -1,0 +1,100 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "b06a37567941c57fbcc573b087b18a22eae6ea661a3789c124072f3081c05f8e",
+    "created_at": "2026-10-05T06:39:53.859874Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e011",
+  "task": "a2-e011",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Goal dropdown menu closes, revealing the Goal column beneath",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "'Delight users' goal tag committed to the new idea row",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["pop"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Delight users",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": null,
+      "manual_box": [250, 410, 330, 480],
+      "manual_reason": "No candidate box covers the Effort rating cell of the new row and its hover tooltip ('Medium' then 'High'); the dots fill as the cursor hovers.",
+      "label": "Effort rating dots fill with hover tooltip",
+      "role": "metric",
+      "role_other": null,
+      "change_types": ["color_shift", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 200, "easing_class": "step"}
+    },
+    {
+      "box": "b10",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Impact vs effort formula value appears",
+      "role": "metric",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "0",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": null,
+      "manual_box": [265, 655, 300, 675],
+      "manual_reason": "No candidate box isolates the cursor; it moves from the Goal field across the Effort cell to the Impact cell of the new row.",
+      "label": "Mouse cursor",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_right"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 600, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "The Goal dropdown closes and commits the 'Delight users' tag; the cursor sweeps right along the new row, setting the Effort rating (tooltips 'Medium' then 'High' as dots fill), the formula column updates to 0, and the cursor lands on Impact.",
+    "why_premium": "Field-by-field data entry is compressed into one fluid left-to-right cursor pass, with tooltips and instant value updates proving the fields are live; it follows the narration 'each idea can be organized'."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.goal-dropdown', {autoAlpha: 0, duration: 0.04}).set('.new-row .goal', {innerHTML: tagDelight}).to('.cursor', {x: 585, duration: 0.25, ease: 'power1.inOut'}).set('.effort-tooltip', {text: 'Medium', autoAlpha: 1}).to('.new-row .effort .dot', {backgroundColor: '#f87168', stagger: 0.03, duration: 0}).set('.effort-tooltip', {text: 'High'}).set('.new-row .ive', {text: '0'}).to('.cursor', {x: 845, duration: 0.3, ease: 'power1.inOut'}).set('.effort-tooltip', {autoAlpha: 0}).",
+    "remotion": "Sequence of discrete UI states keyed to frames: dropdown unmount and tag mount on the same frame, dot fill and tooltip text driven by the cursor x (interpolated with Easing.inOut(Easing.quad) over ~18 frames), formula value set when the rating commits."
+  },
+  "confidence": "medium",
+  "notes": "Effort dot count is hard to read at thumbnail size (tooltip shows 'Medium' then 'High' but three filled dots remain at the end); exact values worth a human look. All state changes are UI swaps, not tweens. No SFX candidates."
+}

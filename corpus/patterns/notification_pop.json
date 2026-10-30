@@ -1,0 +1,119 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a3_pattern_cards",
+    "annotator": "claude-code",
+    "skill": "write-pattern-cards@e525a58fa6d8",
+    "model": null,
+    "input_hash": "f9ccea6e3e16062e7b2ba02cca06cc4f33d5cbe4edc71272618746bff0abe6f0",
+    "created_at": "2026-10-05T12:53:31.054505Z"
+  },
+  "id": "notification_pop",
+  "name": "Message Card Pops In",
+  "summary": "A new message, notification or small UI card appears with its avatar or icon, fading in while it rises or grows slightly and then gently decelerates into place. It feels like something just arrived rather than being switched on.",
+  "when_to_use": [
+    "A new chat message, reply or alert arrives in a conversation or feed",
+    "An overlay card appears over footage or a scene to tie the product to a story beat",
+    "Landing a message on the exact narrated line that introduces it"
+  ],
+  "avoid_when": [
+    "Many cards arrive at once, where a staggered list reveal reads better",
+    "The message should feel like it is being written, where typing or streaming fits better",
+    "The surrounding thread is moving, which blurs the sense of a single arrival"
+  ],
+  "steps": [
+    "Place the card where it will rest, grouped with its avatar or icon so they move as one unit.",
+    "Start it invisible, slightly lower and slightly smaller than its final state.",
+    "Fade it in quickly while it rises and grows into place with a long, decelerating settle and no bounce.",
+    "If the card has inner content, reveal the header first, then the icon and title, then the inner panel in quick nested stages.",
+    "Keep the rest of the thread or scene still so the new arrival is the only motion.",
+    "Time the arrival to the narration line that introduces the message."
+  ],
+  "build": {
+    "gsap": "Use gsap.fromTo on the bubble and avatar together with autoAlpha, a small y offset and a slight scale, using a strong power or expo ease-out, with no stagger or a tiny one. For an overlay card, chain nested fromTo tweens (card scaleY from its top edge, then icon and title fades, then the inner panel scale) overlapped with negative position offsets. Spring overshoot is rare; keep it settling without a bounce.",
+    "remotion": "Drive translateY and scale from a critically or heavily damped spring (no overshoot) applied to bubble and avatar together, with opacity from a fast interpolate over the first part of the spring. For nested overlay cards, use a second delayed spring for the inner panel."
+  },
+  "sound": "No typical sound: the arrivals usually sit on the music bed with no distinct cue.",
+  "why_premium": "The card and its avatar travel as one unit, so the message reads as a single object being delivered, and a fast fade with a long decelerating settle makes it feel calm and real rather than abruptly switched on. Letting the avatar overhang the panel edge, or rendering the card as frosted glass over footage, adds depth and keeps the product inside the story's space. Because the rest of the thread stays still and the arrival is timed to the narration, the viewer's eye goes straight to the new message.",
+  "numbers": {
+    "id": "notification_pop",
+    "events": 4,
+    "videos": 2,
+    "weight": 3.0,
+    "duration_ms": {
+      "n": 10,
+      "videos": 2,
+      "weight": 7.1014,
+      "median": 603.4,
+      "p25": 518.624,
+      "p75": 654.5,
+      "ci": [
+        526.877,
+        647.894
+      ]
+    },
+    "easing_mix": {
+      "ease_out": 0.7581,
+      "ease_in_out": 0.0838,
+      "linear": 0.0821,
+      "spring_overshoot": 0.0759
+    },
+    "change_mix": {
+      "fade": 0.3836,
+      "slide_up": 0.274,
+      "scale_up": 0.1918,
+      "pop": 0.1096,
+      "morph": 0.0411
+    },
+    "role_mix": {
+      "card": 0.4167,
+      "avatar": 0.3333,
+      "icon": 0.0833,
+      "label": 0.0833,
+      "ui_panel": 0.0833
+    },
+    "sfx_label_mix": {
+      "music": 0.6667,
+      "unsure": 0.3333
+    },
+    "sfx_offset_ms": {
+      "n": 4,
+      "videos": 1,
+      "weight": 3.2,
+      "median": 87.85,
+      "p25": -220.0,
+      "p75": 379.2,
+      "ci": null
+    },
+    "examples": [
+      {
+        "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+        "event": "e025",
+        "score": 4.0
+      },
+      {
+        "video": "servicenow-what-are-servicenow-ai-agents",
+        "event": "e023",
+        "score": 3.0
+      }
+    ]
+  },
+  "examples": [
+    {
+      "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+      "event": "e025",
+      "score": 4.0
+    },
+    {
+      "video": "servicenow-what-are-servicenow-ai-agents",
+      "event": "e023",
+      "score": 3.0
+    }
+  ],
+  "caveats": [
+    "Seen in only two videos, and most member events come from a single chat-style video.",
+    "Few events and measured elements overall, so the timing range is indicative.",
+    "Sound offset comes from a single video with very few measurements and no confidence interval."
+  ]
+}

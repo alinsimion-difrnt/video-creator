@@ -1,0 +1,36 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes", "annotator": "claude-code", "input_hash": "9c21122196d7f531f570713df0b0e2e0acae9ccc101e97d2ac82cf03298ffd43", "created_at": "2026-10-13T10:56:00+00:00"},
+  "id": "7615228608897928461",
+  "format": "other",
+  "hook": {"type": "list_promise",
+           "line": "There are three types of content you should post: TOFU, MOFU and BOFU.",
+           "visual": "Three stacked copies of the same creator labelled TOFU/MOFU/BOFU with 1M/100K/10K view tags; lime 'What's the DIFFERENCE?' text."},
+  "beats": [
+    {"t": 0.0, "what": "Three stacked rows of her, labelled TOFU, MOFU, BOFU with view counts"},
+    {"t": 1.88, "what": "Lime funnel graphic fills the top tier: top of funnel content"},
+    {"t": 8.41, "what": "Grid of view counts (1M, 1.6M, 3.7M) proves 'more views'"},
+    {"t": 12.62, "what": "Phone screenshot of leads for the bottom tier: 'more leads'"},
+    {"t": 16.82, "what": "Example thumbnail and 'Tier List Videos' label for TOFU"},
+    {"t": 25.24, "what": "Thumbnail collage 'About Personal' stories for MOFU"},
+    {"t": 33.65, "what": "'Fake Case Study Videos' example for BOFU"},
+    {"t": 42.06, "what": "All three rows show thumbnail strips: 'depending on your goals'"},
+    {"t": 46.27, "what": "Ends on 'of all these 3 types' with the strips still up"}
+  ],
+  "graphics": {"captions": "sentence", "caption_position": "mixed",
+               "devices": ["split_screen", "screenshot", "chart_or_number", "title_text"],
+               "density": "heavy", "per_minute_estimate": 20},
+  "characters": [],
+  "cta": {"kind": "none", "t": null},
+  "why_it_works": [
+    "The three-row layout is the structure: each version of her talks in her own tier, so the framework is visible without a diagram.",
+    "View tags (1M, 100K, 10K) on each row make the trade-off concrete at a glance.",
+    "Example thumbnails appear beside the row that is talking, so each content type gets proof.",
+    "Fast speech (4 words/s) and no pauses suit a dense list people save (2,581 shares)."
+  ],
+  "weaknesses": [
+    "Each row is small (face about 11% of frame height), so expression is lost.",
+    "Overlay text is tiny and hard to read on a phone.",
+    "No spoken CTA; the follow ask is only in the caption."
+  ],
+  "for_robert": "Stack the same take in rows (or let Fred take one row) to show a 3-part framework as a layout, with a number tag per row. Keep text larger."
+}

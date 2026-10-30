@@ -1,0 +1,71 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "157ef17016a69bf007d14d24c901344b01665fead1e426d179138e61770d336c",
+    "created_at": "2026-10-05T06:27:20.015775Z"
+  },
+  "video": "moz-create-a-perfect-content-brief-in-second",
+  "task": "a1-p4",
+  "shots": [
+    {
+      "shot": "s016",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "The section of the Moz AI Content Brief currently being narrated, framed by an animated purple-to-pink gradient outline with its heading tinted in a lavender highlight",
+      "transition_in": "push",
+      "transition_other": null,
+      "on_screen_text": [
+        "Blog Post",
+        "Generate",
+        "Target Audience(s)",
+        "Sample Summary",
+        "Suggested Content Structure",
+        "Primary Search Intent",
+        "Keywords to Focus On",
+        "What's Already Ranking",
+        "Your Existing Content",
+        "Key Questions to Consider",
+        "Interesting Facts to Consider",
+        "Export PDF"
+      ],
+      "text_word_count": 33,
+      "typography": "Native product UI text only: clean humanist sans (Lato-like, low-confidence guess), bold title-case section headings, regular-weight sentence-case helper copy and list items, normal tracking; no added motion typography.",
+      "depth_cues": ["glow"],
+      "what_happens": "A single long zoomed-in screen-recording take (about 44 s) that walks the generated brief section by section in sync with the voice-over (w83-w189): the market and Content type dropdowns and the Generate button get a pink highlight as they are named (w83-w96), then the view scrolls down and each section in turn (Target Audience(s), Sample Summary, Suggested Content Structure, Primary Search Intent, Keywords to Focus On, What's Already Ranking, Your Existing Content, Key Questions to Consider plus Interesting Facts to Consider) is wrapped by a purple-to-pink gradient border that draws on around it while its heading gets a lavender marker highlight; finally the camera cuts in tight on the Export PDF button, which pulses with a soft pink-lavender glow ring (w179-w189).",
+      "build_rebuild": "Record the product UI at high resolution, scale it about 2x, scroll it with eased translateY tweens timed to each VO phrase, and for every named section animate an SVG rounded-rect stroke with a purple-to-pink linear gradient (stroke-dashoffset draw-on, then hold) plus a lavender background highlight sweeping behind the heading text, ending on a zoomed Export PDF button with a pulsing blurred gradient halo.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s017",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Large centered caption pill with a lavender-to-pink gradient fill over the exported PDF brief preview",
+      "transition_in": "other",
+      "transition_other": "Pull-back from the Export PDF close-up to the full app view that dissolves into the exported PDF preview (frame at 1:18.000 shows both layers ghosted together)",
+      "on_screen_text": [
+        "Moz Pro | AI Content Brief",
+        "Build smarter, search-optimized content faster.",
+        "Ready to transform your workflow?",
+        "Get every insight",
+        "perfectly organized",
+        "in one brief,"
+      ],
+      "text_word_count": 23,
+      "typography": "Captions: large medium-to-semibold humanist sans (Lato-like, low-confidence guess), sentence case, normal tracking, dark text centered in a rounded pill with a soft lavender-to-pink gradient; the caption text types on letter by letter in sync with speech. Underlying PDF uses the same sans with numbered title-case section headings.",
+      "depth_cues": ["none"],
+      "what_happens": "The exported PDF brief (Moz Pro | AI Content Brief header, numbered sections 01 Target Audience(s) onward) slowly scrolls upward while a gradient caption pill sits mid-frame and types out the voice-over phrase by phrase: 'Ready to transform' / 'your workflow?' (w190-w194), 'Get every insight' / 'perfectly organized' / 'in one brief,' (w195-w202); each phrase replaces the previous one in the same pill. A cursor rests near the top-right corner and a small '1 of 3' page badge is visible.",
+      "build_rebuild": "Render the PDF page as a full-width image scrolling up with a slow linear translateY, and overlay a centered rounded pill (lavender-to-pink linear gradient, ~60% opacity) whose text is revealed character by character from word timestamps, swapping to the next phrase at each VO pause.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

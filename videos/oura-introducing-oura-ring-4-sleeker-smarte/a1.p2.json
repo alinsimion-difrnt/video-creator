@@ -1,0 +1,142 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "102d93b0fa473882bcef69832949c4c4f858e2d95111670429e814615de42ec8",
+    "created_at": "2026-10-05T07:39:46.211138Z"
+  },
+  "video": "oura-introducing-oura-ring-4-sleeker-smarte",
+  "task": "a1-p2",
+  "shots": [
+    {
+      "shot": "s007",
+      "shot_type": "footage",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Silver ring tumbling across a white bedsheet, then rolling inside a curled green yoga mat",
+      "transition_in": "other",
+      "transition_other": "Detector flagged a non-cut transition into this shot; the sheets do not show its type. Inside the shot the bedsheet scene changes to a rolled yoga mat between 9.0 s and 9.5 s, apparently a fast cut or match on the rolling ring.",
+      "on_screen_text": [
+        "Your"
+      ],
+      "text_word_count": 1,
+      "typography": "Small white sans-serif in sentence case, regular weight, normal tracking, centred over the footage; appears from about 10.0 s as the first word of a two-part caption.",
+      "depth_cues": [
+        "blur",
+        "shadow"
+      ],
+      "what_happens": "Macro product footage: the ring rolls on a bedsheet (sleep context), then the scene shifts to the ring rolling inside a coiled yoga mat in a softly blurred living room, and the word 'Your' fades in at frame centre, setting up the next caption.",
+      "build_rebuild": "Play two macro clips of the ring rolling (bedsheet, then rolled mat) back to back, and fade in a centred white sans 'Your' about 1.7 s into the shot, holding it into the next cut.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s008",
+      "shot_type": "footage",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Ring rolling across a green yoga mat, casting a long oval shadow",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Your activity"
+      ],
+      "text_word_count": 2,
+      "typography": "Mixed-style caption: 'Your' in a clean white sans-serif regular, 'activity' in a white italic serif (light weight, lowercase), normal tracking; font guesses low confidence.",
+      "depth_cues": [
+        "shadow",
+        "blur"
+      ],
+      "what_happens": "Close-up of the ring rolling on the textured mat surface in raking light; the caption completes as 'Your activity', with the italic serif word naming the tracked metric.",
+      "build_rebuild": "Over a macro clip of the ring rolling on a mat, keep 'Your' in white sans at frame centre and append 'activity' in italic serif to its right on the cut.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s009",
+      "shot_type": "footage",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Extreme close-up of a person's lips and jaw exhaling slowly",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Your recovery"
+      ],
+      "text_word_count": 2,
+      "typography": "Same caption system: 'Your' in white sans-serif regular, then 'recovery' appended in white italic serif lowercase; centred, normal tracking.",
+      "depth_cues": [
+        "blur"
+      ],
+      "what_happens": "Warm, shallow-focus close-up of a person breathing out; 'Your' sits alone first, then 'recovery' appears in italic serif around 13.0 s. The last sampled frame (14.0 s) already shows the next ring-on-table scene, so the cut lands at the shot boundary.",
+      "build_rebuild": "Cut to a shallow-depth macro of a face exhaling, show 'Your' centred in white sans, then add 'recovery' in italic serif about 1 s later.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s010",
+      "shot_type": "footage",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Ring standing upright and spinning on a wooden table edge in low sunlight",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": [
+        "shadow",
+        "blur"
+      ],
+      "what_happens": "Product hero beat with no caption: the ring rotates in place on a table corner, catching hard window light against a blurred background, while the lyric 'I can feel your love' plays (w7-w11). The last sampled frame (16.0 s) shows clasped hands, the start of the next scene.",
+      "build_rebuild": "Hold a text-free macro of the ring spinning upright on a sunlit wooden surface for about 2 s, timed to the vocal line.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s011",
+      "shot_type": "footage",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Clasped hands with the ring on one finger, in soft warm light",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "To check your stress"
+      ],
+      "text_word_count": 4,
+      "typography": "'To check your' in white sans-serif regular sentence case, then 'stress' appended in white italic serif lowercase; centred over the hands, normal tracking.",
+      "depth_cues": [
+        "blur"
+      ],
+      "what_happens": "Lifestyle close-up of tense clasped hands wearing the ring; caption builds from 'To check your' to 'To check your stress' around 17.0 s. The final sampled frame (18.0 s) shows the green swirled-fabric scene of the next shot.",
+      "build_rebuild": "Over a shallow-focus clip of clasped hands wearing the ring, show 'To check your' in centred white sans and append 'stress' in italic serif about 0.5 s later.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s012",
+      "shot_type": "footage",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Ring nested at the centre of olive-green fabric twisted into a spiral",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Stylised product shot: the ring rotates slowly in the vortex of swirled velvet-like fabric, showing its inner sensors and then its polished outer face; no text and no speech.",
+      "build_rebuild": "Place the ring at the centre of a spiral-draped fabric set (or 3D render) and rotate it about 90 degrees over 1.2 s with the camera locked overhead.",
+      "confidence": "high"
+    }
+  ],
+  "summary": null
+}

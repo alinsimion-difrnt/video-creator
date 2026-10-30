@@ -1,0 +1,52 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "80af3c18d97b51b68f3843d399290d7ef9e3a2866df2d54ac05ef601db30176f",
+    "created_at": "2026-10-13T13:05:37+00:00"
+  },
+  "id": "7610485362309254407",
+  "kind": "clip",
+  "palette": {
+    "colours_estimate": 30,
+    "shadows": "cool",
+    "notes": "Measured 30 colours, 2 ramps, median hue shift 81.7 (very hue-shifted), ramp length 15. Night blues for room and city, neon pink sign, pale blue-white shirt; skin lit warm-pink against blue shadow."
+  },
+  "lighting": "Night interior: cool blue ambient from the window and city, a pink neon accent top-left, warm light on skin. Classic blue/pink cyberpunk split.",
+  "silhouette": "Two figures: seated girl in front with long dark hair, standing boy behind with spiky hair and a hair dryer. Clear overlap, his arm reaching into her hair.",
+  "motion": {
+    "timing": "Code: 99 changes in 8.06 s, 12.3 drawings/s, hold median 83.3 ms (p25 and p75 the same), on 2.5 (about 12 fps on a 30 fps copy). Short looping action: dryer moves through her hair, her hair sways.",
+    "principles": [
+      "loop",
+      "secondary motion (hair)",
+      "overlap",
+      "idle blink"
+    ]
+  },
+  "texture": "Clean pixel art (clean_pixels true, dither 0.0016) with soft anti-aliased light on the window glass; neon has a slight glow.",
+  "camera": "Static, medium shot, square framing; no camera move.",
+  "sound": "Caption tags pixel music: a song loop under it.",
+  "acting": {
+    "enters": "No entrance; the loop starts mid-action.",
+    "acts": "He dries her hair, moving the dryer and lifting strands; her head turns slightly and hair sways in reply. The small give-and-take is the story.",
+    "exits": "No exit; loops seamlessly in 8 s.",
+    "comes_back": null,
+    "depth": "Two planes of characters (her in front, him behind) plus the city far away through the window."
+  },
+  "techniques": [
+    "blue ambient + pink neon accent split",
+    "strongly hue-shifted ramps (81.7 median)",
+    "two-character interaction loop: action and reaction",
+    "hair as secondary motion reacting to the dryer",
+    "animated on 2s-3s (~12 fps) for a cozy, handmade feel"
+  ],
+  "feel": "night blue room + pink neon + warm skin + 12 fps two-person loop = cozy romantic moment",
+  "for_fred": "Make Fred and Pixie interact in one small loop: one acts (Pixie bats at Fred), the other reacts with secondary motion (Fred's fins and tail flutter). Animate at about 12 fps on 2s-3s, keep it 4-8 s, and show them on two depth planes, one in front, one behind.",
+  "sources": [
+    "data/study/pixel/work/7610485362309254407/sheet.jpg",
+    "studies/pixel-art/clips/7610485362309254407.json",
+    "studies/pixel-art/tiktok.yaml"
+  ]
+}

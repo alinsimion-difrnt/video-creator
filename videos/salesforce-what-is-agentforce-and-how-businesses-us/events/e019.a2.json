@@ -1,0 +1,65 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "d39a3938840a878a7ebfe137fb356a06b3edd89938162ab3fa922396981a3c1d",
+    "created_at": "2026-10-05T06:53:18.109843Z"
+  },
+  "video": "salesforce-what-is-agentforce-and-how-businesses-us",
+  "event": "e019",
+  "task": "a2-e019",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Incoming Cirrus Virtual Agent builder page (topic test + Conversation Preview)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 800, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [20, 0, 1000, 1000],
+      "manual_reason": "The outgoing Add Topics page is fully off-screen in the end frame, so no candidate box exists; box marks the full frame it filled at the burst start.",
+      "label": "Outgoing Add Topics and Actions page",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 800, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x030",
+      "verdict": "confirm",
+      "label": "chime",
+      "note": "A clear tonal onset with sustained harmonic lines starts about 60.6 s, mid-push, as the Conversation Preview robot lands; it reads as a soft chime layered on the music bed."
+    }
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "horizontal page push",
+    "description": "The whole Add Topics screen is pushed off to the left while the next Agent Builder screen (Cirrus Virtual Agent with Conversation Preview) slides in from the right. Both move as one strip at near-constant speed, ramping in and out over about 0.8 s.",
+    "why_premium": "A lateral push reads as moving forward a step in the setup flow rather than a jump cut. The soft chime marks the arrival of the friendly agent preview just as the narration turns to 'Your agents will then work inside'."
+  },
+  "build_hint": {
+    "gsap": "Put both pages in one horizontal strip: gsap.fromTo('.page-strip', {xPercent: 0}, {xPercent: -50, duration: 0.8, ease: 'power2.inOut'}); no stagger, both pages move together; trigger the chime at about 70% progress.",
+    "remotion": "const p = interpolate(frame, [0, 24], [0, 1], {easing: Easing.inOut(Easing.quad), extrapolateRight: 'clamp'}); outgoing translateX = -p * width, incoming translateX = (1 - p) * width. Alternatively spring({frame, fps, config: {damping: 200, stiffness: 60}}) for an overdamped settle."
+  },
+  "confidence": "medium",
+  "notes": "Code reports camera.move pan_right with pan_x near -1.0 (one full frame width), consistent with a full-page horizontal push; it could equally be modelled as a camera pan across a wide canvas. No canonical pattern covers a lateral page push, hence 'other'. Energy is flat across the burst, which suggests near-linear speed with short ramps."
+}

@@ -1,0 +1,52 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T14:01:39+00:00"
+  },
+  "id": "papers-please",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "cool",
+    "notes": "Desaturated drab greys, olive greens and browns for the booth and desk; one accent per entrant (red hat, blue face cast) carries identity. Clip 2 is fan art (red/black), ignored for the game's palette."
+  },
+  "lighting": "Flat, almost no light direction: faces get a single cool or green cast as a mood tint rather than lit shading; the booth is a dark frame around a lighter desk.",
+  "silhouette": "Entrants are head-and-shoulders busts in a window: hat shape (cap, fur hat, peaked uniform cap) and glasses make each one readable at tiny size.",
+  "motion": {
+    "timing": "Not measured (no metrics file). Frames show near-static busts; change comes from cutting between entrants and UI elements (speech bubbles, documents) popping on, not from in-between animation.",
+    "principles": [
+      "limited animation",
+      "pose-to-pose",
+      "staging through a frame"
+    ]
+  },
+  "texture": "Chunky low-res pixels upscaled hard; scanline-like dark wood stripes behind the window; paper documents with tiny dithered text.",
+  "camera": "Fixed split screen: top strip shows a small side-on queue at the checkpoint, bottom is the close-up booth and desk. Intro uses full-frame newspaper and propaganda cards.",
+  "sound": "",
+  "acting": {
+    "enters": "Entrants walk up the queue as tiny figures in the top strip, then appear as a bust in the booth window.",
+    "acts": "Talk in short pixel-font speech bubbles stacked beside the window (one word per bubble); hand over papers that slide onto the desk.",
+    "exits": "Leave the window and walk off as a tiny figure in the top strip; the next one steps up.",
+    "comes_back": true,
+    "depth": "Same characters shown twice at two scales: tiny in the background queue, large bust in the foreground booth."
+  },
+  "techniques": [
+    "two-scale staging: tiny walker in a background strip + large close-up bust",
+    "one accent colour per character on a drab base palette",
+    "stacked one-word speech bubbles timed as beats",
+    "fixed window frame so only the character changes",
+    "newspaper/propaganda card as chapter intro"
+  ],
+  "feel": "drab grey-olive world + one accent colour per face + fixed booth window = tense, readable bureaucracy",
+  "for_fred": "Give Fred a 'queue strip': show him tiny walking in a thin band at the top of the reel, then cut to him big in a window frame below; when he leaves the frame, let him reappear tiny in the strip doing something else. Keep the background drab so his orange reads.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Papers,_Please",
+    "data/study/pixel/work/papers-please/clip1-7621199104898583830.jpg",
+    "data/study/pixel/work/papers-please/clip2-7682909452038688013.jpg",
+    "studies/pixel-art/sources.yaml"
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "beat": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Beat",
+      "type": "array"
+    },
+    "camera_move": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Camera Move",
+      "type": "array"
+    },
+    "change_type": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Change Type",
+      "type": "array"
+    },
+    "composition": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Composition",
+      "type": "array"
+    },
+    "depth_cue": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Depth Cue",
+      "type": "array"
+    },
+    "easing_class": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Easing Class",
+      "type": "array"
+    },
+    "element_role": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Element Role",
+      "type": "array"
+    },
+    "format": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Format",
+      "type": "array"
+    },
+    "hook_technique": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Hook Technique",
+      "type": "array"
+    },
+    "music_event": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Music Event",
+      "type": "array"
+    },
+    "pattern_aliases": {
+      "additionalProperties": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "title": "Pattern Aliases",
+      "type": "object"
+    },
+    "patterns": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Patterns",
+      "type": "array"
+    },
+    "scene_archetype": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Scene Archetype",
+      "type": "array"
+    },
+    "sfx": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Sfx",
+      "type": "array"
+    },
+    "shot_type": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Shot Type",
+      "type": "array"
+    },
+    "transition": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Transition",
+      "type": "array"
+    }
+  },
+  "required": [
+    "format",
+    "shot_type",
+    "composition",
+    "transition",
+    "element_role",
+    "change_type",
+    "easing_class",
+    "camera_move",
+    "sfx",
+    "music_event",
+    "depth_cue",
+    "hook_technique",
+    "beat",
+    "patterns"
+  ],
+  "title": "Taxonomy",
+  "type": "object"
+}

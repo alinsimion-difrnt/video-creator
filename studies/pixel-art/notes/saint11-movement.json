@@ -1,0 +1,65 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "f465b4f9281c1cd2e2faa9753fddcf96b4d6d3a9c54575950043272149eb820d",
+    "created_at": "2026-10-13T13:02:05+00:00"
+  },
+  "id": "saint11-movement",
+  "kind": "tutorial",
+  "palette": {
+    "colours_estimate": 16,
+    "shadows": "mixed",
+    "notes": "Measured 11-20 colours per sheet (run 11, slide-roll 12, four-legged walk 16, wall slide 18, walk 19, jump 20), UI included. Ramps shift both ways (+24 to +48 deg, -10 to -46 deg); dithering about 1%."
+  },
+  "lighting": "Pale blue-white mannequins lit flat from above with one darker shade, so the pose reads, not the rendering; the four-legged walk adds an orange leg-colour code to separate near and far legs.",
+  "silhouette": "Generic mannequin figures so the pose carries everything; strong lean in the run and slide, open legs on contact frames, a tucked ball for the roll.",
+  "motion": {
+    "timing": "Walk 12 frames at 100 ms (1.2 s cycle), run 32 frames at 80 ms, jump 24 at 80 ms, slide-roll 16 at 80 ms, wall slide 18 at 80 ms, four-legged walk 16 at 100 ms. Even holds everywhere; locomotion runs at 12.5 drawings/s, walks at 10.",
+    "principles": [
+      "contact and passing poses",
+      "anticipation",
+      "squash and stretch",
+      "follow through",
+      "overlapping action",
+      "arcs"
+    ]
+  },
+  "texture": "Plain flat sprites on solid panels; dust puffs at slide and land, and small sparks on wall-slide contact are the only texture.",
+  "camera": "Static; cycles play in place in a strip of key poses while one copy travels across a panel, showing the cycle and the move side by side.",
+  "sound": "",
+  "acting": {
+    "enters": "The jump figure starts from a crouch, rises and lands; the walker crosses the panel from one side to the other and wraps.",
+    "acts": "Jump is split into anticipation crouch, launch, rise, invert at the peak, fall and contact squash; the roll tucks into a ball and unrolls into a recover pose.",
+    "exits": "Moving copies exit by walking or running out of the panel and wrap back in from the opposite edge.",
+    "comes_back": true,
+    "depth": "One plane; the jump panel shows the figure small in a wide space next to a close strip of the key poses."
+  },
+  "techniques": [
+    "walk in 6 keys per step (12 frames): contact, down, passing, up",
+    "run with one foot off the ground and a forward lean, body high on the passing pose",
+    "jump in phases: crouch anticipation, stretch on launch, tuck at peak, stretch on fall, squash on contact",
+    "slide as a low held pose with dust behind, then a roll into a ball and a recover pose",
+    "wall slide: back to the wall, one hand dragging, sparks at the contact point",
+    "four-legged walk: diagonal leg pairs move together, near and far legs coloured apart"
+  ],
+  "feel": "pose-first mannequins + clear contact frames + crouch before every jump = movement that reads in 12 frames",
+  "for_fred": "Make Fred travel in and out of frame with a real move instead of sliding the sprite: a 2-frame crouch, a stretched launch, a squash on landing, and a swim cycle with clear key poses at 80 ms. For an exit he can jump or swim off the edge and return from the opposite edge, like the wrapping walker.",
+  "sources": [
+    "https://saint11.art/img/pixel-tutorials/Walk.gif",
+    "https://saint11.art/img/pixel-tutorials/RunCycleSimple.gif",
+    "https://saint11.art/img/pixel-tutorials/Jump.gif",
+    "https://saint11.art/img/pixel-tutorials/Slide-Roll.gif",
+    "https://saint11.art/img/pixel-tutorials/WallSlide.gif",
+    "https://saint11.art/img/pixel-tutorials/4LegsWalk.gif",
+    "studies/pixel-art/metrics/saint11-movement.json",
+    "data/study/pixel/work/saint11-movement/4LegsWalk.png",
+    "data/study/pixel/work/saint11-movement/Jump.png",
+    "data/study/pixel/work/saint11-movement/RunCycleSimple.png",
+    "data/study/pixel/work/saint11-movement/Slide-Roll.png",
+    "data/study/pixel/work/saint11-movement/Walk.png",
+    "data/study/pixel/work/saint11-movement/WallSlide.png"
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "9f4514f036cd8c4ac4e49b4f2c98944eb723a6ee479924ac2955141a8e2ff310",
+    "created_at": "2026-10-05T06:46:59.378810Z"
+  },
+  "video": "notion-introducing-the-new-notion-ai",
+  "event": "e026",
+  "task": "a2-e026",
+  "elements": [
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Dragged PDF file icon",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["slide_right", "slide_down", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 900, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "AI composer input expanding to hold attachment",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["morph"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 100, "easing_class": "step"}
+    },
+    {
+      "box": null,
+      "manual_box": [645, 320, 680, 480],
+      "manual_reason": "'Draft anything...' suggestion row disappears on drop; it is absent from the end frame so no candidate box covers it",
+      "label": "Draft anything suggestion row removed",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Draft anything...",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 100, "easing_class": "step"}
+    },
+    {
+      "box": "b12",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Attached file chip",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["pop", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "RFP_Sept2024.pdf",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 100, "easing_class": "step"}
+    },
+    {
+      "box": "b11",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "All sources selector",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "All sources",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 100, "easing_class": "step"}
+    },
+    {
+      "box": "b14",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Typed prompt start with caret",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["typewriter"],
+      "change_other": null,
+      "is_text": true,
+      "text": "R|",
+      "text_unit": "char",
+      "estimates": {"duration_ms": 200, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "chip_append",
+    "proposed_name": null,
+    "description": "A PDF file icon is dragged from the left of the page across into the Notion AI composer; on drop the composer snaps taller, the 'Draft anything...' row disappears, an RFP_Sept2024.pdf attachment pill appears inside the input with an 'All sources' selector, and typing begins.",
+    "why_premium": "The drag gives a physical, readable cause for the state change, and the drop resolves in a single clean frame swap so the attachment lands with no lag; the first typed character immediately hands off to the next beat."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.file-icon', {x: dropX, y: dropY, duration: 0.9, ease: 'power2.inOut'}); then at drop: tl.set('.file-icon', {autoAlpha: 0}).set('.draft-row', {display: 'none'}).set('.composer', {height: expandedH}).fromTo('.attach-chip', {autoAlpha: 0, scale: 0.96}, {autoAlpha: 1, scale: 1, duration: 0.12, ease: 'power2.out'}, '<').fromTo('.all-sources', {autoAlpha: 0}, {autoAlpha: 1, duration: 0.12}, '<'); then a TextPlugin/steps typing of the prompt starting ~0.1s after.",
+    "remotion": "Interpolate the file icon x/y over ~27 frames at 30fps with Easing.inOut(Easing.quad); at the drop frame switch composer state (taller height, chip + 'All sources' visible, draft row hidden) with a 3-4 frame opacity fade on the chip; then reveal prompt chars with Math.floor(interpolate(frame, ...)) slicing."
+  },
+  "confidence": "medium",
+  "notes": "Drop is a near-instant state swap (single-frame energy spike near f821) rather than an animated expand. b03 is the diff box at the file icon's start position; the icon is absent from the end frame. b02 covers both the composer and suggestion rows; chosen as the closest box for the composer reflow. Removal chip close button (b15) is part of the attachment chip and not listed separately. No SFX candidates in packet."
+}

@@ -1,0 +1,44 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "0de822b35ebfe394ad914ca9ac1b18fd0214e42c39f309b9dfd444c2832c15ab",
+    "created_at": "2026-10-05T06:48:58.078885Z"
+  },
+  "video": "notion-introducing-the-new-notion-ai",
+  "event": "e031",
+  "task": "a2-e031",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Mascot face features (brows, eyes, nose)",
+      "role": "logo",
+      "role_other": null,
+      "change_types": ["morph"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 250, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "logo_resolve",
+    "proposed_name": null,
+    "description": "Continuation of the closing mascot beat: inside the static circle, the Notion AI face shifts from a squinting wink pose to a neutral, two-eyed pose with both brows arched, drawn as a handful of stepped poses before it holds.",
+    "why_premium": "Animating only the facial strokes, on twos, while the circle stays locked gives the brand mark a deliberate, hand-animated character moment to end on, without any camera or layout noise."
+  },
+  "build_hint": {
+    "gsap": "Swap pose layers or morph stroke paths with a stepped tween: tl.to('.face', {morphSVG: '#pose-neutral', duration: 0.25, ease: 'steps(3)'}) or tl.set('.pose-n', {autoAlpha: 1}) every 2 frames; keep the circle static.",
+    "remotion": "Choose the face pose by Math.min(Math.floor(frame / 2), poses.length - 1) over ~6-8 frames (animating on twos) and hold the last pose; the circle outline stays a constant element."
+  },
+  "confidence": "high",
+  "notes": "Energy alternates spike/zero every other frame, consistent with stepped (on-twos) pose changes rather than a smooth tween. Follows e029 in the same shot (e030 not in this batch). No SFX candidates."
+}

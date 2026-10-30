@@ -1,0 +1,174 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a3_pattern_cards",
+    "annotator": "claude-code",
+    "skill": "write-pattern-cards@e525a58fa6d8",
+    "model": null,
+    "input_hash": "f18212fcaac1938df7b21733bdc9cd905cd5d83a2d9bf2526c33dc1e04561a0e",
+    "created_at": "2026-10-05T12:49:38.408850Z"
+  },
+  "id": "masked_scroll",
+  "name": "Content Scrolls Inside A Window",
+  "summary": "A list, chat thread or stack of cards slides up (or down) inside a fixed frame, so old items leave through the frame's edge and new ones arrive, while everything around the frame stays still.",
+  "when_to_use": [
+    "Showing progress piling up, such as an agent finishing steps or a chat getting new replies",
+    "Revealing how much is in a list or menu without cutting away",
+    "Linking one statement to the next as if they were lines of one continuous document",
+    "Moving the viewer's reading position to where the next beat begins"
+  ],
+  "avoid_when": [
+    "The scroll is tiny and incidental; it reads as an accidental nudge, not an authored move",
+    "The surrounding interface also moves, which removes the calm anchor the mask provides",
+    "The viewer needs to read the content that flies past"
+  ],
+  "steps": [
+    "Put the moving content in a container clipped by a fixed panel or window so nothing shows outside its edges.",
+    "Keep headers, footers, overlays and neighbouring panels outside the clipped container so they stay put.",
+    "Move the whole content container up (or down) as one piece, easing into a soft stop on the item that matters next.",
+    "Fade or slide the newly arriving item in as it enters the window, landing it in its slot.",
+    "Optionally keep a scrollbar thumb, a cursor or a gentle camera push in sync with the scroll.",
+    "Start the next beat, such as streaming text or a reply, right where the scroll settles."
+  ],
+  "build": {
+    "gsap": "Wrap the content in an overflow-hidden viewport and tween the inner container with gsap.to on y, usually a power ease-out or a power ease-in-out for a fast jump between distant positions; linear or stepped tweens suit terminal-style hard redraws. Bring the new row in with gsap.fromTo on y and autoAlpha, placed on the timeline with '<' so it travels with the scroll, and tie any scrollbar thumb to the same progress.",
+    "remotion": "Drive the container's translateY with interpolate and an Easing.out or Easing.inOut curve, clamped at the end, inside an overflow:hidden element; or use a well-damped spring for a softer settle, with a lightly underdamped spring only when a small overshoot is wanted. Map scrollbar, push-in scale and the new item's opacity from the same progress value."
+  },
+  "sound": "No typical sound: the bed is mostly music or unclear. When a cue is present it is usually a soft impact or chime landing just after the scroll starts.",
+  "why_premium": "The mask does the heavy lifting: content advances while the frame, headers and side panels stay anchored, so the viewer keeps their place and never feels a cut. A single continuous scroll compresses a long run of work or a long list into one readable gesture that says 'a lot happened', and decelerating into the next important item gives the move a clear landing that hands off straight into the next beat. Details like a frosted overlay blurring content beneath it or a synced scrollbar make it feel like real, living software rather than a slideshow.",
+  "numbers": {
+    "id": "masked_scroll",
+    "events": 35,
+    "videos": 10,
+    "weight": 25.8,
+    "duration_ms": {
+      "n": 73,
+      "videos": 7,
+      "weight": 50.7336,
+      "median": 453.459,
+      "p25": 236.839,
+      "p75": 1089.741,
+      "ci": [
+        355.193,
+        666.7
+      ]
+    },
+    "easing_mix": {
+      "ease_out": 0.2876,
+      "ease_in_out": 0.2771,
+      "linear": 0.167,
+      "ease_in": 0.1512,
+      "spring_overshoot": 0.117
+    },
+    "change_mix": {
+      "slide_up": 0.5187,
+      "fade": 0.1544,
+      "slide_down": 0.1068,
+      "color_shift": 0.0644,
+      "mask_reveal": 0.0347,
+      "other": 0.0347,
+      "slide_left": 0.0219,
+      "rotate": 0.0193,
+      "highlight": 0.0142,
+      "morph": 0.0129,
+      "scale_up": 0.0064,
+      "weight_shift": 0.0064,
+      "typewriter": 0.0051
+    },
+    "role_mix": {
+      "body_text": 0.1798,
+      "card": 0.1745,
+      "list_item": 0.1606,
+      "ui_panel": 0.1204,
+      "avatar": 0.103,
+      "other": 0.0558,
+      "label": 0.0541,
+      "icon": 0.0384,
+      "headline": 0.0314,
+      "background": 0.0297,
+      "cursor": 0.0244,
+      "button": 0.0105,
+      "chart": 0.0105,
+      "notification": 0.007
+    },
+    "sfx_label_mix": {
+      "music": 0.5047,
+      "unsure": 0.1963,
+      "impact": 0.1495,
+      "chime": 0.1121,
+      "swoosh_reverse": 0.0374
+    },
+    "sfx_offset_ms": {
+      "n": 55,
+      "videos": 4,
+      "weight": 38.2,
+      "median": 165.262,
+      "p25": 5.4,
+      "p75": 392.719,
+      "ci": [
+        103.9,
+        216.4
+      ]
+    },
+    "examples": [
+      {
+        "video": "anthropic-introducing-claude-design-by-anthropic-l",
+        "event": "e007",
+        "score": 4.0
+      },
+      {
+        "video": "attio-introducing-ask-attio",
+        "event": "e012",
+        "score": 4.0
+      },
+      {
+        "video": "raycast-new-raycast-coming-2026",
+        "event": "e003",
+        "score": 4.0
+      },
+      {
+        "video": "warp-introducing-warp-2-0-the-agentic-develo",
+        "event": "e005",
+        "score": 4.0
+      },
+      {
+        "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+        "event": "e013",
+        "score": 4.0
+      }
+    ]
+  },
+  "examples": [
+    {
+      "video": "anthropic-introducing-claude-design-by-anthropic-l",
+      "event": "e007",
+      "score": 4.0
+    },
+    {
+      "video": "attio-introducing-ask-attio",
+      "event": "e012",
+      "score": 4.0
+    },
+    {
+      "video": "raycast-new-raycast-coming-2026",
+      "event": "e003",
+      "score": 4.0
+    },
+    {
+      "video": "warp-introducing-warp-2-0-the-agentic-develo",
+      "event": "e005",
+      "score": 4.0
+    },
+    {
+      "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+      "event": "e013",
+      "score": 4.0
+    }
+  ],
+  "caveats": [
+    "Timing spread is wide: quick jumps and slow screen-recorded scrolls are grouped together, so pick the short or long end to suit the content.",
+    "Easing is mixed with no dominant family; ease-out and ease-in-out lead only narrowly.",
+    "Sound offsets come from only a few videos, so the sound guidance is weak."
+  ]
+}

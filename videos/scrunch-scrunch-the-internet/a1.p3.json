@@ -1,0 +1,140 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "2229b154a657b766be64fc6473e487f198404b2677dea2a43ccb17e24b1d87c3",
+    "created_at": "2026-10-05T06:32:26.650692Z"
+  },
+  "video": "scrunch-scrunch-the-internet",
+  "task": "a1-p3",
+  "shots": [
+    {
+      "shot": "s011",
+      "shot_type": "other",
+      "shot_type_other": "continuous composite take: recreated 'AI's viewpoint' UI panel, then a 3D spinning brand-mark coin, then a typed kinetic line, then a logo resolve and end card",
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "In turn: a white pill of AI-assistant marks that grows into an 'AI's viewpoint' text panel; a black octagonal star coin; the typed line 'the internet needs to be rebuilt for AI'; the 'scrunch' logo lockup with the CTA URL",
+      "transition_in": "other",
+      "transition_other": "morph from s010: a toggle on the purple field stretches into a wide white pill holding AI-assistant marks while the purple field fades to a pale blue/off-white starburst gradient",
+      "on_screen_text": [
+        "AI's viewpoint",
+        "[https://This link is difficult for AI to understand/#whoops]",
+        "**://It's also having trouble figuring out your user-friendly pricing structure [$100 off!] _ $40/mo",
+        "://Do you have reviews?",
+        "FREE! [is it just a free trial? Or is your product free?]",
+        "****AI CANNOT UNDERSTAND THIS BEAUTIFUL IMAGE & LAYOUT*****",
+        "[https://Still having issues with this stunning animated data section/#ughhhh]",
+        "**://You have tiered pricing? [$1200/year] _ $100/mo - $800/year - $70/mo",
+        "Mission statement and value proposition",
+        "Trusted by 1725 customers ★★★★★",
+        "the internet needs to be rebuilt for AI",
+        "scrunch",
+        "Get started today at Scrunch.com"
+      ],
+      "text_word_count": 87,
+      "typography": "Three systems: (1) the 'AI's viewpoint' panel uses a small monospaced code-style face for raw markdown-like lines (mixed case, all-caps shout line, bracketed URLs, '====' rule lines), with a small sans header and flat blue/green marker-highlight bars behind the rewritten lines; (2) the kinetic line is the same clean regular-weight sans as earlier shots, all lowercase except 'AI', normal tracking, typed with a visible caret; (3) the wordmark is a heavy bold lowercase geometric sans with tight tracking, and the CTA is small regular sans with the URL in bold (font guess, low confidence: Inter-like for the body sans). Leading symbols on some monospace lines are partly illegible ('**' is a best reading).",
+      "depth_cues": ["perspective_tilt", "glow", "blur"],
+      "what_happens": "Under 'Our platform continuously optimizes' (w111-w114) one toggle from s010 stretches into a white pill showing a row of AI-assistant marks (Meta-, OpenAI- and Perplexity-like marks plus a sparkle and a starburst; identification low confidence) as the purple field fades to a pale blue/off-white starburst gradient. The pill shrinks, moves up and becomes the header of an 'AI's viewpoint' panel that extends downward (~51-52s), then fills with messy monospace lines showing what AI sees of a website (w115-w119). Over 'AI retrieval without impacting human visitors' (w120-w125) a highlight cursor rewrites lines in place: the broken link line becomes blue-highlighted 'Mission statement and value proposition' and the reviews line becomes green-highlighted 'Trusted by 1725 customers' with stars; the panel holds. On 'We provide an accurate, up-to-date source of truth' (w126-w135) the panel tilts in 3D and flips (mirrored text visible at ~57.5s) while a black octagonal star coin rises in; the panel shrinks off to the left while the coin spins on the right, then the coin moves to centre, spins edge-on with a blue/orange rim glow on 'your truth' (w136-w137) and shrinks to a dot. On off-white, 'the internet needs to be rebuilt for AI' is typed with a caret in sync with w138-w145 while purple/yellow/green gradient strokes draw in from the corners, framing it in the logo's octagonal-star outline; it holds. On 'It's time to scrunch' (w146-w149) a black star-shaped zoom tunnel punches in, resolving into the star mark at centre with yellow, blue, green and purple light beams shooting out diagonally, which then fade. On 'optimize for the AI-first customer journey' (w153-w159) the mark slides left as the letters of 'scrunch' slide in from the right with motion blur and an RGB/colour split, settling into the logo lockup by ~68.5s. 'Get started today at Scrunch.com' types on beneath in sync with w160-w165, and the end card holds to the end of the video.",
+      "build_rebuild": "Chain the scenes on one timeline keyed to VO word timestamps: morph a toggle pill into a logo-row pill that becomes the header of a monospace text panel, wipe marker-highlight rects across two lines while swapping their text, flip the panel in 3D (rotateY) to reveal a spinning extruded octagon logo coin, type the tagline with a caret inside four gradient stroke paths drawn with stroke-dashoffset, then burst the star mark in with radial colour beams and slide the wordmark letters in from the right with blur and RGB-offset that settle to zero, and type the CTA line below.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001", "s002"], "words": [0, 11]},
+      {"beat": "problem", "shots": ["s003", "s004"], "words": [12, 35]},
+      {"beat": "agitate", "shots": ["s005", "s006", "s007", "s008"], "words": [36, 82]},
+      {"beat": "mechanism", "shots": ["s009", "s010"], "words": [83, 110]},
+      {"beat": "demo", "shots": ["s011"], "words": [111, 125]},
+      {"beat": "outcome", "shots": ["s011"], "words": [126, 159]},
+      {"beat": "cta", "shots": ["s011"], "words": [160, 165]}
+    ],
+    "hook": {
+      "text": "A customer just chose your competitor because AI told them to. Why?",
+      "technique": "pain",
+      "technique_other": null,
+      "shots": ["s001", "s002"],
+      "words": [0, 11]
+    },
+    "cta": {
+      "text": "Get started today at Scrunch.com",
+      "shots": ["s011"]
+    },
+    "tone": "Confident, minimal and editorial: calm, measured voice-over over a restrained off-white canvas, with bursts of colour and 3D motion used as punctuation; it frames a business threat, then answers it with a product-as-movement line ('scrunch the internet').",
+    "signature_moments": [
+      {
+        "shots": ["s002", "s003"],
+        "description": "The black typed line peels away in a page-curl with a lilac back face, revealing a 3D fly-through of the website and case-study cards that rush past with depth-of-field blur, then AI brand marks timed to 'chat GPT, perplexity, and Google'.",
+        "why_premium": "One unbroken camera move turns an abstract claim (customers no longer visit your site) into a physical journey, with every layer landing on its VO word; it reads as bespoke 3D, not template slides."
+      },
+      {
+        "shots": ["s011"],
+        "description": "The 'AI's viewpoint' panel shows a website as messy monospace text that AI cannot parse, then a highlight cursor rewrites the lines into clean 'Mission statement and value proposition' and 'Trusted by 1725 customers' lines.",
+        "why_premium": "It visualises an invisible product (content optimised for AI retrieval) with a simple before/after metaphor, using a second, code-like type system so the 'machine view' reads at a glance."
+      },
+      {
+        "shots": ["s009", "s011"],
+        "description": "The octagonal star logo is a recurring motif: it emerges from the zoom-through blur in s009, returns as a spinning 3D coin, frames the typed tagline as gradient strokes, then bursts in with light beams before the wordmark letters slide in with an RGB split.",
+        "why_premium": "Building the brand mark into the transitions and the tagline frame makes the final logo resolve feel earned and gives the whole film one coherent geometric language."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 4,
+        "evidence": "Opens straight on a pain statement built word by word, flips the 'YOUR COMPETITOR' pill to solid black on the keyword, inverts to a typed line and ends on a spoken 'Why?' within 5s. Strong and fast, though purely typographic, with no product or striking visual yet.",
+        "refs": ["s001", "s002", "w5", "w11"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "Clear problem-to-solution arc (AI decides, sites are built for people, Scrunch makes an AI-readable version) and the 'AI's viewpoint' before/after makes the mechanism concrete. The middle (s007 spheres and streaks, s010 toggles for the 'control layer') stays abstract, so what the product actually looks like is never shown.",
+        "refs": ["s004", "s007", "s010", "s011", "w103", "w121"]
+      },
+      "ui_showcase": {
+        "score": 2,
+        "evidence": "No real product UI appears. The UI on screen is generic recreated website and pricing cards (the customer's site), stylised toggles and the conceptual 'AI's viewpoint' text panel; well crafted, but nothing shows the platform's interface.",
+        "refs": ["s006", "s010", "s011"]
+      },
+      "motion_polish": {
+        "score": 5,
+        "evidence": "Best-in-class craft: a page-curl into a 3D card fly-through with depth-of-field, a stair-step word settle, zoom-through transitions that feel continuous, a toggle-to-pill morph, a 3D panel flip into a spinning glowing logo coin, caret-typed lines synced to VO words, and a wordmark resolve with blur and RGB split. Transitions are motivated by objects, not cuts.",
+        "refs": ["s002", "s003", "s004", "s007", "s009", "s011"]
+      },
+      "sound_design": {
+        "score": 3,
+        "evidence": "Judged from anchors plus visuals: a music bed at about 117 BPM, integrated loudness -17.15 LUFS, and 32 SFX candidates that are mostly labelled music or unsure. Only a few confident accents (clear reverse swooshes around the s007-s008 and s009 zoom-throughs) line up with the big visual moves. Competent and clean, but sparse in distinct, picture-locked sound accents compared with the density of the visual motion.",
+        "refs": ["s001", "s008", "s009", "s011"]
+      },
+      "vo_script_quality": {
+        "score": 4,
+        "evidence": "Tight, conversational script with a rhetorical 'Why?', the punchy 'That's the problem.', the 'source of truth, your truth' repetition, and a brand verb payoff ('time to scrunch the internet'). A few abstract phrases ('control layer to manage what AI can access') and an unsupported '90%' claim weaken it slightly.",
+        "refs": ["w11", "w33", "w69", "w103", "w135", "w137", "w149"]
+      },
+      "brand_consistency": {
+        "score": 4,
+        "evidence": "One sans family, an off-white base canvas and the octagonal star mark recur throughout and tie into the final lockup. Full-field colour changes (orange s004, light blue s006, purple s010) are bold but slightly loose as a system before the end card pulls it together.",
+        "refs": ["s004", "s006", "s009", "s010", "s011"]
+      },
+      "works_muted": {
+        "score": 3,
+        "evidence": "With sound off the hook text, 'That's the problem.', the 'AI CANNOT UNDERSTAND THIS BEAUTIFUL IMAGE & LAYOUT' panel, the typed tagline and the CTA still tell a rough story. The long middle stretch (built for people not AI, 90% of visitors, what Scrunch is) is carried only by VO over abstract visuals.",
+        "refs": ["s001", "s004", "s006", "s007", "s010", "s011"]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "A premium, highly polished brand-launch explainer: exceptional motion craft and a coherent geometric brand language, a sharp hook and a clear narrative. It falls short of 5 because it never shows the real product and leans on VO for the middle of the argument.",
+        "refs": ["s002", "s003", "s009", "s011"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 2,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "Key lines are animated type synced to English VO word timing (s001, s002, s004 and the typed tagline in s011), and the 'AI's viewpoint' panel carries dense English monospace copy that is central to the demo; UI cards also bake in English labels. Localising means re-timing the typography to new VO and rewriting the panel text. The mid-section visuals (s005-s010) are text-light and reusable."
+    }
+  }
+}

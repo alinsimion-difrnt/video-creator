@@ -1,0 +1,65 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "dac5939824117da6151f26d40398497b60d5a332824363c866c72ce4972c6fb8",
+    "created_at": "2026-10-05T06:44:30.282943Z"
+  },
+  "video": "dyson-introducing-the-dyson-washg1-wet-floor",
+  "event": "e001",
+  "task": "a2-e001",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Spinning blue microfibre roller throwing a water spray and debris across the red floor",
+      "role": "other",
+      "role_other": "product_part",
+      "change_types": ["other"],
+      "change_other": "live_action_splash",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    },
+    {
+      "box": null,
+      "manual_box": [305, 828, 835, 1000],
+      "manual_reason": "No candidate box covers the cereal ring at the right edge; b01 already used for the roller/splash and b04 is only a small corner patch.",
+      "label": "Cereal ring debris swept toward the camera",
+      "role": "other",
+      "role_other": "debris",
+      "change_types": ["slide_right", "scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "linear"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x019",
+      "verdict": "confirm",
+      "label": "music",
+      "note": "Low-confidence classifier (0.51); spectrogram shows sustained tonal bands with no sharp transient at 15.63 s, consistent with the music bed rather than a splash SFX."
+    }
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "macro product action",
+    "description": "Low-angle, slow-motion macro of the floor cleaner's roller in action: water sprays off the spinning blue roller and cereal debris is flung toward the lens across a glossy red floor, while the narration says 'cleaning'.",
+    "why_premium": "High-speed macro photography with shallow depth of field, rim-lit water droplets and a bold red/blue palette makes a mundane cleaning action feel cinematic and visceral, proving the product mechanism visually."
+  },
+  "build_hint": {
+    "gsap": "Live footage, no tween rebuild. For a motion-graphics recreation: particle emitter for droplets (gsap.to(particles, {x: 'random(200,600)', y: 'random(-200,100)', opacity: 0, duration: 0.6, ease: 'power2.out', stagger: 0.01})) plus a debris sprite gsap.fromTo({x: 0, scale: 0.6}, {x: 300, scale: 1.4, duration: 0.3, ease: 'none'}); keep playback slow-motion.",
+    "remotion": "Use <OffthreadVideo> with playbackRate < 1 for the slow-mo plate; if recreated, drive droplet positions with interpolate(frame, [0, 18], [...]) linearly and the debris scale with interpolate(frame, [0, 9], [0.6, 1.4])."
+  },
+  "confidence": "low",
+  "notes": "Live-action product macro footage, not UI; elements are physical (water, debris) and hard to map to taxonomy roles, hence role 'other'. Small diff boxes b02-b06 are water/blur noise and were not listed. Camera verdict none."
+}

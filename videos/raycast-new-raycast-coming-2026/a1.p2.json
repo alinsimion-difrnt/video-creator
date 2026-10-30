@@ -1,0 +1,147 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "6144bfaa622357900228e550ad6608a1995ea65326f855ab2790345c0458fa5e",
+    "created_at": "2026-10-05T07:42:34.516112Z"
+  },
+  "video": "raycast-new-raycast-coming-2026",
+  "task": "a1-p2",
+  "shots": [
+    {
+      "shot": "s007",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Selected emoji tile that ends on a studio-microphone emoji, which shrinks into a small round microphone button and grows into a voice-input pill with a live waveform",
+      "transition_in": "other",
+      "transition_other": "no visible cut: continues the emoji-grid selection from s006 (the fire tile is still selected at 15.0 s); flagged as non-cut by the detector",
+      "on_screen_text": [
+        "Get my active issues and start a focus session"
+      ],
+      "text_word_count": 9,
+      "typography": "Small sans UI face (Inter-like, low-confidence guess), regular weight, sentence case, normal tracking, near-white prompt text with a trailing caret in a dark rounded input bar",
+      "depth_cues": [
+        "grain",
+        "blur",
+        "shadow"
+      ],
+      "what_happens": "The emoji-grid selection keeps stepping right (fire at 15.0 s, droplet at 15.5 s, microphone at 16.0 s, each with a tint matched to the emoji). Around 16.5 s the grid dims and blurs out leaving the mic tile; by 17.0 s it has shrunk to a small rounded tile over a dark draped-fabric backdrop, then becomes a circular dictation button (17.5 s) that expands sideways into a pill with a dictation icon, an animated waveform and an up-arrow send button (18.0 to 19.5 s), drifting left then back to centre. By 20.0 s the view has moved to a cropped dark window whose input reads 'Get my active issues and start a focus session' with a caret.",
+      "build_rebuild": "Step a tinted selection ring across three emoji tiles every ~500 ms, blur and fade the grid except the selected tile, scale that tile down and morph it into a 44px circular icon button, then animate its width open into a rounded pill holding an icon, a bar-waveform whose bar heights are driven by noise, and a send button, before cutting to an input field showing the transcribed prompt.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s008",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "AI preset popover above the prompt input ('Ask Anything', 'Personal Assistant', 'React Expert', 'Viral Tweet Writer') with the highlight moving from the first to the second item",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Ask Anything",
+        "⌘ 1",
+        "Personal Assistant",
+        "⌘ 2",
+        "React Expert",
+        "Viral Tweet Writer",
+        "Search",
+        "Get my active issues and start a focus session"
+      ],
+      "text_word_count": 23,
+      "typography": "Sans UI face, regular weight, title case for preset names in near-white with line icons; shortcut hints on small outlined keycaps; grey 'Search' placeholder with caret; the prompt text in sentence case, its tail slightly dimmer",
+      "depth_cues": [
+        "grain",
+        "blur",
+        "shadow"
+      ],
+      "what_happens": "Close-up of the bottom-left of a dark window with the prompt input from s007. At about 21.0 s a rounded popover listing four AI presets with a search field appears above the input, 'Ask Anything' highlighted with '⌘ 1'; the frame drifts slightly, and by 22.0 s the highlight has moved to 'Personal Assistant' with '⌘ 2'.",
+      "build_rebuild": "Over a cropped prompt input, pop in a rounded frosted popover (opacity 0 to 1 with a ~12px upward move, ease-out ~200 ms) containing four icon-plus-label rows and a search field, then slide the rounded highlight background from row 1 to row 2, swapping the keycap hint, while the whole camera drifts up a few pixels.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s009",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "AI chat window titled 'Focus Session / GPT-5' with the sent prompt bubble and tool-call status lines appearing one by one",
+      "transition_in": "other",
+      "transition_other": "flagged as non-cut by the detector; the popover view gives way to a chat window entering from the right, read as the prompt being sent; exact motion not resolvable at 2 fps",
+      "on_screen_text": [
+        "Focus Session",
+        "GPT-5",
+        "Get my active issues and start a",
+        "Getting active Linear Issues",
+        "Getting active GitHub Issues"
+      ],
+      "text_word_count": 18,
+      "typography": "Sans UI face; title 'Focus Session' in medium weight title case with a smaller grey 'GPT-5' subtitle in a rounded header pill; user message in a grey rounded bubble, truncated at the frame edge; status lines in regular weight sentence case, mid-grey, revealed with a left-to-right fading gradient",
+      "depth_cues": [
+        "grain",
+        "blur",
+        "shadow"
+      ],
+      "what_happens": "A macOS-style dark chat window (traffic lights, compose button, 'Focus Session' header with 'GPT-5') sits cropped top-right over a light grey draped backdrop, sliding slightly up-left. A small loading glyph appears (22.5 s), then 'Getting active Linear Issues' reveals left to right behind a fading edge (23.0 to 23.5 s); by 24.0 s the camera has pushed in and 'Getting active GitHub Issues' has appeared below with another loading glyph under it.",
+      "build_rebuild": "Slide a cropped dark window with a header pill and right-aligned user bubble into frame, then add status rows one at a time, each revealed by animating a left-to-right gradient mask over ~500 ms with a provider icon, while the camera slowly pushes in toward the rows.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s010",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "Three stacked tool-call status rows, the third ('Creating note with summary') revealing in",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Get my active is",
+        "Getting active Linear Issues",
+        "Getting active GitHub Issues",
+        "Creating note with summary",
+        "Checking for updates..."
+      ],
+      "text_word_count": 19,
+      "typography": "Sans UI face, regular weight, sentence case, light grey status text with app icons; the newest row fades in left to right through a gradient mask; the last frame shows the 'Checking for updates...' pill in near-white regular weight",
+      "depth_cues": [
+        "grain",
+        "blur",
+        "shadow"
+      ],
+      "what_happens": "Closer crop of the chat window: the Linear and GitHub status rows are visible and a third row with a red notes-app icon, 'Creating note with summary', reveals left to right (24.5 to 25.0 s) then dims to a muted grey by 25.5 s as if completed. The frame stamped 26.0 s already shows the 'Checking for updates...' pill over the backdrop, so the change to s011 may happen slightly before the detected boundary.",
+      "build_rebuild": "Hold the two existing status rows, append a third row with an app icon whose text is revealed by a left-to-right gradient mask over ~500 ms, then fade its text to a dimmer grey to mark completion before cutting away.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s011",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Centred 'Checking for updates...' pill with a spinning loader over the draped dark-and-grey backdrop",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Checking for updates..."
+      ],
+      "text_word_count": 3,
+      "typography": "Sans UI face (SF-like or Inter-like, low-confidence guess), regular to medium weight, sentence case, normal tracking, near-white, with an ellipsis",
+      "depth_cues": [
+        "grain",
+        "blur",
+        "shadow"
+      ],
+      "what_happens": "A dark translucent pill with a thin light outline and a circular arc spinner sits centred over the abstract draped backdrop; the spinner rotates through the shot while the pill and text hold still for about 2 s.",
+      "build_rebuild": "Centre a frosted dark pill (backdrop blur, 1px light border, fully rounded) holding a 2px arc spinner rotating at about 1 turn per second and the label 'Checking for updates...', over a grainy dark gradient backdrop, and hold it for 2 s.",
+      "confidence": "high"
+    }
+  ],
+  "summary": null
+}

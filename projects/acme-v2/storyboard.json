@@ -1,0 +1,463 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "c6_storyboard",
+  "annotator": "claude-code",
+  "skill": null,
+  "model": null,
+  "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "created_at": "2026-10-06T15:00:00Z"
+ },
+ "project": "acme-v2",
+ "scenes": [
+  {
+   "scene": "s01",
+   "archetype": "kinetic_statement_card",
+   "canvas": "marketing",
+   "slots": {
+    "headline": "People ask AI everything now.",
+    "emphasis_word": "everything",
+    "cycling_options": [
+     "Where can I buy running shoes online?",
+     "Where should we eat tonight?",
+     "Which CRM should a small agency use?"
+    ],
+    "background": "site canvas with soft drifting shapes"
+   },
+   "accent": "the word 'everything'",
+   "cues": [
+    {
+     "word": 0,
+     "do": "headline reveals word by word",
+     "target": "headline"
+    },
+    {
+     "word": 4,
+     "do": "'everything' turns orange with a soft highlight bar",
+     "target": "emphasis_word"
+    },
+    {
+     "word": 6,
+     "do": "first question slides in under the headline",
+     "target": "cycling_options"
+    },
+    {
+     "word": 11,
+     "do": "second question replaces it",
+     "target": "cycling_options"
+    },
+    {
+     "word": 15,
+     "do": "third question replaces it and holds",
+     "target": "cycling_options"
+    }
+   ]
+  },
+  {
+   "scene": "s02",
+   "archetype": "chat_demo_panel",
+   "canvas": "product",
+   "example_data": true,
+   "slots": {
+    "panel_chrome": "ChatGPT answer card with an engine chip",
+    "messages": [
+     "What's the best CRM for small marketing agencies?"
+    ],
+    "answer_body": [
+     "1 Northwind: pipeline CRM for small teams",
+     "2 Cobalt: email-first sales tracking",
+     "3 Ledgerly: CRM with built-in invoicing",
+     "4 Harbor: simple contacts and deals",
+     "5 Your brand?"
+    ]
+   },
+   "accent": "the '5 Your brand?' row",
+   "cues": [
+    {
+     "word": 22,
+     "do": "answer card slides up",
+     "target": "panel_chrome"
+    },
+    {
+     "word": 25,
+     "do": "the question types into the prompt row",
+     "target": "messages"
+    },
+    {
+     "word": 31,
+     "do": "answer rows stagger in, one per beat",
+     "target": "answer_body"
+    },
+    {
+     "word": 36,
+     "do": "rows four and five pulse to count them",
+     "target": "answer_body"
+    },
+    {
+     "word": 40,
+     "do": "'5 Your brand?' outlines in orange and holds",
+     "target": "answer_body"
+    }
+   ]
+  },
+  {
+   "scene": "s03",
+   "archetype": "app_icon_orbit",
+   "canvas": "marketing",
+   "slots": {
+    "hub": "Acme logo (orange, light-background version)",
+    "icons": [
+     "ChatGPT",
+     "Gemini",
+     "Perplexity"
+    ],
+    "status_badge": "Updated daily",
+    "caption": "Against the competitors you pick",
+    "background": "site canvas"
+   },
+   "accent": "the Acme logo",
+   "cues": [
+    {
+     "word": 45,
+     "do": "the logo resolves in the centre",
+     "target": "hub"
+    },
+    {
+     "word": 57,
+     "do": "ChatGPT icon orbits in",
+     "target": "icons"
+    },
+    {
+     "word": 58,
+     "do": "Gemini icon orbits in",
+     "target": "icons"
+    },
+    {
+     "word": 60,
+     "do": "Perplexity icon orbits in",
+     "target": "icons"
+    },
+    {
+     "word": 61,
+     "do": "'Updated daily' badge pops on",
+     "target": "status_badge"
+    },
+    {
+     "word": 65,
+     "do": "caption fades in under the orbit",
+     "target": "caption"
+    }
+   ]
+  },
+  {
+   "scene": "s04",
+   "archetype": "prompt_input_card",
+   "canvas": "product",
+   "slots": {
+    "greeting": "First: your questions",
+    "prompt_text": "What's the best CRM for small marketing agencies?",
+    "input_chrome": "question list card with a YOURS chip per row",
+    "preset_menu": [
+     "Which CRM has the best email automation for agencies?",
+     "What CRM works with Google Workspace?"
+    ],
+    "context_ui": {
+     "personas": [
+      {
+       "name": "CEO",
+       "list": [
+        "Northwind",
+        "Cobalt",
+        "Harbor"
+       ]
+      },
+      {
+       "name": "Student",
+       "list": [
+        "Ledgerly",
+        "Harbor",
+        "Your brand"
+       ]
+      }
+     ],
+     "note": "the same question, two different short lists"
+    }
+   },
+   "accent": "the 'AI suggested' chip",
+   "cues": [
+    {
+     "word": 68,
+     "do": "step label slides in",
+     "target": "greeting"
+    },
+    {
+     "word": 75,
+     "do": "the question types into the first row",
+     "target": "prompt_text"
+    },
+    {
+     "word": 84,
+     "do": "two suggested questions append with an 'AI suggested' chip",
+     "target": "preset_menu"
+    },
+    {
+     "word": 89,
+     "do": "persona chips appear beside the question",
+     "target": "context_ui"
+    },
+    {
+     "word": 98,
+     "do": "the CEO card shows its short list",
+     "target": "context_ui"
+    },
+    {
+     "word": 101,
+     "do": "the Student card shows a different list",
+     "target": "context_ui"
+    }
+   ],
+   "example_data": true
+  },
+  {
+   "scene": "s05",
+   "archetype": "ai_working_loader",
+   "canvas": "product",
+   "slots": {
+    "status_label": "Second: real browser runs",
+    "status_cycle": [
+     "Opening ChatGPT",
+     "Opening Gemini",
+     "Opening Perplexity"
+    ],
+    "working_icon": "a browser window with the engine's app inside",
+    "source_icons": [
+     "ChatGPT",
+     "Gemini",
+     "Perplexity"
+    ],
+    "result_view": "the answer exactly as a customer sees it in the app"
+   },
+   "cues": [
+    {
+     "word": 107,
+     "do": "step label slides in",
+     "target": "status_label"
+    },
+    {
+     "word": 111,
+     "do": "a browser window opens",
+     "target": "working_icon"
+    },
+    {
+     "word": 112,
+     "do": "the status cycles through the three apps",
+     "target": "status_cycle"
+    },
+    {
+     "word": 123,
+     "do": "the window settles on a finished answer",
+     "target": "result_view"
+    }
+   ]
+  },
+  {
+   "scene": "s06",
+   "archetype": "document_highlight",
+   "canvas": "product",
+   "title": "Third: we read the answers",
+   "example_data": true,
+   "slots": {
+    "document": {
+     "engine": "ChatGPT",
+     "text": "For a small marketing agency, Northwind is the usual pick for its pipeline views. Cobalt is cheaper and simpler. Your brand stands out for client reporting and gets praise for its support.",
+     "brands": [
+      "Northwind",
+      "Cobalt",
+      "Your brand"
+     ],
+     "your_brand": "Your brand",
+     "sentiment_phrase": "gets praise for its support"
+    },
+    "focus_regions": [
+     "brand names, numbered in the order they appear",
+     "the phrase that says how the AI feels about your brand"
+    ],
+    "highlight_style": "orange tint for your brand, grey tint for competitors",
+    "cue_words": [
+     "mentioned",
+     "order",
+     "talks about you",
+     "topic"
+    ],
+    "tags": [
+     "Interest rates: 8.2/10 positive",
+     "Burger: 6.4/10 neutral"
+    ]
+   },
+   "accent": "your brand's highlight",
+   "cues": [
+    {
+     "word": 128,
+     "do": "step label and the answer card slide in",
+     "target": "document"
+    },
+    {
+     "word": 133,
+     "do": "brand names highlight one by one with order badges",
+     "target": "focus_regions"
+    },
+    {
+     "word": 140,
+     "do": "the sentiment phrase underlines",
+     "target": "focus_regions"
+    },
+    {
+     "word": 146,
+     "do": "topic tags slide out from the card",
+     "target": "tags"
+    },
+    {
+     "word": 151,
+     "do": "the 'Interest rates' tag fills its score",
+     "target": "tags"
+    },
+    {
+     "word": 161,
+     "do": "the 'Burger' tag fills its score",
+     "target": "tags"
+    }
+   ]
+  },
+  {
+   "scene": "s07",
+   "archetype": "tile_grid",
+   "canvas": "product",
+   "slots": {
+    "tiles": [
+     "Search results",
+     "Reddit threads",
+     "Parent groups on Facebook",
+     "Student forums"
+    ],
+    "hero_tile": "Reddit threads",
+    "caption": "Fourth: where the AI gets its answers",
+    "status_chip": [
+     "Children's products",
+     "Colleges"
+    ],
+    "background": "app canvas"
+   },
+   "accent": "the 'Show up here next' marker",
+   "cues": [
+    {
+     "word": 167,
+     "do": "step label slides in",
+     "target": "caption"
+    },
+    {
+     "word": 175,
+     "do": "the 'Search results' tile appears, then shrinks",
+     "target": "tiles"
+    },
+    {
+     "word": 182,
+     "do": "Reddit tile pops in large",
+     "target": "hero_tile"
+    },
+    {
+     "word": 184,
+     "do": "Facebook groups tile with a 'Children's products' chip",
+     "target": "status_chip"
+    },
+    {
+     "word": 193,
+     "do": "Student forums tile with a 'Colleges' chip",
+     "target": "status_chip"
+    },
+    {
+     "word": 199,
+     "do": "an orange 'Show up here next' marker lands on the tiles",
+     "target": "tiles"
+    }
+   ]
+  },
+  {
+   "scene": "s08",
+   "archetype": "cards_triptych",
+   "canvas": "marketing",
+   "title": "For agencies",
+   "slots": {
+    "cards": [
+     "A real report on their brand",
+     "Sent as a link",
+     "They sign, you pay"
+    ],
+    "card_labels": [
+     "Report",
+     "Link",
+     "Signed"
+    ],
+    "layout": "three cards in a row, left to right",
+    "cue_words": [
+     "report",
+     "link",
+     "pay"
+    ]
+   },
+   "accent": "the 'They sign, you pay' card",
+   "cues": [
+    {
+     "word": 207,
+     "do": "'For agencies' label slides in",
+     "target": "layout"
+    },
+    {
+     "word": 221,
+     "do": "the report card rises",
+     "target": "cards"
+    },
+    {
+     "word": 228,
+     "do": "the link card rises",
+     "target": "cards"
+    },
+    {
+     "word": 234,
+     "do": "the third card rises with an orange check",
+     "target": "cards"
+    }
+   ]
+  },
+  {
+   "scene": "s09",
+   "archetype": "logo_close",
+   "canvas": "marketing",
+   "slots": {
+    "logo_mark": "Acme logo (orange, light-background version)",
+    "wordmark": "Acme",
+    "tagline": "Free plan. No card needed.",
+    "url_or_price": "acme.example",
+    "background": "site canvas"
+   },
+   "accent": "the Acme logo",
+   "cues": [
+    {
+     "word": 240,
+     "do": "the logo resolves",
+     "target": "logo_mark"
+    },
+    {
+     "word": 243,
+     "do": "tagline fades in",
+     "target": "tagline"
+    },
+    {
+     "word": 250,
+     "do": "URL fades in below",
+     "target": "url_or_price"
+    }
+   ]
+  }
+ ]
+}

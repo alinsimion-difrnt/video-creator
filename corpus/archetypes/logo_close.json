@@ -1,0 +1,274 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a3_pattern_cards",
+  "annotator": "claude-code",
+  "skill": "write-archetype-cards@a75a12f0ca91",
+  "model": null,
+  "input_hash": "133fb5808800adfd1ed7ea94a95ab3416ca1c59b07c592b81cfe67984f35397b",
+  "created_at": "2026-10-05T19:10:51.904546Z"
+ },
+ "id": "logo_close",
+ "name": "Logo Close",
+ "summary": "The last scene: a closing tagline or call to action builds, then shapes or the final UI resolve into the brand mark and wordmark, which hold on a clean background. It leaves the viewer with the brand and one thing to do next.",
+ "when_to_use": [
+  "As the final scene of almost any explainer.",
+  "When the narration ends on a call to action or a payoff line.",
+  "To bookend a video whose opening used the same logo animation."
+ ],
+ "slots": [
+  {"name": "tagline", "what": "a short closing line or slogan", "required": false},
+  {"name": "cta_line", "what": "what to do next, such as try it, visit or availability", "required": false},
+  {"name": "logo_mark", "what": "the brand symbol as a vector", "required": true},
+  {"name": "wordmark", "what": "the brand or product name lockup", "required": true},
+  {"name": "lead_in_visual", "what": "the last product view or shapes that collapse into the logo", "required": false},
+  {"name": "url_or_price", "what": "a small line under the lockup with a web address, price or date", "required": false},
+  {"name": "background", "what": "a plain or gradient end-card field", "required": true}
+ ],
+ "steps": [
+  "The previous scene clears, shrinks or washes out to the end-card background.",
+  "A tagline or call to action builds word by word, with keywords tinted as they are spoken.",
+  "The tagline clears and shapes or the lead-in visual converge into the logo mark.",
+  "The wordmark slides or wipes out beside or below the mark as the lockup recentres.",
+  "An optional small line with the address, price or date fades in beneath.",
+  "The lockup holds while the music finishes, then fades out to the background."
+ ],
+ "patterns": [
+  "logo_resolve",
+  "kinetic_word_reveal",
+  "layout_reframe",
+  "prompt_type_on",
+  "input_text_cycle",
+  "whip_transition"
+ ],
+ "build": {
+  "gsap": "One timeline for the close: scale and opacity tweens to clear the last view, a per-word stagger for the tagline with an expo ease-out and colour tweens on keywords, then the logo built from shapes that tween position, scale and border radius into place with a back or expo ease-out, a mask or x tween revealing the wordmark, a long hold, and a final opacity fade.",
+  "remotion": "A Sequence for the tagline and a later Sequence for the lockup; tagline words and logo parts each enter on a spring offset by index, the wordmark reveal uses an interpolated clip or translate, and the end of the composition holds the lockup with a closing interpolate to fade."
+ },
+ "sound": "Music carries the close and usually resolves under the held logo; a reverse swoosh or chime often marks the logo resolving, with an occasional impact. Treat the music ending as the main cue.",
+ "numbers": {
+  "id": "logo_close",
+  "shots": 55,
+  "videos": 49,
+  "weight": 31.8,
+  "duration_s": {
+   "n": 55,
+   "videos": 49,
+   "weight": 31.8,
+   "median": 6.859,
+   "p25": 4.354,
+   "p75": 10.237,
+   "ci": [
+    4.8,
+    8.792
+   ]
+  },
+  "events_per_shot": {
+   "n": 55,
+   "videos": 49,
+   "weight": 31.8,
+   "median": 0.0,
+   "p25": 0.0,
+   "p75": 1.0,
+   "ci": [
+    0.0,
+    1.0
+   ]
+  },
+  "first_motion_s": {
+   "n": 16,
+   "videos": 14,
+   "weight": 12.8,
+   "median": 0.574,
+   "p25": 0.183,
+   "p75": 1.644,
+   "ci": [
+    0.33,
+    1.042
+   ]
+  },
+  "pattern_mix": {
+   "logo_resolve": 0.3158,
+   "other": 0.2406,
+   "kinetic_word_reveal": 0.1504,
+   "layout_reframe": 0.0977,
+   "prompt_type_on": 0.0602,
+   "input_text_cycle": 0.0451,
+   "cursor_guided_demo": 0.0301,
+   "ui_camera_push_in": 0.0301,
+   "whip_transition": 0.0301
+  },
+  "transition_mix": {
+   "other": 0.3239,
+   "hard_cut": 0.3176,
+   "zoom_through": 0.1698,
+   "crossfade": 0.1509,
+   "blur": 0.0126,
+   "push": 0.0126,
+   "whip": 0.0126
+  },
+  "shot_type_mix": {
+   "logo": 0.522,
+   "kinetic_type": 0.2044,
+   "other": 0.195,
+   "3d": 0.0503,
+   "presenter": 0.0189,
+   "abstract": 0.0094
+  },
+  "beat_mix": {
+   "cta": 0.7224,
+   "outcome": 0.2262,
+   "demo": 0.0411,
+   "proof": 0.0103
+  },
+  "sfx_label_mix": {
+   "music": 0.4015,
+   "unsure": 0.2754,
+   "swoosh_reverse": 0.1261,
+   "chime": 0.0975,
+   "impact": 0.0804,
+   "glitch": 0.0136,
+   "whoosh": 0.0055
+  },
+  "sfx_offset_s_by_label": {
+   "chime": {
+    "n": 20,
+    "videos": 11,
+    "weight": 14.3,
+    "median": 2.804,
+    "p25": 1.689,
+    "p75": 6.658,
+    "ci": [
+     2.289,
+     6.049
+    ]
+   },
+   "glitch": {
+    "n": 4,
+    "videos": 3,
+    "weight": 2.0,
+    "median": 1.274,
+    "p25": 0.216,
+    "p75": 2.001,
+    "ci": null
+   },
+   "impact": {
+    "n": 16,
+    "videos": 9,
+    "weight": 11.8,
+    "median": 3.176,
+    "p25": 1.288,
+    "p75": 11.732,
+    "ci": [
+     1.448,
+     10.689
+    ]
+   },
+   "music": {
+    "n": 98,
+    "videos": 21,
+    "weight": 58.9,
+    "median": 5.056,
+    "p25": 2.68,
+    "p75": 12.318,
+    "ci": [
+     4.312,
+     6.443
+    ]
+   },
+   "swoosh_reverse": {
+    "n": 29,
+    "videos": 16,
+    "weight": 18.5,
+    "median": 2.175,
+    "p25": 1.015,
+    "p75": 4.405,
+    "ci": [
+     1.241,
+     3.211
+    ]
+   },
+   "unsure": {
+    "n": 74,
+    "videos": 28,
+    "weight": 40.4,
+    "median": 2.369,
+    "p25": 0.914,
+    "p75": 6.575,
+    "ci": [
+     1.588,
+     3.732
+    ]
+   },
+   "whoosh": {
+    "n": 1,
+    "videos": 1,
+    "weight": 0.8,
+    "median": 0.385,
+    "p25": 0.385,
+    "p75": 0.385,
+    "ci": null
+   }
+  },
+  "examples": [
+   {
+    "video": "notion-introducing-notion-ai-connectors",
+    "shot": "s005",
+    "score": 4.0
+   },
+   {
+    "video": "datadog-datadog-overview-see-inside-the-platfor",
+    "shot": "s013",
+    "score": 4.0
+   },
+   {
+    "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+    "shot": "s008",
+    "score": 5.0
+   },
+   {
+    "video": "figma-introducing-figma-motion-your-canvas-no",
+    "shot": "s028",
+    "score": 5.0
+   },
+   {
+    "video": "meta-introducing-meta-quest-3-coming-this-f",
+    "shot": "s034",
+    "score": 5.0
+   }
+  ]
+ },
+ "examples": [
+  {
+   "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+   "shot": "s008",
+   "score": 5.0
+  },
+  {
+   "video": "figma-introducing-figma-motion-your-canvas-no",
+   "shot": "s028",
+   "score": 5.0
+  },
+  {
+   "video": "meta-introducing-meta-quest-3-coming-this-f",
+   "shot": "s034",
+   "score": 5.0
+  },
+  {
+   "video": "notion-introducing-notion-ai-connectors",
+   "shot": "s005",
+   "score": 4.0
+  },
+  {
+   "video": "datadog-datadog-overview-see-inside-the-platfor",
+   "shot": "s013",
+   "score": 4.0
+  }
+ ],
+ "caveats": [
+  "Members are mixed: some shots fold a whole closing montage or a final demo into the same shot as the logo.",
+  "First-motion timing comes from a minority of shots.",
+  "Some members are only a trailing blank fade after the logo, which lowers the motion stats."
+ ]
+}

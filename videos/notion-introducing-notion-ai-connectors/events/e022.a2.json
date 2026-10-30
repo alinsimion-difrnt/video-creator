@@ -1,0 +1,51 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "d55a28ec0f73c29f95035342fee95b8447646a60d791281759b885a62ad86373",
+    "created_at": "2026-10-05T06:47:08.158994Z"
+  },
+  "video": "notion-introducing-notion-ai-connectors",
+  "event": "e022",
+  "task": "a2-e022",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Mouse cursor gliding to the Slack citation chip",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_up", "slide_left"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 500, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x002",
+      "verdict": "confirm",
+      "label": "music",
+      "note": "At 28.11 s, 680 ms after the cursor settles. The spectrogram shows new sustained harmonic bands starting there, a musical phrase change rather than a transient SFX. Nothing visual happens at that moment."
+    }
+  ],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "With the AI answer already on screen, the cursor glides diagonally from near the send button at the bottom right up to the blue Slack citation chip '2' after 'outage', showing motion blur on the way, and comes to rest on the chip, ready to open the source.",
+    "why_premium": "One smooth eased cursor path with motion blur leads the eye straight to the citation that proves the connector works (a Slack source), with no jitter or detour, like a scripted, retimed screen recording."
+  },
+  "build_hint": {
+    "gsap": "gsap.fromTo('.cursor', {x: 135, y: 300}, {x: 0, y: 0, duration: 0.5, ease: 'power2.inOut'}) along a straight diagonal (or motionPath with a slight curve). Optional directional blur via filter during travel.",
+    "remotion": "const p = interpolate(frame, [0, 15], [0, 1], {easing: Easing.bezier(0.45, 0, 0.55, 1), extrapolateRight: 'clamp'}); left = interpolate(p, [0,1], [955, 820]); top = interpolate(p, [0,1], [655, 360]). Spring({damping: 200}) with no overshoot also works."
+  },
+  "confidence": "high",
+  "notes": "Only the cursor moves. b03 marks its start area and b01 the union of its path; b02 is the settled position. The Slack chip shows no visible hover change by f842."
+}

@@ -1,0 +1,14 @@
+# Base plate for the bespoke panel (ADR 0034; written by `create panel --init` when missing): Robert below the
+# seam, the captions on the white strip above it, the audio. The panel page covers the product area (y 0-840).
+# The same plan as acme-reel, x-ads and facebook-algorithm.
+layout:
+- {word: 0, layout: split}
+split_seam: 980
+split_head_gap: 160
+captions: top
+caption_plate: true
+push: 1.05
+grade: {contrast: 1.08, saturate: 1.14, brightness: 1.01, warmth: 0.05}
+product_bg: canvas
+sounds: false
+panel: true

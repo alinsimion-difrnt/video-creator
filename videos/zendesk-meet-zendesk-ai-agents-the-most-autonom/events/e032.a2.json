@@ -1,0 +1,89 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "a66c22ad0b85edb589bed4110d369807b19eedb29d83b5fd64cf93df491f510b",
+    "created_at": "2026-10-05T06:55:56.816671Z"
+  },
+  "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+  "event": "e032",
+  "task": "a2-e032",
+  "elements": [
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Left Z-glyph half and speech-bubble tail",
+      "role": "logo",
+      "role_other": null,
+      "change_types": ["morph", "slide_right"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 230, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Typing-indicator dots inside speech bubble",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 230, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Right edge of speech bubble",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["morph"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 230, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Checkmark circle and right K-glyph half",
+      "role": "logo",
+      "role_other": null,
+      "change_types": ["slide_left", "morph"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 230, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x110", "verdict": "confirm", "label": "music", "note": "Broadband vertical streak on the music bed's rhythmic grid, ~360 ms after the burst; no visual hit at that moment."},
+    {"id": "x111", "verdict": "confirm", "label": "music", "note": "Next beat in the same percussive pattern; precedes the e033 collapse."}
+  ],
+  "pattern": {
+    "id": "logo_resolve",
+    "proposed_name": null,
+    "description": "Wind-up of the Zendesk logo assembly: the glyph row (Z half, speech bubble with typing dots, checkmark circle, K half) subtly tightens and reshapes in place, anticipating the collapse into the final mark.",
+    "why_premium": "A small anticipatory squeeze before the big morph gives the logo collapse a sense of weight and intention instead of a hard swap; the product icons (chat, resolved check) literally become the brand mark."
+  },
+  "build_hint": {
+    "gsap": "Timeline on the four glyph groups: gsap.to(['.zLeft','.bubble','.dots','.checkK'], {x: (i) => inwardOffset[i], scaleX: 0.97, duration: 0.23, ease: 'power2.inOut', stagger: 0}) with the bubble's right edge via a clip-path/width tween; all together, no stagger, as a pre-roll to the e033 collapse.",
+    "remotion": "interpolate(frame, [0, 7], [0, 1], {easing: Easing.inOut(Easing.quad), extrapolateRight: 'clamp'}) driving per-glyph translateX toward centre and a small scaleX on the bubble; no spring (no overshoot visible)."
+  },
+  "confidence": "low",
+  "notes": "Motion is very subtle across the filmstrip (frames look nearly identical); camera verdict is none, so the 1.11 scale sum is internal content change, likely the glyphs reshaping/tightening. Exact per-glyph direction is uncertain; b01 (union) omitted as redundant with the child boxes."
+}

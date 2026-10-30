@@ -1,0 +1,981 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "s3_signals",
+    "annotator": "code",
+    "skill": null,
+    "model": null,
+    "input_hash": "a3fd0edda6c9a7dd9e116057279b6578bd60d79068d9998e381e341b1269f965",
+    "created_at": "2026-10-04T20:19:05.021786Z"
+  },
+  "video_id": "scrunch-scrunch-the-internet",
+  "video": {
+    "fps": 23.976,
+    "duration_s": 77.1188,
+    "shots": [
+      {
+        "id": "s001",
+        "start_s": 0.0,
+        "end_s": 2.2523,
+        "transition_in": null,
+        "motion_energy": 0.000813,
+        "events_per_s": 0.0,
+        "wpm": 159.8
+      },
+      {
+        "id": "s002",
+        "start_s": 2.2523,
+        "end_s": 5.0884,
+        "transition_in": {
+          "kind": "other",
+          "start_s": 2.2523,
+          "duration_s": 0.2503,
+          "direction": null
+        },
+        "motion_energy": 0.01482,
+        "events_per_s": 0.0,
+        "wpm": 126.9
+      },
+      {
+        "id": "s003",
+        "start_s": 5.0884,
+        "end_s": 15.1401,
+        "transition_in": {
+          "kind": "other",
+          "start_s": 5.0884,
+          "duration_s": 0.3337,
+          "direction": null
+        },
+        "motion_energy": 0.02166,
+        "events_per_s": 0.597,
+        "wpm": 125.4
+      },
+      {
+        "id": "s004",
+        "start_s": 15.1401,
+        "end_s": 17.3507,
+        "transition_in": {
+          "kind": "zoom_through",
+          "start_s": 15.1401,
+          "duration_s": 0.709,
+          "direction": null
+        },
+        "motion_energy": 0.007967,
+        "events_per_s": 0.0,
+        "wpm": 81.4
+      },
+      {
+        "id": "s005",
+        "start_s": 17.3507,
+        "end_s": 18.8522,
+        "transition_in": {
+          "kind": "other",
+          "start_s": 17.3507,
+          "duration_s": 1.2513,
+          "direction": null
+        },
+        "motion_energy": 0.019022,
+        "events_per_s": 0.0,
+        "wpm": 199.8
+      },
+      {
+        "id": "s006",
+        "start_s": 18.8522,
+        "end_s": 23.9823,
+        "transition_in": {
+          "kind": "other",
+          "start_s": 18.8522,
+          "duration_s": 0.8759,
+          "direction": null
+        },
+        "motion_energy": 0.004852,
+        "events_per_s": 0.0,
+        "wpm": 117.0
+      },
+      {
+        "id": "s007",
+        "start_s": 23.9823,
+        "end_s": 35.9109,
+        "transition_in": {
+          "kind": "zoom_through",
+          "start_s": 23.9823,
+          "duration_s": 1.0427,
+          "direction": null
+        },
+        "motion_energy": 0.01112,
+        "events_per_s": 0.251,
+        "wpm": 140.8
+      },
+      {
+        "id": "s008",
+        "start_s": 35.9109,
+        "end_s": 37.2039,
+        "transition_in": {
+          "kind": "zoom_through",
+          "start_s": 35.9109,
+          "duration_s": 0.709,
+          "direction": null
+        },
+        "motion_energy": 0.012533,
+        "events_per_s": 0.0,
+        "wpm": 139.2
+      },
+      {
+        "id": "s009",
+        "start_s": 37.2039,
+        "end_s": 40.9993,
+        "transition_in": {
+          "kind": "zoom_through",
+          "start_s": 37.2039,
+          "duration_s": 2.4608,
+          "direction": null
+        },
+        "motion_energy": 0.022469,
+        "events_per_s": 0.0,
+        "wpm": 158.1
+      },
+      {
+        "id": "s010",
+        "start_s": 40.9993,
+        "end_s": 48.9239,
+        "transition_in": {
+          "kind": "other",
+          "start_s": 40.9993,
+          "duration_s": 0.7925,
+          "direction": null
+        },
+        "motion_energy": 0.010053,
+        "events_per_s": 0.126,
+        "wpm": 143.9
+      },
+      {
+        "id": "s011",
+        "start_s": 48.9239,
+        "end_s": 77.1188,
+        "transition_in": {
+          "kind": "other",
+          "start_s": 48.9239,
+          "duration_s": 1.1261,
+          "direction": null
+        },
+        "motion_energy": 0.006395,
+        "events_per_s": 0.142,
+        "wpm": 117.0
+      }
+    ],
+    "transitions_by_kind": {
+      "other": 6,
+      "zoom_through": 4
+    },
+    "mean_shot_s": 7.011,
+    "events": [
+      {
+        "id": "e001",
+        "shot": "s003",
+        "kind": "camera",
+        "start_s": 6.2563,
+        "end_s": 6.7568,
+        "bbox": [
+          0.0,
+          0.13333333333333333,
+          1.0,
+          0.9166666666666666
+        ],
+        "camera_move": "push_in"
+      },
+      {
+        "id": "e002",
+        "shot": "s003",
+        "kind": "camera",
+        "start_s": 7.4658,
+        "end_s": 8.3417,
+        "bbox": [
+          0.0,
+          0.0,
+          0.715625,
+          1.0
+        ],
+        "camera_move": "push_in"
+      },
+      {
+        "id": "e003",
+        "shot": "s003",
+        "kind": "camera",
+        "start_s": 9.5095,
+        "end_s": 10.5939,
+        "bbox": [
+          0.265625,
+          0.0,
+          1.0,
+          1.0
+        ],
+        "camera_move": "push_in"
+      },
+      {
+        "id": "e004",
+        "shot": "s003",
+        "kind": "motion",
+        "start_s": 11.8452,
+        "end_s": 12.1371,
+        "bbox": [
+          0.0,
+          0.0,
+          0.58125,
+          1.0
+        ],
+        "camera_move": "none"
+      },
+      {
+        "id": "e005",
+        "shot": "s003",
+        "kind": "motion",
+        "start_s": 12.6793,
+        "end_s": 12.9713,
+        "bbox": [
+          0.396875,
+          0.18888888888888888,
+          1.0,
+          1.0
+        ],
+        "camera_move": "none"
+      },
+      {
+        "id": "e006",
+        "shot": "s003",
+        "kind": "motion",
+        "start_s": 13.6803,
+        "end_s": 13.9306,
+        "bbox": [
+          0.0,
+          0.18333333333333332,
+          0.59375,
+          0.8333333333333334
+        ],
+        "camera_move": "none"
+      },
+      {
+        "id": "e007",
+        "shot": "s007",
+        "kind": "motion",
+        "start_s": 32.8662,
+        "end_s": 32.9496,
+        "bbox": [
+          0.0,
+          0.0,
+          1.0,
+          1.0
+        ],
+        "camera_move": "none"
+      },
+      {
+        "id": "e008",
+        "shot": "s007",
+        "kind": "camera",
+        "start_s": 33.1164,
+        "end_s": 34.5345,
+        "bbox": [
+          0.0,
+          0.0,
+          1.0,
+          1.0
+        ],
+        "camera_move": "push_in"
+      },
+      {
+        "id": "e009",
+        "shot": "s007",
+        "kind": "camera",
+        "start_s": 35.2853,
+        "end_s": 35.6607,
+        "bbox": [
+          0.0,
+          0.0,
+          1.0,
+          1.0
+        ],
+        "camera_move": "push_in"
+      },
+      {
+        "id": "e010",
+        "shot": "s010",
+        "kind": "motion",
+        "start_s": 46.046,
+        "end_s": 46.3797,
+        "bbox": [
+          0.421875,
+          0.2222222222222222,
+          1.0,
+          1.0
+        ],
+        "camera_move": "none"
+      },
+      {
+        "id": "e011",
+        "shot": "s011",
+        "kind": "camera",
+        "start_s": 57.4741,
+        "end_s": 58.0998,
+        "bbox": [
+          0.021875,
+          0.15,
+          0.88125,
+          1.0
+        ],
+        "camera_move": "tilt_down"
+      },
+      {
+        "id": "e012",
+        "shot": "s011",
+        "kind": "motion",
+        "start_s": 59.3093,
+        "end_s": 59.643,
+        "bbox": [
+          0.0875,
+          0.3055555555555556,
+          0.89375,
+          0.7222222222222222
+        ],
+        "camera_move": "none"
+      },
+      {
+        "id": "e013",
+        "shot": "s011",
+        "kind": "camera",
+        "start_s": 65.5239,
+        "end_s": 65.8158,
+        "bbox": [
+          0.0,
+          0.0,
+          1.0,
+          1.0
+        ],
+        "camera_move": "tilt_up"
+      },
+      {
+        "id": "e014",
+        "shot": "s011",
+        "kind": "motion",
+        "start_s": 67.6927,
+        "end_s": 68.1098,
+        "bbox": [
+          0.203125,
+          0.3055555555555556,
+          0.9875,
+          0.6944444444444444
+        ],
+        "camera_move": "none"
+      }
+    ],
+    "camera_moves": {
+      "push_in": 5,
+      "tilt_down": 1,
+      "tilt_up": 1
+    },
+    "holds": [
+      {
+        "shot": "s001",
+        "start_s": 0.0,
+        "end_s": 2.2523,
+        "dead": false
+      },
+      {
+        "shot": "s002",
+        "start_s": 2.5025,
+        "end_s": 5.0884,
+        "dead": false
+      },
+      {
+        "shot": "s003",
+        "start_s": 5.4221,
+        "end_s": 6.2563,
+        "dead": false
+      },
+      {
+        "shot": "s003",
+        "start_s": 8.3834,
+        "end_s": 9.5095,
+        "dead": false
+      },
+      {
+        "shot": "s003",
+        "start_s": 10.6356,
+        "end_s": 11.8452,
+        "dead": false
+      },
+      {
+        "shot": "s003",
+        "start_s": 13.9723,
+        "end_s": 15.1401,
+        "dead": false
+      },
+      {
+        "shot": "s004",
+        "start_s": 15.8492,
+        "end_s": 17.3507,
+        "dead": false
+      },
+      {
+        "shot": "s006",
+        "start_s": 19.7281,
+        "end_s": 23.9823,
+        "dead": false
+      },
+      {
+        "shot": "s007",
+        "start_s": 25.025,
+        "end_s": 32.8662,
+        "dead": false
+      },
+      {
+        "shot": "s009",
+        "start_s": 39.6647,
+        "end_s": 40.9993,
+        "dead": false
+      },
+      {
+        "shot": "s010",
+        "start_s": 41.7918,
+        "end_s": 46.046,
+        "dead": false
+      },
+      {
+        "shot": "s010",
+        "start_s": 46.4214,
+        "end_s": 48.9239,
+        "dead": false
+      },
+      {
+        "shot": "s011",
+        "start_s": 50.0501,
+        "end_s": 57.4741,
+        "dead": false
+      },
+      {
+        "shot": "s011",
+        "start_s": 58.1415,
+        "end_s": 59.3093,
+        "dead": false
+      },
+      {
+        "shot": "s011",
+        "start_s": 59.6847,
+        "end_s": 65.5239,
+        "dead": false
+      },
+      {
+        "shot": "s011",
+        "start_s": 65.8575,
+        "end_s": 67.6927,
+        "dead": false
+      },
+      {
+        "shot": "s011",
+        "start_s": 68.1515,
+        "end_s": 77.1188,
+        "dead": false
+      }
+    ],
+    "dead_hold_count": 0,
+    "dead_hold_s": 0.0,
+    "pace_cv": 0.557
+  },
+  "audio": {
+    "stems": true,
+    "ducking_db": -1.32,
+    "loudness": {
+      "integrated_lufs": -17.15,
+      "short_term_max_lufs": -14.57,
+      "lra_lu": 3.36,
+      "sample_peak_dbfs": -1.21,
+      "true_peak_dbtp": -1.2
+    },
+    "bpm": 117.45,
+    "beat_confidence": 0.441,
+    "sfx": [
+      {
+        "id": "x001",
+        "sync_s": 0.6417,
+        "label": "impact",
+        "label_source": "rules",
+        "rules_label": "impact",
+        "clap_label": "swoosh_reverse",
+        "clap_score": 0.531,
+        "agreement": false,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": 641.7,
+        "at_scene_start": false
+      },
+      {
+        "id": "x002",
+        "sync_s": 0.9752,
+        "label": "unsure",
+        "label_source": "rules",
+        "rules_label": "unsure",
+        "clap_label": "music",
+        "clap_score": 0.355,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": 975.2,
+        "at_scene_start": false
+      },
+      {
+        "id": "x003",
+        "sync_s": 17.682,
+        "label": "music",
+        "label_source": "clap",
+        "rules_label": "unsure",
+        "clap_label": "music",
+        "clap_score": 0.604,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": 0.0,
+        "at_scene_start": true
+      },
+      {
+        "id": "x004",
+        "sync_s": 18.3259,
+        "label": "impact",
+        "label_source": "rules",
+        "rules_label": "impact",
+        "clap_label": "music",
+        "clap_score": 0.509,
+        "agreement": false,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": 0.0,
+        "at_scene_start": true
+      },
+      {
+        "id": "x005",
+        "sync_s": 31.7417,
+        "label": "music",
+        "label_source": "clap",
+        "rules_label": "unsure",
+        "clap_label": "music",
+        "clap_score": 0.854,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": -4169.2,
+        "at_scene_start": false
+      },
+      {
+        "id": "x006",
+        "sync_s": 35.3528,
+        "label": "swoosh_reverse",
+        "label_source": "clap",
+        "rules_label": "unsure",
+        "clap_label": "swoosh_reverse",
+        "clap_score": 0.896,
+        "agreement": null,
+        "on_beat": true,
+        "reveal_offset_ms": 67.5,
+        "scene_start_offset_ms": -558.1,
+        "at_scene_start": false
+      },
+      {
+        "id": "x007",
+        "sync_s": 38.2133,
+        "label": "music",
+        "label_source": "clap",
+        "rules_label": "unsure",
+        "clap_label": "music",
+        "clap_score": 0.581,
+        "agreement": null,
+        "on_beat": true,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": 0.0,
+        "at_scene_start": true
+      },
+      {
+        "id": "x008",
+        "sync_s": 38.4871,
+        "label": "swoosh_reverse",
+        "label_source": "clap",
+        "rules_label": "unsure",
+        "clap_label": "swoosh_reverse",
+        "clap_score": 0.551,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": 0.0,
+        "at_scene_start": true
+      },
+      {
+        "id": "x009",
+        "sync_s": 39.2594,
+        "label": "impact",
+        "label_source": "rules",
+        "rules_label": "impact",
+        "clap_label": "swoosh_reverse",
+        "clap_score": 0.387,
+        "agreement": false,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": 0.0,
+        "at_scene_start": true
+      },
+      {
+        "id": "x010",
+        "sync_s": 39.7061,
+        "label": "unsure",
+        "label_source": "rules",
+        "rules_label": "unsure",
+        "clap_label": "swoosh_reverse",
+        "clap_score": 0.409,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": 41.4,
+        "at_scene_start": true
+      },
+      {
+        "id": "x011",
+        "sync_s": 41.0297,
+        "label": "unsure",
+        "label_source": "rules",
+        "rules_label": "unsure",
+        "clap_label": "glitch",
+        "clap_score": 0.279,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": 0.0,
+        "at_scene_start": true
+      },
+      {
+        "id": "x012",
+        "sync_s": 43.0846,
+        "label": "unsure",
+        "label_source": "rules",
+        "rules_label": "unsure",
+        "clap_label": "music",
+        "clap_score": 0.403,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": 1292.8,
+        "at_scene_start": false
+      },
+      {
+        "id": "x013",
+        "sync_s": 44.6154,
+        "label": "unsure",
+        "label_source": "rules",
+        "rules_label": "unsure",
+        "clap_label": "music",
+        "clap_score": 0.383,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": 2823.6,
+        "at_scene_start": false
+      },
+      {
+        "id": "x014",
+        "sync_s": 45.423,
+        "label": "music",
+        "label_source": "clap",
+        "rules_label": "unsure",
+        "clap_label": "music",
+        "clap_score": 0.704,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": -3500.9,
+        "at_scene_start": false
+      },
+      {
+        "id": "x015",
+        "sync_s": 49.2379,
+        "label": "music",
+        "label_source": "clap",
+        "rules_label": "unsure",
+        "clap_label": "music",
+        "clap_score": 0.619,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": 0.0,
+        "at_scene_start": true
+      },
+      {
+        "id": "x016",
+        "sync_s": 51.2929,
+        "label": "unsure",
+        "label_source": "rules",
+        "rules_label": "unsure",
+        "clap_label": "swoosh_reverse",
+        "clap_score": 0.405,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": 1242.8,
+        "at_scene_start": false
+      },
+      {
+        "id": "x017",
+        "sync_s": 53.6234,
+        "label": "music",
+        "label_source": "clap",
+        "rules_label": "unsure",
+        "clap_label": "music",
+        "clap_score": 0.857,
+        "agreement": null,
+        "on_beat": true,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": 3573.3,
+        "at_scene_start": false
+      },
+      {
+        "id": "x018",
+        "sync_s": 53.9748,
+        "label": "music",
+        "label_source": "clap",
+        "rules_label": "unsure",
+        "clap_label": "music",
+        "clap_score": 0.87,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": 3924.7,
+        "at_scene_start": false
+      },
+      {
+        "id": "x019",
+        "sync_s": 54.4856,
+        "label": "music",
+        "label_source": "clap",
+        "rules_label": "unsure",
+        "clap_label": "music",
+        "clap_score": 0.735,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": 4435.5,
+        "at_scene_start": false
+      },
+      {
+        "id": "x020",
+        "sync_s": 55.6746,
+        "label": "music",
+        "label_source": "clap",
+        "rules_label": "unsure",
+        "clap_label": "music",
+        "clap_score": 0.666,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": 5624.5,
+        "at_scene_start": false
+      },
+      {
+        "id": "x021",
+        "sync_s": 57.063,
+        "label": "unsure",
+        "label_source": "rules",
+        "rules_label": "unsure",
+        "clap_label": "glitch",
+        "clap_score": 0.392,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": -411.1,
+        "scene_start_offset_ms": 7012.9,
+        "at_scene_start": false
+      },
+      {
+        "id": "x022",
+        "sync_s": 57.741,
+        "label": "unsure",
+        "label_source": "rules",
+        "rules_label": "unsure",
+        "clap_label": "glitch",
+        "clap_score": 0.411,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": 266.9,
+        "scene_start_offset_ms": 7690.9,
+        "at_scene_start": false
+      },
+      {
+        "id": "x023",
+        "sync_s": 58.0731,
+        "label": "music",
+        "label_source": "clap",
+        "rules_label": "unsure",
+        "clap_label": "music",
+        "clap_score": 0.529,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": -26.7,
+        "scene_start_offset_ms": 8023.0,
+        "at_scene_start": false
+      },
+      {
+        "id": "x024",
+        "sync_s": 58.246,
+        "label": "music",
+        "label_source": "clap",
+        "rules_label": "unsure",
+        "clap_label": "music",
+        "clap_score": 0.839,
+        "agreement": null,
+        "on_beat": true,
+        "reveal_offset_ms": 146.2,
+        "scene_start_offset_ms": 8195.9,
+        "at_scene_start": false
+      },
+      {
+        "id": "x025",
+        "sync_s": 61.5445,
+        "label": "music",
+        "label_source": "clap",
+        "rules_label": "unsure",
+        "clap_label": "music",
+        "clap_score": 0.634,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": 11494.4,
+        "at_scene_start": false
+      },
+      {
+        "id": "x026",
+        "sync_s": 63.5995,
+        "label": "music",
+        "label_source": "clap",
+        "rules_label": "unsure",
+        "clap_label": "music",
+        "clap_score": 0.607,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": 13549.4,
+        "at_scene_start": false
+      },
+      {
+        "id": "x027",
+        "sync_s": 65.9911,
+        "label": "unsure",
+        "label_source": "rules",
+        "rules_label": "unsure",
+        "clap_label": "music",
+        "clap_score": 0.399,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": 175.3,
+        "scene_start_offset_ms": 15941.0,
+        "at_scene_start": false
+      },
+      {
+        "id": "x028",
+        "sync_s": 66.3975,
+        "label": "music",
+        "label_source": "clap",
+        "rules_label": "unsure",
+        "clap_label": "music",
+        "clap_score": 0.662,
+        "agreement": null,
+        "on_beat": true,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": 16347.4,
+        "at_scene_start": false
+      },
+      {
+        "id": "x029",
+        "sync_s": 67.8496,
+        "label": "unsure",
+        "label_source": "rules",
+        "rules_label": "unsure",
+        "clap_label": "swoosh_reverse",
+        "clap_score": 0.496,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": 156.9,
+        "scene_start_offset_ms": 17799.5,
+        "at_scene_start": false
+      },
+      {
+        "id": "x030",
+        "sync_s": 69.7411,
+        "label": "unsure",
+        "label_source": "rules",
+        "rules_label": "unsure",
+        "clap_label": "swoosh_reverse",
+        "clap_score": 0.345,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": 19691.0,
+        "at_scene_start": false
+      },
+      {
+        "id": "x031",
+        "sync_s": 71.8077,
+        "label": "music",
+        "label_source": "clap",
+        "rules_label": "unsure",
+        "clap_label": "music",
+        "clap_score": 0.612,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": 21757.6,
+        "at_scene_start": false
+      },
+      {
+        "id": "x032",
+        "sync_s": 73.7814,
+        "label": "unsure",
+        "label_source": "rules",
+        "rules_label": "unsure",
+        "clap_label": "swoosh_reverse",
+        "clap_score": 0.326,
+        "agreement": null,
+        "on_beat": false,
+        "reveal_offset_ms": null,
+        "scene_start_offset_ms": 23731.3,
+        "at_scene_start": false
+      }
+    ],
+    "sfx_per_min": 24.9,
+    "label_agreement_share": 0.0,
+    "sfx_at_scene_start_share": 0.25,
+    "sfx_near_reveal_share": 0.219,
+    "cuts_on_beat_share": 0.4
+  },
+  "speech": {
+    "words": 166,
+    "speech_span_s": 72.55,
+    "wpm": 137.3,
+    "articulation_wpm": 172.9,
+    "pause_count": 23,
+    "pause_mean_ms": 650.4,
+    "pause_p90_ms": 1024.0,
+    "pause_cv": 0.509,
+    "pauses_by_length": {
+      "short": 7,
+      "medium": 10,
+      "long": 6
+    },
+    "phrase_rate_cv": 0.157,
+    "pitch_median_hz": 188.1,
+    "pitch_std_semitones": 3.76,
+    "energy_std_db": 7.54,
+    "perceived_emotion": null,
+    "wpm_cv_across_shots": 0.21
+  },
+  "captions": {
+    "groups": 4,
+    "words_per_group_mean": 6.0,
+    "words_per_group_median": 6.0,
+    "group_duration_mean_s": 2.732,
+    "changes_per_min": 3.11,
+    "coverage": 0.142,
+    "word_synced_share": 0.333
+  }
+}

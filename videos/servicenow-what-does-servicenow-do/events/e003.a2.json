@@ -1,0 +1,48 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "d2fda9f08ea54d70dcaf5305caad3c544bde1c5210c5d3e3d5e893404b258fc0",
+    "created_at": "2026-10-05T06:51:33.059855Z"
+  },
+  "video": "servicenow-what-does-servicenow-do",
+  "event": "e003",
+  "task": "a2-e003",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Support agent raising hand to headset (live-action footage)",
+      "role": "other",
+      "role_other": "footage_subject",
+      "change_types": ["other"],
+      "change_other": "live-action subject gesture (hand moves up to adjust headset, motion blur)",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 450, "easing_class": "ambiguous"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x066", "verdict": "confirm", "label": "music", "note": "Broadband onset in the music bed just before the gesture; no discrete SFX shape."},
+    {"id": "x067", "verdict": "confirm", "label": "music", "note": "Music bed beat/onset; nothing visual is synced to it."},
+    {"id": "x068", "verdict": "confirm", "label": "music", "note": "Music bed onset after the event."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "live action cutaway",
+    "description": "Filmed footage of a support agent at a desk; the only motion is the actor's natural hand gesture to the headset, with a shallow-depth-of-field foreground blur. No designed animation.",
+    "why_premium": "Cinematic shallow depth of field, graded teal/warm palette and a soft out-of-focus foreground layer give a human, produced feel that grounds the abstract platform story in a real support scenario."
+  },
+  "build_hint": {
+    "gsap": "Not a designed animation: place the footage clip on the timeline (HyperFrames video layer) and optionally gsap.fromTo(clip, {scale: 1.0}, {scale: 1.02, duration: clipLength, ease: 'none'}) for a slow drift; keep the grade and foreground blur in the footage.",
+    "remotion": "Render the footage with <OffthreadVideo> inside a <Sequence>; optional slow interpolate(frame, [0, durationInFrames], [1, 1.02]) scale for drift. No spring needed."
+  },
+  "confidence": "medium",
+  "notes": "Live-action footage; the motion is the actor's hand gesture, so the only fitting box is the full-frame b01. b02/b03/b04 are small diff regions from blur/background shifts (the hand's motion blur and foreground) and are not distinct elements. Camera verdict is none."
+}

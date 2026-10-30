@@ -1,0 +1,223 @@
+{
+  "$defs": {
+    "Annotator": {
+      "enum": [
+        "code",
+        "claude-code",
+        "human"
+      ],
+      "title": "Annotator",
+      "type": "string"
+    },
+    "BoxOut": {
+      "additionalProperties": false,
+      "properties": {
+        "changed_share": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Changed Share",
+          "type": "number"
+        },
+        "id": {
+          "pattern": "^b\\d{2}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "norm": {
+          "maxItems": 4,
+          "minItems": 4,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Norm",
+          "type": "array"
+        },
+        "source": {
+          "enum": [
+            "diff",
+            "ocr",
+            "union"
+          ],
+          "title": "Source",
+          "type": "string"
+        },
+        "text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Text"
+        },
+        "xyxy": {
+          "maxItems": 4,
+          "minItems": 4,
+          "prefixItems": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer"
+            }
+          ],
+          "title": "Xyxy",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "source",
+        "xyxy",
+        "norm",
+        "changed_share"
+      ],
+      "title": "BoxOut",
+      "type": "object"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "description": "Carried by every output JSON (BUILD_PLAN section 2.7).",
+      "properties": {
+        "annotator": {
+          "$ref": "#/$defs/Annotator"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "input_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Input Hash",
+          "type": "string"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "schema_version": {
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "skill": {
+          "anyOf": [
+            {
+              "pattern": "^[a-z0-9-]+@[0-9a-f]{8,64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Skill"
+        },
+        "stage": {
+          "title": "Stage",
+          "type": "string"
+        },
+        "tool_version": {
+          "title": "Tool Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool_version",
+        "stage",
+        "annotator",
+        "input_hash",
+        "created_at"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "boxes": {
+      "items": {
+        "$ref": "#/$defs/BoxOut"
+      },
+      "minItems": 1,
+      "title": "Boxes",
+      "type": "array"
+    },
+    "end_frame": {
+      "minimum": 0,
+      "title": "End Frame",
+      "type": "integer"
+    },
+    "event": {
+      "pattern": "^e\\d{3,}$",
+      "title": "Event",
+      "type": "string"
+    },
+    "frame_size": {
+      "maxItems": 2,
+      "minItems": 2,
+      "prefixItems": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "integer"
+        }
+      ],
+      "title": "Frame Size",
+      "type": "array"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    },
+    "start_frame": {
+      "minimum": 0,
+      "title": "Start Frame",
+      "type": "integer"
+    },
+    "video": {
+      "title": "Video",
+      "type": "string"
+    }
+  },
+  "required": [
+    "provenance",
+    "video",
+    "event",
+    "frame_size",
+    "start_frame",
+    "end_frame",
+    "boxes"
+  ],
+  "title": "CandidatesFile",
+  "type": "object"
+}

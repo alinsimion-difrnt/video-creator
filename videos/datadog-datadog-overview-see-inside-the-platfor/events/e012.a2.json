@@ -1,0 +1,44 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "0672a6bfd6f0cf571a3a614c2b9722a05b8ffae047d6defcb5883db5ab9ad6fd",
+    "created_at": "2026-10-05T06:43:29.667976Z"
+  },
+  "video": "datadog-datadog-overview-see-inside-the-platfor",
+  "event": "e012",
+  "task": "a2-e012",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Isometric wall of integration logo tiles (pulls back so many more tiles fill the frame)",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["scale_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 450, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "logo wall pull out",
+    "description": "The camera pulls back fast over an isometric grid of integration logo tiles, so the tiles shrink and many more come into view. The headline 'With 450+ turn-key integrations' stays fixed and sharp on a soft white band over the wall.",
+    "why_premium": "The pull-back shows the '450+' scale visually: the viewer sees the count of tiles grow instead of reading a number. The pinned headline with a soft fade behind it keeps the text readable while the busy wall moves underneath."
+  },
+  "build_hint": {
+    "gsap": "Headline on its own fixed layer (no tween). tl.fromTo('.logo-wall',{scale:1.7},{scale:1,duration:0.45,ease:'power2.inOut',transformOrigin:'50% 50%'}); keep the wall on an isometric parent (rotateX(55deg) rotateZ(-45deg)) with an oversized tiled grid so edges never show; add a radial white gradient behind the headline.",
+    "remotion": "wallScale = interpolate(frame,[0,13],[1.7,1],{easing:Easing.inOut(Easing.cubic),extrapolateRight:'clamp'}) applied to the isometric logo grid container; headline AbsoluteFill above it with no animation."
+  },
+  "confidence": "high",
+  "notes": "The headline (b03) is static in every frame, so it is not listed. Camera verdict is pull_out (scale 0.59), and it applies to the logo wall layer only."
+}

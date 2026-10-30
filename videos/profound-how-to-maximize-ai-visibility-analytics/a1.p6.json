@@ -1,0 +1,131 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "94acb52742f3504d32aec65183aa2ac397225441fd83ade0f59804b0970900ae",
+    "created_at": "2026-10-05T06:31:01.216159Z"
+  },
+  "video": "profound-how-to-maximize-ai-visibility-analytics",
+  "task": "a1-p6",
+  "shots": [
+    {
+      "shot": "s023",
+      "shot_type": "logo",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "White Profound logomark and wordmark lockup centred on a pure black frame",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": ["Profound"],
+      "text_word_count": 1,
+      "typography": "Brand wordmark: geometric/grotesque sans, semibold, title case, tight tracking, white on black, paired with the angular logomark on the left; same lockup as the s001 opener. Font guess (low confidence): Inter-like grotesk.",
+      "depth_cues": ["blur"],
+      "what_happens": "The first sampled frame (2:26.5) is the darkened presenter wide fading down to black. By 2:27.0 the lockup is appearing in grey, with the right edge of the wordmark ('d') not yet visible, which suggests a soft left-to-right reveal combined with a fade from blur. It reaches full white by 2:27.5-2:28.0 and holds static to about 2:31.0. The frame is fully black from 2:31.5 to the end (2:32.29). There is no VO in this shot (the last word, w371, ends before it starts). The anchors list one 'unsure' SFX candidate (x034, CLAP top label 'impact') near the logo resolve.",
+      "build_rebuild": "Fade the last presenter frame to black over ~0.4s, then reveal a centred white logo lockup with a left-to-right soft mask plus blur 12px->0 and opacity 0->1 over ~0.8s, hold it ~3s, and cut or fade to black for the final ~1s.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001", "s002", "s003"], "words": [0, 29]},
+      {"beat": "proof", "shots": ["s004", "s005"], "words": [30, 58]},
+      {"beat": "problem", "shots": ["s006", "s007"], "words": [59, 97]},
+      {"beat": "mechanism", "shots": ["s007", "s008", "s009"], "words": [98, 121]},
+      {"beat": "demo", "shots": ["s010"], "words": [122, 145]},
+      {"beat": "agitate", "shots": ["s011"], "words": [146, 163]},
+      {"beat": "mechanism", "shots": ["s012", "s013"], "words": [164, 207]},
+      {"beat": "demo", "shots": ["s014"], "words": [208, 251]},
+      {"beat": "outcome", "shots": ["s015", "s016", "s017"], "words": [252, 287]},
+      {"beat": "demo", "shots": ["s018", "s019"], "words": [288, 328]},
+      {"beat": "outcome", "shots": ["s020", "s021"], "words": [329, 356]},
+      {"beat": "cta", "shots": ["s022", "s023"], "words": [357, 371]}
+    ],
+    "hook": {
+      "text": "For the past 18 months, the best brands have been doing AI search marketing the hard way, profound for visibility and analytics, and a separate tool for content and workflows.",
+      "technique": "pain",
+      "technique_other": null,
+      "shots": ["s001", "s002", "s003"],
+      "words": [0, 29]
+    },
+    "cta": {
+      "text": null,
+      "shots": ["s022", "s023"]
+    },
+    "tone": "Calm, confident founder-keynote launch: a single presenter in a dark, warmly lit branded studio, with an Apple-style 'one more thing' aside. Restrained premium visuals (blur dissolves, floating white UI cards, real product captures) under a steady ~110 BPM music bed. There is no explicit ask: it closes on a tagline and a logo end card.",
+    "signature_moments": [
+      {
+        "shots": ["s007"],
+        "description": "While the presenter lists the old manual tasks, a matching UI card (article, SERP result, translation) blurs in beside him for each one. A cursor-dragged window then expands to enclose them and connector lines stitch them together.",
+        "why_premium": "Each spoken pain point gets its own visual in sync with the VO, so the abstract 'tool sprawl' problem becomes concrete without leaving the presenter. The cards are composited into the live set with soft shadows, not shown on a cut-away slide."
+      },
+      {
+        "shots": ["s013", "s014"],
+        "description": "Spreadsheet agent cells flip from spinner 'Running...' to green 'Completed' in a staggered cascade while outputs fill in, framed by tight crops that ease out to the full sheet.",
+        "why_premium": "The staggered state changes visibly prove the 'hundreds of inputs in parallel' claim (w187-w192) with real product UI. The tight-crop-to-wide camera moves keep a dense table readable."
+      },
+      {
+        "shots": ["s005"],
+        "description": "A citation-share leaderboard card blurs in beside the presenter, and its rows reorder twice while the headline rank flips.",
+        "why_premium": "Animated data (a FLIP reorder and a value swap) inside a floating card makes the positioning claim feel live and measured, not static. It also sets up the brand's blur-in card language early."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 3,
+        "evidence": "The cold open is a logo plate that dissolves into a talking head stating a pain point (w0-w16), quickly backed by two floating UI cards for 'visibility and analytics' vs 'a separate tool'. It is clear and on-message, but there is no striking visual or stat in the first 3 s.",
+        "refs": ["s001", "s002", "s003", "w0", "w16"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "The narrative is linear: an established platform, then the problem (leaving to do the work), then agents, then scale via Sheets, then measurement, then collaboration, then positioning. Each claim is paired with a matching UI view. Some montage shots (s010, s014) pack several screens into one shot, so they are hard to parse at speed.",
+        "refs": ["s007", "s009", "s012", "s013", "s017", "s010", "s014"]
+      },
+      "ui_showcase": {
+        "score": 4,
+        "evidence": "Real product captures with deliberate virtual-camera punch-ins (agent builder, Sheets running/completed cells, Agent Analytics push-in, Sankey, multiplayer cursors), plus clean recreated cards over the presenter. A few views are dense and shown briefly, without callouts.",
+        "refs": ["s009", "s013", "s014", "s017", "s019", "s005"]
+      },
+      "motion_polish": {
+        "score": 4,
+        "evidence": "A consistent blur-dissolve system bridges presenter and UI, cards blur in with soft shadows, the 'Sheets' title has a letter stagger with gridlines drawing on, and smooth camera eases sit on the UI. The motion is restrained, not showy, and some UI moves are plain screen-capture pans.",
+        "refs": ["s001", "s005", "s012", "s015", "s018", "s023"]
+      },
+      "sound_design": {
+        "score": 3,
+        "evidence": "Judged from the anchors' audio facts plus visuals. A continuous music bed at about 110 BPM sits at -21.37 LUFS integrated, under clear VO. The SFX detector returns mostly 'music' segments. Only a few impact/chime/click candidates appear (x006, x018, x020, x024, x029), with an 'unsure' impact-like hit at the logo end card (x034). The sound is competent and unobtrusive, but there is little UI-synced sound design.",
+        "refs": ["s002", "s012", "s014", "s019", "s023"]
+      },
+      "vo_script_quality": {
+        "score": 4,
+        "evidence": "Tight, rhythmic script with triads ('optimize a page, write a meta description, localize content', w73-w83), a crisp turn ('Today, that's changed.', w98-w100), an escalation ('A hundred pages? A thousand?', w158-w163), and a memorable close ('ship like a team of 10', w351-w356). The 'Oh, and one more thing' aside (w288-w292) is borrowed. The delivery is natural on camera.",
+        "refs": ["w73", "w83", "w98", "w100", "w163", "w288", "w356"]
+      },
+      "brand_consistency": {
+        "score": 4,
+        "evidence": "The same logo lockup bookends the video, the branded studio set ('Profound University' screen, desk sign) appears in every presenter shot, the blur-dissolve transitions and white rounded cards are reused throughout, and the UI type is consistent. The palette from code is warm neutrals plus black/white.",
+        "refs": ["s001", "s023", "s011", "s015", "s022"]
+      },
+      "works_muted": {
+        "score": 2,
+        "evidence": "About half the runtime is talking head with no captions (s004, s006, s011, s015, s016, s018, s020-s022). The key claims (the agents' purpose, parallel rows, collaboration, positioning) are spoken, not shown as text. Only the 'Sheets' title card and the UI demos carry meaning without sound.",
+        "refs": ["s004", "s006", "s011", "s016", "s021", "s012"]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "A polished founder-keynote launch: it integrates real UI with a branded studio presenter through a coherent blur-dissolve and floating-card language, and the script is strong. It is held back by its dependence on the presenter's VO (weak muted viewing), a modest hook, and sparse sound design.",
+        "refs": ["s001", "s007", "s013", "s014", "s019", "s023"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 2,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "The on-camera presenter speaks English to camera, so dubbing needs lip-sync or subtitles. All UI captures, cards and set signage carry English text baked into the footage and screen recordings. Only the 'Sheets' title card and the logo end card are minimal-text graphics that would be easy to swap."
+    }
+  }
+}

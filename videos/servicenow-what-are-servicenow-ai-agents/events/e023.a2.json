@@ -1,0 +1,86 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "49dd0d895c5743b88eea1167b6eb2764b14d6bcacf2146730433dab4f3b6b52d",
+    "created_at": "2026-10-05T06:51:50.603657Z"
+  },
+  "video": "servicenow-what-are-servicenow-ai-agents",
+  "event": "e023",
+  "task": "a2-e023",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Frosted-glass AI Agents card (green header bar expanding into full card)",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["fade", "scale_up", "morph"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 250, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Card title",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "AI Agents",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 150, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Sparkle AI icon",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 150, "easing_class": "ease_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [319, 105, 507, 349],
+      "manual_reason": "The inner white frosted panel has no own candidate box; b01 covers the whole outer card.",
+      "label": "Inner white frosted content panel",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["fade", "scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 200, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "notification_pop",
+    "proposed_name": null,
+    "description": "A glassmorphic 'AI Agents' UI card is composited over live-action office footage: a green pill grows downward into a frosted card, the sparkle icon and title fade in, then a white inner panel scales/fades up inside it.",
+    "why_premium": "The UI overlay lives in the actors' space (translucent glass over the blurred background) and builds in quick nested stages, tying the product to the story beat 'Then they send it to me for final approval' without leaving the scene."
+  },
+  "build_hint": {
+    "gsap": "tl.fromTo(card, {opacity: 0, scaleY: 0.35, transformOrigin: 'top center'}, {opacity: 1, scaleY: 1, duration: 0.25, ease: 'power3.out'}).fromTo([icon, title], {opacity: 0}, {opacity: 1, duration: 0.15, stagger: 0.03, ease: 'power2.out'}, '-=0.1').fromTo(innerPanel, {opacity: 0, scale: 0.92}, {opacity: 1, scale: 1, duration: 0.2, ease: 'power2.out'}, '-=0.05'); card uses backdrop-filter blur for the glass look.",
+    "remotion": "spring({frame, fps, config: {damping: 26, stiffness: 220, mass: 1}}) drives card scaleY from 0.35 to 1 (no overshoot); icon/title opacity via interpolate over 4 frames offset by 1 frame; inner panel uses a second spring delayed ~4 frames for scale 0.92 to 1 plus opacity."
+  },
+  "confidence": "medium",
+  "notes": "Pattern is a borderline fit: notification_pop chosen as the closest canonical id for a UI card popping over footage; it is more a staged card build than a notification. OCR reads the title as 'Al Agents'; on screen it is 'AI Agents'. Filmstrip timestamps (1:49.282-1:49.870) span wider than the facts window (109.49-109.62 s)."
+}

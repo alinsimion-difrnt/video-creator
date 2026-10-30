@@ -1,0 +1,187 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "452bd91cd72778ed579c82c8103e71560b52f48e0ee80e285b11bace1c3df85d",
+    "created_at": "2026-10-05T06:30:05.778661Z"
+  },
+  "video": "notion-what-is-notion",
+  "task": "a1-p3",
+  "shots": [
+    {
+      "shot": "s004",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "A simplified, recreated Notion UI card on a near-white canvas with Notion's line-drawn mascot face overlapping its top edge (keyframe: the 'Meeting @Today' page card).",
+      "transition_in": "push",
+      "transition_other": null,
+      "on_screen_text": [
+        "Meeting @Today",
+        "@Today"
+      ],
+      "text_word_count": 3,
+      "typography": "Clean grotesk UI sans (low-confidence guess: Inter or Notion's UI sans); page title in semibold sentence case at near-headline size, mention placeholder '@Today' in regular weight, grey, normal tracking.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "This part only received the mid-shot keyframe for s004 (about 41 s in): a rounded white page card titled 'Meeting @Today' with a calendar icon, the mascot face partly covering the title, just before transcription starts (around w57-w68). The full 67 s single-take content of this shot is described in part a1-p2; this entry is consistent with it but adds nothing beyond the keyframe.",
+      "build_rebuild": "Render a 900x490 rounded card with a 1px light border on white, a calendar icon plus semibold 'Meeting @Today' title and grey '@Today' placeholder, and pin an SVG circular mascot face so it overlaps the card's top-left edge.",
+      "confidence": "low"
+    },
+    {
+      "shot": "s005",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The typed line 'Notion does' paired with a white checklist card whose to-dos tick themselves off, ending on a single empty 'To-do' and the Notion logo lockup.",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "Notion is...",
+        "Notion does",
+        "Busywork",
+        "Triage tasks",
+        "Update roadmap",
+        "Collect bug reports",
+        "Tag action items",
+        "Archive old ta",
+        "Review check",
+        "C",
+        "Compile m",
+        "To-do",
+        "Notion"
+      ],
+      "text_word_count": 25,
+      "typography": "Same bold grotesk sans as the opening, sentence case, normal tracking, black on near-white for the kinetic line; checklist items in regular weight, completed items grey with strike-through; 'To-do' in large grey regular weight; closing wordmark is Notion's own logotype in bold beside the cube logo. Font guess (low confidence): Inter.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Bookend to the opening: 'Notion' is typed with a caret, then 'is.' and 'is...' as the voice-over asks again 'what is Notion?' (w117-w119). The dots and 'is' are deleted back to 'Notion' ('Maybe that's the wrong question', w120-w124) and 'does' is typed (w125-w129). The line shifts left as a shadowed checklist card pops in beside it; items ('Busywork', 'Triage tasks', 'Update roadmap', 'Collect bug reports', 'Tag action items') append one by one and each checkbox fills blue and its text is struck through on its own. The camera pushes into the list, more items ('Archive old ta...', 'Review check...') check off at large scale, then the list fades to a single empty checkbox 'To-do'; a cursor glides onto it (around w130-w136, 'so you can do your life's work') without checking it. It cuts to a typed 'N' beside the Notion cube logo, completing to the 'Notion' lockup that holds to the end.",
+      "build_rebuild": "On a near-white canvas, typewriter 'Notion is...' then backspace to 'Notion' and type 'does'; slide the line left while a shadowed rounded checklist card scales in, append rows with a ~0.4 s stagger and, per row, fill the checkbox blue and draw a strike-through left to right; scale-push the camera into the list, crossfade to a lone empty 'To-do' row with a cursor easing onto its box, then type the 'Notion' wordmark next to the cube logo and hold.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {
+        "beat": "hook",
+        "shots": ["s001", "s002", "s003"],
+        "words": [0, 4]
+      },
+      {
+        "beat": "problem",
+        "shots": ["s004"],
+        "words": [5, 24]
+      },
+      {
+        "beat": "mechanism",
+        "shots": ["s004"],
+        "words": [25, 55]
+      },
+      {
+        "beat": "demo",
+        "shots": ["s004"],
+        "words": [56, 99]
+      },
+      {
+        "beat": "proof",
+        "shots": ["s004"],
+        "words": [100, 115]
+      },
+      {
+        "beat": "outcome",
+        "shots": ["s004", "s005"],
+        "words": [116, 136]
+      }
+    ],
+    "hook": {
+      "text": "What is Notion? ... Notion? Hmm. (a giant blinking caret types 'Notion is' and trails off into dots)",
+      "technique": "question",
+      "technique_other": null,
+      "shots": ["s001", "s002", "s003"],
+      "words": [0, 4]
+    },
+    "cta": {
+      "text": null,
+      "shots": []
+    },
+    "tone": "Confident, witty and minimal: a calm, self-aware voice-over that admits the product is hard to define, on a quiet monochrome canvas with a playful hand-drawn mascot, ending on a warm reframe rather than a hard sell.",
+    "signature_moments": [
+      {
+        "shots": ["s001", "s002", "s003"],
+        "description": "The video opens on a frame-high blinking caret that types 'N', flashes 'No', then pulls back to a normal-size 'Notion is...' whose dots keep running while the voice-over hesitates.",
+        "why_premium": "Turns the product's own core interaction (typing in a blank page) into the hook with nothing but type and scale, which shows confidence and restraint and sets up a question the film pays off."
+      },
+      {
+        "shots": ["s004"],
+        "description": "A 67 s single continuous take where scenes (negation lines, workspace, AI prompt, transcript, kanban, search, chat, logo wall, roadmap) hand off through camera pushes and morphs with no cuts, guided by a persistent line-drawn mascot.",
+        "why_premium": "Cut-free choreography of 36 timed events in one shared space reads as one coherent product, not a montage of screenshots, and needs careful timeline engineering that cheap explainers skip."
+      },
+      {
+        "shots": ["s005"],
+        "description": "Bookend: 'Notion is...' is retyped, deleted back to 'Notion' and rewritten as 'Notion does', while a checklist of busywork ticks itself off and ends on one empty 'To-do' with the cursor resting on it before the logo lockup.",
+        "why_premium": "The edit-in-place answer to its own opening question gives the script a clear payoff, and leaving the last to-do unticked visually lands 'so you can do your life's work' without extra copy."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 4,
+        "evidence": "Pure typographic hook: a giant caret and a typed 'Notion is...' with the spoken question and a self-aware 'Hmm.' Intriguing and on-brand, but it takes about 7 s before any claim is made.",
+        "refs": ["s001", "s002", "s003", "w0", "w4"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "Clear arc: three negations, a one-line positioning ('a better way to work... all in one place'), then concrete vignettes each tied to a 'Where every...' line, and a bookend answer. Vignettes move fast and much UI text is too small to read, so the details lean on the voice-over.",
+        "refs": ["s004", "s005", "w5", "w25", "w57", "w69", "w83", "w125"]
+      },
+      "ui_showcase": {
+        "score": 5,
+        "evidence": "Simplified recreated UI shows real end-to-end workflows (prompt builds a project tracker, live meeting transcript becomes a summary, a kanban card flips to Merged, enterprise search answers, AI replies in chat, roadmap flips to Launched), each staged at readable zoom with a camera push to the key element.",
+        "refs": ["s004", "w44", "w57", "w69", "w83", "w93"]
+      },
+      "motion_polish": {
+        "score": 5,
+        "evidence": "Anchors detect no cut across 67 s of s004 yet 36 motion events; per the sheets every scene change is a push, zoom or morph in one space, and s005 reuses the typewriter, checklist and camera-push language cleanly. Easing curves were not measured in this pass, so this is judged from sampled frames only.",
+        "refs": ["s004", "s005"]
+      },
+      "sound_design": {
+        "score": 3,
+        "evidence": "Judged from anchors plus visuals: a 152 BPM music bed at -14.34 LUFS integrated; of 23 SFX candidates nearly all classify as music, with only three chimes (x014 at 57.6 s near the search answer, x021 at 73.3 s before 'So,', x022 at 81.0 s during the checklist) and one impact (x015). Typing and clicks on screen have no detected matching SFX, so sound reads as a competent music-led mix rather than designed sound.",
+        "refs": ["s004", "s005", "w93", "w116", "w128"]
+      },
+      "vo_script_quality": {
+        "score": 5,
+        "evidence": "Tight, rhythmic script: rule-of-three negations, anaphoric 'Where every meeting... Where every project... Where everyone...', and a bookend reframe ('Maybe that's the wrong question. Notion does the busy work, so you can do your life's work.') that pays off the opening question.",
+        "refs": ["w5", "w24", "w56", "w69", "w83", "w120", "w136"]
+      },
+      "brand_consistency": {
+        "score": 5,
+        "evidence": "One near-white monochrome canvas, one sans family, Notion's hand-drawn mascot recurring through s004, recreated Notion UI and a closing logo lockup; opening and closing shots share the same typed-line device.",
+        "refs": ["s001", "s003", "s004", "s005"]
+      },
+      "works_muted": {
+        "score": 4,
+        "evidence": "The negations ('Notion is not an AI chatbot' etc.), the demos and the closing 'Notion does' plus self-ticking checklist read without sound. The positioning lines ('a better way to work', 'does the work for you') and the 'life's work' payoff are voice-over only.",
+        "refs": ["s004", "s005", "w25", "w50", "w135"]
+      },
+      "overall": {
+        "score": 5,
+        "evidence": "Best-in-class brand explainer: a type-only hook, a seamless single-take product tour with real workflows, and a script that answers its own question in a visual bookend. Held back only by music-led sound design and dense, fast UI vignettes.",
+        "refs": ["s001", "s004", "s005", "w124", "w136"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 2,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "English kinetic lines ('Notion is not a...', 'Notion does') and every recreated UI string (prompts, transcript, kanban, chat, checklist) are baked into the animation, and the positioning and payoff lines exist only in voice-over. Localising means re-rendering the motion graphics and re-recording VO timed to the typing beats; the monochrome, logo-light layout does make a re-render practical."
+    }
+  }
+}

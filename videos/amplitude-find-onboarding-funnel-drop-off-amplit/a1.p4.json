@@ -1,0 +1,256 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "2ecb2f11370a975501964db4d92457d8111cf9a47b30a270f354b63127aec7a2",
+    "created_at": "2026-10-05T06:22:50.230572Z"
+  },
+  "video": "amplitude-find-onboarding-funnel-drop-off-amplit",
+  "task": "a1-p4",
+  "shots": [
+    {
+      "shot": "s007",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "other",
+      "composition_other": "zoomed crop of the funnel chart: bars fill the lower two thirds, the dark tooltip panel sits upper-centre-right next to the Follow Playlist bar",
+      "focal_element": "The dark 'Follow Playlist' tooltip over the hatched drop-off part of the bar, with a red outline box on its drop-off line and later on its 'from previous step' line",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Follow Playlist",
+        "(Drop-... : 80.5% (252,681 of 313,877)",
+        "90.7% from previous step (252,681 of 2...",
+        "Show User Journeys",
+        "Show User Paths",
+        "View Users",
+        "Explore Conversion Drivers",
+        "Create Cohort",
+        "Download Users",
+        "User Sign Up",
+        "Play Song or Video",
+        "Daily",
+        "7d 30d 60d 90d",
+        "More",
+        "Add to",
+        "Save",
+        "Share",
+        "Refresh"
+      ],
+      "text_word_count": 46,
+      "typography": "Native product UI only: neutral grotesque sans (low-confidence guess: Inter-like). Tooltip uses white text on a dark navy panel, bold numeric drop-off figure, regular-weight sentence/title-case menu items with small line icons; axis labels small regular dark grey; default tracking. No added captions.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "The camera pushes in (the first frame at 2:03.0 is still wider, fully zoomed by 2:03.5) on the open tooltip of the Follow Playlist bar and then holds a static close-up for ~15 s. As the VO says '80% of the total users who entered the funnel ... dropped off by this step' (w295-w318) a red outline box frames the '80.5% (252,681 of 313,877)' drop-off line; around 2:11, on 'around 90% of all users who completed the user signup page dropped off before they followed a playlist' (w319-w338), the red box jumps to the '90.7% from previous step' line. The cursor rests on the hatched part of the bar; nothing else moves.",
+      "build_rebuild": "Push the camera in about 2x on the chart tooltip with an ease-out over ~0.5 s, hold, and toggle a 2 px red rounded-rectangle outline from the first metric row to the second row exactly at the VO word that introduces each number.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s008",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "The full Amplitude funnel workspace (left controls rail, 6.11% Total Conversion headline, four-bar funnel chart, 'Optimize your conversion funnel' suggestion cards below)",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "6.11%",
+        "Total Conversion",
+        "Last 30 Days",
+        "From Welcome to Play Song or Video within the last 30 days.",
+        "Welcome",
+        "User Sign Up",
+        "Follow Playlist",
+        "Play Song or Video",
+        "313,877",
+        "278,488",
+        "25,807",
+        "19,187",
+        "Completed within 30 minutes",
+        "Optimize your conversion funnel",
+        "Understand what sequence of events users are taking based on the funnel above",
+        "What paths are users taking between conversion steps?",
+        "Explore Journey Map",
+        "Is this the most common path taken by users?",
+        "Explore Pathfinder",
+        "Create New",
+        "Events",
+        "Measured as",
+        "Segment by",
+        "All Users",
+        "Breakdown by:"
+      ],
+      "text_word_count": 86,
+      "typography": "Native product UI only: neutral grotesque sans (low-confidence guess: Inter-like); large bold headline metric '6.11%', medium-weight title-case event names in the rail, small regular-weight helper text and axis labels, white bold counts inside dark-blue bars; default tracking. Most UI text is too small to read on the contact sheet and only legible on the keyframe.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Zoom-through pulls out from the tooltip close-up to the whole app window (2:18.5 to 2:19.0) with the tooltip still open; by about 2:21.5 the cursor moves to empty canvas and the tooltip closes. The full funnel (dark-blue converted bars with light hatched drop-off segments) then sits static to 2:29.6 while the VO teases a follow-up: 'You might be wondering what users who drop off your funnel end up doing ... We'll cover what this looks like in Amplitude in another video' (w339-w370). The 'What paths are users taking...' and 'Explore Pathfinder' cards match that line but get no callout. The bars render in a lighter tint at the start of the shot and a darker blue after the pull-out (likely the tooltip hover state clearing; low confidence).",
+      "build_rebuild": "Reverse the earlier push-in with an ease-in-out scale from about 2x to 1x over ~0.5 s back to the full-bleed UI capture, dismiss the tooltip, then hold the static workspace under the VO for about 8 s before the outro.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s009",
+      "shot_type": "logo",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Amplitude logo mark resolving into the Amplitude wordmark with the ACADEMY sub-label (same lockup as the opening s001)",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "Amplitude",
+        "ACADEMY"
+      ],
+      "text_word_count": 2,
+      "typography": "Wordmark in a bold geometric sans, title case, tight tracking; 'ACADEMY' sub-label small bold all-caps sans with wide tracking, right-aligned under the wordmark.",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "The funnel UI washes out toward white while a solid circle scales up over it (2:30.0); by 2:30.5 only the circle mark with its waveform glyph remains on white. The 'A' stroke completes (2:31.0), the wordmark slides out from behind the circle as the lockup recentres (2:31.5-2:32.0), 'ACADEMY' appears beneath at about 2:33.0, the lockup holds and starts fading at 2:35.0. The spoken CTA 'For more resources on how to use Amplitude, check out the Amplitude Help Center and Community' (w371-w386) plays over the logo; none of it appears as on-screen text.",
+      "build_rebuild": "Reuse the intro logo animation as a bookend: crossfade the last UI frame to white while scaling a solid circle up from centre, draw the waveform glyph, mask-reveal the wordmark sliding out to the right as the group recentres, fade in the tracked 'ACADEMY' label, hold ~2 s and fade the lockup to white.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s010",
+      "shot_type": "other",
+      "shot_type_other": "blank white tail frame after the logo fade-out",
+      "composition": "other",
+      "composition_other": "empty white frame; only a near-invisible ghost of the fading logo on the keyframe",
+      "focal_element": "Empty white frame (the residue of the logo lockup fading out)",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "About 1.2 s of plain white as the logo lockup finishes fading out; the keyframe shows only a faint ghost of the wordmark. No voice-over (the last word w386 ends at 155.43 s, just after the shot starts) and no motion beyond the fade.",
+      "build_rebuild": "End on about 1 s of solid white after the logo fade so the video does not cut off mid-fade.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {
+        "beat": "hook",
+        "shots": ["s001", "s002"],
+        "words": [0, 6]
+      },
+      {
+        "beat": "problem",
+        "shots": ["s002"],
+        "words": [7, 45]
+      },
+      {
+        "beat": "mechanism",
+        "shots": ["s002"],
+        "words": [46, 117]
+      },
+      {
+        "beat": "demo",
+        "shots": ["s002", "s003", "s004", "s005", "s006"],
+        "words": [118, 242]
+      },
+      {
+        "beat": "outcome",
+        "shots": ["s006", "s007"],
+        "words": [243, 338]
+      },
+      {
+        "beat": "cta",
+        "shots": ["s008", "s009", "s010"],
+        "words": [339, 386]
+      }
+    ],
+    "hook": {
+      "text": "At what step of my onboarding funnel are most users dropping off?",
+      "technique": "question",
+      "technique_other": null,
+      "shots": ["s002"],
+      "words": [0, 6]
+    },
+    "cta": {
+      "text": "For more resources on how to use Amplitude, check out the Amplitude Help Center and Community.",
+      "shots": ["s009"]
+    },
+    "tone": "Calm, neutral, instructional academy tutorial: friendly second-person voice-over over a white, brand-blue, uncluttered look; competent and practical rather than cinematic.",
+    "signature_moments": [
+      {
+        "shots": ["s007", "s008"],
+        "description": "Push-in on the Follow Playlist tooltip with a red outline that steps from the 80.5% drop-off line to the 90.7% from-previous-step line exactly as the VO reads each number, then a zoom back out to the full workspace.",
+        "why_premium": "Zooming plus word-synced callouts turns a dense analytics screen into one readable number at a time, so the payoff insight lands without the viewer hunting for it."
+      },
+      {
+        "shots": ["s006"],
+        "description": "Live change of the conversion window from 1 day to 30 minutes, with the headline dropping to 6.11% and a red callout framing the new figure as the VO explains it.",
+        "why_premium": "Shows cause and effect inside the real product instead of describing it, which makes the abstract 'conversion window' concept concrete."
+      },
+      {
+        "shots": ["s001", "s009"],
+        "description": "Identical animated Amplitude Academy logo lockup (circle mark, waveform draw-on, wordmark slide-out, ACADEMY label) bookends the video.",
+        "why_premium": "A consistent, well-timed animated lockup frames an otherwise raw screen capture as part of a coherent branded series."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 2,
+        "evidence": "The hook is a clear, relevant on-screen question, but it only arrives after a ~5 s logo intro, sits on a static card for ~3 s, and the VO opens with a generic definition rather than a stat, pain or demo.",
+        "refs": ["s001", "s002", "w0", "w25"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "Logical arc: define onboarding, show the example four-step flow diagram, build the funnel event by event, explain the conversion window, then read off the drop-off. Red callouts and the s007 zoom map the VO to the exact UI element.",
+        "refs": ["s002", "s005", "s006", "s007", "w183", "w299"]
+      },
+      "ui_showcase": {
+        "score": 3,
+        "evidence": "Real product UI is shown end to end and the s007 push-in makes the key tooltip readable, but most of the demo is a long, unzoomed full-frame capture (s006 runs ~60 s) with loading veils and small text left in.",
+        "refs": ["s003", "s005", "s006", "s007"]
+      },
+      "motion_polish": {
+        "score": 2,
+        "evidence": "Apart from the logo bookends and the s007/s008 zoom-through, the video is raw screen capture joined by hard cuts, with callouts that switch on and off with no animation, and visible chart-loading states.",
+        "refs": ["s001", "s003", "s006", "s007", "s009"]
+      },
+      "sound_design": {
+        "score": 2,
+        "evidence": "Judged from anchors plus visuals: a single SFX (chime x001 at the intro logo), no UI clicks or whooshes for zooms and callouts, a steady ~126 BPM music bed under the VO, and integrated loudness of -18.07 LUFS, which is quiet for online playback. Clean, but minimal.",
+        "refs": ["s001", "s007", "s009"]
+      },
+      "vo_script_quality": {
+        "score": 4,
+        "evidence": "Plain, accurate and well paced; defines terms ('conversion window', w183-w214), uses a concrete example (30 minutes, 6%, 80%, 90%) and a forward pointer to a follow-up video. Some filler ('you probably want to', 'let's say I want to') and the opening is generic.",
+        "refs": ["w0", "w183", "w233", "w252", "w299", "w339"]
+      },
+      "brand_consistency": {
+        "score": 4,
+        "evidence": "The matching Amplitude Academy logo lockup opens and closes the video, the title and diagram cards use the same white background, brand blue and sans type, and the product UI shares the blue. The only break is the plain red callout boxes.",
+        "refs": ["s001", "s002", "s006", "s009"]
+      },
+      "works_muted": {
+        "score": 2,
+        "evidence": "With sound off, the title question, definition card and flow diagram carry the setup and the red boxes point at the key numbers, but the how-to steps, the conversion-window explanation, the meaning of the 80%/90% figures and the CTA are voice-only. There are no captions.",
+        "refs": ["s002", "s006", "s007", "s009", "w371"]
+      },
+      "overall": {
+        "score": 3,
+        "evidence": "A competent, clear product tutorial with good VO and a smart zoom-plus-callout payoff, held back by a slow opening, long unedited capture stretches, minimal motion and sound design, and a voice-only CTA.",
+        "refs": ["s002", "s006", "s007", "s009"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 3,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "The intro title, definition and flow-diagram cards (s002) have English text baked in and would need re-rendering. The product UI in s003-s008 is English and would need localized captures or overlays. The VO carries the instructions and the CTA, so it needs re-dubbing or subtitles. The logo bookends and the callout-box approach are language-neutral."
+    }
+  }
+}

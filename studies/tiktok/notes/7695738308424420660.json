@@ -1,0 +1,73 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "tiktok_notes",
+    "annotator": "claude-code",
+    "input_hash": "b369702e5dec3698878b52b5bcdf535180cb82fd96ba844d2f08872de35df297",
+    "created_at": "2026-10-13T13:56:12+00:00"
+  },
+  "id": "7695738308424420660",
+  "format": "listicle_text",
+  "hook": {
+    "type": "list_promise",
+    "line": "On-screen text: 3 machine learning projects you can finish in a weekend, sports edition.",
+    "visual": "A hand fidgets at a laptop in a letterboxed frame, then fast cuts to a printed research paper and a 3D distribution plot, under teal list text."
+  },
+  "beats": [
+    {
+      "t": 0.0,
+      "what": "Title text '3 machine learning projects you can finish in a weekend / sports edition' over a hand at a keyboard."
+    },
+    {
+      "t": 0.53,
+      "what": "Rapid cuts every half second between a research paper and 3D plots, filmed off a monitor."
+    },
+    {
+      "t": 4.2,
+      "what": "Project 1, match predictor (any sport), over a football prediction paper and a correlation heatmap."
+    },
+    {
+      "t": 7.4,
+      "what": "Project 2, baseball pitch prediction, over a pitch scatter plot and a 'Pitch Predictor' app with a bar chart."
+    },
+    {
+      "t": 8.47,
+      "what": "Project 3, football expected goals, over a match dashboard with a cumulative xG line chart."
+    },
+    {
+      "t": 10.53,
+      "what": "Cut to the creator in a library at his laptop with 'Make sure to follow for more project ideas'."
+    }
+  ],
+  "graphics": {
+    "captions": "title_only",
+    "caption_position": "middle",
+    "devices": [
+      "title_text",
+      "screen_recording",
+      "chart_or_number",
+      "product_ui",
+      "music_bed",
+      "jump_cut"
+    ],
+    "density": "heavy",
+    "per_minute_estimate": 35
+  },
+  "characters": [],
+  "cta": {
+    "kind": "follow",
+    "t": 10.53
+  },
+  "why_it_works": [
+    "A 12 s video with a 1.27 s median shot is easy to watch twice, and the long caption holds the full plan so viewers pause or save.",
+    "Each list item is paired with a finished-looking chart or dashboard, so the result is shown before any explanation.",
+    "No speech, only music and text, so it works muted and reads at a glance."
+  ],
+  "weaknesses": [
+    "Text is tiny (2% median height) and 72% falls outside the safe area; the list is hard to read on a phone.",
+    "Screens are filmed off a monitor in the dark, so the charts are blurry and skewed.",
+    "The caption lists different projects (churn, house price, fraud) than the video's sports projects."
+  ],
+  "for_robert": "Pair each listed item with one finished result on screen (a chart, a dashboard); avoid filming monitors in the dark and tiny text a phone can't read."
+}

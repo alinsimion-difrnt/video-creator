@@ -1,0 +1,40 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code",
+                 "input_hash": "8fa056b07aff194b875d2712eebdb2dc768c153a562ff664aa6bb8c18226da4d",
+                 "created_at": "2026-10-13T12:00:00+00:00"},
+  "id": "7627697420683578637",
+  "format": "green_screen",
+  "hook": {"type": "list_promise",
+           "line": "Here is my very much requested engineering major tier list",
+           "visual": "Creator's face cut out large in the lower right over a full tier-list screenshot, with a red-outlined 'Engineering major tier list' title at top; he gestures from the first frame"},
+  "beats": [
+    {"t": 0.0, "what": "Tier list already filled in behind him; he announces it as 'very much requested'"},
+    {"t": 6.73, "what": "S tier: electrical above mechanical, justified by starting pay"},
+    {"t": 22.53, "what": "Explains moving computer engineering down from S to A tier because the job market is saturated"},
+    {"t": 33.79, "what": "Rest of A tier: chemical, aerospace, materials, civil"},
+    {"t": 60.47, "what": "Teasing jab at civil engineers ('stop saying your major is difficult')"},
+    {"t": 78.85, "what": "Reassurance: every engineering major is in great shape"},
+    {"t": 85.2, "what": "Predicts industrial engineering hate and puts it in B tier"},
+    {"t": 101.37, "what": "Why construction engineering technology sits lower: employers read polytechnic degrees as a step down"},
+    {"t": 117.87, "what": "Closes with 'don't kill the messenger'"}
+  ],
+  "graphics": {"captions": "title_only", "caption_position": "top",
+               "devices": ["green_screen_bg", "screenshot", "title_text"],
+               "density": "minimal", "per_minute_estimate": 1},
+  "characters": [],
+  "cta": {"kind": "none", "t": null},
+  "why_it_works": [
+    "A ranking is a built-in argument: every viewer has a major to defend, so the comments fill up (the caption even invites the 'biased' complaints)",
+    "The finished tier list is on screen from frame one, so viewers pause and scan for their own major before he reaches it",
+    "Calling out specific groups (civil, industrial) by name gives each group a reason to react",
+    "Fast, unbroken talking (4.8 words/s, 5% silence) over one long shot feels like a candid opinion, not a produced ad"
+  ],
+  "weaknesses": [
+    "124 s with a single cut and no zooms or highlights on the tier being discussed; it relies fully on the topic",
+    "The tier-list labels are tiny and his head covers the lower tiers",
+    "Browser ads and UI clutter stay visible behind him the whole time",
+    "No captions for the speech and the audio is quiet (-27.4 LUFS)"
+  ],
+  "for_robert": "Steal the ranking format with a named-group callout to invite debate, but have Fred point at or circle the tier being discussed so the screen changes with each claim."
+}

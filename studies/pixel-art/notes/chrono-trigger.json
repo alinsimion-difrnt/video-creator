@@ -1,0 +1,54 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T14:00:39Z"
+  },
+  "id": "chrono-trigger",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "cool",
+    "notes": "No clip shows the original SNES art (clip1 instrument cover, clip2 dance video, clip3 fan HD-remake reimagining), so palette facts stay from the wiki: one colour world per era; Toriyama's flat bright heroes on richer backgrounds. The fan clip keeps one dominant hue per location."
+  },
+  "lighting": "From the wiki: ambient, era-wide mood lighting; the graphics lead cited the film Alien, so dark interiors and ruined future maps lean dim and cool while heroes stay bright. The fan clip's god rays and rim-lit heroes are not the original look.",
+  "silhouette": "Toriyama's chunky proportions (big heads, distinct hair: Crono's red spikes, Frog's shape, Robo's round body) keep each hero readable at sprite size; the fan clip's portrait cards still read from hair spike and body block alone.",
+  "motion": {
+    "timing": "No metrics file and no original footage in the clips: describe only. Per the wiki and the game's reputation: a short reusable pose set (walk, run, nod, head-shake, surprised jump, laugh, collapse) cut together on held beats rather than long tweens.",
+    "principles": [
+      "pose-to-pose",
+      "anticipation",
+      "exaggeration",
+      "staging"
+    ]
+  },
+  "texture": "From the wiki: tile-built maps with soft dithered shading on rocks, trees and floors; characters cleaner and flatter than the ground. The fan clip pushes background density (cables, crates, foliage) far beyond the original while keeping the party as tiny clean sprites.",
+  "camera": "Fixed top-down 3/4 view; scenes scroll to frame the action instead of cutting. The fan clip keeps a wide 3/4 establishing frame per location and cuts between places every ~7 s with a black-background quote card in between.",
+  "sound": "",
+  "acting": {
+    "enters": "Walk or run in from screen edges and doorways on the same map; enemies are visible on the field before a fight. The fan clip walks the party in single file along a path into each set.",
+    "acts": "A handful of poses (nod, head-shake, surprise jump, laugh, faint) do all the emotion; NPCs talk while the player can still move.",
+    "exits": "Walk off-screen or through a door; fights start and end on the same map with no black transition screen.",
+    "comes_back": true,
+    "depth": "Tiny party sprites low in a huge set (portal plaza, market street, castle town) so the world dwarfs them; the field battle keeps the world visible behind the fight."
+  },
+  "techniques": [
+    "small reusable pose library cut together on held beats",
+    "battles staged on the field map, no separate battle screen",
+    "readable hero silhouette from exaggerated proportions (hair spike, big head)",
+    "one dominant hue per era/location so place reads before story",
+    "background-level dithering, flatter characters on top",
+    "tiny party in a large set to sell scale"
+  ],
+  "feel": "per-era colour world + flat bright heroes + 6-pose acting library = expressive tiny actors that never leave the stage",
+  "for_fred": "Give Fred a small pose library (nod, head-shake, surprise hop, laugh) and cut between them on the narration beats instead of looping one animation. Keep the scene continuous: Fred swims off the edge, the frame holds, he comes back from another side; once, show him tiny in a big set to sell scale.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Chrono_Trigger",
+    "data/study/pixel/work/chrono-trigger/clip1-7490883912059718942.jpg",
+    "data/study/pixel/work/chrono-trigger/clip2-7555259767237758238.jpg",
+    "data/study/pixel/work/chrono-trigger/clip3-7631242465151913238.jpg"
+  ]
+}

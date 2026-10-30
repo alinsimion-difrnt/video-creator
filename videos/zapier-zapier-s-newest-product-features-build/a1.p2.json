@@ -1,0 +1,98 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "c24df46eca13aff9a235cefd069b16d0999ee64468c488b3f0a6d7325dfee75b",
+    "created_at": "2026-10-05T06:32:26.794620Z"
+  },
+  "video": "zapier-zapier-s-newest-product-features-build",
+  "task": "a1-p2",
+  "shots": [
+    {
+      "shot": "s006",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Simplified, flat-illustrated Zapier editor cards (a three-step zap panel, then a 'Zap 1 / Zap 2' two-column panel, then a folder-tree zap list) centred on a flat warm-orange background",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "zapier",
+        "Zap 1",
+        "Zap 2",
+        "Copy",
+        "Paste below",
+        "New Zap",
+        "Operations",
+        "Accounting",
+        "Orders",
+        "Invoices",
+        "Sales",
+        "Pitch Deck"
+      ],
+      "text_word_count": 17,
+      "typography": "Lowercase wordmark logo; panel headers 'Zap 1'/'Zap 2' in bold white sentence-case sans on a near-black header bar; menu items ('Copy', 'Paste below', 'New Zap') and folder labels in small regular-weight sentence-case grotesque sans, normal tracking; most copy is replaced by grey placeholder bars. Font guess (low confidence): a geometric/grotesque sans similar to Degular or Inter.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "One long 32 s continuous animated sequence covering the editor section (w59-w153). A centred three-step zap card (HubSpot/OpenAI/Gmail rows with green checks) sits alone, then dozens of mini UI cards, toasts, pills and dots fly in around it until the frame is a dense collage of integrations (w64-w91, 'teams of all sizes, across all departments'). The camera then cuts in to a 'Zap 1 / Zap 2' panel; a cursor opens a step's '...' menu and clicks 'Copy', then 'Paste below' on Zap 2 adds the Gmail step (w109-w115 'copy steps across zaps'). Zap 2 is isolated, the pasted Gmail step lifts out and is dragged to position 1 (reordering, w105-w108 echoed), then the three steps stack into a compact icon cluster that zooms into a folder-tree zap list; the cursor drags rows onto folders via a 'New Zap' ghost chip and the list re-populates under 'Invoices' (w141-w153 'drag and drop zaps to keep them organized').",
+      "build_rebuild": "On a flat orange stage, render a centred card with hard offset drop shadow, stagger-in ~30 small UI cards from off-frame with a slight overshoot ease, then cut to a two-column 'Zap 1/Zap 2' card and script a cursor that opens a '...' menu, highlights 'Copy' with an orange outline, pastes a new row into column 2, drags it to the top, collapses the rows into an icon stack and scale-transitions into a folder-tree list where a 'New Zap' chip is dragged onto a folder.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s007",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The folder-tree zap list card, now framed inside a rounded orange tile on a deep indigo background, sliding left as a lavender tile containing the Zap 2 card enters from the right",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "zapier",
+        "Operations",
+        "Accounting",
+        "Orders",
+        "Invoices",
+        "Sales",
+        "Pitch Deck",
+        "Zap 2"
+      ],
+      "text_word_count": 10,
+      "typography": "Same system as s006: lowercase wordmark, small regular sentence-case sans folder labels, bold white 'Zap 2' header on a dark bar; text is tiny at this scale.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Section-change bridge on 'But it doesn't stop there' (w154-w158): the full-bleed orange scene pulls back to reveal it as a rounded tile on an indigo canvas, then the tiles slide left like a carousel so a lavender tile carrying the three-step Zap 2 card (Gmail, Calendar, Slack) arrives centre frame.",
+      "build_rebuild": "Scale the current full-frame scene down to ~70% inside a rounded-corner mask on an indigo background, then translate a horizontal row of rounded scene tiles left by one tile width with an ease-in-out so the next (lavender) scene lands centred.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s008",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The 'Zap 2' card with three numbered steps (Gmail, Google Calendar, Slack) centred on a flat lavender background",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Zap 2"
+      ],
+      "text_word_count": 2,
+      "typography": "Bold white sentence-case sans header on a near-black bar; step numbers '1.', '2.', '3.' in medium-weight sans; step titles are grey placeholder bars.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "The lavender tile from s007 scales up to fill the frame, so the Zap 2 card sits alone on lavender; over 1.5 s the card slowly shrinks/drifts back, settling the new reliability section (w159-w165 'We know that organizations of all sizes').",
+      "build_rebuild": "Fill the frame with the lavender tile, then apply a slow ~0.85x scale-down on the centred Zap 2 card (with its hard offset shadow) over the shot to create a calm settle before the next feature beat.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

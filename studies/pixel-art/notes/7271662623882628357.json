@@ -1,0 +1,50 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "6bffbb2969798dd2edc1c4cb1eb00e7e290112ff0824b464c48a3383148da792",
+    "created_at": "2026-10-13T13:05:37+00:00"
+  },
+  "id": "7271662623882628357",
+  "kind": "clip",
+  "palette": {
+    "colours_estimate": 22,
+    "shadows": "cool",
+    "notes": "Measured 22 colours, 2 ramps, median hue shift 40 (strongly hue-shifted), ramp length 11. Saturated yellow-greens for grass and ivy, warm beige houses, shadows go to blue-green and grey."
+  },
+  "lighting": "Bright overcast daylight with soft top light; foliage highlights pushed to yellow, shade to cool green. In 3D the lighting is shared by everything, so shadows are consistent.",
+  "silhouette": "A man with a backpack, side-on, small against the house; clear walking silhouette. Houses read as big blocky masses.",
+  "motion": {
+    "timing": "Phone filming a monitor, so code numbers (599 changes, 29.93/s, on 1s) are mostly the camera and screen, not drawings. The character walks with smooth game-engine animation.",
+    "principles": [
+      "walk cycle",
+      "parallax"
+    ]
+  },
+  "texture": "Voxel/3D scene rendered with pixel-art texture: blocky pixel foliage and brick, then shown from a tilted 3D angle (the 'work smart' reveal). Engine gizmos visible in editor view.",
+  "camera": "Starts as a flat side-scroller view; mid-clip the editor camera swings to a top-down 3D angle revealing the scene is 3D, then returns to the side view.",
+  "sound": "",
+  "acting": {
+    "enters": "Character walks in from the side in the game view.",
+    "acts": "Walks across the yard, stops; ordinary gameplay walk. The joke is the reveal of the 3D build behind the 2D look.",
+    "exits": "Walks out of frame to the right before the camera swings.",
+    "comes_back": true,
+    "depth": "Foreground grass, mid-ground character, houses behind and more houses far back; real 3D depth gives free parallax."
+  },
+  "techniques": [
+    "2D-looking pixel art built as a 3D/voxel scene for free parallax",
+    "hue-shifted foliage ramps (yellow lights, blue-green shade)",
+    "camera swing reveal: flat view turns into 3D",
+    "layered foreground grass in front of the character",
+    "behind-the-scenes editor view as the hook"
+  ],
+  "feel": "flat side view + 3D voxel world + yellow-to-teal foliage ramps + camera swing reveal = 'wait, it's 3D?' hook",
+  "for_fred": "Give Fred layered depth: foreground grass or weeds in front, Fred in the middle, background far behind, and let him walk out of frame and come back. A cheap version: a 3-layer parallax pan when he exits, then cut back with him small in the background layer.",
+  "sources": [
+    "data/study/pixel/work/7271662623882628357/sheet.jpg",
+    "studies/pixel-art/clips/7271662623882628357.json",
+    "studies/pixel-art/tiktok.yaml"
+  ]
+}

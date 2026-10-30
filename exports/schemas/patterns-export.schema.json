@@ -1,0 +1,276 @@
+{
+  "$defs": {
+    "Annotator": {
+      "enum": [
+        "code",
+        "claude-code",
+        "human"
+      ],
+      "title": "Annotator",
+      "type": "string"
+    },
+    "Build": {
+      "additionalProperties": false,
+      "properties": {
+        "gsap": {
+          "minLength": 1,
+          "title": "Gsap",
+          "type": "string"
+        },
+        "remotion": {
+          "minLength": 1,
+          "title": "Remotion",
+          "type": "string"
+        }
+      },
+      "required": [
+        "gsap",
+        "remotion"
+      ],
+      "title": "Build",
+      "type": "object"
+    },
+    "ExportPattern": {
+      "additionalProperties": false,
+      "properties": {
+        "avoid_when": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Avoid When",
+          "type": "array"
+        },
+        "build": {
+          "$ref": "#/$defs/Build"
+        },
+        "caveats": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Caveats",
+          "type": "array"
+        },
+        "change_mix": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Change Mix",
+          "type": "object"
+        },
+        "duration_ms": {
+          "$ref": "#/$defs/Range"
+        },
+        "easing_mix": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Easing Mix",
+          "type": "object"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "sfx_offset_ms": {
+          "$ref": "#/$defs/Range"
+        },
+        "sound": {
+          "title": "Sound",
+          "type": "string"
+        },
+        "steps": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Steps",
+          "type": "array"
+        },
+        "summary": {
+          "title": "Summary",
+          "type": "string"
+        },
+        "videos": {
+          "title": "Videos",
+          "type": "integer"
+        },
+        "when_to_use": {
+          "items": {
+            "type": "string"
+          },
+          "title": "When To Use",
+          "type": "array"
+        },
+        "why_premium": {
+          "title": "Why Premium",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "summary",
+        "when_to_use",
+        "avoid_when",
+        "steps",
+        "build",
+        "sound",
+        "why_premium",
+        "duration_ms",
+        "easing_mix",
+        "change_mix",
+        "sfx_offset_ms",
+        "videos",
+        "caveats"
+      ],
+      "title": "ExportPattern",
+      "type": "object"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "description": "Carried by every output JSON (BUILD_PLAN section 2.7).",
+      "properties": {
+        "annotator": {
+          "$ref": "#/$defs/Annotator"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "input_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Input Hash",
+          "type": "string"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "schema_version": {
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "skill": {
+          "anyOf": [
+            {
+              "pattern": "^[a-z0-9-]+@[0-9a-f]{8,64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Skill"
+        },
+        "stage": {
+          "title": "Stage",
+          "type": "string"
+        },
+        "tool_version": {
+          "title": "Tool Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool_version",
+        "stage",
+        "annotator",
+        "input_hash",
+        "created_at"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "Range": {
+      "additionalProperties": false,
+      "description": "A measured value for building: the weighted median and the typical (25-75%) range.",
+      "properties": {
+        "high": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "High"
+        },
+        "low": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Low"
+        },
+        "median": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Median"
+        },
+        "n": {
+          "minimum": 0,
+          "title": "N",
+          "type": "integer"
+        },
+        "videos": {
+          "minimum": 0,
+          "title": "Videos",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "median",
+        "low",
+        "high",
+        "n",
+        "videos"
+      ],
+      "title": "Range",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "patterns": {
+      "items": {
+        "$ref": "#/$defs/ExportPattern"
+      },
+      "title": "Patterns",
+      "type": "array"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    }
+  },
+  "required": [
+    "provenance",
+    "patterns"
+  ],
+  "title": "PatternsExport",
+  "type": "object"
+}

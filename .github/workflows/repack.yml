@@ -1,0 +1,124 @@
+name: repack
+
+# Rebuild S5 packets (event triage, task images) from the S3/S4 data kept in R2, after a packets/annotate
+# config or code change (ADR 0013). Videos that already have annotations are never repacked: the build
+# refuses, because new task ids and hashes would orphan them. Manifests come back through one data PR.
+on:
+  workflow_dispatch:
+    inputs:
+      videos:
+        description: "Space-separated source ids (empty = every A2-tier video without annotations)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: repack
+  cancel-in-progress: false
+
+env:
+  R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+  R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+  R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+  R2_BUCKET: ${{ secrets.R2_BUCKET }}
+
+jobs:
+  select:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      videos: ${{ steps.sel.outputs.videos }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - name: Install
+        run: uv sync --frozen --no-dev
+      - name: Select videos
+        id: sel
+        env:
+          VIDEOS: ${{ inputs.videos }}
+        run: |
+          if [ -n "$VIDEOS" ]; then
+            for v in $VIDEOS; do
+              [[ "$v" =~ ^[a-z0-9]+([-_][a-z0-9]+)*$ ]] || { echo "bad source id: $v" >&2; exit 2; }
+            done
+            list=$(printf '%s\n' $VIDEOS | jq -R . | jq -cs .)
+          else
+            list=$(uv run python - <<'EOF'
+          import json
+          from lens.config import REPO_ROOT, load_config
+          from lens.schemas import PacketManifest
+
+          tiers = load_config().annotate.a2_tiers
+          out = []
+          for path in sorted((REPO_ROOT / "packets").glob("*/manifest.json")):
+              m = PacketManifest.model_validate_json(path.read_text(encoding="utf-8"))
+              if m.tier in tiers and not any((REPO_ROOT / t.output).exists() for t in m.tasks):
+                  out.append(m.video)
+          print(json.dumps(out))
+          EOF
+            )
+          fi
+          echo "videos=$list" >> "$GITHUB_OUTPUT"
+          echo "::notice title=repack::$list"
+
+  repack:
+    needs: select
+    if: needs.select.outputs.videos != '' && needs.select.outputs.videos != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        video: ${{ fromJSON(needs.select.outputs.videos) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - name: Install
+        run: uv sync --frozen --no-dev
+      - name: Pull S3 signals and S4 evidence
+        run: uv run lens storage pull-media --video ${{ matrix.video }} --kind signals --kind evidence
+      - name: S5 packets
+        run: uv run lens packets --video ${{ matrix.video }} --force
+      - name: Validate
+        run: uv run lens validate --all
+      - name: Push packets, manifest and marker
+        run: uv run lens storage push --video ${{ matrix.video }}
+
+  collect:
+    needs: [select, repack]
+    if: always() && needs.repack.result != 'skipped'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - name: Install
+        run: uv sync --frozen --no-dev
+      - name: Pull all committed outputs from R2
+        run: uv run lens storage pull-outputs
+      - name: Validate
+        run: uv run lens validate --all
+      # The branch is pushed before the PR call; the repo may not let Actions open PRs.
+      - name: Open or update the data PR
+        continue-on-error: true
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: data/repack
+          add-paths: |
+            packets/*/manifest.json
+          commit-message: "data: repacked manifests (${{ github.run_id }})"
+          title: "data: repacked packet manifests"
+          body: |
+            S5 packets rebuilt by run ${{ github.run_id }} (videos: ${{ needs.select.outputs.videos }}).
+            Packet images are in R2; only the manifests are committed.

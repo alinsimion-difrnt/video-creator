@@ -1,0 +1,123 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "d610a83eaac2f2938ef644fadf31075ab5803fe301873cbba511c0aca4dddc83",
+    "created_at": "2026-10-05T07:37:12.835187Z"
+  },
+  "video": "dyson-introducing-the-dyson-washg1-wet-floor",
+  "task": "a1-p2",
+  "shots": [
+    {
+      "shot": "s007",
+      "shot_type": "logo",
+      "shot_type_other": null,
+      "composition": "split",
+      "composition_other": null,
+      "focal_element": "Centred-left dyson wordmark with a 'Subscribe' label below, beside a right-hand panel of thin grey engineering dimension lines framing two empty slots",
+      "transition_in": "other",
+      "transition_other": "black rectangular block wipe carried over from s006 (blocks of the previous end card still visible at 26.5 s)",
+      "on_screen_text": ["dyson", "Subscribe"],
+      "text_word_count": 2,
+      "typography": "Brand wordmark in lowercase bold rounded geometric sans, white on black, tight tracking; 'Subscribe' in sentence case, light/regular geometric sans, smaller, normal tracking, centred under the wordmark. Font guess (low confidence): Dyson custom geometric sans similar to Futura.",
+      "depth_cues": ["none"],
+      "what_happens": "The last black blocks of the s006 wipe clear by about 27.0 s, leaving a black end screen with the dyson wordmark and 'Subscribe' at left (the VO finishes 'floors properly' w52-w53). At right, thin grey technical-drawing lines with arrowheads draw on between 26.5 s and about 28.0 s to frame two stacked empty rectangles (likely platform end-screen video slots); the frame then holds static to 36.0 s with no further motion visible at 2 fps.",
+      "build_rebuild": "On a black 16:9 frame, place the white wordmark and a 'Subscribe' label at the left third, then draw on hairline grey dimension lines with arrowheads (stroke-dashoffset over about 1.5 s) to outline two stacked placeholder rectangles at the right, and hold for 8 s.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001"], "words": [0, 12]},
+      {"beat": "mechanism", "shots": ["s001", "s002"], "words": [13, 35]},
+      {"beat": "outcome", "shots": ["s003", "s004", "s005"], "words": [36, 47]},
+      {"beat": "cta", "shots": ["s006", "s007"], "words": [48, 53]}
+    ],
+    "hook": {
+      "text": "Dyson's new invention solves the problem of washing hard floors, doing it properly.",
+      "technique": "bold_claim",
+      "technique_other": null,
+      "shots": ["s001"],
+      "words": [0, 12]
+    },
+    "cta": {
+      "text": "Subscribe",
+      "shots": ["s007"]
+    },
+    "tone": "Calm, confident, engineering-led premium product launch: clean CG product cinematography, understated VO, minimal text and a restrained black end screen.",
+    "signature_moments": [
+      {
+        "shots": ["s001"],
+        "description": "One continuous 11 s CG camera move that pushes from a wide kitchen shot down to floor level, fades the head shell to a glowing x-ray view and orbits to a macro of the spinning microfibre roller, timed to the 'two microfiber rollers' line.",
+        "why_premium": "A single unbroken camera path that moves from context to internal mechanism shows technical mastery and explains the product without any on-screen text."
+      },
+      {
+        "shots": ["s002"],
+        "description": "The camera dives through the translucent x-ray head into a macro fluid simulation of water and debris on the roller as the VO says 'hygienically cleaning the rollers'.",
+        "why_premium": "Showing an invisible internal process as a physically plausible simulation makes an abstract benefit (self-cleaning hygiene) concrete and credible."
+      },
+      {
+        "shots": ["s004"],
+        "description": "Kitchen, bathroom and living room are chained in one floor-level move using the product and a glass panel passing the lens as wipes, each room landing on its VO noun.",
+        "why_premium": "Hidden wipes keep the flow continuous and the word-locked room changes make the edit feel scored and intentional."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 4,
+        "evidence": "Opens straight on the product in use with a clear bold claim naming the problem in the first 5 s (w0-w12); strong but not a surprising or visual-first twist.",
+        "refs": ["s001", "w0", "w12"]
+      },
+      "clarity": {
+        "score": 5,
+        "evidence": "One idea per beat: claim, two-roller mechanism shown in x-ray, stain removal, self-cleaning rollers, rooms, dock self-clean, tagline. Each visual matches its VO phrase.",
+        "refs": ["s001", "s002", "s004", "s005", "s006"]
+      },
+      "ui_showcase": {
+        "score": null,
+        "evidence": "Not applicable: a physical product launch with no software UI; the product itself is showcased in high-end CG (x-ray cutaways, macro roller).",
+        "refs": ["s001", "s002"]
+      },
+      "motion_polish": {
+        "score": 5,
+        "evidence": "Smooth continuous CG camera paths, x-ray material transitions, fluid simulation, hidden wipes between rooms and a block-wipe into a line-draw end screen; no visible jank in the sheets.",
+        "refs": ["s001", "s002", "s004", "s006", "s007"]
+      },
+      "sound_design": {
+        "score": 3,
+        "evidence": "Judged from anchors plus visuals: a steady music bed at 89.1 BPM, integrated loudness -19.04 LUFS, 36 SFX candidates mostly classified music with chimes clustered around the room sequence and end card (x027-x030, x034-x035) and one swoosh_reverse at 6.88 s near the roller macro. Competent and tidy; little evidence of distinct designed SFX for the mechanical moments. Cannot hear the mix itself.",
+        "refs": ["s001", "s004", "s006", "s007"]
+      },
+      "vo_script_quality": {
+        "score": 4,
+        "evidence": "54 words, concise and benefit-led, with a bookended 'properly' (w12 and w53) tying hook to tagline; the 'sparkly clean' phrase (w42-w43) is slightly casual against the engineering tone.",
+        "refs": ["w12", "w42", "w43", "w53"]
+      },
+      "brand_consistency": {
+        "score": 5,
+        "evidence": "Consistent CG lighting and product materials throughout, Dyson wordmark and geometric sans on the end card and end screen, and engineering-drawing lines in s007 echoing the brand's technical identity.",
+        "refs": ["s006", "s007"]
+      },
+      "works_muted": {
+        "score": 3,
+        "evidence": "The visuals show cleaning, rooms and the dock clearly, and the tagline is on screen in s006, but the mechanism details (two rollers, one washes one finishes, self-cleaning) are only spoken; no captions are baked in.",
+        "refs": ["s001", "s002", "s005", "s006"]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "A tight 26 s product story with best-in-class CG cinematography and clear VO-to-visual mapping, held back slightly by an ordinary sound bed, mechanism info that depends on VO, and a long 10 s static subscribe screen.",
+        "refs": ["s001", "s002", "s004", "s006", "s007"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 4,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "Only the end card (product name, one-line tagline, wordmark) and the 'Subscribe' end screen carry text, so few frames need re-rendering; the VO is short and over picture without lip sync, easy to re-record, but the mechanism explanation depends on it."
+    }
+  }
+}

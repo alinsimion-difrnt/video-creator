@@ -1,0 +1,171 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a3_pattern_cards",
+    "annotator": "claude-code",
+    "skill": "write-pattern-cards@e525a58fa6d8",
+    "model": null,
+    "input_hash": "d0022d447c990b603b89fae76e0114f1e0f04a58526abc6ec0d5216533f72a57",
+    "created_at": "2026-10-05T12:50:09.693310Z"
+  },
+  "id": "kinetic_word_reveal",
+  "name": "Words Arrive With Momentum",
+  "summary": "A headline appears word by word (or as one big word), each piece fading in while it slides, scales or sharpens from a blur and then settles softly into place.",
+  "when_to_use": [
+    "Title cards and taglines that should feel spoken rather than pasted on",
+    "Landing a key word exactly on the narration or a music hit",
+    "Swapping one statement for the next so the new line reads as the answer to the old one",
+    "Turning a product name into a bold, cinematic moment"
+  ],
+  "avoid_when": [
+    "Long sentences or body copy, where staggered words slow reading",
+    "Several animated headlines in a row, which makes the effect feel routine",
+    "The background is already busy and moving fast"
+  ],
+  "steps": [
+    "Split the headline into words, and the key word into letters if it gets its own accent.",
+    "Start each word invisible and offset: a little low, to one side, slightly larger, or blurred.",
+    "Bring the words in one after another with a short stagger, fading up while they travel to rest.",
+    "Let the motion decelerate so each word glides into place rather than stopping hard.",
+    "Give the final or most important word a small extra accent, such as a wobble, tilt or sparkle pop.",
+    "When replacing a line, send the old one out in the same direction the new one arrives so the motion stays continuous."
+  ],
+  "build": {
+    "gsap": "Split the text into word spans and use tl.from or tl.fromTo on autoAlpha plus y or x, with optional scale and filter blur, eased mostly with a power ease-out (an ease-in-out for slower glides) and a stagger between words. Use a back ease-out only for a small overshoot accent on the key word or a decorative pop; for line swaps, tween the old line out with an ease-in and overlap the new line's entry using a '<' position offset.",
+    "remotion": "Give each word its own spring delayed by its index, using a heavily damped config so it settles without overshoot, and map that progress through interpolate to opacity, translate, scale and blur. Reserve a lightly damped spring for the accent word or sparkle; plain interpolate with an Easing.out curve works for clip-path or mask reveals."
+  },
+  "sound": "No typical sound: most events sit on music or an unclear cue. When there is a cue it is often a reverse swoosh building into the word's landing, sometimes a soft impact, lined up closely with the reveal.",
+  "why_premium": "Type that moves with weight reads as voice: words that streak, rise or rack into focus and then settle feel like they are being said, not displayed. The best examples time the key word to the narration or a beat and give it a tiny physical reaction, which puts emphasis exactly on the idea being sold. Overlapping a departing line with an arriving one in a single direction makes successive statements feel like one thought, and depth cues such as blur and scale turn a plain title card into something cinematic without stock effects.",
+  "numbers": {
+    "id": "kinetic_word_reveal",
+    "events": 28,
+    "videos": 12,
+    "weight": 23.2,
+    "duration_ms": {
+      "n": 67,
+      "videos": 11,
+      "weight": 54.2832,
+      "median": 576.536,
+      "p25": 316.167,
+      "p75": 735.191,
+      "ci": [
+        501.284,
+        692.1
+      ]
+    },
+    "easing_mix": {
+      "ease_out": 0.5523,
+      "ease_in_out": 0.2648,
+      "ease_in": 0.0659,
+      "spring_overshoot": 0.0586,
+      "linear": 0.0584
+    },
+    "change_mix": {
+      "fade": 0.3478,
+      "slide_up": 0.1319,
+      "color_shift": 0.1154,
+      "slide_left": 0.0975,
+      "blur_in": 0.066,
+      "scale_up": 0.0555,
+      "other": 0.0465,
+      "slide_right": 0.03,
+      "scale_down": 0.024,
+      "slide_down": 0.024,
+      "mask_reveal": 0.012,
+      "pop": 0.012,
+      "rotate": 0.012,
+      "typewriter": 0.012,
+      "blur_out": 0.0075,
+      "draw_on": 0.006
+    },
+    "role_mix": {
+      "headline": 0.7126,
+      "background": 0.1494,
+      "icon": 0.0345,
+      "other": 0.0345,
+      "label": 0.023,
+      "body_text": 0.0115,
+      "cursor": 0.0115,
+      "logo": 0.0115,
+      "ui_panel": 0.0115
+    },
+    "sfx_label_mix": {
+      "music": 0.3564,
+      "unsure": 0.3564,
+      "swoosh_reverse": 0.2079,
+      "impact": 0.0792
+    },
+    "sfx_offset_ms": {
+      "n": 49,
+      "videos": 8,
+      "weight": 40.4,
+      "median": 45.4,
+      "p25": -171.65,
+      "p75": 287.812,
+      "ci": [
+        -37.2,
+        149.3
+      ]
+    },
+    "examples": [
+      {
+        "video": "meta-introducing-meta-quest-3-coming-this-f",
+        "event": "e005",
+        "score": 5.0
+      },
+      {
+        "video": "attio-introducing-ask-attio",
+        "event": "e005",
+        "score": 4.0
+      },
+      {
+        "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+        "event": "e016",
+        "score": 4.0
+      },
+      {
+        "video": "hubspot-what-is-hubspot",
+        "event": "e008",
+        "score": 4.0
+      },
+      {
+        "video": "loom-introducing-loom-ai",
+        "event": "e001",
+        "score": 4.0
+      }
+    ]
+  },
+  "examples": [
+    {
+      "video": "meta-introducing-meta-quest-3-coming-this-f",
+      "event": "e005",
+      "score": 5.0
+    },
+    {
+      "video": "attio-introducing-ask-attio",
+      "event": "e005",
+      "score": 4.0
+    },
+    {
+      "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+      "event": "e016",
+      "score": 4.0
+    },
+    {
+      "video": "hubspot-what-is-hubspot",
+      "event": "e008",
+      "score": 4.0
+    },
+    {
+      "video": "loom-introducing-loom-ai",
+      "event": "e001",
+      "score": 4.0
+    }
+  ],
+  "caveats": [
+    "Sound timing varies widely: cues land before, on or after the reveal, so treat the sound guidance as loose.",
+    "Measured timing mixes whole-line reveals with per-word staggers; the duration describes the overall move, not each word.",
+    "Several examples come from the same video, so its house style is over-represented."
+  ]
+}

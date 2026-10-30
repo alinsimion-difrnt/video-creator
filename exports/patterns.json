@@ -1,0 +1,1606 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "s10_export",
+  "annotator": "code",
+  "skill": null,
+  "model": null,
+  "input_hash": "52efe18647fd4c244300a2688f72497e7547ee88fd7142a04dd16747cf9eb796",
+  "created_at": "2026-10-05T19:13:48.265695Z"
+ },
+ "patterns": [
+  {
+   "id": "ai_answer_stream",
+   "name": "AI Answer Streams In",
+   "summary": "An assistant's reply appears piece by piece, line by line or word by word, while the surrounding chat or page shifts up to make room, so the viewer watches the answer being generated live.",
+   "when_to_use": [
+    "Showing an AI assistant or agent answering a question in the product",
+    "Proving automation is working by letting real output or progress lines arrive",
+    "Following a typed prompt, as the payoff beat of a prompt-and-answer demo"
+   ],
+   "avoid_when": [
+    "The answer is long and the viewer needs to read it all; show the finished result instead",
+    "The scene has no input or question that the answer clearly responds to"
+   ],
+   "steps": [
+    "Lay out the finished answer first, split into lines, bullets or words, and hide every piece",
+    "Optionally grow the reply container from a small typing-indicator pill or show a short status line with a spinner",
+    "Reveal the pieces in order with a short fade and small upward rise, at a steady cadence",
+    "As each piece lands, push the thread or page up so the newest content stays in view",
+    "If there is narration, key each word or line to the moment it is spoken",
+    "Finish with a clear end state, such as follow-up cards, an action menu or the assistant icon settling"
+   ],
+   "build": {
+    "gsap": "Use a timeline with gsap.fromTo on the answer pieces (autoAlpha and a small y offset) and a stagger between them; mostly ease-in, ease-in-out or linear eases, with ease-out on settles and an occasional back-style overshoot for avatars or icons. Run a parallel gsap.to on the thread or panel y to scroll it up. For a terminal feel, use stepped (steps) eases so lines snap in.",
+    "remotion": "Give each piece a start frame and drive opacity and translateY with interpolate, or a damped spring with no overshoot for softer rises; for a stepped generation feel, show a piece only once frame passes its start. Move the thread container with interpolate or a heavily damped spring, and grow the reply bubble's width and height with a livelier spring from pill size."
+   },
+   "sound": "No typical sound; the corpus examples sit under music only, so let the score carry it and key text to the voice if there is narration.",
+   "why_premium": "The answer earns trust because it arrives the way real generation does: discrete lines or words at a steady rhythm, with the surrounding page reflowing to make room, rather than a block that simply appears or a generic spinner. Premium versions add small signs of live work, like a reply bubble born from a typing pill, a shimmering status line or a thinking mascot, and they lock the text to the narration so speech and screen agree. The end of the stream is used as a hand-off, landing follow-up cards or an action menu so the next beat starts without a cut.",
+   "duration_ms": {
+    "median": 238.086,
+    "low": 55.211,
+    "high": 839.649,
+    "n": 29,
+    "videos": 5
+   },
+   "easing_mix": {
+    "ease_in": 0.3108,
+    "ease_in_out": 0.246,
+    "linear": 0.2326,
+    "ease_out": 0.1101,
+    "spring_overshoot": 0.1005
+   },
+   "change_mix": {
+    "fade": 0.4033,
+    "slide_up": 0.2754,
+    "morph": 0.0721,
+    "scale_up": 0.0492,
+    "draw_on": 0.0426,
+    "other": 0.0426,
+    "mask_reveal": 0.0328,
+    "color_shift": 0.0295,
+    "rotate": 0.023,
+    "slide_down": 0.0197,
+    "count_up": 0.0098
+   },
+   "sfx_offset_ms": {
+    "median": 66.6,
+    "low": 50.1,
+    "high": 83.1,
+    "n": 2,
+    "videos": 1
+   },
+   "videos": 6,
+   "caveats": [
+    "Measured element durations vary widely, from snap-in terminal redraws to slow rises, so the confidence interval is broad",
+    "The easing mix is split with no dominant family; pick per piece rather than one ease for everything",
+    "Sound was only labelled as music, in a single video, so there is no evidence for a dedicated effect"
+   ]
+  },
+  {
+   "id": "avatar_hero_expand",
+   "name": "Avatar Grows Into Hero",
+   "summary": "A small round avatar or decorative orb lifts out of its place and grows into a large centred hero object while the surrounding UI shrinks and fades behind it. The reverse also appears: the hero shrinks back down to become a small avatar badge on a message.",
+   "when_to_use": [
+    "Moving from a UI choice (a clicked card or template) to the product concept it represents",
+    "Turning a brand visual into the concrete product object without a cut",
+    "Introducing an agent or presenter whose face or orb should carry identity across scenes"
+   ],
+   "avoid_when": [
+    "There is no recognisable small object to start from; the handoff then reads as a random zoom",
+    "The surrounding UI still needs to be read while the hero grows"
+   ],
+   "steps": [
+    "Measure the small avatar's on-screen position and size so the hero can start exactly there",
+    "Fade out or shrink back the surrounding headline or panel to make room and add depth",
+    "Move the avatar towards centre while scaling it up into the hero size",
+    "If the hero becomes something else (a video bubble, a voice orb), reveal the new content inside the circle as it grows",
+    "Let a small finishing detail, such as a status badge, pop onto the rim last",
+    "For the reverse, shrink the hero towards a corner and fade the message bubble in beneath it so it lands as the badge"
+   ],
+   "build": {
+    "gsap": "A timeline with FLIP-style fromTo on the avatar: start from its measured rect (small scale, offset x/y) and tween to centre at full scale. Run a parallel tween scaling down and fading the panel or headline. The hero travel is mostly linear or ease-out, with ease-in-out (power inOut) for the combined move; finishing badges use a slight overshoot ease (back.out). Text lines inside a following bubble can stagger softly.",
+    "remotion": "One spring (high damping, no overshoot) as shared progress, interpolated into the orb's scale and translate and the panel's scale and opacity. A delayed spring with a circular overflow mask reveals the inner content; a separate lower-damping spring gives the badge its small overshoot. An outer scene wrapper can scale with a gentle interpolate for a camera push."
+   },
+   "sound": "A soft chime is the typical cue, sometimes a reverse swoosh, landing just after the move starts.",
+   "why_premium": "The object the viewer was already looking at becomes the star. Rather than cutting from a UI or brand world to a product shot, one continuous shape carries identity across the change: a tiny template avatar swells into the agent's hero orb, or a background orb turns into the presenter's camera bubble. The receding panel behind it adds depth, and saving a small product cue such as a record badge for last gives the move a clear landing. Played in reverse, the same object becoming an avatar badge on a chat message hands the concept back into a concrete demo.",
+   "duration_ms": {
+    "median": 1160.493,
+    "low": 1071.703,
+    "high": 1249.151,
+    "n": 7,
+    "videos": 1
+   },
+   "easing_mix": {
+    "linear": 0.4277,
+    "ease_out": 0.2861,
+    "ease_in_out": 0.1431,
+    "spring_overshoot": 0.143
+   },
+   "change_mix": {
+    "fade": 0.2437,
+    "scale_down": 0.2101,
+    "slide_up": 0.2101,
+    "slide_right": 0.1261,
+    "scale_up": 0.0756,
+    "blur_in": 0.0336,
+    "mask_reveal": 0.0336,
+    "morph": 0.0336,
+    "pop": 0.0336
+   },
+   "sfx_offset_ms": {
+    "median": 86.5,
+    "low": 86.5,
+    "high": 153.1,
+    "n": 7,
+    "videos": 1
+   },
+   "videos": 2,
+   "caveats": [
+    "Seen in only two videos",
+    "Timing and sound offset were measured in a single video",
+    "Mixes forward (grow into hero) and reverse (shrink into badge) events"
+   ]
+  },
+  {
+   "id": "blur_crossfade",
+   "name": "Blur Out, Blur In",
+   "summary": "The current layout softens, fades and drifts away while the next one comes into focus in its place, sharpening from a blur and settling gently. It replaces a hard cut with something that feels like a camera pulling focus.",
+   "when_to_use": [
+    "Changing section or page without breaking the feeling of one continuous session",
+    "Moving from a busy interface to a single centred statement",
+    "Handing off from an opening title or logo to the first product visual",
+    "Swapping a content pane while a sidebar or frame stays put"
+   ],
+   "avoid_when": [
+    "The change should feel sudden or dramatic, where a hard cut or whip lands better",
+    "Both layouts share an element that could carry a match cut instead",
+    "Rapid back-to-back scene changes, where repeated blurs feel mushy"
+   ],
+   "steps": [
+    "Decide what stays fixed (a sidebar, the canvas, the centre position) so the eye has an anchor.",
+    "Send the outgoing layout away: fade it, blur it and optionally drift it in one direction.",
+    "Slightly overlap the incoming layout so it starts appearing before the outgoing one is fully gone.",
+    "Bring the incoming elements in from a blur to sharp, with a small upward settle or a slight scale-down to rest.",
+    "Stagger the incoming items lightly so the new layout assembles rather than pops in as one block.",
+    "Optionally let the new headline deepen from a pale tint to its full colour as it sharpens."
+   ],
+   "build": {
+    "gsap": "Use a timeline: gsap.to on the outgoing group (opacity to zero, a blur filter up, an optional y or x drift) with a power ease-in, then gsap.fromTo on the incoming children (opacity, blur filter down to none, a small y or scale settle) with a power ease-out and a light stagger, overlapped using a negative position offset. A back.out spring-overshoot suits small incoming items; keep transforms subtle and avoid large scale changes.",
+    "remotion": "Drive the outgoing layer with interpolate on frame for opacity, blur and translate, using Easing.in. Drive incoming items with a spring (high damping, or a mild overshoot) or interpolate with Easing.out, mapping progress to opacity, blur radius and a small translateY, each item delayed a frame or so after the last."
+   },
+   "sound": "Often paired with a reverse swoosh, sometimes a soft chime, landing almost exactly on the visual change; many cases had no clearly identifiable cue.",
+   "why_premium": "Pulling focus instead of cutting keeps a scene change soft and continuous, so the story moves from one step to the next as a single gesture rather than a jolt. Premium explainers keep an anchor in place (a persistent sidebar, a fixed centre point, a clean background) while only the content swaps, and they keep the motion travelling in one consistent direction, so the handoff reads as the same product session continuing. The incoming layout sharpening from a blur, sometimes deepening from a tint to full brand colour, gives a polished settling finish that a plain opacity fade lacks.",
+   "duration_ms": {
+    "median": 442.5,
+    "low": 337.567,
+    "high": 530.343,
+    "n": 10,
+    "videos": 2
+   },
+   "easing_mix": {
+    "ease_out": 0.5069,
+    "spring_overshoot": 0.2078,
+    "ease_in": 0.1039,
+    "linear": 0.1036,
+    "ease_in_out": 0.0779
+   },
+   "change_mix": {
+    "fade": 0.3976,
+    "slide_up": 0.1811,
+    "blur_in": 0.1496,
+    "blur_out": 0.0748,
+    "color_shift": 0.063,
+    "slide_down": 0.0512,
+    "slide_right": 0.0315,
+    "typewriter": 0.0197,
+    "highlight": 0.0157,
+    "scale_down": 0.0157
+   },
+   "sfx_offset_ms": {
+    "median": -10.0,
+    "low": -10.0,
+    "high": -10.0,
+    "n": 2,
+    "videos": 1
+   },
+   "videos": 4,
+   "caveats": [
+    "Durations were measured in only a couple of videos.",
+    "Sound offset rests on very few measurements from a single video and has no confidence interval.",
+    "Some member events are plain crossfades with little or no actual blur, so the blur share of changes is modest."
+   ]
+  },
+  {
+   "id": "card_wall_stagger",
+   "name": "Cards Fill The Wall",
+   "summary": "A wall or grid of cards builds up piece by piece: each card fades, slides or grows into its spot a moment after the one before, softly coming into focus, until the whole layout settles.",
+   "when_to_use": [
+    "Showing breadth: a library, a set of use cases or a family of products",
+    "Building a hierarchy where parent cards arrive before their child items",
+    "Turning a single clip or screen into one item among many",
+    "Giving each item a brief moment to register before the full picture lands"
+   ],
+   "avoid_when": [
+    "Only a couple of items need to be shown",
+    "Each card needs to be read in detail while it is moving",
+    "The narration is about one specific item rather than the collection"
+   ],
+   "steps": [
+    "Lay out the final wall or grid first, then hide each card at its start state",
+    "Choose an order: from one corner, from the centre, parents before children, or random",
+    "Bring each card in with a fade plus a slide, scale or blur clearing, offset slightly from the previous card",
+    "Optionally scale the whole wall at the same time, as if the camera pulls back to reveal it",
+    "Bring in smaller satellite items, icons or connector lines after their parent cards",
+    "Land any headline last over the settled wall, and keep a slow drift going so it stays alive"
+   ],
+   "build": {
+    "gsap": "Use a timeline with gsap.fromTo on the card selector, animating opacity plus y/x, scale or filter blur, with a stagger object (each, from: 'start', 'center', 'end' or 'random', grid for tiled layouts). Ease-in and ease-out power curves dominate; use power ease-in-out for a container scale that pulls back the camera, a linear yoyo for idle drift, and back.out only for small pop-in icons. Overlap groups with position parameters so children start before parents fully settle.",
+    "remotion": "For each card, offset the frame by its index and drive a spring (high damping, no overshoot) mapped through interpolate to opacity, translate, scale and blur. Animate the container scale with interpolate and an Easing.inOut curve. Use a low-damping spring only for small icons that should pop."
+   },
+   "sound": "Sound is often absent or unclear; where present it is a whoosh or reverse swoosh that leads into the motion, starting ahead of the cards arriving. Treat it as optional.",
+   "why_premium": "The stagger turns a crowd of items into a sequence the eye can follow, so a dense layout fills the screen without ever feeling cluttered. Soft blur clearing and gentle scale changes make cards feel like they are coming into focus rather than popping on, and ordering them by hierarchy or from a clear origin explains the structure as it builds. Pulling back from a single item to a wall with depth and slow drift makes an abstract idea such as a content library or a platform of agents feel spatial and tangible.",
+   "duration_ms": {
+    "median": 1586.412,
+    "low": 527.362,
+    "high": 2680.161,
+    "n": 17,
+    "videos": 2
+   },
+   "easing_mix": {
+    "ease_in": 0.33,
+    "ease_out": 0.3002,
+    "ease_in_out": 0.1764,
+    "linear": 0.1382,
+    "spring_overshoot": 0.0552
+   },
+   "change_mix": {
+    "fade": 0.3077,
+    "blur_in": 0.1775,
+    "scale_up": 0.1361,
+    "scale_down": 0.1006,
+    "slide_left": 0.0828,
+    "slide_up": 0.0828,
+    "slide_down": 0.0592,
+    "pop": 0.0296,
+    "slide_right": 0.0237
+   },
+   "sfx_offset_ms": {
+    "median": -464.9,
+    "low": -464.9,
+    "high": -464.9,
+    "n": 6,
+    "videos": 1
+   },
+   "videos": 3,
+   "caveats": [
+    "Seen in only 3 videos, with timing measured in only 2 of them",
+    "Sound timing comes from a single video, so the lead-in placement is a weak guide",
+    "Wide timing spread: quick tile entries and long wall reveals are grouped together"
+   ]
+  },
+  {
+   "id": "chat_bubble_append",
+   "name": "Chat Bubble Pops In",
+   "summary": "A new message bubble, often with its sender's avatar, pops in at the bottom of a chat and drifts up into place while the earlier messages nudge upwards to make room.",
+   "when_to_use": [
+    "Showing a conversation between a customer and an AI agent turn by turn",
+    "Making a reply feel live, as if it is arriving right now",
+    "Chaining one message after another so a demo keeps momentum"
+   ],
+   "avoid_when": [
+    "The full conversation must be readable at once; animating each bubble then just delays it",
+    "Messages arrive so fast that the bubbles overlap their own entrances"
+   ],
+   "steps": [
+    "Bring in the chat panel first and let it settle fully before any message arrives",
+    "Push the existing bubbles up slightly to open a slot at the bottom",
+    "Pop the new bubble and its avatar in together as one unit: fade up from slightly smaller and slightly lower",
+    "Optionally grow the bubble from a small pill before its text appears, so the reply slot shows first",
+    "Chain the next content, such as a reply or a row of cards, right after the bubble settles"
+   ],
+   "build": {
+    "gsap": "Timeline: a gsap.to moving existing bubbles up with a soft ease-in-out, then a fromTo on avatar and bubble (autoAlpha, scale from slightly smaller, y from slightly lower) with an ease-out (power out) and a tiny stagger between avatar and bubble. A light overshoot (back.out) is an option for a bouncier pop. Set transformOrigin at the bubble's top or tail edge.",
+    "remotion": "One high-damping spring for the existing bubbles' upward drift; a delayed spring per new bubble mapped to opacity, scale and translateY. Keep damping high for the usual smooth ease-out settle, or lower it slightly for a small overshoot. Stagger later items by a frame offset on the spring."
+   },
+   "sound": "No typical sound: the mix is mostly unsure or music, with an occasional reverse swoosh near the bubble's arrival.",
+   "why_premium": "It mimics how real chat feels. The panel lands first so the eye reads the frame before the message, then each bubble arrives with its avatar as one decelerating unit, small and low then settling into place. Nudging the older messages up instead of jumping the layout keeps the composition balanced, and showing the empty reply slot before the text reads as genuine turn-taking. Chaining the next message right after keeps a conversation demo moving without feeling rushed.",
+   "duration_ms": {
+    "median": 588.9,
+    "low": 528.1,
+    "high": 720.139,
+    "n": 10,
+    "videos": 1
+   },
+   "easing_mix": {
+    "ease_out": 0.8998,
+    "spring_overshoot": 0.1002
+   },
+   "change_mix": {
+    "slide_up": 0.5435,
+    "pop": 0.3043,
+    "fade": 0.0978,
+    "scale_up": 0.0543
+   },
+   "sfx_offset_ms": {
+    "median": 17.65,
+    "low": -245.15,
+    "high": 274.3,
+    "n": 20,
+    "videos": 1
+   },
+   "videos": 2,
+   "caveats": [
+    "Seen in only two videos",
+    "Timing and sound offset were measured in a single video",
+    "Sound offset spread is wide, so there is no reliable sync point"
+   ]
+  },
+  {
+   "id": "chip_append",
+   "name": "Chip Pops Onto Element",
+   "summary": "A small tag, chip, badge or attachment pill pops onto an existing input, field, list or headline, and the things around it shift aside to make room, showing that something was just added or selected.",
+   "when_to_use": [
+    "Showing a selection, mention or file attachment landing in an input after a click or drop",
+    "Labelling items in a list or column with a status, category or icon",
+    "Dropping a feature name or shortcut hint onto a scene without cutting away",
+    "Inserting a brand icon into a headline so it becomes part of the sentence"
+   ],
+   "avoid_when": [
+    "Many chips would arrive at once in different places, splitting attention",
+    "The chip's meaning is not clear without reading it closely"
+   ],
+   "steps": [
+    "Show the cause first: a click, a drag and drop, or the narrated line that introduces the item",
+    "Close any menu or dropdown at the same moment the chip appears",
+    "Pop the chip in from slightly smaller with a quick fade, or slide it up into place if it lands over footage",
+    "Shift neighbouring words, labels or form rows aside or down so the layout reflows around the chip",
+    "If several chips gain the same element, add them together or with a tiny stagger so they read as one state change",
+    "Move the cursor or focus straight on to the next control"
+   ],
+   "build": {
+    "gsap": "Use gsap.fromTo on the chip (scale and autoAlpha to rest) with a back-style overshoot ease for a pop, or ease-out for a calm insert, alongside ease-in-out or ease-out tweens that move neighbours aside; use gsap.set for instant UI swaps like closing the menu. Add a small stagger when several chips appear.",
+    "remotion": "Drive chip scale and opacity with a spring, a slightly bouncy config for a pop or a damped one for a quiet insert; move neighbours with interpolate or a damped spring from the same start frame. Switch menu and field states on the click frame without interpolation."
+   },
+   "sound": "No typical sound; moments sit under music or an unclear bed.",
+   "why_premium": "Each chip makes a cause and its effect visible together: a click, drop or spoken phrase instantly becomes attached context, a status or a named feature. Premium versions keep it tight, closing the menu and landing the chip in the same instant, while the surrounding words or rows shift aside so the chip feels like part of the layout rather than a sticker on top. When several chips change at once they move as one coordinated update, and the cursor moves straight on, so the demo never stalls.",
+   "duration_ms": {
+    "median": 281.147,
+    "low": 134.448,
+    "high": 685.625,
+    "n": 8,
+    "videos": 3
+   },
+   "easing_mix": {
+    "ease_out": 0.2554,
+    "ease_in_out": 0.2554,
+    "spring_overshoot": 0.2339,
+    "ease_in": 0.1277,
+    "linear": 0.1277
+   },
+   "change_mix": {
+    "fade": 0.25,
+    "slide_down": 0.1932,
+    "pop": 0.1705,
+    "slide_right": 0.1477,
+    "slide_up": 0.0739,
+    "highlight": 0.0511,
+    "morph": 0.0227,
+    "other": 0.0227,
+    "scale_up": 0.0227,
+    "slide_left": 0.0227,
+    "typewriter": 0.0227
+   },
+   "sfx_offset_ms": {
+    "median": -115.15,
+    "low": -392.7,
+    "high": 162.4,
+    "n": 2,
+    "videos": 1
+   },
+   "videos": 4,
+   "caveats": [
+    "Timing comes from few measured elements and the confidence interval is wide",
+    "Several members are screen recordings where the chip appears in a single frame, so measured motion mostly reflects surrounding reflow",
+    "No easing family dominates, and sound evidence comes from a single video"
+   ]
+  },
+  {
+   "id": "cursor_guided_demo",
+   "name": "Cursor Leads The Demo",
+   "summary": "A mouse pointer glides across the product screen, lands on a button, list row or panel and clicks it, and the interface reacts right away so the viewer sees the feature working.",
+   "when_to_use": [
+    "Showing how a feature is used, one action at a time",
+    "Turning a narrated claim into a visible cause and effect",
+    "Pointing the eye at a detail (a citation, a field, a menu option) before it matters"
+   ],
+   "avoid_when": [
+    "The screen is already busy and a moving pointer would compete with it",
+    "The message is abstract and there is no real interaction to show",
+    "The cursor path would wander or jitter instead of going straight to its target"
+   ],
+   "steps": [
+    "Lay out the interface in its starting state with the cursor parked off target or just entering the frame",
+    "Move the cursor along one smooth, eased path straight to the target, optionally with slight motion blur",
+    "Swap the cursor sprite (arrow to hand or crosshair) as it arrives",
+    "Play a short press: the cursor or target squashes slightly and springs back",
+    "Trigger the result of the click: a highlight, colour change, dropdown, or new panel sliding or fading in",
+    "Let hover tints follow the cursor across rows or options, then move the cursor out of the way so the result can be read"
+   ],
+   "build": {
+    "gsap": "Use a timeline: a to() tween on the cursor's x and y with an ease_in_out or ease_out power ease (power2.inOut or power2.out), a tl.set() to swap the cursor sprite on arrival, then a tiny scale yoyo for the press. Follow it with fromTo() tweens on the reacting element (autoAlpha, scale, y, backgroundColor or clipPath) using an ease_out family such as power3.out, or back.out for a spring_overshoot pop. Stagger reacting icons or rows lightly; drive hover tints with tl.call() or quick backgroundColor tweens as the cursor crosses each row.",
+    "remotion": "Drive cursor position with interpolate() and Easing.inOut or Easing.out (or Easing.bezier) between the start and target points, and pick the cursor sprite by frame threshold. Animate the press and the UI reaction with spring() (moderate damping, no overshoot for focus rings; allow slight overshoot for pops) mapped to scale, opacity and translate. Compute hovered rows from the cursor's current y each frame."
+   },
+   "sound": "No typical sound: most detected audio here is music or unclear. When a distinct effect is used it is a soft chime or light impact landing near the click.",
+   "why_premium": "The cursor carries intent: it travels on one clean, decelerating path to exactly the control that matters, and that single click visibly changes the product state with no cut, so the feature is demonstrated rather than explained. Real feedback (a press-in, a radial fill, a focus ring snapping tight, hover tints following the pointer) makes the interaction feel tactile, and the pointer then gets out of the way so the result stays readable while the narration lands.",
+   "duration_ms": {
+    "median": 409.562,
+    "low": 160.193,
+    "high": 706.326,
+    "n": 57,
+    "videos": 7
+   },
+   "easing_mix": {
+    "ease_out": 0.2717,
+    "ease_in": 0.2517,
+    "ease_in_out": 0.2225,
+    "spring_overshoot": 0.1871,
+    "linear": 0.0669
+   },
+   "change_mix": {
+    "highlight": 0.2114,
+    "fade": 0.2069,
+    "color_shift": 0.1051,
+    "slide_down": 0.0973,
+    "slide_up": 0.0861,
+    "other": 0.0783,
+    "slide_right": 0.0615,
+    "pop": 0.047,
+    "slide_left": 0.0313,
+    "scale_down": 0.0257,
+    "morph": 0.0179,
+    "scale_up": 0.0123,
+    "mask_reveal": 0.0078,
+    "typewriter": 0.0045,
+    "count_up": 0.0034,
+    "rotate": 0.0034
+   },
+   "sfx_offset_ms": {
+    "median": 75.1,
+    "low": -255.7,
+    "high": 146.3,
+    "n": 23,
+    "videos": 5
+   },
+   "videos": 8,
+   "caveats": [
+    "Easing is split fairly evenly between ease-out, ease-in and ease-in-out, so pick per move rather than treating one as standard",
+    "Sound timing was measured on fewer events and videos than motion timing, and the offset range spans both before and after the action"
+   ]
+  },
+  {
+   "id": "diagonal_ui_wipe_in",
+   "name": "UI Wipes Over Title",
+   "summary": "The product screen sweeps in over a title card along a moving edge, either a slanted diagonal edge or a stack of coloured bands rising from below. Once it lands, the rest of the UI and a caption assemble on top.",
+   "when_to_use": [
+    "Leaving a title or chapter card and handing straight into a product demo",
+    "Keeping scene changes branded and consistent when the video already uses a slash or band motif",
+    "Introducing a feature name over the screen it describes"
+   ],
+   "avoid_when": [
+    "The video has no matching transition style; a lone wipe looks out of place",
+    "Cuts are frequent and a wipe on each would slow the pace"
+   ],
+   "steps": [
+    "Keep the title card on screen and, for the band style, start nudging it up",
+    "Sweep the UI layer in with a moving mask: a diagonal clip edge from a corner, or full-width brand-coloured bands rising in quick succession",
+    "Let the UI land slightly over-scaled and settle to its normal size",
+    "Make the last band or the revealed screen become the UI background",
+    "Bring in secondary pieces on top, such as a sidebar sliding from the side or a card fading up",
+    "Wipe a caption banner across the UI to name the feature after the screen has landed"
+   ],
+   "build": {
+    "gsap": "A timeline tweening clipPath (a diagonal polygon, or inset for the caption) on the UI layer, together with a scale settling down to one; for bands, a fromTo on yPercent with a small stagger. Use ease-in-out (power inOut) for the sweep and ease-in where the outgoing title accelerates away. Follow with the sidebar slide and caption wipe overlapping the end of the sweep.",
+    "remotion": "Interpolate a wipe progress on frame with an in-out bezier curve and map it to a diagonal polygon clipPath and the UI's settling scale; bands are the same interpolate offset by a few frames each. The caption banner and sidebar use a delayed high-damping spring mapped to inset or translate."
+   },
+   "sound": "no typical sound",
+   "why_premium": "A branded wipe turns a scene change into a designed moment instead of a plain cut. Brand-coloured bands or a slash edge that repeats the video's own transition motif make every change feel part of one system, and the last band or revealed screen becomes the product background, so the hand-off into the demo is seamless. Landing the UI first and only then wiping in a bright caption lets viewers take in real product context before reading the feature name, and the banner stays legible on a busy screen without dimming it.",
+   "duration_ms": {
+    "median": 579.793,
+    "low": 173.2,
+    "high": 987.743,
+    "n": 2,
+    "videos": 1
+   },
+   "easing_mix": {
+    "ease_in_out": 0.5017,
+    "ease_in": 0.4983
+   },
+   "change_mix": {
+    "mask_reveal": 0.3333,
+    "slide_right": 0.1667,
+    "slide_up": 0.1667,
+    "fade": 0.0833,
+    "scale_down": 0.0833,
+    "scale_up": 0.0833,
+    "slide_left": 0.0833
+   },
+   "sfx_offset_ms": {
+    "median": null,
+    "low": null,
+    "high": null,
+    "n": 0,
+    "videos": 0
+   },
+   "videos": 2,
+   "caveats": [
+    "Seen in only two videos, and timing comes from very few measured elements in one of them, with no confidence interval",
+    "No sound was measured for this pattern",
+    "The two examples differ in style (diagonal edge versus rising bands)"
+   ]
+  },
+  {
+   "id": "footage_with_ui_overlay",
+   "name": "UI Layered Over Footage",
+   "summary": "A product window or card sits as a layer on top of live-action footage. The footage keeps playing underneath while the UI either stays put as a frosted overlay or slides off to hand the frame back to the people on screen.",
+   "when_to_use": [
+    "Showing the product inside a real-world story rather than cutting to a screen recording",
+    "Switching between a presenter and the product without a hard cut",
+    "Pairing an action in the footage with the notification or approval it triggers"
+   ],
+   "avoid_when": [
+    "The footage is busy behind the card and makes the UI hard to read",
+    "The UI needs close reading; a full-screen product shot works better"
+   ],
+   "steps": [
+    "Lay the footage as the full-frame base layer and leave it untouched",
+    "Place the UI window or card above it, with a frosted semi-transparent fill or a framed window so it reads as a separate surface",
+    "Let the actors' own movement carry the shot while the overlay holds still",
+    "To hand back to the footage, slide the UI layer off the side of the frame with an accelerate-then-settle move",
+    "Optionally add a soft shadow on the leading edge while it travels"
+   ],
+   "build": {
+    "gsap": "The footage element does not animate. The overlay exits with a single gsap.to on xPercent past the frame edge, using an ease-out or a smooth power inOut ease; a linear move is also seen. For an overlay entrance, a fromTo on opacity, y, scale and a blur filter with an ease-out, optionally with a light overshoot.",
+    "remotion": "An OffthreadVideo in a full AbsoluteFill as the base, with the UI in an AbsoluteFill above. The exit is an interpolate on translateX with an Easing.inOut curve rather than a spring; a card entrance can use a high-damping spring on opacity and translateY, with backdropFilter blur for the frosted look."
+   },
+   "sound": "no typical sound",
+   "why_premium": "Treating the UI as a physical layer over the real set puts the product inside the story instead of breaking away to a screen capture. A frosted card composited onto a meeting shot reads as part of the scene, and sliding a product window off a presenter returns the story to them without a cut, so the narration keeps flowing. Because the footage itself stays still or simply plays on, the only designed motion is the overlay, which makes that move feel deliberate rather than like a generic wipe.",
+   "duration_ms": {
+    "median": 350.872,
+    "low": 163.132,
+    "high": 626.53,
+    "n": 3,
+    "videos": 2
+   },
+   "easing_mix": {
+    "ease_out": 0.4126,
+    "spring_overshoot": 0.3095,
+    "linear": 0.2779
+   },
+   "change_mix": {
+    "slide_left": 0.5385,
+    "other": 0.4615
+   },
+   "sfx_offset_ms": {
+    "median": 150.6,
+    "low": 129.6,
+    "high": 171.6,
+    "n": 2,
+    "videos": 1
+   },
+   "videos": 2,
+   "caveats": [
+    "Seen in only two videos, with very few measured elements and no confidence interval",
+    "Much of the measured motion is actors moving in the footage, not the UI itself",
+    "In one example the overlay never animates, so its entrance timing was not measured"
+   ]
+  },
+  {
+   "id": "input_text_cycle",
+   "name": "Rotating Word Slot",
+   "summary": "The start of a sentence stays fixed while its ending, a word, phrase or option pill, keeps flipping vertically to the next alternative with a soft blur, like a slot machine, until a final line lands.",
+   "when_to_use": [
+    "Listing several use cases, audiences, data sources or integrations inside one sentence",
+    "A headline that should read as both marketing copy and product UI",
+    "Building rhythm on music beats before a payoff line"
+   ],
+   "avoid_when": [
+    "The alternatives are long or need explaining; viewers only catch a glance of each",
+    "The stem would have to reflow as the words change width"
+   ],
+   "steps": [
+    "Set the fixed sentence stem and a masked slot where the changing part sits",
+    "Bring the first option into the slot from below, fading and sharpening from a blur as it rises",
+    "For each swap, push the current option up and out with a blur while the next rises in from below, overlapping slightly",
+    "Optionally keep faint, blurred neighbours above and below so the options feel like a continuous wheel",
+    "Resize a pill to fit each new label so the sentence keeps reading naturally",
+    "Resolve the cycle with a plain-type completion or the last option, landing in the same rhythm"
+   ],
+   "build": {
+    "gsap": "Inside an overflow-hidden slot, run a timeline per swap: gsap.to the outgoing word (yPercent up, opacity to zero, blur up, ease-in) and an overlapping gsap.fromTo on the incoming word (from below with blur to rest, ease-out). For a wheel of pills, tween the whole stack's y with ease-in-out and set each pill's opacity and blur by its distance from the slot.",
+    "remotion": "Use a damped spring per swap with no overshoot as the progress value; map it with interpolate to translateY, opacity and blur on the incoming word, and drive the outgoing word with a short ease-in interpolate. For a wheel, derive each pill's offset, opacity and blur from its distance to the current index plus progress."
+   },
+   "sound": "No typical sound; the corpus examples sit under music only. Place each swap on a music beat rather than adding an effect.",
+   "why_premium": "Holding the sentence stem still and swapping only its ending turns a list of features into one line that keeps rebuilding, so the viewer reads a claim instead of a bullet list. The vertical flip with motion blur sells speed without harsh edges, and faint neighbouring options make it feel like a wheel with more to come. A steady cadence locked to the music builds rhythm, and ending on a plain-type payoff gives the cycle a clear resolution without a cut.",
+   "duration_ms": {
+    "median": 191.147,
+    "low": 124.144,
+    "high": 420.6,
+    "n": 11,
+    "videos": 3
+   },
+   "easing_mix": {
+    "ease_in_out": 0.3995,
+    "ease_in": 0.3958,
+    "ease_out": 0.2047
+   },
+   "change_mix": {
+    "fade": 0.3429,
+    "slide_up": 0.2857,
+    "blur_in": 0.1571,
+    "blur_out": 0.1286,
+    "slide_down": 0.0571,
+    "other": 0.0286
+   },
+   "sfx_offset_ms": {
+    "median": -121.9,
+    "low": -337.4,
+    "high": 20.9,
+    "n": 5,
+    "videos": 1
+   },
+   "videos": 3,
+   "caveats": [
+    "Seen in only three videos, with most events from a single one",
+    "Members are mostly headline word swaps and option pills rather than literal input fields, so the pattern name may be narrower than what was observed",
+    "Sound timing comes from a single video"
+   ]
+  },
+  {
+   "id": "kinetic_word_reveal",
+   "name": "Words Arrive With Momentum",
+   "summary": "A headline appears word by word (or as one big word), each piece fading in while it slides, scales or sharpens from a blur and then settles softly into place.",
+   "when_to_use": [
+    "Title cards and taglines that should feel spoken rather than pasted on",
+    "Landing a key word exactly on the narration or a music hit",
+    "Swapping one statement for the next so the new line reads as the answer to the old one",
+    "Turning a product name into a bold, cinematic moment"
+   ],
+   "avoid_when": [
+    "Long sentences or body copy, where staggered words slow reading",
+    "Several animated headlines in a row, which makes the effect feel routine",
+    "The background is already busy and moving fast"
+   ],
+   "steps": [
+    "Split the headline into words, and the key word into letters if it gets its own accent.",
+    "Start each word invisible and offset: a little low, to one side, slightly larger, or blurred.",
+    "Bring the words in one after another with a short stagger, fading up while they travel to rest.",
+    "Let the motion decelerate so each word glides into place rather than stopping hard.",
+    "Give the final or most important word a small extra accent, such as a wobble, tilt or sparkle pop.",
+    "When replacing a line, send the old one out in the same direction the new one arrives so the motion stays continuous."
+   ],
+   "build": {
+    "gsap": "Split the text into word spans and use tl.from or tl.fromTo on autoAlpha plus y or x, with optional scale and filter blur, eased mostly with a power ease-out (an ease-in-out for slower glides) and a stagger between words. Use a back ease-out only for a small overshoot accent on the key word or a decorative pop; for line swaps, tween the old line out with an ease-in and overlap the new line's entry using a '<' position offset.",
+    "remotion": "Give each word its own spring delayed by its index, using a heavily damped config so it settles without overshoot, and map that progress through interpolate to opacity, translate, scale and blur. Reserve a lightly damped spring for the accent word or sparkle; plain interpolate with an Easing.out curve works for clip-path or mask reveals."
+   },
+   "sound": "No typical sound: most events sit on music or an unclear cue. When there is a cue it is often a reverse swoosh building into the word's landing, sometimes a soft impact, lined up closely with the reveal.",
+   "why_premium": "Type that moves with weight reads as voice: words that streak, rise or rack into focus and then settle feel like they are being said, not displayed. The best examples time the key word to the narration or a beat and give it a tiny physical reaction, which puts emphasis exactly on the idea being sold. Overlapping a departing line with an arriving one in a single direction makes successive statements feel like one thought, and depth cues such as blur and scale turn a plain title card into something cinematic without stock effects.",
+   "duration_ms": {
+    "median": 576.536,
+    "low": 316.167,
+    "high": 735.191,
+    "n": 67,
+    "videos": 11
+   },
+   "easing_mix": {
+    "ease_out": 0.5523,
+    "ease_in_out": 0.2648,
+    "ease_in": 0.0659,
+    "spring_overshoot": 0.0586,
+    "linear": 0.0584
+   },
+   "change_mix": {
+    "fade": 0.3478,
+    "slide_up": 0.1319,
+    "color_shift": 0.1154,
+    "slide_left": 0.0975,
+    "blur_in": 0.066,
+    "scale_up": 0.0555,
+    "other": 0.0465,
+    "slide_right": 0.03,
+    "scale_down": 0.024,
+    "slide_down": 0.024,
+    "mask_reveal": 0.012,
+    "pop": 0.012,
+    "rotate": 0.012,
+    "typewriter": 0.012,
+    "blur_out": 0.0075,
+    "draw_on": 0.006
+   },
+   "sfx_offset_ms": {
+    "median": 45.4,
+    "low": -171.65,
+    "high": 287.812,
+    "n": 49,
+    "videos": 8
+   },
+   "videos": 12,
+   "caveats": [
+    "Sound timing varies widely: cues land before, on or after the reveal, so treat the sound guidance as loose.",
+    "Measured timing mixes whole-line reveals with per-word staggers; the duration describes the overall move, not each word.",
+    "Several examples come from the same video, so its house style is over-represented."
+   ]
+  },
+  {
+   "id": "layout_reframe",
+   "name": "Layout Shifts Into Place",
+   "summary": "Without a cut, everything on screen moves together into a new arrangement: elements slide, shrink or grow to make room, and new pieces fade in to fill the gaps, so one layout becomes the next.",
+   "when_to_use": [
+    "Turning a title card or single line into the real product screen",
+    "Showing the immediate result of an action, such as a new row appearing in a table",
+    "Making room for a headline or answer while keeping earlier content as the anchor"
+   ],
+   "avoid_when": [
+    "The new state has nothing in common with the old one, so a transition would read better",
+    "Elements move on different eases and the shift starts to feel like several unrelated motions"
+   ],
+   "steps": [
+    "Group the elements that stay on screen so they can move as one unit",
+    "Decide the anchor element the viewer should track from the old layout into the new one",
+    "Move, shrink or grow the group to its new position on one shared ease",
+    "Fade and lift new elements into the space that opens, with a light stagger",
+    "Fade out or collapse anything that no longer belongs at the same time",
+    "Let the frame settle before the next action starts"
+   ],
+   "build": {
+    "gsap": "Use one timeline with to() or fromTo() tweens on x, y, yPercent and scale for the moving group, sharing an ease_out family (power2.out or power3.out) or ease_in_out (power2.inOut) for the main move. Add fromTo() tweens on autoAlpha and y for incoming items with a small stagger, positioned with '<' so they overlap the main move. For a shape that turns into another shape, GSAP Flip.from() captures the old state. Use back.out only for small accent pops (spring_overshoot), and linear for spinners or counters riding along.",
+    "remotion": "Drive the shared move with one spring() at high damping (no overshoot) or with interpolate() and Easing.out or Easing.inOut, and map that single progress value to every element's translate and scale so they move together. Fade incoming children with interpolate() on opacity, offset by a frame or so per item. Reserve low-damping springs for a small reward pop."
+   },
+   "sound": "No single typical sound: most detected audio is music or unclear. When an effect is used it is usually a reverse swoosh landing just after the shift begins, occasionally a chime or click.",
+   "why_premium": "The screen never cuts: one shared ease moves every layer at once, so the change reads as a single deliberate gesture rather than a set of separate animations. Something the viewer is already looking at (a greeting, a prompt, a table) stays as the anchor and becomes part of the new layout, which keeps attention continuous and makes the product feel responsive, as when a table makes room in place for a new item instead of opening a modal. New content arriving with a soft fade and rise lets the interface build around the message calmly and in step with the narration.",
+   "duration_ms": {
+    "median": 623.78,
+    "low": 304.493,
+    "high": 814.426,
+    "n": 106,
+    "videos": 11
+   },
+   "easing_mix": {
+    "ease_out": 0.4295,
+    "ease_in_out": 0.2698,
+    "linear": 0.1279,
+    "spring_overshoot": 0.0875,
+    "ease_in": 0.0853
+   },
+   "change_mix": {
+    "fade": 0.2695,
+    "slide_left": 0.1653,
+    "slide_down": 0.1035,
+    "scale_down": 0.0946,
+    "slide_up": 0.0834,
+    "scale_up": 0.0774,
+    "slide_right": 0.0603,
+    "color_shift": 0.032,
+    "other": 0.0253,
+    "morph": 0.0194,
+    "pop": 0.0186,
+    "highlight": 0.0149,
+    "mask_reveal": 0.0112,
+    "count_up": 0.0104,
+    "draw_on": 0.0067,
+    "typewriter": 0.0045,
+    "rotate": 0.003
+   },
+   "sfx_offset_ms": {
+    "median": 120.2,
+    "low": -228.0,
+    "high": 245.2,
+    "n": 49,
+    "videos": 3
+   },
+   "videos": 14,
+   "caveats": [
+    "Sound timing comes from only a few videos, so the sound guidance is weak",
+    "A broad pattern: it covers both large title-to-product reframes and small in-product table reflows, which run at quite different speeds"
+   ]
+  },
+  {
+   "id": "logo_resolve",
+   "name": "Logo Builds Into Lockup",
+   "summary": "Shapes, icons or blurred type move, merge and sharpen until they settle into the brand logo, often with the mark arriving first and the wordmark joining it to complete the lockup.",
+   "when_to_use": [
+    "Opening or closing a video on the brand",
+    "Showing that many tools or features fold into one product",
+    "Turning a product motif (an orb, a waveform, an icon) into the brand mark"
+   ],
+   "avoid_when": [
+    "The logo is already on screen and a second build would feel repetitive",
+    "The build is so long or busy that the final mark is not given time to hold"
+   ],
+   "steps": [
+    "Clear or cut away the previous content so the frame is calm",
+    "Start from pieces related to the brand: scattered parts of the mark, product icons, a soft shape, or blurred type",
+    "Optionally add a small anticipatory squeeze or contraction before the main move",
+    "Move, merge or morph the pieces into the mark on one shared ease, sharpening any blur as they land",
+    "Slide the mark aside and fade the wordmark in next to it to form the lockup",
+    "Ease in faint secondary elements, such as a tagline or background shapes, and hold the final frame"
+   ],
+   "build": {
+    "gsap": "Split the logo into SVG parts and build with a timeline: fromTo() tweens on x, scale, autoAlpha and filter blur using an ease_out family (power3.out, expo.out) for arrivals and ease_in_out (power3.inOut) for converging moves. For playful assembly use back.out or elastic.out on part scale (spring_overshoot) with a stagger from random, center or edges. Bring the wordmark in with a short autoAlpha and x tween overlapping the mark's settle.",
+    "remotion": "Drive each part from its own spring() with a small per-part frame delay: high damping for clean slides and blur-to-sharp arrivals, lower damping where parts should pop and settle. Use interpolate() with Easing.inOut for converging rows and for blur and outline scale; layer the hero mark on top so other pieces tuck behind it."
+   },
+   "sound": "No typical sound: most detected audio is music or unclear. When an effect is used it is usually a reverse swoosh arriving just after the logo starts to form.",
+   "why_premium": "The logo is assembled from its own geometry or from the product's visual motifs instead of a plain fade, so the brand moment reads as designed motion and often tells a story by itself, such as many tools collapsing into one or a voice orb becoming a waveform. Directional blur resolving to crisp type, a small wind-up before the merge, and one shared ease across all pieces give the build weight and intent. Letting the mark land alone before the wordmark joins keeps the hierarchy clear, and faint secondary elements add depth without pulling focus.",
+   "duration_ms": {
+    "median": 618.39,
+    "low": 317.964,
+    "high": 977.543,
+    "n": 40,
+    "videos": 9
+   },
+   "easing_mix": {
+    "ease_out": 0.4237,
+    "ease_in_out": 0.2877,
+    "spring_overshoot": 0.136,
+    "linear": 0.0895,
+    "ease_in": 0.063
+   },
+   "change_mix": {
+    "fade": 0.1856,
+    "morph": 0.1385,
+    "slide_left": 0.1191,
+    "scale_up": 0.097,
+    "color_shift": 0.097,
+    "slide_up": 0.0914,
+    "slide_right": 0.0693,
+    "scale_down": 0.0609,
+    "blur_in": 0.0471,
+    "other": 0.0471,
+    "draw_on": 0.0166,
+    "mask_reveal": 0.0166,
+    "rotate": 0.0139
+   },
+   "sfx_offset_ms": {
+    "median": 130.2,
+    "low": -302.314,
+    "high": 279.2,
+    "n": 25,
+    "videos": 4
+   },
+   "videos": 10,
+   "caveats": [
+    "Relatively few events overall, and sound timing comes from only a few videos",
+    "Builds vary a lot in length, from quick slides to multi-stage morphs, so the timing spread is wide"
+   ]
+  },
+  {
+   "id": "masked_scroll",
+   "name": "Content Scrolls Inside A Window",
+   "summary": "A list, chat thread or stack of cards slides up (or down) inside a fixed frame, so old items leave through the frame's edge and new ones arrive, while everything around the frame stays still.",
+   "when_to_use": [
+    "Showing progress piling up, such as an agent finishing steps or a chat getting new replies",
+    "Revealing how much is in a list or menu without cutting away",
+    "Linking one statement to the next as if they were lines of one continuous document",
+    "Moving the viewer's reading position to where the next beat begins"
+   ],
+   "avoid_when": [
+    "The scroll is tiny and incidental; it reads as an accidental nudge, not an authored move",
+    "The surrounding interface also moves, which removes the calm anchor the mask provides",
+    "The viewer needs to read the content that flies past"
+   ],
+   "steps": [
+    "Put the moving content in a container clipped by a fixed panel or window so nothing shows outside its edges.",
+    "Keep headers, footers, overlays and neighbouring panels outside the clipped container so they stay put.",
+    "Move the whole content container up (or down) as one piece, easing into a soft stop on the item that matters next.",
+    "Fade or slide the newly arriving item in as it enters the window, landing it in its slot.",
+    "Optionally keep a scrollbar thumb, a cursor or a gentle camera push in sync with the scroll.",
+    "Start the next beat, such as streaming text or a reply, right where the scroll settles."
+   ],
+   "build": {
+    "gsap": "Wrap the content in an overflow-hidden viewport and tween the inner container with gsap.to on y, usually a power ease-out or a power ease-in-out for a fast jump between distant positions; linear or stepped tweens suit terminal-style hard redraws. Bring the new row in with gsap.fromTo on y and autoAlpha, placed on the timeline with '<' so it travels with the scroll, and tie any scrollbar thumb to the same progress.",
+    "remotion": "Drive the container's translateY with interpolate and an Easing.out or Easing.inOut curve, clamped at the end, inside an overflow:hidden element; or use a well-damped spring for a softer settle, with a lightly underdamped spring only when a small overshoot is wanted. Map scrollbar, push-in scale and the new item's opacity from the same progress value."
+   },
+   "sound": "No typical sound: the bed is mostly music or unclear. When a cue is present it is usually a soft impact or chime landing just after the scroll starts.",
+   "why_premium": "The mask does the heavy lifting: content advances while the frame, headers and side panels stay anchored, so the viewer keeps their place and never feels a cut. A single continuous scroll compresses a long run of work or a long list into one readable gesture that says 'a lot happened', and decelerating into the next important item gives the move a clear landing that hands off straight into the next beat. Details like a frosted overlay blurring content beneath it or a synced scrollbar make it feel like real, living software rather than a slideshow.",
+   "duration_ms": {
+    "median": 453.459,
+    "low": 236.839,
+    "high": 1089.741,
+    "n": 73,
+    "videos": 7
+   },
+   "easing_mix": {
+    "ease_out": 0.2876,
+    "ease_in_out": 0.2771,
+    "linear": 0.167,
+    "ease_in": 0.1512,
+    "spring_overshoot": 0.117
+   },
+   "change_mix": {
+    "slide_up": 0.5187,
+    "fade": 0.1544,
+    "slide_down": 0.1068,
+    "color_shift": 0.0644,
+    "mask_reveal": 0.0347,
+    "other": 0.0347,
+    "slide_left": 0.0219,
+    "rotate": 0.0193,
+    "highlight": 0.0142,
+    "morph": 0.0129,
+    "scale_up": 0.0064,
+    "weight_shift": 0.0064,
+    "typewriter": 0.0051
+   },
+   "sfx_offset_ms": {
+    "median": 165.262,
+    "low": 5.4,
+    "high": 392.719,
+    "n": 55,
+    "videos": 4
+   },
+   "videos": 10,
+   "caveats": [
+    "Timing spread is wide: quick jumps and slow screen-recorded scrolls are grouped together, so pick the short or long end to suit the content.",
+    "Easing is mixed with no dominant family; ease-out and ease-in-out lead only narrowly.",
+    "Sound offsets come from only a few videos, so the sound guidance is weak."
+   ]
+  },
+  {
+   "id": "match_cut_element",
+   "name": "Match Cut On Shared Shape",
+   "summary": "A hard cut jumps to a new shot or a new framing, but a shared object or shape stays in the same place on screen, so the eye follows it across the cut and the change feels continuous.",
+   "when_to_use": [
+    "Linking two different shots or angles through a common object",
+    "Jumping in scale on a key word while keeping the composition locked",
+    "Giving a story-led, cinematic rhythm to a sequence of scenes"
+   ],
+   "avoid_when": [
+    "No element can sit in a matching position and shape in both shots",
+    "The viewer needs to track a precise spatial move, where a continuous transition reads better"
+   ],
+   "steps": [
+    "Choose the anchor element both shots share and note its screen position and size",
+    "Frame or lay out the incoming shot so that anchor lands in the same region",
+    "Cut instantly from the first shot to the second, ideally on a spoken word or beat",
+    "Right after the cut, add a short drift or settle (slight scale or outward move, a colour shift) so the new shot feels already in motion"
+   ],
+   "build": {
+    "gsap": "Use timeline set calls to swap visibility of the two layouts at the same time (no transition tween), then a short fromTo on the anchor and its neighbours animating scale, xPercent and gradient position with an ease-out (power-type) or ease-in-out family; a gentle back-type ease can add a small overshoot to the settle.",
+    "remotion": "Place the two shots in back-to-back Sequence blocks with no transition, aligning the anchor's position. Inside the second Sequence, interpolate with an ease-out curve drives a slight scale and translate drift; a spring with light overshoot is an option for the settle."
+   },
+   "sound": "no typical sound",
+   "why_premium": "Keeping one shape or object fixed in the frame across a cut gives the eye a handhold, so a jump in angle or scale reads as continuous action rather than a jarring edit. Landing the cut on a narrated word gives it purpose, and a short drift after the cut folds the edit into a sense of forward motion. The result feels cinematic and deliberate without needing any visible transition effect.",
+   "duration_ms": {
+    "median": 223.786,
+    "low": 166.816,
+    "high": 367.942,
+    "n": 4,
+    "videos": 2
+   },
+   "easing_mix": {
+    "ease_out": 0.274,
+    "spring_overshoot": 0.274,
+    "ease_in_out": 0.2465,
+    "ease_in": 0.2055
+   },
+   "change_mix": {
+    "scale_up": 0.3871,
+    "color_shift": 0.2581,
+    "slide_left": 0.129,
+    "slide_right": 0.129,
+    "other": 0.0968
+   },
+   "sfx_offset_ms": {
+    "median": -235.0,
+    "low": -235.0,
+    "high": -86.5,
+    "n": 3,
+    "videos": 1
+   },
+   "videos": 2,
+   "caveats": [
+    "Seen in only two videos with very few measured elements; no confidence interval could be computed",
+    "Measured durations describe the post-cut drift, since the cut itself is instant",
+    "All sound labels are unsure, so no sound guidance is given"
+   ]
+  },
+  {
+   "id": "notification_pop",
+   "name": "Message Card Pops In",
+   "summary": "A new message, notification or small UI card appears with its avatar or icon, fading in while it rises or grows slightly and then gently decelerates into place. It feels like something just arrived rather than being switched on.",
+   "when_to_use": [
+    "A new chat message, reply or alert arrives in a conversation or feed",
+    "An overlay card appears over footage or a scene to tie the product to a story beat",
+    "Landing a message on the exact narrated line that introduces it"
+   ],
+   "avoid_when": [
+    "Many cards arrive at once, where a staggered list reveal reads better",
+    "The message should feel like it is being written, where typing or streaming fits better",
+    "The surrounding thread is moving, which blurs the sense of a single arrival"
+   ],
+   "steps": [
+    "Place the card where it will rest, grouped with its avatar or icon so they move as one unit.",
+    "Start it invisible, slightly lower and slightly smaller than its final state.",
+    "Fade it in quickly while it rises and grows into place with a long, decelerating settle and no bounce.",
+    "If the card has inner content, reveal the header first, then the icon and title, then the inner panel in quick nested stages.",
+    "Keep the rest of the thread or scene still so the new arrival is the only motion.",
+    "Time the arrival to the narration line that introduces the message."
+   ],
+   "build": {
+    "gsap": "Use gsap.fromTo on the bubble and avatar together with autoAlpha, a small y offset and a slight scale, using a strong power or expo ease-out, with no stagger or a tiny one. For an overlay card, chain nested fromTo tweens (card scaleY from its top edge, then icon and title fades, then the inner panel scale) overlapped with negative position offsets. Spring overshoot is rare; keep it settling without a bounce.",
+    "remotion": "Drive translateY and scale from a critically or heavily damped spring (no overshoot) applied to bubble and avatar together, with opacity from a fast interpolate over the first part of the spring. For nested overlay cards, use a second delayed spring for the inner panel."
+   },
+   "sound": "No typical sound: the arrivals usually sit on the music bed with no distinct cue.",
+   "why_premium": "The card and its avatar travel as one unit, so the message reads as a single object being delivered, and a fast fade with a long decelerating settle makes it feel calm and real rather than abruptly switched on. Letting the avatar overhang the panel edge, or rendering the card as frosted glass over footage, adds depth and keeps the product inside the story's space. Because the rest of the thread stays still and the arrival is timed to the narration, the viewer's eye goes straight to the new message.",
+   "duration_ms": {
+    "median": 603.4,
+    "low": 518.624,
+    "high": 654.5,
+    "n": 10,
+    "videos": 2
+   },
+   "easing_mix": {
+    "ease_out": 0.7581,
+    "ease_in_out": 0.0838,
+    "linear": 0.0821,
+    "spring_overshoot": 0.0759
+   },
+   "change_mix": {
+    "fade": 0.3836,
+    "slide_up": 0.274,
+    "scale_up": 0.1918,
+    "pop": 0.1096,
+    "morph": 0.0411
+   },
+   "sfx_offset_ms": {
+    "median": 87.85,
+    "low": -220.0,
+    "high": 379.2,
+    "n": 4,
+    "videos": 1
+   },
+   "videos": 2,
+   "caveats": [
+    "Seen in only two videos, and most member events come from a single chat-style video.",
+    "Few events and measured elements overall, so the timing range is indicative.",
+    "Sound offset comes from a single video with very few measurements and no confidence interval."
+   ]
+  },
+  {
+   "id": "parallax_layers",
+   "name": "Layers Drift At Different Speeds",
+   "summary": "Separate layers of a flat scene (tiles, logos, background shapes, a foreground pill or headline) move at different speeds or in different directions, so the picture feels like it has depth. Often the headline or focal element stays calm while the layers around it drift.",
+   "when_to_use": [
+    "Keeping a held card or collage alive while the narration plays",
+    "Opening a reel with a collage that settles around a title",
+    "Giving a flat diagram or logo network a sense of space",
+    "Adding a feeling of speed behind a static message"
+   ],
+   "avoid_when": [
+    "The viewer must read dense text inside the moving layers",
+    "Every layer would move at the same rate, which reads as a plain slide rather than depth",
+    "The scene already has strong camera motion competing for attention"
+   ],
+   "steps": [
+    "Split the scene into layers by depth: back (background shapes or tiles), middle (cards, nodes, icons) and front (headline, pill or a defocused particle).",
+    "Keep the focal element on its own layer and keep it still or nearly still.",
+    "Give each other layer its own direction and speed; nearer layers move faster, farther layers slower, and opposing directions add energy on an opening.",
+    "For a hold, use a slow continuous drift or a gentle sine bob with varied phase per element so nothing moves in lockstep.",
+    "For an entrance, let the layers settle into place from opposite sides while the title lands in the calm centre.",
+    "Optionally add a blurred foreground element that crosses quickly to sell shallow depth of field."
+   ],
+   "build": {
+    "gsap": "Put each depth layer in its own container. For entrances, use gsap.fromTo per layer on x/y with opposing start offsets, a back.out spring-overshoot or a power ease-out, and a light stagger within a layer. For holds, use gsap.to with a sine ease-in-out yoyo repeat, or ease none for constant drift, varying speed per layer. A fast foreground particle uses a power ease-in with a blur filter.",
+    "remotion": "Map each layer's translate from frame: a spring (moderate damping, slight overshoot) interpolated between opposing start offsets for entrances, or a linear interpolate or Math.sin of frame for continuous drift on holds, with a different speed or amplitude multiplier per layer. Keep the focal layer unanimated or animate only its colour."
+   },
+   "sound": "No typical sound: the motion usually rides on the music bed; where a cue was tagged it was a reverse swoosh landing slightly before the motion.",
+   "why_premium": "Parallax gives a flat composition real depth for almost no production cost: when the back tiles, mid-layer nodes and a front headline move at different rates or in opposing directions, the eye reads a three-dimensional space instead of a slide. On holds, a slow, varied drift keeps the frame breathing so a static card never looks frozen, yet it stays quiet enough not to compete with the narration. A still focal element against the moving field becomes a clear anchor, and a fast defocused particle crossing the foreground sells a shallow depth of field that feels filmed rather than built.",
+   "duration_ms": {
+    "median": 505.194,
+    "low": 319.0,
+    "high": 684.45,
+    "n": 14,
+    "videos": 3
+   },
+   "easing_mix": {
+    "spring_overshoot": 0.3769,
+    "ease_in_out": 0.279,
+    "ease_out": 0.2785,
+    "ease_in": 0.0656
+   },
+   "change_mix": {
+    "other": 0.3306,
+    "slide_up": 0.1532,
+    "fade": 0.1452,
+    "color_shift": 0.121,
+    "slide_down": 0.1129,
+    "slide_left": 0.0726,
+    "scale_up": 0.0323,
+    "slide_right": 0.0323
+   },
+   "sfx_offset_ms": {
+    "median": -285.05,
+    "low": -392.7,
+    "high": -94.1,
+    "n": 10,
+    "videos": 1
+   },
+   "videos": 5,
+   "caveats": [
+    "Durations were measured in only a few of the videos, and continuous drifts on holds have no natural end, so the duration figures describe entrances better than ambient drift.",
+    "Sound offset comes from a single video only.",
+    "A large share of changes are labelled other, because slow ambient drift does not fit the standard change types."
+   ]
+  },
+  {
+   "id": "prompt_type_on",
+   "name": "Prompt Types Itself In",
+   "summary": "Text appears character by character in a focused input or prompt field, often with a blinking caret, while the view gently drifts to keep the field centred and the cursor heads for the send button.",
+   "when_to_use": [
+    "Showing a user asking an AI assistant a question or giving it an instruction",
+    "Filling in a configuration form or renaming something live in the product",
+    "Setting up the moment just before an answer or result appears"
+   ],
+   "avoid_when": [
+    "The typed text is long enough that viewers cannot read it at the typing pace",
+    "The input content does not matter to the story; show the result instead"
+   ],
+   "steps": [
+    "Open or focus the input, marking focus with a ring or glow",
+    "Reveal the text character by character, in small bursts for a realistic cadence, with a caret after the last character",
+    "Let the field grow if the text wraps, and drift or scroll the view so the field stays near the centre",
+    "Move the cursor toward the send button or next field while typing finishes",
+    "On send, clear the input and show the same text as a sent message bubble that softly rises in",
+    "Hand focus to the next field or start the answer so momentum continues"
+   ],
+   "build": {
+    "gsap": "Type with a linear tween using TextPlugin (or a character-split stagger with a near-zero duration per character). Run parallel tweens with ease-out for the view drift, field growth and focus glow, ease-in-out for cursor travel, and a light back-style overshoot for a sent bubble or panel pop.",
+    "remotion": "Slice the string by a frame-driven character count from interpolate with clamping, and toggle caret opacity on a frame cycle. Drive the view drift and field height with a damped spring or interpolate with an ease-out curve, and the cursor with an ease-in-out interpolate."
+   },
+   "sound": "No settled sound: labelled moments split evenly between music, an impact and a reverse swoosh, landing just after the visual change. A soft impact or reverse swoosh on send works if the mix has room.",
+   "why_premium": "Typing reads as a real product interaction rather than a mockup, especially when the characters arrive in quick, uneven bursts and the caret is visible. Premium versions run several things at once: the text types, the view drifts to keep the field centred, a focus glow leads the eye, and the cursor is already moving toward the next control. That makes the step feel effortless and fast. The send beat is handled cleanly, with the input clearing and the message rising into the thread, so the viewer is primed for the answer without a pause.",
+   "duration_ms": {
+    "median": 532.713,
+    "low": 313.301,
+    "high": 958.862,
+    "n": 8,
+    "videos": 3
+   },
+   "easing_mix": {
+    "ease_out": 0.5011,
+    "linear": 0.2476,
+    "spring_overshoot": 0.1257,
+    "ease_in_out": 0.1256
+   },
+   "change_mix": {
+    "slide_up": 0.2819,
+    "typewriter": 0.2013,
+    "fade": 0.1611,
+    "highlight": 0.1208,
+    "morph": 0.0805,
+    "slide_down": 0.0604,
+    "color_shift": 0.0336,
+    "draw_on": 0.0336,
+    "pop": 0.0268
+   },
+   "sfx_offset_ms": {
+    "median": 66.9,
+    "low": 25.2,
+    "high": 197.5,
+    "n": 6,
+    "videos": 2
+   },
+   "videos": 5,
+   "caveats": [
+    "Timing comes from few measured elements in only a handful of videos, and the confidence interval is wide",
+    "Sound evidence comes from just two videos with no agreement on the effect",
+    "Measured durations cover the surrounding moves as well as the typing itself; set typing speed by readability"
+   ]
+  },
+  {
+   "id": "scale_dissolve_transition",
+   "name": "Zoom And Dissolve Transition",
+   "summary": "One screen fades away while it grows or shrinks, and the next screen fades in while settling to its normal size, so the change feels like one continuous zoom instead of a cut.",
+   "when_to_use": [
+    "Moving between two product screens while keeping the sense of one continuous app",
+    "Handing off from a loading or prompt state to the finished result",
+    "Changing topic or section without a hard cut, such as from a demo into a feature tile",
+    "Hiding a time jump in a screen recording while a menu or cursor stays continuous"
+   ],
+   "avoid_when": [
+    "The two screens are unrelated and a clean cut would read more honestly",
+    "Fast-paced montage where a dissolve would blur the rhythm"
+   ],
+   "steps": [
+    "Stack the outgoing and incoming layers in the same frame",
+    "Start fading the outgoing layer while scaling it slightly up or down, optionally with a touch of blur or drift",
+    "Overlap the start of the incoming layer so both are briefly visible",
+    "Bring the incoming layer in from slightly oversized or undersized and let it settle to full size as it reaches full opacity",
+    "Keep any anchor element, like a cursor or open menu, continuous across the change",
+    "Start the next action, such as typing, dragging or a caption, right as the new layer settles"
+   ],
+   "build": {
+    "gsap": "Use a timeline: gsap.to on the outgoing layer (opacity to zero, scale change, ease-in) and an overlapping gsap.fromTo on the incoming layer (opacity and scale to rest) placed with a negative offset. Settle the incoming layer with a back-style overshoot ease or a strong ease-out; linear only for slow ambient drift.",
+    "remotion": "Interpolate the outgoing layer's opacity and scale with an ease-in curve; drive the incoming layer's scale and opacity with a spring that has a little overshoot, or a damped spring if the settle should be calm. Both layers live in one Sequence so the overlap is exact."
+   },
+   "sound": "No typical sound; most moments sit under music or an unclear bed. When a whoosh is used, it tends to lead the visual change slightly rather than follow it.",
+   "why_premium": "The zoom-and-dissolve keeps the viewer inside one continuous product world: the scale change carries momentum from one surface to the next, so a jump between screens, projects or sections reads as a camera move rather than an edit. The best versions overlap the outgoing and incoming layers, settle the new layer with a soft spring, and keep an anchor like a cursor or menu steady through the change. They also land straight on the next action, so the demo never pauses after the transition.",
+   "duration_ms": {
+    "median": 566.494,
+    "low": 379.801,
+    "high": 806.447,
+    "n": 11,
+    "videos": 3
+   },
+   "easing_mix": {
+    "spring_overshoot": 0.4504,
+    "ease_in": 0.2735,
+    "ease_out": 0.1841,
+    "linear": 0.092
+   },
+   "change_mix": {
+    "fade": 0.3537,
+    "scale_up": 0.1703,
+    "scale_down": 0.1266,
+    "slide_right": 0.0786,
+    "slide_up": 0.0524,
+    "color_shift": 0.0349,
+    "highlight": 0.0349,
+    "mask_reveal": 0.0349,
+    "slide_down": 0.0349,
+    "blur_out": 0.0218,
+    "pop": 0.0218,
+    "other": 0.0175,
+    "typewriter": 0.0175
+   },
+   "sfx_offset_ms": {
+    "median": -317.1,
+    "low": -363.5,
+    "high": -46.5,
+    "n": 8,
+    "videos": 1
+   },
+   "videos": 5,
+   "caveats": [
+    "Timing was measured on few elements from only a handful of videos, so treat the duration range as indicative",
+    "Sound offsets come from a single video, so the whoosh lead is not yet a corpus-wide habit",
+    "Members split between zooming in and pulling out; the direction should follow the story, not a rule"
+   ]
+  },
+  {
+   "id": "skeleton_resolve",
+   "name": "Placeholders Resolve Into Data",
+   "summary": "An empty or loading view (grey placeholder bars, a blank panel or a spinner) fills in with the real content: headers first, then numbers, cards or text appear almost instantly in place. The frame around it stays still, so the data seems to land where it belongs.",
+   "when_to_use": [
+    "Showing that the product computes or fetches data live",
+    "Switching a report, view or version and landing the new data on the narrated word",
+    "Presenting structure first and data second, such as an empty chart that then populates",
+    "Trimming a real loading wait down to a near-instant swap"
+   ],
+   "avoid_when": [
+    "The viewer needs to read the individual values as they appear",
+    "The loading state would make the product look slow",
+    "There is no real placeholder or empty state to resolve from"
+   ],
+   "steps": [
+    "Keep the surrounding window chrome, sidebar or frame fixed throughout.",
+    "Show the empty state: placeholder bars, a blank panel, a spinner or a dim loading overlay.",
+    "Remove the placeholder or spinner almost instantly rather than with a slow fade.",
+    "Reveal the structure first (header band, title, axis chips), then the data cells, cards or bubbles.",
+    "Sweep the data in with a very quick stagger across columns or items so it reads as a data load, not a designed animation.",
+    "Optionally add a tiny scale settle on the new view, and time the arrival to the narration."
+   ],
+   "build": {
+    "gsap": "Use tl.set to hide the spinner or skeleton, then gsap.fromTo on the content with autoAlpha from hidden to visible, a very short power ease-in or ease none, and a tiny stagger along the grid axis (headers before cells). A light back.out spring-overshoot or ease-in-out scale settle can follow on the whole panel. A faithful replica of a native load uses tl.set steps with no tween at all.",
+    "remotion": "Switch from the placeholder layer to the content at a fixed frame, then drive each cell or block's opacity with interpolate over a frame or two, offset per column or item. Use no spring for the data itself; a highly damped spring or interpolate with Easing.out is only for an optional panel scale settle."
+   },
+   "sound": "No typical sound: no sound cues were tagged for this pattern.",
+   "why_premium": "Instead of cutting to a finished screen, premium product demos let the viewer watch the data arrive inside a stable frame, which makes the product's computation feel live and real. The wait is trimmed to almost nothing, so the product feels fast rather than slow, and showing structure before data teaches the layout of the view before the numbers fill it. Landing the resolve on the narrated promise, such as the moment the voiceover names the insight or the new forecast, makes cause and effect obvious without any added graphics.",
+   "duration_ms": {
+    "median": 41.7,
+    "low": 41.7,
+    "high": 122.7,
+    "n": 16,
+    "videos": 1
+   },
+   "easing_mix": {
+    "ease_in": 0.6875,
+    "spring_overshoot": 0.1875,
+    "ease_in_out": 0.125
+   },
+   "change_mix": {
+    "fade": 0.7955,
+    "other": 0.1136,
+    "color_shift": 0.0227,
+    "highlight": 0.0227,
+    "scale_down": 0.0227,
+    "slide_down": 0.0227
+   },
+   "sfx_offset_ms": {
+    "median": null,
+    "low": null,
+    "high": null,
+    "n": 0,
+    "videos": 0
+   },
+   "videos": 2,
+   "caveats": [
+    "Seen in only two videos, both screen-recorded tutorials, and timing was measured in just one of them.",
+    "Measured durations are close to a single frame, so they reflect recorded UI loads rather than a designed animation.",
+    "No sound was measured, and several members are spinner-to-content swaps rather than true placeholder bars."
+   ]
+  },
+  {
+   "id": "spotlight_focus",
+   "name": "Spotlight On One Thing",
+   "summary": "Out of a busy screen, one item is singled out: the rest dims, shrinks or loses colour while the chosen item grows, lights up or gains a selection mark, often with a gentle camera push toward it.",
+   "when_to_use": [
+    "The narration names one item inside a dense interface, map or grid",
+    "Showing a selection or keyboard step as real product behaviour",
+    "Narrowing from many options to the single hero feature",
+    "Pointing at the one part of a view that matters before explaining it"
+   ],
+   "avoid_when": [
+    "Everything on screen is equally important to the message",
+    "The view is already sparse and the item is obvious",
+    "Several spotlights would follow each other too quickly to read"
+   ],
+   "steps": [
+    "Lay out the full context so the viewer sees the whole view first",
+    "Pick the one focus item and keep it on its own layer",
+    "Dim, desaturate or shrink everything else, keeping it faintly visible for context",
+    "Raise the focus item: scale it up, shift its colour to the accent or move the selection mark onto it",
+    "Optionally push the camera in toward the focus item at the same time",
+    "Keep captions on an unscaled layer, or clear them once the focus lands"
+   ],
+   "build": {
+    "gsap": "Build a timeline that tweens the context elements to low opacity and lower saturation (or smaller scale, staggered from the centre) with an ease-in or power ease-in-out, while the focus item tweens scale or colour with an ease-out; add a parallel scale tween on the parent layer with a transform origin on the focus for the camera push. For UI selection steps, use tl.set to swap the selected class instantly, and keep any background drift on a separate linear (ease: 'none') tween. Use back-style overshoot only on the hero item when it should feel lively.",
+    "remotion": "Drive context opacity and scale with interpolate and an ease-in or ease-in-out Easing curve, and the focus item or camera push with a spring (high damping for a calm settle, lower damping for a slight overshoot). For instant selection hops, derive the selected index from the frame with no interpolation, and keep any background drift as a linear interpolate."
+   },
+   "sound": "Often a short accent such as a chime, glitch or impact placed right around the moment focus lands, sometimes just before or just after it; in other cases only the music bed carries it. Treat sound as optional.",
+   "why_premium": "The spotlight cuts a crowded, unreadable view down to one legible thing without cutting away, so the viewer keeps a sense of scale while knowing exactly where to look. It does this with restraint: the surroundings fade to a ghost rather than vanishing, the accent colour is reserved for the focus, and selection changes happen as honest, instant interface steps rather than fake tweens. Layering two moves, such as a push-in plus dimming, or a zoom plus a small emphasis on the key element, guides the eye in stages instead of relying on boxes, arrows or callouts.",
+   "duration_ms": {
+    "median": 437.777,
+    "low": 377.229,
+    "high": 954.72,
+    "n": 16,
+    "videos": 3
+   },
+   "easing_mix": {
+    "ease_in": 0.3766,
+    "linear": 0.3135,
+    "ease_out": 0.1255,
+    "spring_overshoot": 0.1216,
+    "ease_in_out": 0.0627
+   },
+   "change_mix": {
+    "fade": 0.2286,
+    "color_shift": 0.2,
+    "highlight": 0.1143,
+    "scale_up": 0.1143,
+    "scale_down": 0.0857,
+    "slide_left": 0.0857,
+    "slide_up": 0.0571,
+    "draw_on": 0.0286,
+    "mask_reveal": 0.0286,
+    "other": 0.0286,
+    "slide_down": 0.0286
+   },
+   "sfx_offset_ms": {
+    "median": 46.55,
+    "low": -152.5,
+    "high": 245.6,
+    "n": 10,
+    "videos": 2
+   },
+   "videos": 4,
+   "caveats": [
+    "Seen in only four videos, and timing was measured in only three of them",
+    "Sound timing comes from just two videos and its spread is wide, so treat the sound placement as a loose guide",
+    "The pattern mixes instant selection hops with smooth zoom-and-dim moves, so the timing spread is wide"
+   ]
+  },
+  {
+   "id": "stagger_list_reveal",
+   "name": "List Items Arrive In Turn",
+   "summary": "The items of a list, row or panel appear one after another in quick succession, each fading in while rising or sliding a short distance into place, so the group builds up in reading order.",
+   "when_to_use": [
+    "Revealing steps, settings, results or integrations that should read as an ordered set",
+    "Visualising reasoning or progress as a checklist that fills in",
+    "Bringing an empty panel or launcher to life without a hard pop"
+   ],
+   "avoid_when": [
+    "The list is long enough that waiting for the last item drags",
+    "Items are unrelated, so a sequence implies an order that is not there"
+   ],
+   "steps": [
+    "Lay out the final list, then offset each item slightly below or to the side and make it transparent",
+    "Optionally grow or unmask the container first, overlapping its growth with the first items",
+    "Bring each item to its resting place with a fade and short slide, starting each a beat after the previous one",
+    "Keep every item on the same distance, ease and baseline so the cascade reads as one rhythm",
+    "Add grouping or focus cues, such as a tray or a selection highlight, as the last item lands"
+   ],
+   "build": {
+    "gsap": "One gsap.fromTo() on the item selector from {autoAlpha: 0, y or x offset, optional filter blur} to rest, with an ease_out family (power2.out or power3.out) and a small stagger in reading order. Run the container's scale, height or clipPath reveal on the same timeline with '<' so they overlap; use ease_in_out (power2.inOut) for any accompanying camera drift. A back.out ease suits an occasional spring_overshoot pop on the first item.",
+    "remotion": "For item i, compute spring({frame: frame - i * delay, fps}) with high damping (no overshoot) and map it to opacity, translate and optional blur with interpolate(). Drive the container from its own spring or an interpolate() with Easing.out, and fade any grouping tray in after the last item's delay."
+   },
+   "sound": "No typical sound: most detected audio is music. When an effect is used it is a light impact or reverse swoosh landing roughly with the cascade, sometimes a faint tick per item.",
+   "why_premium": "A tight cascade lets the eye read the items as an ordered sequence instead of a block that pops in all at once, which turns a flat row of icons or steps into a quick roll call or a visible line of reasoning. Every item sharing the same short travel, soft ease-out and baseline gives the reveal a single rhythm, and overlapping the container's growth with the items means the panel never shows empty space. Small finishing cues, like a tray fading in behind the last icon or a selection highlight arriving with the first row, tell the viewer how the group fits together and where to look next.",
+   "duration_ms": {
+    "median": 689.069,
+    "low": 531.498,
+    "high": 866.238,
+    "n": 43,
+    "videos": 5
+   },
+   "easing_mix": {
+    "ease_out": 0.5349,
+    "ease_in_out": 0.2092,
+    "spring_overshoot": 0.1142,
+    "linear": 0.0708,
+    "ease_in": 0.0708
+   },
+   "change_mix": {
+    "fade": 0.4343,
+    "slide_up": 0.2727,
+    "slide_left": 0.1313,
+    "blur_in": 0.0606,
+    "scale_up": 0.0404,
+    "pop": 0.0303,
+    "mask_reveal": 0.0202,
+    "highlight": 0.0101
+   },
+   "sfx_offset_ms": {
+    "median": 8.8,
+    "low": -181.85,
+    "high": 270.1,
+    "n": 43,
+    "videos": 2
+   },
+   "videos": 6,
+   "caveats": [
+    "Few events, from a small number of videos",
+    "Sound timing comes from only two videos, so the sound guidance is weak"
+   ]
+  },
+  {
+   "id": "ui_camera_push_in",
+   "name": "Virtual Camera Move Over UI",
+   "summary": "A virtual camera moves over a product screen without cutting: it pushes in to a detail, pans sideways across it, or pulls out to show the whole interface. The UI itself stays put; the frame around it travels.",
+   "when_to_use": [
+    "The narration names one control, row or result and the viewer needs to see it up close",
+    "A dense full-screen UI must become readable without a cut",
+    "Showing cause and effect: close on a click, then pull out to reveal what it changed",
+    "Keeping a static screen alive during a long narrated line with a barely visible drift"
+   ],
+   "avoid_when": [
+    "The target detail is not known yet; a move that lands on nothing reads as aimless",
+    "Several camera moves would stack back to back and make the viewer seasick",
+    "The UI is low resolution and will turn soft when enlarged"
+   ],
+   "steps": [
+    "Put the whole UI (screenshot or live layout) inside one camera wrapper so everything moves together",
+    "Pick the end framing: the control, list or panel the narration is about, and set the transform origin there",
+    "Animate the wrapper's scale and translate together toward that framing; reverse the values for a pull-out, or translate only for a sideways pan",
+    "Time the move to a narration beat or the gap between sentences so it has a clear reason",
+    "Optionally add motion blur during travel that resolves to sharp on arrival",
+    "Once the frame settles, bring in the follow-up detail such as the pointer arriving on the named control"
+   ],
+   "build": {
+    "gsap": "One gsap.fromTo on the camera wrapper animating scale plus xPercent/yPercent, with transformOrigin at the target. Mostly an ease-out (power or expo out) for snappy arrivals, ease-in-out (power or sine inOut) for smooth glides and slow drifts, linear for continuous background motion; occasionally a slight overshoot ease. No stagger: children ride along with the wrapper. Chain the pointer or content change on the timeline after the move, and add an optional yoyo blur tween for motion blur.",
+    "remotion": "Drive one progress value per move, either interpolate on frame with an Easing.out or Easing.inOut curve, or a critically damped spring with no overshoot. Map it to scale and translate on a single AbsoluteFill wrapping the UI; a pull-out maps from a large scale back to one. Content swaps and pointer moves are separate Sequences or interpolations timed after the camera lands."
+   },
+   "sound": "Often no distinct sound (many hits are unsure or just music). When there is one it is usually a soft impact or a reverse swoosh, sometimes a click or chime, landing just before the move starts or right on it.",
+   "why_premium": "The camera does the viewer's looking for them. Instead of asking people to hunt across a busy full-screen interface, a smooth eased move crops away browser chrome and sidebars and lands exactly on the thing the voice is talking about, and pulling back out afterwards shows the consequence in context. Because there is no cut, the viewer keeps their sense of where the detail sits in the whole product, and a crisp settle, sometimes after motion blur, makes the UI feel like a real physical surface. Even a barely perceptible drift keeps a static page from looking frozen.",
+   "duration_ms": {
+    "median": 561.942,
+    "low": 290.83,
+    "high": 844.92,
+    "n": 40,
+    "videos": 6
+   },
+   "easing_mix": {
+    "ease_out": 0.4295,
+    "ease_in_out": 0.1773,
+    "ease_in": 0.1634,
+    "linear": 0.1601,
+    "spring_overshoot": 0.0696
+   },
+   "change_mix": {
+    "scale_up": 0.2546,
+    "fade": 0.1921,
+    "color_shift": 0.081,
+    "other": 0.0741,
+    "slide_up": 0.0694,
+    "slide_left": 0.0671,
+    "highlight": 0.0532,
+    "scale_down": 0.0532,
+    "slide_right": 0.0463,
+    "slide_down": 0.0278,
+    "morph": 0.0208,
+    "rotate": 0.0162,
+    "blur_in": 0.0093,
+    "blur_out": 0.0093,
+    "mask_reveal": 0.0093,
+    "pop": 0.0093,
+    "typewriter": 0.0069
+   },
+   "sfx_offset_ms": {
+    "median": -59.0,
+    "low": -189.256,
+    "high": 48.481,
+    "n": 24,
+    "videos": 4
+   },
+   "videos": 9,
+   "caveats": [
+    "Merged pattern: push-ins, sideways pans and pull-outs share one card, so the timing spread covers both snap moves and slow drifts",
+    "Durations were measured in only some of the videos where the pattern appears",
+    "Sound offset comes from a handful of videos and many sound labels are unsure"
+   ]
+  },
+  {
+   "id": "whip_transition",
+   "name": "Fast Whip To Next Scene",
+   "summary": "The current scene shoots off screen in a very fast, motion-blurred sweep, as if the camera was flicked, and the next scene sweeps in behind it and settles, often with a headline landing as the blur clears.",
+   "when_to_use": [
+    "Jumping between two related scenes while keeping the sense of one continuous world",
+    "Marking a change of time, place or topic that the narration calls out",
+    "Adding energy between beats of a fast feature reel"
+   ],
+   "avoid_when": [
+    "The video is calm or instructional and needs a gentle pace",
+    "Several whips would land back to back and tire the viewer",
+    "The outgoing scene holds detail the viewer still needs to read"
+   ],
+   "steps": [
+    "Pick the whip direction (up or sideways) and keep both scenes on one shared container",
+    "Accelerate the outgoing content off frame while adding a strong motion blur",
+    "Bring the incoming scene in from the opposite side with blur, decelerating as it arrives",
+    "Clear the blur as the new scene settles into place",
+    "Land the headline or key word as the motion resolves, line by line if there are several"
+   ],
+   "build": {
+    "gsap": "A timeline: a to tween moving the outgoing scene by xPercent or yPercent with a filter blur on an ease-in (power-type), overlapping a fromTo bringing the incoming scene in with an ease-out and blur returning to zero. Headline lines follow with a staggered fromTo on opacity and y; an ease-in-out or back-type ease can give the landing a slight overshoot.",
+    "remotion": "Use interpolate on translateX or translateY with an ease-in curve for the exit and an ease-out curve for the entry, plus a blur filter that peaks mid-whip. Background elements and headline lines can settle on a spring, mildly underdamped if a small overshoot is wanted, driving translate and opacity."
+   },
+   "sound": "no typical sound",
+   "why_premium": "A whip reads as the camera itself moving rather than an edit, so two scenes feel like parts of one continuous space instead of separate clips. The heavy motion blur hides the hand-off and keeps the cut energetic, while timing the landing to a narrated change gives the move a reason. Letting the new headline arrive only as the blur clears, with a short empty beat or oversized type layered over the footage, turns the landing frame into a clear message moment.",
+   "duration_ms": {
+    "median": 1402.72,
+    "low": 644.82,
+    "high": 1472.676,
+    "n": 6,
+    "videos": 1
+   },
+   "easing_mix": {
+    "spring_overshoot": 0.3394,
+    "ease_out": 0.3344,
+    "ease_in": 0.1693,
+    "ease_in_out": 0.1569
+   },
+   "change_mix": {
+    "slide_up": 0.4286,
+    "fade": 0.2143,
+    "blur_out": 0.1429,
+    "blur_in": 0.0714,
+    "pop": 0.0714,
+    "slide_left": 0.0714
+   },
+   "sfx_offset_ms": {
+    "median": null,
+    "low": null,
+    "high": null,
+    "n": 0,
+    "videos": 0
+   },
+   "videos": 2,
+   "caveats": [
+    "Seen in only two videos, and element timing was measured in only one of them",
+    "Measured durations cover the settling elements and headline, not just the whip itself, so they run longer than the sweep",
+    "No sound was measured for this pattern"
+   ]
+  }
+ ]
+}

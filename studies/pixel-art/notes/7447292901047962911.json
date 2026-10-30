@@ -1,0 +1,51 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "pixel_notes",
+  "annotator": "claude-code",
+  "input_hash": "d37f547ad2c144ef7f3577efa5d1579e678fcab1bc86c2cd86388d7ada958e1d",
+  "created_at": "2026-10-13T13:05:22+00:00"
+ },
+ "id": "7447292901047962911",
+ "kind": "clip",
+ "palette": {
+  "colours_estimate": 14,
+  "shadows": "cool",
+  "notes": "14 colours measured, 2 ramps with tiny hue shift (2.4 deg). The finished art is one teal ramp on black; the tutorial UI is grey-mauve."
+ },
+ "lighting": "No drawn light: the source is filmed live footage, so light comes from the video, reduced to a teal monochrome ramp by dithering.",
+ "silhouette": "A real hand cut out from green screen on black; the bright hand shape against black carries the whole read.",
+ "motion": {
+  "timing": "Holds median 100 ms, p75 191.7 ms (4.35 drawings/s), screen-recording steps. The result is a rotoscoped hand loop from live video.",
+  "principles": [
+   "rotoscope",
+   "limited palette"
+  ]
+ },
+ "texture": "Error-diffusion dither over a tiny palette gives the Hylics-like crunchy, noisy surface.",
+ "camera": "Screen recording of Aseprite with zoom on dialogs; each step gets one caption at the top.",
+ "sound": "",
+ "acting": {
+  "enters": "",
+  "acts": "No character: a step-by-step tutorial (import green screen clip, cut it out, shrink with linear interpolation, tiny palette, dither).",
+  "exits": "",
+  "comes_back": null,
+  "depth": "Flat UI; the result preview sits centred in the frame."
+ },
+ "techniques": [
+  "rotoscope live footage into pixel art",
+  "downscale with linear interpolation before quantising",
+  "really tiny colour palette, then error-diffusion dithering",
+  "one short caption per step on screen",
+  "result shown first as the hook, then the recipe"
+ ],
+ "feel": "result-first hook + one caption per step + tiny palette and dither = fast, copyable tutorial",
+ "for_fred": "Open on the finished effect, then show the steps; and for a quick Fred gag, Robert can film a real motion, downscale and quantise it to Fred's ramp for weird, lifelike rotoscoped moves.",
+ "sources": [
+  "https://www.tiktok.com/@mogdogblog/video/7447292901047962911",
+  "data/study/pixel/work/7447292901047962911/sheet.jpg",
+  "studies/pixel-art/clips/7447292901047962911.json",
+  "studies/pixel-art/tiktok.yaml"
+ ]
+}

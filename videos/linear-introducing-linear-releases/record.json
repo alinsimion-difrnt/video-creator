@@ -1,0 +1,433 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "s8_reconcile",
+    "annotator": "code",
+    "skill": null,
+    "model": null,
+    "input_hash": "b4850a60abbb9536103c2d82eccefab0c59c0a7f759aa5f27b2a039a4bc33194",
+    "created_at": "2026-10-05T12:18:11.160604Z"
+  },
+  "video": "linear-introducing-linear-releases",
+  "brand": "Linear",
+  "title": "Introducing Linear Releases",
+  "format": "tutorial",
+  "tier": "reference",
+  "duration_s": 30.0,
+  "fps": 60.0,
+  "frame_size": [
+    1280,
+    640
+  ],
+  "palette": [
+    "#020103",
+    "#0f0c10",
+    "#282629",
+    "#4c4a4d",
+    "#868387",
+    "#ebe9ec"
+  ],
+  "summary": {
+    "beats": [
+      {
+        "beat": "hook",
+        "shots": [
+          "s001"
+        ],
+        "words": null
+      },
+      {
+        "beat": "mechanism",
+        "shots": [
+          "s001"
+        ],
+        "words": null
+      },
+      {
+        "beat": "demo",
+        "shots": [
+          "s001"
+        ],
+        "words": null
+      },
+      {
+        "beat": "cta",
+        "shots": [
+          "s001"
+        ],
+        "words": null
+      }
+    ],
+    "hook": {
+      "text": "Wordless opening: a shallow-focus drift over glowing branch lines labelled with issue IDs that converge into one release line",
+      "technique": "demo_first",
+      "technique_other": null,
+      "shots": [
+        "s001"
+      ],
+      "words": null
+    },
+    "cta": {
+      "text": "AVAILABLE NOW",
+      "shots": [
+        "s001"
+      ]
+    },
+    "tone": "Minimal, cinematic, confident teaser: monochrome near-black world, monospace type, no voice-over, product metaphor over feature explanation.",
+    "signature_moments": [
+      {
+        "shots": [
+          "s001"
+        ],
+        "description": "Many issue-ID branches flow and merge into a single line that terminates at a 'LAUNCH v1.1' node on a tilted release panel.",
+        "why_premium": "Turns the abstract idea 'many issues ship as one release' into a single elegant visual metaphor built from the product's own data vocabulary."
+      },
+      {
+        "shots": [
+          "s001"
+        ],
+        "description": "Three tilted release panels (Mobile App, SDK, Production) fan in from darkness with shallow depth of field.",
+        "why_premium": "Real-camera cues (perspective, focus falloff, soft shadows) make recreated UI feel like a physical object and show multiple release types in one frame."
+      },
+      {
+        "shots": [
+          "s001"
+        ],
+        "description": "Monospace typewriter reveal 'RELEASES' then 'AVAILABLE NOW' with a block cursor, resolving to the Linear logo.",
+        "why_premium": "Restrained, on-brand developer-tool typography; the cursor ties the launch message to an engineering audience without extra copy."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 4,
+        "evidence": "Opens straight into a striking defocused branch-line visual with readable issue IDs; intriguing but does not state the product until the title card.",
+        "refs": [
+          "s001"
+        ]
+      },
+      "clarity": {
+        "score": 3,
+        "evidence": "Only 'PLAN AND TRACK RELEASES' explains the feature; the graph metaphor is clear to Linear users but the video shows no concrete workflow or interaction.",
+        "refs": [
+          "s001"
+        ]
+      },
+      "ui_showcase": {
+        "score": 3,
+        "evidence": "Release panels with scheduled/continuous status pills are shown, but as stylized recreated UI with no cursor, interaction or real screens.",
+        "refs": [
+          "s001"
+        ]
+      },
+      "motion_polish": {
+        "score": 4,
+        "evidence": "From stills: consistent depth-of-field, perspective camera drifts, fades and a typewriter reveal; easing and timing cannot be judged from 2 fps sheets.",
+        "refs": [
+          "s001"
+        ]
+      },
+      "sound_design": {
+        "score": 3,
+        "evidence": "Judged from anchors plus visuals: a steady ~110 BPM music bed, integrated loudness -24.7 LUFS (quiet), and no detected SFX; no audible accents on the typewriter or logo per anchors.",
+        "refs": [
+          "s001"
+        ]
+      },
+      "vo_script_quality": {
+        "score": null,
+        "evidence": "No voice-over: anchors contain no transcript words.",
+        "refs": []
+      },
+      "brand_consistency": {
+        "score": 5,
+        "evidence": "Strict monochrome near-black world, monospace labels, Linear-style issue IDs and a clean logo end card throughout.",
+        "refs": [
+          "s001"
+        ]
+      },
+      "works_muted": {
+        "score": 5,
+        "evidence": "No voice-over; all messaging is on-screen text, so the story is identical with sound off.",
+        "refs": [
+          "s001"
+        ]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "Highly polished, on-brand launch teaser with a strong visual metaphor; limited explanatory depth keeps it short of best-in-class as an explainer.",
+        "refs": [
+          "s001"
+        ]
+      }
+    },
+    "localization_friendliness": {
+      "score": 4,
+      "baked_in_text": true,
+      "vo_dependent": false,
+      "notes": "Only a few short headline cards ('PLAN AND TRACK RELEASES', 'RELEASES', 'AVAILABLE NOW') need translation; issue IDs and panel labels can stay in English. No voice-over to re-record."
+    }
+  },
+  "shots": [
+    {
+      "id": "s001",
+      "start_s": 0.0,
+      "end_s": 30.0,
+      "transition_in": null,
+      "motion_energy": 0.001175,
+      "wpm": null,
+      "annotation": {
+        "shot": "s001",
+        "shot_type": "ui_recreated",
+        "shot_type_other": null,
+        "composition": "other",
+        "composition_other": "mixed within one detected shot: full-bleed perspective graph sections, a stacked fan of three tilted panels, and centered type/logo cards",
+        "focal_element": "a monochrome branching-line graph where many issue-ID nodes converge into a single release line, later shown on tilted release panels",
+        "transition_in": "other",
+        "transition_other": "none: first shot of the video (anchors give transition_in null)",
+        "on_screen_text": [
+          "MOB-9124",
+          "APP-1843",
+          "ENG-9833",
+          "MOBILE APP",
+          "SCHEDULED RELEASE",
+          "LAUNCH",
+          "v1.1",
+          "PLAN AND TRACK RELEASES",
+          "SDK",
+          "PRODUCTION",
+          "CONTINUOUS RELEASE",
+          "SDK-372",
+          "API-5094",
+          "AUTH-3219",
+          "SDK-311",
+          "SDK-334",
+          "ENG-9810",
+          "UX-4534",
+          "UX-4598",
+          "NAV-5874",
+          "ENG-7699",
+          "ENG-9868",
+          "NAV-5809",
+          "RELEASES",
+          "AVAILABLE NOW",
+          "Linear"
+        ],
+        "text_word_count": 33,
+        "typography": "Monospaced, regular weight, all caps with wide tracking for headlines ('PLAN AND TRACK RELEASES', 'RELEASES', 'AVAILABLE NOW') and for small node labels and panel headers; status pills in small caps with a dot indicator; end card is the sentence-case wordmark 'Linear' in a geometric sans with its logo mark (font guesses low confidence). Node-ID list is partial: many tiny/defocused labels were not legible.",
+        "depth_cues": [
+          "blur",
+          "perspective_tilt",
+          "shadow",
+          "glow"
+        ],
+        "what_happens": "The scene detector found one shot, but the contact sheets show several internal cuts/sections: (1) a close, shallow-depth-of-field drift over glowing curved lines tagged with issue IDs converging to the right; (2) a pulled-back tilted 'MOBILE APP / SCHEDULED RELEASE' panel where all branches merge into a single line ending at a 'LAUNCH v1.1' node; (3) a centered mono title card 'PLAN AND TRACK RELEASES' that fades out; (4) three tilted panels (MOBILE APP, SDK, PRODUCTION / CONTINUOUS RELEASE) fanning in from darkness; (5) another defocused close drift along the PRODUCTION graph; (6) a black card where 'RELEASES' then 'AVAILABLE NOW' type on with a block cursor; (7) the Linear logo lockup end card. No voice-over; music only.",
+        "build_rebuild": "Render SVG bezier paths from scattered issue-ID nodes that converge to one release line on a dark 3D-tilted panel (CSS perspective + rotateX/rotateY), drift a camera with depth-of-field blur over it, then cut to a centered monospace typewriter headline with a block cursor and end on a centered logo lockup.",
+        "confidence": "medium"
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "e001",
+      "shot": "s001",
+      "kind": "motion",
+      "start_s": 24.95,
+      "end_s": 25.3,
+      "camera_move": "none",
+      "status": "annotated",
+      "skip_reason": null,
+      "of": null,
+      "pattern": {
+        "id": "kinetic_word_reveal",
+        "proposed_name": null,
+        "description": "Monospace uppercase line 'AVAILABLE NOW' is typed one character per step behind a solid white block cursor on a near-black starfield; the line stays horizontally centred, so each keystroke nudges the already-typed text left while the cursor advances right.",
+        "why_premium": "Strictly rhythmic step timing (energy spikes at a fixed ~5-frame interval) with no easing reads as a precise terminal/command-line voice that matches a developer tool; the restrained palette (white mono type, single block cursor, black field) keeps all attention on the CTA phrase."
+      },
+      "build_hint": {
+        "gsap": "Split the line into chars (SplitText type:'chars'), set all autoAlpha:0, then tl.to(chars, {autoAlpha:1, duration:0, stagger:{each:0.083, ease:'none'}}) ; keep the text container centred (text-align:center) so it re-centres per char, and move the block cursor with each char via an onUpdate/stagger callback (gsap.set cursor x to the last visible char's right edge); no tween easing — ease:'steps(1)'. Cursor stays visible (optional blink after settle with repeat:-1, ease:'steps(1)').",
+        "remotion": "const n = Math.floor(frame / 5) (~83 ms per char at 60 fps); render text.slice(0, n) in a centred monospace flex row followed by the block cursor element so layout moves the cursor; no spring or interpolate easing (hard step per char); optional cursor blink via Math.floor(frame/30)%2 after the last char."
+      },
+      "confidence": "high",
+      "notes": "Event window starts mid-typing ('AVAIL' already present at f1479); earlier chars belong outside this event. Energy shows 8 discrete spikes every 5 frames (B, L, E, space, N, O, W). Facts camera reports move 'none' but scale 1.19 / pan_x -0.07 — likely an artefact of the centred line re-flowing left, not a real camera move; worth a human check. Per-word split b03/b04 chosen over union b01 so cursor b05 is separate.",
+      "elements": [
+        {
+          "id": "b03",
+          "box": [
+            370,
+            284,
+            689,
+            351
+          ],
+          "box_source": "candidate",
+          "label": "Typed word AVAILABLE",
+          "role": "headline",
+          "role_other": null,
+          "change_types": [
+            "typewriter",
+            "slide_left"
+          ],
+          "change_other": null,
+          "is_text": true,
+          "text": "AVAILABLE",
+          "text_unit": "char",
+          "timing": {
+            "source": "measured",
+            "duration_ms": 917.3,
+            "start_s": 24.6047,
+            "ease": "circ.out",
+            "easing_class": "ease_out",
+            "bezier": "cubic-bezier(1.000, 1.004, 1.000, 0.836)",
+            "spring": {
+              "mass": 1.0,
+              "stiffness": 19.366,
+              "damping": 6.094
+            },
+            "overshoot_pct": 0.0,
+            "quality": 0.9917,
+            "channels": [
+              "x",
+              "opacity"
+            ],
+            "changes": [
+              "fade",
+              "slide_left"
+            ],
+            "stagger_unit": null,
+            "stagger_ms": null
+          },
+          "sfx_offset_ms": {}
+        },
+        {
+          "id": "b04",
+          "box": [
+            707,
+            286,
+            813,
+            349
+          ],
+          "box_source": "candidate",
+          "label": "Typed word NOW",
+          "role": "headline",
+          "role_other": null,
+          "change_types": [
+            "typewriter"
+          ],
+          "change_other": null,
+          "is_text": true,
+          "text": "NOW",
+          "text_unit": "char",
+          "timing": {
+            "source": "model_estimate",
+            "duration_ms": 330.0,
+            "start_s": null,
+            "ease": null,
+            "easing_class": "step",
+            "bezier": null,
+            "spring": null,
+            "overshoot_pct": null,
+            "quality": null,
+            "channels": [],
+            "changes": [],
+            "stagger_unit": null,
+            "stagger_ms": null
+          },
+          "sfx_offset_ms": {}
+        },
+        {
+          "id": "b05",
+          "box": [
+            841,
+            286,
+            873,
+            349
+          ],
+          "box_source": "candidate",
+          "label": "Block text cursor",
+          "role": "cursor",
+          "role_other": null,
+          "change_types": [
+            "slide_right"
+          ],
+          "change_other": null,
+          "is_text": false,
+          "text": null,
+          "text_unit": null,
+          "timing": {
+            "source": "measured",
+            "duration_ms": 662.3,
+            "start_s": 24.6682,
+            "ease": "none",
+            "easing_class": "linear",
+            "bezier": "cubic-bezier(0.000, 0.137, 0.000, 0.005)",
+            "spring": {
+              "mass": 1.0,
+              "stiffness": 14.573,
+              "damping": 5.203
+            },
+            "overshoot_pct": 0.0,
+            "quality": 0.9928,
+            "channels": [
+              "x"
+            ],
+            "changes": [
+              "slide_right"
+            ],
+            "stagger_unit": null,
+            "stagger_ms": null
+          },
+          "sfx_offset_ms": {}
+        }
+      ],
+      "sfx": []
+    }
+  ],
+  "sfx": [],
+  "coverage": {
+    "events": 1,
+    "annotated": 1,
+    "propagated": 0,
+    "skipped": 0,
+    "pending": 0,
+    "elements": 3,
+    "measured": 2,
+    "estimated": 1
+  },
+  "checks": [
+    {
+      "name": "a1_shots",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "a1_summary",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "a2_events",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "events_in_shots",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "sfx_ids",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "sfx_labels",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "measure_boxes",
+      "ok": true,
+      "detail": null
+    }
+  ]
+}

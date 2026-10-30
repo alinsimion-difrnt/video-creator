@@ -1,0 +1,65 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "fe7f622623e74eea935838765892e3c01de7733a9bc1dc7f62277dbdfc3ecb73",
+    "created_at": "2026-10-05T06:38:38.953749Z"
+  },
+  "video": "attio-introducing-ask-attio",
+  "event": "e005",
+  "task": "a2-e005",
+  "elements": [
+    {
+      "box": null,
+      "manual_box": [0, 0, 1000, 1000],
+      "manual_reason": "The black dot expands into the full-bleed dark background; no candidate box covers the whole frame.",
+      "label": "Expanding black dot to dark background",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["scale_up", "mask_reveal"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 130, "easing_class": "ease_in"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "'Everything' headline",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["fade", "slide_up", "scale_down"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Everything",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 350, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x001",
+      "verdict": "confirm",
+      "label": "impact",
+      "note": "Lands as the dot covers the frame and the scene flips from light to dark; low broadband hit and a change in the music texture. CLAP said glitch, but there is no stutter pattern."
+    }
+  ],
+  "pattern": {
+    "id": "kinetic_word_reveal",
+    "proposed_name": null,
+    "description": "The black dot keeps scaling until it covers the frame (a circular wipe to a dark, dot-grid background), then 'Everything' settles in at the centre: it fades in slightly large and low, then drifts up and shrinks to rest.",
+    "why_premium": "The circular wipe reuses the dot from the previous beat as the transition, so the light-to-dark flip feels motivated. The single word then lands with a gentle settle (drift plus scale-down) instead of a plain fade, with the impact SFX on the flip."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.dot', {scale: 20, duration: 0.13, ease: 'power3.in'}); tl.set('.bg', {backgroundColor: '#0f1013'}); tl.fromTo('.headline', {autoAlpha: 0, y: 30, scale: 1.15}, {autoAlpha: 1, y: 0, scale: 1, duration: 0.35, ease: 'power3.out'}, '+=0.05').",
+    "remotion": "Dot scale = interpolate(frame, [0, 4], [1, 20], {easing: Easing.in(Easing.cubic)}); headline from frame 7: spring({frame: frame - 7, fps, config: {damping: 200, stiffness: 120}}) drives opacity 0->1, translateY 30->0 and scale 1.15->1 (no overshoot)."
+  },
+  "confidence": "medium",
+  "notes": "The pattern combines a circular mask wipe with a word reveal; I picked kinetic_word_reveal for the end state, but the wipe carries most of the motion energy. The x001 impact belongs to both e004 and e005 (offset -167 ms here). The faint dot-grid background appears with the wipe."
+}

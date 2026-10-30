@@ -1,0 +1,100 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "a6209b78f30ab53f7a2e4f89952277449174606626ee3d6484969538f4e0ea59",
+    "created_at": "2026-10-05T06:44:56.867870Z"
+  },
+  "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+  "event": "e005",
+  "task": "a2-e005",
+  "elements": [
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "First message text typing",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["typewriter"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Hey, welcome to QuickCrate. How can I help you today",
+      "text_unit": "char",
+      "estimates": {"duration_ms": 600, "easing_class": "linear"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Agent form cards scrolling",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 500, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b10",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "LLM card focus border drawing on",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["draw_on", "highlight"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b09",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "LLM card label",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "LLM",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 500, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b06",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Cursor moving to LLM dropdown",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "prompt_type_on",
+    "proposed_name": null,
+    "description": "The First Message field fills with a greeting that types on quickly, while the form scrolls up. The cursor glides down to the LLM dropdown and that card's focus border starts drawing on.",
+    "why_premium": "Fast type-on, a smooth scroll and a cursor that moves ahead of the next field make configuration feel effortless. The focus ring handing from card to card keeps the eye on one step at a time."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.first-msg .text', {text:{value:'Hey, welcome to QuickCrate. How can I help you today'}, duration:0.6, ease:'none'}, 0).to('.form', {y:-60, duration:0.5, ease:'power2.inOut'}, 0.1).to('.cursor', {x:-200, y:150, duration:0.4, ease:'power2.inOut'}, 0.2).to('.first-msg', {'--glow':0, duration:0.2}, 0.5).fromTo('.llm-card .focus-border', {scaleX:0, transformOrigin:'left'}, {scaleX:1, duration:0.3, ease:'power2.out'}, 0.55).",
+    "remotion": "Typed text: msg.slice(0, Math.floor(interpolate(frame, [0, 18], [0, msg.length], {extrapolateRight:'clamp'}))). Form translateY: interpolate(frame, [3, 18], [0, -60], {easing: Easing.inOut(Easing.quad)}). Cursor position: spring({frame: frame - 6, fps, config:{damping:200, stiffness:120}}) mapped to the start and end points. LLM focus border: interpolate scaleX from 0 to 1 over frames 16-25."
+  },
+  "confidence": "medium",
+  "notes": "Continues e004 (same shot). The form drift is small (scale 1.03, camera none), so it is treated as content scrolling, not a camera move. The caption block at left is static. There are no SFX candidates."
+}

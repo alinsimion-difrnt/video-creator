@@ -1,0 +1,51 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "56b2cddedafeb9f05bfede824cad60f65b81704cc7f076b9c09f8455db6e2548",
+    "created_at": "2026-10-13T13:05:28+00:00"
+  },
+  "id": "7170936314408324398",
+  "kind": "clip",
+  "palette": {
+    "colours_estimate": 12,
+    "shadows": "cool",
+    "notes": "Measured palette_size 12 at native 288x512 (2x scale), one ramp with hue shift ~56 over 11 colours. Greens go to teal-blue in shadow and yellow-green in light; the console and controller are purples; small red and yellow flowers as accents on a dark teal background."
+  },
+  "lighting": "Soft top-left light: highlights on the TV and console tops, shaded right sides; the dark teal backdrop isolates the diorama.",
+  "silhouette": "Isometric island vignette: old CRT TV and a GameCube overgrown with plants, readable as one rounded blob against the empty background.",
+  "motion": {
+    "timing": "Measured 7 changes over 8.34 s, median hold 400 ms (p25 262.5, p75 500): a slow screen animation where a symbol is drawn stroke by stroke on the TV, then a white flash with scanlines (~5.9-6.6 s), then the screen goes dark. The rest is still.",
+    "principles": [
+      "held frames",
+      "single focal animation",
+      "flash accent"
+    ]
+  },
+  "texture": "Clean pixel clusters, almost no dithering (dither_share 0.0004); foliage built from leaf-shaped clusters with highlight dots.",
+  "camera": "Static, isometric 3/4 view; the scene floats centred with lots of empty space above and below.",
+  "sound": "",
+  "acting": {
+    "enters": "",
+    "acts": "No characters: the 'actor' is the TV screen, which boots up a logo in slow steps, flashes white and goes off, like a ghost of an old console.",
+    "exits": "The screen turns off after the flash.",
+    "comes_back": null,
+    "depth": "Single isometric diorama; the whole scene is the object, set in an empty void."
+  },
+  "techniques": [
+    "isometric overgrown-object diorama on a flat dark background",
+    "hue-shifted green ramp (~56 degrees): teal shadows, yellow-green lights",
+    "only one element animates (the TV screen), with 260-500 ms holds",
+    "stepped logo build then a white flash with scanlines as the payoff",
+    "purple props against green foliage for colour contrast"
+  ],
+  "feel": "dark empty void + small cozy overgrown diorama + one slow-animating screen = nostalgic, calm loop",
+  "for_fred": "Animate only one thing at a time: let Fred's scene hold still while a single prop (a screen, a bubble) changes on slow 260-500 ms holds, then pay off with one flash; avoids the overused-animation problem.",
+  "sources": [
+    "studies/pixel-art/clips/7170936314408324398.json",
+    "data/study/pixel/work/7170936314408324398/sheet.jpg",
+    "studies/pixel-art/tiktok.yaml"
+  ]
+}

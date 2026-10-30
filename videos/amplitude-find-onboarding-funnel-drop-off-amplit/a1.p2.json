@@ -1,0 +1,108 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "29a4c3c89e688644861c1aa665890eaee99a06e8e98d660e152df4723d53ddc3",
+    "created_at": "2026-10-05T06:21:30.016534Z"
+  },
+  "video": "amplitude-find-onboarding-funnel-drop-off-amplit",
+  "task": "a1-p2",
+  "shots": [
+    {
+      "shot": "s003",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "other",
+      "composition_other": "left-docked slide-over panel (about a fifth of the frame) over a dimmed full-width dashboard",
+      "focal_element": "The 'New Chart' side panel listing chart types, with the cursor moving toward the Funnel card",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Create New",
+        "New Chart",
+        "Segmentation",
+        "Segment events by various filters and metrics.",
+        "Funnel",
+        "Investigate conversion through a series of events.",
+        "Data Table",
+        "Compare and break down multiple metrics.",
+        "Retention",
+        "Analyze how often users return.",
+        "Journeys",
+        "BETA",
+        "Analyze sequences of steps taken by users.",
+        "All chart types"
+      ],
+      "text_word_count": 46,
+      "typography": "Native product UI type: clean sans-serif (low-confidence guess: Inter-like), semibold sentence/title-case card titles over regular-weight grey descriptions, normal tracking; the panel heading 'New Chart' is the largest, semibold. No added motion-graphics type.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Fast 2-second unedited screen capture right after the VO finishes 'create a new funnel analysis chart' (w118-w124): the Create New menu (Chart, Cohort, Report, Experiment, Feature Flag) is open, then the New Chart panel with five chart-type cards slides over the dimmed dashboard; the cursor goes to Funnel and by 0:53.0 the screen is a blank loading page. No narration over the shot itself after w124.",
+      "build_rebuild": "Record the real UI at 1280x720, show a left drawer (about 280px wide) of five chart-type cards over the dashboard dimmed to about 60% white overlay, and move the cursor onto the 'Funnel' card before cutting on the page load.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s004",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "other",
+      "composition_other": "app layout: narrow left controls sidebar plus large right chart canvas, no zoom or reframe",
+      "focal_element": "The '+ Add Event' slot in the Events panel of the empty funnel chart, then the event picker dropdown",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Start by selecting two events",
+        "Choose up to 30 steps in your conversion funnel by selecting them in the Events panel above.",
+        "Check out our documentation or introductory video to learn more.",
+        "+ Add Event",
+        "Optimize your conversion funnel",
+        "100%",
+        "Welcome"
+      ],
+      "text_word_count": 30,
+      "typography": "Native product UI: sans-serif (low-confidence guess: Inter-like); empty-state headline in medium weight sentence case centred under a placeholder bar-chart illustration, small regular-weight grey helper text, link text in product blue; normal tracking. At the end a large bold '100%' conversion figure appears top-left of the chart.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Empty Funnel chart with an empty-state illustration while the VO says 'In the events module, you'll want to choose the events that correspond to your' (w125-w138). The cursor clicks '+ Add Event', a dropdown of suggested events opens with a side preview card ('Purchase Ticket'), the user types and picks 'Welcome', and the canvas switches to a single full-height blue bar labelled 100%.",
+      "build_rebuild": "Show a full-frame screen recording with no camera move: click the '+ Add Event' field, open a search dropdown with a hover-preview card, select the first event, and swap the empty-state illustration for a single 100% bar chart in the same layout.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s005",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "other",
+      "composition_other": "app layout: narrow left controls sidebar plus large right chart canvas, no zoom or reframe",
+      "focal_element": "The funnel bar chart growing from one to two steps (Welcome to User Sign Up, 88.9% total conversion) as events are added in the sidebar",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Total Conversion",
+        "88.9%",
+        "Last 30 Days",
+        "From Welcome to User Sign Up within the last 30 days.",
+        "Welcome",
+        "User Sign Up",
+        "+ Add Event",
+        "313,877",
+        "279,045",
+        "Follow Playlist"
+      ],
+      "text_word_count": 27,
+      "typography": "Native product UI: sans-serif (low-confidence guess: Inter-like); large bold numeric conversion headline ('88.9%'), small regular-weight caption lines below, white bold counts set inside the bars, event names in medium weight title case in the sidebar; normal tracking.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "The VO continues 'onboarding funnel in the order you expect users to trigger them' (w139-w149). The user opens '+ Add Event' again, picks 'User Sign Up', and the chart redraws as two bars (313,877 to 279,045) with a hatched drop-off segment above the second bar and an 88.9% headline. The user then adds a third step ('Follow Playlist', label only partly legible), and at 1:02.0 the chart is greyed out while it recomputes.",
+      "build_rebuild": "Animate a funnel bar chart that adds one bar per selected event, filling each bar to its conversion height with a light hatched remainder segment above it and updating a large percent headline, while a loading veil dims the chart between updates.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

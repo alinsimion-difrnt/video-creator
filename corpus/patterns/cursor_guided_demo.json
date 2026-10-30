@@ -1,0 +1,176 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a3_pattern_cards",
+  "annotator": "claude-code",
+  "skill": "write-pattern-cards@e525a58fa6d8",
+  "model": null,
+  "input_hash": "4a5bd9a9423adfbc2039d19a8b3e2619e405fa20f0f3fda6c437d429802971c8",
+  "created_at": "2026-10-05T12:51:31.197468Z"
+ },
+ "id": "cursor_guided_demo",
+ "name": "Cursor Leads The Demo",
+ "summary": "A mouse pointer glides across the product screen, lands on a button, list row or panel and clicks it, and the interface reacts right away so the viewer sees the feature working.",
+ "when_to_use": [
+  "Showing how a feature is used, one action at a time",
+  "Turning a narrated claim into a visible cause and effect",
+  "Pointing the eye at a detail (a citation, a field, a menu option) before it matters"
+ ],
+ "avoid_when": [
+  "The screen is already busy and a moving pointer would compete with it",
+  "The message is abstract and there is no real interaction to show",
+  "The cursor path would wander or jitter instead of going straight to its target"
+ ],
+ "steps": [
+  "Lay out the interface in its starting state with the cursor parked off target or just entering the frame",
+  "Move the cursor along one smooth, eased path straight to the target, optionally with slight motion blur",
+  "Swap the cursor sprite (arrow to hand or crosshair) as it arrives",
+  "Play a short press: the cursor or target squashes slightly and springs back",
+  "Trigger the result of the click: a highlight, colour change, dropdown, or new panel sliding or fading in",
+  "Let hover tints follow the cursor across rows or options, then move the cursor out of the way so the result can be read"
+ ],
+ "build": {
+  "gsap": "Use a timeline: a to() tween on the cursor's x and y with an ease_in_out or ease_out power ease (power2.inOut or power2.out), a tl.set() to swap the cursor sprite on arrival, then a tiny scale yoyo for the press. Follow it with fromTo() tweens on the reacting element (autoAlpha, scale, y, backgroundColor or clipPath) using an ease_out family such as power3.out, or back.out for a spring_overshoot pop. Stagger reacting icons or rows lightly; drive hover tints with tl.call() or quick backgroundColor tweens as the cursor crosses each row.",
+  "remotion": "Drive cursor position with interpolate() and Easing.inOut or Easing.out (or Easing.bezier) between the start and target points, and pick the cursor sprite by frame threshold. Animate the press and the UI reaction with spring() (moderate damping, no overshoot for focus rings; allow slight overshoot for pops) mapped to scale, opacity and translate. Compute hovered rows from the cursor's current y each frame."
+ },
+ "sound": "No typical sound: most detected audio here is music or unclear. When a distinct effect is used it is a soft chime or light impact landing near the click.",
+ "why_premium": "The cursor carries intent: it travels on one clean, decelerating path to exactly the control that matters, and that single click visibly changes the product state with no cut, so the feature is demonstrated rather than explained. Real feedback (a press-in, a radial fill, a focus ring snapping tight, hover tints following the pointer) makes the interaction feel tactile, and the pointer then gets out of the way so the result stays readable while the narration lands.",
+ "numbers": {
+  "id": "cursor_guided_demo",
+  "events": 59,
+  "videos": 8,
+  "weight": 36.8,
+  "duration_ms": {
+   "n": 57,
+   "videos": 7,
+   "weight": 38.8352,
+   "median": 409.562,
+   "p25": 160.193,
+   "p75": 706.326,
+   "ci": [
+    226.951,
+    531.918
+   ]
+  },
+  "easing_mix": {
+   "ease_out": 0.2717,
+   "ease_in": 0.2517,
+   "ease_in_out": 0.2225,
+   "spring_overshoot": 0.1871,
+   "linear": 0.0669
+  },
+  "change_mix": {
+   "highlight": 0.2114,
+   "fade": 0.2069,
+   "color_shift": 0.1051,
+   "slide_down": 0.0973,
+   "slide_up": 0.0861,
+   "other": 0.0783,
+   "slide_right": 0.0615,
+   "pop": 0.047,
+   "slide_left": 0.0313,
+   "scale_down": 0.0257,
+   "morph": 0.0179,
+   "scale_up": 0.0123,
+   "mask_reveal": 0.0078,
+   "typewriter": 0.0045,
+   "count_up": 0.0034,
+   "rotate": 0.0034
+  },
+  "role_mix": {
+   "list_item": 0.2464,
+   "cursor": 0.1805,
+   "button": 0.1375,
+   "ui_panel": 0.0989,
+   "card": 0.0788,
+   "label": 0.0573,
+   "headline": 0.0401,
+   "body_text": 0.0372,
+   "icon": 0.0358,
+   "metric": 0.0258,
+   "other": 0.0215,
+   "background": 0.0115,
+   "avatar": 0.01,
+   "notification": 0.0086,
+   "logo": 0.0057,
+   "chart": 0.0043
+  },
+  "sfx_label_mix": {
+   "music": 0.5161,
+   "unsure": 0.2258,
+   "chime": 0.129,
+   "impact": 0.129
+  },
+  "sfx_offset_ms": {
+   "n": 23,
+   "videos": 5,
+   "weight": 17.6,
+   "median": 75.1,
+   "p25": -255.7,
+   "p75": 146.3,
+   "ci": [
+    -189.0,
+    138.286
+   ]
+  },
+  "examples": [
+   {
+    "video": "anthropic-introducing-claude-design-by-anthropic-l",
+    "event": "e010",
+    "score": 4.0
+   },
+   {
+    "video": "hubspot-what-is-hubspot",
+    "event": "e003",
+    "score": 4.0
+   },
+   {
+    "video": "loom-introducing-loom-ai",
+    "event": "e003",
+    "score": 4.0
+   },
+   {
+    "video": "notion-introducing-notion-ai-connectors",
+    "event": "e022",
+    "score": 4.0
+   },
+   {
+    "video": "notion-introducing-the-new-notion-ai",
+    "event": "e001",
+    "score": 4.0
+   }
+  ]
+ },
+ "examples": [
+  {
+   "video": "anthropic-introducing-claude-design-by-anthropic-l",
+   "event": "e010",
+   "score": 4.0
+  },
+  {
+   "video": "hubspot-what-is-hubspot",
+   "event": "e003",
+   "score": 4.0
+  },
+  {
+   "video": "loom-introducing-loom-ai",
+   "event": "e003",
+   "score": 4.0
+  },
+  {
+   "video": "notion-introducing-notion-ai-connectors",
+   "event": "e022",
+   "score": 4.0
+  },
+  {
+   "video": "notion-introducing-the-new-notion-ai",
+   "event": "e001",
+   "score": 4.0
+  }
+ ],
+ "caveats": [
+  "Easing is split fairly evenly between ease-out, ease-in and ease-in-out, so pick per move rather than treating one as standard",
+  "Sound timing was measured on fewer events and videos than motion timing, and the offset range spans both before and after the action"
+ ]
+}

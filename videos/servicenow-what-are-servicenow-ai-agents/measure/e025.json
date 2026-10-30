@@ -1,0 +1,89 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "s7_measure",
+    "annotator": "code",
+    "skill": null,
+    "model": null,
+    "input_hash": "f584bdb6f2e49f11f768b2419c00b4d83c4a6ccad00286e2cb4f9c16cb05aa3a",
+    "created_at": "2026-10-05T10:08:39.467849Z"
+  },
+  "video": "servicenow-what-are-servicenow-ai-agents",
+  "event": "e025",
+  "fps": 23.81,
+  "elements": [
+    {
+      "box": "b01",
+      "xyxy": [
+        384,
+        115,
+        997,
+        627
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.945,
+      "channels": [],
+      "timing": null,
+      "stagger": null,
+      "sfx_offset_ms": {},
+      "source": "model_estimate",
+      "quality": 0.0
+    },
+    {
+      "box": "b02",
+      "xyxy": [
+        1080,
+        461,
+        1280,
+        627
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.958,
+      "channels": [
+        {
+          "name": "y",
+          "start_f": 3149,
+          "end_f": 3157,
+          "start_value": 537.5,
+          "end_value": 544.0,
+          "observed_start": true,
+          "cls": "linear",
+          "gsap": {
+            "ease": "power1.in",
+            "duration_ms": 474.6,
+            "rmse": 0.05239
+          },
+          "bezier": "cubic-bezier(0.000, 0.287, 0.532, -0.087)",
+          "bezier_rmse": 0.03522,
+          "spring": {
+            "zeta": 0.05,
+            "omega0": 3.522,
+            "settle_ms": 19903.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 12.405,
+              "damping": 0.352
+            },
+            "remotion_exact": true,
+            "rmse": 0.06069
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 414.7,
+          "fit_quality": 0.9152
+        }
+      ],
+      "timing": {
+        "ease": "power1.in",
+        "start_s": 132.1353,
+        "duration_ms": 474.6,
+        "rmse": 0.05239
+      },
+      "stagger": null,
+      "sfx_offset_ms": {},
+      "source": "measured",
+      "quality": 0.9152
+    }
+  ],
+  "failed": {}
+}

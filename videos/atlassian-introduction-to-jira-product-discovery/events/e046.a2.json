@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "290a858a216a9271bc6afb57b550abf3324484a594dd078b47246b09fc51c6e3",
+    "created_at": "2026-10-05T06:39:29.000382Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e046",
+  "task": "a2-e046",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Whole app UI: page swaps from the Impact vs. Effort chart to the new list view, then the frame pushes in toward the top-left",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["scale_up", "slide_right"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 450, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b12",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "View title input 'New View' (focused, blue outline)",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["highlight", "scale_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "New View",
+      "text_unit": "whole",
+      "estimates": null
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "ui_camera_push_in",
+    "proposed_name": null,
+    "description": "The screen recording switches instantly to the newly created list view. A post-production camera push-in (about 1.16x, drifting toward the top-left) then frames the focused 'New View' title field and the idea table, as the narrator says 'give the head of sales'.",
+    "why_premium": "The push-in turns an ordinary page change into a guided moment: it crops away the browser chrome and sidebar and makes the field the user is about to rename larger. The decelerating zoom keeps the recording feeling directed rather than raw."
+  },
+  "build_hint": {
+    "gsap": "Hard swap the screenshot layers (set autoAlpha), then gsap.fromTo('.screen', {scale: 1, xPercent: 0}, {scale: 1.16, xPercent: 4, transformOrigin: '15% 10%', duration: 0.45, ease: 'power3.out'}).",
+    "remotion": "On the swap frame, change the <Img> source. Then scale = interpolate(spring({frame: frame - swapFrame, fps, config: {damping: 200}}), [0, 1], [1, 1.16]) with transformOrigin '15% 10%' and a matching translateX for the drift."
+  },
+  "confidence": "medium",
+  "notes": "The energy curve shows a cut-like spike (page swap) followed by a sustained decaying burst (zoom). Camera verdict is push_in with a scale of about 1.16. The final pan_x of -0.086 means content moves left in pixel terms; the label 'slide_right' is ambiguous, since the framing travels toward the left edge. The TS-2 row highlight was already present and is not listed."
+}

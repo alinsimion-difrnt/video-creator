@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "8e179e47f202a0677112547f5a75de9c0b2452169a8ad8e0bf95a029963a40b7",
+    "created_at": "2026-10-05T06:43:01.730634Z"
+  },
+  "video": "attio-introducing-ask-attio",
+  "event": "e016",
+  "task": "a2-e016",
+  "elements": [
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "'Ask Attio' lockup recentring",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["slide_right"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Ask Attio",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 500, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Grey trailing phrase erased",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["typewriter", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "to celebrate this win.",
+      "text_unit": "char",
+      "estimates": {"duration_ms": 500, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "trailing text erase",
+    "description": "A sentence 'Ask Attio to celebrate this win.' (brand words black, the rest grey) loses its grey tail character by character from the left of the grey run, while the black 'Ask Attio' glides right to re-centre as the line shortens, leaving the brand lockup alone at centre.",
+    "why_premium": "Reverse-typing the example prompt turns a use-case sentence into the product name without a cut; the continuous re-centring keeps the line optically centred at every frame, which reads as carefully engineered type."
+  },
+  "build_hint": {
+    "gsap": "Split the grey tail into chars; tl.to(chars, {opacity: 0, duration: 0.05, stagger: 0.02, ease: 'none'}) while animating the line container x so it stays centred (or let each char's width collapse) with ease 'power2.inOut' over ~0.5s.",
+    "remotion": "visibleChars = Math.round(interpolate(frame, [start, start + 15], [tail.length, 0], {easing: Easing.inOut(Easing.quad)})); render tail.slice(tail.length - visibleChars) and centre the flex row so 'Ask Attio' translates naturally; no spring."
+  },
+  "confidence": "medium",
+  "notes": "Characters vanish from the start of the grey run (e.g. 'to' -> 'o' -> 'celebrate' -> 'brate' -> 'in.'), i.e. a forward erase rather than a backspace; it could also be a left-edge mask wipe. No single candidate box covers the grey tail at its start; b01 (union of the line) is used. Closest canonical alternatives: input_text_cycle or prompt_type_on (reversed)."
+}

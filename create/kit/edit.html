@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Edit: {{PROJECT}}</title>
+<!-- Robert's own crops, zooms and notes (create/footage/editpage.py, `create edits <p> --page`). Self-contained. -->
+<style>
+  :root { --bg: #0b1220; --card: #141d2e; --line: #22304a; --fg: #eef2f6; --dim: #8796a8; --acc: #00AA90; --ok: #3ecf8e; --zoom: #7aa2ff; }
+  html, body { margin: 0; background: var(--bg); color: var(--fg); font: 400 16px/1.5 system-ui, -apple-system, sans-serif; }
+  header { position: sticky; top: 0; z-index: 5; background: rgba(11,18,32,.96); padding: 12px 16px 8px; border-bottom: 1px solid var(--line); }
+  h1 { font-size: 17px; margin: 0; }
+  h2 { font-size: 15px; margin: 0 0 8px; }
+  #sum { color: var(--dim); font-size: 13px; }
+  main { padding: 12px 16px 220px; max-width: 900px; margin: 0 auto; }
+  .card { background: var(--card); border-radius: 12px; padding: 12px; margin-bottom: 12px; }
+  .dim { color: var(--dim); font-size: 13px; }
+  video { display: block; width: 100%; max-height: 52vh; background: #000; border-radius: 10px; }
+  #bar { position: relative; height: 40px; margin-top: 10px; background: #0b1220; border-radius: 8px; overflow: hidden; touch-action: none; }
+  #bar .shot { position: absolute; top: 8px; bottom: 8px; border-right: 1px solid var(--bg); background: #2b3a55; }
+  #bar .shot.alt { background: #34476a; }
+  #bar .shot.changed { background: var(--acc); }
+  #bar .shot.on { outline: 2px solid #fff; outline-offset: -2px; z-index: 1; }
+  #bar .tick { position: absolute; top: 0; width: 2px; height: 8px; background: var(--zoom); }
+  #bar .tick.gone { background: #555; }
+  #bar .held { position: absolute; bottom: 0; height: 6px; background: var(--zoom); opacity: .8; }
+  #bar .pin { position: absolute; top: 0; bottom: 0; width: 2px; background: var(--ok); z-index: 2; }
+  #bar #head { position: absolute; top: 0; bottom: 0; width: 2px; background: #fff; z-index: 3; }
+  #said { margin-top: 8px; font-size: 14px; min-height: 1.5em; }
+  .views { display: flex; gap: 10px; align-items: flex-start; }
+  #master { position: relative; flex: 2; overflow: hidden; border-radius: 8px; touch-action: none; cursor: grab; background: #000; }
+  #master img { display: block; width: 100%; max-height: 46vh; object-fit: contain; user-select: none; -webkit-user-drag: none; }
+  #box { position: absolute; border: 2px solid var(--acc); box-shadow: 0 0 0 9999px rgba(0,0,0,.55); box-sizing: border-box; pointer-events: none; }
+  #face { position: absolute; border: 1px dashed rgba(255,255,255,.6); pointer-events: none; }
+  #prev { position: relative; flex: none; overflow: hidden; border-radius: 8px; background: #000; }
+  #prev img { position: absolute; max-width: none; user-select: none; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 10px; }
+  button { font: 600 15px system-ui, sans-serif; color: #fff; background: #2b3a55; border: 0; border-radius: 10px; padding: 11px 6px; }
+  button:active { background: #3a4d70; }
+  button.wide { grid-column: span 2; }
+  button.main { background: var(--acc); }
+  button.small { min-width: 44px; min-height: 40px; padding: 6px 10px; font-size: 14px; }
+  .zoomline { display: flex; align-items: center; justify-content: space-between; margin-top: 10px; gap: 8px; }
+  .zoomline b { font-size: 20px; }
+  .row { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 0; border-top: 1px solid var(--line); }
+  .row:first-of-type { border-top: 0; }
+  .row .what { flex: 1; font-size: 14px; }
+  .row.gone .what { text-decoration: line-through; color: var(--dim); }
+  .step { display: flex; align-items: center; gap: 6px; }
+  textarea { width: 100%; box-sizing: border-box; min-height: 70px; font: 400 15px/1.4 system-ui, sans-serif; color: var(--fg);
+    background: #0b1220; border: 1px solid var(--line); border-radius: 8px; padding: 8px; }
+  footer { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; background: var(--card); padding: 10px 16px;
+    padding-bottom: max(10px, env(safe-area-inset-bottom)); border-top: 1px solid var(--line); }
+  #out { font: 500 12px/1.4 ui-monospace, Menlo, monospace; background: #0b1220; border-radius: 8px; padding: 8px;
+    word-break: break-all; max-height: 52px; overflow: auto; }
+  footer .grid { grid-template-columns: 1fr; margin-top: 8px; }
+</style></head>
+<body>
+<header><h1>Edit {{PROJECT}}</h1><div id="sum"></div></header>
+<main>
+  <div class="card" id="watch">
+    <video id="v" controls playsinline preload="auto"></video>
+    <div id="bar"><div id="head"></div></div>
+    <div id="said" class="dim"></div>
+    <div class="dim" id="legend">Grey blocks are shots (orange = you changed it). Blue ticks are quick zooms and blue bars are held zooms. Green lines are your notes. Tap the bar to jump.</div>
+  </div>
+
+  <div class="card">
+    <h2 id="shotTitle"></h2>
+    <div class="views">
+      <div id="master"><img id="mimg" alt=""><div id="face"></div><div id="box"></div></div>
+      <div id="prev"><img id="pimg" alt=""></div>
+    </div>
+    <div class="dim" style="margin-top:6px">Left: the whole camera frame; the orange box is what the video shows. Drag it to move it. Right: the result.</div>
+    <div class="zoomline">
+      <button id="wider" style="flex:1">− Wider</button>
+      <div style="text-align:center;flex:1"><b id="zoomv"></b><div class="dim">1.00× = widest</div></div>
+      <button id="tighter" style="flex:1">Tighter +</button>
+    </div>
+    <div class="grid">
+      <button id="left">←</button><button id="up">↑</button><button id="down">↓</button><button id="right">→</button>
+      <button id="reset" class="wide">Reset shot</button><button id="all" class="wide">This zoom on all shots</button>
+      <button id="prevShot" class="wide">‹ Previous shot</button><button id="nextShot" class="wide">Next shot ›</button>
+    </div>
+  </div>
+
+  <div class="card" id="fx">
+    <h2>Zoom effects</h2>
+    <div class="row"><div class="what">Slow push-in during every shot</div>
+      <div class="step"><button class="small" id="pushDown">−</button><b id="pushv"></b><button class="small" id="pushUp">+</button></div></div>
+    <div id="fxList"></div>
+    <div class="dim" id="fxNone"></div>
+  </div>
+
+  <div class="card">
+    <h2>Notes</h2>
+    <textarea id="note" placeholder="What is wrong here? e.g. the sticker covers my face, cut this sentence, too loud…"></textarea>
+    <div class="grid" style="grid-template-columns:1fr"><button id="addNote">Add note at <span id="noteAt"></span></button></div>
+    <div id="notes"></div>
+  </div>
+</main>
+<footer>
+  <div class="dim" id="outHelp">Copy this and paste it in the chat.</div>
+  <div id="out"></div>
+  <div class="grid"><button id="copy" class="main">Copy</button></div>
+</footer>
+<script type="application/json" id="data">{{DATA}}</script>
+<script>
+(function () {
+  const D = JSON.parse(document.getElementById("data").textContent);
+  const $ = id => document.getElementById(id);
+  const r2 = x => Math.round(x * 100) / 100, r3 = x => Math.round(x * 1000) / 1000;
+  const clamp = (v, lo, hi) => Math.min(Math.max(v, lo), hi);
+  const fmt = t => `${Math.floor(t / 60)}:${(t % 60).toFixed(1).padStart(4, "0")}`;
+  const S = D.shots.map(s => ({ zoom: s.zoom, dx: s.dx, dy: s.dy }));
+  const dropped = new Set();
+  const held = Object.fromEntries(D.zooms.map(z => [z.word, z.scale]));
+  let push = D.push, cur = 0;
+  const notes = [];
+  const v = $("v");
+
+  // F5's fill_crop (create/footage/reframe.py), so the box here is the crop the render will use.
+  function crop(s, zoom, dx, dy) {
+    const a = D.out_w / D.out_h;
+    let w, h;
+    if (s.src_w / s.src_h > a) { h = s.src_h; w = h * a; } else { w = s.src_w; h = w / a; }
+    w /= zoom; h /= zoom;
+    let cx, top;
+    if (!s.face) { cx = s.src_w / 2; top = (s.src_h - h) / 2; }
+    else { cx = s.face[0] + s.face[2] / 2; top = s.face[1] + D.eyes_in_face * s.face[3] - D.eye_line * h; }
+    cx += dx * w; top += dy * h;
+    const cw = Math.round(w), ch = Math.round(h);
+    return { x: Math.round(clamp(cx - cw / 2, 0, s.src_w - cw)), y: Math.round(clamp(top, 0, s.src_h - ch)), w: cw, h: ch };
+  }
+  // Keep the shift where the crop really is (a box held at the edge stops moving, it does not wind up).
+  function settle(k) {
+    const s = D.shots[k], e = S[k], c = crop(s, e.zoom, e.dx, e.dy), base = crop(s, e.zoom, 0, 0);
+    const bx = s.face ? s.face[0] + s.face[2] / 2 : s.src_w / 2;
+    const bt = s.face ? s.face[1] + D.eyes_in_face * s.face[3] - D.eye_line * c.h : (s.src_h - c.h) / 2;
+    const free = (lo, hi, v) => v > lo && v < hi;
+    if (!free(0, s.src_w - c.w, c.x)) e.dx = (c.x + c.w / 2 - bx) / c.w;
+    if (!free(0, s.src_h - c.h, c.y)) e.dy = (c.y - bt) / c.h;
+    e.dx = clamp(e.dx, -1, 1); e.dy = clamp(e.dy, -1, 1);
+    return base;
+  }
+  const changed = k => Math.abs(S[k].zoom - D.shots[k].zoom) > 1e-6 ||
+    Math.abs(S[k].dx - D.shots[k].dx) > 1e-4 || Math.abs(S[k].dy - D.shots[k].dy) > 1e-4;
+  const shotAt = t => { for (let k = 0; k < D.shots.length; k++) if (t < D.shots[k].t1) return k; return D.shots.length - 1; };
+
+  // The video and its bar.
+  if (D.video) { v.src = D.video; } else { v.remove(); $("legend").textContent = "No video on this page (too big): use the shot list below. " + $("legend").textContent; }
+  const bar = $("bar");
+  const pct = t => (100 * t / D.duration) + "%";
+  D.shots.forEach((s, k) => {
+    const d = document.createElement("div");
+    d.className = "shot" + (k % 2 ? " alt" : ""); d.style.left = pct(s.t0); d.style.width = pct(s.t1 - s.t0);
+    d.dataset.k = k; bar.appendChild(d);
+  });
+  D.punches.forEach(p => { const d = document.createElement("div"); d.className = "tick"; d.style.left = pct(p.t0); d.dataset.w = p.word; bar.appendChild(d); });
+  D.zooms.forEach(z => { const d = document.createElement("div"); d.className = "held"; d.style.left = pct(z.t0); d.style.width = pct(z.t1 - z.t0); d.dataset.w = z.word; bar.appendChild(d); });
+  function seekFromBar(e) {
+    const r = bar.getBoundingClientRect(), t = clamp((e.clientX - r.left) / r.width, 0, 0.9999) * D.duration;
+    if (D.video) v.currentTime = t;
+    select(shotAt(t), false);
+  }
+  bar.addEventListener("pointerdown", seekFromBar);
+  const now = () => D.video ? v.currentTime : D.shots[cur].t0;
+  function said(t) {
+    const ws = D.words.filter(w => w[1] >= t - 2 && w[1] <= t + 3);
+    $("said").textContent = ws.length ? "“" + ws.map(w => w[2]).join(" ") + "”" : "";
+  }
+  v.addEventListener("timeupdate", () => {
+    $("head").style.left = pct(v.currentTime); said(v.currentTime); $("noteAt").textContent = fmt(v.currentTime);
+    const k = shotAt(v.currentTime); if (k !== cur) select(k, false);
+  });
+
+  // The shot editor.
+  const mimg = $("mimg"), pimg = $("pimg");
+  function select(k, seek) {
+    cur = k; const s = D.shots[k];
+    if (mimg.dataset.k !== String(k)) { mimg.src = s.still; pimg.src = s.still; mimg.dataset.k = k; }
+    if (seek && D.video) v.currentTime = s.t0 + 0.05;
+    if (!D.video || seek) { said(s.t0); $("noteAt").textContent = fmt(s.t0); }
+    else { said(v.currentTime); $("noteAt").textContent = fmt(v.currentTime); }
+    draw();
+  }
+  function draw() {
+    const s = D.shots[cur], e = S[cur], c = crop(s, e.zoom, e.dx, e.dy);
+    $("shotTitle").textContent = `Shot ${cur + 1} of ${D.shots.length} · ${fmt(s.t0)}–${fmt(s.t1)}` + (changed(cur) ? " · changed" : "");
+    $("zoomv").textContent = e.zoom.toFixed(2) + "×";
+    const box = $("box"), mh = mimg.clientHeight || 1;
+    box.style.left = (100 * c.x / s.src_w) + "%"; box.style.top = (100 * c.y / s.src_h) + "%";
+    box.style.width = (100 * c.w / s.src_w) + "%"; box.style.height = (100 * c.h / s.src_h) + "%";
+    const f = $("face");
+    if (s.face) { f.style.display = ""; f.style.left = (100 * s.face[0] / s.src_w) + "%"; f.style.top = (100 * s.face[1] / s.src_h) + "%";
+      f.style.width = (100 * s.face[2] / s.src_w) + "%"; f.style.height = (100 * s.face[3] / s.src_h) + "%"; } else f.style.display = "none";
+    const pv = $("prev"), ph = Math.max(200, mh), pw = ph * D.out_w / D.out_h;  // as tall as the camera frame
+    pv.style.height = ph + "px"; pv.style.width = pw + "px";
+    const k = pw / c.w;
+    pimg.style.width = (s.src_w * k) + "px"; pimg.style.left = (-c.x * k) + "px"; pimg.style.top = (-c.y * k) + "px";
+    bar.querySelectorAll(".shot").forEach(d => { const j = +d.dataset.k; d.classList.toggle("on", j === cur); d.classList.toggle("changed", changed(j)); });
+    fxList(); output();
+  }
+  function zoomBy(dz) { const e = S[cur]; e.zoom = r2(clamp(e.zoom + dz, 1, D.max_zoom)); settle(cur); draw(); }
+  function nudge(ax, sign) { const e = S[cur]; e[ax] = r3(e[ax] + sign * D.nudge); settle(cur); draw(); }
+  $("wider").onclick = () => zoomBy(-D.zoom_step); $("tighter").onclick = () => zoomBy(D.zoom_step);
+  $("left").onclick = () => nudge("dx", -1); $("right").onclick = () => nudge("dx", 1);
+  $("up").onclick = () => nudge("dy", -1); $("down").onclick = () => nudge("dy", 1);
+  $("reset").onclick = () => { Object.assign(S[cur], { zoom: D.shots[cur].zoom, dx: D.shots[cur].dx, dy: D.shots[cur].dy }); draw(); };
+  $("all").onclick = () => { S.forEach((e, k) => { e.zoom = S[cur].zoom; settle(k); }); draw(); };
+  $("prevShot").onclick = () => select(Math.max(0, cur - 1), true);
+  $("nextShot").onclick = () => select(Math.min(D.shots.length - 1, cur + 1), true);
+  let drag = null;
+  $("master").addEventListener("pointerdown", e => { drag = { x: e.clientX, y: e.clientY }; e.target.setPointerCapture && e.target.setPointerCapture(e.pointerId); });
+  window.addEventListener("pointermove", e => {
+    if (!drag) return;
+    const s = D.shots[cur], st = S[cur], c = crop(s, st.zoom, st.dx, st.dy);
+    const k = s.src_w / (mimg.clientWidth || 1);  // master px per screen px
+    st.dx = r3(st.dx + (e.clientX - drag.x) * k / c.w); st.dy = r3(st.dy + (e.clientY - drag.y) * k / c.h);
+    drag = { x: e.clientX, y: e.clientY }; settle(cur); draw();
+  });
+  window.addEventListener("pointerup", () => (drag = null));
+  window.addEventListener("resize", draw);
+  mimg.addEventListener("load", draw);
+
+  // Zoom effects of the plan (create reel): the push-in, quick zooms and held zooms near this shot.
+  function fxList() {
+    $("pushv").textContent = push.toFixed(2) + "×";
+    const s = D.shots[cur], near = x => x.t1 >= s.t0 - 0.01 && x.t0 <= s.t1 + 0.01;
+    const list = $("fxList"); list.innerHTML = "";
+    const items = D.punches.filter(near).map(p => ({ kind: "p", ...p })).concat(D.zooms.filter(near).map(z => ({ kind: "z", ...z })));
+    $("fxNone").textContent = items.length ? "" : (D.punches.length || D.zooms.length ? "No zoom effects in this shot." : "This version has no quick or held zooms.");
+    items.forEach(x => {
+      const row = document.createElement("div"); row.className = "row";
+      const what = document.createElement("div"); what.className = "what"; row.appendChild(what);
+      const step = document.createElement("div"); step.className = "step"; row.appendChild(step);
+      const btn = (label, fn) => { const b = document.createElement("button"); b.className = "small"; b.textContent = label; b.onclick = fn; step.appendChild(b); return b; };
+      if (x.kind === "p") {
+        const gone = dropped.has(x.word); row.classList.toggle("gone", gone);
+        what.textContent = `${fmt(x.t0)} quick zoom on “${x.text}” (${D.punch_scale.toFixed(2)}×)`;
+        btn(gone ? "Keep" : "Remove", () => { gone ? dropped.delete(x.word) : dropped.add(x.word); draw(); });
+      } else {
+        const sc = held[x.word], gone = sc <= 1; row.classList.toggle("gone", gone);
+        what.textContent = `${fmt(x.t0)}–${fmt(x.t1)} held zoom from “${x.text}” (${gone ? "removed" : sc.toFixed(2) + "×"})`;
+        btn("−", () => { held[x.word] = r2(clamp(sc - D.zoom_step, 1, 2)); draw(); });
+        btn("+", () => { held[x.word] = r2(clamp(Math.max(sc, 1) + D.zoom_step, 1, 2)); draw(); });
+        btn(gone ? "Keep" : "Remove", () => { held[x.word] = gone ? x.scale : 1; draw(); });
+      }
+      list.appendChild(row);
+    });
+    bar.querySelectorAll(".tick").forEach(d => d.classList.toggle("gone", dropped.has(+d.dataset.w)));
+    bar.querySelectorAll(".held").forEach(d => (d.style.opacity = held[+d.dataset.w] <= 1 ? 0.15 : 0.8));
+  }
+  $("pushDown").onclick = () => { push = r2(clamp(push - 0.01, 1, 1.15)); draw(); };
+  $("pushUp").onclick = () => { push = r2(clamp(push + 0.01, 1, 1.15)); draw(); };
+
+  // Notes pinned to a time.
+  function drawNotes() {
+    const box = $("notes"); box.innerHTML = "";
+    bar.querySelectorAll(".pin").forEach(p => p.remove());
+    notes.forEach((n, i) => {
+      const row = document.createElement("div"); row.className = "row";
+      const what = document.createElement("div"); what.className = "what"; what.textContent = `${fmt(n.t)} ${n.text}`;
+      what.onclick = () => { if (D.video) v.currentTime = n.t; select(shotAt(n.t), false); };
+      const b = document.createElement("button"); b.className = "small"; b.textContent = "Delete";
+      b.onclick = () => { notes.splice(i, 1); drawNotes(); output(); };
+      row.appendChild(what); row.appendChild(b); box.appendChild(row);
+      const p = document.createElement("div"); p.className = "pin"; p.style.left = pct(n.t); bar.appendChild(p);
+    });
+  }
+  $("addNote").onclick = () => {
+    const text = $("note").value.trim(); if (!text) return;
+    notes.push({ t: Math.round(now() * 10) / 10, text }); notes.sort((a, b) => a.t - b.t);
+    $("note").value = ""; drawNotes(); output();
+  };
+
+  // The answer: only what changed, as values.
+  function answer() {
+    const out = { edits: D.project, plan: D.plan };
+    const shots = D.shots.map((s, k) => [s, k]).filter(([, k]) => changed(k))
+      .map(([s, k]) => ({ take: s.take, src_in: s.src_in, zoom: r2(S[k].zoom), dx: r3(S[k].dx), dy: r3(S[k].dy) }));
+    if (shots.length) out.shots = shots;
+    if (Math.abs(push - D.push) > 1e-6) out.push = push;
+    if (dropped.size) out.drop_punches = [...dropped].sort((a, b) => a - b);
+    const zs = D.zooms.filter(z => Math.abs(held[z.word] - z.scale) > 1e-6).map(z => ({ word: z.word, scale: r2(Math.max(1, held[z.word])) }));
+    if (zs.length) out.zooms = zs;
+    if (notes.length) out.notes = notes;
+    return out;
+  }
+  function output() {
+    const a = answer(), n = Object.keys(a).length - 2;
+    const sh = (a.shots || []).length;
+    $("sum").textContent = `${D.shots.length} shots · ${fmt(D.duration)} · ` +
+      (n ? `${sh} shot${sh === 1 ? "" : "s"} changed, ${notes.length} note${notes.length === 1 ? "" : "s"}` : "no changes yet");
+    $("out").textContent = n ? JSON.stringify(a) : "Nothing changed yet.";
+  }
+  $("copy").onclick = function () {
+    const t = $("out").textContent;
+    (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(
+      () => { this.textContent = "Copied"; setTimeout(() => (this.textContent = "Copy"), 1500); },
+      () => { const r = document.createRange(); r.selectNode($("out")); getSelection().removeAllRanges(); getSelection().addRange(r); });
+  };
+  select(0, false); drawNotes();
+})();
+</script>
+</body></html>

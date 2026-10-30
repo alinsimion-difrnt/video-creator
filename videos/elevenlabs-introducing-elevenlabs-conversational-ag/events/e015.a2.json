@@ -1,0 +1,26 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a2_annotate_event",
+  "annotator": "claude-code",
+  "skill": "annotate-event@3dad117bd85a",
+  "model": null,
+  "input_hash": "f009d5ee38891e2acec1ce91f0f3a18323d99e901b18cee85150418ad1b03f54",
+  "created_at": "2026-10-05T06:44:43.558415Z"
+ },
+ "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+ "event": "e015",
+ "task": "a2-e015",
+ "elements": [
+  {"box": "b01", "manual_box": null, "manual_reason": null, "label": "Voice orb moving to centre and growing", "role": "avatar", "role_other": null, "change_types": ["slide_left", "scale_up"], "change_other": null, "is_text": false, "text": null, "text_unit": null, "estimates": {"duration_ms": 450, "easing_class": "ease_in_out"}},
+  {"box": "b02", "manual_box": null, "manual_reason": null, "label": "Cursor exiting downward", "role": "cursor", "role_other": null, "change_types": ["slide_down", "fade"], "change_other": null, "is_text": false, "text": null, "text_unit": null, "estimates": {"duration_ms": 300, "easing_class": "ease_in"}},
+  {"box": null, "manual_box": [400, 150, 610, 480], "manual_reason": "Picker pill has left the end frame (hidden behind/under the orb), so no candidate box covers it; box marks where it was in the start frame.", "label": "Voice picker pill (selected JESSICA)", "role": "ui_panel", "role_other": null, "change_types": ["slide_left", "scale_down", "fade"], "change_other": null, "is_text": true, "text": "JESSICA", "text_unit": "whole", "estimates": {"duration_ms": 400, "easing_class": "ease_in_out"}},
+  {"box": null, "manual_box": [0, 240, 1000, 440], "manual_reason": "Unselected voice-name list fades out completely, so no end-frame candidate exists; box marks its start-frame column.", "label": "Unselected voice-name list", "role": "list_item", "role_other": null, "change_types": ["fade"], "change_other": null, "is_text": true, "text": "BELMA ADELINE MANAV SAANU SULLY DOGA", "text_unit": "whole", "estimates": {"duration_ms": 200, "easing_class": "ease_out"}}
+ ],
+ "sfx_review": [],
+ "pattern": {"id": "layout_reframe", "proposed_name": null, "description": "After the voice is chosen, the picker UI recedes (list fades, pill slides behind) while the selected voice's orb glides to frame centre and scales up to become the hero, and the cursor drops out of frame.", "why_premium": "The selection hands off into the next beat without a cut: the chosen voice literally becomes the subject, keeping visual continuity and focus on 'perfect for your application'."},
+ "build_hint": {"gsap": "tl.to('.voice-list', {autoAlpha: 0, duration: 0.2, ease: 'power1.out'}); tl.to('.cursor', {y: 120, autoAlpha: 0, duration: 0.3, ease: 'power2.in'}, '<'); tl.to('.picker-pill', {x: 160, scale: 0.8, autoAlpha: 0, duration: 0.4, ease: 'power3.inOut'}, '<0.05'); tl.to('.orb', {x: 0, scale: 1.5, duration: 0.45, ease: 'power3.inOut'}, '<'); background tint fades to white in parallel.", "remotion": "const p = spring({frame: frame - start, fps, config: {damping: 200, stiffness: 140}}); orb translateX = interpolate(p, [0,1], [startX, 0]), scale = interpolate(p, [0,1], [1, 1.5]); list opacity = interpolate(frame, [start, start+6], [1, 0]); pill opacity/scale from the same p; cursor translateY with Easing.in(Easing.quad)."},
+ "confidence": "medium",
+ "notes": "Only two candidate boxes; picker pill and name list required manual boxes because they are gone in the end frame. Orb role set to avatar (voice visualiser) rather than logo."
+}

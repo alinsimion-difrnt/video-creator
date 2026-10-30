@@ -1,0 +1,1417 @@
+{
+  "$defs": {
+    "Annotator": {
+      "enum": [
+        "code",
+        "claude-code",
+        "human"
+      ],
+      "title": "Annotator",
+      "type": "string"
+    },
+    "Beat": {
+      "additionalProperties": false,
+      "properties": {
+        "beat": {
+          "title": "Beat",
+          "type": "string"
+        },
+        "shots": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Shots",
+          "type": "array"
+        },
+        "words": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Words"
+        }
+      },
+      "required": [
+        "beat",
+        "shots"
+      ],
+      "title": "Beat",
+      "type": "object"
+    },
+    "BuildHint": {
+      "additionalProperties": false,
+      "properties": {
+        "gsap": {
+          "minLength": 1,
+          "title": "Gsap",
+          "type": "string"
+        },
+        "remotion": {
+          "minLength": 1,
+          "title": "Remotion",
+          "type": "string"
+        }
+      },
+      "required": [
+        "gsap",
+        "remotion"
+      ],
+      "title": "BuildHint",
+      "type": "object"
+    },
+    "Check": {
+      "additionalProperties": false,
+      "properties": {
+        "detail": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Detail"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "ok": {
+          "title": "Ok",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "name",
+        "ok"
+      ],
+      "title": "Check",
+      "type": "object"
+    },
+    "Coverage": {
+      "additionalProperties": false,
+      "properties": {
+        "annotated": {
+          "minimum": 0,
+          "title": "Annotated",
+          "type": "integer"
+        },
+        "elements": {
+          "minimum": 0,
+          "title": "Elements",
+          "type": "integer"
+        },
+        "estimated": {
+          "minimum": 0,
+          "title": "Estimated",
+          "type": "integer"
+        },
+        "events": {
+          "minimum": 0,
+          "title": "Events",
+          "type": "integer"
+        },
+        "measured": {
+          "minimum": 0,
+          "title": "Measured",
+          "type": "integer"
+        },
+        "pending": {
+          "minimum": 0,
+          "title": "Pending",
+          "type": "integer"
+        },
+        "propagated": {
+          "minimum": 0,
+          "title": "Propagated",
+          "type": "integer"
+        },
+        "skipped": {
+          "minimum": 0,
+          "title": "Skipped",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "events",
+        "annotated",
+        "propagated",
+        "skipped",
+        "pending",
+        "elements",
+        "measured",
+        "estimated"
+      ],
+      "title": "Coverage",
+      "type": "object"
+    },
+    "Cta": {
+      "additionalProperties": false,
+      "properties": {
+        "shots": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Shots",
+          "type": "array"
+        },
+        "text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Text"
+        }
+      },
+      "required": [
+        "text",
+        "shots"
+      ],
+      "title": "Cta",
+      "type": "object"
+    },
+    "ElementTiming": {
+      "additionalProperties": false,
+      "properties": {
+        "bezier": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Bezier"
+        },
+        "changes": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Changes",
+          "type": "array"
+        },
+        "channels": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Channels",
+          "type": "array"
+        },
+        "duration_ms": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Duration Ms"
+        },
+        "ease": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ease"
+        },
+        "easing_class": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Easing Class"
+        },
+        "overshoot_pct": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Overshoot Pct"
+        },
+        "quality": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Quality"
+        },
+        "source": {
+          "$ref": "#/$defs/ValueSource"
+        },
+        "spring": {
+          "anyOf": [
+            {
+              "additionalProperties": {
+                "type": "number"
+              },
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Spring"
+        },
+        "stagger_ms": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Stagger Ms"
+        },
+        "stagger_unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Stagger Unit"
+        },
+        "start_s": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Start S"
+        }
+      },
+      "required": [
+        "source"
+      ],
+      "title": "ElementTiming",
+      "type": "object"
+    },
+    "Hook": {
+      "additionalProperties": false,
+      "properties": {
+        "shots": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Shots",
+          "type": "array"
+        },
+        "technique": {
+          "title": "Technique",
+          "type": "string"
+        },
+        "technique_other": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Technique Other"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "words": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Words"
+        }
+      },
+      "required": [
+        "text",
+        "technique",
+        "shots"
+      ],
+      "title": "Hook",
+      "type": "object"
+    },
+    "Localization": {
+      "additionalProperties": false,
+      "properties": {
+        "baked_in_text": {
+          "title": "Baked In Text",
+          "type": "boolean"
+        },
+        "notes": {
+          "title": "Notes",
+          "type": "string"
+        },
+        "score": {
+          "maximum": 5,
+          "minimum": 1,
+          "title": "Score",
+          "type": "integer"
+        },
+        "vo_dependent": {
+          "title": "Vo Dependent",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "score",
+        "baked_in_text",
+        "vo_dependent",
+        "notes"
+      ],
+      "title": "Localization",
+      "type": "object"
+    },
+    "Pattern": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "proposed_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Proposed Name"
+        },
+        "why_premium": {
+          "minLength": 1,
+          "title": "Why Premium",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "description",
+        "why_premium"
+      ],
+      "title": "Pattern",
+      "type": "object"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "description": "Carried by every output JSON (BUILD_PLAN section 2.7).",
+      "properties": {
+        "annotator": {
+          "$ref": "#/$defs/Annotator"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "input_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Input Hash",
+          "type": "string"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "schema_version": {
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "skill": {
+          "anyOf": [
+            {
+              "pattern": "^[a-z0-9-]+@[0-9a-f]{8,64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Skill"
+        },
+        "stage": {
+          "title": "Stage",
+          "type": "string"
+        },
+        "tool_version": {
+          "title": "Tool Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool_version",
+        "stage",
+        "annotator",
+        "input_hash",
+        "created_at"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "RecordElement": {
+      "additionalProperties": false,
+      "properties": {
+        "box": {
+          "anyOf": [
+            {
+              "maxItems": 4,
+              "minItems": 4,
+              "prefixItems": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Box"
+        },
+        "box_source": {
+          "enum": [
+            "candidate",
+            "manual"
+          ],
+          "title": "Box Source",
+          "type": "string"
+        },
+        "change_other": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Change Other"
+        },
+        "change_types": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Change Types",
+          "type": "array"
+        },
+        "id": {
+          "pattern": "^[bm]\\d{2}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "is_text": {
+          "title": "Is Text",
+          "type": "boolean"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "role": {
+          "title": "Role",
+          "type": "string"
+        },
+        "role_other": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Role Other"
+        },
+        "sfx_offset_ms": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Sfx Offset Ms",
+          "type": "object"
+        },
+        "text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Text"
+        },
+        "text_unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Text Unit"
+        },
+        "timing": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ElementTiming"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "box",
+        "box_source",
+        "label",
+        "role",
+        "role_other",
+        "change_types",
+        "change_other",
+        "is_text",
+        "text",
+        "text_unit",
+        "timing"
+      ],
+      "title": "RecordElement",
+      "type": "object"
+    },
+    "RecordEvent": {
+      "additionalProperties": false,
+      "properties": {
+        "build_hint": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/BuildHint"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "camera_move": {
+          "title": "Camera Move",
+          "type": "string"
+        },
+        "confidence": {
+          "anyOf": [
+            {
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Confidence"
+        },
+        "elements": {
+          "items": {
+            "$ref": "#/$defs/RecordElement"
+          },
+          "title": "Elements",
+          "type": "array"
+        },
+        "end_s": {
+          "title": "End S",
+          "type": "number"
+        },
+        "id": {
+          "pattern": "^e\\d{3,}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "title": "Kind",
+          "type": "string"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        },
+        "of": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Of"
+        },
+        "pattern": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Pattern"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "sfx": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Sfx",
+          "type": "array"
+        },
+        "shot": {
+          "title": "Shot",
+          "type": "string"
+        },
+        "skip_reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Skip Reason"
+        },
+        "start_s": {
+          "title": "Start S",
+          "type": "number"
+        },
+        "status": {
+          "enum": [
+            "annotated",
+            "propagated",
+            "skipped",
+            "pending"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "shot",
+        "kind",
+        "start_s",
+        "end_s",
+        "camera_move",
+        "status"
+      ],
+      "title": "RecordEvent",
+      "type": "object"
+    },
+    "RecordSfx": {
+      "additionalProperties": false,
+      "properties": {
+        "clap_label": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Clap Label"
+        },
+        "clap_score": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Clap Score"
+        },
+        "classifier_label": {
+          "title": "Classifier Label",
+          "type": "string"
+        },
+        "events": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Events",
+          "type": "array"
+        },
+        "id": {
+          "pattern": "^x\\d{3,}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "label_source": {
+          "enum": [
+            "claude",
+            "code"
+          ],
+          "title": "Label Source",
+          "type": "string"
+        },
+        "on_beat": {
+          "title": "On Beat",
+          "type": "boolean"
+        },
+        "reveal_offset_ms": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Reveal Offset Ms"
+        },
+        "sync_s": {
+          "title": "Sync S",
+          "type": "number"
+        },
+        "verdict": {
+          "anyOf": [
+            {
+              "enum": [
+                "confirm",
+                "override",
+                "unsure"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Verdict"
+        }
+      },
+      "required": [
+        "id",
+        "sync_s",
+        "classifier_label",
+        "clap_label",
+        "clap_score",
+        "label",
+        "label_source",
+        "verdict",
+        "events",
+        "on_beat",
+        "reveal_offset_ms"
+      ],
+      "title": "RecordSfx",
+      "type": "object"
+    },
+    "RecordShot": {
+      "additionalProperties": false,
+      "properties": {
+        "annotation": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Shot"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "end_s": {
+          "exclusiveMinimum": 0,
+          "title": "End S",
+          "type": "number"
+        },
+        "id": {
+          "pattern": "^s\\d{3,}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "motion_energy": {
+          "minimum": 0,
+          "title": "Motion Energy",
+          "type": "number"
+        },
+        "start_s": {
+          "minimum": 0,
+          "title": "Start S",
+          "type": "number"
+        },
+        "transition_in": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Transition In"
+        },
+        "wpm": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Wpm"
+        }
+      },
+      "required": [
+        "id",
+        "start_s",
+        "end_s",
+        "transition_in",
+        "motion_energy",
+        "wpm",
+        "annotation"
+      ],
+      "title": "RecordShot",
+      "type": "object"
+    },
+    "Score": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence": {
+          "minLength": 1,
+          "title": "Evidence",
+          "type": "string"
+        },
+        "refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Refs",
+          "type": "array"
+        },
+        "score": {
+          "anyOf": [
+            {
+              "maximum": 5,
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Score"
+        }
+      },
+      "required": [
+        "score",
+        "evidence"
+      ],
+      "title": "Score",
+      "type": "object"
+    },
+    "Scores": {
+      "additionalProperties": false,
+      "properties": {
+        "brand_consistency": {
+          "$ref": "#/$defs/Score"
+        },
+        "clarity": {
+          "$ref": "#/$defs/Score"
+        },
+        "hook": {
+          "$ref": "#/$defs/Score"
+        },
+        "motion_polish": {
+          "$ref": "#/$defs/Score"
+        },
+        "overall": {
+          "$ref": "#/$defs/Score"
+        },
+        "sound_design": {
+          "$ref": "#/$defs/Score"
+        },
+        "ui_showcase": {
+          "$ref": "#/$defs/Score"
+        },
+        "vo_script_quality": {
+          "$ref": "#/$defs/Score"
+        },
+        "works_muted": {
+          "$ref": "#/$defs/Score"
+        }
+      },
+      "required": [
+        "hook",
+        "clarity",
+        "ui_showcase",
+        "motion_polish",
+        "sound_design",
+        "vo_script_quality",
+        "brand_consistency",
+        "works_muted",
+        "overall"
+      ],
+      "title": "Scores",
+      "type": "object"
+    },
+    "Shot": {
+      "additionalProperties": false,
+      "properties": {
+        "build_rebuild": {
+          "minLength": 1,
+          "title": "Build Rebuild",
+          "type": "string"
+        },
+        "composition": {
+          "title": "Composition",
+          "type": "string"
+        },
+        "composition_other": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Composition Other"
+        },
+        "confidence": {
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ],
+          "title": "Confidence",
+          "type": "string"
+        },
+        "depth_cues": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Depth Cues",
+          "type": "array"
+        },
+        "focal_element": {
+          "minLength": 1,
+          "title": "Focal Element",
+          "type": "string"
+        },
+        "on_screen_text": {
+          "items": {
+            "type": "string"
+          },
+          "title": "On Screen Text",
+          "type": "array"
+        },
+        "shot": {
+          "pattern": "^s\\d{3,}$",
+          "title": "Shot",
+          "type": "string"
+        },
+        "shot_type": {
+          "title": "Shot Type",
+          "type": "string"
+        },
+        "shot_type_other": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Shot Type Other"
+        },
+        "text_word_count": {
+          "minimum": 0,
+          "title": "Text Word Count",
+          "type": "integer"
+        },
+        "transition_in": {
+          "title": "Transition In",
+          "type": "string"
+        },
+        "transition_other": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Transition Other"
+        },
+        "typography": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Typography"
+        },
+        "what_happens": {
+          "minLength": 1,
+          "title": "What Happens",
+          "type": "string"
+        }
+      },
+      "required": [
+        "shot",
+        "shot_type",
+        "composition",
+        "focal_element",
+        "transition_in",
+        "on_screen_text",
+        "text_word_count",
+        "typography",
+        "depth_cues",
+        "what_happens",
+        "build_rebuild",
+        "confidence"
+      ],
+      "title": "Shot",
+      "type": "object"
+    },
+    "SignatureMoment": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "shots": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Shots",
+          "type": "array"
+        },
+        "why_premium": {
+          "minLength": 1,
+          "title": "Why Premium",
+          "type": "string"
+        }
+      },
+      "required": [
+        "shots",
+        "description",
+        "why_premium"
+      ],
+      "title": "SignatureMoment",
+      "type": "object"
+    },
+    "ValueSource": {
+      "enum": [
+        "measured",
+        "model_estimate",
+        "human"
+      ],
+      "title": "ValueSource",
+      "type": "string"
+    },
+    "VideoSummary": {
+      "additionalProperties": false,
+      "description": "Per-video judgement; written by the last A1 part (it reads the earlier parts).",
+      "properties": {
+        "beats": {
+          "items": {
+            "$ref": "#/$defs/Beat"
+          },
+          "minItems": 1,
+          "title": "Beats",
+          "type": "array"
+        },
+        "cta": {
+          "$ref": "#/$defs/Cta"
+        },
+        "hook": {
+          "$ref": "#/$defs/Hook"
+        },
+        "localization_friendliness": {
+          "$ref": "#/$defs/Localization"
+        },
+        "scores": {
+          "$ref": "#/$defs/Scores"
+        },
+        "signature_moments": {
+          "items": {
+            "$ref": "#/$defs/SignatureMoment"
+          },
+          "maxItems": 3,
+          "title": "Signature Moments",
+          "type": "array"
+        },
+        "tone": {
+          "minLength": 1,
+          "title": "Tone",
+          "type": "string"
+        }
+      },
+      "required": [
+        "beats",
+        "hook",
+        "cta",
+        "tone",
+        "signature_moments",
+        "scores",
+        "localization_friendliness"
+      ],
+      "title": "VideoSummary",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "brand": {
+      "title": "Brand",
+      "type": "string"
+    },
+    "checks": {
+      "items": {
+        "$ref": "#/$defs/Check"
+      },
+      "title": "Checks",
+      "type": "array"
+    },
+    "coverage": {
+      "$ref": "#/$defs/Coverage"
+    },
+    "duration_s": {
+      "exclusiveMinimum": 0,
+      "title": "Duration S",
+      "type": "number"
+    },
+    "events": {
+      "items": {
+        "$ref": "#/$defs/RecordEvent"
+      },
+      "title": "Events",
+      "type": "array"
+    },
+    "format": {
+      "title": "Format",
+      "type": "string"
+    },
+    "fps": {
+      "exclusiveMinimum": 0,
+      "title": "Fps",
+      "type": "number"
+    },
+    "frame_size": {
+      "maxItems": 2,
+      "minItems": 2,
+      "prefixItems": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "integer"
+        }
+      ],
+      "title": "Frame Size",
+      "type": "array"
+    },
+    "palette": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Palette",
+      "type": "array"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    },
+    "sfx": {
+      "items": {
+        "$ref": "#/$defs/RecordSfx"
+      },
+      "title": "Sfx",
+      "type": "array"
+    },
+    "shots": {
+      "items": {
+        "$ref": "#/$defs/RecordShot"
+      },
+      "title": "Shots",
+      "type": "array"
+    },
+    "summary": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/VideoSummary"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "tier": {
+      "title": "Tier",
+      "type": "string"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "video": {
+      "title": "Video",
+      "type": "string"
+    }
+  },
+  "required": [
+    "provenance",
+    "video",
+    "brand",
+    "title",
+    "format",
+    "tier",
+    "duration_s",
+    "fps",
+    "frame_size",
+    "palette",
+    "summary",
+    "shots",
+    "events",
+    "sfx",
+    "coverage",
+    "checks"
+  ],
+  "title": "RecordFile",
+  "type": "object"
+}

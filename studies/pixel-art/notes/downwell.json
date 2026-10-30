@@ -1,0 +1,53 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T13:58:29+00:00"
+  },
+  "id": "downwell",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": 3,
+    "shadows": "neutral",
+    "notes": "The frames show three colours: black background, white for the hero, walls and text, red for gems, enemies, the HP bar, blood and hit flashes. The wiki adds blue for water (not visible in these clips) and unlockable palettes that swap the colours."
+  },
+  "lighting": "No modelled light; a black void with white shapes and red as the only emphasis. Red diagonal hatching on some enemies stands in for shading.",
+  "silhouette": "Tiny white hero falling down a narrow shaft; walls are white dithered speckle, enemies are white or red blobs; danger reads because red is reserved for things that hurt or pay out.",
+  "motion": {
+    "timing": "No metrics file. Fast and punchy: the hero falls, shoots downward, enemies burst into red particles, a combo counter and gem counter tick up; gunboots reload on landing (per the wiki), giving a land-reset rhythm. Shop screens are a still interruption.",
+    "principles": [
+      "impact feedback",
+      "snappy timing",
+      "landing reset"
+    ]
+  },
+  "texture": "Dithered white speckle for rock walls; red hatching for enemy fills; everything else is flat black.",
+  "camera": "Vertical scroll down a narrow well in a tall column with black margins and a HUD (HP, ammo, gem count) on top; it already fits 9:16, and trailers put captions above the column.",
+  "sound": "Entering a timevoid stops everything outside it, music included (per the wiki).",
+  "acting": {
+    "enters": "Drops in from the top of the well; the title card has the hero standing on a ledge before the fall.",
+    "acts": "Falls, stomps and shoots downward; between falls he steps into a side-room shop where a shopkeeper sells items (rice ball, sushi heal HP).",
+    "exits": "Falls out through the bottom of the screen into the next section, or leaves the shop back into the shaft.",
+    "comes_back": true,
+    "depth": "Single plane; the vertical scroll and the side-room shop carry all the sense of space."
+  },
+  "techniques": [
+    "three colours: black, white, red emphasis",
+    "red reserved for danger and reward only",
+    "red hatching vs solid red to mark enemy type",
+    "dithered white speckle for walls",
+    "enemies burst into red particles on hit",
+    "narrow vertical playfield with HUD and captions above (native 9:16)",
+    "side-room shop as a still break in the fall"
+  ],
+  "feel": "black + white + one red accent + vertical fall = punchy, readable 9:16 action",
+  "for_fred": "Reserve one accent colour for what matters: keep Fred and Pixie in a restrained palette and use red only for the thing the viewer must notice; drop Fred in from the top of the 9:16 frame, let him fall out the bottom, then pop him into a small side room for a still beat before he drops again.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Downwell_(video_game)",
+    "data/study/pixel/work/downwell/clip2-7465052014767082794.jpg",
+    "data/study/pixel/work/downwell/clip3-7307348725234486574.jpg"
+  ]
+}

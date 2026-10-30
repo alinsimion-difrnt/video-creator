@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "833de862110c058feb6e36e1c0fd2317fe68914cef421b7915ab2f95b7990c21",
+    "created_at": "2026-10-05T06:56:25.340371Z"
+  },
+  "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+  "event": "e021",
+  "task": "a2-e021",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Blank flow canvas panel (framed card)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["morph", "scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 500, "easing_class": "ease_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [243, 131, 268, 173],
+      "manual_reason": "No candidate box isolates the Start node; only the whole-panel diff box b01 exists.",
+      "label": "Start node chip on the canvas",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Start",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 200, "easing_class": "ease_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [722, 602, 775, 628],
+      "manual_reason": "No candidate box covers the cursor; it moves from the bottom edge up and right onto the canvas.",
+      "label": "Mouse cursor",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_right", "slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 500, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "panel expand open",
+    "description": "A thin rounded strip at the top of the frame grows in width and height (aspect-ratio morph, anchored near the top) into a large empty canvas card; once it settles, the Start node fades in and the cursor glides onto the canvas.",
+    "why_premium": "The container itself becomes the transition: the new workspace unfolds from a sliver with a fast-out deceleration (energy peaks on the first frame then decays), so the scene change reads as one continuous object rather than a cut, and content only appears after the frame is stable."
+  },
+  "build_hint": {
+    "gsap": "tl.fromTo('.canvas-card', {width: '38%', height: '9%', y: -40}, {width: '80%', height: '67%', y: 0, duration: 0.5, ease: 'expo.out'}).fromTo('.start-node', {autoAlpha: 0}, {autoAlpha: 1, duration: 0.2, ease: 'power1.out'}, '-=0.1').to('.cursor', {x: 280, y: -40, duration: 0.5, ease: 'power2.inOut'}, '<');",
+    "remotion": "const p = spring({frame, fps, config: {damping: 30, stiffness: 160, mass: 1}}); width = interpolate(p, [0, 1], [38, 80]) + '%', height = interpolate(p, [0, 1], [9, 67]) + '%'; Start node opacity = interpolate(frame, [10, 16], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}); cursor via interpolate with Easing.inOut(Easing.quad)."
+  },
+  "confidence": "medium",
+  "notes": "camera.move is none: the panel changes shape (not a uniform zoom), so this is a container morph, not a camera push. Could alternatively be read as layout_reframe; the earlier shot (e020) shrank the prior window just before this cut."
+}

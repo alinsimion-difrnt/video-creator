@@ -1,0 +1,261 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "1c7496ce08fa2a6d813140e1ff3ba47b3a5dfdc6d15bfa98b28d0f184e27b476",
+    "created_at": "2026-10-05T07:39:47.291928Z"
+  },
+  "video": "figma-introducing-figma-motion-your-canvas-no",
+  "task": "a1-p5",
+  "shots": [
+    {
+      "shot": "s025",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "grid",
+      "composition_other": null,
+      "focal_element": "Bento grid of finance-app tiles: 3x3 icon set, three badge progress cards, a 'Total savings' balance card counting up, a spending bar chart and a 'Cheddar' logo tile",
+      "transition_in": "other",
+      "transition_other": "continuous zoom-out: the s024 icon-grid frame shrinks into the top-left tile of a larger bento grid (no visible cut)",
+      "on_screen_text": [
+        "Finance Nerd",
+        "8 of 10 articles read",
+        "Double Down",
+        "1 of 2 goals this month",
+        "Stack Master",
+        "$194.70 of $500.00 total savings",
+        "Total savings",
+        "$194.70",
+        "Deposit",
+        "Transfer",
+        "Trips",
+        "Entertainment",
+        "Food",
+        "Clothes",
+        "Transfer",
+        "Watchlist",
+        "Wallet",
+        "Cheddar"
+      ],
+      "text_word_count": 35,
+      "typography": "Card labels in a small regular/medium UI sans, sentence and title case, normal tracking; the balance figure in a heavy condensed sans with superscript cents; the logo tile is a bold rounded wordmark partly cropped at the frame edge (reads 'heddar' after a C-shaped mark, inferred as 'Cheddar', low confidence).",
+      "depth_cues": ["none"],
+      "what_happens": "The camera keeps pulling out so the icon grid becomes one tile among many on black: badge cards slide in with their progress bars filling, the 'Total savings' balance rolls digits up from about $20.50 to $194.70 with an odometer-style flip, the spending bar chart grows its coloured bars, and pill buttons (Transfer, Watchlist, Wallet), a 'Cheddar' logo tile and the chrome party-popper tile slide in at the right.",
+      "build_rebuild": "Scale a CSS-grid bento of rounded tiles from 1.6x to 1x on black, stagger each tile's slide-in by ~0.1 s, fill progress bars width 0 to target, run a rolling-digit counter from 20.50 to 194.70 and grow the stacked bar chart segments in sequence over ~1.5 s.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s026",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "A single phone mockup of the 'Cheddar' savings app scrolling from the home screen to the Profile screen",
+      "transition_in": "other",
+      "transition_other": "layout reframe: the bento tiles from s025 collapse and reassemble into one centred phone screen (exact morph not visible at 2 fps)",
+      "on_screen_text": [
+        "Hi, Jamie",
+        "Total savings",
+        "$194.70",
+        "Deposit",
+        "Transfer",
+        "Recent spending",
+        "Trips",
+        "Entertainment",
+        "Food",
+        "Clothes",
+        "Goals",
+        "View all",
+        "Headphones",
+        "$280.00",
+        "$76.50",
+        "$203.50",
+        "Sneakers",
+        "$120.00",
+        "$100.00",
+        "$20.00",
+        "Freshman Trip",
+        "$500.00",
+        "$18.20",
+        "$481.80",
+        "New badge!",
+        "You earned a new badge for meeting one of your savings goals!",
+        "Learn more",
+        "Completed goals",
+        "Skateboard",
+        "$120.00",
+        "Camera",
+        "Profile",
+        "Jamie K.",
+        "Edit",
+        "Share",
+        "Savings Streak",
+        "Badges",
+        "Finance Nerd"
+      ],
+      "text_word_count": 60,
+      "typography": "Mobile app UI in a clean regular/medium sans, sentence case, normal tracking, with tabular currency figures; section headers medium weight; the balance and 'Jamie K.' name in a heavy condensed sans display face (font not identifiable).",
+      "depth_cues": ["shadow"],
+      "what_happens": "The tiles resolve into one phone on black; the balance counts from $20.50 to $194.70 again, the screen scrolls down through Recent spending, Goals progress bars, a 'New badge!' chrome-star card and a horizontally scrolling 'Completed goals' carousel with chrome 3D objects, then a tap ripple on the profile tab in the bottom nav cross-fades to the Profile screen where the 'Jamie K.' card, Savings Streak checkmarks and Badges build in.",
+      "build_rebuild": "Center a 300x650 rounded phone frame on black, tween the inner scroll container translateY through the home screen sections over ~2 s with ease-in-out, slide the carousel row left, then show a circular tap ripple on the nav icon and cross-fade to a profile view whose streak checkmarks pop in with a 50 ms stagger.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s027",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "split",
+      "composition_other": null,
+      "focal_element": "The dark Motion inspector in Code/CSS mode showing generated '@keyframes rotate_1' CSS beside the Profile screen",
+      "transition_in": "other",
+      "transition_other": "reframe from the centred phone to a split view with the Figma inspector panel at the right (not clearly visible at 2 fps)",
+      "on_screen_text": [
+        "Profile",
+        "Jamie K.",
+        "@jamieh",
+        "Edit",
+        "Share",
+        "Savings Streak",
+        "S M T W T F S",
+        "Badges",
+        "Finance Nerd",
+        "8 of 10 articles read",
+        "Double Down",
+        "Motion",
+        "List",
+        "Code",
+        "CSS",
+        "Animation",
+        "Style",
+        "animation: rotate_1 2s;",
+        "Keyframes",
+        "@keyframes rotate_1 { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }",
+        "Copy Keyframes",
+        "Assets"
+      ],
+      "text_word_count": 46,
+      "typography": "Inspector labels in a regular/medium neutral UI sans, title case section headers ('Motion', 'Animation', 'Keyframes'); code in a monospace face with syntax colouring for at-rules, percentages and function values; tooltip in small white sans on dark.",
+      "depth_cues": ["none"],
+      "what_happens": "With the Profile screen on a grey canvas at the left, the Motion panel switches from List to Code with CSS selected; the style line 'animation: rotate_1 2s;' and the keyframes block type in, an oversized arrow cursor hovers the clipboard icon to show a 'Copy Keyframes' tooltip and clicks it, highlighting the code block; the final frame jumps out to a black collage of earlier tiles (image stack, rotation dial, party popper) that leads into s028.",
+      "build_rebuild": "Split the frame 45/55 with a phone screen on grey and a dark inspector card, toggle a segmented List/Code control, reveal the CSS lines with a line-by-line opacity stagger, move an enlarged cursor onto a copy icon, show a dark tooltip and flash a translucent green selection over the code block on click.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s028",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Tagline 'Set your ideas in motion' amid drifting feature tiles, then coloured shapes with selection handles assembling into the Figma logo",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Set your ideas in motion",
+        "M✱SF",
+        "358°"
+      ],
+      "text_word_count": 7,
+      "typography": "Tagline in a regular-weight grotesque sans, sentence case, tight tracking, two centred lines; 'Set' appears alone in white, then the rest builds and 'Set your ideas' turns orange while 'in motion' briefly stays white before all turns orange. Dial readout in a heavy condensed numeral face counting 37° to 358°.",
+      "depth_cues": ["perspective_tilt"],
+      "what_happens": "On black, the tagline builds word by word ('Set' then 'Set your ideas in motion') while recap tiles drift outward toward the edges (icon grid, perspective image stack with the M✱SF chip, a yellow rotation dial counting 37° to 358°, the party-popper tile); then the tiles clear and five coloured shapes with square selection handles (orange, ochre, green, cyan circles and an orange pill) fly together, morph and snap into the Figma logo, which holds on black to the end. One counted event in this shot.",
+      "build_rebuild": "Type a two-line centred sans tagline word by word with a colour tween white to orange, drift four recap tiles outward with slow linear translate, then animate five primitive shapes with corner-handle squares converging along curved paths, morphing border-radius into the Figma logo segments, and hold the logo for ~1 s.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001", "s002", "s003", "s004"], "words": null},
+      {"beat": "demo", "shots": ["s005", "s006", "s007", "s008", "s009", "s010", "s011", "s012"], "words": null},
+      {"beat": "demo", "shots": ["s013", "s014", "s015", "s016", "s017", "s018"], "words": null},
+      {"beat": "demo", "shots": ["s019", "s020", "s021", "s022", "s023", "s024"], "words": null},
+      {"beat": "outcome", "shots": ["s025", "s026"], "words": null},
+      {"beat": "demo", "shots": ["s027"], "words": null},
+      {"beat": "cta", "shots": ["s028"], "words": null}
+    ],
+    "hook": {
+      "text": "A macro flower bloom pulls out to reveal an animated garden site inside the Figma editor with the Motion timeline, then cuts to the 'Figma Motion' title amid animated tiles.",
+      "technique": "demo_first",
+      "technique_other": null,
+      "shots": ["s001", "s002", "s003", "s004"],
+      "words": null
+    },
+    "cta": {
+      "text": "Set your ideas in motion",
+      "shots": ["s028"]
+    },
+    "tone": "Confident, playful, design-forward product launch: no voice-over, music-driven, saturated brand colours and chrome 3D props, showing the feature rather than explaining it.",
+    "signature_moments": [
+      {
+        "shots": ["s009"],
+        "description": "Dragging the bezier handles from linear to ease-out to ease-in-out while the motion-path dots respace live along the toggle track.",
+        "why_premium": "It makes an abstract timing concept visible in one gesture, showing the product's depth while being a beautiful motion graphic in itself."
+      },
+      {
+        "shots": ["s005", "s006", "s010", "s011", "s012"],
+        "description": "A giant pill shape is revealed as a toggle that gets keyframed, eased, flipped to 'Unlocked', then pulled out to its place on a 'Goal Reached' card.",
+        "why_premium": "Continuous scale reveals and colour inversions tell a complete build-to-result story with one object, so viewers follow the workflow without any narration."
+      },
+      {
+        "shots": ["s024", "s025", "s026", "s027"],
+        "description": "Motion tokens re-time an icon grid, which zooms out into a bento of finance tiles, collapses into a working phone app and ends on copyable CSS keyframes.",
+        "why_premium": "Chained zoom-outs connect token, component, screen and code handoff in one unbroken camera move, conveying the end-to-end system scope."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 4,
+        "evidence": "The bloom-to-editor pull-out is striking and immediately shows animation inside Figma; the product name lands at about 7 s, slightly late for feeds, and nothing states a problem.",
+        "refs": ["s002", "s003", "s004"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "Each feature gets its own self-contained vignette (keyframes, easing, animation styles, AI prompt, 3D transform, comments, multiplayer, motion tokens, CSS export) with readable UI labels; but with no narration or captions some features (timeline comment chips, tokens) are understood only by Figma-literate viewers.",
+        "refs": ["s009", "s013", "s016", "s022", "s024", "s027"]
+      },
+      "ui_showcase": {
+        "score": 5,
+        "evidence": "Recreated UI is crisp at close range with oversized cursors guiding attention, real interactions (bezier drag, prompt typing, cube-driven 3D tilt, code copy) and polished sample content across several art-directed demo brands.",
+        "refs": ["s006", "s009", "s016", "s020", "s027"]
+      },
+      "motion_polish": {
+        "score": 5,
+        "evidence": "Continuous scale reveals and zoom-throughs chain shots (s005 to s006, s024 to s026), easing demonstrably matches the product's own curves, counters and staggers are smooth, and the outro morphs shapes into the logo; only the 2 fps sheets limit verification of easing detail.",
+        "refs": ["s003", "s006", "s025", "s028"]
+      },
+      "sound_design": {
+        "score": 4,
+        "evidence": "Judged from anchors plus visuals: a 126 BPM music bed at -13.43 LUFS integrated with 58 SFX candidates (many unsure); confident swoosh_reverse hits land on transitions (x004 in s004, x021 just before s014, x024 at s016, x053 at s027, x057/x058 under the tagline) and chimes accompany UI confirmations. Several cuts sit close to beats. Many candidates are low-confidence, so the exact layering cannot be verified.",
+        "refs": ["s004", "s014", "s016", "s027", "s028"]
+      },
+      "vo_script_quality": {
+        "score": null,
+        "evidence": "No voice-over: the anchors transcript has no words."
+      },
+      "brand_consistency": {
+        "score": 4,
+        "evidence": "Consistent black stage, orange product title and tagline, oversized black cursor, and Figma-UI chrome throughout, closing on the Figma logo; the demo files deliberately switch art direction (garden, purple toggle, museum, event app, finance app), which shows range but loosens the visual system.",
+        "refs": ["s004", "s012", "s021", "s025", "s028"]
+      },
+      "works_muted": {
+        "score": 5,
+        "evidence": "There is no narration; the story is carried entirely by visible UI, on-screen labels, the title and the tagline, so nothing is lost without sound.",
+        "refs": ["s004", "s009", "s016", "s028"]
+      },
+      "overall": {
+        "score": 5,
+        "evidence": "A dense, 68-second feature reel with best-in-class UI recreation and continuous camera choreography that demonstrates motion with motion; the main weaknesses are no stated problem or explicit CTA and reliance on design-literate viewers.",
+        "refs": ["s003", "s009", "s024", "s026", "s028"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 3,
+      "baked_in_text": true,
+      "vo_dependent": false,
+      "notes": "No voice-over, so no dubbing is needed, but the title, tagline and all UI copy (prompt text, comments, app screens, CSS) are baked into the recreated UI and would need re-rendering per locale; the short title and tagline are the only marketing text."
+    }
+  }
+}

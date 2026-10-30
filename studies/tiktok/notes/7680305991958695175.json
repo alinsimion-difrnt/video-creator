@@ -1,0 +1,38 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code",
+                 "input_hash": "526aa5a832f52788f3916a976785c160175ade6c7ea361179c3c6cf776513a99",
+                 "created_at": "2026-10-13T09:30:41Z"},
+  "id": "7680305991958695175",
+  "format": "tutorial_demo",
+  "hook": {"type": "pattern_interrupt",
+           "line": "So you press record, your camera's like this...",
+           "visual": "The phone points straight down at her feet and pale blue coat on a concrete floor, with the top title 'teaching clients how to shoot social first content'."},
+  "beats": [
+    {"t": 0.0, "what": "Camera aimed at her walking feet; title text at the top explains the setting."},
+    {"t": 3.22, "what": "Still walking with the floor view while she explains 'walk, walk, flip, engage'."},
+    {"t": 9.67, "what": "The flip: camera turns to her face, arm-length selfie, walking through an art gallery."},
+    {"t": 12.9, "what": "Demonstrates locking eye contact with the lens while talking about what is behind her."},
+    {"t": 19.35, "what": "Walks past colourful artworks, gesturing; 'your eyes never leave the lens'."},
+    {"t": 25.79, "what": "Teases the reveal: all she sees behind her is cameras."},
+    {"t": 33.07, "what": "Measured motion: the camera starts to swing around."},
+    {"t": 35.47, "what": "Reveal: a room of seated clients filming her with their phones."}
+  ],
+  "graphics": {"captions": "title_only",
+               "caption_position": "top",
+               "devices": ["title_text", "camera_move"],
+               "density": "minimal", "per_minute_estimate": 5},
+  "characters": [],
+  "cta": {"kind": "none", "t": null},
+  "why_it_works": [
+    "The video teaches the walk-and-flip move by doing it: the floor shot then the flip at about 10 s is the lesson itself.",
+    "A promised reveal ('when I show you the back') holds viewers to the end, where the camera swings round to a room of clients filming her.",
+    "One continuous handheld shot (0 cuts) feels unedited and real, which suits a behind-the-scenes 'show and tell'."
+  ],
+  "weaknesses": [
+    "The first ~10 s show only a floor and feet; without the top title the hook gives nothing to look at.",
+    "No spoken captions, and the speech is rambly with fillers, so the lesson is hard to follow muted.",
+    "Silence share 0.266 and the reveal lands in the last 2 s, so viewers who leave early never see the point."
+  ],
+  "for_robert": "Use a promised reveal at the end (tell viewers 'wait till you see who's behind me') and make Fred the reveal; but do not spend the first 10 s on a dead shot."
+}

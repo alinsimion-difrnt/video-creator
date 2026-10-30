@@ -1,0 +1,44 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "fb17601ca0127c78cead0eafa17d77017533b9d0b844e61e02fc4d064bde1ee1",
+    "created_at": "2026-10-05T06:53:46.574895Z"
+  },
+  "video": "servicenow-what-are-servicenow-ai-agents",
+  "event": "e014",
+  "task": "a2-e014",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Hand sliding an espresso cup across the table",
+      "role": "other",
+      "role_other": "live_action_hand_and_prop",
+      "change_types": ["slide_right", "slide_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 130, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "live action vignette",
+    "description": "Top-down live-action insert on a plain grey table: a hand slides an espresso cup toward centre frame and lets go, locked-off camera.",
+    "why_premium": "A clean overhead insert with negative space and soft vignette reads like a product ad, giving the story a polished, art-directed beat that can hold a title in the empty table area."
+  },
+  "build_hint": {
+    "gsap": "Not a graphics build: place the clip as a <video> layer on the HyperFrames timeline; for a synthetic version use gsap.fromTo(cupGroup, {x:-60, y:-20}, {x:0, y:0, duration:0.15, ease:'power2.out'}) with the hand and cup moving as one group.",
+    "remotion": "Use <OffthreadVideo> in a <Sequence>; for a synthetic version drive translateX/Y with spring({fps, frame, config:{damping:200}}) (no overshoot) over ~4-5 frames."
+  },
+  "confidence": "medium",
+  "notes": "Very short burst (4 frames), the tail of the slide; camera.move none, so the scale sum is the cup and hand moving. b01 is an OCR false positive ('Lo') around the hand and is not used. No SFX candidates."
+}

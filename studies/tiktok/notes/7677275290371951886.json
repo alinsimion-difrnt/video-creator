@@ -1,0 +1,39 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "bb7e3a91c8e660647c791c0cf244a255f6b3f8c0097cf1b9444c0e0b21170710",
+                 "created_at": "2026-10-13T15:05:00+00:00"},
+  "id": "7677275290371951886",
+  "format": "talking_head",
+  "hook": {"type": "curiosity_gap",
+           "line": "Everybody's learning RAG, agents and model training, but top-paying AI roles pay you to evaluate, not create.",
+           "visual": "Close-up of the creator holding a fuzzy lav mic to the lens; from 1.1 s a diagram (RAG, multi-agent, model training) pops in above his head for each skill he names."},
+  "beats": [
+    {"t": 0.0, "what": "Close selfie framing, mic held up to camera, bold italic caption 'EVERYBODY'S LEARNING RAG'"},
+    {"t": 1.12, "what": "A new diagram image flashes in at the top for each skill named: RAG architecture, multi-agent workflow, model training"},
+    {"t": 4.73, "what": "Pixel-font 'Claude Code' logo card above his head as he turns: roles pay you to evaluate, not create"},
+    {"t": 9.04, "what": "Dark text screenshot 'Key Insight: RAG + Agents = 70%+ of use cases' backs up the claim"},
+    {"t": 13.56, "what": "Highlighted article quote about how many companies already run agents and RAG"},
+    {"t": 18.13, "what": "Screenshot of an expert's post on why AI software is less predictable than normal software"},
+    {"t": 22.59, "what": "'How AI Hallucination Happens' diagram while he says LLM output is unpredictable"},
+    {"t": 27.11, "what": "'AI Engineer Salaries' bar chart on '500K plus'"},
+    {"t": 31.63, "what": "Real job description with evaluation duties highlighted in blue, face shrinks to a small box at the bottom"},
+    {"t": 40.67, "what": "Screenshots of his community: member list, then course modules, as he lists what it includes"}
+  ],
+  "graphics": {"captions": "word_by_word", "caption_position": "bottom",
+               "devices": ["screenshot", "chart_or_number", "product_ui", "zoom_punch", "jump_cut", "music_bed", "prop"],
+               "density": "heavy", "per_minute_estimate": 26},
+  "characters": [],
+  "cta": {"kind": "comment", "t": 47.6},
+  "why_it_works": [
+    "'Everyone does X, but the money is in Y' contrast sets up a gap the viewer wants closed in the first 8 s",
+    "Every claim is followed within a second by a screenshot, chart or job post, so the argument feels sourced rather than opinion",
+    "Visuals change about every 2 s (median shot 1.93 s) while the face stays in the same spot, so the eye has new proof to read without losing the speaker",
+    "The mic held up to the lens makes the selfie framing feel like a direct, intimate tip"
+  ],
+  "weaknesses": [
+    "The last 15 s are a community pitch; the evaluation advice itself is never explained",
+    "Many screenshots are dense paragraphs too small to read on a phone",
+    "The CTA word is cut off at the end of the audio, so the keyword is only in the caption text"
+  ],
+  "for_robert": "Pop a proof image (chart, post, job ad) above his head the instant he makes each claim; Fred could carry or unroll each one in from the side instead of it just appearing."
+}

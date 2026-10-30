@@ -1,0 +1,38 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes", "annotator": "claude-code",
+                 "input_hash": "5bd0e8af70f4669baf96ab83fc3e4286ef1566afe1eddddee6d37debabed77a3",
+                 "created_at": "2026-10-13T14:35:00+00:00"},
+  "id": "7682892006959369502",
+  "format": "talking_head",
+  "hook": {"type": "news",
+           "line": "Ladies and gentlemen, today is the day the world will remember.",
+           "visual": "Man in cap and glasses in a parked car holding a lav mic; a small b-roll window above his head swaps image every ~0.4 s (brain scan, mushrooms, crowds) over word-by-word captions."},
+  "beats": [
+    {"t": 0.0, "what": "Grand announcement opener; b-roll window above his head changes almost every word"},
+    {"t": 5.75, "what": "Names the product: an unrestricted AI model you can install; red glitch skull image above him"},
+    {"t": 11.5, "what": "ChatGPT and Claude logos flank the inset as he names them"},
+    {"t": 17.25, "what": "Terminal screenshots beside the inset while he says they added agentic coding"},
+    {"t": 23.01, "what": "'Drumroll please' on a clean frame with no inset, a beat of pause"},
+    {"t": 28.76, "what": "List of science models (DNA, proteins, atoms) each paired with an illustration"},
+    {"t": 46.01, "what": "Product landing page shown: 'The world's first AI that doesn't say No'"},
+    {"t": 57.51, "what": "Scarcity CTA: first 1,000 people who comment the keyword get access"},
+    {"t": 63.27, "what": "Signs off 'good night' on a plain frame"}
+  ],
+  "graphics": {"captions": "word_by_word", "caption_position": "middle",
+               "devices": ["b_roll", "screenshot", "product_ui", "title_text", "jump_cut"],
+               "density": "heavy", "per_minute_estimate": 60},
+  "characters": [],
+  "cta": {"kind": "comment", "t": 57.51},
+  "why_it_works": [
+    "Historic-announcement framing ('the world will remember') creates a curiosity gap before the product is named",
+    "The b-roll window above his head changes on nearly every phrase, so the eye always has something new while the face stays fixed",
+    "Each listed capability gets its own picture, turning an abstract list into a fast slideshow",
+    "Comment-a-keyword with a 1,000-person cap adds scarcity and drives comments (480)"
+  ],
+  "weaknesses": [
+    "Hype tone and 'for research purposes only' disclaimer can read as clickbait",
+    "Inset images are small and pass too fast to read",
+    "No demo of the product actually working; the 'copy, paste, enter' step is only told"
+  ],
+  "for_robert": "Put a small changing picture window above his head that updates on key words; Fred could live in that window and swap props per phrase instead of stock images."
+}

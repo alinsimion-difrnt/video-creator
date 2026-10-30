@@ -1,0 +1,86 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "4c1ebb33dab903e10c5dea41fe406fc8821123871898146512e275b6088f75b8",
+    "created_at": "2026-10-05T06:51:47.970345Z"
+  },
+  "video": "workday-workday-adaptive-planning-demo-finan",
+  "event": "e017",
+  "task": "a2-e017",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Progress bar fill advancing (64% to 78% to 85%)",
+      "role": "other",
+      "role_other": "progress_bar",
+      "change_types": ["mask_reveal"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Percentage readout inside the progress bar",
+      "role": "metric",
+      "role_other": null,
+      "change_types": ["count_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "85%",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b08",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "New top log line inserted",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "row inserted instantly",
+      "is_text": true,
+      "text": "Fetching mappings",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Earlier status log rows pushed down by the new entries",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["slide_down"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Running Automap\nFetching data to import into Planning\nBuilding Transformation Storage\nRunning Planning loader \"Actuals Planning Loader - Workday via CCDS\"\nRunning planning loaders",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "ai_answer_stream",
+    "proposed_name": null,
+    "description": "The import job log keeps streaming: the progress bar jumps from 64% to 78% to 85% and new status lines ('Running Automap', 'Fetching mappings') are inserted at the top of the log, pushing earlier lines down.",
+    "why_premium": "Live, specific progress (percent and named loader steps) lands on 'consolidation.', proving the import runs itself without the viewer having to read every line."
+  },
+  "build_hint": {
+    "gsap": "Discrete timeline, no tweening: tl.set('.progress-fill', {scaleX: 0.78, transformOrigin: 'left'}).set('.progress-pct', {textContent: '78%'}, '<').add(() => prependLogRow('Running Automap')).add(() => prependLogRow('Fetching mappings'), '+=0.03').set('.progress-fill', {scaleX: 0.85}, '+=0.25').set('.progress-pct', {textContent: '85%'}, '<'); each prepend shifts the list down one row height instantly.",
+    "remotion": "Map frame to state: pct = frame < 8 ? 64 : frame < 16 ? 78 : 85; rows = log.slice(0, visibleCount(frame)) rendered newest first; progress width = pct percent; no interpolate or spring, values step."
+  },
+  "confidence": "medium",
+  "notes": "Screen-recorded job progress; all changes look like instant steps rather than eased motion. OCR for log lines was truncated (b03, b05-b09); text was read from the end frame. Pattern kept as ai_answer_stream for consistency with e015, though it is a status log rather than an AI answer."
+}

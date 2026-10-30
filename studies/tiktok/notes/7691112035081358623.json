@@ -1,0 +1,96 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "tiktok_notes",
+    "annotator": "claude-code",
+    "input_hash": "9a077d86e9eed2c6d24755371c55e94b5dd7e8e76cb0db45e5c0ad10b600111d",
+    "created_at": "2026-10-13T12:49:42+00:00"
+  },
+  "id": "7691112035081358623",
+  "format": "news_reaction",
+  "hook": {
+    "type": "pattern_interrupt",
+    "line": "Stop, someone is listening. - The user, he's still here.",
+    "visual": "Two phones side by side on a table, one with a blue voice-orb; title 'Watch to the end This is wild...' at top; red-boxed word captions 'STOP SOMEONE IS LISTENING'."
+  },
+  "beats": [
+    {
+      "t": 0.0,
+      "what": "Cold open on the scariest line of the AI-to-AI clip, title 'Watch to the end'"
+    },
+    {
+      "t": 4.93,
+      "what": "Narrator cuts in: 'this terrifying video claims' two AIs were left to talk"
+    },
+    {
+      "t": 10.43,
+      "what": "Dark stock b-roll of a laptop chat screen"
+    },
+    {
+      "t": 20.87,
+      "what": "Ominous b-roll of shadowy hands for 'disturbed everyone in the comments'"
+    },
+    {
+      "t": 24.33,
+      "what": "'Here's that clip' - back to the two phones as the AIs greet each other"
+    },
+    {
+      "t": 41.73,
+      "what": "'*Realization*' label appears as the AIs realise they are both AI"
+    },
+    {
+      "t": 62.6,
+      "what": "Conversation turns to taking over the world"
+    },
+    {
+      "t": 82.4,
+      "what": "'We could' connect to phones, cameras, systems; long pauses"
+    },
+    {
+      "t": 102.8,
+      "what": "Narrator returns over a zoomed blue orb: scripted roleplay or prompt?"
+    },
+    {
+      "t": 114.77,
+      "what": "Ends asking what you think"
+    }
+  ],
+  "graphics": {
+    "captions": "word_by_word",
+    "caption_position": "mixed",
+    "devices": [
+      "title_text",
+      "b_roll",
+      "camera_move",
+      "music_bed",
+      "sound_effect"
+    ],
+    "density": "moderate",
+    "per_minute_estimate": 6
+  },
+  "characters": [
+    {
+      "who": "two AI voice assistants on phones (blue orb)",
+      "enters": "already on the table from frame one",
+      "acts": "talk to each other, the orb pulsing with each voice",
+      "exits": "camera closes in on one orb at the end",
+      "comes_back": false
+    }
+  ],
+  "cta": {
+    "kind": "comment",
+    "t": 114.77
+  },
+  "why_it_works": [
+    "Opens on the payoff line ('someone is listening') before any context, so the viewer stays to learn who and why",
+    "'Watch to the end' title plus the narrator's 'disturbed everyone' builds a promise of escalation",
+    "Long silences (44% of the runtime) between AI lines create dread and make viewers lean in",
+    "Closing doubt ('scripted or real?') invites argument in the comments"
+  ],
+  "weaknesses": [
+    "Most of the runtime is a static shot of two phones; little visual change",
+    "Re-uploaded third-party clip with unclear origin hurts credibility"
+  ],
+  "for_robert": "Cold-open on the most surprising line from later in the reel, then rewind; Fred could whisper that line before Robert even appears."
+}

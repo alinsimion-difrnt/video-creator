@@ -1,0 +1,173 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "23da8df34fe1c41f9d4fa8d1f6ecb0f587fcdfc3f68435ae3b2b36347ebe0972",
+    "created_at": "2026-10-05T06:27:49.055974Z"
+  },
+  "video": "notion-introducing-notion-3-0-agents",
+  "task": "a1-p1",
+  "shots": [
+    {
+      "shot": "s001",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Two-line headline under a cluster of hand-drawn line-art agent faces",
+      "transition_in": "other",
+      "transition_other": "video start (first shot, no incoming transition)",
+      "on_screen_text": [
+        "You assign the tasks.",
+        "Your Agents do the work."
+      ],
+      "text_word_count": 9,
+      "typography": "Large geometric/grotesque sans (low-confidence guess: Inter), bold weight, sentence case, tight tracking, centred two-line stack in black on off-white.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Opens on the Notion logo with a cursor clicking it on an off-white canvas; it gives way to a single illustrated face with line one 'You assign the tasks.', then flanking agent faces (hard hat, headset, etc.) fan out behind it as line two appears; the last frame already shows the blue-framed product window starting to come in.",
+      "build_rebuild": "On an off-white canvas, swap a centred logo for an SVG avatar plus headline line 1, then stagger 4 overlapping circular avatar badges outward from behind the centre avatar while headline line 2 fades/slides up under line 1.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s002",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Notion page 'Andy's OS' in a browser window framed on a saturated blue background",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Share",
+        "Andy's OS",
+        "To-dos",
+        "Build bug tracking dashboard",
+        "Prep for bugs meeting",
+        "Update and categorize issues",
+        "Draft my specs",
+        "Quick Links",
+        "Issue Reports",
+        "Engineering Dashboard",
+        "Team Meeting Notes",
+        "QA Testing Guidelines",
+        "Active Projects",
+        "Table"
+      ],
+      "text_word_count": 34,
+      "typography": "Native Notion UI type: bold sans page title and section headings, regular-weight sans list items, sentence case, default tracking.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Short establishing view (under 1 s) of a personal Notion workspace page with a to-do list, quick links and an agent avatar button at bottom right, inset as a floating window on a blue backdrop; the cursor rests to the right of the to-do block.",
+      "build_rebuild": "Place a rounded, soft-shadowed browser-chrome screenshot of the product page at ~93% width centred on a solid brand-blue full-frame background, with a static cursor sprite over it.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s003",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "The To-dos checklist, especially 'Build bug tracking dashboard', with the cursor hovering it",
+      "transition_in": "other",
+      "transition_other": "detector flagged 'other'; visually a punch-in from the full window to a tight crop of the to-do block",
+      "on_screen_text": [
+        "To-dos",
+        "Build bug tracking dashboard",
+        "Prep for bugs meeting",
+        "Update and categorize issues",
+        "Draft my specs",
+        "Quick Links",
+        "Issue Reports",
+        "Team Meeting Notes",
+        "Engineering Dashboard",
+        "QA Testing Guidelines"
+      ],
+      "text_word_count": 28,
+      "typography": "Native Notion UI type shown large: bold sans headings, regular sans list items, sentence case.",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "Camera is zoomed into the to-do list; the cursor moves onto the first item 'Build bug tracking dashboard' and then drifts down toward 'Prep for bugs meeting' while the frame slowly drifts/pulls back slightly, setting up the task the agent will be given.",
+      "build_rebuild": "Scale the same page screenshot to ~2.5x anchored on the to-do block, animate a cursor sprite onto the first checklist item, and ease a slight scale-down over the 1.6 s shot.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s004",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "Notion AI side panel with 'How can I help you today?' and the agent avatar",
+      "transition_in": "push",
+      "transition_other": null,
+      "on_screen_text": [
+        "Hi, Andy!",
+        "How can I help you today?",
+        "Personalize Notion AI",
+        "Translate this page",
+        "Analyze for insights",
+        "New",
+        "New page",
+        "Ask, search, or make anything...",
+        "All sources",
+        "Personalize"
+      ],
+      "text_word_count": 28,
+      "typography": "Notion UI sans: semibold prompt heading, regular menu items, small blue 'New' pill label, light-grey placeholder text; sentence case.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Framing pushes to the bottom-right corner where the agent avatar shows a 'Hi, Andy!' greeting bubble; the cursor clicks it and the AI side panel opens with suggestions and an input box; the cursor then moves up to the avatar, revealing a 'Personalize' pill beside it, which gets an outline on hover.",
+      "build_rebuild": "Push the camera into the bottom-right of the page screenshot, pop a 'Hi, Andy!' tooltip by the avatar, cut the panel open on click, then animate the cursor to the panel avatar and fade in an outlined 'Personalize' chip next to it.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s005",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The agent avatar being personalised (accessory carousel, name and profile form), then the prompt input",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Name",
+        "Profile",
+        "Default",
+        "Lucky",
+        "Use existing profile",
+        "Search for a profile...",
+        "Bug Wrangler",
+        "Brainstorm Buddy",
+        "Launch Specialist",
+        "Browse templates",
+        "Howdy, Partner!",
+        "How can I help you today?",
+        "Personalize Notion AI",
+        "Translate this page",
+        "Analyze for insights",
+        "New",
+        "New page",
+        "Ask, search, or make anything...",
+        "All sources",
+        "Create a bug tracking dashboard."
+      ],
+      "text_word_count": 51,
+      "typography": "Simplified Notion UI on off-white: small grey sans field labels, regular sans field values and menu items; the prompt is also shown as a giant full-bleed regular-weight sans with a text caret during typing; sentence case.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Long multi-phase shot. (1) A horizontal carousel of accessory cards (moustache, duck, pencil, chili, cowboy hat, flower, leaf) scrolls under the avatar; the blue-outlined selected card changes and the accessory appears on the avatar's head until the cowboy hat is chosen. (2) A Name/Profile form appears; 'Lucky' is typed into Name and the Profile dropdown opens to pick 'Bug Wrangler'. (3) The avatar scales up with a 'Howdy, Partner!' speech bubble. (4) Back to the blue-framed AI panel, now with the hatted avatar; the cursor clicks the input and the prompt is typed, shown as an extreme close-up of large text with a caret ('Cr', 'Create a b', 'bug track', 'king dash'), then returns to the panel showing 'Create a bug tracking dashboard.' with the send button active.",
+      "build_rebuild": "Build a scene sequence: a horizontally sliding row of rounded accessory cards with a blue selection ring whose icon swaps onto a centred SVG avatar, then a two-field form with typed name and an opening dropdown, then an avatar scale-up with a speech-bubble pop, then the panel with a typewriter prompt rendered in a full-frame zoomed text layer before cutting back to the panel with the filled input and blue send button.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

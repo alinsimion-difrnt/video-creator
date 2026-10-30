@@ -1,0 +1,128 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a3_pattern_cards",
+  "annotator": "claude-code",
+  "skill": "write-pattern-cards@e525a58fa6d8",
+  "model": null,
+  "input_hash": "c84b2efb24df1d21c7366ea54b78f3dcdee38f57ed4efddc4a53550316127555",
+  "created_at": "2026-10-05T12:53:03.057235Z"
+ },
+ "id": "input_text_cycle",
+ "name": "Rotating Word Slot",
+ "summary": "The start of a sentence stays fixed while its ending, a word, phrase or option pill, keeps flipping vertically to the next alternative with a soft blur, like a slot machine, until a final line lands.",
+ "when_to_use": [
+  "Listing several use cases, audiences, data sources or integrations inside one sentence",
+  "A headline that should read as both marketing copy and product UI",
+  "Building rhythm on music beats before a payoff line"
+ ],
+ "avoid_when": [
+  "The alternatives are long or need explaining; viewers only catch a glance of each",
+  "The stem would have to reflow as the words change width"
+ ],
+ "steps": [
+  "Set the fixed sentence stem and a masked slot where the changing part sits",
+  "Bring the first option into the slot from below, fading and sharpening from a blur as it rises",
+  "For each swap, push the current option up and out with a blur while the next rises in from below, overlapping slightly",
+  "Optionally keep faint, blurred neighbours above and below so the options feel like a continuous wheel",
+  "Resize a pill to fit each new label so the sentence keeps reading naturally",
+  "Resolve the cycle with a plain-type completion or the last option, landing in the same rhythm"
+ ],
+ "build": {
+  "gsap": "Inside an overflow-hidden slot, run a timeline per swap: gsap.to the outgoing word (yPercent up, opacity to zero, blur up, ease-in) and an overlapping gsap.fromTo on the incoming word (from below with blur to rest, ease-out). For a wheel of pills, tween the whole stack's y with ease-in-out and set each pill's opacity and blur by its distance from the slot.",
+  "remotion": "Use a damped spring per swap with no overshoot as the progress value; map it with interpolate to translateY, opacity and blur on the incoming word, and drive the outgoing word with a short ease-in interpolate. For a wheel, derive each pill's offset, opacity and blur from its distance to the current index plus progress."
+ },
+ "sound": "No typical sound; the corpus examples sit under music only. Place each swap on a music beat rather than adding an effect.",
+ "why_premium": "Holding the sentence stem still and swapping only its ending turns a list of features into one line that keeps rebuilding, so the viewer reads a claim instead of a bullet list. The vertical flip with motion blur sells speed without harsh edges, and faint neighbouring options make it feel like a wheel with more to come. A steady cadence locked to the music builds rhythm, and ending on a plain-type payoff gives the cycle a clear resolution without a cut.",
+ "numbers": {
+  "id": "input_text_cycle",
+  "events": 7,
+  "videos": 3,
+  "weight": 5.2,
+  "duration_ms": {
+   "n": 11,
+   "videos": 3,
+   "weight": 7.992,
+   "median": 191.147,
+   "p25": 124.144,
+   "p75": 420.6,
+   "ci": [
+    124.1,
+    420.6
+   ]
+  },
+  "easing_mix": {
+   "ease_in_out": 0.3995,
+   "ease_in": 0.3958,
+   "ease_out": 0.2047
+  },
+  "change_mix": {
+   "fade": 0.3429,
+   "slide_up": 0.2857,
+   "blur_in": 0.1571,
+   "blur_out": 0.1286,
+   "slide_down": 0.0571,
+   "other": 0.0286
+  },
+  "role_mix": {
+   "button": 0.4615,
+   "headline": 0.4615,
+   "card": 0.0769
+  },
+  "sfx_label_mix": {
+   "music": 1.0
+  },
+  "sfx_offset_ms": {
+   "n": 5,
+   "videos": 1,
+   "weight": 3.0,
+   "median": -121.9,
+   "p25": -337.4,
+   "p75": 20.9,
+   "ci": [
+    -337.4,
+    20.9
+   ]
+  },
+  "examples": [
+   {
+    "video": "notion-introducing-the-new-notion-ai",
+    "event": "e007",
+    "score": 4.0
+   },
+   {
+    "video": "attio-introducing-ask-attio",
+    "event": "e007",
+    "score": 4.0
+   },
+   {
+    "video": "servicenow-what-are-servicenow-ai-agents",
+    "event": "e033",
+    "score": 3.0
+   }
+  ]
+ },
+ "examples": [
+  {
+   "video": "notion-introducing-the-new-notion-ai",
+   "event": "e007",
+   "score": 4.0
+  },
+  {
+   "video": "attio-introducing-ask-attio",
+   "event": "e007",
+   "score": 4.0
+  },
+  {
+   "video": "servicenow-what-are-servicenow-ai-agents",
+   "event": "e033",
+   "score": 3.0
+  }
+ ],
+ "caveats": [
+  "Seen in only three videos, with most events from a single one",
+  "Members are mostly headline word swaps and option pills rather than literal input fields, so the pattern name may be narrower than what was observed",
+  "Sound timing comes from a single video"
+ ]
+}

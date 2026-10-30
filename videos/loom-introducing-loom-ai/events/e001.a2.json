@@ -1,0 +1,120 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@46647335d2ce",
+    "model": null,
+    "input_hash": "f4250331b59d9757e47e8d4d0379581c9453d0642af78ad4dadda031c79c00f0",
+    "created_at": "2026-10-04T21:35:35.292810Z"
+  },
+  "video": "loom-introducing-loom-ai",
+  "event": "e001",
+  "task": "a2-e001",
+  "elements": [
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Title line 'Introducing Loom AI'",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["fade", "scale_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Introducing Loom AI",
+      "text_unit": "word",
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b08",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Four-point AI sparkle",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["slide_right", "scale_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 800, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Large gradient sphere, left",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["slide_left", "scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 800, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Large gradient sphere, right",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["slide_right", "scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 800, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b06",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Blurred gradient sphere, top",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["slide_up", "blur_in"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 800, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b07",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Small gradient sphere, left",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 800, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x003", "verdict": "unsure", "label": "unsure", "note": "Precedes event by ~300 ms; lines up with the sparkle appearing alone. Broadband vertical streak resembles the recurring music hits, so a chime is plausible but not distinguishable."},
+    {"id": "x004", "verdict": "unsure", "label": "unsure", "note": "Strong low-frequency onset as the spheres burst out from the sparkle; could be an impact/whoosh SFX or a music downbeat. No reverse-swoosh shape (no rising build) visible."},
+    {"id": "x005", "verdict": "unsure", "label": "unsure", "note": "Onset as 'Introducing' fades in; streak matches the regular rhythmic pattern of the music bed."},
+    {"id": "x006", "verdict": "unsure", "label": "unsure", "note": "After the event settles; another low onset in the regular pattern, likely music."},
+    {"id": "x007", "verdict": "unsure", "label": "unsure", "note": "Outside the event; regular broadband streak, likely music percussion."}
+  ],
+  "pattern": {
+    "id": "kinetic_word_reveal",
+    "proposed_name": null,
+    "description": "A lone AI sparkle in the centre bursts outward into floating gradient spheres while the camera pushes in; the title 'Introducing Loom AI' then fades up word by word, with the sparkle settling as a superscript accent after 'AI'.",
+    "why_premium": "The sparkle is a single hero object that both seeds the spheres (motion origin) and ends as the brand accent, so the opening reads as one continuous gesture; word-by-word reveal is timed to the music hits, and depth comes from sphere blur and parallax rather than flat slides."
+  },
+  "build_hint": {
+    "gsap": "tl.fromTo('.sparkle',{x:0,scale:1.4},{x:sparkleEndX,scale:0.6,duration:0.8,ease:'power3.out'}); tl.fromTo('.sphere',{x:0,y:0,scale:0.3},{x:(i)=>dx[i],y:(i)=>dy[i],scale:1,duration:0.9,ease:'power3.out',stagger:0.04},0); tl.fromTo('.cam',{scale:1},{scale:1.02,duration:1.2,ease:'sine.out'},0); tl.fromTo('.title .word',{opacity:0,scale:0.96},{opacity:1,scale:1,duration:0.3,ease:'power2.out',stagger:0.23},0.4); last word 'AI' stays at reduced opacity.",
+    "remotion": "Sparkle and spheres: spring({frame, fps, config:{damping:22, stiffness:120, mass:1}}) driving interpolate() for x/y/scale from centre to end positions, sphere i delayed by ~1 frame each. Words: per-word spring (no overshoot, damping ~26) delayed ~7 frames apart mapped to opacity 0→1 and scale 0.96→1. Wrap scene in a container with interpolate(frame,[0,36],[1,1.02]) for the push-in."
+  },
+  "confidence": "medium",
+  "notes": "Sparkle travel from frame centre to after 'AI' is inferred from filmstrip continuity (b08 is its end box). Sphere motion is a mix of object motion and the measured camera push_in; directions per sphere are approximate. 'AI' renders at lower opacity in the end frame (OCR reads 'Al'). All SFX candidates left unsure: the stem shows evenly spaced broadband streaks that look like music percussion."
+}

@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "31a3c83a81caa0fa6189271528fda8d3858efd836ebcb7eee81127a32a828426",
+    "created_at": "2026-10-05T06:42:56.833144Z"
+  },
+  "video": "attio-introducing-ask-attio",
+  "event": "e018",
+  "task": "a2-e018",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Outgoing tagline 'Ask more from CRM.'",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Ask more from CRM.",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 70, "easing_class": "step"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Attio logo mark",
+      "role": "logo",
+      "role_other": null,
+      "change_types": ["fade", "slide_left"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Attio wordmark",
+      "role": "logo",
+      "role_other": null,
+      "change_types": ["fade", "slide_left"],
+      "change_other": null,
+      "is_text": true,
+      "text": "attio",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "logo_resolve",
+    "proposed_name": null,
+    "description": "The tagline cuts away and the logo mark appears alone at centre, then slides left as the grey 'attio' wordmark fades in beside it to form the lockup.",
+    "why_premium": "The mark gets a brief solo beat before the wordmark joins, so the lockup builds in two clear steps. The wordmark arrives at partial opacity, which keeps the hierarchy on the mark."
+  },
+  "build_hint": {
+    "gsap": "tl.set(tagline,{autoAlpha:0}); tl.fromTo(mark,{autoAlpha:0,x:'+=95'},{autoAlpha:1,duration:0.15}).to(mark,{x:0,duration:0.4,ease:'power3.out'}); tl.fromTo(wordmark,{autoAlpha:0,x:24},{autoAlpha:1,x:0,duration:0.4,ease:'power2.out'},'<0.05')",
+    "remotion": "Hide the tagline on a hard cut. Mark translateX = interpolate(spring({frame, fps, config:{damping:200, stiffness:120, mass:1}}), [0,1], [95,0]). Wordmark opacity and translateX are driven by the same spring, delayed 2 frames; opacity 0 to 1, translateX 24 to 0."
+  },
+  "confidence": "medium",
+  "notes": "Camera move is none; the pan_x value comes from the lockup shifting left. No candidate box covers the full tagline width, so b01 (union box at the tagline's centre) stands in for it. The tagline seems to hard-cut out between f1299 and f1302 rather than fade. The wordmark is still grey at f1309 and may keep fading in after the burst. No SFX candidates."
+}

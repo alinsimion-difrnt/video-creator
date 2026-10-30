@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "s7_measure",
+    "annotator": "code",
+    "skill": null,
+    "model": null,
+    "input_hash": "5545daf1ebd114d9ff9160d85f439631be1cb46f0457cfcf574667b672c7bb17",
+    "created_at": "2026-10-05T09:42:35.047128Z"
+  },
+  "video": "notion-introducing-the-new-notion-ai",
+  "event": "e001",
+  "fps": 23.81,
+  "elements": [
+    {
+      "box": "b01",
+      "xyxy": [
+        584,
+        309,
+        705,
+        442
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.951,
+      "channels": [
+        {
+          "name": "scale",
+          "start_f": 23,
+          "end_f": 24,
+          "start_value": 1.076,
+          "end_value": 1.0,
+          "observed_start": true,
+          "cls": "spring",
+          "gsap": {
+            "ease": "back.out(3)",
+            "duration_ms": 224.8,
+            "rmse": 0.0
+          },
+          "bezier": "cubic-bezier(0.356, -0.045, 0.342, 1.286)",
+          "bezier_rmse": 0.0,
+          "spring": {
+            "zeta": 0.7754,
+            "omega0": 66.129,
+            "settle_ms": 81.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 4373.064,
+              "damping": 102.553
+            },
+            "remotion_exact": true,
+            "rmse": 0.0
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 81.0,
+          "fit_quality": 1.0
+        }
+      ],
+      "timing": {
+        "ease": "back.out(3)",
+        "start_s": 0.9518,
+        "duration_ms": 224.8,
+        "rmse": 0.0
+      },
+      "stagger": null,
+      "sfx_offset_ms": {},
+      "source": "measured",
+      "quality": 1.0
+    }
+  ],
+  "failed": {}
+}

@@ -1,0 +1,184 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "f654698ab50b817a1b54098d5a3d03aa21f6bafcac1e3c54534456fd73fe55e2",
+    "created_at": "2026-10-05T07:39:48.408674Z"
+  },
+  "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+  "task": "a1-p3",
+  "shots": [
+    {
+      "shot": "s006",
+      "shot_type": "data_viz",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "A single square white flip-card counter labelled 'DAYS TO PRODUCTION' in the centre of an off-white canvas, whose big number counts down from 60 to 5 as cards peel off and fly away",
+      "transition_in": "other",
+      "transition_other": "The s005 footage tiles shrink away toward the upper left while a faded '60' card fades and sharpens in at centre (crossfade with scale).",
+      "on_screen_text": [
+        "60",
+        "56",
+        "40",
+        "30",
+        "22",
+        "11",
+        "8",
+        "5",
+        "DAYS TO PRODUCTION"
+      ],
+      "text_word_count": 11,
+      "typography": "Very large, heavy geometric sans numerals (black, tight tracking) above a hairline divider; the label 'DAYS TO PRODUCTION' is small, bold, uppercase, two lines, centred, with slightly open tracking. Font guess (low confidence): an Inter-like or Eleven-branded grotesk. Some intermediate numbers are only partly visible mid-flip and are not quoted.",
+      "depth_cues": [
+        "shadow",
+        "perspective_tilt"
+      ],
+      "what_happens": "On 'So whatever you're creating, get to production in days, not months' (w258-w269) a stack of calendar-style cards shows 60 days; the top card repeatedly tilts in 3D and flies off to the right with a soft drop shadow, revealing lower numbers (56, 40, 30, 22, 11, 8) faster and faster until it lands on 5. A thin green outline then draws around the '5' card, the card shrinks inside a growing green rounded square, and the green square scales up to fill the frame, handing off to s007.",
+      "build_rebuild": "Stack absolutely positioned number cards in a centred container and, from w262 to w268, animate the top card off with rotateX/rotateZ tilt, translateX and a growing blurred shadow on an accelerating stagger (60 down to 5), then draw an SVG rounded-rect stroke around the last card and scale a green rounded square behind it to full-bleed as the zoom-through into the next shot.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s007",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "A white padlock icon centred on a full green field, with the words 'Safe & Secure' appearing beneath it",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Safe & Secure"
+      ],
+      "text_word_count": 3,
+      "typography": "Medium-bold rounded geometric sans, title case, white on green, normal tracking; words appear one at a time ('Safe', then '&', then 'Secure'), each fading/scaling in and the line re-centring as it grows.",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "On 'and all with enterprise-grade security to keep your users' data safe and secure' (w269-w282) a white line draws on into the padlock outline, the body fills in with the shackle open, then the shackle drops closed and the lock nudges into place; the lock slides up as 'Safe', '&', 'Secure' build word by word below it in sync with w280-w282. At the end the green field contracts into a large circle on white, which keeps shrinking to become the orb that opens s008.",
+      "build_rebuild": "On a full-bleed green div, draw an SVG padlock with stroke-dashoffset, fill it, animate the shackle path down ~8 px with a small overshoot spring to 'lock', then reveal three word spans below it per word index (w280-w282) and finally animate a clip-path circle from 150% to ~10% radius to zoom out into the next scene.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s008",
+      "shot_type": "logo",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The swirling gradient agent orb multiplying into a ring of differently coloured orbs, then resolving into the gradient 'Conversational AI' wordmark with the ElevenLabs logo below",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Conversational AI",
+        "ElevenLabs"
+      ],
+      "text_word_count": 3,
+      "typography": "'Conversational AI' in a large medium-bold geometric sans, sentence case, slightly tight tracking, filled with a blue/violet/pink/cyan gradient that slowly shifts across the letters with a soft glow; the ElevenLabs logo sits below as a small, bold black wordmark with its two-bar mark. Font guess (low confidence): ElevenLabs' brand grotesk.",
+      "depth_cues": [
+        "blur",
+        "glow"
+      ],
+      "what_happens": "On 'It's time to explore the huge potential of conversational AI with 11Labs' (w283-w294) a single green/orange orb splits into a trailing chain of smaller orbs in different colourways that swing into a ring, rotate, and then spiral back into one orb; the orb slides right and bursts into a soft blurred colour cloud from which 'Conversational AI' resolves in gradient type, the ElevenLabs logo wipes in below, and the gradient keeps cycling through the letters for the final ~5 s on a clean off-white end card with music continuing after the VO ends.",
+      "build_rebuild": "Render ~10 instances of the orb component along a path that animates from a single point into a circle (staggered position tweens, slow group rotation), collapse them back to one, then crossfade a blurred radial-gradient cloud into a centred headline with an animated background-clip:text gradient (background-position loop) and mask-wipe the logo SVG in beneath at w294.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001"], "words": [0, 10]},
+      {"beat": "demo", "shots": ["s002"], "words": [11, 68]},
+      {"beat": "problem", "shots": ["s002"], "words": [69, 81]},
+      {"beat": "mechanism", "shots": ["s002"], "words": [82, 146]},
+      {"beat": "demo", "shots": ["s003"], "words": [147, 230]},
+      {"beat": "demo", "shots": ["s003", "s004", "s005"], "words": [231, 257]},
+      {"beat": "outcome", "shots": ["s006", "s007"], "words": [258, 282]},
+      {"beat": "cta", "shots": ["s008"], "words": [283, 294]}
+    ],
+    "hook": {
+      "text": "Building AI agents that can speak is now easier than ever.",
+      "technique": "bold_claim",
+      "technique_other": null,
+      "shots": ["s001"],
+      "words": [0, 10]
+    },
+    "cta": {
+      "text": "It's time to explore the huge potential of conversational AI with 11Labs.",
+      "shots": ["s008"]
+    },
+    "tone": "Calm, confident and premium: soft off-white canvas, one living gradient orb as the voice of the product, smooth spring-driven UI reframes, a friendly measured narrator plus real-sounding agent dialogue, ending on a quiet branded lockup rather than a hard sell.",
+    "signature_moments": [
+      {
+        "shots": ["s002", "s003", "s008"],
+        "description": "A single swirling gradient orb is the product's persistent character: it speaks the greetings, swallows the scattered pipeline tiles on 'but not anymore', recolours per voice, becomes the chat avatar, and finally multiplies into a ring of orbs before resolving into the end lockup.",
+        "why_premium": "A recurring abstract mascot gives an invisible product (voice) a visual body and stitches 1:57 of varied UI into one continuous world, which reads as deliberate art direction rather than a sequence of screen grabs."
+      },
+      {
+        "shots": ["s006", "s007"],
+        "description": "'Days to production' flip cards peel off in 3D from 60 down to 5, the last card gets a green outline, and the green square zooms through into a full-frame padlock that locks and spells 'Safe & Secure' word by word.",
+        "why_premium": "Turns abstract claims (speed, security) into tactile, physical motion with an accelerating rhythm and a seamless shape-based hand-off, so the outcome beat lands without any stock imagery."
+      },
+      {
+        "shots": ["s003"],
+        "description": "'All agents currently support 32 languages.' floats among blurred serif translations, then the camera zooms through the letters of 'languages' into the Spanish-speaking chat.",
+        "why_premium": "Depth-of-field type and a zoom-through-glyph transition are high-craft devices that make a feature bullet feel cinematic."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 4,
+        "evidence": "Opens in 3 s on a bold claim mirrored as glowing kinetic type on black, then immediately has the orb speak to the viewer ('Hi, what would you like to talk about today?'), demonstrating the product before naming it. Strong, but a claim rather than a surprising stat or demo-first cold open.",
+        "refs": ["s001", "w0", "w10", "s002", "w11"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "The script follows a clean build/test/deploy arc (create agent, voice, LLM, knowledge base, server, analytics, languages, embed/SDK, speed, security) with each feature getting its own UI vignette. s002 is very dense (17 events in one 48 s shot), so some UI detail flies by too fast to read.",
+        "refs": ["s002", "s003", "w25", "w28", "w246"]
+      },
+      "ui_showcase": {
+        "score": 5,
+        "evidence": "Recreated, simplified product UI throughout: agent config panel with typed prompt, LLM dropdown, voice picker, knowledge-base upload, live chat transcripts, analytics waveform player, evaluation cards and an embed-code copy, all cleanly enlarged and cursor-driven.",
+        "refs": ["s002", "s003"]
+      },
+      "motion_polish": {
+        "score": 5,
+        "evidence": "Continuous long shots built from layout reframes, blur crossfades and zoom-throughs (anchors: s002 17 events, s003 12 events, zoom_through/push transitions), 3D flip-card countdown with shadows, drawn-on padlock, orb ring choreography, and an animated gradient end lockup; no visible hard cuts or jank in the sheets.",
+        "refs": ["s002", "s003", "s006", "s007", "s008"]
+      },
+      "sound_design": {
+        "score": 4,
+        "evidence": "Judged from anchors plus visuals: 74 SFX candidates over 116.9 s (dense), mostly swoosh_reverse on transitions, chimes on key reveals (x005 on '11Labs', x060-x063 during the s006 countdown, x071/x074 on the end card), an impact at the s008 entry (x069); 120.19 BPM music bed under the VO at -16.05 LUFS integrated, with a music-only breather around 78-86 s. Many candidates are 'unsure', so individual sync quality cannot be fully confirmed.",
+        "refs": ["s001", "s006", "s008", "w24"]
+      },
+      "vo_script_quality": {
+        "score": 4,
+        "evidence": "Tight benefit-led narration with a problem/solution turn ('used to be immensely complex... but not anymore'), concrete specifics (32 languages, single copy and paste, days not months) and real agent dialogue samples that double as product proof; a few generic phrases ('vast high-quality library', 'huge potential').",
+        "refs": ["w69", "w84", "w228", "w242", "w264", "w268"]
+      },
+      "brand_consistency": {
+        "score": 5,
+        "evidence": "One visual system end to end: off-white canvas, gradient orb motif, gradient-filled 'Conversational AI' wordmark at open (s002) and close (s008), consistent rounded white cards with soft shadows, and a single green accent reserved for the speed/security outcome.",
+        "refs": ["s002", "s006", "s007", "s008"]
+      },
+      "works_muted": {
+        "score": 3,
+        "evidence": "Key beats are carried by on-screen text (opening claim, 'Build, test, and deploy.', chat bubbles mirroring dialogue, '32 languages', 'DAYS TO PRODUCTION', 'Safe & Secure', end lockup), but the problem/solution turn, SDK/deploy explanations and the voice quality itself rely on audio.",
+        "refs": ["s001", "s002", "s003", "s006", "s007"]
+      },
+      "overall": {
+        "score": 5,
+        "evidence": "A best-in-class SaaS launch explainer: premium art direction around a single orb motif, recreated UI that is legible and paced to the VO, physical motion metaphors for outcome claims, and a calm branded close; held back only slightly by density in s002.",
+        "refs": ["s002", "s003", "s006", "s008"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 2,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "Heavy baked-in English: kinetic headlines, recreated UI labels, typed prompts and chat transcripts, 'DAYS TO PRODUCTION' and 'Safe & Secure'. Chat bubbles are synced word-by-word to the English VO and dialogue, so re-voicing requires re-timing and re-rendering most UI scenes. The number countdown, padlock, orb choreography and end lockup are largely language-neutral."
+    }
+  }
+}

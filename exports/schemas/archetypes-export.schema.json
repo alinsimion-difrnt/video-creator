@@ -1,0 +1,316 @@
+{
+  "$defs": {
+    "Annotator": {
+      "enum": [
+        "code",
+        "claude-code",
+        "human"
+      ],
+      "title": "Annotator",
+      "type": "string"
+    },
+    "Build": {
+      "additionalProperties": false,
+      "properties": {
+        "gsap": {
+          "minLength": 1,
+          "title": "Gsap",
+          "type": "string"
+        },
+        "remotion": {
+          "minLength": 1,
+          "title": "Remotion",
+          "type": "string"
+        }
+      },
+      "required": [
+        "gsap",
+        "remotion"
+      ],
+      "title": "Build",
+      "type": "object"
+    },
+    "ExportArchetype": {
+      "additionalProperties": false,
+      "properties": {
+        "beats": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Beats",
+          "type": "object"
+        },
+        "build": {
+          "$ref": "#/$defs/Build"
+        },
+        "caveats": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Caveats",
+          "type": "array"
+        },
+        "duration_s": {
+          "$ref": "#/$defs/Range"
+        },
+        "events_per_scene": {
+          "$ref": "#/$defs/Range"
+        },
+        "first_motion_s": {
+          "$ref": "#/$defs/Range"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "patterns": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Patterns",
+          "type": "array"
+        },
+        "sfx_cues_s": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Range"
+          },
+          "title": "Sfx Cues S",
+          "type": "object"
+        },
+        "slots": {
+          "items": {
+            "$ref": "#/$defs/Slot"
+          },
+          "title": "Slots",
+          "type": "array"
+        },
+        "sound": {
+          "title": "Sound",
+          "type": "string"
+        },
+        "steps": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Steps",
+          "type": "array"
+        },
+        "summary": {
+          "title": "Summary",
+          "type": "string"
+        },
+        "videos": {
+          "title": "Videos",
+          "type": "integer"
+        },
+        "way_in": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Way In",
+          "type": "object"
+        },
+        "when_to_use": {
+          "items": {
+            "type": "string"
+          },
+          "title": "When To Use",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "summary",
+        "when_to_use",
+        "slots",
+        "steps",
+        "patterns",
+        "build",
+        "sound",
+        "duration_s",
+        "first_motion_s",
+        "events_per_scene",
+        "way_in",
+        "beats",
+        "sfx_cues_s",
+        "videos",
+        "caveats"
+      ],
+      "title": "ExportArchetype",
+      "type": "object"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "description": "Carried by every output JSON (BUILD_PLAN section 2.7).",
+      "properties": {
+        "annotator": {
+          "$ref": "#/$defs/Annotator"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "input_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Input Hash",
+          "type": "string"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "schema_version": {
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "skill": {
+          "anyOf": [
+            {
+              "pattern": "^[a-z0-9-]+@[0-9a-f]{8,64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Skill"
+        },
+        "stage": {
+          "title": "Stage",
+          "type": "string"
+        },
+        "tool_version": {
+          "title": "Tool Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool_version",
+        "stage",
+        "annotator",
+        "input_hash",
+        "created_at"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "Range": {
+      "additionalProperties": false,
+      "description": "A measured value for building: the weighted median and the typical (25-75%) range.",
+      "properties": {
+        "high": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "High"
+        },
+        "low": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Low"
+        },
+        "median": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Median"
+        },
+        "n": {
+          "minimum": 0,
+          "title": "N",
+          "type": "integer"
+        },
+        "videos": {
+          "minimum": 0,
+          "title": "Videos",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "median",
+        "low",
+        "high",
+        "n",
+        "videos"
+      ],
+      "title": "Range",
+      "type": "object"
+    },
+    "Slot": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "required": {
+          "default": true,
+          "title": "Required",
+          "type": "boolean"
+        },
+        "what": {
+          "minLength": 3,
+          "title": "What",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "what"
+      ],
+      "title": "Slot",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "archetypes": {
+      "items": {
+        "$ref": "#/$defs/ExportArchetype"
+      },
+      "title": "Archetypes",
+      "type": "array"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    }
+  },
+  "required": [
+    "provenance",
+    "archetypes"
+  ],
+  "title": "ArchetypesExport",
+  "type": "object"
+}

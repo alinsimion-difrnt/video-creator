@@ -1,0 +1,39 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "872d4933fe1d2d557fe056e2ba461d7642520546fe3ddff31323dc4126903912",
+                 "created_at": "2026-10-13T14:55:00+00:00"},
+  "id": "7691811981325569310",
+  "format": "green_screen",
+  "hook": {"type": "pattern_interrupt",
+           "line": "Opens mid-rant, swearing that this looks nasty: who wants to eat something that looks like that?",
+           "visual": "Small cut-out face top-left over a full-frame AI-made menu: 'BREAKFAST BURRITO, ONLY $13.50' with a burrito full of holes; caps captions with red-boxed swear words."},
+  "beats": [
+    {"t": 0.0, "what": "The ugly AI menu image fills the screen; his small face in the corner reacts with disgust from the first word"},
+    {"t": 6.97, "what": "Verdict line 'it's lazy' with the key word boxed in red"},
+    {"t": 10.45, "what": "The fix: just take a photo of the actual breakfast burrito"},
+    {"t": 13.94, "what": "Second fix: no photo at all, just write the item on the menu"},
+    {"t": 20.91, "what": "Pre-empts the backlash: he is not anti-AI in general"},
+    {"t": 22.33, "what": "Leans toward the camera as he concedes AI has real use cases"},
+    {"t": 27.88, "what": "Narrows the target: generative AI for art, especially restaurants and small businesses"},
+    {"t": 34.85, "what": "Escalating list of insults ending on 'abhorrent'"},
+    {"t": 38.33, "what": "Final 'ew, look at it' pointing back at the image, which loops into the opening"}
+  ],
+  "graphics": {"captions": "word_by_word", "caption_position": "middle",
+               "devices": ["green_screen_bg", "screenshot", "title_text"],
+               "density": "minimal", "per_minute_estimate": 2},
+  "characters": [],
+  "cta": {"kind": "none", "t": null},
+  "why_it_works": [
+    "The evidence is the background: the absurd burrito with holes is on screen the whole time, so every viewer judges it with him and wants to comment",
+    "Strong emotion from word one (disgust, swearing) is a pattern interrupt that stops the scroll before any context is given",
+    "He pre-empts the 'you just hate AI' reply, which invites debate in the comments rather than dismissal",
+    "Ends on 'look at that' pointing at the same image, so the 0.99 loop score makes the replay seamless"
+  ],
+  "weaknesses": [
+    "Nothing on screen changes for 38 s; no cuts and only one movement event",
+    "Face is tiny in a corner (face height 0.14 of frame), so expression barely reads on a phone",
+    "92% of text sits outside the safe area and captions overlap the menu title",
+    "No call to action; the outrage does the work but there is no ask"
+  ],
+  "for_robert": "Use the 'evidence as background' move for hot takes: put the bad example full screen and have Fred react to it in a corner, then point back at it at the end so the clip loops."
+}

@@ -1,0 +1,24 @@
+# v10 — quick-fire style switches: 3D, illustrated, pixel, 3D again inside about three seconds, with the
+# moustache landing while 3D. Questions: does a turntable that gets cut short look broken? Do back-to-back
+# poofs read as one transformation or as noise?
+name: v10
+voice: iP95p4xoKVk53GoZ742B
+script: >-
+  Fred can be anything. 3D. Flat. Pixel. 3D again. With a moustache? Obviously.
+plan:
+  layout: [{word: 0, layout: full}]
+  props:
+    - id: fred
+      art: fred
+      word: "Fred"
+      until: "Obviously"
+      at: lap
+      size: 0.22
+      style: illustrated
+      beats:
+        - {word: "3D", style: toon3d}
+        - {word: "Flat", style: illustrated}
+        - {word: "Pixel", style: pixel}
+        - {word: "3D#2", style: toon3d}
+        - {word: "moustache", add: [moustache]}
+        - {word: "Obviously", do: wave}

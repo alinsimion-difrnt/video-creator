@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="{{LANG}}">
+<head>
+<meta charset="utf-8">
+<title>overlays</title>
+<link rel="stylesheet" href="assets/fonts.css">
+<script src="assets/gsap.min.js"></script>
+<!-- Graphics over the presenter's own video (create/kit, `create overlay`). Each item has a zone chosen in
+     create/footage/overlays.py (clear of the face and the caption band); here it is fitted into that zone. -->
+<style>
+  {{CSS_VARS}}
+  html, body { margin: 0; padding: 0; background: #000; }
+  #root { position: relative; width: var(--w); height: var(--h); overflow: hidden; background: #000; }
+  #plate { position: absolute; left: 0; top: 0; width: var(--w); height: var(--h); z-index: 1; }
+  #layer { position: absolute; left: 0; top: 0; width: var(--w); height: var(--h); z-index: 2; pointer-events: none; }
+  .zone { position: absolute; display: flex; align-items: center; justify-content: center; }
+  .ov { display: inline-block; box-sizing: border-box; max-width: 100%; transform-origin: 50% 50%; opacity: 0; }
+  .card { background: var(--surface); color: var(--ink); border-radius: var(--radius); box-shadow: var(--shadow);
+    padding: 28px 36px; }
+  .keyword { background: var(--surface); color: var(--ink); border-radius: 999px; padding: 14px 34px;
+    font: 700 60px/1.1 var(--heading); letter-spacing: -0.01em; box-shadow: var(--shadow); white-space: nowrap; }
+  .title { font: 700 52px/1.12 var(--heading); letter-spacing: -0.02em; }
+  .line { font: 500 44px/1.25 var(--body); color: var(--muted); margin-top: 10px; }
+  .stat .title { font-size: 128px; line-height: 1; letter-spacing: -0.04em; }
+  .row { font: 600 44px/1.25 var(--body); margin-top: 12px; display: flex; gap: 16px; align-items: baseline; }
+  .row .dot { color: var(--accent); }
+  .accent .title, .keyword.accent { color: var(--accent); }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="overlays" data-width="{{W}}" data-height="{{H}}" data-start="0"
+     data-duration="{{DURATION}}">
+  <video id="plate" src="presenter.mp4" muted playsinline data-start="0" data-duration="{{DURATION}}"
+         data-track-index="0"></video>
+  <div id="layer" data-layout-allow-overlap="graphics over the presenter's video, placed clear of the face"></div>
+</div>
+<script type="application/json" id="overlay-data">{{DATA}}</script>
+<script>
+(function () {
+  const D = JSON.parse(document.getElementById("overlay-data").textContent);
+  const layer = document.getElementById("layer");
+  const el = (tag, cls, parent, text) => { const e = document.createElement(tag); if (cls) e.className = cls;
+    if (text != null) e.textContent = text; parent.appendChild(e); return e; };
+  const built = D.items.map(function (it, i) {
+    const z = el("div", "zone", layer);
+    const [x0, y0, x1, y1] = it.zone;
+    Object.assign(z.style, { left: x0 + "px", top: y0 + "px", width: (x1 - x0) + "px", height: (y1 - y0) + "px" });
+    let ov, rows = [];
+    if (it.kind === "keyword") {
+      ov = el("div", "ov keyword" + (it.accent ? " accent" : ""), z, it.title);
+    } else {
+      ov = el("div", "ov card " + it.kind + (it.accent ? " accent" : ""), z);
+      el("div", "title", ov, it.title);
+      it.lines.forEach(function (l) {
+        if (it.kind === "list") { const r = el("div", "row", ov); el("span", "dot", r, "●"); el("span", "", r, l); rows.push(r); }
+        else el("div", "line", ov, l);
+      });
+    }
+    ov.id = "ov" + i;
+    return { it: it, z: z, ov: ov, rows: rows };
+  });
+  // Fit each graphic inside its zone (scale down only).
+  function fit() {
+    built.forEach(function (b) {
+      const zw = b.z.clientWidth, zh = b.z.clientHeight, w = b.ov.offsetWidth, h = b.ov.offsetHeight;
+      const s = Math.min(1, zw / w, zh / h);
+      b.ov.dataset.fit = s.toFixed(4);
+    });
+  }
+  fit();
+  const tl = gsap.timeline({ paused: true });
+  built.forEach(function (b, i) {
+    const s = parseFloat(b.ov.dataset.fit);
+    gsap.set(b.ov, { opacity: 0, y: 24, scale: s * 0.9 });
+    if (b.rows.length) gsap.set(b.rows, { opacity: 0, x: -16 });
+    tl.fromTo(b.ov, { opacity: 0, y: 24, scale: s * 0.9 }, { opacity: 1, y: 0, scale: s, duration: 0.45, ease: "back.out(1.4)", immediateRender: false }, b.it.t0);
+    if (b.rows.length) tl.fromTo(b.rows, { opacity: 0, x: -16 }, { opacity: 1, x: 0, duration: 0.3, ease: "power3.out", stagger: 0.18, immediateRender: false }, b.it.t0 + 0.25);
+    const out = Math.max(b.it.t0 + 0.6, b.it.t1 - 0.25);
+    tl.to(b.ov, { opacity: 0, y: -12, duration: 0.25, ease: "power2.in" }, out);
+    tl.set(b.ov, { opacity: 0, visibility: "hidden" }, out + 0.25);
+  });
+  tl.set({}, {}, D.duration);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["overlays"] = tl;
+})();
+</script>
+</body>
+</html>

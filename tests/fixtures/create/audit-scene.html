@@ -1,0 +1,21 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+html,body{margin:0;width:1080px;height:1920px}
+#s01{position:relative;width:1080px;height:1920px;overflow:hidden;font:48px sans-serif}
+p{position:absolute;margin:0}
+</style></head><body>
+<div id="s01">
+  <p id="ok" style="left:200px;top:400px">Safe</p>
+  <p id="rail" style="left:820px;top:1180px;opacity:0">Under the rail</p>
+  <div style="position:absolute;left:200px;top:600px;width:400px;height:60px;overflow:hidden">
+    <p id="masked" style="top:80px">Masked away</p>
+  </div>
+  <p data-safe-exempt="decoration" style="left:0;top:1800px">Decor</p>
+  <p data-role="caption" style="left:200px;top:950px">Caption text</p>
+</div>
+<script>
+  // A stand-in for a GSAP timeline: "Under the rail" appears at 0.5 s.
+  const rail = document.getElementById("rail");
+  window.__timelines = { s01: { duration: () => 1.0, seek: (t) => { rail.style.opacity = t >= 0.5 ? 1 : 0; } } };
+</script>
+</body></html>

@@ -1,0 +1,89 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "1e99d7f9d573cc01fb130e3dea1787feb80fe621d9f5b990d7091cc5dc31ea73",
+    "created_at": "2026-10-05T06:44:02.138317Z"
+  },
+  "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+  "event": "e009",
+  "task": "a2-e009",
+  "elements": [
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Left gradient orb (green-dominant)",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["rotate", "scale_up", "scale_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 3300, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Right gradient orb (orange-dominant)",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["rotate", "scale_up", "scale_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 3300, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Inner outline ring",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 3300, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Outer concentric outline rings",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 3300, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x033", "verdict": "override", "label": "music", "note": "New sustained tonal partials enter the score here; orbs are mid-orbit with no discrete visual hit, so read as a musical note rather than a chime SFX."},
+    {"id": "x034", "verdict": "unsure", "label": "unsure", "note": "Lands as the orbs settle left/right at the end of the orbit; a short transient follows ~60 ms later but it is not clearly an SFX."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "orbital depth swap",
+    "description": "Two gradient orbs orbit around a common centre inside concentric outline rings, swapping positions with perspective scaling (the near orb grows, the far one shrinks) while the rings expand, settling side by side on a wider orbit.",
+    "why_premium": "A slow, continuous orbit with depth-based scaling turns two voices into a dance (imitate vs embody) without any cut, and the expanding rings give spatial depth and a calm, measured rhythm under the narration."
+  },
+  "build_hint": {
+    "gsap": "Put both orbs in a rotating parent: tl.to('.orbit', {rotation:540, duration:3.3, ease:'sine.inOut'}) with counter-rotation on '.orb' to keep gradients upright; drive orb scale from orbit angle (scale = 1 + 0.6*sin(angle)) via onUpdate, opposite phase per orb; tl.fromTo('.ring', {scale:0.6}, {scale:1, duration:3.3, ease:'sine.inOut', stagger:0.08}, 0); radius grows 0.6 to 1 in parallel.",
+    "remotion": "angle = interpolate(frame,[0,100],[0,3*Math.PI],{easing:Easing.inOut(Easing.sin)}); orb x = cx + r*cos(angle + phase), y = cy + r*0.6*sin(angle + phase), scale = 1 + 0.6*sin(angle + phase); ring and orbit radius r interpolated 0.6 to 1 with the same easing; no spring (continuous orbit)."
+  },
+  "confidence": "medium",
+  "notes": "Camera verdict none; the scale and pan sums come from the rings expanding and orbs travelling. Energy has a single near-zero sample mid-burst (likely a duplicate frame). Exact number of orbit turns is not measurable from 7 frames."
+}

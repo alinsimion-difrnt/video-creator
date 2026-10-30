@@ -1,0 +1,765 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "s5_packets",
+    "annotator": "code",
+    "skill": null,
+    "model": null,
+    "input_hash": "bb515103d776c27e55fa536a18713e4fc3bbd6f93624333a821b44c643515a7f",
+    "created_at": "2026-10-05T06:19:19.209123Z"
+  },
+  "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+  "tier": "reference",
+  "max_images_per_task": 12,
+  "event_images": 4,
+  "tasks": [
+    {
+      "id": "a1-p1",
+      "kind": "a1",
+      "images": [
+        "pass1/sheets/shot_s001_1.jpg",
+        "pass1/keyframes/shot_s001.jpg",
+        "pass1/sheets/shot_s002_1.jpg",
+        "pass1/sheets/shot_s002_2.jpg",
+        "pass1/sheets/shot_s002_3.jpg",
+        "pass1/sheets/shot_s002_4.jpg",
+        "pass1/sheets/shot_s002_5.jpg",
+        "pass1/sheets/shot_s002_6.jpg",
+        "pass1/sheets/shot_s002_7.jpg",
+        "pass1/sheets/shot_s002_8.jpg",
+        "pass1/sheets/shot_s002_9.jpg",
+        "pass1/keyframes/shot_s002.jpg"
+      ],
+      "files": [
+        "pass1/anchors.json"
+      ],
+      "shots": [
+        "s001",
+        "s002"
+      ],
+      "event": null,
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/a1.p1.json",
+      "input_hash": "3846cbb63b8b3ce433bb44171aada9317cb15276b299b4b43fcc5557983572c7"
+    },
+    {
+      "id": "a1-p2",
+      "kind": "a1",
+      "images": [
+        "pass1/sheets/shot_s003_1.jpg",
+        "pass1/sheets/shot_s003_2.jpg",
+        "pass1/sheets/shot_s003_3.jpg",
+        "pass1/sheets/shot_s003_4.jpg",
+        "pass1/sheets/shot_s003_5.jpg",
+        "pass1/sheets/shot_s003_6.jpg",
+        "pass1/sheets/shot_s003_7.jpg",
+        "pass1/keyframes/shot_s003.jpg",
+        "pass1/sheets/shot_s004_1.jpg",
+        "pass1/keyframes/shot_s004.jpg",
+        "pass1/sheets/shot_s005_1.jpg",
+        "pass1/keyframes/shot_s005.jpg"
+      ],
+      "files": [
+        "pass1/anchors.json"
+      ],
+      "shots": [
+        "s003",
+        "s004",
+        "s005"
+      ],
+      "event": null,
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/a1.p2.json",
+      "input_hash": "98703bdb30e2d4a8f0aac54a91cbfcbdc780ffa1a45b2006491a571b93b2b646"
+    },
+    {
+      "id": "a1-p3",
+      "kind": "a1",
+      "images": [
+        "pass1/sheets/shot_s006_1.jpg",
+        "pass1/keyframes/shot_s006.jpg",
+        "pass1/sheets/shot_s007_1.jpg",
+        "pass1/keyframes/shot_s007.jpg",
+        "pass1/sheets/shot_s008_1.jpg",
+        "pass1/sheets/shot_s008_2.jpg",
+        "pass1/keyframes/shot_s008.jpg"
+      ],
+      "files": [
+        "pass1/anchors.json"
+      ],
+      "shots": [
+        "s006",
+        "s007",
+        "s008"
+      ],
+      "event": null,
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/a1.p3.json",
+      "input_hash": "f654698ab50b817a1b54098d5a3d03aa21f6bafcac1e3c54534456fd73fe55e2"
+    },
+    {
+      "id": "a2-e001",
+      "kind": "a2",
+      "images": [
+        "events/e001/filmstrip.jpg",
+        "events/e001/end_marked.jpg",
+        "events/e001/end_clean.jpg",
+        "events/e001/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e001/facts.json",
+        "events/e001/candidates.json"
+      ],
+      "shots": [],
+      "event": "e001",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e001.a2.json",
+      "input_hash": "f342e8295fef2ce0afef76dd623a72f8d22a8955ef91e60de1bae212cf7ca313"
+    },
+    {
+      "id": "a2-e002",
+      "kind": "a2",
+      "images": [
+        "events/e002/filmstrip.jpg",
+        "events/e002/end_marked.jpg",
+        "events/e002/end_clean.jpg",
+        "events/e002/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e002/facts.json",
+        "events/e002/candidates.json"
+      ],
+      "shots": [],
+      "event": "e002",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e002.a2.json",
+      "input_hash": "a70b020e855135ae2108606b502aa408c751f7cb5cac000d2caf1234c5983188"
+    },
+    {
+      "id": "a2-e004",
+      "kind": "a2",
+      "images": [
+        "events/e004/filmstrip.jpg",
+        "events/e004/end_marked.jpg",
+        "events/e004/end_clean.jpg",
+        "events/e004/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e004/facts.json",
+        "events/e004/candidates.json"
+      ],
+      "shots": [],
+      "event": "e004",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e004.a2.json",
+      "input_hash": "bc808a8742ab7f2a635a7b34847ab58a3da43ede2407dfb09dc874987761b36d"
+    },
+    {
+      "id": "a2-e005",
+      "kind": "a2",
+      "images": [
+        "events/e005/filmstrip.jpg",
+        "events/e005/end_marked.jpg",
+        "events/e005/end_clean.jpg",
+        "events/e005/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e005/facts.json",
+        "events/e005/candidates.json"
+      ],
+      "shots": [],
+      "event": "e005",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e005.a2.json",
+      "input_hash": "a6209b78f30ab53f7a2e4f89952277449174606626ee3d6484969538f4e0ea59"
+    },
+    {
+      "id": "a2-e006",
+      "kind": "a2",
+      "images": [
+        "events/e006/filmstrip.jpg",
+        "events/e006/end_marked.jpg",
+        "events/e006/end_clean.jpg",
+        "events/e006/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e006/facts.json",
+        "events/e006/candidates.json"
+      ],
+      "shots": [],
+      "event": "e006",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e006.a2.json",
+      "input_hash": "6c4f50c3ec5744c9b82ff05abee5f8c34533f5e4f215bcc37d13fc84564283de"
+    },
+    {
+      "id": "a2-e007",
+      "kind": "a2",
+      "images": [
+        "events/e007/filmstrip.jpg",
+        "events/e007/end_marked.jpg",
+        "events/e007/end_clean.jpg",
+        "events/e007/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e007/facts.json",
+        "events/e007/candidates.json"
+      ],
+      "shots": [],
+      "event": "e007",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e007.a2.json",
+      "input_hash": "e30df5eba89bc3479e0b04a47973c32c6b9ac5dbb2f1f467884a0ea1cca45e0a"
+    },
+    {
+      "id": "a2-e008",
+      "kind": "a2",
+      "images": [
+        "events/e008/filmstrip.jpg",
+        "events/e008/end_marked.jpg",
+        "events/e008/end_clean.jpg",
+        "events/e008/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e008/facts.json",
+        "events/e008/candidates.json"
+      ],
+      "shots": [],
+      "event": "e008",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e008.a2.json",
+      "input_hash": "e8b1eb45e1c903042e447962ad5430bfe52bda93840446b11ef606b888d194c5"
+    },
+    {
+      "id": "a2-e009",
+      "kind": "a2",
+      "images": [
+        "events/e009/filmstrip.jpg",
+        "events/e009/end_marked.jpg",
+        "events/e009/end_clean.jpg",
+        "events/e009/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e009/facts.json",
+        "events/e009/candidates.json"
+      ],
+      "shots": [],
+      "event": "e009",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e009.a2.json",
+      "input_hash": "6622bbc01e9ee33c61f8b26f51575347f736ae52912aa2659a00d387535b72cb"
+    },
+    {
+      "id": "a2-e010",
+      "kind": "a2",
+      "images": [
+        "events/e010/filmstrip.jpg",
+        "events/e010/end_marked.jpg",
+        "events/e010/end_clean.jpg",
+        "events/e010/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e010/facts.json",
+        "events/e010/candidates.json"
+      ],
+      "shots": [],
+      "event": "e010",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e010.a2.json",
+      "input_hash": "24d6dc634ca72ab00ee63bb178e5e5c972f3ead8b9c4dc693b2b08c6cd468f7c"
+    },
+    {
+      "id": "a2-e011",
+      "kind": "a2",
+      "images": [
+        "events/e011/filmstrip.jpg",
+        "events/e011/end_marked.jpg",
+        "events/e011/end_clean.jpg",
+        "events/e011/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e011/facts.json",
+        "events/e011/candidates.json"
+      ],
+      "shots": [],
+      "event": "e011",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e011.a2.json",
+      "input_hash": "1164a77c01c4b18512cbbf4391876495b21c37639353d81a1fb809c79a26d46c"
+    },
+    {
+      "id": "a2-e012",
+      "kind": "a2",
+      "images": [
+        "events/e012/filmstrip.jpg",
+        "events/e012/end_marked.jpg",
+        "events/e012/end_clean.jpg",
+        "events/e012/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e012/facts.json",
+        "events/e012/candidates.json"
+      ],
+      "shots": [],
+      "event": "e012",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e012.a2.json",
+      "input_hash": "6a49948cba45f3fe514df28f7797047e675c4ba4bc133221f2692f0cf840feb1"
+    },
+    {
+      "id": "a2-e013",
+      "kind": "a2",
+      "images": [
+        "events/e013/filmstrip.jpg",
+        "events/e013/end_marked.jpg",
+        "events/e013/end_clean.jpg",
+        "events/e013/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e013/facts.json",
+        "events/e013/candidates.json"
+      ],
+      "shots": [],
+      "event": "e013",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e013.a2.json",
+      "input_hash": "ec1ed13c9478832ca84e641753fab676169dd9bdbdd2086788fffc3b08f6e3f1"
+    },
+    {
+      "id": "a2-e015",
+      "kind": "a2",
+      "images": [
+        "events/e015/filmstrip.jpg",
+        "events/e015/end_marked.jpg",
+        "events/e015/end_clean.jpg",
+        "events/e015/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e015/facts.json",
+        "events/e015/candidates.json"
+      ],
+      "shots": [],
+      "event": "e015",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e015.a2.json",
+      "input_hash": "f009d5ee38891e2acec1ce91f0f3a18323d99e901b18cee85150418ad1b03f54"
+    },
+    {
+      "id": "a2-e016",
+      "kind": "a2",
+      "images": [
+        "events/e016/filmstrip.jpg",
+        "events/e016/end_marked.jpg",
+        "events/e016/end_clean.jpg",
+        "events/e016/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e016/facts.json",
+        "events/e016/candidates.json"
+      ],
+      "shots": [],
+      "event": "e016",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e016.a2.json",
+      "input_hash": "d5fd01436d8b5cf53b882c678a8b637aca40d94392cba1ad9540e39da1206dfc"
+    },
+    {
+      "id": "a2-e017",
+      "kind": "a2",
+      "images": [
+        "events/e017/filmstrip.jpg",
+        "events/e017/end_marked.jpg",
+        "events/e017/end_clean.jpg",
+        "events/e017/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e017/facts.json",
+        "events/e017/candidates.json"
+      ],
+      "shots": [],
+      "event": "e017",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e017.a2.json",
+      "input_hash": "9b717dd9d4973a140e5718830ca3a30ed53976a92cae8469c49f9d772a64de7b"
+    },
+    {
+      "id": "a2-e018",
+      "kind": "a2",
+      "images": [
+        "events/e018/filmstrip.jpg",
+        "events/e018/end_marked.jpg",
+        "events/e018/end_clean.jpg",
+        "events/e018/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e018/facts.json",
+        "events/e018/candidates.json"
+      ],
+      "shots": [],
+      "event": "e018",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e018.a2.json",
+      "input_hash": "5e0d7494072d86467852f3b04a809bbe9e37e8bfba5a8dff431997e1aa826374"
+    },
+    {
+      "id": "a2-e019",
+      "kind": "a2",
+      "images": [
+        "events/e019/filmstrip.jpg",
+        "events/e019/end_marked.jpg",
+        "events/e019/end_clean.jpg",
+        "events/e019/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e019/facts.json",
+        "events/e019/candidates.json"
+      ],
+      "shots": [],
+      "event": "e019",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e019.a2.json",
+      "input_hash": "39dc28ebc7b02dca45b3884b8032c70390110862d60fb78a4fee57edc6be84a3"
+    },
+    {
+      "id": "a2-e020",
+      "kind": "a2",
+      "images": [
+        "events/e020/filmstrip.jpg",
+        "events/e020/end_marked.jpg",
+        "events/e020/end_clean.jpg",
+        "events/e020/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e020/facts.json",
+        "events/e020/candidates.json"
+      ],
+      "shots": [],
+      "event": "e020",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e020.a2.json",
+      "input_hash": "32ecf3e7b279e2ee00f16d41f71b323bb95dbd9c8661b7ab481d6b8f48502467"
+    },
+    {
+      "id": "a2-e021",
+      "kind": "a2",
+      "images": [
+        "events/e021/filmstrip.jpg",
+        "events/e021/end_marked.jpg",
+        "events/e021/end_clean.jpg",
+        "events/e021/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e021/facts.json",
+        "events/e021/candidates.json"
+      ],
+      "shots": [],
+      "event": "e021",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e021.a2.json",
+      "input_hash": "ca0a96b235490c207f32b6cd703f20b552fde138a5c23250e7b8defb43940190"
+    },
+    {
+      "id": "a2-e022",
+      "kind": "a2",
+      "images": [
+        "events/e022/filmstrip.jpg",
+        "events/e022/end_marked.jpg",
+        "events/e022/end_clean.jpg",
+        "events/e022/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e022/facts.json",
+        "events/e022/candidates.json"
+      ],
+      "shots": [],
+      "event": "e022",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e022.a2.json",
+      "input_hash": "0dbf0004c39d8b391579bcf4519fdc95b6e9d689a62f37aec55b05d2881d8742"
+    },
+    {
+      "id": "a2-e023",
+      "kind": "a2",
+      "images": [
+        "events/e023/filmstrip.jpg",
+        "events/e023/end_marked.jpg",
+        "events/e023/end_clean.jpg",
+        "events/e023/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e023/facts.json",
+        "events/e023/candidates.json"
+      ],
+      "shots": [],
+      "event": "e023",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e023.a2.json",
+      "input_hash": "a3b6cde3f34c0180154db6204dce7942565db578cc05b09551b7c2ba0e201eea"
+    },
+    {
+      "id": "a2-e024",
+      "kind": "a2",
+      "images": [
+        "events/e024/filmstrip.jpg",
+        "events/e024/end_marked.jpg",
+        "events/e024/end_clean.jpg",
+        "events/e024/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e024/facts.json",
+        "events/e024/candidates.json"
+      ],
+      "shots": [],
+      "event": "e024",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e024.a2.json",
+      "input_hash": "d9e16c4434d1239bd61544dc0c70060b014d1afca6ec2b8647331eb60a81a50e"
+    },
+    {
+      "id": "a2-e025",
+      "kind": "a2",
+      "images": [
+        "events/e025/filmstrip.jpg",
+        "events/e025/end_marked.jpg",
+        "events/e025/end_clean.jpg",
+        "events/e025/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e025/facts.json",
+        "events/e025/candidates.json"
+      ],
+      "shots": [],
+      "event": "e025",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e025.a2.json",
+      "input_hash": "ddf53f7bcf0959935a56afd5af40bf06080b7515716956642bf9a94113cf48d2"
+    },
+    {
+      "id": "a2-e026",
+      "kind": "a2",
+      "images": [
+        "events/e026/filmstrip.jpg",
+        "events/e026/end_marked.jpg",
+        "events/e026/end_clean.jpg",
+        "events/e026/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e026/facts.json",
+        "events/e026/candidates.json"
+      ],
+      "shots": [],
+      "event": "e026",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e026.a2.json",
+      "input_hash": "2c4b926bc8b51be85356af7150f8e95b29692c954a645d1b01900195fc554ed2"
+    },
+    {
+      "id": "a2-e027",
+      "kind": "a2",
+      "images": [
+        "events/e027/filmstrip.jpg",
+        "events/e027/end_marked.jpg",
+        "events/e027/end_clean.jpg",
+        "events/e027/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e027/facts.json",
+        "events/e027/candidates.json"
+      ],
+      "shots": [],
+      "event": "e027",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e027.a2.json",
+      "input_hash": "ba4e6056eadb0c537f5b1db24058a89e8c496064bed92444ee5cb8d016431626"
+    },
+    {
+      "id": "a2-e028",
+      "kind": "a2",
+      "images": [
+        "events/e028/filmstrip.jpg",
+        "events/e028/end_marked.jpg",
+        "events/e028/end_clean.jpg",
+        "events/e028/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e028/facts.json",
+        "events/e028/candidates.json"
+      ],
+      "shots": [],
+      "event": "e028",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e028.a2.json",
+      "input_hash": "1a43a2dc4569f6e12272c71e71dc472f55d476898ff6951217a803388caba984"
+    },
+    {
+      "id": "a2-e029",
+      "kind": "a2",
+      "images": [
+        "events/e029/filmstrip.jpg",
+        "events/e029/end_marked.jpg",
+        "events/e029/end_clean.jpg",
+        "events/e029/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e029/facts.json",
+        "events/e029/candidates.json"
+      ],
+      "shots": [],
+      "event": "e029",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e029.a2.json",
+      "input_hash": "c14ea210dd31758843e6294e576ee0f4fa8c518ec05c64493034e8256ff19972"
+    },
+    {
+      "id": "a2-e030",
+      "kind": "a2",
+      "images": [
+        "events/e030/filmstrip.jpg",
+        "events/e030/end_marked.jpg",
+        "events/e030/end_clean.jpg",
+        "events/e030/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e030/facts.json",
+        "events/e030/candidates.json"
+      ],
+      "shots": [],
+      "event": "e030",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e030.a2.json",
+      "input_hash": "ac893d3ea6725f0b45adce2039ea25d41bfa849d1a071d1897bd396596182778"
+    },
+    {
+      "id": "a2-e031",
+      "kind": "a2",
+      "images": [
+        "events/e031/filmstrip.jpg",
+        "events/e031/end_marked.jpg",
+        "events/e031/end_clean.jpg",
+        "events/e031/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e031/facts.json",
+        "events/e031/candidates.json"
+      ],
+      "shots": [],
+      "event": "e031",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e031.a2.json",
+      "input_hash": "c6ac4cb8365e32cf9e0217f24b2ed3a6b8705d9ac409ca62be9d9aa1cb0e8872"
+    },
+    {
+      "id": "a2-e033",
+      "kind": "a2",
+      "images": [
+        "events/e033/filmstrip.jpg",
+        "events/e033/end_marked.jpg",
+        "events/e033/end_clean.jpg",
+        "events/e033/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e033/facts.json",
+        "events/e033/candidates.json"
+      ],
+      "shots": [],
+      "event": "e033",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e033.a2.json",
+      "input_hash": "351609f4c9e255b2749f2cc8d99396496702ecf985900f3d27a41aaf13c54044"
+    },
+    {
+      "id": "a2-e034",
+      "kind": "a2",
+      "images": [
+        "events/e034/filmstrip.jpg",
+        "events/e034/end_marked.jpg",
+        "events/e034/end_clean.jpg",
+        "events/e034/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e034/facts.json",
+        "events/e034/candidates.json"
+      ],
+      "shots": [],
+      "event": "e034",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e034.a2.json",
+      "input_hash": "a87f8b10811f0b37438fd65d8d8814abec38e30d2a7f61f7e4eaebf352bdfd43"
+    },
+    {
+      "id": "a2-e035",
+      "kind": "a2",
+      "images": [
+        "events/e035/filmstrip.jpg",
+        "events/e035/end_marked.jpg",
+        "events/e035/end_clean.jpg",
+        "events/e035/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e035/facts.json",
+        "events/e035/candidates.json"
+      ],
+      "shots": [],
+      "event": "e035",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e035.a2.json",
+      "input_hash": "1675a11d607ad2f54a65b2754172cdd07eec5e5973a1d6d45b80a819352abf72"
+    },
+    {
+      "id": "a2-e036",
+      "kind": "a2",
+      "images": [
+        "events/e036/filmstrip.jpg",
+        "events/e036/end_marked.jpg",
+        "events/e036/end_clean.jpg",
+        "events/e036/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e036/facts.json",
+        "events/e036/candidates.json"
+      ],
+      "shots": [],
+      "event": "e036",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e036.a2.json",
+      "input_hash": "11575d77b524e58bbe36e055771d74c09650c50f0209523185e9bd91d55adf06"
+    },
+    {
+      "id": "a2-e037",
+      "kind": "a2",
+      "images": [
+        "events/e037/filmstrip.jpg",
+        "events/e037/end_marked.jpg",
+        "events/e037/end_clean.jpg",
+        "events/e037/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e037/facts.json",
+        "events/e037/candidates.json"
+      ],
+      "shots": [],
+      "event": "e037",
+      "siblings": [],
+      "output": "videos/elevenlabs-introducing-elevenlabs-conversational-ag/events/e037.a2.json",
+      "input_hash": "521965cc967b59d6e1fa618c675ad9e6b4ff923dedb43b7be7e9b2146cc6bf3a"
+    }
+  ],
+  "skipped": [
+    {
+      "event": "e003",
+      "reason": "overlap",
+      "of": "e002"
+    },
+    {
+      "event": "e014",
+      "reason": "overlap",
+      "of": "e013"
+    },
+    {
+      "event": "e032",
+      "reason": "overlap",
+      "of": "e031"
+    }
+  ]
+}

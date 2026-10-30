@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "27f0e9b2a97de9d74dbba76572d237c2584209b73aee63b000c1649421ef0b81",
+    "created_at": "2026-10-05T06:55:59.528762Z"
+  },
+  "video": "workday-workday-adaptive-planning-demo-finan",
+  "event": "e040",
+  "task": "a2-e040",
+  "elements": [
+    {
+      "box": "b17",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "'Sheets' nav item hover highlight",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["highlight", "color_shift"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Sheets",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "White 'Sheets' submenu flyout listing sheet names",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Sheets Overview P&L Balance Sheet Cash Flow Expenses Office Expenses with Trend Workforce Planning Product Revenue Sources of New Revenue Capital Planning Fixed Asset Movement Travel Vendor Contracts Prepaids Daily Order Detail IC Accounts Operational Metrics CRM Data Inventory Purchases Schedule",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": null,
+      "manual_box": [199, 178, 226, 189],
+      "manual_reason": "No candidate box isolates the cursor; b02 is a union box spanning most of the page.",
+      "label": "Mouse cursor moving onto 'Sheets'",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "submenu flyout open",
+    "description": "The cursor hovers the 'Sheets' item in the open navigation drawer; the item highlights and a white submenu of sheet names appears beside it in a single step.",
+    "why_premium": "Low premium value as recorded: an instant UI state change. Its job is wayfinding, showing the viewer the menu path to the P&L sheet the narration names next."
+  },
+  "build_hint": {
+    "gsap": "tl.to(sheetsItem, {backgroundColor: '#0a3fae', duration: 0.12, ease: 'power1.out'}).fromTo(flyout, {opacity: 0, x: -16}, {opacity: 1, x: 0, duration: 0.25, ease: 'power3.out'}, '<').from(flyout.querySelectorAll('li'), {opacity: 0, y: 6, stagger: 0.015, duration: 0.18, ease: 'power2.out'}, '<0.05'); the source pops in instantly.",
+    "remotion": "flyout opacity = interpolate(frame, [0, 6], [0, 1], {extrapolateRight: 'clamp'}); translateX = interpolate(spring({frame, fps, config: {damping: 28, stiffness: 240}}), [0, 1], [-16, 0]); item highlight colour via interpolateColors over 3 frames."
+  },
+  "confidence": "medium",
+  "notes": "Energy is a single spike at the last burst frame, so the flyout is a hard state change in the source; any fade/slide is a suggested upgrade. Cursor travel is small and its start position is not clear in the filmstrip."
+}

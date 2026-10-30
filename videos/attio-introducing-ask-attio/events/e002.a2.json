@@ -1,0 +1,114 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "168cda7415b53d19b4aef84f86cd67bc9d5c0209936d524b4bc74bfb5c320546",
+    "created_at": "2026-10-05T06:40:13.116934Z"
+  },
+  "video": "attio-introducing-ask-attio",
+  "event": "e002",
+  "task": "a2-e002",
+  "elements": [
+    {
+      "box": "b07",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Greeting headline drifting up then vanishing",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["slide_up", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Good morning.",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 330, "easing_class": "ease_in"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Prompt input card drifting up then vanishing",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_up", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 330, "easing_class": "ease_in"}
+    },
+    {
+      "box": "b08",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Typed query inside the input (leaves the input on send)",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["slide_up", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "How do I win this deal",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 330, "easing_class": "ease_in"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Suggestion chip: Prep next meeting",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["slide_up", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Prep next meeting",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 330, "easing_class": "ease_in"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Suggestion chip: Recap last meeting",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["slide_up", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Recap last meeting",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 330, "easing_class": "ease_in"}
+    },
+    {
+      "box": "b06",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Sent user message bubble appearing right of centre",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "How do I win this deal",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "prompt send to bubble",
+    "description": "When the typed query is sent, the home layout (greeting, input card and chips) drifts up with a slight push-in and clears to an empty canvas within a frame. The same query then fades in on its own as a grey right-aligned chat bubble, becoming the user turn in a conversation view.",
+    "why_premium": "Clearing the screen to show only the sent question puts all attention on the user's intent before the AI answer arrives. The upward drift sells the 'send' gesture, and the empty canvas is a clean stage for the answer stream."
+  },
+  "build_hint": {
+    "gsap": "tl.to(homeLayout, {y: -160, scale: 1.03, duration: 0.33, ease: 'power2.in'}); tl.set(homeLayout, {autoAlpha: 0}); tl.fromTo(bubble, {autoAlpha: 0}, {autoAlpha: 1, duration: 0.3, ease: 'power2.out'}, '+=0.03').",
+    "remotion": "Sequence 1 (≈10 frames @30fps): container translateY = interpolate(frame, [0, 10], [0, -160], {easing: Easing.in(Easing.quad)}), scale from 1 to 1.03. Then unmount it. Sequence 2: bubble opacity = interpolate(frame, [0, 9], [0, 1], {easing: Easing.out(Easing.cubic)}). No spring."
+  },
+  "confidence": "medium",
+  "notes": "camera.move = tilt_down (pan_y -0.219, scale 1.028): the whole layout rises with a slight push-in, which reads as a camera tilt plus push. The layout drops to a blank frame abruptly (energy collapses at f112), so it is a hard clear, not a crossfade. It is unclear whether the bubble text is the same layer as b08 moving (morph) or a new layer fading in; no intermediate frame shows travel. b09 ('Good' part of the greeting diff) is not listed separately because b07 represents the headline. No SFX candidates in facts.json, but the spectrogram shows a soft rising swell into ~3.65 s with tonal partials, possibly a send whoosh or chime; not reviewable."
+}

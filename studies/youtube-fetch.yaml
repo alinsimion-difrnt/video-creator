@@ -1,0 +1,60 @@
+# YouTube for the two studies (studies/README.md). YouTube blocks the cloud, so a Claude session on Robert's
+# laptop runs scripts/study_youtube_fetch.py (studies/youtube-fetch.md). Each source names its track; the
+# tracks stay independent: pixel-art items land in studies/pixel-art/youtube.yaml and r2 study/pixel-art/,
+# tiktok-track items in studies/tiktok/youtube.yaml and r2 study/tiktok/.
+#
+# A source is one of:
+#   url:     a video, a playlist, or a channel tab (https://www.youtube.com/@name/shorts or /videos)
+#   search:  a YouTube search phrase (yt-dlp "ytsearchN:")
+# with: track, subject (a slug), take (how many videos), max_seconds. A channel url that fails falls back to
+# `fallback_search` when given.
+defaults:
+  max_seconds: 1200
+  take: 5
+
+sources:
+# --- pixel art: the creators Robert named --------------------------------------------------------------
+- {track: pixel-art, subject: mortmort, url: "https://www.youtube.com/@MortMort/videos", take: 6, fallback_search: "MortMort pixel art"}
+- {track: pixel-art, subject: mortmort, url: "https://www.youtube.com/@MortMort/shorts", take: 6, max_seconds: 180}
+- {track: pixel-art, subject: slynyrd, url: "https://www.youtube.com/@Slynyrd/videos", take: 5, fallback_search: "Slynyrd pixel art timelapse"}
+- {track: pixel-art, subject: pixel-pete, url: "https://www.youtube.com/@PixelPete/videos", take: 5, fallback_search: "Pixel Pete pixel art"}
+- {track: pixel-art, subject: miziziziz, url: "https://www.youtube.com/@Miziziziz/videos", take: 4, fallback_search: "Miziziziz pixel art game"}
+- {track: pixel-art, subject: pixeloven, search: "PixelOven pixel art", take: 3}
+- {track: pixel-art, subject: adamcyounis, url: "https://www.youtube.com/@AdamCYounis/videos", take: 6, fallback_search: "AdamCYounis pixel art"}
+- {track: pixel-art, subject: pixel-overload, url: "https://www.youtube.com/@PixelOverload/videos", take: 4, fallback_search: "Pixel Overload pixel art animation"}
+- {track: pixel-art, subject: brackeys, search: "Brackeys pixel art game feel", take: 3}
+- {track: pixel-art, subject: viyaura, url: "https://www.youtube.com/watch?v=Ddykm6gJRvA", take: 1}
+- {track: pixel-art, subject: viyaura, search: "viyaura pixel art animation", take: 4, max_seconds: 600}
+- {track: pixel-art, subject: 1-bit-studio, url: "https://www.youtube.com/watch?v=Tkd3ZDJsNTI", take: 1}
+# --- pixel art: talks and playlists Robert sent ---------------------------------------------------------
+- {track: pixel-art, subject: kyle-bunk-gdc, url: "https://www.youtube.com/watch?v=Ih65Kg4DTw8", take: 1, max_seconds: 4000}
+- {track: pixel-art, subject: best-pixel-shorts, url: "https://www.youtube.com/playlist?list=PLHuVBjokeuXEntKmH-HJXMI-Nx6BGl1jB", take: 20, max_seconds: 180}
+- {track: pixel-art, subject: pixel-tutorials, url: "https://www.youtube.com/playlist?list=PLp99DFIAFv-xM8l6Uzmg83yvGRu6jMfid", take: 8}
+- {track: pixel-art, subject: sprite-animation-tutorials, url: "https://www.youtube.com/playlist?list=PL5xtQ0kWJKFSVG0P9G3T9pp1WxFq7hZsB", take: 6}
+# --- pixel art: games (one official trailer each: motion, acting, camera) -------------------------------
+- {track: pixel-art, subject: celeste, search: "Celeste official trailer", take: 1, max_seconds: 300}
+- {track: pixel-art, subject: hyper-light-drifter, search: "Hyper Light Drifter official trailer", take: 1, max_seconds: 300}
+- {track: pixel-art, subject: octopath-traveler, search: "Octopath Traveler official trailer", take: 1, max_seconds: 300}
+- {track: pixel-art, subject: sea-of-stars, search: "Sea of Stars official trailer", take: 1, max_seconds: 300}
+- {track: pixel-art, subject: eastward, search: "Eastward official trailer", take: 1, max_seconds: 300}
+- {track: pixel-art, subject: blasphemous, search: "Blasphemous official trailer", take: 1, max_seconds: 300}
+- {track: pixel-art, subject: owlboy, search: "Owlboy official trailer", take: 1, max_seconds: 300}
+- {track: pixel-art, subject: chained-echoes, search: "Chained Echoes official trailer", take: 1, max_seconds: 300}
+- {track: pixel-art, subject: kingdom-two-crowns, search: "Kingdom Two Crowns official trailer", take: 1, max_seconds: 300}
+- {track: pixel-art, subject: loop-hero, search: "Loop Hero official trailer", take: 1, max_seconds: 300}
+- {track: pixel-art, subject: dead-cells, search: "Dead Cells official trailer", take: 1, max_seconds: 300}
+- {track: pixel-art, subject: shovel-knight, search: "Shovel Knight official trailer", take: 1, max_seconds: 300}
+- {track: pixel-art, subject: stardew-valley, search: "Stardew Valley official trailer", take: 1, max_seconds: 300}
+- {track: pixel-art, subject: katana-zero, search: "Katana ZERO official trailer", take: 1, max_seconds: 300}
+- {track: pixel-art, subject: metal-slug, search: "Metal Slug animation all sprites", take: 1, max_seconds: 600}
+- {track: pixel-art, subject: street-fighter-3, search: "Street Fighter III 3rd Strike sprite animation", take: 1, max_seconds: 600}
+- {track: pixel-art, subject: animal-well, search: "Animal Well official trailer", take: 1, max_seconds: 300}
+- {track: pixel-art, subject: the-last-night, search: "The Last Night trailer pixel", take: 1, max_seconds: 300}
+- {track: pixel-art, subject: mark-ferrari, search: "Mark Ferrari color cycling GDC", take: 1, max_seconds: 4000}
+- {track: pixel-art, subject: paul-robertson, search: "Paul Robertson pixel animation", take: 2, max_seconds: 600}
+# --- tiktok track: YouTube Shorts on the same five topics (a platform comparison) ------------------------
+- {track: tiktok, subject: shorts-claude, search: "claude code #shorts", take: 10, max_seconds: 180}
+- {track: tiktok, subject: shorts-ai, search: "ai tools #shorts", take: 10, max_seconds: 180}
+- {track: tiktok, subject: shorts-marketing, search: "marketing tips #shorts", take: 10, max_seconds: 180}
+- {track: tiktok, subject: shorts-geo, search: "generative engine optimization #shorts", take: 10, max_seconds: 180}
+- {track: tiktok, subject: shorts-seo, search: "seo tips #shorts", take: 10, max_seconds: 180}

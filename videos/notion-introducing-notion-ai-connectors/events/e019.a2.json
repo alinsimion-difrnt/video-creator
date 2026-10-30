@@ -1,0 +1,79 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "7943e561c33a66b76abbf27802fe9143a8a0de876e9db216f1b0160f6337e029",
+    "created_at": "2026-10-05T06:47:06.633499Z"
+  },
+  "video": "notion-introducing-notion-ai-connectors",
+  "event": "e019",
+  "task": "a2-e019",
+  "elements": [
+    {
+      "box": null,
+      "manual_box": [0, 266, 903, 756],
+      "manual_reason": "No candidate box isolates the Notion AI chat panel; b01 covers the whole changed area, including the board behind it.",
+      "label": "Notion AI chat panel",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["pop"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 100, "easing_class": "step"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Projects kanban board behind the panel",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 450, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b08",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Prompt text typed into the input",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["typewriter"],
+      "change_other": null,
+      "is_text": true,
+      "text": "What is the m",
+      "text_unit": "char",
+      "estimates": {"duration_ms": 400, "easing_class": "linear"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x001",
+      "verdict": "unsure",
+      "label": "unsure",
+      "note": "At 24.82 s, about 1 s after this event ends. It sits at the right edge of the spectrogram, so its shape cannot be judged. Nothing visual in this event lines up with it (typing continues). It probably belongs to a later event."
+    }
+  ],
+  "pattern": {
+    "id": "prompt_type_on",
+    "proposed_name": null,
+    "description": "The Notion AI chat panel snaps open over the Projects board with its input already focused (blue ring). The board behind it fades to the off-white background, then the question types in character by character ('W' ... 'What is the m').",
+    "why_premium": "Fading the board out leaves the AI panel as the only subject, and the realistic char-by-char typing shows the real product interaction instead of a mockup, building anticipation for the answer."
+  },
+  "build_hint": {
+    "gsap": "tl.set('.ai-panel', {autoAlpha: 1}) at the cut; tl.to('.board', {opacity: 0, duration: 0.45, ease: 'power2.inOut'}, '<+0.1'); then type the prompt with a TextPlugin or a char-split stagger: tl.from(chars, {opacity: 0, duration: 0.01, stagger: 0.035, ease: 'none'}, '<+0.2').",
+    "remotion": "Panel visible from frame 0 of the event. Board opacity = interpolate(frame, [3, 17], [1, 0], {easing: Easing.inOut(Easing.quad), extrapolateRight: 'clamp'}). Typed text = prompt.slice(0, Math.floor((frame - 8) / 1)) at about 1 char per frame, clamped."
+  },
+  "confidence": "medium",
+  "notes": "The panel appears in one step at f715 (energy spike) and has no candidate box, hence the manual_box. b01 also includes the panel area, but here it stands for the board fading behind it. Board cards b03-b20 fade with the board and are not listed separately. The cursor jumps between f705 and f715 but has no candidate box; it is left out. Typing continues past the event end."
+}

@@ -1,0 +1,46 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "f24e08e5ce898ed59ec43571c8a43ce8c69964d31d1dbabbbee9f5f54d35cf6e",
+    "created_at": "2026-10-05T06:51:34.154290Z"
+  },
+  "video": "warp-introducing-warp-2-0-the-agentic-develo",
+  "event": "e001",
+  "task": "a2-e001",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Full-frame film-leader flash: clapperboard shot cuts through film-strip / colour-chart frames to a white flash",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "film-leader flash frames (1-2 frame insert of film sprockets and colour-chart, then overexposed white)",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 130, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x001", "verdict": "unsure", "label": "unsure", "note": "Short narrow-band low-frequency thump at the cut to white, right after the broadband slate-clap burst (~0.8-0.92 s). Shape is not a rising reverse swoosh; could be a projector/impact thump, but too ambiguous to label."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "film leader flash",
+    "description": "After a live-action clapperboard slate, the edit inserts a couple of film-leader frames (sprocket holes, colour-chart swatches) and then flashes to an overexposed white frame, as a celluloid-style transition into the keynote.",
+    "why_premium": "Analog film-burn vocabulary (slate, sprockets, colour chart, white flash) signals a crafted, cinematic production and gives the opening a tactile, behind-the-scenes texture instead of a generic logo sting."
+  },
+  "build_hint": {
+    "gsap": "Hard-cut sequence on the HyperFrames timeline: tl.set(slate, {autoAlpha: 0}).set(leaderFrames, {autoAlpha: 1}).set(leaderFrames, {autoAlpha: 0}, '+=0.042').set(whiteFlash, {autoAlpha: 1}); optionally gsap.fromTo(leaderFrames, {x: 0}, {x: -60, duration: 0.08, ease: 'none'}) for the sprocket slip; no easing on cuts (step).",
+    "remotion": "Use <Sequence> blocks of 1-2 frames each (slate -> leader still -> white AbsoluteFill); optional interpolate(frame, [0, 2], [0, -60]) translateX on the leader frame. No spring; step changes only."
+  },
+  "confidence": "medium",
+  "notes": "Only one candidate box (b01, full frame). The camera verdict pan_left reflects the film-strip slipping across the leader frames, not a real camera move on the scene. The slate clap itself (broadband burst before x001) is not a candidate."
+}

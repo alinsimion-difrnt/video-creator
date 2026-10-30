@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "45164d44f087ee6d516dd90593b47e2407b7f6d485c68b8396ec9490f42f7dbb",
+    "created_at": "2026-10-05T06:38:33.944399Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e050",
+  "task": "a2-e050",
+  "elements": [
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Select a field dropdown trigger",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["color_shift"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Select a field",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 70, "easing_class": "step"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Field picker dropdown menu (search + field list)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["pop"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Search Assignee Bucket competitive differentiator Creator Customers interested Effort Goal Impact",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 70, "easing_class": "step"}
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Group by button focus ring",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Group by",
+      "text_unit": "whole",
+      "estimates": null
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "Screen recording: the cursor clicks the 'Select a field' control in the Group by side panel; the trigger turns dark navy and a field-picker dropdown with a focused search box and field list appears in one frame.",
+    "why_premium": "Real product interaction shown at a calm pace with no cuts; the instant native dropdown keeps the UI honest, and the narration ('I can group it') lands right after the menu opens so the viewer sees the options before hearing the action."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.select-trigger', {backgroundColor: '#1d2b4f', color: '#fff', duration: 0.08, ease: 'none'}).fromTo('.field-dropdown', {autoAlpha: 0}, {autoAlpha: 1, duration: 0.08, ease: 'none'}, '<'); optionally soften with y: -4 -> 0 and 'power2.out' over 0.15s; cursor arrives on the trigger 0.2s before.",
+    "remotion": "Step change at the click frame: trigger background interpolate over 2 frames; dropdown opacity interpolate(frame, [click, click+2], [0, 1], {extrapolateRight: 'clamp'}); no spring (native UI pop)."
+  },
+  "confidence": "high",
+  "notes": "Dropdown appears essentially in one frame (energy spike at a single frame); the Group by button focus ring visible in the first frame is gone at the end, a minor change. No SFX candidates."
+}

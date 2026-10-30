@@ -1,0 +1,186 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "2f516847742c6b5277b570e6466bb6dac098f558836be99aa1e8a6f47ff9d205",
+    "created_at": "2026-10-05T06:24:20.914076Z"
+  },
+  "video": "conductor-conductor-ai-get-found-in-ai-search",
+  "task": "a1-p2",
+  "shots": [
+    {
+      "shot": "s007",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "other",
+      "composition_other": "scattered label chips floating over a dimmed, centered browser-window mockup",
+      "focal_element": "the central 'Overused meta tags' chip among six dark pill labels naming outdated SEO tactics",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "Generic content",
+        "Article spinning",
+        "Keyword stuffing",
+        "Overused meta tags",
+        "Cloaking",
+        "Doorway pages"
+      ],
+      "text_word_count": 12,
+      "typography": "Geometric sans, medium/semibold weight, sentence case, normal tracking, white on dark navy rounded-rectangle chips with thin light outline; centre chip set larger than the rest (font guess: Circular-like grotesk, low confidence).",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "While the VO says 'yesterday's tactics won't cut it in the AI era' (w32-w41), a generic e-commerce site mockup in a browser frame sits dimmed under a dark overlay (its own copy is too dim to quote reliably) and six chips naming outdated/black-hat SEO tactics hover over it, drifting very slightly; the shot ends on the AI prompt scene at ~14.5s.",
+      "build_rebuild": "Render a browser-frame website screenshot at ~40% brightness under a navy vignette, absolutely position six rounded dark pill labels (one larger in the centre) above it, and animate the whole group with a slow 1-2% scale/translate drift for the shot duration.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s008",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "stacked",
+      "composition_other": null,
+      "focal_element": "the fourth stacked prompt-result row whose 'Generate' button is highlighted with a green-teal gradient",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Prompt: Hey AI, write a blog about sound design",
+        "Generate",
+        "Here is what you need to know about sound design...",
+        "Generate",
+        "Here is what you need to know about design sound...",
+        "Generate",
+        "Here is what you need to know about design sound...",
+        "Generate",
+        "Here is what you need to know about design sound...",
+        "The Art of Sound Design"
+      ],
+      "text_word_count": 58,
+      "typography": "Geometric sans throughout; headline prompt in white medium weight, sentence case, centred above the stack; row copy in small grey regular sentence case; pill buttons with white medium label text on grey (inactive) or green-to-teal gradient (active).",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "A prompt line types on ('Prompt: Hey AI, write a blog about soun' completes to '...sound design') above four white rounded result rows of near-identical generic AI output; the bottom row's Generate button is active, and at ~16.5s that row expands with a green outline to reveal 'The Art of Sound Design' answer text, illustrating generic AI content while the VO says 'To capture market share and establish authority' (w42-w48).",
+      "build_rebuild": "Type a prompt headline character by character over a dark vignette, show four stacked white rounded rows each with a pill 'Generate' button and a one-line truncated answer, then on the last row swap the button to a green-teal gradient and scale the row up slightly with a green border as answer text types in.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s009",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "split",
+      "composition_other": null,
+      "focal_element": "the 'Articles and Courses' AI-answer card on the left paired with the glowing stacked words 'AEO GEO SEO' on the right",
+      "transition_in": "other",
+      "transition_other": "continuous move from s008: the result-row stack slides left and shrinks to open space on the right (layout reframe, no visible cut)",
+      "on_screen_text": [
+        "Generate",
+        "Here is what you need to know about sound design...",
+        "Generate",
+        "Here is what you need to know about design sound...",
+        "Generate",
+        "Here is what you need to know about design sound...",
+        "Generate",
+        "The Art of Sound Design: More Than Just Effects",
+        "AEO",
+        "GEO",
+        "SEO",
+        "Articles and Courses",
+        "Keep it Simpler: Tips for Synthesis and Sound Design",
+        "Your website",
+        "Sound Design with Ableton Live Instruments - Warp Academy",
+        "An in-depth course focusing on using Ableton's built-in instruments for sound design, helping you craft professional-level sounds for you projects.",
+        "Your website",
+        "A Free Ableton Live Sound Design Course by ZW Buckley",
+        "Your website"
+      ],
+      "text_word_count": 102,
+      "typography": "Right side: very large bold geometric sans all-caps acronyms (AEO / GEO / SEO) stacked in a stepped diagonal, white with soft outer glow, tight tracking. Card: black bold sentence-case titles, grey regular sub-lines and body copy, small pill tags 'Your website' in white text on black that flip to green.",
+      "depth_cues": [
+        "shadow",
+        "glow"
+      ],
+      "what_happens": "The prompt stack slides left; 'AEO' appears on the right as the VO says 'end-to-end AEO' (w52-w55), the answer card morphs/expands into an 'Articles and Courses' AI answer card with skeleton lines and 'Your website' tags, 'GEO' and then 'SEO' type in letter by letter in sync with w56-w57, the three 'Your website' tags flash green (~20.0-21.0s) then return to black, and the layout holds through 'built for enterprise and designed for scale' (w58-w67). The partially typed answer body under 'The Art of Sound Design' is cut off and not quoted.",
+      "build_rebuild": "Slide the stacked rows to the left half, morph the active row into a white answer card with title, skeleton bars and three pill 'Your website' tags, and on the right reveal 'AEO', 'GEO', 'SEO' as glowing bold caps on successive VO words (typewriter for SEO), then toggle the tag pills black-to-green-to-black.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s010",
+      "shot_type": "logo",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "the 'Conductor AI' wordmark centred on a dark blue vignette",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Conductor AI"
+      ],
+      "text_word_count": 2,
+      "typography": "Humanist sans wordmark, semibold, title case 'Conductor' in white with 'AI' in a green gradient, normal tracking (font guess: Lato-like, low confidence).",
+      "depth_cues": [
+        "blur"
+      ],
+      "what_happens": "On 'Introducing Conductor AI' (w68-w71) the wordmark resolves: 'Conductor' is already centred while 'AI' slides in from the right with heavy motion blur and the lockup settles by ~24.5s, holds still on a soft cloudy navy background through w72-w74, and at ~27.0s dashboard cards start flying in over it.",
+      "build_rebuild": "Centre a white 'Conductor' wordmark on a navy radial-vignette background and slide a green-gradient 'AI' in from the right with a directional motion blur that clears over ~0.4s, then hold the lockup for ~2.5s.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s011",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "other",
+      "composition_other": "overlapping collage of dashboard cards filling the frame around a central circular badge",
+      "focal_element": "the green-gradient circular 'Data & AI Engine' badge at lower centre surrounded by analytics cards",
+      "transition_in": "other",
+      "transition_other": "dashboard cards fly in and assemble over the held logo, covering it (card-wall assemble)",
+      "on_screen_text": [
+        "Monthly Search Volume",
+        "22.3K",
+        "Competitor Analysis",
+        "Tracked Keyword Ranking",
+        "AI Visibility Over Time",
+        "Revenue",
+        "81K",
+        "Your Content's AI Performance",
+        "Add to cart",
+        "5.6K",
+        "Content Guidance",
+        "Recommendation: target these keywords instead",
+        "Keyword",
+        "Volume",
+        "Universal Result Types",
+        "Write with AI",
+        "Website Health",
+        "925 /1000",
+        "Issue Changes",
+        "Open Incidents",
+        "10",
+        "Type",
+        "Page",
+        "Redirect",
+        "Missing",
+        "Server Error",
+        "Unreachable",
+        "Indexable",
+        "Yes",
+        "No",
+        "Data & AI Engine"
+      ],
+      "text_word_count": 60,
+      "typography": "Geometric sans; card titles in black semibold sentence/title case, large teal semibold metric numerals (81K, 5.6K), small grey regular legend and axis labels; badge label in white semibold title case on green-teal gradient circle.",
+      "depth_cues": [
+        "shadow",
+        "glow"
+      ],
+      "what_happens": "A wall of about fifteen white flat analytics cards (line chart, stacked area chart, bar chart, two donut charts, metric tiles with green up-arrows, keyword table) sits assembled around a glowing 'Data & AI Engine' badge with a thin ring, held almost static while the VO says 'industry-leading data is infused used with' (w75-w81); the card entrance itself happens at the s010/s011 boundary and is only partly visible at 2 fps, and chart axis tick labels are too small to quote reliably.",
+      "build_rebuild": "Lay out ~15 absolutely positioned white dashboard cards (charts, metric tiles, donuts) in an overlapping collage on a dark navy background, stagger them in with quick scale/translate entrances, and place a green-to-teal gradient circle with a thin outer ring labelled 'Data & AI Engine' at lower centre.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

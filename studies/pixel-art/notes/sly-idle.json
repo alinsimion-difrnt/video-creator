@@ -1,0 +1,53 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T13:03:02+00:00"
+  },
+  "id": "sly-idle",
+  "kind": "tutorial",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "unknown",
+    "notes": "Palette, outlines and lighting are not discussed; the article is purely about motion of 48x92 px fighter sprites."
+  },
+  "lighting": "Not covered in the article.",
+  "silhouette": "Stance defines the character: a boxer with hands up, neck tucked and soft knees versus a low, wide karate stance; loose clothing and hair thicken and change the outline.",
+  "motion": {
+    "timing": "8-frame idle loop: frames 1-4 at 100 ms, frames 5-8 at 50 ms, so the rise and apex linger and the drop is fast. Body moves 1 px per step; fists and arms 2-4 px.",
+    "principles": [
+      "breath-like bounce",
+      "ease (slow apex, fast fall)",
+      "overlapping action",
+      "secondary motion (cloth, hair)",
+      "weight via knee and heel shifts"
+    ]
+  },
+  "texture": "Fabric wrinkles and loose areas shift slightly each frame; added only after the base body loop works.",
+  "camera": "Static side view; no camera.",
+  "sound": "",
+  "acting": {
+    "enters": "",
+    "acts": "The idle is the personality display: torso anchors the bounce, limbs lag or lead by different pixel amounts, head stays level on the last frame while legs extend.",
+    "exits": "",
+    "comes_back": null,
+    "depth": "One sprite at one scale; offsets are counted in single pixels, so it only works at native resolution."
+  },
+  "techniques": [
+    "split timing: 4 frames at 100 ms up, 4 frames at 50 ms down = gravity",
+    "different body parts move different distances (body 1 px, fists 2-4 px)",
+    "heels lift for the top of the bounce, knees compress for the bottom",
+    "torso as the anchor; limbs and hair overlap it",
+    "base form-fitting loop first, then add secondary motion one area at a time",
+    "head stays level while legs extend to avoid a bobbing head"
+  ],
+  "feel": "8-frame breath + slow top, fast drop + 1 px body vs 3 px fists = an idle with weight and attitude",
+  "for_fred": "Replace Fred's constant looping with one weighted idle: slow rise for 4 frames at 100 ms, fast sink for 4 at 50 ms, body moving 1 px while fins move 2-3 px. Use it only while he waits in frame, so actions read against a calm baseline instead of everything animating at once.",
+  "sources": [
+    "https://www.slynyrd.com/blog/2024/9/26/pixelblog-52-idle-fighting-stance",
+    "studies/pixel-art/sources.yaml"
+  ]
+}

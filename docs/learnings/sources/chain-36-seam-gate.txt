@@ -1,0 +1,23 @@
+
+■ bank→restaurant (x-ray match cut, scan line sweeps LEFT)  (cut @7.49s, match-cut)  ✓
+   PASS carrier          Δpos 0.0,0.0px Δsize 0.0%
+
+■ payoff→answer card ('And fourth')  (cut @10.4s, cut)  ✓
+   PASS ledger           x- both sides
+   PASS exit-vector      -1898 px/s x-
+   PASS entry-vector     -1898 px/s x-
+   PASS speed-match      ratio 1.00
+   PASS zero-overlap     one side visible per frame
+
+■ x-ray world → source world (re-host of the same card)  (cut @13.95s, morph)  ✓
+   PASS carrier          Δpos 0.0,0.0px Δsize 0.0%
+
+■ card → source cloud (scale-burst: leaving a world)  (cut @14.64s, cut)  ✓
+   PASS ledger           z+ both sides
+   PASS exit-vector      0.771 es/s z+
+   PASS entry-vector     2.206 es/s z+
+   PASS speed-match      ratio 2.86
+   PASS zero-overlap     one side visible per frame
+   PASS z-sign-scan      no sign-fighting entrances
+
+SEAM GATE: PASSED — 0 fail, 0 warn across 4 seams

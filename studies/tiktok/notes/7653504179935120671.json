@@ -1,0 +1,38 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "315d9b811a2418273810576751aae6759593955cb349b176965422d12790fd0d",
+                 "created_at": "2026-10-13T09:30:32+00:00"},
+  "id": "7653504179935120671",
+  "format": "tutorial_demo",
+  "hook": {"type": "result_first",
+           "line": "What happens when you ask ChatGPT to erase your whole digital footprint? I tried it.",
+           "visual": "Creator close-up in a warm room talking straight to camera, white pill title 'ChatGPT erased my digital identity' with an emoji above his head, single-word caption at chest height."},
+  "beats": [
+    {"t": 0.0, "what": "Face-to-camera question plus the claim that it actually worked, title pill on screen."},
+    {"t": 3.6, "what": "Hard cut to the payoff first: a checklist of data-broker sites, each with a green tick and 'removal request in process'."},
+    {"t": 9.02, "what": "Screen recording of the ChatGPT box as prompt 1 is typed in, voice reads it aloud."},
+    {"t": 18.04, "what": "Table of broker sites with opt-out links scrolls past while he says the results were terrifying."},
+    {"t": 22.55, "what": "Prompt 2 typed: write the removal request for each site."},
+    {"t": 27.05, "what": "The plus menu opens with a red box drawn around the + button: 'here's the trick', turn on agent mode."},
+    {"t": 36.07, "what": "Agent browser window appears and visits a broker site on its own."},
+    {"t": 45.09, "what": "Prompt 4 result: a weekly scheduled removal task is created."},
+    {"t": 45.8, "what": "Cut back to his face for the keyword comment CTA, new title pill 'Comment Erase and I'll send you the prompts'."}
+  ],
+  "graphics": {"captions": "word_by_word", "caption_position": "middle",
+               "devices": ["screen_recording", "product_ui", "arrow_or_circle", "title_text", "zoom_punch", "jump_cut", "sound_effect"],
+               "density": "moderate", "per_minute_estimate": 12},
+  "characters": [],
+  "cta": {"kind": "comment", "t": 45.8},
+  "why_it_works": [
+    "Result shown before the method: the ticked list of broker removals at 3.6 s proves the claim, so the viewer stays to learn how.",
+    "Numbered prompts (1 to 4) give a clear progress structure, and 'here's the trick' / 'here's the best part' re-hook before the two strongest steps.",
+    "Fear of exposed personal data plus a do-nothing payoff ('while I just sit there') is a high-stakes, low-effort promise.",
+    "Keyword comment CTA ('comment Erase') trades the full prompts for comments, which explains the 2.5k comments and 26k shares."
+  ],
+  "weaknesses": [
+    "Screen recording runs one 28.5 s shot with tiny UI text (median text height 2.2% of frame) that is hard to read on a phone.",
+    "Face appears only 14% of the time, so the personal presence from the hook disappears for most of the video.",
+    "Most text sits outside the safe area (83%), so UI overlays clash with TikTok's buttons."
+  ],
+  "for_robert": "Copy the structure: show the finished result in the first cut, then walk through numbered prompts, and end with a keyword comment CTA. Fred could hold up the 'result' card at the cut, but keep the screen text big instead of a raw UI recording."
+}

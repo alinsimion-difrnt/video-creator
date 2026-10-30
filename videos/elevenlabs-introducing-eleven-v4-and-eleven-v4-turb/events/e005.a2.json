@@ -1,0 +1,89 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "64e2bd2efb8f1ab96b32f0c2e730562689aae7cbe4cbade4813e4e43de8a4503",
+    "created_at": "2026-10-05T06:44:39.667955Z"
+  },
+  "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+  "event": "e005",
+  "task": "a2-e005",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Five white pill slider tracks",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["scale_up", "morph"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 600, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Slider knob 1 (gradient orb)",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["scale_up", "slide_down", "color_shift"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 600, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Slider knobs 2-4 (gradient orbs, middle group)",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["scale_up", "slide_up", "slide_down", "color_shift"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 600, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Slider knob 5 (gradient orb)",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["scale_up", "slide_up", "color_shift"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 600, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x028", "verdict": "unsure", "label": "unsure", "note": "Sustained broadband texture while the orb shrinks; no sharp onset that would support the CLAP 'impact' guess."},
+    {"id": "x029", "verdict": "unsure", "label": "unsure", "note": "After the burst as the sliders settle; low-level, no clear glitch-like stutter visible."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "orb to slider rack",
+    "description": "The large gradient orb shrinks to centre, then a row of five white pill tracks grows outward with small gradient-orb knobs inside; the tracks lengthen while each knob glides to a different height, ending as a mixer-style rack of voice controls.",
+    "why_premium": "The hero orb becomes the knobs of the control UI, so the brand shape carries meaning (tone, emotion levels) instead of a cut to a generic UI; tracks and knobs move on separate, offset timings, and the uneven knob heights read as tuned settings."
+  },
+  "build_hint": {
+    "gsap": "Timeline: orb to {scale: 0.55, duration: 0.5, ease: 'power2.in'}; then tracks fromTo {height: knobSize, opacity: 0} -> {height: full, opacity: 1, duration: 0.6, ease: 'power3.out', stagger: {each: 0.04, from: 'center'}}; knobs fromTo {scale: 0.4, y: 0} -> {scale: 1, y: target_i, duration: 0.7, ease: 'power2.inOut', stagger: {each: 0.04, from: 'center'}}; slowly rotate each knob's gradient.",
+    "remotion": "Per column i: s = spring({frame: frame - 18 - Math.abs(i-2)*1, fps, config: {damping: 22, stiffness: 120}}); trackHeight = interpolate(s, [0,1], [knobSize, fullHeight]); knobY = interpolate(s, [0,1], [0, target_i]); knobScale = interpolate(s, [0,1], [0.4, 1]); orb pre-shrink via interpolate(frame, [0, 15], [1, 0.55], {easing: Easing.in(Easing.quad)})."
+  },
+  "confidence": "medium",
+  "notes": "Energy drops to ~0 mid-burst (orb gone, tracks not yet drawn), so the orb-to-sliders handoff may be a near-instant swap rather than a true morph. b02 groups three middle knobs because no per-knob candidate exists; b01 (union) is used for the track row."
+}

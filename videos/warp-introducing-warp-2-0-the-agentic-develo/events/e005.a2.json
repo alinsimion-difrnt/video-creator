@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "b3d54e19797034628c6e9b6dc4e7e21453f02a7a6bf8c0a06ef5847bea15c73a",
+    "created_at": "2026-10-05T06:52:17.701534Z"
+  },
+  "video": "warp-introducing-warp-2-0-the-agentic-develo",
+  "event": "e005",
+  "task": "a2-e005",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Left-pane agent conversation stack (scrolls up as a container)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 30, "easing_class": "step"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "New tool-step card (file search)",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["fade", "slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Finding files that match the following patterns in /Users/jess/Documents/Coding_Projects/math-pyramid -* -.*",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 30, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "masked_scroll",
+    "proposed_name": null,
+    "description": "A new 'Finding files...' tool-step card is appended at the bottom of the left agent pane and the whole conversation stack jumps up inside the fixed pane to make room; the right pane stays still.",
+    "why_premium": "The scroll is driven by real agent progress, so the viewer reads the agent working step by step; the pane mask and fixed 'Thinking...' footer keep the frame calm while content advances."
+  },
+  "build_hint": {
+    "gsap": "gsap.to('.left .stack', {y: '-=96', duration: 0.07, ease: 'steps(2)'}); gsap.fromTo('.left .step-card:last-child', {autoAlpha: 0}, {autoAlpha: 1, duration: 0.03, ease: 'none'}, '<'); pane has overflow:hidden as the mask.",
+    "remotion": "stack translateY = interpolate(frame, [0, 2], [0, -96], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}) inside an overflow:hidden pane; new card opacity = frame >= 1 ? 1 : 0. No spring: terminal-style hard redraw."
+  },
+  "confidence": "medium",
+  "notes": "Motion energy sits in two adjacent frames, consistent with a near-instant redraw rather than an eased scroll; shift amount is a visual estimate. Camera move is none."
+}

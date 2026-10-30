@@ -1,0 +1,122 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a3_pattern_cards",
+    "annotator": "claude-code",
+    "skill": "write-pattern-cards@e525a58fa6d8",
+    "model": null,
+    "input_hash": "2dc2ef8db9b291d585266c5ecf4df8e5379b966a819f088c0519e9e3ddb7f0c0",
+    "created_at": "2026-10-05T12:53:04.732453Z"
+  },
+  "id": "skeleton_resolve",
+  "name": "Placeholders Resolve Into Data",
+  "summary": "An empty or loading view (grey placeholder bars, a blank panel or a spinner) fills in with the real content: headers first, then numbers, cards or text appear almost instantly in place. The frame around it stays still, so the data seems to land where it belongs.",
+  "when_to_use": [
+    "Showing that the product computes or fetches data live",
+    "Switching a report, view or version and landing the new data on the narrated word",
+    "Presenting structure first and data second, such as an empty chart that then populates",
+    "Trimming a real loading wait down to a near-instant swap"
+  ],
+  "avoid_when": [
+    "The viewer needs to read the individual values as they appear",
+    "The loading state would make the product look slow",
+    "There is no real placeholder or empty state to resolve from"
+  ],
+  "steps": [
+    "Keep the surrounding window chrome, sidebar or frame fixed throughout.",
+    "Show the empty state: placeholder bars, a blank panel, a spinner or a dim loading overlay.",
+    "Remove the placeholder or spinner almost instantly rather than with a slow fade.",
+    "Reveal the structure first (header band, title, axis chips), then the data cells, cards or bubbles.",
+    "Sweep the data in with a very quick stagger across columns or items so it reads as a data load, not a designed animation.",
+    "Optionally add a tiny scale settle on the new view, and time the arrival to the narration."
+  ],
+  "build": {
+    "gsap": "Use tl.set to hide the spinner or skeleton, then gsap.fromTo on the content with autoAlpha from hidden to visible, a very short power ease-in or ease none, and a tiny stagger along the grid axis (headers before cells). A light back.out spring-overshoot or ease-in-out scale settle can follow on the whole panel. A faithful replica of a native load uses tl.set steps with no tween at all.",
+    "remotion": "Switch from the placeholder layer to the content at a fixed frame, then drive each cell or block's opacity with interpolate over a frame or two, offset per column or item. Use no spring for the data itself; a highly damped spring or interpolate with Easing.out is only for an optional panel scale settle."
+  },
+  "sound": "No typical sound: no sound cues were tagged for this pattern.",
+  "why_premium": "Instead of cutting to a finished screen, premium product demos let the viewer watch the data arrive inside a stable frame, which makes the product's computation feel live and real. The wait is trimmed to almost nothing, so the product feels fast rather than slow, and showing structure before data teaches the layout of the view before the numbers fill it. Landing the resolve on the narrated promise, such as the moment the voiceover names the insight or the new forecast, makes cause and effect obvious without any added graphics.",
+  "numbers": {
+    "id": "skeleton_resolve",
+    "events": 7,
+    "videos": 2,
+    "weight": 4.2,
+    "duration_ms": {
+      "n": 16,
+      "videos": 1,
+      "weight": 9.5988,
+      "median": 41.7,
+      "p25": 41.7,
+      "p75": 122.7,
+      "ci": [
+        41.7,
+        97.993
+      ]
+    },
+    "easing_mix": {
+      "ease_in": 0.6875,
+      "spring_overshoot": 0.1875,
+      "ease_in_out": 0.125
+    },
+    "change_mix": {
+      "fade": 0.7955,
+      "other": 0.1136,
+      "color_shift": 0.0227,
+      "highlight": 0.0227,
+      "scale_down": 0.0227,
+      "slide_down": 0.0227
+    },
+    "role_mix": {
+      "metric": 0.3023,
+      "body_text": 0.1395,
+      "button": 0.1395,
+      "ui_panel": 0.1395,
+      "card": 0.093,
+      "chart": 0.0698,
+      "label": 0.0465,
+      "cursor": 0.0233,
+      "headline": 0.0233,
+      "list_item": 0.0233
+    },
+    "sfx_label_mix": {},
+    "sfx_offset_ms": {
+      "n": 0,
+      "videos": 0,
+      "weight": 0.0,
+      "median": null,
+      "p25": null,
+      "p75": null,
+      "ci": null
+    },
+    "examples": [
+      {
+        "video": "workday-workday-adaptive-planning-demo-finan",
+        "event": "e049",
+        "score": 3.0
+      },
+      {
+        "video": "atlassian-introduction-to-jira-product-discovery",
+        "event": "e028",
+        "score": 3.0
+      }
+    ]
+  },
+  "examples": [
+    {
+      "video": "workday-workday-adaptive-planning-demo-finan",
+      "event": "e049",
+      "score": 3.0
+    },
+    {
+      "video": "atlassian-introduction-to-jira-product-discovery",
+      "event": "e028",
+      "score": 3.0
+    }
+  ],
+  "caveats": [
+    "Seen in only two videos, both screen-recorded tutorials, and timing was measured in just one of them.",
+    "Measured durations are close to a single frame, so they reflect recorded UI loads rather than a designed animation.",
+    "No sound was measured, and several members are spinner-to-content swaps rather than true placeholder bars."
+  ]
+}

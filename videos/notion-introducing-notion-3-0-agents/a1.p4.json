@@ -1,0 +1,212 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "06ff9bcabc19c0f7b7467450737c2d138c218976e78d68e3687fd37d5e56ee7f",
+    "created_at": "2026-10-05T06:30:32.598193Z"
+  },
+  "video": "notion-introducing-notion-3-0-agents",
+  "task": "a1-p4",
+  "shots": [
+    {
+      "shot": "s016",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The enlarged agent prompt card where the meeting-based update is typed, then the Bug Tracker Status column flipping to Complete",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "What can I wrangle up for ya?",
+        "Bug Tracking Dashboard",
+        "Ask, search, or make anything...",
+        "Update bug tracker based on Bug Catchers Meeting Today",
+        "All sources",
+        "Target Fix",
+        "My Bugs",
+        "Assignee",
+        "Status",
+        "Priority",
+        "Luca Beetz",
+        "Kameron Shiller",
+        "Jordan Scales",
+        "Chloe Chau",
+        "Complete",
+        "In progress",
+        "Blocked",
+        "In Review",
+        "New",
+        "P2",
+        "P1",
+        "P0",
+        "Yeehaw, all complete!"
+      ],
+      "text_word_count": 54,
+      "typography": "Simplified Notion AI input on off-white: semibold sans greeting in sentence case beside the avatar, grey placeholder, regular sans typed prompt with caret and an inline page-mention chip (icon + underlined 'Bug Catchers Meeting Today'); then native Notion table type (grey column headers, regular row text, rounded status pills, small P0-P2 tags); final frame a large regular-weight sans line beside the avatar. Font guess (low confidence): Inter-like UI sans.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Crossfades in on the hatted avatar and 'What can I wrangle up for ya?' alone; the prompt card fades in under it, the cursor clicks the input (card gains a blue outline) and 'Update bug tracker based on @Bug Catche...' is typed, the @-text resolving into a page-mention chip 'Bug Catchers Meeting Today'; the cursor clicks the blue send button (~70 s). Around 71 s it changes to a cropped Bug Tracker table (Assignee/Status/Priority) where the mixed statuses (In progress, Blocked, In Review, New) flip to green 'Complete' pills within half a second, mostly all rows; the table holds, and the last sampled frame (73.0 s) already shows the avatar with 'Yeehaw, all complete!'.",
+      "build_rebuild": "Fade in an avatar + heading row and a rounded shadowed prompt card on off-white, typewriter the prompt with a caret and swap the '@Bug Catchers Meeting Today' substring for an icon chip, press the round blue send button, then cut to a cropped table component and stagger-swap each status pill to a green 'Complete' pill top to bottom over ~0.4 s.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s017",
+      "shot_type": "other",
+      "shot_type_other": "Multi-phase end sequence: agent chat-style message, single agent card that pulls back into a wall of agent cards, kinetic tagline with avatar lineup, URL end card and logo lockup",
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The Bug Wrangler agent (message, then card) as it becomes one of many agents, ending on the 'Your team of Agents are ready to work' tagline, notion.com CTA and Notion logo",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "Yeehaw, all complete!",
+        "What should we build next?",
+        "Bug Wrangler",
+        "Fashion Advisor Agent",
+        "Gaming Strategy Agent",
+        "Onboarding Buddy",
+        "Personal Shopping Agent",
+        "Recipe Suggestion Agent",
+        "Health Monitoring Agent",
+        "Pet Care Agent",
+        "Customer Support Agent",
+        "Messaging Editor",
+        "System Administrator Agent",
+        "Event Coordinator",
+        "Network Optimization Agent",
+        "Proposal Drafter",
+        "Data Analysis Agent",
+        "Fitness Coaching Agent",
+        "Ideas Generator",
+        "Incident Response Agent",
+        "Bug Wrangler",
+        "Code Reviewer",
+        "Inventory Management Agent",
+        "Translation Agent",
+        "Quality Assurance Agent",
+        "Messaging Editor",
+        "Market Research Agent",
+        "Travel Planning Agent",
+        "Chrono Navigator Agent",
+        "Daily Summarizer",
+        "Performance Monitoring Agent",
+        "Logistics Management Agent",
+        "Social Media Management Agent",
+        "Compliance Monitoring Agent",
+        "Emoji Creation Agent",
+        "Feedback Collector",
+        "User Experience Agent",
+        "Personal Finance Agent",
+        "Your team of Agents",
+        "are ready to work",
+        "Get started at notion.com",
+        "Notion"
+      ],
+      "text_word_count": 118,
+      "typography": "Agent message in large regular-weight sans, sentence case, two stacked lines; agent cards use semibold sans names (title case) under coloured circular icons; tagline and URL in large bold geometric/grotesque sans, sentence case, tight tracking, centred two-line stacks in near-black; final Notion wordmark beside the cube logo. Font guess (low confidence): Inter-like sans. The left-column card names in the wall are cropped by the frame edge (first letters cut off), so those names are read from partial text.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "The avatar says 'Yeehaw, all complete!' and a second line 'What should we build next?' fades in (73.5-75 s). At ~75.5 s it changes to a single rounded 'Bug Wrangler' card that drifts/scales down, then (~77 s) the camera pulls back to reveal it within a grid of agent cards (Incident Response Agent, Code Reviewer, etc.), continuing to zoom out (~80 s) to a dense wall of ~35+ agent cards with coloured icons. At ~82 s a line-art person avatar appears over 'Your team of Agents'; at ~83 s the agent avatars (duck, flower, cowboy hat, pencil) fan out beside it and the line extends to 'Your team of Agents are ready to work'. At ~85 s it changes to 'Get started at notion.com', then (~86.5 s) the Notion cube logo appears alone and the 'Notion' wordmark resolves beside it, holding to the end.",
+      "build_rebuild": "Sequence on an off-white canvas: avatar + two-line message with line-2 fade-up, then a single shadowed card that scales down while a camera pull-out reveals a CSS grid of identical cards (icon + name) zooming out to ~7x5, then a centred headline with an SVG avatar that gains staggered flanking avatars as line 2 appears, then a URL end card, then a logo icon that slides left as the wordmark fades in.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001"], "words": null},
+      {"beat": "mechanism", "shots": ["s002", "s003", "s004", "s005"], "words": null},
+      {"beat": "demo", "shots": ["s006", "s007", "s008", "s009", "s010", "s011", "s012", "s013", "s014", "s015", "s016"], "words": [0, 7]},
+      {"beat": "outcome", "shots": ["s016", "s017"], "words": null},
+      {"beat": "cta", "shots": ["s017"], "words": null}
+    ],
+    "hook": {
+      "text": "You assign the tasks. Your Agents do the work.",
+      "technique": "bold_claim",
+      "technique_other": null,
+      "shots": ["s001"],
+      "words": null
+    },
+    "cta": {
+      "text": "Get started at notion.com",
+      "shots": ["s017"]
+    },
+    "tone": "Playful, warm and confident: a character-led product demo (a cowboy-hat agent named Lucky the 'Bug Wrangler' speaking in Western idioms) on a calm off-white and Notion-blue canvas, with no narration and the story carried by on-screen text and UI.",
+    "signature_moments": [
+      {
+        "shots": ["s005"],
+        "description": "The agent avatar is personalised via a sliding accessory carousel, named and given a profile, then the prompt is typed as a giant full-frame close-up of text with a caret before cutting back to the panel.",
+        "why_premium": "Turns a settings form into character creation and makes typing cinematic by scaling the text to fill the frame, giving the agent personality that the rest of the film pays off."
+      },
+      {
+        "shots": ["s008"],
+        "description": "While the dashboard page builds itself, the camera pushes into the agent panel where reasoning streams and source-result counters tick up, then pulls back as the table fills row by row.",
+        "why_premium": "Choreographed camera moves direct attention between cause (agent reasoning) and effect (the database filling) in one continuous shot, making the AI's work legible without narration."
+      },
+      {
+        "shots": ["s017"],
+        "description": "The single Bug Wrangler card pulls back to reveal a wall of dozens of specialised agent cards, then resolves into 'Your team of Agents are ready to work' with the avatar lineup.",
+        "why_premium": "A single zoom-out turns one demoed agent into a scalable product promise, a satisfying scale reveal that lands the hook's claim before the CTA."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 4,
+        "evidence": "Two-line bold claim stated as kinetic type with illustrated agent faces fanning out in the first 4 s; clear and on-brand, though it is a statement rather than a tension or question.",
+        "refs": ["s001"]
+      },
+      "clarity": {
+        "score": 5,
+        "evidence": "One continuous, concrete use case (create a bug dashboard, populate from sources, assign engineers, summarise bugs, update from a meeting, all complete) with each step shown as a prompt followed by its visible result; the agent status labels ('Thinking', 'Crafting', 'Adding engineers...') explain what happens between steps.",
+        "refs": ["s005", "s007", "s008", "s010", "s011", "s016"]
+      },
+      "ui_showcase": {
+        "score": 5,
+        "evidence": "Recreated Notion UI is shown at readable scale with camera push-ins, streaming agent text, counting search results, column insertion, staggered assignee fills and status pills flipping to Complete; full-window shots alternate with tight crops.",
+        "refs": ["s004", "s008", "s011", "s013", "s016"]
+      },
+      "motion_polish": {
+        "score": 4,
+        "evidence": "Varied, purposeful transitions (push, zoom_through, crossfades) and in-shot camera moves, typewriter prompts, staggered reveals and a long card-wall pull-out; consistent rhythm. Easing curves and frame-level smoothness cannot be judged from 2 fps contact sheets, so not scored 5.",
+        "refs": ["s004", "s005", "s008", "s017"]
+      },
+      "sound_design": {
+        "score": 3,
+        "evidence": "Judged from anchor audio facts, not listening: a 120.19 BPM music bed at -15.24 LUFS integrated; 58 SFX candidates, most labelled music, with a cluster of impact/swoosh hits in the opening 13 s and a chime (x031) on the assignee fill in s011; little evidence of UI SFX on later clicks and status changes. Diegetic meeting speech (w0-w7) supports the transcription moment.",
+        "refs": ["s001", "s005", "s011", "s015", "w0"]
+      },
+      "vo_script_quality": {
+        "score": null,
+        "evidence": "No voice-over: the only speech is a short diegetic meeting line (w0-w7, 'Thank you so much to all of you.') used as source audio for the transcript in s015.",
+        "refs": ["s015", "w0", "w7"]
+      },
+      "brand_consistency": {
+        "score": 5,
+        "evidence": "Consistent off-white canvas and Notion-blue backdrop, the house line-art avatar style throughout, one sans family, and a sustained agent persona (cowboy hat, 'wrangle', 'Howdy, Partner!', 'Yeehaw') from creation to the end card and Notion logo lockup.",
+        "refs": ["s001", "s005", "s009", "s016", "s017"]
+      },
+      "works_muted": {
+        "score": 5,
+        "evidence": "There is no narration; every step is carried by on-screen prompts, agent status lines and visible UI results, so the story is fully understandable with sound off.",
+        "refs": ["s006", "s009", "s012", "s016"]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "A clear, charming, character-led feature reel with strong UI choreography and a memorable scale reveal before the CTA; held back from 5 only by unverifiable motion detail and fairly generic sound design per the audio facts.",
+        "refs": ["s001", "s005", "s008", "s017"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 3,
+      "baked_in_text": true,
+      "vo_dependent": false,
+      "notes": "No voice-over, so no dubbing is needed, and the UI looks recreated (vector-like) so it could be re-typeset. But nearly every shot carries baked-in text (prompts, table rows, dozens of agent card names, tagline) and the persona relies on English Western idioms ('wrangle up for ya', 'Howdy, Partner!', 'Yeehaw') that need transcreation; the s015 transcript is tied to English speech."
+    }
+  }
+}

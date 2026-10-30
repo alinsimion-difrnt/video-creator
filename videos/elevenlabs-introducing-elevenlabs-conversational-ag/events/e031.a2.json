@@ -1,0 +1,159 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "c6ac4cb8365e32cf9e0217f24b2ed3a6b8705d9ac409ca62be9d9aa1cb0e8872",
+    "created_at": "2026-10-05T06:47:24.634030Z"
+  },
+  "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+  "event": "e031",
+  "task": "a2-e031",
+  "elements": [
+    {
+      "box": null,
+      "manual_box": [58, 477, 675, 751],
+      "manual_reason": "Only a union box (b01) covers the tile grid; the suitcase tile resizes on its own.",
+      "label": "Suitcase tile (grows into the hero tile)",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 700, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [200, 243, 675, 470],
+      "manual_reason": "Only a union box (b01) covers the tile grid; the kayak tile resizes on its own.",
+      "label": "Kayak aerial tile",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["scale_up", "slide_left"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 700, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [688, 270, 872, 469],
+      "manual_reason": "Only a union box (b01) covers the tile grid; the parcel tile shrinks on its own.",
+      "label": "Parcel delivery tile (shrinks to a thumbnail)",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["scale_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 700, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [688, 477, 872, 623],
+      "manual_reason": "Only a union box (b01) covers the tile grid; the presenter tile shrinks on its own.",
+      "label": "Presenter portrait tile (shrinks to a thumbnail)",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["scale_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 700, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Booking confirmed chip",
+      "role": "notification",
+      "role_other": null,
+      "change_types": ["pop", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Booking confirmed",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 300, "easing_class": "spring_overshoot"}
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Python icon",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 700, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "JavaScript icon",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 700, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b06",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "React icon",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 700, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Swift icon",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 700, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x055", "verdict": "confirm", "label": "music", "note": "Continuous harmonic bands, no transient at 94.88 s."},
+    {"id": "x056", "verdict": "confirm", "label": "music", "note": "Music bed continues; nothing distinct at 95.11 s."}
+  ],
+  "pattern": {
+    "id": "layout_reframe",
+    "proposed_name": null,
+    "description": "The 2x2 tile grid re-lays out: the suitcase tile grows into a tall hero tile, the kayak tile enlarges, the bottom two shrink to thumbnails, the SDK icon column shifts left, and a Booking confirmed chip pops onto the hero tile.",
+    "why_premium": "Re-weighting the grid instead of cutting puts one use case in focus while keeping the others visible, and the chip lands a concrete outcome on the image as the narration says 'creating apps'."
+  },
+  "build_hint": {
+    "gsap": "Use Flip: const state = Flip.getState('.tile, .sdk-icon'); apply the hero layout class; Flip.from(state, {duration: 0.7, ease: 'power3.inOut', absolute: true}); then tl.fromTo('.chip', {scale: 0.6, opacity: 0}, {scale: 1, opacity: 1, duration: 0.3, ease: 'back.out(1.6)'}, '-=0.35');",
+    "remotion": "Interpolate each tile's x, y, width, height between the two layouts with p = spring({frame, fps, config: {damping: 200}}); chip scale = spring({frame: frame - 10, fps, config: {damping: 10, stiffness: 180}}) mapped 0.6->1 with opacity interpolate over 4 frames."
+  },
+  "confidence": "medium",
+  "notes": "Camera verdict none; raw scale 1.13 is the tiles resizing inside the frame. Chip could also be read as chip_append; layout_reframe chosen as the dominant motion. Tile boxes are manual because only a union diff box covers the grid."
+}

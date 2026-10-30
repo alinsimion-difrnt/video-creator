@@ -1,0 +1,54 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T13:58:33Z"
+  },
+  "id": "undertale",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "unknown",
+    "notes": "Overworld rooms use very few flat colours per area: the Ruins seen in the clips are pink-magenta floor, darker purple walls, a pale-blue water channel and a brown bridge. Battles are white line art on black with orange menu buttons. No metrics file."
+  },
+  "lighting": "None to speak of: flat fills, no light direction, no cast shadows. Areas read by their colour, and battles by black emptiness around white shapes.",
+  "silhouette": "The child is a tiny, simple sprite (striped shirt, brown hair) dwarfed by the room; the battle monster is a big white outline drawing front-on. Simple, iconic shapes that read at small size.",
+  "motion": {
+    "timing": "Few frames and long holds; the overworld sprite barely changes while text plays. A single pose or face swap lands a joke (wiki). No frame timings measured.",
+    "principles": [
+      "pose to pose",
+      "holds",
+      "exaggeration",
+      "staging"
+    ]
+  },
+  "texture": "Flat, clean tiles with a faint repeating floor pattern; low detail keeps focus on text and expression. Critics split on whether it looks amateur; it is a choice.",
+  "camera": "Top-down rooms with a fixed camera that scrolls with the child; battles cut to a separate black stage with the monster front-on and a small box below.",
+  "sound": "Each character's speech has its own font and text blip, so voice is designed into the text (wiki).",
+  "acting": {
+    "enters": "Characters pop into a room unexpectedly or are revealed by a cut to the black battle screen, then hold a pose while text types out.",
+    "acts": "Acting through tiny pose and face changes plus typed dialogue; monsters talk mid-fight and their attacks change with how you treat them (wiki).",
+    "exits": "Characters leave mid-conversation or after a joke, then turn up again later in a new spot.",
+    "comes_back": true,
+    "depth": "Mostly flat; recurring characters reappear in later rooms rather than in the background of the same shot."
+  },
+  "techniques": [
+    "one-pose-change punchline with a held beat",
+    "character-specific font and text blip as voice",
+    "flat colour, no shading, to push expression",
+    "few flat colours per area so each place reads instantly",
+    "hard cut to a black stage for a confrontation",
+    "running character who leaves and pops up again later"
+  ],
+  "feel": "flat colour + tiny pose swap + held beat + custom text voice = huge personality from almost nothing",
+  "for_fred": "Give Fred a running bit: he leaves mid-scene, then pops up later in an unexpected spot holding a new pose. Land jokes with one pose or face swap and a held beat, not a loop. For a confrontation, hard-cut to a black frame with Fred front-on and big.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Undertale",
+    "studies/pixel-art/sources.yaml",
+    "data/study/pixel/work/undertale/clip2-7695332422916902165.jpg",
+    "data/study/pixel/work/undertale/clip3-7695516001345080609.jpg"
+  ]
+}

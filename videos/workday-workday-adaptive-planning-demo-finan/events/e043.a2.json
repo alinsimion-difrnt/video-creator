@@ -1,0 +1,44 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "a6b0e830d7dff41e6f276098dca81659c101f78a52ae284e11d0de659d13a129",
+    "created_at": "2026-10-05T06:55:57.825184Z"
+  },
+  "video": "workday-workday-adaptive-planning-demo-finan",
+  "event": "e043",
+  "task": "a2-e043",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "P&L sheet grid replacing loading spinner",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "skeleton_resolve",
+    "proposed_name": null,
+    "description": "A blank app window with a loading spinner resolves in effectively one frame into the fully populated P&L spreadsheet (toolbar, account rows, monthly columns) inside the same browser frame.",
+    "why_premium": "The load is cut down to a near-instant swap so the viewer never waits on a real spinner; the window chrome stays fixed, so the data appears to land in place and continuity is kept."
+  },
+  "build_hint": {
+    "gsap": "Keep the window frame static. tl.set(spinner, {autoAlpha: 0}) then tl.fromTo(sheet, {autoAlpha: 0}, {autoAlpha: 1, duration: 0.05, ease: 'none'}) - essentially a hard swap timed just after the narration pause.",
+    "remotion": "Render the spinner until the event frame, then switch to the sheet layer; optionally opacity: interpolate(frame, [f0, f0 + 1], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})."
+  },
+  "confidence": "high",
+  "notes": "Screen-recorded page load; the change is a near-instant swap (energy peak in one frame), not an authored animation. skeleton_resolve is the closest canonical match (spinner rather than skeleton bars)."
+}

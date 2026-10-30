@@ -1,0 +1,190 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "6ccd9f1edbf50bbe33586109d128da4f52512a5fa201d60b172cb47e1960ce56",
+    "created_at": "2026-10-05T06:31:58.490803Z"
+  },
+  "video": "profound-introducing-profound",
+  "task": "a1-p9",
+  "shots": [
+    {
+      "shot": "s056",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "grid",
+      "composition_other": null,
+      "focal_element": "A wall of dark-mode phone mockups, each showing a different AI assistant (ChatGPT, Gemini, Claude, a Copilot-style and a Spanish-language answer UI) answering a shopping or general question",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "9:41",
+        "ChatGPT",
+        "Gemini Flash",
+        "Claude",
+        "Which 4k tv should I buy for movies and gaming?",
+        "Fuentes",
+        "Responder",
+        "How many questions does AI answer daily?",
+        "Can you recommend a good tablet for reading and light work?",
+        "Can you recommend a water bottle that can help track your hydration?",
+        "Things to consider when choosing:",
+        "Solicitar seguimiento..."
+      ],
+      "text_word_count": 54,
+      "typography": "Mocked native chat-app UI: clean sans (Inter/SF-like, low confidence) for questions in regular weight sentence case, small bold section labels, numbered bold list headings in answers; the Claude tile uses a serif for its answer body. Answer body text is too small to transcribe reliably and is not quoted.",
+      "depth_cues": ["shadow", "blur"],
+      "what_happens": "Entered by a zoom-through from the brand graph, a grid of roughly seven columns of phone screens drifts slowly, each tile a different assistant answering a question (repeated 'Which 4k tv should I buy...' tiles, some in Spanish), under VO 'discussed in AI right now. The question is,' (w201-w208). By the last sample (1:14.5) the camera has pulled far back so the grid becomes a dense wall of dozens of tiny phones, visualising the scale of AI conversations about brands. One detected event.",
+      "build_rebuild": "Tile 20+ dark phone-frame cards in an offset grid on black, each with a static recreated AI-chat answer, slowly pan the grid, then over the last ~0.5 s scale the whole grid down to about 35% so it reads as a wall of conversations before cutting.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s057",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Single centred question line 'are you part of the conversation?' on black",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": ["are you part of the conversation?"],
+      "text_word_count": 6,
+      "typography": "Semibold geometric/grotesk sans (Inter-like, low confidence), all lowercase including the first word, normal tracking, white on pure black, single centred line.",
+      "depth_cues": ["none"],
+      "what_happens": "The phone wall zooms through into black and the full question is already on screen by 1:15.0, slightly larger, then settles a little smaller by 1:15.5 and holds while the VO asks 'are you part of the conversation?' (w209-w215); by 1:17.0 the line has faded to dark grey before the cut.",
+      "build_rebuild": "Cut to black with the full lowercase question centred at ~105% scale, ease it down to 100% over ~0.5 s, hold through the VO line, then fade opacity to ~15% over the last 0.5 s.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s058",
+      "shot_type": "logo",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Profound logo lockup: stepped pixel/checker mark plus 'Profound' wordmark",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": ["Profound"],
+      "text_word_count": 1,
+      "typography": "Wordmark in a medium-weight neo-grotesk sans, title case, slightly tight tracking, near-black on a pale grey background; mark is a stepped arrangement of rounded squares.",
+      "depth_cues": ["none"],
+      "what_happens": "Hard cut to a pale, subtly textured light-grey card: at 1:17.5 the mark is still grey and the wordmark is revealed only up to 'Profo', fading in left to right; by 1:18.5 the full lockup is solid black and it holds silently (VO ended at w215) until about 1:20.0, where the frame is already black. A weak SFX onset (x050, unsure) sits near the reveal.",
+      "build_rebuild": "On a light-grey background, fade the logo mark from 30% to 100% while a left-to-right gradient mask reveals the wordmark over ~1 s, hold for ~1.5 s, then cut to black.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s059",
+      "shot_type": "other",
+      "shot_type_other": "black closing slate",
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Solid black frame (no content)",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": ["none"],
+      "what_happens": "Five frames of pure black close the video after the logo card; no VO or text.",
+      "build_rebuild": "End the composition with ~5 frames of solid black after the logo end card.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001", "s002", "s003", "s004", "s005", "s006", "s007", "s008", "s009"], "words": [0, 30]},
+      {"beat": "problem", "shots": ["s010", "s011", "s012", "s013", "s014", "s015", "s016", "s017", "s018", "s019", "s020", "s021", "s022", "s023", "s024", "s025", "s026", "s027", "s028", "s029", "s030", "s031", "s032", "s033", "s034", "s035", "s036", "s037", "s038", "s039", "s040", "s041", "s042", "s043", "s044"], "words": [31, 85]},
+      {"beat": "agitate", "shots": ["s045", "s046"], "words": [86, 114]},
+      {"beat": "mechanism", "shots": ["s046", "s047"], "words": [115, 122]},
+      {"beat": "demo", "shots": ["s047", "s048", "s049", "s050", "s051", "s052", "s053", "s054", "s055"], "words": [123, 196]},
+      {"beat": "outcome", "shots": ["s055", "s056"], "words": [197, 208]},
+      {"beat": "cta", "shots": ["s057", "s058", "s059"], "words": [209, 215]}
+    ],
+    "hook": {
+      "text": "35 years ago, the humble search engine was born.",
+      "technique": "other",
+      "technique_other": "nostalgic history flashback (retro CRT search page) that sets up a 'then everything changed' turn",
+      "shots": ["s001", "s002"],
+      "words": [0, 8]
+    },
+    "cta": {
+      "text": "are you part of the conversation?",
+      "shots": ["s057", "s058"]
+    },
+    "tone": "Cinematic documentary build: nostalgic and playful (retro footage, typewriter captions, film grain) turning urgent and slightly ominous (press montage, 'nothing you can do about it'), then calm, sleek and premium in the dark/light 3D product demo, ending on a quiet rhetorical question and a minimal logo card.",
+    "signature_moments": [
+      {
+        "shots": ["s014", "s015", "s016", "s017", "s018", "s019", "s020", "s021", "s022"],
+        "description": "Rapid 2-3-frame montage of different news headlines and article crops, each scaled so the word 'ChatGPT' stays locked to the same screen position, with vignette and grain.",
+        "why_premium": "The keyword-locked match cut keeps the eye still while the sources change, turning borrowed press into a deliberate, rhythmic proof beat instead of a messy collage."
+      },
+      {
+        "shots": ["s050"],
+        "description": "The source pills (reddit, Verywellfit, NY Times, Vogue) lift out of a phone AI answer, float in 3D depth of field, and land as rows in a 'Citation Page Count' table.",
+        "why_premium": "One continuous object-level transition explains the product's core idea (which sources AI cites) without a cut or caption, which reads as bespoke motion design rather than a screen recording."
+      },
+      {
+        "shots": ["s045", "s046"],
+        "description": "The brand comparison collapses to the Nike swoosh, the camera zooms through it into black, words of 'and there's absolutely nothing you can do about it.' light up on the VO, and a white mask sweep resolves into the Profound logo on 'until now'.",
+        "why_premium": "Turning a UI element into the transition portal and pairing the darkest line of the script with the product reveal gives the pivot real dramatic timing."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 4,
+        "evidence": "Opens on a crafted retro CRT search page with '35 years ago' and a typewriter caption that persists across hard cuts (s002-s005), immediately framing a big historical shift; strong and cinematic, but it takes ~12 s before the AI turn and the product is not hinted at.",
+        "refs": ["s002", "s003", "s005", "w0", "w8"]
+      },
+      "clarity": {
+        "score": 3,
+        "evidence": "The problem (AI answers decide whether to recommend your business, w91-w105) is stated clearly, and the demo shows tracking, citations, mention volume and ranking. But Profound is first named at w119 (~44 s of 80 s), the first half leans on borrowed footage and brand flashes, and several demo frames are too fast to read.",
+        "refs": ["s045", "s046", "s049", "s050", "s053", "w105", "w119"]
+      },
+      "ui_showcase": {
+        "score": 4,
+        "evidence": "Product UI is restaged in 3D with perspective tilts, depth of field, a line chart that draws with a counting tooltip, a dropdown stagger, citation chips flying into a table and a rank climb from 5 to 1; it is polished but brief (~25 s) and mostly unreadable at detail level.",
+        "refs": ["s047", "s049", "s050", "s052", "s053"]
+      },
+      "motion_polish": {
+        "score": 4,
+        "evidence": "Zoom-throughs (s046, s056, s057), the keyword-locked headline montage, karaoke word highlighting (s048) and the chip-to-table FLIP move are high-end; the intentionally lo-fi grain, light leaks and RGB-split montage in the first half are effective but stylistically less consistent with the clean demo.",
+        "refs": ["s014", "s046", "s048", "s050", "s055", "s057"]
+      },
+      "sound_design": {
+        "score": 4,
+        "evidence": "Judged from anchor audio facts plus visuals: a steady 114.84 BPM music bed at -15.89 LUFS integrated, 50 detected SFX onsets dominated by swoosh/reverse-swoosh hits on transitions (e.g. x031 at the 'until now' reveal, x043 at the swoosh zoom), and montage cuts landing within ~5-40 ms of beats (s037, s040, s043). Many SFX labels are 'unsure', and no distinct UI clicks are detected in the demo.",
+        "refs": ["s037", "s043", "s046", "s053"]
+      },
+      "vo_script_quality": {
+        "score": 4,
+        "evidence": "Clear narrative arc: history (w0-w30), disruption (w31-w68), stakes for marketers (w81-w105), despair then 'until now' (w106-w116), concrete features (w123-w196), closing question (w206-w215). Archival sound bites add texture; a few generic phrases ('world-leading software', w120-w122) weaken it slightly.",
+        "refs": ["w0", "w85", "w105", "w116", "w122", "w215"]
+      },
+      "brand_consistency": {
+        "score": 3,
+        "evidence": "From s046 on, the look is coherent (Inter-like sans, charcoal and pale-grey grounds, frosted cards, consistent logo), but the first ~38 s are dominated by third-party footage, press and AI-brand logos with varied lo-fi treatments, so Profound's own identity is absent for half the runtime.",
+        "refs": ["s006", "s029", "s041", "s046", "s048", "s058"]
+      },
+      "works_muted": {
+        "score": 3,
+        "evidence": "Key beats carry on-screen type ('BIG', 'BILLIONS OF PEOPLE', 'and there's absolutely nothing you can do about it.', 'Track what people are asking AI about your industry', 'are you part of the conversation?'), and the demo visuals are partly self-explanatory, but the problem statement (w86-w105) and most feature lines (w135-w205) have no captions.",
+        "refs": ["s010", "s029", "s046", "s048", "s057", "w105"]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "A cinematic, well-paced launch film with genuinely premium transitions and a strong demo section; held back from best-in-class by the long borrowed-footage preamble, late product naming and a soft, rhetorical ending without a concrete CTA or URL.",
+        "refs": ["s002", "s014", "s046", "s050", "s057", "s058"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 2,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "English kinetic type is baked into many shots (typewriter caption, 'REVOLUTIONISED', 'BILLIONS OF PEOPLE', s046/s048/s057 captions) and timed to English VO words; third-party sound bites and press headlines are English-only. The product demo and logo card would transfer with recreated UI text."
+    }
+  }
+}

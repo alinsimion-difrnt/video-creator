@@ -1,0 +1,144 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "a3b6cde3f34c0180154db6204dce7942565db578cc05b09551b7c2ba0e201eea",
+    "created_at": "2026-10-05T06:43:43.452133Z"
+  },
+  "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+  "event": "e023",
+  "task": "a2-e023",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Transcript column of chat bubbles, which scrolls up",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 650, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b07",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Key phrase in the first user bubble, recoloured with a blue-violet gradient",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["color_shift", "highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "The reference number is REF123456.",
+      "text_unit": "word",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b09",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Booking date phrase, highlighted",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["color_shift", "highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "November 1st, 2024.",
+      "text_unit": "word",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b08",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Booking confirmation phrase, gradient highlight that sweeps word by word",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["color_shift", "highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "John Doe at Hotel California is confirmed.",
+      "text_unit": "word",
+      "estimates": {"duration_ms": 450, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b14",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Check-in line, highlighted after the line above it",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["color_shift", "highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Check-in is scheduled for December 15th, 2024.",
+      "text_unit": "word",
+      "estimates": {"duration_ms": 450, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b06",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Amount phrase in the new agent bubble, highlighted",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["color_shift", "highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "total amount due is $500.",
+      "text_unit": "word",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Agent bubble 'Correct, ...' scrolls into view from the bottom edge",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Correct, the total amount due is $500. Is there anything else I can help you with?",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 600, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b16",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "User bubble 'No, that will be all...' scrolls in at the bottom",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["slide_up", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "No, that will be all. Thanks for your assistance.",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 500, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x033", "verdict": "unsure", "label": "unsure", "note": "About 440 ms before the burst. Only a low percussive transient from the music bed shows there, with no sweep shape."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "key phrase highlight",
+    "description": "As the transcript scrolls up, the key facts in each bubble (reference number, date, booking confirmation, amount due) are recoloured with a blue-violet gradient, roughly one bubble after another. This shows what the analysis pulled out.",
+    "why_premium": "It shows the product's value (extracting insights from a transcript) directly on the UI, not with a caption. Using the brand gradient for the highlight ties it to the earlier headline, and pairing it with a gentle scroll keeps the frame alive without breaking the read."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.transcript', {y: -130, duration: 0.65, ease: 'power2.inOut'}); tl.fromTo('.keyPhrase .word', {color: '#111'}, {color: 'var(--brand-gradient-stop)', duration: 0.3, ease: 'power1.out', stagger: 0.04}, 0.05) (or animate background-position on a background-clip:text gradient from 100% to 0%); new bubbles ride in with the scroll.",
+    "remotion": "translateY = interpolate(frame, [0, 20], [0, -130], {easing: Easing.inOut(Easing.cubic)}) on the transcript. For each phrase word i, the gradient mix = interpolate(frame - 2 - i*1.2, [0, 9], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}), applied as background-clip text opacity over the black text."
+  },
+  "confidence": "medium",
+  "notes": "camera.move says tilt_down, but this is the transcript content scrolling up inside the UI, not a camera move. Some phrases (the reference number, the date) were already partly coloured at the burst start, so their highlight may carry over from e022. The b07 box covers the full first line; the highlighted span is only part of it plus b17."
+}

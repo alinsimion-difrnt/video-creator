@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "54abb4099e978378b4e8d7628424c6648658f01ee96994341f38826f449c96ef",
+    "created_at": "2026-10-05T06:55:58.643144Z"
+  },
+  "video": "workday-workday-adaptive-planning-demo-finan",
+  "event": "e037",
+  "task": "a2-e037",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Workday 'Add, Edit, or Delete Version' app window (whole UI frame)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["scale_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 1000, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [236, 534, 844, 902],
+      "manual_reason": "No candidate box isolates the Version Details form; it scrolls back to the top (General / Access Control) inside its pane during the pull-out.",
+      "label": "Version Details form scrolling back to top",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    },
+    {
+      "box": null,
+      "manual_box": [194, 537, 225, 551],
+      "manual_reason": "No candidate box covers the mouse cursor, which ends over the save icon in the Version Details toolbar.",
+      "label": "Mouse cursor moving to the save icon",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "ui_camera_push_in",
+    "proposed_name": null,
+    "description": "Reverse of a UI camera push-in: a virtual camera pulls out from a close-up of the settings form to reveal the full app window on the brand-blue backdrop, while the form scrolls back to its top and the cursor heads to Save.",
+    "why_premium": "A smooth eased zoom-out re-establishes context after a detail close-up instead of a hard cut, so the viewer sees where the edited settings live before the save action."
+  },
+  "build_hint": {
+    "gsap": "gsap.fromTo(appWindow, {scale: 1.45, x: -180, y: -260}, {scale: 1, x: 0, y: 0, duration: 1.0, ease: 'power2.inOut', transformOrigin: '50% 50%'}); in the same timeline at 0 tween form scrollTop back to 0 (duration 0.6, 'power2.out') and the cursor to the save icon (duration 0.8, 'power1.inOut').",
+    "remotion": "const p = interpolate(frame, [0, 30], [0, 1], {easing: Easing.inOut(Easing.cubic), extrapolateRight: 'clamp'}); scale = interpolate(p, [0, 1], [1.45, 1]); translate x/y from the zoom focus to 0 with the same p; form translateY and cursor position driven by separate interpolates."
+  },
+  "confidence": "medium",
+  "notes": "Camera verdict is pull_out; taxonomy has no pull-out pattern so ui_camera_push_in (reversed) is the closest. The in-pane form scroll during the zoom is inferred from the filmstrip and could be a reflow instead."
+}

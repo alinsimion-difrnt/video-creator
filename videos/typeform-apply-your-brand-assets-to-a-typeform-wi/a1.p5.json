@@ -1,0 +1,167 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "6060683a66e2bd6825e643c9a9d974f610a36d30a118c44548101e787dd1378b",
+    "created_at": "2026-10-05T06:31:36.368896Z"
+  },
+  "video": "typeform-apply-your-brand-assets-to-a-typeform-wi",
+  "task": "a1-p5",
+  "shots": [
+    {
+      "shot": "s019",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "The black 'Create typeform' button at the top left of the workspace grid, with the cursor on it",
+      "transition_in": "other",
+      "transition_other": "scale-in: opens on a slightly wider framing of the same workspace that settles into a tighter crop within about 0.5 s (reads as a short zoom-in rather than a cut)",
+      "on_screen_text": [
+        "Suzie Q Corp.",
+        "My workspace",
+        "Create typeform",
+        "Event Registration",
+        "Plant Classification Quiz",
+        "My Typeform quiz",
+        "Zen House Yoga"
+      ],
+      "text_word_count": 15,
+      "typography": "Native product UI in a clean geometric sans (low-confidence guess: Apercu-like); sentence case, regular weight; white button label on a dark pill; no added motion-graphics type",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Back in the workspace grid of coloured form cards, the framing tightens and the cursor clicks 'Create typeform' while the VO says 'I'll click to create a new Typeform' (w219-w225); the shot ends with a dissolve into the form editor.",
+      "build_rebuild": "Show a full-bleed workspace screenshot scaled from about 0.9 to 1.0 over 0.5 s with ease-out, animate a cursor to the 'Create typeform' button and click it on w220, then crossfade to the editor capture.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s020",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "The right-hand settings panel, where the cursor moves from 'Question' to the 'Design' tab",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "New forms / Hotel Feedback Form",
+        "Create Connect Share Results",
+        "Your question here. Recall information with @",
+        "Description (optional)",
+        "Choice 1",
+        "Choice 2",
+        "Add choice",
+        "Question Design Logic",
+        "Brand kit Beta",
+        "Themes",
+        "My themes Gallery",
+        "Tropical Hotel Group",
+        "Tropical Hotels",
+        "Tropical Motel",
+        "Tropical Group"
+      ],
+      "text_word_count": 37,
+      "typography": "Native editor UI in a neutral sans, sentence case; the question placeholder is italic; the theme preview cards show a serif 'Question / Answer' sample; small 'Beta' pill tag",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "A blank 'Hotel Feedback Form' with one multiple-choice question opens. On 'Under the Design tab' (w226-w229) the cursor clicks Design, and the panel swaps to Brand kit and Themes, listing the 'Tropical Hotel Group' brand kit themes (w230-w238). Near the end the screen starts to dim.",
+      "build_rebuild": "Show a static editor capture for about 2.5 s, move the cursor to the 'Design' tab and click it on w228, hard-swap the right panel to the themes list, then fade a 40% grey scrim over the whole frame at the end.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s021",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "The 'Tropical Hotel Group' theme card stack, left undimmed inside a white rounded cutout while the rest of the UI sits under a grey scrim",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "Tropical Hotel Group",
+        "Question",
+        "Answer",
+        "Brand Kit",
+        "Tropical Hotels",
+        "Tropical Motel",
+        "Tropical Group"
+      ],
+      "text_word_count": 13,
+      "typography": "Same native UI type; the theme cards show a serif 'Question/Answer' specimen (each theme's brand font) with a small sans 'Brand Kit' badge; there are no overlay captions",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Spotlight hold: the whole editor dims except a rounded white panel around the three Brand Kit theme cards. It lands on 'here.' (w239) and points out the themes created earlier.",
+      "build_rebuild": "Overlay a full-frame semi-transparent grey layer with a rounded-rectangle mask hole over the theme list, fade it in over about 300 ms, and hold it for 2 s.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s022",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "The 'Tropical Hotels' theme card that the cursor moves onto and clicks",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "My workspace / Hotel Feedback Form",
+        "Brand kit Beta",
+        "Themes",
+        "Tropical Hotel Group",
+        "Tropical Hotels",
+        "Tropical Motel",
+        "Tropical Group",
+        "Your question here. Recall information with @"
+      ],
+      "text_word_count": 25,
+      "typography": "Native UI sans and the serif theme specimens; after the click the canvas question switches to a serif italic with a serif 'THG' wordmark at top left",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "The scrim dissolves away and the cursor travels down to the first theme card while the VO says 'Just like that, I have an' (w240-w245). On the last frame the card gets a selected outline and the canvas switches to the pink branded theme with the THG logo.",
+      "build_rebuild": "Crossfade out the spotlight scrim, ease the cursor onto the first theme card, and on click swap the canvas to the branded theme state with a 2px selection ring on the card.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s023",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "The pink branded form canvas with the 'THG' logo, plus the selected 'Tropical Hotels' theme card",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "THG",
+        "Your question here. Recall information with @",
+        "Description (optional)",
+        "Choice 1",
+        "Choice 2",
+        "Add choice",
+        "Brand kit Beta",
+        "Themes",
+        "My themes Gallery",
+        "Tropical Hotel Group",
+        "Tropical Hotels",
+        "Tropical Motel",
+        "Tropical Group"
+      ],
+      "text_word_count": 31,
+      "typography": "The applied theme brings in a serif display face (italic for the question and description, upright for choices) and a bold serif 'THG' wordmark; the surrounding editor chrome stays in a neutral sans",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Payoff: the form is now pink with the THG logo, 'instantly branded Typeform' (w246-w248). It holds for about 4 s, then the camera pushes in and pans right toward the Design panel as the VO covers changing the Brand Kit 'from here too' (w249-w269). The cursor hovers near 'Brand kit Beta', and the shot fades to white.",
+      "build_rebuild": "Hold the branded editor state for about 4 s, then animate a camera scale of 1.0 to 1.25 with a translate toward the right panel over about 2 s using ease-in-out, move the cursor to the 'Brand kit' row, and fade to white over the last 0.5 s.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

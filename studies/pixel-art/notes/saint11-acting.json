@@ -1,0 +1,65 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "f9c9cb05273ae16327d45f8ccd39d506c3e7dff52321b5bfae2558b15f9831d4",
+    "created_at": "2026-10-13T13:02:05+00:00"
+  },
+  "id": "saint11-acting",
+  "kind": "tutorial",
+  "palette": {
+    "colours_estimate": 17,
+    "shadows": "mixed",
+    "notes": "Measured 16-19 colours per sheet (idle 18, cuteness 19, defend 17, death 16, breaking 16), UI included. Ramps hue-shift both ways (+30 to +46 deg warm ramps, -13 to -38 deg cool ones); near-zero dithering (1.4-2.0%)."
+  },
+  "lighting": "Flat top-left light on tiny sprites; drama comes from flashes instead: a full white frame on a hit, a bright shield bubble on defend, white impact stars on death.",
+  "silhouette": "Big-head small-body heroes (red cape, blue hood) and blobby monsters that read at 1x; the cuteness panel shows the rule as overlays: big forehead, low eyes, a triangle-shaped body, round soft shapes.",
+  "motion": {
+    "timing": "Even holds: idle 60 frames at 100 ms (6 s cycle), defend 34 at 80 ms, death 22 at 100 ms, breaking 59 drawings at 80 ms with one 400 ms hold. Cuteness mixes 30, 60, 100 and 120 ms holds; the 30 ms one is a blink.",
+    "principles": [
+      "anticipation",
+      "follow through",
+      "secondary action (hair, cape, ears)",
+      "hit flash / impact frame",
+      "staging",
+      "exaggeration"
+    ]
+  },
+  "texture": "Clean flat clusters, almost no dithering; debris and sparks (breaking pot shards, death particles, shield chips) carry the texture.",
+  "camera": "Static tutorial panels, one idea per box; each idea plays as its own small looping scene side by side, so the eye compares variants.",
+  "sound": "",
+  "acting": {
+    "enters": "No entrances; characters already stand in place, and new beats arrive as events: a projectile flies in from the right, a pot drops from above.",
+    "acts": "Idles breathe and blink at different rhythms per character; defend shows block, shield bubble and recoil; death shows hit flash, knock-back, collapse to a lying pose; the pot falls, cracks and bursts into shards.",
+    "exits": "Exit by death: the body falls flat and stays, or explodes into particles that fade; the broken pot leaves pieces on the floor.",
+    "comes_back": true,
+    "depth": "All in one plane; a close-up face panel next to the full-body sprite plays the same moment at two scales (bust reacts, body acts)."
+  },
+  "techniques": [
+    "idle that breathes: 1-2 px body bob plus a blink, each character on its own rhythm",
+    "cute proportions: big forehead, low-set eyes, triangle body, rounded shapes",
+    "30 ms blink frame inside 120 ms holds",
+    "one white hit-flash frame before the knock-back",
+    "defend = anticipation pose, shield bubble, small recoil, settle",
+    "death = flash, knock-back, fall, lie still; or burst into particles that fade",
+    "object break: fall, crack, explode into 4-6 shards that stay on the floor",
+    "loop the whole beat with a hold so it can play again"
+  ],
+  "feel": "big-head cute proportions + breathing idle with blinks + one white flash on every hit = small sprites with real personality",
+  "for_fred": "Give Fred a breathing idle (1-2 px bob, a blink on its own beat) so he lives while Robert talks, then let one beat end in an exit by event: a white flash, he gets knocked off-frame, a held empty beat, and he pops back in. Pixie can do a defend beat (brace, bubble, recoil) when a point is attacked. Do not loop the same idle for the whole reel.",
+  "sources": [
+    "https://saint11.art/img/pixel-tutorials/characterIdle.gif",
+    "https://saint11.art/img/pixel-tutorials/Cuteness.gif",
+    "https://saint11.art/img/pixel-tutorials/Defend.gif",
+    "https://saint11.art/img/pixel-tutorials/Death.GIF",
+    "https://saint11.art/img/pixel-tutorials/Breaking.gif",
+    "studies/pixel-art/metrics/saint11-acting.json",
+    "data/study/pixel/work/saint11-acting/Breaking.png",
+    "data/study/pixel/work/saint11-acting/Cuteness.png",
+    "data/study/pixel/work/saint11-acting/Death.png",
+    "data/study/pixel/work/saint11-acting/Defend.png",
+    "data/study/pixel/work/saint11-acting/characterIdle.png"
+  ]
+}

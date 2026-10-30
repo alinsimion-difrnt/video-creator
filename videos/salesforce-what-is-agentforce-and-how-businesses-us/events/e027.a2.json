@@ -1,0 +1,47 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "b22762830175becefc36cb4cf85c8ab8f3f3b2d9a37bf7db22c50c4b11a3cbdb",
+    "created_at": "2026-10-05T06:52:01.409098Z"
+  },
+  "video": "salesforce-what-is-agentforce-and-how-businesses-us",
+  "event": "e027",
+  "task": "a2-e027",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Agent Builder UI screen shrinking into a rounded card",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["scale_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 330, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x050", "verdict": "override", "label": "music", "note": "Broadband pulse matching the regular beat pulses of the music bed; nothing visual happens at 84.11 s, before the burst."},
+    {"id": "x051", "verdict": "unsure", "label": "unsure", "note": "Low-mid tonal band brightening at 85.07 s after the motion has settled, under 'watching.'; could be a soft chime or a music swell, no visual hit to sync to."}
+  ],
+  "pattern": {
+    "id": "layout_reframe",
+    "proposed_name": null,
+    "description": "The full-bleed screen recording shrinks (about 6%) into a rounded-corner card floating on a dark purple starfield, decelerating to rest as the narrator says 'Thanks for watching'.",
+    "why_premium": "Turning the raw UI capture into a framed card on the brand backdrop signals the end of the demo and gives a polished, contained exit rather than a hard cut to the outro."
+  },
+  "build_hint": {
+    "gsap": "Brand starfield background behind a UI container; gsap.fromTo(uiPlate, {scale: 1, borderRadius: 0}, {scale: 0.94, borderRadius: 24, duration: 0.35, ease: 'power3.out'}); optionally add a soft drop shadow as it lands.",
+    "remotion": "Inside an AbsoluteFill with the gradient background: const s = spring({frame: frame - start, fps, config: {damping: 30, stiffness: 180, mass: 1}}); scale = interpolate(s, [0, 1], [1, 0.94]); borderRadius = interpolate(s, [0, 1], [0, 24]); no overshoot."
+  },
+  "confidence": "medium",
+  "notes": "Continuation of e026 (same shrink; the shot detector split it). camera.move is none, so treated as the plate scaling inside the frame, not a camera pull-out. Energy is front-loaded and decays smoothly, suggesting a strong ease-out."
+}

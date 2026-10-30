@@ -1,0 +1,91 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "s7_measure",
+    "annotator": "code",
+    "skill": null,
+    "model": null,
+    "input_hash": "d08c0e56aea82692096b4f98e9fab99a59dcb72d0c667bdaa9728d59416ee17d",
+    "created_at": "2026-10-05T09:02:42.276174Z"
+  },
+  "video": "dyson-introducing-the-dyson-washg1-wet-floor",
+  "event": "e001",
+  "fps": 25.0,
+  "elements": [
+    {
+      "box": "b01",
+      "xyxy": [
+        236,
+        0,
+        1280,
+        710
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.622,
+      "channels": [
+        {
+          "name": "opacity",
+          "start_f": 390,
+          "end_f": 397,
+          "start_value": 0.498,
+          "end_value": 1.0,
+          "observed_start": false,
+          "cls": "ease_in",
+          "gsap": {
+            "ease": "power1.in",
+            "duration_ms": 161.0,
+            "rmse": 0.11161
+          },
+          "bezier": "cubic-bezier(0.003, -0.702, 0.992, -0.385)",
+          "bezier_rmse": 0.03604,
+          "spring": {
+            "zeta": 0.05,
+            "omega0": 10.943,
+            "settle_ms": 6947.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 119.742,
+              "damping": 1.094
+            },
+            "remotion_exact": true,
+            "rmse": 0.11242
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 298.5,
+          "fit_quality": 0.9933
+        }
+      ],
+      "timing": {
+        "ease": "power1.in",
+        "start_s": 15.7191,
+        "duration_ms": 161.0,
+        "rmse": 0.11161
+      },
+      "stagger": null,
+      "sfx_offset_ms": {
+        "x019": -253.0
+      },
+      "source": "measured",
+      "quality": 0.9933
+    },
+    {
+      "box": "m02",
+      "xyxy": [
+        1060,
+        220,
+        1280,
+        601
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.565,
+      "channels": [],
+      "timing": null,
+      "stagger": null,
+      "sfx_offset_ms": {},
+      "source": "model_estimate",
+      "quality": 0.0
+    }
+  ],
+  "failed": {}
+}

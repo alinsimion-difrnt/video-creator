@@ -1,0 +1,131 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "a881fa640e62e3be5998c041dd0f89d51dd9793acbf1f859eccc94d54370b5a1",
+    "created_at": "2026-10-05T06:32:40.143932Z"
+  },
+  "video": "zapier-zapier-s-newest-product-features-build",
+  "task": "a1-p4",
+  "shots": [
+    {
+      "shot": "s014",
+      "shot_type": "abstract",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Large green circular checkmark badge centred on a flat lavender field, flanked by two diagonal clusters of small coloured dots",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": ["none"],
+      "what_happens": "A lavender circle expands from a dark navy frame until it fills the screen (iris-style zoom through), revealing a green success checkmark; the checkmark stroke draws/settles while two groups of coloured dots drift outward and stretch into pill shapes like confetti, landing on 'get back to business as usual' (w273-w279).",
+      "build_rebuild": "Scale a lavender circle mask from ~60% to 150% of the frame over a navy background, centre a 140px green circle with a white checkmark whose path draws on with ease-out, and animate two clusters of 4 coloured dots outward along a diagonal while stretching them on their motion axis.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s015",
+      "shot_type": "other",
+      "shot_type_other": "illustrated_character_zoom_chain (flat vector illustration, infinite zoom through nested scenes)",
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "A continuous centre-locked zoom through nested illustrated scenes: an eye, a meeting room monitor, a calendar/spreadsheet tunnel, an email compose window, a video-call grid and finally a woman's face",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "To",
+        "From",
+        "Subject: Automation that drives you forward",
+        "Send"
+      ],
+      "text_word_count": 8,
+      "typography": "Small UI-mimic labels in a light grotesk sans, sentence case, normal tracking, rendered as part of the illustrated email form; calendar cells carry small numerals (6-16) and a spreadsheet toolbar with column letters A-E, all incidental rather than read",
+      "depth_cues": ["perspective_tilt"],
+      "what_happens": "Starting on an extreme close-up of a character's eye, the camera pushes into the pupil, which opens like an aperture onto a meeting room; it zooms into the room's wall monitor, through a nested calendar and spreadsheet tunnel, into an email compose window with typing hands, into a wall of video-call tiles, and ends on one participant's face, visualising 'unleash automation across your entire organization' (w285-w300).",
+      "build_rebuild": "Build each illustrated scene as a layer whose centre contains a scaled-down copy of the next scene, then animate a single continuous scale (exponential, ~8x per scene) on the root so the camera endlessly pushes through screen-within-screen frames, swapping the outer layer out once the inner one fills the viewport.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s016",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "grid",
+      "composition_other": null,
+      "focal_element": "An 'Audit Log' card in the centre of a wall of pastel UI tiles, listing five Zap events with user avatars and timestamps",
+      "transition_in": "other",
+      "transition_other": "cut/zoom-out from the illustrated face onto a tilted wall of UI tiles that settles flat (not clearly visible between 2 fps frames)",
+      "on_screen_text": [
+        "Audit Log",
+        "Zap Turned on by Quinn Fox",
+        "Zap Deleted by Nicky Steward 9:30 am",
+        "Zap Published by Quinn Fox 8:45 am",
+        "Zap Turned off by Quinn Fox 8:30 am",
+        "Zap Created by Riley Howard 8:00 am"
+      ],
+      "text_word_count": 37,
+      "typography": "Product-UI sans (grotesk, possibly Zapier's Degular/Inter-like face, low confidence); bold sentence-case card title 'Audit Log', regular-weight small row labels, mixed case names, normal tracking; the timestamp on the first row is partly hidden by the cursor",
+      "depth_cues": ["shadow"],
+      "what_happens": "The camera settles on a mosaic of rounded pastel tiles separated by an orange gutter; the Audit Log card sits centre, and a large black cursor moves down the rows, each hovered row lifting and offsetting out of the card with a hard black drop shadow, as the voice-over says 'Use the audit log to maintain oversight' (w301-w313).",
+      "build_rebuild": "Lay out a CSS grid of rounded pastel tiles with an orange gap, place a centred card titled 'Audit Log' with five event rows, and animate a cursor that hops row to row while the hovered row translates up-left a few pixels and gains a solid 4px offset black shadow.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s017",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "grid",
+      "composition_other": null,
+      "focal_element": "A 'Members' card with four users and role dropdowns, arriving at the centre of the tile wall",
+      "transition_in": "other",
+      "transition_other": "camera pan/slide across the same tile wall from the audit-log tile to the members tile",
+      "on_screen_text": [
+        "Members",
+        "Add member",
+        "Quinn Fox quinn@website.com Owner",
+        "Riley Howard riley@website.com Super Admin",
+        "Nicky Steward nicky@website.com Admin",
+        "Parker McKinney parker@zapier.com Member"
+      ],
+      "text_word_count": 20,
+      "typography": "Same product-UI grotesk sans; bold sentence-case 'Members' title, small white-on-orange button label, medium-weight names over regular smaller email addresses, role labels in dropdown pills, normal tracking",
+      "depth_cues": ["shadow"],
+      "what_happens": "The camera glides diagonally across the tile wall, passing a search/checklist tile and a step list with green checks, and settles on the Members card while the cursor drifts in from the right, on 'and assign super admin roles' (w314-w318).",
+      "build_rebuild": "Translate the whole tile-wall container diagonally with an ease-in-out tween over ~1s so the Members card (title, orange 'Add member' button, four avatar rows with role selects) lands centre-frame, with a static cursor parked to its right.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s018",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "Role dropdown on Nicky Steward's row, opened to show Admin / Member / Super Admin options with descriptions",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Members",
+        "Add member",
+        "Quinn Fox quinn@website.com Owner",
+        "Riley Howard riley@website.com Super Admin",
+        "Nicky Steward nicky@website.com Admin",
+        "Parker McKinney parker@zapier.com Member",
+        "Admin Can access all shared Zaps",
+        "Member Can access only Zaps shared with them",
+        "Super Admin Can access all Zaps (shared and private)"
+      ],
+      "text_word_count": 43,
+      "typography": "Product-UI grotesk sans at large scale due to the push-in; medium-weight option titles in sentence/title case with regular-weight grey descriptions beneath, highlighted option in dark blue text on a pale blue fill, normal tracking",
+      "depth_cues": ["shadow"],
+      "what_happens": "The camera pushes in on the Members card; the cursor clicks Nicky Steward's 'Admin' select, a dropdown opens beneath, and the highlight moves from Member to Super Admin as the voice-over says 'appoint trusted teammates to help maintain oversight' (w319-w328).",
+      "build_rebuild": "Scale the Members card from 1x to ~1.6x anchored near the third row, then on a cursor click fade/slide-down a 3-option dropdown with title + description lines and step a pale-blue highlight from 'Member' to 'Super Admin' as the cursor moves down.",
+      "confidence": "high"
+    }
+  ],
+  "summary": null
+}

@@ -1,0 +1,46 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "27577fc80ce5f027f4a476659ffdeb063a8929170441242e8b89c9fca294e8f2",
+                 "created_at": "2026-10-13T15:15:00+00:00"},
+  "id": "7439545217402817835",
+  "format": "talking_head",
+  "hook": {"type": "question",
+           "line": "Hey, I just wanted to share with you guys what AEO is.",
+           "visual": "A one-frame yellow cover card 'WHAT IS AEO?' with her waving hand, then a close webcam shot at her desk with a fixed 'What is AEO?' label and highlighted captions."},
+  "beats": [
+    {"t": 0.0, "what": "Cover frame: big yellow 'WHAT IS AEO?' card while she waves at the camera."},
+    {"t": 0.07, "what": "Cut to a close desk shot; says she will define AEO for people hearing the term."},
+    {"t": 9.46, "what": "Recaps SEO as search engine optimization; aside about her dog chewing in the background."},
+    {"t": 18.92, "what": "Defines AEO as AI engine optimization."},
+    {"t": 28.38, "what": "Explains the shift: people used to 'just Google it', now they search differently."},
+    {"t": 37.4, "what": "Jump cut; names ChatGPT, Claude and Perplexity as the new places people ask."},
+    {"t": 53.67, "what": "Jump cut; main point: what happened with SEO will soon happen with AEO."},
+    {"t": 75.68, "what": "Camera whips to the surfboard behind her to act out the 'ride the wave' line, then back."},
+    {"t": 85.15, "what": "Says businesses that do AEO will be a step ahead; invites comments."},
+    {"t": 94.61, "what": "Plugs her website by voice, then a black end frame with only the label."}
+  ],
+  "graphics": {"captions": "word_by_word", "caption_position": "bottom",
+               "devices": ["title_text", "prop", "camera_move", "jump_cut", "music_bed"],
+               "density": "minimal", "per_minute_estimate": 2},
+  "characters": [
+    {"who": "Her surfboard (prop)",
+     "enters": "Visible behind her the whole time as part of the set.",
+     "acts": "At the 'ride the wave' line she swings the camera onto it as a visual pun.",
+     "exits": "Camera swings back to her face.",
+     "comes_back": false}
+  ],
+  "cta": {"kind": "other", "t": 94.61},
+  "why_it_works": [
+    "The question in the hook stays on screen as a fixed label for the whole video, so anyone joining late knows the topic.",
+    "Plain-language definition by contrast with SEO, which the audience already knows.",
+    "Unpolished asides (dog chewing, 'so super cheesy') make her feel like a real person, not an ad.",
+    "Word-by-word captions with the current word boxed carry the video for sound-off viewers."
+  ],
+  "weaknesses": [
+    "104 s with 3 cuts and a 50 s longest shot; one definition is stretched to almost two minutes.",
+    "Almost all on-screen text (99.6%) sits outside the safe area, where TikTok's UI can cover it.",
+    "No proof or example of AEO in action; it is a definition only.",
+    "The CTA is spread over 'comment, reach out, check my site' with no single clear ask."
+  ],
+  "for_robert": "Copy the prop pun: when Robert says a metaphor ('ride the wave'), cut to Fred acting it out in the scene for a second, then back; avoid her long single-take ramble."
+}

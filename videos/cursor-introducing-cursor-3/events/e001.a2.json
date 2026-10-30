@@ -1,0 +1,48 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "f27333dbf9bcfb15a0c9498a0d93d68c5c7a027f7dd65d5d7b431e2ee4a2a49a",
+    "created_at": "2026-10-05T06:43:23.826371Z"
+  },
+  "video": "cursor-introducing-cursor-3",
+  "event": "e001",
+  "task": "a2-e001",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Presenter gesturing on camera (hands, head, torso)",
+      "role": "other",
+      "role_other": "presenter",
+      "change_types": ["other"],
+      "change_other": "live-action gesture and head movement",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    }
+  ],
+  "sfx_review": [
+    {"id": "x010", "verdict": "unsure", "label": "unsure", "note": "Falls in the pause between 'instant.' and 'And'. A faint vertical band like the speech residue around it, with nothing visual at that moment."},
+    {"id": "x011", "verdict": "override", "label": "speech", "note": "Lands in the middle of the word 'agents'. The bands repeat at syllable rate, so this looks like narration bleeding into the voice-removed stem, not a reverse swoosh."},
+    {"id": "x012", "verdict": "unsure", "label": "unsure", "note": "Just after 'good.' ends (outside the event). Broadband onset that could be a real transition SFX for the next shot or speech bleed."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "presenter talking head",
+    "description": "A live-action founder speaks to camera in a medium close-up against a soft-focus bookshelf, gesturing with both hands. The motion comes from the person, not from any graphic or camera move.",
+    "why_premium": "Shallow depth of field, warm practical lighting and a styled set make the talking head feel cinematic rather than webcam-like. Off-axis framing with a second person's shoulder in the foreground suggests an interview."
+  },
+  "build_hint": {
+    "gsap": "Not an animation: live-action footage. Place the clip on its own track (no tweens). An optional, very slow scale drift adds life to a static shot: gsap.fromTo(video,{scale:1},{scale:1.02,duration:shotLength,ease:'none'}).",
+    "remotion": "Use <OffthreadVideo> for the footage. Optional slow drift: scale = interpolate(frame,[0,durationInFrames],[1,1.02]) with no easing."
+  },
+  "confidence": "low",
+  "notes": "The motion is live-action gesture only. Camera move is none, and the small pan values come from the presenter's body motion and slight handheld drift. The only candidate box is the full frame (b01). All three SFX candidates are labelled swoosh_reverse, but they fit speech or music residue rather than designed SFX."
+}

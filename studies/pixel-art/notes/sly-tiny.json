@@ -1,0 +1,52 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T13:02:39+00:00"
+  },
+  "id": "sly-tiny",
+  "kind": "tutorial",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "unknown",
+    "notes": "Colour count not discussed; drop shadows are drawn as separate tile layers or baked in when there is room."
+  },
+  "lighting": "Implied by layered drop shadows under trees, rocks and cliffs rather than shading on the sprites.",
+  "silhouette": "Tiny hero on 8x8 tiles (the author's usual is 16x16 tiles and 16x32 characters): only a few cues survive, shoulder pads and flaming red hair, and the viewer fills in the rest.",
+  "motion": {
+    "timing": "Each frame can only shift by one pixel, so a full stride takes just a few frames; extra frames add little. No durations given.",
+    "principles": [
+      "economy of frames",
+      "one-pixel shifts",
+      "posture change by 1-2 px",
+      "layered parts for big figures"
+    ]
+  },
+  "texture": "Layered tiles: dirt, grass, shadows, trees and rocks, cliffs with more shadows on top; detail kept low on purpose.",
+  "camera": "Fixed 4:3 play area with UI in the margins, suggested because widescreen at this scale looks chunky.",
+  "sound": "",
+  "acting": {
+    "enters": "Not covered.",
+    "acts": "A one- or two-pixel shift reads as a head turn or a change in posture; that tiny change is the acting.",
+    "exits": "Not covered.",
+    "comes_back": false,
+    "depth": "Depth from layer order and drop shadows; large enemies split into layered pieces animated separately."
+  },
+  "techniques": [
+    "keep only 2-3 identity cues at tiny sizes (hair colour, shoulder pads)",
+    "1-2 px shift for a head turn or posture change",
+    "few-frame walk: one pixel per frame",
+    "drop shadows as a separate layer",
+    "split big figures into layered parts",
+    "stop detailing early; leave gaps for the viewer"
+  ],
+  "feel": "2 identity cues + 1 px head turns + layered shadows = charm from what you leave out",
+  "for_fred": "When Fred appears small in the background, shrink him to just his identity cues (orange body, tail fin shape) and act with 1-2 px shifts: a head turn toward the presenter, a tiny bob, then out. Don't draw a detailed mini-Fred; the background cameo should read from silhouette and colour alone.",
+  "sources": [
+    "https://www.slynyrd.com/blog/2023/11/26/pixelblog-47-tiny-pixels",
+    "studies/pixel-art/sources.yaml"
+  ]
+}

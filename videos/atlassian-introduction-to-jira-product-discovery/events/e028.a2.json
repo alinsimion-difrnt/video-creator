@@ -1,0 +1,37 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "b8c7c2567920fd5f3c3ba39c990c1e82fb7ef8cfcf04738b1b262efa90e6699d",
+    "created_at": "2026-10-05T06:40:10.798015Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e028",
+  "task": "a2-e028",
+  "elements": [
+    {"box": "b08", "manual_box": null, "manual_reason": null, "label": "Create an insight button turns from disabled grey to primary blue", "role": "button", "role_other": null, "change_types": ["color_shift"], "change_other": null, "is_text": true, "text": "Create an insight", "text_unit": "whole", "estimates": null},
+    {"box": null, "manual_box": [340, 570, 410, 703], "manual_reason": "No candidate box covers the first insight's author/date/title header that replaces the skeleton bars.", "label": "First insight header (author, date, title)", "role": "body_text", "role_other": null, "change_types": ["fade"], "change_other": null, "is_text": true, "text": "Chris Hall 14 October 2022 Interview with John Smith", "text_unit": "whole", "estimates": {"duration_ms": 100, "easing_class": "step"}},
+    {"box": "b03", "manual_box": null, "manual_reason": null, "label": "First insight source link", "role": "body_text", "role_other": null, "change_types": ["fade"], "change_other": null, "is_text": true, "text": "User Feedback Interview - John Smith, Sales Manager - Sarah Stenhouse", "text_unit": "whole", "estimates": null},
+    {"box": "b05", "manual_box": null, "manual_reason": null, "label": "First insight quote", "role": "body_text", "role_other": null, "change_types": ["fade"], "change_other": null, "is_text": true, "text": "At this point, I'm a proficient user, but it did take me almost 6 months to get to", "text_unit": "whole", "estimates": null},
+    {"box": null, "manual_box": [569, 578, 750, 703], "manual_reason": "No candidate box covers the document thumbnail attached to the first insight.", "label": "Attached document thumbnail", "role": "card", "role_other": null, "change_types": ["fade"], "change_other": null, "is_text": false, "text": null, "text_unit": null, "estimates": null},
+    {"box": "b09", "manual_box": null, "manual_reason": null, "label": "Second insight feature link", "role": "body_text", "role_other": null, "change_types": ["fade"], "change_other": null, "is_text": true, "text": "Feature: Sales Software > Onboarding templates", "text_unit": "whole", "estimates": null},
+    {"box": "b14", "manual_box": null, "manual_reason": null, "label": "Second insight segment metadata", "role": "body_text", "role_other": null, "change_types": ["fade"], "change_other": null, "is_text": true, "text": "Segment: Everyone, Timeframe: Last 180 Days", "text_unit": "whole", "estimates": null}
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "skeleton_resolve",
+    "proposed_name": null,
+    "description": "Screen recording: the Insights tab's loading skeletons resolve into real insight cards (interview link, customer quote, document thumbnail, analytics insight) and the Create an insight button becomes active, while the frame is enlarged toward the sidebar.",
+    "why_premium": "The skeletons resolve exactly on 'packed with insights', so the evidence (a real customer quote and usage metrics) appears on the word that promises it, and the enlargement makes the small sidebar text readable."
+  },
+  "build_hint": {
+    "gsap": "Skeleton bars autoAlpha 1 -> 0 (0.1s, power1.in); insight blocks fromTo {autoAlpha:0, y:6} -> {autoAlpha:1, y:0, 0.2s, power2.out, stagger:0.05}; button backgroundColor grey -> brand blue 0.15s. If reproducing the enlargement, wrap the scene and gsap.to(scale:1.15, x/y toward the sidebar, 0.35s, power3.out).",
+    "remotion": "Per block opacity = interpolate(frame - i*2, [0,6], [0,1], {extrapolateLeft:'clamp'}); skeleton opacity inverse; optional wrapper scale = interpolate(spring({frame, fps, config:{damping:30, stiffness:120}}), [0,1], [1,1.15]) with transformOrigin at the sidebar (no overshoot)."
+  },
+  "confidence": "medium",
+  "notes": "Human look: camera.move is 'none', so per the skill no camera move is reported, but the filmstrip and facts (scale 1.1525, pan_x -0.053, pan_y -0.080, sustained decaying energy over ~10 frames) show the whole UI enlarging toward the top right, which looks like an edited push-in (ui_camera_push_in) layered on the skeleton resolve. If the camera verdict is wrong, the pattern may better be ui_camera_push_in. Skeleton swap itself looks instant (step)."
+}

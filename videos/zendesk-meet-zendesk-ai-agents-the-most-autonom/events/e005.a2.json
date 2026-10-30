@@ -1,0 +1,56 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "f178c7f6969466c13ac71c1ecc02a1de3f4d50c29d149d3e58a3234186e139ab",
+    "created_at": "2026-10-05T07:00:17.073121Z"
+  },
+  "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+  "event": "e005",
+  "task": "a2-e005",
+  "elements": [
+    {"box": "b01", "manual_box": null, "manual_reason": null, "label": "Chain-of-thought card",
+     "role": "card", "role_other": null, "change_types": ["pop", "scale_up"], "change_other": null,
+     "is_text": false, "text": null, "text_unit": null,
+     "estimates": {"duration_ms": 600, "easing_class": "ease_out"}},
+    {"box": "b03", "manual_box": null, "manual_reason": null, "label": "Card title",
+     "role": "headline", "role_other": null, "change_types": ["pop", "scale_up"], "change_other": null,
+     "is_text": true, "text": "AI agent chain of thought", "text_unit": "whole",
+     "estimates": {"duration_ms": 600, "easing_class": "ease_out"}},
+    {"box": "b06", "manual_box": null, "manual_reason": null, "label": "Checklist step 1 with check",
+     "role": "list_item", "role_other": null, "change_types": ["pop"], "change_other": null,
+     "is_text": true, "text": "Search knowledge", "text_unit": "line",
+     "estimates": {"duration_ms": 200, "easing_class": "ease_out"}},
+    {"box": "b05", "manual_box": null, "manual_reason": null, "label": "Checklist step 2 with check",
+     "role": "list_item", "role_other": null, "change_types": ["fade", "slide_up"], "change_other": null,
+     "is_text": true, "text": "Retrieve order details", "text_unit": "line",
+     "estimates": {"duration_ms": 200, "easing_class": "ease_out"}},
+    {"box": "b02", "manual_box": null, "manual_reason": null, "label": "Checklist step 3 with check",
+     "role": "list_item", "role_other": null, "change_types": ["fade", "slide_up"], "change_other": null,
+     "is_text": true, "text": "Verify order is eligible for return", "text_unit": "line",
+     "estimates": {"duration_ms": 200, "easing_class": "ease_out"}},
+    {"box": "b04", "manual_box": null, "manual_reason": null, "label": "Checklist step 4 with check",
+     "role": "list_item", "role_other": null, "change_types": ["fade", "slide_up"], "change_other": null,
+     "is_text": true, "text": "Verify item selection for return", "text_unit": "line",
+     "estimates": {"duration_ms": 200, "easing_class": "ease_out"}}
+  ],
+  "sfx_review": [
+    {"id": "x016", "verdict": "unsure", "label": "unsure", "note": "Before the card appears; weak score on the music beat grid."},
+    {"id": "x017", "verdict": "unsure", "label": "unsure", "note": "About 320 ms before the card pops; short broadband transient, not a clear reverse swoosh."},
+    {"id": "x018", "verdict": "confirm", "label": "music", "note": "Mid list build; rhythmic music hit, no matching visual accent."},
+    {"id": "x019", "verdict": "unsure", "label": "unsure", "note": "After the event; low score."}
+  ],
+  "pattern": {"id": "stagger_list_reveal", "proposed_name": null,
+    "description": "A white 'AI agent chain of thought' card pops in top-right, connected to the chat by dashed lines, and grows as four checked steps append one after another, each with a green check icon.",
+    "why_premium": "The card scales up in step with the list so the container never shows empty space; rapid ~100 ms stagger reads as the agent reasoning in real time and visualises an abstract claim ('they reason') as concrete steps."},
+  "build_hint": {
+    "gsap": "tl.fromTo(card, {autoAlpha: 0, scale: 0.8, transformOrigin: 'left top'}, {autoAlpha: 1, scale: 1, duration: 0.6, ease: 'power3.out'}); tl.fromTo(items, {autoAlpha: 0, y: 10}, {autoAlpha: 1, y: 0, duration: 0.2, ease: 'power2.out', stagger: 0.1}, '<0.05'); animate card height with the items (Flip or height: 'auto').",
+    "remotion": "card: spring({frame, fps, config: {damping: 200, stiffness: 140}}) driving opacity and scale 0.8->1; items i: spring({frame: frame - 3*i, fps, config: {damping: 200, stiffness: 200}}) for opacity and translateY 10->0; card height interpolated from the visible item count."
+  },
+  "confidence": "medium",
+  "notes": "Dashed connector lines appear with the card (absent in the first frame of the crop) but have no candidate box; omitted rather than guessing a manual box spanning the card. Whether the card truly scales or only grows in height as rows append is ambiguous from the crops; filmstrip is a zoomed crop."
+}

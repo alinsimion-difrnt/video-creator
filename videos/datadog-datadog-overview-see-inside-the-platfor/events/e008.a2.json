@@ -1,0 +1,64 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "ed64338f015cb396c3f16b211430d313c59024e6f9ae980dc54784094828ecad",
+    "created_at": "2026-10-05T06:43:23.059447Z"
+  },
+  "video": "datadog-datadog-overview-see-inside-the-platfor",
+  "event": "e008",
+  "task": "a2-e008",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Service map (incoming, revealed behind the tilting panel, then slow pull-out)",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["scale_down", "other"],
+      "change_other": "revealed as the outgoing signal-detail panel tilts back in 3D perspective and leaves the frame",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 600, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Caption pill (text swap, widens to the new line)",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["morph"],
+      "change_other": null,
+      "is_text": true,
+      "text": "to your most business-critical service",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 100, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x022", "verdict": "unsure", "label": "unsure", "note": "503 ms before the burst; on the periodic music grid; nothing changes on screen"},
+    {"id": "x023", "verdict": "unsure", "label": "unsure", "note": "before the burst; looks like a music percussion hit"},
+    {"id": "x024", "verdict": "unsure", "label": "unsure", "note": "during the panel tilt (about f1277) but has the same shape as the surrounding music hits"},
+    {"id": "x025", "verdict": "override", "label": "music", "note": "a new sustained harmonic band starts here as the map scene settles; it reads as a music chord change, not a chime"},
+    {"id": "x026", "verdict": "unsure", "label": "unsure", "note": "after the burst; it matches the music hits"}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "perspective tilt transition",
+    "description": "The signal-detail UI tilts back in 3D perspective and recedes, revealing the service map. The map then eases into a slow pull-out centred on the red web-store node. The fixed caption pill swaps to the next line of copy and resizes to fit it.",
+    "why_premium": "The 3D tilt makes the scene change feel spatial, as if moving between layers of one product, instead of a flat cut. The fixed caption carries the sentence across scenes, so the copy reads as one continuous thought."
+  },
+  "build_hint": {
+    "gsap": "tl.to(panel, {rotationX: 30, rotationY: -20, scale: 0.8, opacity: 0, transformPerspective: 1200, duration: 0.3, ease: 'power2.in'}).fromTo(map, {scale: 1.06}, {scale: 1, duration: 1.2, ease: 'power2.out'}, '-=0.1'); caption: tl.set(caption, {textContent: next}) at the swap, then animate the pill width with a 0.2 s 'power2.out' tween.",
+    "remotion": "For the outgoing panel, interpolate rotateX/rotateY/scale/opacity with Easing.in(Easing.quad) inside a perspective(1200px) wrapper. For the map, scale 1.06 to 1 using spring({damping: 200, stiffness: 60}) (slow, no overshoot). Switch the caption text on a frame threshold."
+  },
+  "confidence": "medium",
+  "notes": "The outgoing panel is not on the end frame, so it has no box. The web-store tooltip (b04/b07/b16/b17/b20) is already visible at f1291 and only moves with the map, so it is not listed. Code verdict is camera pull_out (scale 0.94). Every SFX candidate sits on a regular music percussion grid, so none could be confirmed as an edit SFX."
+}

@@ -1,0 +1,44 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "ed3e09b53018a63a770dfad247c2732cd582646f8f8e7ee56339c7d6379be2d9",
+    "created_at": "2026-10-05T06:46:59.278249Z"
+  },
+  "video": "notion-introducing-notion-ai-connectors",
+  "event": "e002",
+  "task": "a2-e002",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Jira and GitHub app icon tiles (sequential grey flash)",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["color_shift", "highlight"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 70, "easing_class": "step", "source": "model_estimate"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "beat synced icon flash",
+    "description": "Inside a static connector-logo tray, individual app tiles flash to a darkened grey state for one or two frames, one tile at a time (Jira, then GitHub), then snap back to white.",
+    "why_premium": "The flashes land on music transients in the stem, so a static logo row gets a rhythmic pulse without any layout movement, keeping the tray readable while signalling each integration in turn."
+  },
+  "build_hint": {
+    "gsap": "Static tray; for each tile in order, a timeline `.set(tile, {filter: 'brightness(0.55) saturate(0)'})` at the beat time followed by `.set(tile, {filter: 'none'}, '+=0.067')` (step, no tween). Place tiles on beat timestamps rather than a fixed stagger.",
+    "remotion": "Per tile, compute `const on = frame >= beatFrame && frame < beatFrame + 2;` and apply `filter: on ? 'brightness(0.55) grayscale(1)' : 'none'` with no interpolation; beatFrame comes from the music beat list per tile."
+  },
+  "confidence": "medium",
+  "notes": "b01 is a union box covering both the Jira and GitHub tiles, which flash at different frames (f110 Jira, f120 GitHub); recorded as one element to avoid inventing a box. Flashes last one to two frames and could also be an encode artefact or a hard-cut tease. Filmstrip timestamps (0:03.604 at f108) differ from facts start_s 3.904 by 0.3 s."
+}

@@ -1,0 +1,48 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "085c620a3e1c10b5a8001412ce9b6b02ee7ca4d42e41f8d0ec3b48d8a7bebe5d",
+    "created_at": "2026-10-05T06:57:29.913057Z"
+  },
+  "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+  "event": "e017",
+  "task": "a2-e017",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Dark green dot",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 450, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x080", "verdict": "override", "label": "music", "note": "Before the dot appears; one of the regular percussive streaks of the music bed."},
+    {"id": "x081", "verdict": "unsure", "label": "unsure", "note": "Coincides with the dot starting to grow, but its shape matches the recurring music streaks (~0.25s spacing); could be the bed or a soft designed accent."},
+    {"id": "x082", "verdict": "override", "label": "music", "note": "After the dot has settled; same recurring streak shape as the bed, not a swoosh contour."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "dot scale in",
+    "description": "On an empty gradient green background, a single solid dark dot grows from zero size to its final diameter in the upper centre of the frame, decelerating hard into place.",
+    "why_premium": "A minimal single-shape entrance with a fast attack and long ease-out tail resets attention after the previous text card and sets up the next build from one focal point."
+  },
+  "build_hint": {
+    "gsap": "gsap.fromTo(dot, {scale: 0, transformOrigin: '50% 50%'}, {scale: 1, duration: 0.45, ease: 'expo.out'}).",
+    "remotion": "scale = spring({frame, fps, config: {damping: 200, stiffness: 160, mass: 1}}) (no overshoot), applied to the dot with transform-origin center."
+  },
+  "confidence": "medium",
+  "notes": "The dot is likely the seed of a following logo or icon build (logo_resolve may fit once the next event is seen). Filmstrip frames suggest the dot drifts slightly up as it grows (camera pan_y is content motion; camera.move none). b02/b03 overlap the same dot and are not separate elements."
+}

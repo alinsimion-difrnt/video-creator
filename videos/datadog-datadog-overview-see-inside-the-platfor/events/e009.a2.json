@@ -1,0 +1,88 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "a690a73c3efd1dc3670fab46c746674a59bb3bca7deccddd66d29db68b99a54a",
+    "created_at": "2026-10-05T06:43:23.662781Z"
+  },
+  "video": "datadog-datadog-overview-see-inside-the-platfor",
+  "event": "e009",
+  "task": "a2-e009",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Service map (push-in toward web-store)",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 500, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [132, 246, 524, 466],
+      "manual_reason": "No candidate box covers the web-store node ring; only its inner cursor (b19) and labels have boxes.",
+      "label": "web-store node ring (red to purple-pink gradient)",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["color_shift", "highlight"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 200, "easing_class": "ease_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [0, 0, 390, 610],
+      "manual_reason": "The thick gradient dependency edges radiate from the node to the frame edges; no candidate box covers them.",
+      "label": "Highlighted dependency edges (gradient lines)",
+      "role": "other",
+      "role_other": "graph edge",
+      "change_types": ["draw_on", "color_shift"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [443, 104, 541, 894],
+      "manual_reason": "The caption pill has left the end frame, so this box is where it sat before its wipe-out.",
+      "label": "Caption pill (wipes out)",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["mask_reveal"],
+      "change_other": "exit: a left-to-right mask wipe removes the pill",
+      "is_text": true,
+      "text": "to your most business-critical service",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 200, "easing_class": "ease_in"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x027", "verdict": "unsure", "label": "unsure", "note": "345 ms after the burst, on the regular music percussion grid; nothing visual happens at that moment"}
+  ],
+  "pattern": {
+    "id": "spotlight_focus",
+    "proposed_name": null,
+    "description": "The camera pushes in on the critical web-store node while its ring turns from red to a purple-pink gradient. Thick gradient edges then draw outward along its dependencies, and the caption wipes off to clear the view.",
+    "why_premium": "Brand-gradient colour marks the one service that matters among dozens of grey nodes. Drawing the edges outward shows its blast radius without any extra copy."
+  },
+  "build_hint": {
+    "gsap": "tl.to(map, {scale: 1.16, x: -20, y: -30, transformOrigin: '35% 30%', duration: 0.5, ease: 'power2.inOut'}).to(ringGradient, {opacity: 1, duration: 0.2, ease: 'power1.out'}, '-=0.2').fromTo('.edge', {strokeDashoffset: (i, el) => el.getTotalLength()}, {strokeDashoffset: 0, duration: 0.3, ease: 'power2.out', stagger: 0.04}, '<').to(caption, {clipPath: 'inset(0 0 0 100%)', duration: 0.2, ease: 'power2.in'}, '<').",
+    "remotion": "Map scale 1 to 1.16 with interpolate + Easing.inOut(Easing.cubic). Crossfade the gradient ring opacity over 6 frames. Draw each edge's strokeDashoffset to 0 with spring({damping: 200, stiffness: 180}) (no overshoot), each delayed 1 frame more than the last. Caption clip-path inset left goes 0 to 100% via interpolate."
+  },
+  "confidence": "medium",
+  "notes": "The caption is not on the end frame, so its manual box marks where it sat before the wipe. The edge box is a rough envelope around several separate lines. Code verdict is camera push_in (scale 1.16)."
+}

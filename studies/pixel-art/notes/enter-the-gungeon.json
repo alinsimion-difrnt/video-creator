@@ -1,0 +1,54 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T14:00:48+00:00"
+  },
+  "id": "enter-the-gungeon",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "cool",
+    "notes": "Frames: purple and blue-grey stone floors, dark red rugs; bright accents for bullets (white/red rings), gold items and a cyan guide arrow. Enemy bullets are the most saturated thing on screen."
+  },
+  "lighting": "Dim dungeon rooms lit by small light sources (torches, a muzzle flash, a white bloom at a door); bright effects glow on dark floors.",
+  "silhouette": "Tiny heroes with hats and big guns; enemies are living bullets (Gundead, wiki) with a cartridge body and a face. Bosses are big round shapes with a mouth (clip 3, 42 s).",
+  "motion": {
+    "timing": "No frame timings measured. Bullet patterns form shapes (rings, heart faces) and expand outward slowly enough to read (clip 2). Dodge roll gives brief invulnerability (wiki).",
+    "principles": [
+      "staging",
+      "arcs",
+      "exaggeration"
+    ]
+  },
+  "texture": "Crisp tiles with brick lines, framed portraits and crates as props; shell casings litter the floor after fights.",
+  "camera": "Top-down, follows the player in the room; item pickups get a big framed card that pops over the scene (clip 3, 6-14 s).",
+  "sound": "",
+  "acting": {
+    "enters": "Enemies come as a crowd; in the Gungeon 2 trailer (3D, not pixel) a pile of hundreds of bullet characters becomes one tower.",
+    "acts": "Bullet characters are props with faces: the joke is the object being alive. Bosses fire bullet patterns that form faces and hearts.",
+    "exits": "Enemies burst into shell casings that stay on the floor.",
+    "comes_back": null,
+    "depth": "One plane; scale gag from many tiny copies vs one big boss."
+  },
+  "techniques": [
+    "object as character: a bullet with eyes and feet",
+    "bullet patterns that draw shapes (rings, smiley faces, hearts)",
+    "crowd of identical tiny characters as a gag",
+    "debris (shell casings) left after action",
+    "item card pop-over to name a pickup",
+    "dodge roll with brief invulnerability (wiki)"
+  ],
+  "feel": "dark purple rooms + bright bullet patterns + tiny living-bullet enemies = playful chaos you can read",
+  "for_fred": "Turn a prop into a character the Gungeon way: give a small object eyes and a 2-frame waddle, then multiply it (one, then ten copies) behind Fred for a scale gag. Avoid giving every prop a face; one living prop per reel.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Enter_the_Gungeon",
+    "studies/pixel-art/sources.yaml",
+    "data/study/pixel/work/enter-the-gungeon/clip2-7166988911716175110.jpg",
+    "data/study/pixel/work/enter-the-gungeon/clip3-7150061503993892138.jpg",
+    "data/study/pixel/work/enter-the-gungeon/clip1-7488736550071569706.jpg (Gungeon 2 trailer, 3D: used for acting only)"
+  ]
+}

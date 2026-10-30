@@ -1,0 +1,54 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T14:00:39Z"
+  },
+  "id": "final-fantasy-6",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "cool",
+    "notes": "No clip shows the SNES art: all three are fan reimaginings (HD-2D, realistic 3D, anime). They agree on its colour identity: snow-blue Narshe, olive Magitek armour with red crosses, Terra's green hair and red dress, warm lamps against cold night. Wiki: muted backgrounds, saturated characters."
+  },
+  "lighting": "From the wiki: mood comes from scene-wide tints (night, interiors, the opera stage) rather than per-sprite lighting. Every fan version keeps the same lighting idea: warm point lights (windows, lamps, the opera spotlight) in a cold blue scene, so the eye goes to the warm spot.",
+  "silhouette": "Same sprite resolution on the map and in battle (Kazuko Shibuya), so small map sprites have distinct heads, capes and props. The Magitek armour is the strongest silhouette in all three fan clips: a squat walker with two big eye-lamps, recognisable in every style.",
+  "motion": {
+    "timing": "No metrics file and no original footage: describe only. Emotional beats come from long holds on one pose (head down, back turned) between short action poses. The anime fan clip holds each shot ~6 s with only slow pushes, which echoes that held-pose rhythm.",
+    "principles": [
+      "pose-to-pose",
+      "staging",
+      "timing",
+      "exaggeration"
+    ]
+  },
+  "texture": "From the wiki: painted background tiles with dense detail; boss sprites made from scanned hand-drawn sketches give a rougher drawn texture.",
+  "camera": "Top-down map scenes; Mode 7 world map gives a pseudo-3D tilted perspective for travel. The HD-2D fan clip uses wide 3/4 establishing shots with the party small in the lower third, and a theatre-house shot of the opera from the audience.",
+  "sound": "The opera scene's 'voice' is a synthesised sound because the chip could not play real vocals.",
+  "acting": {
+    "enters": "Characters walk in from map edges or doors and stop on a mark before acting; in the fan clips the Magitek walkers march in single file through the snow toward the town.",
+    "acts": "Tiny sprites act with a pose library (arms up, head down, kneel, turn away, laugh) plus facial changes made possible by the higher sprite resolution.",
+    "exits": "Turn and walk away slowly; a character who leaves the party exits the frame on their own while others stay still.",
+    "comes_back": true,
+    "depth": "Staged like theatre (literally at the opera, shown from the audience with heads in the foreground and the singer small and spot-lit on stage); background crowd small and still, hero front and centre."
+  },
+  "techniques": [
+    "held sad pose (head down, back turned) as the emotional beat",
+    "same-resolution sprites on map and in battle for consistent expression",
+    "theatre staging: actors hit marks, others freeze while one acts",
+    "warm point light in a cold blue scene to place the eye",
+    "one iconic prop silhouette (Magitek armour) reused across scenes",
+    "Mode 7 world map for a pseudo-3D travel shot"
+  ],
+  "feel": "muted cold set + saturated tiny actors + warm spotlight + long held pose = stage play in 16 pixels",
+  "for_fred": "Use the held pose: after the joke, Fred turns his back or droops and holds still for a full beat instead of animating. Stage it like a play: Pixie freezes while Fred acts, then Fred freezes while Pixie answers; put a warm glow behind whoever is talking in an otherwise cool frame.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Final_Fantasy_VI",
+    "data/study/pixel/work/final-fantasy-6/clip1-7630802310838471958.jpg",
+    "data/study/pixel/work/final-fantasy-6/clip2-7617838149158472983.jpg",
+    "data/study/pixel/work/final-fantasy-6/clip3-7681746293084949782.jpg"
+  ]
+}

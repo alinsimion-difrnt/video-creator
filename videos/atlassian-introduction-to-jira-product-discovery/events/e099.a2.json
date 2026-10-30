@@ -1,0 +1,44 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "f2e883caa6e776d42027d0d114fa173f2b95a818755f56f2e1c37896417e9660",
+    "created_at": "2026-10-05T06:39:15.608773Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e099",
+  "task": "a2-e099",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Full Jira Product Discovery screen recording dimming to black",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 330, "easing_class": "linear"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "fade to black outro",
+    "description": "Right after the closing line 'good luck!', the whole static screen recording fades uniformly toward black over about a third of a second. There is no scale, blur or camera move.",
+    "why_premium": "A short dip to black that starts just after the last spoken word ends the video cleanly instead of with an abrupt cut; it is standard practice rather than a distinctive premium move."
+  },
+  "build_hint": {
+    "gsap": "Black overlay over the final scene: gsap.fromTo(overlay, {opacity: 0}, {opacity: 1, duration: 0.33, ease: 'none'}) (or 'power1.in'), starting ~0.2 s after the last narration word.",
+    "remotion": "Scene opacity = interpolate(frame, [start, start + 10], [1, 0], {extrapolateRight: 'clamp'}) at 30fps over a black <AbsoluteFill>; linear, no spring."
+  },
+  "confidence": "high",
+  "notes": "Only b01 is listed: the OCR boxes b02-b20 are text inside the same frame that dims together, not separate elements. Packet end frame is mid-fade (still faintly visible)."
+}

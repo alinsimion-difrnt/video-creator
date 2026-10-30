@@ -1,0 +1,75 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "6fde613d6372aa18850003bc41c5a1b14b113ed84672b8b7c488a8926832b791",
+    "created_at": "2026-10-05T07:46:45.205232Z"
+  },
+  "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+  "task": "a1-p1",
+  "shots": [
+    {
+      "shot": "s001",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "Recreated 'AI agent' chat widget (left) linked by a dotted connector to an 'AI agent chain of thought' checklist card (upper right)",
+      "transition_in": "other",
+      "transition_other": "none: opening shot of the video (anchors give no transition_in)",
+      "on_screen_text": [
+        "INTRODUCING",
+        "AI Agents",
+        "AI agent",
+        "I’d like to return my order #44433.",
+        "Hey Angela, which items would you like to return?",
+        "Snail Mucin Serum",
+        "Saddle Tan Wallet",
+        "French Soap Set",
+        "Select",
+        "Select",
+        "Select",
+        "AI agent chain of thought",
+        "Search knowledge",
+        "Retrieve order details",
+        "Verify order is eligible for return",
+        "Verify item selection for return"
+      ],
+      "text_word_count": 54,
+      "typography": "Clean geometric/grotesque sans throughout (low-confidence guess: Zendesk's brand sans). Title card: small all-caps 'INTRODUCING' label in a dark pill with slight positive tracking, above a large regular-to-medium weight sentence-case 'AI Agents' headline in white. UI: small sentence-case medium-weight header label, regular-weight chat bubble copy, bold small product names, medium-weight bold checklist title with regular items.",
+      "depth_cues": [
+        "shadow",
+        "glow"
+      ],
+      "what_happens": "On a flat green field a small dark dot appears (0.0s) and stretches into an 'INTRODUCING' pill, then 'AI Agents' fades/rises in below it as the VO says the title (w0-w8). Around 3.0s the title clears and a white chat widget with a dark 'AI agent' header slides up from the bottom edge and settles left of centre. The customer bubble with a photo avatar pops in (~4.5s), the agent reply with a ringed AI avatar icon appears (~6.0s), then three product cards with Select buttons (~6.5s, middle one selected). A dotted connector draws out from the widget (~8.0s) and a 'chain of thought' card pops in upper right with checklist rows ticking in one by one (3 rows at 8.5s, 4th by 9.0s) while the VO lists 'they reason, they learn, they adapt' (w16-w21). The composition then holds static from ~9.5s to the cut while the VO finishes (w22-w40).",
+      "build_rebuild": "Animate a dot that scales into an 'INTRODUCING' pill and fade-up a headline, then swap to a white chat card that translates up from off-frame, stagger in two chat bubbles and a 3-card product row, draw an SVG dashed connector via stroke-dashoffset, and pop in a checklist card whose rows stagger in with check icons about 0.25s apart.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s002",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Three-line centred statement in black on a soft lime-to-grey diagonal gradient",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Powered by Agentic AI, they’re capable of resolving issues autonomously, without scripting or training."
+      ],
+      "text_word_count": 14,
+      "typography": "Large regular-to-medium weight geometric sans in sentence case, black, tight-to-normal tracking, centred three-line block with balanced line breaks.",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "Hard cut to a light gradient card. The sentence builds in phrase by phrase: at 17.5s only 'Powered by Agentic AI,' is visible (left-set on line one), by 18.0s the first two lines and 'without' have appeared and re-centred, and by 18.5s the full three-line sentence is set. The text leads the VO (w41-w54, which runs to 23.82s) and then holds static to the cut.",
+      "build_rebuild": "Render the sentence as a centred 3-line block and reveal it word by word with short fade-up staggers over about 1s, anchored so already-revealed words stay put, then hold until the next cut.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

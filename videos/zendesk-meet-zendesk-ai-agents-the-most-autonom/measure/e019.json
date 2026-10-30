@@ -1,0 +1,103 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "s7_measure",
+    "annotator": "code",
+    "skill": null,
+    "model": null,
+    "input_hash": "e96cd97d719d2b88c478ee173b8684ba24389ce7a3a81566022215ccc5920e25",
+    "created_at": "2026-10-05T10:13:10.159190Z"
+  },
+  "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+  "event": "e019",
+  "fps": 30.303,
+  "elements": [
+    {
+      "box": "b01",
+      "xyxy": [
+        223,
+        95,
+        1057,
+        606
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.821,
+      "channels": [
+        {
+          "name": "y",
+          "start_f": 2002,
+          "end_f": 2030,
+          "start_value": 352.5,
+          "end_value": 350.5,
+          "observed_start": true,
+          "cls": "spring",
+          "gsap": {
+            "ease": "back.out(3)",
+            "duration_ms": 1155.0,
+            "rmse": 7.29637
+          },
+          "bezier": "cubic-bezier(0.000, 2.500, 1.000, 2.500)",
+          "bezier_rmse": 6.64619,
+          "spring": {
+            "zeta": 0.05,
+            "omega0": 4.057,
+            "settle_ms": 18735.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 16.461,
+              "damping": 0.406
+            },
+            "remotion_exact": true,
+            "rmse": 6.98488
+          },
+          "overshoot_pct": 950.0,
+          "duration_ms": 18735.0,
+          "fit_quality": 0.0
+        },
+        {
+          "name": "scale",
+          "start_f": 2001,
+          "end_f": 2030,
+          "start_value": 0.817,
+          "end_value": 1.0,
+          "observed_start": true,
+          "cls": "linear",
+          "gsap": {
+            "ease": "none",
+            "duration_ms": 1155.0,
+            "rmse": 0.14202
+          },
+          "bezier": "cubic-bezier(0.432, 1.217, 1.000, 0.011)",
+          "bezier_rmse": 0.03104,
+          "spring": {
+            "zeta": 3.0,
+            "omega0": 7.84,
+            "settle_ms": 2931.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 61.463,
+              "damping": 47.039
+            },
+            "remotion_exact": false,
+            "rmse": 0.09378
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 1155.0,
+          "fit_quality": 0.5275
+        }
+      ],
+      "timing": {
+        "ease": "back.out(3)",
+        "start_s": 65.9439,
+        "duration_ms": 1155.0,
+        "rmse": 5.17392
+      },
+      "stagger": null,
+      "sfx_offset_ms": {},
+      "source": "model_estimate",
+      "quality": 0.5275
+    }
+  ],
+  "failed": {}
+}

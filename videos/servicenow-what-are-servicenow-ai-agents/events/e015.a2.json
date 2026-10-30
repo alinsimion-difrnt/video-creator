@@ -1,0 +1,44 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "33d546301bfc30bc10ce469cdec8d94f32d2781f82a84b92ba08d322380b216e",
+    "created_at": "2026-10-05T06:51:28.880614Z"
+  },
+  "video": "servicenow-what-are-servicenow-ai-agents",
+  "event": "e015",
+  "task": "a2-e015",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Live-action footage: top-down coffee cup cuts to woman sipping from a cup",
+      "role": "other",
+      "role_other": "live_action_footage",
+      "change_types": ["other"],
+      "change_other": "hard cut between footage clips matched on the coffee cup, then in-clip subject motion (cup lowers, head tilts down)",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "match_cut_element",
+    "proposed_name": null,
+    "description": "A top-down shot of a hand lifting a coffee cup hard-cuts to a frontal shot of a woman drinking from a cup, the cup carrying the eye across the cut.",
+    "why_premium": "The shared object (the cup) links two unrelated angles so the cut reads as continuous action instead of a jump, giving a cinematic, story-led rhythm."
+  },
+  "build_hint": {
+    "gsap": "No tween: a timeline hard cut (tl.set(clipA, {autoAlpha: 0}) / tl.set(clipB, {autoAlpha: 1}) at the same time), with the cup positioned near the same frame region in both clips; optional subtle tl.fromTo(clipB, {scale: 1.02}, {scale: 1, duration: 0.6, ease: 'power2.out'}).",
+    "remotion": "Two <Sequence> blocks back to back with <OffthreadVideo> clips, no transition; align the cup's screen position across the cut; optional scale interpolate(frame, [0, 18], [1.02, 1], {extrapolateRight: 'clamp'})."
+  },
+  "confidence": "medium",
+  "notes": "Live-action footage, not UI motion. Camera verdict is none; the motion is a cut plus subject movement. The match on the cup is loose (different angle and different cup)."
+}

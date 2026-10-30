@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #0a0a0a;
+      }
+      #root {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      }
+      #card { position:absolute; left:760px; top:640px; width:400px; height:220px; border-radius:24px;
+        background: linear-gradient(135deg,#ff7a1a,#ffd166); }
+      #title {
+        color: #f4f4f5;
+        font-size: 72px;
+        font-weight: 600;
+        letter-spacing: -0.03em;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="4"
+      data-width="1920"
+      data-height="1080"
+    >
+      <h1 id="title" class="clip" data-start="0" data-duration="4" data-track-index="0">Title</h1>
+      <div id="card" class="clip" data-start="0" data-duration="4" data-track-index="1"></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#title", { opacity: 0, y: 80 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 1.0);
+      tl.fromTo("#card", { x: -900 }, { x: 0, duration: 0.5, ease: "back.out(1.4)" }, 2.0);
+      tl.to({}, { duration: 4 }, 0);
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

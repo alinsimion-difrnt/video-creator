@@ -1,0 +1,52 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "806e8a2c4a91924c562464ca70054012b70719dad1fff1bc613eab4154f55db5",
+    "created_at": "2026-10-13T13:07:00+00:00"
+  },
+  "id": "7427568589772754207",
+  "kind": "clip",
+  "palette": {
+    "colours_estimate": 26,
+    "shadows": "neutral",
+    "notes": "Code: 26 colours, 2 ramps with ~1 deg hue shift on a still that includes the Aseprite UI; the sprite itself is a yellow ramp to dark olive, no hue shift, dithered."
+  },
+  "lighting": "Blender lighting baked in: one key from upper right, soft falloff to dark olive; after reduction the light becomes stepped bands with dithering.",
+  "silhouette": "A round yellow face with two black eyes and an open mouth; the circle stays readable at the small sprite size.",
+  "motion": {
+    "timing": "Code: median hold 116.7 ms (p25 50, p75 500 ms), 2.67 changes/s; mostly held tutorial steps, with the head turning a few degrees in the final 'Perfecto' loop.",
+    "principles": [
+      "held step",
+      "turn",
+      "reveal"
+    ]
+  },
+  "texture": "Pre-rendered 3D downscaled in Aseprite (nearest neighbour), colours reduced, then dithered: pixel art from 3D, smooth source shading turned into stepped bands.",
+  "camera": "Screen capture of Blender then Aseprite, one step per caption, ending zoomed on the finished sprite on a checker background.",
+  "sound": "",
+  "acting": {
+    "enters": "The 3D model appears already finished in Blender.",
+    "acts": "Turns to camera; its expression is the only acting. The final sprite looks up and turns.",
+    "exits": "None; ends on the 'Perfecto' sprite.",
+    "comes_back": false,
+    "depth": "None; single object centred."
+  },
+  "techniques": [
+    "render in 3D, then reduce sprite size in Aseprite",
+    "colour reduction to a small palette",
+    "Floyd-Steinberg dithering for smooth shading",
+    "brightness and contrast pass as finishing touch",
+    "one caption per step tutorial"
+  ],
+  "feel": "3D render + downscale + palette cut + dither = cheap smooth-turning pixel sprite, but soft and generic",
+  "for_fred": "Avoid letting 3D Fred go out as raw downscaled renders: if using create/render3d for turns, reduce to Fred's own ramp and hand-fix eyes and outline so he still reads as the same pixel character.",
+  "sources": [
+    "data/study/pixel/work/7427568589772754207/sheet.jpg",
+    "studies/pixel-art/clips/7427568589772754207.json",
+    "studies/pixel-art/tiktok.yaml",
+    "https://www.tiktok.com/@mogdogblog/video/7427568589772754207"
+  ]
+}

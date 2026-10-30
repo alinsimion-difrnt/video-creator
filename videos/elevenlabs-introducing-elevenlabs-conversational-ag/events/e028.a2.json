@@ -1,0 +1,102 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "1a43a2dc4569f6e12272c71e71dc472f55d476898ff6951217a803388caba984",
+    "created_at": "2026-10-05T06:47:23.304930Z"
+  },
+  "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+  "event": "e028",
+  "task": "a2-e028",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Embed code card (grows from the small empty chat bubble)",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["scale_up", "morph"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 600, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b06",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Embed code title",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Embed code",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 250, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Embed instruction line",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Add the following snippet to the pages where you want the conversation widget to be.",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 250, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Embed code snippet",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "<elevenlabs-convai agent-id=\"1vOxib2KLQQCWgj1HwUM\"></elevenlabs-conva",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 250, "easing_class": "ease_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [247, 0, 751, 202],
+      "manual_reason": "The large agent orb at the left edge has no own candidate; b01 is a union that also covers the card.",
+      "label": "Agent orb (enlarged by the push-in)",
+      "role": "avatar",
+      "role_other": null,
+      "change_types": ["scale_up", "slide_right"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 600, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x049", "verdict": "override", "label": "swoosh_reverse", "note": "Soft swelling mid-band blob, no sharp broadband onset, so not an impact; lands mid push-in, CLAP swoosh_reverse 0.71."}
+  ],
+  "pattern": {
+    "id": "ui_camera_push_in",
+    "proposed_name": null,
+    "description": "The camera pushes into the chat thread toward a new empty bubble; the chat bubbles fly out of frame and the bubble grows into an Embed code card whose title, instruction and snippet fade in, with the agent orb huge at the left edge.",
+    "why_premium": "One continuous push-in turns a chat bubble into the next UI surface, so the scene change reads as a zoom into the product rather than a cut; the oversized orb keeps brand continuity and adds depth."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.chat-scene', {scale: 1.35, x: 120, duration: 0.6, ease: 'power2.inOut'}); tl.fromTo('.new-bubble', {width: 40, height: 60, borderRadius: 20}, {width: 870, height: 232, duration: 0.6, ease: 'power3.inOut'}, '<'); tl.fromTo('.embed-card .content > *', {opacity: 0}, {opacity: 1, duration: 0.25, stagger: 0.06, ease: 'power1.out'}, '-=0.2');",
+    "remotion": "Drive scene scale 1->1.35 and translateX with interpolate(frame, [0,18], ..., {easing: Easing.inOut(Easing.cubic)}); card width/height from spring({frame, fps, config: {damping: 200}}); card contents opacity via interpolate with 2-frame stagger after frame 12."
+  },
+  "confidence": "medium",
+  "notes": "Camera verdict push_in (scale 1.35). Exiting chat bubbles move but are gone in the end frame, so they are not listed. The card origin as a growing chat bubble is inferred from frames f2617-f2623."
+}

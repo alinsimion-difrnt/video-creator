@@ -1,0 +1,71 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "9c751985b3849102958275965e62b192d13329d7de2c38c47d13a5a4b90d6ee8",
+    "created_at": "2026-10-05T06:48:02.503171Z"
+  },
+  "video": "meta-introducing-meta-quest-3-coming-this-f",
+  "event": "e008",
+  "task": "a2-e008",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Full-frame footage: cut from Ghostbusters firehouse to amber cave climbing scene, crossed by horizontal white light streaks",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "hard cut to new gameplay footage plus a horizontal white light-streak flash over the cut",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 200, "easing_class": "ambiguous"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Overlay word swaps 'Larger' to 'Richer' through a horizontal motion smear",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["blur_out", "blur_in", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Richer",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 250, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x047",
+      "verdict": "override",
+      "label": "music",
+      "note": "Onset of sustained tonal bands around 56.0-56.06 s, about 250 ms before the burst, with no visual change then; reads as music."
+    },
+    {
+      "id": "x048",
+      "verdict": "override",
+      "label": "music",
+      "note": "Broadband vertical transient in the same regular beat series as the neighbouring hits (about 56.5, 56.83, 57.1 s); arrives 500 ms after the word has settled, so it is a music beat, not a swoosh."
+    }
+  ],
+  "pattern": {
+    "id": "kinetic_word_reveal",
+    "proposed_name": null,
+    "description": "Centred one-word overlay over fast gameplay cuts: the footage cuts, a horizontal white light-streak flash crosses the frame, and the word swaps from 'Larger' to 'Richer' through a short horizontal smear, holding the same centred slot.",
+    "why_premium": "The light-streak flash and the text smear share one direction, so cut and copy change read as a single gesture; the fixed word slot and one-word cadence keep the comparison series ('Deeper', 'Larger', 'Richer') rhythmic and instantly legible over busy footage."
+  },
+  "build_hint": {
+    "gsap": "On each beat: hard-cut clips (tl.set autoAlpha); tl.fromTo(streakOverlay, {xPercent: -60, autoAlpha: 0}, {xPercent: 60, autoAlpha: 1, duration: 0.2, ease: 'power2.inOut', yoyo: true, repeat: 1}); word swap in the same slot: tl.to(wordOld, {filter: 'blur(8px)', scaleX: 1.3, autoAlpha: 0, duration: 0.1, ease: 'power2.in'}, '<').fromTo(wordNew, {filter: 'blur(8px)', scaleX: 1.3, autoAlpha: 0}, {filter: 'blur(0px)', scaleX: 1, autoAlpha: 1, duration: 0.15, ease: 'power3.out'}, '>-0.03').",
+    "remotion": "Hard-cut Sequences; a streak overlay layer with opacity interpolate(frame, [0, 3, 6], [0, 1, 0]); word layer: out over 3 frames (blur 0->8px, scaleX 1->1.3), new word in with spring({frame, fps, config: {damping: 200, stiffness: 220}}) driving blur 8->0 and scaleX 1.3->1."
+  },
+  "confidence": "medium",
+  "notes": "Cannot tell from the stills whether the white streaks are a designed overlay or part of the game footage; same visual device appears at e007. The large energy dip between f1339 and f1344 suggests the cut itself is near f1340 and the streak/word swap follows about 4-6 frames later."
+}

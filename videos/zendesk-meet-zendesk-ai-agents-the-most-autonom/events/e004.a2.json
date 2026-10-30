@@ -1,0 +1,53 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "b1c969072279428762c6ce8f38074e7d6f73622bc987be5bf7b42238e7a5c723",
+    "created_at": "2026-10-05T06:59:44.007601Z"
+  },
+  "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+  "event": "e004",
+  "task": "a2-e004",
+  "elements": [
+    {"box": "b02", "manual_box": null, "manual_reason": null, "label": "AI agent reply bubble",
+     "role": "card", "role_other": null, "change_types": ["pop", "slide_up"], "change_other": null,
+     "is_text": false, "text": null, "text_unit": null,
+     "estimates": {"duration_ms": 500, "easing_class": "ease_out"}},
+    {"box": "b03", "manual_box": null, "manual_reason": null, "label": "Reply text, line 1",
+     "role": "body_text", "role_other": null, "change_types": ["pop", "slide_up"], "change_other": null,
+     "is_text": true, "text": "Hey Angela, which items", "text_unit": "whole",
+     "estimates": {"duration_ms": 500, "easing_class": "ease_out"}},
+    {"box": "b04", "manual_box": null, "manual_reason": null, "label": "Reply text, line 2",
+     "role": "body_text", "role_other": null, "change_types": ["pop", "slide_up"], "change_other": null,
+     "is_text": true, "text": "would you like to return?", "text_unit": "whole",
+     "estimates": {"duration_ms": 500, "easing_class": "ease_out"}},
+    {"box": "b06", "manual_box": null, "manual_reason": null, "label": "AI agent avatar with sparkle icon",
+     "role": "avatar", "role_other": null, "change_types": ["pop", "slide_up"], "change_other": null,
+     "is_text": false, "text": null, "text_unit": null,
+     "estimates": {"duration_ms": 500, "easing_class": "ease_out"}},
+    {"box": "b05", "manual_box": null, "manual_reason": null, "label": "Product card row (top edge entering)",
+     "role": "card", "role_other": null, "change_types": ["slide_up", "fade"], "change_other": null,
+     "is_text": false, "text": null, "text_unit": null,
+     "estimates": {"duration_ms": 400, "easing_class": "ease_out"}}
+  ],
+  "sfx_review": [
+    {"id": "x011", "verdict": "unsure", "label": "unsure", "note": "Before the event; weak click score, sits on the music beat grid."},
+    {"id": "x012", "verdict": "override", "label": "music", "note": "Before the reply appears; rhythmic music transient, CLAP agrees on music."},
+    {"id": "x013", "verdict": "confirm", "label": "music", "note": "Lands at the bubble pop but matches the regular beat pattern."},
+    {"id": "x014", "verdict": "unsure", "label": "unsure", "note": "Late in the settle; no distinct swoosh shape."},
+    {"id": "x015", "verdict": "unsure", "label": "unsure", "note": "At the event end as product cards start entering; weak score."}
+  ],
+  "pattern": {"id": "other", "proposed_name": "chat bubble pop",
+    "description": "The AI agent's reply bubble and its avatar pop into the chat panel below the customer message and drift up a short distance while settling; the product card row begins to rise in beneath at the end.",
+    "why_premium": "Reply arrives as one unit (avatar plus bubble) with a soft scale-and-rise that decelerates over about half a second, mimicking real chat arrival; the next content (product cards) is chained right after so the conversation keeps momentum."},
+  "build_hint": {
+    "gsap": "tl.fromTo([avatar, bubble], {autoAlpha: 0, scale: 0.85, y: 40}, {autoAlpha: 1, scale: 1, y: 0, duration: 0.5, ease: 'power3.out', stagger: 0.03}); tl.fromTo(cards, {autoAlpha: 0, y: 30}, {autoAlpha: 1, y: 0, duration: 0.4, ease: 'power2.out', stagger: 0.06}, '-=0.05').",
+    "remotion": "const s = spring({frame, fps, config: {damping: 200, stiffness: 120, mass: 1}}); bubble and avatar: opacity s, scale interpolate(s,[0,1],[0.85,1]), translateY interpolate(s,[0,1],[40,0]); cards use the same spring with delay ~30 frames and per-card stagger 2 frames."
+  },
+  "confidence": "medium",
+  "notes": "Filmstrip frames are a zoomed crop of the reply area. b01 is a union of bubble plus avatar and is not used to avoid double-counting. Product cards only start entering at the burst end (likely the next event). SFX candidates look like music beats."
+}

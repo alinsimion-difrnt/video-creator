@@ -1,0 +1,44 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "cf00f0358c61f35608b7a0824d4cdb812a5ec19b8ff7b84073783b986a5a8fe3",
+    "created_at": "2026-10-05T06:51:36.745961Z"
+  },
+  "video": "servicenow-what-does-servicenow-do",
+  "event": "e002",
+  "task": "a2-e002",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Live-action footage: woman at laptop recoils while a colleague lint-rolls her shoulder; handheld camera reframes",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["slide_left", "scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 500, "easing_class": "ambiguous"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "handheld reaction reframe",
+    "description": "Live-action comedic vignette: the subject leans and grimaces as a coworker lint-rolls her, and the handheld camera pans right with a slight push to keep her framed; the censor bleep from the previous shot cuts out as the shot starts.",
+    "why_premium": "Documentary-style handheld framing that follows the actor's reaction makes a scripted B2B ad feel candid and relatable, setting up the pain point before any product appears."
+  },
+  "build_hint": {
+    "gsap": "Not a motion-graphics build; for a recreation over footage: gsap.fromTo('.footage', {xPercent: 0, scale: 1}, {xPercent: -3, scale: 1.035, duration: 0.5, ease: 'sine.inOut'}) plus a small noise-driven jitter for handheld feel.",
+    "remotion": "Footage transform: translateX = interpolate(frame, [0, 15], [0, -3])%, scale = interpolate(frame, [0, 15], [1, 1.035], {easing: Easing.inOut(Easing.sin)}), plus a low-amplitude noise2D offset for handheld shake."
+  },
+  "confidence": "medium",
+  "notes": "Camera verdict pan_right with scale 1.035 (slight push); much of the motion energy is actor movement within the frame, not only the camera. No SFX candidates; spectrogram shows the bleep tone from e001 ending around 9.37 s."
+}

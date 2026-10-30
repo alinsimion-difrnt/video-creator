@@ -1,0 +1,179 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "69817ae1790b0f5cd1c0aaa5b5a4ddae47e52eadcab9626c636502c0a4e5a0cd",
+    "created_at": "2026-10-05T06:32:12.118584Z"
+  },
+  "video": "scrunch-many-brands-one-workspace-how-agencies",
+  "task": "a1-p3",
+  "shots": [
+    {
+      "shot": "s003",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Scrunch app in a full browser window: first the 'Set Up Prompts' configuration form, then the Disney Plus Dashboard whose chart cards resolve from skeleton placeholders; circular presenter webcam bubble and recorder control bar fixed bottom-left",
+      "transition_in": "other",
+      "transition_other": "in-app modal close: the New Prompt dialog and its dark scrim disappear and the bright Prompts dashboard returns within the same continuous recording (shot detector split on the luminance jump)",
+      "on_screen_text": [
+        "scrunch",
+        "Disney Plus",
+        "Dashboard",
+        "Prompts",
+        "Insights",
+        "Beta",
+        "Citations",
+        "Site Audits",
+        "AI Traffic",
+        "Sites",
+        "Set Up Prompts",
+        "Configure",
+        "Stage Focus",
+        "Awareness",
+        "Evaluation",
+        "Persona Focus",
+        "Platforms",
+        "ChatGPT",
+        "Meta",
+        "Perplexity",
+        "Claude",
+        "AI Overviews",
+        "Google AI Mode",
+        "Gemini",
+        "Additional Instructions",
+        "Generate Prompts",
+        "Last 12 weeks",
+        "Non-Branded only",
+        "Add filter",
+        "Responses",
+        "AI Assistants",
+        "Competitive Presence",
+        "(% of total)",
+        "Presence",
+        "Position",
+        "Sentiment",
+        "Netflix",
+        "Hulu",
+        "Amazon Pr",
+        "HBO Max",
+        "Apple",
+        "YouTubeTV",
+        "Peacock",
+        "Last 90 days",
+        "52.29%",
+        "Last 7 days",
+        "50.39%",
+        "Positive",
+        "Mixed",
+        "Negative",
+        "91%",
+        "9%",
+        "1%",
+        "591",
+        "13667"
+      ],
+      "text_word_count": 81,
+      "typography": "Native product UI only, no added titles or captions: lowercase bold wordmark, semibold sentence-case page titles ('Set Up Prompts', 'Dashboard'), small regular-weight sentence-case card labels with a lighter grey '(% of total)' suffix, bold numeric metrics, title-case platform names beside checkboxes, normal tracking; geometric UI sans (low-confidence guess: Inter). Persona option descriptions, helper copy and the New Prompt dropdown items are too small to quote reliably and are omitted.",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "Continuation of the unedited webcam-plus-screen recording (1:56.08-2:29.85). The modal has just closed; around 1:57 the presenter opens the New Prompt menu (a small dropdown of prompt-creation options) and at ~1:58 lands on the 'Set Up Prompts' page (Stage Focus, Persona Focus, Platforms checkboxes, Additional Instructions, Generate Prompts button), which sits static for about 10 s while he says AI can generate prompts tied to customer-journey stages, personas and platforms (w354-w385); nothing is filled in or generated. At ~2:08.5 he navigates to the Dashboard, which appears as grey skeleton cards; the Competitive Presence bar chart (Disney Plus vs Netflix, Hulu, Amazon, HBO Max, Apple, YouTubeTV, Peacock) loads first (~2:10.5), then Sentiment, Position, Presence and Citations donut cards and the Prompts/Responses totals resolve one by one (~2:12.5-2:15.5). From ~2:16 to the end the dashboard is static with the cursor parked on the Hulu bar tooltip while he delivers the closing value statement and sign-off (w386-w446). The video ends on this frame with no end card, logo or URL.",
+      "build_rebuild": "Recreate the dashboard as a 3x2 card grid that starts as grey skeleton bars, resolve the bar chart first and then each donut card with a 150-250 ms stagger and a draw-on arc, and hold the finished dashboard under the closing voice-over before cutting to a logo end card.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001"], "words": [0, 21]},
+      {"beat": "demo", "shots": ["s001"], "words": [22, 41]},
+      {"beat": "outcome", "shots": ["s001"], "words": [42, 101]},
+      {"beat": "mechanism", "shots": ["s001"], "words": [102, 268]},
+      {"beat": "demo", "shots": ["s001"], "words": [269, 333]},
+      {"beat": "demo", "shots": ["s002", "s003"], "words": [334, 385]},
+      {"beat": "outcome", "shots": ["s003"], "words": [386, 446]}
+    ],
+    "hook": {
+      "text": "Spoken claim that self-serve new brand creation is one of the most important capabilities launched last quarter for agency partners, over an empty 'Create a new brand' form.",
+      "technique": "bold_claim",
+      "technique_other": null,
+      "shots": ["s001"],
+      "words": [0, 21]
+    },
+    "cta": {
+      "text": null,
+      "shots": []
+    },
+    "tone": "Casual, unscripted product-team walkthrough: a presenter on webcam talks over a live single-take screen recording, friendly and informative but with filler, restarts and real-time waits; no music-led or produced feel.",
+    "signature_moments": [
+      {
+        "shots": ["s001"],
+        "description": "Pasting a single URL (disneyplus.com) makes the product auto-fill the brand identity, personas, competitors and key topics live (w22-w30, w102-w219).",
+        "why_premium": "Showing real generated output from one input is a credible, concrete proof of the 'self-serve in minutes' promise; the value is in the product, not the production, and it would land harder if the ~50 s wait were cut."
+      },
+      {
+        "shots": ["s003"],
+        "description": "The new brand's dashboard resolves from skeleton cards into a competitive bar chart and sentiment/position/presence/citations donuts (~2:08.5-2:15.5).",
+        "why_premium": "A staggered skeleton-to-data reveal gives a natural payoff moment that reads as the 'built-out environment' arriving; it is native UI loading, not designed motion, but it is the most dynamic visual in the video."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 2,
+        "evidence": "The opening is a verbal bold claim (w0-w21) delivered over a static empty form; there is no visual hook, stat or demo-first moment, and the first ~8 s give a viewer nothing to look at.",
+        "refs": ["s001", "w0", "w21"]
+      },
+      "clarity": {
+        "score": 3,
+        "evidence": "The flow is logical (enter URL, platform generates brand profile, create brand, live dashboard, add prompts) and the voice-over names each step, but about 50 s of the first 70 s is a static loader, small browser-scale UI text is hard to read, and the prompt-generation feature is described over an unused form rather than shown working.",
+        "refs": ["s001", "s002", "s003", "w102", "w206", "w354"]
+      },
+      "ui_showcase": {
+        "score": 2,
+        "evidence": "Real product UI is shown end to end, but at full-browser scale with no zooms, crops or highlights, the webcam bubble covers the bottom-left of the app, browser chrome and bookmarks stay visible, and the AI prompt generator is only opened, never run.",
+        "refs": ["s001", "s002", "s003"]
+      },
+      "motion_polish": {
+        "score": 1,
+        "evidence": "No designed motion at all: one continuous recording with native page loads, scrolls and a modal; the only movement of note is the dashboard skeleton-to-chart load in s003. Long holds (generation loader, Set Up Prompts page, final static dashboard) are left uncut, and a pause in recording is bridged by 'Thanks for your patience' (gap between w287 and w288).",
+        "refs": ["s001", "s003", "w287", "w288"]
+      },
+      "sound_design": {
+        "score": 1,
+        "evidence": "Judged from anchors plus visuals: only 4 SFX candidates in 150 s, all low-confidence click/swoosh classifications at points that coincide with mouse activity or recording edits (e.g. x003 at 95.2 s inside the pause gap), consistent with incidental recording noise rather than designed SFX. Integrated loudness is -23.46 LUFS, quiet for web delivery. A 117 BPM beat grid is reported, but nothing in the visuals is cut to it and I cannot confirm music is present; the soundtrack appears to be the presenter's mic only.",
+        "refs": ["s001", "s003", "w288"]
+      },
+      "vo_script_quality": {
+        "score": 2,
+        "evidence": "Unscripted narration with filler and restarts ('for and for an agency partner that needs to live create', w48-w58; 'obviously self-explanatory', w239-w241; 'right?', w343) and a meandering use-case section, though the value proposition is stated clearly at the start (w0-w21) and the close (w386-w427).",
+        "refs": ["w48", "w58", "w239", "w343", "w386", "w427"]
+      },
+      "brand_consistency": {
+        "score": 2,
+        "evidence": "Every frame is the Scrunch app with its wordmark, so visual identity is consistent by default, but there is no branded intro, title, lower third or end card, and internal browser tabs/bookmarks ('Scrunch Logins', 'Backoffice Tools') and the recorder toolbar stay in shot.",
+        "refs": ["s001", "s003"]
+      },
+      "works_muted": {
+        "score": 2,
+        "evidence": "No captions or added text; muted, a viewer sees a URL entered, a long loader, a filled form and a dashboard appearing, which hints at the flow, but the why (agency prospecting, personas, AI prompt generation) lives only in the voice-over and the UI text is small.",
+        "refs": ["s001", "s002", "s003"]
+      },
+      "overall": {
+        "score": 2,
+        "evidence": "An authentic, informative internal-style product walkthrough with a genuinely compelling product moment (URL to auto-built brand), but it has none of the editing, framing, motion, sound or packaging that makes an explainer premium: single take, real-time waits, tiny UI, unscripted VO and no CTA or end card.",
+        "refs": ["s001", "s002", "s003"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 2,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "All on-screen text is English product UI captured in the recording (not separable layers), and the story depends on an on-camera presenter's voice-over, so localising means subtitles or re-recording both screen and webcam; there are no added titles to translate, which is the only easy part."
+    }
+  }
+}

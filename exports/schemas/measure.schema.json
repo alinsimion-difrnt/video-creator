@@ -1,0 +1,483 @@
+{
+  "$defs": {
+    "Annotator": {
+      "enum": [
+        "code",
+        "claude-code",
+        "human"
+      ],
+      "title": "Annotator",
+      "type": "string"
+    },
+    "ChannelOut": {
+      "additionalProperties": false,
+      "properties": {
+        "bezier": {
+          "title": "Bezier",
+          "type": "string"
+        },
+        "bezier_rmse": {
+          "minimum": 0,
+          "title": "Bezier Rmse",
+          "type": "number"
+        },
+        "cls": {
+          "enum": [
+            "linear",
+            "ease_in",
+            "ease_out",
+            "ease_in_out",
+            "spring",
+            "ambiguous"
+          ],
+          "title": "Cls",
+          "type": "string"
+        },
+        "duration_ms": {
+          "minimum": 0,
+          "title": "Duration Ms",
+          "type": "number"
+        },
+        "end_f": {
+          "minimum": 0,
+          "title": "End F",
+          "type": "integer"
+        },
+        "end_value": {
+          "title": "End Value",
+          "type": "number"
+        },
+        "fit_quality": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Fit Quality",
+          "type": "number"
+        },
+        "gsap": {
+          "$ref": "#/$defs/GsapOut"
+        },
+        "name": {
+          "enum": [
+            "x",
+            "y",
+            "scale",
+            "opacity"
+          ],
+          "title": "Name",
+          "type": "string"
+        },
+        "observed_start": {
+          "title": "Observed Start",
+          "type": "boolean"
+        },
+        "overshoot_pct": {
+          "minimum": 0,
+          "title": "Overshoot Pct",
+          "type": "number"
+        },
+        "spring": {
+          "$ref": "#/$defs/SpringOut"
+        },
+        "start_f": {
+          "minimum": 0,
+          "title": "Start F",
+          "type": "integer"
+        },
+        "start_value": {
+          "title": "Start Value",
+          "type": "number"
+        }
+      },
+      "required": [
+        "name",
+        "start_f",
+        "end_f",
+        "start_value",
+        "end_value",
+        "observed_start",
+        "cls",
+        "gsap",
+        "bezier",
+        "bezier_rmse",
+        "spring",
+        "overshoot_pct",
+        "duration_ms",
+        "fit_quality"
+      ],
+      "title": "ChannelOut",
+      "type": "object"
+    },
+    "ElementOut": {
+      "additionalProperties": false,
+      "properties": {
+        "box": {
+          "pattern": "^[bm]\\d{2}$",
+          "title": "Box",
+          "type": "string"
+        },
+        "channels": {
+          "items": {
+            "$ref": "#/$defs/ChannelOut"
+          },
+          "title": "Channels",
+          "type": "array"
+        },
+        "mean_confidence": {
+          "maximum": 1,
+          "minimum": -1,
+          "title": "Mean Confidence",
+          "type": "number"
+        },
+        "method": {
+          "const": "ncc",
+          "title": "Method",
+          "type": "string"
+        },
+        "quality": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Quality",
+          "type": "number"
+        },
+        "sfx_offset_ms": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Sfx Offset Ms",
+          "type": "object"
+        },
+        "source": {
+          "$ref": "#/$defs/ValueSource"
+        },
+        "stagger": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/StaggerOut"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "timing": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TimingOut"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "xyxy": {
+          "anyOf": [
+            {
+              "maxItems": 4,
+              "minItems": 4,
+              "prefixItems": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Xyxy"
+        }
+      },
+      "required": [
+        "box",
+        "method",
+        "mean_confidence",
+        "channels",
+        "timing",
+        "source",
+        "quality"
+      ],
+      "title": "ElementOut",
+      "type": "object"
+    },
+    "GsapOut": {
+      "additionalProperties": false,
+      "properties": {
+        "duration_ms": {
+          "minimum": 0,
+          "title": "Duration Ms",
+          "type": "number"
+        },
+        "ease": {
+          "title": "Ease",
+          "type": "string"
+        },
+        "rmse": {
+          "minimum": 0,
+          "title": "Rmse",
+          "type": "number"
+        }
+      },
+      "required": [
+        "ease",
+        "duration_ms",
+        "rmse"
+      ],
+      "title": "GsapOut",
+      "type": "object"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "description": "Carried by every output JSON (BUILD_PLAN section 2.7).",
+      "properties": {
+        "annotator": {
+          "$ref": "#/$defs/Annotator"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "input_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Input Hash",
+          "type": "string"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "schema_version": {
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "skill": {
+          "anyOf": [
+            {
+              "pattern": "^[a-z0-9-]+@[0-9a-f]{8,64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Skill"
+        },
+        "stage": {
+          "title": "Stage",
+          "type": "string"
+        },
+        "tool_version": {
+          "title": "Tool Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool_version",
+        "stage",
+        "annotator",
+        "input_hash",
+        "created_at"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "SpringOut": {
+      "additionalProperties": false,
+      "properties": {
+        "omega0": {
+          "exclusiveMinimum": 0,
+          "title": "Omega0",
+          "type": "number"
+        },
+        "remotion": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Remotion",
+          "type": "object"
+        },
+        "remotion_exact": {
+          "title": "Remotion Exact",
+          "type": "boolean"
+        },
+        "rmse": {
+          "minimum": 0,
+          "title": "Rmse",
+          "type": "number"
+        },
+        "settle_ms": {
+          "minimum": 0,
+          "title": "Settle Ms",
+          "type": "number"
+        },
+        "zeta": {
+          "exclusiveMinimum": 0,
+          "title": "Zeta",
+          "type": "number"
+        }
+      },
+      "required": [
+        "zeta",
+        "omega0",
+        "settle_ms",
+        "remotion",
+        "remotion_exact",
+        "rmse"
+      ],
+      "title": "SpringOut",
+      "type": "object"
+    },
+    "StaggerOut": {
+      "additionalProperties": false,
+      "properties": {
+        "reveal_frames": {
+          "items": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "title": "Reveal Frames",
+          "type": "array"
+        },
+        "stagger_ms": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Stagger Ms"
+        },
+        "unit": {
+          "enum": [
+            "word",
+            "all",
+            "none"
+          ],
+          "title": "Unit",
+          "type": "string"
+        }
+      },
+      "required": [
+        "unit",
+        "stagger_ms",
+        "reveal_frames"
+      ],
+      "title": "StaggerOut",
+      "type": "object"
+    },
+    "TimingOut": {
+      "additionalProperties": false,
+      "description": "One ease and timing shared by all channels of the element (one tween moving and fading it).",
+      "properties": {
+        "duration_ms": {
+          "minimum": 0,
+          "title": "Duration Ms",
+          "type": "number"
+        },
+        "ease": {
+          "title": "Ease",
+          "type": "string"
+        },
+        "rmse": {
+          "minimum": 0,
+          "title": "Rmse",
+          "type": "number"
+        },
+        "start_s": {
+          "title": "Start S",
+          "type": "number"
+        }
+      },
+      "required": [
+        "ease",
+        "start_s",
+        "duration_ms",
+        "rmse"
+      ],
+      "title": "TimingOut",
+      "type": "object"
+    },
+    "ValueSource": {
+      "enum": [
+        "measured",
+        "model_estimate",
+        "human"
+      ],
+      "title": "ValueSource",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "elements": {
+      "items": {
+        "$ref": "#/$defs/ElementOut"
+      },
+      "title": "Elements",
+      "type": "array"
+    },
+    "event": {
+      "pattern": "^e\\d{3,}$",
+      "title": "Event",
+      "type": "string"
+    },
+    "failed": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Failed",
+      "type": "object"
+    },
+    "fps": {
+      "exclusiveMinimum": 0,
+      "title": "Fps",
+      "type": "number"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    },
+    "video": {
+      "title": "Video",
+      "type": "string"
+    }
+  },
+  "required": [
+    "provenance",
+    "video",
+    "event",
+    "fps",
+    "elements"
+  ],
+  "title": "MeasureFile",
+  "type": "object"
+}

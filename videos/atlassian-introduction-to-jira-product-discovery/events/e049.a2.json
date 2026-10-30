@@ -1,0 +1,44 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "54b5c269418d8c05c5f12198375e54e83cb91da6293aae529a642b8fde2be84d",
+    "created_at": "2026-10-05T06:40:10.624335Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e049",
+  "task": "a2-e049",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Table column-header hover state (grey fill and kebab menu icon) appearing and clearing as the cursor passes",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["highlight", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 70, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "The cursor sweeps right across the list's column header. The header row briefly shows its hover state (grey fill and a kebab menu icon), then the cursor passes the '+' add-column button and continues right, so the hover state clears.",
+    "why_premium": "There is little premium craft here: it is incidental hover feedback in a raw screen recording, timed with 'create a new view'. Its only value is as a reference for keeping the UI's native hover states, which make a demo feel live rather than staged."
+  },
+  "build_hint": {
+    "gsap": "Move the cursor along a path with gsap.to('.cursor', {x: ..., duration: 0.4, ease: 'power1.inOut'}); toggle the header hover with tl.set('.col-header', {backgroundColor: '#f1f2f4'}).set('.kebab', {autoAlpha: 1}, '<') when the cursor enters, then reverse with set() when it leaves.",
+    "remotion": "Interpolate the cursor x over frames. Derive hover = cursorX in [headerLeft, headerRight], then render the header background and kebab icon conditionally (instant state change, no easing)."
+  },
+  "confidence": "low",
+  "notes": "Very subtle event (b01 changed_share 0.0001). The end_marked/end_clean images show a later state: the view is named 'Sales', 'Group by' is active, a 'Group by' side panel is open and the cursor is on 'Select a field'. That does not match filmstrip frame f3019, which shows only the table header with no cursor. The end frame may be mis-sampled; worth a human look. The moving cursor has no candidate box and is not listed."
+}

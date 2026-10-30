@@ -1,0 +1,52 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "9995410a4e4787e689930125c0c8540fdfc42cb4d948f7d4112d7a0101471876",
+    "created_at": "2026-10-13T13:07:00+00:00"
+  },
+  "id": "7507648967178554632",
+  "kind": "clip",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "cool",
+    "notes": "Code: 8 colours and one 120 deg ramp on the still; looks too low for these lit rooms, not trusted. Day scene: lavender, warm lamp orange; night scenes: neon blue and pink with cool blue shadows."
+  },
+  "lighting": "Motivated lights: desk lamp and window rain-light by day, neon signs and a glowing monitor at night; the cool night grade is the mood change.",
+  "silhouette": "Gamer in a chair seen side-on, then slumped asleep facing camera; Pokemon posters and plushies frame him. Busy scenes, so the figure reads by its pose and the dark shirt.",
+  "motion": {
+    "timing": "Code: median hold 33.3 ms (p75 66.7 ms), 10.57 changes/s; motion is subtle loops (typing, rain, breathing) inside three nearly static AI-generated scenes.",
+    "principles": [
+      "idle loop",
+      "held pose",
+      "scene cut"
+    ]
+  },
+  "texture": "AI-generated pixel-art style (caption tags #AI): pixel-looking but inconsistent pixel size and soft gradients, so it is pseudo-pixel art.",
+  "camera": "Static frames; three hard cuts between scenes (typing by day, asleep with 'Lv.99' bubble, asleep in a Pokemon room).",
+  "sound": "",
+  "acting": {
+    "enters": "No entrance; each scene opens with the character already in place.",
+    "acts": "Types at the desk, then sleeps; a 'Lv.99' speech bubble tells the joke.",
+    "exits": "Hard cut between scenes; no exits.",
+    "comes_back": true,
+    "depth": "Character mid-ground, posters and plushies in the back and props on the floor in front; no depth play."
+  },
+  "techniques": [
+    "day-to-night grade change as the story beat",
+    "speech bubble with a single word ('Lv.99') as the gag",
+    "small idle loops in a static scene",
+    "dense prop dressing to set the fandom",
+    "AI pixel-style generation (inconsistent grid)"
+  ],
+  "feel": "busy fan-room dressing + day-to-night cut + one-word bubble = cozy but static; AI pixels lack a clean grid",
+  "for_fred": "Avoid: still scenes with only idle loops; Fred needs to move between scenes. Borrow the one-word speech bubble and the day-to-night grade shift to mark time passing.",
+  "sources": [
+    "data/study/pixel/work/7507648967178554632/sheet.jpg",
+    "studies/pixel-art/clips/7507648967178554632.json",
+    "studies/pixel-art/tiktok.yaml",
+    "https://www.tiktok.com/@t_rex5201314/video/7507648967178554632"
+  ]
+}

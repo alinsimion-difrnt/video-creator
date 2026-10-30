@@ -1,0 +1,39 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "d4035255aed308cbe17052aab45b373614cff6f3d6b9bc70731a21ddfe97ed3a",
+                 "created_at": "2026-10-13T09:30:37+00:00"},
+  "id": "7364550029480168710",
+  "format": "animation",
+  "hook": {"type": "list_promise",
+           "line": "Learn how to sell anything to anyone.",
+           "visual": "Black grid background with green glow; a famous film salesman on the phone fades in while 'LEARN HOW TO SELL ANYTHING TO ANYONE' builds word by word, then a light-leak flash into three coffee cups"},
+  "beats": [
+    {"t": 0.38, "what": "Movie cutaway of a slick salesman on the phone under the building title"},
+    {"t": 1.88, "what": "Light-leak flash transition"},
+    {"t": 2.25, "what": "'COFFEE SHOP' title and three cups (small, medium, large) slide in"},
+    {"t": 5.6, "what": "Prices appear under each cup: $5, $5.50, $5.90"},
+    {"t": 8.4, "what": "Green bracket labels small and medium 'overpriced'"},
+    {"t": 11.19, "what": "Thumbs-up icon lands under the large cup - the decoy pays off"},
+    {"t": 11.33, "what": "Cut to 'PSYCHOLOGY FOR MARKETING' with a backpack"},
+    {"t": 16.79, "what": "Watch and $49.99 price tag join the bag - bundle reframed as a free gift"},
+    {"t": 20.13, "what": "'BRANDING IS EVERYTHING': plain tee at $4.99 next to a designer tee at $350"},
+    {"t": 28.53, "what": "Closing line with CTA to follow for more"}
+  ],
+  "graphics": {"captions": "word_by_word", "caption_position": "middle",
+               "devices": ["title_text", "chart_or_number", "meme_cutaway", "prop", "sticker_emoji", "music_bed"],
+               "density": "heavy", "per_minute_estimate": 30},
+  "characters": [],
+  "cta": {"kind": "follow", "t": 28.53},
+  "why_it_works": [
+    "Every tip becomes a concrete price comparison on screen (cups at $5/$5.50/$5.90, tees at $4.99/$350), so the idea lands visually in one glance",
+    "A new graphic element arrives roughly every 2 s (30 events per minute measured), so the eye never rests on a static frame",
+    "Three tips in 30 s with bold green section titles give clear chapters and a short, loopable video (loop 0.956)",
+    "A recognisable film salesman in the first second borrows a status signal before any explanation"
+  ],
+  "weaknesses": [
+    "No face: little personal connection or creator identity beyond the handle",
+    "Small single-word captions in the middle are easy to miss next to the big titles",
+    "Third tip is asserted rather than explained; the CTA is generic"
+  ],
+  "for_robert": "Turn each claim into a side-by-side price or number comparison that builds in steps (items, then prices, then a bracket, then a verdict icon) - Fred could deliver the thumbs-up verdict instead of a sticker."
+}

@@ -1,0 +1,161 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "5163eceff1017a146fa3757eec728a96c64955a05d6a221f60b7db54dad2c4f7",
+    "created_at": "2026-10-05T07:47:35.473258Z"
+  },
+  "video": "warp-introducing-warp-2-0-the-agentic-develo",
+  "task": "a1-p8",
+  "shots": [
+    {
+      "shot": "s042",
+      "shot_type": "presenter",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "Founder in three-quarter side profile with glasses, framed left, facing screen right into dark negative space",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": ["blur"],
+      "what_happens": "Hard cut back to the low-key side-profile angle as he says 'It's not an IDE.' (w345-w348), continuing the alternating A/B camera rhythm of the closing thesis. The last sheet frame (2:18.000) already shows the frontal angle of the next shot, so the cut lands slightly before the detected boundary.",
+      "build_rebuild": "Hard-cut to a 1.5 s static side-profile interview take (subject on the left third, soft key light, out-of-focus panelled wall) timed exactly to the second negation line.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s043",
+      "shot_type": "presenter",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Founder facing camera, centred between soft-focus vintage computers on plinths",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": ["blur"],
+      "what_happens": "Frontal medium shot delivering the payoff 'It's an agentic development environment.' (w349-w353), echoing the opening title card tagline; one small hand gesture at the start, then a steady look to camera. The final sheet frame (2:20.500) is already pure black with a tiny white square in the centre, i.e. the start of the logo sting, slightly before the detected boundary.",
+      "build_rebuild": "Cut to the centred direct-to-camera medium shot for the final category line and hard-cut to a black frame immediately after the last word ends.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s044",
+      "shot_type": "logo",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Warp logomark (two overlapping rounded rectangles) resolving next to the 'warp.dev' wordmark on black",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": ["warp.dev"],
+      "text_word_count": 1,
+      "typography": "Lowercase geometric sans wordmark, regular weight, slightly open tracking, white on black; paired left with a solid white logomark at cap height. Font unknown (low-confidence guess: a custom or mono-influenced grotesk).",
+      "depth_cues": ["none"],
+      "what_happens": "No voice-over. A small white square in the centre of a black frame unfolds into the two-panel Warp logomark (2:21.0-2:22.0), the mark shifts left as 'warp.dev' appears to its right (visible from 2:22.5) and holds to about 2:24.5, then the wordmark disappears, the mark recentres and folds back into the square (2:25.0-2:26.0). Audio facts place a whoosh (x059) and chime (x060) at the unfold, chimes x061-x063 during the hold and a music tail (x064) at the end. The exact easing of the fold is not visible at 2 fps.",
+      "build_rebuild": "On a black frame, scale a small white rounded square up and split it into two skewed overlapping panels, slide the mark left while the 'warp.dev' wordmark fades/reveals to its right, hold about 2 s, then reverse the sequence back to the square before the end.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001", "s002", "s003", "s004", "s005"], "words": [0, 21]},
+      {"beat": "mechanism", "shots": ["s006", "s007", "s008", "s009"], "words": [22, 65]},
+      {"beat": "demo", "shots": ["s010", "s011", "s012", "s013", "s014", "s015", "s016"], "words": [66, 185]},
+      {"beat": "proof", "shots": ["s017", "s018", "s019", "s020", "s021"], "words": [186, 248]},
+      {"beat": "demo", "shots": ["s022", "s023", "s024", "s025", "s026"], "words": [249, 306]},
+      {"beat": "proof", "shots": ["s027", "s028", "s029", "s030", "s031", "s032", "s033", "s034", "s035", "s036", "s037", "s038", "s039"], "words": [307, 326]},
+      {"beat": "outcome", "shots": ["s040", "s041", "s042", "s043"], "words": [327, 353]},
+      {"beat": "cta", "shots": ["s044"], "words": null}
+    ],
+    "hook": {
+      "text": "I'm Zach, the founder and CEO of Warp. Today, I'm excited to demo Warp 2.0, the agentic development environment.",
+      "technique": "other",
+      "technique_other": "founder self-introduction with a behind-the-scenes slate cold open, then a category-naming title card",
+      "shots": ["s001", "s002", "s003", "s004", "s005"],
+      "words": [2, 21]
+    },
+    "cta": {
+      "text": "warp.dev",
+      "shots": ["s044"]
+    },
+    "tone": "Confident, understated founder keynote: dark cinematic studio with vintage computers, calm direct-to-camera delivery, pastel-gradient product cards, a dry self-deprecating aside and an Apple-style 'one more thing' and 'not X, not Y, it's Z' close.",
+    "signature_moments": [
+      {
+        "shots": ["s003", "s004", "s024"],
+        "description": "Large white sans words are pinned around the presenter (four-corner 'Zach / Lloyd / Founder / CEO', flanking 'Warp' '2.0', flanking 'Warp' 'Drive') and appear exactly on the spoken words.",
+        "why_premium": "Replaces the generic lower third with editorial, magazine-like type that respects the symmetrical set and makes key names land without extra graphics."
+      },
+      {
+        "shots": ["s007", "s009", "s011", "s012", "s013", "s016"],
+        "description": "Real product screen recordings live inside rounded pastel-gradient cards that slide in beside the talking founder, swap content on each enumerated feature, and are pushed or morphed away into the next state (Edit button morphing into the editor).",
+        "why_premium": "One consistent card system keeps presenter and product on screen together, so the demo feels designed rather than screen-captured, and every feature beat has a clear visual container."
+      },
+      {
+        "shots": ["s028", "s029", "s030", "s031", "s032", "s033", "s034", "s035", "s036", "s037", "s038", "s039"],
+        "description": "A 2-3 frame strobe montage of enlarged, edge-cropped developer posts praising Warp plays under 'loved by over a half million active developers'.",
+        "why_premium": "Turns social proof into energy: the speed implies volume without asking the viewer to read, and the bolded 'Warp'/'terminal' keywords still register."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 3,
+        "evidence": "Competent but conventional opener: a founder introduction and product naming (w2-w21) with no problem, stat or question. Lifted by the raw slate cold open (s001-s002), the four-corner name type (s003) and a full-frame title card (s005).",
+        "refs": ["s001", "s003", "s005", "w2", "w21"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "The script announces 'four parts' (w26-w27) and enumerates them First/Second/Third/Finally (w28-w65), each with its own UI card; later sections map one feature per card. Dense UI text in some cards (s012, s016) is too small to read, and the second half mixes features and proof without signposting.",
+        "refs": ["w26", "w28", "w33", "w41", "w48", "s007", "s008", "s009", "s012"]
+      },
+      "ui_showcase": {
+        "score": 4,
+        "evidence": "Real product UI throughout: parallel agent panes (s012), agent management popover (s013), inline diff editing (s016), a 10,000+ line Rust file (s020), codebase index (s023) and MCP/Rules/Drive screens (s026), framed in rounded gradient cards. Some cards are static (s023) and much of the UI text is unreadable at frame size.",
+        "refs": ["s012", "s013", "s016", "s020", "s023", "s026"]
+      },
+      "motion_polish": {
+        "score": 4,
+        "evidence": "Clean, restrained motion: card slide-ins and swaps (s007, s011), a push transition (s013), a button-to-editor morph (s015-s016), a stat-card split with pixel-smear dissolve (s018-s019), word-synced type and a fold/unfold logo sting (s044). Mostly simple slides; easing cannot be judged at 2 fps.",
+        "refs": ["s007", "s013", "s016", "s018", "s019", "s044"]
+      },
+      "sound_design": {
+        "score": 3,
+        "evidence": "Judged from anchor audio facts plus visuals: a steady music bed at about 114.8 BPM, integrated loudness -17.71 LUFS, and sparse SFX (64 candidates, many labelled unsure). Clear accents are the chime run on the title card (x002-x005), a few swoosh_reverse candidates on card moves (x015, x029, x036, x052), an impact candidate on the Rust punchline cut (x042) and a whoosh plus chimes on the logo sting (x059-x063). Supportive and tidy rather than designed.",
+        "refs": ["s005", "s021", "s044"]
+      },
+      "vo_script_quality": {
+        "score": 4,
+        "evidence": "Tight founder script with an explicit four-part structure (w26-w65), concrete examples (w116-w139), benchmark proof (w194-w206), a self-deprecating aside (w237-w248), 'one more thing' (w160-w163) and a 'not a terminal, not an IDE, an agentic development environment' close (w342-w353) that calls back to the opening tagline (w18-w21).",
+        "refs": ["w26", "w160", "w194", "w240", "w342", "w349", "w353"]
+      },
+      "brand_consistency": {
+        "score": 4,
+        "evidence": "Consistent dark museum-like set with vintage computers, one white geometric sans for overlay type, a recurring pastel-gradient card frame for all UI, and the category phrase repeated at open and close, ending on the warp.dev lockup. The bright pastel cards contrast with the dark set by design; the tweet montage uses third-party styling.",
+        "refs": ["s003", "s005", "s007", "s023", "s043", "s044"]
+      },
+      "works_muted": {
+        "score": 2,
+        "evidence": "No captions. Muted, the viewer gets the product name (s004-s005), stat cards (s018), 'Warp Drive' (s024) and UI demos, but the four-part structure, the feature explanations and the closing thesis (s040-s043) are spoken only, and most talking-head shots carry no text.",
+        "refs": ["s005", "s018", "s024", "s040", "s042", "s043"]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "A polished, cinematic founder launch: a strong set and lighting, a coherent card system for real UI, word-synced editorial type, a fast social-proof montage and a memorable closing line. Held back from best-in-class by a conventional hook, VO dependence and some hard-to-read UI.",
+        "refs": ["s003", "s012", "s018", "s028", "s043", "s044"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 2,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "English text is baked into the title card (s005), corner and flanking words (s003, s004, s024), stat cards (s018), every product UI recording and the third-party tweet montage. The story is carried by the founder's on-camera speech, so localizing needs subtitles or dubbing over lip-synced footage; the end card 'warp.dev' is language-neutral."
+    }
+  }
+}

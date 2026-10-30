@@ -1,0 +1,34 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "4c480d8d94f358daa0b3fbb4caba12bd52de67206dcb551ad62c7360bf2074ec",
+                 "created_at": "2026-10-13T15:25:00+00:00"},
+  "id": "7668145668032138526",
+  "format": "talking_head",
+  "hook": {"type": "result_first",
+           "line": "Just broke our record of SEO growth: 30 times the traffic in two weeks.",
+           "visual": "Plain bedroom selfie, face centred; black-box title at the top 'We grew a client's SEO/AEO traffic by 30 times in 2 weeks', one white word at a time below."},
+  "beats": [
+    {"t": 0.0, "what": "Result stated in the top title and the first sentence at once"},
+    {"t": 2.47, "what": "Jump cut; a search-performance dashboard with a rising line chart pops in over the left side as proof"},
+    {"t": 5.73, "what": "Cut, title and chart gone: explains it is regular SEO work, just more articles and backlinks, faster"},
+    {"t": 16.27, "what": "Cut to reason two: the client is in a hot niche with fast-growing search terms"},
+    {"t": 29.0, "what": "Cut to the 'fun fact': non-English content ranks faster because it is less competitive"},
+    {"t": 39.47, "what": "Final cut on the payoff: articles in the other language grow about a hundred times faster than English"}
+  ],
+  "graphics": {"captions": "word_by_word", "caption_position": "bottom",
+               "devices": ["title_text", "screenshot", "chart_or_number", "jump_cut"],
+               "density": "minimal", "per_minute_estimate": 5},
+  "characters": [],
+  "cta": {"kind": "none", "t": null},
+  "why_it_works": [
+    "A specific multiplier and timeframe (30x in 2 weeks) in the first line and title, backed by a real dashboard chart at 2.5 s",
+    "Calm, unpolished delivery reads as an honest report from someone doing the work, not a pitch",
+    "Ends on a surprising, saveable tip (other languages rank faster) that rewards watching to the end"
+  ],
+  "weaknesses": [
+    "Very quiet audio (-33 LUFS) and no music; easy to scroll past",
+    "Only one visual after 6 s; the rest is a static face for 37 s",
+    "No CTA, and the language tip is not tied back to what the viewer should do"
+  ],
+  "for_robert": "Put the proof chart on screen within 3 s of stating a result, then remove it; Fred could carry the chart in and drop it out of frame once the number is said."
+}

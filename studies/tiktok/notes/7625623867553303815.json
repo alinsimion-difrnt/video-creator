@@ -1,0 +1,101 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "tiktok_notes",
+    "annotator": "claude-code",
+    "input_hash": "31417128825894f9e040c0652fc0d9baf6510fc85b5fb7550203834d748f5a17",
+    "created_at": "2026-10-13T10:18:39+00:00"
+  },
+  "id": "7625623867553303815",
+  "format": "split_screen",
+  "hook": {
+    "type": "list_promise",
+    "line": "How to turn Claude Code into a team of six developers in five minutes.",
+    "visual": "Presenter in the top half by a bookshelf, a plugin web page in the bottom half, one big caption word on the seam; a light streak sweeps the screen."
+  },
+  "beats": [
+    {
+      "t": 0.0,
+      "what": "Promise spoken straight to camera: a six-developer team in five minutes, captions on the face/screen seam."
+    },
+    {
+      "t": 4.93,
+      "what": "Item 1 (superpowers): GitHub repo card with the star count, then a pixel-art 'CLAUDE SUPERPOWERS PLUGIN' badge with a block robot."
+    },
+    {
+      "t": 9.85,
+      "what": "Terminal install command typed in the lower half while he explains planning and tests."
+    },
+    {
+      "t": 14.78,
+      "what": "Item 2 (front-end design): install count as a big caption number over the plugin's landing page."
+    },
+    {
+      "t": 22.4,
+      "what": "Item 3 (code review): git log and blame shown in the terminal while he lists the parallel agents."
+    },
+    {
+      "t": 29.56,
+      "what": "Item 4 (security review) introduced full-frame on his face with an italic serif title; zoom punch at 31.4 s."
+    },
+    {
+      "t": 34.49,
+      "what": "Full-frame cutaway: a giant serif '5' on white with palm-leaf shadows marks item 5 (memory plugin)."
+    },
+    {
+      "t": 39.42,
+      "what": "'Recalled context' list in the terminal shows what memory keeps across sessions."
+    },
+    {
+      "t": 44.35,
+      "what": "Item 6: plugin installed successfully, then a CEO-review agent output for a sample product."
+    },
+    {
+      "t": 52.93,
+      "what": "Back to his face full frame with the comment keyword 'PLUGINS' in big italic type."
+    }
+  ],
+  "graphics": {
+    "captions": "word_by_word",
+    "caption_position": "middle",
+    "devices": [
+      "split_screen",
+      "screen_recording",
+      "product_ui",
+      "chart_or_number",
+      "title_text",
+      "zoom_punch",
+      "mascot",
+      "jump_cut",
+      "music_bed"
+    ],
+    "density": "heavy",
+    "per_minute_estimate": 26
+  },
+  "characters": [
+    {
+      "who": "Pixel-art block robot on the 'CLAUDE SUPERPOWERS' plugin badge",
+      "enters": "Appears in the lower screen half as a static badge when item 1 is named",
+      "acts": "Sits beside the pixel-type plugin name as its logo; an arrow points to the word 'plugin'",
+      "exits": "Cut away to the terminal on the next shot",
+      "comes_back": false
+    }
+  ],
+  "cta": {
+    "kind": "comment",
+    "t": 52.93
+  },
+  "why_it_works": [
+    "Numbered list of six with a concrete count per item (stars, installs), so viewers stay to collect all six and know how far along they are.",
+    "Face fixed in the top half for 94% of the video while the bottom half changes about every second (median shot 0.97 s), so the eye always has something new without losing the speaker.",
+    "Comment-keyword CTA ('comment PLUGINS') promises the full list with links, which turns the list into a reason to comment.",
+    "A full-frame number card ('5') breaks the split layout once, resetting attention late in the list."
+  ],
+  "weaknesses": [
+    "Screen recordings are small and dense (about 30 words on screen at once); the code is unreadable at phone size.",
+    "Six items in 54 s means each gets about one sentence, so it reads as a list to save, not to learn from.",
+    "78% of the on-screen text sits outside the safe area, so some of it collides with TikTok UI."
+  ],
+  "for_robert": "Borrow the one-off full-frame number card (the big '5') as a chapter break, and let Fred hold up or swim past the number instead of a static card."
+}

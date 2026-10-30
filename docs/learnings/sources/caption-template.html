@@ -1,0 +1,149 @@
+<!-- Copied 2026-10-09 from the Acme v2 session scratchpad: $S/final/captions/src/index.tpl.html. $S paths are ephemeral (archived in R2 create/acme-v2/). See ../readme.md. -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Acme captions</title>
+<link rel="stylesheet" href="assets/fonts.css">
+<script src="assets/gsap.min.js"></script>
+<script src="captions.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: #000; }
+  #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #000; }
+  #plate { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; z-index: 1; }
+  #stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; z-index: 2; pointer-events: none; }
+  /* Pill: bottom edge at y=1014 (66 px above the frame edge) so the text baseline lands near y=990. */
+  .cap {
+    position: absolute; left: 50%; bottom: 66px;
+    display: block; width: max-content; max-width: 1400px; box-sizing: border-box;
+    padding: 13px 30px 15px;
+    font-family: "Inter", sans-serif; font-weight: 600; font-size: 44px; line-height: 54px;
+    letter-spacing: -0.01em; color: #3E0863; text-align: center; white-space: nowrap;
+  }
+  /* The pill surface is its own layer so adjacent groups can crossfade the surface while the
+     words swap cleanly (no ghosted double text, no blink of the pill between groups). */
+  .cap .bg {
+    position: absolute; left: 0; top: 0; right: 0; bottom: 0;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow:
+      0 1px 2px rgba(5, 41, 73, 0.10),
+      0 4px 10px -2px rgba(5, 41, 73, 0.10),
+      0 14px 34px -10px rgba(5, 41, 73, 0.26);
+    opacity: 0;
+  }
+  .cap.two .bg { border-radius: 40px; }
+  .cap .txt { position: relative; opacity: 0; }
+  .w { opacity: 0.35; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="captions" data-width="1920" data-height="1080" data-start="0"
+     data-duration="{{DURATION}}">
+  <video id="plate" src="plate.mp4" muted playsinline data-start="0" data-duration="{{DURATION}}"
+         data-track-index="0"></video>
+  <div id="stage" data-layout-allow-overlap="burned-in captions sit over the finished film plate by design"></div>
+</div>
+<script>
+(function () {
+  const DUR = {{DURATION}};
+  const GROUPS = window.CAPTIONS || [];
+  const stage = document.getElementById("stage");
+  const MAXW = 1400;
+
+  // DOM: every word of a group is present from the start, so the pill width is fixed per group.
+  const pills = GROUPS.map(function (g, gi) {
+    const el = document.createElement("div");
+    el.className = "cap";
+    el.id = "g" + gi;
+    el.setAttribute("data-layout-allow-overlap", "caption pill over the film plate; adjacent groups crossfade");
+    const bg = document.createElement("div");
+    bg.className = "bg";
+    el.appendChild(bg);
+    const txt = document.createElement("div");
+    txt.className = "txt";
+    g.words.forEach(function (w, wi) {
+      if (wi) txt.appendChild(document.createTextNode(" "));
+      const s = document.createElement("span");
+      s.className = "w";
+      s.textContent = w.w;
+      txt.appendChild(s);
+    });
+    el.appendChild(txt);
+    stage.appendChild(el);
+    return el;
+  });
+
+  // Wrap to two balanced lines only when a group is wider than MAXW (deterministic, layout only).
+  function balance() {
+    pills.forEach(function (el) {
+      if (el.classList.contains("two")) return;
+      if (el.scrollWidth <= MAXW) return;
+      const spans = Array.prototype.slice.call(el.querySelectorAll(".w"));
+      const widths = spans.map(function (s) { return s.getBoundingClientRect().width; });
+      const sp = 12;
+      let best = 1, bestMax = Infinity;
+      for (let k = 1; k < spans.length; k++) {
+        const a = widths.slice(0, k).reduce(function (x, y) { return x + y + sp; }, -sp);
+        const b = widths.slice(k).reduce(function (x, y) { return x + y + sp; }, -sp);
+        if (Math.max(a, b) < bestMax) { bestMax = Math.max(a, b); best = k; }
+      }
+      spans[best].parentNode.insertBefore(document.createElement("br"), spans[best]);
+      el.classList.add("two");
+    });
+  }
+  balance();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(balance);
+
+  // Initial hidden states outside the timeline (seek-safe).
+  gsap.set(".cap", { xPercent: -50 });
+  gsap.set(".cap .bg, .cap .txt", { opacity: 0, y: 0 });
+  gsap.set(".w", { opacity: 0.35 });
+
+  const SEAM = 0.15; // gaps at or below this are treated as one continuous caption stream
+  const tl = gsap.timeline({ paused: true });
+  GROUPS.forEach(function (g, gi) {
+    const el = pills[gi];
+    const bg = el.querySelector(".bg");
+    const txt = el.querySelector(".txt");
+    const prev = GROUPS[gi - 1];
+    const next = GROUPS[gi + 1];
+    const tIn = Math.max(0, g.start);
+    const joinedIn = !!prev && g.start - prev.end <= SEAM;
+    const joinedOut = !!next && next.start - g.end <= SEAM;
+
+    // In: 0.12 s fade + 6 px rise. After a pause the whole pill rises; inside a continuous run the
+    // surface crossfades under the seam and only the words rise.
+    tl.fromTo(txt, { opacity: 0, y: 6 }, { opacity: 1, y: 0, duration: 0.12, ease: "power3.out",
+      immediateRender: false }, tIn);
+    if (joinedIn) {
+      tl.fromTo(bg, { opacity: 0, y: 0 }, { opacity: 1, y: 0, duration: 0.12, ease: "power1.inOut",
+        immediateRender: false }, Math.max(0, tIn - 0.06));
+    } else {
+      tl.fromTo(bg, { opacity: 0, y: 6 }, { opacity: 1, y: 0, duration: 0.12, ease: "power3.out",
+        immediateRender: false }, tIn);
+    }
+
+    // Words: 35% -> 100% at t - 0.04 s.
+    const spans = el.querySelectorAll(".w");
+    g.words.forEach(function (w, wi) {
+      tl.fromTo(spans[wi], { opacity: 0.35 }, { opacity: 1, duration: 0.06, ease: "none",
+        immediateRender: false }, Math.max(tIn, w.t - 0.04));
+    });
+
+    // Out: 0.10 s fade. Words finish fading exactly as the next group's words begin.
+    if (joinedOut) {
+      tl.to(txt, { opacity: 0, duration: 0.10, ease: "power2.in" }, next.start - 0.10);
+      tl.to(bg, { opacity: 0, duration: 0.10, ease: "power1.inOut" }, next.start - 0.04);
+    } else {
+      const tOut = Math.min(g.end, DUR - 0.10);
+      tl.to([txt, bg], { opacity: 0, duration: 0.10, ease: "power2.in" }, tOut);
+    }
+  });
+  tl.set({}, {}, DUR);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["captions"] = tl;
+})();
+</script>
+</body>
+</html>

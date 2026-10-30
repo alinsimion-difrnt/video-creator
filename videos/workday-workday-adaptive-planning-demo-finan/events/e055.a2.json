@@ -1,0 +1,32 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "9ac646f8882553a102e6565117b218e110c4ce89e52db5c4381053ab7453dafa",
+    "created_at": "2026-10-05T06:58:35.444854Z"
+  },
+  "video": "workday-workday-adaptive-planning-demo-finan",
+  "event": "e055",
+  "task": "a2-e055",
+  "elements": [
+    {"box": "b01", "manual_box": null, "manual_reason": null, "label": "Version 2 dropdown panel closing", "role": "ui_panel", "role_other": null, "change_types": ["fade"], "change_other": null, "is_text": false, "text": null, "text_unit": null, "estimates": {"duration_ms": 42, "easing_class": "step"}},
+    {"box": "b08", "manual_box": null, "manual_reason": null, "label": "Version 2 selector value", "role": "button", "role_other": null, "change_types": ["other"], "change_other": "text_swap", "is_text": true, "text": "May Forecast", "text_unit": "whole", "estimates": {"duration_ms": 42, "easing_class": "step"}}
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "In the open Version 2 list (Working Budget, May Forecast) the cursor moves down so the hover highlight shifts to May Forecast, clicks, and the dropdown snaps shut with Version 2 now reading May Forecast.",
+    "why_premium": "The selection lands on 'revise their forecasts' in the narration, and the short, visible hover-then-click keeps a real UI step legible without slowing the pace."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.cursor', {y:'+=14', duration:0.3, ease:'power1.inOut'}); tl.set('.dropdown li', {className:'-=hover'}, '<0.15'); tl.set('.dropdown li.may', {className:'+=hover'}, '<'); tl.set('.dropdown', {autoAlpha:0}, '+=0.1'); tl.set('.version2 .value', {textContent:'May Forecast'}, '<').",
+    "remotion": "Cursor y = interpolate(frame, [0, 8], [y0, y1], {easing: Easing.inOut(Easing.quad)}); hover row swaps at frame 4; dropdown opacity = frame >= clickFrame ? 0 : 1 (hard cut); label swap on the same frame; no spring."
+  },
+  "confidence": "high",
+  "notes": "Twin of e054 (Version 1 selection). The close is a single-frame cut (one energy spike). The cursor also moves but has no candidate box and was not listed."
+}

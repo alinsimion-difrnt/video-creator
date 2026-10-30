@@ -1,0 +1,52 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "d0d6abb1fe05e142fa376f21e42ff908b66f7fabb63c6d70efae912f142dfbf9",
+    "created_at": "2026-10-13T13:07:00+00:00"
+  },
+  "id": "7419699172669984006",
+  "kind": "clip",
+  "palette": {
+    "colours_estimate": 41,
+    "shadows": "cool",
+    "notes": "Code: 41 colours, 3 ramps, ~3 deg hue shift, but the still mixes the Minecraft sky, terrain and shader shadows with the block art. The art itself: black outline, blue-white hair, blue eyes, skin, red ribbon."
+  },
+  "lighting": "Shader-lit Minecraft world: bright sun, moving clouds and long tree shadows on the grass; the block portrait gets dimmer as clouds pass, so lighting is environmental, not painted into the art.",
+  "silhouette": "Anime bust (Alya) read first as a single black outline: head dome, then hair strands, face and collar; the silhouette is legible before any fill exists.",
+  "motion": {
+    "timing": "Code: median hold 16.7 ms, 32.79 changes/s, from the timelapse and drifting camera; the drawing grows in steps: outline (0.8-5.5 s), inner lines (to ~10 s), flat fills (10-15 s), shading and eyes last.",
+    "principles": [
+      "build-up reveal",
+      "staging",
+      "progressive detail"
+    ]
+  },
+  "texture": "Each pixel is a Minecraft block (1 block = 1 pixel), so the image is pixel art made of 3D blocks; clean hard edges, no dithering (code dither share 0.0015).",
+  "camera": "Fixed front view at first, then the camera rises and pushes closer as the build fills in, ending on a tight front framing of the finished face with sky behind.",
+  "sound": "",
+  "acting": {
+    "enters": "The character is drawn in from nothing: a lone arc, then hair, then face.",
+    "acts": "No acting; the reveal is the performance. The eyes are added near the end, the moment it comes alive.",
+    "exits": "No exit; holds on the finished face.",
+    "comes_back": false,
+    "depth": "Huge figure standing on the horizon behind trees, so the world gives scale; camera moves in to make her fill the frame."
+  },
+  "techniques": [
+    "outline-first reveal: line art before flat fills before shading",
+    "eyes last as the payoff beat",
+    "1 block = 1 pixel build in a 3D world",
+    "environment lighting (clouds, shadows) over flat pixel art",
+    "camera push from wide to close as detail grows"
+  ],
+  "feel": "Minecraft block pixel art: outline-first timelapse + eyes-last payoff = satisfying reveal",
+  "for_fred": "Reveal Fred line-first: draw his outline in a few beats, fill him, and only add the eye on the punchline so he 'wakes up'; keep the reveal under 2 s in a reel.",
+  "sources": [
+    "data/study/pixel/work/7419699172669984006/sheet.jpg",
+    "studies/pixel-art/clips/7419699172669984006.json",
+    "studies/pixel-art/tiktok.yaml",
+    "https://www.tiktok.com/@xlbsmx/video/7419699172669984006"
+  ]
+}

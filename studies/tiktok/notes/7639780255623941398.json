@@ -1,0 +1,39 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "1f34422bf2447b0e4556787bde62464479eb91e41a47ada7d5d40e5e460a6257",
+                 "created_at": "2026-10-13T10:58:00+00:00"},
+  "id": "7639780255623941398",
+  "format": "talking_head",
+  "hook": {"type": "bold_claim",
+           "line": "\"I created Rhode's 2026 campaign\" — then she admits it was a mock campaign.",
+           "visual": "Face to camera with mic and big white 'i created', then fast cuts to a glossy lips shot, 'rhode 2026 harvest season' and a product collage."},
+  "beats": [
+    {"t": 0.0, "what": "Claim on camera with word-by-word white caption 'i created'."},
+    {"t": 0.73, "what": "Cut to a close-up lips image with 'rhode' over it: the result is shown first."},
+    {"t": 1.47, "what": "Full-screen campaign key visual 'rhode 2026 / harvest season', then a product collage."},
+    {"t": 3.13, "what": "Back on her face for the twist: she didn't actually make it, it is a mock portfolio campaign."},
+    {"t": 15.67, "what": "Short intro: who she is and the 'come on this journey' account premise."},
+    {"t": 24.29, "what": "Step 1: pick a brand that fits your skills and interests."},
+    {"t": 34.6, "what": "Burst of quick product-image cutaways (teddy bear, lip tint) while she explains why she chose the brand."},
+    {"t": 60.73, "what": "Hero campaign revealed on a laptop: the mock 'harvest season' site."},
+    {"t": 97.16, "what": "Moodboard collage of her campaign visuals for the 'collect your visuals' step."},
+    {"t": 108.93, "what": "Rapid cuts over the laptop as she pulls everything into one strategy document."}
+  ],
+  "graphics": {"captions": "word_by_word", "caption_position": "mixed",
+               "devices": ["b_roll", "screenshot", "product_ui", "jump_cut", "zoom_punch", "music_bed"],
+               "density": "heavy", "per_minute_estimate": 22},
+  "characters": [],
+  "cta": {"kind": "comment", "t": null},
+  "why_it_works": [
+    "Bait-and-switch hook: a too-good claim plus the finished campaign visuals in the first 3 s (4 cuts in the hook window), then an honest twist that makes you want to see how.",
+    "The pretty end product is shown before the method, so the viewer stays for the step-by-step.",
+    "Cutaways cluster in bursts (0.3-0.7 s shots around 35-38 s and 109-113 s) right when she names visuals, so the long talking stretches are broken by eye candy.",
+    "Comment CTA asks a specific, easy question (which brand did you pick), which invites replies."
+  ],
+  "weaknesses": [
+    "Long talking-only stretches (longest shot almost 20 s) in the middle steps with only the caption moving.",
+    "133 s is long for a list of steps; the step names are never shown as titles, so it is hard to skim.",
+    "Two CTAs (comment, then follow) stacked at the end dilute each other."
+  ],
+  "for_robert": "Use the bait-and-switch open: state the big claim over the finished result, then cut back to his face for the honest 'okay, not exactly' — Fred could pop in and give a side-eye on the twist."
+}

@@ -1,0 +1,77 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "bedc02230abb032e4f66f2801e4cad5ec831766d2654e812bd61c3b5939c216b",
+    "created_at": "2026-10-05T06:48:28.947399Z"
+  },
+  "video": "meta-introducing-meta-quest-3-coming-this-f",
+  "event": "e004",
+  "task": "a2-e004",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "CG controller render: close-up on the thumbstick orbits/pulls back to reveal both controllers floating",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["rotate", "slide_left", "scale_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 600, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Caption swap: 'Meet our redesigned controllers' smears out horizontally, 'With TruTouch' fades in",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["blur_out", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "With TruTouch",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 250, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x035",
+      "verdict": "override",
+      "label": "music",
+      "note": "Thin broadband column that repeats at roughly regular intervals across the window (about every 0.3 s); reads as a percussion hit in the score, and nothing changes visually at 48.46 s."
+    },
+    {
+      "id": "x036",
+      "verdict": "unsure",
+      "label": "unsure",
+      "note": "Coincides with the caption smear-out at f1163 and has a slightly wider broadband column than its neighbours, so a whoosh may be layered on the beat; could also be just the music hit."
+    },
+    {
+      "id": "x037",
+      "verdict": "override",
+      "label": "music",
+      "note": "Same repeating percussion column as x035; lands as the two-controller shot settles but before the new caption appears, no distinct swoosh shape."
+    }
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "product orbit caption swap",
+    "description": "A CG product render camera orbits and pulls back from a macro detail (thumbstick) to a hero view of both controllers, while the feature caption is swapped: the old line streaks off with horizontal motion blur and the next feature line fades in once the new angle settles.",
+    "why_premium": "The continuous CG orbit replaces a cut, so the product never leaves the screen; the caption change rides the fastest part of the move, hiding the swap, and the new line lands on a calm, centered hero composition."
+  },
+  "build_hint": {
+    "gsap": "tl.to(productCam,{rotationY:-60,z:-400,duration:0.6,ease:'power2.inOut'}).to(oldCaption,{x:120,scaleX:1.4,filter:'blur(16px)',autoAlpha:0,duration:0.12,ease:'power3.in'},0.1).fromTo(newCaption,{autoAlpha:0,y:6},{autoAlpha:1,y:0,duration:0.25,ease:'power2.out'},'>0.25')",
+    "remotion": "Drive the 3D camera (e.g. @remotion/three) with interpolate(frame,[0,18],[0,1],{easing:Easing.inOut(Easing.cubic)}) for orbit angle and dolly; old caption translateX/blur/opacity interpolate [3,6] with Easing.in(Easing.cubic); new caption opacity via spring({frame:frame-14,fps,config:{damping:200,stiffness:150,mass:1}})."
+  },
+  "confidence": "medium",
+  "notes": "Outgoing caption is not on the end frame, so it is described within b02. camera.move is none (pan_x is content motion of the CG render, not a filming camera move). Pattern could alternatively be kinetic_word_reveal (the caption swap) but the dominant motion is the product orbit. SFX: the stem shows a regular percussion pulse, so per-candidate SFX vs music is uncertain."
+}

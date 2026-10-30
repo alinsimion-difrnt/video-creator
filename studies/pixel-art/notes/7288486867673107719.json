@@ -1,0 +1,51 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "6d4e5340941789c18eb00fa0e8efcf39f6f936b2513913dc0e8d0a9fad08ee20",
+    "created_at": "2026-10-13T13:05:41+00:00"
+  },
+  "id": "7288486867673107719",
+  "kind": "clip",
+  "palette": {
+    "colours_estimate": 12,
+    "shadows": "cool",
+    "notes": "Code: 12 colours, one ramp of 12 with only 8.5 deg hue shift; nearly monochrome teal/cyan with tiny red, amber and green traffic lights as accents."
+  },
+  "lighting": "Night, street lamp glow at top left; snow catches the cyan light. The only warm/saturated points are the traffic signals and a small orange sign.",
+  "silhouette": "No characters; tall poles and the dark tower block give vertical silhouettes in the 9:16 frame.",
+  "motion": {
+    "timing": "Code: median hold 83.3 ms (2.5s, about 12 drawings/s), 13.29 changes/s from falling snow. Traffic light cycles red, amber, green, amber, red, about 10 s per loop on the sheet.",
+    "principles": [
+      "ambient loop",
+      "state change as the event"
+    ]
+  },
+  "texture": "Posterised, photo-like scene (may be a photo converted to pixels rather than hand-drawn); light dither (0.002) in the snow and sky.",
+  "camera": "Locked vertical frame, no moves; built for a seamless loop.",
+  "sound": "",
+  "acting": {
+    "enters": "No characters.",
+    "acts": "The traffic light is the 'actor': its colour change is the only event, on a slow timer.",
+    "exits": "",
+    "comes_back": null,
+    "depth": "Snowbank foreground, intersection mid-ground, tower block behind; atmospheric haze lightens the background."
+  },
+  "techniques": [
+    "near-monochrome teal ramp with tiny saturated accents",
+    "one slow state change (traffic light) as the scene's event",
+    "falling-snow particle loop on 2s/3s",
+    "seamless loop length matched to the light cycle",
+    "atmospheric haze for depth"
+  ],
+  "feel": "single teal ramp + snow loop + traffic light as the only colour change = quiet hypnotic winter loop",
+  "for_fred": "Keep one small colour event on a slow cycle (a lamp, a sign) in Fred's background so the frame lives while he is off-screen; let him re-enter when the light changes.",
+  "sources": [
+    "data/study/pixel/work/7288486867673107719/sheet.jpg",
+    "studies/pixel-art/clips/7288486867673107719.json",
+    "studies/pixel-art/tiktok.yaml",
+    "https://www.tiktok.com/@sixveeceear/video/7288486867673107719"
+  ]
+}

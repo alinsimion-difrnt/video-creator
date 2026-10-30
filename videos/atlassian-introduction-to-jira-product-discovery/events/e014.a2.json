@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "1b532924b7f48810fc317cedea66a3ac2e3427a7c065f355651999e1046f38c8",
+    "created_at": "2026-10-05T06:38:38.328989Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e014",
+  "task": "a2-e014",
+  "elements": [
+    {
+      "box": null,
+      "manual_box": [128, 385, 158, 404],
+      "manual_reason": "Cursor ends on the Fields button whose box (b01) is used for the button's hover state; cursor needs its own box.",
+      "label": "Mouse cursor",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 550, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Fields toolbar button hover state",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Fields",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 100, "easing_class": "step"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Table rows and Effort header hover highlights",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 250, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "The cursor sweeps up diagonally across the idea table, briefly highlighting rows and the Effort column header, and lands on the Fields toolbar button on the word 'fields'.",
+    "why_premium": "Cursor arrival is synced to the narration ('based on these fields'), so the pointer acts as a visual citation of the word being spoken without any added overlay."
+  },
+  "build_hint": {
+    "gsap": "Recorded UI. To recreate: gsap.to('.cursor', {x: -170, y: -480, duration: 0.55, ease: 'power3.out'}); timeline callbacks toggle row/header hover classes as the cursor crosses them; at the end gsap.set('.fields-btn', {className: '+=is-hover'}).",
+    "remotion": "Cursor x/y = interpolate(frame, [0, 16], [start, end], {easing: Easing.out(Easing.cubic)}); row and header hover states derived from cursor position each frame; Fields button hover when cursor is inside its rect."
+  },
+  "confidence": "medium",
+  "notes": "b02 reports changed_share 0 on the end frame; the row hovers are transient during the sweep. Fields button hover is subtle (cursor change to hand plus faint tint)."
+}

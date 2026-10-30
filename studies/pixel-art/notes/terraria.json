@@ -1,0 +1,55 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T13:58:33Z"
+  },
+  "id": "terraria",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "cool",
+    "notes": "Biome colour families: saturated grass green and sky blue on the surface, brown dirt, orange-red lava in the underworld, dark purple-brown caves. Shadows go to blue-grey and near black; items are bright and saturated so they pop on dark ground. No metrics file."
+  },
+  "lighting": "Tile lighting: surface scenes are evenly lit, underground falls to near black with soft light around torches and the player; lava glows and lights the cave red. Day/night shifts smoothly (wiki).",
+  "silhouette": "Player and NPCs are small (about 3 tiles tall), chunky, with clear heads and gear (a blue wizard hat and robe reads at once); items get a dark outline and a single bright colour, so even a 16 px icon reads.",
+  "motion": {
+    "timing": "Short walk and swing cycles; weapon swings arc around the player and leave trails, hits pop floating damage numbers. No frame timings measured.",
+    "principles": [
+      "arcs",
+      "secondary action",
+      "staging",
+      "exaggeration"
+    ]
+  },
+  "texture": "Tile terrain with ore specks, grass tufts and brick patterns; visible chunky pixels when zoomed. Late-game bosses are big, detailed sprites with glowing eyes and particle sparks.",
+  "camera": "Side-on view following the player; scale contrast does the drama: a tiny player under a boss that fills the screen. Fan clips zoom hard into single sprites.",
+  "sound": "",
+  "acting": {
+    "enters": "A Guide greets the player at the start; other NPCs move into built houses once goals are met (wiki).",
+    "acts": "NPCs stand in a row with the player and a slime, each in their own outfit; they wander homes, react to biome and neighbours, and sell items (wiki).",
+    "exits": "NPCs can die or leave, then move back in when a house is free (wiki).",
+    "comes_back": true,
+    "depth": "One plane of play with a parallax treeline and hills behind it; a giant boss fills the background while the player is a dot in front."
+  },
+  "techniques": [
+    "biome colour families for instant place reading",
+    "darkness everywhere except around light sources",
+    "dark outline + one bright colour per item icon",
+    "tiny hero against a screen-filling boss for scale drama",
+    "floating damage numbers as hit feedback",
+    "parallax background layers per biome"
+  ],
+  "feel": "biome colour + dark caves with lit pockets + chunky readable sprites + floating numbers = cozy, legible sandbox",
+  "for_fred": "Give every prop Fred touches a dark outline and one bright colour so it reads at phone size. For a big moment, flip the scale: show something huge behind Fred while he is a small dot in front, and pop a floating number or word when he lands a hit. Let Pixie idle small in the background like an NPC.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Terraria",
+    "studies/pixel-art/sources.yaml",
+    "data/study/pixel/work/terraria/clip1-7208356328559873323.jpg",
+    "data/study/pixel/work/terraria/clip2-7504786452677512470.jpg",
+    "data/study/pixel/work/terraria/clip3-7292428552429948203.jpg"
+  ]
+}

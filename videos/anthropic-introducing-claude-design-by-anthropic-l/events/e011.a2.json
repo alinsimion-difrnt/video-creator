@@ -1,0 +1,99 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "f7ecdd7e91e803559809594bab47f5c12e0ff1de81c81e442a8df7a92dfce2fa",
+    "created_at": "2026-10-05T06:38:39.543570Z"
+  },
+  "video": "anthropic-introducing-claude-design-by-anthropic-l",
+  "event": "e011",
+  "task": "a2-e011",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Right column: Tweaks panel and the new Comment popover moving up into view",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b07",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Comment text being typed into the input",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["typewriter"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Add a dark mode tog",
+      "text_unit": "char",
+      "estimates": {"duration_ms": 550, "easing_class": "linear"}
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Phone prototype (player screen) moving up with the frame",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [806, 754, 910, 809],
+      "manual_reason": "No candidate box covers the cursor; it moves from the Tweaks panel down to the Send button and turns into a pointing hand.",
+      "label": "Cursor travelling to the Send button",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_down", "morph"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x029",
+      "verdict": "override",
+      "label": "music",
+      "note": "459 ms before this burst; part of the regular broadband percussive hits in the score, no visual hit."
+    },
+    {
+      "id": "x030",
+      "verdict": "unsure",
+      "label": "unsure",
+      "note": "Lands about when the cursor reaches Send (f987, 41.125s), so it could be a click accent, but the spectrogram shows a low broadband swell in line with the surrounding music hits, not a short click transient."
+    }
+  ],
+  "pattern": {
+    "id": "prompt_type_on",
+    "proposed_name": null,
+    "description": "A Comment popover opens under the Tweaks panel, the request 'Add a dark mode tog...' types on character by character while the frame drifts up to keep it centred, and the cursor heads to the orange Send button.",
+    "why_premium": "Typing, the drift and the cursor travel happen together, so the comment-to-edit flow is shown in under a second; the slow upward drift keeps the input in the optical centre while it grows."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.stage', {y: -170, duration: 0.6, ease: 'power2.out'}); tl.to('.comment-input', {text: 'Add a dark mode toggle', duration: 0.8, ease: 'none'}, 0); tl.to('.cursor', {x: sendX, y: sendY, duration: 0.4, ease: 'power2.inOut'}, 0.1); tl.set('.cursor', {className: 'cursor hand'}, '>-0.05').",
+    "remotion": "stage translateY = -170 * spring({frame, fps, config: {damping: 30, stiffness: 100}}); typed = text.slice(0, Math.floor(frame * charsPerFrame)); cursor x/y = interpolate(frame, [3, 13], [start, send], {easing: Easing.inOut(Easing.quad)})."
+  },
+  "confidence": "medium",
+  "notes": "Code reports camera.move tilt_down (small, pan_y -0.23), so the column movement may be a camera drift rather than per-element slides; listed per region because both columns shift. The Send button has no candidate box and does not visibly change, so it is not listed."
+}

@@ -1,0 +1,808 @@
+{
+  "$defs": {
+    "Annotator": {
+      "enum": [
+        "code",
+        "claude-code",
+        "human"
+      ],
+      "title": "Annotator",
+      "type": "string"
+    },
+    "AudioSummary": {
+      "additionalProperties": false,
+      "properties": {
+        "beat_confidence": {
+          "title": "Beat Confidence",
+          "type": "number"
+        },
+        "bpm": {
+          "title": "Bpm",
+          "type": "number"
+        },
+        "cuts_on_beat_share": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Cuts On Beat Share"
+        },
+        "ducking_db": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Ducking Db"
+        },
+        "label_agreement_share": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Label Agreement Share"
+        },
+        "loudness": {
+          "$ref": "#/$defs/LoudnessOut"
+        },
+        "sfx": {
+          "items": {
+            "$ref": "#/$defs/SfxOut"
+          },
+          "title": "Sfx",
+          "type": "array"
+        },
+        "sfx_at_scene_start_share": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Sfx At Scene Start Share"
+        },
+        "sfx_near_reveal_share": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Sfx Near Reveal Share"
+        },
+        "sfx_per_min": {
+          "title": "Sfx Per Min",
+          "type": "number"
+        },
+        "stems": {
+          "title": "Stems",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "stems",
+        "ducking_db",
+        "loudness",
+        "bpm",
+        "beat_confidence",
+        "sfx",
+        "sfx_per_min",
+        "label_agreement_share",
+        "sfx_at_scene_start_share",
+        "sfx_near_reveal_share",
+        "cuts_on_beat_share"
+      ],
+      "title": "AudioSummary",
+      "type": "object"
+    },
+    "CaptionSummary": {
+      "additionalProperties": false,
+      "properties": {
+        "changes_per_min": {
+          "title": "Changes Per Min",
+          "type": "number"
+        },
+        "coverage": {
+          "title": "Coverage",
+          "type": "number"
+        },
+        "group_duration_mean_s": {
+          "title": "Group Duration Mean S",
+          "type": "number"
+        },
+        "groups": {
+          "title": "Groups",
+          "type": "integer"
+        },
+        "word_synced_share": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Word Synced Share"
+        },
+        "words_per_group_mean": {
+          "title": "Words Per Group Mean",
+          "type": "number"
+        },
+        "words_per_group_median": {
+          "title": "Words Per Group Median",
+          "type": "number"
+        }
+      },
+      "required": [
+        "groups",
+        "words_per_group_mean",
+        "words_per_group_median",
+        "group_duration_mean_s",
+        "changes_per_min",
+        "coverage",
+        "word_synced_share"
+      ],
+      "title": "CaptionSummary",
+      "type": "object"
+    },
+    "EventOut": {
+      "additionalProperties": false,
+      "properties": {
+        "bbox": {
+          "anyOf": [
+            {
+              "maxItems": 4,
+              "minItems": 4,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Bbox"
+        },
+        "camera_move": {
+          "title": "Camera Move",
+          "type": "string"
+        },
+        "end_s": {
+          "title": "End S",
+          "type": "number"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "title": "Kind",
+          "type": "string"
+        },
+        "shot": {
+          "title": "Shot",
+          "type": "string"
+        },
+        "start_s": {
+          "title": "Start S",
+          "type": "number"
+        }
+      },
+      "required": [
+        "id",
+        "shot",
+        "kind",
+        "start_s",
+        "end_s",
+        "bbox",
+        "camera_move"
+      ],
+      "title": "EventOut",
+      "type": "object"
+    },
+    "HoldOut": {
+      "additionalProperties": false,
+      "properties": {
+        "dead": {
+          "title": "Dead",
+          "type": "boolean"
+        },
+        "end_s": {
+          "title": "End S",
+          "type": "number"
+        },
+        "shot": {
+          "title": "Shot",
+          "type": "string"
+        },
+        "start_s": {
+          "title": "Start S",
+          "type": "number"
+        }
+      },
+      "required": [
+        "shot",
+        "start_s",
+        "end_s",
+        "dead"
+      ],
+      "title": "HoldOut",
+      "type": "object"
+    },
+    "LoudnessOut": {
+      "additionalProperties": false,
+      "properties": {
+        "integrated_lufs": {
+          "title": "Integrated Lufs",
+          "type": "number"
+        },
+        "lra_lu": {
+          "title": "Lra Lu",
+          "type": "number"
+        },
+        "sample_peak_dbfs": {
+          "title": "Sample Peak Dbfs",
+          "type": "number"
+        },
+        "short_term_max_lufs": {
+          "title": "Short Term Max Lufs",
+          "type": "number"
+        },
+        "true_peak_dbtp": {
+          "title": "True Peak Dbtp",
+          "type": "number"
+        }
+      },
+      "required": [
+        "integrated_lufs",
+        "short_term_max_lufs",
+        "lra_lu",
+        "sample_peak_dbfs",
+        "true_peak_dbtp"
+      ],
+      "title": "LoudnessOut",
+      "type": "object"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "description": "Carried by every output JSON (BUILD_PLAN section 2.7).",
+      "properties": {
+        "annotator": {
+          "$ref": "#/$defs/Annotator"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "input_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Input Hash",
+          "type": "string"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "schema_version": {
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "skill": {
+          "anyOf": [
+            {
+              "pattern": "^[a-z0-9-]+@[0-9a-f]{8,64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Skill"
+        },
+        "stage": {
+          "title": "Stage",
+          "type": "string"
+        },
+        "tool_version": {
+          "title": "Tool Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool_version",
+        "stage",
+        "annotator",
+        "input_hash",
+        "created_at"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "SfxOut": {
+      "additionalProperties": false,
+      "properties": {
+        "agreement": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Agreement"
+        },
+        "at_scene_start": {
+          "title": "At Scene Start",
+          "type": "boolean"
+        },
+        "clap_label": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Clap Label"
+        },
+        "clap_score": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Clap Score"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "label_source": {
+          "title": "Label Source",
+          "type": "string"
+        },
+        "on_beat": {
+          "title": "On Beat",
+          "type": "boolean"
+        },
+        "reveal_offset_ms": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Reveal Offset Ms"
+        },
+        "rules_label": {
+          "title": "Rules Label",
+          "type": "string"
+        },
+        "scene_start_offset_ms": {
+          "title": "Scene Start Offset Ms",
+          "type": "number"
+        },
+        "sync_s": {
+          "title": "Sync S",
+          "type": "number"
+        }
+      },
+      "required": [
+        "id",
+        "sync_s",
+        "label",
+        "label_source",
+        "rules_label",
+        "clap_label",
+        "clap_score",
+        "agreement",
+        "on_beat",
+        "reveal_offset_ms",
+        "scene_start_offset_ms",
+        "at_scene_start"
+      ],
+      "title": "SfxOut",
+      "type": "object"
+    },
+    "ShotOut": {
+      "additionalProperties": false,
+      "properties": {
+        "end_s": {
+          "exclusiveMinimum": 0,
+          "title": "End S",
+          "type": "number"
+        },
+        "events_per_s": {
+          "minimum": 0,
+          "title": "Events Per S",
+          "type": "number"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "motion_energy": {
+          "minimum": 0,
+          "title": "Motion Energy",
+          "type": "number"
+        },
+        "start_s": {
+          "minimum": 0,
+          "title": "Start S",
+          "type": "number"
+        },
+        "transition_in": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TransitionOut"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "wpm": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Wpm"
+        }
+      },
+      "required": [
+        "id",
+        "start_s",
+        "end_s",
+        "transition_in",
+        "motion_energy",
+        "events_per_s"
+      ],
+      "title": "ShotOut",
+      "type": "object"
+    },
+    "SpeechSummary": {
+      "additionalProperties": false,
+      "properties": {
+        "articulation_wpm": {
+          "title": "Articulation Wpm",
+          "type": "number"
+        },
+        "energy_std_db": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Energy Std Db"
+        },
+        "pause_count": {
+          "title": "Pause Count",
+          "type": "integer"
+        },
+        "pause_cv": {
+          "title": "Pause Cv",
+          "type": "number"
+        },
+        "pause_mean_ms": {
+          "title": "Pause Mean Ms",
+          "type": "number"
+        },
+        "pause_p90_ms": {
+          "title": "Pause P90 Ms",
+          "type": "number"
+        },
+        "pauses_by_length": {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "title": "Pauses By Length",
+          "type": "object"
+        },
+        "perceived_emotion": {
+          "default": null,
+          "title": "Perceived Emotion",
+          "type": "null"
+        },
+        "phrase_rate_cv": {
+          "title": "Phrase Rate Cv",
+          "type": "number"
+        },
+        "pitch_median_hz": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Pitch Median Hz"
+        },
+        "pitch_std_semitones": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Pitch Std Semitones"
+        },
+        "speech_span_s": {
+          "title": "Speech Span S",
+          "type": "number"
+        },
+        "words": {
+          "title": "Words",
+          "type": "integer"
+        },
+        "wpm": {
+          "title": "Wpm",
+          "type": "number"
+        },
+        "wpm_cv_across_shots": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Wpm Cv Across Shots"
+        }
+      },
+      "required": [
+        "words",
+        "speech_span_s",
+        "wpm",
+        "articulation_wpm",
+        "pause_count",
+        "pause_mean_ms",
+        "pause_p90_ms",
+        "pause_cv",
+        "pauses_by_length",
+        "phrase_rate_cv",
+        "pitch_median_hz",
+        "pitch_std_semitones",
+        "energy_std_db",
+        "wpm_cv_across_shots"
+      ],
+      "title": "SpeechSummary",
+      "type": "object"
+    },
+    "TransitionOut": {
+      "additionalProperties": false,
+      "properties": {
+        "direction": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Direction"
+        },
+        "duration_s": {
+          "minimum": 0,
+          "title": "Duration S",
+          "type": "number"
+        },
+        "kind": {
+          "title": "Kind",
+          "type": "string"
+        },
+        "start_s": {
+          "title": "Start S",
+          "type": "number"
+        }
+      },
+      "required": [
+        "kind",
+        "start_s",
+        "duration_s"
+      ],
+      "title": "TransitionOut",
+      "type": "object"
+    },
+    "VideoSummary": {
+      "additionalProperties": false,
+      "properties": {
+        "camera_moves": {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "title": "Camera Moves",
+          "type": "object"
+        },
+        "dead_hold_count": {
+          "minimum": 0,
+          "title": "Dead Hold Count",
+          "type": "integer"
+        },
+        "dead_hold_s": {
+          "minimum": 0,
+          "title": "Dead Hold S",
+          "type": "number"
+        },
+        "duration_s": {
+          "exclusiveMinimum": 0,
+          "title": "Duration S",
+          "type": "number"
+        },
+        "events": {
+          "items": {
+            "$ref": "#/$defs/EventOut"
+          },
+          "title": "Events",
+          "type": "array"
+        },
+        "fps": {
+          "exclusiveMinimum": 0,
+          "title": "Fps",
+          "type": "number"
+        },
+        "holds": {
+          "items": {
+            "$ref": "#/$defs/HoldOut"
+          },
+          "title": "Holds",
+          "type": "array"
+        },
+        "mean_shot_s": {
+          "title": "Mean Shot S",
+          "type": "number"
+        },
+        "pace_cv": {
+          "minimum": 0,
+          "title": "Pace Cv",
+          "type": "number"
+        },
+        "shots": {
+          "items": {
+            "$ref": "#/$defs/ShotOut"
+          },
+          "title": "Shots",
+          "type": "array"
+        },
+        "transitions_by_kind": {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "title": "Transitions By Kind",
+          "type": "object"
+        }
+      },
+      "required": [
+        "fps",
+        "duration_s",
+        "shots",
+        "transitions_by_kind",
+        "mean_shot_s",
+        "events",
+        "camera_moves",
+        "holds",
+        "dead_hold_count",
+        "dead_hold_s",
+        "pace_cv"
+      ],
+      "title": "VideoSummary",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "audio": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/AudioSummary"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "captions": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/CaptionSummary"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    },
+    "speech": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/SpeechSummary"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "video": {
+      "$ref": "#/$defs/VideoSummary"
+    },
+    "video_id": {
+      "title": "Video Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "provenance",
+    "video_id",
+    "video",
+    "audio",
+    "speech",
+    "captions"
+  ],
+  "title": "SignalsSummary",
+  "type": "object"
+}

@@ -1,0 +1,114 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "66d1453e38c890d53abaedd8f287d6d13e2eb2a977e4d1ddc228b81071825f2d",
+    "created_at": "2026-10-05T06:39:02.574315Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e008",
+  "task": "a2-e008",
+  "elements": [
+    {
+      "box": "b08",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Goal cell select placeholder",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Select...",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 50, "easing_class": "step"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Goal options dropdown menu",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 50, "easing_class": "step"}
+    },
+    {
+      "box": "b07",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Dropdown search field focus",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Search",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Option 'Build network effects' hover highlight",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Build network effects",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Option 'Delight users' hover highlight",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Delight users",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": null,
+      "manual_box": [460, 255, 500, 275],
+      "manual_reason": "No candidate box isolates the cursor; it moves from the Goal cell down into the option list and settles left of 'Delight users'.",
+      "label": "Mouse cursor",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 500, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "A click on the empty Goal cell of the new idea opens a select dropdown (search field plus goal options) at once; the cursor then glides down through the options, hover highlights following it, toward 'Delight users'.",
+    "why_premium": "A real interaction played back cleanly and timed to the narration ('every idea has fields'): the dropdown snaps open and the hover states lead the eye to the option about to be picked."
+  },
+  "build_hint": {
+    "gsap": "tl.set('.goal-cell', {text: 'Select...'}).fromTo('.goal-dropdown', {autoAlpha: 0}, {autoAlpha: 1, duration: 0.05}).to('.cursor', {x: 336, y: 342, duration: 0.5, ease: 'power1.inOut'}); toggle .option.is-hover on each row as the cursor crosses it (no tween).",
+    "remotion": "Mount the dropdown at the click frame (opacity 0->1 over 1-2 frames); interpolate cursor x/y over ~15 frames with Easing.inOut(Easing.quad); compute the hovered option from the cursor y each frame and apply the hover background."
+  },
+  "confidence": "medium",
+  "notes": "Dropdown appears within one frame (f271->f272), so it is effectively a cut-on UI state, not a tween. b09 ('Win large customers') is static and partly hidden by the box overlay, so it was not listed. No SFX candidates."
+}

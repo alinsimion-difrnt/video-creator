@@ -1,0 +1,145 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "d2bd66f9d10dc5fec973d51359e5052140ab7021b13c7eca95156f938f2db829",
+    "created_at": "2026-10-05T07:37:14.841941Z"
+  },
+  "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+  "task": "a1-p5",
+  "shots": [
+    {
+      "shot": "s012",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The 'V4' mark with a green/coral gradient fill, slightly defocused, centred inside a large gradient-stroked rounded outline that is cropped by the frame edges",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": ["V4"],
+      "text_word_count": 1,
+      "typography": "Two-character mark in a heavy geometric/grotesque sans, uppercase V with numeral 4, tight tracking, filled with a grainy two-colour gradient and still softly blurred as it comes into focus; font name unknown (low-confidence guess: the same grotesque as the captions).",
+      "depth_cues": ["blur", "grain"],
+      "what_happens": "A ~0.5 s pull-back: the keyframe still shows the enormous blurred '4' filling the frame (continuing the s011 sweep), and by 2:29.0 the camera has pulled out so the whole 'V4' sits centred and nearly sharp inside a thick gradient outline ring whose edges bleed off-frame, under w319 'frontier' (closing line began at w317).",
+      "build_rebuild": "Tween a 'V4' text layer with a gradient fill from ~8x scale and 20px blur down to ~1x and 2px blur over ~0.5 s with an ease-out, while a 6px gradient-stroked rounded-rectangle outline larger than the frame scales down behind it on the same curve.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s013",
+      "shot_type": "logo",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The 'V4' mark shrinking into a small outlined 'V4' pill badge, joined by 'Eleven' to form the product lockup, which then resolves into the bold ElevenLabs wordmark held to the end",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": ["V4", "Eleven V4", "IIElevenLabs"],
+      "text_word_count": 4,
+      "typography": "Opening 'V4' in a heavy gradient-filled sans inside a gradient-stroked stadium outline; product lockup 'Eleven' in small regular-weight sentence-case sans beside a tiny outlined pill badge reading 'V4' in an accent tone (same badge style as the opening disclaimer in s001); final wordmark is the ElevenLabs logo (two vertical bars plus 'ElevenLabs') in a bold grotesque, mixed case, tight tracking, briefly carrying a gradient sweep on its last letters before settling solid dark.",
+      "depth_cues": ["blur", "grain"],
+      "what_happens": "Although the detector marks a cut, it reads as a continuation of the s012 pull-back: at 2:29.5 the gradient 'V4' inside its stadium outline keeps shrinking until by 2:30.0 it has become a small centred outlined 'V4' pill; at ~2:31.0 'Eleven' appears to its left forming the 'Eleven V4' lockup; at ~2:32.0 the lockup blurs out as the wordmark's bar glyphs wipe in from the left, and by 2:32.5 the bold 'IIElevenLabs' wordmark is on screen with a coral gradient sweeping off its final letters (an impact-labelled SFX candidate x099 sits here). The wordmark holds alone on off-white from ~2:33.5 to the end, as the VO finishes w320-w323 'of human level communication'.",
+      "build_rebuild": "Scale the gradient 'V4' and its stadium outline down into a 1px-outlined pill badge over ~0.8 s with ease-in-out, fade/slide in an 'Eleven' label to its left at +1 s, then at +2.8 s blur-crossfade the lockup out while mask-wiping the ElevenLabs wordmark in left-to-right with a gradient overlay that sweeps across and off the letters in ~0.5 s, and hold the solid wordmark for ~3.5 s.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001"], "words": [0, 17]},
+      {"beat": "mechanism", "shots": ["s001"], "words": [18, 26]},
+      {"beat": "demo", "shots": ["s001"], "words": [27, 110]},
+      {"beat": "mechanism", "shots": ["s001", "s002", "s003"], "words": [111, 140]},
+      {"beat": "demo", "shots": ["s004", "s005"], "words": [141, 218]},
+      {"beat": "mechanism", "shots": ["s006", "s007", "s008", "s009"], "words": [219, 229]},
+      {"beat": "mechanism", "shots": ["s009", "s010"], "words": [230, 237]},
+      {"beat": "demo", "shots": ["s010"], "words": [238, 316]},
+      {"beat": "outcome", "shots": ["s011", "s012", "s013"], "words": [317, 323]}
+    ],
+    "hook": {
+      "text": "Everything you're about to hear was generated from the prompts shown, with no edits or modifications. Just 11v4.",
+      "technique": "bold_claim",
+      "technique_other": null,
+      "shots": ["s001"],
+      "words": [0, 17]
+    },
+    "cta": {
+      "text": null,
+      "shots": []
+    },
+    "tone": "Cinematic, minimal and confident: a calm off-white canvas with two-tone gradient orbs and point-cloud faces, letting playful, emotional generated performances (film set, news reader, phone call) carry the proof, closing on an understated aspirational line and wordmark.",
+    "signature_moments": [
+      {
+        "shots": ["s001", "s005", "s010"],
+        "description": "Each voice demo shows the exact prompt (including bracketed audio tags like [voice breaking], [laughs], [checking]) as a two-line karaoke caption under a breathing point-cloud face, with words lighting up in sync with the generated speech.",
+        "why_premium": "It turns the product claim into visible proof: the viewer reads the input while hearing the output, so the demo doubles as evidence and the restrained typography keeps it elegant rather than technical."
+      },
+      {
+        "shots": ["s001", "s002", "s003", "s007", "s008", "s009"],
+        "description": "Abstract gradient-orb metaphors for each feature: the orb splits into equalizer pill tracks for 'tone', pixelates for 'texture', two outline circles merge via their filled intersection for 'speaker similarity', and a glowing core bursts into a multi-depth dot lattice for '100 languages'.",
+        "why_premium": "Every feature gets a bespoke, on-brand motion idea timed to the spoken word instead of generic UI or bullet text, with grain, blur and zoom-through transitions keeping the whole piece one continuous camera move."
+      },
+      {
+        "shots": ["s011", "s012", "s013"],
+        "description": "A camera sweep past a giant defocused 'v4' pulls back to a gradient 'V4' in an outline ring, which shrinks into the 'Eleven V4' pill lockup and resolves into the ElevenLabs wordmark with a gradient sweep.",
+        "why_premium": "The end card is earned through continuous scale/focus changes that echo the badge from the opening disclaimer, bookending the film and landing the brand with a single sync point (impact-labelled SFX x099) rather than a static slate."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 4,
+        "evidence": "Opens on a bold, verifiable claim that everything heard is unedited generated audio from the prompts shown, immediately followed by 'doesn't just speak, it performs' and a dramatic demo; the first 8 s are text on a plain field, so the visual grab is quieter than the verbal one.",
+        "refs": ["s001", "w0", "w17", "w26"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "One idea per beat: performance/audio tags, professional voice clones with better similarity, long-form consistency, 100 languages, and a low-latency Turbo variant, each followed or preceded by an audible demo. Feature lines are only spoken (apart from 'Intent.' and 'v4 Turbo'), and there is no availability/pricing information.",
+        "refs": ["w111", "w140", "w219", "w237", "s010"]
+      },
+      "ui_showcase": {
+        "score": null,
+        "evidence": "No product UI appears anywhere; the 'product' is shown through prompt captions and abstract visuals, so a UI showcase score does not apply.",
+        "refs": []
+      },
+      "motion_polish": {
+        "score": 5,
+        "evidence": "Rotating point-cloud faces, orb morphs (split, pill tracks, pixelate, concentric orbits), intersecting-circle fill, zoom-through bridges, word-synced karaoke captions and a multi-stage logo resolve, all with consistent grain and blur and almost no hard cuts.",
+        "refs": ["s001", "s003", "s006", "s008", "s012", "s013"]
+      },
+      "sound_design": {
+        "score": 4,
+        "evidence": "Judged from anchor audio facts plus visuals: 102 SFX candidates over 156 s, mostly music beds plus chimes and reverse swooshes; a reverse-swoosh cluster (x002-x006) rides the orb transformations at 9-12 s, a reverse swoosh (x094) accompanies the giant-glyph sweep and an impact-labelled hit (x099) lands on the wordmark; integrated loudness -11.99 LUFS with a ~132.5 BPM bed. The generated voices are the hero and are left clear; many candidates are 'unsure', so exact SFX design is partly inferred.",
+        "refs": ["s001", "s011", "s013"]
+      },
+      "vo_script_quality": {
+        "score": 4,
+        "evidence": "Narration is sparse and rhythmic ('doesn't just speak, it performs', 'tone, texture, intent', 'you don't just imitate a voice, you embody it') and the demo scripts are written to show range (crying, accent switch, comic pigeon reveal, clinical call). The feature list near the end is a dense run-on sentence.",
+        "refs": ["w18", "w26", "w118", "w135", "w219", "w237"]
+      },
+      "brand_consistency": {
+        "score": 5,
+        "evidence": "The same off-white canvas, two-tone gradient orbs, grotesque sans and outlined 'V4' pill badge run from the opening disclaimer to the closing lockup, ending on the ElevenLabs wordmark.",
+        "refs": ["s001", "s010", "s013"]
+      },
+      "works_muted": {
+        "score": 2,
+        "evidence": "Muted, a viewer sees the prompts and tags typed out and the 'v4 Turbo' and logo cards, but the value (expressive voice output) is audio-only and the narrator's feature claims are not captioned.",
+        "refs": ["s001", "s005", "s008", "w219"]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "A highly polished, cohesive launch film where demos act as proof and every feature has a bespoke visual metaphor; it is held back from best-in-class as an explainer by the absence of any product surface, no CTA and weak muted comprehension.",
+        "refs": ["s001", "s005", "s010", "s013"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 2,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "Long English prompt captions with karaoke timing are baked into the demos (s001, s005, s010; s010 also shows Chinese captions), and the feature story is carried by the voice-over and the generated audio itself; only the abstract visuals and the logo end card transfer without rework."
+    }
+  }
+}

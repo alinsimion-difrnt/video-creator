@@ -1,0 +1,56 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T13:58:33Z"
+  },
+  "id": "katana-zero",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "cool",
+    "notes": "Each room owns one hue: plum-purple hallways, blood-red mansion, teal-and-cream club, navy city at night. Shadows sink to near-black violet; warm accents (fireplace orange, lamp yellow, red lanterns) are the only hot spots. No metrics file."
+  },
+  "lighting": "Motivated pools of light: a fireplace or wall lamp throws an orange cone into a red room, a window throws pale light shafts onto a grey floor, neon signs glow over a bar. The rest of the room falls off to dark, so the tiny hero reads where the light is.",
+  "silhouette": "Hero is tiny (about 1/10 of frame height) with dark hair and coat; he reads by the bright rainbow slash smear, which is longer than his body, and by standing in a lit patch. The giant room is the star; the sprite is a dark notch in it.",
+  "motion": {
+    "timing": "Fast actions (a slash smear spanning half a corridor in one frame) against long static holds in quiet rooms: the hero sits at a desk and only the TV and a coloured pickup label change over 3 s of the sheet. No frame timings measured.",
+    "principles": [
+      "smear",
+      "timing contrast",
+      "holds",
+      "anticipation",
+      "exaggeration"
+    ]
+  },
+  "texture": "Clean pixels with dense set dressing (posters, bottles, stair rails, brick); a chromatic RGB-split trail on the slash; VHS glitch and rewind treatment noted by critics.",
+  "camera": "Locked side-on shot of one room at a time, the room filling the frame like a diorama; scene changes are hard cuts between rooms. Screen shake and distortion punctuate hits and dialogue (wiki).",
+  "sound": "",
+  "acting": {
+    "enters": "He is already in the room or walks in from a door at one side, tiny, with no fanfare; the title card drops over him in the hallway.",
+    "acts": "Quiet beats are staged as life in a lived-in room: sitting at a desk, by a fire, at a bar. Action beats are one bright slash. Story is shown through play, not told (wiki).",
+    "exits": "Leaves through a doorway or the frame edge; failed attempts end in a tape-rewind to the room's start (wiki).",
+    "comes_back": true,
+    "depth": "Flat side-on rooms; depth from layered light, a lower floor seen below a walkway, and a whole city skyline with the hero as a speck in the foreground."
+  },
+  "techniques": [
+    "one dominant hue per room, warm practical light as the only hot spot",
+    "light cone from a lamp or fireplace to place the small hero",
+    "rainbow RGB-split smear longer than the body on the slash",
+    "tiny hero in a huge detailed room: the set tells the story",
+    "long static hold with one small change (TV flicker, label pop)",
+    "VHS rewind/glitch as a reset transition"
+  ],
+  "feel": "one-hue room + warm lamp pool + tiny dark hero + one rainbow slash smear = moody, slick, punchy",
+  "for_fred": "Give each Fred scene one dominant hue with a single warm light patch, and stand Fred in it, small; let the room carry the mood. When he does the gag, make it one fast smear frame, then a long still hold with only one small thing changing. Use a tape-rewind once per reel for his 'try again'.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Katana_Zero",
+    "studies/pixel-art/sources.yaml",
+    "data/study/pixel/work/katana-zero/clip1-7354949202943675654.jpg",
+    "data/study/pixel/work/katana-zero/clip2-7494431966045965573.jpg",
+    "data/study/pixel/work/katana-zero/clip3-7649719941603642644.jpg"
+  ]
+}

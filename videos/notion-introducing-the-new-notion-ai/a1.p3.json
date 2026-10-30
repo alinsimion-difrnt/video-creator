@@ -1,0 +1,233 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "e3994e086ff3f2f8d7c8191e5bc68e5a070f94fb9ed1e08f3749b70c60edc1dd",
+    "created_at": "2026-10-05T07:42:37.682037Z"
+  },
+  "video": "notion-introducing-the-new-notion-ai",
+  "task": "a1-p3",
+  "shots": [
+    {
+      "shot": "s011",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Bold centred chapter headline 'Chat about anything' with a small row of model labels (GPT-4, Claude) and their logos beneath",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Chat about anything",
+        "GPT-4",
+        "Claude"
+      ],
+      "text_word_count": 5,
+      "typography": "Bold geometric/grotesk sans headline, sentence case, tight tracking (Inter or Notion's own sans, low confidence); the model labels below are set smaller in medium weight, each led by its brand mark",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "A static chapter title card on off-white introduces the mobile chat feature and names the two underlying models. The headline holds still for both sampled frames; how it entered is not visible at 2 fps. The sampled frame at 43.5 s already shows the next mobile UI close-up (orange field, phone keyboard), so the visual cut seems to land slightly before the detected shot boundary.",
+      "build_rebuild": "Render an off-white full-bleed card with a centred bold one-line headline and, ~24 px below it, a centred row of two icon+label pairs at about 40% of the headline size, held for ~1.5 s before a hard cut.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s012",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "The prompt input of the Notion mobile AI sheet with the iOS keyboard, as a prompt is typed into it",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Look up updates on Permissions",
+        "New voice memo",
+        "Think it",
+        "Summarize a pag",
+        "Give me 5 ice breakers for a team event",
+        "Thinking",
+        "Find, edit, chat with AI..."
+      ],
+      "text_word_count": 28,
+      "typography": "Native iOS/Notion mobile UI sans (SF Pro-like, low confidence): regular sentence-case suggestion rows with a bold verb ('Summarize') and grey continuation, small grey section label 'Think it', dark input text with a caret",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Tight close-up of a phone on an orange field: above the keyboard the suggestion list (Look up updates on Permissions, New voice memo, Summarize a page) sits still while 'Give me 5 ice breakers for a team event' types into the input character by character. By the last sampled frame (45.5 s) the camera has pulled out to the whole phone, showing the sent message bubble and a 'Thinking' indicator with the avatar.",
+      "build_rebuild": "Frame a phone mock-up at ~2.5x scale on a solid orange canvas so only the input and keyboard show, typewrite the prompt into the input with a caret over ~1.5 s, then scale out to the full phone with an ease-in-out as the prompt becomes a right-aligned bubble and a 'Thinking' row appears.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s013",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "A full iPhone mock-up centred on an orange field showing the Notion AI chat streaming a bulleted ice-breaker list",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "9:41",
+        "Give me 5 ice breakers for a team event",
+        "Thinking",
+        "Here are some general ice breakers:",
+        "Emoji Mood Check",
+        "Two Truths and a Lie",
+        "Virtual Background Challenge",
+        "Soundtrack of Your Life",
+        "Guess the Childhood Photo",
+        "Copy",
+        "Find, edit, chat with AI..."
+      ],
+      "text_word_count": 42,
+      "typography": "Native iOS/Notion mobile UI sans (SF Pro-like, low confidence): regular sentence-case body and title-case bullet items in grey, user prompt in a light grey rounded bubble, small grey placeholder in the input",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "The phone stays centred and static on orange while the AI answers: a 'Thinking' row with an animated avatar and dots, then 'Here are some general ice breakers:' and five bullets stream in one per half-second (Emoji Mood Check through Guess the Childhood Photo), with Copy / reply / share action buttons sitting under the growing list and the bubble pushed upward. The final sampled frame (50.0 s) is an empty off-white frame, so the phone has cleared before the CTA card; how it exits is not visible at 2 fps.",
+      "build_rebuild": "Centre a phone mock-up on a solid orange canvas, show a 'Thinking' row with a pulsing three-dot loader for ~1 s, then stream an intro line and five bullet items at ~0.5 s intervals while the message bubble and the action-button row shift up to keep the list bottom-anchored.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s014",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Two-line bold CTA headline 'Try Notion AI for free at Notion.com', followed by the line-art Notion AI mascot face in a circle",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Try Notion AI for free at Notion.com"
+      ],
+      "text_word_count": 7,
+      "typography": "Bold geometric/grotesk sans (same as the chapter cards, Inter or Notion's own sans, low confidence), sentence case with brand capitalisation, two centred lines with tight leading and tracking",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "The CTA card holds static on off-white from 50.5 to 52.0 s. By 52.5 s the text is gone and the small mascot face (white circle, black outline) sits centred on a slightly different light background; its line-art expression changes between 52.5 and 53.0 s (a wink/glance), and by 53.5 s the frame is empty again ahead of the crossfade into the end card. How the text leaves and the mascot enters is not visible at 2 fps.",
+      "build_rebuild": "Show a centred two-line bold CTA on off-white for ~2 s, cut or fade to a small centred outlined-circle mascot whose SVG eye/brow strokes swap once after ~0.5 s, then clear to an empty frame for ~0.3 s.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s015",
+      "shot_type": "logo",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Tagline 'Think it. Make it.' resolving into the Notion cube logo and then the cube plus 'Notion' wordmark lockup",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "Think it. Make it.",
+        "Notion"
+      ],
+      "text_word_count": 5,
+      "typography": "Tagline in a semibold sans at a modest size, sentence case, default tracking; the wordmark 'Notion' is a semibold sans set beside the cube mark (brand wordmark, font guess low confidence)",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "After a crossfade, the small centred tagline 'Think it. Make it.' holds for about a second, then is replaced by the Notion cube alone at centre (55.0 s); by 55.5 s the cube has shifted left and the 'Notion' wordmark sits to its right, forming the lockup that holds to the end. The exact motion between these states is not visible at 2 fps.",
+      "build_rebuild": "Crossfade to an off-white card with a small centred tagline for ~1 s, swap it for the centred cube logo, then slide the cube ~70 px left while the wordmark fades/slides in from behind it to form a centred horizontal lockup held for ~1 s.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001", "s002", "s003"], "words": null},
+      {"beat": "mechanism", "shots": ["s003"], "words": null},
+      {"beat": "demo", "shots": ["s004", "s005", "s006"], "words": null},
+      {"beat": "demo", "shots": ["s007", "s008", "s009"], "words": null},
+      {"beat": "demo", "shots": ["s009", "s010"], "words": null},
+      {"beat": "demo", "shots": ["s011", "s012", "s013"], "words": null},
+      {"beat": "cta", "shots": ["s014", "s015"], "words": null}
+    ],
+    "hook": {
+      "text": "Meet the new Notion AI. One AI tool to [cycling actions] do it all.",
+      "technique": "bold_claim",
+      "technique_other": null,
+      "shots": ["s001", "s002", "s003"],
+      "words": null
+    },
+    "cta": {
+      "text": "Try Notion AI for free at Notion.com",
+      "shots": ["s014"]
+    },
+    "tone": "Calm, playful-minimal product launch: off-white type cards and a doodled mascot face set against bold blue and orange colour fields, carried by music with no voice-over; confident and light rather than hype.",
+    "signature_moments": [
+      {
+        "shots": ["s003"],
+        "description": "'One AI tool to' followed by a pill chip whose label cycles vertically with motion blur through six actions (Ask a question, Find in Google Drive, ... Draft a meeting agenda) before resolving into 'do it all.'",
+        "why_premium": "It shows the whole feature range in one sentence-shaped animation without a list or voice-over; the blur cycling feels kinetic yet stays readable and on-brand."
+      },
+      {
+        "shots": ["s002", "s006", "s014"],
+        "description": "The line-art Notion AI mascot face recurs (intro, beside the answering chat panel, after the CTA) and changes expression frame to frame.",
+        "why_premium": "A tiny hand-drawn character gives the AI a personality and ties chapters together for almost no visual cost, which reads as a confident, crafted brand system."
+      },
+      {
+        "shots": ["s008", "s009"],
+        "description": "Selecting a brief, typing a prompt that links a 'Voice & Tone Guidelines' page as an inline chip, then watching a blue AI draft stream in and turn black on Accept.",
+        "why_premium": "Each step of the real workflow is staged with camera push-ins and clear state changes, so the benefit (on-brand writing) is shown rather than claimed."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 4,
+        "evidence": "A cursor click on the logo zooms through into the mascot, then 'Meet the new Notion AI' with a drawn underline and the cycling action chip set up the whole promise within ~12 s. It is an announcement plus a bold claim rather than a pain point or striking stat.",
+        "refs": ["s001", "s002", "s003"]
+      },
+      "clarity": {
+        "score": 5,
+        "evidence": "Each feature gets a short title card (Find answers from all your apps; Write smarter, with AI that knows your style; Analyze PDFs and images; Chat about anything), then exactly one concrete, legible demo with a realistic prompt and answer. One idea per chapter, no clutter.",
+        "refs": ["s003", "s007", "s009", "s011", "s006", "s010", "s013"]
+      },
+      "ui_showcase": {
+        "score": 4,
+        "evidence": "Clean recreated desktop and mobile UI with readable prompts, streamed answers, source chips, a file drop and an Accept flow, framed by push-ins and cropped panels on colour fields. Framing is mostly static once inside a demo, and some panels are cropped hard.",
+        "refs": ["s004", "s006", "s008", "s009", "s010", "s012", "s013"]
+      },
+      "motion_polish": {
+        "score": 4,
+        "evidence": "Masked headline reveals, the blur-cycling chip, eased camera push-ins and pull-outs, typed prompts and streamed answers are smooth and consistent. Most joins are hard cuts and the title cards are largely static, so it is restrained rather than showy. Easing quality is not measured here.",
+        "refs": ["s003", "s004", "s008", "s012", "s015"]
+      },
+      "sound_design": {
+        "score": 3,
+        "evidence": "Judged from anchors only, as audio cannot be heard: a music bed at ~139.7 BPM, integrated loudness -22.4 LUFS (quiet for web delivery), no transcript words, and only one SFX candidate (x001, labelled music at 24.07 s). That means no detected UI clicks, typing or whooshes to support the many on-screen interactions. Competent music-led bed with no discrete sound layer.",
+        "refs": ["s008", "s009"]
+      },
+      "vo_script_quality": {
+        "score": null,
+        "evidence": "No voice-over: the anchors transcript has no words. All messaging is on-screen text.",
+        "refs": []
+      },
+      "brand_consistency": {
+        "score": 5,
+        "evidence": "One type style for all chapter cards, a consistent off-white base with saturated blue/orange/red demo fields, the recurring mascot, and Notion cube bookends (opening click, closing lockup with 'Think it. Make it.').",
+        "refs": ["s001", "s002", "s007", "s011", "s014", "s015"]
+      },
+      "works_muted": {
+        "score": 5,
+        "evidence": "The story is told entirely through title cards, typed prompts and visible answers with no voice-over, so nothing is lost with sound off.",
+        "refs": ["s003", "s007", "s009", "s011", "s014"]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "A tight 56 s feature reel with clear chapter structure, believable UI demos, a charming mascot and strong brand coherence. It is held back from best-in-class by mostly static cards and hard cuts, and by a music-only soundtrack with no detected SFX supporting the interactions.",
+        "refs": ["s003", "s006", "s009", "s013", "s015"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 3,
+      "baked_in_text": true,
+      "vo_dependent": false,
+      "notes": "No voice-over, so only text needs translating. However, every chapter card and all the UI demo content (prompts, streamed answers, page copy, file names) is baked-in English text. Translating it means rebuilding the recreated UI and title cards, which is feasible if they are built from components, but the sheer amount of UI copy makes it costly."
+    }
+  }
+}

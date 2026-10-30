@@ -1,0 +1,44 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "e249f059bf7b4c385b2b88716a22c0c8205bb2caa063c5304a7ad06c14bd7dfe",
+    "created_at": "2026-10-05T06:38:34.019659Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e001",
+  "task": "a2-e001",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Jira Product Discovery 'All Ideas' list view (whole app screen)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 100, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "ui_camera_push_in",
+    "proposed_name": null,
+    "description": "The full browser screenshot of the Jira Product Discovery list view (browser chrome, top nav and left sidebar visible) pushes in to a tight crop on the ideas table, dropping the chrome and sidebar. The move happens in a few frames, right after the narrator names the product and before 'Here's a quick demo'.",
+    "why_premium": "Cropping the browser chrome and sidebar away makes the table, the actual subject, fill the frame and become readable. Putting the snap-zoom in the pause between sentences gives the move a clear purpose and ties it to the narration."
+  },
+  "build_hint": {
+    "gsap": "Single screenshot layer: gsap.fromTo(ui, {scale: 1, x: 0, y: 0}, {scale: 1.22, x: '-5%', y: '-2%', duration: 0.12, ease: 'power3.out', transformOrigin: '50% 30%'}); no stagger, just one container transform. Start it in the narration gap after 'Discovery.'.",
+    "remotion": "const s = spring({frame: frame - start, fps, config: {damping: 30, stiffness: 400, mass: 0.6}}); scale = interpolate(s, [0, 1], [1, 1.22]); translate interpolate to (-5%, -2%) on one AbsoluteFill holding the screenshot; critically damped, no overshoot."
+  },
+  "confidence": "high",
+  "notes": "Very fast push-in (most of the energy sits in about 3 frames), so it reads almost like a zoom cut. Camera verdict push_in, scale 1.22. No SFX candidates."
+}

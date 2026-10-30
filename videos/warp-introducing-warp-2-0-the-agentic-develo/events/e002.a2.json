@@ -1,0 +1,46 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "d2777d2fa84e2dc74fbae3acc6236636a1d2f9fd9b1a9e77664e706c6709b114",
+    "created_at": "2026-10-05T06:51:34.764008Z"
+  },
+  "video": "warp-introducing-warp-2-0-the-agentic-develo",
+  "event": "e002",
+  "task": "a2-e002",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Warp agent window (agent conversation + TechRadarChart code diff) sliding in from the right to replace the git-log terminal window",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 550, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x007", "verdict": "confirm", "label": "music", "note": "Low kick-drum transient with decay, part of a regular beat (same shape at ~15.70, 16.28, 16.80 s); not synced to the window swap as a designed SFX."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "panel slide swap",
+    "description": "In a split composition (presenter left, product window on a gradient card right), the previous terminal window (git log) leaves and the next product window slides in horizontally from the right edge and settles in the same slot, while the presenter keeps talking.",
+    "why_premium": "Swapping only the product panel keeps the presenter shot continuous, so the demo advances on the narration beat ('Second, a state-of-the-art coding agent') without a cut; the decelerating slide reads as a deliberate carousel step rather than an edit."
+  },
+  "build_hint": {
+    "gsap": "tl.to(oldWindow, {xPercent: 110, autoAlpha: 0, duration: 0.3, ease: 'power2.in'}).fromTo(newWindow, {xPercent: 110}, {xPercent: 0, duration: 0.55, ease: 'power3.out'}, '-=0.1'); keep the gradient card and presenter static.",
+    "remotion": "const p = spring({frame: frame - start, fps, config: {damping: 200, stiffness: 120, mass: 1}}); newWindow translateX = interpolate(p, [0, 1], [width * 1.1, 0]); old window translateX = interpolate(frame, [start - 9, start], [0, width * 1.1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}) with opacity to 0. No overshoot."
+  },
+  "confidence": "medium",
+  "notes": "The outgoing git-log window is not visible in the end frame, so it is not listed as an element (no end-frame box exists for it). Its exact exit direction (slide right vs. covered by the incoming panel) is hard to read from the filmstrip. The OCR boxes (b04-b20) are text inside the incoming window that moves with it, not separately animated. The presenter (b03) only talks; camera verdict none."
+}

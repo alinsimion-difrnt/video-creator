@@ -1,0 +1,42 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "9b2039863b67292803e54a0428782805a0bd792efc0051721e4f2c5c77510def",
+    "created_at": "2026-10-05T06:38:31.073963Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e037",
+  "task": "a2-e037",
+  "elements": [
+    {"box": "b02", "manual_box": null, "manual_reason": null, "label": "Idea search dropdown (closes)", "role": "ui_panel", "role_other": null, "change_types": ["fade"], "change_other": null, "is_text": false, "text": null, "text_unit": null, "estimates": {"duration_ms": 33, "easing_class": "step"}},
+    {"box": "b07", "manual_box": null, "manual_reason": null, "label": "Selected idea label", "role": "label", "role_other": null, "change_types": ["fade"], "change_other": null, "is_text": true, "text": "Onboarding templates", "text_unit": "whole", "estimates": {"duration_ms": 33, "easing_class": "step"}},
+    {"box": "b16", "manual_box": null, "manual_reason": null, "label": "Remove selected idea button", "role": "button", "role_other": null, "change_types": ["fade"], "change_other": null, "is_text": false, "text": null, "text_unit": null, "estimates": {"duration_ms": 33, "easing_class": "step"}},
+    {"box": "b05", "manual_box": null, "manual_reason": null, "label": "Idea input reset to placeholder", "role": "other", "role_other": "input_field", "change_types": ["fade"], "change_other": null, "is_text": true, "text": "Start typing to create new idea...", "text_unit": "whole", "estimates": {"duration_ms": 33, "easing_class": "step"}},
+    {"box": "b10", "manual_box": null, "manual_reason": null, "label": "Add to idea label", "role": "label", "role_other": null, "change_types": ["slide_down"], "change_other": null, "is_text": true, "text": "Add to idea", "text_unit": "whole", "estimates": {"duration_ms": 33, "easing_class": "step"}},
+    {"box": "b04", "manual_box": null, "manual_reason": null, "label": "Captured page URL", "role": "body_text", "role_other": null, "change_types": ["slide_down"], "change_other": null, "is_text": true, "text": "https://uxdesign.cc/in-defense-of-template...", "text_unit": "whole", "estimates": {"duration_ms": 33, "easing_class": "step"}},
+    {"box": "b06", "manual_box": null, "manual_reason": null, "label": "Captured text excerpt", "role": "body_text", "role_other": null, "change_types": ["slide_down"], "change_other": null, "is_text": true, "text": "Templates increase user engagement and", "text_unit": "whole", "estimates": {"duration_ms": 33, "easing_class": "step"}},
+    {"box": "b09", "manual_box": null, "manual_reason": null, "label": "Select more text link", "role": "button", "role_other": null, "change_types": ["slide_down"], "change_other": null, "is_text": true, "text": "Select more text", "text_unit": "whole", "estimates": {"duration_ms": 33, "easing_class": "step"}},
+    {"box": "b12", "manual_box": null, "manual_reason": null, "label": "Add a description link", "role": "button", "role_other": null, "change_types": ["slide_down"], "change_other": null, "is_text": true, "text": "+ Add a description", "text_unit": "whole", "estimates": {"duration_ms": 33, "easing_class": "step"}},
+    {"box": "b14", "manual_box": null, "manual_reason": null, "label": "Add labels link", "role": "button", "role_other": null, "change_types": ["slide_down"], "change_other": null, "is_text": true, "text": "+ Add labels", "text_unit": "whole", "estimates": {"duration_ms": 33, "easing_class": "step"}},
+    {"box": "b13", "manual_box": null, "manual_reason": null, "label": "Add button", "role": "button", "role_other": null, "change_types": ["slide_down"], "change_other": null, "is_text": true, "text": "Add", "text_unit": "whole", "estimates": {"duration_ms": 33, "easing_class": "step"}},
+    {"box": "b15", "manual_box": null, "manual_reason": null, "label": "Cancel button", "role": "button", "role_other": null, "change_types": ["slide_down"], "change_other": null, "is_text": true, "text": "Cancel", "text_unit": "whole", "estimates": {"duration_ms": 33, "easing_class": "step"}}
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "chip_append",
+    "proposed_name": null,
+    "description": "In a browser-extension capture form, picking 'Onboarding templates' from the idea search dropdown closes the dropdown, places the chosen idea as a removable label (with an x) above a reset input, and pushes the rest of the form down by one row.",
+    "why_premium": "The selection resolves in a single frame with the form reflowing to make room, so the viewer sees cause (pick) and effect (attached idea) together without any dead time; the cursor immediately moves on to the next control, keeping the demo pace tight."
+  },
+  "build_hint": {
+    "gsap": "Screen-recorded state swap: tl.set(dropdown,{autoAlpha:0}); tl.fromTo(ideaChip,{autoAlpha:0,y:-6},{autoAlpha:1,y:0,duration:0.2,ease:'power2.out'},0); tl.fromTo(formRowsBelow,{y:-22},{y:0,duration:0.25,ease:'power3.out',stagger:0.015},0); input placeholder swap via tl.set. For a recreation, a short power2.out softens the original one-frame cut.",
+    "remotion": "Recreate with chip opacity=interpolate(frame,[0,6],[0,1]) and rows below translateY=spring({frame,fps,config:{damping:26,stiffness:220,mass:1}})*22-22 (no overshoot); dropdown unmounted at frame 0."
+  },
+  "confidence": "medium",
+  "notes": "Raw screen recording: the change is a near-instant UI state swap (energy spikes in one frame), so estimates are step. b02 (diff region) is used for the closing dropdown menu, which is gone in the end frame. Cursor also moves from the dropdown to 'Select more text' but has no clean candidate box and is omitted. Pattern could also be read as layout_reframe."
+}

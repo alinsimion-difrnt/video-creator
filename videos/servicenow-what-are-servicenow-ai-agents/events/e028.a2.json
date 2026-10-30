@@ -1,0 +1,48 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "8325874bc4819a03de78f4e63819133ad4c5fd75f6bbd56d98ea3c80e12676ec",
+    "created_at": "2026-10-05T06:52:43.225724Z"
+  },
+  "video": "servicenow-what-are-servicenow-ai-agents",
+  "event": "e028",
+  "task": "a2-e028",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Standing colleague walking out of frame to the right behind the seated pair",
+      "role": "other",
+      "role_other": "live_action_person",
+      "change_types": ["slide_right"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 500, "easing_class": "ease_in"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x166", "verdict": "override", "label": "music", "note": "Harmonic stack that matches the ongoing music bed; precedes the event by about 0.57 s with no visual trigger."},
+    {"id": "x167", "verdict": "unsure", "label": "unsure", "note": "Faint broadband vertical streak plus a new harmonic onset during the exit; could be a score note or a light foley step. Not clearly a designed chime."},
+    {"id": "x168", "verdict": "override", "label": "music", "note": "Tonal harmonic onset continuing the music pattern after the man has left; nothing on screen pops in at that moment."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "footage subject exit",
+    "description": "Wide live-action office shot, locked-off: after his 'geese' line the colleague turns and walks off frame right while the seated pair react ('Great to know.'). No graphics animate.",
+    "why_premium": "The comedic button is timed through blocking (exit plus a deadpan reaction) in a well-lit, deep-staged office set, so the scene reads like a commercial rather than a template."
+  },
+  "build_hint": {
+    "gsap": "No motion-graphic build; use the footage as is. A cut-out recreation would be gsap.to(person, {x: 260, duration: 0.5, ease: 'power1.in'}) with motion blur on the exiting layer.",
+    "remotion": "<OffthreadVideo> clip; for a cut-out recreation, translateX = interpolate(frame, [0, 15], [0, 260], {easing: Easing.in(Easing.quad)})."
+  },
+  "confidence": "medium",
+  "notes": "The filmstrip frames are crops around b01, which is why the framing looks tighter than the end frame; camera.move is none. All three candidates are tonal and look like part of the score (CLAP says chime); x167 is worth a listen."
+}

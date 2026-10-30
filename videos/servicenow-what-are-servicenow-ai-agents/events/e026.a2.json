@@ -1,0 +1,74 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "b906c2e96dae2c5ba8bedc6b78a089a0b04f0f62a4d30d386a23896b63b5eb0c",
+    "created_at": "2026-10-05T06:51:53.931819Z"
+  },
+  "video": "servicenow-what-are-servicenow-ai-agents",
+  "event": "e026",
+  "task": "a2-e026",
+  "elements": [
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Hand holding a phone entering from the right edge",
+      "role": "other",
+      "role_other": "live_action_hand_prop",
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Seated man turning his head toward the left",
+      "role": "other",
+      "role_other": "live_action_person",
+      "change_types": ["other"],
+      "change_other": "live-action head turn",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Seated woman tilting her head with eyes closed",
+      "role": "other",
+      "role_other": "live_action_person",
+      "change_types": ["other"],
+      "change_other": "live-action head tilt",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    }
+  ],
+  "sfx_review": [
+    {"id": "x160", "verdict": "confirm", "label": "music", "note": "Sustained harmonic horizontal lines starting about 0.2 s after the event, which reads as a musical phrase onset, not a transient SFX."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "footage with ui overlay",
+    "description": "Live-action meeting shot with a static frosted 'AI Agents' card ('Send notification to client', Approve button) composited top-right; within this burst only the actors move (head turns and a hand with a phone entering from the right). The card does not animate.",
+    "why_premium": "The UI card is tracked onto real footage as a soft frosted-glass overlay, so the product sits inside the story rather than cutting away to a screen recording."
+  },
+  "build_hint": {
+    "gsap": "Footage layer plays untouched; the overlay card is static in this burst. If building the card entrance elsewhere: gsap.fromTo(card, {opacity: 0, y: 16, scale: 0.97, filter: 'blur(6px)'}, {opacity: 1, y: 0, scale: 1, filter: 'blur(0px)', duration: 0.5, ease: 'power3.out'}).",
+    "remotion": "<OffthreadVideo> base with an absolutely positioned card: backdropFilter blur and a semi-transparent white fill; for its entrance use spring({frame, fps, config: {damping: 200}}) driving opacity and translateY 16 to 0."
+  },
+  "confidence": "medium",
+  "notes": "The motion in this event is all live action; the 'AI Agents' overlay card is identical across every filmstrip frame, so it is not listed. b01 is a union box covering both people."
+}

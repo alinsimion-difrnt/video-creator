@@ -1,0 +1,158 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "b034b7cce6ad0e63c13b1707b544baa55f48fe154ab0f548d10de2515c427324",
+    "created_at": "2026-10-05T07:37:14.553539Z"
+  },
+  "video": "figma-introducing-figma-motion-your-canvas-no",
+  "task": "a1-p3",
+  "shots": [
+    {
+      "shot": "s013",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "Orange 'F' map pin on an isometric line-drawn floor plan, then the 'Animation styles' popover next to it",
+      "transition_in": "other",
+      "transition_other": "Continuous camera reframe from the previous canvas view (no visible cut; frame starts wider then pushes closer)",
+      "on_screen_text": [
+        "Animation styles",
+        "Position",
+        "Scale",
+        "Rotation",
+        "Opacity"
+      ],
+      "text_word_count": 6,
+      "typography": "Small UI sans-serif (Inter-like, low confidence), medium-weight title, regular-weight sentence-case list items with small leading icons; map pins carry single uppercase letters in a regular geometric sans",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "On a grey isometric floor-plan canvas with selected yellow lettered pins, the camera pushes in while the cursor moves to the orange F pin, clicks it, and an 'Animation styles' popover (Position, Scale, Rotation, Opacity) appears; the cursor hovers Position, which highlights.",
+      "build_rebuild": "Render an SVG isometric floor plan with circular letter pins, animate a camera scale-up toward pin F, move a cursor sprite onto it, then pop in a small white shadowed menu card with four icon+label rows and highlight the first row on hover.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s014",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "split",
+      "composition_other": null,
+      "focal_element": "The full floor-plan map card where all pins rise into 3D standing map pins",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "UM MATION",
+        "ibition",
+        "ESHOLDS"
+      ],
+      "text_word_count": 3,
+      "typography": "Left-edge text is cropped: a heavy condensed uppercase sans headline on a yellow highlight block, a bold sentence-case subhead and a bold uppercase label; a small level switcher shows numerals 3, 2, 1",
+      "depth_cues": [
+        "shadow",
+        "perspective_tilt"
+      ],
+      "what_happens": "The view pulls out to reveal the map is part of a museum-style poster layout (cropped headline, photo of an orange geodesic dome); the flat letter pins all extrude upward into standing pin markers with small ground shadows while level '2' is active in the floor switcher.",
+      "build_rebuild": "Pull the camera back from the pin closeup to the full page layout, then stagger each pin's translateY upward by ~20px while scaling in a thin stem and a soft ellipse shadow beneath it.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s015",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Dark phone mockup with a selected hero image card reading 'CANYON CREW MEETUP'",
+      "transition_in": "other",
+      "transition_other": "Scene change from the museum map layout to an orange backdrop with a phone mockup between 0:26.0 and 0:26.5; exact transition style not visible at 2 fps",
+      "on_screen_text": [
+        "9:41",
+        "CANYON CREW MEETUP",
+        "Trail Crew Meetup",
+        "TOPANGA, CA",
+        "35 · 5:45PM - 7:45PM",
+        "JUN 20",
+        "Featured"
+      ],
+      "text_word_count": 15,
+      "typography": "Hero title in a dotted/segmented pill-shaped pixel display face, uppercase; card title in regular sans, sentence case; location and time in uppercase monospace with wide tracking; date badge in monospace",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "A dark event-app phone screen sits centered on a flat orange background; its hero image (motion-blurred cyclist with 'CANYON CREW MEETUP') is selected with blue handles and an AI sparkle button beside it; the phone drifts up and the cursor approaches the sparkle button.",
+      "build_rebuild": "Place a rounded dark phone frame centered on a solid orange stage, draw a blue selection rectangle with square corner handles around the hero image, add a blue sparkle icon button at the top-right, and slowly translate the phone upward while a cursor eases toward the button.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s016",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "AI prompt input field where a prompt is typed above the selected hero image",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Create a glitchy type animation, staggering the shapes.",
+        "CANYON CREW MEETUP"
+      ],
+      "text_word_count": 11,
+      "typography": "Prompt in regular sans (Inter-like, low confidence), sentence case, with freshly typed characters briefly tinted blue before settling to black; hero title in dotted pixel display face, uppercase",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "The camera zooms in past the phone frame to the selected image; an empty prompt box opens and the text 'Create a glitchy type animation, staggering the shapes.' types on character by character, then the cursor clicks the blue send arrow.",
+      "build_rebuild": "Scale the scene up toward the selection, pop in a white rounded prompt card with a '+' and a blue round send button, type the prompt string at ~15 chars/s with the newest characters coloured accent-blue fading to black, then move the cursor onto the send button and press.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s017",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The selected hero image card in a generating state with a spinning AI sparkle icon",
+      "transition_in": "other",
+      "transition_other": "Prompt card dismisses and the view reframes onto the image card alone (not clearly visible at 2 fps)",
+      "on_screen_text": [
+        "CANYON CREW MEETUP"
+      ],
+      "text_word_count": 3,
+      "typography": "Dotted pill-segment pixel display face, uppercase, wide letterforms, two centered lines",
+      "depth_cues": [
+        "glow"
+      ],
+      "what_happens": "With the prompt sent, the image card sits isolated on a dark canvas inside a blue selection outline while a soft light sheen sweeps across it and the sparkle icon rotates, signalling the AI is generating.",
+      "build_rebuild": "Show the image card in a blue outline on a dark background, rotate the sparkle icon continuously, and sweep a diagonal white gradient mask across the card at reduced opacity as a 'generating' shimmer.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s018",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "stacked",
+      "composition_other": null,
+      "focal_element": "The generated glitch type animation playing above a keyframe timeline",
+      "transition_in": "other",
+      "transition_other": "Sparkle icon resolves into a checkmark, then the view jumps closer to the image with a timeline panel sliding up beneath it",
+      "on_screen_text": [
+        "CANYON CREW MEETUP",
+        "0 0.2 0.4 0.6 0.8 1 1.2 1.4 1.6"
+      ],
+      "text_word_count": 12,
+      "typography": "Hero title in dotted pill-segment pixel display face, uppercase, assembling from scattered dashes; timeline ruler in small regular grey sans numerals",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "A checkmark confirms generation, then the glitch animation plays: the title's dash segments scatter and resolve into 'CANYON CREW MEETUP' as a blue playhead scrubs across a timeline of keyframe diamonds and clip bars; the cursor then selects one clip bar (turns blue) and drags its end to shorten it.",
+      "build_rebuild": "Split the title into per-segment dash shapes and stagger them in from random x offsets with brief opacity flicker over ~1.2s, synced to a playhead moving across a 0-1.6s timeline below, then animate a cursor selecting a grey clip bar (fill to blue) and dragging its right edge leftward.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

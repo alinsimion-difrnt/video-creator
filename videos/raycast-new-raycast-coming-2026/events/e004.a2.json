@@ -1,0 +1,67 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "9e7a8edca5cdd17caa10f237925a59223b25b601d91d75a817f8df3a999ba820",
+    "created_at": "2026-10-05T06:47:06.396046Z"
+  },
+  "video": "raycast-new-raycast-coming-2026",
+  "event": "e004",
+  "task": "a2-e004",
+  "elements": [
+    {
+      "box": null, "manual_box": [181, 684, 817, 1000],
+      "manual_reason": "No candidate isolates the fire tile and its orange selection ring; b01 spans two tiles and b03 is only the emoji.",
+      "label": "Fire tile selection ring (gains focus)", "role": "card", "role_other": null,
+      "change_types": ["highlight", "color_shift"], "change_other": null,
+      "is_text": false, "text": null, "text_unit": null,
+      "estimates": {"duration_ms": 70, "easing_class": "step"}
+    },
+    {
+      "box": null, "manual_box": [181, 291, 817, 648],
+      "manual_reason": "No candidate isolates the middle tile whose selection ring and warm fill switch off; b02 covers only the emoji.",
+      "label": "Face-with-peeking-eye tile (loses focus)", "role": "card", "role_other": null,
+      "change_types": ["color_shift"], "change_other": null,
+      "is_text": false, "text": null, "text_unit": null,
+      "estimates": {"duration_ms": 70, "easing_class": "step"}
+    },
+    {
+      "box": "b03", "manual_box": null, "manual_reason": null,
+      "label": "Fire emoji (slow drift with grid)", "role": "icon", "role_other": null,
+      "change_types": ["slide_left"], "change_other": null,
+      "is_text": false, "text": null, "text_unit": null,
+      "estimates": {"duration_ms": 200, "easing_class": "linear"}
+    },
+    {
+      "box": "b02", "manual_box": null, "manual_reason": null,
+      "label": "Face-with-peeking-eye emoji (slow drift with grid)", "role": "icon", "role_other": null,
+      "change_types": ["slide_left"], "change_other": null,
+      "is_text": false, "text": null, "text_unit": null,
+      "estimates": {"duration_ms": 200, "easing_class": "linear"}
+    },
+    {
+      "box": "b04", "manual_box": null, "manual_reason": null,
+      "label": "Robot emoji (slow drift with grid)", "role": "icon", "role_other": null,
+      "change_types": ["slide_left"], "change_other": null,
+      "is_text": false, "text": null, "text_unit": null,
+      "estimates": {"duration_ms": 200, "easing_class": "linear"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "spotlight_focus",
+    "proposed_name": null,
+    "description": "Keyboard-style selection hop in the emoji grid: the highlight ring and warm fill jump in a single frame from the peeking-eye tile to the fire tile, while the whole grid keeps a slow leftward drift.",
+    "why_premium": "The focus change is an instant, honest UI step (no tween), set against a continuous slow drift, so the shot reads as real product behaviour while still feeling cinematic; the orange ring is the only saturated accent, pulling the eye straight to the new selection."
+  },
+  "build_hint": {
+    "gsap": "Continuous drift: gsap.to('.grid', {x: '-=36', duration: 2, ease: 'none'}). Selection hop: tl.set('.tile.peek', {className: 'tile'}).set('.tile.fire', {className: 'tile selected'}) (instant; selected = 4px orange border + warm fill).",
+    "remotion": "Grid translateX = interpolate(frame, [0, 60], [0, -36], {extrapolateRight: 'clamp'}) (linear). Selected index = frame >= hopFrame ? fireIndex : peekIndex; apply ring/fill styles from the selected index with no interpolation."
+  },
+  "confidence": "medium",
+  "notes": "Energy spike at the 4th burst frame is the one-frame selection hop; the rising tail is the slow grid drift (camera verdict none, pan_x small). Only the fire tile ring is unambiguous; whether the middle tile had a ring before the hop is visible in frame f431 (pale ring) so it is listed as losing focus."
+}

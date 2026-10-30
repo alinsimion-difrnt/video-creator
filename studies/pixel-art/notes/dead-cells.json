@@ -1,0 +1,56 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T13:59:40+00:00"
+  },
+  "id": "dead-cells",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "cool",
+    "notes": "Frames: deep blue-violet night grounds with a huge lavender moon, saturated accents on top (toxic green lanterns, magenta flame, orange-red hero hair). Shadows go to blue/purple; warm colour is kept for the hero and hits."
+  },
+  "lighting": "Strong backlight: a big moon or sunset disc sits behind the action so figures read as dark shapes with rim colour. Emissive elements (green lanterns, magenta flame, orange slash trails, red lava) are the only bright local lights; full-screen white-yellow flash frames on big impacts.",
+  "silhouette": "The Prisoner reads by one flame head (orange-red, magenta in the title art) on a dark body; bosses are huge and fill half the frame (skull-faced giant, red demon) next to a tiny hero, so scale alone says danger. Cutscene close-ups crop to back-of-head and raised fist.",
+  "motion": {
+    "timing": "No frame timings measured. Frames show fluid in-betweens (sprites from 3D models, per sources.yaml), long glowing weapon trails, and cutscene beats changed every ~4 s in the edit.",
+    "principles": [
+      "anticipation",
+      "smear",
+      "follow-through",
+      "squash and stretch",
+      "fast in, slow out"
+    ]
+  },
+  "texture": "Clean flat clusters with little dithering; painterly gradient skies and parallax mist behind crisp foreground tiles. Big-pixel close-ups in cutscenes (visible chunky clusters on hair and armour).",
+  "camera": "2D side-scroller: wide shots with the hero small on a castle wall against the moon; cutscenes punch in to extreme close-ups (fist, hair, face) and back out. Boss intros cut to a wide frame with the boss name as a title card.",
+  "sound": "Score by Yoann Laulan and Thomas Chastagnol; critics singled out the sound design.",
+  "acting": {
+    "enters": "Hero possesses a corpse at run start (wiki); in cutscenes characters slide in from the frame edge and bosses are revealed already filling the frame, name card on top.",
+    "acts": "Silent hero acts with the body: one big swing with a light trail, then a held pose. Other characters talk in short red or blue speech boxes while standing still on the rampart.",
+    "exits": "Death ends the run and sends the hero back to the start; in cutscenes a flash frame or dark fade cuts the character away.",
+    "comes_back": true,
+    "depth": "Tiny figures on a rampart against a giant moon, then extreme close-ups of the same hero: the reel cuts between far and near rather than tracking."
+  },
+  "techniques": [
+    "backlit moon or sunset disc behind small dark figures",
+    "emissive accent colour (toxic green, magenta) as the only local light",
+    "full-screen white flash frame on the big hit",
+    "long glowing weapon trail held for a few frames after the swing",
+    "boss many times hero size with a name card on reveal",
+    "3D model rendered to pixel sprites for many in-betweens (sources.yaml)",
+    "cut from tiny wide shot to extreme close-up of the same hero"
+  ],
+  "feel": "blue-violet night + giant backlight moon + one hot accent colour on the hero + flash-frame hits = epic but readable",
+  "for_fred": "Stage one Fred beat as a tiny dark silhouette against a big backlight disc (moon or sun) at the far side of the frame, then hard-cut to a close-up of his face. Give his big move one flash frame and a glowing trail that hangs 3-4 frames; use it once per reel.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Dead_Cells",
+    "studies/pixel-art/sources.yaml",
+    "data/study/pixel/work/dead-cells/clip2-7662740984530242848.jpg",
+    "data/study/pixel/work/dead-cells/clip3-7660839709333015828.jpg"
+  ]
+}

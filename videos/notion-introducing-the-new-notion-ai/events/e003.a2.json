@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "da4f138763194d23e56f4d886fb253ce1df31c66ce5bdb0fae5bb16a8adcddd9",
+    "created_at": "2026-10-05T06:48:03.897913Z"
+  },
+  "video": "notion-introducing-the-new-notion-ai",
+  "event": "e003",
+  "task": "a2-e003",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Notion AI face badge (white circle)",
+      "role": "avatar",
+      "role_other": null,
+      "change_types": ["pop", "scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 250, "easing_class": "spring_overshoot", "source": "model_estimate"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Face features (brows, eye, nose)",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["morph"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 200, "easing_class": "ease_in_out", "source": "model_estimate"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "mascot expression pop",
+    "description": "After the cursor clicks the Notion logo, the scene cuts to a blue field where the Notion AI face badge pops in with a quick scale overshoot, then its line-drawn features shift into a new expression (brow lifts, eye moves) as it settles.",
+    "why_premium": "The click-to-pop gives the AI mascot a character beat in a fraction of a second; the small expression change after the scale settles makes it feel alive without full character animation."
+  },
+  "build_hint": {
+    "gsap": "tl.fromTo(badge, {scale: 0.8}, {scale: 1, duration: 0.3, ease: 'back.out(2)'}).to(featurePaths, {morphSVG: nextExpression, duration: 0.2, ease: 'power2.inOut'}, '-=0.05') (or crossfade two feature SVGs if MorphSVG is unavailable).",
+    "remotion": "scale = spring({frame, fps, config: {mass: 1, stiffness: 260, damping: 14}}) mapped 0.8->1 (overshoot); features: interpolate path points or opacity crossfade between two expression SVGs over frames 6-12 with Easing.inOut(Easing.quad)."
+  },
+  "confidence": "low",
+  "notes": "Filmstrip frames are cropped at varying zoom, so the badge's real scale change versus crop framing is uncertain (camera move none; scale sum 1.44 is content-only). f25 is the hard cut from the white Notion-logo frame; a pop/click-like transient is visible on the spectrogram at ~1.17 s but no SFX candidate was provided. No pattern in the taxonomy covers a mascot expression change; logo_resolve is the nearest."
+}

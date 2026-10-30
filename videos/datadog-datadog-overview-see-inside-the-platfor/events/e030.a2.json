@@ -1,0 +1,79 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "fc7e9369f63528140a357687d824732c09a260d399192e84c42fdb8550c7d6c2",
+    "created_at": "2026-10-05T06:43:00.698563Z"
+  },
+  "video": "datadog-datadog-overview-see-inside-the-platfor",
+  "event": "e030",
+  "task": "a2-e030",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Outgoing benefit row (Speed up / Reduce costs / Avoid downtime icons + labels)",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["scale_down", "mask_reveal"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Speed up Reduce costs Avoid downtime",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_in"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Diagonal pink/violet background bands",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["mask_reveal", "slide_up", "slide_right"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Headline 'See inside any stack' (stack underlined)",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["mask_reveal"],
+      "change_other": null,
+      "is_text": true,
+      "text": "See inside any stack",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 150, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x047",
+      "verdict": "unsure",
+      "label": "unsure",
+      "note": "Falls at the start of the diagonal band wipe, but the spectrogram shows no distinct onset there, only the ongoing tonal music bed with periodic plucks at ~68.57s and ~68.78s; likely a music note rather than a designed chime."
+    }
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "diagonal band wipe",
+    "description": "The three-benefit row first contracts toward centre, then oversized diagonal pink/violet bands sweep up-right across the frame, wiping the row away and leaving the next headline already in place on the new band layout.",
+    "why_premium": "The brand's angled gradient bands double as the transition device, so the scene change feels on-brand and directional instead of a cut; the pre-shrink of the outgoing row signals the exit before the wipe lands, keeping the change readable at speed."
+  },
+  "build_hint": {
+    "gsap": "tl.to(benefitRow, {scale: 0.7, duration: 0.4, ease: 'power2.in'}); tl.fromTo(bands, {xPercent: -60, yPercent: 40}, {xPercent: 0, yPercent: 0, duration: 0.3, ease: 'power3.out', stagger: 0.04}, '-=0.05'); tl.set(benefitRow, {autoAlpha: 0}, '<0.12'); tl.fromTo(headline, {clipPath: 'inset(0 100% 0 0)'}, {clipPath: 'inset(0 0% 0 0)', duration: 0.15, ease: 'power2.out'}, '<');",
+    "remotion": "Row scale 1->0.7 via interpolate(frame, [0, 12], [1, 0.7], {easing: Easing.in(Easing.quad)}); each band translates along its diagonal with interpolate(frame - 11 - i*1, [0, 9], [-60, 0], {easing: Easing.out(Easing.cubic), extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}); hide the row and reveal the headline behind the leading band edge (clip-path) over ~4 frames."
+  },
+  "confidence": "medium",
+  "notes": "The outgoing row is gone in the end frame, so b02 (union box over the centre region) stands in for it. Exact reveal of the headline is hidden by the band sweep (it appears fully formed by f4132); mask_reveal is inferred. SFX x047 left as unsure."
+}

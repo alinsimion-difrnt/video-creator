@@ -1,0 +1,118 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a3_pattern_cards",
+  "annotator": "claude-code",
+  "skill": "write-pattern-cards@e525a58fa6d8",
+  "model": null,
+  "input_hash": "9c1f5fdb47ee71ffbf4b8edffe90edc8dcc4a6ba62bc663d12e6481fc56608de",
+  "created_at": "2026-10-05T13:25:34.288080Z"
+ },
+ "id": "chat_bubble_append",
+ "name": "Chat Bubble Pops In",
+ "summary": "A new message bubble, often with its sender's avatar, pops in at the bottom of a chat and drifts up into place while the earlier messages nudge upwards to make room.",
+ "when_to_use": [
+  "Showing a conversation between a customer and an AI agent turn by turn",
+  "Making a reply feel live, as if it is arriving right now",
+  "Chaining one message after another so a demo keeps momentum"
+ ],
+ "avoid_when": [
+  "The full conversation must be readable at once; animating each bubble then just delays it",
+  "Messages arrive so fast that the bubbles overlap their own entrances"
+ ],
+ "steps": [
+  "Bring in the chat panel first and let it settle fully before any message arrives",
+  "Push the existing bubbles up slightly to open a slot at the bottom",
+  "Pop the new bubble and its avatar in together as one unit: fade up from slightly smaller and slightly lower",
+  "Optionally grow the bubble from a small pill before its text appears, so the reply slot shows first",
+  "Chain the next content, such as a reply or a row of cards, right after the bubble settles"
+ ],
+ "build": {
+  "gsap": "Timeline: a gsap.to moving existing bubbles up with a soft ease-in-out, then a fromTo on avatar and bubble (autoAlpha, scale from slightly smaller, y from slightly lower) with an ease-out (power out) and a tiny stagger between avatar and bubble. A light overshoot (back.out) is an option for a bouncier pop. Set transformOrigin at the bubble's top or tail edge.",
+  "remotion": "One high-damping spring for the existing bubbles' upward drift; a delayed spring per new bubble mapped to opacity, scale and translateY. Keep damping high for the usual smooth ease-out settle, or lower it slightly for a small overshoot. Stagger later items by a frame offset on the spring."
+ },
+ "sound": "No typical sound: the mix is mostly unsure or music, with an occasional reverse swoosh near the bubble's arrival.",
+ "why_premium": "It mimics how real chat feels. The panel lands first so the eye reads the frame before the message, then each bubble arrives with its avatar as one decelerating unit, small and low then settling into place. Nudging the older messages up instead of jumping the layout keeps the composition balanced, and showing the empty reply slot before the text reads as genuine turn-taking. Chaining the next message right after keeps a conversation demo moving without feeling rushed.",
+ "numbers": {
+  "id": "chat_bubble_append",
+  "events": 3,
+  "videos": 2,
+  "weight": 2.6,
+  "duration_ms": {
+   "n": 10,
+   "videos": 1,
+   "weight": 7.9866,
+   "median": 588.9,
+   "p25": 528.1,
+   "p75": 720.139,
+   "ci": [
+    528.692,
+    696.452
+   ]
+  },
+  "easing_mix": {
+   "ease_out": 0.8998,
+   "spring_overshoot": 0.1002
+  },
+  "change_mix": {
+   "slide_up": 0.5435,
+   "pop": 0.3043,
+   "fade": 0.0978,
+   "scale_up": 0.0543
+  },
+  "role_mix": {
+   "card": 0.4182,
+   "body_text": 0.2909,
+   "avatar": 0.1455,
+   "label": 0.0727,
+   "ui_panel": 0.0727
+  },
+  "sfx_label_mix": {
+   "unsure": 0.537,
+   "music": 0.3148,
+   "swoosh_reverse": 0.1481
+  },
+  "sfx_offset_ms": {
+   "n": 20,
+   "videos": 1,
+   "weight": 16.0,
+   "median": 17.65,
+   "p25": -245.15,
+   "p75": 274.3,
+   "ci": [
+    -141.7,
+    195.4
+   ]
+  },
+  "examples": [
+   {
+    "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+    "event": "e003",
+    "score": 4.0
+   },
+   {
+    "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+    "event": "e027",
+    "score": 5.0
+   }
+  ]
+ },
+ "examples": [
+  {
+   "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+   "event": "e003",
+   "score": 4.0
+  },
+  {
+   "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+   "event": "e027",
+   "score": 5.0
+  }
+ ],
+ "caveats": [
+  "Seen in only two videos",
+  "Timing and sound offset were measured in a single video",
+  "Sound offset spread is wide, so there is no reliable sync point"
+ ]
+}

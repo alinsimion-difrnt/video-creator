@@ -1,0 +1,63 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "c1846e6f341a08f4984c13d6377533a915a9dac01f6902c1e3a6a5c869085403",
+    "created_at": "2026-10-05T06:44:30.221247Z"
+  },
+  "video": "cursor-introducing-cursor-3",
+  "event": "e005",
+  "task": "a2-e005",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Cursor 3 app window (agent sidebar plus agent reply pane) scaling up as the view pushes in toward the lower-left",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 450, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [810, 412, 858, 432],
+      "manual_reason": "No candidate box covers the mouse pointer. It ends hovering over the Review +2392 -1 button.",
+      "label": "Mouse pointer arriving on the Review button",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "pointer travel and hover (hand cursor)",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    }
+  ],
+  "sfx_review": [
+    {"id": "x035", "verdict": "unsure", "label": "unsure", "note": "Before the burst, in the pause after 'place.'. A strong broadband onset that may be the cut into this shot or speech residue. No visual change inside this event at that moment."},
+    {"id": "x036", "verdict": "unsure", "label": "unsure", "note": "Mid push-in, during 'can'. A thin vertical transient. Speech residue is more likely than a designed impact, but it cannot be ruled out."},
+    {"id": "x037", "verdict": "unsure", "label": "unsure", "note": "Coincides with the push-in settling and the word 'at'. A low-frequency onset; the impact label is plausible but weak."},
+    {"id": "x038", "verdict": "unsure", "label": "unsure", "note": "After the event, in the pause before 'you can'. Partly off the spectrogram edge."}
+  ],
+  "pattern": {
+    "id": "ui_camera_push_in",
+    "proposed_name": null,
+    "description": "From a full-window view of the Cursor 3 agent reply, the frame pushes in about 2x toward the lower-left, ending on the summary list, the sidebar and the Review / Commit & Push buttons, where the pointer hovers on Review as the voice-over says 'You can look at changes'.",
+    "why_premium": "A fast, eased push-in turns a dense full-screen UI into a legible close-up and lands on the exact control the narration names (Review). The viewer never has to search the screen."
+  },
+  "build_hint": {
+    "gsap": "gsap.fromTo(uiWrapper,{scale:1,xPercent:0,yPercent:0},{scale:2,xPercent:17,yPercent:-16,transformOrigin:'30% 85%',duration:0.45,ease:'power2.inOut'}); then tween the pointer to the Review button: gsap.to(pointer,{x:reviewX,y:reviewY,duration:0.4,ease:'power2.out'},'-=0.1')",
+    "remotion": "const p = spring({frame, fps, config:{damping:200, stiffness:100, mass:1}}) (no overshoot, critically damped feel). scale = interpolate(p,[0,1],[1,2]). Translate the wrapper toward the lower-left with interpolate on the same p. Pointer position interpolates to the Review button with Easing.out(Easing.cubic)."
+  },
+  "confidence": "medium",
+  "notes": "Camera verdict is push_in (scale about 1.99), so the UI scale-up is a camera/zoom move on a screen recording rather than element animation. The energy curve shows a near-instant start at f742 and a stop at f754, which suggests an ease_in_out or even a near-linear zoom, so measure it. The pointer's motion is uncertain (it may only ride the zoom). All four SFX candidates are unsure; the reverse-swoosh CLAP labels are probably speech or music residue."
+}

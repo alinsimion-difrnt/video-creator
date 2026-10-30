@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="{{LANG}}">
+<head>
+<meta charset="utf-8">
+<title>presenter layout</title>
+<script src="assets/gsap.min.js"></script>
+<!-- Presenter layouts over a background (create/kit, `create pip`). One full-frame presenter video: for the
+     bubble it is clipped to a circle around the face and scaled into the corner; for split it moves below the
+     product and is clipped above the product's bottom edge. Changing layout is one continuous move. Poses come from create/footage/layout.py (face from F5 framing, corner from the frame's
+     safe area). -->
+<style>
+  {{CSS_VARS}}
+  html, body { margin: 0; padding: 0; background: #000; }
+  #root { position: relative; width: var(--w); height: var(--h); overflow: hidden; background: #000; }
+  #bg { position: absolute; left: 0; top: 0; width: var(--w); height: var(--h); z-index: 1; }
+  #clipbox { position: absolute; left: 0; top: 0; width: var(--w); height: var(--h); z-index: 2;
+    clip-path: inset(var(--top, 0px) 0px 0px 0px); }
+  #pres { position: absolute; left: 0; top: 0; width: var(--w); height: var(--h); transform-origin: 0 0;
+    clip-path: circle(var(--r, 4000px) at var(--cx, 50%) var(--cy, 50%)); will-change: transform, clip-path; }
+  #face { position: absolute; left: 0; top: 0; width: var(--w); height: var(--h); }
+  #ring { position: absolute; left: var(--bx); top: var(--by); width: var(--d); height: var(--d); z-index: 3;
+    border-radius: 50%; box-sizing: border-box; border: var(--ring-w) solid var(--ring); opacity: 0;
+    box-shadow: 0 10px 30px -8px rgba(0,0,0,.45), 0 2px 6px rgba(0,0,0,.25); pointer-events: none; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="layout" data-width="{{W}}" data-height="{{H}}" data-start="0"
+     data-duration="{{DURATION}}">
+  <video id="bg" src="background.mp4" muted playsinline data-start="0" data-duration="{{DURATION}}"
+         data-track-index="0"></video>
+  <div id="clipbox" data-layout-allow-overflow="the presenter layer is clipped below the product in split">
+    <div id="pres" data-layout-allow-overflow="the presenter layer scales and moves between layouts">
+      <video id="face" src="presenter.mp4" muted playsinline data-start="0" data-duration="{{DURATION}}"
+             data-track-index="1"></video>
+    </div>
+  </div>
+  <div id="ring" data-layout-allow-overlap="the bubble's ring sits over the background by design"></div>
+</div>
+<script type="application/json" id="layout-data">{{DATA}}</script>
+<script>
+(function () {
+  const D = JSON.parse(document.getElementById("layout-data").textContent);
+  const P = D.poses, T = D.transition, DUR = D.duration;
+  // Clip shapes are built in CSS from numeric custom properties: GSAP tweens numbers reliably, while
+  // tweening clip-path strings between poses produced garbage centres (the presenter vanished mid-move).
+  const state = (p) => ({ x: p.x, y: p.y, scale: p.scale, opacity: p.layout === "off" ? 0 : 1,
+    "--r": p.r + "px", "--cx": p.cx + "px", "--cy": p.cy + "px" });
+  const ringOn = (p) => (p.layout === "pip" ? 1 : 0);
+  const box = (p) => ({ "--top": p.top + "px" });
+  gsap.set("#clipbox", box(P[0]));
+  gsap.set("#pres", state(P[0]));
+  gsap.set("#ring", { opacity: ringOn(P[0]) });
+  const tl = gsap.timeline({ paused: true });
+  for (let i = 1; i < P.length; i++) {
+    const a = P[i - 1], b = P[i];
+    if (a.layout === b.layout && a.x === b.x && a.y === b.y && a.scale === b.scale && a.top === b.top) continue;
+    const at = Math.max(0, b.t - T / 2);
+    tl.fromTo("#clipbox", box(a), Object.assign(box(b), { duration: T, ease: "power3.inOut", immediateRender: false }), at);
+    tl.fromTo("#pres", state(a), Object.assign(state(b), { duration: T, ease: "power3.inOut", immediateRender: false }), at);
+    if (ringOn(a) && !ringOn(b)) tl.fromTo("#ring", { opacity: 1 }, { opacity: 0, duration: T * 0.3, ease: "none", immediateRender: false }, at);
+    if (!ringOn(a) && ringOn(b)) tl.fromTo("#ring", { opacity: 0 }, { opacity: 1, duration: T * 0.3, ease: "none", immediateRender: false }, at + T * 0.7);
+  }
+  tl.set({}, {}, DUR);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["layout"] = tl;
+})();
+</script>
+</body>
+</html>

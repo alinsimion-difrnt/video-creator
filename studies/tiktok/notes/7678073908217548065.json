@@ -1,0 +1,38 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "a580bc62c9fb36a5b579cf15293c628ec27feae8308107eea30713b6e30545f1",
+                 "created_at": "2026-10-13T12:20:00+00:00"},
+  "id": "7678073908217548065",
+  "format": "talking_head",
+  "hook": {"type": "question",
+           "line": "What is something in SEO nobody knows to do?",
+           "visual": "Man in a puffer jacket at an outdoor cafe table, coffee cup in hand, looking at the lens; the question sits as large white sentence captions across his chest."},
+  "beats": [
+    {"t": 0.0, "what": "The question is asked over a calm, still shot of him holding a coffee, like a street-interview prompt."},
+    {"t": 3.56, "what": "Answer in one line: add a preferred sources badge to your website (finger raised)."},
+    {"t": 14.25, "what": "A Google 'Top stories' screenshot card pops above the captions as he lists AI Overviews, AI Mode, Discover."},
+    {"t": 17.82, "what": "Calls it a new Google feature everybody is sleeping on."},
+    {"t": 24.95, "what": "Google Search Central docs card with a blue arrow: paste the documentation into your favourite AI."},
+    {"t": 28.51, "what": "The blue 'make me a preferred source on Google' button appears as proof: done in five minutes."},
+    {"t": 32.07, "what": "A green version of the button shows it can be restyled."},
+    {"t": 35.64, "what": "A news headline card says it is a global SEO signal; closes on 'your site does better for everybody'."}
+  ],
+  "graphics": {"captions": "sentence",
+               "caption_position": "middle",
+               "devices": ["screenshot", "arrow_or_circle", "product_ui", "jump_cut"],
+               "density": "moderate", "per_minute_estimate": 9},
+  "characters": [],
+  "cta": {"kind": "none", "t": null},
+  "why_it_works": [
+    "Opens with a question that frames the tip as insider knowledge ('nobody knows'), then answers it within about 3 s, so there is no wait.",
+    "Each claim gets a small screenshot card above the captions (Top stories, Search Central docs, the button, a news headline), so proof arrives as the claim is spoken.",
+    "Short and single-idea (39 s, one tip), with a high loop score (0.796) that invites rewatching.",
+    "The relaxed cafe setting with a coffee feels like advice from a friend, not an ad."
+  ],
+  "weaknesses": [
+    "No CTA at all; nothing asks to follow or comment.",
+    "Captions and cards sit across his chest in the middle band, with 95% of text outside the safe area.",
+    "Zero motion events and only 3 cuts; the cards just appear without animation."
+  ],
+  "for_robert": "Answer the hook question in the first 3 s, then drop one small proof card (screenshot, docs, headline) above the caption for each claim; Fred could slide each card in and nudge it away."
+}

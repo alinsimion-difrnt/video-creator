@@ -1,0 +1,47 @@
+# TikTok study (studies/README.md): every threshold and target the study code uses. Read by
+# study/tiktok/config.py. The lens detectors (cuts, events, words, loudness) keep their own values in
+# config/lens.yaml.
+schema_version: 1
+
+select:                        # building sources.yaml from the discovered candidates
+  total: 200
+  per_topic: 40                # ai, marketing, claude, geo, seo
+  max_per_creator: 5
+  min_seconds: 12
+  max_seconds: 180
+  max_age_days: 1095           # videos older than three years are skipped (the feed changed)
+  min_likes: 50                # the study learns from videos that landed
+  exclude: 'geograph|geolog|minecraft|roblox|fortnite|\bfps\b|gaming|pc ?tips|#map\b'   # off-topic matches
+  topic_keywords:              # a caption must match its topic (case-insensitive regex); first match wins
+    claude: '\bclaude\b|anthropic'
+    geo: 'generative engine|\baeo\b|answer engine|ai search|ai overview|llms\.txt|preferred source|rank (in|on) (chatgpt|ai)|chatgpt (seo|search)|\bllm seo|ai seo|\bgeo\b.{0,80}(seo|\bai\b|search|chatgpt|llm|rank)|(seo|\bai\b|search|chatgpt|llm|rank).{0,80}\bgeo\b'
+    seo: '\bseo\b|search engine|google (search|rank|update|algorithm|discover)|keyword|backlink|\bserp|ranking'
+    ai: '\bai\b|chatgpt|\bgpt|prompt|gemini|\bllm|agents?\b|automat|zapier|n8n|artificial intelligence|vibe cod'
+    marketing: 'marketing|brand|content|sales|\bsell|\bugc\b|social media|campaign|launch|customer|business|founder|creator'
+
+measure:
+  scan_fps: 15                 # lens video scan (cuts, events, punch-ins)
+  sample_fps: 1                # OCR and face samples (OCR is the slow step: ~1 s a frame on 4 CPUs)
+  sample_width: 432            # frames for OCR and faces (captions stay readable; the copies are 576x1024)
+  ocr_min_score: 0.6
+  ocr_min_chars: 2
+  caption_min_height: 0.025    # text at least this tall (share of frame height) is caption-sized, not UI/code
+  face_min_height: 0.06        # share of frame height: smaller faces are not a talking head
+  face_model: data/models/face_detection_yunet_2026may.onnx   # YuNet (create/footage/reframe.py uses it)
+  face_min_score: 0.7
+  hook_window_s: 3.0
+  end_slack_s: 1.0             # the embed copy adds a ~4 s end slate; its cut is looked for within this of
+                               # the stated whole-second length, and the copy is trimmed this far past it
+  punch_min_step: 0.012        # global scale change per scan frame that counts as a zoom step
+  punch_min_total: 0.05        # a punch-in / zoom: at least 5% scale change over one run
+  punch_max_gap_frames: 2
+  music_guard_s: 0.12          # gaps between words, shrunk by this, are where a music bed is heard
+  music_min_gap_s: 0.25
+  music_bed_floor_db: -45      # gap RMS above this (dBFS) counts as a music bed
+  safe_core: [0.111, 0.15, 0.722, 0.65]   # house core x 120-780, y 288-1248 of 1080x1920 (external-facts 17)
+  thirds: [0.333, 0.667]       # top / middle / bottom bands of the frame
+
+notes:
+  videos_per_agent: 5
+  sheet_frames: 12             # contact sheet: evenly spaced full frames
+  hook_frames: 8               # hook strip: frames across 0-3 s

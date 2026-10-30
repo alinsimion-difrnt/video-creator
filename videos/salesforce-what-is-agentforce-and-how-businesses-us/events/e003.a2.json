@@ -1,0 +1,114 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "a66b9e33ff9ccfe24a6744902d27d45ebc5257a7ac3cfcedd149fd88cfcc1496",
+    "created_at": "2026-10-05T06:49:08.286183Z"
+  },
+  "video": "salesforce-what-is-agentforce-and-how-businesses-us",
+  "event": "e003",
+  "task": "a2-e003",
+  "elements": [
+    {
+      "box": "b12",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Sales Agent card title",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "barely visible sub-pixel drift / sharpening while the map holds",
+      "is_text": true,
+      "text": "Sales Agent",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": "b08",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Healthcare Agent card title",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "barely visible sub-pixel drift / sharpening while the map holds",
+      "is_text": true,
+      "text": "Healthcare Agent",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": "b10",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Security Agent card title",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "barely visible sub-pixel drift / sharpening while the map holds",
+      "is_text": true,
+      "text": "Security Agent",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": "b15",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Service Agent card title",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "barely visible sub-pixel drift / sharpening while the map holds",
+      "is_text": true,
+      "text": "Service Agent",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": "b18",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Commerce Agent card title",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "barely visible sub-pixel drift / sharpening while the map holds",
+      "is_text": true,
+      "text": "Commerce Agent",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": "b20",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Lead Management chip text",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "barely visible sub-pixel drift / sharpening while the map holds",
+      "is_text": true,
+      "text": "Lead Management",
+      "text_unit": "whole",
+      "estimates": null
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "ambient hold drift",
+    "description": "The completed agent mind-map holds on screen while its text and cards change only at sub-pixel level (slow drift or sharpening), keeping the frame alive during narration without any visible new motion.",
+    "why_premium": "A held diagram that never goes fully static avoids the dead-frame feel of a still slide while not competing with the voice-over."
+  },
+  "build_hint": {
+    "gsap": "gsap.to('.agent-map', {y: '-=2', scale: 1.003, duration: 3, ease: 'none'}) as a slow continuous drift during the hold; no stagger.",
+    "remotion": "translateY = interpolate(frame, [0, 90], [0, -2]); scale = interpolate(frame, [0, 90], [1, 1.003]) - linear, no spring."
+  },
+  "confidence": "low",
+  "notes": "Very low motion energy (max 0.006 on the last frame only); all 7 filmstrip frames look identical to the eye and camera.move is none with scale 1.0. Diff boxes concentrate on agent title text (changed_share 0.36-0.51), so the change may be a subtle drift/sharpen or just compression noise. Possibly a spurious event; worth a human look. IT Agent title has no candidate box. No SFX candidates."
+}

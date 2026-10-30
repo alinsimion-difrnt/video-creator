@@ -1,0 +1,100 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "ba711d266f1e1312152a6ce13a31c3b6131dfeb9dcc295a6a41dce1c76b651c9",
+    "created_at": "2026-10-05T06:48:03.117503Z"
+  },
+  "video": "hubspot-what-is-hubspot",
+  "event": "e003",
+  "task": "a2-e003",
+  "elements": [
+    {
+      "box": null,
+      "manual_box": [253, 361, 747, 639],
+      "manual_reason": "No candidate box covers the hub circle alone; b01 is a union of the whole hub-and-spoke diagram.",
+      "label": "Smart CRM hub circle (press then orange radial fill)",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["scale_down", "mask_reveal", "color_shift", "scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "spring_no_overshoot"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "HubSpot logo inside hub",
+      "role": "logo",
+      "role_other": null,
+      "change_types": ["color_shift"],
+      "change_other": null,
+      "is_text": true,
+      "text": "HubSpot",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 150, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Smart CRM title",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["color_shift"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Smart CRM",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 150, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Powered by AI subline",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["color_shift"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Powered by AI",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 150, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Spoke connectors and product icons",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["color_shift", "scale_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 250, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "A cursor clicks the central Smart CRM hub: the hub squashes slightly as if pressed, then an orange fill grows out from its centre to fill the circle, the label turns white, and the spoke icons change from white ghosts to orange gradient icons as the view pulls back slightly.",
+    "why_premium": "The click has real feedback (press-in, then a radial fill outward from the centre), and that one action switches on the whole platform diagram, so the voiceover line 'platform is connected' becomes a cause-and-effect moment."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.hub', {scale:0.9, duration:0.08, ease:'power2.in'}) then tl.fromTo('.hub-fill', {clipPath:'circle(0% at 50% 50%)'}, {clipPath:'circle(50% at 50% 50%)', duration:0.3, ease:'power3.out'}) with tl.to('.hub', {scale:1, duration:0.35, ease:'power3.out'}, '<'); tl.to('.hub-text', {color:'#fff', duration:0.12}, '<0.05'); spoke icons gsap.to('.spoke-icon', {fill:'orange gradient on', opacity:1, duration:0.2, stagger:0.02}, at click). Whole stage gsap.fromTo('.stage', {scale:1.1}, {scale:1, duration:0.4, ease:'power2.out'}) for the pull-out.",
+    "remotion": "Press: interpolate(frame,[0,2],[1,0.9]); release: spring({frame: frame-2, fps, config:{damping:20, stiffness:200}}) mapping 0.9 to 1 on hub scale. Fill radius = interpolate(frame,[2,10],[0,50],{easing:Easing.out(Easing.cubic)}) in a clipPath circle. Text colour via interpolateColors over frames 3-6. Stage scale interpolate(frame,[0,12],[1.1,1],{easing:Easing.out(Easing.quad)})."
+  },
+  "confidence": "medium",
+  "notes": "camera.move is pull_out (scale 0.89), which matches the whole diagram shrinking. The hub's press-then-regrow could be partly that camera move rather than a separate scale on the hub. The spoke icon colour change happens early (by f339), just before the fill, and may belong to a slightly earlier beat. No SFX candidates."
+}

@@ -1,0 +1,42 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "b5110f419625899bf854ffbe5fb7b6cceede8116cc90c089cadb907729e0ded3",
+    "created_at": "2026-10-05T06:39:36.921937Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e040",
+  "task": "a2-e040",
+  "elements": [
+    {"box": "b06", "manual_box": null, "manual_reason": null, "label": "Sidebar view item selected", "role": "list_item", "role_other": null, "change_types": ["highlight"], "change_other": null, "is_text": true, "text": "Impact vs. Effort", "text_unit": "whole", "estimates": {"duration_ms": 33, "easing_class": "step"}},
+    {"box": "b05", "manual_box": null, "manual_reason": null, "label": "View title", "role": "headline", "role_other": null, "change_types": ["fade"], "change_other": null, "is_text": true, "text": "Impact vs. Effort", "text_unit": "whole", "estimates": {"duration_ms": 33, "easing_class": "step"}},
+    {"box": "b15", "manual_box": null, "manual_reason": null, "label": "X-Axis chip", "role": "button", "role_other": null, "change_types": ["fade"], "change_other": null, "is_text": true, "text": "X-Axis Effort", "text_unit": "whole", "estimates": {"duration_ms": 33, "easing_class": "step"}},
+    {"box": "b14", "manual_box": null, "manual_reason": null, "label": "Y-Axis chip", "role": "button", "role_other": null, "change_types": ["fade"], "change_other": null, "is_text": true, "text": "Y-Axis Impact", "text_unit": "whole", "estimates": {"duration_ms": 33, "easing_class": "step"}},
+    {"box": "b13", "manual_box": null, "manual_reason": null, "label": "Size chip", "role": "button", "role_other": null, "change_types": ["fade"], "change_other": null, "is_text": true, "text": "Size Team Vote", "text_unit": "whole", "estimates": {"duration_ms": 33, "easing_class": "step"}},
+    {"box": "b19", "manual_box": null, "manual_reason": null, "label": "Fields chip", "role": "button", "role_other": null, "change_types": ["fade"], "change_other": null, "is_text": true, "text": "Fields 5", "text_unit": "whole", "estimates": {"duration_ms": 33, "easing_class": "step"}},
+    {"box": "b08", "manual_box": null, "manual_reason": null, "label": "Idea card title", "role": "card", "role_other": null, "change_types": ["fade"], "change_other": null, "is_text": true, "text": "Slack integration", "text_unit": "whole", "estimates": {"duration_ms": 33, "easing_class": "step"}},
+    {"box": "b10", "manual_box": null, "manual_reason": null, "label": "Idea card title", "role": "card", "role_other": null, "change_types": ["fade"], "change_other": null, "is_text": true, "text": "Authentication options", "text_unit": "whole", "estimates": {"duration_ms": 33, "easing_class": "step"}},
+    {"box": "b09", "manual_box": null, "manual_reason": null, "label": "Idea card title", "role": "card", "role_other": null, "change_types": ["fade"], "change_other": null, "is_text": true, "text": "Performance improvements", "text_unit": "whole", "estimates": {"duration_ms": 33, "easing_class": "step"}},
+    {"box": "b01", "manual_box": null, "manual_reason": null, "label": "Impact vs. Effort matrix plot area", "role": "chart", "role_other": null, "change_types": ["fade"], "change_other": null, "is_text": false, "text": null, "text_unit": null, "estimates": {"duration_ms": 130, "easing_class": "ambiguous"}},
+    {"box": "b17", "manual_box": null, "manual_reason": null, "label": "Y-axis impact dot scale", "role": "chart", "role_other": null, "change_types": ["fade"], "change_other": null, "is_text": false, "text": null, "text_unit": null, "estimates": {"duration_ms": 100, "easing_class": "ambiguous"}},
+    {"box": "b12", "manual_box": null, "manual_reason": null, "label": "Idea bubble on matrix", "role": "chart", "role_other": null, "change_types": ["fade"], "change_other": null, "is_text": false, "text": null, "text_unit": null, "estimates": {"duration_ms": 100, "easing_class": "ambiguous"}}
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "skeleton_resolve",
+    "proposed_name": null,
+    "description": "Clicking 'Impact vs. Effort' in the sidebar swaps the Timeline view for the matrix view in one frame (title, axis chips and the idea card column), but the plot first appears empty; over the next frames the axis dot scales and the idea bubbles populate the grid.",
+    "why_premium": "The instant chrome swap followed by data filling the empty grid lands on the voiceover word 'Matrix', so the new view registers as structure first and data second, which reads as the product being fast and the data being live."
+  },
+  "build_hint": {
+    "gsap": "tl.set(timelineView,{autoAlpha:0}).set([title,axisChips,ideaCards],{autoAlpha:1}); then tl.fromTo(axisDots,{autoAlpha:0},{autoAlpha:1,duration:0.2,ease:'power1.out',stagger:0.02},'+=0.3').fromTo(bubbles,{autoAlpha:0,scale:0.8},{autoAlpha:1,scale:1,duration:0.3,ease:'power2.out',stagger:0.04},'<0.05'); sidebar item via tl.set(navItem,{className:'+=selected'},0).",
+    "remotion": "Render the matrix chrome from the cut frame; bubbles and axis dots get opacity=interpolate(frame-delay-i*1,[0,8],[0,1]) and scale=spring({frame:frame-delay-i*1,fps,config:{damping:20,stiffness:180}}) mapped 0.8->1 (no overshoot); delay of about 10 frames after the cut."
+  },
+  "confidence": "medium",
+  "notes": "Screen recording; the view change itself is a single-frame swap (energy spike at one frame), and the plot population is the slower tail. Could also be classed as a hard view switch rather than skeleton_resolve, since there are no placeholder bars, only an empty grid that fills in. Cursor sits on the sidebar item and barely moves."
+}

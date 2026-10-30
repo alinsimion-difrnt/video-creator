@@ -1,0 +1,93 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "31e27169168e51bc35d6c70a69e610463f6d97e53ca9f6075b2605fad248a746",
+    "created_at": "2026-10-05T06:51:29.694876Z"
+  },
+  "video": "salesforce-what-is-agentforce-and-how-businesses-us",
+  "event": "e015",
+  "task": "a2-e015",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Zoom gallery video tiles",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b15",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Sales Coach thumbnail tile",
+      "role": "avatar",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Sales Coach",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b14",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Joyce Turner thumbnail tile",
+      "role": "avatar",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Joyce Turner",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [0, 780, 1000, 1000],
+      "manual_reason": "No candidate covers the whole Salesforce side panel; b01 is the meeting-area diff and the OCR boxes are single lines inside it.",
+      "label": "Salesforce side panel",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x020",
+      "verdict": "override",
+      "label": "music",
+      "note": "Periodic broadband beat streaks across the whole window on a sustained low bed; no transient tied to the visual motion, which has largely settled by 35.05 s."
+    }
+  ],
+  "pattern": {
+    "id": "layout_reframe",
+    "proposed_name": null,
+    "description": "The meeting screen settles leftward: the video tiles and thumbnails slide left while the Salesforce side panel slides in from the right to its docked width. Motion energy peaks on the first frame and decays smoothly, so this is the tail of an ease-out reframe.",
+    "why_premium": "Making room for the AI side panel with one continuous ease-out shift keeps the viewer oriented in the same call and puts the Agentforce panel in focus as the narration says 'AI sales coach agent'."
+  },
+  "build_hint": {
+    "gsap": "Group the meeting stage (tiles + thumbnails) and the side panel. gsap.timeline().fromTo('.stage', {x: 165}, {x: 0, duration: 0.3, ease: 'power3.out'}).fromTo('.side-panel', {x: 150}, {x: 0, duration: 0.3, ease: 'power3.out'}, '<'); no stagger, both move together.",
+    "remotion": "const p = spring({frame, fps, config: {damping: 200, stiffness: 120, mass: 1}}); translateX = interpolate(p, [0, 1], [165, 0]) on the stage and [150, 0] on the side panel; overdamped, no overshoot."
+  },
+  "confidence": "medium",
+  "notes": "camera.move is none, so the leftward shift is reported as content motion. The first filmstrip frame (f817) also shows a white sidebar at the far left that is gone afterwards, possibly residue of the previous transition. Pixel offsets in the build hint are rough reads from the filmstrip."
+}

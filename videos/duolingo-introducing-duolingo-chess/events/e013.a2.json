@@ -1,0 +1,44 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "f4b6bbdbf4a4c998f7593592f7b3d1cead2d2b57e914e32d1350636f48903b24",
+    "created_at": "2026-10-05T06:44:11.499448Z"
+  },
+  "video": "duolingo-introducing-duolingo-chess",
+  "event": "e013",
+  "task": "a2-e013",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Mascot plush dropping from the top and landing in the centre foreground in front of the hero figure",
+      "role": "other",
+      "role_other": "character",
+      "change_types": ["slide_down", "rotate"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_in"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "mascot rain pileup",
+    "description": "Continuation of the end-card gag: another duplicate plush falls from above with heavy motion blur, passes behind the 'on duolingo' overlay and lands face-down in the centre foreground, now partly covering the hero figure in an ever-growing pile.",
+    "why_premium": "Escalating physical comedy on a fixed typographic lockup; the text stays on top and legible while real objects with motion blur and soft contact shadows add tactile, handmade energy."
+  },
+  "build_hint": {
+    "gsap": "Text layers static and above the object layer. gsap.fromTo('.plush', {y: -900, rotation: -30, filter: 'blur(8px)'}, {y: 0, rotation: 10, filter: 'blur(2px)', duration: 0.4, ease: 'power3.in'}) followed by a short squash/settle (scaleY 0.92 -> 1, ease 'back.out(2)', 0.15s).",
+    "remotion": "const y = interpolate(frame - delay, [0, 12], [-900, 0], {easing: Easing.in(Easing.cubic), extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}); then a spring({frame: frame - delay - 12, fps, config: {stiffness: 300, damping: 12}}) driving a small squash; keep text layers above and static."
+  },
+  "confidence": "medium",
+  "notes": "Live-action/puppet compositing. 'on duolingo' (b03) and 'LEARN CHESS' are static overlays; b03 only registers change because the plush passes behind it, so it is not listed. b02 is a union box over the fall path, not used to avoid duplicating the same plush. No SFX candidates; the spectrogram shows only rhythmic music."
+}

@@ -1,0 +1,38 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "d4b8e88ab752a39ecce0a968894161e713e4e575a7846fac8918d674dbe99148",
+                 "created_at": "2026-10-13T15:10:00+00:00"},
+  "id": "7662088856887479565",
+  "format": "talking_head",
+  "hook": {"type": "result_first",
+           "line": "An AI model cited my F1 predictions as the top resource, so here is how to make that happen.",
+           "visual": "Creator mid hair-flip, talking to a selfie camera at home; white title 'How to get chatGPT to recommend you' builds in two lines at the top."},
+  "beats": [
+    {"t": 0.0, "what": "Hair-flip opening, claims her F1 prediction repo was the AI's top cited source; title at top."},
+    {"t": 7.47, "what": "Jump cut; on-screen label defines GEO = Generative Engine Optimization."},
+    {"t": 15.05, "what": "Text list of what can be cited pops up: LinkedIn, Medium, blog, GitHub, etc."},
+    {"t": 22.93, "what": "Cut; asks why this source won, with the AI answer engine named on screen."},
+    {"t": 30.11, "what": "Screenshot of the AI chat answer listing her repo appears above her head."},
+    {"t": 37.64, "what": "Screenshot zoom with a pink box around the GitHub citation and its trusted shield."},
+    {"t": 46.2, "what": "Cut; GitHub repo page screenshot shown at top-left as she says video can't be cited."},
+    {"t": 52.69, "what": "Second reason: the repo name matches the question users ask."},
+    {"t": 59.13, "what": "Zoom punch-in as she gives the rule: answer your target persona's question."},
+    {"t": 67.75, "what": "Third reason: the README exactly answers the query; video ends mid-sentence."}
+  ],
+  "graphics": {"captions": "title_only", "caption_position": "top",
+               "devices": ["screenshot", "arrow_or_circle", "title_text", "zoom_punch", "jump_cut"],
+               "density": "minimal", "per_minute_estimate": 6},
+  "characters": [],
+  "cta": {"kind": "none", "t": null},
+  "why_it_works": [
+    "Proof first: she opens on her own result (cited as the top source) before explaining GEO, so the viewer stays to learn how.",
+    "Numbered reasons (GitHub is trusted, repo name matches the question, README answers it) give a checklist the viewer can copy.",
+    "Real screenshots of the AI answer with a box around her citation make the claim checkable."
+  ],
+  "weaknesses": [
+    "Only 3 cuts in 82 s and a 36 s longest shot; long stretches are a static selfie with no graphics.",
+    "No running captions, so sound-off viewers miss almost everything.",
+    "Audio is quiet (-29 LUFS) and the video ends mid-sentence with no CTA."
+  ],
+  "for_robert": "Open on the proof (a screenshot of an AI citing you) with Fred pointing a box at it, then list numbered reasons; avoid her long uncut stretches and add captions plus a closing CTA."
+}

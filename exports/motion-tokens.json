@@ -1,0 +1,464 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "s10_export",
+  "annotator": "code",
+  "skill": null,
+  "model": null,
+  "input_hash": "52efe18647fd4c244300a2688f72497e7547ee88fd7142a04dd16747cf9eb796",
+  "created_at": "2026-10-05T19:13:48.265695Z"
+ },
+ "duration_ms_by_role": {
+  "avatar": {
+   "median": 643.557,
+   "low": 489.898,
+   "high": 756.362,
+   "n": 22,
+   "videos": 4
+  },
+  "background": {
+   "median": 472.388,
+   "low": 291.194,
+   "high": 921.289,
+   "n": 56,
+   "videos": 14
+  },
+  "body_text": {
+   "median": 484.594,
+   "low": 369.946,
+   "high": 797.662,
+   "n": 48,
+   "videos": 11
+  },
+  "button": {
+   "median": 464.855,
+   "low": 161.804,
+   "high": 747.797,
+   "n": 35,
+   "videos": 13
+  },
+  "card": {
+   "median": 717.178,
+   "low": 507.472,
+   "high": 1185.461,
+   "n": 63,
+   "videos": 14
+  },
+  "chart": {
+   "median": 164.699,
+   "low": 60.76,
+   "high": 551.306,
+   "n": 3,
+   "videos": 3
+  },
+  "cursor": {
+   "median": 547.481,
+   "low": 248.75,
+   "high": 871.475,
+   "n": 37,
+   "videos": 10
+  },
+  "headline": {
+   "median": 558.119,
+   "low": 393.96,
+   "high": 757.961,
+   "n": 106,
+   "videos": 16
+  },
+  "icon": {
+   "median": 390.7,
+   "low": 222.952,
+   "high": 786.034,
+   "n": 60,
+   "videos": 15
+  },
+  "label": {
+   "median": 524.718,
+   "low": 318.615,
+   "high": 717.421,
+   "n": 39,
+   "videos": 14
+  },
+  "list_item": {
+   "median": 492.698,
+   "low": 170.642,
+   "high": 754.99,
+   "n": 115,
+   "videos": 9
+  },
+  "logo": {
+   "median": 576.686,
+   "low": 319.0,
+   "high": 829.952,
+   "n": 52,
+   "videos": 8
+  },
+  "metric": {
+   "median": 133.299,
+   "low": 41.7,
+   "high": 523.593,
+   "n": 23,
+   "videos": 6
+  },
+  "notification": {
+   "median": 565.591,
+   "low": 330.5,
+   "high": 800.741,
+   "n": 2,
+   "videos": 1
+  },
+  "other": {
+   "median": 584.256,
+   "low": 230.22,
+   "high": 840.029,
+   "n": 90,
+   "videos": 15
+  },
+  "ui_panel": {
+   "median": 409.155,
+   "low": 168.899,
+   "high": 672.091,
+   "n": 86,
+   "videos": 16
+  }
+ },
+ "duration_ms_by_change": {
+  "blur_in": {
+   "median": 473.942,
+   "low": 239.69,
+   "high": 985.325,
+   "n": 52,
+   "videos": 12
+  },
+  "blur_out": {
+   "median": 458.78,
+   "low": 342.529,
+   "high": 789.375,
+   "n": 15,
+   "videos": 8
+  },
+  "color_shift": {
+   "median": 579.944,
+   "low": 292.106,
+   "high": 734.078,
+   "n": 96,
+   "videos": 15
+  },
+  "count_up": {
+   "median": 188.8,
+   "low": 129.406,
+   "high": 734.638,
+   "n": 3,
+   "videos": 3
+  },
+  "draw_on": {
+   "median": 633.784,
+   "low": 569.266,
+   "high": 945.811,
+   "n": 9,
+   "videos": 3
+  },
+  "fade": {
+   "median": 583.234,
+   "low": 292.998,
+   "high": 838.401,
+   "n": 486,
+   "videos": 23
+  },
+  "highlight": {
+   "median": 399.008,
+   "low": 171.064,
+   "high": 733.935,
+   "n": 32,
+   "videos": 10
+  },
+  "mask_reveal": {
+   "median": 574.52,
+   "low": 400.481,
+   "high": 1134.706,
+   "n": 24,
+   "videos": 10
+  },
+  "morph": {
+   "median": 545.667,
+   "low": 368.087,
+   "high": 749.983,
+   "n": 35,
+   "videos": 13
+  },
+  "other": {
+   "median": 391.596,
+   "low": 209.837,
+   "high": 672.439,
+   "n": 83,
+   "videos": 16
+  },
+  "pop": {
+   "median": 564.653,
+   "low": 436.537,
+   "high": 832.32,
+   "n": 31,
+   "videos": 11
+  },
+  "rotate": {
+   "median": 569.141,
+   "low": 170.712,
+   "high": 757.579,
+   "n": 24,
+   "videos": 10
+  },
+  "scale_down": {
+   "median": 486.422,
+   "low": 274.995,
+   "high": 798.994,
+   "n": 134,
+   "videos": 21
+  },
+  "scale_up": {
+   "median": 620.702,
+   "low": 293.399,
+   "high": 915.999,
+   "n": 328,
+   "videos": 22
+  },
+  "slide_down": {
+   "median": 517.382,
+   "low": 232.204,
+   "high": 839.921,
+   "n": 294,
+   "videos": 21
+  },
+  "slide_left": {
+   "median": 565.618,
+   "low": 274.942,
+   "high": 865.647,
+   "n": 312,
+   "videos": 23
+  },
+  "slide_right": {
+   "median": 533.743,
+   "low": 236.704,
+   "high": 854.253,
+   "n": 282,
+   "videos": 23
+  },
+  "slide_up": {
+   "median": 572.591,
+   "low": 326.715,
+   "high": 855.655,
+   "n": 447,
+   "videos": 22
+  },
+  "typewriter": {
+   "median": 695.39,
+   "low": 357.988,
+   "high": 961.776,
+   "n": 10,
+   "videos": 6
+  }
+ },
+ "easing": {
+  "ease_out": {
+   "gsap": "circ.out",
+   "css": "cubic-bezier(0.318, 0.656, 0.530, 0.903)",
+   "share": 0.3488
+  },
+  "ease_in_out": {
+   "gsap": "back.inOut(2.5)",
+   "css": "cubic-bezier(0.501, 0.314, 0.415, 0.828)",
+   "share": 0.2318
+  },
+  "ease_in": {
+   "gsap": "circ.in",
+   "css": "cubic-bezier(0.411, 0.129, 0.667, 0.806)",
+   "share": 0.163
+  },
+  "spring_overshoot": {
+   "gsap": "back.out(3)",
+   "css": "cubic-bezier(0.420, 0.480, 0.509, 0.895)",
+   "share": 0.1396
+  },
+  "linear": {
+   "gsap": "none",
+   "css": "linear",
+   "share": 0.1167
+  }
+ },
+ "easing_by_role": {
+  "avatar": {
+   "ease_out": 0.6852,
+   "ease_in_out": 0.1698,
+   "linear": 0.0985,
+   "spring_overshoot": 0.0465
+  },
+  "background": {
+   "ease_out": 0.3223,
+   "ease_in_out": 0.2048,
+   "spring_overshoot": 0.1845,
+   "linear": 0.1608,
+   "ease_in": 0.1276
+  },
+  "body_text": {
+   "ease_out": 0.3385,
+   "ease_in_out": 0.2946,
+   "ease_in": 0.1731,
+   "linear": 0.107,
+   "spring_overshoot": 0.0869
+  },
+  "button": {
+   "ease_out": 0.2991,
+   "ease_in": 0.2552,
+   "ease_in_out": 0.2508,
+   "spring_overshoot": 0.1051,
+   "linear": 0.0898
+  },
+  "card": {
+   "ease_out": 0.4338,
+   "spring_overshoot": 0.1819,
+   "ease_in": 0.1373,
+   "linear": 0.1264,
+   "ease_in_out": 0.1206
+  },
+  "chart": {
+   "ease_in": 0.364,
+   "linear": 0.3629,
+   "ease_out": 0.273
+  },
+  "cursor": {
+   "ease_out": 0.4101,
+   "spring_overshoot": 0.2151,
+   "ease_in_out": 0.1586,
+   "ease_in": 0.1098,
+   "linear": 0.1064
+  },
+  "headline": {
+   "ease_out": 0.5005,
+   "ease_in_out": 0.2448,
+   "spring_overshoot": 0.1008,
+   "ease_in": 0.1003,
+   "linear": 0.0535
+  },
+  "icon": {
+   "ease_in_out": 0.281,
+   "ease_out": 0.2708,
+   "ease_in": 0.1999,
+   "spring_overshoot": 0.1614,
+   "linear": 0.0868
+  },
+  "label": {
+   "ease_out": 0.4195,
+   "ease_in_out": 0.2458,
+   "ease_in": 0.1439,
+   "spring_overshoot": 0.1372,
+   "linear": 0.0537
+  },
+  "list_item": {
+   "ease_out": 0.3231,
+   "ease_in": 0.2382,
+   "ease_in_out": 0.1718,
+   "spring_overshoot": 0.149,
+   "linear": 0.1179
+  },
+  "logo": {
+   "ease_in_out": 0.3784,
+   "ease_out": 0.3723,
+   "linear": 0.1286,
+   "ease_in": 0.0606,
+   "spring_overshoot": 0.0602
+  },
+  "metric": {
+   "ease_in": 0.5312,
+   "ease_in_out": 0.2343,
+   "ease_out": 0.1172,
+   "spring_overshoot": 0.1172
+  },
+  "notification": {
+   "ease_out": 0.5001,
+   "ease_in_out": 0.4999
+  },
+  "other": {
+   "ease_in_out": 0.2535,
+   "linear": 0.2303,
+   "spring_overshoot": 0.1878,
+   "ease_out": 0.1756,
+   "ease_in": 0.1528
+  },
+  "ui_panel": {
+   "ease_out": 0.2901,
+   "ease_in_out": 0.2429,
+   "ease_in": 0.1782,
+   "spring_overshoot": 0.1522,
+   "linear": 0.1366
+  }
+ },
+ "springs": [
+  {
+   "name": "bouncy",
+   "remotion": {
+    "mass": 1.0,
+    "stiffness": 59.71,
+    "damping": 0.89
+   },
+   "zeta": 0.05,
+   "settle_ms": {
+    "median": 426.926,
+    "low": 236.446,
+    "high": 693.505,
+    "n": 85,
+    "videos": 19
+   },
+   "share": 0.1016
+  },
+  {
+   "name": "snappy",
+   "remotion": {
+    "mass": 1.0,
+    "stiffness": 15236.28,
+    "damping": 166.78
+   },
+   "zeta": 0.809,
+   "settle_ms": {
+    "median": 127.163,
+    "low": 73.957,
+    "high": 182.128,
+    "n": 194,
+    "videos": 21
+   },
+   "share": 0.2318
+  },
+  {
+   "name": "smooth",
+   "remotion": {
+    "mass": 1.0,
+    "stiffness": 210.08,
+    "damping": 26.16
+   },
+   "zeta": 0.836,
+   "settle_ms": {
+    "median": 666.388,
+    "low": 477.603,
+    "high": 918.9,
+    "n": 558,
+    "videos": 23
+   },
+   "share": 0.6667
+  }
+ ],
+ "overshoot_share": 0.1325,
+ "overshoot_pct": {
+  "median": 9.345,
+  "low": 2.245,
+  "high": 23.401,
+  "n": 111,
+  "videos": 22
+ },
+ "word_stagger_ms": {
+  "median": 83.826,
+  "low": 42.0,
+  "high": 168.0,
+  "n": 61,
+  "videos": 16
+ },
+ "all_at_once_share": 0.6258
+}

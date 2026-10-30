@@ -1,0 +1,174 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "7c811e5fe4bdb6153620d8050ea61d6e1017eb9618983360271a697aa8449510",
+    "created_at": "2026-10-05T06:33:51.612224Z"
+  },
+  "video": "typeform-apply-your-brand-assets-to-a-typeform-wi",
+  "task": "a1-p6",
+  "shots": [
+    {
+      "shot": "s024",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "A washed-out 'Brand kits' list page (Headphone Corp and Tropical Hotel Group cards) with the form editor ghosted faintly behind it",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "Brand kits",
+        "Create brand kit",
+        "Headphone Corp",
+        "Tropical Hotel Group",
+        "Headphone Co...",
+        "Tropical Hotel ..."
+      ],
+      "text_word_count": 14,
+      "typography": "Native product UI only: regular-weight sans page heading 'Brand kits' in sentence case, small white-on-black button label with a plus glyph, regular sans card titles and truncated footer labels; default tracking. No added motion-graphics type.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Outro bridge: the Brand kits list sits under a strong white wash, double-exposed over the faded editor, while the cursor idles at the top right and the VO says 'Stay on brand with' (w270-w273). The image is otherwise static; in the final sampled frame (2:17.5) it has dissolved to white with a grey 'Typeform' wordmark fading in.",
+      "build_rebuild": "Crossfade a Brand kits screenshot in under an ~85% white overlay on top of the fading editor capture, hold it static for ~2.5 s, then dissolve the whole frame to a white background over ~0.4 s while the centred wordmark fades from 0 to full opacity.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s025",
+      "shot_type": "logo",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Centred black 'Typeform' wordmark on a plain white background",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "Typeform"
+      ],
+      "text_word_count": 1,
+      "typography": "Single wordmark in a geometric/humanist sans, bold-ish (semi-bold) weight, title case, normal tracking (low-confidence guess: Typeform's own brand sans)",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "End card: the Typeform wordmark holds centred on white, fully static, for ~3.4 s as the VO finishes 'Typeform.' (w274) and the music plays out to the end of the video.",
+      "build_rebuild": "Render a white full-frame background with a centred black wordmark at ~22% of frame width and hold it static for ~3.4 s until the end of the video.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {
+        "beat": "hook",
+        "shots": ["s001", "s002"],
+        "words": [0, 9]
+      },
+      {
+        "beat": "mechanism",
+        "shots": ["s003", "s004", "s005"],
+        "words": [10, 30]
+      },
+      {
+        "beat": "demo",
+        "shots": ["s006", "s007", "s008", "s009", "s010", "s011", "s012", "s013", "s014", "s015", "s016", "s017", "s018", "s019", "s020", "s021", "s022"],
+        "words": [31, 245]
+      },
+      {
+        "beat": "outcome",
+        "shots": ["s023"],
+        "words": [246, 269]
+      },
+      {
+        "beat": "cta",
+        "shots": ["s024", "s025"],
+        "words": [270, 274]
+      }
+    ],
+    "hook": {
+      "text": "Put your brand front and center with Typeforms Brand Kit. (VO over a title card reading 'Add brand assets to your typeforms with Brand Kit')",
+      "technique": "bold_claim",
+      "technique_other": null,
+      "shots": ["s001", "s002"],
+      "words": [0, 9]
+    },
+    "cta": {
+      "text": "Stay on brand with Typeform. (spoken sign-off over the wordmark; no on-screen action, URL or button)",
+      "shots": ["s024", "s025"]
+    },
+    "tone": "Friendly, calm and instructional: a help-centre style walkthrough with a warm conversational narrator, light background music and a short designed intro before real-time product screen recording.",
+    "signature_moments": [
+      {
+        "shots": ["s004"],
+        "description": "A pink colour swatch slides across the plain form's headline and, inside its mask, the text re-renders in the themed serif style, a 'theme lens' that visualises what setting a colour palette does.",
+        "why_premium": "It explains the feature's value in under a second without words, using a masked dual-layer reveal that reads as bespoke motion design rather than a screen capture."
+      },
+      {
+        "shots": ["s003", "s005", "s017"],
+        "description": "The intro builds a recreated form that gains a logo, then fans into a diagonal cascade of three themed versions (yellow, pink, teal); the demo later produces those same three Tropical themes for real.",
+        "why_premium": "The intro previews the exact end state of the tutorial, so the screen recording pays off a promise already made visually, giving the piece a planned narrative arc."
+      },
+      {
+        "shots": ["s015", "s021"],
+        "description": "Spotlight holds dim the whole editor except the Brand Kit palette popover and the theme card stack, landing on the narration ('color palettes', 'here').",
+        "why_premium": "Directed attention on dense UI turns a raw recording into a guided read, a small post-production touch that many tutorials skip."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 3,
+        "evidence": "A clear benefit line spoken over a clean squircle title card, followed by a slide-out exit, but the card is static for ~2.7 s and makes no stat, question or pain point; competent rather than gripping.",
+        "refs": ["s001", "s002", "w0", "w9"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "Every VO line maps to a visible click (Brand kit sidebar, Create brand kit, Colors '+', Themes tab, Design tab, theme card), push-ins and spotlights point to the active control, and the payoff is shown explicitly. The 37 s single shot s012 packs many steps and an in-shot jump edit, which slows the read.",
+        "refs": ["s007", "s012", "s014", "s021", "s023", "w36", "w228"]
+      },
+      "ui_showcase": {
+        "score": 4,
+        "evidence": "Real product UI at legible scale with digital push-ins (s008, s010, s014, s023), spotlight dims (s015, s021) and a before/after theme swap on the canvas; plus a stylised recreated form in the intro. Much of the middle is unzoomed full-frame recording.",
+        "refs": ["s005", "s014", "s015", "s016", "s023"]
+      },
+      "motion_polish": {
+        "score": 3,
+        "evidence": "The intro (panel slide, wipe-up, swatch mask, themed card cascade) is crafted, but the body relies on crossfades, simple digital zooms and real-time cursor moves, with a visible jump edit in s012 and a washed-out double-exposure outro bridge in s024.",
+        "refs": ["s002", "s004", "s005", "s012", "s024"]
+      },
+      "sound_design": {
+        "score": 3,
+        "evidence": "Judged from anchors audio facts plus visuals: music bed at 136 BPM throughout at -18.26 LUFS integrated; designed whoosh/swoosh/impact SFX (x001-x003) only in the intro transitions; the rest of the 21 SFX candidates are mostly diegetic typing/click sounds from the recording (x007-x020) plus one chime (x021, ~99.2 s) near the theme being applied in s016. Clean and unobtrusive but not sculpted to the edit.",
+        "refs": ["s002", "s004", "s009", "s013", "s016"]
+      },
+      "vo_script_quality": {
+        "score": 4,
+        "evidence": "275 words in ~141 s, plain imperative steps ('click here in the bottom-left corner', 'Under the Design tab') with sequencing markers (First, Then, Finally) and a clear payoff line 'instantly branded Typeform'. Slightly long-winded side branches (delete assets w123-w145, editing from the form w249-w269).",
+        "refs": ["w36", "w54", "w114", "w246", "w249"]
+      },
+      "brand_consistency": {
+        "score": 4,
+        "evidence": "Bookended by a Typeform title card and wordmark end card in the same sans; the demo brand (THG pink/teal/yellow themes, serif type) introduced in the recreated intro carries consistently through every demo stage to the final branded form.",
+        "refs": ["s001", "s005", "s017", "s023", "s025"]
+      },
+      "works_muted": {
+        "score": 3,
+        "evidence": "No captions or overlay labels; with sound off the cursor clicks, push-ins and spotlights still show the path (sidebar, create kit, add assets, theme, apply), and the before/after theme swap is visible, but the reasons and some steps (e.g. long s012) rely on the VO.",
+        "refs": ["s001", "s012", "s021", "s023"]
+      },
+      "overall": {
+        "score": 3,
+        "evidence": "A competent, clear product tutorial with a well-designed 13 s animated intro and good attention-direction touches, but most of its 141 s is real-time screen recording with basic transitions and a plain outro, so it reads as polished help content rather than a premium launch explainer.",
+        "refs": ["s004", "s005", "s012", "s021", "s025"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 2,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "The title card text is baked into the intro and nearly every frame is an English product UI screen recording (sidebar, buttons, file names, typed names), so localising means re-recording the UI in each language; the steps also lean on the VO. Only the end card (wordmark) and the wordless intro animation (s002-s005) transfer as-is."
+    }
+  }
+}

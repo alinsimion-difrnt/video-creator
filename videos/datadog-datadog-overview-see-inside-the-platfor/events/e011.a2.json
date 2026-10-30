@@ -1,0 +1,79 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "ba3ee1201f1502816954145d191156d7a7f2a56bb7591a1ddd3f5e17ad1bcbe2",
+    "created_at": "2026-10-05T06:42:55.116600Z"
+  },
+  "video": "datadog-datadog-overview-see-inside-the-platfor",
+  "event": "e011",
+  "task": "a2-e011",
+  "elements": [
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Headline 'On one powerful platform'",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["fade", "blur_in"],
+      "change_other": null,
+      "is_text": true,
+      "text": "On one powerful platform",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 250, "easing_class": "ease_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [86, 105, 900, 898],
+      "manual_reason": "No candidate box covers the whole isometric dashboard; diff boxes are fragments and b01 is the full frame (used for the background).",
+      "label": "Isometric dashboard (wall of tilted screens converging into one dashboard)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["scale_up", "morph"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 550, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Background diagonal stripes dissolving into soft magenta-violet gradient",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["fade", "color_shift"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x030",
+      "verdict": "unsure",
+      "label": "unsure",
+      "note": "At 28.07s a new sustained tonal band starts with no clear transient; could be a chime or just a music chord change. It lands right as the dashboard settles."
+    }
+  ],
+  "pattern": {
+    "id": "ui_camera_push_in",
+    "proposed_name": null,
+    "description": "A diagonal wall of tilted dashboard screens collapses into a single isometric dashboard while the camera pushes in. The striped background dissolves to a clean gradient and the headline fades/blurs in over the product.",
+    "why_premium": "One continuous move takes the viewer from 'many tools' to 'one platform', so the motion itself makes the claim. The isometric tilt and the background calming down put the focus on the product UI with the headline locked on top."
+  },
+  "build_hint": {
+    "gsap": "tl.fromTo('.headline',{opacity:0,filter:'blur(12px)'},{opacity:1,filter:'blur(0px)',duration:0.25,ease:'power2.out'}); tl.to('.screen-wall',{scale:1.2,x:'+=40',duration:0.55,ease:'power3.out'},'<'); tl.to('.stripes',{opacity:0,duration:0.4,ease:'power1.inOut'},'<'); tl.fromTo('.iso-dashboard',{opacity:0,scale:0.85},{opacity:1,scale:1,duration:0.5,ease:'power3.out'},'<0.15'). Keep the isometric transform (rotateX/rotateZ) on a parent and animate only scale/opacity on children.",
+    "remotion": "headline opacity/blur = interpolate(frame,[0,8],[0,1]) with Easing.out(Easing.cubic); dashboard scale = spring({frame:frame-4,fps,config:{damping:200,stiffness:120,mass:1}}) mapped to 0.85->1 (no overshoot); stripes opacity = interpolate(frame,[0,12],[1,0]) with ease-in-out."
+  },
+  "confidence": "medium",
+  "notes": "The camera verdict is push_in. The screen wall converging into one dashboard may be a cross-dissolve between two layouts rather than a true morph. Metric tiles (b07/b10/b11) move with the dashboard, so they are not listed separately."
+}

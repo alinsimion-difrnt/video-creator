@@ -1,0 +1,65 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "ae127cf38e36dbe3488b4f6a39675821481ac473f9f03e8107409aaa7e4db92d",
+    "created_at": "2026-10-05T06:43:14.123007Z"
+  },
+  "video": "datadog-datadog-overview-see-inside-the-platfor",
+  "event": "e002",
+  "task": "a2-e002",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Host map hexagon grid",
+      "role": "chart",
+      "role_other": null,
+      "change_types": ["scale_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 550, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [435, 480, 551, 532],
+      "manual_reason": "Only candidate is the whole-frame diff box (b01, used for the grid); the selected host hex that turns purple at the end has no own box.",
+      "label": "Selected host hexagon highlight",
+      "role": "other",
+      "role_other": "map_marker",
+      "change_types": ["highlight", "color_shift"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 150, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x007",
+      "verdict": "override",
+      "label": "music",
+      "note": "Vertical broadband streak is one of an evenly spaced train of percussion hits through the whole window (same shape before and after); part of the music bed, not a chime tied to the zoom."
+    }
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "ui zoom out reveal",
+    "description": "Starting tight on a few large host hexagons, the host map zooms out continuously until thousands of tiny hexes fill the frame; the host-detail panel stays fixed while the selected host is marked purple on landing.",
+    "why_premium": "One unbroken zoom turns a single host into a fleet of 7,061, showing scale through motion instead of a number, while the fixed detail panel keeps the viewer anchored."
+  },
+  "build_hint": {
+    "gsap": "gsap.fromTo('.hostmap', {scale: 8, transformOrigin: '50% 40%'}, {scale: 1, duration: 0.6, ease: 'power2.inOut'}); detail panel stays static on a separate layer; at the end tl.set('.hex-selected', {backgroundColor: '#8e44ad'}) (or a 0.1 s fade).",
+    "remotion": "scale = interpolate(frame, [0, 36], [8, 1], {easing: Easing.inOut(Easing.cubic), extrapolateRight: 'clamp'}) on the map layer with transformOrigin '50% 40%'; detail panel outside the scaled layer; selected hex colour switches at the last frame."
+  },
+  "confidence": "medium",
+  "notes": "Camera verdict is pull_out; a near-cut energy spike near the start suggests the first filmstrip frame (with chips inside big hexes) may belong to a cut into the zoom. Pattern is a reverse of ui_camera_push_in, so proposed as 'other'."
+}

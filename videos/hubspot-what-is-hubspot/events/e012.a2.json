@@ -1,0 +1,128 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "95cfdfd82b51d22acb53807f3fc6506bdc60e6297b5b60313de15d5fec864a66",
+    "created_at": "2026-10-05T06:47:00.614469Z"
+  },
+  "video": "hubspot-what-is-hubspot",
+  "event": "e012",
+  "task": "a2-e012",
+  "elements": [
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Sidebar nav selection highlight moving from CRM Suite to Free Tools",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["slide_down", "color_shift"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 120, "easing_class": "step"}
+    },
+    {
+      "box": null,
+      "manual_box": [222, 97, 264, 114],
+      "manual_reason": "No candidate isolates the cursor; b03 covers the whole nav highlight row.",
+      "label": "Cursor moving onto Free Tools nav item",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 200, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b07",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Page title swapping from CRM Suite to Free Tools",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["fade", "slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Free Tools",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 250, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Page subtitle swap",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["fade", "slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Get access to all of HubSpot's free foundational tools",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 250, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Pricing cards: Professional/Enterprise fade out, single Free Tools card fades in",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["fade", "slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b14",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Card title",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Free Tools",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 250, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b06",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Orange CTA button resolving from pale to solid",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["fade", "color_shift"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Get started free",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 250, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "The cursor lands on the Free Tools sidebar item; the selection highlight jumps to it and the right-hand pricing pane cross-fades from the two-card CRM Suite layout to the single Free Tools card, with the pane content drifting up as it settles.",
+    "why_premium": "The click is the cue for the content swap, so the viewer reads cause and effect; the old cards dissolve before the new card arrives (no hard cut), and the swap lands on the narrated word 'free'."
+  },
+  "build_hint": {
+    "gsap": "tl.to(cursor,{y:'+=57',duration:0.2,ease:'power2.out'}).set(navHighlight,{y:57},'<0.1').to('.crm-cards',{autoAlpha:0,duration:0.15,ease:'power1.in'},'<').fromTo('.free-pane > *',{autoAlpha:0,y:16},{autoAlpha:1,y:0,duration:0.3,ease:'power2.out',stagger:0.03},'>-0.05')",
+    "remotion": "Cursor y via interpolate(frame,[0,6],[0,57],{easing:Easing.out(Easing.quad)}); nav highlight jumps at frame 3; old cards opacity interpolate [3,7]->[1,0]; new pane children opacity/translateY via spring({frame:frame-6-i,fps,config:{damping:200,stiffness:170,mass:1}}) with 1-frame stagger."
+  },
+  "confidence": "medium",
+  "notes": "facts.json camera.move is tilt_up (pan_y 0.17), but in the filmstrip the sidebar stays fixed while the right pane content moves up after the swap; this looks like a content scroll/reflow in the main pane rather than a true camera tilt. Worth a human look. Event coincides with narration 'free tools'. No SFX candidates."
+}

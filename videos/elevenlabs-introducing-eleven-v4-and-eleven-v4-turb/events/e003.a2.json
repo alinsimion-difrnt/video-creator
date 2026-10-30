@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "14b2097c123dd8ac9aeb6351f3ceb19be3f4e688612c7c18dd9b9e5bf81965cd",
+    "created_at": "2026-10-05T06:43:53.373375Z"
+  },
+  "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+  "event": "e003",
+  "task": "a2-e003",
+  "elements": [
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Out-of-focus orange bokeh particle flying through foreground",
+      "role": "other",
+      "role_other": "particle",
+      "change_types": ["slide_left", "slide_down", "scale_up", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 350, "easing_class": "ease_in"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Lower edge of left point-cloud head (particle drift)",
+      "role": "other",
+      "role_other": "particle_figure",
+      "change_types": ["other"],
+      "change_other": "particle_jitter",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "parallax_layers",
+    "proposed_name": null,
+    "description": "A large, heavily blurred orange particle streaks diagonally from upper right to lower left past the camera and exits frame, in front of the in-focus point-cloud heads and captions.",
+    "why_premium": "A defocused foreground element moving faster than the scene sells shallow depth of field and a 3D space around flat point clouds, at near-zero cost and without distracting from the caption."
+  },
+  "build_hint": {
+    "gsap": "Foreground particle: gsap.fromTo(el, {x: 280, y: -200, scale: 0.6, filter: 'blur(18px)', opacity: 0.9}, {x: -260, y: 260, scale: 1.6, opacity: 0, duration: 0.35, ease: 'power2.in'}); keep it on a top layer above heads and captions.",
+    "remotion": "const t = interpolate(frame, [0, 11], [0, 1], {easing: Easing.in(Easing.quad), extrapolateRight: 'clamp'}); translate = lerp([280,-200],[-260,260], t); scale = 0.6 + t; opacity = 1 - t; CSS filter blur(18px). Linear time path, no spring."
+  },
+  "confidence": "medium",
+  "notes": "The particle has left the frame by the end frame, so no candidate box contains it; b03 (union of the change area in the lower left) is used as the closest fit for its exit path. b02 is a tiny residual blur trace, omitted."
+}

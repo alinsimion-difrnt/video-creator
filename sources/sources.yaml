@@ -1,0 +1,941 @@
+# Corpus sources. See sources/README.md. Validated by `uv run lens validate sources/sources.yaml`.
+
+- id: acme-explainer-v1
+  url: r2://inbox/acme-explainer-mvp.mp4
+  brand: Acme
+  title: "Acme explainer MVP v1"
+  format: narrated_explainer
+  tier: own                 # compared, never used to derive tokens
+  why: "Baseline for lens compare; known values in config/lens.yaml baselines"
+  tags: [light-ui, vo, hyperframes]
+  media: full
+  refetchable: false        # our own render: keep the original
+
+- id: linkedin-research-explainer
+  url: null                 # TODO(Robert): the LinkedIn post URL v1 was modelled on
+  brand: unknown
+  title: "Research explainer v1 was modelled on"
+  format: narrated_explainer
+  tier: reference
+  why: "Light pastel frames, bold sans + serif-italic accent word, corner chrome, calm VO"
+  tags: [light-ui, vo, pastel]
+  media: full               # set to frames_only if the real MP4 cannot be fetched (M1)
+  refetchable: false
+  status: draft
+
+# Corpus batch 1 (Robert, 2026-10-03): every vetted candidate reported at <= 3 min, plus those with
+# unknown length. scripts/fetch_batch.py checks the real length before downloading (batch.fetch_max_seconds).
+# Reported durations come from AI research and are unverified.
+
+- id: apple-iphone-15-reveal-4k
+  url: r2://inbox/apple-iphone-15-reveal-4k.mp4
+  page_url: https://www.youtube.com/watch?v=VYoqPazNqXw
+  brand: Apple
+  title: iPhone 15 Reveal (4K)
+  format: feature_reel
+  tier: reference
+  why: Quick-cut reveal of titanium design and USB-C transition
+  tags:
+  - dark-ui
+  - motion-design
+  - no-vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: meta-introducing-meta-quest-3-coming-this-f
+  url: r2://inbox/meta-introducing-meta-quest-3-coming-this-f.mp4
+  page_url: https://www.youtube.com/watch?v=5AKl_cEB26c
+  brand: Meta
+  title: Introducing Meta Quest 3 | Coming This Fall
+  format: feature_reel
+  tier: reference
+  why: High-impact hardware and mixed reality UI entrance reels
+  tags:
+  - 3d
+  - dark-ui
+  - pilot
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: meta-this-is-meta-quest-3
+  url: r2://inbox/meta-this-is-meta-quest-3.mp4
+  page_url: https://www.youtube.com/watch?v=Exu7r2vZpcw
+  brand: Meta
+  title: This is Meta Quest 3
+  format: feature_reel
+  tier: reference
+  why: Breakthrough mixed reality blending virtual UI with physical environment
+  tags:
+  - 3d
+  - dark-ui
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: linear-introducing-linear-releases
+  url: r2://inbox/linear-introducing-linear-releases.mp4
+  page_url: https://www.youtube.com/watch?v=6dIwFoQ0eVg
+  brand: Linear
+  title: Introducing Linear Releases
+  format: tutorial
+  tier: reference
+  why: CI/CD integration visuals and smooth issue deployment status tracking
+  tags:
+  - dark-ui
+  - data-viz
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: salesforce-what-is-agentforce-and-how-businesses-us
+  url: r2://inbox/salesforce-what-is-agentforce-and-how-businesses-us.mp4
+  page_url: https://www.youtube.com/watch?v=irdNqlytsLc
+  brand: Salesforce
+  title: What Is Agentforce and How Businesses Use AI Agents | Dreamforce 2024
+  format: narrated_explainer
+  tier: reference
+  why: Atmospheric synth swells and fast 3D mascot transitions frame a concise AI-agent explanation
+  tags:
+  - 3d
+  - dark-ui
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: hubspot-what-is-hubspot
+  url: r2://inbox/hubspot-what-is-hubspot.mp4
+  page_url: https://www.youtube.com/watch?v=GnIREMgz-SQ
+  brand: HubSpot
+  title: What is HubSpot?
+  format: narrated_explainer
+  tier: reference
+  why: Upbeat narration moves through layered CRM cards with quick branded wipes and a clean musical bed
+  tags:
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: atlassian-introduction-to-jira-product-discovery
+  url: r2://inbox/atlassian-introduction-to-jira-product-discovery.mp4
+  page_url: https://www.youtube.com/watch?v=Zje6bMeiqjk
+  brand: Atlassian
+  title: Introduction to Jira Product Discovery | Atlassian
+  format: tutorial
+  tier: reference
+  why: Cursor-led UI zooms and restrained callouts keep the idea-to-roadmap workflow easy to follow
+  tags:
+  - light-ui
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: zendesk-meet-zendesk-ai-agents-the-most-autonom
+  url: r2://inbox/zendesk-meet-zendesk-ai-agents-the-most-autonom.mp4
+  page_url: https://www.youtube.com/watch?v=GvoRdGPleXk
+  brand: Zendesk
+  title: 'Meet Zendesk AI Agents: The most autonomous AI for customer service'
+  format: feature_reel
+  tier: reference
+  why: Chat bubbles animate in sequence over a steady electronic bed to dramatize autonomous support
+  tags:
+  - light-ui
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: servicenow-what-does-servicenow-do
+  url: r2://inbox/servicenow-what-does-servicenow-do.mp4
+  page_url: https://www.youtube.com/watch?v=6lx2N_QyyVw
+  brand: ServiceNow
+  title: What does ServiceNow do?
+  format: narrated_explainer
+  tier: reference
+  why: Live-action cuts, supers, and interface inserts give the platform overview a polished corporate cadence
+  tags:
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: servicenow-what-are-servicenow-ai-agents
+  url: r2://inbox/servicenow-what-are-servicenow-ai-agents.mp4
+  page_url: https://www.youtube.com/watch?v=ie0awHAw4fA
+  brand: ServiceNow
+  title: What are ServiceNow AI Agents?
+  format: narrated_explainer
+  tier: reference
+  why: Punchy title cards and agent UI inserts are timed tightly to the presenter’s explanation
+  tags:
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: workday-workday-adaptive-planning-demo-finan
+  url: r2://inbox/workday-workday-adaptive-planning-demo-finan.mp4
+  page_url: https://www.youtube.com/watch?v=JKT4aQFl5zE
+  brand: Workday
+  title: Workday Adaptive Planning - Demo - Financial Forecasting
+  format: tutorial
+  tier: reference
+  why: Spreadsheet-style forecasting actions are punctuated by cursor emphasis and restrained corporate music
+  tags:
+  - light-ui
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: clickup-clickup-4-0-world-s-first-converged-ai
+  url: r2://inbox/clickup-clickup-4-0-world-s-first-converged-ai.mp4
+  page_url: https://www.youtube.com/watch?v=feAJjhF4_-M
+  brand: ClickUp
+  title: 'ClickUp 4.0: World''s First Converged AI Workspace'
+  format: feature_reel
+  tier: average
+  why: Rapid interface cards, device mockups, and energetic sound hits sell the new workspace at launch pace
+  tags:
+  - 3d
+  - light-ui
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: clickup-introducing-clickup-ai
+  url: r2://inbox/clickup-introducing-clickup-ai.mp4
+  page_url: https://www.youtube.com/watch?v=b1zkgRMpI6w
+  brand: ClickUp
+  title: Introducing ClickUp AI
+  format: feature_reel
+  tier: average
+  why: AI prompts and response panels animate over vivid gradients with compact narrated feature beats
+  tags:
+  - light-ui
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: clickup-clickup-4-0-overview-a-new-era-of-craf
+  url: r2://inbox/clickup-clickup-4-0-overview-a-new-era-of-craf.mp4
+  page_url: https://www.youtube.com/watch?v=nU41rM7zZns
+  brand: ClickUp
+  title: ClickUp 4.0 overview | A new era of craft, quality, and convergence.
+  format: feature_reel
+  tier: average
+  why: Angled UI cards and crisp kinetic type present the 4.0 changes as a polished launch montage
+  tags:
+  - light-ui
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: clickup-clickup-4-0-just-changed-work-ai-softwar
+  url: r2://inbox/clickup-clickup-4-0-just-changed-work-ai-softwar.mp4
+  page_url: https://www.youtube.com/watch?v=i5ChP35iJPw
+  brand: ClickUp
+  title: ClickUp 4.0 Just Changed Work AI Software Forever
+  format: feature_reel
+  tier: average
+  why: Presenter-led exposition is reinforced by quick interface cutaways and emphatic typographic hits
+  tags:
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: miro-miro-interactive-presentation-mode-your
+  url: r2://inbox/miro-miro-interactive-presentation-mode-your.mp4
+  page_url: https://www.youtube.com/watch?v=SdjmunFeXdY
+  brand: Miro
+  title: 'Miro Interactive Presentation Mode: Your Most Interactive Presentations Yet'
+  format: tutorial
+  tier: average
+  why: Large interface panels slide between presenter and audience modes with upbeat product music
+  tags:
+  - light-ui
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: miro-miro-slides-collaborative-presentation
+  url: r2://inbox/miro-miro-slides-collaborative-presentation.mp4
+  page_url: https://www.youtube.com/watch?v=jx_gBqcyq_c
+  brand: Miro
+  title: Miro Slides | Collaborative presentations that get and keep the room’s attention
+  format: feature_reel
+  tier: average
+  why: Slides fan and stack in fast motion, using bright sound accents to emphasize collaboration
+  tags:
+  - light-ui
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: notion-what-is-notion
+  url: r2://inbox/notion-what-is-notion.mp4
+  page_url: https://www.youtube.com/watch?v=3HLMH9t1Q-g
+  brand: Notion
+  title: What is Notion?
+  format: narrated_explainer
+  tier: average
+  why: Minimal kinetic type builds anticipation before revealing the modular workspace UI
+  tags:
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: notion-introducing-notion-3-0-agents
+  url: r2://inbox/notion-introducing-notion-3-0-agents.mp4
+  page_url: https://www.youtube.com/watch?v=R1cF4T4lgI4
+  brand: Notion
+  title: 'Introducing Notion 3.0: Agents'
+  format: feature_reel
+  tier: average
+  why: Whimsical characters and interface tiles move in sync with concise launch narration and light percussion
+  tags:
+  - light-ui
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: typeform-apply-your-brand-assets-to-a-typeform-wi
+  url: r2://inbox/typeform-apply-your-brand-assets-to-a-typeform-wi.mp4
+  page_url: https://www.youtube.com/watch?v=T9KUJB7K4JM
+  brand: Typeform
+  title: Apply your brand assets to a typeform with Brand Kits | Typeform Help Center
+  format: tutorial
+  tier: average
+  why: Brand colors apply live across the form UI, reinforced by smooth before-and-after transitions
+  tags:
+  - light-ui
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: zapier-zapier-s-newest-product-features-build
+  url: r2://inbox/zapier-zapier-s-newest-product-features-build.mp4
+  page_url: https://www.youtube.com/watch?v=dLwYWP50WMM
+  brand: Zapier
+  title: 'Zapier''s Newest Product Features: Build, Manage and Supervise Mission Critical Workflows'
+  format: feature_reel
+  tier: average
+  why: Workflow cards assemble and connect on screen with bright, percussive transition cues
+  tags:
+  - light-ui
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: zapier-zapier-on-off
+  url: r2://inbox/zapier-zapier-on-off.mp4
+  page_url: https://www.youtube.com/watch?v=1Z3Cb7NULw0
+  brand: Zapier
+  title: Zapier On/Off
+  format: feature_reel
+  tier: average
+  why: A short music-led brand animation uses bold illustration and one decisive on/off visual metaphor
+  tags:
+  - no-vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: apollo-io-how-to-use-apollo-io-in-less-than-2-minu
+  url: r2://inbox/apollo-io-how-to-use-apollo-io-in-less-than-2-minu.mp4
+  page_url: https://www.youtube.com/watch?v=Bnr5Xqzr-Ec
+  brand: Apollo.io
+  title: How to Use Apollo.io in Less Than 2 Minutes
+  format: tutorial
+  tier: average
+  why: Presenter framing, highlighted controls, and quick zooms compress the prospecting workflow
+  tags:
+  - light-ui
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: amplitude-find-onboarding-funnel-drop-off-amplit
+  url: r2://inbox/amplitude-find-onboarding-funnel-drop-off-amplit.mp4
+  page_url: https://www.youtube.com/watch?v=aRn6YoWpzcc
+  brand: Amplitude
+  title: Find Onboarding Funnel Drop-Off | Amplitude
+  format: tutorial
+  tier: average
+  why: Funnel steps and drop-off points receive clean animated emphasis over a steady instructional voice track
+  tags:
+  - data-viz
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: fullstory-behavioral-data-made-simple-by-fullstory
+  url: r2://inbox/fullstory-behavioral-data-made-simple-by-fullstory.mp4
+  page_url: https://www.youtube.com/watch?v=Q18TO1lZVz8
+  brand: FullStory
+  title: Behavioral data made simple by Fullstory
+  format: narrated_explainer
+  tier: average
+  why: Session and behavioral panels glide across a colorful frame with polished explanatory narration
+  tags:
+  - light-ui
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: semrush-introducing-semrush-toolkits-all-your-m
+  url: r2://inbox/semrush-introducing-semrush-toolkits-all-your-m.mp4
+  page_url: https://www.youtube.com/watch?v=TNwsfWTb1Hw
+  brand: Semrush
+  title: Introducing Semrush Toolkits, All Your Marketing Tools In One Place
+  format: feature_reel
+  tier: competitor
+  why: Toolkit tiles snap into a unified layout with a fast voice-led pitch and punchy end sting
+  tags:
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: moz-create-a-perfect-content-brief-in-second
+  url: r2://inbox/moz-create-a-perfect-content-brief-in-second.mp4
+  page_url: https://www.youtube.com/watch?v=jbjjsHUd-D0
+  brand: Moz
+  title: Create a Perfect Content Brief in Seconds with Moz Pro
+  format: tutorial
+  tier: competitor
+  why: A content brief assembles from inputs to recommendations with concise callouts and soft electronic cues
+  tags:
+  - light-ui
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: moz-how-to-find-keyword-opportunties-with-ke
+  url: r2://inbox/moz-how-to-find-keyword-opportunties-with-ke.mp4
+  page_url: https://www.youtube.com/watch?v=533MFU3nFTI
+  brand: Moz
+  title: How to find keyword opportunties with Keyword Overview in Moz Pro
+  format: tutorial
+  tier: competitor
+  why: Keyword charts and opportunity panels receive quick highlights synchronized to the spoken workflow
+  tags:
+  - data-viz
+  - light-ui
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: conductor-conductor-ai-get-found-in-ai-search
+  url: r2://inbox/conductor-conductor-ai-get-found-in-ai-search.mp4
+  page_url: https://www.youtube.com/watch?v=F8bs0nP4vKg
+  brand: Conductor
+  title: 'Conductor AI: Get Found in AI Search'
+  format: narrated_explainer
+  tier: competitor
+  why: Abstract AI particles resolve into interface cards, supported by confident launch narration and synth ambience
+  tags:
+  - dark-ui
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: profound-introducing-profound
+  url: r2://inbox/profound-introducing-profound.mp4
+  page_url: https://www.youtube.com/watch?v=TTidorXLogM
+  brand: Profound
+  title: Introducing Profound
+  format: feature_reel
+  tier: competitor
+  why: Cinematic brand marks and dark UI inserts build momentum under a polished narrated launch soundtrack
+  tags:
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: profound-how-to-maximize-ai-visibility-analytics
+  url: r2://inbox/profound-how-to-maximize-ai-visibility-analytics.mp4
+  page_url: https://www.youtube.com/watch?v=s-R3RJXpIoE
+  brand: Profound
+  title: 'How to Maximize AI Visibility Analytics with Profound Sheets: Key Upgrade Features Explained'
+  format: tutorial
+  tier: competitor
+  why: Spreadsheet cells, filters, and analytics views animate crisply around a presenter-led product walkthrough
+  tags:
+  - dark-ui
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: anthropic-introducing-claude-design-by-anthropic-l
+  url: r2://inbox/anthropic-introducing-claude-design-by-anthropic-l.mp4
+  page_url: https://www.youtube.com/watch?v=t_LBECIQQqs
+  brand: Anthropic
+  title: Introducing Claude Design by Anthropic Labs
+  format: narrated_explainer
+  tier: reference
+  why: light, warm UI shows prototypes, slides and one-pagers being made; closest AI-lab match to a calm light-UI house style
+  tags:
+  - light-ui
+  - pilot
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: raycast-new-raycast-coming-2026
+  url: r2://inbox/raycast-new-raycast-coming-2026.mp4
+  page_url: https://www.youtube.com/watch?v=Mi173xGb0ZA
+  brand: Raycast
+  title: New Raycast. Coming 2026
+  format: teaser
+  tier: reference
+  why: cropped, dramatically lit fragments of the real UI and AI actions ticking through; reference for UI shown as a designed
+    object
+  tags:
+  - dark-ui
+  - no-vo
+  - pilot
+  media: full
+  refetchable: true
+  status: ready
+
+- id: raycast-introducing-raycast-dictation
+  url: r2://inbox/raycast-introducing-raycast-dictation.mp4
+  page_url: https://www.youtube.com/watch?v=RUh1KDgSOsc
+  brand: Raycast
+  title: Introducing Raycast Dictation 🎙️
+  format: feature_reel
+  tier: reference
+  why: single-feature reveal; study how voice input is visualised and how SFX land on UI state changes
+  tags:
+  - dark-ui
+  media: full
+  refetchable: true
+  status: draft  # 554 s: over batch.fetch_max_seconds (180)
+
+- id: raycast-introducing-raycast-ai-presets
+  url: r2://inbox/raycast-introducing-raycast-ai-presets.mp4
+  page_url: https://www.youtube.com/watch?v=4Hi21ZpdrOc
+  brand: Raycast
+  title: Introducing Raycast AI Presets
+  format: feature_reel
+  tier: reference
+  why: small-feature launch at desktop-utility scale; good for transition timing between chat states
+  tags:
+  - dark-ui
+  media: full
+  refetchable: true
+  status: draft  # 342 s: over batch.fetch_max_seconds (180)
+
+- id: figma-introducing-figma-motion-your-canvas-no
+  url: r2://inbox/figma-introducing-figma-motion-your-canvas-no.mp4
+  page_url: https://www.youtube.com/watch?v=l3HuAYXyOTo
+  brand: Figma
+  title: 'Introducing Figma Motion: Your canvas now has a timeline'
+  format: feature_reel
+  tier: reference
+  why: bright, flat animated designs with easing presets shown on screen beside the motion they produce; easing reference
+    by design
+  tags:
+  - kinetic-type
+  - light-ui
+  media: full
+  refetchable: true
+  status: ready
+
+- id: warp-introducing-warp-2-0-the-agentic-develo
+  url: r2://inbox/warp-introducing-warp-2-0-the-agentic-develo.mp4
+  page_url: https://www.youtube.com/watch?v=k9BRhSbVSpI
+  brand: Warp
+  title: 'Introducing Warp 2.0: The Agentic Development Environment'
+  format: founder_talk
+  tier: reference
+  why: founder and CEO Zach Lloyd to camera on a dark set with on-screen labels, chaptered as a demo; reference for founder
+    VO pacing
+  tags:
+  - dark-ui
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: cursor-introducing-cursor-3
+  url: r2://inbox/cursor-introducing-cursor-3.mp4
+  page_url: https://www.youtube.com/watch?v=UxbULt_hCdA
+  brand: Cursor
+  title: Introducing Cursor 3
+  format: feature_reel
+  tier: reference
+  why: AI-coding launch film framed around agents; check camera pushes into the editor UI
+  tags:
+  - dark-ui
+  media: full
+  refetchable: true
+  status: ready
+
+- id: notion-introducing-the-new-notion-ai
+  url: r2://inbox/notion-introducing-the-new-notion-ai.mp4
+  page_url: https://www.youtube.com/watch?v=S92KX8-Hmlc
+  brand: Notion
+  title: Introducing the new Notion AI
+  format: narrated_explainer
+  tier: reference
+  why: light UI, explains cross-app search across Notion, Slack and Google Drive; close to our light-UI style
+  tags:
+  - light-ui
+  - pilot
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: notion-introducing-notion-ai-connectors
+  url: r2://inbox/notion-introducing-notion-ai-connectors.mp4
+  page_url: https://www.youtube.com/watch?v=6QmV5TtPyZE
+  brand: Notion
+  title: Introducing Notion AI connectors
+  format: feature_reel
+  tier: reference
+  why: shows answers pulled from connected apps; reference for visualising data flowing between sources
+  tags:
+  - data-viz
+  - light-ui
+  media: full
+  refetchable: true
+  status: ready
+
+- id: elevenlabs-introducing-eleven-v4-and-eleven-v4-turb
+  url: r2://inbox/elevenlabs-introducing-eleven-v4-and-eleven-v4-turb.mp4
+  page_url: https://www.youtube.com/watch?v=th_tXR2QQ6U
+  brand: ElevenLabs
+  title: Introducing Eleven v4 and Eleven v4 Turbo
+  format: feature_reel
+  tier: reference
+  why: voice-model launch from an audio-first brand; study VO expressiveness and music ducking
+  tags:
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: elevenlabs-introducing-eleven-music
+  url: r2://inbox/elevenlabs-introducing-eleven-music.mp4
+  page_url: https://www.youtube.com/watch?v=VDwTSuKbrg8
+  brand: ElevenLabs
+  title: Introducing Eleven Music
+  format: feature_reel
+  tier: reference
+  why: music-model launch; reference for music that builds and drops in time with the cuts
+  tags:
+  - no-vo
+  media: full
+  refetchable: true
+  status: draft  # 254 s: over batch.fetch_max_seconds (180)
+
+- id: elevenlabs-introducing-elevenlabs-conversational-ag
+  url: r2://inbox/elevenlabs-introducing-elevenlabs-conversational-ag.mp4
+  page_url: https://www.youtube.com/watch?v=v-EYzZCLF48
+  brand: ElevenLabs
+  title: Introducing ElevenLabs Conversational Agents
+  format: narrated_explainer
+  tier: reference
+  why: explains a developer platform (latency, configurability, scale) in plain language; compare with our feature-benefit
+    lines
+  tags:
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: attio-introducing-ask-attio
+  url: r2://inbox/attio-introducing-ask-attio.mp4
+  page_url: https://www.youtube.com/watch?v=HSVVMgExV9U
+  brand: Attio
+  title: Introducing Ask Attio
+  format: feature_reel
+  tier: reference
+  why: AI-in-CRM launch from a design-led SaaS; check typography and UI stagger
+  tags:
+  - light-ui
+  media: full
+  refetchable: true
+  status: ready
+
+- id: attio-attio-introducing-ai-attributes
+  url: r2://inbox/attio-attio-introducing-ai-attributes.mp4
+  page_url: https://www.youtube.com/watch?v=3p4HFH3nWaM
+  brand: Attio
+  title: Attio | Introducing AI Attributes
+  format: feature_reel
+  tier: reference
+  why: AI attributes launch; reference for data-table reveals and cell-by-cell stagger
+  tags:
+  - data-viz
+  - light-ui
+  media: full
+  refetchable: true
+  status: draft  # 295 s: over batch.fetch_max_seconds (180)
+
+- id: loom-introducing-loom-ai
+  url: r2://inbox/loom-introducing-loom-ai.mp4
+  page_url: https://www.youtube.com/watch?v=apqd3aEMnuY
+  brand: Loom
+  title: Introducing Loom AI
+  format: feature_reel
+  tier: reference
+  why: AI feature launch from a video-native SaaS; check pacing and transitions between UI states
+  tags:
+  - light-ui
+  media: full
+  refetchable: true
+  status: ready
+
+- id: replit-shopify-on-replit-the-new-seo-agent
+  url: r2://inbox/replit-shopify-on-replit-the-new-seo-agent.mp4
+  page_url: https://www.youtube.com/watch?v=PWJ3wNPpDow
+  brand: Replit
+  title: Shopify on Replit + the new SEO Agent
+  format: tutorial
+  tier: reference
+  why: AI-builder explainer that touches SEO; useful for vocabulary and demo pacing next to our own space
+  tags:
+  - vo
+  media: full
+  refetchable: true
+  status: draft  # 6815 s: over batch.fetch_max_seconds (180)
+
+- id: google-introducing-the-google-pixel-9-pro
+  url: r2://inbox/google-introducing-the-google-pixel-9-pro.mp4
+  page_url: https://www.youtube.com/watch?v=OMVpP-Zam1A
+  brand: Google
+  title: Introducing the Google Pixel 9 Pro
+  format: teaser
+  tier: reference
+  why: kinetic-type Gemini prompt typed over a dark screen before the reveal; the AI feature writes the teaser
+  tags:
+  - kinetic-type
+  - no-vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: adobe-introducing-firefly-into-creative-work
+  url: r2://inbox/adobe-introducing-firefly-into-creative-work.mp4
+  page_url: https://www.youtube.com/watch?v=tZBohx5AN1Q
+  brand: Adobe
+  title: Introducing Firefly into Creative Work | AI Tools for Creatives Powered by Adobe Firefly | Adobe
+  format: feature_reel
+  tier: reference
+  why: generative-AI overview from a creative-tools brand; check match cuts between generated outputs
+  tags:
+  - vo
+  media: full
+  refetchable: true
+  status: draft  # 295 s: over batch.fetch_max_seconds (180)
+
+- id: dyson-introducing-the-dyson-washg1-wet-floor
+  url: r2://inbox/dyson-introducing-the-dyson-washg1-wet-floor.mp4
+  page_url: https://www.youtube.com/watch?v=87w1whnDl7w
+  brand: Dyson
+  title: Introducing the Dyson WashG1™ wet floor cleaner
+  format: feature_reel
+  tier: reference
+  why: colour-coded 3D cutaway that reads with the sound off; reference for simple, legible explanatory visuals
+  tags:
+  - 3d
+  - no-vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: oura-introducing-oura-ring-4-sleeker-smarte
+  url: r2://inbox/oura-introducing-oura-ring-4-sleeker-smarte.mp4
+  page_url: https://www.youtube.com/watch?v=lCE7dmBojyg
+  brand: Oura
+  title: 'Introducing Oura Ring 4: Sleeker. Smarter. Made for you.'
+  format: feature_reel
+  tier: reference
+  why: feeling-first hero with soft shots and short type lines; reference for calm pacing and restrained typography
+  tags:
+  - kinetic-type
+  - no-vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: duolingo-introducing-duolingo-chess
+  url: r2://inbox/duolingo-introducing-duolingo-chess.mp4
+  page_url: https://www.youtube.com/watch?v=PqRKKVWWh0o
+  brand: Duolingo
+  title: Introducing...Duolingo Chess!
+  format: feature_reel
+  tier: reference
+  why: mixes puppets with flat 2D character animation in self-contained gags; contrast reference for character-led motion
+  tags:
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: datadog-datadog-overview-see-inside-the-platfor
+  url: r2://inbox/datadog-datadog-overview-see-inside-the-platfor.mp4
+  page_url: https://www.youtube.com/watch?v=yjtrDOEHH-Q
+  brand: Datadog
+  title: 'Datadog Overview: See Inside the Platform'
+  format: narrated_explainer
+  tier: reference
+  why: enterprise observability platform tour; reference for dashboards and charts as simple data visuals
+  tags:
+  - dark-ui
+  - data-viz
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: datadog-consolidate-your-tools-with-datadog-s-ec
+  url: r2://inbox/datadog-consolidate-your-tools-with-datadog-s-ec.mp4
+  page_url: https://www.youtube.com/watch?v=KN3FECLhvTc
+  brand: Datadog
+  title: Consolidate your tools with Datadog’s ecosystem
+  format: narrated_explainer
+  tier: average
+  why: competent enterprise integration explainer; baseline for 'many tools into one' messaging
+  tags:
+  - data-viz
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: hubspot-introducing-breeze-prospecting-agents
+  url: r2://inbox/hubspot-introducing-breeze-prospecting-agents.mp4
+  page_url: https://www.youtube.com/watch?v=uatbpBBJwZg
+  brand: HubSpot
+  title: Introducing Breeze Prospecting Agents | Spotlight 2024
+  format: narrated_explainer
+  tier: average
+  why: competent B2B marketing-suite AI explainer aimed at the same marketer audience; baseline for VO and pacing
+  tags:
+  - light-ui
+  - pilot
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: hubspot-introducing-breeze-social-content-agen
+  url: r2://inbox/hubspot-introducing-breeze-social-content-agen.mp4
+  page_url: https://www.youtube.com/watch?v=Ii8X-5ZIyR4
+  brand: HubSpot
+  title: Introducing Breeze Social & Content Agents | Spotlight Fall 2024
+  format: narrated_explainer
+  tier: average
+  why: content-marketing AI agents explained to agency-like buyers; plain, template-adjacent structure
+  tags:
+  - light-ui
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: hubspot-introducing-form-shortening-with-breeze
+  url: r2://inbox/hubspot-introducing-form-shortening-with-breeze.mp4
+  page_url: https://www.youtube.com/watch?v=uwVj-tsDDDo
+  brand: HubSpot
+  title: Introducing Form Shortening With Breeze Intelligence | Spotlight Fall 2024
+  format: narrated_explainer
+  tier: average
+  why: single-feature B2B explainer; example of uniform pacing to compare against shaped pacing
+  tags:
+  - light-ui
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: ahrefs-ahrefs-brand-radar-see-any-brand-s-ai-v
+  url: r2://inbox/ahrefs-ahrefs-brand-radar-see-any-brand-s-ai-v.mp4
+  page_url: https://www.youtube.com/watch?v=U9-zRV8az4A
+  brand: Ahrefs
+  title: 'Ahrefs Brand Radar: See ANY brand''s AI visibility'
+  format: narrated_explainer
+  tier: competitor
+  why: direct AI-visibility competitor; see how it explains mentions, citations and share of voice
+  tags:
+  - data-viz
+  - light-ui
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: scrunch-scrunch-the-internet
+  url: r2://inbox/scrunch-scrunch-the-internet.mp4
+  page_url: https://www.youtube.com/watch?v=GvbUBOHxP14
+  brand: Scrunch
+  title: Scrunch the Internet
+  format: feature_reel
+  tier: competitor
+  why: launch film for the Scrunch Agent Experience Platform; competitor brand-film benchmark
+  tags:
+  - data-viz
+  media: full
+  refetchable: true
+  status: ready
+
+- id: scrunch-many-brands-one-workspace-how-agencies
+  url: r2://inbox/scrunch-many-brands-one-workspace-how-agencies.mp4
+  page_url: https://www.youtube.com/watch?v=qMHyLNz29CA
+  brand: Scrunch
+  title: Many brands. One workspace. How agencies can use Scrunch for client AI visibility (Scrunch demo)
+  format: tutorial
+  tier: competitor
+  why: competitor demo pitched at agencies, our exact buyer; study multi-client framing
+  tags:
+  - data-viz
+  - vo
+  media: full
+  refetchable: true
+  status: ready
+
+- id: semrush-ai-share-of-voice-explained-how-to-trac
+  url: r2://inbox/semrush-ai-share-of-voice-explained-how-to-trac.mp4
+  page_url: https://www.youtube.com/watch?v=6Lch6Xg26nQ
+  brand: Semrush
+  title: 'AI Share of Voice Explained: How to Track Your Brand in AI Models'
+  format: narrated_explainer
+  tier: competitor
+  why: adjacent SEO-suite explainer of AI share of voice; average-tier production for our core concept
+  tags:
+  - data-viz
+  - vo
+  media: full
+  refetchable: true
+  status: draft  # 1026 s: over batch.fetch_max_seconds (180)

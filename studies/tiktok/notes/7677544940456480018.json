@@ -1,0 +1,88 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "tiktok_notes",
+    "annotator": "claude-code",
+    "input_hash": "2c9f7da5695eb14fb2e7e25ce4eecd73185f4120c52d96ae50ba274a9c0cb4d6",
+    "created_at": "2026-10-13T10:56:07+00:00"
+  },
+  "id": "7677544940456480018",
+  "format": "split_screen",
+  "hook": {
+    "type": "news",
+    "line": "Somebody just leaked an HTML file on GitHub with free access to 50+ AI tools.",
+    "visual": "Top half: animated dark GitHub promo with big '50+ ai tools IN ONE PLACE' title; bottom half: presenter at desk with mic, small captions at the seam."
+  },
+  "beats": [
+    {
+      "t": 0.0,
+      "what": "Split screen opens on the '50+ AI tools in one place' title over a GitHub promo animation, 'somebody just leaked'"
+    },
+    {
+      "t": 2.73,
+      "what": "Fast cuts in the top half: GitHub logo, then each named model's logo (Claude asterisk) as he lists them"
+    },
+    {
+      "t": 9.6,
+      "what": "Cut to the repo README's feature list while he says 'they're calling it God mode'"
+    },
+    {
+      "t": 12.2,
+      "what": "'Here's how it works' over the GitHub file list"
+    },
+    {
+      "t": 15.07,
+      "what": "Zoom punch into the God Mode app screen as he describes running it locally"
+    },
+    {
+      "t": 22.2,
+      "what": "Cuts through the app's settings: privacy toggle shows 'no login, no subscription'"
+    },
+    {
+      "t": 27.63,
+      "what": "Red arrow points at the 'race all 5' combo mode for the head-to-head feature"
+    },
+    {
+      "t": 30.71,
+      "what": "Layout drops to full-frame presenter for the CTA"
+    },
+    {
+      "t": 33.78,
+      "what": "Big 'GOD MODE' text over his chest, the comment keyword"
+    }
+  ],
+  "graphics": {
+    "captions": "sentence",
+    "caption_position": "middle",
+    "devices": [
+      "split_screen",
+      "screen_recording",
+      "b_roll",
+      "title_text",
+      "arrow_or_circle",
+      "zoom_punch",
+      "jump_cut",
+      "music_bed"
+    ],
+    "density": "heavy",
+    "per_minute_estimate": 32
+  },
+  "characters": [],
+  "cta": {
+    "kind": "comment",
+    "t": 31.8
+  },
+  "why_it_works": [
+    "'Leaked' plus 'free' in the first three seconds frames it as insider news the viewer might miss",
+    "The top half changes on every noun he says (a cut about every 1.5 s) while his face stays steady below",
+    "Switching to full frame for the CTA marks the ending, and the keyword appears as big text",
+    "The comment-keyword gate ('comment God Mode') drove 4,432 comments, far above the other metrics' ratio"
+  ],
+  "weaknesses": [
+    "Captions are tiny and sit on the seam between halves, easy to miss",
+    "Calling a public repo 'leaked' oversells it; risky for trust",
+    "The God Mode screens are shown too briefly to read what they do"
+  ],
+  "for_robert": "Swap the full-frame layout for the CTA: after a split-screen body, drop to Robert full frame and pop the comment keyword as a big word, with Fred pointing at it."
+}

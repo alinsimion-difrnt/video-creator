@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "bba5ad5b86ed8f83833ca342624fce5bee0be7f148a3aa534935d922c16debe9",
+    "created_at": "2026-10-05T06:51:58.723714Z"
+  },
+  "video": "workday-workday-adaptive-planning-demo-finan",
+  "event": "e009",
+  "task": "a2-e009",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Dashboards menu row (active state cleared)",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["color_shift"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Dashboards",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Integration menu row (selected on click)",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Integration",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "The cursor clicks the Integration item in the nav drawer: the active-row highlight jumps from Dashboards to Integration in a near-instant state change.",
+    "why_premium": "A real, crisp UI state change on the exact word 'actuals' shows the click path without any extra graphics; the instant swap keeps a demo feeling responsive rather than staged."
+  },
+  "build_hint": {
+    "gsap": "gsap.timeline().set('.nav-item.dashboards', {backgroundColor: 'transparent'}).set('.nav-item.integration', {backgroundColor: '#0b2a6b'}); optionally a 0.08 s fromTo on the integration row backgroundColor with ease 'none' for a press flash; no stagger.",
+    "remotion": "Step change: const clicked = frame >= clickFrame; dashboards row background = clicked ? 'transparent' : activeColor; integration row background = clicked ? activeColor : hoverColor. No spring; at most a 2-frame interpolate on backgroundColor via interpolateColors."
+  },
+  "confidence": "high",
+  "notes": "No SFX candidates despite a click; the cursor barely moves (it is already over Integration from e008)."
+}

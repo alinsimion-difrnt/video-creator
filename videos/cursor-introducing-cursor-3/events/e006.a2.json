@@ -1,0 +1,63 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "de2970433564c09d59c3bc2a104759e97e2dc82c348d3ab933b47f6025100eea",
+    "created_at": "2026-10-05T06:42:56.882363Z"
+  },
+  "video": "cursor-introducing-cursor-3",
+  "event": "e006",
+  "task": "a2-e006",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Editor canvas panning from the plan/chat column to the uncommitted-changes diff panel",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 1000, "easing_class": "ease_in_out", "source": "model_estimate"}
+    },
+    {
+      "box": "b11",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Cursor arriving on the Commit & Create PR button",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "cursor travels to and rests on the button (hover)",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    }
+  ],
+  "sfx_review": [
+    {"id": "x038", "verdict": "unsure", "label": "unsure", "note": "420 ms before the pan; broadband onset that reads like a music hit, no visual change at that moment."},
+    {"id": "x039", "verdict": "unsure", "label": "unsure", "note": "Lands early in the pan; no clear click transient or whoosh sweep in the spectrogram."},
+    {"id": "x040", "verdict": "unsure", "label": "unsure", "note": "After the pan settles; low-frequency bloom, likely music, possibly tied to the cursor reaching the button."},
+    {"id": "x041", "verdict": "unsure", "label": "unsure", "note": "Outside the event window; no visible click on screen in the packet frames."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "ui camera pan",
+    "description": "The virtual camera pans right across a wide app canvas, sliding the agent plan off the left and settling on the diff panel with a slight zoom, then the cursor parks on the primary action.",
+    "why_premium": "One continuous move connects the narration step 'test them out' to the next UI surface without a cut, keeping spatial continuity; the slight scale and eased settle feel like a directed camera instead of a screen recording."
+  },
+  "build_hint": {
+    "gsap": "gsap.fromTo('.canvas', {x: 0, scale: 1}, {x: '-55%', scale: 1.03, duration: 1.0, ease: 'power2.inOut'}); then gsap.to('.cursor', {x: btnX, y: btnY, duration: 0.5, ease: 'power3.out'}, '-=0.2').",
+    "remotion": "const p = interpolate(frame, [0, 24], [0, 1], {easing: Easing.bezier(0.45, 0, 0.55, 1), extrapolateRight: 'clamp'}); translateX = -0.55 * width * p, scale = 1 + 0.03 * p; cursor position via spring({frame: frame - 18, fps, config: {damping: 200}})."
+  },
+  "confidence": "medium",
+  "notes": "Camera verdict is pan_right (content slides left). Hard to tell whether this is a true camera pan or the diff panel sliding in over the plan; treated as a camera pan per facts.json. All four SFX candidates are ambiguous against the music bed."
+}

@@ -1,0 +1,129 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "b056382b6e1ecbd77636b9e8670378434402b0c38dc883f3c8ea280741f7d8af",
+    "created_at": "2026-10-05T06:25:22.087157Z"
+  },
+  "video": "fullstory-behavioral-data-made-simple-by-fullstory",
+  "task": "a1-p2",
+  "shots": [
+    {
+      "shot": "s006",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "A simplified document-style app card whose header flips from 'Manual Tagging' to 'True Behavior', then the kinetic headline 'Behavioral data' / 'What is happening' / 'Why it's happening', ending on the fullstory wordmark",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "Manual Tagging",
+        "True Behavior",
+        "Sam enters on homepage as a “direct visitor.” He scrolls down to the \"Collections\" section and clicks on \"White Classics.\"",
+        "He scrolls through the page, hovering over \"Pacific\" and \"VaporX,\" then pauses over the price for \"the \"Athena 1.\" He clicks in “Athena One.”",
+        "On the “Athena 1” page, Sam clicks on the size selector and chooses a Size 9 shoe. A network traffic error from the Inventory API causes the page loader to spin indefinitely. Sam highlights the Athena 1 product name and price, then he exits the page.",
+        "Behavioral data",
+        "What is happening",
+        "Why it's happening",
+        "Rage click!",
+        "fullstory"
+      ],
+      "text_word_count": 104,
+      "typography": "Card body in a geometric sans, regular weight sentence case with verbs set in bold (enters, scrolls, clicks, hovering, pauses, network traffic error, spin, highlights, exits); small bold sentence-case card header. Kinetic headlines are large geometric sans: 'Behavioral data' bold with a hand-drawn underline stroke under 'Behavioral'; 'What'/'Why' in heavy black weight in the accent colour beside regular-weight 'is happening'/'it's happening', normal tracking. Lowercase wordmark. Font guess (low confidence): a Gilroy/Sora-like geometric sans.",
+      "depth_cues": [
+        "shadow",
+        "blur",
+        "perspective_tilt"
+      ],
+      "what_happens": "The card swings in from a slight 3D tilt and settles flat (29.5-30 s). Under 'Manual Tagging' only the bolded verbs type in while the rest of each sentence stays blurred, illustrating that tagged tools see only part of the picture (w66-w87). At about 38.5 s the header rolls from 'Manual Tagging' to 'True Behavior', the blurred text sharpens, and highlight bars sweep across the sentences in three colours (green, purple, pink) in sync with 'Scrolls, text highlights... console logs and network traffic' (w98-w109). The highlights then dissolve into a burst of coloured dots that fall and scatter around a kinetic 'Behavioral data' title with a scribbled underline (w110-w111). A cursor rewrites the headline 'What is happening' into 'Why it's happening' with a small 'Rage click!' label (w116-w123), the text blurs out, grey blurred bokeh dots drift across a faint fullstory wordmark that fills with a multicolour gradient as the dots resolve into it (w124-w133), and the final frame flips to a white logo on a vivid gradient background. Shot spans 29.3-59.0 s and contains three visual phases; anchors list 5 events.",
+      "build_rebuild": "Render a white card with a sage header bar; type in only the bold verb spans while the rest of each paragraph sits at blur(4px), then on cue swap the header text with a vertical roll, animate blur to 0 and sweep coloured highlight rects left-to-right across each sentence (staggered ~0.4 s), then convert the highlights into falling particle dots behind a centred 'Behavioral data' title with an SVG underline drawn via stroke-dashoffset, and end with dots converging onto a gradient-filled wordmark.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s007",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "A session-replay player frame showing the fictional 'TREADWAVE' sneaker storefront, floating on a vivid multicolour gradient background",
+      "transition_in": "other",
+      "transition_other": "Background flip: the light-background gradient wordmark at the end of s006 switches to a white wordmark on a saturated pink/green/orange gradient field",
+      "on_screen_text": [
+        "fullstory",
+        "TREADWAVE",
+        "treadwave.com",
+        "Tab 1",
+        "Sneakers Built for Life",
+        "Note and Share",
+        "1X",
+        "Skip Inactivity",
+        "Full Screen",
+        "00:00 / 06:31",
+        "Truly personalized digital experiences",
+        "WELCOME SAM",
+        "Enjoy 20% off now through Wednesday!",
+        "EMAIL ADDRESS",
+        "Sam Garrison",
+        "Clicked",
+        "Webhook:Promotion"
+      ],
+      "text_word_count": 37,
+      "typography": "Lower-third caption 'Truly personalized digital experiences' in a medium-weight white geometric sans, sentence case, normal tracking. Storefront hero uses a condensed rounded display face in white title case. Player chrome labels are small regular sans. Popup and side-card text is very small; read at low confidence from the 2 fps sheet.",
+      "depth_cues": [
+        "shadow",
+        "blur",
+        "glow"
+      ],
+      "what_happens": "White fullstory logo holds centred on the animated gradient (59.0-60.5 s, over w134-w137). The logo shrinks and moves to the top while a translucent glass-edged player frame rises from below with the storefront slightly blurred, then sharpens, and the caption 'Truly personalized digital experiences' appears beneath (around w141-w145). A 'WELCOME SAM' 20%-off popup scales in on the page, a burst of coloured dots marks a click on it, and a white side card for 'Sam Garrison' slides in from the right listing a 'Clicked Webhook:Promotion' event. The popup then disappears, showing the personalised offer being acted on. Anchors list 1 event.",
+      "build_rebuild": "On a slowly drifting multi-stop radial-gradient background, scale the centred white wordmark down and translate it up while a rounded translucent player card (1px white border, inner screenshot) slides up with blur(8px)->0, fade the caption up beneath, then scale-pop a small popup onto the screenshot, emit a short coloured-dot click burst at its button and slide a white event card in from the right edge.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s008",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The enlarged replay player with the storefront scrolled to 'SHOP THE COLLECTIONS' and the Sam Garrison event card overlapping its right edge",
+      "transition_in": "other",
+      "transition_other": "Continuous zoom: the same player from s007 scales up toward camera while the page inside scrolls, no visible cut",
+      "on_screen_text": [
+        "treadwave.com",
+        "Tab 1",
+        "SHOP THE COLLECTIONS",
+        "THE PERFECT WHITE SNEAKER",
+        "Shop ›",
+        "CURRENT MUST-HAVES",
+        "Shop Latest Drop",
+        "Sam Garrison",
+        "October 2 at 12:34 PM",
+        "Atlanta, Georgia",
+        "Chrome, OS X",
+        "Clicked",
+        "Webhook:Promotion",
+        "Scroll",
+        "Clicked Perfect White Sneaker",
+        "00:00 / 06:31",
+        "Note and Share",
+        "1X",
+        "Skip Inactivity",
+        "Full Screen"
+      ],
+      "text_word_count": 45,
+      "typography": "Storefront section headings in a condensed uppercase display face with slight tracking; event card in a clean regular-weight sans (name in medium weight, metadata small with icons, event chips in light grey pills). No added caption in this shot.",
+      "depth_cues": [
+        "shadow",
+        "glow"
+      ],
+      "what_happens": "The player grows larger in frame while the replayed page scrolls from the hero down to the product grid (a 'Scroll' row is added to the event card). Coloured dots cluster on 'THE PERFECT WHITE SNEAKER' tile like a click/activity burst, and a new faded 'Clicked Perfect White Sneaker' row begins to appear in the card, timed with 'AI-powered full capture, everything you see' (w149-w156). Anchors list 0 events.",
+      "build_rebuild": "Tween the player container scale 1->1.25 over ~1 s while translating the inner page image upward to simulate scroll, append a 'Scroll' row to the side card, then spawn a cluster of small coloured circles at the first product tile and fade in a new 'Clicked' row with its chip in the card.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

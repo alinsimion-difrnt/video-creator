@@ -1,0 +1,86 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "daf9fcb064a34d997ca3e8555333f4f1f30ea0a39f3a5c447532eeb90481a7d1",
+    "created_at": "2026-10-05T06:38:39.318853Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e088",
+  "task": "a2-e088",
+  "elements": [
+    {
+      "box": null,
+      "manual_box": [340, 669, 372, 684],
+      "manual_reason": "No candidate box isolates the mouse cursor; it travels up from the Delivery tickets label to the Create a delivery ticket button (end position given).",
+      "label": "Mouse cursor",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_up", "slide_right"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Create a delivery ticket button (focus ring and hover darken)",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["highlight", "color_shift"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Create a delivery ticket",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 100, "easing_class": "step"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Delivery progress row hover state (row tint and overflow menu briefly appear as cursor passes)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 100, "easing_class": "step"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Expanded ticket row hover tint clears",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["color_shift"],
+      "change_other": null,
+      "is_text": true,
+      "text": "TES-3 Templates",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 100, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "Screen recording: with the ticket tree already expanded, the cursor moves up past the progress bar and lands on 'Create a delivery ticket', which picks up a focus ring as the narration turns to creating new work.",
+    "why_premium": "The cursor arrives on the next call-to-action just before the narrator says 'or you can create', so the UI action and voice stay tightly synced."
+  },
+  "build_hint": {
+    "gsap": "tl.to(cursor,{x:btnX,y:btnY,duration:0.4,ease:'power2.out'}); tl.set(progressRow,{backgroundColor:'rgba(9,30,66,0.04)'},0.1).set(progressRow,{backgroundColor:'transparent'},0.25); tl.set(ticketRow,{backgroundColor:'transparent'},0); tl.fromTo(btnFocusRing,{opacity:0},{opacity:1,duration:0.1},0.3)",
+    "remotion": "Cursor position via interpolate(frame,[start,start+12],[from,to],{easing:Easing.out(Easing.cubic),extrapolateRight:'clamp'}); hover states as frame-threshold conditionals; focus ring opacity 0->1 over 3 frames on arrival."
+  },
+  "confidence": "medium",
+  "notes": "Real UI screen recording; motion is cursor travel plus hover/focus states. Focus-ring outline is partly offset from the button in the end frame (recording artefact). No SFX candidates."
+}

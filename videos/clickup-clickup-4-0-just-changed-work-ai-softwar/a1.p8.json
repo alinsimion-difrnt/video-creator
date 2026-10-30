@@ -1,0 +1,212 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "9715731b9e5040f1344ee8810e052c66234387c8a9c02c304db50fe12321519d",
+    "created_at": "2026-10-05T06:24:35.063942Z"
+  },
+  "video": "clickup-clickup-4-0-just-changed-work-ai-softwar",
+  "task": "a1-p8",
+  "shots": [
+    {
+      "shot": "s042",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "The browser tab strip, with the cursor closing tabs one after another (the Google Doc tab, then the Microsoft Teams tab)",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Chat | Microsoft teams",
+        "EarlyBuddy: UX ...",
+        "docs.google.com/document",
+        "Overview",
+        "teams.microsoft.com",
+        "Search",
+        "Charlotte, Babak,",
+        "Chat",
+        "Files",
+        "Charlotte de Crum 12:56 PM",
+        "It would be great to sync with you both EOD to have a",
+        "Ray Tanaka 1:47 PM",
+        "Louisa will send the initial list of...",
+        "Beth Davies 1:43 PM"
+      ],
+      "text_word_count": 46,
+      "typography": "Native browser and app UI text only (regular-weight tab titles, bold chat header, small grey timestamps); no added motion-graphics type.",
+      "depth_cues": ["shadow"],
+      "what_happens": "A magnified browser window sits under a magenta gradient band. The cursor clicks the close 'x' on the Google Doc tab ('EarlyBuddy: UX ...'), which disappears and leaves Microsoft Teams in front. The cursor then moves to the Teams tab's close button while the camera slowly pulls back. This is under the VO 'into one app, one tab,' (w301-w305). Anchors log 1 event, probably a tab closing.",
+      "build_rebuild": "Scale a browser-window mock to about 2x anchored on the tab strip, animate a cursor to each tab's close button, and on each click remove the tab (width collapses to 0 over ~150 ms) and swap the page content to the next tab, while the window scale eases slowly from 2x toward 1.6x.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s043",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "rule_of_thirds",
+      "composition_other": null,
+      "focal_element": "A browser window with only the ClickUp tab left open, showing the Mango Tech workspace",
+      "transition_in": "other",
+      "transition_other": "The detector flagged a non-hard-cut change. The last other tab closes and the page content switches to ClickUp while the camera keeps pulling back, so it reads as a continuous in-UI state change, not a cut.",
+      "on_screen_text": [
+        "ClickUp",
+        "www.clickup.com",
+        "Mango Tech",
+        "Design Review in 5m",
+        "Join",
+        "ClickUp Launches +2",
+        "Task",
+        "8xdfkwv06"
+      ],
+      "text_word_count": 14,
+      "typography": "Native browser and ClickUp UI text: regular tab label and URL, semibold workspace name, a small dark 'Join' button with white text, grey breadcrumb.",
+      "depth_cues": ["shadow", "glow"],
+      "what_happens": "Only one tab remains, ClickUp at www.clickup.com, with the window inset in the lower-right of a magenta gradient. The cursor sits at the right edge where the closed tabs were, and the camera keeps pulling back slightly. The left rail shows a glowing home icon. VO: 'one AI workspace' (w306-w308).",
+      "build_rebuild": "Hold the browser mock with a single ClickUp tab offset to the lower right on a magenta gradient, and keep a slow scale-down (about 1.6x to 1.4x over 1 s, linear-ish) so the motion carries on from the tab-closing shot.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s044",
+      "shot_type": "logo",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "First the 'Launch ClickUp 4.0' task whose status is clicked to Complete, then the ClickUp logo with the '4.0' pill and its tagline on a white end card",
+      "transition_in": "other",
+      "transition_other": "The detector flagged a non-hard-cut change. The first frame shows the same browser pulled back further, then the camera pushes in, so it reads as a continuous camera move from s043.",
+      "on_screen_text": [
+        "ClickUp",
+        "www.clickup.com",
+        "Mango Tech",
+        "Design Review in 5m",
+        "Join",
+        "ClickUp Launches +2",
+        "PRD-351",
+        "Task",
+        "8xdfkwv06",
+        "Launch ClickUp 4.0",
+        "Ask Brain to write a description · generate subtasks or find similar tasks",
+        "Status",
+        "In Progress",
+        "Complete",
+        "Dates",
+        "Start",
+        "Today",
+        "Time Estimate",
+        "Add",
+        "Track Time",
+        "Add",
+        "ClickUp",
+        "4.0",
+        "A New Era of Convergence",
+        "Now Available to Everyone"
+      ],
+      "text_word_count": 54,
+      "typography": "In the UI part: native product sans, a bold large task title, regular field labels and purple link text for the Brain suggestions. On the end card: the ClickUp brand logotype, '4.0' in a monospaced-looking bold numeral inside a dark rounded pill, and a medium-weight sentence-case tagline centred under the wordmark, about one fifth of its height.",
+      "depth_cues": ["shadow", "glow", "grain"],
+      "what_happens": "The camera pushes from the browser view into the 'Launch ClickUp 4.0' task. The cursor clicks the blue 'In Progress' status and it flips to a green 'Complete' at about 1:50.5, right on 'clicks' (w311) after 'everything just' (w309-w310). The frame then fades to a grainy white stage with a multi-hue glow at the top. The ClickUp logo fades up from pale to full colour. A '4.0' pill slides in from the right, translucent at first, and turns solid dark. 'A New Era of Convergence' appears under the logo and is then replaced by 'Now Available to Everyone', which holds to the end. Anchors put chime SFX (x072, x073) at about 111.2-111.8 s, as the logo resolves, and a reverse swoosh (x074) at about 114.5 s, near the tagline swap.",
+      "build_rebuild": "Push the camera into a task-detail mock, click the status pill so it changes from blue 'In Progress' to green 'Complete' on the final VO word, then fade to a white grain stage with a blurred gradient band at the top. Fade the logo from 15% to 100% opacity, slide in a '4.0' pill from the right that goes from translucent to solid, and fade in a centred tagline, then crossfade it to the availability line.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001", "s002"], "words": [0, 3]},
+      {"beat": "problem", "shots": ["s003", "s004", "s005", "s006", "s007", "s008"], "words": [4, 37]},
+      {"beat": "agitate", "shots": ["s009", "s010", "s011"], "words": [38, 58]},
+      {"beat": "mechanism", "shots": ["s011", "s012", "s013", "s014", "s015", "s016", "s017", "s018", "s019", "s020", "s021", "s022", "s023", "s024"], "words": [59, 165]},
+      {"beat": "demo", "shots": ["s025", "s026", "s027", "s028", "s029", "s030", "s031", "s032", "s033"], "words": [166, 217]},
+      {"beat": "outcome", "shots": ["s034", "s035", "s036"], "words": [218, 265]},
+      {"beat": "proof", "shots": ["s037", "s038", "s039"], "words": [266, 293]},
+      {"beat": "demo", "shots": ["s040", "s041", "s042", "s043", "s044"], "words": [294, 311]},
+      {"beat": "cta", "shots": ["s044"], "words": null}
+    ],
+    "hook": {
+      "text": "Work today is broken.",
+      "technique": "pain",
+      "technique_other": null,
+      "shots": ["s001", "s002"],
+      "words": [0, 3]
+    },
+    "cta": {
+      "text": "Now Available to Everyone",
+      "shots": ["s044"]
+    },
+    "tone": "A confident founder manifesto with launch energy. It starts with urgent pain ('broken', 'wasting our time'), moves through an origin story, and lands on a big category claim. A playful pun ('everything just clicks') resolves it into a calm, bright brand end card.",
+    "signature_moments": [
+      {
+        "shots": ["s001", "s002"],
+        "description": "The words 'WORK' and 'TODAY' arc around a silhouette on circular paths, then a giant glowing 'BROKEN' behind the presenter shatters into shards on an impact hit (x001 at 1.65 s), all within the first 2 seconds.",
+        "why_premium": "The opening is custom typographic design synced to both speech and SFX, not a stock title. It sets a cinematic standard in the first two seconds and makes the pain line physically 'break'."
+      },
+      {
+        "shots": ["s019", "s028", "s039"],
+        "description": "A recurring device: a full-width gradient keyword ('BUNDLING', 'FUTURE', 'A LOT MORE') sits behind the keyed presenter, so his head occludes the type, while small supporting words frame him.",
+        "why_premium": "The depth layering between talent and type is a high-end editorial look. Reusing it across the film gives the founder segments a coherent visual system in the brand gradient."
+      },
+      {
+        "shots": ["s040", "s041", "s042", "s043", "s044"],
+        "description": "The finale zooms into a browser full of competitor tabs, closes them one by one until only ClickUp is left ('one app, one tab, one AI workspace'), and clicks a 'Launch ClickUp 4.0' task to Complete exactly on 'clicks'. It then resolves to the logo and the 4.0 lockup.",
+        "why_premium": "It turns the convergence claim into a literal on-screen action and lands a word-perfect pun on a UI state change. That is a concrete, memorable payoff, not an abstract slogan."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 4,
+        "evidence": "A four-word pain statement in under 2 s, backed by bespoke arc typography and a shattering 'BROKEN' with an impact SFX. It is strong and stylish, but a generic claim rather than a specific or surprising one.",
+        "refs": ["s001", "s002", "w0", "w3"]
+      },
+      "clarity": {
+        "score": 3,
+        "evidence": "The problem (tool sprawl) is very clear through icon swarms and captions. What 4.0 actually is stays abstract ('convergence', 'meta category', 'epicenter'), and many flash cuts (s012-s018) and dense multi-beat shots (s011, s023, s033) are fast. The demos show chat-to-task, AI agents and Planner but skim past each feature.",
+        "refs": ["s008", "s011", "s023", "s024", "s033", "w135", "w236"]
+      },
+      "ui_showcase": {
+        "score": 4,
+        "evidence": "Polished staged UI. Zoom-through pull-outs from the app corner (s026-s027), chat-to-AI-task creation (s029-s032), agents replying in the activity feed (s033), the Brain panel and Planner auto-schedule (s037-s038), and the tab-closing finale (s040-s044). Each feature gets only 1-3 s, so depth is traded for pace.",
+        "refs": ["s027", "s030", "s033", "s037", "s038", "s042"]
+      },
+      "motion_polish": {
+        "score": 5,
+        "evidence": "Consistently word-synced kinetic captions with blur-in, gradient type layered behind keyed talent, particle shatters, an isometric 3D tile merge (s023), timeline sprouting icons (s024), app-card ring (s036), and smooth zoom-through camera moves across the UI. Transitions use zoom_through and continuous moves, not only hard cuts.",
+        "refs": ["s002", "s011", "s023", "s024", "s027", "s036", "s041"]
+      },
+      "sound_design": {
+        "score": 4,
+        "evidence": "Judged from the anchor audio facts plus visuals; I cannot hear the track. The music runs at 143.55 BPM and integrated loudness is -16.84 LUFS. 74 SFX candidates over 116.8 s (about 0.63/s): impacts land on key moments ('broken' x001 at 1.65 s, reveal x042 at 58.78 s), glitch hits accompany the icon pops (x002-x005), and chimes (x072-x073) sit under the logo resolve. Many candidates are labelled 'music' or 'unsure', so how deliberate the SFX layer is cannot be fully confirmed.",
+        "refs": ["s002", "s003", "s025", "s044"]
+      },
+      "vo_script_quality": {
+        "score": 4,
+        "evidence": "Tight problem-to-origin-to-solution arc with callbacks ('root of the problem' w47-w50 and w105-w108; 'bundling' rejected three times) and a closing pun on the brand name ('everything just clicks', w309-w311). Some buzzword stacking ('meta category', 'epicenter', 'era of craft and quality') weakens the specificity.",
+        "refs": ["w47", "w105", "w135", "w222", "w236", "w309", "w311"]
+      },
+      "brand_consistency": {
+        "score": 5,
+        "evidence": "The pink-violet-blue gradient of the logo is reused for every hero keyword, the 3D slab, UI backdrops and the end-card glow. One geometric sans caption family is used throughout, a ClickUp watermark is in every shot, and the 'Introducing' lockup (s025) is mirrored by the final end card (s044).",
+        "refs": ["s008", "s019", "s023", "s025", "s044"]
+      },
+      "works_muted": {
+        "score": 4,
+        "evidence": "Nearly the whole VO is burned in as kinetic captions (s003-s036, s039), so the story reads with sound off. The UI demo stretches (s037-s038, s040-s043) carry no captions, so lines like 'saves you one day every week' (w266-w277) and 'one app, one tab' (w301-w305) are lost muted, although the tab-closing visual still makes sense.",
+        "refs": ["s003", "s019", "s034", "s037", "s042"]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "This is a premium, highly crafted launch film with distinctive typography, strong brand coherence and a clever finale. It falls short of a 5 because the product value stays abstract and the feature demos are too brief to teach anything specific.",
+        "refs": ["s002", "s023", "s033", "s044"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 2,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "Every VO line is baked in as word-synced kinetic type. Much of it is composited behind a keyed presenter or layered into 3D and gradient effects, and English UI mock content (chat messages, tasks, tab titles) fills the demos. Localizing would mean re-timing and re-rendering nearly every shot to a new VO, and the closing pun 'everything just clicks' depends on the brand name in English."
+    }
+  }
+}

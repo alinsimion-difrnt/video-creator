@@ -1,0 +1,162 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "70876679f16e938c491e3fc544696175d71de490d91681affd91edb90cde412b",
+    "created_at": "2026-10-05T06:34:08.917181Z"
+  },
+  "video": "zapier-zapier-s-newest-product-features-build",
+  "task": "a1-p6",
+  "shots": [
+    {
+      "shot": "s025",
+      "shot_type": "other",
+      "shot_type_other": "2D flat-vector character animation (multi-armed cartoon woman juggling stacked cards and geometric shapes)",
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The cartoon woman from s024, standing centred with a ground shadow, who sprouts several extra orange-sleeved arms that hold stacks of cards, small shapes and slanted panels",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": ["shadow"],
+      "what_happens": "Opens on an extreme close-up of the character's pressed-together hands, pulls back to reveal her full figure on a warm grey field, then extra arms fan out one after another holding two stacks of cards, a circle/square/triangle trio and two slanted panels; she shifts from calm to a happy shout as the card stacks recolour to one warm tone, visualising 'scale securely, and collaborate quickly so your whole team can use automation to grow with' (w355-w369). In the last frame (2:05.500) the scene has shrunk into a rounded tile on navy with a neighbouring tile entering from the left, starting the carousel of s026.",
+      "build_rebuild": "Start scaled ~6x on the character's hands, ease the camera out to 1x to reveal the full illustration, then rotate in 4-6 extra arm sprites from the shoulders on a ~100 ms stagger, each carrying a card stack or shape that pops in with a slight overshoot, and finally scale the whole scene down into a rounded-corner tile on a navy canvas.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s026",
+      "shot_type": "logo",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "First a horizontally sliding carousel of portrait tiles (live-action photos of smiling people, illustrations, recreated UI cards, isometric cubes), then the lowercase 'zapier' wordmark with a 'zapier.com/sales' button pill beneath it",
+      "transition_in": "other",
+      "transition_other": "continuation of s025's ending: the character scene shrinks into a portrait tile on navy and joins a sliding carousel of tiles (detector reports other)",
+      "on_screen_text": ["zapier", "zapier.com/sales"],
+      "text_word_count": 2,
+      "typography": "Bold lowercase wordmark with an underscore-style accent bar on its left, light on dark, tight tracking; the URL in small regular-weight lowercase sans inside a rounded pill with a stacked offset shadow (font guess, low confidence: Zapier's brand sans).",
+      "depth_cues": ["shadow"],
+      "what_happens": "A carousel of rounded portrait tiles on navy slides left: a smiling man photo, a lightning-bolt illustration, the s024 character, UI cards, the three icon cubes, a hands-on-product photo and a smiling woman photo that ends centred while the other tiles drop away (w370 'confidence.'). The photo then vanishes and coloured pill particles burst outward as the wordmark builds from the accent bar and 'z' into the full lowercase 'zapier' (letters fading in left to right per the keyframe); the particles fly off and a 'zapier.com/sales' pill pops in under the logo and holds through the VO CTA 'Ready to get more out of Zapier? Talk to our sales team to find the right plan for your team.' (w371-w390).",
+      "build_rebuild": "Translate a row of rounded portrait tiles left with an ease-in-out, fade out all but the centre photo, cut to navy with 10-12 rounded pill particles bursting radially, reveal the wordmark letters left to right with a ~40 ms stagger behind the accent bar, then pop a rounded URL pill with a three-layer stepped offset shadow under the logo and hold for ~3.5 s.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s027",
+      "shot_type": "other",
+      "shot_type_other": "black end slate",
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "An empty black frame",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": ["none"],
+      "what_happens": "The end card cuts to solid black, which holds for the final ~3.8 s with no speech; the anchors list a few late SFX candidates (x092-x094, the last labelled music), so the music tail likely plays out over black.",
+      "build_rebuild": "Hard cut to a solid black frame and hold it for ~3.8 s while the music tail decays.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {"beat": "hook", "shots": ["s001", "s002"], "words": [0, 2]},
+      {"beat": "problem", "shots": ["s003"], "words": [3, 17]},
+      {"beat": "mechanism", "shots": ["s004"], "words": [18, 58]},
+      {"beat": "demo", "shots": ["s005", "s006", "s007"], "words": [59, 153]},
+      {"beat": "demo", "shots": ["s008", "s009", "s010", "s011", "s012", "s013"], "words": [154, 272]},
+      {"beat": "outcome", "shots": ["s014"], "words": [273, 279]},
+      {"beat": "demo", "shots": ["s015", "s016", "s017", "s018", "s019"], "words": [280, 334]},
+      {"beat": "outcome", "shots": ["s020", "s021", "s022", "s023", "s024", "s025"], "words": [335, 370]},
+      {"beat": "cta", "shots": ["s026", "s027"], "words": [371, 390]}
+    ],
+    "hook": {
+      "text": "Growth is good, but without the right structures in place, things can get a little out of control.",
+      "technique": "pain",
+      "technique_other": null,
+      "shots": ["s001", "s002", "s003"],
+      "words": [0, 17]
+    },
+    "cta": {
+      "text": "Ready to get more out of Zapier? Talk to our sales team to find the right plan for your team. (on screen: zapier.com/sales)",
+      "shots": ["s026"]
+    },
+    "tone": "Upbeat, playful-but-assured B2B launch tone: bright flat-vector motion design with continuous camera moves and confetti-like particles, a warm friendly voice-over, and an enterprise message of control, reliability and oversight.",
+    "signature_moments": [
+      {
+        "shots": ["s015"],
+        "description": "A single continuous infinite zoom through nested illustrated scenes: an eye's pupil opens onto a meeting room, then its monitor, a calendar/spreadsheet tunnel, an email compose window, a video-call wall and a face.",
+        "why_premium": "Screen-within-screen zooms need every scene designed around a shared centre and scale chain; it turns the abstract line 'automation across your entire organization' into one unbroken visual journey."
+      },
+      {
+        "shots": ["s009", "s010", "s011", "s012"],
+        "description": "Three isometric icon cubes (versions, bell, gear) preview the three reliability features, then each cube stays beside its own recreated UI card as that feature is demoed.",
+        "why_premium": "A recurring visual anchor gives the section a table of contents and chapter markers without any title cards, so the viewer always knows which feature is on screen."
+      },
+      {
+        "shots": ["s002", "s003", "s004"],
+        "description": "App tiles grow into overlapping windows, fill with cursors and warning badges, then collapse into one deck that a lightning bolt strikes and turns into the Zapier connector card, all without a cut.",
+        "why_premium": "The problem-to-solution turn plays out as one continuous morph rather than a cut, so the product reads as the thing that resolves the chaos."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 3,
+        "evidence": "The opening line is a generic growth-pain statement and takes ~6.6 s to land, but the visuals (app windows filling with cursors and pulsing warning badges, then a lightning-bolt resolution) make it engaging; no stat, question or demo-first.",
+        "refs": ["s002", "s003", "w0", "w17"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "Clear structure: editor improvements, then three reliability features signposted by cubes, then admin features (audit log, roles), recap and CTA; each feature has a benefit sentence and a matching UI card. The character sequence near the end (s024-s025) is more abstract and less clearly tied to a message.",
+        "refs": ["s006", "s009", "s010", "s011", "s012", "s016", "s018", "s024", "s025"]
+      },
+      "ui_showcase": {
+        "score": 4,
+        "evidence": "Simplified recreated UI cards with hard offset shadows and legible labels, driven by cursor-guided micro-interactions (copy/paste a step, edit from an older version, change notification frequency, set replay rules, assign Super Admin). Real product depth is abstracted away, and some editor screens use placeholder bars.",
+        "refs": ["s006", "s010", "s011", "s012", "s016", "s018"]
+      },
+      "motion_polish": {
+        "score": 5,
+        "evidence": "Almost every transition is a continuous zoom-through, push or carousel slide, with no plain cuts between sections; plus an infinite nested-scene zoom, rotating isometric cubes, letter-by-letter outline-to-fill type, character animation and a particle-burst logo resolve.",
+        "refs": ["s004", "s007", "s013", "s015", "s019", "s022", "s023", "s026"]
+      },
+      "sound_design": {
+        "score": 3,
+        "evidence": "Judged from anchors, not listening: 94 SFX candidates, mostly labelled swoosh_reverse, are dense around transitions from 9 s to 57 s and from 77 s to 135 s, with a sparse gap at about 57-77 s; music at 166.71 BPM; integrated loudness is quiet at -29.06 LUFS. The dense transition swooshes match the continuous camera moves, but labels are low-confidence and the mix is quiet.",
+        "refs": ["s004", "s006", "s024", "s026"]
+      },
+      "vo_script_quality": {
+        "score": 3,
+        "evidence": "Feature lines are tied to benefits ('Mistakes happen, so version rollback lets you recover', w188-w195), but the frame copy leans on stock phrases ('unlock the power of automation', 'endless possibilities', 'grow with confidence') and the CTA is a standard sales-team ask.",
+        "refs": ["w50", "w188", "w195", "w345", "w346", "w378", "w390"]
+      },
+      "brand_consistency": {
+        "score": 5,
+        "evidence": "One tight system throughout: the code palette's navy, peach and orange recur as backgrounds; lowercase wordmark with accent bar; hard offset card shadows; rounded tiles; and the pill particles from the opening (s002) return in the logo resolve (s026).",
+        "refs": ["s002", "s004", "s010", "s019", "s026"]
+      },
+      "works_muted": {
+        "score": 3,
+        "evidence": "The UI demos are readable without sound thanks to on-screen labels (Versions, Error notifications settings, Advanced Settings, Audit Log, Members), and the end card shows the URL. However, there are no captions or headline titles naming features or benefits, and the hook, problem and outcome beats rely on the voice-over.",
+        "refs": ["s003", "s010", "s011", "s016", "s026"]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "Best-in-class motion craft and brand consistency carry a competent but generic script; the feature demos are clear and well signposted. A weaker hook, VO dependence and the ambiguous character sequence keep it from a 5.",
+        "refs": ["s003", "s009", "s015", "s024", "s026"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 3,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "Recreated UI cards contain many short English labels and sample names; kinetic type ('endless', 'endless possibilities', 'work for you') is baked into animated shots. Because it is all vector-recreated, it can be re-rendered per language, but the type animations need re-timing. The narrative is carried by the VO, while the visuals stay mostly language-neutral apart from the UI text."
+    }
+  }
+}

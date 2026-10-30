@@ -1,0 +1,51 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "478315b99fd7e2876212dc1690da5deb02fc0d928c0bad33aa8843cc815d9618",
+    "created_at": "2026-10-05T06:47:30.526785Z"
+  },
+  "video": "hubspot-what-is-hubspot",
+  "event": "e008",
+  "task": "a2-e008",
+  "elements": [
+    {"box": "b04", "manual_box": null, "manual_reason": null, "label": "Word 'business'", "role": "headline",
+     "role_other": null, "change_types": ["slide_up", "fade", "rotate"], "change_other": null,
+     "is_text": true, "text": "business", "text_unit": "word",
+     "estimates": {"duration_ms": 250, "easing_class": "ease_out"}},
+    {"box": "b03", "manual_box": null, "manual_reason": null, "label": "Words 'growing your'", "role": "headline",
+     "role_other": null, "change_types": ["slide_down"], "change_other": null,
+     "is_text": true, "text": "growing your", "text_unit": "line",
+     "estimates": {"duration_ms": 250, "easing_class": "ease_out"}},
+    {"box": "b05", "manual_box": null, "manual_reason": null, "label": "Kicker 'HubSpot makes'", "role": "headline",
+     "role_other": null, "change_types": ["slide_down"], "change_other": null,
+     "is_text": true, "text": "HubSpot makes", "text_unit": "line",
+     "estimates": {"duration_ms": 250, "easing_class": "ease_out"}},
+    {"box": "b07", "manual_box": null, "manual_reason": null, "label": "Left sparkle accent", "role": "icon",
+     "role_other": null, "change_types": ["pop", "scale_up"], "change_other": null,
+     "is_text": false, "text": null, "text_unit": null,
+     "estimates": {"duration_ms": 200, "easing_class": "spring_overshoot"}},
+    {"box": null, "manual_box": [250, 872, 278, 889],
+     "manual_reason": "Small right sparkle has no own candidate box; only the union box b01 covers it.",
+     "label": "Right sparkle accent", "role": "icon", "role_other": null, "change_types": ["pop", "scale_up"],
+     "change_other": null, "is_text": false, "text": null, "text_unit": null,
+     "estimates": {"duration_ms": 200, "easing_class": "spring_overshoot"}}
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "kinetic_word_reveal",
+    "proposed_name": null,
+    "description": "Last word 'business' rises and rotates into place from a faded state, the headline lockup settles slightly as it lands, then two sparkle accents pop in around the phrase.",
+    "why_premium": "The final word lands on the narrated 'your business' and the lockup reacts to it physically; the delayed sparkle pops add a small reward beat after the type settles."
+  },
+  "build_hint": {
+    "gsap": "tl.fromTo('.w-business', {yPercent: 60, rotation: 6, opacity: 0.3}, {yPercent: 0, rotation: 0, opacity: 1, duration: 0.25, ease: 'power3.out'}).to('.lockup', {y: '+=8', duration: 0.25, ease: 'power2.out'}, '<').fromTo('.sparkle', {scale: 0}, {scale: 1, duration: 0.2, ease: 'back.out(2.5)', stagger: 0.1}, '>-0.05')",
+    "remotion": "Word: spring({frame, fps, config: {damping: 22, stiffness: 220, mass: 0.8}}) mapped to translateY 60%->0, rotate 6deg->0, opacity 0.3->1; lockup translateY driven by the same spring; sparkles: spring({frame: frame - 8 - i*3, fps, config: {damping: 9, stiffness: 260}}) to scale 0->1 (overshoot)."
+  },
+  "confidence": "medium",
+  "notes": "Burst starts mid-entrance; 'business' is already partly visible at f1262, so its start state is inferred. A lighter background band near the bottom also moves at f1262-f1263 (no candidate box; not listed). Sparkle pop may be a separate sub-beat."
+}

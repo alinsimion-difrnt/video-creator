@@ -1,0 +1,51 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "a4ae512e40e1bcd8937691ab89906ed71ad3e5a7bf76b334c4cf895b03d0f0aa",
+    "created_at": "2026-10-13T13:05:28+00:00"
+  },
+  "id": "7471838902316223799",
+  "kind": "clip",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "cool",
+    "notes": "Measured palette_size 1 is not usable (the still came from the black TikTok end card after ~8.5 s), so no count. By eye: navy-black ground, a few blues for clothes and hair, white and pale-blue highlights, pink accents on ribbons and cheeks; everything in shadow drifts to blue."
+  },
+  "lighting": "Flat front light on the character; depth comes from a big blue offset drop-shadow copy of the figure on the back wall rather than from modelled light.",
+  "silhouette": "Tall anime girl, full body, one arm raised high: the raised arm and the big hair tuft make a clear diagonal outline; the darker blue duplicate behind her doubles the silhouette.",
+  "motion": {
+    "timing": "Measured 7.31 drawings/s, median hold 66.7 ms (p25 66.7, p75 100), on 2s: a looping dance at ~7 drawings per second, poses alternating between the wave-up key and a hand-to-cap key every ~1 s on the sheet.",
+    "principles": [
+      "animating on 2s",
+      "pose-to-pose keys",
+      "follow-through on hair and ribbons",
+      "looping dance cycle"
+    ]
+  },
+  "texture": "Clean pixels with no visible dithering (dither_share 0.0); small equaliser bars of square pixels in the corner as a graphic accent.",
+  "camera": "Locked square frame (576x576), character centred; no camera moves. Loop ends after ~8.5 s into the TikTok end card.",
+  "sound": "",
+  "acting": {
+    "enters": "Already in frame at 0 s; no entrance.",
+    "acts": "A short dance loop: waves one arm up, tips the cap with a wink, back to the wave; personality comes from the wink and the cheeky hand-on-hip.",
+    "exits": "Never exits; the clip simply loops.",
+    "comes_back": null,
+    "depth": "One plane; the offset shadow copy on the wall fakes a second layer and makes the flat sprite feel stage-lit."
+  },
+  "techniques": [
+    "animated on 2s at ~67 ms holds: a chunky, readable dance rhythm",
+    "offset darker-blue silhouette copy behind the hero as a cheap depth/stage-light effect",
+    "wink + cap-tip key as the character beat inside a loop",
+    "limited cool palette with pink accent for the face and ribbons"
+  ],
+  "feel": "dark navy stage + bright hero + blue shadow double + dance on 2s = loopable idol energy",
+  "for_fred": "Give Fred a 2-key 'signature' gesture (a fin wave and a wink) animated on 2s at ~67 ms, and drop a darker offset copy of his silhouette behind him so he pops off any background in a vertical reel.",
+  "sources": [
+    "studies/pixel-art/clips/7471838902316223799.json",
+    "data/study/pixel/work/7471838902316223799/sheet.jpg",
+    "studies/pixel-art/tiktok.yaml"
+  ]
+}

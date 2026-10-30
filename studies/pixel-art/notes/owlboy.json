@@ -1,0 +1,53 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T13:58:46+00:00"
+  },
+  "id": "owlboy",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "cool",
+    "notes": "Frames: bright sky blue with big soft white clouds, rock faces shaded pink to purple, grass tops a hard bright green. Caves go deep maroon/plum with blue-grey stone; purple carries every shadow, green caps every ledge."
+  },
+  "lighting": "Ambient by area: open sky is high-key and airy, caves drop to dark plum with a few light shafts and moss highlights; the green grass rim is the brightest value indoors, so ledges read as lit edges.",
+  "silhouette": "Otus is very small on screen (wide wingspan, cloak, round head) and still reads because he is warm brown against cool purple/blue walls. Enemies and allies are chunky, round blobs in that same small scale.",
+  "motion": {
+    "timing": "Not measured. Frames show Otus gliding with wings spread wide and a carried ally hanging below; flight is the default state, so he floats rather than lands.",
+    "principles": [
+      "follow-through (cloak, feathers)",
+      "secondary motion",
+      "anticipation",
+      "squash and stretch"
+    ]
+  },
+  "texture": "Painterly hand-placed clusters: clouds built from stacked rounded pixel clusters, brick-like stone walls in muted blue-grey, scraggly moss and hanging roots along every ceiling. Dense but low-contrast, so the small hero still pops.",
+  "camera": "Wide, free-scrolling side view with lots of headroom; the character often takes under a tenth of the frame. Parallax layers and soft-focus foreground foliage frame the shot.",
+  "sound": "",
+  "acting": {
+    "enters": "Flies in from the sky or drops into a cave chamber; the wide frame shows him arriving from far away.",
+    "acts": "Mute hero: acts with wing pose and posture. Fights happen small inside big rooms with an enemy cluster on the floor.",
+    "exits": "Flies up and out of frame into the next layer or chamber.",
+    "comes_back": true,
+    "depth": "Blurred foreground foliage and sky layers sit in front of and behind the play plane; the hero lives small in the middle layer of a big world."
+  },
+  "techniques": [
+    "hue-shifted shadows: rock and cave shadows go purple, not black",
+    "bright green ledge caps as rim light that marks every walkable edge",
+    "warm hero on cool environment for readability at tiny size",
+    "blurred foreground layer for depth",
+    "painterly cloud clusters instead of dithered gradients",
+    "wide framing that keeps the hero tiny"
+  ],
+  "feel": "soft purple-shadowed world + bright green ledges + tiny warm hero gliding through = lush storybook adventure",
+  "for_fred": "Put Fred tiny and warm-coloured in a wide cool scene, gliding across the background layer behind a blurred foreground, then cut him in big and close. Shadows on Fred and his scene go purple, not black.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Owlboy",
+    "data/study/pixel/work/owlboy/clip3-7678106295701916935.jpg",
+    "studies/pixel-art/sources.yaml"
+  ]
+}

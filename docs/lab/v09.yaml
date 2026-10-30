@@ -1,0 +1,46 @@
+# v09 — a plain drawn fish (art: fish) swimming through the room, the "even this fish? AI" opener on its own,
+# punches, and a 3D Fred carried off by Pixie. Questions: does a fish that swims in and out read? Does a
+# carried 3D Fred read?
+name: v09
+voice: iP95p4xoKVk53GoZ742B
+script: >-
+  Even this fish? AI. It swims, it judges, it leaves. And this one? Also AI. He's 3D.
+  And this is Pixie. Pixie! Put him down!
+plan:
+  layout: [{word: 0, layout: full}]
+  punches: ["AI", "Pixie#2"]
+  props:
+    - id: fishy
+      art: fish
+      word: "fish"
+      until: "leaves"
+      at: left
+      size: 0.16
+      enter: slide_left
+      exit: swim_right
+      idle: swim
+      beats:
+        - {word: "judges", do: look}
+    - id: fred
+      art: fred
+      word: "this#2"
+      until: "down"
+      at: lap
+      size: 0.2
+      style: illustrated
+      beats:
+        - {word: "3D", style: toon3d}
+    - id: pixie
+      art: cat
+      word: "this#3"
+      until: "down"
+      at: floor_left
+      size: 0.28
+      enter: walk_left
+      exit: run_left
+      beats:
+        - {word: "Pixie", tag: Pixie}
+        - {word: "Pixie#2", move: lap}
+        - {word: "Put", carry: fred}
+  fx:
+    - {word: "Put", kind: shake}

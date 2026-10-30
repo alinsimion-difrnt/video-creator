@@ -1,0 +1,100 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "6c4f50c3ec5744c9b82ff05abee5f8c34533f5e4f215bcc37d13fc84564283de",
+    "created_at": "2026-10-05T06:42:56.479326Z"
+  },
+  "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+  "event": "e006",
+  "task": "a2-e006",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Agent config form panel (System Prompt / First Message / LLM / Voice cards)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_up", "scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 550, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "LLM dropdown value",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Claude 3.5 Sonnet",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 150, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b15",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "LLM card (gradient focus border)",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["highlight", "color_shift"],
+      "change_other": null,
+      "is_text": true,
+      "text": "LLM",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 200, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b14",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Voice card",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Voice",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 550, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b11",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Avatar section entering from below",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Avatar",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 550, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "ui_camera_push_in",
+    "proposed_name": null,
+    "description": "A virtual camera glides down the agent-config form while pushing in slightly; the LLM field resolves to 'Claude 3.5 Sonnet' with a gradient focus ring as the next fields (Voice, Avatar) rise into view. The 'Build, test, and deploy.' headline stays locked on the left.",
+    "why_premium": "Combines a small push-in with a vertical travel so the form reads as being filled step by step; the static headline anchors the frame while the UI side carries motion, and the gradient focus border tells the eye which field just completed."
+  },
+  "build_hint": {
+    "gsap": "Timeline: gsap.to('.form', {y: '-=35%', scale: 1.04, duration: 0.6, ease: 'power2.inOut'}); at t=0.03 gsap.fromTo('.llm-value', {opacity: 0}, {opacity: 1, duration: 0.15, ease: 'power1.out'}) and gsap.to('.llm-card', {borderColor gradient on / boxShadow glow, duration: 0.2}); keep the left headline untouched; wrap the form in an overflow-hidden mask.",
+    "remotion": "translateY = interpolate(frame, [0, 18], [0, -35%], {easing: Easing.inOut(Easing.cubic)}) and scale 1 -> 1.04 on the form container; llm value opacity interpolate over 4-5 frames; or spring({damping: 200, stiffness: 120}) without overshoot for the travel."
+  },
+  "confidence": "medium",
+  "notes": "Camera verdict is push_in but the left headline appears static, so this is a push+scroll on the UI layer only (could also be read as masked_scroll). Cursor rides with the frame and has no candidate box; not listed."
+}

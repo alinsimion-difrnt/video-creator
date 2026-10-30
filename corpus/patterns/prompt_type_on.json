@@ -1,0 +1,160 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a3_pattern_cards",
+  "annotator": "claude-code",
+  "skill": "write-pattern-cards@e525a58fa6d8",
+  "model": null,
+  "input_hash": "e90cb4c2f7570f030250196d0238b3fb508f3b96ff047845b554d108dab29882",
+  "created_at": "2026-10-05T12:52:35.287126Z"
+ },
+ "id": "prompt_type_on",
+ "name": "Prompt Types Itself In",
+ "summary": "Text appears character by character in a focused input or prompt field, often with a blinking caret, while the view gently drifts to keep the field centred and the cursor heads for the send button.",
+ "when_to_use": [
+  "Showing a user asking an AI assistant a question or giving it an instruction",
+  "Filling in a configuration form or renaming something live in the product",
+  "Setting up the moment just before an answer or result appears"
+ ],
+ "avoid_when": [
+  "The typed text is long enough that viewers cannot read it at the typing pace",
+  "The input content does not matter to the story; show the result instead"
+ ],
+ "steps": [
+  "Open or focus the input, marking focus with a ring or glow",
+  "Reveal the text character by character, in small bursts for a realistic cadence, with a caret after the last character",
+  "Let the field grow if the text wraps, and drift or scroll the view so the field stays near the centre",
+  "Move the cursor toward the send button or next field while typing finishes",
+  "On send, clear the input and show the same text as a sent message bubble that softly rises in",
+  "Hand focus to the next field or start the answer so momentum continues"
+ ],
+ "build": {
+  "gsap": "Type with a linear tween using TextPlugin (or a character-split stagger with a near-zero duration per character). Run parallel tweens with ease-out for the view drift, field growth and focus glow, ease-in-out for cursor travel, and a light back-style overshoot for a sent bubble or panel pop.",
+  "remotion": "Slice the string by a frame-driven character count from interpolate with clamping, and toggle caret opacity on a frame cycle. Drive the view drift and field height with a damped spring or interpolate with an ease-out curve, and the cursor with an ease-in-out interpolate."
+ },
+ "sound": "No settled sound: labelled moments split evenly between music, an impact and a reverse swoosh, landing just after the visual change. A soft impact or reverse swoosh on send works if the mix has room.",
+ "why_premium": "Typing reads as a real product interaction rather than a mockup, especially when the characters arrive in quick, uneven bursts and the caret is visible. Premium versions run several things at once: the text types, the view drifts to keep the field centred, a focus glow leads the eye, and the cursor is already moving toward the next control. That makes the step feel effortless and fast. The send beat is handled cleanly, with the input clearing and the message rising into the thread, so the viewer is primed for the answer without a pause.",
+ "numbers": {
+  "id": "prompt_type_on",
+  "events": 7,
+  "videos": 5,
+  "weight": 5.8,
+  "duration_ms": {
+   "n": 8,
+   "videos": 3,
+   "weight": 6.3634,
+   "median": 532.713,
+   "p25": 313.301,
+   "p75": 958.862,
+   "ci": [
+    314.768,
+    958.916
+   ]
+  },
+  "easing_mix": {
+   "ease_out": 0.5011,
+   "linear": 0.2476,
+   "spring_overshoot": 0.1257,
+   "ease_in_out": 0.1256
+  },
+  "change_mix": {
+   "slide_up": 0.2819,
+   "typewriter": 0.2013,
+   "fade": 0.1611,
+   "highlight": 0.1208,
+   "morph": 0.0805,
+   "slide_down": 0.0604,
+   "color_shift": 0.0336,
+   "draw_on": 0.0336,
+   "pop": 0.0268
+  },
+  "role_mix": {
+   "body_text": 0.2627,
+   "card": 0.2034,
+   "ui_panel": 0.178,
+   "headline": 0.1356,
+   "cursor": 0.0763,
+   "label": 0.0424,
+   "background": 0.0339,
+   "icon": 0.0339,
+   "other": 0.0339
+  },
+  "sfx_label_mix": {
+   "impact": 0.3333,
+   "music": 0.3333,
+   "swoosh_reverse": 0.3333
+  },
+  "sfx_offset_ms": {
+   "n": 6,
+   "videos": 2,
+   "weight": 4.8,
+   "median": 66.9,
+   "p25": 25.2,
+   "p75": 197.5,
+   "ci": [
+    25.2,
+    197.5
+   ]
+  },
+  "examples": [
+   {
+    "video": "anthropic-introducing-claude-design-by-anthropic-l",
+    "event": "e011",
+    "score": 4.0
+   },
+   {
+    "video": "notion-introducing-notion-ai-connectors",
+    "event": "e020",
+    "score": 4.0
+   },
+   {
+    "video": "notion-introducing-the-new-notion-ai",
+    "event": "e016",
+    "score": 4.0
+   },
+   {
+    "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+    "event": "e004",
+    "score": 5.0
+   },
+   {
+    "video": "atlassian-introduction-to-jira-product-discovery",
+    "event": "e048",
+    "score": 3.0
+   }
+  ]
+ },
+ "examples": [
+  {
+   "video": "anthropic-introducing-claude-design-by-anthropic-l",
+   "event": "e011",
+   "score": 4.0
+  },
+  {
+   "video": "notion-introducing-notion-ai-connectors",
+   "event": "e020",
+   "score": 4.0
+  },
+  {
+   "video": "notion-introducing-the-new-notion-ai",
+   "event": "e016",
+   "score": 4.0
+  },
+  {
+   "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+   "event": "e004",
+   "score": 5.0
+  },
+  {
+   "video": "atlassian-introduction-to-jira-product-discovery",
+   "event": "e048",
+   "score": 3.0
+  }
+ ],
+ "caveats": [
+  "Timing comes from few measured elements in only a handful of videos, and the confidence interval is wide",
+  "Sound evidence comes from just two videos with no agreement on the effect",
+  "Measured durations cover the surrounding moves as well as the typing itself; set typing speed by readability"
+ ]
+}

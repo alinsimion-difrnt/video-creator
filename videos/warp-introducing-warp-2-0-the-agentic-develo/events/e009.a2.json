@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "43fe548b957bef2b43e0813ed1c6136ce9eac71ab62344944a8d002e0690ddf9",
+    "created_at": "2026-10-05T06:51:29.385872Z"
+  },
+  "video": "warp-introducing-warp-2-0-the-agentic-develo",
+  "event": "e009",
+  "task": "a2-e009",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Right-pane agent transcript container (scrolls up)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 80, "easing_class": "step"}
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Newly revealed 'Finding files' tool-call card",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Finding files that match the following patterns in /Users/jess/Documents/",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 80, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "masked_scroll",
+    "proposed_name": null,
+    "description": "The right terminal pane's agent transcript jumps up roughly two lines inside its fixed pane, bringing the new 'Finding files' tool-call card with its file-pattern list fully into view above the 'Thinking...' footer.",
+    "why_premium": "Auto-scroll keeps the latest agent step pinned above the input footer, so the eye stays in one spot while the transcript grows. The left pane and window chrome stay still, which keeps the frame calm."
+  },
+  "build_hint": {
+    "gsap": "Clip the transcript inside the pane (overflow hidden). On each new block, gsap.to(transcript, {y: '-=newBlockHeight', duration: 0.08, ease: 'power2.out'}); a near-instant snap (or gsap.set) matches the source. No stagger.",
+    "remotion": "Translate the transcript container by -blockHeight using interpolate(frame, [start, start+2], [0, -h], {extrapolateRight: 'clamp'}) inside an overflow-hidden pane; a 2-frame step, no spring."
+  },
+  "confidence": "medium",
+  "notes": "Motion energy spans only about 2 frames, so this reads as an instant auto-scroll snap, not an eased glide. b02 (diff) stands in for the scrolled transcript region; it is treated as a non-text container (its text is many lines). b01 is the wider union box and is not used separately. No SFX candidates. The spectrogram shows a short broadband transient at about 59.05s, but there is no candidate to review."
+}

@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "256b7b078b8f28197f1c79844c1f34135282e6ad574e8d7767874610f773bc6c",
+    "created_at": "2026-10-05T06:43:34.964447Z"
+  },
+  "video": "datadog-datadog-overview-see-inside-the-platfor",
+  "event": "e025",
+  "task": "a2-e025",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Full UI: log view transitions to Incidents page",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["scale_down", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 600, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Gradient ribbon caption, line 1",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["mask_reveal"],
+      "change_other": null,
+      "is_text": true,
+      "text": "The right response for",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 250, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Gradient ribbon caption, line 2",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["mask_reveal"],
+      "change_other": null,
+      "is_text": true,
+      "text": "every incident and error",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 250, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "scale_dissolve_transition",
+    "proposed_name": null,
+    "description": "The scrolling log view zooms and dissolves into the Incidents list page (camera pull-out), then a blue-to-magenta gradient ribbon caption wipes in from the left over the new page, line by line.",
+    "why_premium": "The scale change carries momentum from one product surface to the next instead of hard cutting, and the caption lands only after the new page has settled, so each beat gets its own moment."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.logs', {scale: 1.1, opacity: 0, duration: 0.6, ease: 'power2.inOut'}).fromTo('.incidents', {scale: 1.1, opacity: 0}, {scale: 1, opacity: 1, duration: 0.6, ease: 'power2.inOut'}, '<'); then tl.fromTo('.ribbon-line', {clipPath: 'inset(0 100% 0 0)'}, {clipPath: 'inset(0 0% 0 0)', duration: 0.25, ease: 'power3.out', stagger: 0.05}).",
+    "remotion": "Cross-scale with interpolate over ~36 frames (Easing.inOut(Easing.cubic)) on both pages; ribbon lines use clipPath inset-right driven by spring({frame: frame-captionStart, fps, config: {damping: 30, stiffness: 200}}) with a 3-frame stagger, no overshoot."
+  },
+  "confidence": "medium",
+  "notes": "Two things happen in one burst: the page transition (most of the energy) and the caption wipe-in at the end. The pattern names the transition; the ribbon caption matches the wipe style of e021/e023. camera.move is pull_out per code. The mid frame (f3432) shows the logs and incidents pages overlapping, which fits a scale+dissolve, but it could also be a zoom-through."
+}

@@ -1,0 +1,33 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a2_annotate_event",
+  "annotator": "claude-code",
+  "skill": "annotate-event@3dad117bd85a",
+  "model": null,
+  "input_hash": "bcdeda7ed7509cf303c61f6e0741831fc88925ac4f7592e049ea0280b4c9309c",
+  "created_at": "2026-10-05T06:52:00.207065Z"
+ },
+ "video": "salesforce-what-is-agentforce-and-how-businesses-us",
+ "event": "e006",
+ "task": "a2-e006",
+ "elements": [
+  {"box": "b01", "manual_box": null, "manual_reason": null, "label": "Cirrus website browser card",
+   "role": "ui_panel", "role_other": null, "change_types": ["scale_up"], "change_other": null,
+   "is_text": false, "text": null, "text_unit": null,
+   "estimates": {"duration_ms": 300, "easing_class": "ease_in_out", "source": "model_estimate"}}
+ ],
+ "sfx_review": [
+  {"id": "x008", "verdict": "unsure", "label": "unsure",
+   "note": "Short (~120 ms) noisy burst confined to the upper-mid band, no tonal lines and no matching visual beat (only a slow card scale). Could be a soft whoosh or a music percussion hit; CLAP's swoosh_reverse score is weak."}
+ ],
+ "pattern": {"id": "ui_camera_push_in", "proposed_name": null,
+  "description": "The recreated Cirrus website sits in a rounded browser card over the purple brand gradient and slowly scales up (~1%) while all of its contents stay locked in place.",
+  "why_premium": "A continuous, barely perceptible push keeps a static web page alive during narration and draws the eye in without ever cutting or panning."},
+ "build_hint": {
+  "gsap": "gsap.fromTo(browserCard, {scale: 1}, {scale: 1.03, duration: 2.5, ease: 'sine.inOut', transformOrigin: '50% 50%'}); card contents are children so they scale together, no stagger.",
+  "remotion": "scale = interpolate(frame, [0, 75], [1, 1.03], {easing: Easing.inOut(Easing.sin)}) on the card wrapper; no spring (no overshoot visible)."},
+ "confidence": "medium",
+ "notes": "camera.move is none and the gradient background stays put, so this is the card scaling inside the frame, not a camera move. Cursor and page content move only with the card."
+}

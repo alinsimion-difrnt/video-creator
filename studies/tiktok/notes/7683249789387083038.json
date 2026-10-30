@@ -1,0 +1,38 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes", "annotator": "claude-code",
+                 "input_hash": "e44241bdb762e284f7086b732d77c3a748fa94dc85970fa9ef0337e0478a7c2e",
+                 "created_at": "2026-10-13T14:55:00+00:00"},
+  "id": "7683249789387083038",
+  "format": "split_screen",
+  "hook": {"type": "result_first",
+           "line": "This backtest shows almost an 80% win rate for the past 5 years.",
+           "visual": "Top half: young man in glasses with a fuzzy mic, close up; bottom half: a rising green equity curve; bold title with '80% winrate' in green over the seam."},
+  "beats": [
+    {"t": 0.0, "what": "Face over a rising equity curve with the 80% win-rate title; cursor hovers along the curve"},
+    {"t": 7.93, "what": "Chart with 'ICT' crossed out by a drawn line as he says this is not ICT"},
+    {"t": 14.07, "what": "Parameter optimization screen shown as he names the first test"},
+    {"t": 25.73, "what": "Walk-forward optimizer table with every row marked Pass"},
+    {"t": 42.0, "what": "Live data and payouts shown as extra proof"},
+    {"t": 47.0, "what": "Candlestick chart: the range box the algorithm detects"},
+    {"t": 55.67, "what": "Gold bar highlights the entry when price breaks the range"},
+    {"t": 67.73, "what": "Strategy report: winning and losing streaks bar chart"},
+    {"t": 87.48, "what": "Returns to the equity curve; 'Visit link in bio!' caption while he points"}
+  ],
+  "graphics": {"captions": "word_by_word", "caption_position": "middle",
+               "devices": ["split_screen", "screen_recording", "product_ui", "chart_or_number", "title_text", "arrow_or_circle", "music_bed"],
+               "density": "moderate", "per_minute_estimate": 10},
+  "characters": [],
+  "cta": {"kind": "link_in_bio", "t": 87.48},
+  "why_it_works": [
+    "Result first: a specific number (80% win rate, 2,270 trades, 5 years) in a highlighted title before any method",
+    "Face on top and chart below keep both the speaker and the evidence in view the whole time",
+    "Pre-empts the sceptic ('no, this is not ICT', 'why you can trust this') and stacks proof: optimization, walk-forward, stress tests, payouts",
+    "Ends on the same equity curve it opened with, so the loop is near seamless (measured loop 0.93)"
+  ],
+  "weaknesses": [
+    "87 s with a 40 s unbroken shot; the middle sags into jargon",
+    "Charts and tables are tiny and unreadable on a phone",
+    "Win-rate and payout claims for a trading product are high-risk and hard to verify"
+  ],
+  "for_robert": "Use face-on-top, proof-below split and open and close on the same result screen for a clean loop; Fred could cross out the wrong answer like the 'ICT' strike."
+}

@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "127a3247cb3d6cbabf4849ddabf17afa33a4f8848d66cc9e2d74998f434c4e12",
+    "created_at": "2026-10-05T06:38:36.602509Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e093",
+  "task": "a2-e093",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Sidebar views list scrolls up inside the sidebar",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "All Ideas Impact vs. Effort Roadmap Timeline view Delivery Impact Assessment Roadmap - VP Product Stakeholder Feedback Sales Create a view",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 230, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Sidebar view icons scroll up with the list",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 230, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "masked_scroll",
+    "proposed_name": null,
+    "description": "Screen recording: the left navigation sidebar scrolls up by roughly one row inside its fixed panel, revealing Give feedback / Project settings at the bottom while the main table stays still.",
+    "why_premium": "Short, smooth wheel scroll confined to the sidebar mask keeps the main view stable, so attention moves to the settings entry without a cut."
+  },
+  "build_hint": {
+    "gsap": "gsap.to('.sidebar-list', {y: -25, duration: 0.23, ease: 'power2.out'}) inside a container with overflow: hidden",
+    "remotion": "y = interpolate(frame, [0, 7], [0, -25], {easing: Easing.out(Easing.quad), extrapolateRight: 'clamp'}) on the list inside an overflow-hidden sidebar; spring({damping: 30, stiffness: 200}) also fits (no overshoot)."
+  },
+  "confidence": "high",
+  "notes": "Camera move is none; the small pan_y/scale describe the sidebar scroll only. Many per-item OCR boxes (b04-b20) are the same scroll; listed once via the union box. The Project settings hover highlight may change near the end but is not distinguishable in the filmstrip crop."
+}

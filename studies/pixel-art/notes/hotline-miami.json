@@ -1,0 +1,53 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T13:58:29+00:00"
+  },
+  "id": "hotline-miami",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "neutral",
+    "notes": "Frames (HM2): hot magenta floors, red brick, teal accents, black/white checker and stripe rugs, white-suited enemies, red blood; score text white with pink/cyan outline. Masks are flat signature colours (red rooster, yellow tiger, teal helmet). Art by Dennis Wedin (wiki). No metrics, no count."
+  },
+  "lighting": "No modelled light on the sprites: flat fills with dark outlines. Mood comes from saturated floor colours and full-screen tints; the title card is a yellow rooster mask alone on black.",
+  "silhouette": "Top-down figures are tiny against big rooms and read by colour (white suits vs the hero's mask colour) and by the head/mask shape; corpses stay on the floor as dark-outlined shapes in red pools, so the room keeps a readable record of what happened.",
+  "motion": {
+    "timing": "No metrics file. In the frames a room goes from standing enemies to bodies in pools within a couple of seconds; score popups (+400pts, 600PTS) stack and linger over the action. The 'Do you like hurting other people?' card flickers between dim and bright text across ~2 s on a static mask.",
+    "principles": [
+      "snappy timing",
+      "hold after impact",
+      "rhythm-synced motion"
+    ]
+  },
+  "texture": "Patterned floors carry the texture (checkerboards, stripes, wood planks, tiled kitchens); blood splats and score text layer on top as the real 'texture' of a cleared room.",
+  "camera": "Top-down and close on the hero's area; the view drifts and leans toward the aim direction (per the wiki), so rooms are cropped and the edge of the screen keeps changing.",
+  "sound": "Synthwave/electronic soundtrack meant to feel like a film score; combat music switches to ambience once a building is cleared (per the wiki).",
+  "acting": {
+    "enters": "Hero walks in from the car at the map edge after an answering-machine intro (per the wiki); fan edits cut to the big mask face popping into a screen corner as the 'enter' beat.",
+    "acts": "Short decisive bursts, then the bodies stay where they fell while score text pops above them; the mask card is a still face with flickering question text.",
+    "exits": "Walks back out through the cleared, blood-marked rooms to the car while music drops to ambience (per the wiki).",
+    "comes_back": true,
+    "depth": "Single top-down plane at small scale; edits add depth by overlaying a huge mask face in a corner over the tiny gameplay (close-up layer vs tiny figure)."
+  },
+  "techniques": [
+    "one flat signature colour per mask (red rooster, yellow tiger, teal helmet)",
+    "mask shape as the whole silhouette identity, readable as a huge flat face on black",
+    "aftermath persists: bodies and splats stay in the room as a record of the action",
+    "stacking score popups (+400pts) with a contrasting outline over the action",
+    "flickering dim/bright title text on a static mask",
+    "saturated patterned floors (checkerboard, stripes) instead of modelled shading",
+    "music hard-cut from combat to ambience on exit"
+  ],
+  "feel": "hot magenta floors + flat colour-keyed masks + persistent aftermath + flicker text = tense, loud, cinematic",
+  "for_fred": "Leave evidence of Fred's gag in the frame after he exits (a splash, a knocked-over prop) so the empty scene still tells the story, and use a giant flat Fred face popping into a corner over a tiny Fred in the scene as a close-up beat.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Hotline_Miami",
+    "data/study/pixel/work/hotline-miami/clip2-7683968642471431438.jpg",
+    "data/study/pixel/work/hotline-miami/clip3-7694404775554616584.jpg"
+  ]
+}

@@ -1,0 +1,20 @@
+# Pixel-art study (studies/README.md): every threshold the study code uses. Read by study/pixel/config.py.
+schema_version: 1
+
+measure:
+  max_scale: 16               # largest pixel size looked for in an upscaled screenshot
+  block_tolerance: 6          # a native pixel's block may vary this much per channel (JPEG noise)
+  block_min_share: 0.9        # share of uniform blocks for a scale to count
+  max_palette: 256            # more colours than this after downscaling: not clean pixel art (filtered/photo)
+  min_colour_share: 0.002     # colours covering less than this share are noise (antialiasing, JPEG)
+  ramp_hue_window: 40         # degrees: colours within this hue of each other can share a ramp
+  ramp_min_chroma: 0.08       # greys (lower chroma) form their own ramp
+  ramp_min_len: 3
+  outline_dark_delta: 0.18    # an edge pixel this much darker (luma 0..1) than its inside neighbour is an outline
+  outline_black_luma: 0.12    # outline pixels darker than this are "black" outlines
+  dither_min_share: 0.02      # checkerboard 2x2 share above this counts as dithering
+  hold_min_frames: 1
+  video_fps: 60                # clips are decoded at this rate to see every hold
+  video_width: 288
+  change_threshold: 0.004     # mean |diff| (0..1) above this: a new drawing (below: compression noise)
+  clip_seconds: 20            # measured from the start of each clip

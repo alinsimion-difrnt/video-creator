@@ -1,0 +1,137 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "37488284eab217b1220e5ef96ea28e4716c06c8923fef5979156be7255d26fc5",
+    "created_at": "2026-10-05T07:39:47.511447Z"
+  },
+  "video": "meta-this-is-meta-quest-3",
+  "task": "a1-p8",
+  "shots": [
+    {
+      "shot": "s039",
+      "shot_type": "other",
+      "shot_type_other": "gameplay footage that shrinks into a floating 3D wall of rounded gameplay cards",
+      "composition": "other",
+      "composition_other": "full-bleed footage with centered caption, then a scattered depth-layered card field around a centered caption",
+      "focal_element": "large centered white caption words ('new', 'adventures', then the library line) over gameplay and a cloud of game thumbnails",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "new",
+        "adventures",
+        "From the world's best library of immersive content",
+        "But there's more",
+        "Captured on PC."
+      ],
+      "text_word_count": 16,
+      "typography": "Bold geometric sans, white, lowercase single words very large and centered ('new', 'adventures'); the library line is sentence case, two lines, medium-bold, tight tracking; the same line is shown huge and blurred as the camera flies through it; small regular-weight disclaimer bottom centre. Font guess (low confidence): Meta's Optimistic Display.",
+      "depth_cues": [
+        "blur",
+        "parallax",
+        "perspective_tilt"
+      ],
+      "what_happens": "Single caption words land over first-person VR gameplay (a hand catching a glowing mushroom on a night rooftop, then a hand on Venetian roof tiles). The rooftop clip shrinks into a rounded card on a pale blue gradient and dozens of gameplay cards fly toward camera in depth; the camera pushes through oversized blurred caption text, which resolves into 'From the world's best library of immersive content' sitting among the cards. The whole card plane then tilts diagonally and sweeps out bottom-left, leaving 'But there's more' drifting on the empty gradient as new cards begin to enter from the top-right.",
+      "build_rebuild": "Scale the full-frame clip down into a rounded-corner card on a soft blue gradient, spawn 30+ video cards on a 3D z-spread with depth-of-field blur, dolly the camera through a blur-in headline, then rotate the card plane ~25 degrees and translate it out bottom-left while a small sentence-case caption drifts in its place.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s040",
+      "shot_type": "footage",
+      "shot_type_other": null,
+      "composition": "other",
+      "composition_other": "scattered card field resolving into full-bleed footage with centered caption",
+      "focal_element": "a Roblox gameplay card that grows from the card field to fill the frame",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Dive into thousands of Roblox experiences",
+        "Captured on PC."
+      ],
+      "text_word_count": 9,
+      "typography": "White bold geometric sans, sentence case, two centered lines, tight tracking; 'experiences' enters large and blurred then scales/settles into the line (blur-in kinetic reveal); small disclaimer bottom centre.",
+      "depth_cues": [
+        "blur",
+        "parallax"
+      ],
+      "what_happens": "Floating game cards on the pale gradient drift in depth; one Roblox clip (cartoon heroes running across a meadow under a rainbow) scales up from the centre and expands to fill the frame. The caption builds over it, with the final word 'experiences' arriving oversized and blurred before snapping into place.",
+      "build_rebuild": "Animate one card from the 3D field to full-frame (scale plus border-radius to 0) while sibling cards blur and slide outward, then reveal the caption line by line with the last word scaling down from ~2x with a blur-to-sharp tween.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s041",
+      "shot_type": "footage",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "centered Roblox caption over a plaza of walking avatars",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Dive into thousands of Roblox experiences",
+        "Captured on PC."
+      ],
+      "text_word_count": 9,
+      "typography": "Same white bold geometric sans caption, sentence case, two centered lines; small regular 'Captured on PC.' bottom centre.",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "A very short (about 0.2 s) cut to a different Roblox scene: stylised avatars walking through a neon-lit social plaza, with the caption held steady from the previous shot.",
+      "build_rebuild": "Keep the caption layer persistent and hard-cut the underlying footage on a beat to a second Roblox clip so the text reads as continuous across scene changes.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s042",
+      "shot_type": "footage",
+      "shot_type_other": null,
+      "composition": "other",
+      "composition_other": "full-bleed footage that tilts into a rounded card flying off over a pale gradient, then a new tilted card settling to full bleed",
+      "focal_element": "persistent centered captions over gameplay, then a hand holding an Xbox controller",
+      "transition_in": "other",
+      "transition_other": "caption-continuous cut: the footage changes underneath while the Roblox caption carries over unchanged",
+      "on_screen_text": [
+        "Dive into thousands of Roblox experiences",
+        "Captured on PC.",
+        "Play your favorite Xbox games",
+        "Requires Xbox Game Pass Ultimate subscription and supported controller (sold separately). Streaming limitations apply; server availability and wait times may vary. Select regions.",
+        "GAME PASS"
+      ],
+      "text_word_count": 39,
+      "typography": "White bold geometric sans captions, sentence case, single or two centered lines; 'Play your favorite Xbox games' builds word by word with 'favorite' entering larger/blurred before settling; tiny two-line legal disclaimer bottom centre; Game Pass wordmark in heavy uppercase sans with logo top-left.",
+      "depth_cues": [
+        "perspective_tilt",
+        "blur"
+      ],
+      "what_happens": "The Roblox caption holds over the avatar plaza and then a sunny Roblox city street. The street clip shrinks into a rounded card that rotates and slides off top-left across the pale gradient, while a second tilted card (person on a sofa holding an Xbox controller) swings in and straightens to full frame. 'Play your favorite Xbox games' builds in at centre with a legal disclaimer at the bottom, and by the end the frame shows a Game Pass title playing on a large curved virtual screen in a living room.",
+      "build_rebuild": "Shrink and rotate the outgoing clip into a rounded card that exits top-left on a gradient while the incoming clip enters as a counter-rotated card and eases to full-bleed (rotation and radius to 0), then stagger the caption words in with a blur-to-sharp scale on the key word.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s043",
+      "shot_type": "footage",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "a large curved virtual screen playing a Game Pass title (armoured soldier on an off-road vehicle kicking up dust) floating in a living room",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "GAME PASS",
+        "Requires Xbox Game Pass Ultimate subscription and supported controller (sold separately). Streaming limitations apply; server availability and wait times may vary. Select regions."
+      ],
+      "text_word_count": 25,
+      "typography": "Game Pass logo plus heavy uppercase sans wordmark top-left inside the virtual screen; small white regular-weight two-line legal disclaimer, sentence case, bottom centre.",
+      "depth_cues": [
+        "perspective_tilt"
+      ],
+      "what_happens": "Mixed-reality view: a huge, slightly curved virtual display hangs in a real living room, showing an off-road vehicle with a soldier tearing up a rocky trail in a cloud of dust; the legal disclaimer stays on screen.",
+      "build_rebuild": "Composite gameplay onto a gently curved plane (cylindrical warp) placed in front of live-action room footage with a subtle perspective, and keep a static two-line legal disclaimer layer centred at the bottom.",
+      "confidence": "high"
+    }
+  ],
+  "summary": null
+}

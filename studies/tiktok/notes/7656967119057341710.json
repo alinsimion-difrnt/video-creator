@@ -1,0 +1,80 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "tiktok_notes",
+    "annotator": "claude-code",
+    "input_hash": "a7a3b77b569c1885961fcb05dd4d448ed1f99916a341c30fc414f6dd41b65aca",
+    "created_at": "2026-10-13T14:30:15+00:00"
+  },
+  "id": "7656967119057341710",
+  "format": "talking_head",
+  "hook": {
+    "type": "news",
+    "line": "Google just released a spam update aimed at people manipulating generative AI.",
+    "visual": "Selfie-cam walk outdoors in bright sun, orange title box 'Google Update Aims to Punish GEO Tactics' over his head, white captions with orange word highlight."
+  },
+  "beats": [
+    {
+      "t": 0.0,
+      "what": "News hook: spam update targets GEO manipulation, orange headline box on top"
+    },
+    {
+      "t": 12.8,
+      "what": "First jump cut; title box gone, context on how Google links spam policies"
+    },
+    {
+      "t": 25.09,
+      "what": "Reveals the new policy section against manipulating AI results"
+    },
+    {
+      "t": 41.8,
+      "what": "Names the two tactics: Reddit comments and paid publisher recommendations"
+    },
+    {
+      "t": 62.71,
+      "what": "Argues detection is hard: how could Google know who placed a recommendation"
+    },
+    {
+      "t": 82.33,
+      "what": "Turn: AI cites the same pages, so a few surgical placements matter"
+    },
+    {
+      "t": 98.13,
+      "what": "Proof story: one placed recommendation took a client from 20% to 40% of tracked prompts"
+    },
+    {
+      "t": 125.43,
+      "what": "Verdict: targeted placement is safe, recommendation building is the new link building"
+    }
+  ],
+  "graphics": {
+    "captions": "word_by_word",
+    "caption_position": "bottom",
+    "devices": [
+      "title_text",
+      "jump_cut",
+      "camera_move"
+    ],
+    "density": "minimal",
+    "per_minute_estimate": 3
+  },
+  "characters": [],
+  "cta": {
+    "kind": "none",
+    "t": null
+  },
+  "why_it_works": [
+    "Timely news hook ('just released') plus a threat ('penalty') makes SEO viewers stay to learn if they are at risk",
+    "Orange headline box states the whole topic in the first frame, so a muted scroller knows what the video answers",
+    "A concrete client result (20% to 40% of tracked prompts from one placement) is held back until the end, rewarding viewers who stayed",
+    "Fast talk (3.76 words/s) with almost no silence (7.6%) keeps momentum despite few cuts"
+  ],
+  "weaknesses": [
+    "137 s with only 6 cuts and no cutaways: the picture barely changes, long shots up to 40.5 s",
+    "Headline box disappears after the first cut, leaving nothing but captions to anchor the topic",
+    "No call to action at all",
+    "The proof claim is only spoken; no screenshot or number on screen"
+  ],
+  "for_robert": "Copy the orange headline box with the topic as a question-shaped claim in frame one, but put the proof number on screen (Fred holding a '20% to 40%' sign) instead of only saying it."
+}

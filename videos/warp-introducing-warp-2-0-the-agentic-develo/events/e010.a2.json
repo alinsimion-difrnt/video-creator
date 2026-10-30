@@ -1,0 +1,44 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "f71c6527a316c3f12ba52a90129d91712f9b13b3772bf15879ce178c09f55bf3",
+    "created_at": "2026-10-05T06:52:04.953330Z"
+  },
+  "video": "warp-introducing-warp-2-0-the-agentic-develo",
+  "event": "e010",
+  "task": "a2-e010",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Warp app window with Agents popover, sliding off-screen left to uncover the presenter footage",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 650, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "ui overlay slide reveal",
+    "description": "The Warp window, with its peach gradient frame and the 'Agents' list popover, sits over live presenter footage. It slides left off the frame and fully uncovers the presenter standing among vintage computers on plinths. The footage behind it stays still.",
+    "why_premium": "The product UI is a physical layer over the real-world set, and pulling it away hands the story back to the presenter without a cut. This keeps the narration ('easily track their progress') flowing. The accelerate-then-settle slide feels deliberate, not like a hard wipe."
+  },
+  "build_hint": {
+    "gsap": "Stack the UI layer above the footage. gsap.to(uiWindow, {xPercent: -110, duration: 0.65, ease: 'power3.inOut'}). The footage layer does not animate. Optionally add a slight shadow on the leading right edge while it moves.",
+    "remotion": "Absolute-fill the footage <OffthreadVideo>, with the UI <AbsoluteFill> on top; translateX = interpolate(frame, [s, s+20], [0, -1.1*width], {easing: Easing.inOut(Easing.cubic), extrapolateRight: 'clamp'}). Use an ease, not a spring."
+  },
+  "confidence": "medium",
+  "notes": "The camera verdict is push_in (scale 1.13, pan_x -0.29), but the room composition and presenter position look the same from f1543 to f1564. The shift sums are probably driven by the large window sliding left, not by a real camera move on the footage. A human should check. b01 is the whole-frame diff box, used because the window has left the frame by the end frame. The small boxes b02-b10 are compression or noise in the dark footage and are not listed. No SFX candidates."
+}

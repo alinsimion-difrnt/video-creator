@@ -1,0 +1,294 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "d9fb30791693b8d2b019c760e3ff37e84226610df7d324e6fce0eca041f968c7",
+    "created_at": "2026-10-05T06:24:53.625566Z"
+  },
+  "video": "clickup-clickup-4-0-overview-a-new-era-of-craf",
+  "task": "a1-p5",
+  "shots": [
+    {
+      "shot": "s023",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "stacked",
+      "composition_other": null,
+      "focal_element": "Large white 'AI Workspace' headline above a slightly tilted app window (Home inbox) rising from the bottom of frame on the grainy magenta-orange-blue gradient",
+      "transition_in": "other",
+      "transition_other": "window rises from below with heavy motion blur while the headline fades/sharpens in; the hand-off from the s022 logo card is not visible on the sheet",
+      "on_screen_text": [
+        "AI Workspace"
+      ],
+      "text_word_count": 2,
+      "typography": "Large bold geometric sans-serif headline in white, title case, normal-to-tight tracking, centred above the window; it fades in from a soft low-opacity state. App UI text inside the window is native product type and is not enumerated.",
+      "depth_cues": [
+        "perspective_tilt",
+        "shadow",
+        "blur",
+        "grain"
+      ],
+      "what_happens": "A blurred, perspective-tilted app window slides up from the bottom and flattens as the 'AI Workspace' title resolves above it, landing on 'every interaction faster' (w243-w245) and completing the triple started in s021-s022.",
+      "build_rebuild": "Over a grainy gradient, tween a window screenshot from y=+60% with rotateX ~20deg and 20px motion blur to y=+30% flat and sharp over ~0.6s, while fading a bold white two-word headline from 30% to 100% opacity centred above it.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s024",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The app window, which whips horizontally with extreme motion blur from the Home inbox to a zoomed-in 'Work' workspace view",
+      "transition_in": "other",
+      "transition_other": "continuation of the s023 camera move (the headline lifts out of the top of frame as the window rises); no visible cut",
+      "on_screen_text": [
+        "AI Workspace"
+      ],
+      "text_word_count": 2,
+      "typography": "The 'AI Workspace' headline from s023 (bold white sans, title case) exits off the top; the rest is native UI text, unreadable through the blur.",
+      "depth_cues": [
+        "blur",
+        "shadow",
+        "grain"
+      ],
+      "what_happens": "The window rises and pushes the headline out, then a horizontal whip with heavy motion blur (near SFX x010) swaps to a zoomed-in top-left corner of a different workspace ('Work') as the VO asks 'Ready to make the switch?' (w246-w250).",
+      "build_rebuild": "Translate the window up while the headline exits, then do a ~0.4s horizontal whip with strong directional blur that lands on a 2x crop of the next screenshot's top-left corner with the cursor on the workspace switcher.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s025",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "other",
+      "composition_other": "cropped top-left corner of the app window (workspace menu) with the gradient visible along the top and left edges",
+      "focal_element": "Open 'Work' workspace menu with the 'Settings' button the cursor is heading for",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Work",
+        "42 members • Enterprise",
+        "Settings",
+        "People",
+        "Manage",
+        "Apps",
+        "Templates",
+        "Custom Fields",
+        "Automations",
+        "Switch Workspaces",
+        "ClickUp",
+        "Cass Chan's Test Workspace"
+      ],
+      "text_word_count": 19,
+      "typography": "Native UI only: workspace name in semibold sans, sentence case; menu items regular weight; section labels ('Manage', 'Switch Workspaces') small grey; normal tracking. Font guess (low confidence): Inter-like UI sans.",
+      "depth_cues": [
+        "shadow",
+        "grain"
+      ],
+      "what_happens": "Zoomed into the top-left of the window, the cursor has opened the 'Work' workspace dropdown, moves down to 'Settings' and clicks as the VO says 'Admins and owners can' (w251-w254); the view then cuts to the 'All settings' sidebar (General highlighted) at the end of the shot.",
+      "build_rebuild": "Show a ~2.5x crop anchored on the window's top-left corner with an open dropdown, animate the cursor from the switcher to the 'Settings' button with a hover/press state, then swap to the settings screenshot on click.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s026",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Full app window on the gradient showing the 'Workspace Settings' page, with the 'ClickUp 4.0 NEW' section and 'Workspace version' dropdown in the middle",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "All settings",
+        "Workspace Settings",
+        "ClickUp 4.0",
+        "NEW",
+        "Workspace version",
+        "Everyone uses 4.0",
+        "Custom branding",
+        "Enterprise"
+      ],
+      "text_word_count": 15,
+      "typography": "Native UI only: page title in semibold sans, sentence/title case; section headers medium weight; small pill badges ('NEW', 'Enterprise') in tinted uppercase/sentence case; settings list in small regular sans. Smaller settings rows are not enumerated.",
+      "depth_cues": [
+        "shadow",
+        "grain"
+      ],
+      "what_happens": "The camera pulls back to the full rounded window centred on the gradient; the cursor leaves the settings sidebar and travels to the 'Workspace version' dropdown as the VO says 'now return on ClickUp 4.0' (w255-w260).",
+      "build_rebuild": "Scale the window from ~2.5x back to ~70% width centred on the gradient over ~0.4s with motion blur, then glide the cursor from the sidebar to the dropdown control in the centre column.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s027",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "'Workspace version' dropdown opened, listing 'Everyone uses 3.0' and 'Everyone uses 4.0'",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Workspace Settings",
+        "General",
+        "Avatar",
+        "Name",
+        "Work",
+        "ClickUp 4.0",
+        "NEW",
+        "Workspace version",
+        "After refreshing, everyone's Workspace will switch to the version you activate.",
+        "Everyone uses 4.0",
+        "Everyone uses 3.0",
+        "Everyone uses 4.0",
+        "Custom branding",
+        "Enterprise",
+        "Enable custom branding",
+        "Round logo",
+        "Recommended: 72x72px PNG"
+      ],
+      "text_word_count": 42,
+      "typography": "Native UI only at large zoom: bold sans page title, medium-weight section headers, regular body and grey helper text, sentence case, normal tracking; small tinted pill badges.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Pushed in so the settings column fills a white frame, the cursor clicks the 'Everyone uses 4.0' dropdown, which opens to show the 3.0 / 4.0 options and stays open, under 'in your workspace settings' (w261-w264).",
+      "build_rebuild": "Crop the settings page at ~2x so the column fills the frame, click the select control and reveal a shadowed two-item menu below it with a quick fade/scale-in, holding for ~1.5s.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s028",
+      "shot_type": "logo",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "ClickUp logomark and wordmark centred on white",
+      "transition_in": "push",
+      "transition_other": null,
+      "on_screen_text": [
+        "ClickUp"
+      ],
+      "text_word_count": 1,
+      "typography": "Brand wordmark: heavy rounded geometric sans, title case 'ClickUp', tight tracking, near-black; no other type.",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "On a clean white frame the gradient logomark appears alone, then the wordmark is revealed left to right behind a thin blue swoosh stroke (near SFX x011) and the lockup settles and holds to the end while the VO says 'Welcome to ClickUp 4.0.' (w265-w269).",
+      "build_rebuild": "Centre the logomark on white, then mask-reveal the wordmark left to right while a thin gradient stroke sweeps across it over ~0.5s, ease the full lockup into its final centred position and hold for ~3s.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {
+        "beat": "hook",
+        "shots": ["s001", "s002", "s003"],
+        "words": [0, 25]
+      },
+      {
+        "beat": "mechanism",
+        "shots": ["s004", "s005"],
+        "words": [26, 54]
+      },
+      {
+        "beat": "demo",
+        "shots": ["s006", "s007", "s008", "s009", "s010", "s011", "s012", "s013", "s014", "s015", "s016", "s017", "s018"],
+        "words": [55, 220]
+      },
+      {
+        "beat": "proof",
+        "shots": ["s019", "s020", "s021", "s022", "s023"],
+        "words": [221, 245]
+      },
+      {
+        "beat": "cta",
+        "shots": ["s024", "s025", "s026", "s027", "s028"],
+        "words": [246, 269]
+      }
+    ],
+    "hook": {
+      "text": "Your workspace is about to change forever.",
+      "technique": "bold_claim",
+      "technique_other": null,
+      "shots": ["s001", "s002"],
+      "words": [0, 6]
+    },
+    "cta": {
+      "text": "Ready to make the switch? Admins and owners can now return on ClickUp 4.0 in your workspace settings.",
+      "shots": ["s024", "s025", "s026", "s027", "s028"]
+    },
+    "tone": "Confident, upbeat product-launch tone: brisk feature-by-feature walkthrough with a friendly, slightly playful voice (caveman GIF in s002, meme image in s018) that turns into a polished brand 'craft' montage and a practical how-to-switch CTA.",
+    "signature_moments": [
+      {
+        "shots": ["s001", "s002", "s003"],
+        "description": "The opening line is delivered inside the product: a chat post reads 'Your Workspace is about to change forever.' and the threaded reply matches the VO word for word (w0-w25), while the camera zooms through into the post.",
+        "why_premium": "The product itself carries the hook, so the very first seconds are already a demo and avoid a generic title card; text and VO are tightly synced."
+      },
+      {
+        "shots": ["s019", "s020", "s021", "s022", "s023"],
+        "description": "A craft montage: a perspective-tilted UI plane racks focus, feature cards fly through with motion blur, a 'pixel precision' callout points at a window corner, cards stack into a ClickUp logo card, and an 'AI Workspace' title resolves over a rising window under 'Every pixel refined, every workflow smoother, every interaction faster' (w237-w245).",
+        "why_premium": "It shifts register from screen recording to designed 3D/motion graphics exactly when the script claims craft, so the visuals prove the claim instead of just stating it."
+      },
+      {
+        "shots": ["s005", "s007", "s009", "s015", "s017", "s025", "s027"],
+        "description": "A consistent camera system: the rounded, shadowed app window floats on one grainy gradient and the camera zooms through into ~2-2.5x close-ups on the exact control being used, then pulls back out.",
+        "why_premium": "One repeatable framing grammar keeps a dense UI legible at video scale and makes 20+ shots feel like one continuous, authored camera move."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 4,
+        "evidence": "Bold-claim line delivered diegetically as an in-app post with an immediate zoom-through and a humorous GIF; strong and on-brand, though it states no concrete pain or benefit until w11-w25.",
+        "refs": ["s001", "s002", "s003", "w0", "w6"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "Each feature gets a named VO line and a matching cursor-driven demo (hierarchy, Planner, Teams Hub, subfolders, task types), but almost no on-screen labels name the features and s012 packs Teams Hub plus a whip to subfolders into one 16.6s shot, so viewers must follow fast UI.",
+        "refs": ["s005", "s007", "s012", "s013", "s017"]
+      },
+      "ui_showcase": {
+        "score": 5,
+        "evidence": "Real product UI shown at legible zoom with scripted cursor paths, a spotlight dim on the Teams Hub tab bar, glowing outlines on custom-field groups and an actual settings walkthrough for the switch.",
+        "refs": ["s007", "s011", "s015", "s017", "s027"]
+      },
+      "motion_polish": {
+        "score": 4,
+        "evidence": "Smooth zoom-through push-ins with motion blur, whips between screens, a 3D tilted-plane and card-stack montage and a stroke-swept logo reveal; the zoom-through device is repeated many times and a few transitions are long blurred holds rather than designed moves.",
+        "refs": ["s005", "s019", "s022", "s024", "s028"]
+      },
+      "sound_design": {
+        "score": 3,
+        "evidence": "Judged from anchors, not listening: music at about 126 BPM under the VO, integrated loudness -21.23 LUFS (quiet for online delivery), and only 11 SFX candidates, mostly reverse swooshes marking section changes (x001 10.0s, x002 23.0s, x003 38.7s, x004 55.8s, x005 70.5s), a denser but low-confidence cluster in the craft montage (x006-x010) and a swoosh on the logo (x011). Competent and sparse rather than distinctive.",
+        "refs": ["s004", "s012", "s020", "s024", "s028"]
+      },
+      "vo_script_quality": {
+        "score": 4,
+        "evidence": "Tight, benefit-led lines ('so work flows without the context switching' w55-w61, 'know your team's true capacity at a glance' w142-w149) and a rhythmic triple close (w237-w245); some list-like stretches and a functional rather than emotional CTA.",
+        "refs": ["w55", "w61", "w142", "w149", "w237", "w245"]
+      },
+      "brand_consistency": {
+        "score": 5,
+        "evidence": "One grainy magenta-orange-blue gradient and rounded shadowed window treatment throughout, gradient accents echoing the logomark, and a clean resolve to the ClickUp lockup.",
+        "refs": ["s001", "s012", "s023", "s028"]
+      },
+      "works_muted": {
+        "score": 2,
+        "evidence": "Only the opening post and reply, 'pixel precision', 'AI Workspace' and the logo carry the message on screen; feature names and benefits live in the VO, so muted viewers see competent UI clicks without knowing why they matter. The CTA steps (settings, version dropdown) are partly self-explanatory.",
+        "refs": ["s003", "s012", "s021", "s023", "s027"]
+      },
+      "overall": {
+        "score": 4,
+        "evidence": "A premium-feeling launch overview: real UI shown beautifully with a consistent camera system and a designed craft montage that backs up the script; held back by heavy VO dependence, sparse sound design and a long, dense middle section.",
+        "refs": ["s001", "s012", "s020", "s022", "s028"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 3,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "Very few added overlays (s021 'pixel precision', s023/s024 'AI Workspace', the logo), so re-voicing plus a couple of replaced titles is cheap; but the hook text in s001-s003 is baked into the English product UI and mirrors the VO, all demo UI is English, and the story depends on the VO."
+    }
+  }
+}

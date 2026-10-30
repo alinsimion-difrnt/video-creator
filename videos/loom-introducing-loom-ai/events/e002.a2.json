@@ -1,0 +1,133 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@46647335d2ce",
+    "model": null,
+    "input_hash": "3754a6cf48a4ae8fbc48c6b23ef6fb0f3a773269becf452f5aeafa77b5f2858f",
+    "created_at": "2026-10-04T21:36:11.920555Z"
+  },
+  "video": "loom-introducing-loom-ai",
+  "event": "e002",
+  "task": "a2-e002",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Gradient orb that becomes the circular presenter video bubble",
+      "role": "avatar",
+      "role_other": null,
+      "change_types": ["slide_up", "scale_up", "morph", "mask_reveal"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 550, "easing_class": "ease_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [400, 290, 600, 720],
+      "manual_reason": "Headline fades out during the event and is absent from the end frame, so no candidate box exists; box approximates its position from the first filmstrip frame.",
+      "label": "Headline 'Record better, faster video messages'",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Record better, faster video messages",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 250, "easing_class": "ease_in"}
+    },
+    {
+      "box": "b09",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Red record/stop button badge",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["pop"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 200, "easing_class": "spring_overshoot"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Blurred gradient sphere, lower left",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["slide_up", "blur_in"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Gradient sphere, top right",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    },
+    {
+      "box": "b08",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Small sphere, upper left",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    },
+    {
+      "box": "b07",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Sphere entering, bottom right",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    }
+  ],
+  "sfx_review": [
+    {"id": "x013", "verdict": "unsure", "label": "unsure", "note": "~600 ms before the event while the headline is static; evenly spaced broadband streak like the rest of the music bed, no distinct chime partials."},
+    {"id": "x014", "verdict": "unsure", "label": "unsure", "note": "~370 ms before the event; low-frequency onset plus streak, nothing visual happens at that moment beyond sphere drift. Possibly music downbeat."},
+    {"id": "x015", "verdict": "unsure", "label": "unsure", "note": "Sharp low onset lines up with the orb turning into the presenter bubble (~f192-197); could be an impact/pop accent or a music hit."},
+    {"id": "x016", "verdict": "unsure", "label": "unsure", "note": "After the event settles (record badge already visible); regular streak, likely music."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "orb to avatar morph",
+    "description": "The headline fades out while a floating gradient orb rises to centre and swells; the orb's fill dissolves into a circular presenter video (mask reveal inside the circle), the gradient ring shrinks away and a red record badge pops onto the rim. Camera pushes in throughout.",
+    "why_premium": "A decorative background element is promoted into the hero UI object, so the transition from brand world to product (Loom's circular camera bubble) has visual continuity instead of a cut; the record badge lands last as a clear product cue."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.headline',{opacity:0,duration:0.25,ease:'power1.in'}); tl.fromTo('.orb',{x:orbX,y:orbY,scale:0.8},{x:0,y:0,scale:1.25,duration:0.35,ease:'power2.out'},0); tl.fromTo('.bubble-video',{opacity:0,scale:0.6},{opacity:1,scale:1,duration:0.3,ease:'power2.out'},0.25); tl.to('.orb-ring',{scale:0.9,opacity:0,duration:0.3,ease:'power2.inOut'},0.4); tl.fromTo('.rec-badge',{scale:0},{scale:1,duration:0.25,ease:'back.out(2)'},0.65); tl.to('.scene',{scale:1.1,duration:0.9,ease:'sine.inOut'},0); background spheres drift up with parallax (larger = faster).",
+    "remotion": "Headline opacity: interpolate(frame,[0,8],[1,0]). Orb travel/scale: spring({frame, fps, config:{damping:20, stiffness:140}}) mapped to x/y/scale. Video bubble: spring delayed ~8 frames to opacity/scale 0.6→1 with overflow hidden circle mask. Badge: spring({frame:frame-20, fps, config:{damping:10, stiffness:200}}) for slight overshoot. Scene container scale interpolate(frame,[0,30],[1,1.1])."
+  },
+  "confidence": "medium",
+  "notes": "Exact morph mechanics (orb fading into video vs. video masked inside the orb) are ambiguous between f192 and f197. Background-sphere motion is mostly the measured push_in plus parallax drift. b05 overlaps b03 (same lower-left sphere, spurious OCR '●'), so only b03 is used. b06 (top-left sphere edge) and b01 (union) omitted."
+}

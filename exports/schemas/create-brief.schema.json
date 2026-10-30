@@ -1,0 +1,264 @@
+{
+  "$defs": {
+    "Annotator": {
+      "enum": [
+        "code",
+        "claude-code",
+        "human"
+      ],
+      "title": "Annotator",
+      "type": "string"
+    },
+    "Fact": {
+      "additionalProperties": false,
+      "description": "A claim the video may make, with where it comes from (honesty guard, handoff 7.9).",
+      "properties": {
+        "claim": {
+          "minLength": 1,
+          "title": "Claim",
+          "type": "string"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "source": {
+          "minLength": 1,
+          "title": "Source",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "claim",
+        "source"
+      ],
+      "title": "Fact",
+      "type": "object"
+    },
+    "LengthBand": {
+      "additionalProperties": false,
+      "properties": {
+        "max_s": {
+          "exclusiveMinimum": 0,
+          "title": "Max S",
+          "type": "number"
+        },
+        "min_s": {
+          "exclusiveMinimum": 0,
+          "title": "Min S",
+          "type": "number"
+        }
+      },
+      "required": [
+        "min_s",
+        "max_s"
+      ],
+      "title": "LengthBand",
+      "type": "object"
+    },
+    "Product": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "one_liner": {
+          "minLength": 1,
+          "title": "One Liner",
+          "type": "string"
+        },
+        "spoken": {
+          "minLength": 1,
+          "title": "Spoken",
+          "type": "string"
+        },
+        "url": {
+          "pattern": "^https://",
+          "title": "Url",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "spoken",
+        "url",
+        "one_liner"
+      ],
+      "title": "Product",
+      "type": "object"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "description": "Carried by every output JSON (BUILD_PLAN section 2.7).",
+      "properties": {
+        "annotator": {
+          "$ref": "#/$defs/Annotator"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "input_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Input Hash",
+          "type": "string"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "schema_version": {
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "skill": {
+          "anyOf": [
+            {
+              "pattern": "^[a-z0-9-]+@[0-9a-f]{8,64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Skill"
+        },
+        "stage": {
+          "title": "Stage",
+          "type": "string"
+        },
+        "tool_version": {
+          "title": "Tool Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool_version",
+        "stage",
+        "annotator",
+        "input_hash",
+        "created_at"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "C1: what the video is for. Written by Claude from a short interview with Robert.",
+  "properties": {
+    "audience": {
+      "minLength": 1,
+      "title": "Audience",
+      "type": "string"
+    },
+    "brand": {
+      "title": "Brand",
+      "type": "string"
+    },
+    "build": {
+      "default": "motion",
+      "enum": [
+        "motion",
+        "templates"
+      ],
+      "title": "Build",
+      "type": "string"
+    },
+    "cut_s": {
+      "anyOf": [
+        {
+          "exclusiveMinimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Cut S"
+    },
+    "destination": {
+      "title": "Destination",
+      "type": "string"
+    },
+    "facts": {
+      "items": {
+        "$ref": "#/$defs/Fact"
+      },
+      "minItems": 1,
+      "title": "Facts",
+      "type": "array"
+    },
+    "format": {
+      "title": "Format",
+      "type": "string"
+    },
+    "language": {
+      "default": "en",
+      "pattern": "^[a-z]{2}$",
+      "title": "Language",
+      "type": "string"
+    },
+    "length": {
+      "$ref": "#/$defs/LengthBand"
+    },
+    "message": {
+      "minLength": 1,
+      "title": "Message",
+      "type": "string"
+    },
+    "product": {
+      "$ref": "#/$defs/Product"
+    },
+    "project": {
+      "title": "Project",
+      "type": "string"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    },
+    "tone": {
+      "minLength": 1,
+      "title": "Tone",
+      "type": "string"
+    },
+    "voice": {
+      "default": "tts",
+      "enum": [
+        "tts",
+        "presenter"
+      ],
+      "title": "Voice",
+      "type": "string"
+    }
+  },
+  "required": [
+    "provenance",
+    "project",
+    "brand",
+    "product",
+    "audience",
+    "destination",
+    "format",
+    "length",
+    "tone",
+    "message",
+    "facts"
+  ],
+  "title": "Brief",
+  "type": "object"
+}

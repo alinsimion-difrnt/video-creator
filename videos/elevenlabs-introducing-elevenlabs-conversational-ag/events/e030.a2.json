@@ -1,0 +1,102 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "ac893d3ea6725f0b45adce2039ea25d41bfa849d1a071d1897bd396596182778",
+    "created_at": "2026-10-05T06:47:24.186527Z"
+  },
+  "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+  "event": "e030",
+  "task": "a2-e030",
+  "elements": [
+    {
+      "box": null,
+      "manual_box": [101, 337, 493, 501],
+      "manual_reason": "Only a union box (b01) covers the grid; each tile moves separately so it gets its own box.",
+      "label": "Kayak aerial tile (top left)",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["scale_down", "slide_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 600, "easing_class": "ease_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [101, 508, 493, 673],
+      "manual_reason": "Only a union box (b01) covers the grid; each tile moves separately so it gets its own box.",
+      "label": "Suitcase tile (top right)",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["scale_up", "slide_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 600, "easing_class": "ease_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [507, 337, 899, 501],
+      "manual_reason": "Only a union box (b01) covers the grid; each tile moves separately so it gets its own box.",
+      "label": "Parcel delivery tile (bottom left)",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 500, "easing_class": "ease_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [507, 508, 899, 673],
+      "manual_reason": "Only a union box (b01) covers the grid; each tile moves separately so it gets its own box.",
+      "label": "Presenter portrait tile (bottom right)",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 500, "easing_class": "ease_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [100, 293, 347, 321],
+      "manual_reason": "The SDK icon column (Python, JS, React, Swift) has no candidate; b02 is an empty area just above it.",
+      "label": "SDK language icon column",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["pop"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "spring_no_overshoot"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x054", "verdict": "unsure", "label": "unsure", "note": "No clear transient in the spectrogram at 93.11 s; only the music bed is visible."}
+  ],
+  "pattern": {
+    "id": "card_wall_stagger",
+    "proposed_name": null,
+    "description": "A 2x2 wall of photo tiles assembles: the top tiles resize into place while the bottom two slide up from below the frame, and the SDK icons pop in one by one down the left column.",
+    "why_premium": "The staggered entries let each use case register, and the icons arriving in sync with 'our SDK' tie the developer platform to real-world scenarios in one beat."
+  },
+  "build_hint": {
+    "gsap": "tl.fromTo('.tile', {y: 260, opacity: 0}, {y: 0, opacity: 1, duration: 0.5, ease: 'power3.out', stagger: {each: 0.08, grid: [2,2], from: 'start'}}); tl.to('.grid', {scale: 0.86, duration: 0.6, ease: 'power2.out'}, 0); tl.fromTo('.sdk-icon', {scale: 0, opacity: 0}, {scale: 1, opacity: 1, duration: 0.3, ease: 'back.out(1.4)', stagger: 0.06}, 0);",
+    "remotion": "Per tile i: translateY = interpolate(spring({frame: frame - i*2, fps, config: {damping: 200}}), [0,1], [260,0]); grid scale interpolate(spring({frame, fps, config: {damping: 200}}), [0,1], [1,0.86]); icon j scale = spring({frame: frame - j*2, fps, config: {damping: 12, stiffness: 200}})."
+  },
+  "confidence": "medium",
+  "notes": "Camera verdict none; raw scale 0.86 is the grid settling smaller inside the frame. All element boxes are manual because the only candidates are one union box and an empty corner box. Tile images are video and may also play internally."
+}

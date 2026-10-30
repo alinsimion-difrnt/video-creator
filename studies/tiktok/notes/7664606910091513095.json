@@ -1,0 +1,39 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "05db14fdadfca9b3761504c41ab7d0cfd11c440dc99a0854bfded30675029730",
+                 "created_at": "2026-10-13T14:15:00+00:00"},
+  "id": "7664606910091513095",
+  "format": "tutorial_demo",
+  "hook": {"type": "result_first",
+           "line": "This guy is getting so much free traffic from Google, and I'll show you exactly what they did.",
+           "visual": "Tight handheld selfie, head resting on his hand, then a finger point at 2.3 s; a black box reading 'Steal this SEO strategy NOW' with a shocked emoji sits low in frame."},
+  "beats": [
+    {"t": 0.0, "what": "Result-first line over a fixed 'Steal this SEO strategy NOW' title box."},
+    {"t": 3.79, "what": "No cut: the phone swings from his face to a laptop screen ('here are the receipts')."},
+    {"t": 7.57, "what": "Finger traces a traffic bar chart climbing month by month."},
+    {"t": 15.14, "what": "Keyword ranking chart: top-3 keywords from zero in October."},
+    {"t": 18.93, "what": "Finger on the tooltip: 56 keywords in the top 3 by the summer."},
+    {"t": 20.2, "what": "First cut back to his face, raised eyebrows: 'these are our clients'."},
+    {"t": 26.5, "what": "The whole recipe on one screen: 8 pieces of content and 4 backlinks a month."},
+    {"t": 30.29, "what": "Content tool site name and a written prompt, which he says is in the comments."},
+    {"t": 34.08, "what": "Backlink tool site name filmed on the screen."},
+    {"t": 37.87, "what": "Back to face: clients pay $40,000 a year for this and he just gave it away."}
+  ],
+  "graphics": {"captions": "title_only", "caption_position": "bottom",
+               "devices": ["title_text", "sticker_emoji", "screenshot", "chart_or_number", "camera_move", "jump_cut"],
+               "density": "moderate", "per_minute_estimate": 12},
+  "characters": [],
+  "cta": {"kind": "comment", "t": 31.93},
+  "why_it_works": [
+    "Receipts before the method: the rising traffic chart comes before any how-to, so the viewer stays to see how it was done.",
+    "One continuous handheld move from face to screen (first cut at 20.2 s) feels like being shown over the shoulder, not presented to.",
+    "The method is boiled down to two numbers (8 posts, 4 links a month) that fit one screen and are easy to save (1,148 shares).",
+    "The price anchor at the end ($40k a year) reframes a free 40-second tip as something valuable."
+  ],
+  "weaknesses": [
+    "No spoken-word captions at 4.39 words/s; muted viewers only get the fixed title.",
+    "Phone-filmed screens are moiré-striped and tilted; the tool names are readable but the prompt is not.",
+    "Quiet mix (measured -35.6 LUFS), well under typical TikTok loudness."
+  ],
+  "for_robert": "Lead with the proof chart before the method. Fred could trace the climbing line with a fin, the way the finger does here, then tap the one-screen recipe so the key numbers land."
+}

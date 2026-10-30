@@ -1,0 +1,146 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@46647335d2ce",
+    "model": null,
+    "input_hash": "422cc92ee1408d23e5a0855f5976a1461d17c288bb9ef90283dcbe38c8afb5f5",
+    "created_at": "2026-10-04T21:36:50.897666Z"
+  },
+  "video": "loom-introducing-loom-ai",
+  "event": "e003",
+  "task": "a2-e003",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Shared video player card ('Market Trends' recording with play button)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["fade", "scale_up", "slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 450, "easing_class": "ease_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [454, 619, 646, 727],
+      "manual_reason": "The presenter bubble ends inside the player card (b02) and has no candidate box of its own; box drawn around the circle on the end frame.",
+      "label": "Presenter camera bubble shrinking into the player corner",
+      "role": "avatar",
+      "role_other": null,
+      "change_types": ["scale_down", "slide_down", "slide_right"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 450, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [210, 520, 390, 720],
+      "manual_reason": "Red stop button is clicked and disappears before the end frame, so no candidate exists; box approximates its position at f266.",
+      "label": "Red stop-recording button",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["scale_down", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 200, "easing_class": "ease_in"}
+    },
+    {
+      "box": null,
+      "manual_box": [380, 650, 520, 1000],
+      "manual_reason": "Hand cursor moves off the right edge and is absent from the end frame; box covers its path across f266-f282.",
+      "label": "Hand cursor clicking stop, then exiting right",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_right", "slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    },
+    {
+      "box": "b09",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Video title being typed ('Wi...')",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["typewriter"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Wi",
+      "text_unit": "char",
+      "estimates": null
+    },
+    {
+      "box": "b10",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Author byline 'Deja Harris · 1 minute ago'",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Deja Harris 1 minute ago",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Blurred sphere, left",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Sphere, lower right",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    }
+  ],
+  "sfx_review": [
+    {"id": "x020", "verdict": "unsure", "label": "unsure", "note": "~350 ms before the event while the cursor hovers the stop button; broadband streak in the regular music pattern."},
+    {"id": "x021", "verdict": "unsure", "label": "unsure", "note": "Sharp low-heavy onset ~110 ms before the event start, close to the cursor clicking stop; could be a click/impact accent or a music downbeat. No tonal chime partials visible."},
+    {"id": "x022", "verdict": "unsure", "label": "unsure", "note": "Low onset as the player card settles; may be a soft impact or the next music hit."}
+  ],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "A hand cursor clicks the red stop button on the presenter bubble; the button collapses, the cursor exits, and a shared-video page assembles: the player card scales up from behind while the camera bubble shrinks into its lower-right corner, then the byline fades in and the title starts typing.",
+    "why_premium": "One click causes the whole state change (record to shareable video) with no cut, demonstrating the product's core promise; the presenter bubble persists across states as the anchor, and the title typewriter keeps the eye moving after the main motion settles."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.cursor',{x:'+=40',y:'-=10',duration:0.15,ease:'power2.out'}); tl.to('.stop-btn',{scale:0,opacity:0,duration:0.2,ease:'power2.in'}); tl.to('.cursor',{x:'+=400',y:'-=80',duration:0.4,ease:'power2.in'},'<'); tl.fromTo('.player-card',{opacity:0,scale:0.85,y:30},{opacity:1,scale:1,y:0,duration:0.45,ease:'power3.out'},'-=0.2'); tl.to('.cam-bubble',{x:bubbleX,y:bubbleY,scale:0.7,duration:0.45,ease:'power3.inOut'},'<'); tl.fromTo('.byline',{opacity:0},{opacity:1,duration:0.3,ease:'power1.out'},'-=0.15'); tl.to('.title',{text:'Wi...',duration:0.6,ease:'none'},'<');",
+    "remotion": "Stop button: interpolate(frame,[0,6],[1,0]) on scale/opacity after click frame. Player card: spring({frame:frame-6, fps, config:{damping:24, stiffness:150}}) mapped to opacity, scale 0.85→1 and translateY 30→0. Camera bubble: same spring driving interpolate to corner x/y and scale 1→0.7. Byline: interpolate opacity over 9 frames starting ~frame 20. Title: slice the string by Math.floor(interpolate(frame,[24,60],[0,len])) for typewriter."
+  },
+  "confidence": "medium",
+  "notes": "Camera summary reports move=none with scale 0.56, i.e. the scene effectively zooms out as the UI page appears; sphere motion is partly that. Manual boxes for the stop button and cursor are approximations since both leave the frame. The title is mid-typing at the end frame ('Wi'); the full title is likely in a later event."
+}

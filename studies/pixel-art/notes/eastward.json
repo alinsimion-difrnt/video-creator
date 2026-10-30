@@ -1,0 +1,53 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T13:59:40+00:00"
+  },
+  "id": "eastward",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "cool",
+    "notes": "Frames: warm sunny midtones (ochre, rust, peach, cream) with teal-green and sky-blue shadows and skies; forest scenes in muted sage greens. Many hues but low saturation, so busy scenes stay calm."
+  },
+  "lighting": "Sprites drawn in Aseprite then lit in engine (Gii on MOAI) with 3D-style light and post effects (wiki). Frames show soft warm sun with long cool shadows, haze on the town, and low dim light on the dark interior/boss scenes.",
+  "silhouette": "Big miner John and small white-haired girl Sam (wiki): in frames Sam's white hair and red outfit pop against brown rubble, so the small character still reads. Buildings and props are tall, stacked and irregular.",
+  "motion": {
+    "timing": "No frame timings measured. The review edit holds each scene ~2.7 s; motion visible is small ambient life (characters walking, steam, crowds) rather than big actions.",
+    "principles": [
+      "staging",
+      "secondary action",
+      "contrast of scale"
+    ]
+  },
+  "texture": "Dense, hand-placed detail: shelves of objects, signs, pipes, stacked houses, foliage. Soft clusters, little hard outline, slight haze. Every corner has small unique props (wiki agrees).",
+  "camera": "Top-down 3/4 view for gameplay; scenic shots look up at tall towers or across a crowded market from above. Slow pans; scene-to-scene cuts.",
+  "sound": "Music by Joel Corelitz, audio by Hyperduck Soundworks; well received.",
+  "acting": {
+    "enters": "Characters walk in small through the scenery (top-down path through the forest); the boss scene shows Sam tiny at the bottom edge entering a huge wrecked set.",
+    "acts": "Roles split by body (wiki): John does heavy work, Sam supports and squeezes into gaps. In frames, NPCs do small chores in shops and market stalls as background life.",
+    "exits": "Not shown in the frames.",
+    "comes_back": null,
+    "depth": "Tiny figures placed inside huge detailed sets; background crowds of small NPCs each doing something. The set is the hero, characters are small."
+  },
+  "techniques": [
+    "paint sprites flat, add light and post effects in the engine",
+    "warm lights with teal and blue shadows, low saturation overall",
+    "dense prop clutter so every corner has a story",
+    "background NPCs each doing a small chore",
+    "tiny hero with one bright accent (white hair, red) to stay findable",
+    "big/small duo with split roles"
+  ],
+  "feel": "warm hazy light + cluttered handmade set + tiny busy characters = cozy lived-in world",
+  "for_fred": "Put Pixie small in the background doing a chore (pushing a box, poking a sign) while Fred does the main beat up front, then swap who is near and far. Keep one bright accent colour on whoever is tiny so the eye finds them.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Eastward_(video_game)",
+    "studies/pixel-art/sources.yaml",
+    "data/study/pixel/work/eastward/clip1-7358461040251735302.jpg",
+    "data/study/pixel/work/eastward/clip3-7645697284801301791.jpg (ignored: a different 3D game named EASTWARD)"
+  ]
+}

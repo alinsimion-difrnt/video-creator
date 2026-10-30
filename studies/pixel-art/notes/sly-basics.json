@@ -1,0 +1,46 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T13:02:41+00:00"
+  },
+  "id": "sly-basics",
+  "kind": "tutorial",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "unknown",
+    "notes": "Palette not the topic of this post."
+  },
+  "lighting": "Not covered.",
+  "silhouette": "Shape comes from clusters: simple angular clusters give a clean, sharp look; varied organic clusters look natural. Every pixel should be placed on purpose, so the outline reads at 1x.",
+  "motion": {
+    "timing": "No animation in this article.",
+    "principles": []
+  },
+  "texture": "Hard pixel edges only: no automatic anti-aliasing on brushes or scaling; manual anti-aliasing is deferred to a later post. Detail too fine to notice undermines the pixel look.",
+  "camera": "Work small (author's pieces around 128x128 to 256x256) and present with whole-number scaling only (2x to 4x; about 4x is the most before it looks too chunky). Figures are the article's.",
+  "sound": "",
+  "acting": {
+    "enters": "No characters in the article.",
+    "acts": "Staging lesson: intention per pixel; a small canvas forces each element to earn its place.",
+    "exits": "No characters.",
+    "comes_back": null,
+    "depth": "Not covered."
+  },
+  "techniques": [
+    "intentional pixel placement: every pixel is a decision",
+    "cluster shape sets the style: angular = clean, organic = natural",
+    "no automatic anti-aliasing anywhere, including on scaling",
+    "integer scaling only (200/300/400%) so pixels stay square",
+    "start on a small canvas and grow it only when needed"
+  ],
+  "feel": "small canvas + deliberate clusters + integer scale = crisp art that reads as pixel art, not a blurry painting",
+  "for_fred": "Render Fred and Pixie at their native sprite size and scale to the 1080x1920 reel by a whole number with nearest-neighbour, never a fractional or smoothed scale; mixing sprite scales in one shot (e.g. a 3x Fred next to a 4x Pixie) breaks the look, so pick one scale per reel and use whole-sprite size changes only for depth.",
+  "sources": [
+    "https://www.slynyrd.com/blog/2018/5/16/pixelblog-5-back-to-basics",
+    "studies/pixel-art/sources.yaml"
+  ]
+}

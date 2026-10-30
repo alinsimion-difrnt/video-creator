@@ -1,0 +1,39 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a2_annotate_event",
+  "annotator": "claude-code",
+  "skill": "annotate-event@3dad117bd85a",
+  "model": null,
+  "input_hash": "2f8ff4168034846cd3210bd8ffcc6baa09eba1cf646872a7f33e3adaacbbba5f",
+  "created_at": "2026-10-05T06:51:30.568898Z"
+ },
+ "video": "salesforce-what-is-agentforce-and-how-businesses-us",
+ "event": "e005",
+ "task": "a2-e005",
+ "elements": [
+  {"box": "b01", "manual_box": null, "manual_reason": null, "label": "Agentforce 3D wordmark",
+   "role": "logo", "role_other": null, "change_types": ["other"],
+   "change_other": "slow settle drift (sub-pixel vertical float and slight scale)", "is_text": true,
+   "text": "Agentforce", "text_unit": "whole",
+   "estimates": {"duration_ms": 250, "easing_class": "ease_out", "source": "model_estimate"}},
+  {"box": "b02", "manual_box": null, "manual_reason": null, "label": "Subtitle 'What is Agentforce?'",
+   "role": "headline", "role_other": null, "change_types": ["other"],
+   "change_other": "slow settle drift together with the wordmark", "is_text": true,
+   "text": "What is Agentforce?", "text_unit": "whole",
+   "estimates": {"duration_ms": 250, "easing_class": "ease_out", "source": "model_estimate"}},
+  {"box": "b07", "manual_box": null, "manual_reason": null, "label": "Aurora light streak over mountains",
+   "role": "background", "role_other": null, "change_types": ["color_shift"], "change_other": null,
+   "is_text": false, "text": null, "text_unit": null, "estimates": null}
+ ],
+ "sfx_review": [],
+ "pattern": {"id": "logo_resolve", "proposed_name": null,
+  "description": "Tail of the title-card lockup: the 3D Agentforce wordmark and its question subtitle hold almost still with a faint settling drift while the aurora light in the background shimmers.",
+  "why_premium": "The lockup never freezes dead: a tiny continuous drift plus living background light keeps the hold feeling cinematic rather than a static slide."},
+ "build_hint": {
+  "gsap": "Hold phase after the lockup: gsap.to([wordmark, subtitle], {y: '-=4', scale: 1.01, duration: 3, ease: 'none'}) as a slow continuous drift; background aurora gsap.to(aurora, {opacity: 0.85, xPercent: 2, duration: 2, ease: 'sine.inOut', yoyo: true, repeat: -1}).",
+  "remotion": "interpolate(frame, [0, 90], [0, -4]) for translateY and [1, 1.01] for scale on the lockup group (linear, no spring); aurora opacity via Math.sin(frame / 30) * 0.075 + 0.925."},
+ "confidence": "low",
+ "notes": "Motion energy is tiny and camera.move is none; frames look near-identical. The detected change is likely a subtle drift of the lockup and background shimmer, not a distinct animation. Possibly a micro-event worth discarding."
+}

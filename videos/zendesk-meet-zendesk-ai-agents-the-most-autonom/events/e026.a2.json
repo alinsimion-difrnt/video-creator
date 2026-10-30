@@ -1,0 +1,74 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "43dc869b13fe7d84883502da0538555df7b3f76a31eb35943bf217616a7e2a13",
+    "created_at": "2026-10-05T06:55:57.172445Z"
+  },
+  "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+  "event": "e026",
+  "task": "a2-e026",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "AI agent reply bubble",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["slide_up", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Hey Angela, which items would you like to return?",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out", "source": "model_estimate"}
+    },
+    {
+      "box": "b06",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "AI agent avatar icon",
+      "role": "avatar",
+      "role_other": null,
+      "change_types": ["slide_up", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out", "source": "model_estimate"}
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Product choice cards row (top edge)",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["slide_up", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out", "source": "model_estimate"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x090", "verdict": "confirm", "label": "music", "note": "Regular broadband beat columns across the whole window; no distinct SFX shape at the bubble entrance."}
+  ],
+  "pattern": {
+    "id": "ai_answer_stream",
+    "proposed_name": null,
+    "description": "The AI agent's reply bubble and its avatar rise into the chat thread together, then a row of product choice cards follows beneath it.",
+    "why_premium": "The reply arrives as one soft rise synced to the narration ('providing you with an AI agent'), and the follow-up cards are sequenced after it rather than popping at once, so the chat reads like a live conversation."
+  },
+  "build_hint": {
+    "gsap": "tl.fromTo([bubble, avatar], {y: 40, autoAlpha: 0}, {y: 0, autoAlpha: 1, duration: 0.4, ease: 'power3.out'}).fromTo(cards, {y: 30, autoAlpha: 0}, {y: 0, autoAlpha: 1, duration: 0.4, ease: 'power3.out', stagger: 0.05}, '+=0.6')",
+    "remotion": "bubble/avatar: translateY = interpolate(spring({frame, fps, config: {damping: 200, stiffness: 120}}), [0,1], [40,0]) with opacity on the same spring; cards: same spring delayed ~18 frames, small per-card stagger."
+  },
+  "confidence": "medium",
+  "notes": "Filmstrip is a crop of the changed region; the text lines (b03, b04) move with the bubble and are folded into b02. b05 covers only the top strip of the product cards that entered at the end of the burst."
+}

@@ -1,0 +1,105 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "1675a11d607ad2f54a65b2754172cdd07eec5e5973a1d6d45b80a819352abf72",
+    "created_at": "2026-10-05T06:47:03.694062Z"
+  },
+  "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+  "event": "e035",
+  "task": "a2-e035",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Tear-off card stack (top cards flip off toward the lower right, final card settles larger)",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["rotate", "slide_right", "slide_down", "scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 2150, "easing_class": "ease_in"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Days counter numeral counting down 60 to 5",
+      "role": "metric",
+      "role_other": null,
+      "change_types": ["count_up", "other"],
+      "change_other": "count-down: each value is a new card face revealed as the card above is torn away",
+      "is_text": true,
+      "text": "5",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 2150, "easing_class": "ease_in"}
+    },
+    {
+      "box": "b06",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Card caption line 1",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["rotate", "scale_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "DAYS TO",
+      "text_unit": "line",
+      "estimates": null
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Card caption line 2",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["rotate", "scale_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "PRODUCTION",
+      "text_unit": "line",
+      "estimates": null
+    },
+    {
+      "box": "b07",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Green accent line above the card",
+      "role": "other",
+      "role_other": "accent rule",
+      "change_types": ["draw_on", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x060", "verdict": "confirm", "label": "chime", "note": "Tonal high partials start just before the first card flips; reads as a light chime cue leading into the countdown."},
+    {"id": "x061", "verdict": "unsure", "label": "unsure", "note": "Sits on the onset of the same tonal layer as x060; could be its second strike or a card-flip transient."},
+    {"id": "x062", "verdict": "confirm", "label": "chime", "note": "Tonal partial during the fast-flipping middle of the countdown (around 40 to 11)."},
+    {"id": "x063", "verdict": "confirm", "label": "chime", "note": "Clear tonal line as the stack nears the final 5 card; accent for the payoff."}
+  ],
+  "pattern": {
+    "id": "metric_count_up",
+    "proposed_name": null,
+    "description": "A tear-off calendar countdown: a white rounded card reading '60 DAYS TO PRODUCTION' sits on a stack; each top card rotates and flies off toward the lower right with a soft shadow, revealing a lower number underneath, accelerating through 59, 56, 40, 22, 11, 6 until the final '5' card settles larger with a green accent rule drawn above it.",
+    "why_premium": "It makes the 'days, not months' claim physical: real card flips with 3D tilt and contact shadows, an accelerating rhythm that builds tension, and a calm, enlarged landing on the final number synced to the narration word 'days'."
+  },
+  "build_hint": {
+    "gsap": "Stack of card nodes (60..5) with only the top visible; tl = gsap.timeline(); cards.forEach((c,i) => tl.to(c, {rotation: 25, x: 380, y: 160, rotationX: 30, autoAlpha: 0, duration: 0.35, ease: 'power2.in'}, '>-' + (0.25 * Math.min(1, i/6)))) with timeScale ramp (tl.timeScale ramping 1 -> 3 via gsap.to(tl, {timeScale: 3, duration: 1.5, ease: 'power1.in'})); final card: to({scale: 1.2, duration: 0.5, ease: 'back.out(1.2)'}); accent: fromTo('.rule', {scaleX: 0, transformOrigin: 'left'}, {scaleX: 1, duration: 0.3, ease: 'power3.out'}).",
+    "remotion": "For each card i, start = cumulative frames with shrinking gaps (e.g. gap = max(2, 10 - i)); progress = interpolate(frame, [start, start + 10], [0, 1], {easing: Easing.in(Easing.quad), extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}) driving rotate/translate/opacity; final card scale via spring({frame: frame - endStart, fps, config: {damping: 14, stiffness: 140}}); rule scaleX interpolate with Easing.out(Easing.cubic)."
+  },
+  "confidence": "medium",
+  "notes": "b01 is a union box spanning the card plus the right-hand flight path of discarded cards; no candidate isolates the card alone. Countdown values are read from filmstrip frames, not all intermediate numbers are visible. Whether the final card actually scales up or the camera pushes in is ambiguous (camera verdict none, scale sum 0.81 reflects content change)."
+}

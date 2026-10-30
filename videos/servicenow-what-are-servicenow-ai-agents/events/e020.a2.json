@@ -1,0 +1,47 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "c84df5b0b821348329c36a30338ed541c79ed5b6ab9461ebe154e941d0c35dab",
+    "created_at": "2026-10-05T06:51:27.993970Z"
+  },
+  "video": "servicenow-what-are-servicenow-ai-agents",
+  "event": "e020",
+  "task": "a2-e020",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Live-action office scene (letterboxed footage)",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["other", "scale_up"],
+      "change_other": "hard cut from a door-handle close-up to a wide office shot, then a slow camera drift/push-in while the actors settle",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 1500, "easing_class": "linear"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x085", "verdict": "override", "label": "music", "note": "Before the event; part of a run of evenly spaced tonal onsets with harmonic stacks in the music stem, no visual hit."},
+    {"id": "x086", "verdict": "unsure", "label": "unsure", "note": "Strong tonal onset with a sustained low partial at ~80.0 s; reads like a melodic music note rather than a UI chime, and nothing happens visually at that moment."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "live action cut-in",
+    "description": "Live-action narrative footage: a hand pushes a door handle in close-up, hard cut to a wide office shot as the character enters and sits, with a slow handheld-style push-in.",
+    "why_premium": "Cinematic film-grade footage (shallow depth, letterbox, motivated cut on the door action) grounds the AI product story in a relatable human scenario before any UI appears."
+  },
+  "build_hint": {
+    "gsap": "Footage, not a motion graphic: hard cut between clips, then gsap.fromTo(clip, {scale: 1.0}, {scale: 1.03, x: -6, duration: 2, ease: 'none'}) to fake a slow dolly push-in on the wide shot.",
+    "remotion": "<Sequence> per clip with a hard cut; on the wide clip interpolate(frame, [0, 60], [1, 1.03]) for transform: scale with linear easing (no spring)."
+  },
+  "confidence": "medium",
+  "notes": "The burst spans a hard cut (energy spike around frame ~1886) from the door close-up to the office, so it is two clips inside one detected shot (s038); the shot detector may have missed this cut. b02 is a thin sliver at the letterbox edge and was not treated as an element. Camera verdict push_in is small (scale 1.032)."
+}

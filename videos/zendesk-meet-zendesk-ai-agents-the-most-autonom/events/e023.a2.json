@@ -1,0 +1,44 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "30471b2312de38230a085ffce3a26cb2aa302114ed989032a70267efefc5b8d2",
+    "created_at": "2026-10-05T06:57:22.961630Z"
+  },
+  "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+  "event": "e023",
+  "task": "a2-e023",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Dark green dot that pops in and starts stretching into a pill",
+      "role": "other",
+      "role_other": "abstract shape (dot / pill)",
+      "change_types": ["pop", "slide_up", "morph"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 200, "easing_class": "spring_no_overshoot"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "dot pop morph",
+    "description": "On a flat light-green field, a small dark dot pops in (rising slightly, with a faint soft shadow beneath it on the first frame), grows to a circle and, at the end of the burst, begins stretching horizontally into a pill shape, setting up a shape-to-UI morph.",
+    "why_premium": "A single primitive shape carries the scene change: the pop gives a tactile 'drop' with a soft shadow, and the circle-to-pill stretch promises a transformation (likely into a control or label), giving continuity between sections without text or a cut."
+  },
+  "build_hint": {
+    "gsap": "tl.fromTo('.dot', {scale: 0, y: 10, autoAlpha: 0}, {scale: 1, y: 0, autoAlpha: 1, duration: 0.2, ease: 'back.out(1.4)'}).to('.dot', {width: 88, borderRadius: 999, duration: 0.25, ease: 'power2.inOut'}, '+=0.05');",
+    "remotion": "const s = spring({frame, fps, config: {damping: 14, stiffness: 220, mass: 0.6}}); transform: translateY(${(1 - s) * 10}px) scale(${s}); then width = interpolate(frame, [14, 22], [64, 88], {easing: Easing.inOut(Easing.quad), extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}) with borderRadius 9999."
+  },
+  "confidence": "medium",
+  "notes": "The burst ends just as the dot starts widening (energy rises again on the last two frames), so the pill morph probably continues into the next event. b02 is a spurious OCR box ('●'); b03 is a union box including the shadow area, not used."
+}

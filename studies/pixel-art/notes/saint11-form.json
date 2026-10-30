@@ -1,0 +1,69 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "df3b73e36b2c86afb41c3e6ba450044373fc21816822b3f0ee8d6454c51a2f0a",
+    "created_at": "2026-10-13T13:02:05+00:00"
+  },
+  "id": "saint11-form",
+  "kind": "tutorial",
+  "palette": {
+    "colours_estimate": 21,
+    "shadows": "mixed",
+    "notes": "Measured 4-28 colours per sheet: 1-bit 4, shine 9, silhouette 11, fundamentals 21, outlines 23, illumination 24, shading 27, fundamentals 2 28 (UI included). Strong warm hue shifts on skin and fur ramps (+51 to +64 deg) next to cool ones (-34 to -51 deg)."
+  },
+  "lighting": "One clear light per object: a cube and a sphere lit from the top-left with a cast shadow, rim light against dark backgrounds, and coloured light from a source (lava, window, screen) that tints the side facing it.",
+  "silhouette": "The silhouette sheet builds characters from a flat grey shape first (sketch, then details); a hero, an octopus monster and a round robot each read as a solid shape before any colour.",
+  "motion": {
+    "timing": "Mostly slideshow holds: fundamentals 70 frames at 130 ms, shading 7 drawings with 600 ms median holds, silhouette 1.8 s first hold, outlines 120 ms with 840 ms holds. Shine is the only motion: 80 ms sweep frames with 200-700 ms rests between glints.",
+    "principles": [
+      "staging",
+      "solid drawing",
+      "appeal",
+      "timing (rest between glints)"
+    ]
+  },
+  "texture": "Dithering kept low (1.4-2.0%, 2.7% only in 1-bit where it stands in for grey); texture comes from clusters, not noise; the fundamentals panel warns against single stray pixels and jaggies.",
+  "camera": "Static before/after panels: a wrong version beside the right one, or a sketch beside the finished sprite.",
+  "sound": "",
+  "acting": {
+    "enters": "No characters enter; ideas are revealed one panel at a time, from silhouette to rendered sprite.",
+    "acts": "The demo objects change state instead of moving: the light source moves around a sphere, the outline switches from black to coloured, a glint sweeps across a sword.",
+    "exits": "",
+    "comes_back": null,
+    "depth": "Staging lesson: dark, low-contrast backgrounds behind high-contrast subjects; the 1-bit scene separates near and far using only pattern and line weight."
+  },
+  "techniques": [
+    "silhouette first: block the character as one flat shape that reads alone",
+    "one light source: highlight, mid, shadow, then a cast shadow on the ground",
+    "hue-shifted ramps: skin and fur go warmer in the light, cooler in the shadow",
+    "selective outline: coloured, darker on the shadow side, broken where light hits",
+    "rim light on the edge opposite the key light to separate from a dark background",
+    "shine sweep: a 2-3 px diagonal highlight crosses the object, then a long rest",
+    "1-bit: 4 colours, use dither and line weight for value",
+    "avoid pillow shading and single stray pixels"
+  ],
+  "feel": "one light + silhouette that reads in grey + selective coloured outline + a rare shine = solid sprites that stay clear at 1x",
+  "for_fred": "Check Fred and Pixie as flat grey silhouettes at reel size before adding detail, and light them from one side with warm highlights and cool shadows. A shine sweep across Fred's scales, with a long rest between glints, is a cheap way to make him catch the eye when he comes back on screen.",
+  "sources": [
+    "https://saint11.art/img/pixel-tutorials/Fundamentals.gif",
+    "https://saint11.art/img/pixel-tutorials/Fundamentals2.gif",
+    "https://saint11.art/img/pixel-tutorials/Shading.gif",
+    "https://saint11.art/img/pixel-tutorials/IlluminationTechniques.gif",
+    "https://saint11.art/img/pixel-tutorials/Outlines.gif",
+    "https://saint11.art/img/pixel-tutorials/Silhouette.gif",
+    "https://saint11.art/img/pixel-tutorials/1-bit.gif",
+    "https://saint11.art/img/pixel-tutorials/Shine.gif",
+    "studies/pixel-art/metrics/saint11-form.json",
+    "data/study/pixel/work/saint11-form/1-bit.png",
+    "data/study/pixel/work/saint11-form/Fundamentals.png",
+    "data/study/pixel/work/saint11-form/Fundamentals2.png",
+    "data/study/pixel/work/saint11-form/IlluminationTechniques.png",
+    "data/study/pixel/work/saint11-form/Outlines.png",
+    "data/study/pixel/work/saint11-form/Shading.png",
+    "data/study/pixel/work/saint11-form/Shine.png",
+    "data/study/pixel/work/saint11-form/Silhouette.png"
+  ]
+}

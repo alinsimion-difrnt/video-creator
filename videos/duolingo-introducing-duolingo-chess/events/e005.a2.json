@@ -1,0 +1,61 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "2d489d14aad81d9e52802a5f74ccbb69da675d1134acbc43e2f4def6badeb56b",
+    "created_at": "2026-10-05T06:42:55.757574Z"
+  },
+  "video": "duolingo-introducing-duolingo-chess",
+  "event": "e005",
+  "task": "a2-e005",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "3D black knight chess piece flying through and out frame right",
+      "role": "other",
+      "role_other": "3d_character_prop",
+      "change_types": ["slide_right", "scale_up", "rotate"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 650, "easing_class": "ease_in"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "3D rider character tumbling off the knight across the UI",
+      "role": "other",
+      "role_other": "3d_character",
+      "change_types": ["slide_up", "rotate", "slide_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 750, "easing_class": "ambiguous"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x013", "verdict": "override", "label": "whoosh", "note": "Sharp broadband onset then decay as the knight sweeps across; reads as a forward whoosh rather than a reverse swell."},
+    {"id": "x014", "verdict": "unsure", "label": "unsure", "note": "1.3 s after the event, after the frame has settled; nothing visible here explains it."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "mascot fly through",
+    "description": "A 3D knight piece carrying a cartoon rider charges across a static flat UI (course picker with stats bar), the rider tumbling off and both exiting frame, leaving the UI untouched.",
+    "why_premium": "Mixes rendered 3D characters over flat product UI, adding personality and depth with motion blur and perspective scale while the product screen stays readable."
+  },
+  "build_hint": {
+    "gsap": "Static UI layer underneath; knight sprite: gsap.fromTo(knight, {x: -200, scale: 0.8, rotate: -10}, {x: 900, scale: 2.2, rotate: 15, duration: 0.65, ease: 'power2.in'}); rider: timeline offset 0.05s, arc via motionPath up and over then down, rotate 360, duration 0.75, ease 'power1.inOut'; add a motion-blur filter during peak speed.",
+    "remotion": "Overlay two <Img> sprites over the UI; knight translateX/scale via interpolate(frame, [0, 20], ...) with Easing.in(Easing.quad); rider position on a parabolic arc from interpolate plus rotate; extrapolateRight clamp so both exit cleanly."
+  },
+  "confidence": "medium",
+  "notes": "Both moving elements leave the frame before the end frame, so b02/b01 are the diff/union areas of their paths rather than settled positions. The middle tile is occluded early and shows the French flag once the knight passes; it may have swapped under occlusion but cannot be confirmed, so it is not listed."
+}

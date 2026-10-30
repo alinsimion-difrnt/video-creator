@@ -1,0 +1,224 @@
+{
+  "$defs": {
+    "Annotator": {
+      "enum": [
+        "code",
+        "claude-code",
+        "human"
+      ],
+      "title": "Annotator",
+      "type": "string"
+    },
+    "Cue": {
+      "additionalProperties": false,
+      "description": "An action that starts when a word of the narration starts (a timeline word index; never a time).",
+      "properties": {
+        "do": {
+          "minLength": 1,
+          "title": "Do",
+          "type": "string"
+        },
+        "target": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Target"
+        },
+        "word": {
+          "minimum": 0,
+          "title": "Word",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "word",
+        "do"
+      ],
+      "title": "Cue",
+      "type": "object"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "description": "Carried by every output JSON (BUILD_PLAN section 2.7).",
+      "properties": {
+        "annotator": {
+          "$ref": "#/$defs/Annotator"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "input_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Input Hash",
+          "type": "string"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "schema_version": {
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "skill": {
+          "anyOf": [
+            {
+              "pattern": "^[a-z0-9-]+@[0-9a-f]{8,64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Skill"
+        },
+        "stage": {
+          "title": "Stage",
+          "type": "string"
+        },
+        "tool_version": {
+          "title": "Tool Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool_version",
+        "stage",
+        "annotator",
+        "input_hash",
+        "created_at"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "StoryScene": {
+      "additionalProperties": false,
+      "properties": {
+        "accent": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Accent"
+        },
+        "archetype": {
+          "title": "Archetype",
+          "type": "string"
+        },
+        "canvas": {
+          "enum": [
+            "marketing",
+            "product"
+          ],
+          "title": "Canvas",
+          "type": "string"
+        },
+        "cues": {
+          "items": {
+            "$ref": "#/$defs/Cue"
+          },
+          "minItems": 1,
+          "title": "Cues",
+          "type": "array"
+        },
+        "example_data": {
+          "default": false,
+          "title": "Example Data",
+          "type": "boolean"
+        },
+        "freeform_reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Freeform Reason"
+        },
+        "scene": {
+          "pattern": "^s\\d{2}$",
+          "title": "Scene",
+          "type": "string"
+        },
+        "slots": {
+          "additionalProperties": true,
+          "title": "Slots",
+          "type": "object"
+        },
+        "title": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Title"
+        }
+      },
+      "required": [
+        "scene",
+        "archetype",
+        "canvas",
+        "slots",
+        "cues"
+      ],
+      "title": "StoryScene",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "C6: an archetype per scene, its slots filled, every motion cue tied to a spoken word.",
+  "properties": {
+    "project": {
+      "title": "Project",
+      "type": "string"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    },
+    "scenes": {
+      "items": {
+        "$ref": "#/$defs/StoryScene"
+      },
+      "minItems": 1,
+      "title": "Scenes",
+      "type": "array"
+    }
+  },
+  "required": [
+    "provenance",
+    "project",
+    "scenes"
+  ],
+  "title": "Storyboard",
+  "type": "object"
+}

@@ -1,0 +1,100 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "36814f51fd1f8513e9a80d4f2b963f22167f74c939947f8e80475db458def25d",
+    "created_at": "2026-10-05T06:38:40.037600Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e016",
+  "task": "a2-e016",
+  "elements": [
+    {
+      "box": null,
+      "manual_box": [490, 905, 520, 922],
+      "manual_reason": "Cursor ends over the Impact row's action icons, whose box (b09) is used for the icons appearing.",
+      "label": "Mouse cursor",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "ambiguous"}
+    },
+    {
+      "box": "b10",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Impact field row hover highlight in Fields panel",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Impact",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 80, "easing_class": "step"}
+    },
+    {
+      "box": "b09",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Row action icons (settings, visibility) revealed on hover",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 80, "easing_class": "step"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Field description hover card",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Impact Rated manually, and represents how each idea contributes to the goal",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 120, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Fields button focus ring clears",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Fields 7",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 80, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "The cursor travels down the 'Fields in this view' list (Summary, Goal, Impact), each row lighting up with action icons, and resting on Impact pops a description card beside the panel.",
+    "why_premium": "Real hover affordances (row icons, explanatory card) explain field meaning in-product, with no added callouts; the motion lands just before the narration's 'Now you can remove existing fields'."
+  },
+  "build_hint": {
+    "gsap": "Recorded UI. To recreate: tl.to('.cursor', {y: 90, duration: 0.3, ease: 'power1.inOut'}); per-row hover via tl.set('.field-row.is-hover', ...) as the cursor crosses rows; tl.set('.row-actions', {autoAlpha: 1}); tl.fromTo('.field-card', {autoAlpha: 0}, {autoAlpha: 1, duration: 0.12, ease: 'power2.out'}, '+=0.2').",
+    "remotion": "Cursor y = interpolate(frame, [0, 9], [startY, endY], {easing: Easing.inOut(Easing.quad)}); hovered row index from cursor y; card opacity = interpolate(frame, [24, 28], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})."
+  },
+  "confidence": "medium",
+  "notes": "Hover states are discrete UI state changes; the description card appears within about two frames, so fade vs instant is unclear."
+}

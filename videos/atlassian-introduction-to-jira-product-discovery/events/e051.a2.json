@@ -1,0 +1,114 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "498870309f8c3bce08abc969637360359c6f468792d373760bae77f37829e964",
+    "created_at": "2026-10-05T06:38:34.524583Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e051",
+  "task": "a2-e051",
+  "elements": [
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Group value: Enterprise SaaS Inc.",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["pop"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Enterprise SaaS Inc.",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Group value: Legacy Manufacturing Corp.",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["pop"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Legacy Manufacturing Corp.",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Group value chip: Emerging BioTech Co. (hovered row)",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["pop", "highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Emerging BioTech Co.",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b07",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Group value: Midsize Bank Inc. (hovered row)",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["pop", "highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Midsize Bank Inc.",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b08",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Group value: Small Startup Co.",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["pop"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Small Startup Co.",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b06",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Table vertical scrollbar",
+      "role": "other",
+      "role_other": "scrollbar",
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "After 'Key customers' is chosen as the group-by field, the panel populates with the customer values at once; the cursor then sweeps over the list, the row hover state (grey band, drag handle, eye icon) jumps from Midsize Bank to Emerging BioTech and clears as the cursor leaves toward the swimlane table.",
+    "why_premium": "The values appear right as the narration says 'which is key customers', and the cursor's hover trail visibly ties the side-panel values to the coloured swimlane headers in the table, so the viewer reads the cause and effect without any added graphics."
+  },
+  "build_hint": {
+    "gsap": "tl.set('.group-values li', {autoAlpha: 1}) at the select frame (native UI, no tween); then hover states: tl.to('.row-midsize', {backgroundColor: '#f1f2f4', duration: 0.05}).to('.row-midsize', {backgroundColor: 'transparent', duration: 0.05}, '+=0.1').to('.row-biotech', {backgroundColor: '#f1f2f4', duration: 0.05}, '<'); cursor path tween with 'power2.inOut'. A designed recreation could instead stagger the values with fromTo({autoAlpha: 0, y: 6}, {autoAlpha: 1, y: 0, stagger: 0.04, ease: 'power2.out'}).",
+    "remotion": "Values: opacity step at the select frame. Hover band: opacity interpolate over 1-2 frames keyed to the cursor position; cursor x/y via interpolate with Easing.inOut(Easing.cubic). No spring."
+  },
+  "confidence": "medium",
+  "notes": "Filmstrip is a crop of the side panel; the first frame is blank white (values not yet rendered) and the list appears in a single frame. Hover-row highlight moves between rows during the burst and is gone in the settled end frame. b06 scrollbar appearance is a small secondary change (table re-rendered into swimlanes)."
+}

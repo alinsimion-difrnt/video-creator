@@ -1,0 +1,65 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "d8ab3436b64e75e747a93e31bef45bd96f02ec995116d22aee4f599dcc118aab",
+    "created_at": "2026-10-05T06:51:46.118760Z"
+  },
+  "video": "workday-workday-adaptive-planning-demo-finan",
+  "event": "e003",
+  "task": "a2-e003",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Company Summary dashboard screenshot card",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 350, "easing_class": "ease_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [722, 0, 1000, 1000],
+      "manual_reason": "The blue arc backdrop behind the card expands and drops toward the bottom edge; no candidate box isolates it (b01 is the card-area diff).",
+      "label": "Blue brand arc backdrop",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["scale_up", "slide_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 350, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x001",
+      "verdict": "confirm",
+      "label": "music",
+      "note": "Broadband onset ~660 ms after the motion settles; reads as a music hit/downbeat, not synced to the scale-up."
+    }
+  ],
+  "pattern": {
+    "id": "ui_camera_push_in",
+    "proposed_name": null,
+    "description": "A small, slightly perspective-tilted dashboard screenshot on a white field with a blue arc grows quickly to fill most of the frame, flattening as it settles, while the arc expands behind it.",
+    "why_premium": "Fast front-loaded scale (most of the motion in the first 3-4 frames, then a long settle) gives a confident 'arrive and hold' feel; the backdrop arc scaling with the card adds depth without a hard cut."
+  },
+  "build_hint": {
+    "gsap": "tl.fromTo('.dashboard', {scale: 0.45, rotationX: 8, transformPerspective: 1200}, {scale: 1, rotationX: 0, duration: 0.4, ease: 'expo.out'}).fromTo('.arc', {scale: 0.8, yPercent: -10}, {scale: 1, yPercent: 0, duration: 0.4, ease: 'expo.out'}, '<'); no stagger.",
+    "remotion": "const p = spring({frame, fps, config: {damping: 30, stiffness: 220, mass: 1}}); dashboard style transform: `perspective(1200px) rotateX(${interpolate(p,[0,1],[8,0])}deg) scale(${interpolate(p,[0,1],[0.45,1])})`; arc uses the same p for scale and translateY. Critically damped, no overshoot."
+  },
+  "confidence": "medium",
+  "notes": "camera.move is none; the scale is the card (and arc) growing inside the frame, so it is mapped to ui_camera_push_in as the visual pattern rather than a camera move. Slight perspective tilt in the first frames is a guess from the filmstrip. Inner dashboard text boxes (b02-b20) scale with the card and are not separate elements."
+}

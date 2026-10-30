@@ -1,0 +1,74 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "s7_measure",
+    "annotator": "code",
+    "skill": null,
+    "model": null,
+    "input_hash": "aadc6b3d6cc07cfed0418ba361b9f5cef446f63e32a474f5673144500913ea56",
+    "created_at": "2026-10-05T10:02:46.434370Z"
+  },
+  "video": "servicenow-what-are-servicenow-ai-agents",
+  "event": "e017",
+  "fps": 23.81,
+  "elements": [
+    {
+      "box": "b01",
+      "xyxy": [
+        392,
+        93,
+        871,
+        627
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.811,
+      "channels": [
+        {
+          "name": "opacity",
+          "start_f": 1846,
+          "end_f": 1854,
+          "start_value": 0.0,
+          "end_value": 1.0,
+          "observed_start": true,
+          "cls": "ambiguous",
+          "gsap": {
+            "ease": "sine.inOut",
+            "duration_ms": 445.9,
+            "rmse": 0.01133
+          },
+          "bezier": "cubic-bezier(0.456, 0.282, 0.528, 0.616)",
+          "bezier_rmse": 0.00278,
+          "spring": {
+            "zeta": 0.4319,
+            "omega0": 5.737,
+            "settle_ms": 1462.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 32.918,
+              "damping": 4.956
+            },
+            "remotion_exact": true,
+            "rmse": 0.00368
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 360.4,
+          "fit_quality": 0.9999
+        }
+      ],
+      "timing": {
+        "ease": "sine.inOut",
+        "start_s": 77.4714,
+        "duration_ms": 445.9,
+        "rmse": 0.01133
+      },
+      "stagger": null,
+      "sfx_offset_ms": {
+        "x084": 209.7
+      },
+      "source": "measured",
+      "quality": 0.9999
+    }
+  ],
+  "failed": {}
+}

@@ -1,0 +1,35 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes",
+                 "annotator": "claude-code", "input_hash": "8373b455448fa6c4c5a8e32020c524c78ecf2f15d4fc7cd6055ad200cf759c3e",
+                 "created_at": "2026-10-13T15:00:00+00:00"},
+  "id": "7693271980031708429",
+  "format": "talking_head",
+  "hook": {"type": "curiosity_gap",
+           "line": "This press release did what?",
+           "visual": "Selfie close-up of a man in a blue zip top, puzzled squint; white-box text mid-frame 'THIS PRESS RELEASE DID WHAT?!' and 'GET ONE FREE!'."},
+  "beats": [
+    {"t": 0.0, "what": "Puzzled face with a two-line title: the question plus a free giveaway"},
+    {"t": 3.0, "what": "Cut to phone footage of his laptop: the press release report listing Google News, AP, ChatGPT, Yahoo, Bing"},
+    {"t": 8.13, "what": "Back to face with a zoom punch: introduces himself and promises a free one at the end"},
+    {"t": 17.4, "what": "Cut to the screen again: Google, ChatGPT logos and a list of local news outlets that picked it up"},
+    {"t": 30.87, "what": "Back to face: says his agency does this monthly for clients to get AI visibility"},
+    {"t": 40.9, "what": "Asks viewers to comment 'press release' to enter a draw for a free one"},
+    {"t": 52.27, "what": "Zoom punch on the closing ask to follow"}
+  ],
+  "graphics": {"captions": "title_only", "caption_position": "middle",
+               "devices": ["title_text", "screen_recording", "product_ui", "zoom_punch", "jump_cut"],
+               "density": "moderate", "per_minute_estimate": 8},
+  "characters": [],
+  "cta": {"kind": "comment", "t": 40.9},
+  "why_it_works": [
+    "Question title plus 'GET ONE FREE!' in the first frame gives two reasons to stay: the result and the giveaway",
+    "Cuts to the real distribution report at 3 s, so proof (ChatGPT, Google News, AP logos) arrives before the explanation",
+    "Comment-a-keyword giveaway turns the CTA into an entry, which fits the high comment and share counts (33 comments, 51 shares)"
+  ],
+  "weaknesses": [
+    "Laptop screen filmed with a phone is skewed and hard to read on a small display",
+    "Very quiet audio (-29.0 LUFS) and no running captions after the opening title",
+    "Two stacked CTAs at the end (comment, then follow) dilute each other"
+  ],
+  "for_robert": "Cut to the proof screen within the first 3 s and offer a comment-keyword giveaway; record the screen properly instead of filming a laptop, and let Fred react to the result."
+}

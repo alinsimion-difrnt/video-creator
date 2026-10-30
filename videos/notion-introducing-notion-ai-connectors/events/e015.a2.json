@@ -1,0 +1,50 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "ce874c8067b625dfc2d367e8278613ab3bc7adca00de3fd340a921494aeb5a83",
+    "created_at": "2026-10-05T06:47:08.176654Z"
+  },
+  "video": "notion-introducing-notion-ai-connectors",
+  "event": "e015",
+  "task": "a2-e015",
+  "elements": [
+    {"box": "b05", "manual_box": null, "manual_reason": null, "label": "Word 'Access'", "role": "headline",
+     "role_other": null, "change_types": ["fade", "color_shift"], "change_other": null,
+     "is_text": true, "text": "Access", "text_unit": "word",
+     "estimates": {"duration_ms": 300, "easing_class": "ease_out", "source": "model_estimate"}},
+    {"box": "b07", "manual_box": null, "manual_reason": null, "label": "Word 'all'", "role": "headline",
+     "role_other": null, "change_types": ["fade", "color_shift", "slide_up"], "change_other": null,
+     "is_text": true, "text": "all", "text_unit": "word",
+     "estimates": {"duration_ms": 300, "easing_class": "ease_out", "source": "model_estimate"}},
+    {"box": "b06", "manual_box": null, "manual_reason": null, "label": "Word 'your'", "role": "headline",
+     "role_other": null, "change_types": ["fade", "color_shift", "slide_up"], "change_other": null,
+     "is_text": true, "text": "your", "text_unit": "word",
+     "estimates": {"duration_ms": 300, "easing_class": "ease_out", "source": "model_estimate"}},
+    {"box": "b04", "manual_box": null, "manual_reason": null, "label": "Word 'company's'", "role": "headline",
+     "role_other": null, "change_types": ["fade", "color_shift"], "change_other": null,
+     "is_text": true, "text": "company's", "text_unit": "word",
+     "estimates": {"duration_ms": 300, "easing_class": "ease_out", "source": "model_estimate"}},
+    {"box": "b03", "manual_box": null, "manual_reason": null, "label": "Word 'knowledge'", "role": "headline",
+     "role_other": null, "change_types": ["fade", "color_shift", "slide_up"], "change_other": null,
+     "is_text": true, "text": "knowledge", "text_unit": "word",
+     "estimates": {"duration_ms": 350, "easing_class": "ease_out", "source": "model_estimate"}}
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "kinetic_word_reveal",
+    "proposed_name": null,
+    "description": "Centered two-line value statement builds word by word: each word fades in light grey (rising a few pixels) and darkens to black, while the centered block re-centers and wraps onto a second line as words are added.",
+    "why_premium": "Word-paced reveal mirrors the voiceover cadence, and the grey-to-black settle plus the small rise give each word a soft landing; the live re-centering keeps the block balanced throughout."
+  },
+  "build_hint": {
+    "gsap": "Split into words; tl.fromTo(words, {opacity: 0, y: 6, color: '#b5b5b5'}, {opacity: 1, y: 0, color: '#111', duration: 0.35, ease: 'power2.out', stagger: 0.2}); use Flip on the line container so the centered block re-centers smoothly as each word lands.",
+    "remotion": "Per word i: start = i*6 frames at 30fps; opacity = interpolate(f-start, [0, 4], [0, 1]); translateY = interpolate(f-start, [0, 8], [6, 0], {easing: Easing.out(Easing.cubic)}); color = interpolateColors(f-start, [0, 10], ['#b5b5b5', '#111']); layout offset smoothed with spring({damping: 200})."
+  },
+  "confidence": "high",
+  "notes": "Same typographic system as e010 (question card). The small upward drift is inferred from the filmstrip and may instead be line reflow; code should measure. No SFX candidates; camera.move none."
+}

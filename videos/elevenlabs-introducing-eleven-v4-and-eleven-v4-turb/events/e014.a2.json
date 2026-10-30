@@ -1,0 +1,90 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "507129f7a8ed8bde49c8275e1202e5f3ded464ae064a4ad46c1b6f6cc562399a",
+    "created_at": "2026-10-05T06:43:20.572458Z"
+  },
+  "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+  "event": "e014",
+  "task": "a2-e014",
+  "elements": [
+    {
+      "box": null,
+      "manual_box": [28, 230, 972, 770],
+      "manual_reason": "No candidate box isolates the large translucent disc; b01 is the whole frame and the other boxes are edge slivers.",
+      "label": "Large translucent disc",
+      "role": "other",
+      "role_other": "abstract_shape",
+      "change_types": ["slide_down", "slide_right", "scale_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 600, "easing_class": "ease_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [312, 393, 690, 607],
+      "manual_reason": "The inner sphere with its glowing core has no candidate box of its own.",
+      "label": "Inner sphere with glowing core",
+      "role": "other",
+      "role_other": "abstract_shape",
+      "change_types": ["fade", "scale_up", "highlight"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 450, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Thin orbit rings (wireframe ellipses)",
+      "role": "other",
+      "role_other": "abstract_shape",
+      "change_types": ["rotate", "morph"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 600, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Blurred green/red gradient background",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["color_shift"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 600, "easing_class": "linear"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x056", "verdict": "unsure", "label": "unsure", "note": "No distinct sweep shape; music bed only. Weak CLAP score (0.29)."},
+    {"id": "x057", "verdict": "unsure", "label": "unsure", "note": "Faint diffuse energy; no clear reverse-swoosh build. Weak CLAP score."},
+    {"id": "x058", "verdict": "unsure", "label": "unsure", "note": "Soft tonal patch after the event; could be music, not a clear chime."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "nested orb settle",
+    "description": "A stack of nested translucent discs drifts from upper left to centre and settles concentric while an inner sphere fades in and a point of light ignites at its core; wireframe orbit rings tilt around it over a grainy gradient.",
+    "why_premium": "Layered translucency, film grain and a single bright focal point make a calm abstract 'voice core' with real depth; the slow settle into perfect concentricity reads as precision and stability, matching 'voice consistency'."
+  },
+  "build_hint": {
+    "gsap": "Timeline: gsap.fromTo(outerDisc, {x:-180, y:-90, scale:1.08}, {x:0, y:0, scale:1, duration:0.6, ease:'power3.out'}); then innerSphere fromTo {opacity:0, scale:0.8} -> {opacity:1, scale:1, duration:0.45, ease:'power2.out'} at '-=0.3'; core glow fromTo {opacity:0, scale:0} -> {opacity:1, scale:1, ease:'expo.out'} at '-=0.2'; rings gsap.to rotation continuously (ease 'none'); background gradient position tween ease 'sine.inOut'.",
+    "remotion": "spring({frame, fps, config:{damping:200, stiffness:80, mass:1}}) drives disc translate/scale from offset to 0 (no overshoot); inner sphere opacity/scale via a delayed spring (delay ~6 frames); glow opacity interpolate over 6 frames; rings rotate = interpolate(frame, [0, durationInFrames], [0, 20]) linear; background via animated CSS gradient position."
+  },
+  "confidence": "medium",
+  "notes": "Most moving layers lack candidate boxes, so two manual boxes are used. Camera move is none; the 1.03 scale sum reflects the discs settling, not a camera push. All three SFX candidates look like music bed."
+}

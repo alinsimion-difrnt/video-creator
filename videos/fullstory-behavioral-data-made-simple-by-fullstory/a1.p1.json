@@ -1,0 +1,154 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "24130be6de106a1bdd9723d5ef3ff82329b478f8b08a0623059f13ca25a85905",
+    "created_at": "2026-10-05T06:25:10.961152Z"
+  },
+  "video": "fullstory-behavioral-data-made-simple-by-fullstory",
+  "task": "a1-p1",
+  "shots": [
+    {
+      "shot": "s001",
+      "shot_type": "kinetic_type",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Three-line headline statement with hand-drawn doodle accents (burst marks top-left, looping arrow under 'experiences')",
+      "transition_in": "other",
+      "transition_other": "opening shot; no incoming transition (anchors give null)",
+      "on_screen_text": [
+        "Behavioral data is transforming today's digital experiences."
+      ],
+      "text_word_count": 7,
+      "typography": "Large left-aligned three-line sentence-case statement in a geometric sans; 'Behavioral data' set in extra-bold with a quirky stylised 'r'/'a' display cut, remaining words in regular weight; normal tracking, generous leading. Lines appear to resolve from faded to full opacity at the start. Font guess (low confidence): a custom brand grotesk.",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "On a soft gradient background the headline is already present and resolves from partially faded to full contrast by 0.5 s; from about 1.0 s a hand-drawn burst draws on beside 'Behavioral' and a looping squiggle arrow draws on under 'experiences', then the frame holds while the VO (w0-w9) says the line, which differs slightly from the on-screen copy ('Access to customer behavioral data is...').",
+      "build_rebuild": "Render a centred three-line text block with the first two words in an extra-bold weight, fade lines in over 0.4 s, then animate two SVG doodle paths (burst strokes and a looping arrow) with stroke-dashoffset draw-on over about 0.8 s and hold.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s002",
+      "shot_type": "footage",
+      "shot_type_other": null,
+      "composition": "split",
+      "composition_other": null,
+      "focal_element": "Two live-action shoppers (Alex and Sam) seated at a shared black desk with laptops, separated by a thin vertical divider",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [],
+      "text_word_count": 0,
+      "typography": null,
+      "depth_cues": [
+        "blur"
+      ],
+      "what_happens": "The headline from s001 scales up past camera with heavy blur, revealing two cut-out live-action people behind it; the camera then pushes in slightly on the split-screen pair as the VO introduces them (w10-w13, 'Enter Alex and Sam').",
+      "build_rebuild": "Scale the previous text layer from 1 to about 4 with an increasing gaussian blur and fading opacity over about 0.5 s while the footage layer underneath scales from 0.9 to 1, then apply a slow 1.0 to 1.05 push-in on the two-up split composition.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s003",
+      "shot_type": "other",
+      "shot_type_other": "live-action presenters composited under recreated browser UI mockups",
+      "composition": "split",
+      "composition_other": null,
+      "focal_element": "Two identical recreated browser windows for a fictional sneaker shop, floating above each shopper",
+      "transition_in": "other",
+      "transition_other": "browser mockups appear over the continuing split-screen footage (layered reveal rather than a cut)",
+      "on_screen_text": [
+        "TreadWave",
+        "treadwave.com",
+        "Sneakers Built for Life",
+        "SHOP THE COLLECTIONS"
+      ],
+      "text_word_count": 9,
+      "typography": "Browser chrome text in small system sans; hero headline 'Sneakers Built for Life' in a large condensed rounded sans, mixed case, set in white over the hero photo; section label 'SHOP THE COLLECTIONS' in small all-caps with wide tracking. Collection tile labels are too small to read reliably on the sheet.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "A browser window sits above each shopper showing the same store homepage; both pages scroll down in parallel from the hero to a 'Shop the collections' tile row while separate cursors hover different tiles, illustrating 'avid online shoppers on the same site' (w14-w23).",
+      "build_rebuild": "Place two identical browser-window mockups (rounded card with soft drop shadow) above each half of the split footage and animate their inner page content scrolling up by the same distance over about 2 s with an ease-in-out, each with its own animated cursor sprite.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s004",
+      "shot_type": "other",
+      "shot_type_other": "live-action presenters composited under recreated browser UI mockups",
+      "composition": "split",
+      "composition_other": null,
+      "focal_element": "Two different product-grid pages ('White Sneakers' vs 'Elevated Classics') showing each shopper's divergent path",
+      "transition_in": "crossfade",
+      "transition_other": null,
+      "on_screen_text": [
+        "treadwave.com/whitesneakers",
+        "WHITE SNEAKERS",
+        "Cliff Plus $115",
+        "Athena 1 $128",
+        "Crystal Stride $98",
+        "Canvas Sneaker $70",
+        "treadwave.com/elevatedclassics",
+        "ELEVATED CLASSICS",
+        "Prime $70",
+        "Pacific $98",
+        "Flux Sneakers $139"
+      ],
+      "text_word_count": 25,
+      "typography": "Category headings in bold all-caps condensed sans with slight tracking; product names in small mixed-case condensed sans with prices beneath in regular weight; URLs in tiny browser-chrome sans. The fourth product label on the right is partly hidden by the cursor and not quoted.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Both browser pages crossfade through a blank loading state into category grids of colourful product photos; the left shopper lands on a white-sneakers grid and the right on an elevated-classics grid, the grids scroll and the cursors move between products while the VO says 'the same product at the same time' (w24-w29).",
+      "build_rebuild": "Crossfade each browser's content from a pale skeleton page to a 4-column product grid over about 0.4 s, then scroll the grid up slowly and move each cursor along a short bezier path to hover a product card.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s005",
+      "shot_type": "other",
+      "shot_type_other": "live-action presenter composited under a large recreated e-commerce UI walkthrough",
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "One large browser window with the 'Athena 1' product page, with a single shopper seated beneath and a coloured glow halo behind them that signals success or frustration",
+      "transition_in": "other",
+      "transition_other": "split-screen collapses into a single centred panel focused on one shopper (layout reframe)",
+      "on_screen_text": [
+        "TREADWAVE",
+        "treadwave.com/athena1",
+        "ATHENA 1",
+        "$128",
+        "Unisex Sneakers",
+        "Your go-to for comfort and easy styling. Rock this classic sneaker for any occasion.",
+        "Sizes",
+        "Add to Cart",
+        "SHIPPING & RETURNS",
+        "REVIEWS (97)",
+        "DETAILS",
+        "MY CART",
+        "Subtotal $128 Shipping $10 Taxes $7 Total $145",
+        "Checkout",
+        "THANK YOU, ALEX!",
+        "Unable to confirm availability",
+        "Google",
+        "athena 1 sneakers",
+        "Athena 1",
+        "Athena 1 White Sneakers",
+        "All White Athena 1"
+      ],
+      "text_word_count": 62,
+      "typography": "Store logo as a two-weight all-caps wordmark (bold 'TREAD' plus light 'WAVE'); product title in bold all-caps condensed sans with bold price right-aligned; body copy in small light mixed-case sans; buttons in small bold sans inside pill shapes; accordion rows in all-caps condensed sans; confirmation headline in bold all-caps. The red error label, cart totals and search results are small on the sheets and read with medium confidence.",
+      "depth_cues": [
+        "shadow",
+        "glow"
+      ],
+      "what_happens": "The split collapses to the woman (Alex, named by the 'Thank you, Alex!' page) under a large product page: she opens the size dropdown, picks a size, clicks Add to Cart (button shows a loading state then 'Added'), opens the cart and checks out to a thank-you page while a soft success-toned glow blooms behind her. A fast horizontal slide with motion blur at about 20.5 s switches to the man (Sam) on the same page: he picks a size, clicks Add to Cart, gets an 'Unable to confirm availability' error, the glow behind him turns an alarm tone, he opens a new tab, searches Google for 'athena 1 sneakers', returns, then throws up his hands and the page spins on a loader. VO covers w30-w65 ('Despite all their similarities ... What made Alex convert and Sam lose interest?').",
+      "build_rebuild": "Build one browser-mockup component with scripted states (product page, size dropdown, button loading/added, cart, confirmation, error pill, search page, spinner) driven by a cursor timeline, place a cut-out presenter video beneath it, and animate a blurred radial-gradient glow behind the presenter whose opacity and hue tween between a success and an error colour token on each outcome.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

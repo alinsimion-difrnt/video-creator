@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "efca6194e2bf29d1e3acf45e522f71c5f24793607294d1e95e789d6467648f12",
+    "created_at": "2026-10-05T06:51:59.642979Z"
+  },
+  "video": "workday-workday-adaptive-planning-demo-finan",
+  "event": "e011",
+  "task": "a2-e011",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Page content (nav drawer and dashboard replaced by Run Tasks table)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "hard content swap via a one-frame translucent blue ghost of the dashboard (page-load flash)",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 170, "easing_class": "step"}
+    },
+    {
+      "box": "b19",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Breadcrumb",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "text swap from 'Dashboards' to 'Integration / Run Tasks'",
+      "is_text": true,
+      "text": "Integration / Run Tasks",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": "b14",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Stale tooltip under cursor",
+      "role": "other",
+      "role_other": "tooltip",
+      "change_types": ["other"],
+      "change_other": "appears instantly (browser tooltip left over from the dashboard tab hover)",
+      "is_text": true,
+      "text": "Targets vs. Actuals",
+      "text_unit": "whole",
+      "estimates": null
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "page navigation swap",
+    "description": "After clicking Run Tasks, the nav drawer closes and the app content hard-swaps to the Run Tasks list through a brief translucent page-load flash; the breadcrumb updates to Integration / Run Tasks.",
+    "why_premium": "Little added craft: it is raw screen-recording navigation. Its value is pacing, since the swap lands on 'Workday' in the narration and the new page is held still for reading; a premium remake would replace the page-load flash with a short crossfade or blur_crossfade."
+  },
+  "build_hint": {
+    "gsap": "gsap.timeline().set('.nav-drawer, .dim-overlay', {autoAlpha: 0}).set('.dashboard-page', {autoAlpha: 0}).set('.run-tasks-page', {autoAlpha: 1}).set('.breadcrumb', {textContent: 'Integration / Run Tasks'}); premium alternative: fromTo('.run-tasks-page', {autoAlpha: 0}, {autoAlpha: 1, duration: 0.2, ease: 'power1.out'}).",
+    "remotion": "Use a <Sequence> cut at the click frame: frame < swapFrame renders the dashboard with drawer, frame >= swapFrame renders the Run Tasks page and new breadcrumb; optional 4-frame opacity interpolate for a softer swap. No spring."
+  },
+  "confidence": "medium",
+  "notes": "The blue translucent layer at frame 605 looks like a one-frame page-load or screen-capture artifact, not an authored transition. The 'Targets vs. Actuals' tooltip is stale UI from the earlier dashboard and does not belong to the new page. No SFX candidates."
+}

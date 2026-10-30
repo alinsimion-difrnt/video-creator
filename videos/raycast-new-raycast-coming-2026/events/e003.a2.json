@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "0ce2f09628e7c6aa7261b025f6d871514bf561e815bf74d323702542565ce73a",
+    "created_at": "2026-10-05T06:47:05.242419Z"
+  },
+  "video": "raycast-new-raycast-coming-2026",
+  "event": "e003",
+  "task": "a2-e003",
+  "elements": [
+    {
+      "box": "b10", "manual_box": null, "manual_reason": null,
+      "label": "Shushing-face emoji tile content", "role": "icon", "role_other": null,
+      "change_types": ["slide_up"], "change_other": null,
+      "is_text": false, "text": null, "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b11", "manual_box": null, "manual_reason": null,
+      "label": "Face-exhaling emoji tile content", "role": "icon", "role_other": null,
+      "change_types": ["slide_up"], "change_other": null,
+      "is_text": false, "text": null, "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b06", "manual_box": null, "manual_reason": null,
+      "label": "Face-in-clouds emoji (right column, edge-blurred)", "role": "icon", "role_other": null,
+      "change_types": ["slide_up"], "change_other": null,
+      "is_text": false, "text": null, "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b03", "manual_box": null, "manual_reason": null,
+      "label": "Grid tile (left column, lower edge)", "role": "card", "role_other": null,
+      "change_types": ["slide_up"], "change_other": null,
+      "is_text": false, "text": null, "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b05", "manual_box": null, "manual_reason": null,
+      "label": "Grid tile (middle column, lower edge)", "role": "card", "role_other": null,
+      "change_types": ["slide_up"], "change_other": null,
+      "is_text": false, "text": null, "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b09", "manual_box": null, "manual_reason": null,
+      "label": "Lightning emoji in incoming row", "role": "icon", "role_other": null,
+      "change_types": ["slide_up", "fade"], "change_other": null,
+      "is_text": false, "text": null, "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "masked_scroll",
+    "proposed_name": null,
+    "description": "The emoji picker grid scrolls upward inside the rounded panel: the top row exits, the next row rises under the floating 'Search Emoji & Symbols' pill, which stays put as a frosted overlay, while a gentle push-in runs at the same time.",
+    "why_premium": "The scroll decelerates smoothly (energy decays from the first frame) instead of stepping, and the frosted pill blurs the content passing beneath it, giving depth; pairing it with a slow push keeps the shot moving without a cut."
+  },
+  "build_hint": {
+    "gsap": "Clip the grid inside the panel (overflow: hidden). tl.to('.emoji-grid', {y: '-=150', duration: 0.4, ease: 'power3.out'}); in parallel tl.to('.stage', {scale: 1.14, duration: 0.4, ease: 'power2.out'}, '<'); keep '.search-pill' outside the grid with backdrop-filter: blur(12px) so passing tiles blur under it.",
+    "remotion": "const p = spring({frame, fps, config: {damping: 200, stiffness: 120, mass: 1}}); grid translateY = interpolate(p, [0, 1], [0, -150]); stage scale = interpolate(p, [0, 1], [1, 1.14]); pill is a sibling with backdrop-filter blur, not inside the scrolled grid."
+  },
+  "confidence": "medium",
+  "notes": "Camera verdict is push_in (scale 1.14) while the grid also scrolls inside the panel; masked_scroll chosen as the dominant read, ui_camera_push_in is a plausible alternative. Search pill appears fixed relative to the panel so it is not listed."
+}

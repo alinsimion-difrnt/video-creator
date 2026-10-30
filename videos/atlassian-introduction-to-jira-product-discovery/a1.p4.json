@@ -1,0 +1,262 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "d5807a2fa0e80a1cba590b3bd8f6d80e0bf1c2032da9a95df1bc84663dc38377",
+    "created_at": "2026-10-05T06:59:48.891821Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "task": "a1-p4",
+  "shots": [
+    {
+      "shot": "s004",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Jira Product Discovery views in a Chrome window; in the part I saw (about 132.5-171.5 s): the Timeline view, the Delivery list and the 'Onboarding templates' idea's Delivery tab where a Jira Software delivery ticket is created",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Insight successfully added",
+        "Templates increase user engagement and productivity",
+        "Onboarding templates",
+        "All Ideas",
+        "Roadmap",
+        "Timeline view",
+        "Impact vs. Effort",
+        "Create a view",
+        "Create a new list",
+        "New View",
+        "Sales",
+        "Group by",
+        "Select a field. The different values of that field will be swimlanes in your list.",
+        "Key customers",
+        "Fields",
+        "Columns",
+        "Share",
+        "Share view in full screen",
+        "Copy link",
+        "Copied",
+        "URL copied to clipboard",
+        "Jan 2023 - Dec 2023",
+        "Bucket",
+        "Customer request",
+        "Delighter",
+        "Authentication options",
+        "Performance improvements",
+        "Delivery",
+        "Overview",
+        "Comments",
+        "Insights",
+        "History",
+        "Create a delivery ticket",
+        "Add a delivery ticket",
+        "Templates",
+        "IN PROGRESS",
+        "Software Project",
+        "Epic",
+        "Onboarding templates2",
+        "Cancel",
+        "Create",
+        "Give feedback",
+        "Share your thoughts"
+      ],
+      "text_word_count": 103,
+      "typography": "Native product UI text only: sans-serif (Atlassian UI font, low-confidence guess), semibold view and idea titles ('Timeline view', 'Delivery', 'Onboarding templates'), small regular table/body text, uppercase status pills ('IN PROGRESS', 'TO DO', 'DONE'), sentence case elsewhere, default tracking; no added captions, lower thirds or kinetic type",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "The first ~72 s of this shot (60.3-132.5 s: insight confirmation, All Ideas, Roadmap, Timeline, Impact vs. Effort, creating the 'Sales' list grouped by Key customers, board card drag and Share/Copy link, w188-w431) are described in a1-p3; their frames were not in my packet. From about 132.5 s: on the Roadmap board with the 'Copied' toast, the cursor clicks 'Timeline view' in the sidebar (w432-w436); at about 134.5-135 s the frame punches in on the timeline (sidebar cropped off), coinciding with the swoosh_reverse SFX candidate x002 at 135.13 s, and stays punched in while the cursor hovers and grabs the idea bars and a small goal tooltip pops near 139.5 s (w437-w470). At about 144.5 s it reframes out to the full browser and the presenter opens the 'Delivery' list with delivery progress bars and status pills (w471-w488), opens the 'Onboarding templates' idea side panel (about 148.5 s), clicks its Delivery tab (w489-w493) and expands the linked 'Templates' ticket to show its child tasks (w494-w503). He clicks 'Create a delivery ticket' (w504-w511), picks 'Software Project' and type 'Epic' (w512-w525), appends '2' to the prefilled summary and clicks Create; the new 'Onboarding templates2' ticket appears in the list (about 165 s, w526-w541). The panel closes on the Delivery list with its Delivery status column (w542-w555), and the cursor travels down the sidebar to 'Give feedback', opening the 'Share your thoughts' modal over a dimmed page at about 171.5 s. Popovers and the side panel cast soft shadows.",
+      "build_rebuild": "Play the continuous screen capture full-bleed and keyframe an eased CSS scale/translate crop (about 1.0 to 1.2) onto the timeline when it is introduced, with a reverse-swoosh SFX on the zoom, then ease back to the full frame for the side-panel ticket-creation sequence driven by the real cursor.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s005",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "The centered 'Share your thoughts' feedback modal over the dimmed Delivery list, with the cursor on its 'community' link",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Share your thoughts",
+        "Visit our community to learn tips, best practices and FAQ.",
+        "I want to...",
+        "Submit feedback to the product team",
+        "Let us know what's on your mind",
+        "Atlassian can contact me about this feedback",
+        "Send feedback",
+        "Cancel"
+      ],
+      "text_word_count": 39,
+      "typography": "Native product UI text only: semibold sans-serif modal title, small regular sans-serif body and labels, a blue underlined text link ('community'), sentence case, default tracking; the background UI text is dimmed and not counted; no added captions",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "The feedback modal sits centered over a dimmed scrim while the VO starts the outro 'OK, that's it. Please make sure to join our community' (w556-w565); the cursor hovers the 'community' link in the modal as that word is spoken (around the keyframe). The cursor then moves to 'Cancel' and clicks it (about 174.5-175 s, w566-w570); in the last sampled frame (about 175.5 s) the modal is gone and the frame is slightly punched in on the Delivery list with the sidebar partly cropped.",
+      "build_rebuild": "Over a 40% black scrim on the app screenshot, show a centered 420px feedback modal and animate a cursor to hover its 'community' link on the narrated word 'community', then click Cancel to dismiss the modal.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s006",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "The full-browser Delivery list (ideas with teams, delivery progress, goal and delivery status columns) with an idle cursor",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Jira Product Discovery",
+        "Delivery",
+        "Create an idea",
+        "Slack integration",
+        "Onboarding templ...",
+        "Authentication opti...",
+        "Performance impr...",
+        "Automation",
+        "Sorting capabilities",
+        "Add dark mode",
+        "Add MS teams fun...",
+        "Build network effects",
+        "Delight users",
+        "Win large customers",
+        "Differentiate",
+        "IN PROGRESS",
+        "TO DO",
+        "DONE",
+        "Give feedback"
+      ],
+      "text_word_count": 41,
+      "typography": "Native product UI text only: sans-serif (Atlassian UI font, low-confidence guess), semibold view title 'Delivery', regular table text truncated with ellipses, uppercase status pills, sentence case, default tracking; no end title, logo card or caption",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "A short static full-browser frame of the Delivery list with the cursor resting below the table while the VO closes with 'and good luck!' (w572-w574); the video ends on this raw UI frame with no end card, logo or on-screen call to action (the frames after about 176.5 s were not sampled).",
+      "build_rebuild": "Hold the full-frame app screenshot static for about 1.6 s under the final VO line and end the composition on it without an end card.",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "beats": [
+      {
+        "beat": "hook",
+        "shots": ["s001", "s002"],
+        "words": [0, 14]
+      },
+      {
+        "beat": "mechanism",
+        "shots": ["s002"],
+        "words": [15, 52]
+      },
+      {
+        "beat": "demo",
+        "shots": ["s002", "s003"],
+        "words": [53, 187]
+      },
+      {
+        "beat": "demo",
+        "shots": ["s004"],
+        "words": [188, 470]
+      },
+      {
+        "beat": "demo",
+        "shots": ["s004"],
+        "words": [471, 555]
+      },
+      {
+        "beat": "cta",
+        "shots": ["s005", "s006"],
+        "words": [556, 574]
+      }
+    ],
+    "hook": {
+      "text": "Hello and welcome to Jira Product Discovery. Here's a quick demo on how it works.",
+      "technique": "demo_first",
+      "technique_other": null,
+      "shots": ["s001", "s002"],
+      "words": [0, 14]
+    },
+    "cta": {
+      "text": "Please make sure to join our community for news about product and practices",
+      "shots": ["s005", "s006"]
+    },
+    "tone": "Casual, first-person product-manager walkthrough: friendly and practical, unscripted-sounding narration over a raw screen recording, tutorial rather than marketing",
+    "signature_moments": [
+      {
+        "shots": ["s002", "s004"],
+        "description": "Digital punch-in crops onto the active UI region at each narrated step (idea row, field panel, Sales list, timeline), easing back to the full browser between features.",
+        "why_premium": "Directs the eye in a dense UI without any designed overlays; it is the main attention device in an otherwise raw recording, though the reframes are abrupt rather than finely eased."
+      },
+      {
+        "shots": ["s003"],
+        "description": "Highlighting a passage in a third-party article and attaching it to an idea through the Chrome extension popup.",
+        "why_premium": "Shows the product reaching outside its own app in one continuous, believable action, which makes the capture-insights benefit concrete."
+      },
+      {
+        "shots": ["s005"],
+        "description": "The cursor hovers the 'community' link in the feedback modal exactly as the VO says 'join our community' (w563-w565).",
+        "why_premium": "A small voice-to-picture sync that grounds the call to action in the real UI instead of a generic end card."
+      }
+    ],
+    "scores": {
+      "hook": {
+        "score": 2,
+        "evidence": "Generic greeting plus a promise of a quick demo (w0-w14) over a fade-up into an unannotated product list; no problem, stakes or claim to earn attention.",
+        "refs": ["s001", "s002", "w0", "w14"]
+      },
+      "clarity": {
+        "score": 4,
+        "evidence": "Clear capture, prioritise, share, deliver progression; each feature is named in the VO while the cursor performs it (e.g. delivery ticket creation w504-w541), and punch-ins point at the active area. Small full-frame UI text and the 177 s length dilute it slightly.",
+        "refs": ["s002", "s003", "s004", "w201", "w471", "w504"]
+      },
+      "ui_showcase": {
+        "score": 3,
+        "evidence": "Real product with realistic data across list, board, timeline, matrix and delivery views, but shown as a raw browser capture with URL bar, extensions and avatar visible, tiny text at full frame and no recreated or emphasized UI.",
+        "refs": ["s002", "s004", "s006"]
+      },
+      "motion_polish": {
+        "score": 2,
+        "evidence": "Motion is limited to cursor activity and digital crop punch-ins; reframes are abrupt (s003 transition is an abrupt reframe), shots join with hard cuts/jump cuts, and the video ends on a static UI frame with no designed transitions, type or end card.",
+        "refs": ["s003", "s004", "s005", "s006"]
+      },
+      "sound_design": {
+        "score": 2,
+        "evidence": "Judged from anchor audio facts plus visuals: integrated loudness is low at -24.64 LUFS, only two SFX candidates in 177 s (x001 unsure at 45.09 s; x002 swoosh_reverse at 135.13 s, which lines up with the timeline punch-in in s004), and a 126 BPM beat grid is detected but I cannot confirm from anchors whether a music bed is present. Sound is essentially the voice-over.",
+        "refs": ["s004"]
+      },
+      "vo_script_quality": {
+        "score": 3,
+        "evidence": "Conversational and accurate with good feature-to-benefit lines ('quick wins or big bets', w284-w289), but loose and unscripted-sounding: repeated 'Now' openers including a stumble (w357-w358), filler like 'or better again' (w161-w163), and a flat 'OK, that's it' outro (w556-w558).",
+        "refs": ["w284", "w289", "w357", "w358", "w161", "w556"]
+      },
+      "brand_consistency": {
+        "score": 3,
+        "evidence": "Everything on screen is the consistent Atlassian product UI, but there is no branded intro, title card, lockup or end card; the brand appears only in the app header.",
+        "refs": ["s002", "s006"]
+      },
+      "works_muted": {
+        "score": 2,
+        "evidence": "No captions or overlay text; muted, a viewer sees UI clicks but loses why each view matters and the CTA (w559-w571) exists only in the VO.",
+        "refs": ["s004", "s005", "w559", "w571"]
+      },
+      "overall": {
+        "score": 3,
+        "evidence": "A competent, clear narrated product tutorial with sensible structure and good VO-action sync, but tutorial-grade production: weak hook, raw capture, minimal motion and sound design, no muted support and no designed ending.",
+        "refs": ["s002", "s004", "s006"]
+      }
+    },
+    "localization_friendliness": {
+      "score": 3,
+      "baked_in_text": true,
+      "vo_dependent": true,
+      "notes": "No overlay captions to translate, so re-voicing plus subtitles is straightforward, but the meaning rests on the English VO and the product UI itself (labels, sample data, the Medium article) is baked into the recording in English and would need re-capturing for a fully localized version."
+    }
+  }
+}

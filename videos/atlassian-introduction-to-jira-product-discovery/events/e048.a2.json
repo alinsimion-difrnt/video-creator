@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "4fc75c644e4c3a23dc24887e28168b3721d523850862ea943a6fb1202fd44efa",
+    "created_at": "2026-10-05T06:39:49.967598Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e048",
+  "task": "a2-e048",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Placeholder title 'New View', selected (blue highlight) and then replaced",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["highlight", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "New View",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 70, "easing_class": "step"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "First typed character of the new view name, with the caret",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["typewriter"],
+      "change_other": null,
+      "is_text": true,
+      "text": "S",
+      "text_unit": "char",
+      "estimates": {"duration_ms": 35, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "prompt_type_on",
+    "proposed_name": null,
+    "description": "In the view-title input, the default text 'New View' is select-all highlighted and then overwritten as the user starts typing a new name ('S...'), with the caret after the first character.",
+    "why_premium": "Renaming happens live on the zoomed-in title field, timed to 'a quick view', so viewers watch the view get its identity without leaving the context. The select-then-overwrite beat reads clearly at this zoom level."
+  },
+  "build_hint": {
+    "gsap": "tl.set('.title-selection', {autoAlpha: 1}).set('.title-text', {textContent: ''}, '+=0.25').to('.title-text', {duration: 0.6, text: {value: 'Sales', delimiter: ''}, ease: 'none'}) with a blinking caret (steps(1)) after the text; characters appear at a steady typing rate.",
+    "remotion": "Show a selection rect behind 'New View' for N frames, then text = target.slice(0, Math.floor((frame - typeStart) / framesPerChar)) and a caret with opacity = Math.floor(frame / 15) % 2."
+  },
+  "confidence": "high",
+  "notes": "Only the first character ('S') is visible at the end of this burst. The full name is typed in later events, presumably 'Sales...' to match 'head of sales', but that is not verified here."
+}

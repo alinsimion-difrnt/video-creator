@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "982209f7ac03ef689db7e047869e3bca0aa6824f72eb02ff9e8cb8b7abb20122",
+    "created_at": "2026-10-05T06:47:01.658546Z"
+  },
+  "video": "hubspot-what-is-hubspot",
+  "event": "e001",
+  "task": "a2-e001",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "HubSpot wordmark",
+      "role": "logo",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "assemble from scattered dots and stroke fragments that grow and join into the letterforms",
+      "is_text": true,
+      "text": "HubSpot",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 500, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Customer Platform tagline (faint)",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Customer Platform",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 250, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Decorative rounded background shapes (bottom right)",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["slide_up", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "logo_resolve",
+    "proposed_name": null,
+    "description": "The HubSpot wordmark builds itself from scattered dots and short strokes that grow and lock into the letterforms on a flat brand-orange field; a faint 'Customer Platform' line and rounded corner shapes ease in as it settles.",
+    "why_premium": "The logo is built from its own geometry (the sprocket dots) instead of a plain fade, so the brand mark reads as designed motion in about half a second, and the faint secondary elements add depth without pulling focus."
+  },
+  "build_hint": {
+    "gsap": "Split the logo into SVG parts (dots, stems, bowls). gsap.fromTo(parts, {scale:0, opacity:0, transformOrigin:'50% 50%'}, {scale:1, opacity:1, duration:0.35, ease:'back.out(1.4)', stagger:{each:0.015, from:'random'}}); overlap with stroke growth on stems (scaleY 0 to 1, ease 'power3.out'). Then at +0.3s gsap.fromTo('.tagline', {opacity:0}, {opacity:0.15, duration:0.25, ease:'power2.out'}) and gsap.fromTo('.corner-shape', {yPercent:30, opacity:0}, {yPercent:0, opacity:1, duration:0.3, ease:'power2.out'}).",
+    "remotion": "Per logo part: spring({frame: frame - delay_i, fps, config:{damping:14, stiffness:180, mass:0.6}}) driving scale and opacity, delay_i random 0-6 frames. Tagline opacity interpolate(frame,[9,15],[0,0.15],{easing:Easing.out(Easing.quad)}); corner shapes translateY via interpolate with Easing.out(Easing.cubic)."
+  },
+  "confidence": "medium",
+  "notes": "Event window is very short (0.17-0.38 s); the logo assembly runs through f15. Part-by-part assembly uses many small diff boxes (b06, b07, b04); the whole wordmark b02 was chosen instead. The left-edge sliver b18 changes too but is too thin to identify, so it is left out."
+}

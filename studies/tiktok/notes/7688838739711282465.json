@@ -1,0 +1,39 @@
+{
+  "provenance": {"schema_version": 1, "tool_version": "0.1.0", "stage": "tiktok_notes", "annotator": "claude-code",
+                 "input_hash": "9948ebc9a651e302017325ebfaad200b74ddad5665dbbe063f66b3005f10d4d9",
+                 "created_at": "2026-10-13T11:56:31+00:00"},
+  "id": "7688838739711282465",
+  "format": "split_screen",
+  "hook": {"type": "bold_claim",
+           "line": "Claude Code and ChatGPT are finally free, and setup takes under a minute.",
+           "visual": "Top half: Claude and ChatGPT logos animate in with a plus, then '= $0'; orange 'CLAUDE CODE + CHATGPT FOR FREE' banner; bottom half: him at a podcast mic."},
+  "beats": [
+    {"t": 0.0, "what": "Split screen: logos plus '= $0' equation on top, presenter at mic below, orange title banner"},
+    {"t": 4.09, "what": "Full-screen motion graphic: clock with 'TAKES LESS THAN A MINUTE' and spinning icons"},
+    {"t": 8.19, "what": "Sign-in screen on a laptop mock-up, caption 'and sign in'"},
+    {"t": 12.28, "what": "3D dashboard card shows balance 20.00, caption 'get $20 for free'"},
+    {"t": 16.2, "what": "Zoom punch onto a 10,000,000 tokens card as he says 'up to 10 billion'"},
+    {"t": 20.46, "what": "Model logo grid (DeepSeek, GLM, MiniMax, Claude Code) wired to a central 'API' cloud"},
+    {"t": 24.56, "what": "Joke cutaway: a man at a sci-fi multi-monitor desk for 'Jarvis as your copilot'"},
+    {"t": 32.74, "what": "Codex app screen recording, caption 'using Codex'"},
+    {"t": 36.83, "what": "Gold coins burst under glowing model icons for 'use your free tokens'"},
+    {"t": 40.93, "what": "Back to full-frame presenter for the payoff and link-in-bio close"}
+  ],
+  "graphics": {"captions": "word_by_word", "caption_position": "mixed",
+               "devices": ["split_screen", "title_text", "product_ui", "screen_recording", "chart_or_number", "zoom_punch", "meme_cutaway", "b_roll", "jump_cut", "sticker_emoji"],
+               "density": "heavy", "per_minute_estimate": 22},
+  "characters": [],
+  "cta": {"kind": "link_in_bio", "t": 40.93},
+  "why_it_works": [
+    "Price-zero promise visualised as an equation (Claude + ChatGPT = $0) in the first second, so the claim is read before it is heard",
+    "Every spoken number gets its own graphic ($20 balance card, 10,000,000 tokens card), which makes an abstract offer feel tangible",
+    "Presenter is on screen only 29% of the time; the rest is a new animated visual roughly every 5 s (median shot 4.94 s), so there is always something new to look at",
+    "Link promised early ('I'll send you the link at the end') sets up a reason to watch to the end, then the bio CTA pays it off"
+  ],
+  "weaknesses": [
+    "Fast 3.64 words/s with dense captions in shifting positions; hard to follow on first watch",
+    "'Finally free' oversells a $20 credit, which risks trust once viewers click",
+    "Generic glowing-icon motion graphics look template-made"
+  ],
+  "for_robert": "Use the 'logo + logo = $0' equation hook: Fred can slap the two logos together and stamp the result in pixel art in the first second, so the promise lands before the first sentence ends."
+}

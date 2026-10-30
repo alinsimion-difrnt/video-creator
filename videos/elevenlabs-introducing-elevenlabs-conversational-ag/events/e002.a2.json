@@ -1,0 +1,158 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "a70b020e855135ae2108606b502aa408c751f7cb5cac000d2caf1234c5983188",
+    "created_at": "2026-10-05T06:43:50.215039Z"
+  },
+  "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+  "event": "e002",
+  "task": "a2-e002",
+  "elements": [
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Build, kinetic word",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["fade", "slide_right", "color_shift"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Build,",
+      "text_unit": "word",
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b11",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "QuickCrate agent name",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["slide_left", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "QuickCrate",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b12",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Private badge",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["slide_left", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Private",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b14",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Agent Type card label",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["slide_left", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Agent Type",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Prompt option chip",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["fade", "color_shift"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Prompt",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Server option chip",
+      "role": "button",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Server",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b08",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "System Prompt card",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["slide_left", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "System Prompt",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b07",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "System Prompt input field",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_left", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b10",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Cursor",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x006", "verdict": "confirm", "label": "impact", "note": "Sharp broadband low-frequency onset at ~10.81s, just before the title gives way to the UI form."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "title to ui push",
+    "description": "The Conversational AI title card is replaced by an agent-builder form that slides in from the right as one layer of cards, while the narrated word 'Build,' fades in at the left in step with the voice-over.",
+    "why_premium": "The scene change lands on an impact hit and the first narrated verb, so the brand title hands off straight into the product UI. The large caption word anchors the voice-over while the UI fills the rest of the frame."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.title-card', {opacity:0, duration:0.2, ease:'power2.in'}).fromTo('.form-cards > *', {x:120, opacity:0}, {x:0, opacity:1, duration:0.45, ease:'power3.out', stagger:0.03}, '<0.05').fromTo('.caption-word', {x:-40, opacity:0}, {x:0, opacity:1, duration:0.3, ease:'power2.out'}, '<'); time the caption to the narrated word's start.",
+    "remotion": "Per card i: const p = spring({frame: frame - i, fps, config: {damping: 200, stiffness: 160}}); translateX = interpolate(p, [0,1], [120,0]); opacity = p. Caption: spring from x -40 starting at the word frame; title opacity interpolate over 6 frames to 0."
+  },
+  "confidence": "medium",
+  "notes": "The outgoing 'Conversational AI / ElevenLabs' title is not on the end frame and has no candidate box, so it is not listed. The 'Test AI agent' button and the First Message card also arrive but have no candidate boxes. 'Build,' shifts from a gradient to a dark fill (color_shift) across the last frames. The form may arrive by a vertical move (pan_y 0.46) rather than from the right; code should measure the direction."
+}

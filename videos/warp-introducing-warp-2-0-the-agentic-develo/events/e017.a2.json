@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "003b4a00fe30e8502bb73a7dd9aeb87029e314797e04aa2e24156cd406810fa5",
+    "created_at": "2026-10-05T06:52:00.329357Z"
+  },
+  "video": "warp-introducing-warp-2-0-the-agentic-develo",
+  "event": "e017",
+  "task": "a2-e017",
+  "elements": [
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Code listing in vi editor window (lines 10411-10437)",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "let selection_string = model.selection_to_string(",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 670, "easing_class": "step"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Presenter head and torso (talking)",
+      "role": "other",
+      "role_other": "presenter",
+      "change_types": ["other"],
+      "change_other": "natural presenter movement while speaking",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    },
+    {
+      "box": "b06",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Presenter hand gesture entering bottom-left",
+      "role": "other",
+      "role_other": "presenter",
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "masked_scroll",
+    "proposed_name": null,
+    "description": "The vi editor window beside the presenter keeps scrolling its Rust code upward in discrete line jumps inside the fixed window mask while he talks about the size of the codebase's files.",
+    "why_premium": "Continuous, real code scrolling behind a clean rounded window sells 'our biggest files' without a cutaway; only the content moves, the frame and gradient backdrop stay locked."
+  },
+  "build_hint": {
+    "gsap": "Static window with overflow hidden; tween the code container's y in repeated short steps: gsap.to(code, {y: '-=' + lineH * n, duration: 0.67, ease: 'steps(8)'}), gutter numbers in the same container.",
+    "remotion": "translateY = -lineHeight * Math.floor(interpolate(frame, [0, 30], [0, nLines], {extrapolateRight: 'clamp'})) inside an overflow:hidden window; no spring, stepped motion."
+  },
+  "confidence": "medium",
+  "notes": "Continuation of the scroll seen in e015 (same shot s020). Energy curve shows ~6 separate spikes, consistent with stepped editor scrolling. The hand at bottom-left (b06) is presenter footage motion, not graphics."
+}

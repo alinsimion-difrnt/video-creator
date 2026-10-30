@@ -1,0 +1,90 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "d4f5e512bbec02019db9cd53e6f0554fe0740edfb677340b912d49bf5f3325ac",
+    "created_at": "2026-10-05T06:21:29.307368Z"
+  },
+  "video": "apollo-io-how-to-use-apollo-io-in-less-than-2-minu",
+  "task": "a1-p2",
+  "shots": [
+    {
+      "shot": "s004",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Apollo People Search UI, first with oversized blue stat overlays (281.1M / 70M), then the expanded filter grid, a LinkedIn profile with the Apollo Chrome extension, a saved-list table and a sequence editor",
+      "transition_in": "mask_wipe",
+      "transition_other": null,
+      "on_screen_text": [
+        "281.1M",
+        "70M",
+        "Start your people search by applying any filter in the left panel",
+        "Buying Intent",
+        "The fastest growing, most loved sales technology on Earth."
+      ],
+      "text_word_count": 25,
+      "typography": "Overlay stats: very large geometric sans, medium/semibold weight, numerals plus uppercase M, tight tracking, set in a saturated blue directly over the faded UI; all other text is native product UI sans (small, regular weight, sentence case). Font guess (low confidence): Inter-like.",
+      "depth_cues": ["shadow", "perspective_tilt"],
+      "what_happens": "A long continuous cursor-guided product walkthrough synced to the VO (w65-w157). Opens on the People Search page (the corner of a brand-yellow disc is visible at 0:19.5, suggesting a shape wipe in); the cursor hovers the Total tab and the UI fades back while a giant '281.1M' appears, then a second number counts up 33M -> 67M -> 70M on 'over 280 million people and 70 million companies' (w75-w82), then both fade out. On 'dozens of advanced filters' (w88-w91) More Filters opens a multi-column filter grid, the view pushes in, the cursor hovers Job Change and Technologies (w94-w97) and expands Buying Intent with High/Medium/Low/None options (w111-w113). On the Chrome-extension line (w117-w134) a slightly tilted, shadowed LinkedIn profile window slides up over the app, scales to fill frame, and the Apollo extension side panel opens with contact details. Around w135-w139 the LinkedIn window shrinks and slides away to reveal a list table where rows are checked and Save is clicked; a yellow circular wipe (about 0:49.5-0:50.0) then leads into the sequence editor (w150-w156), which pushes in and the cursor clicks 'Add a step'. Visible zoom/push-ins and window scale moves happen within the shot; exact easing not visible from 2 fps sheets.",
+      "build_rebuild": "Record the product UI at high resolution, then in the editor animate a camera (scale/translate) over the recording per VO phrase, dim the UI to ~40% opacity and overlay large blue sans numerals that fade in and count up (0 -> 70M) on the spoken stats, and composite separately recorded windows (LinkedIn page) as shadowed cards that slide up, scale to full frame and shrink away, joining sections with a brand-yellow circle wipe.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s005",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "split",
+      "composition_other": null,
+      "focal_element": "Right-hand step-picker card listing Phone call, Action item and LinkedIn tasks over the dimmed sequence editor, with the cursor on the 'Add a step' button",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "LinkedIn tasks",
+        "LinkedIn: send connection request",
+        "LinkedIn: send message",
+        "LinkedIn: view profile",
+        "LinkedIn: interact with post",
+        "Add a step"
+      ],
+      "text_word_count": 19,
+      "typography": "Native product UI: medium-weight sans titles in sentence case with smaller regular grey descriptions beneath; no added motion-graphics type.",
+      "depth_cues": ["shadow"],
+      "what_happens": "A half-second (one sampled frame) tight crop showing the moment after 'Add a step' is clicked: the background sequence dims and the step-picker list appears at the right edge, cropped by the zoom, on 'emails,' (w158). It reads as the zoomed-in start of a camera move that continues in s005->s006; detail beyond the single frame is not visible.",
+      "build_rebuild": "Cut to a ~0.5 s 1.6x-scaled crop of the recording anchored on the clicked button, with a dark overlay on the page and the white step-picker panel entering at the right, then pull the camera back in the next shot.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s006",
+      "shot_type": "screen_recording",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Centered 'Select a sequence step' modal listing Automatic email, Manual email, Phone call, Action item and LinkedIn task step types",
+      "transition_in": "other",
+      "transition_other": "Camera pull-back/re-frame from the s005 close-up to the full centered modal (frame at 0:52.5 is mid-move, modal partially off-centre)",
+      "on_screen_text": [
+        "Select a sequence step",
+        "Add a step for the sequence to follow and automate for you.",
+        "Automatic email",
+        "AI available!",
+        "Manual email",
+        "Phone call",
+        "Action item",
+        "LinkedIn tasks"
+      ],
+      "text_word_count": 28,
+      "typography": "Native product UI: modal title in semibold sans, sentence case; list items medium weight with small grey descriptions; purple 'AI available!' pill badges with sparkle icon.",
+      "depth_cues": ["shadow"],
+      "what_happens": "The view settles on the full modal centered over the dimmed sequence page while the VO lists 'phone calls, and LinkedIn touches' (w159-w163); the cursor glides down the list hovering Automatic email, Phone call/Action item and LinkedIn: send connection request in step with the spoken channels, then moves to the close X; at about 0:57.0 the modal is gone and the full sequence overview is visible as 'You can also utilize' (w164-w166) begins.",
+      "build_rebuild": "Keep the modal centered with the page behind dimmed (black overlay ~50%), and script the cursor to hover each step type exactly on the matching VO word before closing the modal into the next section.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

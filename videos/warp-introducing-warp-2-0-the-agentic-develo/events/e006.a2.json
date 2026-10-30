@@ -1,0 +1,86 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "0181097d8daf9f68b908fa22636639e89a9b3bb096d97fa8ec0bda7493f7d78a",
+    "created_at": "2026-10-05T06:52:39.783340Z"
+  },
+  "video": "warp-introducing-warp-2-0-the-agentic-develo",
+  "event": "e006",
+  "task": "a2-e006",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Left-pane agent conversation stack (scrolls up as a container)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Left-pane newly appended agent paragraph (below the file-search card)",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["fade", "slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "I can see this is a React project (based on the structure with package.json, src/, public/, etc.). However, I notice there's no Navigation.js file in the src/components/ directory currently. Let me check the existing components and the main App.js to understand the current structure.",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Right-pane agent conversation stack (scrolls up)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": null,
+      "manual_box": [817, 512, 861, 947],
+      "manual_reason": "The new 'pwd' tool-step row at the bottom of the right pane has no candidate box (b05 only covers the left strip of that pane).",
+      "label": "Right-pane new 'pwd' tool-step row",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["fade", "slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "pwd",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "masked_scroll",
+    "proposed_name": null,
+    "description": "Both agent panes advance at once: the left pane appends a new reasoning paragraph and the right pane appends a 'pwd' tool step, and each conversation stack jumps up inside its fixed pane above the pinned 'Thinking...' footer.",
+    "why_premium": "Parallel, independently scrolling panes make 'multiple agents working in the background' legible without any added graphics; the motion is honest product redraw, timed under the narration 'and in the background'."
+  },
+  "build_hint": {
+    "gsap": "Two independent timelines in overflow:hidden panes: gsap.to('.left .stack', {y: '-=100', duration: 0.05, ease: 'steps(2)'}) with gsap.fromTo('.left .para:last-child', {autoAlpha: 0}, {autoAlpha: 1, duration: 0.03}, '<'); offset the right pane by ~1 frame: gsap.to('.right .stack', {y: '-=28', duration: 0.05, ease: 'steps(2)'}) plus gsap.fromTo('.right .step:last-child', {autoAlpha: 0}, {autoAlpha: 1, duration: 0.03}, '<').",
+    "remotion": "Per pane: translateY = interpolate(frame, [start, start + 2], [0, -shift], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}); appended block opacity = frame >= start + 1 ? 1 : 0. Left and right panes use different start frames. No spring."
+  },
+  "confidence": "medium",
+  "notes": "Energy shows three separate spikes (frames ~2, 8-9, 16), so the two panes probably redraw at slightly different moments; which spike belongs to which pane is not separable from the filmstrip. Scroll amounts are visual estimates. Camera move is none."
+}

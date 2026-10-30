@@ -1,0 +1,135 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "091c7c28ee3a5d351a5c725949550c6906e3f0b458edf30777f02973aedeeec0",
+    "created_at": "2026-10-05T06:23:06.829463Z"
+  },
+  "video": "clickup-clickup-4-0-overview-a-new-era-of-craf",
+  "task": "a1-p1",
+  "shots": [
+    {
+      "shot": "s001",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Full ClickUp app window (Chat channel 'Seasonal Promotions') floating on a grainy magenta-orange-blue gradient, with a post titled 'Your Workspace is about to change forever.'",
+      "transition_in": "other",
+      "transition_other": "none - opening shot of the video (anchors give no transition)",
+      "on_screen_text": [
+        "Your Workspace is about to change forever.",
+        "Cass Chan made a new Post!"
+      ],
+      "text_word_count": 13,
+      "typography": "Product UI type only: bold sans-serif sentence-case post title, small regular grey metadata; no added motion-graphic type. Font looks like the product's UI sans (low-confidence guess: Inter-like).",
+      "depth_cues": [
+        "shadow",
+        "grain"
+      ],
+      "what_happens": "Cold open on the real app window centred on a gradient backdrop; the cursor clicks the post (w0-w4 'Your workspace is about to') and the post detail panel slides in from the right while the camera begins pushing into it, blurring at the end of the shot.",
+      "build_rebuild": "Render a 1280px app-window screenshot with rounded corners and a soft drop shadow, centred at ~80% width over a grainy multi-stop gradient, then slide a detail panel in from the right and start a scale-up push-in with motion blur over the last 0.5s.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s002",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "The post headline 'Your Workspace is about to change forever.' above a looping caveman-celebration GIF",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Your Workspace is about to change forever.",
+        "Cass Chan",
+        "in Seasonal Promotions • Yesterday • Update"
+      ],
+      "text_word_count": 14,
+      "typography": "UI headline in bold sans-serif, sentence case, normal tracking, set large because of the zoom; author name in semibold, metadata in small regular grey.",
+      "depth_cues": [
+        "none"
+      ],
+      "what_happens": "After zooming through into the post, the frame holds full-bleed on the headline, reaction chips and a humorous GIF of cavemen celebrating while the VO lands 'change forever' (w5-w6) and 'With ClickUp 4.0' (w7-w10); the cursor rests near the metadata.",
+      "build_rebuild": "Crop the post view to fill the 16:9 frame at ~2.5x UI scale with the headline in the top third, play the embedded GIF in place, and hold static for ~3s with a resting cursor.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s003",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "The threaded reply 'With ClickUp 4.0, the most requested features in our history come together in a smarter and more connected experience.' and the reply composer below it",
+      "transition_in": "other",
+      "transition_other": "motion-blurred vertical scroll/camera move down the same post (continuation of s002, not a cut)",
+      "on_screen_text": [
+        "1 Reply",
+        "Cass Chan",
+        "With ClickUp 4.0, the most requested features in our history come together in a smarter and more connected experience.",
+        "Reply to this post"
+      ],
+      "text_word_count": 27,
+      "typography": "UI body text in regular sans-serif sentence case, author name semibold, timestamp light grey; the reply text mirrors the VO word for word.",
+      "depth_cues": [
+        "blur",
+        "shadow"
+      ],
+      "what_happens": "The view scrolls down with motion blur to reveal the reply that reads exactly what the VO says (w11-w25); the cursor hovers the message (hover toolbar appears), then clicks the reply field, which expands into the full composer with its toolbar.",
+      "build_rebuild": "Animate a vertical translate of the zoomed UI with a short motion blur to reveal the reply row, show a hover action bar on cursor-over, then expand the reply input into a composer with toolbar icons on click.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s004",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "Full app window showing the OKRs 2025 'Objectives' list grouped by quarter (Q1/Q2/Q3) with coloured status pills",
+      "transition_in": "hard_cut",
+      "transition_other": null,
+      "on_screen_text": [
+        "Marketing Space / OKRs / 2025",
+        "Objectives"
+      ],
+      "text_word_count": 5,
+      "typography": "Product UI only: small sans-serif table text, status pills in bold white on colour, breadcrumbs in medium weight. Dense table row text is too small at this scale to quote reliably and is not enumerated.",
+      "depth_cues": [
+        "shadow",
+        "grain"
+      ],
+      "what_happens": "Hard cut (with a reverse-swoosh SFX x001 near the cut) back to the wide window-on-gradient framing, now on a list view; the cursor moves to the top-left 'Home' area as the VO says 'It all starts with' (w26-w29).",
+      "build_rebuild": "Hard-cut to the same centred window-on-gradient layout used in s001 but with a list-view screenshot, and move the cursor to the sidebar header over ~1.5s to set up the next push-in.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s005",
+      "shot_type": "ui_closeup",
+      "shot_type_other": null,
+      "composition": "other",
+      "composition_other": "cropped top-left corner of the app window (nav rail and sidebar) with gradient visible along the top and left edges",
+      "focal_element": "The left navigation rail (Home, Spaces, Chat, Planner, Brain, Teams, More) and the sidebar panel it switches",
+      "transition_in": "zoom_through",
+      "transition_other": null,
+      "on_screen_text": [
+        "Home Spaces Chat Planner Brain Teams More",
+        "Docs Dashboards Whiteboar... Forms Clips Goals Timesheets Apps"
+      ],
+      "text_word_count": 15,
+      "typography": "UI nav labels in small medium-weight sans-serif under icons, sentence case; sidebar headings ('Home', 'Spaces', 'Chat') in bold sentence case.",
+      "depth_cues": [
+        "shadow",
+        "grain",
+        "blur"
+      ],
+      "what_happens": "Camera pushes into the top-left of the window; the cursor walks down the new nav rail - Spaces, Chat, back to Home - and the sidebar swaps content each time, matching 'converged hierarchy... projects, docs, and chat' (w30-w46); the camera then drifts down to 'More', which opens an app grid (Docs, Dashboards, ...), hovers Docs, then settles on the sidebar as the VO says 'a unified navbar you can make your own' (w47-w54), ending in a motion-blurred move out.",
+      "build_rebuild": "Scale the window to ~2.5x anchored on its top-left corner, script a cursor path down the nav rail with sidebar panel swaps on each click, pan down to open a popover icon grid from 'More', and finish with a blurred camera move into the next shot.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

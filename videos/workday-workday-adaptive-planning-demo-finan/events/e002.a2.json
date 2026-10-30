@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "70820ad11c28f9aac6bc977738f6ee32ee601ddde6d64216654ad786ea940ee1",
+    "created_at": "2026-10-05T06:51:29.908710Z"
+  },
+  "video": "workday-workday-adaptive-planning-demo-finan",
+  "event": "e002",
+  "task": "a2-e002",
+  "elements": [
+    {
+      "box": null,
+      "manual_box": [333, 344, 708, 727],
+      "manual_reason": "Outgoing Workday / Adaptive Planning logo lockup has faded out by the end frame; only a faint ghost remains, so no candidate box covers it.",
+      "label": "Workday Adaptive Planning logo (outgoing)",
+      "role": "logo",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 250, "easing_class": "ease_in"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Section title",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["fade", "color_shift"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Financial Forcasting",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 450, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "blur_crossfade",
+    "proposed_name": null,
+    "description": "The logo lockup dissolves out to white and the section title fades in at the same centre position, its colour deepening from pale blue to full navy as it settles.",
+    "why_premium": "Sequential out-then-in dissolve on a clean white field keeps the eye anchored at centre; the title resolving from a tint to full brand navy gives a soft 'ink settling' finish instead of a hard cut."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.logo', {opacity: 0, duration: 0.25, ease: 'power2.in'}).fromTo('.title', {opacity: 0, color: '#c9d6ec'}, {opacity: 1, color: '#0b3a8f', duration: 0.45, ease: 'power2.out'}, '-=0.05'); no stagger, whole-line reveal.",
+    "remotion": "logoOpacity = interpolate(frame, [0, 6], [1, 0], {easing: Easing.in(Easing.quad)}); titleOpacity = interpolate(frame, [5, 16], [0, 1], {easing: Easing.out(Easing.quad)}); interpolateColors over the same range from pale blue to navy. Ease, not spring."
+  },
+  "confidence": "medium",
+  "notes": "No visible blur in frames; this is a plain opacity crossfade plus colour deepening, mapped to blur_crossfade as the closest pattern. Title text is verbatim as on screen ('Forcasting' typo is in the source). b02-b04 are OCR fragments / ghost diff of the same title and logo remnant."
+}

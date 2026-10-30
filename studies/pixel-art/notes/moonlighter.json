@@ -1,0 +1,53 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T14:00:48+00:00"
+  },
+  "id": "moonlighter",
+  "kind": "game",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "mixed",
+    "notes": "Frames: shop in warm orange-red wood with cream floors; dungeon in saturated teal; night village in deep blue with yellow lamp pools. Each place owns one colour family."
+  },
+  "lighting": "Warm interior lamp light in the shop; at night the village is blue and lamps throw round warm pools on the ground (clip 3, 39-44 s). Contrast of warm pools on a cool ground.",
+  "silhouette": "Small top-down sprites with big heads; hero Will (wiki) and customers read by hair and hat shapes. Thought bubbles with prices or faces float above customers.",
+  "motion": {
+    "timing": "No frame timings measured. Shop scene: customers walk to a table, stop, a bubble pops up with their reaction, then they walk to the counter or leave.",
+    "principles": [
+      "staging",
+      "anticipation",
+      "secondary action"
+    ]
+  },
+  "texture": "Clean tiles with soft 2-3 step shading on wood, stone and grass; detailed furniture props around an open floor.",
+  "camera": "Fixed top-down, one room per screen; the shop is framed as a stage with the counter at the bottom. Day shop / night dungeon loop (wiki).",
+  "sound": "",
+  "acting": {
+    "enters": "Customers come in through the door one by one and walk to a pedestal.",
+    "acts": "Each customer stops at an item and shows a reaction bubble (happy, neutral, angry about price), then buys or walks away.",
+    "exits": "Satisfied customers walk to the counter; others walk out; the next comes in.",
+    "comes_back": true,
+    "depth": "All on one plane; scale comes from the wide room. Moonlighter 2 (3D, not pixel) uses the same shop staging."
+  },
+  "techniques": [
+    "reaction bubble above the head instead of facial animation",
+    "repeated loop: enter, look, react, leave, next one",
+    "warm lamp pools on a cool night ground",
+    "one colour family per place (orange shop, teal dungeon, blue night)",
+    "room as a stage with a fixed counter"
+  ],
+  "feel": "warm wood shop + small top-down customers + pop-up reaction bubbles + enter/react/leave loop = cozy readable routine",
+  "for_fred": "Use Moonlighter's customer loop for Fred: he swims in, looks at the thing, a small pixel bubble pops above him (heart, '?', '!'), he leaves; later he comes back and the bubble changes. Repeat 2-3 times with one change each time.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Moonlighter_(video_game)",
+    "studies/pixel-art/sources.yaml",
+    "data/study/pixel/work/moonlighter/clip1-7395354303440981253.jpg",
+    "data/study/pixel/work/moonlighter/clip3-6955124309664877830.jpg",
+    "data/study/pixel/work/moonlighter/clip2-7616483680772541699.jpg (Moonlighter 2, 3D: used for staging only)"
+  ]
+}

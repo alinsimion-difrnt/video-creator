@@ -1,0 +1,76 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "e7fb9f36e5ef7d8fd7b038e17858219b37b0418c8162de22dfadfdf8ed4022c4",
+    "created_at": "2026-10-05T06:51:29.805895Z"
+  },
+  "video": "salesforce-what-is-agentforce-and-how-businesses-us",
+  "event": "e021",
+  "task": "a2-e021",
+  "elements": [
+    {
+      "box": "b11",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Agent greeting message",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Hi! I'm your Service Agent",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "User message bubble",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Hi, my email address is mrichards@example.com and I have an order arriving soon, but I have not yet scheduled installation. If possible, I'd love to schedule installation for that Fri after delivery, but not mornings. Do you have appointments available?",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Agent reply with time slots",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["slide_up", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "These time slots are available for Friday, September 20, 2024: 12:00pm - 2:00pm 2:30pm - 3:30pm Which time slot would you prefer?",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x034", "verdict": "unsure", "label": "unsure", "note": "Falls just before the scroll; spectrogram shows only the recurring music band pattern, no distinct chime transient."},
+    {"id": "x035", "verdict": "override", "label": "music", "note": "Periodic broadband music pulse during the scroll; no isolated SFX shape."},
+    {"id": "x036", "verdict": "override", "label": "music", "note": "After the scroll settles; continues the music bed."}
+  ],
+  "pattern": {
+    "id": "masked_scroll",
+    "proposed_name": null,
+    "description": "A new agent reply lands at the bottom of the Conversation Preview panel and the whole chat thread scrolls up inside the fixed panel to make room, earlier messages moving together.",
+    "why_premium": "The scroll is short and eased so the thread reads as a live conversation, and the crop keeps the eye on the newest reply instead of jumping the layout."
+  },
+  "build_hint": {
+    "gsap": "Wrap the chat thread in an overflow-hidden panel; gsap.fromTo(thread, {y: 0}, {y: -replyHeight, duration: 0.45, ease: 'power2.out'}) while the new reply does gsap.fromTo(reply, {autoAlpha: 0, y: 16}, {autoAlpha: 1, y: 0, duration: 0.4, ease: 'power2.out'}) at the same start.",
+    "remotion": "translateY of the thread = interpolate(spring({frame, fps, config: {damping: 26, stiffness: 160, mass: 1}}), [0, 1], [0, -replyHeight]); reply opacity follows the same spring, all inside a fixed-size overflow:hidden container."
+  },
+  "confidence": "medium",
+  "notes": "The filmstrip is a cropped close-up of the chat panel; camera.move is none, so the pan_y/scale sums describe the chat scroll, not a camera move. b12 (left-panel scrollbar sliver) changed but is too small to read reliably and was left out."
+}

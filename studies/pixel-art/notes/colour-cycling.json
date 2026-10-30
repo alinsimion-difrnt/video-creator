@@ -1,0 +1,51 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "created_at": "2026-10-13T14:01:54+00:00"
+  },
+  "id": "colour-cycling",
+  "kind": "style",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "cool",
+    "notes": "Clip: indexed palette grid with ranges reserved for water (blue-white steps), foliage greens and warm stone; a night version shifts the whole grid to dark blues with a few warm lights."
+  },
+  "lighting": "Lighting is the palette: swapping the whole palette turns the same day waterfall into a dark night scene with only warm lantern pixels left lit.",
+  "silhouette": "Detailed painterly scene (cliffs, pagodas, waterfall, trees); the pixels never move, so silhouettes are fixed and the motion lives inside them.",
+  "motion": {
+    "timing": "Pixels stay still while palette entries rotate in order; the demo runs at 60 fps with a speed control. Blend mode fades between steps for smoother flow.",
+    "principles": [
+      "palette rotation",
+      "looping flow",
+      "time-of-day shift"
+    ]
+  },
+  "texture": "Dense dithered painting; water and falls are bands of 4-8 related colours laid in streaks so rotating them reads as flowing water.",
+  "camera": "Locked full-scene view; the clip only zooms to show the palette grid next to the image.",
+  "sound": "",
+  "acting": {
+    "enters": "No characters; the scene itself changes from day to night.",
+    "acts": "Water falls and shimmers forever by cycling colours, and the whole scene relights when the palette changes.",
+    "exits": "",
+    "comes_back": null,
+    "depth": "Depth comes from painting (misty, lighter far cliffs, dark close foliage), not from movement."
+  },
+  "techniques": [
+    "rotate a reserved palette range to make water, lava or lights move",
+    "lay the cycling colours in streaks along the flow direction",
+    "swap the whole palette for time of day: same pixels, new mood",
+    "blend mode: fade between steps for smooth flow",
+    "marquee-bulb chase for blinking lights and signs"
+  ],
+  "feel": "still painted scene + rotating water colours + whole-palette night swap = alive without moving a pixel",
+  "for_fred": "Make Fred's pond water flow by cycling 4-6 blue steps instead of animating frames, and use a palette swap for a 'later that night' beat (same scene, dark blues, one warm lamp) so Fred's comeback reads as time passing.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Color_cycling",
+    "http://www.effectgames.com/demos/canvascycle/",
+    "data/study/pixel/work/colour-cycling/clip2-6894278674707664129.jpg"
+  ]
+}

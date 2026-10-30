@@ -1,0 +1,737 @@
+# All thresholds, budgets and targets. Validated by `uv run lens validate config/lens.yaml`.
+schema_version: 1
+
+analysis:
+  max_minutes: 5            # cap per video unless sources.yaml sets a segment
+  proxy_max_width: 1280
+  base_fps: 2
+  base_frame_width: 960
+  jpeg_quality: 80
+  palette_colors: 6
+  palette_pixels_per_frame: 2000
+  proxy_crf: 18
+  proxy_duration_tolerance_s: 0.1   # proxy must match the analysis window this closely (or 2 frames)
+  audio_sample_rate: 48000
+  phash_frames: 16                  # dHash samples per video for duplicate detection
+  duplicate_max_distance: 6         # median Hamming distance (of 64 bits) to flag a duplicate
+
+originals:
+  lifecycle_days: 30        # R2 lifecycle rule; never applied to keep_tiers or refetchable: false
+  keep_tiers: [own]
+
+batch:                      # corpus runs (docs/operating-guide.md "Batch analysis")
+  fetch_max_seconds: 180    # scripts/fetch_batch.py skips longer videos (yt-dlp reads the length first)
+  per_run: 8                # videos one prepare run takes from the queue
+  max_parallel: 4           # of those, analysed at once (one runner each)
+
+signals:
+  stems:
+    enabled: true
+    model: htdemucs                # demucs, CPU; vocals vs accompaniment
+    ducking_guard_s: 0.3           # bed level "away from speech" excludes this margin around words
+  clap:
+    enabled: true
+    model: laion/clap-htsat-unfused  # Apache-2.0 (external-facts 8); ~600 MB, CPU
+    min_score: 0.5                 # replaces an "unsure" rule label only above this probability
+    pre_s: 0.1                     # clip = [onset - pre, sync + post], at least min_clip_s long
+    post_s: 0.5
+    min_clip_s: 0.6
+    batch_size: 16
+  captions:
+    enabled: true
+    band_fraction: 0.25            # captions live in the bottom quarter
+    analysis_width: 640            # OCR needs more pixels than motion analysis
+    band_change_min: 0.01          # mean band diff that counts as a caption switch...
+    band_ratio: 3.0                # ...when the band changes this much more than the rest of the frame
+    min_group_frames: 3            # shorter stretches are part of a switch, not a group
+    ocr_min_score: 0.6
+    min_groups: 3                  # fewer recognised groups = no burned-in captions
+    sync_tolerance_frames: 2       # a switch within 2 frames of a word start is word-synced
+  video:
+    analysis_width: 320          # diff and flow are computed at this width
+    mask_threshold: 20           # per-pixel |diff| (0-255) that counts as changed
+    cut_min_diff: 0.10           # hard cut: mean diff spike of at least this...
+    cut_ratio: 3.0               # ...and this many times its neighbourhood
+    transition_min_diff: 0.01    # gradual transition: sustained diff above this...
+    transition_min_frames: 3     # ...for at least this many frames...
+    transition_min_change: 0.12  # ...with the frames either side this different
+    crossfade_max_residual: 0.03 # alpha-blend fit residual for a crossfade
+    push_min_shift: 0.02         # push/slide: global shift per frame (fraction of width)
+    zoom_min_scale_step: 0.02    # zoom-through: global scale change per frame
+    event_abs_min_diff: 0.0005   # motion event floor; slow fades at 60 fps change ~0.001 per frame
+    event_noise_k: 6             # adaptive floor = median + k * MAD (real footage noise)
+    motion_gap_merge_s: 0.1      # merge gaps up to 0.1 s (3 frames at 30 fps; fps-independent)
+    motion_min_s: 0.06           # drop runs shorter than this (2 frames at 30 fps)
+    continuous_min_s: 4.0        # longer events are "continuous" (screen recordings, loops)
+    camera_min_zoom: 0.03        # cumulative scale change for push_in / pull_out
+    camera_min_pan: 0.05         # cumulative shift (fraction of frame) for pans / tilts
+    camera_min_area: 0.5         # only changes covering this much of the frame can be camera moves
+    phase_min_response: 0.1      # phase-correlation peak needed to trust a global shift
+    empty_max_edge_density: 0.02 # focal region counts as empty below this edge density
+    # Slow dissolves (old layout fades to the canvas, new one fades in; < 2% change per frame):
+    ignore_bottom_fraction: 0.2  # caption band: left out of layout comparisons
+    dissolve_baseline_s: 0.4     # compare frames this far either side of a candidate
+    dissolve_min_change: 0.01    # long-baseline change needed to consider a dissolve
+    dissolve_max_retention: 0.35 # at most this share of the old layout may survive (v1: transitions
+                                 # 0.17-0.24, an in-card text scroll 0.45)
+    dissolve_max_residual: 0.2   # in-between frames must be mixes of old, new and canvas (residual
+                                 # relative to the change; v1 fades 0.01-0.12, a moving box 0.52)
+    dissolve_max_s: 2.0          # longest dissolve considered
+    min_shot_s: 1.0              # transitions closer than this are one
+    push_min_total: 0.5          # layout slid >= half a frame width during the transition: a push
+    zoom_min_frames: 2           # frames with a scale step >= zoom_min_scale_step: a zoom-through
+  cut_on_beat_tolerance_frames: 2
+  scene_start_tolerance_frames: 2  # an SFX this close to a shot start counts as "at scene start"
+  sfx_reveal_window_s: 0.5         # an SFX is tied to the nearest visual landing within this window
+  speech_min_words: 10             # fewer recognised words = no voiceover (music-only reels)
+  audio:
+    beat_grid_tolerance_ms: 40   # on_beat is a feature, not a filter
+    beat_min_confidence: 0.2     # below this there is no steady beat; on_beat is not computed
+    sfx_decay_db: 20             # a sound ends when it falls this far below its peak
+    repet_periods: 4             # REPET: the bed is the median over +-4 beat periods
+    repet_margin: 2.0            # foreground mask margin (higher = stricter foreground)
+    sfx_backtrack_s: 0.6         # look this far back for where a sound's build began
+    sfx_edge_guard_s: 0.05       # ignore candidates touching the first/last 50 ms (edge artefacts)
+    sfx_min_gap_s: 0.12          # starts closer than this are one sound
+    sfx_max_below_loudest_db: 24 # foreground sounds this far below the loudest are bed residue
+    click_max_ms: 40
+    impact_min_low_ratio: 0.3
+    impact_max_attack_ms: 30
+    swell_min_attack_ms: 120     # whooshes and risers build up
+    riser_min_attack_ms: 600
+    noise_min_flatness: 0.01
+  speech:
+    whisper_model: small.en      # local faster-whisper; "medium.en" for harder audio
+    whisper_compute_type: int8
+    language: en
+    pause_min_ms: 150            # gaps between words shorter than this are not pauses
+    pause_medium_ms: 400
+    pause_long_ms: 800
+    phrase_split_ms: 400         # phrases are split at pauses of at least this
+    pitch_fmin_hz: 65
+    pitch_fmax_hz: 400
+    voice_floor_db: 12           # word trimming: voiced = this far above the quietest 10%...
+    voice_range_db: 35           # ...and within this of the loudest frame
+  dead_hold_min_s: 0.8
+
+evidence:
+  burst_pad_s: 0.3
+  filmstrip_quantiles: [0, 0.1, 0.25, 0.5, 0.75, 0.9, 1.0]  # of cumulative motion energy, not time
+  crop_margin: 0.15         # filmstrip crop = bbox_union grown by 15% of its size per side...
+  crop_min_px: 160          # ...and at least 160 proxy px each way
+  context_thumb_px: 320     # full-frame thumbnail with the crop outlined
+  image_long_edge_px: 1500  # Claude requires <= 2000 px per side once a request has > 20 images
+  max_candidate_boxes: 20
+  box_min_area: 0.0005      # diff components smaller than this share of the frame are dropped
+  box_merge_px: 6           # close gaps up to this many px before connected components
+  box_nms_iou: 0.6
+  ocr_min_score: 0.6
+  ocr_min_changed: 0.05     # an OCR line is a candidate only if this share of it changed
+  spectrogram_window_s: 0.6
+  spectrogram_width_px: 1200
+  spectrogram_height_px: 400
+  sheet_cols: 4             # contact sheets: base frames (2 fps) per shot
+  sheet_max_tiles: 12       # longer shots continue on another sheet
+
+packets:
+  min_event_energy: 0.0005  # triage before A2 (saves quota)
+  min_event_area: 0.002
+  skip_caption_band: true   # uses signals.captions.band_fraction
+  dedupe_max_distance: 6    # dHash of the end-frame crop...
+  dedupe_duration_ratio: 0.25  # ...and durations within 25%: a stagger of identical cards is one task
+  words_window_s: 1.0       # facts.json: words spoken within 1 s of the event
+  overlap_merge_min: 0.3    # an event whose burst lies this much (of the shorter) inside a kept event's
+                            # burst in the same shot is one build: skipped as "overlap" (M5 trial)
+
+annotate:
+  videos_per_run: 3
+  max_turns: 200
+  max_images_per_task: 12
+  event_images: 4
+  events_per_subagent: 5
+  validate_retries: 3
+  task_retries: 2
+  a2_tiers: [reference, own]
+  spot_review_fraction: 0.05
+
+measure:
+  progress_end_tolerance: 0.02
+  min_fit_quality: 0.8
+  model_selection_margin: 2.0   # AIC units; inside the margin => class "ambiguous"
+  gsap_class_ratio: 1.25        # a named GSAP ease that fits within 25% of the bezier decides the class
+  track_margin_px: 24           # template search: the event crop plus this margin
+  track_scale_steps: [0.9, 0.95, 1.0, 1.05, 1.1]   # scale change tried per frame (scale-pops)
+  track_min_confidence: 0.6     # NCC below this: the element is too faint to place
+  track_coarse_px: 320          # search areas larger than 2x this are searched coarse to fine
+  track_coarse_min_template_px: 12   # ...without shrinking the element below this
+  min_position_change_px: 2.0   # smaller travel = static channel (proxy pixels)
+  min_scale_change: 0.03
+  min_opacity_change: 0.2
+  min_alpha_contrast: 12        # element must differ from its background this much (0-255) for opacity
+  opacity_hold_max_travel: 1.0  # faint frames count for opacity if the element moves < 1x its size
+  stagger_reveal_alpha: 0.5     # per-word reveal frame: opacity passes 50%
+
+reconcile:
+  shot_tolerance_frames: 1     # S8 check: events lie inside their shot, give or take a frame
+
+eval:                          # lens eval (M6): machine checks of the annotation layer
+  answer_key:
+    video: acme-explainer-v1
+    path: tests/fixtures/acme-v1/answer-key.json
+    min_iou: 0.3               # boxes overlap this much = the same element (text boxes are approximate)
+    event_pad_s: 0.25          # tweens starting/ending this close to an event belong to it
+    sfx_window_s: [-0.1, 0.8]  # same window as scripts/eval_answer_key.py (mp3 lead-in)
+    sfx_labels:                # the render's SFX files -> taxonomy labels that name them
+      click-soft.mp3: [click, tick]
+      pop.mp3: [pop]
+      whoosh-short.mp3: [whoosh]
+      chime.mp3: [chime]
+      typing.mp3: [typing, click]
+      ping.mp3: [chime, tick]
+      impact-bass-2.mp3: [impact]
+  consistency:
+    videos: [acme-explainer-v1, loom-introducing-loom-ai, notion-introducing-notion-ai-connectors]
+    events: 10                 # BUILD_PLAN 11.2: a self-consistency sample of 10 events
+  measured_tier: reference
+  min_measured_share: 0.6      # M6 accept: >= 60% of annotated reference events measured
+
+synth:                         # S9 corpus stats (BUILD_PLAN 8, plan-audit I6)
+  weights:
+    tier: {reference: 1.0, average: 0.5, competitor: 0.5, own: 0.0}   # own videos are compared, never averaged in
+    score_from: overall        # summary.scores.<this>.score / 5
+    score_missing: 0.6         # videos without an A1 summary
+    quality: true              # measured values are also weighted by fit quality
+  min_n: 5                     # fewer observations: median only, no interval
+  bootstrap: 1000
+  ci: 0.9
+  seed: 7
+  spring_clusters: 3
+  max_examples: 5
+  scene_batch: 60              # A3 scene sorting: shots per brief (text only)
+  card_members: 8              # A3 brief: what the annotators said about this many of a pattern's events
+  export_word_brands: [Linear, Cursor, Amplitude]   # brand names that are also words: matched only as capitalised names
+  g4_hold_archetypes:          # seed archetypes with too few corpus examples (G4 asks)
+    question_relay: "No shot in the 55 videos was sorted here; it was a Acme v1 idea."
+    title_step_rail: "No shot in the 55 videos was sorted here."
+    shortlist_card: "Only 2 shots in 2 videos: too few to learn from yet."
+  g4_hold:                     # cards Claude recommends keeping out of the recipe book for now (G4 asks)
+    metric_count_up: "Only one example in the 55 videos, and it counts down rather than up. Not enough to learn from yet."
+  cluster:
+    model: sentence-transformers/all-MiniLM-L6-v2   # Apache-2.0, local CPU (external-facts 13)
+    revision: 1110a243fdf4706b3f48f1d95db1a4f5529b4d41
+    threshold: 0.6             # average-link cosine: `other` names this close are one pattern
+    merge_similarity: 0.65     # a cluster this close to an existing pattern is suggested as a merge
+    min_members: 2
+    min_brands: 2              # one brand's habit is not a corpus pattern (own videos do not count)
+
+gold:                          # G2: Robert corrects these (~2 h): every shot, a sample of events
+  videos: [acme-explainer-v1, loom-introducing-loom-ai, notion-introducing-notion-ai-connectors]
+  max_events_per_video: 12
+
+compare:                       # M9 corpus mode: placement among the target format's premium videos
+  min_cohort: 5
+  max_gap: 3                   # gaps are in cohort band widths, capped here
+  corpus_metrics:              # extractors in lens/compare/corpus.py; weight/effort rank the fixes
+    - {id: wpm, section: voice, unit: wpm, weight: 2, effort: M}
+    - {id: pitch_variability, section: voice, unit: semitones, weight: 3, effort: M}
+    - {id: pause_variety, section: voice, unit: cv, weight: 2, effort: M}
+    - {id: voice_energy_variation, section: voice, unit: dB, weight: 2, effort: M}
+    - {id: loudness_lufs, section: sound, unit: LUFS, weight: 2, effort: S}
+    - {id: true_peak, section: sound, unit: dBTP, weight: 1, effort: S}
+    - {id: loudness_range, section: sound, unit: LU, weight: 1, effort: S}
+    - {id: sfx_per_min, section: sound, unit: per min, weight: 2, effort: M}
+    - {id: sfx_at_scene_start, section: sound, unit: share, weight: 2, effort: M}
+    - {id: sfx_near_reveal, section: sound, unit: share, weight: 3, effort: M}
+    - {id: cuts_on_beat, section: sound, unit: share, weight: 2, effort: M}
+    - {id: ducking_db, section: sound, unit: dB, weight: 2, effort: S}
+    - {id: linear_motion_share, section: motion, unit: share, weight: 3, effort: M}
+    - {id: overshoot_share, section: motion, unit: share, weight: 2, effort: M}
+    - {id: element_duration_ms, section: motion, unit: ms, weight: 2, effort: M}
+    - {id: transitions_per_min, section: motion, unit: per min, weight: 1, effort: M}
+    - {id: time_to_first_ui, section: motion, unit: s, weight: 2, effort: M}
+    - {id: shot_length, section: motion, unit: s, weight: 2, effort: L}
+    - {id: dead_hold_s_per_min, section: rhythm, unit: s per min, weight: 3, effort: S}
+    - {id: pace_variation, section: rhythm, unit: cv, weight: 2, effort: M}
+    - {id: caption_words_per_group, section: rhythm, unit: words, weight: 1, effort: S}
+    - {id: caption_changes_per_min, section: rhythm, unit: per min, weight: 1, effort: S}
+
+targets:
+  loudness:
+    # Neither LinkedIn nor YouTube publishes a LUFS target (docs/external-facts.md).
+    # These are house targets based on the common -14 LUFS convention.
+    linkedin: {min_lufs: -16, max_lufs: -14, max_true_peak_dbtp: -1, source: house}
+    youtube: {min_lufs: -15, max_lufs: -13, max_true_peak_dbtp: -1, source: house}
+    # No vertical platform publishes a loudness target (external-facts §17): the -14 LUFS convention.
+    tiktok: {min_lufs: -15, max_lufs: -13, max_true_peak_dbtp: -1, source: house}
+    instagram_reels: {min_lufs: -15, max_lufs: -13, max_true_peak_dbtp: -1, source: house}
+    youtube_shorts: {min_lufs: -15, max_lufs: -13, max_true_peak_dbtp: -1, source: house}
+  default_destination: linkedin
+  # Absolute house targets for `lens compare --targets-only` (M4.5). Placeholders until the corpus
+  # (M8) replaces them with measured reference ranges; each says where it comes from.
+  # requires: which inputs must exist for the metric to apply (voice, beat, sfx, stems).
+  metrics:
+    - {id: true_peak, path: audio.loudness.true_peak_dbtp, max: -1.0, unit: dBTP, weight: 2, effort: S, requires: [], source: "EBU R128 practice"}
+    - {id: sfx_at_scene_start, path: audio.sfx_at_scene_start_share, max: 0.3, unit: share, weight: 3, effort: M, requires: [sfx], source: "handoff 5.9 (v1 weakness)"}
+    - {id: sfx_on_reveals, path: audio.sfx_near_reveal_share, min: 0.6, unit: share, weight: 3, effort: M, requires: [sfx], source: house}
+    - {id: sfx_density, path: audio.sfx_per_min, min: 6, unit: per min, weight: 2, effort: M, requires: [], source: house}
+    - {id: cuts_on_beat, path: audio.cuts_on_beat_share, min: 0.5, unit: share, weight: 2, effort: M, requires: [beat], source: "handoff 5.9 (v1 weakness)"}
+    - {id: ducking, path: audio.ducking_db, min: 4, unit: dB, weight: 2, effort: S, requires: [voice, stems], source: house}
+    - {id: dead_holds, path: video.dead_hold_s, max: 0.0, unit: s, weight: 3, effort: M, requires: [], source: "handoff 6 (v1 weakness)"}
+    - {id: pace_variation, path: video.pace_cv, min: 0.35, unit: cv, weight: 2, effort: L, requires: [], source: "handoff 6 (v1 weakness)"}
+    - {id: speaking_rate, path: speech.wpm, min: 140, max: 170, unit: wpm, weight: 2, effort: S, requires: [voice], source: house}
+    - {id: pause_variety, path: speech.pause_cv, min: 0.4, unit: cv, weight: 2, effort: S, requires: [voice], source: house}
+    - {id: intonation, path: speech.pitch_std_semitones, min: 2.5, unit: semitones, weight: 3, effort: M, requires: [voice], source: house}
+    - {id: rate_variation, path: speech.phrase_rate_cv, min: 0.15, unit: cv, weight: 1, effort: S, requires: [voice], source: house}
+    - {id: caption_chunking, path: captions.words_per_group_mean, min: 4, unit: words, weight: 2, effort: S, requires: [captions], source: "handoff 5.10 (v1 weakness)"}
+    - {id: caption_sync, path: captions.word_synced_share, min: 0.7, unit: share, weight: 1, effort: S, requires: [captions, voice], source: house}
+
+baselines:
+  # Acme MVP v1 render, known values from docs/handoff-v1.md (sections 1, 3.10, 3.11, 6).
+  - video: acme-explainer-v1
+    fps: 30
+    frames: 4338
+    duration_s: {value: 144.6, tolerance: 0.1}
+    integrated_lufs: {value: -20.9, tolerance: 0.5}
+    sample_peak_dbfs: {value: -3.2, tolerance: 0.3}
+    scenes: 15
+    transitions: 14
+    transitions_min_detected: 13
+    transition_tolerance_frames: 2
+    wpm: {value: 180, tolerance: 18}
+    sfx_at_scene_start_min_share: 0.8
+
+create:                        # Phase 2 (docs/phase2-plan.md); per-project values live in the brief
+  voice:                       # ADR 0020: Hope (corporate) on eleven_v4, default settings (was Zara, ADR 0018)
+    provider: elevenlabs
+    voice_id: WZlYpi1yf6zJhNWXih74
+    voice_name: "Hope - corporate training"
+    model_id: eleven_v4
+    output_format: mp3_44100_128
+    takes: 2                   # per scene; the take closest to exports/voice-spec.json is kept
+    # Ranked on what a 5-15 s clip can show: pause length and loudness variation need the whole read
+    # (P1 run: they outvoted pitch and picked flat takes). A take that mispronounces the brand ranks last.
+    select_on: [wpm, articulation_wpm, pitch_std_semitones]
+    # Tags the warm delivery uses (external-facts §10: v4 tags), plus pauses. Others fail validation.
+    allowed_tags: [curious, thoughtful, chuckles, sighs, laughs, giggles, happy, excited, whispers,
+                   short pause, long pause]
+  footage:                     # presenter footage (ADR 0025; research sources/presenter-footage-pipeline.md)
+    fps: 30                    # masters are constant frame rate at the timeline's fps
+    max_height: 2160           # masters keep up to 4K for vertical crops and punch-ins
+    master_crf: 16
+    gop: 30                    # short GOP: fast, exact seeks
+    stt_engine: elevenlabs     # elevenlabs (Scribe, verbatim, ADR 0022) | whisper (local fallback)
+    keep_pad_s: 1.0            # create take --keep 0:41: a proposed cut within this of 0:41 stays (times from a phone)
+    stt_model: scribe_v2
+    whisper_model: small       # multilingual (Romanian and English); local fallback only
+    fillers:                   # transcribed tokens that are fillers (lowercase, punctuation stripped)
+      en: [um, umm, uh, uhh, er, erm, ah, hmm, mm]
+      ro: [ăă, ăăă, îî, îîî, ăm, mmm, hmm, ă, î]
+    retake_cues:               # a word Robert says before repeating a line
+      en: [again, scratch that]
+      ro: [din nou, încă o dată]
+    count_in:                  # a count before speaking ("Three, doi, unu, și": Robert's first take)
+      en: [one, two, three, four, five, go, action]
+      ro: [unu, doi, trei, patru, cinci, și, si, hai, gata]
+    conjunctions:              # a repeat right after one of these is a list ("the X or the Y"), not a retake
+      en: [or, and, but, nor, then]
+      ro: [sau, și, si, ori, dar, iar]
+    cuts:
+      silence_max_s: 0.45      # longer pauses are shortened (Descript example: 0.75 -> 0.2; auto-editor keeps 0.2)
+      keep_before_s: 0.10      # padding kept before a word (research: 80-150 ms)
+      keep_after_s: 0.18       # and after it (120-250 ms)
+      min_cut_s: 0.12          # shorter cuts are not worth a jump
+      retake_min_words: 3      # a repeated run this long counts as a retake ...
+      retake_window_words: 25  # ... when the first copy started this close before
+      retake_max_tail_words: 6 # ... and was abandoned within this many words
+      retake_pause_s: 0.35     # ... and visibly: a cut-off word ("to--"), a stutter, or this long a pause
+      count_in_pause_s: 0.3    # a count-in run ends at a pause at least this long
+      punch_max_s: 5.0         # an uncut stretch longer than this gets a punch-in at a sentence end (TikTok pacing)
+      punch_min_s: 1.8         # but no piece shorter than this
+      punch_hook_s: 2.5        # the first shot ends by this time (the QA hook wants a visual change by 3 s)
+    crossfade_ms: 15           # audio crossfade at every cut (research: 10-20 ms)
+    voice:                     # F6 voice finishing (ffmpeg only; research §4: denoise after analysis, then loudnorm)
+      highpass_hz: 80          # wind and handling rumble
+      denoise_nf_db: -45       # afftdn noise floor: light, keeps the room
+      compressor: "threshold=-22dB:ratio=3:attack=8:release=160:makeup=1"
+      true_peak_db: -2.0       # limiter ceiling; 1 dB under the -1 dBTP target leaves room for the AAC encode
+      lra: 9
+    resolve:                   # skill resolve-fix-take: a raw take's colour and level fixed in DaVinci Resolve
+      black: 0.05              # display luma the CDL puts the 1st percentile at (DJI takes: 0.13, lifted)
+      white: 0.90              # ...and the 99th (white shirt and wall, unclipped; DJI takes: 0.81)
+      white_rg: 1.01           # near-white wall/shirt after the grade: neutral with a hint of warmth
+      white_bg: 0.99
+      saturation: 0.88         # the contrast stretch raises chroma; this keeps skin where the camera had it
+      skin_hue: 42.0           # Oklab hue of Robert's skin in two photos he likes (walmart-agents, 2026-10-29)
+      skin_chroma: 0.058       # Oklab chroma, same photos (soft daylight 0.043-0.057, sun 0.067-0.082)
+      skin_hue_tol: 3.0        # the check passes within this many degrees...
+      skin_chroma_tol: 0.01    # ...and this much chroma
+      skin_window: [37.0, 26.0]  # the skin LUT acts on Oklab hues centre +- half-width (camera skin: ~36)
+      skin_hue_to: 45.0        # the hue the LUT pulls toward: past skin_hue, since the pull stops short
+      skin_hue_pull: 0.8       # share of the way to skin_hue_to at the window centre
+      skin_chroma_mul: 0.78    # chroma multiplier at the window centre
+      skin_lift: 0.04          # Oklab L added at the window centre (his photos read brighter than the office)
+      skin_neutral: [0.015, 0.035]    # Oklab chroma ramp: below 0.015 untouched (wall, shirt), full from 0.035
+      skin_saturated: [0.14, 0.20]    # ...full up to 0.14, untouched from 0.20 (the red shirt logo is ~0.22)
+      skin_shadow: [0.25, 0.40]       # Oklab L ramp: deep shadows (beard, hair) untouched
+      skin_mask: {min_l: 0.45, min_chroma: 0.025, hue: [10.0, 100.0]}  # skin pixels inside the face box
+      lut_size: 33
+      regions:                 # frame fractions [x0, x1, y0, y1], Robert's centred office framing (9:16)
+        face: [0.36, 0.56, 0.40, 0.48]
+        wall: [0.05, 0.20, 0.05, 0.20]
+        shirt: [0.40, 0.60, 0.62, 0.70]
+    reframe:                   # F5 framing (research §5: own smoothed crop; AutoFlip is unmaintained)
+      model: data/models/face_detection_yunet_2026may.onnx   # OpenCV zoo YuNet, MIT (external-facts §19)
+      model_url: https://media.githubusercontent.com/media/opencv/opencv_zoo/main/models/face_detection_yunet/face_detection_yunet_2026may.onnx
+      model_sha256: ebafce4e3c118d6554634be5c27ab333b4c047a9a8c3faf1d7cf93101c22f0f0
+      sample_fps: 5            # face detection rate on the masters
+      min_score: 0.7
+      eye_line: 0.36           # eyes this far down the crop (rule of thirds, a little headroom)
+      hair_above_face: 0.6     # the top of the head is this many face-heights above the detected face box (0.4 grazed his hair, ai-picks)
+      punch_in: 1.12           # consecutive jump cuts alternate 1.0 / this zoom (research: 1.12-1.20)
+      pip_face_scale: 2.6      # the bubble shows this many face-widths across
+      pip_size: {landscape: 340, vertical: 380}   # bubble diameter in output pixels
+      pip_margin: 24           # gap to the safe area's edge and above the caption band
+      pip_ring: 6              # ring width in px (brand `surface` colour)
+      split_face_offset: 190   # split layout: the face's centre sits this far below the product's bottom edge
+    pose:                      # the presenter's body points (ADR 0030): props that follow the hands, automail
+      model: data/models/pose_estimation_mediapipe_2023mar.onnx   # OpenCV zoo BlazePose, Apache-2.0 (external-facts §19)
+      model_url: https://media.githubusercontent.com/media/opencv/opencv_zoo/main/models/pose_estimation_mediapipe/pose_estimation_mediapipe_2023mar.onnx
+      model_sha256: 9d89c599319a18fb7d2e28451a883476164543182bafca5f09eb2cf767ed2f3f
+      sample_fps: 30           # every frame: a carried prop must not lag the hand (v22)
+      min_conf: 0.5
+      body_below_face: 3.2     # a seated body: its middle is about this many face-heights below the face
+      box_face_heights: 12.0   # one fixed square: head to feet and his arms reaching the floor (v22)
+      smooth: 3                # samples in the moving average after a median of 5: no jitter, no lag you see
+      hand_model: data/models/handpose_estimation_mediapipe_2023feb.onnx   # OpenCV zoo, Apache-2.0
+      hand_model_url: https://media.githubusercontent.com/media/opencv/opencv_zoo/main/models/handpose_estimation_mediapipe/handpose_estimation_mediapipe_2023feb.onnx
+      hand_model_sha256: db0898ae717b76b075d9bf563af315b29562e11f8df5027a1ef07b02bef6d81c
+      hand_scale: 4.0          # the hand crop: 4 wrist-to-knuckle lengths across (the fingers and some room)
+      hand_min_face: 1.5       # ... at least 1.5 face heights (a palm-up hand bunches the body's hand points: 60 px crops saw nothing)
+      hand_min_conf: 0.6
+    overlays:                  # graphics over the presenter (create overlay): placed where the face is not
+      margin: 28               # gap to the face, the safe area's edge and the caption band
+      max_width: 640           # widest card in px (vertical); landscape scales by width
+      gap: 0.25                # seconds between one overlay leaving and the next arriving in the same place
+    music:                     # plan music (tournament n06): Eleven Music bed, beats measured, hits snapped to them
+      model: music_v2_5
+      snap_s: 0.25
+      pulse_scale: 1.025
+    sfx:                       # soft UI sounds under the voice, synthesised by ffmpeg (create/footage/sfx.py)
+      level_db: -20            # under speech: felt more than heard
+      trim_db: {pop: 0, whoosh: -5, click: -3}
+      pop_offset_s: 0.05
+      whoosh_lead_s: 0.3
+      min_gap_s: 0.3
+    depth:                     # fx freeze (tournament n05): Depth Anything V2 Small (Apache-2.0), onnx-community rev 4472b736
+      model: depth-anything-v2-small.onnx
+      url: https://huggingface.co/onnx-community/depth-anything-v2-small/resolve/4472b7362082ad9968fee890ca0f1e5aca36b93d/onnx/model.onnx
+      sha256: afb6a5c28f3b6bf1618c6e43f02073ef9dfdc70e937502d51603e57b0a1df10c
+      side: 518
+      fps: 30
+      amp: 70
+      push: 0.12
+    surface:                   # fx wall (tournament n08): wood = this hue band, saturated, not black or blown
+      hue: [15, 40]
+      sat_min: 0.35
+      val: [0.25, 0.95]
+      rows: [0.3, 0.85]        # default band of the wood's height the words are painted in
+      card_aspect: 3.2         # the flat card (height / width): five stacked letters
+    matte:                     # create matte (ADR 0027): u2net_human_seg via HyperFrames, ~0.8 s/frame on the cloud CPU
+      pad_s: 0.3
+      device: auto             # CoreML on a Mac
+      quality: balanced
+      timeout_s: 3600
+    panel:                     # create panel (create/footage/panel.py, ADR 0034): bespoke panel over a reel render
+      jpeg_quality: 93         # acme-reel v2: no visible artefacts on flat UI at 93
+      crf: 14
+      composite_crf: 16
+      settle_ms: 800           # fonts and logos load before frame 0
+      review_sheets: 4         # images (a sheet or one still) the lab-reviewer gets per stills run; Claude usage
+      max_stills: 16           # per sheet (4 x 4 tiles of 360 px): more and the tiles are too small to judge
+      caption_clear_px: 140    # seam 980 -> an 840 px page; captions sit at ~858-964 (a close take's 880 -> 740)
+    reel:                      # create reel (create/footage/reel.py)
+      chest_chin_gap: 0.15       # ai-picks frames: chest cards at chin + margin sat on the beard once zoomed
+      fit_up: 3.0                # r13 review: card text still small at 2.4; r08: the code card read small at 1.6; r12 review: R2 and code text still small at 2.0
+      caption_plate:           # plan `caption_plate: true`: white plate, ink words, the spoken one in the accent
+        color: "#FFFFFF"       # Robert (seo-budget): "white background with a colour, hard to read" on a paper pill
+        alpha: 0.97
+        size_px: 60
+        pad_y: 14
+        pad_x: 30
+        radius_px: 40
+        max_width_px: 760      # one line for a group (<= ~20 characters); wider groups wrap
+        shadow: "0 2px 3px rgba(5,20,40,.16), 0 8px 22px rgba(5,20,40,.28), 0 0 0 2px rgba(5,20,40,.06)"
+      caption_dim: 0.75        # reviews: words not yet spoken read too faint at 0.35, still faint at 0.6
+      # Motion styles (ADR 0033): a plan picks one per video (`motion: {style: paper}`, say why in `# look:`) and
+      # may override any part. Entrances per kind of widget (cards, stickers, numbers), the hand-over between
+      # product cards, a shared step label, the background, the push-in across cuts. No `motion:` = classic.
+      handover_s: 0.55           # exports/motion-tokens.json: card moves low 507 ms, mask reveals median 575 ms
+      kicker_h: 104              # a shared step label (46 px label, 44 px pill, 32 px gap) above a run of cards
+      snap_cuts_s: 0.3           # a word that starts this soon after a cut: its card enters on the cut
+      bg_drift_s: 18.0           # one loop of the drifting background: slower than any card, never a beat
+      cut_nudge_px: 14           # the background shifts this much on a cut (the dots, the drifting shapes)
+      styles:
+        classic:                 # the first take's motion (ADR 0026): client brands, old plans
+          {cards: rise, stickers: pop, numbers: pop, handover: cut, bg: none, kicker: each,
+           push_alternate: false, cut_nudge: false, snap_cuts: false,
+           note: "Acme and every plan without motion:; cards leave before the next lands"}
+        paper:                   # acme's calm default: one paper surface becomes each card
+          {cards: rise, stickers: pop, numbers: pop, handover: morph, bg: drift, kicker: run,
+           push_alternate: true, cut_nudge: true, snap_cuts: true,
+           note: "how-tos and tool tips on the paper product area; the card is the same sheet all along"}
+        editorial:               # lists, steps, numbers: a deck that scrolls, edges that wipe
+          {cards: wipe, stickers: slide, numbers: unfold, handover: push, bg: none, kicker: run,
+           push_alternate: true, cut_nudge: true, snap_cuts: true,
+           note: "ranked lists, comparisons, before/after, anything read top to bottom"}
+        playful:                 # jokes, wins, mascots: cards pile up and spring
+          {cards: pop, stickers: pop, numbers: pop, handover: stack, bg: drift, kicker: run,
+           push_alternate: false, cut_nudge: true, snap_cuts: true,
+           note: "gags, reactions, a win; pairs with props and pixel art"}
+        terminal:                # code, retro, Claude Code: stepped, hard-edged
+          {cards: pixel, stickers: pixel, numbers: pixel, handover: cut, bg: none, kicker: run,
+           push_alternate: false, cut_nudge: true, snap_cuts: true,
+           note: "code and command-line topics; pairs with pixel sprites and the code widget"}
+      punch_scale: 1.1
+      frame_format: jpg        # camera footage: 358 s vs ~850 s with png on an 81 s take, PSNR 43.7 dB (invisible)
+      overlay_aspect: {chat: 0.75, search: 0.55, sources: 0.85, review: 0.7, counter: 0.55, chart: 0.8,
+                       queries: 0.6, tiles: 0.45, cta: 0.45, sticker: 0.22, pins: 0.6, logo: 0.4,
+                       shredder: 0.95, code: 0.6, bucket: 0.8, agents: 0.9, pixel: 1.1}
+      check:                   # create reel --check (docs/learnings/presenter-reels.md: what reviews kept finding)
+        max_beat_gap_s: 6.0
+        max_static_s: 5.0
+        max_product_empty_s: 0.6
+        max_sticker_chars: 28
+        min_card_text_px: 36     # reviews: 18-22 px secondary text was unreadable on a phone; Robert (seo-budget): cards >= 36 px
+        edge_tol_px: 12
+      props:                   # characters in the room (ADR 0027); anchors: (dx face widths, dy face heights)
+        anchors: {lap: [0.15, 2.45], left: [-1.9, 2.2], right: [1.9, 2.2], shoulder_left: [-1.35, 1.55],
+                  shoulder_right: [1.35, 1.55], floor_left: [-2.0, 5.4], floor_right: [2.0, 5.4],
+                  above: [0.0, -1.0], centre: [0.0, 1.8]}
+        pixel_cells: 28
+        move_s: 0.7
+        exit_s: 0.9
+        path_leg_s: 1.1
+        # animation lab (docs/learnings/animation-lab.md): speeds from the cycles, so feet do not slide
+        speeds: {walk: 1.1, run: 3.4, hop: 1.5, boat: 1.4, swim: 2.2, slide: 2.0, jump: 2.6}
+        max_travel_s: 3.0
+        peek_share: 0.5         # a prop behind the presenter is raised until this share shows (v15)
+        min_travel_s: 0.35      # no move is quicker than this (a snap reads as a cut)
+        jump_rise: 0.5          # walkers move up or down more than half their height by jumping (v08)
+        approach: [0.45, 0.2]   # a carrier stops beside its prey, not on it (v03)
+        carry_max: 0.55         # a carried prop at most this share of the carrier (v07, v08)
+        tag_s: 1.5              # name tags (v03: longer ones drifted over other faces)
+        tag_cut_least_s: 0.5    # ...and ends at the next cut once up this long (r09: stranded across a reframe)
+        flee_gap: 0.3           # follow: flee runs this many of its widths ahead of the leading hand (r11)
+        flee_chase_s: 1.5       # ...for this long from its beat, then its exit runs it off
+        flee_bolt: 0.25         # ...bolting at this share of its run speed on its own; the hand pushes it faster
+        min_exit_s: 0.3         # an exit with less time than this reads as a glitch: the prop stays (v04)
+        lead_s: 0.07
+        safe_bottom: 1480       # TikTok's description and buttons start near y 1500 on a 1920 frame (v02)
+        safe_right: 888         # TikTok's action rail (likes, comments) is right of this x below y 840 (frames.vertical.safe)
+        tag_side_above: 760     # frame y: a prop whose top is above this gets its name tag beside its head (captions, r05)
+        gag_scale: 1.5          # gag items drawn this much bigger than Fred's own pixel size (r04: 60-100 px read as specks)
+        min_visible: 0.6
+    edit_page:                 # create edits --page: Robert's own crops, zoom changes and notes per shot
+      still_width: 480         # one master frame per shot, this wide (JPEG), to place the crop box on
+      still_quality: 6         # ffmpeg -q:v (2 best .. 31 worst)
+      video_height: 640        # the watched render, shrunk to this height and embedded (the page has no network)
+      video_crf: 32
+      audio_kbps: 48
+      max_mb: 15.0             # an Artifact page holds 16 MB: past this the video is left out (shots still work)
+      zoom_step: 0.05          # one tap on Tighter / Wider
+      max_zoom: 2.0            # a 4K master stays sharp to about 2x on a 1080 x 1920 frame
+      nudge: 0.03              # one tap on an arrow moves the crop this share of its size
+    scene_target_s: 8.0        # presenter timeline: scenes split at sentence ends near this length
+  timing:
+    fps: 30
+    pre_roll_s: 1.0            # music starts before the first word (the built-for-the-video prototype)
+    scene_tail_s: 0.5          # real silence after each scene (ADR 0018; 0.5 for a faster cut, ADR 0020)
+    close_tail_s: 3.5          # the music resolves after the last word
+  design:                      # C3 tokens (WCAG 2.1 AA; handoff 7.4: precompute contrast, check glyphs)
+    contrast_normal: 4.5
+    contrast_large: 3.0
+    large_text_px: 24          # WCAG large text: 18 pt regular ...
+    large_bold_px: 18.66       # ... or 14 pt bold
+    frames:                    # per output frame; rectangles are pixels {x0, y0, x1, y1} on that frame
+      landscape:
+        width: 1920
+        height: 1080
+        min_text_px: 24        # brand hand-off DESIGN.md §4: minimum video text size
+        safe: [{x0: 77, y0: 43, x1: 1843, y1: 1037}]   # 4% margin (Acme v2 edge audit)
+        caption_band: {x0: 0, y0: 896, x1: 1920, y1: 1080}  # handoff v1: bottom 17% reserved for captions
+        source: "handoff v1 rules; docs/learnings/readme.md (edge audit)"
+      vertical:
+        width: 1080
+        height: 1920
+        min_text_px: 44        # phone viewing: labels >= 44 px (no official spec; research §4.6)
+        safe:                  # TikTok + Reels + Shorts intersection (research §1.2, external-facts §17)
+          - {x0: 120, y0: 288, x1: 780, y1: 1248}      # core: clear on all three platforms
+          - {x0: 120, y0: 288, x1: 888, y1: 840}       # upper extension, above TikTok's action rail
+        # burned-in captions, above the description; centred on the frame (x 540) so they read as centred,
+        # and inside the core's right edge (780: TikTok's action rail below y 840)
+        caption_band: {x0: 300, y0: 1050, x1: 780, y1: 1240}  # chest height: below the face (Robert, 2026-10-09)
+        cover_safe: {x0: 120, y0: 420, x1: 960, y1: 1500}  # research §1.2: Instagram 1:1, 4:5 and TikTok grid crops
+        caption_top: {x0: 192, y0: 300, x1: 888, y1: 500}  # above the head, under the top tabs (Robert: not on chest or face)
+        source: "docs/research/vertical-footage-brands.md §1.2 (measured official overlays, 2026-10-09)"
+    destination_frames:        # which frame each destination is built for
+      linkedin: landscape
+      youtube: landscape
+      tiktok: vertical
+      instagram_reels: vertical
+      youtube_shorts: vertical
+    captions:                  # C11 caption groups per frame (Acme v2: 65 groups of 2-6 words; research §2.2)
+      landscape: {max_words: 6, max_chars: 32, lead_s: 0.08, hold_s: 0.3, seam_s: 0.02, gap_split_s: 0.6}
+      vertical: {max_words: 4, max_chars: 20, lead_s: 0.05, hold_s: 0.2, seam_s: 0.02, gap_split_s: 0.5}
+    caption_seam_gap_px: 16    # split scenes: captions sit on the product's bottom margin, this far above its edge
+    caption_face_gap: 0.35     # presenter videos: captions start at least this many face-heights below the chin
+    caption_function_words:    # a group should not end on one ("GO ON TO" -> "GO ON TO CHATGPT"); quoted: YAML reads on as true
+      en: ["a", "an", "the", "to", "of", "on", "in", "at", "for", "with", "and", "or", "but", "your", "my", "our", "their", "is", "are", "was", "be", "that", "this", "from", "by", "as", "if"]
+      ro: ["un", "o", "la", "de", "pe", "în", "in", "cu", "și", "si", "sau", "dar", "că", "ca", "din", "pentru", "mai", "al", "a", "ai", "ale", "este", "e"]
+    audit_step_s: 0.2          # safe-zone audit: sample every scene this often
+    audit_tolerance_px: 2      # overflow allowed before a box counts as outside the safe area
+    audit_min_opacity: 0.1     # boxes fainter than this are not checked
+    audit_min_hold_s: 0.4      # shorter problems are motion entering or leaving, not a layout issue
+    required_glyphs: "≈✓→%“”‘’"  # v1 had to draw ≈ and ✓ as SVG (handoff 5.8)
+    google_fonts_css: https://fonts.googleapis.com/css2
+    accent_tint_alpha: 0.08    # default accent tint (chips, highlights) when a brand video.yaml sets none
+  script:                      # C2 style guard (handoff 5.2, 7.10): describe what happens, plainly
+    max_tags_per_scene: 2
+    planning_wpm: 150          # Hope's measured pace (ADR 0020) for the length check before voicing
+    banned:
+      - {pattern: "—", reason: "no em dash in copy (brand DESIGN.md §6)"}
+      - {pattern: "\\bnot (just|only|merely)\\b[^.?!]*\\bbut\\b", reason: "'not X, but Y' antithesis"}
+      - {pattern: "\\b(is|are)n't just\\b", reason: "'isn't just' antithesis"}
+      - {pattern: "\\bthat's a [a-z]+, not an? [a-z]+", reason: "punchline pair (v1 rejected line)"}
+      - {pattern: "\\b(game[- ]?changer|revolutioni[sz]e|unlock the power|supercharge|seamless(ly)?|cutting[- ]edge|next[- ]level)\\b", reason: "slogan word"}
+      - {pattern: "\\bin today's\\b", reason: "stock opener"}
+  qa:                          # C13 checks on a finished vertical video (create qa); research §1-2
+    max_duration_s: 180        # every TikTok creator can post 3 min (developers.tiktok.com, 2026-08)
+    first_word_max_s: 1.0      # no dead air before the hook
+    first_visual_max_s: 3.0    # TikTok: "introduce your proposition in the first 3 seconds"
+    max_static_s: 6.0          # longest stretch with no cut, punch-in, layout change or graphic (research §2.2)
+    max_word_gap_s: 0.8        # longest silence between two kept words
+    max_tail_s: 1.5            # last word to the end
+    true_peak_max_db: -1.0
+  lab:                         # create lab (ADR 0029): stand-in reels for learning animation
+    pre_s: 0.4
+    tail_s: 2.4                # after the last word: a payoff (grab, run-off, fade) needs ~2 s (v20)
+    fps: 30
+    breathe: [1.014, 0.006, 3.7]  # plate zoom base, amplitude, period s; never below 1 (v06 green edges)
+    punch: 1.15                # cut_at: the punch-in after the jump cut
+    brand_project: acme-v2  # tokens and provenance for lab projects
+    study_rows: 6              # motion-strip rows per study page: readable at a glance
+    review_images: 6           # Claude usage: images the lab-reviewer reads per version (strips + sheet)
+  render:                      # P3/P4: HyperFrames via npx (Apache-2.0); telemetry disabled before use
+    hyperframes_version: 0.8.137
+    sketch_before_end_s: 0.15  # sketch = each scene's settled final frame
+    sketch_columns: 3
+    timeout_s: 1800             # a 90 s vertical burn takes ~6 min in the cloud sandbox
+  motion:                      # ADR 0032: Claude directs the motion (c8_motion) inside our learnings
+    patterns: [match_cut_element, layout_reframe, ui_camera_push_in, scale_dissolve_transition,
+               kinetic_word_reveal, prompt_type_on, ai_answer_stream, stagger_list_reveal, chip_append,
+               spotlight_focus, logo_resolve]   # the recipe menu in direction.md (exports/patterns.json ids)
+    pattern_steps: 4           # steps quoted per recipe
+    design_sections: ["2.", "3.", "4.", "5.", "6."]  # DESIGN.md sections copied verbatim into direction.md
+    rules:                     # learned rules every build must satisfy; grade checks those code can measure
+      - rule: Every handover carries one persistent element (a card, a row, a chip) that changes shape into
+          the next scene's layout. No hard cut, no fade to blank, no crossfade ghosting.
+        source: demo15 and demo25 comparisons (2026-10-17)
+      - rule: Nothing covers live text mid-transition; retire or move text out of the carrier's path first.
+        source: demo15 round 1 (the growing card covered the headline)
+      - rule: On-screen headlines never overlap the logo or the product UI; give each its own zone.
+        source: demo25 blind review (C at 8.4 s)
+      - rule: No empty container on screen for 0.8 s or more; content arrives as (or before) its card settles.
+        source: handoff v1 section 6; lens dead holds
+      - rule: Something new happens at least every shot median, and the frame never idles past the shot high.
+        source: exports/pacing.json; demo25 (all builds idle in the first 6 s)
+      - rule: Every reveal lands on the word that names it; cue to the word clock, never guess times.
+        source: CLAUDE.md; handoff v1 section 5.3
+      - rule: Fill the frame at video scale; text at the brand's video sizes and never under the frame's
+          minimum text size.
+        source: DESIGN.md sections 3-4; demo15 and demo25 (text read small)
+      - rule: Brand rules beat taste; no gradients, glows, glass or underline accents; one accent moment per
+          frame (the orange logo counts as half).
+        source: DESIGN.md sections 2 and 6; demo15 and demo25 (freehand builds broke them)
+      - rule: SFX are tied to reveals at the measured offsets, a handful per scene, never one per tween.
+        source: handoff v1 section 5.9; exports/sound-spec.json
+      - rule: Ids start with a letter; no opacity dims on text (contrast risk).
+        source: handoff v1 sections 5.6-5.7
+      - rule: Numbers on screen settle on their final value as their word is spoken, and every example
+          number carries the brand's example-data label.
+        source: demo15 and demo25 (37% shown for 38%)
+      - rule: The logo appears whole, in a zone of its own, or not at all until the close; never a clipped
+          sliver at a frame edge or under a headline.
+        source: demo25 acceptance review (2026-10-17)
+      - rule: The main card of a scene spans at least half the frame width; an empty frame around a small
+          card reads as unfinished.
+        source: demo15, demo25 and the demo25 acceptance review
+      - rule: Hold the final frame (logo and url) still for at least the final hold.
+        source: brief
+      - rule: At every handover the outgoing element is still moving when the next scene starts and the
+          incoming one arrives already in motion; the frame never comes to rest between two scenes.
+        source: launch-video-kit continuity rule (docs/learnings/launch-video-kit.md); grade checks it
+      - rule: Show both ends of the size range at least once each; a close-up (one UI element, a typed
+          prompt or a number filling most of the frame) and a wide view of the whole product. Push into
+          the part the voice names, never the whole app at thumbnail size.
+        source: launch-video-kit lessons; demo15 and demo25 (text read small)
+      - rule: Mix at least three ease families from section 4; overshoot (back.out) only on small pops such
+          as chips, icons and avatars, never on the camera, a card, a text block or data.
+        source: exports/motion-tokens.json and patterns.json; launch-video-kit ease tokens; grade checks it
+    final_hold_s: 1.0          # the last frame holds still at least this long
+    sfx: [click-soft, click, pop, whoosh-short, whoosh, whoosh-cinematic, chime, ping, sparkle, typing,
+          key-press, riser, impact-bass-1, impact-bass-2, notification]  # hyperframes' bundled Pixabay set
+    sfx_gain_db: [-18.0, 0.0]  # allowed gain per cue (the voice sits on top)
+    build:
+      grades: 2                # create grade runs per build (each renders the film)
+      snapshot_frames: 6       # frames the builder may look at in total (Claude usage)
+    grade:
+      max_move_s: 1.2          # a move longer than this needs a reason (measured highs ~0.8-1.2 s)
+      ambient_min_s: 3.0       # tweens this long are ambient drift, not moves
+      min_blur_px: 3           # filter: blur() at or above this is decoration (DESIGN.md: no glows)
+      sample_step_s: 0.25      # DOM samples for text size, accent moments and overlaps
+      max_accent_moments: 1.5  # per frame; the orange logo counts as 0.5 (DESIGN.md section 2)
+      overlap_min_px: 4        # two visible text boxes (or text and logo) overlapping by more than this each way
+      persist_s: 0.5           # a DOM finding counts when it lasts this long (an entrance or fly-through does not)
+      min_visible_opacity: 0.5 # text fainter than this is mid-fade, not read
+      logo_at_close: true      # the last persist_s must show a logo nothing covers (end card)
+      tint_tokens: [accent, second, success, error]  # colours that may appear as light tints (DESIGN.md 4/8/10%)
+      tint_max_alpha: 0.2      # a tint is that colour at up to this opacity over white or the canvas
+      tint_tolerance: 3        # 0-255 per channel
+      tint_alpha_spread: 0.04
+      # ease mix (exports/motion-tokens.json: 5 easing classes, overshoot on ~14% of moves; patterns.json:
+      # back.out only for small accent pops). launch-video-kit (docs/learnings/launch-video-kit.md) asks for
+      # at least 3 eases per film; it bans overshoot outright, which our corpus contradicts.
+      min_ease_families: 3
+      ease_min_moves: 8
+      overshoot_factor: 2.0
+      overshoot_max_area: 0.05 # about a 450 px square on a 1080p frame: chips, icons, avatars
+      # continuity at handovers (launch-video-kit): from one scene's last word to seam_s after the next
+      # scene's first word the frame keeps moving
+      seam_s: 0.3
+      seam_rest_s: 0.3
+  mix:                         # c12_mix: voice + music bed + the build's SFX (ffmpeg)
+    bed_db: -17.0              # the bed under the narration before ducking (Acme preview: -15.4 LUFS mix)
+    duck: "threshold=0.03:ratio=4:attack=20:release=300"   # sidechaincompress keyed on the voice
+    bed_fade_s: 0.6
+    lra: 7
+    true_peak_margin_db: 0.5   # under the destination's ceiling, room for the AAC encode
+    audio_kbps: 192
+    sfx_pan_width: 0.6         # cues with an x pan with the reveal (launch-video-kit: pan = (2x - 1) * 0.6)
+  music:                       # c10_music: a bed built for the video (Eleven Music, phase2-plan section 7)
+    model_id: music_v2_5
+    output_format: mp3_44100_128
+    min_chunk_ms: 3000         # API limits (external-facts 10g)
+    max_chunk_ms: 120000
+    dropout_db: -45.0          # a second quieter than this before the bed's end is a dropout (C10 QA)
+    ending_s: 1.5              # the last seconds may ring out
+    credits_per_s: 12.5        # for --dry-run estimates (external-facts 10g: 100 s on music_v2_5 = 1,250)
+    positive_styles: [playful funk-pop groove, 120 BPM, major key, bouncy bass guitar, muted funk guitar,
+                      plucky marimba and mallet patterns, warm synth pads, light hand claps and finger snaps,
+                      syncopated groove, no lead melody, instrumental, quirky but confident,
+                      sits under a fast voiceover]
+    negative_styles: [four on the floor kick, house, techno, edm drops, corporate stock music, elevator music,
+                      ukulele, bright synth lead, vocals, choir, whistling]
+    sections:                  # per scene, by position: first, middle (repeats), last
+      first: "[Intro]\n{plucky mallet notes and finger snaps, soft bass}"
+      middle: "[Groove]\n{the funky groove kicks in on the downbeat, bouncy bass, muted guitar, light drums}"
+      last: "[Lift and resolve]\n{fuller with warm pads, then resolves cleanly on a final chord that rings out}"

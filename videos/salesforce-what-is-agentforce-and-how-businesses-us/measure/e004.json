@@ -1,0 +1,128 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "s7_measure",
+    "annotator": "code",
+    "skill": null,
+    "model": null,
+    "input_hash": "39775af0d7fc8297cc06fe3e96e218eab9232e4b71e4ead67b81f32eda00ec6e",
+    "created_at": "2026-10-05T09:58:50.314444Z"
+  },
+  "video": "salesforce-what-is-agentforce-and-how-businesses-us",
+  "event": "e004",
+  "fps": 23.81,
+  "elements": [
+    {
+      "box": "b01",
+      "xyxy": [
+        120,
+        180,
+        1280,
+        548
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.056,
+      "channels": [],
+      "timing": null,
+      "stagger": null,
+      "sfx_offset_ms": {},
+      "source": "model_estimate",
+      "quality": 0.0
+    },
+    {
+      "box": "b02",
+      "xyxy": [
+        211,
+        372,
+        1068,
+        510
+      ],
+      "method": "ncc",
+      "mean_confidence": 0.724,
+      "channels": [
+        {
+          "name": "y",
+          "start_f": 220,
+          "end_f": 220,
+          "start_value": 435.5,
+          "end_value": 441.0,
+          "observed_start": false,
+          "cls": "spring",
+          "gsap": {
+            "ease": "back.inOut(1.2)",
+            "duration_ms": 92.4,
+            "rmse": 0.0
+          },
+          "bezier": "cubic-bezier(0.117, -0.078, 0.503, 1.225)",
+          "bezier_rmse": 0.0,
+          "spring": {
+            "zeta": 0.2057,
+            "omega0": 196.133,
+            "settle_ms": 88.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 38468.053,
+              "damping": 80.708
+            },
+            "remotion_exact": true,
+            "rmse": 0.0
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 88.0,
+          "fit_quality": 1.0
+        },
+        {
+          "name": "opacity",
+          "start_f": 204,
+          "end_f": 220,
+          "start_value": 0.0,
+          "end_value": 1.0,
+          "observed_start": true,
+          "cls": "ease_out",
+          "gsap": {
+            "ease": "power3.out",
+            "duration_ms": 864.5,
+            "rmse": 0.05191
+          },
+          "bezier": "cubic-bezier(0.518, 1.471, 0.517, 0.607)",
+          "bezier_rmse": 0.01628,
+          "spring": {
+            "zeta": 1.3716,
+            "omega0": 14.194,
+            "settle_ms": 671.0,
+            "remotion": {
+              "mass": 1.0,
+              "stiffness": 201.469,
+              "damping": 38.937
+            },
+            "remotion_exact": false,
+            "rmse": 0.04052
+          },
+          "overshoot_pct": 0.0,
+          "duration_ms": 706.3,
+          "fit_quality": 0.9973
+        }
+      ],
+      "timing": {
+        "ease": "none",
+        "start_s": 8.4408,
+        "duration_ms": 882.0,
+        "rmse": 0.29904
+      },
+      "stagger": {
+        "unit": "all",
+        "stagger_ms": 0.0,
+        "reveal_frames": [
+          207,
+          206,
+          206
+        ]
+      },
+      "sfx_offset_ms": {},
+      "source": "measured",
+      "quality": 1.0
+    }
+  ],
+  "failed": {}
+}

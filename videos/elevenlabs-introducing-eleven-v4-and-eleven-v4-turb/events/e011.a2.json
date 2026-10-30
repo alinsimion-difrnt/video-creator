@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "c89ae255d5b1fe6f1d04da7a1a4d0931d21d3a77289ba164df92e7cebd7f5f2c",
+    "created_at": "2026-10-05T06:44:59.095515Z"
+  },
+  "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+  "event": "e011",
+  "task": "a2-e011",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Gradient lens (intersection of two circles)",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["rotate", "scale_down", "morph", "color_shift"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 750, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Two overlapping outline circles with soft halo",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["rotate", "scale_down", "fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 750, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "venn overlap converge",
+    "description": "A gradient-filled lens formed by the overlap of two outline circles starts zoomed in and tilted, rotates upright and pulls back while the two circles slide toward each other so the overlap widens into a near-round orb; a soft halo blooms around it at the end.",
+    "why_premium": "The geometry itself carries the message: two voices converging until their overlap is almost whole visualises 'better speaker similarity' with no text, and the rotate-plus-pullback reads as one fluid camera-like gesture."
+  },
+  "build_hint": {
+    "gsap": "Clip a gradient layer to the intersection of two SVG circles; tl.fromTo('.venn', {rotation:-50, scale:2.2}, {rotation:0, scale:1, duration:0.75, ease:'power2.inOut'}).fromTo('#circleA', {attr:{cx:-60}}, {attr:{cx:-10}, duration:0.75, ease:'power2.inOut'}, '<').fromTo('#circleB', {attr:{cx:60}}, {attr:{cx:10}, duration:0.75, ease:'power2.inOut'}, '<').fromTo('.halo', {autoAlpha:0}, {autoAlpha:1, duration:0.2, ease:'power1.out'}, '>-0.05')",
+    "remotion": "progress = interpolate(frame,[0,22],[0,1],{easing:Easing.inOut(Easing.cubic)}); group rotate = -50 + 50*progress deg, scale = 2.2 - 1.2*progress; circle centre offset 60 to 10 px drives the clipPath intersection; halo opacity interpolate over the last 6 frames."
+  },
+  "confidence": "medium",
+  "notes": "Camera verdict none; the rotation and pull-back are on the graphic group. Whether the circles converge or only the group rescales is hard to separate from 7 frames; the lens visibly widens relative to its height, suggesting convergence. Energy rises again at the last frame as the halo appears. No SFX candidates."
+}

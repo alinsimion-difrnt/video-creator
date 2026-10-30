@@ -1,0 +1,178 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "fbb3947e540f18624f2dd2970b580d8ee234d4cb24ba3a860e80d4f973415d43",
+    "created_at": "2026-10-05T06:26:51.913223Z"
+  },
+  "video": "miro-miro-slides-collaborative-presentation",
+  "task": "a1-p2",
+  "shots": [
+    {
+      "shot": "s006",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "split",
+      "composition_other": null,
+      "focal_element": "Icebreaker slide in Miro presentation mode: headline left, 5x3 grid of name cards right, with multiplayer cursors flipping cards",
+      "transition_in": "slide",
+      "transition_other": null,
+      "on_screen_text": [
+        "On the agenda:",
+        "Icebreaker",
+        "How are users feeling?",
+        "Ideas ideas ideas",
+        "Our next moves",
+        "Icebreaker",
+        "2 Truths & 1 Lie",
+        "Write three statements and let your team guess which ones are true and which one is a lie.",
+        "Timer",
+        "Dot votes",
+        "Here we go...",
+        "Adria Weinert",
+        "Sofia Moreno",
+        "Matteo Rossi",
+        "Aaliyah Bennet",
+        "Ethan Carter",
+        "I was born at 12.01 AM on Jan 1st",
+        "I won the lottery",
+        "I've lived on 4 continents",
+        "05:00",
+        "Frame 3/6",
+        "Stop"
+      ],
+      "text_word_count": 76,
+      "typography": "Large tight-tracked bold grotesk headline in sentence case ('Icebreaker', 'On the agenda:'), regular-weight grotesk subhead and two-line body copy, small medium-weight UI labels on cards and the bottom presenter toolbar; font guess (low confidence) Miro's in-house grotesk.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Opens on the agenda slide (Frame 2/6, phone mockup, like and heart reactions pop on), then slides horizontally to the Icebreaker slide (Frame 3/6) around 26.0s; named collaborator cursors (Billy, Adria, Sofia, Matteo, Aaliyah, Ethan) move across the grid, the spinner wheel spins and greys out, the timer starts counting down from 05:00 and cards flip to reveal statements, while VO says 'engaging sessions where you actually get and keep their attention. So, no more awkward pauses' (w47-w61).",
+      "build_rebuild": "Build two 16:9 slide frames on a mint background, slide-transition from agenda to a split layout with a left headline block and a right 5x3 card grid, then animate 5 coloured named cursor pills along paths while 3 cards flip (rotateY 180) to statement text and a timer pill counts down from 05:00.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s007",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "split",
+      "composition_other": null,
+      "focal_element": "'How are users feeling?' slide: four yellow sticky notes left, a mascot reaction sticker centre and an interview-tracker table right",
+      "transition_in": "push",
+      "transition_other": null,
+      "on_screen_text": [
+        "How are users feeling?",
+        "Top findings",
+        "They're still asking if wine counts as fruit",
+        "Nutritional info is hard to find",
+        "More community connection please!",
+        "Restaurant ordering experience is not great",
+        "Let's discuss",
+        "+2",
+        "Frame 4/6",
+        "Stop"
+      ],
+      "text_word_count": 36,
+      "typography": "Bold grotesk sentence-case headline with a regular-weight subhead, regular sticky-note body text, and tiny table cells (names, roles, dates, Done/Planned status chips) that are too small to read in full.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "The Icebreaker slide is pushed off left as the next slide arrives letterboxed in black bars (Frame 4/6); cursors hover over stickies and the table, a waving purple mascot 'Let's discuss' sticker gains a vote count (+1 to +3), and confetti or reaction sparkles burst near the stickies, as VO says 'no more one-way monologues, no frantic moment' (w62-w69).",
+      "build_rebuild": "Push the previous slide out left and the new slide in from the right inside a letterboxed 16:9 frame, then pop a mascot sticker with an incrementing count badge and fire a small particle burst near the sticky-note grid while cursor pills drift.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s008",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "stacked",
+      "composition_other": null,
+      "focal_element": "Huge all-caps headline 'HOW DO WE MAKE IT HAPPEN?'",
+      "transition_in": "push",
+      "transition_other": null,
+      "on_screen_text": [
+        "Collaboration",
+        "HOW DO WE MAKE IT HAPPEN?",
+        "There are no bad ideas!",
+        "Frame 5/6",
+        "Stop"
+      ],
+      "text_word_count": 15,
+      "typography": "Very large heavy condensed grotesk in all caps with tight tracking and leading for the headline; a small rounded pill tag 'Collaboration' in regular weight; a regular sentence-case grotesk line beneath.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "A short 0.87s beat: the bold-type slide pushes in from the right over the table slide (the black letterbox recedes at the left edge) as the presenter clicks the next arrow; all six cursor pills cluster under the headline while VO says 'of having to switch' (w70-w73).",
+      "build_rebuild": "Horizontally push a full-bleed mint slide with a pill tag, a two-line all-caps display headline and a one-line subhead into frame over about 0.5s, keeping six labelled cursor pills drifting over it.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s009",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "full_bleed",
+      "composition_other": null,
+      "focal_element": "Miro board canvas with a 2x2 pain/importance matrix ('How do we get there?') and sticky notes beside it",
+      "transition_in": "other",
+      "transition_other": "camera pull-out: the slide frame zooms out to reveal it sits on the infinite Miro board alongside the other slide frames",
+      "on_screen_text": [
+        "How do we get there?",
+        "High pain",
+        "Low pain",
+        "Low importance",
+        "High importance",
+        "Solve here first",
+        "Alignment scale on the top pain",
+        "Strongly disagree",
+        "Brainstorm id",
+        "Upgraded search functionality",
+        "Ability to download content",
+        "TEAM WORKSHOP",
+        "Recap",
+        "Frame 5/6",
+        "Stop"
+      ],
+      "text_word_count": 39,
+      "typography": "Bold dark-green sentence-case grotesk section headings on the board ('How do we get there?'), tiny regular axis labels, an italic small label 'Solve here first', and small handwritten-style sticky-note text; some labels are cropped at the frame edge.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "Starts with the slide frames laid out as overlapping cards on the board, the camera pans down to the prioritisation matrix where cursors drag sticky notes into quadrants, then pulls back up to the overview of all six slide frames and begins zooming into the Recap frame, as VO says 'tools to keep the energy flowing. Because the best presentations don't just show your work.' (w74-w88).",
+      "build_rebuild": "Render the six slide frames as cards on a dotted-grid canvas, animate a camera pan down to a 2x2 matrix section where labelled cursors drag stickies into quadrants, then pull back to the full layout and push in toward the Recap card.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s010",
+      "shot_type": "ui_full",
+      "shot_type_other": null,
+      "composition": "split",
+      "composition_other": null,
+      "focal_element": "'Generate summary' button on the Recap slide and the AI-written 'Team Workshop Summary' doc that streams in at right",
+      "transition_in": "other",
+      "transition_other": "zoom-in from the board overview into the Recap slide frame (continuation of the s009 camera move)",
+      "on_screen_text": [
+        "Recap",
+        "Generate summary",
+        "Generating",
+        "Team Workshop Summary",
+        "Miro AI",
+        "Generating...",
+        "Frame 6/6",
+        "Stop"
+      ],
+      "text_word_count": 13,
+      "typography": "Large bold sentence-case grotesk 'Recap' headline, medium-weight button label with a sparkle icon, and a doc panel with a bold centred title and small body text; the generated summary body text is too small to read.",
+      "depth_cues": [
+        "shadow",
+        "perspective_tilt"
+      ],
+      "what_happens": "Billy's cursor clicks 'Generate summary', the button switches to a spinner 'Generating' state, a doc panel slides in at right with skeleton bars and a 'Miro AI' tag while the title types on and sections stream in, the button reverts, then the camera tilts and pulls out so the doc and slide sit back on the board, as VO says 'They flow from it. Turns out talking with people works better' (w89-w99).",
+      "build_rebuild": "On a split slide, click a sparkle 'Generate summary' button that swaps to a spinner label, slide in a right-hand doc card with shimmering skeleton bars that resolve into a title and streamed bulleted sections, then pull the camera out with a slight 3D tilt of the doc card.",
+      "confidence": "medium"
+    }
+  ],
+  "summary": null
+}

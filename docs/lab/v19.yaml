@@ -1,0 +1,49 @@
+# v19 — candidate D: C plus a matching gag. When Fred goes pixel, the presenter goes blocky for the beat
+# (hearts and a hotbar), and back on "Fred". Question: does a matched transformation make the gag land harder?
+name: v19
+voice: iP95p4xoKVk53GoZ742B
+cut_at: "Claude"
+script: >-
+  This fish is AI. So is everything else in this video. He can be 3D, flat, or pixel art. I'll call him Fred.
+  Claude, give Fred a moustache and a top hat. Much better. My process doesn't cost an arm and a leg.
+  I write the jokes, Claude does the alchemy. And that's... wait. What is this cat? Cute.
+  I'll call her Pixie. Pixie, no!
+plan:
+  layout: [{word: 0, layout: full}]
+  punches: ["everything", "Fred"]
+  props:
+    - id: fred
+      art: fred
+      word: "fish"
+      until: "no"
+      at: lap
+      size: 0.2
+      style: photo
+      beats:
+        - {word: "3D", style: toon3d}
+        - {word: "flat", style: illustrated}
+        - {word: "pixel", style: pixel}
+        - {word: "Fred", style: illustrated, do: wave, tag: Fred}
+        - {word: "moustache", add: [moustache]}
+        - {word: "hat", add: [top_hat]}
+        - {word: "arm", add: [automail]}
+        - {word: "alchemy", do: clap}
+        - {word: "wait", do: look}
+    - id: pixie
+      art: cat
+      word: "cat"
+      until: "no"
+      at: floor_right
+      size: 0.3
+      enter: walk_right
+      exit: run_left
+      beats:
+        - {word: "Cute", do: look}
+        - {word: "Pixie", tag: Pixie}
+        - {word: "Pixie#2", move: lap}
+        - {word: "no", carry: fred}
+  fx:
+    - {word: "pixel", until: "call", kind: blocky, spec: {block: 22}}
+    - {word: "alchemy", kind: alchemy, spec: {at: fred}}
+    - {word: "no", kind: shake}
+    - {word: "no", kind: fade_black}

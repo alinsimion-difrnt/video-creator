@@ -1,0 +1,85 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "9b3f4e45611daa19bdc2601765bbfb6e7d4a47c2439181ffd08b1ec97f6501be",
+    "created_at": "2026-10-05T06:38:34.536892Z"
+  },
+  "video": "anthropic-introducing-claude-design-by-anthropic-l",
+  "event": "e007",
+  "task": "a2-e007",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Chat conversation column (tool rows: Read/Write, Plan, write_file, Progress 5/5, player.jsx, profile.jsx) scrolling up out of view",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 350, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b10",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Verifier tool row arriving at the top of the view",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Verifier",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 350, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Claude's answer starting to stream in",
+      "role": "body_text",
+      "role_other": null,
+      "change_types": ["fade", "typewriter"],
+      "change_other": null,
+      "is_text": true,
+      "text": "I've built a",
+      "text_unit": "word",
+      "estimates": {"duration_ms": 200, "easing_class": "step"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x022",
+      "verdict": "override",
+      "label": "music",
+      "note": "One of a regular series of broadband percussive hits (about 31.70, 31.88, 32.00, 32.27s) in the score, before the scroll starts; a beat, not a dedicated impact."
+    },
+    {
+      "id": "x023",
+      "verdict": "confirm",
+      "label": "music",
+      "note": "Rhythmic score texture after the scroll settles; no visual hit at that moment."
+    }
+  ],
+  "pattern": {
+    "id": "masked_scroll",
+    "proposed_name": null,
+    "description": "The chat transcript scrolls up quickly past the completed tool steps and the Progress 5/5 checklist, settling on the Verifier row as Claude's answer begins streaming below it.",
+    "why_premium": "Compresses a long agent run into one fast eased scroll: the viewer sees the stack of completed steps fly by, which reads as work done, and the motion lands exactly where the answer starts, so the next beat starts without a cut."
+  },
+  "build_hint": {
+    "gsap": "gsap.to('.chat-scroll', {y: -scrollDistance, duration: 0.35, ease: 'power2.inOut'}); then gsap.from('.answer .word', {opacity: 0, duration: 0.08, stagger: 0.06, ease: 'none'}) starting at the scroll end.",
+    "remotion": "translateY = -scrollDistance * interpolate(frame, [0, 9], [0, 1], {easing: Easing.inOut(Easing.quad), extrapolateRight: 'clamp'}); answer words revealed by index with Math.floor((frame - 9) / 1.5) for a word-by-word stream."
+  },
+  "confidence": "medium",
+  "notes": "Code reports camera.move tilt_down (whole frame shifts, pan_y -1.40), so this may be a camera tilt over a static long UI rather than an in-panel scroll; the visible result is the same. Several end-frame diff boxes (b03-b09, b11-b13) are blank areas where earlier rows used to be and are not listed."
+}

@@ -1,0 +1,2051 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "s9_synth",
+  "annotator": "code",
+  "skill": null,
+  "model": null,
+  "input_hash": "7a4a3de258d7b002574f3f9a20266de5a7ab1a8e688d3577527313566b4fce2e",
+  "created_at": "2026-10-05T19:10:02.072135Z"
+ },
+ "weighting": {
+  "tier": {
+   "reference": 1.0,
+   "average": 0.5,
+   "competitor": 0.5,
+   "own": 0.0
+  },
+  "score_from": "overall",
+  "score_missing": 0.6,
+  "quality": true
+ },
+ "patterns": [
+  {
+   "id": "cursor_guided_demo",
+   "events": 59,
+   "videos": 8,
+   "weight": 36.8,
+   "duration_ms": {
+    "n": 57,
+    "videos": 7,
+    "weight": 38.8352,
+    "median": 409.562,
+    "p25": 160.193,
+    "p75": 706.326,
+    "ci": [
+     226.951,
+     531.918
+    ]
+   },
+   "easing_mix": {
+    "ease_out": 0.2717,
+    "ease_in": 0.2517,
+    "ease_in_out": 0.2225,
+    "spring_overshoot": 0.1871,
+    "linear": 0.0669
+   },
+   "change_mix": {
+    "highlight": 0.2114,
+    "fade": 0.2069,
+    "color_shift": 0.1051,
+    "slide_down": 0.0973,
+    "slide_up": 0.0861,
+    "other": 0.0783,
+    "slide_right": 0.0615,
+    "pop": 0.047,
+    "slide_left": 0.0313,
+    "scale_down": 0.0257,
+    "morph": 0.0179,
+    "scale_up": 0.0123,
+    "mask_reveal": 0.0078,
+    "typewriter": 0.0045,
+    "count_up": 0.0034,
+    "rotate": 0.0034
+   },
+   "role_mix": {
+    "list_item": 0.2464,
+    "cursor": 0.1805,
+    "button": 0.1375,
+    "ui_panel": 0.0989,
+    "card": 0.0788,
+    "label": 0.0573,
+    "headline": 0.0401,
+    "body_text": 0.0372,
+    "icon": 0.0358,
+    "metric": 0.0258,
+    "other": 0.0215,
+    "background": 0.0115,
+    "avatar": 0.01,
+    "notification": 0.0086,
+    "logo": 0.0057,
+    "chart": 0.0043
+   },
+   "sfx_label_mix": {
+    "music": 0.5161,
+    "unsure": 0.2258,
+    "chime": 0.129,
+    "impact": 0.129
+   },
+   "sfx_offset_ms": {
+    "n": 23,
+    "videos": 5,
+    "weight": 17.6,
+    "median": 75.1,
+    "p25": -255.7,
+    "p75": 146.3,
+    "ci": [
+     -189.0,
+     138.286
+    ]
+   },
+   "examples": [
+    {
+     "video": "anthropic-introducing-claude-design-by-anthropic-l",
+     "event": "e010",
+     "score": 4.0
+    },
+    {
+     "video": "hubspot-what-is-hubspot",
+     "event": "e003",
+     "score": 4.0
+    },
+    {
+     "video": "loom-introducing-loom-ai",
+     "event": "e003",
+     "score": 4.0
+    },
+    {
+     "video": "notion-introducing-notion-ai-connectors",
+     "event": "e022",
+     "score": 4.0
+    },
+    {
+     "video": "notion-introducing-the-new-notion-ai",
+     "event": "e001",
+     "score": 4.0
+    }
+   ]
+  },
+  {
+   "id": "layout_reframe",
+   "events": 47,
+   "videos": 14,
+   "weight": 33.2,
+   "duration_ms": {
+    "n": 106,
+    "videos": 11,
+    "weight": 79.8286,
+    "median": 623.78,
+    "p25": 304.493,
+    "p75": 814.426,
+    "ci": [
+     477.208,
+     660.6
+    ]
+   },
+   "easing_mix": {
+    "ease_out": 0.4295,
+    "ease_in_out": 0.2698,
+    "linear": 0.1279,
+    "spring_overshoot": 0.0875,
+    "ease_in": 0.0853
+   },
+   "change_mix": {
+    "fade": 0.2695,
+    "slide_left": 0.1653,
+    "slide_down": 0.1035,
+    "scale_down": 0.0946,
+    "slide_up": 0.0834,
+    "scale_up": 0.0774,
+    "slide_right": 0.0603,
+    "color_shift": 0.032,
+    "other": 0.0253,
+    "morph": 0.0194,
+    "pop": 0.0186,
+    "highlight": 0.0149,
+    "mask_reveal": 0.0112,
+    "count_up": 0.0104,
+    "draw_on": 0.0067,
+    "typewriter": 0.0045,
+    "rotate": 0.003
+   },
+   "role_mix": {
+    "label": 0.1594,
+    "ui_panel": 0.1508,
+    "card": 0.1356,
+    "list_item": 0.1074,
+    "icon": 0.09,
+    "button": 0.0629,
+    "headline": 0.0564,
+    "chart": 0.0412,
+    "body_text": 0.0401,
+    "logo": 0.039,
+    "cursor": 0.0239,
+    "avatar": 0.0217,
+    "other": 0.0206,
+    "metric": 0.0206,
+    "background": 0.0163,
+    "notification": 0.0141
+   },
+   "sfx_label_mix": {
+    "music": 0.4432,
+    "swoosh_reverse": 0.2955,
+    "unsure": 0.1477,
+    "chime": 0.0682,
+    "click": 0.0455
+   },
+   "sfx_offset_ms": {
+    "n": 49,
+    "videos": 3,
+    "weight": 40.6,
+    "median": 120.2,
+    "p25": -228.0,
+    "p75": 245.2,
+    "ci": [
+     77.9,
+     162.031
+    ]
+   },
+   "examples": [
+    {
+     "video": "figma-introducing-figma-motion-your-canvas-no",
+     "event": "e002",
+     "score": 5.0
+    },
+    {
+     "video": "attio-introducing-ask-attio",
+     "event": "e001",
+     "score": 4.0
+    },
+    {
+     "video": "duolingo-introducing-duolingo-chess",
+     "event": "e004",
+     "score": 4.0
+    },
+    {
+     "video": "google-introducing-the-google-pixel-9-pro",
+     "event": "e001",
+     "score": 4.0
+    },
+    {
+     "video": "hubspot-what-is-hubspot",
+     "event": "e002",
+     "score": 4.0
+    }
+   ]
+  },
+  {
+   "id": "masked_scroll",
+   "events": 35,
+   "videos": 10,
+   "weight": 25.8,
+   "duration_ms": {
+    "n": 73,
+    "videos": 7,
+    "weight": 50.7336,
+    "median": 453.459,
+    "p25": 236.839,
+    "p75": 1089.741,
+    "ci": [
+     355.193,
+     666.7
+    ]
+   },
+   "easing_mix": {
+    "ease_out": 0.2876,
+    "ease_in_out": 0.2771,
+    "linear": 0.167,
+    "ease_in": 0.1512,
+    "spring_overshoot": 0.117
+   },
+   "change_mix": {
+    "slide_up": 0.5187,
+    "fade": 0.1544,
+    "slide_down": 0.1068,
+    "color_shift": 0.0644,
+    "mask_reveal": 0.0347,
+    "other": 0.0347,
+    "slide_left": 0.0219,
+    "rotate": 0.0193,
+    "highlight": 0.0142,
+    "morph": 0.0129,
+    "scale_up": 0.0064,
+    "weight_shift": 0.0064,
+    "typewriter": 0.0051
+   },
+   "role_mix": {
+    "body_text": 0.1798,
+    "card": 0.1745,
+    "list_item": 0.1606,
+    "ui_panel": 0.1204,
+    "avatar": 0.103,
+    "other": 0.0558,
+    "label": 0.0541,
+    "icon": 0.0384,
+    "headline": 0.0314,
+    "background": 0.0297,
+    "cursor": 0.0244,
+    "button": 0.0105,
+    "chart": 0.0105,
+    "notification": 0.007
+   },
+   "sfx_label_mix": {
+    "music": 0.5047,
+    "unsure": 0.1963,
+    "impact": 0.1495,
+    "chime": 0.1121,
+    "swoosh_reverse": 0.0374
+   },
+   "sfx_offset_ms": {
+    "n": 55,
+    "videos": 4,
+    "weight": 38.2,
+    "median": 165.262,
+    "p25": 5.4,
+    "p75": 392.719,
+    "ci": [
+     103.9,
+     216.4
+    ]
+   },
+   "examples": [
+    {
+     "video": "anthropic-introducing-claude-design-by-anthropic-l",
+     "event": "e007",
+     "score": 4.0
+    },
+    {
+     "video": "attio-introducing-ask-attio",
+     "event": "e012",
+     "score": 4.0
+    },
+    {
+     "video": "raycast-new-raycast-coming-2026",
+     "event": "e003",
+     "score": 4.0
+    },
+    {
+     "video": "warp-introducing-warp-2-0-the-agentic-develo",
+     "event": "e005",
+     "score": 4.0
+    },
+    {
+     "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+     "event": "e013",
+     "score": 4.0
+    }
+   ]
+  },
+  {
+   "id": "kinetic_word_reveal",
+   "events": 28,
+   "videos": 12,
+   "weight": 23.2,
+   "duration_ms": {
+    "n": 67,
+    "videos": 11,
+    "weight": 54.2832,
+    "median": 576.536,
+    "p25": 316.167,
+    "p75": 735.191,
+    "ci": [
+     501.284,
+     692.1
+    ]
+   },
+   "easing_mix": {
+    "ease_out": 0.5523,
+    "ease_in_out": 0.2648,
+    "ease_in": 0.0659,
+    "spring_overshoot": 0.0586,
+    "linear": 0.0584
+   },
+   "change_mix": {
+    "fade": 0.3478,
+    "slide_up": 0.1319,
+    "color_shift": 0.1154,
+    "slide_left": 0.0975,
+    "blur_in": 0.066,
+    "scale_up": 0.0555,
+    "other": 0.0465,
+    "slide_right": 0.03,
+    "scale_down": 0.024,
+    "slide_down": 0.024,
+    "mask_reveal": 0.012,
+    "pop": 0.012,
+    "rotate": 0.012,
+    "typewriter": 0.012,
+    "blur_out": 0.0075,
+    "draw_on": 0.006
+   },
+   "role_mix": {
+    "headline": 0.7126,
+    "background": 0.1494,
+    "icon": 0.0345,
+    "other": 0.0345,
+    "label": 0.023,
+    "body_text": 0.0115,
+    "cursor": 0.0115,
+    "logo": 0.0115,
+    "ui_panel": 0.0115
+   },
+   "sfx_label_mix": {
+    "music": 0.3564,
+    "unsure": 0.3564,
+    "swoosh_reverse": 0.2079,
+    "impact": 0.0792
+   },
+   "sfx_offset_ms": {
+    "n": 49,
+    "videos": 8,
+    "weight": 40.4,
+    "median": 45.4,
+    "p25": -171.65,
+    "p75": 287.812,
+    "ci": [
+     -37.2,
+     149.3
+    ]
+   },
+   "examples": [
+    {
+     "video": "meta-introducing-meta-quest-3-coming-this-f",
+     "event": "e005",
+     "score": 5.0
+    },
+    {
+     "video": "attio-introducing-ask-attio",
+     "event": "e005",
+     "score": 4.0
+    },
+    {
+     "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+     "event": "e016",
+     "score": 4.0
+    },
+    {
+     "video": "hubspot-what-is-hubspot",
+     "event": "e008",
+     "score": 4.0
+    },
+    {
+     "video": "loom-introducing-loom-ai",
+     "event": "e001",
+     "score": 4.0
+    }
+   ]
+  },
+  {
+   "id": "ui_camera_push_in",
+   "events": 32,
+   "videos": 9,
+   "weight": 22.8,
+   "duration_ms": {
+    "n": 40,
+    "videos": 6,
+    "weight": 27.7637,
+    "median": 561.942,
+    "p25": 290.83,
+    "p75": 844.92,
+    "ci": [
+     416.887,
+     702.667
+    ]
+   },
+   "easing_mix": {
+    "ease_out": 0.4295,
+    "ease_in_out": 0.1773,
+    "ease_in": 0.1634,
+    "linear": 0.1601,
+    "spring_overshoot": 0.0696
+   },
+   "change_mix": {
+    "scale_up": 0.2546,
+    "fade": 0.1921,
+    "color_shift": 0.081,
+    "other": 0.0741,
+    "slide_up": 0.0694,
+    "slide_left": 0.0671,
+    "highlight": 0.0532,
+    "scale_down": 0.0532,
+    "slide_right": 0.0463,
+    "slide_down": 0.0278,
+    "morph": 0.0208,
+    "rotate": 0.0162,
+    "blur_in": 0.0093,
+    "blur_out": 0.0093,
+    "mask_reveal": 0.0093,
+    "pop": 0.0093,
+    "typewriter": 0.0069
+   },
+   "role_mix": {
+    "ui_panel": 0.3631,
+    "list_item": 0.1231,
+    "cursor": 0.1046,
+    "headline": 0.0738,
+    "card": 0.0708,
+    "body_text": 0.0646,
+    "background": 0.0431,
+    "button": 0.0369,
+    "chart": 0.0246,
+    "other": 0.0246,
+    "icon": 0.0215,
+    "avatar": 0.0154,
+    "metric": 0.0123,
+    "notification": 0.0123,
+    "label": 0.0092
+   },
+   "sfx_label_mix": {
+    "unsure": 0.3619,
+    "impact": 0.2286,
+    "music": 0.1429,
+    "swoosh_reverse": 0.1143,
+    "chime": 0.0762,
+    "click": 0.0762
+   },
+   "sfx_offset_ms": {
+    "n": 24,
+    "videos": 4,
+    "weight": 19.0,
+    "median": -59.0,
+    "p25": -189.256,
+    "p75": 48.481,
+    "ci": [
+     -100.7,
+     36.113
+    ]
+   },
+   "examples": [
+    {
+     "video": "anthropic-introducing-claude-design-by-anthropic-l",
+     "event": "e001",
+     "score": 4.0
+    },
+    {
+     "video": "cursor-introducing-cursor-3",
+     "event": "e005",
+     "score": 4.0
+    },
+    {
+     "video": "duolingo-introducing-duolingo-chess",
+     "event": "e007",
+     "score": 4.0
+    },
+    {
+     "video": "notion-introducing-notion-ai-connectors",
+     "event": "e017",
+     "score": 4.0
+    },
+    {
+     "video": "salesforce-what-is-agentforce-and-how-businesses-us",
+     "event": "e006",
+     "score": 3.0
+    }
+   ]
+  },
+  {
+   "id": "logo_resolve",
+   "events": 21,
+   "videos": 10,
+   "weight": 15.6,
+   "duration_ms": {
+    "n": 40,
+    "videos": 9,
+    "weight": 28.4632,
+    "median": 618.39,
+    "p25": 317.964,
+    "p75": 977.543,
+    "ci": [
+     407.3,
+     693.0
+    ]
+   },
+   "easing_mix": {
+    "ease_out": 0.4237,
+    "ease_in_out": 0.2877,
+    "spring_overshoot": 0.136,
+    "linear": 0.0895,
+    "ease_in": 0.063
+   },
+   "change_mix": {
+    "fade": 0.1856,
+    "morph": 0.1385,
+    "slide_left": 0.1191,
+    "scale_up": 0.097,
+    "color_shift": 0.097,
+    "slide_up": 0.0914,
+    "slide_right": 0.0693,
+    "scale_down": 0.0609,
+    "blur_in": 0.0471,
+    "other": 0.0471,
+    "draw_on": 0.0166,
+    "mask_reveal": 0.0166,
+    "rotate": 0.0139
+   },
+   "role_mix": {
+    "logo": 0.5959,
+    "icon": 0.1865,
+    "headline": 0.1451,
+    "background": 0.0363,
+    "body_text": 0.0207,
+    "other": 0.0155
+   },
+   "sfx_label_mix": {
+    "music": 0.5,
+    "unsure": 0.1974,
+    "swoosh_reverse": 0.1711,
+    "chime": 0.0658,
+    "impact": 0.0658
+   },
+   "sfx_offset_ms": {
+    "n": 25,
+    "videos": 4,
+    "weight": 19.2,
+    "median": 130.2,
+    "p25": -302.314,
+    "p75": 279.2,
+    "ci": [
+     64.2,
+     192.5
+    ]
+   },
+   "examples": [
+    {
+     "video": "google-introducing-the-google-pixel-9-pro",
+     "event": "e003",
+     "score": 4.0
+    },
+    {
+     "video": "hubspot-what-is-hubspot",
+     "event": "e001",
+     "score": 4.0
+    },
+    {
+     "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+     "event": "e032",
+     "score": 4.0
+    },
+    {
+     "video": "attio-introducing-ask-attio",
+     "event": "e018",
+     "score": 4.0
+    },
+    {
+     "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+     "event": "e001",
+     "score": 4.0
+    }
+   ]
+  },
+  {
+   "id": "stagger_list_reveal",
+   "events": 11,
+   "videos": 6,
+   "weight": 8.6,
+   "duration_ms": {
+    "n": 43,
+    "videos": 5,
+    "weight": 33.8922,
+    "median": 689.069,
+    "p25": 531.498,
+    "p75": 866.238,
+    "ci": [
+     581.302,
+     756.5
+    ]
+   },
+   "easing_mix": {
+    "ease_out": 0.5349,
+    "ease_in_out": 0.2092,
+    "spring_overshoot": 0.1142,
+    "linear": 0.0708,
+    "ease_in": 0.0708
+   },
+   "change_mix": {
+    "fade": 0.4343,
+    "slide_up": 0.2727,
+    "slide_left": 0.1313,
+    "blur_in": 0.0606,
+    "scale_up": 0.0404,
+    "pop": 0.0303,
+    "mask_reveal": 0.0202,
+    "highlight": 0.0101
+   },
+   "role_mix": {
+    "list_item": 0.4314,
+    "logo": 0.2157,
+    "card": 0.098,
+    "avatar": 0.0588,
+    "ui_panel": 0.0588,
+    "headline": 0.0392,
+    "icon": 0.0392,
+    "label": 0.0392,
+    "other": 0.0196
+   },
+   "sfx_label_mix": {
+    "music": 0.5493,
+    "impact": 0.169,
+    "swoosh_reverse": 0.169,
+    "unsure": 0.1127
+   },
+   "sfx_offset_ms": {
+    "n": 43,
+    "videos": 2,
+    "weight": 34.4,
+    "median": 8.8,
+    "p25": -181.85,
+    "p75": 270.1,
+    "ci": [
+     -79.0,
+     105.4
+    ]
+   },
+   "examples": [
+    {
+     "video": "anthropic-introducing-claude-design-by-anthropic-l",
+     "event": "e004",
+     "score": 4.0
+    },
+    {
+     "video": "notion-introducing-notion-ai-connectors",
+     "event": "e001",
+     "score": 4.0
+    },
+    {
+     "video": "notion-introducing-the-new-notion-ai",
+     "event": "e014",
+     "score": 4.0
+    },
+    {
+     "video": "raycast-new-raycast-coming-2026",
+     "event": "e002",
+     "score": 4.0
+    },
+    {
+     "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+     "event": "e027",
+     "score": 4.0
+    }
+   ]
+  },
+  {
+   "id": "ai_answer_stream",
+   "events": 9,
+   "videos": 6,
+   "weight": 7.2,
+   "duration_ms": {
+    "n": 29,
+    "videos": 5,
+    "weight": 21.4422,
+    "median": 238.086,
+    "p25": 55.211,
+    "p75": 839.649,
+    "ci": [
+     70.325,
+     602.4
+    ]
+   },
+   "easing_mix": {
+    "ease_in": 0.3108,
+    "ease_in_out": 0.246,
+    "linear": 0.2326,
+    "ease_out": 0.1101,
+    "spring_overshoot": 0.1005
+   },
+   "change_mix": {
+    "fade": 0.4033,
+    "slide_up": 0.2754,
+    "morph": 0.0721,
+    "scale_up": 0.0492,
+    "draw_on": 0.0426,
+    "other": 0.0426,
+    "mask_reveal": 0.0328,
+    "color_shift": 0.0295,
+    "rotate": 0.023,
+    "slide_down": 0.0197,
+    "count_up": 0.0098
+   },
+   "role_mix": {
+    "list_item": 0.2828,
+    "card": 0.1919,
+    "body_text": 0.1313,
+    "other": 0.0758,
+    "avatar": 0.0657,
+    "ui_panel": 0.0606,
+    "icon": 0.0556,
+    "label": 0.0354,
+    "notification": 0.0253,
+    "button": 0.0202,
+    "cursor": 0.0202,
+    "headline": 0.0202,
+    "metric": 0.0152
+   },
+   "sfx_label_mix": {
+    "music": 1.0
+   },
+   "sfx_offset_ms": {
+    "n": 2,
+    "videos": 1,
+    "weight": 1.6,
+    "median": 66.6,
+    "p25": 50.1,
+    "p75": 83.1,
+    "ci": null
+   },
+   "examples": [
+    {
+     "video": "notion-introducing-the-new-notion-ai",
+     "event": "e017",
+     "score": 4.0
+    },
+    {
+     "video": "raycast-new-raycast-coming-2026",
+     "event": "e007",
+     "score": 4.0
+    },
+    {
+     "video": "warp-introducing-warp-2-0-the-agentic-develo",
+     "event": "e004",
+     "score": 4.0
+    },
+    {
+     "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+     "event": "e026",
+     "score": 4.0
+    },
+    {
+     "video": "workday-workday-adaptive-planning-demo-finan",
+     "event": "e015",
+     "score": 3.0
+    }
+   ]
+  },
+  {
+   "id": "scale_dissolve_transition",
+   "events": 8,
+   "videos": 5,
+   "weight": 6.8,
+   "duration_ms": {
+    "n": 11,
+    "videos": 3,
+    "weight": 8.6906,
+    "median": 566.494,
+    "p25": 379.801,
+    "p75": 806.447,
+    "ci": [
+     402.547,
+     742.901
+    ]
+   },
+   "easing_mix": {
+    "spring_overshoot": 0.4504,
+    "ease_in": 0.2735,
+    "ease_out": 0.1841,
+    "linear": 0.092
+   },
+   "change_mix": {
+    "fade": 0.3537,
+    "scale_up": 0.1703,
+    "scale_down": 0.1266,
+    "slide_right": 0.0786,
+    "slide_up": 0.0524,
+    "color_shift": 0.0349,
+    "highlight": 0.0349,
+    "mask_reveal": 0.0349,
+    "slide_down": 0.0349,
+    "blur_out": 0.0218,
+    "pop": 0.0218,
+    "other": 0.0175,
+    "typewriter": 0.0175
+   },
+   "role_mix": {
+    "ui_panel": 0.3256,
+    "cursor": 0.124,
+    "card": 0.1085,
+    "button": 0.1008,
+    "label": 0.0775,
+    "headline": 0.062,
+    "list_item": 0.062,
+    "chart": 0.0388,
+    "icon": 0.0388,
+    "body_text": 0.031,
+    "other": 0.031
+   },
+   "sfx_label_mix": {
+    "music": 0.5405,
+    "unsure": 0.3514,
+    "whoosh": 0.1081
+   },
+   "sfx_offset_ms": {
+    "n": 8,
+    "videos": 1,
+    "weight": 6.4,
+    "median": -317.1,
+    "p25": -363.5,
+    "p75": -46.5,
+    "ci": [
+     -363.5,
+     -46.5
+    ]
+   },
+   "examples": [
+    {
+     "video": "anthropic-introducing-claude-design-by-anthropic-l",
+     "event": "e012",
+     "score": 4.0
+    },
+    {
+     "video": "hubspot-what-is-hubspot",
+     "event": "e005",
+     "score": 4.0
+    },
+    {
+     "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+     "event": "e004",
+     "score": 4.0
+    },
+    {
+     "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+     "event": "e010",
+     "score": 5.0
+    },
+    {
+     "video": "datadog-datadog-overview-see-inside-the-platfor",
+     "event": "e025",
+     "score": 4.0
+    }
+   ]
+  },
+  {
+   "id": "prompt_type_on",
+   "events": 7,
+   "videos": 5,
+   "weight": 5.8,
+   "duration_ms": {
+    "n": 8,
+    "videos": 3,
+    "weight": 6.3634,
+    "median": 532.713,
+    "p25": 313.301,
+    "p75": 958.862,
+    "ci": [
+     314.768,
+     958.916
+    ]
+   },
+   "easing_mix": {
+    "ease_out": 0.5011,
+    "linear": 0.2476,
+    "spring_overshoot": 0.1257,
+    "ease_in_out": 0.1256
+   },
+   "change_mix": {
+    "slide_up": 0.2819,
+    "typewriter": 0.2013,
+    "fade": 0.1611,
+    "highlight": 0.1208,
+    "morph": 0.0805,
+    "slide_down": 0.0604,
+    "color_shift": 0.0336,
+    "draw_on": 0.0336,
+    "pop": 0.0268
+   },
+   "role_mix": {
+    "body_text": 0.2627,
+    "card": 0.2034,
+    "ui_panel": 0.178,
+    "headline": 0.1356,
+    "cursor": 0.0763,
+    "label": 0.0424,
+    "background": 0.0339,
+    "icon": 0.0339,
+    "other": 0.0339
+   },
+   "sfx_label_mix": {
+    "impact": 0.3333,
+    "music": 0.3333,
+    "swoosh_reverse": 0.3333
+   },
+   "sfx_offset_ms": {
+    "n": 6,
+    "videos": 2,
+    "weight": 4.8,
+    "median": 66.9,
+    "p25": 25.2,
+    "p75": 197.5,
+    "ci": [
+     25.2,
+     197.5
+    ]
+   },
+   "examples": [
+    {
+     "video": "anthropic-introducing-claude-design-by-anthropic-l",
+     "event": "e011",
+     "score": 4.0
+    },
+    {
+     "video": "notion-introducing-notion-ai-connectors",
+     "event": "e020",
+     "score": 4.0
+    },
+    {
+     "video": "notion-introducing-the-new-notion-ai",
+     "event": "e016",
+     "score": 4.0
+    },
+    {
+     "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+     "event": "e004",
+     "score": 5.0
+    },
+    {
+     "video": "atlassian-introduction-to-jira-product-discovery",
+     "event": "e048",
+     "score": 3.0
+    }
+   ]
+  },
+  {
+   "id": "input_text_cycle",
+   "events": 7,
+   "videos": 3,
+   "weight": 5.2,
+   "duration_ms": {
+    "n": 11,
+    "videos": 3,
+    "weight": 7.992,
+    "median": 191.147,
+    "p25": 124.144,
+    "p75": 420.6,
+    "ci": [
+     124.1,
+     420.6
+    ]
+   },
+   "easing_mix": {
+    "ease_in_out": 0.3995,
+    "ease_in": 0.3958,
+    "ease_out": 0.2047
+   },
+   "change_mix": {
+    "fade": 0.3429,
+    "slide_up": 0.2857,
+    "blur_in": 0.1571,
+    "blur_out": 0.1286,
+    "slide_down": 0.0571,
+    "other": 0.0286
+   },
+   "role_mix": {
+    "button": 0.4615,
+    "headline": 0.4615,
+    "card": 0.0769
+   },
+   "sfx_label_mix": {
+    "music": 1.0
+   },
+   "sfx_offset_ms": {
+    "n": 5,
+    "videos": 1,
+    "weight": 3.0,
+    "median": -121.9,
+    "p25": -337.4,
+    "p75": 20.9,
+    "ci": [
+     -337.4,
+     20.9
+    ]
+   },
+   "examples": [
+    {
+     "video": "notion-introducing-the-new-notion-ai",
+     "event": "e007",
+     "score": 4.0
+    },
+    {
+     "video": "attio-introducing-ask-attio",
+     "event": "e007",
+     "score": 4.0
+    },
+    {
+     "video": "servicenow-what-are-servicenow-ai-agents",
+     "event": "e033",
+     "score": 3.0
+    }
+   ]
+  },
+  {
+   "id": "chip_append",
+   "events": 7,
+   "videos": 4,
+   "weight": 5.0,
+   "duration_ms": {
+    "n": 8,
+    "videos": 3,
+    "weight": 6.2648,
+    "median": 281.147,
+    "p25": 134.448,
+    "p75": 685.625,
+    "ci": [
+     133.651,
+     688.708
+    ]
+   },
+   "easing_mix": {
+    "ease_out": 0.2554,
+    "ease_in_out": 0.2554,
+    "spring_overshoot": 0.2339,
+    "ease_in": 0.1277,
+    "linear": 0.1277
+   },
+   "change_mix": {
+    "fade": 0.25,
+    "slide_down": 0.1932,
+    "pop": 0.1705,
+    "slide_right": 0.1477,
+    "slide_up": 0.0739,
+    "highlight": 0.0511,
+    "morph": 0.0227,
+    "other": 0.0227,
+    "scale_up": 0.0227,
+    "slide_left": 0.0227,
+    "typewriter": 0.0227
+   },
+   "role_mix": {
+    "button": 0.237,
+    "label": 0.237,
+    "list_item": 0.1037,
+    "body_text": 0.0741,
+    "cursor": 0.0741,
+    "ui_panel": 0.0741,
+    "headline": 0.0593,
+    "background": 0.0296,
+    "card": 0.0296,
+    "icon": 0.0296,
+    "logo": 0.0296,
+    "other": 0.0222
+   },
+   "sfx_label_mix": {
+    "music": 0.5,
+    "unsure": 0.5
+   },
+   "sfx_offset_ms": {
+    "n": 2,
+    "videos": 1,
+    "weight": 1.6,
+    "median": -115.15,
+    "p25": -392.7,
+    "p75": 162.4,
+    "ci": null
+   },
+   "examples": [
+    {
+     "video": "attio-introducing-ask-attio",
+     "event": "e009",
+     "score": 4.0
+    },
+    {
+     "video": "notion-introducing-the-new-notion-ai",
+     "event": "e023",
+     "score": 4.0
+    },
+    {
+     "video": "warp-introducing-warp-2-0-the-agentic-develo",
+     "event": "e011",
+     "score": 4.0
+    },
+    {
+     "video": "atlassian-introduction-to-jira-product-discovery",
+     "event": "e009",
+     "score": 3.0
+    }
+   ]
+  },
+  {
+   "id": "spotlight_focus",
+   "events": 6,
+   "videos": 4,
+   "weight": 4.8,
+   "duration_ms": {
+    "n": 16,
+    "videos": 3,
+    "weight": 12.745,
+    "median": 437.777,
+    "p25": 377.229,
+    "p75": 954.72,
+    "ci": [
+     388.668,
+     564.388
+    ]
+   },
+   "easing_mix": {
+    "ease_in": 0.3766,
+    "linear": 0.3135,
+    "ease_out": 0.1255,
+    "spring_overshoot": 0.1216,
+    "ease_in_out": 0.0627
+   },
+   "change_mix": {
+    "fade": 0.2286,
+    "color_shift": 0.2,
+    "highlight": 0.1143,
+    "scale_up": 0.1143,
+    "scale_down": 0.0857,
+    "slide_left": 0.0857,
+    "slide_up": 0.0571,
+    "draw_on": 0.0286,
+    "mask_reveal": 0.0286,
+    "other": 0.0286,
+    "slide_down": 0.0286
+   },
+   "role_mix": {
+    "icon": 0.3333,
+    "other": 0.1667,
+    "card": 0.0833,
+    "label": 0.0833,
+    "list_item": 0.0833,
+    "ui_panel": 0.0833,
+    "background": 0.0417,
+    "body_text": 0.0417,
+    "chart": 0.0417,
+    "notification": 0.0417
+   },
+   "sfx_label_mix": {
+    "chime": 0.2,
+    "glitch": 0.2,
+    "impact": 0.2,
+    "music": 0.2,
+    "unsure": 0.2
+   },
+   "sfx_offset_ms": {
+    "n": 10,
+    "videos": 2,
+    "weight": 8.0,
+    "median": 46.55,
+    "p25": -152.5,
+    "p75": 245.6,
+    "ci": [
+     -152.5,
+     245.6
+    ]
+   },
+   "examples": [
+    {
+     "video": "anthropic-introducing-claude-design-by-anthropic-l",
+     "event": "e006",
+     "score": 4.0
+    },
+    {
+     "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+     "event": "e006",
+     "score": 4.0
+    },
+    {
+     "video": "raycast-new-raycast-coming-2026",
+     "event": "e004",
+     "score": 4.0
+    },
+    {
+     "video": "datadog-datadog-overview-see-inside-the-platfor",
+     "event": "e005",
+     "score": 4.0
+    }
+   ]
+  },
+  {
+   "id": "parallax_layers",
+   "events": 5,
+   "videos": 5,
+   "weight": 4.4,
+   "duration_ms": {
+    "n": 14,
+    "videos": 3,
+    "weight": 12.1826,
+    "median": 505.194,
+    "p25": 319.0,
+    "p75": 684.45,
+    "ci": [
+     319.0,
+     667.274
+    ]
+   },
+   "easing_mix": {
+    "spring_overshoot": 0.3769,
+    "ease_in_out": 0.279,
+    "ease_out": 0.2785,
+    "ease_in": 0.0656
+   },
+   "change_mix": {
+    "other": 0.3306,
+    "slide_up": 0.1532,
+    "fade": 0.1452,
+    "color_shift": 0.121,
+    "slide_down": 0.1129,
+    "slide_left": 0.0726,
+    "scale_up": 0.0323,
+    "slide_right": 0.0323
+   },
+   "role_mix": {
+    "logo": 0.2381,
+    "headline": 0.2143,
+    "card": 0.1786,
+    "other": 0.0952,
+    "icon": 0.0595,
+    "notification": 0.0595,
+    "ui_panel": 0.0595,
+    "background": 0.0476,
+    "metric": 0.0476
+   },
+   "sfx_label_mix": {
+    "music": 0.5,
+    "swoosh_reverse": 0.25,
+    "unsure": 0.25
+   },
+   "sfx_offset_ms": {
+    "n": 10,
+    "videos": 1,
+    "weight": 10.0,
+    "median": -285.05,
+    "p25": -392.7,
+    "p75": -94.1,
+    "ci": [
+     -392.7,
+     -94.1
+    ]
+   },
+   "examples": [
+    {
+     "video": "figma-introducing-figma-motion-your-canvas-no",
+     "event": "e001",
+     "score": 5.0
+    },
+    {
+     "video": "hubspot-what-is-hubspot",
+     "event": "e007",
+     "score": 4.0
+    },
+    {
+     "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+     "event": "e003",
+     "score": 4.0
+    },
+    {
+     "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+     "event": "e033",
+     "score": 5.0
+    },
+    {
+     "video": "datadog-datadog-overview-see-inside-the-platfor",
+     "event": "e017",
+     "score": 4.0
+    }
+   ]
+  },
+  {
+   "id": "blur_crossfade",
+   "events": 5,
+   "videos": 4,
+   "weight": 4.2,
+   "duration_ms": {
+    "n": 10,
+    "videos": 2,
+    "weight": 7.7007,
+    "median": 442.5,
+    "p25": 337.567,
+    "p75": 530.343,
+    "ci": [
+     366.061,
+     528.828
+    ]
+   },
+   "easing_mix": {
+    "ease_out": 0.5069,
+    "spring_overshoot": 0.2078,
+    "ease_in": 0.1039,
+    "linear": 0.1036,
+    "ease_in_out": 0.0779
+   },
+   "change_mix": {
+    "fade": 0.3976,
+    "slide_up": 0.1811,
+    "blur_in": 0.1496,
+    "blur_out": 0.0748,
+    "color_shift": 0.063,
+    "slide_down": 0.0512,
+    "slide_right": 0.0315,
+    "typewriter": 0.0197,
+    "highlight": 0.0157,
+    "scale_down": 0.0157
+   },
+   "role_mix": {
+    "card": 0.3051,
+    "headline": 0.178,
+    "body_text": 0.1186,
+    "background": 0.0847,
+    "cursor": 0.0763,
+    "button": 0.0678,
+    "list_item": 0.0678,
+    "ui_panel": 0.0424,
+    "label": 0.0339,
+    "logo": 0.0254
+   },
+   "sfx_label_mix": {
+    "swoosh_reverse": 0.4348,
+    "unsure": 0.3913,
+    "chime": 0.1739
+   },
+   "sfx_offset_ms": {
+    "n": 2,
+    "videos": 1,
+    "weight": 1.6,
+    "median": -10.0,
+    "p25": -10.0,
+    "p75": -10.0,
+    "ci": null
+   },
+   "examples": [
+    {
+     "video": "hubspot-what-is-hubspot",
+     "event": "e011",
+     "score": 4.0
+    },
+    {
+     "video": "workday-workday-adaptive-planning-demo-finan",
+     "event": "e002",
+     "score": 3.0
+    },
+    {
+     "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+     "event": "e007",
+     "score": 5.0
+    },
+    {
+     "video": "datadog-datadog-overview-see-inside-the-platfor",
+     "event": "e001",
+     "score": 4.0
+    }
+   ]
+  },
+  {
+   "id": "skeleton_resolve",
+   "events": 7,
+   "videos": 2,
+   "weight": 4.2,
+   "duration_ms": {
+    "n": 16,
+    "videos": 1,
+    "weight": 9.5988,
+    "median": 41.7,
+    "p25": 41.7,
+    "p75": 122.7,
+    "ci": [
+     41.7,
+     97.993
+    ]
+   },
+   "easing_mix": {
+    "ease_in": 0.6875,
+    "spring_overshoot": 0.1875,
+    "ease_in_out": 0.125
+   },
+   "change_mix": {
+    "fade": 0.7955,
+    "other": 0.1136,
+    "color_shift": 0.0227,
+    "highlight": 0.0227,
+    "scale_down": 0.0227,
+    "slide_down": 0.0227
+   },
+   "role_mix": {
+    "metric": 0.3023,
+    "body_text": 0.1395,
+    "button": 0.1395,
+    "ui_panel": 0.1395,
+    "card": 0.093,
+    "chart": 0.0698,
+    "label": 0.0465,
+    "cursor": 0.0233,
+    "headline": 0.0233,
+    "list_item": 0.0233
+   },
+   "sfx_label_mix": {},
+   "sfx_offset_ms": {
+    "n": 0,
+    "videos": 0,
+    "weight": 0.0,
+    "median": null,
+    "p25": null,
+    "p75": null,
+    "ci": null
+   },
+   "examples": [
+    {
+     "video": "workday-workday-adaptive-planning-demo-finan",
+     "event": "e049",
+     "score": 3.0
+    },
+    {
+     "video": "atlassian-introduction-to-jira-product-discovery",
+     "event": "e028",
+     "score": 3.0
+    }
+   ]
+  },
+  {
+   "id": "notification_pop",
+   "events": 4,
+   "videos": 2,
+   "weight": 3.0,
+   "duration_ms": {
+    "n": 10,
+    "videos": 2,
+    "weight": 7.1014,
+    "median": 603.4,
+    "p25": 518.624,
+    "p75": 654.5,
+    "ci": [
+     526.877,
+     647.894
+    ]
+   },
+   "easing_mix": {
+    "ease_out": 0.7581,
+    "ease_in_out": 0.0838,
+    "linear": 0.0821,
+    "spring_overshoot": 0.0759
+   },
+   "change_mix": {
+    "fade": 0.3836,
+    "slide_up": 0.274,
+    "scale_up": 0.1918,
+    "pop": 0.1096,
+    "morph": 0.0411
+   },
+   "role_mix": {
+    "card": 0.4167,
+    "avatar": 0.3333,
+    "icon": 0.0833,
+    "label": 0.0833,
+    "ui_panel": 0.0833
+   },
+   "sfx_label_mix": {
+    "music": 0.6667,
+    "unsure": 0.3333
+   },
+   "sfx_offset_ms": {
+    "n": 4,
+    "videos": 1,
+    "weight": 3.2,
+    "median": 87.85,
+    "p25": -220.0,
+    "p75": 379.2,
+    "ci": null
+   },
+   "examples": [
+    {
+     "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+     "event": "e025",
+     "score": 4.0
+    },
+    {
+     "video": "servicenow-what-are-servicenow-ai-agents",
+     "event": "e023",
+     "score": 3.0
+    }
+   ]
+  },
+  {
+   "id": "avatar_hero_expand",
+   "events": 3,
+   "videos": 2,
+   "weight": 2.8,
+   "duration_ms": {
+    "n": 7,
+    "videos": 1,
+    "weight": 5.5913,
+    "median": 1160.493,
+    "p25": 1071.703,
+    "p75": 1249.151,
+    "ci": [
+     1066.7,
+     1268.492
+    ]
+   },
+   "easing_mix": {
+    "linear": 0.4277,
+    "ease_out": 0.2861,
+    "ease_in_out": 0.1431,
+    "spring_overshoot": 0.143
+   },
+   "change_mix": {
+    "fade": 0.2437,
+    "scale_down": 0.2101,
+    "slide_up": 0.2101,
+    "slide_right": 0.1261,
+    "scale_up": 0.0756,
+    "blur_in": 0.0336,
+    "mask_reveal": 0.0336,
+    "morph": 0.0336,
+    "pop": 0.0336
+   },
+   "role_mix": {
+    "background": 0.2759,
+    "avatar": 0.2414,
+    "body_text": 0.1724,
+    "card": 0.0862,
+    "ui_panel": 0.0862,
+    "button": 0.069,
+    "headline": 0.069
+   },
+   "sfx_label_mix": {
+    "chime": 0.5714,
+    "swoosh_reverse": 0.2381,
+    "unsure": 0.1905
+   },
+   "sfx_offset_ms": {
+    "n": 7,
+    "videos": 1,
+    "weight": 5.6,
+    "median": 86.5,
+    "p25": 86.5,
+    "p75": 153.1,
+    "ci": [
+     86.5,
+     153.1
+    ]
+   },
+   "examples": [
+    {
+     "video": "loom-introducing-loom-ai",
+     "event": "e002",
+     "score": 4.0
+    },
+    {
+     "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+     "event": "e001",
+     "score": 5.0
+    }
+   ]
+  },
+  {
+   "id": "chat_bubble_append",
+   "events": 3,
+   "videos": 2,
+   "weight": 2.6,
+   "duration_ms": {
+    "n": 10,
+    "videos": 1,
+    "weight": 7.9866,
+    "median": 588.9,
+    "p25": 528.1,
+    "p75": 720.139,
+    "ci": [
+     528.692,
+     696.452
+    ]
+   },
+   "easing_mix": {
+    "ease_out": 0.8998,
+    "spring_overshoot": 0.1002
+   },
+   "change_mix": {
+    "slide_up": 0.5435,
+    "pop": 0.3043,
+    "fade": 0.0978,
+    "scale_up": 0.0543
+   },
+   "role_mix": {
+    "card": 0.4182,
+    "body_text": 0.2909,
+    "avatar": 0.1455,
+    "label": 0.0727,
+    "ui_panel": 0.0727
+   },
+   "sfx_label_mix": {
+    "unsure": 0.537,
+    "music": 0.3148,
+    "swoosh_reverse": 0.1481
+   },
+   "sfx_offset_ms": {
+    "n": 20,
+    "videos": 1,
+    "weight": 16.0,
+    "median": 17.65,
+    "p25": -245.15,
+    "p75": 274.3,
+    "ci": [
+     -141.7,
+     195.4
+    ]
+   },
+   "examples": [
+    {
+     "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+     "event": "e003",
+     "score": 4.0
+    },
+    {
+     "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+     "event": "e027",
+     "score": 5.0
+    }
+   ]
+  },
+  {
+   "id": "card_wall_stagger",
+   "events": 3,
+   "videos": 3,
+   "weight": 2.4,
+   "duration_ms": {
+    "n": 17,
+    "videos": 2,
+    "weight": 10.8417,
+    "median": 1586.412,
+    "p25": 527.362,
+    "p75": 2680.161,
+    "ci": [
+     830.748,
+     2357.061
+    ]
+   },
+   "easing_mix": {
+    "ease_in": 0.33,
+    "ease_out": 0.3002,
+    "ease_in_out": 0.1764,
+    "linear": 0.1382,
+    "spring_overshoot": 0.0552
+   },
+   "change_mix": {
+    "fade": 0.3077,
+    "blur_in": 0.1775,
+    "scale_up": 0.1361,
+    "scale_down": 0.1006,
+    "slide_left": 0.0828,
+    "slide_up": 0.0828,
+    "slide_down": 0.0592,
+    "pop": 0.0296,
+    "slide_right": 0.0237
+   },
+   "role_mix": {
+    "card": 0.6353,
+    "list_item": 0.2118,
+    "headline": 0.0941,
+    "icon": 0.0588
+   },
+   "sfx_label_mix": {
+    "unsure": 0.5,
+    "swoosh_reverse": 0.25,
+    "whoosh": 0.25
+   },
+   "sfx_offset_ms": {
+    "n": 6,
+    "videos": 1,
+    "weight": 4.8,
+    "median": -464.9,
+    "p25": -464.9,
+    "p75": -464.9,
+    "ci": [
+     -464.9,
+     -422.9
+    ]
+   },
+   "examples": [
+    {
+     "video": "meta-this-is-meta-quest-3",
+     "event": "e006",
+     "score": 4.0
+    },
+    {
+     "video": "salesforce-what-is-agentforce-and-how-businesses-us",
+     "event": "e002",
+     "score": 3.0
+    },
+    {
+     "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+     "event": "e030",
+     "score": 5.0
+    }
+   ]
+  },
+  {
+   "id": "diagonal_ui_wipe_in",
+   "events": 2,
+   "videos": 2,
+   "weight": 1.6,
+   "duration_ms": {
+    "n": 2,
+    "videos": 1,
+    "weight": 1.5869,
+    "median": 579.793,
+    "p25": 173.2,
+    "p75": 987.743,
+    "ci": null
+   },
+   "easing_mix": {
+    "ease_in_out": 0.5017,
+    "ease_in": 0.4983
+   },
+   "change_mix": {
+    "mask_reveal": 0.3333,
+    "slide_right": 0.1667,
+    "slide_up": 0.1667,
+    "fade": 0.0833,
+    "scale_down": 0.0833,
+    "scale_up": 0.0833,
+    "slide_left": 0.0833
+   },
+   "role_mix": {
+    "ui_panel": 0.2857,
+    "background": 0.1429,
+    "card": 0.1429,
+    "cursor": 0.1429,
+    "headline": 0.1429,
+    "label": 0.1429
+   },
+   "sfx_label_mix": {},
+   "sfx_offset_ms": {
+    "n": 0,
+    "videos": 0,
+    "weight": 0.0,
+    "median": null,
+    "p25": null,
+    "p75": null,
+    "ci": null
+   },
+   "examples": [
+    {
+     "video": "hubspot-what-is-hubspot",
+     "event": "e009",
+     "score": 4.0
+    },
+    {
+     "video": "datadog-datadog-overview-see-inside-the-platfor",
+     "event": "e014",
+     "score": 4.0
+    }
+   ]
+  },
+  {
+   "id": "whip_transition",
+   "events": 2,
+   "videos": 2,
+   "weight": 1.6,
+   "duration_ms": {
+    "n": 6,
+    "videos": 1,
+    "weight": 4.7142,
+    "median": 1402.72,
+    "p25": 644.82,
+    "p75": 1472.676,
+    "ci": [
+     606.1,
+     1471.9
+    ]
+   },
+   "easing_mix": {
+    "spring_overshoot": 0.3394,
+    "ease_out": 0.3344,
+    "ease_in": 0.1693,
+    "ease_in_out": 0.1569
+   },
+   "change_mix": {
+    "slide_up": 0.4286,
+    "fade": 0.2143,
+    "blur_out": 0.1429,
+    "blur_in": 0.0714,
+    "pop": 0.0714,
+    "slide_left": 0.0714
+   },
+   "role_mix": {
+    "background": 0.5,
+    "headline": 0.375,
+    "other": 0.125
+   },
+   "sfx_label_mix": {},
+   "sfx_offset_ms": {
+    "n": 0,
+    "videos": 0,
+    "weight": 0.0,
+    "median": null,
+    "p25": null,
+    "p75": null,
+    "ci": null
+   },
+   "examples": [
+    {
+     "video": "loom-introducing-loom-ai",
+     "event": "e004",
+     "score": 4.0
+    },
+    {
+     "video": "meta-this-is-meta-quest-3",
+     "event": "e003",
+     "score": 4.0
+    }
+   ]
+  },
+  {
+   "id": "footage_with_ui_overlay",
+   "events": 2,
+   "videos": 2,
+   "weight": 1.4,
+   "duration_ms": {
+    "n": 3,
+    "videos": 2,
+    "weight": 1.9388,
+    "median": 350.872,
+    "p25": 163.132,
+    "p75": 626.53,
+    "ci": null
+   },
+   "easing_mix": {
+    "ease_out": 0.4126,
+    "spring_overshoot": 0.3095,
+    "linear": 0.2779
+   },
+   "change_mix": {
+    "slide_left": 0.5385,
+    "other": 0.4615
+   },
+   "role_mix": {
+    "other": 0.6923,
+    "ui_panel": 0.3077
+   },
+   "sfx_label_mix": {
+    "music": 1.0
+   },
+   "sfx_offset_ms": {
+    "n": 2,
+    "videos": 1,
+    "weight": 1.2,
+    "median": 150.6,
+    "p25": 129.6,
+    "p75": 171.6,
+    "ci": null
+   },
+   "examples": [
+    {
+     "video": "warp-introducing-warp-2-0-the-agentic-develo",
+     "event": "e010",
+     "score": 4.0
+    },
+    {
+     "video": "servicenow-what-are-servicenow-ai-agents",
+     "event": "e026",
+     "score": 3.0
+    }
+   ]
+  },
+  {
+   "id": "match_cut_element",
+   "events": 2,
+   "videos": 2,
+   "weight": 1.4,
+   "duration_ms": {
+    "n": 4,
+    "videos": 2,
+    "weight": 2.9196,
+    "median": 223.786,
+    "p25": 166.816,
+    "p75": 367.942,
+    "ci": null
+   },
+   "easing_mix": {
+    "ease_out": 0.274,
+    "spring_overshoot": 0.274,
+    "ease_in_out": 0.2465,
+    "ease_in": 0.2055
+   },
+   "change_mix": {
+    "scale_up": 0.3871,
+    "color_shift": 0.2581,
+    "slide_left": 0.129,
+    "slide_right": 0.129,
+    "other": 0.0968
+   },
+   "role_mix": {
+    "icon": 0.5333,
+    "background": 0.2667,
+    "other": 0.2
+   },
+   "sfx_label_mix": {
+    "unsure": 1.0
+   },
+   "sfx_offset_ms": {
+    "n": 3,
+    "videos": 1,
+    "weight": 2.4,
+    "median": -235.0,
+    "p25": -235.0,
+    "p75": -86.5,
+    "ci": null
+   },
+   "examples": [
+    {
+     "video": "elevenlabs-introducing-eleven-v4-and-eleven-v4-turb",
+     "event": "e010",
+     "score": 4.0
+    },
+    {
+     "video": "servicenow-what-are-servicenow-ai-agents",
+     "event": "e015",
+     "score": 3.0
+    }
+   ]
+  },
+  {
+   "id": "metric_count_up",
+   "events": 1,
+   "videos": 1,
+   "weight": 1.0,
+   "duration_ms": {
+    "n": 0,
+    "videos": 0,
+    "weight": 0.0,
+    "median": null,
+    "p25": null,
+    "p75": null,
+    "ci": null
+   },
+   "easing_mix": {},
+   "change_mix": {
+    "rotate": 0.25,
+    "scale_up": 0.25,
+    "count_up": 0.0833,
+    "draw_on": 0.0833,
+    "fade": 0.0833,
+    "other": 0.0833,
+    "slide_down": 0.0833,
+    "slide_right": 0.0833
+   },
+   "role_mix": {
+    "label": 0.4,
+    "card": 0.2,
+    "metric": 0.2,
+    "other": 0.2
+   },
+   "sfx_label_mix": {
+    "chime": 0.75,
+    "unsure": 0.25
+   },
+   "sfx_offset_ms": {
+    "n": 0,
+    "videos": 0,
+    "weight": 0.0,
+    "median": null,
+    "p25": null,
+    "p75": null,
+    "ci": null
+   },
+   "examples": [
+    {
+     "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+     "event": "e035",
+     "score": 5.0
+    }
+   ]
+  }
+ ],
+ "other_events": 146
+}

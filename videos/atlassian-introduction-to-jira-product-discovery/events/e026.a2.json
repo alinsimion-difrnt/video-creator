@@ -1,0 +1,41 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "46b73173f5c60e434ed9150333371a7b5aa6ba7a62b9ca9ee3ad499987c208d7",
+    "created_at": "2026-10-05T06:39:07.511260Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e026",
+  "task": "a2-e026",
+  "elements": [
+    {"box": "b12", "manual_box": null, "manual_reason": null, "label": "Impact and Bucket column headers (Impact column widens from clipped 'pact' to full width)", "role": "label", "role_other": null, "change_types": ["slide_right"], "change_other": null, "is_text": true, "text": "Impact Bucket", "text_unit": "word", "estimates": {"duration_ms": 170, "easing_class": "ambiguous"}},
+    {"box": "b02", "manual_box": null, "manual_reason": null, "label": "Impact rating dots revealed as the column widens", "role": "icon", "role_other": null, "change_types": ["mask_reveal"], "change_other": null, "is_text": false, "text": null, "text_unit": null, "estimates": null},
+    {"box": "b07", "manual_box": null, "manual_reason": null, "label": "Bucket chip row 3", "role": "label", "role_other": null, "change_types": ["slide_right"], "change_other": null, "is_text": true, "text": "Customer request", "text_unit": "whole", "estimates": null},
+    {"box": "b10", "manual_box": null, "manual_reason": null, "label": "Bucket chip row 4", "role": "label", "role_other": null, "change_types": ["slide_right"], "change_other": null, "is_text": true, "text": "Metric mover", "text_unit": "whole", "estimates": null},
+    {"box": "b08", "manual_box": null, "manual_reason": null, "label": "Bucket chip row 6", "role": "label", "role_other": null, "change_types": ["slide_right"], "change_other": null, "is_text": true, "text": "Customer request", "text_unit": "whole", "estimates": null},
+    {"box": "b13", "manual_box": null, "manual_reason": null, "label": "Bucket chip row 7", "role": "label", "role_other": null, "change_types": ["slide_right"], "change_other": null, "is_text": true, "text": "Delighter", "text_unit": "whole", "estimates": null},
+    {"box": "b09", "manual_box": null, "manual_reason": null, "label": "Bucket chip row 8", "role": "label", "role_other": null, "change_types": ["slide_right"], "change_other": null, "is_text": true, "text": "Metric mover", "text_unit": "whole", "estimates": null},
+    {"box": "b16", "manual_box": null, "manual_reason": null, "label": "Delivery progress column header", "role": "label", "role_other": null, "change_types": ["slide_right"], "change_other": null, "is_text": true, "text": "Delivery progress", "text_unit": "whole", "estimates": null},
+    {"box": "b17", "manual_box": null, "manual_reason": null, "label": "Competitive column header", "role": "label", "role_other": null, "change_types": ["slide_right"], "change_other": null, "is_text": true, "text": "competitiv...", "text_unit": "whole", "estimates": null},
+    {"box": "b11", "manual_box": null, "manual_reason": null, "label": "Delivery progress bars shifting right", "role": "chart", "role_other": null, "change_types": ["slide_right"], "change_other": null, "is_text": false, "text": null, "text_unit": null, "estimates": null},
+    {"box": "b18", "manual_box": null, "manual_reason": null, "label": "Competitive score cell: slider commits to a number", "role": "metric", "role_other": null, "change_types": ["other"], "change_other": "slider control replaced by its committed numeric value", "is_text": true, "text": "87", "text_unit": "whole", "estimates": null}
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "layout_reframe",
+    "proposed_name": null,
+    "description": "Screen recording: the ideas table horizontally re-lays out so the clipped Impact column opens to full width, pushing Bucket, Delivery progress and the competitive columns right; the slider edited in the previous beat settles to a number.",
+    "why_premium": "Every column moves together as one reflow, so the viewer reads the full prioritisation grid (impact, bucket, progress, score) at once just before the narration moves on ('Now ideas are...')."
+  },
+  "build_hint": {
+    "gsap": "Use Flip: capture column state, widen the Impact column, Flip.from(state, {duration:0.17, ease:'power2.out'}) so headers, chips and bars translate x together (no stagger); Impact dots revealed with clipPath inset right 100% -> 0 in the same tween; score cell crossfade slider -> '87' (autoAlpha, 0.1s).",
+    "remotion": "Single progress p = interpolate(frame,[0,5],[0,1],{easing: Easing.out(Easing.quad)}); impact column width = interpolate(p,[0,1],[w0,w1]); downstream columns translateX = (w1-w0)*p; score cell opacity swap at p=1."
+  },
+  "confidence": "medium",
+  "notes": "Very short burst (~5 frames) in a live screen recording; the reflow may be a scroll/resize rather than an authored animation. The competitive value reads 87 although e025 showed a 75 tooltip during drag."
+}

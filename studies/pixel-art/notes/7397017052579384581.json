@@ -1,0 +1,51 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "2fefb7592b8b105c269628d7ed5acd0a33702ae85687578ec23ba725cee2f87e",
+    "created_at": "2026-10-13T13:05:37+00:00"
+  },
+  "id": "7397017052579384581",
+  "kind": "clip",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "cool",
+    "notes": "Measured palette_size 1 is a measurement miss (soft gradients, bloom and glow; ramps 0, dither 0.0008), so no count. Hot orange-pink sunset light, shadows go to violet-purple on the floor and desk legs."
+  },
+  "lighting": "One strong low sun from the window behind her: rim light and lens-flare streaks on hair and shoulders, long violet cast shadows of chair and desk across the floor. Backlit, high-key window vs darker figure.",
+  "silhouette": "Girl seated side-on at a school desk: long twin-tail hair hanging past the chair is the read; red shoes and the orange chair frame give accent shapes. Large figure, filling the lower half of a vertical frame.",
+  "motion": {
+    "timing": "Wallpaper loop. Code: 31 changes in 20 s, about 1.55 drawings/s, hold median 66.7 ms (p75 187.5 ms), on 2s. The pose barely changes across 12 sheet frames: tiny head/hair sway, light shimmer, flare streaks.",
+    "principles": [
+      "idle breathing",
+      "secondary motion (hair)",
+      "ambient light animation"
+    ]
+  },
+  "texture": "Painterly pixel art with heavy post: bloom, blurred bokeh clouds in the window, glow and flare overlays on top of the sprite. Pixel edges are softened by the effects and by TikTok compression.",
+  "camera": "Locked-off side view, no camera move. Character placed off-centre with window light filling the top.",
+  "sound": "",
+  "acting": {
+    "enters": "Does not enter; on screen from the first frame (a looping wallpaper).",
+    "acts": "Barely acts: sits, small head and hair sway, occasional blink-like change. The scene's light does the work, not the character.",
+    "exits": "Never exits.",
+    "comes_back": null,
+    "depth": "Single plane: figure and desk in the foreground, window and sky as the far background; no use of a small background character."
+  },
+  "techniques": [
+    "backlit sunset with rim light on the hero",
+    "long cast shadows pushed to violet (warm light, cool shadow)",
+    "bloom and lens-flare streak overlays on pixel art",
+    "near-static loop: ambient light motion carries the clip",
+    "out-of-focus background (bokeh clouds) to separate planes"
+  ],
+  "feel": "warm backlight + violet shadows + almost-still girl + glow overlays = calm lo-fi wallpaper mood",
+  "for_fred": "Use this for a held 'breather' beat, not an action beat: put Fred still in warm backlight with a rim light and a long cool shadow, and let only the light and a 2-frame fin/hair-like sway move. Avoid making a whole reel this static; one 1-2 s hold like this before Fred re-enters reads as a pause.",
+  "sources": [
+    "data/study/pixel/work/7397017052579384581/sheet.jpg",
+    "studies/pixel-art/clips/7397017052579384581.json",
+    "studies/pixel-art/tiktok.yaml"
+  ]
+}

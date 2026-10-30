@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@46647335d2ce",
+    "model": null,
+    "input_hash": "01a6b1061fe53084e2f786fa7338ab08fbbb2bfe1fd98ae1c86a1be63d214bbf",
+    "created_at": "2026-10-04T21:29:09.078766Z"
+  },
+  "video": "linear-introducing-linear-releases",
+  "event": "e001",
+  "task": "a2-e001",
+  "elements": [
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Typed word AVAILABLE",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["typewriter", "slide_left"],
+      "change_other": null,
+      "is_text": true,
+      "text": "AVAILABLE",
+      "text_unit": "char",
+      "estimates": {"duration_ms": 250, "easing_class": "step", "source": "model_estimate"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Typed word NOW",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["typewriter"],
+      "change_other": null,
+      "is_text": true,
+      "text": "NOW",
+      "text_unit": "char",
+      "estimates": {"duration_ms": 330, "easing_class": "step", "source": "model_estimate"}
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Block text cursor",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_right"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 580, "easing_class": "step", "source": "model_estimate"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "kinetic_word_reveal",
+    "proposed_name": null,
+    "description": "Monospace uppercase line 'AVAILABLE NOW' is typed one character per step behind a solid white block cursor on a near-black starfield; the line stays horizontally centred, so each keystroke nudges the already-typed text left while the cursor advances right.",
+    "why_premium": "Strictly rhythmic step timing (energy spikes at a fixed ~5-frame interval) with no easing reads as a precise terminal/command-line voice that matches a developer tool; the restrained palette (white mono type, single block cursor, black field) keeps all attention on the CTA phrase."
+  },
+  "build_hint": {
+    "gsap": "Split the line into chars (SplitText type:'chars'), set all autoAlpha:0, then tl.to(chars, {autoAlpha:1, duration:0, stagger:{each:0.083, ease:'none'}}) ; keep the text container centred (text-align:center) so it re-centres per char, and move the block cursor with each char via an onUpdate/stagger callback (gsap.set cursor x to the last visible char's right edge); no tween easing — ease:'steps(1)'. Cursor stays visible (optional blink after settle with repeat:-1, ease:'steps(1)').",
+    "remotion": "const n = Math.floor(frame / 5) (~83 ms per char at 60 fps); render text.slice(0, n) in a centred monospace flex row followed by the block cursor element so layout moves the cursor; no spring or interpolate easing (hard step per char); optional cursor blink via Math.floor(frame/30)%2 after the last char."
+  },
+  "confidence": "high",
+  "notes": "Event window starts mid-typing ('AVAIL' already present at f1479); earlier chars belong outside this event. Energy shows 8 discrete spikes every 5 frames (B, L, E, space, N, O, W). Facts camera reports move 'none' but scale 1.19 / pan_x -0.07 — likely an artefact of the centred line re-flowing left, not a real camera move; worth a human check. Per-word split b03/b04 chosen over union b01 so cursor b05 is separate."
+}

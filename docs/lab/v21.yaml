@@ -1,0 +1,31 @@
+# v21 — the carp Fred (Robert's first catch) on Robert's own plate (a still of take 1 at 92 s, his hands
+# framing the fish): does the redesign read in all three styles at phone size, and does he sit between the
+# hands? Photo -> 3D turntable -> pixel (with blocky Robert) -> illustrated wave and name -> moustache, hat
+# -> he hops down to the floor right of the chair (his stage for the rest of the video).
+name: v21
+voice: iP95p4xoKVk53GoZ742B
+assets: [data/fred/carp.png]
+script: >-
+  So take a look at this fish. Let's make it 3D. Or pixel art. I'll call it Fred. A mustache, and maybe a
+  top hat. I will just leave Fred here.
+plan:
+  layout: [{word: 0, layout: full}]
+  props:
+    - id: fred
+      art: fred
+      image: carp.png
+      word: "fish"
+      until: "here"
+      at: [0.6, 0.6]
+      size: 0.22
+      style: photo
+      exit: none
+      beats:
+        - {word: "3D", style: toon3d}
+        - {word: "pixel", style: pixel}
+        - {word: "Fred", style: illustrated, do: wave, tag: Fred}
+        - {word: "mustache", add: [moustache]}
+        - {word: "hat", add: [top_hat]}
+        - {word: "leave", move: [0.82, 0.8]}
+  fx:
+    - {word: "pixel", until: "call", kind: blocky, spec: {block: 22}}

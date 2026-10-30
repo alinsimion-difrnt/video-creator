@@ -1,0 +1,88 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "9438cb8590f8b78c3b62452794fd1268c2d0f7bfe50496b903ed2c87f469bcd0",
+    "created_at": "2026-10-05T06:47:05.903971Z"
+  },
+  "video": "notion-introducing-the-new-notion-ai",
+  "event": "e022",
+  "task": "a2-e022",
+  "elements": [
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Bullet 1 selection",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Hype post!",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 60, "easing_class": "step"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Bullet 2 selection",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Announce the new podcast (TechTalks) launching on Wednesday",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 60, "easing_class": "step"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Bullet 3 selection",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Keep it light and fun.",
+      "text_unit": "line",
+      "estimates": {"duration_ms": 60, "easing_class": "step"}
+    },
+    {
+      "box": null,
+      "manual_box": [675, 722, 715, 742],
+      "manual_reason": "The cursor is not covered by any candidate box; it ends at the right of the list after a drag-select.",
+      "label": "Cursor drag",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "translate (drag diagonally down-right across the list)",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 500, "easing_class": "ease_in_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x001", "verdict": "confirm", "label": "music", "note": "Broadband music texture with beat onset ~0.2 s after the burst; no distinct transient tied to the selection."}
+  ],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "A cursor drags from the first bullet down-right past the list, and Notion's blue selection highlight snaps on line by line as it passes each bullet.",
+    "why_premium": "Real product interaction shown at readable speed: the line-by-line selection cascade previews the AI action that follows and directs the eye down the list without extra callouts."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.cursor', {x: dx, y: dy, duration: 0.5, ease: 'power2.inOut'}).set('.bullet .sel', {opacity: 1, stagger: 0.07}, '<0.05') -- selection backgrounds step on (no ease) in list order synced to cursor y.",
+    "remotion": "Cursor position = interpolate(frame, [0, 15], [start, end], {easing: Easing.inOut(Easing.quad)}); each bullet i shows its highlight when cursorY > bulletTop[i] (hard step, no spring)."
+  },
+  "confidence": "high",
+  "notes": "Cursor has no candidate box, so manual_box used. Highlights are hard steps (UI selection), not tweened."
+}

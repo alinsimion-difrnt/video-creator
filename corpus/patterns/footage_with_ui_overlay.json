@@ -1,0 +1,106 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a3_pattern_cards",
+  "annotator": "claude-code",
+  "skill": "write-pattern-cards@e525a58fa6d8",
+  "model": null,
+  "input_hash": "74c04e7c7798653af73933b10c7ca561c942e924254669f63d4af58f7831352b",
+  "created_at": "2026-10-05T13:25:36.273267Z"
+ },
+ "id": "footage_with_ui_overlay",
+ "name": "UI Layered Over Footage",
+ "summary": "A product window or card sits as a layer on top of live-action footage. The footage keeps playing underneath while the UI either stays put as a frosted overlay or slides off to hand the frame back to the people on screen.",
+ "when_to_use": [
+  "Showing the product inside a real-world story rather than cutting to a screen recording",
+  "Switching between a presenter and the product without a hard cut",
+  "Pairing an action in the footage with the notification or approval it triggers"
+ ],
+ "avoid_when": [
+  "The footage is busy behind the card and makes the UI hard to read",
+  "The UI needs close reading; a full-screen product shot works better"
+ ],
+ "steps": [
+  "Lay the footage as the full-frame base layer and leave it untouched",
+  "Place the UI window or card above it, with a frosted semi-transparent fill or a framed window so it reads as a separate surface",
+  "Let the actors' own movement carry the shot while the overlay holds still",
+  "To hand back to the footage, slide the UI layer off the side of the frame with an accelerate-then-settle move",
+  "Optionally add a soft shadow on the leading edge while it travels"
+ ],
+ "build": {
+  "gsap": "The footage element does not animate. The overlay exits with a single gsap.to on xPercent past the frame edge, using an ease-out or a smooth power inOut ease; a linear move is also seen. For an overlay entrance, a fromTo on opacity, y, scale and a blur filter with an ease-out, optionally with a light overshoot.",
+  "remotion": "An OffthreadVideo in a full AbsoluteFill as the base, with the UI in an AbsoluteFill above. The exit is an interpolate on translateX with an Easing.inOut curve rather than a spring; a card entrance can use a high-damping spring on opacity and translateY, with backdropFilter blur for the frosted look."
+ },
+ "sound": "no typical sound",
+ "why_premium": "Treating the UI as a physical layer over the real set puts the product inside the story instead of breaking away to a screen capture. A frosted card composited onto a meeting shot reads as part of the scene, and sliding a product window off a presenter returns the story to them without a cut, so the narration keeps flowing. Because the footage itself stays still or simply plays on, the only designed motion is the overlay, which makes that move feel deliberate rather than like a generic wipe.",
+ "numbers": {
+  "id": "footage_with_ui_overlay",
+  "events": 2,
+  "videos": 2,
+  "weight": 1.4,
+  "duration_ms": {
+   "n": 3,
+   "videos": 2,
+   "weight": 1.9388,
+   "median": 350.872,
+   "p25": 163.132,
+   "p75": 626.53,
+   "ci": null
+  },
+  "easing_mix": {
+   "ease_out": 0.4126,
+   "spring_overshoot": 0.3095,
+   "linear": 0.2779
+  },
+  "change_mix": {
+   "slide_left": 0.5385,
+   "other": 0.4615
+  },
+  "role_mix": {
+   "other": 0.6923,
+   "ui_panel": 0.3077
+  },
+  "sfx_label_mix": {
+   "music": 1.0
+  },
+  "sfx_offset_ms": {
+   "n": 2,
+   "videos": 1,
+   "weight": 1.2,
+   "median": 150.6,
+   "p25": 129.6,
+   "p75": 171.6,
+   "ci": null
+  },
+  "examples": [
+   {
+    "video": "warp-introducing-warp-2-0-the-agentic-develo",
+    "event": "e010",
+    "score": 4.0
+   },
+   {
+    "video": "servicenow-what-are-servicenow-ai-agents",
+    "event": "e026",
+    "score": 3.0
+   }
+  ]
+ },
+ "examples": [
+  {
+   "video": "warp-introducing-warp-2-0-the-agentic-develo",
+   "event": "e010",
+   "score": 4.0
+  },
+  {
+   "video": "servicenow-what-are-servicenow-ai-agents",
+   "event": "e026",
+   "score": 3.0
+  }
+ ],
+ "caveats": [
+  "Seen in only two videos, with very few measured elements and no confidence interval",
+  "Much of the measured motion is actors moving in the footage, not the UI itself",
+  "In one example the overlay never animates, so its entrance timing was not measured"
+ ]
+}

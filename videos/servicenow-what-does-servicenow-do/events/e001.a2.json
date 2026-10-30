@@ -1,0 +1,60 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "e28b4f3a0bc6976a598ca1878a6afdf62939aa42990f719042b4e1a4055335b1",
+    "created_at": "2026-10-05T06:51:36.072406Z"
+  },
+  "video": "servicenow-what-does-servicenow-do",
+  "event": "e001",
+  "task": "a2-e001",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Live-action footage of two seated men, camera pans right onto the second man",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 800, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [500, 664, 625, 707],
+      "manual_reason": "The pixel mosaic over the man's mouth is a small overlay inside the whole-frame diff box b01; no separate candidate covers it.",
+      "label": "Pixelated censor mosaic over the speaker's mouth",
+      "role": "other",
+      "role_other": "censor_mosaic",
+      "change_types": ["pop"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    }
+  ],
+  "sfx_review": [
+    {"id": "x001", "verdict": "override", "label": "other", "note": "Pure sustained sine tone (single steady band about one second long) starting as the speaker cuts off on 'for...'; a comedic censor bleep paired with the mouth mosaic, not a chime."}
+  ],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "comedic censor bleep",
+    "description": "In live-action footage the camera pans right onto a man as he starts to say something; a pixel mosaic pops over his mouth and a sustained sine bleep covers the line.",
+    "why_premium": "A deliberate TV-style censor gag (mosaic plus bleep synced to the cut-off word) lands a joke without dialogue, giving a scripted ad a human, self-aware tone."
+  },
+  "build_hint": {
+    "gsap": "Footage layer: gsap.fromTo('.footage', {xPercent: 0}, {xPercent: -8, duration: 0.8, ease: 'power1.inOut'}); mosaic: gsap.set('.mosaic', {autoAlpha: 1}) at the bleep start (a pixelate filter tracked to the mouth), hold for the bleep duration, then gsap.set autoAlpha 0.",
+    "remotion": "Footage translateX = interpolate(frame, [0, 24], [0, -8], {easing: Easing.inOut(Easing.quad), extrapolateRight: 'clamp'})%; mosaic = <Sequence from={bleepStart} durationInFrames={bleepLen}> with a pixelated crop of the mouth region; bleep = <Audio> of a 1 kHz sine for the same span."
+  },
+  "confidence": "medium",
+  "notes": "Camera verdict is pan_right (real camera move in footage). The mosaic appears from about f201 onward in the filmstrip; its manual box is approximate. Taxonomy sfx has no 'bleep'/'censor' label, so x001 is 'other'; may be worth a taxonomy proposal."
+}

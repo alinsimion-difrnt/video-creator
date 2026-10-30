@@ -1,0 +1,219 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a3_pattern_cards",
+  "annotator": "claude-code",
+  "skill": "write-archetype-cards@a75a12f0ca91",
+  "model": null,
+  "input_hash": "ee3daf945eaedd64226854bd5ebf834042e04b0955f0207649e00d6549e492b3",
+  "created_at": "2026-10-05T19:09:25.906961Z"
+ },
+ "id": "title_card",
+ "name": "Title Card",
+ "summary": "A short, centred headline on a clean field reveals word by word or rises from a mask, sometimes with a small label pill or drifting media tiles around it. It names the product, feature or chapter so the viewer knows what comes next.",
+ "when_to_use": [
+  "Introducing the product or a new feature by name near the start.",
+  "Marking a chapter break before a new demo section.",
+  "Landing a short claim between demo beats while the narration names it."
+ ],
+ "slots": [
+  {"name": "headline", "what": "the feature or product name, or one short claim", "required": true},
+  {"name": "eyebrow", "what": "an optional small label above the headline, such as an introducing pill", "required": false},
+  {"name": "background", "what": "a solid or gradient field, or a tilted product screenshot behind the title", "required": true},
+  {"name": "accent_media", "what": "optional tiles, logos or cutouts that drift in around the title", "required": false},
+  {"name": "accent_colour", "what": "the brand colour the key word switches to as it lands", "required": false}
+ ],
+ "steps": [
+  "The field appears, often already in place from the previous cut.",
+  "An optional eyebrow dot grows into a pill and its label fades in.",
+  "The headline reveals word by word or slides up from a mask and its key word takes the accent colour.",
+  "Accent tiles or logos drift in from the edges with a light stagger and parallax.",
+  "The card holds briefly, then hands off with a cut or a soft blur crossfade."
+ ],
+ "patterns": ["kinetic_word_reveal", "logo_resolve", "parallax_layers", "ui_camera_push_in", "blur_crossfade"],
+ "build": {
+  "gsap": "One timeline per scene. Wrap each headline line in an overflow-hidden mask and tween words from below with opacity on an expo ease-out, staggered per word. Tween the eyebrow from a dot to a pill by width on an ease-out, then fade its label. Add accent tiles as separate layers sliding from the edges at different speeds for parallax, staggered, and tween the key word's colour on its entry. Close with a hold and an optional blur-plus-opacity crossfade.",
+  "remotion": "One Sequence for the field and eyebrow, one for the headline with per-word staggered springs driving translateY and opacity, and one for the accent layers whose springs use different stiffness to read as depth. Use a crossfade with an interpolated blur at the end when not hard cutting."
+ },
+ "sound": "A soft chime is the most common cue, landing as the title settles; music often lifts early in the scene, and a reversed swoosh can lead in right at the start. An occasional impact marks the headline landing.",
+ "numbers": {
+  "id": "title_card",
+  "shots": 23,
+  "videos": 19,
+  "weight": 12.9,
+  "duration_s": {
+   "n": 23,
+   "videos": 19,
+   "weight": 12.9,
+   "median": 2.7,
+   "p25": 2.059,
+   "p75": 3.442,
+   "ci": [
+    2.125,
+    3.16
+   ]
+  },
+  "events_per_shot": {
+   "n": 23,
+   "videos": 19,
+   "weight": 12.9,
+   "median": 0.188,
+   "p25": 0.0,
+   "p75": 1.0,
+   "ci": [
+    0.0,
+    1.0
+   ]
+  },
+  "first_motion_s": {
+   "n": 8,
+   "videos": 6,
+   "weight": 6.2,
+   "median": 0.089,
+   "p25": 0.039,
+   "p75": 0.612,
+   "ci": [
+    0.033,
+    0.584
+   ]
+  },
+  "pattern_mix": {
+   "kinetic_word_reveal": 0.2353,
+   "other": 0.2353,
+   "logo_resolve": 0.1765,
+   "parallax_layers": 0.1471,
+   "ui_camera_push_in": 0.1176,
+   "blur_crossfade": 0.0882
+  },
+  "transition_mix": {
+   "other": 0.4264,
+   "hard_cut": 0.3876,
+   "crossfade": 0.1008,
+   "slide": 0.062,
+   "push": 0.0233
+  },
+  "shot_type_mix": {
+   "kinetic_type": 0.6047,
+   "ui_full": 0.155,
+   "other": 0.1085,
+   "logo": 0.0775,
+   "abstract": 0.031,
+   "ui_recreated": 0.0233
+  },
+  "beat_mix": {
+   "demo": 0.3696,
+   "hook": 0.3696,
+   "mechanism": 0.1232,
+   "proof": 0.087,
+   "outcome": 0.029,
+   "problem": 0.0217
+  },
+  "sfx_label_mix": {
+   "chime": 0.2983,
+   "music": 0.2644,
+   "unsure": 0.2407,
+   "swoosh_reverse": 0.1017,
+   "impact": 0.0949
+  },
+  "sfx_offset_s_by_label": {
+   "chime": {
+    "n": 17,
+    "videos": 5,
+    "weight": 8.8,
+    "median": 2.564,
+    "p25": 1.479,
+    "p75": 4.04,
+    "ci": [
+     1.566,
+     3.454
+    ]
+   },
+   "impact": {
+    "n": 5,
+    "videos": 4,
+    "weight": 2.8,
+    "median": 1.472,
+    "p25": 0.652,
+    "p75": 2.693,
+    "ci": [
+     0.537,
+     2.648
+    ]
+   },
+   "music": {
+    "n": 13,
+    "videos": 7,
+    "weight": 7.8,
+    "median": 1.384,
+    "p25": 0.913,
+    "p75": 1.91,
+    "ci": [
+     0.959,
+     1.891
+    ]
+   },
+   "swoosh_reverse": {
+    "n": 6,
+    "videos": 2,
+    "weight": 3.0,
+    "median": 0.333,
+    "p25": 0.181,
+    "p75": 1.299,
+    "ci": [
+     0.191,
+     1.495
+    ]
+   },
+   "unsure": {
+    "n": 14,
+    "videos": 9,
+    "weight": 7.1,
+    "median": 1.097,
+    "p25": 0.407,
+    "p75": 1.375,
+    "ci": [
+     0.795,
+     1.264
+    ]
+   }
+  },
+  "examples": [
+   {
+    "video": "figma-introducing-figma-motion-your-canvas-no",
+    "shot": "s004",
+    "score": 5.0
+   },
+   {
+    "video": "datadog-datadog-overview-see-inside-the-platfor",
+    "shot": "s007",
+    "score": 4.0
+   },
+   {
+    "video": "notion-introducing-the-new-notion-ai",
+    "shot": "s007",
+    "score": 4.0
+   },
+   {
+    "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+    "shot": "s006",
+    "score": 4.0
+   },
+   {
+    "video": "duolingo-introducing-duolingo-chess",
+    "shot": "s024",
+    "score": 4.0
+   }
+  ]
+ },
+ "examples": [
+  {"video": "figma-introducing-figma-motion-your-canvas-no", "shot": "s004", "score": 5.0},
+  {"video": "datadog-datadog-overview-see-inside-the-platfor", "shot": "s007", "score": 4.0},
+  {"video": "notion-introducing-the-new-notion-ai", "shot": "s007", "score": 4.0},
+  {"video": "zendesk-meet-zendesk-ai-agents-the-most-autonom", "shot": "s006", "score": 4.0}
+ ],
+ "caveats": [
+  "Members are mixed: pure kinetic type, titles over tilted product screenshots, and one very short transitional shot.",
+  "First motion is measured on only some of the shots."
+ ]
+}

@@ -1,0 +1,93 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "tiktok_notes",
+    "annotator": "claude-code",
+    "input_hash": "ee23ffcbc43a79698b08896fa403525991abc6c57ad954d07a9e9810d1558641",
+    "created_at": "2026-10-13T11:57:22+00:00"
+  },
+  "id": "7680530263020948743",
+  "format": "split_screen",
+  "hook": {
+    "type": "problem",
+    "line": "Claude Code hits its token limit mid-task and you're stuck; here's the permanent fix.",
+    "visual": "Top half: Claude logo animates in over a 'claude code TOKEN LIMIT FIX' title; bottom half: presenter at a mic. A meme reaction clip cuts in at 1.2 s."
+  },
+  "beats": [
+    {
+      "t": 0.0,
+      "what": "Split frame: animated Claude logo and 'TOKEN LIMIT FIX' title over the talking presenter"
+    },
+    {
+      "t": 1.2,
+      "what": "Meme reaction clip (frustrated sitcom character) cut under the same title for the pain point"
+    },
+    {
+      "t": 2.0,
+      "what": "Full-screen chat UI with a cursor clicking send: the task that hits the limit"
+    },
+    {
+      "t": 4.33,
+      "what": "Zoom punch as he promises a permanent fix"
+    },
+    {
+      "t": 10.46,
+      "what": "Plugin one: orange app icon on black with its name typing in"
+    },
+    {
+      "t": 15.7,
+      "what": "Pixel-art invader icon with a 'Low usage limit' bar draining, over the presenter"
+    },
+    {
+      "t": 20.93,
+      "what": "Plugin two: ASCII-style 'HEADROOM' logo, then a flow diagram from user to model"
+    },
+    {
+      "t": 31.39,
+      "what": "Plugin three: full-screen red title card 'claude-mem'"
+    },
+    {
+      "t": 41.86,
+      "what": "Plugin four: terminal screenshot, then a big 'builds AI skills' title over app UI"
+    },
+    {
+      "t": 55.2,
+      "what": "Back to presenter full frame with a large 'PLUGINS' word on his chest for the comment keyword"
+    }
+  ],
+  "graphics": {
+    "captions": "word_by_word",
+    "caption_position": "mixed",
+    "devices": [
+      "split_screen",
+      "screen_recording",
+      "product_ui",
+      "title_text",
+      "meme_cutaway",
+      "zoom_punch",
+      "music_bed",
+      "b_roll",
+      "jump_cut"
+    ],
+    "density": "heavy",
+    "per_minute_estimate": 30
+  },
+  "characters": [],
+  "cta": {
+    "kind": "comment",
+    "t": 55.2
+  },
+  "why_it_works": [
+    "Names a pain every Claude Code user has felt in the first sentence, with the fix promised by 4 s",
+    "Numbered list of four tools gives a clear progress map, so viewers stay to hear the last item",
+    "A new visual every 1.6 s (median shot) keeps each plugin on its own branded card",
+    "Comment keyword 'PLUGINS' shown in huge type on the last frame makes the CTA unmissable"
+  ],
+  "weaknesses": [
+    "Captions jump between top, middle and the split line, so the eye hunts for them",
+    "Plugin claims ('practically unlimited tokens') are asserted, never demonstrated",
+    "Music bed is loud relative to the voice"
+  ],
+  "for_robert": "Use a one-second meme-style reaction shot on the pain line; Fred could do that reaction himself (a frustrated fish face) instead of a borrowed sitcom clip."
+}

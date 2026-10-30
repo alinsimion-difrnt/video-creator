@@ -1,0 +1,86 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "deba17aa4f69af03acc0f950db83b94ac9d08d837425892770157c7c401b71a4",
+    "created_at": "2026-10-05T06:39:25.870380Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e080",
+  "task": "a2-e080",
+  "elements": [
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Onboarding row title truncating and underlining on hover",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["highlight", "other"],
+      "change_other": "text truncation on hover (Onboarding templ... to Onboar...)",
+      "is_text": true,
+      "text": "Onboar...",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Expand (open idea) icon appearing on the hovered row",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 40, "easing_class": "step"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Lower table rows: hover background and 'Create a delivery ticket' hint flicking on and off as the cursor passes",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["highlight", "fade"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Create a delivery ticket",
+      "text_unit": "whole",
+      "estimates": null
+    },
+    {
+      "box": null,
+      "manual_box": [372, 268, 412, 282],
+      "manual_reason": "Mouse cursor has no dedicated candidate box (b01 is the hovered summary cell)",
+      "label": "Mouse cursor travelling up the table to the Onboarding row",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["other"],
+      "change_other": "cursor travel",
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "Live screen-recording cursor sweeps up the Delivery table; each row it crosses shows its hover state (row tint, 'Create a delivery ticket' hint), and it settles on the Onboarding row where the title truncates and the open-idea icon appears.",
+    "why_premium": "Real hover affordances reveal the delivery-ticket action without narration, priming the 'link ideas to delivery' line that follows."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.cursor', {x: 0, y: -230, duration: 0.45, ease: 'power2.inOut'}); per row tl.set('.row-n', {className: '+=is-hover'}, t) then remove; at end tl.set('.row-onboarding .open-icon', {autoAlpha: 1}) and swap title to truncated text.",
+    "remotion": "cursorY = interpolate(frame, [0, 14], [startY, endY], {easing: Easing.inOut(Easing.cubic)}); hoveredRow = rows.findIndex(r => cursorY in r); render hover tint, hint and open icon conditionally (no spring)."
+  },
+  "confidence": "medium",
+  "notes": "Filmstrip is a crop of the table's lower-left; hover states are instantaneous UI changes, not authored animation."
+}

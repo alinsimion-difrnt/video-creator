@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "6819c51130f21af4767dba2bb60a323b232884d08fe5fdee9682951eb8cab735",
+    "created_at": "2026-10-05T06:38:36.437722Z"
+  },
+  "video": "attio-introducing-ask-attio",
+  "event": "e003",
+  "task": "a2-e003",
+  "elements": [
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "'Thinking...' status text",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["scale_up", "slide_right", "highlight"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Thinking...",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 450, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Background grid lines",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["fade", "scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 400, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "other",
+    "proposed_name": "status text zoom",
+    "description": "The small grey 'Thinking...' status line under the user's prompt grows from a footnote into the centred hero text while the prompt bubble leaves frame and faint grid lines scale in; a light shimmer sweeps across the letters as it grows.",
+    "why_premium": "Turns an ordinary AI loading state into a hero moment: one element is promoted in scale and position instead of cutting, so the viewer's eye stays on it, and the shimmer keeps the 'working' state alive while it moves."
+  },
+  "build_hint": {
+    "gsap": "tl.fromTo('.thinking', {scale: 0.25, x: -260, y: 40}, {scale: 1, x: 0, y: 0, duration: 0.45, ease: 'power2.inOut'}); tl.to('.prompt-bubble', {x: 300, autoAlpha: 0, duration: 0.3, ease: 'power2.in'}, '<'); tl.fromTo('.grid-line', {autoAlpha: 0, scale: 0.9}, {autoAlpha: 1, scale: 1, duration: 0.4, ease: 'power2.out', stagger: 0.03}, '<0.1'); shimmer: tl.fromTo('.thinking', {backgroundPosition: '200% 0'}, {backgroundPosition: '-100% 0', duration: 1, ease: 'none', repeat: -1}, 0) on a background-clip:text gradient.",
+    "remotion": "const p = interpolate(frame, [0, 14], [0, 1], {easing: Easing.inOut(Easing.cubic), extrapolateRight: 'clamp'}); scale = interpolate(p, [0, 1], [0.25, 1]); translate from (-260px, 40px) to 0; grid opacity = interpolate(frame, [3, 15], [0, 1]); shimmer = gradient background-position driven by (frame % 30) / 30, linear."
+  },
+  "confidence": "medium",
+  "notes": "The 'How do I win this deal' prompt bubble leaves the frame during the burst but is absent from the end frame, so it has no box and is not listed. b04 (thin strip above the text) looks like a motion residue rather than an element. Camera verdict is none, so the zoom is treated as an element scale, not a camera push. A transient around 5.68-5.72 s is visible on the spectrogram but there are no SFX candidates. Filmstrip timestamps run about 0.3 s earlier than facts start_s/end_s (also in e004-e007); worth checking."
+}

@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "44164a02e9f5faf12320dbadae40c7cf2823e9232d1e37f1b6b3131307d4eb29",
+    "created_at": "2026-10-05T06:38:33.120320Z"
+  },
+  "video": "atlassian-introduction-to-jira-product-discovery",
+  "event": "e068",
+  "task": "a2-e068",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Hover highlight row moving across the Impact field preview (value rows then the Impact select)",
+      "role": "list_item",
+      "role_other": null,
+      "change_types": ["highlight"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 70, "easing_class": "step", "source": "model_estimate"}
+    },
+    {
+      "box": null,
+      "manual_box": [156, 971, 181, 983],
+      "manual_reason": "The mouse cursor has no candidate box; it travels from the value rows up past the Impact select towards the panel close button.",
+      "label": "Mouse cursor",
+      "role": "cursor",
+      "role_other": null,
+      "change_types": ["slide_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": null
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "cursor_guided_demo",
+    "proposed_name": null,
+    "description": "Real screen-recorded cursor sweeps over the Columns field preview; each row it passes shows a grey hover band and drag handle, then it exits towards the panel close control.",
+    "why_premium": "Minor beat; the hover band confirms the rows are interactive without any added graphics, keeping the demo honest and legible."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.cursor', {x: 0, y: -120, duration: 0.15, ease: 'power1.out'}); tl.set('.row.hover', {className: 'row'}, '<'); hover band toggled per row with tl.set (no tween).",
+    "remotion": "Cursor position via interpolate(frame, [0, 5], [y0, y1], {easing: Easing.out(Easing.quad)}); hover background as a boolean of which row the interpolated cursor y falls in (hard toggle, no spring)."
+  },
+  "confidence": "low",
+  "notes": "Tiny event (about 130 ms). The filmstrip is a crop of the panel; the hover band is the only UI change. Cursor manual box is placed at its end-frame location near the close X."
+}

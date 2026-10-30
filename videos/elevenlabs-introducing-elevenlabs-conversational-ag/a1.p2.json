@@ -1,0 +1,113 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a1_annotate_video",
+    "annotator": "claude-code",
+    "skill": "annotate-video@21c29fc73f7d",
+    "model": null,
+    "input_hash": "98703bdb30e2d4a8f0aac54a91cbfcbdc780ffa1a45b2006491a571b93b2b646",
+    "created_at": "2026-10-05T07:37:14.693783Z"
+  },
+  "video": "elevenlabs-introducing-elevenlabs-conversational-ag",
+  "task": "a1-p2",
+  "shots": [
+    {
+      "shot": "s003",
+      "shot_type": "ui_recreated",
+      "shot_type_other": null,
+      "composition": "centered",
+      "composition_other": null,
+      "focal_element": "A sequence of recreated product UI moments on an off-white canvas: the swirling gradient agent orb, a two-sided chat transcript that types in sync with the voice-over, transcript analysis lists, an audio playback card, evaluation/summary cards, a multilingual '32 languages' type moment, a Spanish chat, an embed-code card with cursor copy, and a 'Need help? / Start a call' widget.",
+      "transition_in": "push",
+      "transition_other": null,
+      "on_screen_text": [
+        "Server",
+        "Hi, this is Eric from BoundEvents. How can I help?",
+        "Hey, I accidentally bought a ticket twice.",
+        "Could I get a refund please?",
+        "Sure. Please read out your reference number and I can begin to process that right now.",
+        "Analyse your transcripts",
+        "Evaluate your transcripts",
+        "Transcription",
+        "Another tab",
+        "0:04 / 0:53",
+        "Evaluation criteria",
+        "Table Booked",
+        "Caller successfully booked a reservation",
+        "Data collection",
+        "Party size",
+        "Number of people in reservation",
+        "Time",
+        "Time of reservation",
+        "Summary",
+        "Success",
+        "6 people",
+        "8pm",
+        "All agents currently support 32 languages.",
+        "Welcome to DC Medical. How can I help?",
+        "Hello. ¿Hablas español?",
+        "Sí, por supuesto que hablo español. ¿En qué puedo ayudarle?",
+        "Embed code",
+        "Add the following snippet to the pages where you want the conversation widget to be.",
+        "Copied!",
+        "Need help?",
+        "Start a call"
+      ],
+      "text_word_count": 127,
+      "typography": "Clean geometric sans throughout (low-confidence guess: an Inter-like grotesk). Chat bubbles use small regular-weight sentence-case body text; headlines 'Analyse/Evaluate your transcripts' and 'All agents currently support 32 languages.' are large bold sentence case with tight tracking, the first word or the '32 languages' line filled with a gradient; translations of the languages line float behind in a large light serif italic at varying blur and size; the embed snippet is monospace.",
+      "depth_cues": [
+        "shadow",
+        "blur",
+        "glow"
+      ],
+      "what_happens": "Long single shot built from in-shot layout reframes (w148-w245). A 'Server' pill grows into a circle and merges with the gradient orb (w151-w158), which shrinks into a chat avatar; the BoundEvents refund conversation types in word by word with left (user, grey orb) and right (agent, pink orb) bubbles, scrolling up as new ones arrive (w159-w198). The chat slides away to reveal 'Analyse your transcripts' between masked-scrolling lists of call summaries, the first word blur-swapping to 'Evaluate' (w199-w206); a transcript view scrolls with highlighted entities, collapses into an audio waveform player whose bars fill with colour as it plays (w207-w213); evaluation criteria and data collection cards stack behind a summary card with success/value chips (w214-w222). 'All agents currently support 32 languages.' appears while translations in other languages drift by in blurred serif, then the camera zooms through the letters 'ngu' (w223-w230). After a music-only stretch (no words between 77.82 s and 86.36 s), a DC Medical chat answers a Spanish question in Spanish; the orb sweeps in beside an 'Embed code' card, a cursor clicks copy and a 'Copied!' tooltip appears (w231-w245), and the card resolves into a small 'Need help? / Start a call' widget before the scene breaks apart into the next shot's image tiles. Small list and summary paragraph text is too small at sheet resolution to quote; the embed snippet was only partly legible and is not quoted.",
+      "build_rebuild": "Build one continuous HTML scene on an off-white background where each section is a component (chat bubbles with typewriter text keyed to VO word times, a blurred-headline word swap, a waveform player with a progress-fill gradient, stacked summary cards, a floating multilingual text field) and transition between them with GSAP layout reframes, blur crossfades and a final scale-up zoom through a headline glyph.",
+      "confidence": "medium"
+    },
+    {
+      "shot": "s004",
+      "shot_type": "other",
+      "shot_type_other": "collage of stock/lifestyle footage tiles in rounded cards with UI status chips (footage + ui overlay)",
+      "composition": "grid",
+      "composition_other": null,
+      "focal_element": "A 2x2 grid of rounded footage tiles (aerial kayak, orange suitcase, parcel hand-off, older man in a game-like scene) with a column of SDK icons (Python, JavaScript, React, Swift) to its left, and pill chips 'Booking confirmed' / 'Purchase confirmed' appearing over the tiles.",
+      "transition_in": "other",
+      "transition_other": "The embed widget dissolves as the image tiles fly in from off-frame and assemble into the grid (tile assemble).",
+      "on_screen_text": [
+        "Booking confirmed",
+        "Purchase confirmed"
+      ],
+      "text_word_count": 4,
+      "typography": "Pill chips with medium-weight sentence-case sans text in a white capsule with a thin blue/purple gradient outline; the chip text reveals left to right as if typed or masked in.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "As the VO says 'leverage our SDK for creating apps, services' (w246-w253), the grid re-lays out repeatedly: the suitcase tile grows large and a 'Booking confirmed' chip pops onto it, then the layout shifts so the parcel hand-off tile enlarges with a 'Purchase confirmed' chip, the other tiles shrinking and sliding to make room. The SDK icon column stays pinned at the left edge of the grid.",
+      "build_rebuild": "Lay out four rounded video tiles in a CSS grid next to an icon column and, on each VO cue, animate grid-template sizes with a spring so one tile becomes dominant while a gradient-outlined status pill scales in and its label masks in left to right.",
+      "confidence": "high"
+    },
+    {
+      "shot": "s005",
+      "shot_type": "other",
+      "shot_type_other": "collage of footage tiles in rounded cards with a UI status chip (footage + ui overlay)",
+      "composition": "grid",
+      "composition_other": null,
+      "focal_element": "The video-game character tile (older man in an orange jacket with a game HUD dialogue bar) enlarged at lower right, with a 'Mission accepted' pill chip over its corner.",
+      "transition_in": "other",
+      "transition_other": "Continuation of the tile-grid re-layout from s004: tiles resize and slide so the game-character tile becomes dominant (layout reframe detected as a cut).",
+      "on_screen_text": [
+        "Mission accepted"
+      ],
+      "text_word_count": 2,
+      "typography": "Same white capsule chip with thin blue/purple gradient outline and medium-weight sentence-case sans label, larger than in s004 because the tile is larger. The in-footage game HUD text is illegible and not quoted.",
+      "depth_cues": [
+        "shadow"
+      ],
+      "what_happens": "On 'or even video games' (w254-w257) the grid reframes once more: the game-character tile grows to dominate the lower right and a 'Mission accepted' chip appears on it, while the kayak and suitcase tiles shrink into a top row and the SDK icons shrink and fade at the left; the whole collage drifts slightly left across the ~1 s shot.",
+      "build_rebuild": "Reuse the s004 grid component and trigger a third layout state where the game tile spans the large cell, then spring-scale in a 'Mission accepted' pill anchored to that tile's bottom-right corner.",
+      "confidence": "high"
+    }
+  ],
+  "summary": null
+}

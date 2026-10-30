@@ -1,0 +1,51 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "pixel_notes",
+  "annotator": "claude-code",
+  "input_hash": "f20da8abf4def9ef772dc4185369e87557a742e209f9bc3ea984f53a82c595dc",
+  "created_at": "2026-10-13T13:05:22+00:00"
+ },
+ "id": "7357895703256943878",
+ "kind": "clip",
+ "palette": {
+  "colours_estimate": 19,
+  "shadows": "cool",
+  "notes": "19 colours measured, 2 ramps (median hue shift 7.5 deg, length 9.5). Each scene has its own mood palette: dusk maroon, day blue with peach clouds, teal night with orange lamps."
+ },
+ "lighting": "Strong single mood per scene: sunset glow, warm sodium lamps reflected on wet road, a tree glowing in the dark, a lit station on a blue night.",
+ "silhouette": "Wide scenery; poles, trees and buildings in dark flat shapes against the sky; a tiny snowman is the only figure.",
+ "motion": {
+  "timing": "Mostly still: 1.7 drawings/s, 34 changes in 20 s; holds at 33.3 ms come from small looping bits (lights, stars, clouds). Each scene holds about 3 s before a cut.",
+  "principles": [
+   "ambient loop",
+   "minimal motion"
+  ]
+ },
+ "texture": "Native 96x170 at 6x scale, clean pixels, almost no dither; cloud and mountain shading done with flat bands.",
+ "camera": "Locked frames, one cinemagraph per scene, hard cuts between scenes.",
+ "sound": "",
+ "acting": {
+  "enters": "",
+  "acts": "No acting characters; a slideshow of cozy places (fast food sign, clouds, town, wet road, Christmas tree, gas station).",
+  "exits": "",
+  "comes_back": null,
+  "depth": "Deep staging: tiny figures and props small against huge sky; reflections give depth on the road and the station."
+ },
+ "techniques": [
+  "cinemagraph: one or two looping lights per still scene",
+  "tiny native canvas (96x170) upscaled 6x",
+  "one mood palette per scene",
+  "wet-road and water reflections of warm lights",
+  "tiny props small in a big sky for scale"
+ ],
+ "feel": "huge quiet sky + tiny lit props + one looping light per scene = cozy lo-fi calm",
+ "for_fred": "Use a still scene where only one thing loops and put Fred small in the far background doing his gag; then cut close. Small-in-the-back, then big-in-front, is exactly the depth Robert wants.",
+ "sources": [
+  "https://www.tiktok.com/@pixelchilll/video/7357895703256943878",
+  "data/study/pixel/work/7357895703256943878/sheet.jpg",
+  "studies/pixel-art/clips/7357895703256943878.json",
+  "studies/pixel-art/tiktok.yaml"
+ ]
+}

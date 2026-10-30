@@ -1,0 +1,40 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "7b0fe08f7a74d9a32501ae14aded881bad8210aeadf5313c6076991816533178",
+    "created_at": "2026-10-05T06:47:50.545163Z"
+  },
+  "video": "notion-introducing-the-new-notion-ai",
+  "event": "e016",
+  "task": "a2-e016",
+  "elements": [
+    {"box": "b06", "manual_box": null, "manual_reason": null, "label": "Prompt text being typed", "role": "body_text",
+     "role_other": null, "change_types": ["typewriter"], "change_other": null, "is_text": true,
+     "text": "Any updates on the mobile improvements project?", "text_unit": "char",
+     "estimates": {"duration_ms": 500, "easing_class": "step"}},
+    {"box": "b02", "manual_box": null, "manual_reason": null, "label": "AI prompt input field", "role": "ui_panel",
+     "role_other": null, "change_types": ["morph"], "change_other": null, "is_text": false,
+     "text": null, "text_unit": null, "estimates": {"duration_ms": 150, "easing_class": "ease_out"}},
+    {"box": "b03", "manual_box": null, "manual_reason": null, "label": "Notion AI mascot face", "role": "icon",
+     "role_other": null, "change_types": ["morph"], "change_other": null, "is_text": false,
+     "text": null, "text_unit": null, "estimates": {"duration_ms": 400, "easing_class": "ambiguous"}}
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "prompt_type_on",
+    "proposed_name": null,
+    "description": "A question is typed character by character into the Notion AI chat input with a blinking caret; the input grows from a single row to a two-row field with an 'In: All sources' scope line, while the large mascot face beside the panel shifts its expression as if reading along.",
+    "why_premium": "Realistic burst-typing cadence sells a real product interaction, and the reactive mascot on the brand-blue side panel gives the AI a personality without leaving the UI demo."
+  },
+  "build_hint": {
+    "gsap": "gsap.to('.prompt-text', {text: 'Any updates on the mobile improvements project?', duration: 0.9, ease: 'none'}) (TextPlugin, or step the characters via a counter in bursts of 2-4 chars per frame); at the first char gsap.to('.prompt-input', {height: '+=36', duration: 0.15, ease: 'power2.out'}); swap mascot face states with a short gsap.to on eyebrow/eye paths (morph) in parallel.",
+    "remotion": "const chars = Math.floor(interpolate(frame, [0, 26], [0, text.length], {extrapolateRight: 'clamp'})); render text.slice(0, chars) + caret; input height via interpolate(spring({frame, fps, config: {damping: 200}}), [0,1], [48, 84]); mascot face swaps SVG states or interpolates path points over ~12 frames."
+  },
+  "confidence": "medium",
+  "notes": "Energy alternates every other frame, consistent with typing on twos. Text from OCR (trailing caret removed). Mascot face change is subtle (eye/brow shift); exact nature ambiguous at filmstrip scale. The suggestions list (b04/b07/b10-b15/b18-b20) shows small changed shares, possibly a slight upward shift when the input grows; not listed as moving elements."
+}

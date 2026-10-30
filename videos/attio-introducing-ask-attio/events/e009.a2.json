@@ -1,0 +1,86 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "266824b5ec9e8453b6e1335603b28e9fbc777a5b2ecc43cad9cbee2eedfa21ce",
+    "created_at": "2026-10-05T06:43:00.967348Z"
+  },
+  "video": "attio-introducing-ask-attio",
+  "event": "e009",
+  "task": "a2-e009",
+  "elements": [
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Attio app icon inserted between words",
+      "role": "logo",
+      "role_other": null,
+      "change_types": ["scale_up", "pop"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "spring_no_overshoot"}
+    },
+    {
+      "box": "b04",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Word 'Every' pushed left",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Every",
+      "text_unit": "word",
+      "estimates": {"duration_ms": 350, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Word 'note' pushed right",
+      "role": "headline",
+      "role_other": null,
+      "change_types": ["slide_right"],
+      "change_other": null,
+      "is_text": true,
+      "text": "note",
+      "text_unit": "word",
+      "estimates": {"duration_ms": 350, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": null,
+      "manual_box": [0, 0, 1000, 1000],
+      "manual_reason": "The faint grid background fades in across the whole frame; no candidate box covers the full frame.",
+      "label": "Grid background",
+      "role": "background",
+      "role_other": null,
+      "change_types": ["fade"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 300, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "chip_append",
+    "proposed_name": null,
+    "description": "The headline words 'Every' and 'note' part horizontally to open a gap, and the dark Attio app icon pops in at the centre, growing from a tiny square to full size; a light grid background fades in at the same time.",
+    "why_premium": "The words make room for the icon in one coordinated motion, so the brand mark becomes part of the sentence rather than an overlay; the icon grows with a soft settle and the grid adds depth without competing."
+  },
+  "build_hint": {
+    "gsap": "tl.to('.word-left', {x: -60, duration: 0.35, ease: 'power3.inOut'}).to('.word-right', {x: 60, duration: 0.35, ease: 'power3.inOut'}, '<').fromTo('.icon', {scale: 0, opacity: 0}, {scale: 1, opacity: 1, duration: 0.35, ease: 'back.out(1.2)'}, '<0.08').fromTo('.grid', {opacity: 0}, {opacity: 1, duration: 0.4, ease: 'power1.out'}, '<')",
+    "remotion": "const s = spring({frame: frame - 3, fps, config: {damping: 18, stiffness: 200, mass: 1}}); icon scale = s; left word translateX = interpolate(s, [0, 1], [0, -60]); right word = interpolate(s, [0, 1], [0, 60]); grid opacity = interpolate(frame, [0, 12], [0, 1], {extrapolateRight: 'clamp'})."
+  },
+  "confidence": "medium",
+  "notes": "Pattern chip_append is an approximate fit (an inline brand icon inserted into a headline); a dedicated 'inline icon insert' pattern may be worth proposing. Grid background uses a manual full-frame box. Whether the icon overshoots cannot be told from the filmstrip; b03 OCR text '00' is a misread of the icon glyph."
+}

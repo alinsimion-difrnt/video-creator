@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "d55638bccc4f3805f73b76635d54afcd9b93e74b380b4652538e4c01b6796efc",
+    "created_at": "2026-10-05T06:47:29.100962Z"
+  },
+  "video": "notion-introducing-notion-ai-connectors",
+  "event": "e004",
+  "task": "a2-e004",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Connector logo tray (Drive, Slack, Notion, Jira) snapping to a tight framing",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 40, "easing_class": "step", "source": "model_estimate"}
+    },
+    {
+      "box": "b02",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Slack icon tile flashing to grey",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["color_shift", "highlight"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 70, "easing_class": "step", "source": "model_estimate"}
+    }
+  ],
+  "sfx_review": [],
+  "pattern": {
+    "id": "layout_reframe",
+    "proposed_name": null,
+    "description": "The six-logo connector tray jumps from a wide framing to a tight crop on the first four tiles in a single frame (no tweened zoom), then the Slack tile flashes to a grey pressed state on the next beat.",
+    "why_premium": "Snap reframes timed to music transients give a static logo row a punchy, edit-like rhythm while keeping logos crisp; the beat-timed grey flash then singles out one integration without extra graphics."
+  },
+  "build_hint": {
+    "gsap": "Timeline: `.set(tray, {scale: 2.2, xPercent: 20})` on the beat (step, no ease) to reframe; then on the next beat `.set(slackTile, {filter: 'brightness(0.55) saturate(0.6)'})` and `.set(slackTile, {filter: 'none'}, '+=0.067')`. Repeat per tile on later beats.",
+    "remotion": "Drive tray `transform: scale(frame >= cutFrame ? 2.2 : 1)` with no interpolation; for the Slack tile `filter: frame >= flashFrame && frame < flashFrame + 2 ? 'brightness(0.55)' : 'none'`. Take cut and flash frames from the beat list."
+  },
+  "confidence": "medium",
+  "notes": "camera.move is none, so the wide-to-tight jump (f125 to f135) is recorded as an element scale_up, not a camera push; it reads like a jump-cut zoom. b02 is a diff box spanning both Drive and Slack tiles; only Slack visibly changes colour. Notion and Jira (b03, b04) change only through the reframe and are covered by b01. Filmstrip shows Slack still grey at the end frame, so flash duration is unclear."
+}

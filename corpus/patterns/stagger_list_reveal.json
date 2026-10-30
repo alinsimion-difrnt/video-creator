@@ -1,0 +1,159 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "a3_pattern_cards",
+  "annotator": "claude-code",
+  "skill": "write-pattern-cards@e525a58fa6d8",
+  "model": null,
+  "input_hash": "7bbcc6061a91cbfdb55cc09d9d6630ce20db2b1c552c281d2c3907a1f6dcedc3",
+  "created_at": "2026-10-05T12:53:46.545614Z"
+ },
+ "id": "stagger_list_reveal",
+ "name": "List Items Arrive In Turn",
+ "summary": "The items of a list, row or panel appear one after another in quick succession, each fading in while rising or sliding a short distance into place, so the group builds up in reading order.",
+ "when_to_use": [
+  "Revealing steps, settings, results or integrations that should read as an ordered set",
+  "Visualising reasoning or progress as a checklist that fills in",
+  "Bringing an empty panel or launcher to life without a hard pop"
+ ],
+ "avoid_when": [
+  "The list is long enough that waiting for the last item drags",
+  "Items are unrelated, so a sequence implies an order that is not there"
+ ],
+ "steps": [
+  "Lay out the final list, then offset each item slightly below or to the side and make it transparent",
+  "Optionally grow or unmask the container first, overlapping its growth with the first items",
+  "Bring each item to its resting place with a fade and short slide, starting each a beat after the previous one",
+  "Keep every item on the same distance, ease and baseline so the cascade reads as one rhythm",
+  "Add grouping or focus cues, such as a tray or a selection highlight, as the last item lands"
+ ],
+ "build": {
+  "gsap": "One gsap.fromTo() on the item selector from {autoAlpha: 0, y or x offset, optional filter blur} to rest, with an ease_out family (power2.out or power3.out) and a small stagger in reading order. Run the container's scale, height or clipPath reveal on the same timeline with '<' so they overlap; use ease_in_out (power2.inOut) for any accompanying camera drift. A back.out ease suits an occasional spring_overshoot pop on the first item.",
+  "remotion": "For item i, compute spring({frame: frame - i * delay, fps}) with high damping (no overshoot) and map it to opacity, translate and optional blur with interpolate(). Drive the container from its own spring or an interpolate() with Easing.out, and fade any grouping tray in after the last item's delay."
+ },
+ "sound": "No typical sound: most detected audio is music. When an effect is used it is a light impact or reverse swoosh landing roughly with the cascade, sometimes a faint tick per item.",
+ "why_premium": "A tight cascade lets the eye read the items as an ordered sequence instead of a block that pops in all at once, which turns a flat row of icons or steps into a quick roll call or a visible line of reasoning. Every item sharing the same short travel, soft ease-out and baseline gives the reveal a single rhythm, and overlapping the container's growth with the items means the panel never shows empty space. Small finishing cues, like a tray fading in behind the last icon or a selection highlight arriving with the first row, tell the viewer how the group fits together and where to look next.",
+ "numbers": {
+  "id": "stagger_list_reveal",
+  "events": 11,
+  "videos": 6,
+  "weight": 8.6,
+  "duration_ms": {
+   "n": 43,
+   "videos": 5,
+   "weight": 33.8922,
+   "median": 689.069,
+   "p25": 531.498,
+   "p75": 866.238,
+   "ci": [
+    581.302,
+    756.5
+   ]
+  },
+  "easing_mix": {
+   "ease_out": 0.5349,
+   "ease_in_out": 0.2092,
+   "spring_overshoot": 0.1142,
+   "linear": 0.0708,
+   "ease_in": 0.0708
+  },
+  "change_mix": {
+   "fade": 0.4343,
+   "slide_up": 0.2727,
+   "slide_left": 0.1313,
+   "blur_in": 0.0606,
+   "scale_up": 0.0404,
+   "pop": 0.0303,
+   "mask_reveal": 0.0202,
+   "highlight": 0.0101
+  },
+  "role_mix": {
+   "list_item": 0.4314,
+   "logo": 0.2157,
+   "card": 0.098,
+   "avatar": 0.0588,
+   "ui_panel": 0.0588,
+   "headline": 0.0392,
+   "icon": 0.0392,
+   "label": 0.0392,
+   "other": 0.0196
+  },
+  "sfx_label_mix": {
+   "music": 0.5493,
+   "impact": 0.169,
+   "swoosh_reverse": 0.169,
+   "unsure": 0.1127
+  },
+  "sfx_offset_ms": {
+   "n": 43,
+   "videos": 2,
+   "weight": 34.4,
+   "median": 8.8,
+   "p25": -181.85,
+   "p75": 270.1,
+   "ci": [
+    -79.0,
+    105.4
+   ]
+  },
+  "examples": [
+   {
+    "video": "anthropic-introducing-claude-design-by-anthropic-l",
+    "event": "e004",
+    "score": 4.0
+   },
+   {
+    "video": "notion-introducing-notion-ai-connectors",
+    "event": "e001",
+    "score": 4.0
+   },
+   {
+    "video": "notion-introducing-the-new-notion-ai",
+    "event": "e014",
+    "score": 4.0
+   },
+   {
+    "video": "raycast-new-raycast-coming-2026",
+    "event": "e002",
+    "score": 4.0
+   },
+   {
+    "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+    "event": "e027",
+    "score": 4.0
+   }
+  ]
+ },
+ "examples": [
+  {
+   "video": "anthropic-introducing-claude-design-by-anthropic-l",
+   "event": "e004",
+   "score": 4.0
+  },
+  {
+   "video": "notion-introducing-notion-ai-connectors",
+   "event": "e001",
+   "score": 4.0
+  },
+  {
+   "video": "notion-introducing-the-new-notion-ai",
+   "event": "e014",
+   "score": 4.0
+  },
+  {
+   "video": "raycast-new-raycast-coming-2026",
+   "event": "e002",
+   "score": 4.0
+  },
+  {
+   "video": "zendesk-meet-zendesk-ai-agents-the-most-autonom",
+   "event": "e027",
+   "score": 4.0
+  }
+ ],
+ "caveats": [
+  "Few events, from a small number of videos",
+  "Sound timing comes from only two videos, so the sound guidance is weak"
+ ]
+}

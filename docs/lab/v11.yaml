@@ -1,0 +1,38 @@
+# v11 — the accessory parade and a twist ending: sunglasses, crown, bow tie, the hat off; Pixie walks in,
+# takes the crown (carry), and it is hers. Questions: do accessories land with weight? Do removals read?
+name: v11
+voice: iP95p4xoKVk53GoZ742B
+script: >-
+  Fred wanted an upgrade. Sunglasses. A crown. A bow tie. Lose the hat.
+  Perfect. And then the cat showed up. Long live Queen Pixie.
+plan:
+  layout: [{word: 0, layout: full}]
+  props:
+    - id: fred
+      art: fred
+      word: "Fred"
+      until: "Pixie"
+      at: lap
+      size: 0.2
+      style: illustrated
+      accessories: [top_hat]
+      beats:
+        - {word: "Sunglasses", add: [sunglasses]}
+        - {word: "crown", add: [crown]}
+        - {word: "bow", add: [bow_tie]}
+        - {word: "Lose", remove: [top_hat]}
+        - {word: "Perfect", do: clap}
+    - id: pixie
+      art: cat
+      word: "cat"
+      until: "Pixie"
+      at: floor_right
+      size: 0.28
+      enter: walk_right
+      exit: run_left
+      beats:
+        - {word: "showed", move: lap}
+        - {word: "Long", carry: fred}
+        - {word: "Queen", tag: "Queen Pixie"}
+  fx:
+    - {word: "Long", kind: flash}

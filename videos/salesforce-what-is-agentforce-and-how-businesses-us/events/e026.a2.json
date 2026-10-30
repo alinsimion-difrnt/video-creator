@@ -1,0 +1,47 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "5c3d35def6757459fdfa750efb730c0903ae51283953beaefdce89cd072ab85a",
+    "created_at": "2026-10-05T06:51:33.272936Z"
+  },
+  "video": "salesforce-what-is-agentforce-and-how-businesses-us",
+  "event": "e026",
+  "task": "a2-e026",
+  "elements": [
+    {
+      "box": "b01",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Agent Builder UI screen (whole recording plate)",
+      "role": "ui_panel",
+      "role_other": null,
+      "change_types": ["scale_down"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 350, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {"id": "x049", "verdict": "confirm", "label": "music", "note": "Broadband pulse in the continuing music bed, just before the burst; no discrete hit tied to the visual."},
+    {"id": "x050", "verdict": "override", "label": "music", "note": "Same broadband pulse shape as the repeating beat pulses around it (~83.0, 83.4, 83.8, 84.4 s); reads as a music beat rather than a chime."}
+  ],
+  "pattern": {
+    "id": "layout_reframe",
+    "proposed_name": null,
+    "description": "At the end of the last demo shot the whole UI recording plate begins to shrink inside the frame, revealing the purple brand backdrop at the edges, as the outro ('Thanks for watching') approaches.",
+    "why_premium": "The screen recording is treated as a card on a branded backdrop, so the exit is a soft scale-down onto brand colour instead of a hard cut from raw UI to the end card."
+  },
+  "build_hint": {
+    "gsap": "Put the UI capture in a container over a brand gradient background; gsap.fromTo(uiPlate, {scale: 1, borderRadius: 0}, {scale: 0.94, borderRadius: 24, duration: 0.35, ease: 'power3.out'}).",
+    "remotion": "Wrap the screen capture in an AbsoluteFill over a gradient; const s = spring({frame: frame - start, fps, config: {damping: 30, stiffness: 180}}); scale = interpolate(s, [0, 1], [1, 0.94]) applied via transform."
+  },
+  "confidence": "low",
+  "notes": "Only ~1% whole-frame shrink inside this burst (camera.move none, scale 0.9896); the context frame shows the plate shrinking further with purple edges. This is the onset of the shrink completed in e027 (shot split s009/s010 falls mid-move). Not reported as a camera move."
+}

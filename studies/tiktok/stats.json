@@ -1,0 +1,3221 @@
+{
+ "videos": 194,
+ "noted": 194,
+ "all": {
+  "measured": {
+   "duration_s": {
+    "n": 194,
+    "median": 59.0,
+    "p25": 39.0,
+    "p75": 88.0
+   },
+   "cuts_per_min": {
+    "n": 194,
+    "median": 4.085,
+    "p25": 0.782,
+    "p75": 11.67
+   },
+   "shot_median_s": {
+    "n": 194,
+    "median": 7.89,
+    "p25": 3.54,
+    "p75": 25.0
+   },
+   "first_cut_s": {
+    "n": 154,
+    "median": 5.8,
+    "p25": 3.25,
+    "p75": 13.697
+   },
+   "words_per_s": {
+    "n": 194,
+    "median": 3.35,
+    "p25": 2.975,
+    "p75": 3.808
+   },
+   "first_word_s": {
+    "n": 186,
+    "median": 0.0,
+    "p25": 0.0,
+    "p75": 0.0
+   },
+   "silence_share": {
+    "n": 194,
+    "median": 0.106,
+    "p25": 0.076,
+    "p75": 0.156
+   },
+   "text_share": {
+    "n": 194,
+    "median": 0.979,
+    "p25": 0.962,
+    "p75": 0.988
+   },
+   "caption_share": {
+    "n": 194,
+    "median": 0.974,
+    "p25": 0.929,
+    "p75": 0.985
+   },
+   "caption_height": {
+    "n": 194,
+    "median": 0.039,
+    "p25": 0.033,
+    "p75": 0.047
+   },
+   "outside_safe_share": {
+    "n": 194,
+    "median": 0.766,
+    "p25": 0.651,
+    "p75": 0.903
+   },
+   "face_share": {
+    "n": 194,
+    "median": 0.916,
+    "p25": 0.389,
+    "p75": 1.0
+   },
+   "face_height": {
+    "n": 180,
+    "median": 0.272,
+    "p25": 0.186,
+    "p75": 0.354
+   },
+   "face_cy": {
+    "n": 180,
+    "median": 0.446,
+    "p25": 0.38,
+    "p75": 0.518
+   },
+   "events_per_min": {
+    "n": 194,
+    "median": 2.535,
+    "p25": 0.67,
+    "p75": 5.303
+   },
+   "punches_per_min": {
+    "n": 194,
+    "median": 0.0,
+    "p25": 0.0,
+    "p75": 1.39
+   },
+   "loudness_lufs": {
+    "n": 194,
+    "median": -21.6,
+    "p25": -25.75,
+    "p75": -16.5
+   },
+   "music_bed_db": {
+    "n": 165,
+    "median": -31.1,
+    "p25": -39.4,
+    "p75": -23.5
+   },
+   "loop": {
+    "n": 194,
+    "median": 0.832,
+    "p25": 0.768,
+    "p75": 0.877
+   }
+  },
+  "named": {
+   "n": 194,
+   "format": {
+    "talking_head": 0.371,
+    "split_screen": 0.186,
+    "tutorial_demo": 0.119,
+    "green_screen": 0.077,
+    "screen_recording": 0.046,
+    "skit": 0.041,
+    "news_reaction": 0.031,
+    "animation": 0.026,
+    "other": 0.026,
+    "listicle_text": 0.021,
+    "voiceover_broll": 0.015,
+    "product_demo": 0.015,
+    "interview": 0.015,
+    "podcast_clip": 0.01
+   },
+   "hook_type": {
+    "bold_claim": 0.206,
+    "list_promise": 0.149,
+    "result_first": 0.108,
+    "news": 0.108,
+    "callout": 0.093,
+    "curiosity_gap": 0.088,
+    "story": 0.057,
+    "pattern_interrupt": 0.057,
+    "question": 0.057,
+    "problem": 0.052,
+    "demo_first": 0.021,
+    "other": 0.005
+   },
+   "captions": {
+    "word_by_word": 0.521,
+    "title_only": 0.222,
+    "sentence": 0.211,
+    "native_tiktok": 0.026,
+    "none": 0.021
+   },
+   "caption_position": {
+    "bottom": 0.34,
+    "middle": 0.325,
+    "mixed": 0.18,
+    "top": 0.134,
+    "none": 0.021
+   },
+   "devices": {
+    "title_text": 0.876,
+    "jump_cut": 0.66,
+    "music_bed": 0.443,
+    "product_ui": 0.438,
+    "screenshot": 0.392,
+    "screen_recording": 0.366,
+    "zoom_punch": 0.314,
+    "chart_or_number": 0.253,
+    "split_screen": 0.227,
+    "b_roll": 0.211,
+    "camera_move": 0.201,
+    "sticker_emoji": 0.17,
+    "arrow_or_circle": 0.108,
+    "green_screen_bg": 0.098,
+    "prop": 0.077,
+    "meme_cutaway": 0.036,
+    "costume_or_skit": 0.036,
+    "sound_effect": 0.031,
+    "mascot": 0.021,
+    "progress_bar": 0.015,
+    "none": 0.005
+   },
+   "density": {
+    "minimal": 0.423,
+    "moderate": 0.361,
+    "heavy": 0.216
+   },
+   "cta": {
+    "none": 0.34,
+    "comment": 0.294,
+    "follow": 0.175,
+    "save_or_share": 0.062,
+    "other": 0.046,
+    "product": 0.041,
+    "link_in_bio": 0.041
+   },
+   "with_characters": 0.108
+  }
+ },
+ "top_quarter_by_plays": {
+  "measured": {
+   "duration_s": {
+    "n": 48,
+    "median": 49.0,
+    "p25": 29.25,
+    "p75": 73.82
+   },
+   "cuts_per_min": {
+    "n": 48,
+    "median": 3.91,
+    "p25": 0.465,
+    "p75": 14.502
+   },
+   "shot_median_s": {
+    "n": 48,
+    "median": 9.06,
+    "p25": 3.118,
+    "p75": 24.7
+   },
+   "first_cut_s": {
+    "n": 37,
+    "median": 6.13,
+    "p25": 3.6,
+    "p75": 15.4
+   },
+   "words_per_s": {
+    "n": 48,
+    "median": 3.275,
+    "p25": 2.41,
+    "p75": 3.675
+   },
+   "first_word_s": {
+    "n": 43,
+    "median": 0.0,
+    "p25": 0.0,
+    "p75": 0.0
+   },
+   "silence_share": {
+    "n": 48,
+    "median": 0.117,
+    "p25": 0.077,
+    "p75": 0.226
+   },
+   "text_share": {
+    "n": 48,
+    "median": 0.978,
+    "p25": 0.962,
+    "p75": 0.989
+   },
+   "caption_share": {
+    "n": 48,
+    "median": 0.973,
+    "p25": 0.94,
+    "p75": 0.985
+   },
+   "caption_height": {
+    "n": 48,
+    "median": 0.037,
+    "p25": 0.031,
+    "p75": 0.047
+   },
+   "outside_safe_share": {
+    "n": 48,
+    "median": 0.81,
+    "p25": 0.69,
+    "p75": 0.873
+   },
+   "face_share": {
+    "n": 48,
+    "median": 0.762,
+    "p25": 0.303,
+    "p75": 0.99
+   },
+   "face_height": {
+    "n": 44,
+    "median": 0.253,
+    "p25": 0.186,
+    "p75": 0.353
+   },
+   "face_cy": {
+    "n": 44,
+    "median": 0.458,
+    "p25": 0.388,
+    "p75": 0.575
+   },
+   "events_per_min": {
+    "n": 48,
+    "median": 4.51,
+    "p25": 0.86,
+    "p75": 10.72
+   },
+   "punches_per_min": {
+    "n": 48,
+    "median": 0.0,
+    "p25": 0.0,
+    "p75": 1.505
+   },
+   "loudness_lufs": {
+    "n": 48,
+    "median": -21.15,
+    "p25": -24.825,
+    "p75": -16.025
+   },
+   "music_bed_db": {
+    "n": 42,
+    "median": -27.1,
+    "p25": -36.325,
+    "p75": -24.35
+   },
+   "loop": {
+    "n": 48,
+    "median": 0.829,
+    "p25": 0.782,
+    "p75": 0.885
+   }
+  },
+  "named": {
+   "n": 48,
+   "format": {
+    "talking_head": 0.25,
+    "green_screen": 0.146,
+    "split_screen": 0.146,
+    "tutorial_demo": 0.125,
+    "screen_recording": 0.104,
+    "animation": 0.062,
+    "other": 0.062,
+    "skit": 0.062,
+    "product_demo": 0.021,
+    "news_reaction": 0.021
+   },
+   "hook_type": {
+    "curiosity_gap": 0.188,
+    "bold_claim": 0.167,
+    "list_promise": 0.125,
+    "news": 0.104,
+    "callout": 0.104,
+    "pattern_interrupt": 0.104,
+    "result_first": 0.083,
+    "story": 0.042,
+    "question": 0.042,
+    "demo_first": 0.021,
+    "problem": 0.021
+   },
+   "captions": {
+    "word_by_word": 0.458,
+    "title_only": 0.312,
+    "sentence": 0.208,
+    "native_tiktok": 0.021
+   },
+   "caption_position": {
+    "middle": 0.396,
+    "bottom": 0.229,
+    "top": 0.208,
+    "mixed": 0.167
+   },
+   "devices": {
+    "title_text": 0.833,
+    "jump_cut": 0.604,
+    "music_bed": 0.583,
+    "product_ui": 0.5,
+    "screen_recording": 0.354,
+    "screenshot": 0.312,
+    "zoom_punch": 0.292,
+    "chart_or_number": 0.229,
+    "camera_move": 0.229,
+    "split_screen": 0.208,
+    "green_screen_bg": 0.167,
+    "sticker_emoji": 0.167,
+    "arrow_or_circle": 0.167,
+    "b_roll": 0.104,
+    "sound_effect": 0.083,
+    "prop": 0.062,
+    "costume_or_skit": 0.062,
+    "mascot": 0.042,
+    "progress_bar": 0.042,
+    "meme_cutaway": 0.021
+   },
+   "density": {
+    "minimal": 0.458,
+    "moderate": 0.292,
+    "heavy": 0.25
+   },
+   "cta": {
+    "none": 0.333,
+    "comment": 0.312,
+    "follow": 0.167,
+    "save_or_share": 0.083,
+    "product": 0.042,
+    "link_in_bio": 0.042,
+    "other": 0.021
+   },
+   "with_characters": 0.146
+  }
+ },
+ "rest": {
+  "measured": {
+   "duration_s": {
+    "n": 146,
+    "median": 60.0,
+    "p25": 44.25,
+    "p75": 90.75
+   },
+   "cuts_per_min": {
+    "n": 146,
+    "median": 4.145,
+    "p25": 0.902,
+    "p75": 11.65
+   },
+   "shot_median_s": {
+    "n": 146,
+    "median": 7.835,
+    "p25": 3.577,
+    "p75": 25.503
+   },
+   "first_cut_s": {
+    "n": 117,
+    "median": 5.73,
+    "p25": 3.07,
+    "p75": 13.6
+   },
+   "words_per_s": {
+    "n": 146,
+    "median": 3.38,
+    "p25": 3.055,
+    "p75": 3.82
+   },
+   "first_word_s": {
+    "n": 143,
+    "median": 0.0,
+    "p25": 0.0,
+    "p75": 0.0
+   },
+   "silence_share": {
+    "n": 146,
+    "median": 0.104,
+    "p25": 0.076,
+    "p75": 0.143
+   },
+   "text_share": {
+    "n": 146,
+    "median": 0.979,
+    "p25": 0.958,
+    "p75": 0.988
+   },
+   "caption_share": {
+    "n": 146,
+    "median": 0.974,
+    "p25": 0.911,
+    "p75": 0.986
+   },
+   "caption_height": {
+    "n": 146,
+    "median": 0.04,
+    "p25": 0.033,
+    "p75": 0.047
+   },
+   "outside_safe_share": {
+    "n": 146,
+    "median": 0.758,
+    "p25": 0.639,
+    "p75": 0.906
+   },
+   "face_share": {
+    "n": 146,
+    "median": 0.957,
+    "p25": 0.521,
+    "p75": 1.0
+   },
+   "face_height": {
+    "n": 136,
+    "median": 0.281,
+    "p25": 0.186,
+    "p75": 0.354
+   },
+   "face_cy": {
+    "n": 136,
+    "median": 0.442,
+    "p25": 0.367,
+    "p75": 0.502
+   },
+   "events_per_min": {
+    "n": 146,
+    "median": 2.14,
+    "p25": 0.67,
+    "p75": 4.178
+   },
+   "punches_per_min": {
+    "n": 146,
+    "median": 0.0,
+    "p25": 0.0,
+    "p75": 1.328
+   },
+   "loudness_lufs": {
+    "n": 146,
+    "median": -22.1,
+    "p25": -25.8,
+    "p75": -16.75
+   },
+   "music_bed_db": {
+    "n": 123,
+    "median": -32.3,
+    "p25": -39.9,
+    "p75": -23.25
+   },
+   "loop": {
+    "n": 146,
+    "median": 0.833,
+    "p25": 0.768,
+    "p75": 0.876
+   }
+  },
+  "named": {
+   "n": 146,
+   "format": {
+    "talking_head": 0.411,
+    "split_screen": 0.199,
+    "tutorial_demo": 0.116,
+    "green_screen": 0.055,
+    "news_reaction": 0.034,
+    "skit": 0.034,
+    "screen_recording": 0.027,
+    "listicle_text": 0.027,
+    "voiceover_broll": 0.021,
+    "interview": 0.021,
+    "product_demo": 0.014,
+    "podcast_clip": 0.014,
+    "other": 0.014,
+    "animation": 0.014
+   },
+   "hook_type": {
+    "bold_claim": 0.219,
+    "list_promise": 0.158,
+    "result_first": 0.116,
+    "news": 0.11,
+    "callout": 0.089,
+    "question": 0.062,
+    "story": 0.062,
+    "problem": 0.062,
+    "curiosity_gap": 0.055,
+    "pattern_interrupt": 0.041,
+    "demo_first": 0.021,
+    "other": 0.007
+   },
+   "captions": {
+    "word_by_word": 0.541,
+    "sentence": 0.212,
+    "title_only": 0.192,
+    "none": 0.027,
+    "native_tiktok": 0.027
+   },
+   "caption_position": {
+    "bottom": 0.377,
+    "middle": 0.301,
+    "mixed": 0.185,
+    "top": 0.11,
+    "none": 0.027
+   },
+   "devices": {
+    "title_text": 0.89,
+    "jump_cut": 0.678,
+    "screenshot": 0.418,
+    "product_ui": 0.418,
+    "music_bed": 0.397,
+    "screen_recording": 0.37,
+    "zoom_punch": 0.322,
+    "chart_or_number": 0.26,
+    "b_roll": 0.247,
+    "split_screen": 0.233,
+    "camera_move": 0.192,
+    "sticker_emoji": 0.171,
+    "arrow_or_circle": 0.089,
+    "prop": 0.082,
+    "green_screen_bg": 0.075,
+    "meme_cutaway": 0.041,
+    "costume_or_skit": 0.027,
+    "mascot": 0.014,
+    "sound_effect": 0.014,
+    "progress_bar": 0.007,
+    "none": 0.007
+   },
+   "density": {
+    "minimal": 0.411,
+    "moderate": 0.384,
+    "heavy": 0.205
+   },
+   "cta": {
+    "none": 0.342,
+    "comment": 0.288,
+    "follow": 0.178,
+    "other": 0.055,
+    "save_or_share": 0.055,
+    "link_in_bio": 0.041,
+    "product": 0.041
+   },
+   "with_characters": 0.096
+  }
+ },
+ "by_topic": {
+  "ai": {
+   "measured": {
+    "duration_s": {
+     "n": 37,
+     "median": 49.0,
+     "p25": 28.0,
+     "p75": 66.0
+    },
+    "cuts_per_min": {
+     "n": 37,
+     "median": 3.05,
+     "p25": 0.0,
+     "p75": 12.39
+    },
+    "shot_median_s": {
+     "n": 37,
+     "median": 14.0,
+     "p25": 2.87,
+     "p75": 25.0
+    },
+    "first_cut_s": {
+     "n": 25,
+     "median": 4.47,
+     "p25": 3.47,
+     "p75": 9.2
+    },
+    "words_per_s": {
+     "n": 37,
+     "median": 3.15,
+     "p25": 2.38,
+     "p75": 3.57
+    },
+    "first_word_s": {
+     "n": 33,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 0.0
+    },
+    "silence_share": {
+     "n": 37,
+     "median": 0.134,
+     "p25": 0.101,
+     "p75": 0.391
+    },
+    "text_share": {
+     "n": 37,
+     "median": 0.98,
+     "p25": 0.966,
+     "p75": 0.99
+    },
+    "caption_share": {
+     "n": 37,
+     "median": 0.975,
+     "p25": 0.938,
+     "p75": 0.985
+    },
+    "caption_height": {
+     "n": 37,
+     "median": 0.038,
+     "p25": 0.031,
+     "p75": 0.046
+    },
+    "outside_safe_share": {
+     "n": 37,
+     "median": 0.806,
+     "p25": 0.714,
+     "p75": 0.912
+    },
+    "face_share": {
+     "n": 37,
+     "median": 0.7,
+     "p25": 0.156,
+     "p75": 1.0
+    },
+    "face_height": {
+     "n": 33,
+     "median": 0.25,
+     "p25": 0.165,
+     "p75": 0.341
+    },
+    "face_cy": {
+     "n": 33,
+     "median": 0.487,
+     "p25": 0.383,
+     "p75": 0.603
+    },
+    "events_per_min": {
+     "n": 37,
+     "median": 2.22,
+     "p25": 0.0,
+     "p75": 9.78
+    },
+    "punches_per_min": {
+     "n": 37,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 1.23
+    },
+    "loudness_lufs": {
+     "n": 37,
+     "median": -20.2,
+     "p25": -23.4,
+     "p75": -16.1
+    },
+    "music_bed_db": {
+     "n": 34,
+     "median": -28.05,
+     "p25": -36.475,
+     "p75": -22.825
+    },
+    "loop": {
+     "n": 37,
+     "median": 0.836,
+     "p25": 0.721,
+     "p75": 0.895
+    }
+   },
+   "named": {
+    "n": 37,
+    "format": {
+     "split_screen": 0.216,
+     "talking_head": 0.162,
+     "screen_recording": 0.135,
+     "green_screen": 0.135,
+     "tutorial_demo": 0.108,
+     "other": 0.081,
+     "product_demo": 0.054,
+     "skit": 0.027,
+     "animation": 0.027,
+     "news_reaction": 0.027,
+     "listicle_text": 0.027
+    },
+    "hook_type": {
+     "bold_claim": 0.27,
+     "curiosity_gap": 0.216,
+     "news": 0.162,
+     "result_first": 0.081,
+     "pattern_interrupt": 0.081,
+     "demo_first": 0.054,
+     "list_promise": 0.054,
+     "question": 0.027,
+     "callout": 0.027,
+     "problem": 0.027
+    },
+    "captions": {
+     "word_by_word": 0.459,
+     "title_only": 0.324,
+     "sentence": 0.162,
+     "none": 0.054
+    },
+    "caption_position": {
+     "middle": 0.378,
+     "bottom": 0.243,
+     "top": 0.162,
+     "mixed": 0.162,
+     "none": 0.054
+    },
+    "devices": {
+     "title_text": 0.892,
+     "music_bed": 0.568,
+     "product_ui": 0.541,
+     "jump_cut": 0.514,
+     "screen_recording": 0.432,
+     "screenshot": 0.405,
+     "zoom_punch": 0.27,
+     "split_screen": 0.27,
+     "b_roll": 0.216,
+     "sticker_emoji": 0.189,
+     "chart_or_number": 0.162,
+     "green_screen_bg": 0.135,
+     "arrow_or_circle": 0.108,
+     "camera_move": 0.108,
+     "prop": 0.081,
+     "sound_effect": 0.054,
+     "meme_cutaway": 0.054,
+     "costume_or_skit": 0.027,
+     "progress_bar": 0.027
+    },
+    "density": {
+     "minimal": 0.432,
+     "moderate": 0.297,
+     "heavy": 0.27
+    },
+    "cta": {
+     "comment": 0.432,
+     "none": 0.297,
+     "other": 0.108,
+     "follow": 0.054,
+     "link_in_bio": 0.054,
+     "save_or_share": 0.027,
+     "product": 0.027
+    },
+    "with_characters": 0.135
+   }
+  },
+  "claude": {
+   "measured": {
+    "duration_s": {
+     "n": 40,
+     "median": 49.565,
+     "p25": 35.7,
+     "p75": 66.75
+    },
+    "cuts_per_min": {
+     "n": 40,
+     "median": 7.75,
+     "p25": 1.738,
+     "p75": 14.848
+    },
+    "shot_median_s": {
+     "n": 40,
+     "median": 5.17,
+     "p25": 2.403,
+     "p75": 18.907
+    },
+    "first_cut_s": {
+     "n": 34,
+     "median": 4.335,
+     "p25": 2.45,
+     "p75": 8.133
+    },
+    "words_per_s": {
+     "n": 40,
+     "median": 3.325,
+     "p25": 3.105,
+     "p75": 3.643
+    },
+    "first_word_s": {
+     "n": 39,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 0.0
+    },
+    "silence_share": {
+     "n": 40,
+     "median": 0.106,
+     "p25": 0.079,
+     "p75": 0.141
+    },
+    "text_share": {
+     "n": 40,
+     "median": 0.976,
+     "p25": 0.962,
+     "p75": 0.986
+    },
+    "caption_share": {
+     "n": 40,
+     "median": 0.97,
+     "p25": 0.946,
+     "p75": 0.98
+    },
+    "caption_height": {
+     "n": 40,
+     "median": 0.039,
+     "p25": 0.033,
+     "p75": 0.046
+    },
+    "outside_safe_share": {
+     "n": 40,
+     "median": 0.762,
+     "p25": 0.657,
+     "p75": 0.841
+    },
+    "face_share": {
+     "n": 40,
+     "median": 0.789,
+     "p25": 0.377,
+     "p75": 1.0
+    },
+    "face_height": {
+     "n": 37,
+     "median": 0.26,
+     "p25": 0.206,
+     "p75": 0.354
+    },
+    "face_cy": {
+     "n": 37,
+     "median": 0.468,
+     "p25": 0.368,
+     "p75": 0.56
+    },
+    "events_per_min": {
+     "n": 40,
+     "median": 3.05,
+     "p25": 1.26,
+     "p75": 5.45
+    },
+    "punches_per_min": {
+     "n": 40,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 1.782
+    },
+    "loudness_lufs": {
+     "n": 40,
+     "median": -21.4,
+     "p25": -24.975,
+     "p75": -16.075
+    },
+    "music_bed_db": {
+     "n": 33,
+     "median": -28.8,
+     "p25": -38.5,
+     "p75": -24.1
+    },
+    "loop": {
+     "n": 40,
+     "median": 0.794,
+     "p25": 0.706,
+     "p75": 0.86
+    }
+   },
+   "named": {
+    "n": 40,
+    "format": {
+     "split_screen": 0.4,
+     "talking_head": 0.225,
+     "tutorial_demo": 0.125,
+     "news_reaction": 0.1,
+     "interview": 0.05,
+     "animation": 0.025,
+     "green_screen": 0.025,
+     "screen_recording": 0.025,
+     "podcast_clip": 0.025
+    },
+    "hook_type": {
+     "list_promise": 0.225,
+     "callout": 0.15,
+     "bold_claim": 0.15,
+     "news": 0.125,
+     "question": 0.075,
+     "problem": 0.075,
+     "story": 0.075,
+     "curiosity_gap": 0.05,
+     "result_first": 0.025,
+     "pattern_interrupt": 0.025,
+     "demo_first": 0.025
+    },
+    "captions": {
+     "word_by_word": 0.625,
+     "sentence": 0.225,
+     "title_only": 0.1,
+     "native_tiktok": 0.025,
+     "none": 0.025
+    },
+    "caption_position": {
+     "middle": 0.4,
+     "mixed": 0.275,
+     "bottom": 0.25,
+     "top": 0.05,
+     "none": 0.025
+    },
+    "devices": {
+     "title_text": 0.875,
+     "jump_cut": 0.7,
+     "product_ui": 0.6,
+     "screen_recording": 0.5,
+     "music_bed": 0.475,
+     "split_screen": 0.45,
+     "screenshot": 0.4,
+     "zoom_punch": 0.4,
+     "chart_or_number": 0.275,
+     "b_roll": 0.275,
+     "camera_move": 0.2,
+     "sticker_emoji": 0.2,
+     "arrow_or_circle": 0.075,
+     "mascot": 0.075,
+     "meme_cutaway": 0.075,
+     "green_screen_bg": 0.05,
+     "progress_bar": 0.05,
+     "sound_effect": 0.05,
+     "prop": 0.025
+    },
+    "density": {
+     "moderate": 0.425,
+     "heavy": 0.3,
+     "minimal": 0.275
+    },
+    "cta": {
+     "none": 0.4,
+     "comment": 0.35,
+     "follow": 0.125,
+     "save_or_share": 0.05,
+     "link_in_bio": 0.05,
+     "product": 0.025
+    },
+    "with_characters": 0.1
+   }
+  },
+  "geo": {
+   "measured": {
+    "duration_s": {
+     "n": 40,
+     "median": 63.0,
+     "p25": 51.5,
+     "p75": 82.25
+    },
+    "cuts_per_min": {
+     "n": 40,
+     "median": 3.455,
+     "p25": 1.113,
+     "p75": 6.912
+    },
+    "shot_median_s": {
+     "n": 40,
+     "median": 10.365,
+     "p25": 6.683,
+     "p75": 28.975
+    },
+    "first_cut_s": {
+     "n": 31,
+     "median": 7.07,
+     "p25": 3.7,
+     "p75": 13.97
+    },
+    "words_per_s": {
+     "n": 40,
+     "median": 3.31,
+     "p25": 2.958,
+     "p75": 3.79
+    },
+    "first_word_s": {
+     "n": 40,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 0.02
+    },
+    "silence_share": {
+     "n": 40,
+     "median": 0.086,
+     "p25": 0.061,
+     "p75": 0.131
+    },
+    "text_share": {
+     "n": 40,
+     "median": 0.982,
+     "p25": 0.971,
+     "p75": 0.987
+    },
+    "caption_share": {
+     "n": 40,
+     "median": 0.98,
+     "p25": 0.903,
+     "p75": 0.987
+    },
+    "caption_height": {
+     "n": 40,
+     "median": 0.042,
+     "p25": 0.036,
+     "p75": 0.052
+    },
+    "outside_safe_share": {
+     "n": 40,
+     "median": 0.876,
+     "p25": 0.726,
+     "p75": 0.988
+    },
+    "face_share": {
+     "n": 40,
+     "median": 1.0,
+     "p25": 0.631,
+     "p75": 1.0
+    },
+    "face_height": {
+     "n": 40,
+     "median": 0.322,
+     "p25": 0.267,
+     "p75": 0.38
+    },
+    "face_cy": {
+     "n": 40,
+     "median": 0.417,
+     "p25": 0.357,
+     "p75": 0.493
+    },
+    "events_per_min": {
+     "n": 40,
+     "median": 0.875,
+     "p25": 0.0,
+     "p75": 2.05
+    },
+    "punches_per_min": {
+     "n": 40,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 0.755
+    },
+    "loudness_lufs": {
+     "n": 40,
+     "median": -23.95,
+     "p25": -29.025,
+     "p75": -16.15
+    },
+    "music_bed_db": {
+     "n": 31,
+     "median": -34.9,
+     "p25": -40.55,
+     "p75": -23.9
+    },
+    "loop": {
+     "n": 40,
+     "median": 0.847,
+     "p25": 0.794,
+     "p75": 0.877
+    }
+   },
+   "named": {
+    "n": 40,
+    "format": {
+     "talking_head": 0.55,
+     "split_screen": 0.1,
+     "tutorial_demo": 0.075,
+     "screen_recording": 0.05,
+     "green_screen": 0.05,
+     "skit": 0.05,
+     "other": 0.025,
+     "product_demo": 0.025,
+     "voiceover_broll": 0.025,
+     "news_reaction": 0.025,
+     "podcast_clip": 0.025
+    },
+    "hook_type": {
+     "bold_claim": 0.175,
+     "result_first": 0.15,
+     "news": 0.125,
+     "callout": 0.1,
+     "curiosity_gap": 0.1,
+     "story": 0.075,
+     "question": 0.075,
+     "list_promise": 0.075,
+     "pattern_interrupt": 0.05,
+     "problem": 0.05,
+     "demo_first": 0.025
+    },
+    "captions": {
+     "word_by_word": 0.55,
+     "title_only": 0.225,
+     "sentence": 0.175,
+     "native_tiktok": 0.05
+    },
+    "caption_position": {
+     "bottom": 0.525,
+     "middle": 0.3,
+     "top": 0.125,
+     "mixed": 0.05
+    },
+    "devices": {
+     "title_text": 0.825,
+     "jump_cut": 0.65,
+     "screenshot": 0.375,
+     "product_ui": 0.35,
+     "screen_recording": 0.3,
+     "zoom_punch": 0.3,
+     "music_bed": 0.275,
+     "camera_move": 0.225,
+     "chart_or_number": 0.225,
+     "b_roll": 0.1,
+     "prop": 0.1,
+     "sticker_emoji": 0.1,
+     "split_screen": 0.1,
+     "arrow_or_circle": 0.075,
+     "green_screen_bg": 0.05,
+     "costume_or_skit": 0.05,
+     "none": 0.025
+    },
+    "density": {
+     "minimal": 0.625,
+     "moderate": 0.35,
+     "heavy": 0.025
+    },
+    "cta": {
+     "none": 0.325,
+     "comment": 0.25,
+     "follow": 0.175,
+     "product": 0.075,
+     "save_or_share": 0.075,
+     "link_in_bio": 0.05,
+     "other": 0.05
+    },
+    "with_characters": 0.1
+   }
+  },
+  "marketing": {
+   "measured": {
+    "duration_s": {
+     "n": 40,
+     "median": 67.5,
+     "p25": 38.203,
+     "p75": 100.5
+    },
+    "cuts_per_min": {
+     "n": 40,
+     "median": 8.145,
+     "p25": 1.958,
+     "p75": 14.762
+    },
+    "shot_median_s": {
+     "n": 40,
+     "median": 5.135,
+     "p25": 2.62,
+     "p75": 15.268
+    },
+    "first_cut_s": {
+     "n": 33,
+     "median": 4.33,
+     "p25": 3.07,
+     "p75": 7.8
+    },
+    "words_per_s": {
+     "n": 40,
+     "median": 3.595,
+     "p25": 3.252,
+     "p75": 3.933
+    },
+    "first_word_s": {
+     "n": 38,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 0.0
+    },
+    "silence_share": {
+     "n": 40,
+     "median": 0.114,
+     "p25": 0.079,
+     "p75": 0.158
+    },
+    "text_share": {
+     "n": 40,
+     "median": 0.974,
+     "p25": 0.935,
+     "p75": 0.989
+    },
+    "caption_share": {
+     "n": 40,
+     "median": 0.95,
+     "p25": 0.895,
+     "p75": 0.979
+    },
+    "caption_height": {
+     "n": 40,
+     "median": 0.039,
+     "p25": 0.031,
+     "p75": 0.046
+    },
+    "outside_safe_share": {
+     "n": 40,
+     "median": 0.696,
+     "p25": 0.594,
+     "p75": 0.827
+    },
+    "face_share": {
+     "n": 40,
+     "median": 0.849,
+     "p25": 0.625,
+     "p75": 1.0
+    },
+    "face_height": {
+     "n": 38,
+     "median": 0.19,
+     "p25": 0.14,
+     "p75": 0.248
+    },
+    "face_cy": {
+     "n": 38,
+     "median": 0.455,
+     "p25": 0.407,
+     "p75": 0.488
+    },
+    "events_per_min": {
+     "n": 40,
+     "median": 4.07,
+     "p25": 2.073,
+     "p75": 6.945
+    },
+    "punches_per_min": {
+     "n": 40,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 0.847
+    },
+    "loudness_lufs": {
+     "n": 40,
+     "median": -21.05,
+     "p25": -25.325,
+     "p75": -16.65
+    },
+    "music_bed_db": {
+     "n": 34,
+     "median": -31.45,
+     "p25": -39.425,
+     "p75": -26.85
+    },
+    "loop": {
+     "n": 40,
+     "median": 0.841,
+     "p25": 0.786,
+     "p75": 0.888
+    }
+   },
+   "named": {
+    "n": 40,
+    "format": {
+     "talking_head": 0.45,
+     "skit": 0.1,
+     "green_screen": 0.1,
+     "split_screen": 0.1,
+     "animation": 0.075,
+     "tutorial_demo": 0.075,
+     "voiceover_broll": 0.025,
+     "other": 0.025,
+     "interview": 0.025,
+     "listicle_text": 0.025
+    },
+    "hook_type": {
+     "bold_claim": 0.25,
+     "list_promise": 0.175,
+     "callout": 0.15,
+     "result_first": 0.125,
+     "pattern_interrupt": 0.1,
+     "news": 0.075,
+     "story": 0.05,
+     "question": 0.05,
+     "curiosity_gap": 0.025
+    },
+    "captions": {
+     "word_by_word": 0.5,
+     "sentence": 0.25,
+     "title_only": 0.225,
+     "native_tiktok": 0.025
+    },
+    "caption_position": {
+     "mixed": 0.3,
+     "middle": 0.25,
+     "bottom": 0.225,
+     "top": 0.225
+    },
+    "devices": {
+     "title_text": 0.875,
+     "jump_cut": 0.75,
+     "music_bed": 0.525,
+     "chart_or_number": 0.4,
+     "screenshot": 0.35,
+     "product_ui": 0.3,
+     "zoom_punch": 0.3,
+     "b_roll": 0.25,
+     "camera_move": 0.2,
+     "split_screen": 0.175,
+     "screen_recording": 0.175,
+     "sticker_emoji": 0.125,
+     "arrow_or_circle": 0.125,
+     "prop": 0.125,
+     "green_screen_bg": 0.125,
+     "costume_or_skit": 0.1,
+     "sound_effect": 0.05,
+     "meme_cutaway": 0.025
+    },
+    "density": {
+     "moderate": 0.375,
+     "heavy": 0.35,
+     "minimal": 0.275
+    },
+    "cta": {
+     "follow": 0.35,
+     "none": 0.3,
+     "comment": 0.175,
+     "save_or_share": 0.075,
+     "product": 0.05,
+     "link_in_bio": 0.025,
+     "other": 0.025
+    },
+    "with_characters": 0.15
+   }
+  },
+  "seo": {
+   "measured": {
+    "duration_s": {
+     "n": 37,
+     "median": 76.0,
+     "p25": 45.0,
+     "p75": 111.0
+    },
+    "cuts_per_min": {
+     "n": 37,
+     "median": 2.69,
+     "p25": 0.68,
+     "p75": 10.77
+    },
+    "shot_median_s": {
+     "n": 37,
+     "median": 12.2,
+     "p25": 3.8,
+     "p75": 34.5
+    },
+    "first_cut_s": {
+     "n": 31,
+     "median": 8.2,
+     "p25": 4.93,
+     "p75": 40.8
+    },
+    "words_per_s": {
+     "n": 37,
+     "median": 3.49,
+     "p25": 2.97,
+     "p75": 3.92
+    },
+    "first_word_s": {
+     "n": 36,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 0.0
+    },
+    "silence_share": {
+     "n": 37,
+     "median": 0.092,
+     "p25": 0.074,
+     "p75": 0.118
+    },
+    "text_share": {
+     "n": 37,
+     "median": 0.978,
+     "p25": 0.964,
+     "p75": 0.989
+    },
+    "caption_share": {
+     "n": 37,
+     "median": 0.976,
+     "p25": 0.937,
+     "p75": 0.988
+    },
+    "caption_height": {
+     "n": 37,
+     "median": 0.039,
+     "p25": 0.031,
+     "p75": 0.047
+    },
+    "outside_safe_share": {
+     "n": 37,
+     "median": 0.691,
+     "p25": 0.615,
+     "p75": 0.814
+    },
+    "face_share": {
+     "n": 37,
+     "median": 0.957,
+     "p25": 0.369,
+     "p75": 1.0
+    },
+    "face_height": {
+     "n": 32,
+     "median": 0.321,
+     "p25": 0.256,
+     "p75": 0.361
+    },
+    "face_cy": {
+     "n": 32,
+     "median": 0.423,
+     "p25": 0.382,
+     "p75": 0.477
+    },
+    "events_per_min": {
+     "n": 37,
+     "median": 2.61,
+     "p25": 0.68,
+     "p75": 4.07
+    },
+    "punches_per_min": {
+     "n": 37,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 1.02
+    },
+    "loudness_lufs": {
+     "n": 37,
+     "median": -20.9,
+     "p25": -25.3,
+     "p75": -18.2
+    },
+    "music_bed_db": {
+     "n": 33,
+     "median": -33.6,
+     "p25": -39.5,
+     "p75": -23.3
+    },
+    "loop": {
+     "n": 37,
+     "median": 0.832,
+     "p25": 0.786,
+     "p75": 0.871
+    }
+   },
+   "named": {
+    "n": 37,
+    "format": {
+     "talking_head": 0.459,
+     "tutorial_demo": 0.216,
+     "split_screen": 0.108,
+     "green_screen": 0.081,
+     "listicle_text": 0.054,
+     "skit": 0.027,
+     "voiceover_broll": 0.027,
+     "screen_recording": 0.027
+    },
+    "hook_type": {
+     "list_promise": 0.216,
+     "bold_claim": 0.189,
+     "result_first": 0.162,
+     "problem": 0.108,
+     "story": 0.081,
+     "news": 0.054,
+     "question": 0.054,
+     "curiosity_gap": 0.054,
+     "pattern_interrupt": 0.027,
+     "callout": 0.027,
+     "other": 0.027
+    },
+    "captions": {
+     "word_by_word": 0.459,
+     "sentence": 0.243,
+     "title_only": 0.243,
+     "none": 0.027,
+     "native_tiktok": 0.027
+    },
+    "caption_position": {
+     "bottom": 0.459,
+     "middle": 0.297,
+     "mixed": 0.108,
+     "top": 0.108,
+     "none": 0.027
+    },
+    "devices": {
+     "title_text": 0.919,
+     "jump_cut": 0.676,
+     "screenshot": 0.432,
+     "screen_recording": 0.432,
+     "product_ui": 0.405,
+     "music_bed": 0.378,
+     "zoom_punch": 0.297,
+     "camera_move": 0.27,
+     "sticker_emoji": 0.243,
+     "b_roll": 0.216,
+     "chart_or_number": 0.189,
+     "arrow_or_circle": 0.162,
+     "split_screen": 0.135,
+     "green_screen_bg": 0.135,
+     "prop": 0.054,
+     "meme_cutaway": 0.027,
+     "mascot": 0.027
+    },
+    "density": {
+     "minimal": 0.514,
+     "moderate": 0.351,
+     "heavy": 0.135
+    },
+    "cta": {
+     "none": 0.378,
+     "comment": 0.27,
+     "follow": 0.162,
+     "save_or_share": 0.081,
+     "other": 0.054,
+     "link_in_bio": 0.027,
+     "product": 0.027
+    },
+    "with_characters": 0.054
+   }
+  }
+ },
+ "by_format": {
+  "animation": {
+   "measured": {
+    "duration_s": {
+     "n": 5,
+     "median": 61.0,
+     "p25": 37.53,
+     "p75": 70.0
+    },
+    "cuts_per_min": {
+     "n": 5,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 2.95
+    },
+    "shot_median_s": {
+     "n": 5,
+     "median": 37.53,
+     "p25": 17.53,
+     "p75": 70.0
+    },
+    "first_cut_s": {
+     "n": 2,
+     "median": 16.23,
+     "p25": 13.78,
+     "p75": 18.68
+    },
+    "words_per_s": {
+     "n": 5,
+     "median": 3.17,
+     "p25": 3.05,
+     "p75": 3.21
+    },
+    "first_word_s": {
+     "n": 5,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 0.0
+    },
+    "silence_share": {
+     "n": 5,
+     "median": 0.175,
+     "p25": 0.17,
+     "p75": 0.225
+    },
+    "text_share": {
+     "n": 5,
+     "median": 0.974,
+     "p25": 0.935,
+     "p75": 0.984
+    },
+    "caption_share": {
+     "n": 5,
+     "median": 0.974,
+     "p25": 0.935,
+     "p75": 0.984
+    },
+    "caption_height": {
+     "n": 5,
+     "median": 0.039,
+     "p25": 0.031,
+     "p75": 0.042
+    },
+    "outside_safe_share": {
+     "n": 5,
+     "median": 0.697,
+     "p25": 0.555,
+     "p75": 0.835
+    },
+    "face_share": {
+     "n": 5,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 0.053
+    },
+    "face_height": {
+     "n": 2,
+     "median": 0.106,
+     "p25": 0.089,
+     "p75": 0.122
+    },
+    "face_cy": {
+     "n": 2,
+     "median": 0.454,
+     "p25": 0.452,
+     "p75": 0.455
+    },
+    "events_per_min": {
+     "n": 5,
+     "median": 11.14,
+     "p25": 9.03,
+     "p75": 20.78
+    },
+    "punches_per_min": {
+     "n": 5,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 1.6
+    },
+    "loudness_lufs": {
+     "n": 5,
+     "median": -17.3,
+     "p25": -19.6,
+     "p75": -16.7
+    },
+    "music_bed_db": {
+     "n": 5,
+     "median": -31.5,
+     "p25": -45.9,
+     "p75": -25.1
+    },
+    "loop": {
+     "n": 5,
+     "median": 0.861,
+     "p25": 0.845,
+     "p75": 0.956
+    }
+   }
+  },
+  "green_screen": {
+   "measured": {
+    "duration_s": {
+     "n": 15,
+     "median": 81.0,
+     "p25": 41.135,
+     "p75": 119.5
+    },
+    "cuts_per_min": {
+     "n": 15,
+     "median": 3.97,
+     "p25": 0.8,
+     "p75": 9.82
+    },
+    "shot_median_s": {
+     "n": 15,
+     "median": 9.46,
+     "p25": 4.665,
+     "p75": 40.25
+    },
+    "first_cut_s": {
+     "n": 13,
+     "median": 5.2,
+     "p25": 3.93,
+     "p75": 30.27
+    },
+    "words_per_s": {
+     "n": 15,
+     "median": 3.75,
+     "p25": 3.11,
+     "p75": 3.995
+    },
+    "first_word_s": {
+     "n": 15,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 0.0
+    },
+    "silence_share": {
+     "n": 15,
+     "median": 0.099,
+     "p25": 0.056,
+     "p75": 0.116
+    },
+    "text_share": {
+     "n": 15,
+     "median": 0.988,
+     "p25": 0.976,
+     "p75": 0.992
+    },
+    "caption_share": {
+     "n": 15,
+     "median": 0.985,
+     "p25": 0.974,
+     "p75": 0.992
+    },
+    "caption_height": {
+     "n": 15,
+     "median": 0.033,
+     "p25": 0.029,
+     "p75": 0.036
+    },
+    "outside_safe_share": {
+     "n": 15,
+     "median": 0.828,
+     "p25": 0.672,
+     "p75": 0.909
+    },
+    "face_share": {
+     "n": 15,
+     "median": 1.0,
+     "p25": 0.969,
+     "p75": 1.0
+    },
+    "face_height": {
+     "n": 15,
+     "median": 0.263,
+     "p25": 0.189,
+     "p75": 0.336
+    },
+    "face_cy": {
+     "n": 15,
+     "median": 0.59,
+     "p25": 0.428,
+     "p75": 0.698
+    },
+    "events_per_min": {
+     "n": 15,
+     "median": 3.23,
+     "p25": 0.985,
+     "p75": 5.015
+    },
+    "punches_per_min": {
+     "n": 15,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 0.0
+    },
+    "loudness_lufs": {
+     "n": 15,
+     "median": -22.7,
+     "p25": -24.7,
+     "p75": -20.15
+    },
+    "music_bed_db": {
+     "n": 11,
+     "median": -32.7,
+     "p25": -38.9,
+     "p75": -29.2
+    },
+    "loop": {
+     "n": 15,
+     "median": 0.808,
+     "p25": 0.75,
+     "p75": 0.86
+    }
+   }
+  },
+  "interview": {
+   "measured": {
+    "duration_s": {
+     "n": 3,
+     "median": 39.73,
+     "p25": 37.865,
+     "p75": 64.865
+    },
+    "cuts_per_min": {
+     "n": 3,
+     "median": 8.33,
+     "p25": 4.165,
+     "p75": 10.83
+    },
+    "shot_median_s": {
+     "n": 3,
+     "median": 5.4,
+     "p25": 4.5,
+     "p75": 22.565
+    },
+    "first_cut_s": {
+     "n": 2,
+     "median": 7.365,
+     "p25": 6.947,
+     "p75": 7.782
+    },
+    "words_per_s": {
+     "n": 3,
+     "median": 3.54,
+     "p25": 3.435,
+     "p75": 3.685
+    },
+    "first_word_s": {
+     "n": 3,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 0.0
+    },
+    "silence_share": {
+     "n": 3,
+     "median": 0.114,
+     "p25": 0.111,
+     "p75": 0.116
+    },
+    "text_share": {
+     "n": 3,
+     "median": 0.973,
+     "p25": 0.949,
+     "p75": 0.981
+    },
+    "caption_share": {
+     "n": 3,
+     "median": 0.973,
+     "p25": 0.949,
+     "p75": 0.976
+    },
+    "caption_height": {
+     "n": 3,
+     "median": 0.048,
+     "p25": 0.045,
+     "p75": 0.053
+    },
+    "outside_safe_share": {
+     "n": 3,
+     "median": 0.708,
+     "p25": 0.54,
+     "p75": 0.854
+    },
+    "face_share": {
+     "n": 3,
+     "median": 1.0,
+     "p25": 0.878,
+     "p75": 1.0
+    },
+    "face_height": {
+     "n": 3,
+     "median": 0.296,
+     "p25": 0.19,
+     "p75": 0.415
+    },
+    "face_cy": {
+     "n": 3,
+     "median": 0.454,
+     "p25": 0.391,
+     "p75": 0.461
+    },
+    "events_per_min": {
+     "n": 3,
+     "median": 0.67,
+     "p25": 0.335,
+     "p75": 1.845
+    },
+    "punches_per_min": {
+     "n": 3,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 0.755
+    },
+    "loudness_lufs": {
+     "n": 3,
+     "median": -22.4,
+     "p25": -27.9,
+     "p75": -20.95
+    },
+    "music_bed_db": {
+     "n": 2,
+     "median": -35.9,
+     "p25": -41.2,
+     "p75": -30.6
+    },
+    "loop": {
+     "n": 3,
+     "median": 0.864,
+     "p25": 0.799,
+     "p75": 0.867
+    }
+   }
+  },
+  "listicle_text": {
+   "measured": {
+    "duration_s": {
+     "n": 4,
+     "median": 20.0,
+     "p25": 14.25,
+     "p75": 28.25
+    },
+    "cuts_per_min": {
+     "n": 4,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 8.75
+    },
+    "shot_median_s": {
+     "n": 4,
+     "median": 20.0,
+     "p25": 11.567,
+     "p75": 28.25
+    },
+    "first_cut_s": {
+     "n": 1,
+     "median": 0.53,
+     "p25": 0.53,
+     "p75": 0.53
+    },
+    "words_per_s": {
+     "n": 4,
+     "median": 0.24,
+     "p25": 0.06,
+     "p75": 0.905
+    },
+    "first_word_s": {
+     "n": 3,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 0.185
+    },
+    "silence_share": {
+     "n": 4,
+     "median": 0.931,
+     "p25": 0.725,
+     "p75": 0.974
+    },
+    "text_share": {
+     "n": 4,
+     "median": 0.95,
+     "p25": 0.934,
+     "p75": 0.965
+    },
+    "caption_share": {
+     "n": 4,
+     "median": 0.95,
+     "p25": 0.934,
+     "p75": 0.965
+    },
+    "caption_height": {
+     "n": 4,
+     "median": 0.03,
+     "p25": 0.03,
+     "p75": 0.032
+    },
+    "outside_safe_share": {
+     "n": 4,
+     "median": 0.779,
+     "p25": 0.669,
+     "p75": 0.899
+    },
+    "face_share": {
+     "n": 4,
+     "median": 0.042,
+     "p25": 0.0,
+     "p75": 0.312
+    },
+    "face_height": {
+     "n": 2,
+     "median": 0.176,
+     "p25": 0.173,
+     "p75": 0.179
+    },
+    "face_cy": {
+     "n": 2,
+     "median": 0.443,
+     "p25": 0.438,
+     "p75": 0.449
+    },
+    "events_per_min": {
+     "n": 4,
+     "median": 9.605,
+     "p25": 3.75,
+     "p75": 16.058
+    },
+    "punches_per_min": {
+     "n": 4,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 0.0
+    },
+    "loudness_lufs": {
+     "n": 4,
+     "median": -14.4,
+     "p25": -18.55,
+     "p75": -14.05
+    },
+    "music_bed_db": {
+     "n": 4,
+     "median": -16.95,
+     "p25": -25.7,
+     "p75": -16.25
+    },
+    "loop": {
+     "n": 4,
+     "median": 0.724,
+     "p25": 0.57,
+     "p75": 0.841
+    }
+   }
+  },
+  "news_reaction": {
+   "measured": {
+    "duration_s": {
+     "n": 6,
+     "median": 96.5,
+     "p25": 43.75,
+     "p75": 129.0
+    },
+    "cuts_per_min": {
+     "n": 6,
+     "median": 4.675,
+     "p25": 1.452,
+     "p75": 7.08
+    },
+    "shot_median_s": {
+     "n": 6,
+     "median": 9.32,
+     "p25": 6.57,
+     "p75": 32.642
+    },
+    "first_cut_s": {
+     "n": 6,
+     "median": 7.235,
+     "p25": 3.718,
+     "p75": 14.9
+    },
+    "words_per_s": {
+     "n": 6,
+     "median": 3.275,
+     "p25": 2.828,
+     "p75": 3.828
+    },
+    "first_word_s": {
+     "n": 6,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 0.0
+    },
+    "silence_share": {
+     "n": 6,
+     "median": 0.104,
+     "p25": 0.094,
+     "p75": 0.114
+    },
+    "text_share": {
+     "n": 6,
+     "median": 0.965,
+     "p25": 0.901,
+     "p75": 0.979
+    },
+    "caption_share": {
+     "n": 6,
+     "median": 0.965,
+     "p25": 0.901,
+     "p75": 0.979
+    },
+    "caption_height": {
+     "n": 6,
+     "median": 0.049,
+     "p25": 0.038,
+     "p75": 0.058
+    },
+    "outside_safe_share": {
+     "n": 6,
+     "median": 0.868,
+     "p25": 0.841,
+     "p75": 0.948
+    },
+    "face_share": {
+     "n": 6,
+     "median": 0.943,
+     "p25": 0.52,
+     "p75": 0.983
+    },
+    "face_height": {
+     "n": 5,
+     "median": 0.376,
+     "p25": 0.337,
+     "p75": 0.427
+    },
+    "face_cy": {
+     "n": 5,
+     "median": 0.479,
+     "p25": 0.376,
+     "p75": 0.56
+    },
+    "events_per_min": {
+     "n": 6,
+     "median": 2.05,
+     "p25": 0.087,
+     "p75": 3.96
+    },
+    "punches_per_min": {
+     "n": 6,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 0.262
+    },
+    "loudness_lufs": {
+     "n": 6,
+     "median": -18.25,
+     "p25": -24.075,
+     "p75": -14.675
+    },
+    "music_bed_db": {
+     "n": 5,
+     "median": -29.1,
+     "p25": -33.1,
+     "p75": -27.2
+    },
+    "loop": {
+     "n": 6,
+     "median": 0.814,
+     "p25": 0.699,
+     "p75": 0.834
+    }
+   }
+  },
+  "other": {
+   "measured": {
+    "duration_s": {
+     "n": 5,
+     "median": 46.0,
+     "p25": 16.0,
+     "p75": 59.0
+    },
+    "cuts_per_min": {
+     "n": 5,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 0.0
+    },
+    "shot_median_s": {
+     "n": 5,
+     "median": 46.0,
+     "p25": 16.0,
+     "p75": 59.0
+    },
+    "first_cut_s": null,
+    "words_per_s": {
+     "n": 5,
+     "median": 1.17,
+     "p25": 1.02,
+     "p75": 1.56
+    },
+    "first_word_s": {
+     "n": 5,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 0.18
+    },
+    "silence_share": {
+     "n": 5,
+     "median": 0.582,
+     "p25": 0.391,
+     "p75": 0.675
+    },
+    "text_share": {
+     "n": 5,
+     "median": 0.979,
+     "p25": 0.938,
+     "p75": 0.983
+    },
+    "caption_share": {
+     "n": 5,
+     "median": 0.938,
+     "p25": 0.809,
+     "p75": 0.983
+    },
+    "caption_height": {
+     "n": 5,
+     "median": 0.031,
+     "p25": 0.029,
+     "p75": 0.055
+    },
+    "outside_safe_share": {
+     "n": 5,
+     "median": 0.766,
+     "p25": 0.531,
+     "p75": 1.0
+    },
+    "face_share": {
+     "n": 5,
+     "median": 0.547,
+     "p25": 0.375,
+     "p75": 1.0
+    },
+    "face_height": {
+     "n": 5,
+     "median": 0.114,
+     "p25": 0.092,
+     "p75": 0.154
+    },
+    "face_cy": {
+     "n": 5,
+     "median": 0.415,
+     "p25": 0.383,
+     "p75": 0.46
+    },
+    "events_per_min": {
+     "n": 5,
+     "median": 2.61,
+     "p25": 2.03,
+     "p75": 5.62
+    },
+    "punches_per_min": {
+     "n": 5,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 0.0
+    },
+    "loudness_lufs": {
+     "n": 5,
+     "median": -14.3,
+     "p25": -16.3,
+     "p75": -13.0
+    },
+    "music_bed_db": {
+     "n": 4,
+     "median": -16.25,
+     "p25": -17.9,
+     "p75": -14.2
+    },
+    "loop": {
+     "n": 5,
+     "median": 0.863,
+     "p25": 0.775,
+     "p75": 0.919
+    }
+   }
+  },
+  "podcast_clip": {
+   "measured": {
+    "duration_s": {
+     "n": 2,
+     "median": 39.135,
+     "p25": 36.203,
+     "p75": 42.068
+    },
+    "cuts_per_min": {
+     "n": 2,
+     "median": 10.31,
+     "p25": 9.155,
+     "p75": 11.465
+    },
+    "shot_median_s": {
+     "n": 2,
+     "median": 2.03,
+     "p25": 1.745,
+     "p75": 2.315
+    },
+    "first_cut_s": {
+     "n": 2,
+     "median": 13.365,
+     "p25": 8.683,
+     "p75": 18.047
+    },
+    "words_per_s": {
+     "n": 2,
+     "median": 3.28,
+     "p25": 3.175,
+     "p75": 3.385
+    },
+    "first_word_s": {
+     "n": 2,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 0.0
+    },
+    "silence_share": {
+     "n": 2,
+     "median": 0.121,
+     "p25": 0.082,
+     "p75": 0.161
+    },
+    "text_share": {
+     "n": 2,
+     "median": 0.968,
+     "p25": 0.951,
+     "p75": 0.984
+    },
+    "caption_share": {
+     "n": 2,
+     "median": 0.968,
+     "p25": 0.951,
+     "p75": 0.984
+    },
+    "caption_height": {
+     "n": 2,
+     "median": 0.045,
+     "p25": 0.044,
+     "p75": 0.046
+    },
+    "outside_safe_share": {
+     "n": 2,
+     "median": 0.771,
+     "p25": 0.762,
+     "p75": 0.78
+    },
+    "face_share": {
+     "n": 2,
+     "median": 0.867,
+     "p25": 0.801,
+     "p75": 0.934
+    },
+    "face_height": {
+     "n": 2,
+     "median": 0.177,
+     "p25": 0.174,
+     "p75": 0.18
+    },
+    "face_cy": {
+     "n": 2,
+     "median": 0.349,
+     "p25": 0.309,
+     "p75": 0.389
+    },
+    "events_per_min": {
+     "n": 2,
+     "median": 4.94,
+     "p25": 3.805,
+     "p75": 6.075
+    },
+    "punches_per_min": {
+     "n": 2,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 0.0
+    },
+    "loudness_lufs": {
+     "n": 2,
+     "median": -18.3,
+     "p25": -18.75,
+     "p75": -17.85
+    },
+    "music_bed_db": {
+     "n": 2,
+     "median": -28.1,
+     "p25": -30.95,
+     "p75": -25.25
+    },
+    "loop": {
+     "n": 2,
+     "median": 0.772,
+     "p25": 0.767,
+     "p75": 0.778
+    }
+   }
+  },
+  "product_demo": {
+   "measured": {
+    "duration_s": {
+     "n": 3,
+     "median": 46.0,
+     "p25": 42.735,
+     "p75": 47.5
+    },
+    "cuts_per_min": {
+     "n": 3,
+     "median": 11.02,
+     "p25": 10.725,
+     "p75": 16.91
+    },
+    "shot_median_s": {
+     "n": 3,
+     "median": 3.7,
+     "p25": 2.73,
+     "p75": 4.185
+    },
+    "first_cut_s": {
+     "n": 3,
+     "median": 3.47,
+     "p25": 2.535,
+     "p75": 3.8
+    },
+    "words_per_s": {
+     "n": 3,
+     "median": 3.5,
+     "p25": 3.455,
+     "p75": 3.555
+    },
+    "first_word_s": {
+     "n": 3,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 0.0
+    },
+    "silence_share": {
+     "n": 3,
+     "median": 0.127,
+     "p25": 0.126,
+     "p75": 0.181
+    },
+    "text_share": {
+     "n": 3,
+     "median": 0.979,
+     "p25": 0.977,
+     "p75": 0.98
+    },
+    "caption_share": {
+     "n": 3,
+     "median": 0.979,
+     "p25": 0.977,
+     "p75": 0.98
+    },
+    "caption_height": {
+     "n": 3,
+     "median": 0.042,
+     "p25": 0.038,
+     "p75": 0.046
+    },
+    "outside_safe_share": {
+     "n": 3,
+     "median": 0.671,
+     "p25": 0.665,
+     "p75": 0.733
+    },
+    "face_share": {
+     "n": 3,
+     "median": 0.391,
+     "p25": 0.359,
+     "p75": 0.558
+    },
+    "face_height": {
+     "n": 3,
+     "median": 0.31,
+     "p25": 0.266,
+     "p75": 0.357
+    },
+    "face_cy": {
+     "n": 3,
+     "median": 0.368,
+     "p25": 0.354,
+     "p75": 0.376
+    },
+    "events_per_min": {
+     "n": 3,
+     "median": 1.3,
+     "p25": 0.65,
+     "p75": 2.93
+    },
+    "punches_per_min": {
+     "n": 3,
+     "median": 3.04,
+     "p25": 2.825,
+     "p75": 10.09
+    },
+    "loudness_lufs": {
+     "n": 3,
+     "median": -24.1,
+     "p25": -26.2,
+     "p75": -19.35
+    },
+    "music_bed_db": {
+     "n": 3,
+     "median": -36.1,
+     "p25": -38.25,
+     "p75": -29.5
+    },
+    "loop": {
+     "n": 3,
+     "median": 0.804,
+     "p25": 0.8,
+     "p75": 0.866
+    }
+   }
+  },
+  "screen_recording": {
+   "measured": {
+    "duration_s": {
+     "n": 9,
+     "median": 32.0,
+     "p25": 25.0,
+     "p75": 39.0
+    },
+    "cuts_per_min": {
+     "n": 9,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 8.97
+    },
+    "shot_median_s": {
+     "n": 9,
+     "median": 14.0,
+     "p25": 5.73,
+     "p75": 25.0
+    },
+    "first_cut_s": {
+     "n": 3,
+     "median": 6.2,
+     "p25": 4.6,
+     "p75": 8.635
+    },
+    "words_per_s": {
+     "n": 9,
+     "median": 1.07,
+     "p25": 0.0,
+     "p75": 2.76
+    },
+    "first_word_s": {
+     "n": 5,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 0.0
+    },
+    "silence_share": {
+     "n": 9,
+     "median": 0.676,
+     "p25": 0.115,
+     "p75": 1.0
+    },
+    "text_share": {
+     "n": 9,
+     "median": 0.962,
+     "p25": 0.933,
+     "p75": 0.975
+    },
+    "caption_share": {
+     "n": 9,
+     "median": 0.962,
+     "p25": 0.933,
+     "p75": 0.975
+    },
+    "caption_height": {
+     "n": 9,
+     "median": 0.029,
+     "p25": 0.027,
+     "p75": 0.03
+    },
+    "outside_safe_share": {
+     "n": 9,
+     "median": 0.828,
+     "p25": 0.799,
+     "p75": 0.867
+    },
+    "face_share": {
+     "n": 9,
+     "median": 0.12,
+     "p25": 0.0,
+     "p75": 0.156
+    },
+    "face_height": {
+     "n": 6,
+     "median": 0.148,
+     "p25": 0.137,
+     "p75": 0.182
+    },
+    "face_cy": {
+     "n": 6,
+     "median": 0.461,
+     "p25": 0.363,
+     "p75": 0.591
+    },
+    "events_per_min": {
+     "n": 9,
+     "median": 14.4,
+     "p25": 0.0,
+     "p75": 28.8
+    },
+    "punches_per_min": {
+     "n": 9,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 0.0
+    },
+    "loudness_lufs": {
+     "n": 9,
+     "median": -22.2,
+     "p25": -23.0,
+     "p75": -20.2
+    },
+    "music_bed_db": {
+     "n": 9,
+     "median": -26.8,
+     "p25": -34.3,
+     "p75": -23.7
+    },
+    "loop": {
+     "n": 9,
+     "median": 0.881,
+     "p25": 0.832,
+     "p75": 0.931
+    }
+   }
+  },
+  "skit": {
+   "measured": {
+    "duration_s": {
+     "n": 8,
+     "median": 32.5,
+     "p25": 17.75,
+     "p75": 57.05
+    },
+    "cuts_per_min": {
+     "n": 8,
+     "median": 15.26,
+     "p25": 3.655,
+     "p75": 19.432
+    },
+    "shot_median_s": {
+     "n": 8,
+     "median": 3.35,
+     "p25": 2.325,
+     "p75": 7.52
+    },
+    "first_cut_s": {
+     "n": 7,
+     "median": 4.2,
+     "p25": 2.435,
+     "p75": 6.565
+    },
+    "words_per_s": {
+     "n": 8,
+     "median": 1.87,
+     "p25": 0.525,
+     "p75": 3.54
+    },
+    "first_word_s": {
+     "n": 6,
+     "median": 0.01,
+     "p25": 0.0,
+     "p75": 0.208
+    },
+    "silence_share": {
+     "n": 8,
+     "median": 0.432,
+     "p25": 0.153,
+     "p75": 0.92
+    },
+    "text_share": {
+     "n": 8,
+     "median": 0.944,
+     "p25": 0.889,
+     "p75": 0.954
+    },
+    "caption_share": {
+     "n": 8,
+     "median": 0.936,
+     "p25": 0.857,
+     "p75": 0.954
+    },
+    "caption_height": {
+     "n": 8,
+     "median": 0.041,
+     "p25": 0.039,
+     "p75": 0.044
+    },
+    "outside_safe_share": {
+     "n": 8,
+     "median": 0.704,
+     "p25": 0.607,
+     "p75": 0.813
+    },
+    "face_share": {
+     "n": 8,
+     "median": 0.748,
+     "p25": 0.494,
+     "p75": 0.974
+    },
+    "face_height": {
+     "n": 8,
+     "median": 0.191,
+     "p25": 0.133,
+     "p75": 0.234
+    },
+    "face_cy": {
+     "n": 8,
+     "median": 0.404,
+     "p25": 0.356,
+     "p75": 0.438
+    },
+    "events_per_min": {
+     "n": 8,
+     "median": 3.985,
+     "p25": 2.147,
+     "p75": 6.585
+    },
+    "punches_per_min": {
+     "n": 8,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 0.207
+    },
+    "loudness_lufs": {
+     "n": 8,
+     "median": -17.55,
+     "p25": -20.625,
+     "p75": -16.0
+    },
+    "music_bed_db": {
+     "n": 7,
+     "median": -25.7,
+     "p25": -27.4,
+     "p75": -22.05
+    },
+    "loop": {
+     "n": 8,
+     "median": 0.829,
+     "p25": 0.739,
+     "p75": 0.849
+    }
+   }
+  },
+  "split_screen": {
+   "measured": {
+    "duration_s": {
+     "n": 36,
+     "median": 54.0,
+     "p25": 43.5,
+     "p75": 71.5
+    },
+    "cuts_per_min": {
+     "n": 36,
+     "median": 10.94,
+     "p25": 4.365,
+     "p75": 21.567
+    },
+    "shot_median_s": {
+     "n": 36,
+     "median": 3.855,
+     "p25": 2.15,
+     "p75": 5.473
+    },
+    "first_cut_s": {
+     "n": 34,
+     "median": 4.035,
+     "p25": 2.4,
+     "p75": 6.27
+    },
+    "words_per_s": {
+     "n": 36,
+     "median": 3.48,
+     "p25": 3.158,
+     "p75": 3.667
+    },
+    "first_word_s": {
+     "n": 36,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 0.0
+    },
+    "silence_share": {
+     "n": 36,
+     "median": 0.1,
+     "p25": 0.077,
+     "p75": 0.128
+    },
+    "text_share": {
+     "n": 36,
+     "median": 0.98,
+     "p25": 0.967,
+     "p75": 0.988
+    },
+    "caption_share": {
+     "n": 36,
+     "median": 0.966,
+     "p25": 0.942,
+     "p75": 0.985
+    },
+    "caption_height": {
+     "n": 36,
+     "median": 0.038,
+     "p25": 0.033,
+     "p75": 0.042
+    },
+    "outside_safe_share": {
+     "n": 36,
+     "median": 0.688,
+     "p25": 0.61,
+     "p75": 0.765
+    },
+    "face_share": {
+     "n": 36,
+     "median": 0.716,
+     "p25": 0.423,
+     "p75": 1.0
+    },
+    "face_height": {
+     "n": 35,
+     "median": 0.228,
+     "p25": 0.193,
+     "p75": 0.296
+    },
+    "face_cy": {
+     "n": 35,
+     "median": 0.487,
+     "p25": 0.32,
+     "p75": 0.678
+    },
+    "events_per_min": {
+     "n": 36,
+     "median": 3.02,
+     "p25": 1.567,
+     "p75": 7.337
+    },
+    "punches_per_min": {
+     "n": 36,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 2.265
+    },
+    "loudness_lufs": {
+     "n": 36,
+     "median": -19.25,
+     "p25": -24.025,
+     "p75": -16.25
+    },
+    "music_bed_db": {
+     "n": 25,
+     "median": -26.0,
+     "p25": -38.0,
+     "p75": -19.0
+    },
+    "loop": {
+     "n": 36,
+     "median": 0.783,
+     "p25": 0.682,
+     "p75": 0.842
+    }
+   }
+  },
+  "talking_head": {
+   "measured": {
+    "duration_s": {
+     "n": 72,
+     "median": 72.0,
+     "p25": 49.7,
+     "p75": 103.282
+    },
+    "cuts_per_min": {
+     "n": 72,
+     "median": 2.82,
+     "p25": 0.673,
+     "p75": 6.748
+    },
+    "shot_median_s": {
+     "n": 72,
+     "median": 11.395,
+     "p25": 5.902,
+     "p75": 36.6
+    },
+    "first_cut_s": {
+     "n": 57,
+     "median": 7.8,
+     "p25": 4.0,
+     "p75": 21.87
+    },
+    "words_per_s": {
+     "n": 72,
+     "median": 3.52,
+     "p25": 3.112,
+     "p75": 3.82
+    },
+    "first_word_s": {
+     "n": 72,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 0.0
+    },
+    "silence_share": {
+     "n": 72,
+     "median": 0.093,
+     "p25": 0.067,
+     "p75": 0.128
+    },
+    "text_share": {
+     "n": 72,
+     "median": 0.982,
+     "p25": 0.963,
+     "p75": 0.99
+    },
+    "caption_share": {
+     "n": 72,
+     "median": 0.977,
+     "p25": 0.897,
+     "p75": 0.988
+    },
+    "caption_height": {
+     "n": 72,
+     "median": 0.042,
+     "p25": 0.036,
+     "p75": 0.051
+    },
+    "outside_safe_share": {
+     "n": 72,
+     "median": 0.81,
+     "p25": 0.664,
+     "p75": 0.978
+    },
+    "face_share": {
+     "n": 72,
+     "median": 1.0,
+     "p25": 0.925,
+     "p75": 1.0
+    },
+    "face_height": {
+     "n": 72,
+     "median": 0.288,
+     "p25": 0.249,
+     "p75": 0.364
+    },
+    "face_cy": {
+     "n": 72,
+     "median": 0.443,
+     "p25": 0.382,
+     "p75": 0.491
+    },
+    "events_per_min": {
+     "n": 72,
+     "median": 1.14,
+     "p25": 0.0,
+     "p75": 3.373
+    },
+    "punches_per_min": {
+     "n": 72,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 0.0
+    },
+    "loudness_lufs": {
+     "n": 72,
+     "median": -23.9,
+     "p25": -27.425,
+     "p75": -17.1
+    },
+    "music_bed_db": {
+     "n": 62,
+     "median": -33.15,
+     "p25": -39.825,
+     "p75": -24.75
+    },
+    "loop": {
+     "n": 72,
+     "median": 0.853,
+     "p25": 0.817,
+     "p75": 0.885
+    }
+   }
+  },
+  "tutorial_demo": {
+   "measured": {
+    "duration_s": {
+     "n": 23,
+     "median": 58.0,
+     "p25": 44.0,
+     "p75": 85.5
+    },
+    "cuts_per_min": {
+     "n": 23,
+     "median": 7.35,
+     "p25": 3.22,
+     "p75": 13.835
+    },
+    "shot_median_s": {
+     "n": 23,
+     "median": 5.87,
+     "p25": 3.42,
+     "p75": 11.885
+    },
+    "first_cut_s": {
+     "n": 21,
+     "median": 5.87,
+     "p25": 3.6,
+     "p75": 8.53
+    },
+    "words_per_s": {
+     "n": 23,
+     "median": 3.34,
+     "p25": 3.065,
+     "p75": 4.0
+    },
+    "first_word_s": {
+     "n": 22,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 0.0
+    },
+    "silence_share": {
+     "n": 23,
+     "median": 0.1,
+     "p25": 0.078,
+     "p75": 0.147
+    },
+    "text_share": {
+     "n": 23,
+     "median": 0.978,
+     "p25": 0.969,
+     "p75": 0.984
+    },
+    "caption_share": {
+     "n": 23,
+     "median": 0.973,
+     "p25": 0.939,
+     "p75": 0.979
+    },
+    "caption_height": {
+     "n": 23,
+     "median": 0.039,
+     "p25": 0.033,
+     "p75": 0.049
+    },
+    "outside_safe_share": {
+     "n": 23,
+     "median": 0.755,
+     "p25": 0.674,
+     "p75": 0.81
+    },
+    "face_share": {
+     "n": 23,
+     "median": 0.333,
+     "p25": 0.149,
+     "p75": 0.562
+    },
+    "face_height": {
+     "n": 19,
+     "median": 0.361,
+     "p25": 0.253,
+     "p75": 0.393
+    },
+    "face_cy": {
+     "n": 19,
+     "median": 0.475,
+     "p25": 0.412,
+     "p75": 0.514
+    },
+    "events_per_min": {
+     "n": 23,
+     "median": 2.4,
+     "p25": 0.815,
+     "p75": 5.07
+    },
+    "punches_per_min": {
+     "n": 23,
+     "median": 2.05,
+     "p25": 0.225,
+     "p75": 4.07
+    },
+    "loudness_lufs": {
+     "n": 23,
+     "median": -22.9,
+     "p25": -26.45,
+     "p75": -18.4
+    },
+    "music_bed_db": {
+     "n": 23,
+     "median": -34.1,
+     "p25": -43.2,
+     "p75": -29.8
+    },
+    "loop": {
+     "n": 23,
+     "median": 0.828,
+     "p25": 0.754,
+     "p75": 0.866
+    }
+   }
+  },
+  "voiceover_broll": {
+   "measured": {
+    "duration_s": {
+     "n": 3,
+     "median": 61.0,
+     "p25": 52.5,
+     "p75": 78.5
+    },
+    "cuts_per_min": {
+     "n": 3,
+     "median": 8.85,
+     "p25": 5.05,
+     "p75": 12.605
+    },
+    "shot_median_s": {
+     "n": 3,
+     "median": 4.93,
+     "p25": 4.03,
+     "p75": 10.765
+    },
+    "first_cut_s": {
+     "n": 3,
+     "median": 2.8,
+     "p25": 1.7,
+     "p75": 3.8
+    },
+    "words_per_s": {
+     "n": 3,
+     "median": 3.81,
+     "p25": 3.21,
+     "p75": 3.87
+    },
+    "first_word_s": {
+     "n": 3,
+     "median": 0.0,
+     "p25": 0.0,
+     "p75": 0.0
+    },
+    "silence_share": {
+     "n": 3,
+     "median": 0.112,
+     "p25": 0.103,
+     "p75": 0.14
+    },
+    "text_share": {
+     "n": 3,
+     "median": 0.933,
+     "p25": 0.918,
+     "p75": 0.962
+    },
+    "caption_share": {
+     "n": 3,
+     "median": 0.933,
+     "p25": 0.894,
+     "p75": 0.962
+    },
+    "caption_height": {
+     "n": 3,
+     "median": 0.047,
+     "p25": 0.043,
+     "p75": 0.052
+    },
+    "outside_safe_share": {
+     "n": 3,
+     "median": 0.612,
+     "p25": 0.603,
+     "p75": 0.688
+    },
+    "face_share": {
+     "n": 3,
+     "median": 0.377,
+     "p25": 0.214,
+     "p75": 0.552
+    },
+    "face_height": {
+     "n": 3,
+     "median": 0.338,
+     "p25": 0.267,
+     "p75": 0.341
+    },
+    "face_cy": {
+     "n": 3,
+     "median": 0.416,
+     "p25": 0.39,
+     "p75": 0.428
+    },
+    "events_per_min": {
+     "n": 3,
+     "median": 6.25,
+     "p25": 4.6,
+     "p75": 6.535
+    },
+    "punches_per_min": {
+     "n": 3,
+     "median": 1.97,
+     "p25": 0.985,
+     "p75": 2.35
+    },
+    "loudness_lufs": {
+     "n": 3,
+     "median": -22.9,
+     "p25": -24.85,
+     "p75": -21.1
+    },
+    "music_bed_db": {
+     "n": 3,
+     "median": -29.8,
+     "p25": -34.65,
+     "p75": -28.4
+    },
+    "loop": {
+     "n": 3,
+     "median": 0.718,
+     "p25": 0.551,
+     "p75": 0.81
+    }
+   }
+  }
+ }
+}

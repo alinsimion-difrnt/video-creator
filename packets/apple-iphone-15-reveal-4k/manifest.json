@@ -1,0 +1,126 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "s5_packets",
+    "annotator": "code",
+    "skill": null,
+    "model": null,
+    "input_hash": "0b2f9371fea0224f0718448e5394c485935aa96c771f6202c5730fb4532cefbd",
+    "created_at": "2026-10-05T06:17:53.262424Z"
+  },
+  "video": "apple-iphone-15-reveal-4k",
+  "tier": "reference",
+  "max_images_per_task": 12,
+  "event_images": 4,
+  "tasks": [
+    {
+      "id": "a1-p1",
+      "kind": "a1",
+      "images": [
+        "pass1/sheets/shot_s001_1.jpg",
+        "pass1/keyframes/shot_s001.jpg",
+        "pass1/sheets/shot_s002_1.jpg",
+        "pass1/keyframes/shot_s002.jpg",
+        "pass1/sheets/shot_s003_1.jpg",
+        "pass1/keyframes/shot_s003.jpg",
+        "pass1/sheets/shot_s004_1.jpg",
+        "pass1/keyframes/shot_s004.jpg",
+        "pass1/sheets/shot_s005_1.jpg",
+        "pass1/keyframes/shot_s005.jpg",
+        "pass1/sheets/shot_s006_1.jpg",
+        "pass1/keyframes/shot_s006.jpg"
+      ],
+      "files": [
+        "pass1/anchors.json"
+      ],
+      "shots": [
+        "s001",
+        "s002",
+        "s003",
+        "s004",
+        "s005",
+        "s006"
+      ],
+      "event": null,
+      "siblings": [],
+      "output": "videos/apple-iphone-15-reveal-4k/a1.p1.json",
+      "input_hash": "f8c6276a16a5301ce0295635527dae10cc4a0d690e0a4a9629c1580a45dde908"
+    },
+    {
+      "id": "a1-p2",
+      "kind": "a1",
+      "images": [
+        "pass1/sheets/shot_s007_1.jpg",
+        "pass1/keyframes/shot_s007.jpg",
+        "pass1/sheets/shot_s008_1.jpg",
+        "pass1/keyframes/shot_s008.jpg",
+        "pass1/sheets/shot_s009_1.jpg",
+        "pass1/keyframes/shot_s009.jpg",
+        "pass1/sheets/shot_s010_1.jpg",
+        "pass1/keyframes/shot_s010.jpg",
+        "pass1/sheets/shot_s011_1.jpg",
+        "pass1/sheets/shot_s011_2.jpg",
+        "pass1/keyframes/shot_s011.jpg"
+      ],
+      "files": [
+        "pass1/anchors.json"
+      ],
+      "shots": [
+        "s007",
+        "s008",
+        "s009",
+        "s010",
+        "s011"
+      ],
+      "event": null,
+      "siblings": [],
+      "output": "videos/apple-iphone-15-reveal-4k/a1.p2.json",
+      "input_hash": "b4200bccf1e9c0bcaeb364fe5c0463a23403ddf74c63e10fe172ff83cd4c4f63"
+    },
+    {
+      "id": "a1-p3",
+      "kind": "a1",
+      "images": [
+        "pass1/sheets/shot_s012_1.jpg",
+        "pass1/keyframes/shot_s012.jpg",
+        "pass1/sheets/shot_s013_1.jpg",
+        "pass1/keyframes/shot_s013.jpg",
+        "pass1/sheets/shot_s014_1.jpg",
+        "pass1/keyframes/shot_s014.jpg"
+      ],
+      "files": [
+        "pass1/anchors.json"
+      ],
+      "shots": [
+        "s012",
+        "s013",
+        "s014"
+      ],
+      "event": null,
+      "siblings": [],
+      "output": "videos/apple-iphone-15-reveal-4k/a1.p3.json",
+      "input_hash": "ac90491868cd95a69a48de350127ab7d4d96461cc088fbebc352d7aa016d74cf"
+    },
+    {
+      "id": "a2-e001",
+      "kind": "a2",
+      "images": [
+        "events/e001/filmstrip.jpg",
+        "events/e001/end_marked.jpg",
+        "events/e001/end_clean.jpg",
+        "events/e001/spectrogram.jpg"
+      ],
+      "files": [
+        "events/e001/facts.json",
+        "events/e001/candidates.json"
+      ],
+      "shots": [],
+      "event": "e001",
+      "siblings": [],
+      "output": "videos/apple-iphone-15-reveal-4k/events/e001.a2.json",
+      "input_hash": "87741cc63fd5f25f948b6cc6f0dcb8d3acf9aa098a2355a23fb08de94d16603b"
+    }
+  ],
+  "skipped": []
+}

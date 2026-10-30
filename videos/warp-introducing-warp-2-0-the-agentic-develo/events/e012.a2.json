@@ -1,0 +1,149 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "a2_annotate_event",
+    "annotator": "claude-code",
+    "skill": "annotate-event@3dad117bd85a",
+    "model": null,
+    "input_hash": "083f8267cbd1abf623c8c01eb8a931a47158c6775cb11aca0eccc2db23d91352",
+    "created_at": "2026-10-05T06:53:19.402598Z"
+  },
+  "video": "warp-introducing-warp-2-0-the-agentic-develo",
+  "event": "e012",
+  "task": "a2-e012",
+  "elements": [
+    {
+      "box": "b07",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Left stat card (71% SWE Bench Verified), shifting left to make room",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 650, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b03",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "71% metric",
+      "role": "metric",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": true,
+      "text": "71%",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 650, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b09",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "SWE Bench Verified caption",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": true,
+      "text": "SWE Bench Verified",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 650, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b15",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Left verified-check badge",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["slide_left"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 650, "easing_class": "ease_in_out"}
+    },
+    {
+      "box": "b13",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Right stat card (#1 Terminal Bench), entering from the right edge and widening",
+      "role": "card",
+      "role_other": null,
+      "change_types": ["slide_left", "scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 650, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b05",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "#1 metric",
+      "role": "metric",
+      "role_other": null,
+      "change_types": ["slide_left", "scale_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "#1",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 650, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b11",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Terminal Bench caption",
+      "role": "label",
+      "role_other": null,
+      "change_types": ["slide_left", "scale_up"],
+      "change_other": null,
+      "is_text": true,
+      "text": "Terminal Bench",
+      "text_unit": "whole",
+      "estimates": {"duration_ms": 650, "easing_class": "ease_out"}
+    },
+    {
+      "box": "b16",
+      "manual_box": null,
+      "manual_reason": null,
+      "label": "Right verified-check badge",
+      "role": "icon",
+      "role_other": null,
+      "change_types": ["slide_left", "scale_up"],
+      "change_other": null,
+      "is_text": false,
+      "text": null,
+      "text_unit": null,
+      "estimates": {"duration_ms": 650, "easing_class": "ease_out"}
+    }
+  ],
+  "sfx_review": [
+    {
+      "id": "x036",
+      "verdict": "unsure",
+      "label": "unsure",
+      "note": "This is 377 ms before the motion starts. The spectrogram shows a sharp onset with decay at 79.66s (more like a music hit) and a separate broadband swell around 79.9-80.0s that could be the actual reverse swoosh. A reverse swoosh leading into the card slide is plausible, but which feature the label refers to is unclear."
+    }
+  ],
+  "pattern": {
+    "id": "layout_reframe",
+    "proposed_name": null,
+    "description": "A single '71% SWE Bench Verified' stat card slides left from centre while a second card, '#1 Terminal Bench', grows in from the right edge. The second card starts as a narrow sliver whose number and caption scale up as it widens. The two cards settle side by side as a two-up proof layout, over a blurred backdrop.",
+    "why_premium": "The second proof point joins the composition instead of replacing the first, so the viewer reads both stats as one cumulative claim, in time with 'and it's number one on Terminal Bench'. The accelerate-then-decelerate motion with no overshoot keeps the stats feeling authoritative."
+  },
+  "build_hint": {
+    "gsap": "Use one timeline at t=0. gsap.to(leftCard, {x: -leftShift, duration: 0.65, ease: 'power2.inOut'}) and gsap.fromTo(rightCard, {x: '100vw', scaleX: 0.15, transformOrigin: 'right center'}, {x: 0, scaleX: 1, duration: 0.65, ease: 'power2.inOut'}). Counter-scale the right card's children, or animate its width with a clip, so '#1' and its caption grow from small to full size. No stagger: both cards move as one reframe.",
+    "remotion": "const t = interpolate(frame - s, [0, 20], [0, 1], {easing: Easing.inOut(Easing.quad), extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}). Left card translateX = -shift * t; right card translateX = (1 - t) * enterOffset with scale = 0.15 + 0.85 * t. A critically damped spring ({damping: 200}) is an alternative; it should not overshoot."
+  },
+  "confidence": "medium",
+  "notes": "The camera verdict is pan_right (pan_x -0.23). The whole card group moves left and the blurred backdrop may shift with it, so this could equally be built as a virtual camera tracking right across a card row. The elements are annotated as content sliding left. b07 and b13 are only the card edge strips; there is no candidate box for the full cards. The right card's widening may be a perspective rotate-in, not a flat scale; a human should check at full frame rate."
+}

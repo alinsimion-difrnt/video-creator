@@ -1,0 +1,51 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "tool_version": "0.1.0",
+    "stage": "pixel_notes",
+    "annotator": "claude-code",
+    "input_hash": "df491c0e28a0e8be76c711c6f6a38ee2824c48b9468060be84e78545a379ec76",
+    "created_at": "2026-10-13T13:07:24+00:00"
+  },
+  "id": "7243880817854876970",
+  "kind": "clip",
+  "palette": {
+    "colours_estimate": null,
+    "shadows": "cool",
+    "notes": "Code: 7 colours on the still with one flat ramp, but the clip mixes UI, logo and live blurred backgrounds, so this is not the sprites' palette. The demon girl sprite shades purple-blue; the dragon blue with orange."
+  },
+  "lighting": "Sprites lit from upper left with cool purple shadows on the demon and dragon; editor scenes sit over a neon grid floor.",
+  "silhouette": "Strong game-sprite silhouettes: demon girl with wings and horns, a hunched skeletal creature, a long dark quadruped, a dragon, a tree-creature; each reads by shape.",
+  "motion": {
+    "timing": "Code: 26.43 changes/s, median hold 16.7 ms; inflated by screen recording, UI and logo moves; the sprites show bone-rig overlays rather than drawn holds.",
+    "principles": [
+      "skeletal rig",
+      "pose to pose"
+    ]
+  },
+  "texture": "Detailed sprite art with dense shading, shown over a neon synthwave grid inside the tool; white rig bones drawn on top.",
+  "camera": "Screen-recorded tool demo: cuts between Aseprite, a logo card and the Smack Studio editor; the background is blurred and slightly animated.",
+  "sound": "",
+  "acting": {
+    "enters": "Each new character pops in on a cut, one per line of narration.",
+    "acts": "Characters show off a rigged pose or move in the editor (walk, roll, rotate) while text explains the tool.",
+    "exits": "Cut to the next creature.",
+    "comes_back": true,
+    "depth": "The demon girl returns later rigged in the editor; sprites stay centred on the grid floor."
+  },
+  "techniques": [
+    "bone rig over pixel sprites for cutout-style animation",
+    "one character per narration line in quick cuts",
+    "callback: the first sprite returns later rigged",
+    "neon grid stage to frame each sprite",
+    "problem then solution hook ('frame by frame is hard')"
+  ],
+  "feel": "frame-by-frame-is-hard hook + parade of rigged sprites on a neon grid = tool pitch with variety",
+  "for_fred": "Rigged motion is fine for a quick body move, but keep key poses hand-drawn; also borrow the callback: show Fred once early, cut away, then bring him back later doing the move properly.",
+  "sources": [
+    "data/study/pixel/work/7243880817854876970/sheet.jpg",
+    "studies/pixel-art/clips/7243880817854876970.json",
+    "studies/pixel-art/tiktok.yaml",
+    "https://www.tiktok.com/@smackstudio/video/7243880817854876970"
+  ]
+}
