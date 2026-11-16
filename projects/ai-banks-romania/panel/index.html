@@ -101,7 +101,7 @@ body { font-family: var(--text); color: var(--ink); -webkit-font-smoothing: anti
 <div id="pill"><span class="dot"></span><span class="kick">AI search · Romanian banks</span></div>
 
 <!-- A 0.00-5.25 hook -->
-<div class="scene" id="sA">
+<div class="scene" id="sA" style="opacity:1;">
   <div class="abs h3" id="aK" style="left:80px; top:278px; color:var(--muted);">In AI, it matters…</div>
   <img class="emoji" id="aS" src="emoji/speech.png" style="left:886px; top:262px; width:130px;">
   <div class="abs h2" style="left:80px; top:356px;">
@@ -111,7 +111,7 @@ body { font-family: var(--text); color: var(--ink); -webkit-font-smoothing: anti
   </div>
   <img class="emoji" id="aChk" src="emoji/check.png" style="left:752px; top:338px; width:116px;">
   <div class="abs" style="left:80px; top:470px; display:flex; align-items:flex-end; gap:26px;">
-    <span class="mask h2" style="color:var(--muted); padding-bottom:28px;"><span class="wd" id="a4">and</span></span>
+    <span class="mask h2" style="color:var(--muted); margin-bottom:28px;"><span class="wd" id="a4">and</span></span>
     <span class="hero acc" id="aHow" style="display:inline-block;">HOW</span>
   </div>
   <img class="emoji" id="aUp" src="emoji/thumbsup.png" style="left:720px; top:470px; width:150px;">
@@ -188,10 +188,10 @@ body { font-family: var(--text); color: var(--ink); -webkit-font-smoothing: anti
     <span class="bname" style="font-size:56px;">Raiffeisen Bank</span>
   </div>
   <img class="emoji" id="fCrown" src="emoji/crown.png" style="left:872px; top:354px; width:112px;">
-  <div class="abs row" id="f2" style="left:60px; top:510px; width:470px; height:84px;"><span class="rank">2</span><span class="btile"><img src="logos/bcr-white.svg" style="height:40px;"></span></div>
-  <div class="abs row" id="f3" style="left:550px; top:510px; width:470px; height:84px;"><span class="rank">3</span><img src="logos/ing.svg" style="height:52px;"></div>
-  <div class="abs row" id="f4" style="left:60px; top:606px; width:470px; height:84px;"><span class="rank">4</span><img src="logos/bt.svg" style="height:62px;"></div>
-  <div class="abs row" id="f5" style="left:550px; top:606px; width:470px; height:84px;"><span class="rank">5</span><img src="logos/brd-mark.png" style="height:50px;"></div>
+  <div class="abs row" id="f2" style="left:60px; top:508px; width:470px; height:96px;"><span class="rank">2</span><span class="btile" style="padding:12px 18px;"><img src="logos/bcr-white.svg" style="height:51px;"></span></div>
+  <div class="abs row" id="f3" style="left:550px; top:508px; width:470px; height:96px;"><span class="rank">3</span><img src="logos/ing.svg" style="height:62px;"></div>
+  <div class="abs row" id="f4" style="left:60px; top:616px; width:470px; height:96px;"><span class="rank">4</span><img src="logos/bt.svg" style="height:62px;"></div>
+  <div class="abs row" id="f5" style="left:550px; top:616px; width:470px; height:96px;"><span class="rank">5</span><img src="logos/brd-mark.png" style="height:58px;"></div>
 </div>
 
 <!-- G 37.95-41.30 semantic analysis -->
@@ -325,7 +325,6 @@ function draw(path, t, d) {
 }
 
 // ---------- A 0.00-5.25 hook ----------
-tl.set("#sA", { opacity: 1 }, 0);
 tl.to("#sA", { opacity: 0, y: -30, duration: 0.25, ease: "power2.in" }, 5.0);
 tl.set("#sA", { y: 0 }, 5.26);
 float("#aS", 0.0, 3.6, 14);
@@ -362,9 +361,9 @@ pop(16.62, "#c3", { from: { rotation: 0, scale: 0.92, opacity: 0.45 }, to: { dur
 
 // ---------- D 17.45-25.90 browsers ----------
 scene("#sD", 17.45, 26.20);
-pop(18.03, "#d1", { from: { rotation: 0, scale: 0.85, y: 40 }, to: { y: 0, duration: 0.6 } });
-pop(18.25, "#d2", { from: { rotation: 0, scale: 0.85, y: 40 }, to: { y: 0, duration: 0.6 } });
-pop(18.45, "#d3", { from: { rotation: 0, scale: 0.85, y: 40 }, to: { y: 0, duration: 0.6 } });
+pop(17.50, "#d1", { from: { rotation: 0, scale: 0.85, y: 40 }, to: { y: 0, duration: 0.6 } });
+pop(17.78, "#d2", { from: { rotation: 0, scale: 0.85, y: 40 }, to: { y: 0, duration: 0.6 } });
+pop(18.03, "#d3", { from: { rotation: 0, scale: 0.85, y: 40 }, to: { y: 0, duration: 0.6 } });
 tl.fromTo("#dQ", { opacity: 0 }, { opacity: 1, duration: 0.15, immediateRender: false }, 19.7);
 type("#dQ", "Recomandă-mi cel mai bun credit…", 19.77, 20.6);
 tl.fromTo("#dCur", { x: 980, y: 760, opacity: 0 }, { x: 930, y: 470, opacity: 1, duration: 0.9, ease: E.inout }, 19.6);
@@ -449,9 +448,9 @@ tl.to("#jBcr", { y: 0, duration: 0.5, ease: E.inout }, 60.62);
 // ---------- K 61.30-71.45 sentiment score ----------
 scene("#sK", 61.30, 71.45);
 up(61.4, "#kG", { from: { y: 40 } });
-up(63.29, "#kK", { from: { y: 20 } });
-draw($("#kA1"), 63.29, 0.35); draw($("#kA2"), 63.55, 0.35); draw($("#kA3"), 63.8, 0.35);
-tl.fromTo("#kNeedle", { rotation: 0, opacity: 0 }, { rotation: 0, opacity: 1, duration: 0.3 }, 63.6);
+up(61.45, "#kK", { from: { y: 20 } });
+draw($("#kA1"), 62.3, 0.4); draw($("#kA2"), 62.65, 0.4); draw($("#kA3"), 63.0, 0.4);
+tl.fromTo("#kNeedle", { rotation: 0, opacity: 0 }, { rotation: 0, opacity: 1, duration: 0.3 }, 63.29);
 tl.to("#kNeedle", { rotation: -40, duration: 0.6, ease: E.inout }, 64.4);
 pop(64.6, "#kDn", { from: { rotation: 20 } });
 pop(64.8, "#kUp", { from: { rotation: -20 } });

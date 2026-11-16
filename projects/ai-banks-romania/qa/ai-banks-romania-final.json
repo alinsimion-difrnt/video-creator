@@ -1,0 +1,137 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "c13_qa",
+  "annotator": "code",
+  "skill": null,
+  "model": null,
+  "input_hash": "37b79a009cb52e38189b39de625185cf82027315f84f20f5873e361357ec08d0",
+  "created_at": "2026-11-16T11:36:33.485344Z"
+ },
+ "project": "ai-banks-romania",
+ "video": "data/create/ai-banks-romania/render/ai-banks-romania-final.mp4",
+ "destination": "tiktok",
+ "checks": [
+  {
+   "id": "frame",
+   "ok": true,
+   "value": "1080x1920",
+   "target": "1080x1920",
+   "note": ""
+  },
+  {
+   "id": "fps",
+   "ok": true,
+   "value": "30 (30/1 avg)",
+   "target": "constant 30",
+   "note": ""
+  },
+  {
+   "id": "codec",
+   "ok": true,
+   "value": "h264 yuv420p",
+   "target": "h264 yuv420p",
+   "note": ""
+  },
+  {
+   "id": "audio",
+   "ok": true,
+   "value": "aac 48000 Hz",
+   "target": "aac 48000 Hz",
+   "note": ""
+  },
+  {
+   "id": "faststart",
+   "ok": true,
+   "value": "moov first",
+   "target": "moov first",
+   "note": ""
+  },
+  {
+   "id": "duration",
+   "ok": true,
+   "value": "81.4 s",
+   "target": "<= 180 s",
+   "note": ""
+  },
+  {
+   "id": "loudness",
+   "ok": true,
+   "value": "-14.0 LUFS",
+   "target": "-15..-13 LUFS (house)",
+   "note": ""
+  },
+  {
+   "id": "true_peak",
+   "ok": true,
+   "value": "-1.7 dBTP",
+   "target": "<= -1 dBTP",
+   "note": ""
+  },
+  {
+   "id": "first_word",
+   "ok": true,
+   "value": "0.06 s",
+   "target": "<= 1 s",
+   "note": "no dead air before the hook"
+  },
+  {
+   "id": "word_gaps",
+   "ok": true,
+   "value": "0.60 s at 2.4 s",
+   "target": "<= 0.8 s",
+   "note": ""
+  },
+  {
+   "id": "tail",
+   "ok": true,
+   "value": "0.49 s",
+   "target": "<= 1.5 s",
+   "note": ""
+  },
+  {
+   "id": "hook_visual",
+   "ok": false,
+   "value": "5.30 s",
+   "target": "<= 3 s",
+   "note": "first cut, layout change or graphic"
+  },
+  {
+   "id": "pacing",
+   "ok": true,
+   "value": "5.3 s from 0.0 s",
+   "target": "<= 6 s with nothing new on screen",
+   "note": ""
+  },
+  {
+   "id": "captions_present",
+   "ok": true,
+   "value": "90 groups",
+   "target": ">= 1 group (burned in)",
+   "note": ""
+  },
+  {
+   "id": "captions_in_band",
+   "ok": true,
+   "value": "0 outside",
+   "target": "0",
+   "note": ""
+  },
+  {
+   "id": "captions_clear_body",
+   "ok": true,
+   "value": "0 on the presenter",
+   "target": "0 (Robert: never on the face or chest)",
+   "note": ""
+  },
+  {
+   "id": "overlays_placed",
+   "ok": true,
+   "value": "0 misplaced",
+   "target": "0",
+   "note": ""
+  }
+ ],
+ "ok": false
+}
