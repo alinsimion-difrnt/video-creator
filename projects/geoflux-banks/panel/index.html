@@ -56,9 +56,9 @@ body { font-family: var(--text); color: var(--ink); -webkit-font-smoothing: anti
 /* A */
 .tile { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; }
 .tname { font: 700 44px/1 var(--head); letter-spacing: -.02em; }
-.eng { width: 64px; height: 64px; border-radius: 50%; background: #fff; border: 1px solid var(--hair); box-shadow: var(--shadow);
+.eng { width: 76px; height: 76px; border-radius: 50%; background: #fff; border: 1px solid var(--hair); box-shadow: var(--shadow);
   display: flex; align-items: center; justify-content: center; }
-.eng img { width: 36px; height: 36px; }
+.eng img { width: 44px; height: 44px; }
 /* B */
 .cat { width: 168px; height: 168px; display: flex; align-items: center; justify-content: center; border-radius: 36px; }
 .cat img { width: 112px; height: 112px; }
@@ -179,7 +179,7 @@ body { font-family: var(--text); color: var(--ink); -webkit-font-smoothing: anti
     <div class="hit" id="gH1" style="left:330px; top:244px;"><img src="logos/brd.png" alt="">BRD</div>
     <div class="hit" id="gH2" style="left:140px; top:308px;"><img src="logos/bcr.png" alt="">BCR</div>
     <div class="hit" id="gH3" style="left:420px; top:372px;"><img src="logos/raiffeisen.png" alt="">Raiffeisen</div>
-    <div class="hit" id="gH4" style="left:790px; top:436px; font-family:var(--text); font-weight:600; color:var(--accent-ink);">+ more</div>
+    <div class="hit" id="gH4" style="left:750px; top:442px; font-family:var(--text); font-weight:600; color:var(--accent-ink);">+ more</div>
   </div>
   <svg class="abs" id="gCur" width="54" height="54" viewBox="0 0 24 24" style="left:900px; top:720px;">
     <path d="M4 2l15 9.5-6.6 1.4 3.8 7.4-3 1.5-3.8-7.5L4 19z" fill="#1C2B3B" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg>
@@ -242,7 +242,7 @@ body { font-family: var(--text); color: var(--ink); -webkit-font-smoothing: anti
 
 <!-- M 45.60-54.00: if you're there, and how -->
 <div class="scene" id="sM">
-  <div class="abs" id="mCard" style="left:40px; top:140px; width:1000px; height:575px; border-radius:44px; background:#1C2B3B; overflow:hidden;
+  <div class="abs" id="mCard" style="left:40px; top:136px; width:1000px; height:555px; border-radius:44px; background:#1C2B3B; overflow:hidden;
     box-shadow: 0 30px 80px -30px rgba(28,43,59,.6);">
     <div class="blob" style="width:520px; height:520px; background:#FF6600; opacity:.32; right:-170px; bottom:-240px;"></div>
     <div class="abs kick" id="mK" style="left:70px; top:58px; color:#A8B2BD;">In AI, it matters</div>
@@ -279,31 +279,31 @@ body { font-family: var(--text); color: var(--ink); -webkit-font-smoothing: anti
 <div class="scene" id="sP">
   <div class="abs kick" id="pK" style="left:60px; top:150px;">Sentiment score</div>
   <div class="abs chip" id="pTbi" style="left:60px; top:202px; font-size:44px;"><img src="logos/tbi-icon.png" alt="" style="height:56px; border-radius:14px;">TBI Bank</div>
-  <svg class="abs" style="left:240px; top:230px;" width="600" height="330" viewBox="0 0 600 330">
+  <svg class="abs" style="left:280px; top:210px;" width="520" height="290" viewBox="0 0 520 290">
     <defs><linearGradient id="pGrad" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#DC2626"/>
       <stop offset=".5" stop-color="#F59E0B"/><stop offset="1" stop-color="#16A34A"/></linearGradient></defs>
-    <path d="M 50 300 A 250 250 0 0 1 550 300" stroke="#E2E7ED" stroke-width="44" fill="none" stroke-linecap="round"/>
-    <path id="pArc" d="M 50 300 A 250 250 0 0 1 550 300" stroke="url(#pGrad)" stroke-width="44" fill="none" stroke-linecap="round"/>
+    <path d="M 45 260 A 215 215 0 0 1 475 260" stroke="#E2E7ED" stroke-width="44" fill="none" stroke-linecap="round"/>
+    <path id="pArc" d="M 45 260 A 215 215 0 0 1 475 260" stroke="url(#pGrad)" stroke-width="44" fill="none" stroke-linecap="round"/>
   </svg>
-  <div class="abs" id="pNeedle" style="left:533px; top:320px; width:14px; height:210px; background:var(--ink); border-radius:7px; transform-origin:50% 100%;"></div>
-  <div class="abs" style="left:516px; top:506px; width:48px; height:48px; border-radius:50%; background:var(--ink); border:6px solid #fff;"></div>
-  <img class="abs" id="pDn" src="emoji/thumbs_down_3d_default.png" alt="" style="left:124px; top:412px; width:116px;">
-  <img class="abs" id="pUp" src="emoji/thumbs_up_3d_default.png" alt="" style="left:840px; top:412px; width:116px;">
-  <div class="abs" id="pLab" style="left:0; right:0; top:576px; text-align:center; font: 700 56px/1 var(--head); letter-spacing:-.02em; color:var(--good);">Really good on deposits</div>
-  <div class="abs" style="left:0; right:0; top:650px; display:flex; justify-content:center;">
+  <div class="abs" id="pNeedle" style="left:533px; top:290px; width:14px; height:180px; background:var(--ink); border-radius:7px; transform-origin:50% 100%;"></div>
+  <div class="abs" style="left:516px; top:446px; width:48px; height:48px; border-radius:50%; background:var(--ink); border:6px solid #fff;"></div>
+  <img class="abs" id="pDn" src="emoji/thumbs_down_3d_default.png" alt="" style="left:168px; top:378px; width:116px;">
+  <img class="abs" id="pUp" src="emoji/thumbs_up_3d_default.png" alt="" style="left:796px; top:378px; width:116px;">
+  <div class="abs" id="pLab" style="left:0; right:0; top:506px; text-align:center; font: 700 56px/1 var(--head); letter-spacing:-.02em; color:var(--good);">Really good on deposits</div>
+  <div class="abs" style="left:0; right:0; top:584px; display:flex; justify-content:center;">
     <div class="chip" id="pRate" style="font-size:42px;"><img src="emoji/chart_increasing_3d.png" alt="" style="height:60px;">Highest interest rate right now</div></div>
 </div>
 
 <!-- R 68.40-77.75: BCR, good and bad -->
 <div class="scene" id="sR">
   <div class="abs kick" id="rK" style="left:60px; top:150px;">For example, BCR</div>
-  <div class="abs" id="rHead" style="left:60px; top:212px; display:flex; align-items:center; gap:22px;">
+  <div class="abs" id="rHead" style="left:60px; top:200px; display:flex; align-items:center; gap:22px;">
     <img src="logos/bcr.png" alt="" style="width:96px; height:96px; border-radius:22px;"><span class="h2">BCR</span></div>
-  <div class="abs card rrow" id="rR1" style="top:340px;"><img class="ri" src="emoji/thumbs_up_3d_default.png" alt="">
+  <div class="abs card rrow" id="rR1" style="top:322px;"><img class="ri" src="emoji/thumbs_up_3d_default.png" alt="">
     <span class="rt">Refinancing credit</span><span class="pill good" id="rP1">Good</span></div>
-  <div class="abs card rrow" id="rR2" style="top:470px;"><img class="ri" src="emoji/thumbs_down_3d_default.png" alt="">
+  <div class="abs card rrow" id="rR2" style="top:446px;"><img class="ri" src="emoji/thumbs_down_3d_default.png" alt="">
     <span class="rt">Deposits</span><span class="pill bad" id="rP2">Bad</span></div>
-  <div class="abs" id="rWhy" style="left:66px; top:598px; display:flex; align-items:center; gap:18px;">
+  <div class="abs" id="rWhy" style="left:66px; top:568px; display:flex; align-items:center; gap:18px;">
     <img src="emoji/chart_decreasing_3d.png" alt="" style="width:124px; margin:-12px 0;"><span style="font: 700 48px/1 var(--head); letter-spacing:-.02em; color:var(--bad);">Lower interest rate</span></div>
 </div>
 
@@ -430,10 +430,10 @@ slide(30.04, "#iR2"); slide(30.46, "#iR3"); slide(30.88, "#iR4"); slide(31.78, "
 scene("#sK", 33.13, 36.83);
 up(33.16, "#kK", { from: { y: 20 } });
 up(33.18, "#kDoc", { from: { y: 50 } });
-tl.fromTo("#kMag", { x: 0, y: 0, opacity: 0 }, { x: 260, y: -10, opacity: 1, duration: 0.7, ease: E.inout }, 33.33);
-tl.fromTo("#kMag", { x: 260, y: -10 }, { x: 560, y: 50, duration: 0.7, ease: E.inout, immediateRender: false }, 34.08);
-tl.fromTo("#kMag", { x: 560, y: 50 }, { x: 330, y: 110, duration: 0.7, ease: E.inout, immediateRender: false }, 34.83);
-sweep(33.68, "#kL1"); sweep(34.43, "#kL2"); sweep(35.18, "#kL3");
+tl.fromTo("#kMag", { x: 0, y: 0, opacity: 0 }, { x: 260, y: -10, opacity: 1, duration: 0.7, ease: E.inout }, 33.13);
+tl.fromTo("#kMag", { x: 260, y: -10 }, { x: 560, y: 50, duration: 0.7, ease: E.inout, immediateRender: false }, 33.88);
+tl.fromTo("#kMag", { x: 560, y: 50 }, { x: 330, y: 110, duration: 0.7, ease: E.inout, immediateRender: false }, 34.63);
+sweep(33.48, "#kL1"); sweep(34.23, "#kL2"); sweep(34.98, "#kL3");
 mword(35.32, "#k1"); mword(35.64, "#k2");
 
 // ---------- L 36.83-42.83: ten links, only the first ----------
