@@ -102,8 +102,8 @@ body { font-family: var(--text); color: var(--ink); -webkit-font-smoothing: anti
 
 <!-- A 0.00-5.25 hook -->
 <div class="scene" id="sA" style="opacity:1;">
-  <div class="abs h2" id="aK" style="left:80px; top:268px; font-size:72px; color:var(--ink-2);">In AI, it matters…</div>
-  <img class="emoji" id="aS" src="emoji/speech.png" style="left:886px; top:262px; width:130px;">
+  <div class="abs h2" id="aK" style="left:80px; top:266px; font-size:76px; color:var(--ink);">In AI, it matters…</div>
+  <img class="emoji" id="aS" src="emoji/bank.png" style="left:904px; top:232px; width:120px;">
   <div class="abs h2" style="left:80px; top:366px;">
     <span class="mask"><span class="wd" id="a1">If</span></span>
     <span class="mask"><span class="wd" id="a2">you're</span></span>
@@ -111,11 +111,11 @@ body { font-family: var(--text); color: var(--ink); -webkit-font-smoothing: anti
   </div>
   <img class="emoji" id="aChk" src="emoji/check.png" style="left:752px; top:350px; width:116px;">
   <div class="abs" style="left:80px; top:470px; display:flex; align-items:flex-end; gap:26px;">
-    <span class="mask h2" style="color:var(--muted); margin-bottom:28px;"><span class="wd" id="a4">and</span></span>
+    <span class="mask h2" style="color:var(--ink-2); margin-bottom:28px;"><span class="wd" id="a4">and</span></span>
     <span class="hero acc" id="aHow" style="display:inline-block;">HOW</span>
   </div>
-  <img class="emoji" id="aUp" src="emoji/thumbsup.png" style="left:720px; top:470px; width:150px;">
-  <img class="emoji" id="aDn" src="emoji/thumbsdown.png" style="left:880px; top:520px; width:150px;">
+  <img class="emoji" id="aUp" src="emoji/thumbsup.png" style="left:712px; top:512px; width:140px;">
+  <img class="emoji" id="aDn" src="emoji/thumbsdown.png" style="left:872px; top:512px; width:140px;">
 </div>
 
 <!-- B 5.25-9.95 the questions -->
@@ -332,7 +332,7 @@ tl.fromTo("#aK", { scale: 0.94, transformOrigin: "0% 50%" }, { scale: 1, duratio
 mword(1.36, "#a1"); mword(1.56, "#a2"); mword(1.92, "#a3");
 pop(2.0, "#aChk", { from: { rotation: -25 } });
 mword(3.02, "#a4");
-tl.fromTo("#aHow", { scale: 0.55, opacity: 0, transformOrigin: "0% 100%" }, { scale: 1, opacity: 1, duration: 0.55, ease: E.spring }, 3.70);
+tl.fromTo("#aHow", { scale: 0.9, opacity: 0.2, transformOrigin: "0% 100%" }, { scale: 1, opacity: 1, duration: 0.5, ease: E.spring }, 3.70);
 pop(4.36, "#aUp", { from: { rotation: -30, y: 40 }, to: { y: 0 } });
 pop(4.70, "#aDn", { from: { rotation: 30, y: 40 }, to: { y: 0 } });
 
