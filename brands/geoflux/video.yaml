@@ -1,0 +1,111 @@
+# How the GEOflux site design maps to video roles (from REVIEW.md "Video overrides"). Hand-written input to
+# C3 (`create tokens`); every value points at a key in tokens.json ("group.name") or is a literal override.
+colors:
+  canvas: canvas.site-canvas            # marketing frames (title, kinetic type, close)
+  canvas_product: canvas.surface-1      # product frames (UI cards on white)
+  surface: canvas.surface-1             # cards
+  surface_alt: canvas.surface-2
+  fill_subtle: canvas.fill-subtle       # bar tracks, quoted prompts
+  chip: canvas.surface-3                # default chip background
+  ink: ink.navy               # headlines and body (site --secondary, hsl 210 35% 17%)
+  ink_muted: ink-muted.content-secondary
+  hairline: hairline.hairline
+  accent: accent.accent                 # #FF6600: accent word, hero stat, focal brand
+  accent_text_large: accent-as-text.brand-ink
+  accent_text: accent-as-text.site-accent-ink
+  success: data.success
+  error: data.error
+  second: data.second-blue
+# Text/background pairs the scenes will use. size: normal | large | display. A pair that fails WCAG AA is
+# allowed only with an exception that says why.
+pairs:
+  - {text: ink, bg: canvas, size: normal, use: headline and body on marketing frames}
+  - {text: ink, bg: canvas_product, size: normal, use: text on product frames}
+  - {text: ink, bg: surface, size: normal, use: text in cards}
+  - {text: ink, bg: chip, size: normal, use: default chip}
+  - {text: ink_muted, bg: canvas, size: normal, use: "muted text, captions, labels on marketing frames"}
+  - {text: ink_muted, bg: surface, size: normal, use: muted text in cards}
+  - {text: accent_text, bg: canvas, size: normal, use: small orange text on marketing frames}
+  - {text: accent_text_large, bg: surface, size: large, use: orange text 24px+ in cards}
+  - {text: error, bg: surface, size: normal, use: down delta}
+  - {text: success, bg: surface, size: large, use: "up delta, 24px+ only"}
+  - {text: second, bg: surface, size: normal, use: secondary data label}
+  - text: accent
+    bg: canvas
+    size: display
+    use: headline accent word and hero stat only
+    exception: "Orange on near-white is under 3:1. The brand accepts #FF6600 for the display accent word and the hero stat (DESIGN.md §2); one accent moment per frame."
+  - text: accent
+    bg: surface
+    size: display
+    use: hero stat on a card
+    exception: "Under 3:1 on white. Same brand rule as the accent word (DESIGN.md §2)."
+type:
+  families:                             # role -> family (Google Fonts, OFL 1.1; FONTS.md)
+    heading: {family: Space Grotesk, weights: "400..700"}
+    body: {family: Inter, weights: "400..700"}
+  sizes: video1920                      # the hand-off's 1920x1080 size set (tokens.json type.styles.*)
+  overrides:
+    uppercase-label: {size: 24}         # REVIEW.md: 22px is below the 24px video minimum
+  glyph_fallback:                        # REVIEW.md: Space Grotesk has no check mark
+    "✓": Inter
+layout:
+  safe_margin: spacing.video1920.safe margin
+  section_gap: spacing.video1920.section gap
+  stack_gap: spacing.video1920.stack gap
+  card_padding: spacing.video1920.card padding
+  card_radius: radius.video card.value
+  chip_radius: radius.md
+  card_shadow: shadow.video card.value
+  hairline_width: 1
+accent_tint_alpha: 0.08                 # DESIGN.md §2: orange at 8% for chip and highlight backgrounds
+logo:
+  primary: logo/geoflux-primary.svg
+  on_dark: logo/geoflux-on-dark.svg
+  mono: logo/geoflux-mono.svg
+  min_height_corner: 48
+  min_height_hero: 120
+strings:                                 # template UI copy (English); templates hold no copy of their own
+  example_data: Example data
+  own_prompt: Yours
+  suggested_prompt: AI suggested
+  asked_as: Asked as
+  own_brand: Your brand
+captions:                                # burned-in captions per frame (GEOflux)
+  landscape:
+    kind: pill
+    family: body
+    weight: 600
+    size_px: 44
+    line_height: 1.23
+    tracking_em: -0.01
+    text: ink
+    active: ink
+    dim_opacity: 0.35                    # words light up from 35% to 100% as they are spoken
+    background: surface
+    background_alpha: 0.92
+    max_width_px: 1400
+    padding_px: [13, 30]
+  vertical:                              # TikTok / Reels / Shorts (config create.design.frames.vertical)
+    kind: pill
+    family: body
+    weight: 600
+    size_px: 52
+    line_height: 1.25
+    tracking_em: -0.01
+    text: ink
+    active: ink
+    dim_opacity: 0.35
+    background: surface
+    background_alpha: 0.94
+    max_width_px: 480                    # inside the caption band (x 300-780)
+    radius_px: 12
+    padding_px: [14, 26]
+frames:                                  # frames other than landscape (type.sizes and layout above serve landscape)
+  vertical:
+    sizes: video1080x1920                # tokens.json type styles: phone sizes, nothing under 44px
+    layout:
+      safe_margin: spacing.video1080x1920.safe margin
+      section_gap: spacing.video1080x1920.section gap
+      stack_gap: spacing.video1080x1920.stack gap
+      card_padding: spacing.video1080x1920.card padding
