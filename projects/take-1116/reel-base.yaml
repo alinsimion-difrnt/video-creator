@@ -4,7 +4,7 @@
 # caption_font fx turns the active word gold for the whole video.
 layout:
 - {word: 0, layout: split}
-split_seam: 980
+split_seam: 1100   # panel text below y 288 (three-platform safe area)
 split_head_gap: 160
 captions: top
 caption_plate: false
@@ -17,6 +17,8 @@ fx:
 - {kind: caption_font, word: 0, until: 137, spec: {family: body, accent: "#FFC72C"}}
 zooms:
 - {word: 33, until: 44, scale: 1.15}   # "someone that is in Ilfov. He's a family guy."
+- {word: 52, until: 57, scale: 1.12}   # "Raiffeisen is good with everybody"
+- {word: 67, until: 75, scale: 1.15}   # "ING is actually better for the younger people"
 - {word: 82, until: 86, scale: 1.15}   # "ChatGPT, Gemini or Perplexity"
 - {word: 114, until: 118, scale: 1.2}   # "you're not appearing there"
 - {word: 129, until: 137, scale: 1.2}   # "decide if that is the right market for you"

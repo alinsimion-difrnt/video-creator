@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <!-- take-1116 panel (ADR 0034, skill build-panel). 1080 x 840 over the split base (seam 980, product_bg ink).
 Safe area (owner's brief: "keep all text inside TikTok's safe zone"): every text and logo sits inside x 120-888
-(config create.design vertical safe, upper extension above the action rail) and below y 200 (under the top tabs);
+(config create.design vertical safe, upper extension above the action rail) and below y 288 (the #stage offset);
 the content's centre is x 504. Word starts from `create words take-1116 --times`; beat sheet: panel/beats.md.
 beats:
   H   0.00-1.58   "ING is actually better."            object   ING logo on a tile, gold "...better for WHO?"
@@ -30,7 +30,10 @@ gold #FFC72C for winners (the active caption word's gold). Inter throughout. -->
   --head: Inter, system-ui, sans-serif; --text: Inter, system-ui, sans-serif;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { width: 1080px; height: 840px; overflow: hidden; background: var(--base); }
+html, body { width: 1080px; height: 960px; overflow: hidden; background: var(--base); }
+/* seam 1100 -> a 960 px page; every scene sits in an 840 px stage moved 88 px down, so text starts at y >= 288
+   (config create.design vertical safe: TikTok, Reels and Shorts all clear below y 288) */
+#stage { position: absolute; left: 0; top: 88px; width: 1080px; height: 840px; }
 body { font-family: var(--text); color: var(--white); -webkit-font-smoothing: antialiased; position: relative; }
 #bgwrap { position: absolute; inset: 0; overflow: hidden; background: linear-gradient(180deg, var(--top) 0%, #250640 55%, var(--base) 100%); }
 .blob { position: absolute; border-radius: 50%; filter: blur(90px); }
@@ -100,6 +103,7 @@ body { font-family: var(--text); color: var(--white); -webkit-font-smoothing: an
 <body>
 <div id="bgwrap"><div class="blob" id="bg-blob1"></div><div class="blob" id="bg-blob2"></div><div id="bg-dots"></div></div>
 
+<div id="stage">
 <!-- H 0.00-1.58: ING is actually better. -->
 <div class="scene" id="sH">
   <div class="abs kick ctr" id="hK" style="top:214px;">According to AI</div>
@@ -237,6 +241,7 @@ body { font-family: var(--text); color: var(--white); -webkit-font-smoothing: an
   <div class="opt glass" id="o2" style="left:524px;"><img id="o2i" src="emoji/target.png" alt=""><div class="t"><span class="mask"><span class="wd" id="o2t">Decide: is it the <span id="oRM" style="position:relative; display:inline-block;">right market?<span id="k-ul"></span></span></span></span></div></div>
 </div>
 
+</div>
 <div id="fade"></div>
 <script>
 const tl = gsap.timeline({ paused: true });
