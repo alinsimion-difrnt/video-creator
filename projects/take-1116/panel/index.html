@@ -3,17 +3,20 @@
 <head>
 <meta charset="utf-8">
 <!-- take-1116 panel (ADR 0034, skill build-panel). 1080 x 840 over the split base (seam 980, product_bg ink).
-beats (word starts from `create words take-1116 --times`; full sheet in projects/take-1116/panel/beats.md):
-  H   0.00-1.55   "ING is actually better."            object   ING logo slams in, gold "...better for WHO?"
-  B1  1.62-5.20   "...three potential clients."        hero     3 counts up, three blank cards deal in
-  B2  5.20-15.62  young digital guy, 25-30, Bucharest or Cluj, corporation   people  persona card 1 + chips
-  B3  15.62-20.16 someone in Ilfov, a family guy       people   persona card 2
-  B4  20.16-21.80 someone from the countryside         people   persona card 3
-  B5-7 21.80-33.40 Raiffeisen / Banca Transilvania / ING   ui     a results board: bank rows x persona columns
-  B8  32.63-37.78 tracking: ChatGPT, Gemini, Perplexity    logo wall  three engine tiles light on their words
-  B9  37.01-42.48 AI recommending you to the people you want   diagram  robot -> arrow -> bullseye
-  B10 41.71-48.22 audience in the countryside: you're not appearing   ui  an AI answer card without you
-  B11 47.45-53.90 change the way you talk, or decide if it's the right market   kinetic  two option cards
+Safe area (owner's brief: "keep all text inside TikTok's safe zone"): every text and logo sits inside x 120-888
+(config create.design vertical safe, upper extension above the action rail) and below y 200 (under the top tabs);
+the content's centre is x 504. Word starts from `create words take-1116 --times`; beat sheet: panel/beats.md.
+beats:
+  H   0.00-1.58   "ING is actually better."            object   ING logo on a tile, gold "...better for WHO?"
+  B1  1.58-5.22   "...three potential clients."        hero     three blank cards, 3 counts up
+  B2  5.22-15.62  young digital guy, 25-30, Bucharest or Cluj, corporation   people  persona card 1 + chips
+  B3  15.62-20.18 someone in Ilfov, a family guy       people   persona card 2
+  B4  20.18-21.80 someone from the countryside         people   persona card 3
+  B5-7 21.80-32.63 Raiffeisen / Banca Transilvania / ING   ui     results board: bank rows x persona columns
+  B8  32.63-37.01 tracking: ChatGPT, Gemini, Perplexity    logo wall  three engine tiles light on their words
+  B9  37.01-41.71 AI recommending you to the people you want   diagram  robot -> arrow -> bullseye
+  B10 41.71-47.62 audience in the countryside: you're not appearing   ui  an AI answer card without you
+  B11 47.62-53.20 change the way you talk, or decide if it's the right market   kinetic  two option cards
 look: dark plum fading into the base's ink (#3E0863), like the reference TikTok's UI cards and the venue's neon;
 white tiles for the real bank logos, neon pink #FF3D8B for structure (the dashboard's curves on his wall screen),
 gold #FFC72C for winners (the active caption word's gold). Inter throughout. -->
@@ -21,7 +24,7 @@ gold #FFC72C for winners (the active caption word's gold). Inter throughout. -->
 <script src="gsap.min.js"></script>
 <style>
 :root {
-  --base: #3E0863; --top: #14051F; --white: #FFFFFF; --muted: rgba(255,255,255,.66); --line: rgba(255,255,255,.18);
+  --base: #3E0863; --top: #14051F; --white: #FFFFFF; --muted: rgba(255,255,255,.7); --line: rgba(255,255,255,.18);
   --glass: rgba(255,255,255,.08); --pink: #FF3D8B; --gold: #FFC72C; --red: #FF4D5E; --ink: #0F0A1A;
   --shadow: 0 2px 4px rgba(0,0,0,.25), 0 30px 70px -30px rgba(0,0,0,.65);
   --head: Inter, system-ui, sans-serif; --text: Inter, system-ui, sans-serif;
@@ -38,96 +41,90 @@ body { font-family: var(--text); color: var(--white); -webkit-font-smoothing: an
 #fade { position: absolute; left: 0; right: 0; bottom: 0; height: 120px; background: linear-gradient(rgba(62,8,99,0), var(--base)); z-index: 50; }
 .scene { position: absolute; inset: 0; opacity: 0; }
 .abs { position: absolute; }
+.ctr { left: 120px; width: 768px; text-align: center; }  /* the safe column, centred on x 504 */
 .kick { font: 700 34px/1 var(--text); letter-spacing: .08em; text-transform: uppercase; color: var(--pink); }
-.h1 { font: 700 120px/1 var(--head); letter-spacing: -.04em; }
-.h2 { font: 700 76px/1.04 var(--head); letter-spacing: -.03em; }
+.h2 { font: 700 72px/1.04 var(--head); letter-spacing: -.03em; }
 .h3 { font: 700 56px/1.1 var(--head); letter-spacing: -.02em; }
-.hero { font: 700 230px/1 var(--head); letter-spacing: -.05em; color: var(--gold); }
+.hero { font: 700 220px/1 var(--head); letter-spacing: -.05em; color: var(--gold); }
 .gold { color: var(--gold); }
 .mask { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: .1em; }
 .wd { display: inline-block; }
-.tile { background: #fff; border-radius: 28px; box-shadow: var(--shadow); display: flex; align-items: center; justify-content: center; }
-.glass { background: var(--glass); border: 2px solid var(--line); border-radius: 36px; box-shadow: var(--shadow); }
-.chip { display: inline-flex; align-items: center; gap: 14px; padding: 14px 28px 14px 18px; border-radius: 999px;
-  background: rgba(255,255,255,.12); border: 2px solid rgba(255,255,255,.22); font: 700 42px/1 var(--text); color: #fff; }
-.chip img { width: 54px; height: 54px; }
-.chip.tx { padding: 18px 30px; }
+.tile { background: #fff; border-radius: 26px; box-shadow: var(--shadow); display: flex; align-items: center; justify-content: center; }
+.glass { background: var(--glass); border: 2px solid var(--line); border-radius: 34px; box-shadow: var(--shadow); }
+.chip { display: inline-flex; align-items: center; gap: 12px; padding: 12px 26px 12px 16px; border-radius: 999px;
+  background: rgba(255,255,255,.12); border: 2px solid rgba(255,255,255,.22); font: 700 40px/1 var(--text); color: #fff; white-space: nowrap; }
+.chip img { width: 50px; height: 50px; }
+.chip.tx { padding: 16px 28px; }
 .white { filter: brightness(0) invert(1); }
-/* persistent topic pill */
-#pill { left: 50%; top: 18px; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 12px; white-space: nowrap;
-  padding: 12px 26px 12px 16px; border-radius: 999px; background: rgba(15,10,26,.55); border: 2px solid rgba(255,61,139,.55);
-  font: 700 36px/1 var(--text); color: #fff; z-index: 40; opacity: 0; }
-#pill img { width: 46px; height: 46px; }
 /* persona cards */
-.pcard { left: 50px; top: 112px; width: 980px; height: 598px; }
-.pcard .av { position: absolute; left: 36px; top: 174px; width: 250px; height: 250px; }
-.pcard .glowdisc { position: absolute; left: 1px; top: 139px; width: 320px; height: 320px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,61,139,.35), rgba(255,61,139,0) 70%); }
-.pcard .txt { position: absolute; left: 320px; top: 44px; width: 630px; }
-.pcard .chips { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; margin-top: 30px; }
+.pcard { left: 120px; top: 196px; width: 768px; height: 516px; }
+.pcard .av { position: absolute; left: 22px; top: 150px; width: 200px; height: 200px; }
+.pcard .glowdisc { position: absolute; left: -8px; top: 120px; width: 260px; height: 260px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,61,139,.38), rgba(255,61,139,0) 70%); }
+.pcard .txt { position: absolute; left: 240px; top: 36px; width: 510px; }
+.pcard .h2 { font-size: 64px; margin-top: 14px; }
+.pcard .chips { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; margin-top: 24px; }
 /* board */
-.col { position: absolute; top: 124px; width: 220px; text-align: center; }
-.col img { width: 92px; height: 92px; }
-.col .lab { font: 700 34px/1.04 var(--text); letter-spacing: .01em; text-transform: uppercase; color: #fff; margin-top: 6px; white-space: nowrap; margin-left: -20px; margin-right: -20px; }
-.row { position: absolute; left: 30px; width: 304px; height: 114px; }
-.row img { max-width: 262px; max-height: 74px; }
-.cell { position: absolute; width: 220px; height: 114px; display: flex; align-items: center; justify-content: center; }
-.cell img { width: 92px; height: 92px; }
-.dash { width: 64px; height: 10px; border-radius: 5px; background: rgba(255,255,255,.55); }
-.colglow { position: absolute; top: 112px; width: 224px; height: 574px; border-radius: 30px; border: 5px solid var(--gold);
+.col { position: absolute; top: 206px; width: 170px; text-align: center; }
+.col img { width: 84px; height: 84px; }
+.col .lab { font: 700 34px/1 var(--text); letter-spacing: .04em; text-transform: uppercase; color: #fff; margin-top: 6px; }
+.row { position: absolute; left: 120px; width: 252px; height: 104px; }
+.row img { max-width: 212px; max-height: 60px; }
+.cell { position: absolute; width: 170px; height: 104px; display: flex; align-items: center; justify-content: center; }
+.cell img { width: 80px; height: 80px; }
+.dash { width: 56px; height: 10px; border-radius: 5px; background: rgba(255,255,255,.55); }
+.colglow { position: absolute; top: 198px; width: 174px; height: 500px; border-radius: 28px; border: 5px solid var(--gold);
   box-shadow: 0 0 46px rgba(255,199,44,.55), inset 0 0 30px rgba(255,199,44,.18); opacity: 0; }
 /* engines */
-.eng { position: absolute; top: 300px; width: 270px; height: 270px; border-radius: 40px; background: rgba(15,10,26,.6);
+.eng { position: absolute; top: 340px; width: 230px; height: 230px; border-radius: 38px; background: rgba(15,10,26,.6);
   border: 3px solid rgba(255,255,255,.14); display: flex; align-items: center; justify-content: center; }
-.eng img { width: 128px; height: 128px; }
-.engname { position: absolute; top: 600px; width: 270px; text-align: center; font: 700 44px/1 var(--text); }
+.eng img { width: 110px; height: 110px; }
+.engname { position: absolute; top: 592px; width: 230px; text-align: center; font: 700 42px/1 var(--text); }
 /* answer card */
-.acard { left: 400px; top: 128px; width: 640px; height: 572px; background: #fff; border-radius: 36px; box-shadow: var(--shadow); color: var(--ink); }
-.arow { position: absolute; left: 32px; width: 576px; height: 104px; border-radius: 24px; background: #F4F2F8; display: flex; align-items: center; gap: 26px; padding: 0 28px; }
-.arow .rk { font: 700 44px/1 var(--text); color: #8B84A0; width: 64px; }
-.arow img { max-width: 330px; max-height: 70px; }
-.arow .you { font: 700 46px/1 var(--text); color: #B8B2C8; }
-.stamp { position: absolute; font: 700 58px/1 var(--text); color: var(--red); border: 6px solid var(--red); border-radius: 18px;
-  padding: 12px 22px; letter-spacing: .02em; text-transform: uppercase; background: rgba(255,255,255,.92); white-space: nowrap; }
+.acard { left: 120px; top: 336px; width: 768px; height: 380px; background: #fff; border-radius: 34px; box-shadow: var(--shadow); color: var(--ink); }
+.arow { position: absolute; left: 28px; width: 712px; height: 86px; border-radius: 22px; background: #F4F2F8; display: flex; align-items: center; gap: 24px; padding: 0 26px; }
+.arow .rk { font: 700 42px/1 var(--text); color: #6E6785; width: 60px; }
+.arow img { max-width: 320px; max-height: 58px; }
+.arow .you { font: 700 44px/1 var(--text); color: #A9A2BC; }
+.stamp { position: absolute; font: 700 50px/1 var(--text); color: var(--red); border: 6px solid var(--red); border-radius: 16px;
+  padding: 10px 20px; letter-spacing: .02em; text-transform: uppercase; background: rgba(255,255,255,.94); white-space: nowrap; }
 /* options */
-.opt { position: absolute; top: 210px; width: 440px; height: 460px; }
-.opt img { position: absolute; left: 50%; top: 40px; width: 170px; height: 170px; margin-left: -85px; }
-.opt .t { position: absolute; left: 26px; right: 26px; top: 236px; text-align: center; font: 700 50px/1.1 var(--head); letter-spacing: -.02em; }
-#k-ul { position: absolute; left: 0; right: 0; bottom: -4px; height: 10px; border-radius: 5px; background: var(--gold); transform-origin: 0 50%; }
+.opt { position: absolute; top: 262px; width: 364px; height: 440px; }
+.opt img { position: absolute; left: 50%; top: 30px; width: 140px; height: 140px; margin-left: -70px; }
+.opt .t { position: absolute; left: 20px; right: 20px; top: 196px; text-align: center; font: 700 44px/1.12 var(--head); letter-spacing: -.02em; }
+#k-ul { position: absolute; left: 0; right: 0; bottom: -4px; height: 9px; border-radius: 5px; background: var(--gold); transform-origin: 0 50%; }
 </style>
 </head>
 <body>
 <div id="bgwrap"><div class="blob" id="bg-blob1"></div><div class="blob" id="bg-blob2"></div><div id="bg-dots"></div></div>
 
-<div class="abs" id="pill"><img src="emoji/robot.png" alt="">Who does AI recommend?</div>
-
-<!-- H 0.00-1.55: ING is actually better. -->
+<!-- H 0.00-1.58: ING is actually better. -->
 <div class="scene" id="sH">
-  <div class="abs kick" id="hK" style="left:0; right:0; top:170px; text-align:center;">According to AI</div>
-  <div class="abs tile" id="hLogo" style="left:220px; top:236px; width:640px; height:220px;"><img src="logos/ing.svg" alt="ING" style="width:470px;"></div>
-  <div class="abs" id="hQ" style="left:0; right:0; top:520px; text-align:center;">
-    <span class="chip" style="font-size:66px; padding:20px 40px 20px 26px; border-color: rgba(255,199,44,.6); background: rgba(255,199,44,.12);">
-      <img src="emoji/eyes.png" alt="" style="width:76px; height:76px;"><span>...better for <span class="gold">WHO?</span></span></span>
+  <div class="abs kick ctr" id="hK" style="top:214px;">According to AI</div>
+  <div class="abs tile" id="hLogo" style="left:164px; top:264px; width:680px; height:210px;"><img src="logos/ing.svg" alt="ING" style="width:470px;"></div>
+  <div class="abs ctr" id="hQ" style="top:522px;">
+    <span class="chip" style="font-size:56px; padding:18px 36px 18px 22px; border-color: rgba(255,199,44,.6); background: rgba(255,199,44,.12);">
+      <img src="emoji/eyes.png" alt="" style="width:66px; height:66px;"><span>...better for <span class="gold">WHO?</span></span></span>
   </div>
 </div>
 
-<!-- B1 1.62-5.20: three potential clients -->
+<!-- B1 1.58-5.22: three potential clients -->
 <div class="scene" id="s1">
-  <div class="abs kick" id="b1K" style="left:80px; top:150px;">Our analysis</div>
-  <div class="abs hero" id="b1N" style="left:70px; top:190px;">0</div>
-  <div class="abs h2" style="left:300px; top:250px;"><span class="mask"><span class="wd" id="b1a">potential</span></span><br><span class="mask"><span class="wd" id="b1b">clients</span></span></div>
-  <div class="abs glass" id="b1c1" style="left:80px; top:450px; width:280px; height:230px; display:flex; align-items:center; justify-content:center; font:700 120px/1 var(--head); color:rgba(255,255,255,.45);">?</div>
-  <div class="abs glass" id="b1c2" style="left:400px; top:450px; width:280px; height:230px; display:flex; align-items:center; justify-content:center; font:700 120px/1 var(--head); color:rgba(255,255,255,.45);">?</div>
-  <div class="abs glass" id="b1c3" style="left:720px; top:450px; width:280px; height:230px; display:flex; align-items:center; justify-content:center; font:700 120px/1 var(--head); color:rgba(255,255,255,.45);">?</div>
+  <div class="abs kick" id="b1K" style="left:136px; top:214px;">Our analysis</div>
+  <div class="abs hero" id="b1N" style="left:128px; top:256px;">0</div>
+  <div class="abs h2" style="left:330px; top:290px;"><span class="mask"><span class="wd" id="b1a">potential</span></span><br><span class="mask"><span class="wd" id="b1b">clients</span></span></div>
+  <div class="abs glass" id="b1c1" style="left:120px; top:484px; width:240px; height:220px; display:flex; align-items:center; justify-content:center; font:700 110px/1 var(--head); color:rgba(255,255,255,.45);">?</div>
+  <div class="abs glass" id="b1c2" style="left:384px; top:484px; width:240px; height:220px; display:flex; align-items:center; justify-content:center; font:700 110px/1 var(--head); color:rgba(255,255,255,.45);">?</div>
+  <div class="abs glass" id="b1c3" style="left:648px; top:484px; width:240px; height:220px; display:flex; align-items:center; justify-content:center; font:700 110px/1 var(--head); color:rgba(255,255,255,.45);">?</div>
 </div>
 
-<!-- B2 5.20-15.62: persona 1 -->
+<!-- B2 5.22-15.62: persona 1 -->
 <div class="scene" id="s2">
   <div class="abs glass pcard" id="p1">
     <div class="glowdisc"></div><img class="av" id="p1av" src="emoji/technologist.png" alt="">
     <div class="txt">
-      <div class="kick" id="p1k">Client 1 / 3</div>
-      <div class="h2" style="margin-top:18px;"><span class="mask"><span class="wd" id="p1t1">Young</span></span> <span class="mask"><span class="wd" id="p1t2">digital guy</span></span></div>
+      <div class="kick">Client 1 / 3</div>
+      <div class="h2"><span class="mask"><span class="wd" id="p1t1">Young digital</span></span><br><span class="mask"><span class="wd" id="p1t2">guy</span></span></div>
       <div class="chips">
         <span class="chip tx" id="p1c1">25-30 years old</span>
         <span class="chip" id="p1c2"><img src="emoji/cityscape.png" alt="">Bucharest · Cluj</span>
@@ -137,13 +134,13 @@ body { font-family: var(--text); color: var(--white); -webkit-font-smoothing: an
   </div>
 </div>
 
-<!-- B3 15.62-20.16: persona 2 -->
+<!-- B3 15.62-20.18: persona 2 -->
 <div class="scene" id="s3">
   <div class="abs glass pcard" id="p2">
     <div class="glowdisc"></div><img class="av" id="p2av" src="emoji/houses.png" alt="">
     <div class="txt">
       <div class="kick">Client 2 / 3</div>
-      <div class="h2" style="margin-top:18px;"><span class="mask"><span class="wd" id="p2t1">Someone</span></span><br><span class="mask"><span class="wd" id="p2t2">in Ilfov</span></span></div>
+      <div class="h2"><span class="mask"><span class="wd" id="p2t1">Someone</span></span><br><span class="mask"><span class="wd" id="p2t2">in Ilfov</span></span></div>
       <div class="chips">
         <span class="chip tx" id="p2c1">Ilfov</span>
         <span class="chip tx" id="p2c2">Family guy</span>
@@ -152,91 +149,90 @@ body { font-family: var(--text); color: var(--white); -webkit-font-smoothing: an
   </div>
 </div>
 
-<!-- B4 20.16-21.80: persona 3 -->
+<!-- B4 20.18-21.80: persona 3 -->
 <div class="scene" id="s4">
   <div class="abs glass pcard" id="p3">
     <div class="glowdisc"></div><img class="av" id="p3av" src="emoji/farmer.png" alt="">
     <div class="txt">
       <div class="kick">Client 3 / 3</div>
-      <div class="h2" style="margin-top:18px;"><span class="mask"><span class="wd" id="p3t1">From the</span></span><br><span class="mask"><span class="wd" id="p3t2">countryside</span></span></div>
+      <div class="h2"><span class="mask"><span class="wd" id="p3t1">From the</span></span><br><span class="mask"><span class="wd" id="p3t2">countryside</span></span></div>
       <div class="chips"><span class="chip" id="p3c1"><img src="emoji/house-garden.png" alt="">Countryside</span></div>
     </div>
   </div>
 </div>
 
-<!-- B5-B7 21.80-33.40: the board -->
+<!-- B5-B7 21.80-32.63: the board -->
 <div class="scene" id="s5">
-  <div class="colglow" id="gCountry" style="left:808px;"></div>
-  <div class="colglow" id="gYoung" style="left:348px;"></div>
-  <div class="col" id="c1" style="left:350px;"><img src="emoji/technologist.png" alt=""><div class="lab">Young<br>digital</div></div>
-  <div class="col" id="c2" style="left:580px;"><img src="emoji/houses.png" alt=""><div class="lab">Family<br>Ilfov</div></div>
-  <div class="col" id="c3" style="left:810px;"><img src="emoji/farmer.png" alt=""><div class="lab">Country&shy;side</div></div>
-  <div class="row tile" id="rR" style="top:310px;"><img src="logos/raiffeisen.png" alt="Raiffeisen"></div>
-  <div class="row tile" id="rB" style="top:438px;"><img src="logos/bt.svg" alt="Banca Transilvania"></div>
-  <div class="row tile" id="rI" style="top:566px;"><img src="logos/ing.svg" alt="ING"></div>
-  <div class="cell" id="xR1" style="left:350px; top:310px;"><img src="emoji/check.png" alt=""></div>
-  <div class="cell" id="xR2" style="left:580px; top:310px;"><img src="emoji/check.png" alt=""></div>
-  <div class="cell" id="xR3" style="left:810px; top:310px;"><img src="emoji/check.png" alt=""></div>
-  <div class="cell" id="dB" style="left:350px; top:438px; width:450px; justify-content:space-around;"><div class="dash"></div><div class="dash"></div></div>
-  <div class="cell" id="xB3" style="left:810px; top:438px;"><img src="emoji/crown.png" alt=""></div>
-  <div class="cell" id="xI1" style="left:350px; top:566px;"><img src="emoji/crown.png" alt=""></div>
-  <div class="cell" id="dI" style="left:580px; top:566px; width:450px; justify-content:space-around;"><div class="dash"></div><div class="dash"></div></div>
+  <div class="colglow" id="gCountry" style="left:716px;"></div>
+  <div class="colglow" id="gYoung" style="left:376px;"></div>
+  <div class="col" id="c1" style="left:378px;"><img src="emoji/technologist.png" alt=""><div class="lab">Young</div></div>
+  <div class="col" id="c2" style="left:548px;"><img src="emoji/houses.png" alt=""><div class="lab">Family</div></div>
+  <div class="col" id="c3" style="left:718px;"><img src="emoji/farmer.png" alt=""><div class="lab">Rural</div></div>
+  <div class="row tile" id="rR" style="top:348px;"><img src="logos/raiffeisen.png" alt="Raiffeisen"></div>
+  <div class="row tile" id="rB" style="top:464px;"><img src="logos/bt.svg" alt="Banca Transilvania"></div>
+  <div class="row tile" id="rI" style="top:580px;"><img src="logos/ing.svg" alt="ING"></div>
+  <div class="cell" id="xR1" style="left:378px; top:348px;"><img src="emoji/check.png" alt=""></div>
+  <div class="cell" id="xR2" style="left:548px; top:348px;"><img src="emoji/check.png" alt=""></div>
+  <div class="cell" id="xR3" style="left:718px; top:348px;"><img src="emoji/check.png" alt=""></div>
+  <div class="cell" id="dB" style="left:378px; top:464px; width:340px; justify-content:space-around;"><div class="dash"></div><div class="dash"></div></div>
+  <div class="cell" id="xB3" style="left:718px; top:464px;"><img src="emoji/crown.png" alt=""></div>
+  <div class="cell" id="xI1" style="left:378px; top:580px;"><img src="emoji/crown.png" alt=""></div>
+  <div class="cell" id="dI" style="left:548px; top:580px; width:340px; justify-content:space-around;"><div class="dash"></div><div class="dash"></div></div>
 </div>
 
-<!-- B8 32.63-37.78: the engines -->
+<!-- B8 32.63-37.01: the engines -->
 <div class="scene" id="s8">
-  <div class="abs kick" id="eK" style="left:0; right:0; top:130px; text-align:center;">Tracked across</div>
-  <div class="abs h3" id="eH" style="left:0; right:0; top:190px; text-align:center;"><span class="mask"><span class="wd" id="eH1">Through the tracking</span></span></div>
-  <div class="eng" id="e1" style="left:75px;"><img class="white" src="logos/openai.svg" alt=""></div>
-  <div class="eng" id="e2" style="left:405px;"><img class="white" src="logos/googlegemini.svg" alt=""></div>
-  <div class="eng" id="e3" style="left:735px;"><img class="white" src="logos/perplexity.svg" alt=""></div>
-  <div class="engname" id="n1" style="left:75px;">ChatGPT</div>
-  <div class="engname" id="n2" style="left:405px;">Gemini</div>
-  <div class="engname" id="n3" style="left:735px;">Perplexity</div>
+  <div class="abs kick ctr" id="eK" style="top:214px;">Tracked across</div>
+  <div class="abs h3 ctr" style="top:256px;"><span class="mask"><span class="wd" id="eH1">Through the tracking</span></span></div>
+  <div class="eng" id="e1" style="left:120px;"><img class="white" src="logos/openai.svg" alt=""></div>
+  <div class="eng" id="e2" style="left:389px;"><img class="white" src="logos/googlegemini.svg" alt=""></div>
+  <div class="eng" id="e3" style="left:658px;"><img class="white" src="logos/perplexity.svg" alt=""></div>
+  <div class="engname" id="n1" style="left:120px;">ChatGPT</div>
+  <div class="engname" id="n2" style="left:389px;">Gemini</div>
+  <div class="engname" id="n3" style="left:658px;">Perplexity</div>
 </div>
 
-<!-- B9 37.01-42.48: recommending you to the people you actually want -->
+<!-- B9 37.01-41.71: recommending you to the people you actually want -->
 <div class="scene" id="s9">
-  <div class="abs" style="left:70px; top:116px; width:940px;">
-    <div class="h2" style="font-size:72px;"><span class="mask"><span class="wd" id="r1">Is AI</span></span> <span class="mask"><span class="wd" id="r2">recommending you</span></span></div>
-    <div class="h3" style="margin-top:14px; font-size:60px;"><span class="mask"><span class="wd" id="r3">to the people you</span></span> <span class="mask"><span class="wd gold" id="r4">actually want?</span></span></div>
+  <div class="abs" style="left:132px; top:206px; width:756px;">
+    <div class="h3" style="font-size:60px;"><span class="mask"><span class="wd" id="r1">Is AI</span></span> <span class="mask"><span class="wd" id="r2">recommending you</span></span></div>
+    <div class="h3" style="margin-top:8px;"><span class="mask"><span class="wd" id="r3">to the people you</span></span><br><span class="mask"><span class="wd gold" id="r4">actually want?</span></span></div>
   </div>
-  <img class="abs" id="rBot" src="emoji/robot.png" alt="" style="left:90px; top:420px; width:220px; height:220px;">
+  <img class="abs" id="rBot" src="emoji/robot.png" alt="" style="left:130px; top:486px; width:180px; height:180px;">
   <svg class="abs" style="left:0; top:0;" width="1080" height="840" viewBox="0 0 1080 840">
-    <path id="rArrow" d="M330 540 C 470 400, 620 400, 740 520" fill="none" stroke="#FF3D8B" stroke-width="10" stroke-linecap="round"/>
-    <polygon id="rHead" points="752,534 718,532 742,500" fill="#FF3D8B"/>
+    <path id="rArrow" d="M326 590 C 440 470, 560 470, 668 570" fill="none" stroke="#FF3D8B" stroke-width="10" stroke-linecap="round"/>
+    <polygon id="rHead" points="680,584 646,584 668,552" fill="#FF3D8B"/>
   </svg>
-  <img class="abs" id="rTarget" src="emoji/target.png" alt="" style="left:770px; top:400px; width:240px; height:240px;">
+  <img class="abs" id="rTarget" src="emoji/target.png" alt="" style="left:690px; top:476px; width:190px; height:190px;">
 </div>
 
-<!-- B10 41.71-48.22: your audience in the countryside, and you're not appearing -->
+<!-- B10 41.71-47.62: your audience in the countryside, and you're not appearing -->
 <div class="scene" id="s10">
-  <div class="abs" id="aL" style="left:30px; top:150px; width:340px; text-align:center;">
-    <div class="kick" style="font-size:34px;">Your audience</div>
-    <img id="aAv" src="emoji/farmer.png" alt="" style="width:240px; height:240px; margin-top:26px;">
-    <div id="aChip" style="margin-top:20px;"><span class="chip tx" style="font-size:42px;">Countryside</span></div>
+  <div class="abs" id="aTop" style="left:120px; top:200px; width:768px; height:120px;">
+    <img id="aAv" src="emoji/farmer.png" alt="" style="position:absolute; left:0; top:0; width:120px; height:120px;">
+    <div class="kick" style="position:absolute; left:140px; top:14px;">Your audience</div>
+    <div class="h3" id="aTitle" style="position:absolute; left:140px; top:58px;"><span class="mask"><span class="wd" id="aT1">Countryside</span></span></div>
   </div>
   <div class="abs acard" id="aCard">
-    <div class="abs" style="left:32px; top:34px; display:flex; align-items:center; gap:14px;">
-      <span style="font:700 34px/1 var(--text); letter-spacing:.08em; color:#8B84A0;">AI ANSWER</span>
-      <img src="logos/openai.svg" alt="" style="width:38px; height:38px; margin-left:8px;">
-      <img src="logos/googlegemini.svg" alt="" style="width:38px; height:38px;">
-      <img src="logos/perplexity.svg" alt="" style="width:38px; height:38px;">
+    <div class="abs" style="left:28px; top:24px; display:flex; align-items:center; gap:14px;">
+      <span style="font:700 34px/1 var(--text); letter-spacing:.08em; color:#6E6785;">AI ANSWER</span>
+      <img src="logos/openai.svg" alt="" style="width:36px; height:36px; margin-left:8px;">
+      <img src="logos/googlegemini.svg" alt="" style="width:36px; height:36px;">
+      <img src="logos/perplexity.svg" alt="" style="width:36px; height:36px;">
     </div>
-    <div class="arow" id="a1" style="top:96px;"><span class="rk">#1</span><img src="logos/bt.svg" alt="Banca Transilvania"></div>
-    <div class="arow" id="a2" style="top:216px;"><span class="rk">#2</span><img src="logos/raiffeisen.png" alt="Raiffeisen"></div>
-    <div class="arow" id="a3" style="top:336px; border:3px dashed #D9D4E5; background:#FBFAFD;"><span class="rk">?</span><span class="you">Your brand</span>
-      <img id="aX" src="emoji/cross.png" alt="" style="position:absolute; right:22px; top:14px; width:72px; height:72px; max-width:none; max-height:none;"></div>
-    <div class="stamp" id="aStamp" style="left:40px; top:462px;">Not appearing</div>
+    <div class="arow" id="a1" style="top:80px;"><span class="rk">#1</span><img src="logos/bt.svg" alt="Banca Transilvania"></div>
+    <div class="arow" id="a2" style="top:176px;"><span class="rk">#2</span><img src="logos/raiffeisen.png" alt="Raiffeisen"></div>
+    <div class="arow" id="a3" style="top:272px; border:3px dashed #D9D4E5; background:#FBFAFD;"><span class="rk">?</span><span class="you">Your brand</span></div>
+    <div class="stamp" id="aStamp" style="left:340px; top:278px;">Not appearing</div>
   </div>
 </div>
 
-<!-- B11 47.45-53.90: change the way you talk, or decide if that's the right market -->
+<!-- B11 47.62-53.20: change the way you talk, or decide if that's the right market -->
 <div class="scene" id="s11">
-  <div class="abs kick" id="oK" style="left:0; right:0; top:126px; text-align:center;">So you either</div>
-  <div class="opt glass" id="o1" style="left:60px;"><img src="emoji/speech.png" alt=""><div class="t">Change the way you talk</div></div>
-  <div class="abs" id="oOr" style="left:490px; top:400px; width:100px; height:100px; border-radius:50%; background:var(--pink); display:flex; align-items:center; justify-content:center; font:700 44px/1 var(--text); z-index:5;">or</div>
-  <div class="opt glass" id="o2" style="left:580px;"><img src="emoji/target.png" alt=""><div class="t">Decide: is it the <span id="oRM" style="position:relative; display:inline-block;">right market?<span id="k-ul"></span></span></div></div>
+  <div class="abs kick ctr" id="oK" style="top:214px;">So you either</div>
+  <div class="opt glass" id="o1" style="left:120px;"><img id="o1i" src="emoji/speech.png" alt=""><div class="t"><span class="mask"><span class="wd" id="o1t">Change the<br>way you talk</span></span></div></div>
+  <div class="abs" id="oOr" style="left:462px; top:440px; width:84px; height:84px; border-radius:50%; background:var(--pink); display:flex; align-items:center; justify-content:center; font:700 40px/1 var(--text); z-index:5;">or</div>
+  <div class="opt glass" id="o2" style="left:524px;"><img id="o2i" src="emoji/target.png" alt=""><div class="t"><span class="mask"><span class="wd" id="o2t">Decide: is it the <span id="oRM" style="position:relative; display:inline-block;">right market?<span id="k-ul"></span></span></span></span></div></div>
 </div>
 
 <div id="fade"></div>
@@ -275,31 +271,31 @@ function draw(path, t, d) {
   tl.to(path, { attr: { "stroke-dashoffset": 0 }, duration: d || 0.7, ease: E.inout }, t);
 }
 
-// persistent topic pill (from the first scene after the hook)
-tl.fromTo("#pill", { opacity: 0, y: -24 }, { opacity: 1, y: 0, duration: 0.5, ease: E.out, immediateRender: false }, 1.62);
-
-// ---------- H: ING is actually better (0.03 ING, 0.43 is, 1.13 better) ----------
-scene("#sH", 0.0, 1.58);
-tl.fromTo("#hLogo", { scale: 1.7, opacity: 0, rotationX: -55, transformPerspective: 900 },
-  { scale: 1, opacity: 1, rotationX: 0, duration: 0.45, ease: "power4.out" }, 0.0);
+// ---------- H: ING is actually better (0.03 ING, 0.43 is, 1.13 better); the logo is there on frame one ----------
+tl.set("#sH", { opacity: 1 }, 0);
+tl.to("#sH", { opacity: 0, y: -30, duration: 0.25, ease: "power2.in" }, 1.33);
+tl.set("#sH", { y: 0 }, 1.59);
+tl.fromTo("#hLogo", { scale: 1.35, rotationX: -40, transformPerspective: 900 },
+  { scale: 1, rotationX: 0, duration: 0.4, ease: "power4.out" }, 0.0);
 tl.fromTo("#hLogo", { x: 0 }, { x: 10, duration: 0.05, yoyo: true, repeat: 3, ease: "none", immediateRender: false }, 0.42);
 up(0.43, "#hK", { from: { y: 20 }, to: { duration: 0.4 } });
 pop(1.1, "#hQ", { from: { rotation: 0, scale: 0.6, y: 30 }, to: { y: 0, duration: 0.45 } });
 
-// ---------- B1: three potential clients (2.98 we, 3.72 three, 4.06 potential, 4.50 clients) ----------
+// ---------- B1: three potential clients (1.62 In our analysis, 2.98 we, 3.72 three, 4.06 potential) ----------
 scene("#s1", 1.58, 5.22);
 up(1.62, "#b1K", { from: { y: 20 } });
+["#b1c1", "#b1c2", "#b1c3"].forEach((s, i) => up(1.7 + i * 0.12, s, { from: { y: 120, rotation: (i - 1) * 6 }, to: { rotation: 0, duration: 0.6 } }));
 tl.fromTo("#b1N", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.5, ease: E.out }, 2.95);
 count("#b1N", 3, 3.0, 3.72);
 mword(4.02, "#b1a"); mword(4.3, "#b1b");
-["#b1c1", "#b1c2", "#b1c3"].forEach((s, i) => up(4.06 + i * 0.1, s, { from: { y: 120, rotation: (i - 1) * 6 }, to: { rotation: 0, duration: 0.6 } }));
+["#b1c1", "#b1c2", "#b1c3"].forEach((s, i) => tl.to(s, { borderColor: "rgba(255,61,139,.7)", duration: 0.2, ease: "none" }, 4.5 + i * 0.1));
 float("#b1N", 3.8, 5.2, 8);
 
 // ---------- B2: persona 1 (5.26 We, 7.12 young, 8.78 25, 11.38 Bucharest, 13.82 corporation) ----------
 scene("#s2", 5.22, 15.62);
 up(5.26, "#p1", { from: { y: 120 }, to: { duration: 0.8 } });
 pop(5.5, "#p1av", { from: { rotation: -12, scale: 0.5 } });
-mword(7.12, "#p1t1"); mword(7.6, "#p1t2");
+mword(7.12, "#p1t1"); mword(7.95, "#p1t2");
 pop(8.74, "#p1c1", { from: { rotation: 0, scale: 0.6, x: -40 }, to: { x: 0, duration: 0.5 } });
 pop(11.34, "#p1c2", { from: { rotation: 0, scale: 0.6, x: -40 }, to: { x: 0, duration: 0.5 } });
 pop(13.78, "#p1c3", { from: { rotation: 0, scale: 0.6, x: -40 }, to: { x: 0, duration: 0.5 } });
@@ -308,7 +304,7 @@ tl.fromTo("#p1av", { rotation: 0 }, { rotation: 6, duration: 0.3, yoyo: true, re
 
 // ---------- B3: persona 2 (15.66 someone, 17.07 Ilfov, 18.21 family) ----------
 scene("#s3", 15.62, 20.18);
-tl.fromTo("#p2", { x: 1100 }, { x: 0, duration: 0.55, ease: "power3.out" }, 15.62);
+tl.fromTo("#p2", { x: 1000 }, { x: 0, duration: 0.55, ease: "power3.out" }, 15.62);
 pop(15.9, "#p2av", { from: { rotation: 12, scale: 0.5 } });
 mword(15.7, "#p2t1"); mword(17.03, "#p2t2");
 pop(17.07, "#p2c1", { from: { rotation: 0, scale: 0.6, x: -40 }, to: { x: 0, duration: 0.5 } });
@@ -317,23 +313,23 @@ float("#p2av", 16.4, 20.0, 14);
 
 // ---------- B4: persona 3 (20.20 someone, 20.86 from, 21.22 countryside) ----------
 scene("#s4", 20.18, 21.80);
-tl.fromTo("#p3", { x: 1100 }, { x: 0, duration: 0.5, ease: "power3.out" }, 20.18);
+tl.fromTo("#p3", { x: 1000 }, { x: 0, duration: 0.5, ease: "power3.out" }, 20.18);
 pop(20.35, "#p3av", { from: { rotation: -12, scale: 0.5 } });
 mword(20.8, "#p3t1"); mword(21.18, "#p3t2");
 pop(21.2, "#p3c1", { from: { rotation: 0, scale: 0.6 }, to: { duration: 0.45 } });
 
 // ---------- B5-B7: the board (21.85 Raiffeisen, 23.12 good, 24.24 with, 24.42 everybody, 25.23 Banca,
-//            26.87 best, 28.74 countryside, 29.49 ING, 30.59 better, 31.70 younger) ----------
+//            26.87 best, 28.75 countryside, 29.49 ING, 30.59 better, 31.70 younger) ----------
 scene("#s5", 21.80, 32.63);
 ["#c1", "#c2", "#c3"].forEach((s, i) => pop(21.82 + i * 0.08, s, { from: { rotation: 0, scale: 0.6 }, to: { duration: 0.5 } }));
-tl.fromTo("#rR", { x: -360, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 21.85);
+tl.fromTo("#rR", { x: -300, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 21.85);
 pop(23.1, "#xR1"); pop(24.22, "#xR2"); pop(24.4, "#xR3");
-tl.fromTo("#rB", { x: -360, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 25.23);
+tl.fromTo("#rB", { x: -300, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 25.23);
 tl.fromTo("#dB", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "none" }, 25.55);
 pop(26.83, "#xB3", { from: { rotation: -30, scale: 0.2, y: -60 }, to: { y: 0 } });
-tl.fromTo("#gCountry", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.out" }, 28.68);
+tl.fromTo("#gCountry", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.out" }, 28.69);
 tl.to("#gCountry", { opacity: 0, duration: 0.3, ease: "power2.in" }, 29.38);
-tl.fromTo("#rI", { x: -360, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 29.49);
+tl.fromTo("#rI", { x: -300, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 29.49);
 tl.fromTo("#dI", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "none" }, 29.83);
 pop(30.55, "#xI1", { from: { rotation: -30, scale: 0.2, y: -60 }, to: { y: 0 } });
 tl.fromTo("#gYoung", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.out" }, 31.65);
@@ -360,29 +356,32 @@ mword(40.23, "#r3"); mword(40.93, "#r4");
 pop(41.18, "#rTarget", { from: { rotation: 20, scale: 0.3 } });
 float("#rBot", 37.83, 41.63, 14);
 
-// ---------- B10: not appearing (41.75 if, 42.27 audience, 44.39 countryside, 45.95 see, 46.67 not, 46.85 appearing) ----------
-scene("#s10", 41.71, 47.45);
-up(41.78, "#aL", { from: { y: 50 } });
+// ---------- B10: not appearing (41.75 if, 42.27 audience, 44.39 countryside, 45.95 see, 46.67 not) ----------
+scene("#s10", 41.71, 47.62);
+up(41.78, "#aTop", { from: { y: 40 } });
 pop(42.23, "#aAv", { from: { rotation: 10, scale: 0.5 } });
-pop(44.35, "#aChip", { from: { rotation: 0, scale: 0.6 }, to: { duration: 0.45 } });
-tl.fromTo("#aCard", { x: 700, opacity: 0 }, { x: 0, opacity: 1, duration: 0.55, ease: "power3.out" }, 44.39);
+mword(44.35, "#aT1");
+tl.fromTo("#aCard", { y: 420, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "power3.out" }, 44.39);
 up(44.73, "#a1", { from: { y: 40 }, to: { duration: 0.45 } });
 up(45.08, "#a2", { from: { y: 40 }, to: { duration: 0.45 } });
 up(45.93, "#a3", { from: { y: 40 }, to: { duration: 0.45 } });
-pop(46.65, "#aX", { from: { rotation: -40, scale: 0.2 } });
-tl.fromTo("#aStamp", { scale: 2.2, opacity: 0, rotation: -14 }, { scale: 1, opacity: 1, rotation: -6, duration: 0.3, ease: "power4.in" }, 46.83);
-tl.fromTo("#aCard", { x: 0 }, { x: 12, duration: 0.05, yoyo: true, repeat: 3, ease: "none", immediateRender: false }, 47.13);
+tl.fromTo("#aStamp", { scale: 2.2, opacity: 0, rotation: -14 }, { scale: 1, opacity: 1, rotation: -6, duration: 0.3, ease: "power4.in" }, 46.65);
+tl.fromTo("#aCard", { x: 0 }, { x: 12, duration: 0.05, yoyo: true, repeat: 3, ease: "none", immediateRender: false }, 46.95);
 
-// ---------- B11: options (47.69 you, 48.33 change, 50.01 or, 50.61 decide, 52.19 right, 52.39 market) ----------
-scene("#s11", 47.45, null);
-up(47.48, "#oK", { from: { y: 20 } });
-up(48.31, "#o1", { from: { y: 140, rotation: -4 }, to: { rotation: 0, duration: 0.6 } });
+// ---------- B11: options (47.47 and, 48.33 change, 50.01 or, 50.61 decide, 52.19 right, 52.39 market) ----------
+scene("#s11", 47.62, null);
+up(47.66, "#oK", { from: { y: 20 } });
+up(47.7, "#o1", { from: { y: 140, rotation: -4 }, to: { rotation: 0, duration: 0.6 } });
+tl.fromTo("#o2", { y: 140, opacity: 0 }, { y: 0, opacity: 0.4, duration: 0.6, ease: E.out }, 47.85);
+pop(47.9, "#o1i", { from: { rotation: -12, scale: 0.5 } });
+mword(48.31, "#o1t");
 pop(49.99, "#oOr", { from: { rotation: 0, scale: 0.3 } });
-up(50.59, "#o2", { from: { y: 140, rotation: 4 }, to: { rotation: 0, duration: 0.6 } });
+tl.to("#o2", { opacity: 1, duration: 0.25, ease: "none" }, 50.59);
+tl.fromTo("#o2i", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.6, ease: E.spring }, 50.59);
+mword(50.61, "#o2t");
 tl.fromTo("#oRM", { color: "#FFFFFF" }, { color: "#FFC72C", duration: 0.2, ease: "none" }, 52.17);
-float("#o1", 49.03, 53.13, 10);
-
 tl.fromTo("#k-ul", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: E.o4 }, 52.37);
+float("#o1", 49.0, 53.2, 10);
 
 tl.set({}, {}, DUR);
 window.seek = (t) => { tl.seek(t, false); painters.forEach((p) => p(t)); };
