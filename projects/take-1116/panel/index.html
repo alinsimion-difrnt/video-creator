@@ -57,23 +57,25 @@ body { font-family: var(--text); color: var(--white); -webkit-font-smoothing: an
 .chip.tx { padding: 16px 28px; }
 .white { filter: brightness(0) invert(1); }
 /* persona cards */
-.pcard { left: 120px; top: 196px; width: 768px; height: 516px; }
-.pcard .av { position: absolute; left: 22px; top: 150px; width: 200px; height: 200px; }
-.pcard .glowdisc { position: absolute; left: -8px; top: 120px; width: 260px; height: 260px; border-radius: 50%;
+.pcard { left: 120px; top: 206px; width: 768px; height: 506px; }
+.pcard .av { position: absolute; left: 22px; top: 140px; width: 200px; height: 200px; }
+.pcard .glowdisc { position: absolute; left: -8px; top: 110px; width: 260px; height: 260px; border-radius: 50%;
   background: radial-gradient(circle, rgba(255,61,139,.38), rgba(255,61,139,0) 70%); }
-.pcard .txt { position: absolute; left: 240px; top: 36px; width: 510px; }
-.pcard .h2 { font-size: 64px; margin-top: 14px; }
-.pcard .chips { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; margin-top: 24px; }
+.pcard .txt { position: absolute; left: 240px; top: 28px; width: 510px; }
+.pcard .h2 { font-size: 60px; margin-top: 12px; }
+.pcard .chip { padding-top: 10px; padding-bottom: 10px; }
+.pcard .chip.tx { padding-top: 13px; padding-bottom: 13px; }
+.pcard .chips { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin-top: 20px; }
 /* board */
-.col { position: absolute; top: 206px; width: 170px; text-align: center; }
+.col { position: absolute; top: 212px; width: 170px; text-align: center; }
 .col img { width: 84px; height: 84px; }
 .col .lab { font: 700 34px/1 var(--text); letter-spacing: .04em; text-transform: uppercase; color: #fff; margin-top: 6px; }
-.row { position: absolute; left: 120px; width: 252px; height: 104px; }
-.row img { max-width: 212px; max-height: 60px; }
+.row { position: absolute; left: 128px; width: 244px; height: 104px; }
+.row img { max-width: 214px; max-height: 64px; }
 .cell { position: absolute; width: 170px; height: 104px; display: flex; align-items: center; justify-content: center; }
 .cell img { width: 80px; height: 80px; }
-.dash { width: 56px; height: 10px; border-radius: 5px; background: rgba(255,255,255,.55); }
-.colglow { position: absolute; top: 198px; width: 174px; height: 500px; border-radius: 28px; border: 5px solid var(--gold);
+.dash { width: 60px; height: 10px; border-radius: 5px; background: rgba(255,255,255,.72); }
+.colglow { position: absolute; top: 204px; width: 174px; height: 494px; border-radius: 28px; border: 5px solid var(--gold);
   box-shadow: 0 0 46px rgba(255,199,44,.55), inset 0 0 30px rgba(255,199,44,.18); opacity: 0; }
 /* engines */
 .eng { position: absolute; top: 340px; width: 230px; height: 230px; border-radius: 38px; background: rgba(15,10,26,.6);
@@ -86,8 +88,8 @@ body { font-family: var(--text); color: var(--white); -webkit-font-smoothing: an
 .arow .rk { font: 700 42px/1 var(--text); color: #6E6785; width: 60px; }
 .arow img { max-width: 320px; max-height: 58px; }
 .arow .you { font: 700 44px/1 var(--text); color: #A9A2BC; }
-.stamp { position: absolute; font: 700 50px/1 var(--text); color: var(--red); border: 6px solid var(--red); border-radius: 16px;
-  padding: 10px 20px; letter-spacing: .02em; text-transform: uppercase; background: rgba(255,255,255,.94); white-space: nowrap; }
+.stamp { position: absolute; font: 700 36px/1 var(--text); color: var(--red); border: 5px solid var(--red); border-radius: 14px;
+  padding: 9px 16px; letter-spacing: .02em; text-transform: uppercase; background: rgba(255,255,255,.94); white-space: nowrap; }
 /* options */
 .opt { position: absolute; top: 262px; width: 364px; height: 440px; }
 .opt img { position: absolute; left: 50%; top: 30px; width: 140px; height: 140px; margin-left: -70px; }
@@ -215,7 +217,7 @@ body { font-family: var(--text); color: var(--white); -webkit-font-smoothing: an
   </div>
   <div class="abs acard" id="aCard">
     <div class="abs" style="left:28px; top:24px; display:flex; align-items:center; gap:14px;">
-      <span style="font:700 34px/1 var(--text); letter-spacing:.08em; color:#6E6785;">AI ANSWER</span>
+      <span style="font:700 36px/1 var(--text); letter-spacing:.08em; color:#4A4360;">AI ANSWER</span>
       <img src="logos/openai.svg" alt="" style="width:36px; height:36px; margin-left:8px;">
       <img src="logos/googlegemini.svg" alt="" style="width:36px; height:36px;">
       <img src="logos/perplexity.svg" alt="" style="width:36px; height:36px;">
@@ -223,7 +225,7 @@ body { font-family: var(--text); color: var(--white); -webkit-font-smoothing: an
     <div class="arow" id="a1" style="top:80px;"><span class="rk">#1</span><img src="logos/bt.svg" alt="Banca Transilvania"></div>
     <div class="arow" id="a2" style="top:176px;"><span class="rk">#2</span><img src="logos/raiffeisen.png" alt="Raiffeisen"></div>
     <div class="arow" id="a3" style="top:272px; border:3px dashed #D9D4E5; background:#FBFAFD;"><span class="rk">?</span><span class="you">Your brand</span></div>
-    <div class="stamp" id="aStamp" style="left:340px; top:278px;">Not appearing</div>
+    <div class="stamp" id="aStamp" style="left:396px; top:292px;">Not appearing</div>
   </div>
 </div>
 
@@ -372,12 +374,12 @@ tl.fromTo("#aCard", { x: 0 }, { x: 12, duration: 0.05, yoyo: true, repeat: 3, ea
 scene("#s11", 47.62, null);
 up(47.66, "#oK", { from: { y: 20 } });
 up(47.7, "#o1", { from: { y: 140, rotation: -4 }, to: { rotation: 0, duration: 0.6 } });
-tl.fromTo("#o2", { y: 140, opacity: 0 }, { y: 0, opacity: 0.4, duration: 0.6, ease: E.out }, 47.85);
+tl.fromTo("#o2", { y: 140, opacity: 0 }, { y: 0, opacity: 0.55, duration: 0.6, ease: E.out }, 47.85);
 pop(47.9, "#o1i", { from: { rotation: -12, scale: 0.5 } });
 mword(48.31, "#o1t");
 pop(49.99, "#oOr", { from: { rotation: 0, scale: 0.3 } });
 tl.to("#o2", { opacity: 1, duration: 0.25, ease: "none" }, 50.59);
-tl.fromTo("#o2i", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.6, ease: E.spring }, 50.59);
+tl.fromTo("#o2i", { scale: 1 }, { scale: 1.18, duration: 0.18, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, 50.59);
 mword(50.61, "#o2t");
 tl.fromTo("#oRM", { color: "#FFFFFF" }, { color: "#FFC72C", duration: 0.2, ease: "none" }, 52.17);
 tl.fromTo("#k-ul", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: E.o4 }, 52.37);
