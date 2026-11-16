@@ -1,19 +1,23 @@
-# Provisional brief written by `create take` (skill process-take, ADR 0035): replace every TODO from the words
-# the command printed, before `create prep`. Language: detected from the take.
+# Brief for the GEOflux "which bank does AI recommend" TikTok, cut from a landscape recording of a live demo
+# (skill process-take, ADR 0035). The presenter walks a small audience through GEOflux's Romanian banking study.
 provenance: {schema_version: 1, tool_version: 0.1.0, stage: c1_brief, annotator: claude-code, skill: null,
   model: null, input_hash: '0000000000000000000000000000000000000000000000000000000000000000',
   created_at: '2026-11-16T10:35:24Z'}
 project: geoflux-banks
-brand: acme
+brand: geoflux
 language: en
 voice: presenter
-product: {name: acme., spoken: Acme, url: https://acme.example,
-  one_liner: "Robert's own channel on AI, SEO and GEO for marketers; this reel is about TODO."}
-audience: TODO who it is for, one line
+product: {name: GEOflux, spoken: GEO flux, url: https://geoflux.ai,
+  one_liner: "GEOflux tracks how ChatGPT, Gemini and Perplexity recommend brands; this reel shows its Romanian banking study live."}
+audience: Marketers, founders and bank or brand teams in Romania who wonder whether AI assistants recommend them.
 destination: tiktok
 format: founder_talk
-length: {min_s: 30, max_s: 65}
-tone: 'Fast, plain and practical: TODO what to show. No pixel art, no mascot.'
-message: TODO the one thing a viewer should remember
+length: {min_s: 45, max_s: 80}
+tone: 'Live-demo proof, fast and plain: the real ranking, the method and the sentiment twist. No pixel art, no mascot.'
+message: In AI search it matters whether you are in the answer and how AI talks about you; GEOflux measures both.
 facts:
-- {id: todo, claim: 'TODO one per claim he makes about a product or a number, checked', source: TODO url}
+- {id: engines, claim: 'GEOflux tracks answers in ChatGPT, Gemini and Perplexity (among eight engines)', source: https://geoflux.ai}
+- {id: method, claim: 'GEOflux runs prompts in each engine''s own app, not through the API, so results match what users see', source: https://geoflux.ai}
+- {id: features, claim: 'GEOflux reports share of voice, citation sources and sentiment per brand mention', source: https://geoflux.ai}
+- {id: ranking, claim: 'In GEOflux''s Romanian banking study, Raiffeisen is the most visible bank in AI answers, then BCR, ING, Banca Transilvania and BRD', source: 'the presenter, on screen in the take (GEOflux study)'}
+- {id: sentiment, claim: 'AI answers rate TBI Bank well on deposits (highest interest rate) and BCR well for refinancing but poorly on deposits', source: 'the presenter, GEOflux sentiment analysis shown in the take'}
