@@ -505,7 +505,10 @@
   document.getElementById("canvas").style.setProperty("--cap-active", D.active);
   D.groups.forEach(function (g, gi) {
     const el = caps[gi], txt = el.querySelector(".txt"), next = D.groups[gi + 1];
-    const text = g.light || D.plate ? D.text_light : D.text, active = "var(--cap-active)";
+    // reel.py picks the words' colour per group (caption_color): ink on a light canvas or the plate, light on
+    // the dark ink product area, the brand's caption colour over the presenter. On ink the spoken word takes
+    // the brand accent: the caption's own active colour can be ink too (acme, take-1116)
+    const text = g.color, active = g.ink && !D.plate ? "var(--accent)" : "var(--cap-active)";
     // words not yet said: fully opaque in a muted tone, so their outline stays solid. Dimming by opacity also
     // faded the outline and they washed out on a light wall (fred-and-pixie r03)
     const mix = function (c, k) {  // a hex colour mixed toward a blue grey

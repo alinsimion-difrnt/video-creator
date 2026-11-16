@@ -116,6 +116,36 @@ def test_captions_sit_above_the_head_in_full_shots_and_above_the_seam_in_split()
     assert split["light"] is True  # ink captions on the light product canvas
 
 
+def test_captions_on_the_ink_product_canvas_are_light():
+    """product_bg ink: the brand's caption colour (acme: ink, meant for its white pills) vanished on the dark
+    product area (take-1116), so captions there are light; on a light canvas or the plate they stay ink."""
+    from create.footage.reel import caption_color
+    from create.tokens import contrast, luminance
+    from lens.schemas.create import Tokens
+
+    tokens = Tokens.model_validate(json.loads((REPO_ROOT / "projects/acme-v2/tokens.json").read_text()))
+    assert tokens.captions is not None and tokens.captions.text == "ink"
+    ink = tokens.colors["ink"]
+    edl, framing = _edl_framing()
+    for layout in ("split", "pip", "off"):  # every layout whose captions sit on the product area
+        for bg in ("ink", "canvas"):
+            plan = _plan(layout=[{"word": 0, "layout": layout}], product_bg=bg, captions="top")
+            bl = blocks(plan, _timeline(), 10.0)
+            (g,) = caption_heights(_captions([1.0]), V, bl, edl, framing, plan, 70.0, 16.0, HAIR)
+            text = caption_color(tokens, g, plate=False)
+            if bg == "ink":
+                assert g["ink"] and not g["light"], layout
+                assert luminance(text) > luminance(ink), layout
+                assert contrast(text, ink) >= CFG.create.design.contrast_normal, layout
+            else:
+                assert g["light"] and not g["ink"] and text == ink, layout
+            assert caption_color(tokens, g, plate=True) == ink  # the white plate keeps ink words
+    plan = _plan(layout=[{"word": 0, "layout": "full"}], product_bg="ink")  # over the presenter: as before
+    bl = blocks(plan, _timeline(), 10.0)
+    (g,) = caption_heights(_captions([1.0]), V, bl, edl, framing, plan, 70.0, 16.0, HAIR)
+    assert not g["ink"] and caption_color(tokens, g, plate=False) == tokens.colors[tokens.captions.text]
+
+
 def test_chest_captions_count_as_on_the_body():
     face = (FACE[0], FACE[1], FACE[0] + FACE[2], FACE[1] + FACE[3])
     band = V.caption_band

@@ -275,3 +275,44 @@ def test_a_motion_style_carries_cards_into_each_other_under_one_step_label(take:
     assert 'id="pbg"' in html and 'id="pwidgets"' in html
     found = run_check(take, "demo", CFG, p, browser=True)
     assert [f for f in found if f.level == "error"] == []
+
+
+def test_captions_on_the_ink_product_area_are_light_in_the_page(take: Path):
+    """take-1116: acme's caption colours are ink (for its white pills), so on the dark ink product area the
+    words were ink on ink. In the page they are light, the spoken one in the accent."""
+    from create.browser import available
+
+    if not available():
+        pytest.skip("needs playwright and Chromium")
+    from playwright.sync_api import sync_playwright
+
+    from create.browser import launch
+    from create.footage.reel import build
+    from create.tokens import contrast
+
+    path = take / "projects" / "demo" / "tokens.json"
+    tokens = json.loads(path.read_text())
+    tokens["captions"] |= {"text": "ink", "active": "ink"}
+    path.write_text(json.dumps(tokens))
+    comp, _ = build(take, "demo", CFG, _plan(take, [GOOD]))
+    g0 = json.loads((comp / "reel-data.json").read_text())["groups"][0]
+    assert g0["ink"] and len(g0["words"]) > 1
+    page_dir = comp / "preview"  # without the video, as reel_check.measure opens it
+    page_dir.mkdir(exist_ok=True)
+    html = (comp / "index.html").read_text().replace('src="presenter.mp4"', 'src=""')
+    (page_dir / "check.html").write_text(html.replace("<head>", '<head><base href="../">', 1))
+    with sync_playwright() as pw:
+        browser = launch(pw)
+        page = browser.new_page()
+        page.set_default_timeout(20_000)
+        page.goto((page_dir / "check.html").as_uri())
+        page.evaluate("t => { window.__timelines.reel.seek(t, false); }", g0["words"][0]["t"] + 0.05)
+        rgb = page.evaluate(
+            "() => [...document.querySelectorAll('#g0 .w')]"
+            ".map(e => getComputedStyle(e).color.match(/\\d+/g))"
+        )
+        browser.close()
+    hexes = ["#" + "".join(f"{int(v):02x}" for v in c[:3]) for c in rgb]
+    colors = tokens["colors"]
+    assert hexes[0] == colors["accent"].lower()  # the spoken word
+    assert all(contrast(h, colors["ink"]) >= CFG.create.design.contrast_normal for h in hexes), hexes

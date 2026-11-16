@@ -181,23 +181,26 @@ def caption_heights(
     pip_top: float | None = None,
     chin_k: float = 0.35,
 ) -> list[dict[str, Any]]:
-    """Per group: centre y, zone (top, seam, band) and whether it sits on the light product canvas.
+    """Per group: centre y, zone (top, seam, band) and whether it sits on the product area: `light` on a light
+    canvas, `ink` on the dark ink one (see `caption_color`).
     `pip_top`: the low bubble's top edge; pip captions then sit just above it (zone seam).
     `chin_k`: with `plan.caption_shirt`, a caption with no air above the head sits this many face-heights
     below the chin (plus the zoom's growth), inside the caption band."""
     band, top = frame.caption_band, frame.caption_top
-    light = plan.product_bg != "ink"  # dark ink captions on a light product canvas
-    out = []
+    ink = plan.product_bg == "ink"  # dark product area: light captions; else ink captions on a light canvas
+    on_product = {"light": not ink, "ink": ink}
+    over_video = {"light": False, "ink": False}
+    out: list[dict[str, Any]] = []
     for g in captions.groups:
         layout = layout_at((g.start + g.end) / 2, bl)  # the layout most of the group plays in
         if layout == "split":
-            out.append({"cy": round(plan.split_seam - gap_px - half, 1), "zone": "seam", "light": light})
+            out.append({"cy": round(plan.split_seam - gap_px - half, 1), "zone": "seam"} | on_product)
         elif layout == "pip" and pip_top is not None:
-            out.append({"cy": round(pip_top - gap_px - half, 1), "zone": "seam", "light": light})
+            out.append({"cy": round(pip_top - gap_px - half, 1), "zone": "seam"} | on_product)
         elif layout == "off" and plan.captions == "top" and top is not None:  # product fills below them
-            out.append({"cy": round((top.y0 + top.y1) / 2, 1), "zone": "top", "light": light})
+            out.append({"cy": round((top.y0 + top.y1) / 2, 1), "zone": "top"} | on_product)
         elif layout in ("pip", "off"):
-            out.append({"cy": round((band.y0 + band.y1) / 2, 1), "zone": "band", "light": light})
+            out.append({"cy": round((band.y0 + band.y1) / 2, 1), "zone": "band"} | on_product)
         elif plan.captions == "top" and top is not None:
             _, fy0, _, fy1 = face_box_at(g.start, edl, framing, frame.width, frame.height)
             hair = fy0 - hair_k * (fy1 - fy0)
@@ -207,12 +210,26 @@ def caption_heights(
             if plan.caption_shirt and cy < top.y0 + half:  # no air above the head: shirt, under the chin
                 low = fy1 + chin_k * (fy1 - fy0) + (fy1 - (fy0 + fy1) / 2) * (zoom_k - 1) + half
                 if low + half <= band.y1:
-                    out.append({"cy": round(max(low, band.y0 + half), 1), "zone": "band", "light": False})
+                    out.append({"cy": round(max(low, band.y0 + half), 1), "zone": "band"} | over_video)
                     continue
-            out.append({"cy": round(max(cy, top.y0 + half), 1), "zone": "top", "light": False})
+            out.append({"cy": round(max(cy, top.y0 + half), 1), "zone": "top"} | over_video)
         else:
-            out.append({"cy": round((band.y0 + band.y1) / 2, 1), "zone": "band", "light": False})
+            out.append({"cy": round((band.y0 + band.y1) / 2, 1), "zone": "band"} | over_video)
     return out
+
+
+def caption_color(tokens: Tokens, group: dict[str, Any], plate: bool) -> str:
+    """A caption group's word colour: ink on a light product canvas or the white plate; the light surface on
+    the dark ink product area, under the dark drop-shadow (the brand's caption colour may be meant for its
+    own white pills: acme's ink vanished on ink, take-1116); else the brand's caption colour over the
+    presenter."""
+    c = tokens.captions
+    assert c is not None
+    if group["light"] or plate:
+        return tokens.colors["ink"]
+    if group["ink"]:
+        return tokens.colors["surface"]
+    return tokens.colors[c.text]
 
 
 def shots(edl: Edl, framing: Framing | None, w: int, h: int) -> list[dict[str, float]]:
@@ -677,10 +694,11 @@ def build(
         "plate": cplate.model_dump() | {"h1": 2 * half} if cplate else None,
         "shifts": shifts,
         "punch_scale": cfg.create.footage.reel.punch_scale,
-        "text": tokens.colors[c.text],
-        "text_light": tokens.colors["ink"],
         "active": tokens.colors[c.active],
-        "groups": [g.model_dump() | h for g, h in zip(captions.groups, heights, strict=True)],
+        "groups": [
+            g.model_dump() | h | {"color": caption_color(tokens, h, cplate is not None)}
+            for g, h in zip(captions.groups, heights, strict=True)
+        ],
     }
     comp = root / "data" / "create" / project / "render" / "reel"
     (comp / "assets" / "fonts").mkdir(parents=True, exist_ok=True)
