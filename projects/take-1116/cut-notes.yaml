@@ -1,0 +1,20 @@
+# Short version (owner's brief: hook in 2 s, ruthless pacing, ~50-55 s). One idea: AI recommends a different
+# bank to each persona, so check whether it recommends you to YOUR customer. Times on the master clock, each
+# boundary snapped to a measured gap in the audio (whisper word times run up to ~0.15 s early).
+take: 01-take
+# cold open (mid-sentence, a named brand and a claim): "ING is actually better"
+open_with: {start_s: 45.84, end_s: 47.32, reason: "hook: flash-forward to the ING finding"}
+keep_only:
+- {start_s: 7.10, end_s: 29.19, reason: "three personas: In our analysis ... from the countryside"}
+- {start_s: 34.55, end_s: 50.76, reason: "the finding: Raiffeisen ... ING ... younger people"}
+- {start_s: 50.76, end_s: 55.55, reason: "so you can see through the tracking ... Perplexity"}
+- {start_s: 59.08, end_s: 63.77, reason: "if AI is actually recommending you to the people that you actually want"}
+- {start_s: 71.04, end_s: 82.75, reason: "payoff: if your audience was ... the right market for you"}
+cut:
+- {start_s: 23.14, end_s: 24.18, reason: "filler: uh, like, uh"}
+- {start_s: 27.30, end_s: 27.66, reason: "filler: uh"}
+- {start_s: 36.06, end_s: 36.50, reason: "filler: like"}
+- {start_s: 42.71, end_s: 43.17, reason: "stumble: on the (repeated)"}
+- {start_s: 43.80, end_s: 45.86, reason: "tighten: and we can see that"}
+- {start_s: 47.58, end_s: 47.90, reason: "pause"}
+- {start_s: 53.12, end_s: 54.06, reason: "tighten: that you're doing"}
