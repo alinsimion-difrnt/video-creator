@@ -5,18 +5,18 @@
 <!-- GEOflux "which bank does AI recommend" panel (ADR 0034, skill build-panel). 1080 x 840, one GSAP timeline
      on the edited clock (create words geoflux-banks --times). Beat sheet: projects/geoflux-banks/panel/beats.md
 beats:
-  A  0.00- 4.40 "Raiffeisen is the most visible bank in Romania"            hero number: Raiffeisen tile, #1, crown, engines
-  B  4.40- 8.70 "We did an analysis on the state of Romania. Okay, let's go in banking."  object: 5 category tiles, Banking picked
-  D  8.70-20.30 "...the questions that people ask. Recomandă-mi ... ChatGPT, Gemini or Perplexity."  ui: prompt box types his query
-  G 20.30-28.40 "We actually open browsers ... BRD, BCR, Raiffeisen and so on appear."  ui: browser, answer streams, banks light up
-  I 28.40-35.90 "who the winners are. Afterwards ... BCR, ING, Banca Transilvania and BRD."  logo wall: top-5 leaderboard
-  K 35.90-39.60 "But what we also do is we do semantic analysis."           kinetic type + magnifier reading a document
-  L 39.60-45.60 "The old Google is you have 10 links ... as long as you're the first."  ui: 10 results, count-up, #1 highlighted
-  M 45.60-54.00 "In AI, it matters if you're there and also how you're there. ... likes you or doesn't."  dark card, kinetic type, thumbs
-  O 54.00-59.70 "Looking for phrases like, okay, do you recommend BCR? Do you like them?"  ui: highlighted answer + quote bubbles
-  P 59.70-68.40 "sentiment score ... TBI Bank is really good on deposits ... highest interest rate right now."  diagram: gauge swings green
-  R 68.40-77.75 "on BCR ... good for refinanțare credit, but they're bad on deposits ... lower interest rate."  ui: BCR report card
-  S 77.75-79.27 (end card; the film is trimmed to a 1.5 s tail)                                                    brand: GEOflux logo, site headline, geoflux.ai
+  A  0.00- 3.85 "Raiffeisen is the most visible bank in Romania"            hero number: Raiffeisen tile, #1, crown, engines
+  B  3.85- 5.93 "Okay, let's go in banking."  object: 5 category tiles, Banking picked
+  D  5.93-17.53 "...the questions that people ask. Recomandă-mi ... ChatGPT, Gemini or Perplexity."  ui: prompt box types his query
+  G 17.53-25.63 "We actually open browsers ... BRD, BCR, Raiffeisen and so on appear."  ui: browser, answer streams, banks light up
+  I 25.63-33.13 "who the winners are. Afterwards ... BCR, ING, Banca Transilvania and BRD."  logo wall: top-5 leaderboard
+  K 33.13-36.83 "But what we also do is we do semantic analysis."           kinetic type + magnifier reading a document
+  L 36.83-42.83 "The old Google is you have 10 links ... as long as you're the first."  ui: 10 results, count-up, #1 highlighted
+  M 42.83-51.23 "In AI, it matters if you're there and also how you're there. ... likes you or doesn't."  dark card, kinetic type, thumbs
+  O 51.23-56.93 "Looking for phrases like, okay, do you recommend BCR? Do you like them?"  ui: highlighted answer + quote bubbles
+  P 56.93-65.63 "sentiment score ... TBI Bank is really good on deposits ... highest interest rate right now."  diagram: gauge swings green
+  R 65.63-74.98 "on BCR ... good for refinanțare credit, but they're bad on deposits ... lower interest rate."  ui: BCR report card
+  S 74.98-77.00 (end card, 2 s, music up)                                                    brand: GEOflux logo, site headline, geoflux.ai
 look: GEOflux's own site palette (brands/geoflux): near-white #F5F7F9, navy ink #1C2B3B, one orange #FF6600; Space Grotesk
   + Inter. One dark navy card (M) as the pattern interrupt on the key line. -->
 <link rel="stylesheet" href="fonts/fonts.css">
@@ -38,7 +38,7 @@ body { font-family: var(--text); color: var(--ink); -webkit-font-smoothing: anti
 #bg-dots { position: absolute; inset: 0; background-image: radial-gradient(rgba(28,43,59,.10) 1.4px, transparent 1.6px);
   background-size: 36px 36px; -webkit-mask-image: linear-gradient(#000, rgba(0,0,0,.6) 60%, transparent); }
 #fade { position: absolute; left: 0; right: 0; bottom: 0; height: 120px; background: linear-gradient(rgba(245,247,249,0), var(--bg)); z-index: 50; }
-.scene { position: absolute; inset: 0; opacity: 0; }
+.scene { position: absolute; inset: 24px 0 -24px 0; opacity: 0; } /* 24 px lower: kickers clear TikTok's top tabs */
 .abs { position: absolute; }
 .card { background: #fff; border: 1px solid var(--hair); border-radius: 32px; box-shadow: var(--shadow); }
 .kick { font: 700 38px/1 var(--text); letter-spacing: .05em; text-transform: uppercase; color: var(--ink-2); }
@@ -278,7 +278,7 @@ body { font-family: var(--text); color: var(--ink); -webkit-font-smoothing: anti
 <!-- P 59.70-68.40: sentiment score, TBI -->
 <div class="scene" id="sP">
   <div class="abs kick" id="pK" style="left:60px; top:150px;">Sentiment score</div>
-  <div class="abs chip" id="pTbi" style="right:60px; top:128px; font-size:44px;"><img src="logos/tbi-icon.png" alt="" style="height:56px; border-radius:14px;">TBI Bank</div>
+  <div class="abs chip" id="pTbi" style="left:60px; top:202px; font-size:44px;"><img src="logos/tbi-icon.png" alt="" style="height:56px; border-radius:14px;">TBI Bank</div>
   <svg class="abs" style="left:240px; top:230px;" width="600" height="330" viewBox="0 0 600 330">
     <defs><linearGradient id="pGrad" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#DC2626"/>
       <stop offset=".5" stop-color="#F59E0B"/><stop offset="1" stop-color="#16A34A"/></linearGradient></defs>
@@ -307,7 +307,7 @@ body { font-family: var(--text); color: var(--ink); -webkit-font-smoothing: anti
     <img src="emoji/chart_decreasing_3d.png" alt="" style="width:124px; margin:-12px 0;"><span style="font: 700 48px/1 var(--head); letter-spacing:-.02em; color:var(--bad);">Lower interest rate</span></div>
 </div>
 
-<!-- S 77.75-79.80: end card -->
+<!-- S 74.98-77.00: end card -->
 <div class="scene" id="sS">
   <img class="abs" id="sLogo" src="logos/geoflux-primary.svg" alt="GEOflux.ai" style="left:374px; top:220px; height:130px;">
   <div class="abs h2" style="left:0; right:0; top:400px; text-align:center;">
@@ -322,7 +322,7 @@ body { font-family: var(--text); color: var(--ink); -webkit-font-smoothing: anti
 const tl = gsap.timeline({ paused: true });
 const $ = (s) => document.querySelector(s);
 const E = { out: "expo.out", o4: "power4.out", spring: "back.out(1.6)", soft: "back.out(1.2)", inout: "power2.inOut" };
-const DUR = 79.8; // the edited take's length
+const DUR = 77.03; // the edited take's length
 
 // ambient drift so no frame is dead
 tl.to("#bg-blob1", { x: 260, y: 120, duration: DUR, ease: "sine.inOut" }, 0);
@@ -360,144 +360,143 @@ function draw(path, t, d) {
   tl.to(path, { attr: { "stroke-dashoffset": 0 }, duration: d || 0.7, ease: E.inout }, t);
 }
 
-// ---------- A 0.00-3.70: Raiffeisen, #1 ----------
+// ---------- A 0.00-3.85: Raiffeisen, #1 (built at frame 0: the result in frame one) ----------
 tl.set("#sA", { opacity: 1 }, 0);
-tl.to("#sA", { opacity: 0, y: -30, duration: 0.25, ease: "power2.in" }, 4.15);
-tl.set("#sA", { y: 0 }, 4.41);
-up(0.0, "#aK", { from: { y: 20 }, to: { duration: 0.5 } });
-pop(0.02, "#aT", { from: { rotation: -6, scale: 0.6 }, to: { duration: 0.6 } });
-pop(0.2, "#aN", { from: { scale: 0.3, rotation: 0 }, to: { duration: 0.6 } });
-pop(0.55, "#aCrown", { from: { rotation: -40, scale: 0.2 } });
+tl.to("#sA", { opacity: 0, y: -30, duration: 0.22, ease: "power2.in" }, 3.62);
+tl.set("#sA", { y: 0 }, 3.86);
+tl.fromTo(["#aK", "#aT", "#aN"], { opacity: 1, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.5, ease: E.soft }, 0);
+punch(0.15, "#aT", 1.06);
+pop(0.35, "#aCrown", { from: { rotation: -40, scale: 0.2 } });
 punch(1.49, "#aN", 1.12);
 mword(1.49, "#a1"); mword(1.91, "#a2"); mword(2.45, "#a3"); mword(2.81, "#a4"); mword(3.17, "#a5");
-pop(1.9, "#aE1"); pop(2.02, "#aE2"); pop(2.14, "#aE3");
-up(2.3, "#aE4", { from: { y: 20 } });
-float("#aT", 0.7, 4.1, 10);
+pop(0.9, "#aE1"); pop(1.02, "#aE2"); pop(1.14, "#aE3");
+up(1.25, "#aE4", { from: { y: 20 } });
+float("#aT", 0.7, 3.6, 10);
 
-// ---------- B 3.70-7.90: the state of Romania -> banking ----------
-scene("#sB", 4.40, 8.70);
-up(4.42, "#bK", { from: { y: 20 } });
-pop(4.45, "#bGlobe", { from: { rotation: -30 } });
-["#bC1", "#bC2", "#bC3", "#bC4", "#bC5"].forEach((s, i) => pop(4.6 + i * 0.12, s, { from: { y: 40, rotation: 0, scale: 0.6 }, to: { y: 0 } }));
-mword(5.52, "#b1"); mword(5.84, "#b2"); mword(6.0, "#b3");
-tl.to(["#bC2", "#bC3", "#bC4", "#bC5"], { opacity: 0.55, scale: 0.92, duration: 0.35, ease: "power2.out" }, 7.23);
-tl.fromTo("#bC1", { scale: 1, borderColor: "#E0E4E7" }, { scale: 1.12, borderColor: "#FF6600", borderWidth: 4, duration: 0.45, ease: E.spring, immediateRender: false }, 7.37);
-pop(7.51, "#bPick", { from: { rotation: 0, scale: 0.6 }, to: { duration: 0.4 } });
-float("#bGlobe", 5.2, 8.6, 12);
+// ---------- B 3.85-5.93: "okay, let's go in banking" ----------
+scene("#sB", 3.85, 5.93);
+up(3.87, "#bK", { from: { y: 20 } });
+pop(3.9, "#bGlobe", { from: { rotation: -30 } });
+mword(3.92, "#b1"); mword(4.0, "#b2"); mword(4.08, "#b3");
+["#bC1", "#bC2", "#bC3", "#bC4", "#bC5"].forEach((s, i) => pop(3.95 + i * 0.07, s, { from: { y: 40, rotation: 0, scale: 0.6 }, to: { y: 0, duration: 0.5 } }));
+tl.to(["#bC2", "#bC3", "#bC4", "#bC5"], { opacity: 0.55, scale: 0.92, duration: 0.3, ease: "power2.out" }, 4.47);
+tl.fromTo("#bC1", { scale: 1, borderColor: "#E0E4E7" }, { scale: 1.12, borderColor: "#FF6600", borderWidth: 4, duration: 0.4, ease: E.spring, immediateRender: false }, 4.61);
+pop(4.75, "#bPick", { from: { rotation: 0, scale: 0.6 }, to: { duration: 0.4 } });
+float("#bGlobe", 4.2, 5.9, 12);
 
-// ---------- D 7.90-20.30: the prompt ----------
-scene("#sD", 8.70, 20.30);
-up(8.75, "#dK", { from: { y: 20 } });
-up(9.77, "#dBox", { from: { y: 90 } });
-mword(11.75, "#d1"); mword(12.27, "#d2"); mword(12.49, "#d3");
-tl.to("#dPh", { opacity: 0, duration: 0.12 }, 12.8);
-tl.fromTo("#dBox", { borderColor: "#E0E4E7" }, { borderColor: "#FF6600", duration: 0.25, immediateRender: false }, 12.8);
-type("#dTxt", "Recomandă-mi cel mai bun credit de nevoi personale din România", 12.85, 15.55);
-up(14.3, "#dGloss", { from: { y: 24 } });
-tl.to("#dH", { opacity: 0, y: -24, duration: 0.3, ease: "power2.in" }, 17.55);
-pop(18.35, "#dE1", { from: { rotation: 0, y: 30 }, to: { y: 0 } });
-pop(18.87, "#dE2", { from: { rotation: 0, y: 30 }, to: { y: 0 } });
-pop(19.49, "#dE3", { from: { rotation: 0, y: 30 }, to: { y: 0 } });
-punch(19.9, "#dSend", 1.18);
+// ---------- D 7.90-17.53: the prompt ----------
+scene("#sD", 5.93, 17.53);
+up(5.98, "#dK", { from: { y: 20 } });
+up(7.00, "#dBox", { from: { y: 90 } });
+mword(8.98, "#d1"); mword(9.50, "#d2"); mword(9.72, "#d3");
+tl.to("#dPh", { opacity: 0, duration: 0.12 }, 10.03);
+tl.fromTo("#dBox", { borderColor: "#E0E4E7" }, { borderColor: "#FF6600", duration: 0.25, immediateRender: false }, 10.03);
+type("#dTxt", "Recomandă-mi cel mai bun credit de nevoi personale din România", 10.08, 12.78);
+up(11.53, "#dGloss", { from: { y: 24 } });
+tl.to("#dH", { opacity: 0, y: -24, duration: 0.3, ease: "power2.in" }, 14.78);
+pop(15.58, "#dE1", { from: { rotation: 0, y: 30 }, to: { y: 0 } });
+pop(16.10, "#dE2", { from: { rotation: 0, y: 30 }, to: { y: 0 } });
+pop(16.72, "#dE3", { from: { rotation: 0, y: 30 }, to: { y: 0 } });
+punch(17.13, "#dSend", 1.18);
 
-// ---------- G 20.30-28.40: browser, banks appear ----------
-scene("#sG", 20.30, 28.40);
-up(20.43, "#gK", { from: { y: 20 } });
-up(20.45, "#gWin", { from: { y: 60 } });
-tl.fromTo("#gCur", { x: 0, y: 0, opacity: 0 }, { x: -560, y: -460, opacity: 1, duration: 0.6, ease: E.inout }, 20.6);
-type("#gUrl", "chatgpt.com", 20.93, 21.6);
-tl.fromTo("#gCur", { x: -560, y: -460 }, { x: -40, y: -170, duration: 0.6, ease: E.inout, immediateRender: false }, 21.9);
-tl.fromTo("#gCur", { scale: 1 }, { scale: 0.8, duration: 0.1, yoyo: true, repeat: 1, immediateRender: false }, 22.5);
-tl.to("#gCur", { opacity: 0, duration: 0.25 }, 23.0);
-up(21.79, "#gQ", { from: { y: 30 } });
-pop(23.15, "#gAi", { from: { rotation: 0 } });
-["#gS1", "#gS2", "#gS3", "#gS4"].forEach((s, i) => sweep(23.3 + i * 0.22, s, 0.5));
-pop(25.42, "#gH1", { from: { rotation: 0, scale: 0.6 } });
-pop(25.92, "#gH2", { from: { rotation: 0, scale: 0.6 } });
-pop(26.44, "#gH3", { from: { rotation: 0, scale: 0.6 } });
-pop(27.38, "#gH4", { from: { rotation: 0, scale: 0.6 } });
+// ---------- G 17.53-25.63: browser, banks appear ----------
+scene("#sG", 17.53, 25.63);
+up(17.66, "#gK", { from: { y: 20 } });
+up(17.68, "#gWin", { from: { y: 60 } });
+tl.fromTo("#gCur", { x: 0, y: 0, opacity: 0 }, { x: -560, y: -460, opacity: 1, duration: 0.6, ease: E.inout }, 17.83);
+type("#gUrl", "chatgpt.com", 18.16, 18.83);
+tl.fromTo("#gCur", { x: -560, y: -460 }, { x: -40, y: -170, duration: 0.6, ease: E.inout, immediateRender: false }, 19.13);
+tl.fromTo("#gCur", { scale: 1 }, { scale: 0.8, duration: 0.1, yoyo: true, repeat: 1, immediateRender: false }, 19.73);
+tl.to("#gCur", { opacity: 0, duration: 0.25 }, 20.23);
+up(19.02, "#gQ", { from: { y: 30 } });
+pop(20.38, "#gAi", { from: { rotation: 0 } });
+["#gS1", "#gS2", "#gS3", "#gS4"].forEach((s, i) => sweep(20.53 + i * 0.22, s, 0.5));
+pop(22.65, "#gH1", { from: { rotation: 0, scale: 0.6 } });
+pop(23.15, "#gH2", { from: { rotation: 0, scale: 0.6 } });
+pop(23.67, "#gH3", { from: { rotation: 0, scale: 0.6 } });
+pop(24.61, "#gH4", { from: { rotation: 0, scale: 0.6 } });
 
-// ---------- I 28.40-35.90: the ranking ----------
-scene("#sI", 28.40, 35.90);
-up(28.45, "#iK", { from: { y: 20 } });
-up(28.6, "#iH", { from: { y: 30 } });
-["#iG1", "#iG2", "#iG3", "#iG4", "#iG5"].forEach((s, i) => up(28.75 + i * 0.08, s, { from: { y: 20 } }));
-pop(30.58, "#iTro", { from: { rotation: -25 } });
-slide(30.88, "#iR1");
-pop(31.25, "#iCrown", { from: { rotation: -40, scale: 0.2 } });
-slide(32.81, "#iR2"); slide(33.23, "#iR3"); slide(33.65, "#iR4"); slide(34.55, "#iR5");
+// ---------- I 25.63-33.13: the ranking ----------
+scene("#sI", 25.63, 33.13);
+up(25.68, "#iK", { from: { y: 20 } });
+up(25.83, "#iH", { from: { y: 30 } });
+["#iG1", "#iG2", "#iG3", "#iG4", "#iG5"].forEach((s, i) => up(25.98 + i * 0.08, s, { from: { y: 20 } }));
+pop(27.81, "#iTro", { from: { rotation: -25 } });
+slide(27.16, "#iR1");
+pop(28.48, "#iCrown", { from: { rotation: -40, scale: 0.2 } });
+slide(30.04, "#iR2"); slide(30.46, "#iR3"); slide(30.88, "#iR4"); slide(31.78, "#iR5");
 
-// ---------- K 35.90-39.60: semantic analysis ----------
-scene("#sK", 35.90, 39.60);
-up(35.93, "#kK", { from: { y: 20 } });
-up(35.95, "#kDoc", { from: { y: 50 } });
-tl.fromTo("#kMag", { x: 0, y: 0, opacity: 0 }, { x: 260, y: -10, opacity: 1, duration: 0.7, ease: E.inout }, 36.1);
-tl.fromTo("#kMag", { x: 260, y: -10 }, { x: 560, y: 50, duration: 0.7, ease: E.inout, immediateRender: false }, 36.85);
-tl.fromTo("#kMag", { x: 560, y: 50 }, { x: 330, y: 110, duration: 0.7, ease: E.inout, immediateRender: false }, 37.6);
-sweep(36.45, "#kL1"); sweep(37.2, "#kL2"); sweep(37.95, "#kL3");
-mword(38.09, "#k1"); mword(38.41, "#k2");
+// ---------- K 33.13-36.83: semantic analysis ----------
+scene("#sK", 33.13, 36.83);
+up(33.16, "#kK", { from: { y: 20 } });
+up(33.18, "#kDoc", { from: { y: 50 } });
+tl.fromTo("#kMag", { x: 0, y: 0, opacity: 0 }, { x: 260, y: -10, opacity: 1, duration: 0.7, ease: E.inout }, 33.33);
+tl.fromTo("#kMag", { x: 260, y: -10 }, { x: 560, y: 50, duration: 0.7, ease: E.inout, immediateRender: false }, 34.08);
+tl.fromTo("#kMag", { x: 560, y: 50 }, { x: 330, y: 110, duration: 0.7, ease: E.inout, immediateRender: false }, 34.83);
+sweep(33.68, "#kL1"); sweep(34.43, "#kL2"); sweep(35.18, "#kL3");
+mword(35.32, "#k1"); mword(35.64, "#k2");
 
-// ---------- L 39.60-45.60: ten links, only the first ----------
-scene("#sL", 39.60, 45.60);
-up(39.65, "#lHead", { from: { y: 20 } });
-for (let i = 1; i <= 10; i++) slide(40.1 + (i - 1) * 0.14, "#lR" + i);
-count("#lTen", 10, 40.12, 41.48);
-up(41.68, "#lLinks", { from: { y: 24 } });
-tl.to(["#lR2", "#lR3", "#lR4", "#lR5", "#lR6", "#lR7", "#lR8", "#lR9", "#lR10"], { opacity: 0.22, duration: 0.4 }, 42.9);
+// ---------- L 36.83-42.83: ten links, only the first ----------
+scene("#sL", 36.83, 42.83);
+up(36.88, "#lHead", { from: { y: 20 } });
+for (let i = 1; i <= 10; i++) slide(36.95 + (i - 1) * 0.16, "#lR" + i);
+count("#lTen", 10, 36.95, 38.71);
+up(38.91, "#lLinks", { from: { y: 24 } });
+tl.to(["#lR2", "#lR3", "#lR4", "#lR5", "#lR6", "#lR7", "#lR8", "#lR9", "#lR10"], { opacity: 0.22, duration: 0.4 }, 40.13);
 tl.fromTo("#lR1", { backgroundColor: "rgba(255,241,230,0)", boxShadow: "0 0 0 0px rgba(255,102,0,0)" },
-  { backgroundColor: "rgba(255,241,230,1)", boxShadow: "0 0 0 4px rgba(255,102,0,1)", duration: 0.35, immediateRender: false }, 44.16);
-tl.fromTo("#lR1 .gt", { backgroundColor: "#1A0DAB" }, { backgroundColor: "#FF6600", duration: 0.3, immediateRender: false }, 44.16);
-pop(44.3, "#lFirst", { from: { rotation: 0, scale: 0.6 } });
+  { backgroundColor: "rgba(255,241,230,1)", boxShadow: "0 0 0 4px rgba(255,102,0,1)", duration: 0.35, immediateRender: false }, 41.39);
+tl.fromTo("#lR1 .gt", { backgroundColor: "#1A0DAB" }, { backgroundColor: "#FF6600", duration: 0.3, immediateRender: false }, 41.39);
+pop(41.53, "#lFirst", { from: { rotation: 0, scale: 0.6 } });
 
-// ---------- M 45.60-54.00: if you're there, and how ----------
-scene("#sM", 45.60, 54.00);
-tl.fromTo("#mCard", { scale: 0.94 }, { scale: 1, duration: 0.5, ease: E.soft }, 45.6);
-up(45.62, "#mK", { from: { y: 20 } });
-mword(46.29, "#m1a"); mword(46.53, "#m1b"); mword(46.89, "#m1c");
-tl.to("#mL1", { opacity: 0.62, duration: 0.3 }, 48.5);
-mword(48.67, "#m2a"); mword(49.31, "#m2b"); mword(49.65, "#m2c");
-punch(48.85, "#m2a", 1.12);
-pop(51.93, "#mUp", { from: { rotation: -20 } });
-pop(52.83, "#mDn", { from: { rotation: 20 } });
+// ---------- M 42.83-51.23: if you're there, and how ----------
+scene("#sM", 42.83, 51.23);
+tl.fromTo("#mCard", { scale: 0.94 }, { scale: 1, duration: 0.5, ease: E.soft }, 42.83);
+up(42.85, "#mK", { from: { y: 20 } });
+mword(43.52, "#m1a"); mword(43.76, "#m1b"); mword(44.12, "#m1c");
+tl.to("#mL1", { opacity: 0.62, duration: 0.3 }, 45.73);
+mword(45.90, "#m2a"); mword(46.54, "#m2b"); mword(46.88, "#m2c");
+punch(46.08, "#m2a", 1.12);
+pop(49.16, "#mUp", { from: { rotation: -20 } });
+pop(50.06, "#mDn", { from: { rotation: 20 } });
 
-// ---------- O 54.00-59.70: phrases ----------
-scene("#sO", 54.00, 59.70);
-up(54.02, "#oK", { from: { y: 20 } });
-up(54.05, "#oDoc", { from: { y: 50 } });
-sweep(54.4, "#oL1"); sweep(54.85, "#oL2");
-pop(56.10, "#oB1", { from: { rotation: -8, scale: 0.6 }, to: { rotation: -2 } });
-punch(56.86, "#oBcr", 1.2);
-pop(58.54, "#oB2", { from: { rotation: 8, scale: 0.6 }, to: { rotation: 2 } });
+// ---------- O 51.23-56.93: phrases ----------
+scene("#sO", 51.23, 56.93);
+up(51.25, "#oK", { from: { y: 20 } });
+up(51.28, "#oDoc", { from: { y: 50 } });
+sweep(51.63, "#oL1"); sweep(52.08, "#oL2");
+pop(53.33, "#oB1", { from: { rotation: -8, scale: 0.6 }, to: { rotation: -2 } });
+punch(54.09, "#oBcr", 1.2);
+pop(55.77, "#oB2", { from: { rotation: 8, scale: 0.6 }, to: { rotation: 2 } });
 
-// ---------- P 59.70-68.40: sentiment score, TBI ----------
-scene("#sP", 59.70, 68.40);
-up(59.72, "#pK", { from: { y: 20 } });
-draw($("#pArc"), 59.8, 0.9);
-pop(59.95, "#pDn", { from: { rotation: -20 } }); pop(60.15, "#pUp", { from: { rotation: 20 } });
-tl.fromTo("#pNeedle", { rotation: -90 }, { rotation: -15, duration: 1.2, ease: E.inout }, 60.0);
-tl.fromTo("#pNeedle", { rotation: -15 }, { rotation: 14, duration: 1.0, ease: "sine.inOut", immediateRender: false }, 61.2);
-tl.fromTo("#pNeedle", { rotation: 14 }, { rotation: -6, duration: 0.7, ease: "sine.inOut", immediateRender: false }, 62.25);
-pop(63.02, "#pTbi", { from: { rotation: 0, scale: 0.6 } });
-tl.fromTo("#pNeedle", { rotation: -6 }, { rotation: 64, duration: 0.9, ease: "back.out(1.8)", immediateRender: false }, 64.86);
-punch(65.0, "#pUp", 1.25);
-up(65.26, "#pLab", { from: { y: 30 } });
-pop(66.54, "#pRate", { from: { rotation: 0, scale: 0.6 } });
+// ---------- P 56.93-65.63: sentiment score, TBI ----------
+scene("#sP", 56.93, 65.63);
+up(56.95, "#pK", { from: { y: 20 } });
+draw($("#pArc"), 57.03, 0.9);
+pop(57.18, "#pDn", { from: { rotation: -20 } }); pop(57.38, "#pUp", { from: { rotation: 20 } });
+tl.fromTo("#pNeedle", { rotation: -90 }, { rotation: -15, duration: 1.2, ease: E.inout }, 57.23);
+tl.fromTo("#pNeedle", { rotation: -15 }, { rotation: 14, duration: 1.0, ease: "sine.inOut", immediateRender: false }, 58.43);
+tl.fromTo("#pNeedle", { rotation: 14 }, { rotation: -6, duration: 0.7, ease: "sine.inOut", immediateRender: false }, 59.48);
+pop(60.25, "#pTbi", { from: { rotation: 0, scale: 0.6 } });
+tl.fromTo("#pNeedle", { rotation: -6 }, { rotation: 64, duration: 0.9, ease: "back.out(1.8)", immediateRender: false }, 62.09);
+punch(62.23, "#pUp", 1.25);
+up(62.49, "#pLab", { from: { y: 30 } });
+pop(63.77, "#pRate", { from: { rotation: 0, scale: 0.6 } });
 
-// ---------- R 68.40-77.75: BCR, good and bad ----------
-scene("#sR", 68.40, 77.75);
-up(68.53, "#rK", { from: { y: 20 } });
-pop(70.31, "#rHead", { from: { rotation: 0, scale: 0.7 } });
-slide(71.73, "#rR1");
-pop(72.57, "#rP1", { from: { rotation: 0, scale: 0.5 } });
-slide(74.17, "#rR2");
-pop(74.95, "#rP2", { from: { rotation: 0, scale: 0.5 } });
-up(76.61, "#rWhy", { from: { y: 30 } });
+// ---------- R 65.63-74.98: BCR, good and bad ----------
+scene("#sR", 65.63, 74.98);
+up(65.76, "#rK", { from: { y: 20 } });
+pop(66.82, "#rHead", { from: { rotation: 0, scale: 0.7 } });
+slide(68.96, "#rR1");
+pop(69.80, "#rP1", { from: { rotation: 0, scale: 0.5 } });
+slide(71.40, "#rR2");
+pop(72.18, "#rP2", { from: { rotation: 0, scale: 0.5 } });
+up(73.84, "#rWhy", { from: { y: 30 } });
 
-// ---------- S 77.75-79.80: end card ----------
-scene("#sS", 77.75, null);
-pop(77.78, "#sLogo", { from: { rotation: 0, scale: 0.7 }, to: { duration: 0.55 } });
-mword(77.9, "#s1"); mword(78.04, "#s2");
-pop(78.25, "#sUrl", { from: { rotation: 0, scale: 0.6 }, to: { duration: 0.55 } });
+// ---------- S 74.98-77.03: end card ----------
+scene("#sS", 74.98, null);
+pop(75.01, "#sLogo", { from: { rotation: 0, scale: 0.7 }, to: { duration: 0.55 } });
+mword(75.13, "#s1"); mword(75.27, "#s2");
+pop(75.48, "#sUrl", { from: { rotation: 0, scale: 0.6 }, to: { duration: 0.55 } });
 
 tl.set({}, {}, DUR);
 window.seek = (t) => { tl.seek(t, false); painters.forEach((p) => p(t)); };
