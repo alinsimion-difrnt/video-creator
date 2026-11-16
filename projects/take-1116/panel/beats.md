@@ -31,36 +31,36 @@ B5 21.85-24.90  "Raiffeisen is good with everybody."
          @23.12, @24.24, @24.42 (one per persona)
   assets: logos/raiffeisen.svg (Wikimedia, RBI 2023 logo)
 
-B6 24.96-30.10  "Banca Transilvania, it's best on the people in the countryside."
-  shows: BT logo row @24.96; crown pops on the countryside column @27.64; that column glows gold @29.51
+B6 25.23-30.10  "Banca Transilvania, it's best on the people in the countryside."
+  shows: BT logo row @25.23; crown pops on the countryside column @26.87; that column glows gold @28.74
   assets: logos/bt.svg (Wikimedia)
 
-B7 30.26-33.40  "ING is actually better for the younger people."
-  shows: ING logo row @30.26; crown on the young-digital column @31.36; column glows @32.47.
+B7 29.49-33.40  "ING is actually better for the younger people."
+  shows: ING logo row @29.49; crown on the young-digital column @30.59; column glows @32.47.
   (the board: one bank wins each persona: the surprise)
 
-B8 33.43-37.75  "So you can see through the tracking: ChatGPT, Gemini or Perplexity."
+B8 32.66-37.75  "So you can see through the tracking: ChatGPT, Gemini or Perplexity."
   ideas: three engine tiles light up | radar sweep | tabs   -> three engine tiles, each lights on its word
-  shows: kicker "TRACKED ACROSS" @35.51; tiles light @36.09 (ChatGPT), @36.55 (Gemini), @37.07 (Perplexity)
+  shows: kicker "TRACKED ACROSS" @34.74; tiles light @35.32 (ChatGPT), @35.78 (Gemini), @36.30 (Perplexity)
   assets: logos/openai.svg, googlegemini.svg, perplexity.svg (simple-icons, shown white on dark tiles)
 
-B9 37.81-42.40  "If AI is actually recommending you to the people that you actually want."
+B9 37.04-42.40  "If AI is actually recommending you to the people that you actually want."
   ideas: arrow from AI to a target | matchmaking | funnel   -> robot -> arrow drawing -> bullseye
-  shows: robot 3D @37.93; "recommending you" masked reveal @38.85; arrow draws @39.45; bullseye pops @41.97
-         with "the people you actually want" @41.05 (his words)
+  shows: robot 3D @37.16; "recommending you" masked reveal @38.08; arrow draws @38.68; bullseye pops @41.20
+         with "the people you actually want" @40.28 (his words)
   assets: emoji/robot.png, target.png
 
-B10 42.52-48.20  "If your audience was actually the people in the countryside, you will actually see that you're not appearing there,"
+B10 41.75-48.20  "If your audience was actually the people in the countryside, you will actually see that you're not appearing there,"
   ideas: answer list without you | ghost | empty search   -> an AI answer card for the countryside persona,
          two bank rows, then "Your brand" greyed out with a red cross
-  shows: farmer avatar + "Countryside" @42.84; answer rows: Banca Transilvania, Raiffeisen @45.16;
-         "Your brand" row @46.72, crossed + "Not appearing" stamp @47.44
+  shows: farmer avatar + "Countryside" @42.07; answer rows: Banca Transilvania, Raiffeisen @44.39;
+         "Your brand" row @45.95, crossed + "Not appearing" stamp @46.67
   assets: emoji/farmer.png, cross.png
 
-B11 48.24-53.90  "and you need to either change the way you talk, or decide if that is the right market for you."
+B11 47.47-53.90  "and you need to either change the way you talk, or decide if that is the right market for you."
   ideas: fork with two options | checklist | scales   -> two option cards
-  shows: "Change the way you talk" (speaking head 3D) @49.10; "or" @50.78;
-         "Is it the right market?" (bullseye) @51.38; gold underline on "right market" @52.96
+  shows: "Change the way you talk" (speaking head 3D) @48.33; "or" @50.01;
+         "Is it the right market?" (bullseye) @50.61; gold underline on "right market" @52.19
 
 look: dark, like the reference's TikTok UI cards and the venue's neon: a deep plum background fading into the
 base's ink (#3E0863), white cards for the real bank logos (they need light grounds), neon pink #FF3D8B for

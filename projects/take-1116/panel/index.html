@@ -10,10 +10,10 @@ beats (word starts from `create words take-1116 --times`; full sheet in projects
   B3  15.62-20.16 someone in Ilfov, a family guy       people   persona card 2
   B4  20.16-21.80 someone from the countryside         people   persona card 3
   B5-7 21.80-33.40 Raiffeisen / Banca Transilvania / ING   ui     a results board: bank rows x persona columns
-  B8  33.40-37.78 tracking: ChatGPT, Gemini, Perplexity    logo wall  three engine tiles light on their words
-  B9  37.78-42.48 AI recommending you to the people you want   diagram  robot -> arrow -> bullseye
-  B10 42.48-48.22 audience in the countryside: you're not appearing   ui  an AI answer card without you
-  B11 48.22-53.90 change the way you talk, or decide if it's the right market   kinetic  two option cards
+  B8  32.63-37.78 tracking: ChatGPT, Gemini, Perplexity    logo wall  three engine tiles light on their words
+  B9  37.01-42.48 AI recommending you to the people you want   diagram  robot -> arrow -> bullseye
+  B10 41.71-48.22 audience in the countryside: you're not appearing   ui  an AI answer card without you
+  B11 47.45-53.90 change the way you talk, or decide if it's the right market   kinetic  two option cards
 look: dark plum fading into the base's ink (#3E0863), like the reference TikTok's UI cards and the venue's neon;
 white tiles for the real bank logos, neon pink #FF3D8B for structure (the dashboard's curves on his wall screen),
 gold #FFC72C for winners (the active caption word's gold). Inter throughout. -->
@@ -183,7 +183,7 @@ body { font-family: var(--text); color: var(--white); -webkit-font-smoothing: an
   <div class="cell" id="dI" style="left:580px; top:566px; width:450px; justify-content:space-around;"><div class="dash"></div><div class="dash"></div></div>
 </div>
 
-<!-- B8 33.40-37.78: the engines -->
+<!-- B8 32.63-37.78: the engines -->
 <div class="scene" id="s8">
   <div class="abs kick" id="eK" style="left:0; right:0; top:130px; text-align:center;">Tracked across</div>
   <div class="abs h3" id="eH" style="left:0; right:0; top:190px; text-align:center;"><span class="mask"><span class="wd" id="eH1">Through the tracking</span></span></div>
@@ -195,7 +195,7 @@ body { font-family: var(--text); color: var(--white); -webkit-font-smoothing: an
   <div class="engname" id="n3" style="left:735px;">Perplexity</div>
 </div>
 
-<!-- B9 37.78-42.48: recommending you to the people you actually want -->
+<!-- B9 37.01-42.48: recommending you to the people you actually want -->
 <div class="scene" id="s9">
   <div class="abs" style="left:70px; top:116px; width:940px;">
     <div class="h2" style="font-size:72px;"><span class="mask"><span class="wd" id="r1">Is AI</span></span> <span class="mask"><span class="wd" id="r2">recommending you</span></span></div>
@@ -209,7 +209,7 @@ body { font-family: var(--text); color: var(--white); -webkit-font-smoothing: an
   <img class="abs" id="rTarget" src="emoji/target.png" alt="" style="left:770px; top:400px; width:240px; height:240px;">
 </div>
 
-<!-- B10 42.48-48.22: your audience in the countryside, and you're not appearing -->
+<!-- B10 41.71-48.22: your audience in the countryside, and you're not appearing -->
 <div class="scene" id="s10">
   <div class="abs" id="aL" style="left:30px; top:150px; width:340px; text-align:center;">
     <div class="kick" style="font-size:34px;">Your audience</div>
@@ -231,7 +231,7 @@ body { font-family: var(--text); color: var(--white); -webkit-font-smoothing: an
   </div>
 </div>
 
-<!-- B11 48.22-53.90: change the way you talk, or decide if that's the right market -->
+<!-- B11 47.45-53.90: change the way you talk, or decide if that's the right market -->
 <div class="scene" id="s11">
   <div class="abs kick" id="oK" style="left:0; right:0; top:126px; text-align:center;">So you either</div>
   <div class="opt glass" id="o1" style="left:60px;"><img src="emoji/speech.png" alt=""><div class="t">Change the way you talk</div></div>
@@ -244,7 +244,7 @@ body { font-family: var(--text); color: var(--white); -webkit-font-smoothing: an
 const tl = gsap.timeline({ paused: true });
 const $ = (s) => document.querySelector(s);
 const E = { out: "expo.out", o4: "power4.out", spring: "back.out(1.6)", soft: "back.out(1.2)", inout: "power2.inOut" };
-const DUR = 53.9; // the edited take's length
+const DUR = 53.2; // the edited take's length
 
 // ambient drift so no frame is dead
 tl.to("#bg-blob1", { x: 300, y: 160, duration: DUR, ease: "sine.inOut" }, 0);
@@ -322,67 +322,67 @@ pop(20.35, "#p3av", { from: { rotation: -12, scale: 0.5 } });
 mword(20.8, "#p3t1"); mword(21.18, "#p3t2");
 pop(21.2, "#p3c1", { from: { rotation: 0, scale: 0.6 }, to: { duration: 0.45 } });
 
-// ---------- B5-B7: the board (21.85 Raiffeisen, 23.12 good, 24.24 with, 24.42 everybody, 24.96 Banca,
-//            27.64 best, 29.51 countryside, 30.26 ING, 31.36 better, 32.47 younger) ----------
-scene("#s5", 21.80, 33.40);
+// ---------- B5-B7: the board (21.85 Raiffeisen, 23.12 good, 24.24 with, 24.42 everybody, 25.23 Banca,
+//            26.87 best, 28.74 countryside, 29.49 ING, 30.59 better, 31.70 younger) ----------
+scene("#s5", 21.80, 32.63);
 ["#c1", "#c2", "#c3"].forEach((s, i) => pop(21.82 + i * 0.08, s, { from: { rotation: 0, scale: 0.6 }, to: { duration: 0.5 } }));
 tl.fromTo("#rR", { x: -360, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 21.85);
 pop(23.1, "#xR1"); pop(24.22, "#xR2"); pop(24.4, "#xR3");
-tl.fromTo("#rB", { x: -360, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 24.96);
-tl.fromTo("#dB", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "none" }, 25.3);
-pop(27.6, "#xB3", { from: { rotation: -30, scale: 0.2, y: -60 }, to: { y: 0 } });
-tl.fromTo("#gCountry", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.out" }, 29.45);
-tl.to("#gCountry", { opacity: 0, duration: 0.3, ease: "power2.in" }, 30.15);
-tl.fromTo("#rI", { x: -360, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 30.26);
-tl.fromTo("#dI", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "none" }, 30.6);
-pop(31.32, "#xI1", { from: { rotation: -30, scale: 0.2, y: -60 }, to: { y: 0 } });
-tl.fromTo("#gYoung", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.out" }, 32.42);
+tl.fromTo("#rB", { x: -360, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 25.23);
+tl.fromTo("#dB", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "none" }, 25.55);
+pop(26.83, "#xB3", { from: { rotation: -30, scale: 0.2, y: -60 }, to: { y: 0 } });
+tl.fromTo("#gCountry", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.out" }, 28.68);
+tl.to("#gCountry", { opacity: 0, duration: 0.3, ease: "power2.in" }, 29.38);
+tl.fromTo("#rI", { x: -360, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 29.49);
+tl.fromTo("#dI", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "none" }, 29.83);
+pop(30.55, "#xI1", { from: { rotation: -30, scale: 0.2, y: -60 }, to: { y: 0 } });
+tl.fromTo("#gYoung", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.out" }, 31.65);
 
-// ---------- B8: engines (33.43 so, 34.87 through, 36.09 ChatGPT, 36.55 Gemini, 37.07 Perplexity) ----------
-scene("#s8", 33.40, 37.78);
-up(33.45, "#eK", { from: { y: 20 } });
-mword(34.85, "#eH1");
-["#e1", "#e2", "#e3"].forEach((s, i) => tl.fromTo(s, { opacity: 0, y: 60 }, { opacity: 0.35, y: 0, duration: 0.5, ease: E.out }, 33.6 + i * 0.1));
-["#n1", "#n2", "#n3"].forEach((s, i) => tl.fromTo(s, { opacity: 0 }, { opacity: 0.35, duration: 0.4, ease: "none" }, 33.8 + i * 0.1));
-[[36.07, "#e1", "#n1"], [36.53, "#e2", "#n2"], [37.05, "#e3", "#n3"]].forEach(([t, e, n]) => {
+// ---------- B8: engines (32.66 so, 34.10 through, 35.32 ChatGPT, 35.78 Gemini, 36.30 Perplexity) ----------
+scene("#s8", 32.63, 37.01);
+up(32.68, "#eK", { from: { y: 20 } });
+mword(34.08, "#eH1");
+["#e1", "#e2", "#e3"].forEach((s, i) => tl.fromTo(s, { opacity: 0, y: 60 }, { opacity: 0.35, y: 0, duration: 0.5, ease: E.out }, 32.83 + i * 0.1));
+["#n1", "#n2", "#n3"].forEach((s, i) => tl.fromTo(s, { opacity: 0 }, { opacity: 0.35, duration: 0.4, ease: "none" }, 33.03 + i * 0.1));
+[[35.30, "#e1", "#n1"], [35.76, "#e2", "#n2"], [36.28, "#e3", "#n3"]].forEach(([t, e, n]) => {
   tl.to(e, { opacity: 1, scale: 1.08, borderColor: "#FF3D8B", boxShadow: "0 0 50px rgba(255,61,139,.55)", duration: 0.25, ease: "power2.out" }, t);
   tl.to(e, { scale: 1, duration: 0.35, ease: "power2.inOut" }, t + 0.25);
   tl.to(n, { opacity: 1, duration: 0.2, ease: "none" }, t);
 });
 
-// ---------- B9: recommending (37.81 if, 37.93 AI, 38.85 recommending, 41.05 people, 41.73 actually, 41.97 want) ----------
-scene("#s9", 37.78, 42.48);
-mword(37.85, "#r1"); mword(38.83, "#r2");
-pop(37.95, "#rBot", { from: { rotation: -15, scale: 0.4 } });
-draw($("#rArrow"), 39.4, 1.2);
-tl.fromTo("#rHead", { opacity: 0 }, { opacity: 1, duration: 0.15, ease: "none" }, 40.55);
-mword(41.0, "#r3"); mword(41.7, "#r4");
-pop(41.95, "#rTarget", { from: { rotation: 20, scale: 0.3 } });
-float("#rBot", 38.6, 42.4, 14);
+// ---------- B9: recommending (37.04 if, 37.16 AI, 38.08 recommending, 40.28 people, 40.96 actually, 41.20 want) ----------
+scene("#s9", 37.01, 41.71);
+mword(37.08, "#r1"); mword(38.06, "#r2");
+pop(37.18, "#rBot", { from: { rotation: -15, scale: 0.4 } });
+draw($("#rArrow"), 38.63, 1.2);
+tl.fromTo("#rHead", { opacity: 0 }, { opacity: 1, duration: 0.15, ease: "none" }, 39.78);
+mword(40.23, "#r3"); mword(40.93, "#r4");
+pop(41.18, "#rTarget", { from: { rotation: 20, scale: 0.3 } });
+float("#rBot", 37.83, 41.63, 14);
 
-// ---------- B10: not appearing (42.52 if, 43.04 audience, 45.16 countryside, 46.72 see, 47.44 not, 47.62 appearing) ----------
-scene("#s10", 42.48, 48.22);
-up(42.55, "#aL", { from: { y: 50 } });
-pop(43.0, "#aAv", { from: { rotation: 10, scale: 0.5 } });
-pop(45.12, "#aChip", { from: { rotation: 0, scale: 0.6 }, to: { duration: 0.45 } });
-tl.fromTo("#aCard", { x: 700, opacity: 0 }, { x: 0, opacity: 1, duration: 0.55, ease: "power3.out" }, 45.16);
-up(45.5, "#a1", { from: { y: 40 }, to: { duration: 0.45 } });
-up(45.85, "#a2", { from: { y: 40 }, to: { duration: 0.45 } });
-up(46.7, "#a3", { from: { y: 40 }, to: { duration: 0.45 } });
-pop(47.42, "#aX", { from: { rotation: -40, scale: 0.2 } });
-tl.fromTo("#aStamp", { scale: 2.2, opacity: 0, rotation: -14 }, { scale: 1, opacity: 1, rotation: -6, duration: 0.3, ease: "power4.in" }, 47.6);
-tl.fromTo("#aCard", { x: 0 }, { x: 12, duration: 0.05, yoyo: true, repeat: 3, ease: "none", immediateRender: false }, 47.9);
+// ---------- B10: not appearing (41.75 if, 42.27 audience, 44.39 countryside, 45.95 see, 46.67 not, 46.85 appearing) ----------
+scene("#s10", 41.71, 47.45);
+up(41.78, "#aL", { from: { y: 50 } });
+pop(42.23, "#aAv", { from: { rotation: 10, scale: 0.5 } });
+pop(44.35, "#aChip", { from: { rotation: 0, scale: 0.6 }, to: { duration: 0.45 } });
+tl.fromTo("#aCard", { x: 700, opacity: 0 }, { x: 0, opacity: 1, duration: 0.55, ease: "power3.out" }, 44.39);
+up(44.73, "#a1", { from: { y: 40 }, to: { duration: 0.45 } });
+up(45.08, "#a2", { from: { y: 40 }, to: { duration: 0.45 } });
+up(45.93, "#a3", { from: { y: 40 }, to: { duration: 0.45 } });
+pop(46.65, "#aX", { from: { rotation: -40, scale: 0.2 } });
+tl.fromTo("#aStamp", { scale: 2.2, opacity: 0, rotation: -14 }, { scale: 1, opacity: 1, rotation: -6, duration: 0.3, ease: "power4.in" }, 46.83);
+tl.fromTo("#aCard", { x: 0 }, { x: 12, duration: 0.05, yoyo: true, repeat: 3, ease: "none", immediateRender: false }, 47.13);
 
-// ---------- B11: options (48.46 you, 49.10 change, 50.78 or, 51.38 decide, 52.96 right, 53.16 market) ----------
-scene("#s11", 48.22, null);
-up(48.25, "#oK", { from: { y: 20 } });
-up(49.08, "#o1", { from: { y: 140, rotation: -4 }, to: { rotation: 0, duration: 0.6 } });
-pop(50.76, "#oOr", { from: { rotation: 0, scale: 0.3 } });
-up(51.36, "#o2", { from: { y: 140, rotation: 4 }, to: { rotation: 0, duration: 0.6 } });
-tl.fromTo("#oRM", { color: "#FFFFFF" }, { color: "#FFC72C", duration: 0.2, ease: "none" }, 52.94);
-float("#o1", 49.8, 53.9, 10);
+// ---------- B11: options (47.69 you, 48.33 change, 50.01 or, 50.61 decide, 52.19 right, 52.39 market) ----------
+scene("#s11", 47.45, null);
+up(47.48, "#oK", { from: { y: 20 } });
+up(48.31, "#o1", { from: { y: 140, rotation: -4 }, to: { rotation: 0, duration: 0.6 } });
+pop(49.99, "#oOr", { from: { rotation: 0, scale: 0.3 } });
+up(50.59, "#o2", { from: { y: 140, rotation: 4 }, to: { rotation: 0, duration: 0.6 } });
+tl.fromTo("#oRM", { color: "#FFFFFF" }, { color: "#FFC72C", duration: 0.2, ease: "none" }, 52.17);
+float("#o1", 49.03, 53.13, 10);
 
-tl.fromTo("#k-ul", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: E.o4 }, 53.14);
+tl.fromTo("#k-ul", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: E.o4 }, 52.37);
 
 tl.set({}, {}, DUR);
 window.seek = (t) => { tl.seek(t, false); painters.forEach((p) => p(t)); };

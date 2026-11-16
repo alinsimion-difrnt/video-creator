@@ -1,0 +1,137 @@
+{
+ "provenance": {
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "stage": "c13_qa",
+  "annotator": "code",
+  "skill": null,
+  "model": null,
+  "input_hash": "a3bc7010b3815e60c7f05240969777039ef01df2bb67d9ce4de2d1cf7b96aa40",
+  "created_at": "2026-11-16T11:39:22.177946Z"
+ },
+ "project": "take-1116",
+ "video": "data/create/take-1116/render/take-1116-panel.mp4",
+ "destination": "tiktok",
+ "checks": [
+  {
+   "id": "frame",
+   "ok": true,
+   "value": "1080x1920",
+   "target": "1080x1920",
+   "note": ""
+  },
+  {
+   "id": "fps",
+   "ok": true,
+   "value": "30 (30/1 avg)",
+   "target": "constant 30",
+   "note": ""
+  },
+  {
+   "id": "codec",
+   "ok": true,
+   "value": "h264 yuv420p",
+   "target": "h264 yuv420p",
+   "note": ""
+  },
+  {
+   "id": "audio",
+   "ok": true,
+   "value": "aac 48000 Hz",
+   "target": "aac 48000 Hz",
+   "note": ""
+  },
+  {
+   "id": "faststart",
+   "ok": true,
+   "value": "moov first",
+   "target": "moov first",
+   "note": ""
+  },
+  {
+   "id": "duration",
+   "ok": true,
+   "value": "53.9 s",
+   "target": "<= 180 s",
+   "note": ""
+  },
+  {
+   "id": "loudness",
+   "ok": true,
+   "value": "-14.1 LUFS",
+   "target": "-15..-13 LUFS (house)",
+   "note": ""
+  },
+  {
+   "id": "true_peak",
+   "ok": true,
+   "value": "-2.0 dBTP",
+   "target": "<= -1 dBTP",
+   "note": ""
+  },
+  {
+   "id": "first_word",
+   "ok": true,
+   "value": "0.03 s",
+   "target": "<= 1 s",
+   "note": "no dead air before the hook"
+  },
+  {
+   "id": "word_gaps",
+   "ok": false,
+   "value": "1.33 s at 25.0 s",
+   "target": "<= 0.8 s",
+   "note": ""
+  },
+  {
+   "id": "tail",
+   "ok": true,
+   "value": "0.08 s",
+   "target": "<= 1.5 s",
+   "note": ""
+  },
+  {
+   "id": "hook_visual",
+   "ok": true,
+   "value": "1.50 s",
+   "target": "<= 3 s",
+   "note": "first cut, layout change or graphic"
+  },
+  {
+   "id": "pacing",
+   "ok": true,
+   "value": "4.9 s from 3.7 s",
+   "target": "<= 6 s with nothing new on screen",
+   "note": ""
+  },
+  {
+   "id": "captions_present",
+   "ok": true,
+   "value": "57 groups",
+   "target": ">= 1 group (burned in)",
+   "note": ""
+  },
+  {
+   "id": "captions_in_band",
+   "ok": true,
+   "value": "0 outside",
+   "target": "0",
+   "note": ""
+  },
+  {
+   "id": "captions_clear_body",
+   "ok": true,
+   "value": "0 on the presenter",
+   "target": "0 (Robert: never on the face or chest)",
+   "note": ""
+  },
+  {
+   "id": "overlays_placed",
+   "ok": true,
+   "value": "0 misplaced",
+   "target": "0",
+   "note": ""
+  }
+ ],
+ "ok": false
+}
