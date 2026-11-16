@@ -16,7 +16,7 @@ beats:
   O 54.00-59.70 "Looking for phrases like, okay, do you recommend BCR? Do you like them?"  ui: highlighted answer + quote bubbles
   P 59.70-68.40 "sentiment score ... TBI Bank is really good on deposits ... highest interest rate right now."  diagram: gauge swings green
   R 68.40-77.75 "on BCR ... good for refinanțare credit, but they're bad on deposits ... lower interest rate."  ui: BCR report card
-  S 77.75-79.80 (end card)                                                    brand: GEOflux logo, site headline, geoflux.ai
+  S 77.75-79.27 (end card; the film is trimmed to a 1.5 s tail)                                                    brand: GEOflux logo, site headline, geoflux.ai
 look: GEOflux's own site palette (brands/geoflux): near-white #F5F7F9, navy ink #1C2B3B, one orange #FF6600; Space Grotesk
   + Inter. One dark navy card (M) as the pattern interrupt on the key line. -->
 <link rel="stylesheet" href="fonts/fonts.css">
@@ -495,9 +495,9 @@ up(76.61, "#rWhy", { from: { y: 30 } });
 
 // ---------- S 77.75-79.80: end card ----------
 scene("#sS", 77.75, null);
-pop(77.8, "#sLogo", { from: { rotation: 0, scale: 0.7 } });
-mword(78.0, "#s1"); mword(78.2, "#s2");
-pop(78.5, "#sUrl", { from: { rotation: 0, scale: 0.6 } });
+pop(77.78, "#sLogo", { from: { rotation: 0, scale: 0.7 }, to: { duration: 0.55 } });
+mword(77.9, "#s1"); mword(78.04, "#s2");
+pop(78.25, "#sUrl", { from: { rotation: 0, scale: 0.6 }, to: { duration: 0.55 } });
 
 tl.set({}, {}, DUR);
 window.seek = (t) => { tl.seek(t, false); painters.forEach((p) => p(t)); };
