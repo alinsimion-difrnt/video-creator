@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- take-1116 panel (ADR 0034, skill build-panel). 1080 x 840 over the split base (seam 980, product_bg ink).
+beats (word starts from `create words take-1116 --times`; full sheet in projects/take-1116/panel/beats.md):
+  H   0.00-1.55   "ING is actually better."            object   ING logo slams in, gold "...better for WHO?"
+  B1  1.62-5.20   "...three potential clients."        hero     3 counts up, three blank cards deal in
+  B2  5.20-15.62  young digital guy, 25-30, Bucharest or Cluj, corporation   people  persona card 1 + chips
+  B3  15.62-20.16 someone in Ilfov, a family guy       people   persona card 2
+  B4  20.16-21.80 someone from the countryside         people   persona card 3
+  B5-7 21.80-33.40 Raiffeisen / Banca Transilvania / ING   ui     a results board: bank rows x persona columns
+  B8  33.40-37.78 tracking: ChatGPT, Gemini, Perplexity    logo wall  three engine tiles light on their words
+  B9  37.78-42.48 AI recommending you to the people you want   diagram  robot -> arrow -> bullseye
+  B10 42.48-48.22 audience in the countryside: you're not appearing   ui  an AI answer card without you
+  B11 48.22-53.90 change the way you talk, or decide if it's the right market   kinetic  two option cards
+look: dark plum fading into the base's ink (#3E0863), like the reference TikTok's UI cards and the venue's neon;
+white tiles for the real bank logos, neon pink #FF3D8B for structure (the dashboard's curves on his wall screen),
+gold #FFC72C for winners (the active caption word's gold). Inter throughout. -->
+<link rel="stylesheet" href="fonts/fonts.css">
+<script src="gsap.min.js"></script>
+<style>
+:root {
+  --base: #3E0863; --top: #14051F; --white: #FFFFFF; --muted: rgba(255,255,255,.66); --line: rgba(255,255,255,.18);
+  --glass: rgba(255,255,255,.08); --pink: #FF3D8B; --gold: #FFC72C; --red: #FF4D5E; --ink: #0F0A1A;
+  --shadow: 0 2px 4px rgba(0,0,0,.25), 0 30px 70px -30px rgba(0,0,0,.65);
+  --head: Inter, system-ui, sans-serif; --text: Inter, system-ui, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 840px; overflow: hidden; background: var(--base); }
+body { font-family: var(--text); color: var(--white); -webkit-font-smoothing: antialiased; position: relative; }
+#bgwrap { position: absolute; inset: 0; overflow: hidden; background: linear-gradient(180deg, var(--top) 0%, #250640 55%, var(--base) 100%); }
+.blob { position: absolute; border-radius: 50%; filter: blur(90px); }
+#bg-blob1 { width: 640px; height: 640px; background: rgba(255,61,139,.30); left: -220px; top: -260px; }
+#bg-blob2 { width: 560px; height: 560px; background: rgba(124,58,237,.34); right: -200px; top: 160px; }
+#bg-dots { position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,.08) 1.6px, transparent 1.8px);
+  background-size: 36px 36px; -webkit-mask-image: linear-gradient(#000, rgba(0,0,0,.5) 70%, transparent); }
+#fade { position: absolute; left: 0; right: 0; bottom: 0; height: 120px; background: linear-gradient(rgba(62,8,99,0), var(--base)); z-index: 50; }
+.scene { position: absolute; inset: 0; opacity: 0; }
+.abs { position: absolute; }
+.kick { font: 700 34px/1 var(--text); letter-spacing: .08em; text-transform: uppercase; color: var(--pink); }
+.h1 { font: 700 120px/1 var(--head); letter-spacing: -.04em; }
+.h2 { font: 700 76px/1.04 var(--head); letter-spacing: -.03em; }
+.h3 { font: 700 56px/1.1 var(--head); letter-spacing: -.02em; }
+.hero { font: 700 230px/1 var(--head); letter-spacing: -.05em; color: var(--gold); }
+.gold { color: var(--gold); }
+.mask { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: .1em; }
+.wd { display: inline-block; }
+.tile { background: #fff; border-radius: 28px; box-shadow: var(--shadow); display: flex; align-items: center; justify-content: center; }
+.glass { background: var(--glass); border: 2px solid var(--line); border-radius: 36px; box-shadow: var(--shadow); }
+.chip { display: inline-flex; align-items: center; gap: 14px; padding: 14px 28px 14px 18px; border-radius: 999px;
+  background: rgba(255,255,255,.12); border: 2px solid rgba(255,255,255,.22); font: 700 42px/1 var(--text); color: #fff; }
+.chip img { width: 54px; height: 54px; }
+.chip.tx { padding: 18px 30px; }
+.white { filter: brightness(0) invert(1); }
+/* persistent topic pill */
+#pill { left: 50%; top: 30px; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 12px; white-space: nowrap;
+  padding: 12px 26px 12px 16px; border-radius: 999px; background: rgba(15,10,26,.55); border: 2px solid rgba(255,61,139,.55);
+  font: 700 36px/1 var(--text); color: #fff; z-index: 40; opacity: 0; }
+#pill img { width: 46px; height: 46px; }
+/* persona cards */
+.pcard { left: 60px; top: 120px; width: 960px; height: 560px; }
+.pcard .av { position: absolute; left: 50px; top: 120px; width: 280px; height: 280px; }
+.pcard .glowdisc { position: absolute; left: 30px; top: 100px; width: 320px; height: 320px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,61,139,.35), rgba(255,61,139,0) 70%); }
+.pcard .txt { position: absolute; left: 380px; top: 60px; width: 540px; }
+.pcard .chips { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; margin-top: 34px; }
+/* board */
+.col { position: absolute; top: 112px; width: 220px; text-align: center; }
+.col img { width: 112px; height: 112px; }
+.col .lab { font: 700 34px/1.05 var(--text); letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+.row { position: absolute; left: 40px; width: 290px; height: 112px; }
+.row img { max-width: 236px; max-height: 64px; }
+.cell { position: absolute; width: 220px; height: 112px; display: flex; align-items: center; justify-content: center; }
+.cell img { width: 96px; height: 96px; }
+.dash { width: 46px; height: 8px; border-radius: 4px; background: rgba(255,255,255,.22); }
+.colglow { position: absolute; top: 104px; width: 224px; height: 600px; border-radius: 30px; border: 5px solid var(--gold);
+  box-shadow: 0 0 46px rgba(255,199,44,.55), inset 0 0 30px rgba(255,199,44,.18); opacity: 0; }
+/* engines */
+.eng { position: absolute; top: 300px; width: 270px; height: 270px; border-radius: 40px; background: rgba(15,10,26,.6);
+  border: 3px solid rgba(255,255,255,.14); display: flex; align-items: center; justify-content: center; }
+.eng img { width: 128px; height: 128px; }
+.engname { position: absolute; top: 600px; width: 270px; text-align: center; font: 700 44px/1 var(--text); }
+/* answer card */
+.acard { left: 400px; top: 120px; width: 640px; height: 580px; background: #fff; border-radius: 36px; box-shadow: var(--shadow); color: var(--ink); }
+.arow { position: absolute; left: 32px; width: 576px; height: 112px; border-radius: 24px; background: #F4F2F8; display: flex; align-items: center; gap: 26px; padding: 0 28px; }
+.arow .rk { font: 700 44px/1 var(--text); color: #8B84A0; width: 64px; }
+.arow img { max-width: 260px; max-height: 58px; }
+.arow .you { font: 700 46px/1 var(--text); color: #B8B2C8; }
+.stamp { position: absolute; font: 700 58px/1 var(--text); color: var(--red); border: 6px solid var(--red); border-radius: 18px;
+  padding: 12px 22px; letter-spacing: .02em; text-transform: uppercase; background: rgba(255,255,255,.92); white-space: nowrap; }
+/* options */
+.opt { position: absolute; top: 210px; width: 440px; height: 460px; }
+.opt img { position: absolute; left: 50%; top: 40px; width: 170px; height: 170px; margin-left: -85px; }
+.opt .t { position: absolute; left: 26px; right: 26px; top: 236px; text-align: center; font: 700 50px/1.1 var(--head); letter-spacing: -.02em; }
+#k-ul { position: absolute; left: 0; right: 0; bottom: -4px; height: 10px; border-radius: 5px; background: var(--gold); transform-origin: 0 50%; }
+</style>
+</head>
+<body>
+<div id="bgwrap"><div class="blob" id="bg-blob1"></div><div class="blob" id="bg-blob2"></div><div id="bg-dots"></div></div>
+
+<div class="abs" id="pill"><img src="emoji/robot.png" alt="">Who does AI recommend?</div>
+
+<!-- H 0.00-1.55: ING is actually better. -->
+<div class="scene" id="sH">
+  <div class="abs kick" id="hK" style="left:0; right:0; top:120px; text-align:center;">According to AI</div>
+  <div class="abs tile" id="hLogo" style="left:220px; top:190px; width:640px; height:220px;"><img src="logos/ing.svg" alt="ING" style="width:470px;"></div>
+  <div class="abs" id="hQ" style="left:0; right:0; top:470px; text-align:center;">
+    <span class="chip" style="font-size:66px; padding:20px 40px 20px 26px; border-color: rgba(255,199,44,.6); background: rgba(255,199,44,.12);">
+      <img src="emoji/eyes.png" alt="" style="width:76px; height:76px;"><span>...better for <span class="gold">WHO?</span></span></span>
+  </div>
+</div>
+
+<!-- B1 1.62-5.20: three potential clients -->
+<div class="scene" id="s1">
+  <div class="abs kick" id="b1K" style="left:80px; top:150px;">Our analysis</div>
+  <div class="abs hero" id="b1N" style="left:70px; top:190px;">0</div>
+  <div class="abs h2" style="left:300px; top:250px;"><span class="mask"><span class="wd" id="b1a">potential</span></span><br><span class="mask"><span class="wd" id="b1b">clients</span></span></div>
+  <div class="abs glass" id="b1c1" style="left:80px; top:450px; width:280px; height:230px; display:flex; align-items:center; justify-content:center; font:700 120px/1 var(--head); color:rgba(255,255,255,.45);">?</div>
+  <div class="abs glass" id="b1c2" style="left:400px; top:450px; width:280px; height:230px; display:flex; align-items:center; justify-content:center; font:700 120px/1 var(--head); color:rgba(255,255,255,.45);">?</div>
+  <div class="abs glass" id="b1c3" style="left:720px; top:450px; width:280px; height:230px; display:flex; align-items:center; justify-content:center; font:700 120px/1 var(--head); color:rgba(255,255,255,.45);">?</div>
+</div>
+
+<!-- B2 5.20-15.62: persona 1 -->
+<div class="scene" id="s2">
+  <div class="abs glass pcard" id="p1">
+    <div class="glowdisc"></div><img class="av" id="p1av" src="emoji/technologist.png" alt="">
+    <div class="txt">
+      <div class="kick" id="p1k">Client 1 / 3</div>
+      <div class="h2" style="margin-top:18px;"><span class="mask"><span class="wd" id="p1t1">Young</span></span> <span class="mask"><span class="wd" id="p1t2">digital guy</span></span></div>
+      <div class="chips">
+        <span class="chip tx" id="p1c1">25-30 years old</span>
+        <span class="chip" id="p1c2"><img src="emoji/cityscape.png" alt="">Bucharest · Cluj</span>
+        <span class="chip" id="p1c3"><img src="emoji/office.png" alt="">Corporate job</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- B3 15.62-20.16: persona 2 -->
+<div class="scene" id="s3">
+  <div class="abs glass pcard" id="p2">
+    <div class="glowdisc"></div><img class="av" id="p2av" src="emoji/houses.png" alt="">
+    <div class="txt">
+      <div class="kick">Client 2 / 3</div>
+      <div class="h2" style="margin-top:18px;"><span class="mask"><span class="wd" id="p2t1">Someone</span></span><br><span class="mask"><span class="wd" id="p2t2">in Ilfov</span></span></div>
+      <div class="chips">
+        <span class="chip tx" id="p2c1">Ilfov</span>
+        <span class="chip tx" id="p2c2">Family guy</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- B4 20.16-21.80: persona 3 -->
+<div class="scene" id="s4">
+  <div class="abs glass pcard" id="p3">
+    <div class="glowdisc"></div><img class="av" id="p3av" src="emoji/farmer.png" alt="">
+    <div class="txt">
+      <div class="kick">Client 3 / 3</div>
+      <div class="h2" style="margin-top:18px;"><span class="mask"><span class="wd" id="p3t1">From the</span></span><br><span class="mask"><span class="wd" id="p3t2">countryside</span></span></div>
+      <div class="chips"><span class="chip" id="p3c1"><img src="emoji/house-garden.png" alt="">Countryside</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- B5-B7 21.80-33.40: the board -->
+<div class="scene" id="s5">
+  <div class="colglow" id="gCountry" style="left:808px;"></div>
+  <div class="colglow" id="gYoung" style="left:348px;"></div>
+  <div class="col" id="c1" style="left:350px;"><img src="emoji/technologist.png" alt=""><div class="lab">Young<br>digital</div></div>
+  <div class="col" id="c2" style="left:580px;"><img src="emoji/houses.png" alt=""><div class="lab">Family<br>Ilfov</div></div>
+  <div class="col" id="c3" style="left:810px;"><img src="emoji/farmer.png" alt=""><div class="lab">Country-<br>side</div></div>
+  <div class="row tile" id="rR" style="top:330px;"><img src="logos/raiffeisen.png" alt="Raiffeisen"></div>
+  <div class="row tile" id="rB" style="top:456px;"><img src="logos/bt.svg" alt="Banca Transilvania"></div>
+  <div class="row tile" id="rI" style="top:582px;"><img src="logos/ing.svg" alt="ING"></div>
+  <div class="cell" id="xR1" style="left:350px; top:330px;"><img src="emoji/check.png" alt=""></div>
+  <div class="cell" id="xR2" style="left:580px; top:330px;"><img src="emoji/check.png" alt=""></div>
+  <div class="cell" id="xR3" style="left:810px; top:330px;"><img src="emoji/check.png" alt=""></div>
+  <div class="cell" id="dB" style="left:350px; top:456px; width:450px; justify-content:space-around;"><div class="dash"></div><div class="dash"></div></div>
+  <div class="cell" id="xB3" style="left:810px; top:456px;"><img src="emoji/crown.png" alt=""></div>
+  <div class="cell" id="xI1" style="left:350px; top:582px;"><img src="emoji/crown.png" alt=""></div>
+  <div class="cell" id="dI" style="left:580px; top:582px; width:450px; justify-content:space-around;"><div class="dash"></div><div class="dash"></div></div>
+</div>
+
+<!-- B8 33.40-37.78: the engines -->
+<div class="scene" id="s8">
+  <div class="abs kick" id="eK" style="left:0; right:0; top:130px; text-align:center;">See it in the tracking</div>
+  <div class="abs h3" id="eH" style="left:0; right:0; top:190px; text-align:center;"><span class="mask"><span class="wd" id="eH1">Through the tracking</span></span></div>
+  <div class="eng" id="e1" style="left:75px;"><img class="white" src="logos/openai.svg" alt=""></div>
+  <div class="eng" id="e2" style="left:405px;"><img class="white" src="logos/googlegemini.svg" alt=""></div>
+  <div class="eng" id="e3" style="left:735px;"><img class="white" src="logos/perplexity.svg" alt=""></div>
+  <div class="engname" id="n1" style="left:75px;">ChatGPT</div>
+  <div class="engname" id="n2" style="left:405px;">Gemini</div>
+  <div class="engname" id="n3" style="left:735px;">Perplexity</div>
+</div>
+
+<!-- B9 37.78-42.48: recommending you to the people you actually want -->
+<div class="scene" id="s9">
+  <div class="abs" style="left:70px; top:116px; width:940px;">
+    <div class="h2" style="font-size:72px;"><span class="mask"><span class="wd" id="r1">Is AI</span></span> <span class="mask"><span class="wd" id="r2">recommending you</span></span></div>
+    <div class="h3" style="margin-top:14px; font-size:60px;"><span class="mask"><span class="wd" id="r3">to the people you</span></span> <span class="mask"><span class="wd gold" id="r4">actually want?</span></span></div>
+  </div>
+  <img class="abs" id="rBot" src="emoji/robot.png" alt="" style="left:90px; top:420px; width:220px; height:220px;">
+  <svg class="abs" style="left:0; top:0;" width="1080" height="840" viewBox="0 0 1080 840">
+    <path id="rArrow" d="M330 540 C 470 400, 620 400, 740 520" fill="none" stroke="#FF3D8B" stroke-width="10" stroke-linecap="round"/>
+    <polygon id="rHead" points="752,534 718,532 742,500" fill="#FF3D8B"/>
+  </svg>
+  <img class="abs" id="rTarget" src="emoji/target.png" alt="" style="left:770px; top:400px; width:240px; height:240px;">
+</div>
+
+<!-- B10 42.48-48.22: your audience in the countryside, and you're not appearing -->
+<div class="scene" id="s10">
+  <div class="abs" id="aL" style="left:50px; top:170px; width:330px; text-align:center;">
+    <div class="kick" style="font-size:34px;">Your audience</div>
+    <img id="aAv" src="emoji/farmer.png" alt="" style="width:240px; height:240px; margin-top:26px;">
+    <div id="aChip" style="margin-top:20px;"><span class="chip" style="font-size:40px;"><img src="emoji/house-garden.png" alt="">Countryside</span></div>
+  </div>
+  <div class="abs acard" id="aCard">
+    <div class="abs" style="left:32px; top:34px; display:flex; align-items:center; gap:14px;">
+      <span style="font:700 34px/1 var(--text); letter-spacing:.08em; color:#8B84A0;">AI ANSWER</span>
+      <img src="logos/openai.svg" alt="" style="width:38px; height:38px; margin-left:8px;">
+      <img src="logos/googlegemini.svg" alt="" style="width:38px; height:38px;">
+      <img src="logos/perplexity.svg" alt="" style="width:38px; height:38px;">
+    </div>
+    <div class="arow" id="a1" style="top:110px;"><span class="rk">#1</span><img src="logos/bt.svg" alt="Banca Transilvania"></div>
+    <div class="arow" id="a2" style="top:242px;"><span class="rk">#2</span><img src="logos/raiffeisen.png" alt="Raiffeisen"></div>
+    <div class="arow" id="a3" style="top:374px; border:3px dashed #D9D4E5; background:#FBFAFD;"><span class="rk">?</span><span class="you">Your brand</span>
+      <img id="aX" src="emoji/cross.png" alt="" style="position:absolute; right:26px; top:14px; width:84px; height:84px; max-width:none; max-height:none;"></div>
+    <div class="stamp" id="aStamp" style="left:120px; top:478px;">Not appearing</div>
+  </div>
+</div>
+
+<!-- B11 48.22-53.90: change the way you talk, or decide if that's the right market -->
+<div class="scene" id="s11">
+  <div class="abs kick" id="oK" style="left:0; right:0; top:126px; text-align:center;">So you either</div>
+  <div class="opt glass" id="o1" style="left:60px;"><img src="emoji/speaking.png" alt=""><div class="t">Change the way you talk</div></div>
+  <div class="abs" id="oOr" style="left:490px; top:400px; width:100px; height:100px; border-radius:50%; background:var(--pink); display:flex; align-items:center; justify-content:center; font:700 44px/1 var(--text); z-index:5;">or</div>
+  <div class="opt glass" id="o2" style="left:580px;"><img src="emoji/target.png" alt=""><div class="t">Decide: is it the <span id="oRM" style="position:relative; display:inline-block;">right market?<span id="k-ul"></span></span></div></div>
+</div>
+
+<div id="fade"></div>
+<script>
+const tl = gsap.timeline({ paused: true });
+const $ = (s) => document.querySelector(s);
+const E = { out: "expo.out", o4: "power4.out", spring: "back.out(1.6)", soft: "back.out(1.2)", inout: "power2.inOut" };
+const DUR = 53.9; // the edited take's length
+
+// ambient drift so no frame is dead
+tl.to("#bg-blob1", { x: 300, y: 160, duration: DUR, ease: "sine.inOut" }, 0);
+tl.to("#bg-blob2", { x: -260, y: -80, duration: DUR, ease: "sine.inOut" }, 0);
+tl.to("#bg-dots", { backgroundPosition: "0px -260px", duration: DUR, ease: "none" }, 0);
+
+function scene(id, t0, t1) {
+  tl.fromTo(id, { opacity: 0 }, { opacity: 1, duration: 0.18, ease: "none", immediateRender: false }, t0);
+  if (t1 != null) {
+    tl.to(id, { opacity: 0, y: -30, duration: 0.25, ease: "power2.in" }, t1 - 0.25);
+    tl.set(id, { y: 0 }, t1 + 0.01);
+  }
+}
+const up = (t, sel, o) => tl.fromTo(sel, Object.assign({ y: 70, opacity: 0 }, o && o.from), Object.assign({ y: 0, opacity: 1, duration: 0.7, ease: E.out }, o && o.to), t);
+const pop = (t, sel, o) => tl.fromTo(sel, Object.assign({ scale: 0.4, opacity: 0, rotation: -8 }, o && o.from), Object.assign({ scale: 1, opacity: 1, rotation: 0, duration: 0.7, ease: E.spring }, o && o.to), t);
+const mword = (t, sel) => tl.fromTo(sel, { yPercent: 110 }, { yPercent: 0, duration: 0.6, ease: E.o4 }, t);
+const float = (sel, t0, t1, amp) => tl.to(sel, { y: "-=" + (amp || 14), duration: (t1 - t0) / 2, ease: "sine.inOut", yoyo: true, repeat: 1 }, t0);
+const painters = [];
+const prog = (t, t0, t1) => (t1 > t0 ? Math.max(0, Math.min(1, (t - t0) / (t1 - t0))) : +(t >= t0));
+function count(sel, to, t0, t1, fmt) {
+  const el = $(sel), ease = gsap.parseEase("power3.out"), f = fmt || ((v) => Math.round(v).toLocaleString("en-US"));
+  painters.push((t) => { el.textContent = f(to * ease(prog(t, t0, t1))); });
+  tl.fromTo(sel, { scale: 1 }, { scale: 1.1, duration: 0.12, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, t1);
+}
+function draw(path, t, d) {
+  const L = path.getTotalLength();
+  path.setAttribute("stroke-dasharray", L); path.setAttribute("stroke-dashoffset", L);
+  tl.to(path, { attr: { "stroke-dashoffset": 0 }, duration: d || 0.7, ease: E.inout }, t);
+}
+
+// persistent topic pill (from the first scene after the hook)
+tl.fromTo("#pill", { opacity: 0, y: -24 }, { opacity: 1, y: 0, duration: 0.5, ease: E.out, immediateRender: false }, 1.62);
+
+// ---------- H: ING is actually better (0.03 ING, 0.43 is, 1.13 better) ----------
+scene("#sH", 0.0, 1.58);
+tl.fromTo("#hLogo", { scale: 1.7, opacity: 0, rotationX: -55, transformPerspective: 900 },
+  { scale: 1, opacity: 1, rotationX: 0, duration: 0.45, ease: "power4.out" }, 0.0);
+tl.fromTo("#hLogo", { x: 0 }, { x: 10, duration: 0.05, yoyo: true, repeat: 3, ease: "none", immediateRender: false }, 0.42);
+up(0.43, "#hK", { from: { y: 20 }, to: { duration: 0.4 } });
+pop(1.1, "#hQ", { from: { rotation: 0, scale: 0.6, y: 30 }, to: { y: 0, duration: 0.45 } });
+
+// ---------- B1: three potential clients (2.98 we, 3.72 three, 4.06 potential, 4.50 clients) ----------
+scene("#s1", 1.58, 5.22);
+up(1.62, "#b1K", { from: { y: 20 } });
+tl.fromTo("#b1N", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.5, ease: E.out }, 2.95);
+count("#b1N", 3, 3.0, 3.72);
+mword(4.02, "#b1a"); mword(4.3, "#b1b");
+["#b1c1", "#b1c2", "#b1c3"].forEach((s, i) => up(4.5 + i * 0.12, s, { from: { y: 120, rotation: (i - 1) * 6 }, to: { rotation: 0, duration: 0.6 } }));
+float("#b1N", 3.8, 5.2, 8);
+
+// ---------- B2: persona 1 (5.26 We, 7.12 young, 8.78 25, 11.38 Bucharest, 13.82 corporation) ----------
+scene("#s2", 5.22, 15.62);
+up(5.26, "#p1", { from: { y: 120 }, to: { duration: 0.8 } });
+pop(5.5, "#p1av", { from: { rotation: -12, scale: 0.5 } });
+mword(7.12, "#p1t1"); mword(7.6, "#p1t2");
+pop(8.74, "#p1c1", { from: { rotation: 0, scale: 0.6, x: -40 }, to: { x: 0, duration: 0.5 } });
+pop(11.34, "#p1c2", { from: { rotation: 0, scale: 0.6, x: -40 }, to: { x: 0, duration: 0.5 } });
+pop(13.78, "#p1c3", { from: { rotation: 0, scale: 0.6, x: -40 }, to: { x: 0, duration: 0.5 } });
+float("#p1av", 6.3, 15.4, 16);
+tl.fromTo("#p1av", { rotation: 0 }, { rotation: 6, duration: 0.3, yoyo: true, repeat: 1, ease: "sine.inOut", immediateRender: false }, 11.4);
+
+// ---------- B3: persona 2 (15.66 someone, 17.07 Ilfov, 18.21 family) ----------
+scene("#s3", 15.62, 20.18);
+tl.fromTo("#p2", { x: 1100 }, { x: 0, duration: 0.55, ease: "power3.out" }, 15.62);
+pop(15.9, "#p2av", { from: { rotation: 12, scale: 0.5 } });
+mword(15.7, "#p2t1"); mword(17.03, "#p2t2");
+pop(17.07, "#p2c1", { from: { rotation: 0, scale: 0.6, x: -40 }, to: { x: 0, duration: 0.5 } });
+pop(18.17, "#p2c2", { from: { rotation: 0, scale: 0.6, x: -40 }, to: { x: 0, duration: 0.5 } });
+float("#p2av", 16.4, 20.0, 14);
+
+// ---------- B4: persona 3 (20.20 someone, 20.86 from, 21.22 countryside) ----------
+scene("#s4", 20.18, 21.80);
+tl.fromTo("#p3", { x: 1100 }, { x: 0, duration: 0.5, ease: "power3.out" }, 20.18);
+pop(20.35, "#p3av", { from: { rotation: -12, scale: 0.5 } });
+mword(20.8, "#p3t1"); mword(21.18, "#p3t2");
+pop(21.2, "#p3c1", { from: { rotation: 0, scale: 0.6 }, to: { duration: 0.45 } });
+
+// ---------- B5-B7: the board (21.85 Raiffeisen, 23.12 good, 24.24 with, 24.42 everybody, 24.96 Banca,
+//            27.64 best, 29.51 countryside, 30.26 ING, 31.36 better, 32.47 younger) ----------
+scene("#s5", 21.80, 33.40);
+["#c1", "#c2", "#c3"].forEach((s, i) => pop(21.82 + i * 0.08, s, { from: { rotation: 0, scale: 0.6 }, to: { duration: 0.5 } }));
+tl.fromTo("#rR", { x: -360, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 21.85);
+pop(23.1, "#xR1"); pop(24.22, "#xR2"); pop(24.4, "#xR3");
+tl.fromTo("#rB", { x: -360, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 24.96);
+tl.fromTo("#dB", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "none" }, 25.3);
+pop(27.6, "#xB3", { from: { rotation: -30, scale: 0.2, y: -60 }, to: { y: 0 } });
+tl.fromTo("#gCountry", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.out" }, 29.45);
+tl.to("#gCountry", { opacity: 0, duration: 0.3, ease: "power2.in" }, 30.15);
+tl.fromTo("#rI", { x: -360, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 30.26);
+tl.fromTo("#dI", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "none" }, 30.6);
+pop(31.32, "#xI1", { from: { rotation: -30, scale: 0.2, y: -60 }, to: { y: 0 } });
+tl.fromTo("#gYoung", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.out" }, 32.42);
+
+// ---------- B8: engines (33.43 so, 34.87 through, 36.09 ChatGPT, 36.55 Gemini, 37.07 Perplexity) ----------
+scene("#s8", 33.40, 37.78);
+up(33.45, "#eK", { from: { y: 20 } });
+mword(34.85, "#eH1");
+["#e1", "#e2", "#e3"].forEach((s, i) => tl.fromTo(s, { opacity: 0, y: 60 }, { opacity: 0.35, y: 0, duration: 0.5, ease: E.out }, 33.6 + i * 0.1));
+["#n1", "#n2", "#n3"].forEach((s, i) => tl.fromTo(s, { opacity: 0 }, { opacity: 0.35, duration: 0.4, ease: "none" }, 33.8 + i * 0.1));
+[[36.07, "#e1", "#n1"], [36.53, "#e2", "#n2"], [37.05, "#e3", "#n3"]].forEach(([t, e, n]) => {
+  tl.to(e, { opacity: 1, scale: 1.08, borderColor: "#FF3D8B", boxShadow: "0 0 50px rgba(255,61,139,.55)", duration: 0.25, ease: "power2.out" }, t);
+  tl.to(e, { scale: 1, duration: 0.35, ease: "power2.inOut" }, t + 0.25);
+  tl.to(n, { opacity: 1, duration: 0.2, ease: "none" }, t);
+});
+
+// ---------- B9: recommending (37.81 if, 37.93 AI, 38.85 recommending, 41.05 people, 41.73 actually, 41.97 want) ----------
+scene("#s9", 37.78, 42.48);
+mword(37.85, "#r1"); mword(38.83, "#r2");
+pop(37.95, "#rBot", { from: { rotation: -15, scale: 0.4 } });
+draw($("#rArrow"), 39.4, 1.2);
+tl.fromTo("#rHead", { opacity: 0 }, { opacity: 1, duration: 0.15, ease: "none" }, 40.55);
+mword(41.0, "#r3"); mword(41.7, "#r4");
+pop(41.95, "#rTarget", { from: { rotation: 20, scale: 0.3 } });
+float("#rBot", 38.6, 42.4, 14);
+
+// ---------- B10: not appearing (42.52 if, 43.04 audience, 45.16 countryside, 46.72 see, 47.44 not, 47.62 appearing) ----------
+scene("#s10", 42.48, 48.22);
+up(42.55, "#aL", { from: { y: 50 } });
+pop(43.0, "#aAv", { from: { rotation: 10, scale: 0.5 } });
+pop(45.12, "#aChip", { from: { rotation: 0, scale: 0.6 }, to: { duration: 0.45 } });
+tl.fromTo("#aCard", { x: 700, opacity: 0 }, { x: 0, opacity: 1, duration: 0.55, ease: "power3.out" }, 45.16);
+up(45.5, "#a1", { from: { y: 40 }, to: { duration: 0.45 } });
+up(45.85, "#a2", { from: { y: 40 }, to: { duration: 0.45 } });
+up(46.7, "#a3", { from: { y: 40 }, to: { duration: 0.45 } });
+pop(47.42, "#aX", { from: { rotation: -40, scale: 0.2 } });
+tl.fromTo("#aStamp", { scale: 2.2, opacity: 0, rotation: -14 }, { scale: 1, opacity: 1, rotation: -6, duration: 0.3, ease: "power4.in" }, 47.6);
+tl.fromTo("#aCard", { x: 0 }, { x: 12, duration: 0.05, yoyo: true, repeat: 3, ease: "none", immediateRender: false }, 47.9);
+
+// ---------- B11: options (48.46 you, 49.10 change, 50.78 or, 51.38 decide, 52.96 right, 53.16 market) ----------
+scene("#s11", 48.22, null);
+up(48.25, "#oK", { from: { y: 20 } });
+up(49.08, "#o1", { from: { y: 140, rotation: -4 }, to: { rotation: 0, duration: 0.6 } });
+pop(50.76, "#oOr", { from: { rotation: 0, scale: 0.3 } });
+up(51.36, "#o2", { from: { y: 140, rotation: 4 }, to: { rotation: 0, duration: 0.6 } });
+tl.fromTo("#oRM", { color: "#FFFFFF" }, { color: "#FFC72C", duration: 0.2, ease: "none" }, 52.94);
+float("#o1", 49.8, 53.9, 10);
+
+tl.fromTo("#k-ul", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: E.o4 }, 53.14);
+
+tl.set({}, {}, DUR);
+window.seek = (t) => { tl.seek(t, false); painters.forEach((p) => p(t)); };
+window.seek(0);
+</script>
+</body>
+</html>

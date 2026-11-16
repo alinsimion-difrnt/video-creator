@@ -1,0 +1,49 @@
+# Base plate for the bespoke panel (ADR 0034): the speaker below the seam, captions on the seam, the audio.
+# The panel page covers the product area (y 0-840). Look follows the owner's reference TikTok (a split screen
+# with a UI card on top, white captions with gold key words): product_bg ink keeps captions light, and a
+# caption_font fx turns the active word gold for the whole video.
+layout:
+- {word: 0, layout: split}
+split_seam: 980
+split_head_gap: 160
+captions: top
+caption_plate: false
+push: 1.08
+grade: {contrast: 1.08, saturate: 1.1, brightness: 1.02, warmth: 0.03}
+product_bg: ink
+sounds: true
+panel: true
+fx:
+- {kind: caption_font, word: 0, until: 137, spec: {family: body, accent: "#FFC72C"}}
+zooms:
+- {word: 114, until: 118, scale: 1.2}   # "you're not appearing there"
+- {word: 129, until: 137, scale: 1.2}   # "decide if that is the right market for you"
+# Sound cues on the panel's beats (formula sounds, create/footage/sfx.py), each a few dB over the default level.
+audio:
+- {word: 0, sound: whoosh, offset_s: -0.03, gain_db: 4}     # ING slams in (hook)
+- {word: 3, sound: pop, gain_db: 4}                         # "for WHO?" chip
+- {word: 9, sound: pop, gain_db: 3}                         # hero 3
+- {word: 15, sound: whoosh, gain_db: 2}                     # persona 1 card
+- {word: 18, sound: click, gain_db: 4}                      # 25-30 chip
+- {word: 25, sound: pop, gain_db: 3}                        # Bucharest / Cluj chip
+- {word: 32, sound: pop, gain_db: 3}                        # corporate chip
+- {word: 35, sound: whoosh, gain_db: 2}                     # persona 2 card
+- {word: 39, sound: pop, gain_db: 3}                        # Ilfov chip
+- {word: 47, sound: whoosh, gain_db: 2}                     # persona 3 card
+- {word: 51, sound: pop, gain_db: 3}                        # countryside chip
+- {word: 52, sound: whoosh, gain_db: 3}                     # Raiffeisen logo
+- {word: 54, sound: sparkle, gain_db: 3}                    # three checks
+- {word: 57, sound: whoosh, gain_db: 3}                     # Banca Transilvania logo
+- {word: 60, sound: sparkle, gain_db: 3}                    # crown on countryside
+- {word: 67, sound: whoosh, gain_db: 3}                     # ING logo
+- {word: 70, sound: sparkle, gain_db: 3}                    # crown on young digital
+- {word: 82, sound: click, gain_db: 5}                      # ChatGPT
+- {word: 83, sound: click, gain_db: 5}                      # Gemini
+- {word: 85, sound: click, gain_db: 5}                      # Perplexity
+- {word: 90, sound: whoosh, gain_db: 3}                     # recommending
+- {word: 98, sound: pop, gain_db: 4}                        # target
+- {word: 108, sound: whoosh, gain_db: 3}                    # countryside answer card
+- {word: 115, sound: pop, gain_db: 5}                       # not appearing (red cross)
+- {word: 123, sound: whoosh, gain_db: 3}                    # option 1
+- {word: 129, sound: whoosh, gain_db: 3}                    # option 2
+- {word: 135, sound: sparkle, gain_db: 3}                   # right market
