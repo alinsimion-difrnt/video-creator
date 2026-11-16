@@ -1,0 +1,22 @@
+# Provisional brief written by `create take` (skill process-take, ADR 0035): replace every TODO from the words
+# the command printed, before `create prep`. Language: detected from the take.
+provenance: {schema_version: 1, tool_version: 0.1.0, stage: c1_brief, annotator: claude-code, skill: null,
+  model: null, input_hash: '0000000000000000000000000000000000000000000000000000000000000000',
+  created_at: '2026-11-16T10:38:44Z'}
+project: ai-banks-romania
+brand: acme
+language: en
+voice: presenter
+product: {name: GEOflux, spoken: GEOflux, url: https://www.geoflux.ai/state-of-ai/romania/banking,
+  one_liner: "AI-visibility tracker: asks ChatGPT, Gemini, Perplexity and Google AI Mode the same questions every day and counts which brands get named, and how."}
+audience: Romanian marketers and brand/bank teams who want to know what AI assistants say about them
+destination: tiktok
+format: founder_talk
+length: {min_s: 30, max_s: 90}  # a live demo with proof; over 60 s on purpose (owner: no shortening at the cost of content)
+tone: 'Fast, plain and practical: a live demo from a talk (MeasureCamp Bucharest banner on the wall), proof on screen for every claim. No pixel art, no mascot.'
+message: In AI answers it matters whether you are named and how you are described, and both can be measured
+facts:
+- {id: method, claim: "GEOflux asks ChatGPT, Gemini, Perplexity and Google AI Mode the same 25 banking questions every day and counts who gets named", source: "https://www.geoflux.ai/state-of-ai/romania/banking (read 2026-11-16)"}
+- {id: raiffeisen-first, claim: "Raiffeisen was the most visible bank at the time of the talk (his words; the slide's data window read about 4 Sep - 3 Oct 2026, unconfirmed). The live page (17 Oct - 15 Nov 2026) now ranks BCR 72.9%, ING 68.9%, Raiffeisen 68.2%, Banca Transilvania 64.1%, BRD 45.4%", source: "https://www.geoflux.ai/state-of-ai/romania/banking (read 2026-11-16)"}
+- {id: tbi-deposits, claim: "'Tebe bank' in the take is TBI Bank, one of the 9 banks tracked; it leads the Depozite topic on visibility (79%) on the live page", source: "https://www.geoflux.ai/state-of-ai/romania/banking (read 2026-11-16)"}
+- {id: bcr-refinancing, claim: "BCR leads the Refinantare Credit topic (89% visibility) on the live page", source: "https://www.geoflux.ai/state-of-ai/romania/banking (read 2026-11-16)"}

@@ -1,0 +1,18 @@
+# Base plate for the bespoke panel (ADR 0034; written by `create panel --init` when missing): Robert below the
+# seam, the captions on the white strip above it, the audio. The panel page covers the product area (y 0-840).
+# The same plan as acme-reel, x-ads and facebook-algorithm.
+layout:
+- {word: 0, layout: split}
+split_seam: 980
+split_head_gap: 160
+captions: top
+caption_plate: true
+push: 1.08
+grade: {contrast: 1.02, saturate: 1.0, brightness: 1.0, warmth: 0}  # colour fixed on the raw take (skin chroma 0.077 -> 0.058)
+product_bg: canvas
+sounds: false
+panel: true
+# held zooms on the two key lines (0-1.5 a minute, studies/tiktok rule 7): the hook's "HOW", the #1 bank
+zooms:
+- {word: 9, until: 12, scale: 1.18}
+- {word: 86, until: 94, scale: 1.15}

@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- ai-banks-romania panel (ADR 0034, skill build-panel). 1080 x 840 over the split base; times are word
+     starts from `create words ai-banks-romania --times`. Full beat sheet: projects/ai-banks-romania/panel/beats.md
+beats:
+  A 0.00-5.25   hook "In AI, it matters if you're there, and also how you're there"  kinetic type + check / thumbs
+  B 5.25-9.95   "the questions that people ask"  hero count 25 + report topic chips
+  C 9.95-17.45  the Romanian prompt  chat composer typing + ChatGPT / Gemini / Perplexity marks
+  D 17.45-25.90 "we open browsers ... imitate the user ... save the response ... who appears"  browser windows
+  E 25.90-30.55 "saving all that information ... who the winners are"  saved stack + trophy
+  F 30.55-37.95 "Raiffeisen is the most visible bank ... BCR, ING, Banca Transilvania, BRD"  leaderboard
+  G 37.95-41.30 "semantic analysis"  magnifier kinetic
+  H 41.30-46.75 "the old Google ... 10 links ... the first"  results page
+  I 46.75-51.65 "if you're there, and also how you're there"  checklist card
+  J 51.65-61.30 "how AI likes you ... do you recommend BCR ... up or down"  answer card + question tags
+  K 61.30-71.45 "sentiment score ... TBI Bank ... deposits ... highest interest rate"  gauge + TBI card
+  L 71.45-81.40 "BCR ... good for refinanțare credit ... bad on deposits"  scorecard + ask + source
+look: light paper world over the dark red room; violet accent (AI), green / red only for sentiment, Raiffeisen
+  yellow only on its #1 row. Space Grotesk heads + Inter text. -->
+<link rel="stylesheet" href="fonts/fonts.css">
+<script src="gsap.min.js"></script>
+<style>
+:root {
+  --ink: #0B0B14; --ink-2: #2A2A35; --muted: #6B6B7B; --hair: #E6E6EE; --fill: #F4F4F8; --bg: #FFFFFF;
+  --accent: #5B4BFF; --accent-soft: #ECEAFF; --pos: #16A34A; --pos-soft: #E3F6EA; --neg: #E11D48; --neg-soft: #FDE7EC;
+  --rai: #FFE600;
+  --shadow: 0 1px 2px rgba(11,11,20,.05), 0 24px 60px -24px rgba(11,11,20,.30);
+  --head: "Space Grotesk", Inter, system-ui, sans-serif; --text: Inter, system-ui, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 840px; overflow: hidden; background: var(--bg); }
+body { font-family: var(--text); color: var(--ink); -webkit-font-smoothing: antialiased; position: relative; }
+#bgwrap { position: absolute; inset: 0; overflow: hidden; }
+.blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: .55; }
+#bg-blob1 { width: 620px; height: 620px; background: #E2DEFF; left: -160px; top: -200px; }
+#bg-blob2 { width: 560px; height: 560px; background: #D9F7EE; right: -180px; top: 120px; }
+#bg-dots { position: absolute; inset: 0; background-image: radial-gradient(rgba(11,11,20,.10) 1.4px, transparent 1.6px);
+  background-size: 36px 36px; -webkit-mask-image: linear-gradient(#000, rgba(0,0,0,.6) 60%, transparent); }
+#fade { position: absolute; left: 0; right: 0; bottom: 0; height: 120px; background: linear-gradient(rgba(255,255,255,0), var(--bg)); z-index: 50; }
+.scene { position: absolute; inset: 0; opacity: 0; }
+.abs { position: absolute; }
+.card { background: #fff; border: 1px solid var(--hair); border-radius: 32px; box-shadow: var(--shadow); }
+.kick { font: 700 34px/1 var(--text); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+.h1 { font: 700 120px/1 var(--head); letter-spacing: -.04em; }
+.h2 { font: 700 80px/1.04 var(--head); letter-spacing: -.03em; }
+.h3 { font: 700 56px/1.1 var(--head); letter-spacing: -.02em; }
+.body { font: 500 42px/1.3 var(--text); color: var(--ink-2); }
+.hero { font: 700 210px/1 var(--head); letter-spacing: -.05em; }
+.acc { color: var(--accent); }
+.mask { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: .08em; }
+.wd { display: inline-block; }
+.chip { display: inline-flex; align-items: center; gap: 14px; padding: 14px 26px; border-radius: 999px; background: #fff;
+  border: 1px solid var(--hair); box-shadow: var(--shadow); font: 600 40px/1 var(--text); white-space: nowrap; }
+.chip img { height: 46px; }
+.emoji { position: absolute; }
+.btile { display: inline-flex; align-items: center; justify-content: center; padding: 10px 16px; border-radius: 12px; background: #14182B; }
+/* persistent title label */
+#pill { position: absolute; left: 50%; top: 186px; transform: translateX(-50%); z-index: 60; display: flex; align-items: center; gap: 14px;
+  padding: 12px 26px; border-radius: 999px; background: rgba(255,255,255,.92); border: 1px solid var(--hair); box-shadow: var(--shadow); }
+#pill .dot { width: 16px; height: 16px; border-radius: 50%; background: var(--accent); }
+#pill .kick { color: var(--ink); }
+/* C: composer */
+#cCard { left: 60px; top: 278px; width: 960px; height: 262px; padding: 34px 150px 30px 40px; }
+#cText { font: 600 50px/1.24 var(--text); color: var(--ink); }
+#cText::after { content: ""; display: inline-block; width: 4px; height: 52px; margin-left: 4px; vertical-align: -8px; background: var(--accent); }
+#cSend { right: 30px; bottom: 30px; width: 88px; height: 88px; border-radius: 50%; background: var(--ink); display: flex; align-items: center; justify-content: center; }
+/* D: browsers */
+.win { width: 780px; height: 316px; overflow: hidden; }
+.win .bar { height: 64px; background: var(--fill); border-bottom: 1px solid var(--hair); display: flex; align-items: center; gap: 12px; padding: 0 22px; }
+.win .bar i { width: 18px; height: 18px; border-radius: 50%; background: #D7D7E0; display: block; }
+.win .url { margin-left: 14px; padding: 6px 22px; border-radius: 999px; background: #fff; border: 1px solid var(--hair); font: 500 40px/1.1 var(--text); color: var(--ink-2); }
+.skel { height: 22px; border-radius: 11px; background: #E8E8F0; transform-origin: left center; }
+.hl { display: inline-block; padding: 8px 20px; border-radius: 12px; background: var(--rai); font: 700 44px/1.1 var(--text); }
+/* F: leaderboard */
+.row { display: flex; align-items: center; gap: 22px; padding: 0 28px; border-radius: 26px; background: #fff; border: 1px solid var(--hair); box-shadow: var(--shadow); }
+.rank { font: 700 48px/1 var(--text); color: var(--muted); width: 40px; text-align: center; }
+.bname { font: 700 44px/1 var(--head); letter-spacing: -.02em; white-space: nowrap; }
+/* H: results */
+.res { display: flex; align-items: center; gap: 18px; height: 62px; }
+.res .n { font: 700 40px/1 var(--head); color: var(--muted); width: 50px; }
+.res .t { height: 20px; border-radius: 10px; background: #1A0DAB; opacity: .75; }
+.res .u { height: 14px; border-radius: 7px; background: #D9D9E3; margin-top: 10px; }
+/* I: checklist */
+.box { width: 92px; height: 92px; border-radius: 22px; border: 5px solid var(--hair); background: #fff; position: relative; }
+.box img { position: absolute; left: -14px; top: -14px; width: 120px; }
+/* J: tags */
+.tag { padding: 20px 30px; border-radius: 30px 30px 30px 8px; background: #fff; border: 1px solid var(--hair); box-shadow: var(--shadow);
+  font: 600 40px/1.2 var(--text); max-width: 570px; }
+/* L: verdict pills */
+.verdict { display: inline-flex; align-items: center; gap: 12px; padding: 12px 28px 12px 16px; border-radius: 999px; font: 700 48px/1 var(--head); }
+.verdict img { height: 58px; }
+.good { background: var(--pos-soft); color: var(--pos); }
+.bad { background: var(--neg-soft); color: var(--neg); }
+</style>
+</head>
+<body>
+<div id="bgwrap"><div class="blob" id="bg-blob1"></div><div class="blob" id="bg-blob2"></div><div id="bg-dots"></div></div>
+
+<div id="pill"><span class="dot"></span><span class="kick">AI search · Romanian banks</span></div>
+
+<!-- A 0.00-5.25 hook -->
+<div class="scene" id="sA">
+  <div class="abs h3" id="aK" style="left:80px; top:278px; color:var(--muted);">In AI, it matters…</div>
+  <img class="emoji" id="aS" src="emoji/speech.png" style="left:886px; top:262px; width:130px;">
+  <div class="abs h2" style="left:80px; top:356px;">
+    <span class="mask"><span class="wd" id="a1">If</span></span>
+    <span class="mask"><span class="wd" id="a2">you're</span></span>
+    <span class="mask"><span class="wd" id="a3">there</span></span>
+  </div>
+  <img class="emoji" id="aChk" src="emoji/check.png" style="left:752px; top:338px; width:116px;">
+  <div class="abs" style="left:80px; top:470px; display:flex; align-items:flex-end; gap:26px;">
+    <span class="mask h2" style="color:var(--muted); padding-bottom:28px;"><span class="wd" id="a4">and</span></span>
+    <span class="hero acc" id="aHow" style="display:inline-block;">HOW</span>
+  </div>
+  <img class="emoji" id="aUp" src="emoji/thumbsup.png" style="left:720px; top:470px; width:150px;">
+  <img class="emoji" id="aDn" src="emoji/thumbsdown.png" style="left:880px; top:520px; width:150px;">
+</div>
+
+<!-- B 5.25-9.95 the questions -->
+<div class="scene" id="sB">
+  <div class="abs kick" id="bK" style="left:80px; top:292px;">The questions people ask AI</div>
+  <img class="emoji" id="bQ" src="emoji/question.png" style="left:900px; top:232px; width:120px;">
+  <div class="abs hero acc" id="bN" style="left:72px; top:360px;">25</div>
+  <div class="abs body" id="bL" style="left:80px; top:584px; width:430px; font-size:40px;">questions, every day</div>
+  <div class="abs chip" id="b1" style="left:500px; top:362px;">Credit nevoi personale</div>
+  <div class="abs chip" id="b2" style="left:500px; top:448px;">Refinanțare credit</div>
+  <div class="abs chip" id="b3" style="left:500px; top:534px;">Depozite</div>
+  <div class="abs chip" id="b4" style="left:500px; top:620px;">Card de credit</div>
+</div>
+
+<!-- C 9.95-17.45 the prompt -->
+<div class="scene" id="sC">
+  <div class="abs card" id="cCard"><div id="cText"></div>
+    <div class="abs" id="cSend"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></div>
+  </div>
+  <div class="abs body" id="cTr" style="left:70px; top:560px; font-size:40px; font-style:italic; color:var(--muted); white-space:nowrap;">Recommend me the best personal loan in Romania</div>
+  <div class="abs chip" id="c1" style="left:60px; top:640px;"><img src="logos/openai.svg">ChatGPT</div>
+  <div class="abs chip" id="c2" style="left:390px; top:640px;"><img src="logos/googlegemini.svg">Gemini</div>
+  <div class="abs chip" id="c3" style="left:690px; top:640px;"><img src="logos/perplexity.svg">Perplexity</div>
+</div>
+
+<!-- D 17.45-25.90 browsers -->
+<div class="scene" id="sD">
+  <div class="abs card win" id="d1" style="left:60px; top:262px; width:760px;"><div class="bar"><i></i><i></i><i></i><span class="url">chatgpt.com</span></div></div>
+  <div class="abs card win" id="d2" style="left:150px; top:336px;"><div class="bar"><i></i><i></i><i></i><span class="url">gemini.google.com</span></div></div>
+  <div class="abs card win" id="d3" style="left:240px; top:410px; width:800px;"><div class="bar"><i></i><i></i><i></i><span class="url">perplexity.ai</span></div>
+    <div class="abs" id="dQ" style="right:26px; top:80px; white-space:nowrap; padding:12px 22px; border-radius:22px; background:var(--accent-soft); font:600 40px/1.15 var(--text);"></div>
+    <div class="abs" style="left:30px; top:160px; width:740px;">
+      <div class="skel" id="dl1" style="width:560px;"></div>
+      <div class="skel" id="dl2" style="width:600px; margin-top:22px;"></div>
+      <div class="skel" id="dl3" style="width:470px; margin-top:22px;"></div>
+    </div>
+    <div class="abs" style="left:30px; top:236px; display:flex; gap:16px;">
+      <span class="hl" id="dh1">BRD</span><span class="hl" id="dh2">BCR</span><span class="hl" id="dh3">Raiffeisen</span>
+    </div>
+  </div>
+  <svg class="abs" id="dCur" width="54" height="54" viewBox="0 0 24 24" style="left:0; top:0;"><path d="M5 3l14 8-6.5 1.5L9.5 19z" fill="#0B0B14" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg>
+  <div class="abs card" id="dToast" style="left:640px; top:262px; padding:14px 28px 14px 18px; display:flex; align-items:center; gap:14px; border-radius:999px;">
+    <img src="emoji/floppy.png" style="width:64px;"><span style="font:700 40px/1 var(--text);">Response saved</span></div>
+</div>
+
+<!-- E 25.90-30.55 saved, winners -->
+<div class="scene" id="sE">
+  <div class="abs kick" id="eK" style="left:80px; top:292px;">Saving all that information</div>
+  <div class="abs" style="left:80px; top:360px; width:400px; height:330px;">
+    <div class="abs card" id="e1" style="left:0; top:200px; width:380px; height:96px; border-radius:24px; padding:26px; border:2px solid #D3CEFF; box-shadow:0 18px 40px -20px rgba(91,75,255,.45);"><div class="skel" style="width:300px;"></div><div class="skel" style="width:200px; margin-top:12px; height:16px;"></div></div>
+    <div class="abs card" id="e2" style="left:10px; top:150px; width:380px; height:96px; border-radius:24px; padding:26px; border:2px solid #D3CEFF; box-shadow:0 18px 40px -20px rgba(91,75,255,.45);"><div class="skel" style="width:280px;"></div><div class="skel" style="width:220px; margin-top:12px; height:16px;"></div></div>
+    <div class="abs card" id="e3" style="left:20px; top:100px; width:380px; height:96px; border-radius:24px; padding:26px; border:2px solid #D3CEFF; box-shadow:0 18px 40px -20px rgba(91,75,255,.45);"><div class="skel" style="width:310px;"></div><div class="skel" style="width:180px; margin-top:12px; height:16px;"></div></div>
+    <div class="abs card" id="e4" style="left:30px; top:50px; width:380px; height:96px; border-radius:24px; padding:26px; border:2px solid #D3CEFF; box-shadow:0 18px 40px -20px rgba(91,75,255,.45);"><div class="skel" style="width:260px;"></div><div class="skel" style="width:210px; margin-top:12px; height:16px;"></div></div>
+    <div class="abs card" id="e5" style="left:40px; top:0; width:380px; height:96px; border-radius:24px; padding:26px; border:2px solid #D3CEFF; box-shadow:0 18px 40px -20px rgba(91,75,255,.45);"><div class="skel" style="width:300px;"></div><div class="skel" style="width:190px; margin-top:12px; height:16px;"></div></div>
+  </div>
+  <img class="emoji" id="eT" src="emoji/trophy.png" style="left:730px; top:304px; width:200px;">
+  <div class="abs h2" style="left:580px; top:520px; font-size:72px;">
+    <span class="mask"><span class="wd" id="eH1">Who are</span></span><br>
+    <span class="mask"><span class="wd acc" id="eH2">the winners?</span></span>
+  </div>
+</div>
+
+<!-- F 30.55-37.95 leaderboard -->
+<div class="scene" id="sF">
+  <div class="abs kick" id="fK" style="left:80px; top:294px; color:var(--ink);">Most visible bank in AI</div>
+  <div class="abs kick" id="fK2" style="left:80px; top:336px;">At the time of the talk</div>
+  <div class="abs row" id="f1" style="left:60px; top:388px; width:960px; height:104px; background:var(--rai); border-color:#E8D200;">
+    <span class="rank" style="color:var(--ink);">1</span>
+    <img src="logos/fav-raiffeisen.png" style="height:68px; border-radius:12px;">
+    <span class="bname" style="font-size:56px;">Raiffeisen Bank</span>
+  </div>
+  <img class="emoji" id="fCrown" src="emoji/crown.png" style="left:872px; top:354px; width:112px;">
+  <div class="abs row" id="f2" style="left:60px; top:510px; width:470px; height:84px;"><span class="rank">2</span><span class="btile"><img src="logos/bcr-white.svg" style="height:40px;"></span></div>
+  <div class="abs row" id="f3" style="left:550px; top:510px; width:470px; height:84px;"><span class="rank">3</span><img src="logos/ing.svg" style="height:52px;"></div>
+  <div class="abs row" id="f4" style="left:60px; top:606px; width:470px; height:84px;"><span class="rank">4</span><img src="logos/bt.svg" style="height:62px;"></div>
+  <div class="abs row" id="f5" style="left:550px; top:606px; width:470px; height:84px;"><span class="rank">5</span><img src="logos/brd-mark.png" style="height:50px;"></div>
+</div>
+
+<!-- G 37.95-41.30 semantic analysis -->
+<div class="scene" id="sG">
+  <div class="abs kick" id="gK" style="left:80px; top:300px;">But what we also do</div>
+  <div class="abs h1" style="left:80px; top:372px;"><span class="mask"><span class="wd" id="g1">Semantic</span></span></div>
+  <div class="abs h1 acc" style="left:80px; top:500px;"><span class="mask"><span class="wd" id="g2">analysis.</span></span></div>
+  <img class="emoji" id="gM" src="emoji/magnifier.png" style="left:810px; top:318px; width:190px;">
+</div>
+
+<!-- H 41.30-46.75 the old Google -->
+<div class="scene" id="sH">
+  <div class="abs card" id="hCard" style="left:60px; top:272px; width:960px; height:450px; padding:30px 40px;">
+    <div style="display:flex; align-items:center; gap:18px;">
+      <img src="logos/google.svg" style="height:52px;"><span class="kick" id="hK" style="color:var(--ink);">The old Google</span>
+      <span class="kick" style="margin-left:auto;">10 links</span>
+    </div>
+    <div class="abs" style="left:40px; top:104px; width:420px;" id="hColA"></div>
+    <div class="abs" style="left:500px; top:104px; width:420px;" id="hColB"></div>
+  </div>
+  <div class="abs" id="hFirst" style="left:86px; top:370px; width:444px; height:76px; border-radius:18px; border:5px solid var(--pos);"></div>
+</div>
+
+<!-- I 46.75-51.65 checklist -->
+<div class="scene" id="sI">
+  <div class="abs kick" id="iK" style="left:80px; top:292px;">In AI</div>
+  <img class="emoji" id="iR" src="emoji/robot.png" style="left:886px; top:226px; width:120px;">
+  <div class="abs card" id="iCard" style="left:60px; top:356px; width:960px; height:330px; padding:46px 48px;">
+    <div style="display:flex; align-items:center; gap:34px;"><div class="box" id="iB1"><img id="iT1" src="emoji/check.png"></div>
+      <div class="h2" style="font-size:72px;"><span class="mask"><span class="wd" id="i1">If you're there</span></span></div></div>
+    <div style="display:flex; align-items:center; gap:34px; margin-top:46px;"><div class="box" id="iB2"><img id="iT2" src="emoji/check.png"></div>
+      <div class="h2" style="font-size:68px;"><span class="mask"><span class="wd" id="i2"><span class="acc">How</span> you're there</span></span></div></div>
+  </div>
+  <img class="emoji" id="iUp" src="emoji/thumbsup.png" style="left:868px; top:540px; width:92px;">
+  <img class="emoji" id="iDn" src="emoji/thumbsdown.png" style="left:958px; top:556px; width:92px;">
+</div>
+
+<!-- J 51.65-61.30 how AI likes you -->
+<div class="scene" id="sJ">
+  <div class="abs kick" id="jK" style="left:80px; top:282px;">How AI likes you… or doesn't</div>
+  <div class="abs card" id="jCard" style="left:60px; top:340px; width:390px; height:350px; padding:28px;">
+    <div style="display:flex; align-items:center; gap:14px;"><img src="emoji/robot.png" style="width:60px;"><div class="skel" style="width:200px;"></div></div>
+    <div class="skel" style="width:330px; margin-top:34px;"></div>
+    <div class="skel" style="width:300px; margin-top:60px;"></div>
+    <div class="skel" style="width:320px; margin-top:60px;"></div>
+    <div class="skel" style="width:260px; margin-top:60px;"></div>
+  </div>
+  <div class="abs" id="jBcr" style="left:84px; top:510px; display:flex; align-items:center; gap:12px; padding:8px 18px 8px 8px; border-radius:16px; background:var(--accent-soft); border:2px solid var(--accent);">
+    <span class="btile" style="padding:8px 12px;"><img src="logos/bcr-white.svg" style="height:34px;"></span></div>
+  <div class="abs tag" id="j1" style="left:480px; top:350px;">Do you recommend BCR?</div>
+  <div class="abs tag" id="j2" style="left:480px; top:462px;">Do you like them?</div>
+  <div class="abs tag" id="j3" style="left:480px; top:574px;">Are they up or down the response?</div>
+</div>
+
+<!-- K 61.30-71.45 sentiment score -->
+<div class="scene" id="sK">
+  <div class="abs kick" id="kK" style="left:80px; top:292px; color:var(--ink);">Sentiment score</div>
+  <svg class="abs" id="kG" style="left:60px; top:330px;" width="560" height="314" viewBox="0 0 500 280">
+    <path d="M30 250 A220 220 0 0 1 470 250" fill="none" stroke="#EEEEF4" stroke-width="46"/>
+    <path id="kA1" d="M30 250 A220 220 0 0 1 140 59.5" fill="none" stroke="#E11D48" stroke-width="46"/>
+    <path id="kA2" d="M140 59.5 A220 220 0 0 1 360 59.5" fill="none" stroke="#C9C9D6" stroke-width="46"/>
+    <path id="kA3" d="M360 59.5 A220 220 0 0 1 470 250" fill="none" stroke="#16A34A" stroke-width="46"/>
+  </svg>
+  <div class="abs" id="kNeedle" style="left:333px; top:390px; width:14px; height:220px; border-radius:4px; background:var(--ink); transform-origin:50% 100%;"></div>
+  <div class="abs" style="left:318px; top:588px; width:44px; height:44px; border-radius:50%; background:var(--ink);"></div>
+  <img class="emoji" id="kDn" src="emoji/thumbsdown.png" style="left:24px; top:594px; width:100px;">
+  <img class="emoji" id="kUp" src="emoji/thumbsup.png" style="left:530px; top:604px; width:100px;">
+  <div class="abs" id="kTbi" style="left:648px; top:344px; display:flex; align-items:center; gap:18px;">
+    <img src="logos/fav-tbibank.png" style="height:88px; border-radius:16px;"><span class="h3">TBI Bank</span></div>
+  <div class="abs verdict good" id="kDep" style="left:648px; top:466px;"><img src="emoji/thumbsup.png">Deposits</div>
+  <img class="emoji" id="kBag" src="emoji/moneybag.png" style="left:640px; top:574px; width:104px;">
+  <div class="abs" id="kRate" style="left:752px; top:580px; font:600 42px/1.2 var(--text); color:var(--ink-2);">Highest<br>interest rate</div>
+</div>
+
+<!-- L 71.45-81.40 BCR scorecard, the ask, the source -->
+<div class="scene" id="sL">
+  <div class="abs card" id="lCard" style="left:60px; top:268px; width:960px; height:366px; padding:22px 40px;">
+    <div style="display:flex; align-items:center; gap:20px;" id="lHead">
+      <span class="btile" style="padding:14px 22px;"><img src="logos/bcr-white.svg" style="height:50px;"></span>
+      <span class="kick" style="margin-left:auto; display:flex; align-items:center; gap:14px; color:var(--ink);">Data <img src="logos/geoflux.svg" style="height:66px;"></span>
+    </div>
+    <div style="display:flex; align-items:center; margin-top:16px;" id="lR1">
+      <span class="h3" style="font-size:50px;">Refinanțare credit</span>
+      <span class="verdict good" id="lV1" style="margin-left:auto;"><img src="emoji/thumbsup.png">Good</span></div>
+    <div style="display:flex; align-items:flex-start; margin-top:12px;" id="lR2">
+      <div><span class="h3" style="font-size:50px;">Deposits</span>
+        <div id="lLow" style="display:flex; align-items:center; gap:10px; margin-top:14px; font:600 40px/1 var(--text); color:var(--neg);"><img src="emoji/chartdown.png" style="height:54px;">Lower interest rates</div></div>
+      <span class="verdict bad" id="lV2" style="margin-left:auto;"><img src="emoji/thumbsdown.png">Bad</span></div>
+  </div>
+  <div class="abs chip" id="lAsk" style="left:50%; top:660px; padding:10px 24px; transform:translateX(-50%); background:var(--ink); color:#fff; border-color:var(--ink);">
+    What does AI say about your brand? <img src="emoji/pointdown.png" style="height:48px;"></div>
+</div>
+
+<div id="fade"></div>
+<script>
+const tl = gsap.timeline({ paused: true });
+const $ = (s) => document.querySelector(s);
+const E = { out: "expo.out", o4: "power4.out", spring: "back.out(1.6)", soft: "back.out(1.2)", inout: "power2.inOut" };
+const DUR = 81.4; // the edited take's length
+
+tl.to("#bg-blob1", { x: 260, y: 120, duration: DUR, ease: "sine.inOut" }, 0);
+tl.to("#bg-blob2", { x: -220, y: -60, duration: DUR, ease: "sine.inOut" }, 0);
+tl.to("#bg-dots", { backgroundPosition: "0px -540px", duration: DUR, ease: "none" }, 0);
+
+function scene(id, t0, t1) {
+  tl.fromTo(id, { opacity: 0 }, { opacity: 1, duration: 0.18, ease: "none", immediateRender: false }, t0);
+  if (t1 != null) {
+    tl.to(id, { opacity: 0, y: -30, duration: 0.25, ease: "power2.in" }, t1 - 0.25);
+    tl.set(id, { y: 0 }, t1 + 0.01);
+  }
+}
+const up = (t, sel, o) => tl.fromTo(sel, Object.assign({ y: 70, opacity: 0 }, o && o.from), Object.assign({ y: 0, opacity: 1, duration: 0.7, ease: E.out }, o && o.to), t);
+const pop = (t, sel, o) => tl.fromTo(sel, Object.assign({ scale: 0.4, opacity: 0, rotation: -8 }, o && o.from), Object.assign({ scale: 1, opacity: 1, rotation: 0, duration: 0.7, ease: E.spring }, o && o.to), t);
+const mword = (t, sel) => tl.fromTo(sel, { yPercent: 110 }, { yPercent: 0, duration: 0.6, ease: E.o4 }, t);
+const float = (sel, t0, t1, amp) => tl.to(sel, { y: "-=" + (amp || 14), duration: (t1 - t0) / 2, ease: "sine.inOut", yoyo: true, repeat: 1 }, t0);
+const painters = [];
+const prog = (t, t0, t1) => (t1 > t0 ? Math.max(0, Math.min(1, (t - t0) / (t1 - t0))) : +(t >= t0));
+function type(sel, text, t0, t1) {
+  const el = $(sel);
+  painters.push((t) => { el.textContent = text.slice(0, Math.round(text.length * prog(t, t0, t1))); });
+}
+function count(sel, to, t0, t1, fmt) {
+  const el = $(sel), ease = gsap.parseEase("power3.out"), f = fmt || ((v) => Math.round(v).toLocaleString("en-US"));
+  painters.push((t) => { el.textContent = f(to * ease(prog(t, t0, t1))); });
+  tl.fromTo(sel, { scale: 1 }, { scale: 1.08, duration: 0.12, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, t1);
+}
+function draw(path, t, d) {
+  const L = path.getTotalLength();
+  path.setAttribute("stroke-dasharray", L); path.setAttribute("stroke-dashoffset", L);
+  tl.to(path, { attr: { "stroke-dashoffset": 0 }, duration: d || 0.7, ease: E.inout }, t);
+}
+
+// ---------- A 0.00-5.25 hook ----------
+tl.set("#sA", { opacity: 1 }, 0);
+tl.to("#sA", { opacity: 0, y: -30, duration: 0.25, ease: "power2.in" }, 5.0);
+tl.set("#sA", { y: 0 }, 5.26);
+float("#aS", 0.0, 3.6, 14);
+mword(1.36, "#a1"); mword(1.56, "#a2"); mword(1.92, "#a3");
+pop(2.0, "#aChk", { from: { rotation: -25 } });
+mword(3.02, "#a4");
+tl.fromTo("#aHow", { scale: 0.55, opacity: 0, transformOrigin: "0% 100%" }, { scale: 1, opacity: 1, duration: 0.55, ease: E.spring }, 3.70);
+pop(4.36, "#aUp", { from: { rotation: -30, y: 40 }, to: { y: 0 } });
+pop(4.70, "#aDn", { from: { rotation: 30, y: 40 }, to: { y: 0 } });
+
+// ---------- B 5.25-9.95 the questions ----------
+scene("#sB", 5.25, 9.95);
+up(5.33, "#bK", { from: { y: 20 } });
+pop(5.6, "#bQ", { from: { rotation: 20 } });
+float("#bQ", 6.3, 9.7, 16);
+up(6.95, "#b1", { from: { x: 80, y: 0 }, to: { x: 0 } });
+up(7.37, "#b2", { from: { x: 80, y: 0 }, to: { x: 0 } });
+up(8.11, "#b3", { from: { x: 80, y: 0 }, to: { x: 0 } });
+up(8.49, "#b4", { from: { x: 80, y: 0 }, to: { x: 0 } });
+up(8.85, "#bN", { from: { y: 40 } });
+count("#bN", 25, 8.89, 9.63);
+up(9.3, "#bL", { from: { y: 24 } });
+
+// ---------- C 9.95-17.45 the prompt ----------
+scene("#sC", 9.95, 17.45);
+up(9.97, "#cCard", { from: { y: 50 } });
+type("#cText", "Recomandă-mi cel mai bun credit de nevoi personale din România", 10.06, 12.9);
+pop(12.95, "#cSend", { from: { rotation: 0, scale: 0.8 }, to: { duration: 0.4 } });
+tl.fromTo("#cSend", { backgroundColor: "#0B0B14" }, { backgroundColor: "#5B4BFF", duration: 0.2, immediateRender: false }, 13.05);
+up(13.14, "#cTr", { from: { y: 24 } });
+pop(15.48, "#c1", { from: { rotation: 0, scale: 0.92, opacity: 0.45 }, to: { duration: 0.45 } });
+pop(16.00, "#c2", { from: { rotation: 0, scale: 0.92, opacity: 0.45 }, to: { duration: 0.45 } });
+pop(16.62, "#c3", { from: { rotation: 0, scale: 0.92, opacity: 0.45 }, to: { duration: 0.45 } });
+
+// ---------- D 17.45-25.90 browsers ----------
+scene("#sD", 17.45, 26.20);
+pop(18.03, "#d1", { from: { rotation: 0, scale: 0.85, y: 40 }, to: { y: 0, duration: 0.6 } });
+pop(18.25, "#d2", { from: { rotation: 0, scale: 0.85, y: 40 }, to: { y: 0, duration: 0.6 } });
+pop(18.45, "#d3", { from: { rotation: 0, scale: 0.85, y: 40 }, to: { y: 0, duration: 0.6 } });
+tl.fromTo("#dQ", { opacity: 0 }, { opacity: 1, duration: 0.15, immediateRender: false }, 19.7);
+type("#dQ", "Recomandă-mi cel mai bun credit…", 19.77, 20.6);
+tl.fromTo("#dCur", { x: 980, y: 760, opacity: 0 }, { x: 930, y: 470, opacity: 1, duration: 0.9, ease: E.inout }, 19.6);
+tl.to("#dCur", { scale: 0.8, duration: 0.08, yoyo: true, repeat: 1, transformOrigin: "20% 10%" }, 20.6);
+tl.to("#dCur", { x: 1000, y: 820, opacity: 0, duration: 0.6, ease: "power2.in" }, 21.2);
+["#dl1", "#dl2", "#dl3"].forEach((s, i) => tl.fromTo(s, { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: E.o4 }, 21.1 + i * 0.18));
+pop(22.53, "#dToast", { from: { rotation: 0, scale: 0.6, y: -20 }, to: { y: 0, duration: 0.5 } });
+tl.to("#dToast", { opacity: 0, y: -20, duration: 0.3, ease: "power2.in" }, 24.6);
+pop(25.15, "#dh1", { from: { rotation: 0, scale: 0.5 }, to: { duration: 0.45 } });
+pop(25.35, "#dh2", { from: { rotation: 0, scale: 0.5 }, to: { duration: 0.45 } });
+pop(25.55, "#dh3", { from: { rotation: 0, scale: 0.5 }, to: { duration: 0.45 } });
+
+// ---------- E 25.90-30.55 saved, winners ----------
+scene("#sE", 26.20, 30.55);
+up(26.25, "#eK", { from: { y: 20 } });
+["#e1", "#e2", "#e3", "#e4", "#e5"].forEach((s, i) => tl.fromTo(s, { y: -260, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "bounce.out" }, 26.45 + i * 0.22));
+float("#e5", 27.8, 30.3, 10);
+mword(29.51, "#eH1"); mword(29.85, "#eH2");
+pop(29.85, "#eT", { from: { rotation: -20, y: 60 }, to: { y: 0 } });
+
+// ---------- F 30.55-37.95 leaderboard ----------
+scene("#sF", 30.55, 37.95);
+up(30.58, "#fK", { from: { y: 20 } });
+up(30.75, "#fK2", { from: { y: 20 } });
+pop(30.66, "#f1", { from: { rotation: 0, scale: 0.8 } });
+pop(31.06, "#fCrown", { from: { rotation: 25, y: -60 }, to: { y: 0 } });
+tl.fromTo("#f1", { boxShadow: "0 0 0 0 rgba(255,230,0,0)" }, { boxShadow: "0 0 0 18px rgba(255,230,0,.35)", duration: 0.45, yoyo: true, repeat: 1, ease: "sine.inOut", immediateRender: false }, 33.0);
+float("#fCrown", 32.0, 35.6, 12);
+up(35.79, "#f2", { from: { y: 50 } });
+up(36.21, "#f3", { from: { y: 50 } });
+up(36.63, "#f4", { from: { y: 50 } });
+up(37.55, "#f5", { from: { y: 50 }, to: { duration: 0.35 } });
+
+// ---------- G 37.95-41.30 semantic analysis ----------
+scene("#sG", 37.95, 41.30);
+up(38.01, "#gK", { from: { y: 20 } });
+pop(38.6, "#gM", { from: { rotation: 30 } });
+tl.to("#gM", { rotation: -16, scale: 1.12, duration: 0.35, yoyo: true, repeat: 1, ease: "sine.inOut" }, 40.37);
+mword(40.37, "#g1"); mword(40.69, "#g2");
+
+// ---------- H 41.30-46.75 the old Google ----------
+scene("#sH", 41.30, 46.75);
+(function () {
+  const widths = [330, 300, 350, 280, 320, 310, 340, 290, 330, 300];
+  widths.forEach((w, i) => {
+    const r = document.createElement("div");
+    r.className = "res"; r.id = "hr" + (i + 1);
+    r.innerHTML = '<span class="n">' + (i + 1) + '</span><div><div class="t" style="width:' + w + 'px"></div><div class="u" style="width:' + (w - 60) + 'px"></div></div>';
+    (i < 5 ? $("#hColA") : $("#hColB")).appendChild(r);
+  });
+})();
+up(41.32, "#hCard", { from: { y: 50 } });
+for (let i = 1; i <= 10; i++) tl.fromTo("#hr" + i, { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.35, ease: E.out }, 43.10 + (i - 1) * 0.06);
+for (let i = 2; i <= 10; i++) tl.to("#hr" + i, { opacity: 0.55, duration: 0.4 }, 45.03);
+tl.fromTo("#hFirst", { opacity: 0, scale: 1.08 }, { opacity: 1, scale: 1, duration: 0.4, ease: E.out }, 45.73);
+tl.to("#hr1 .n", { color: "#16A34A", scale: 1.3, duration: 0.3, ease: E.spring }, 46.19);
+
+// ---------- I 46.75-51.65 checklist ----------
+scene("#sI", 46.75, 51.65);
+up(46.83, "#iK", { from: { y: 20 } });
+pop(47.11, "#iR", { from: { rotation: -20 } });
+up(46.9, "#iCard", { from: { y: 50 } });
+mword(48.13, "#i1");
+pop(48.69, "#iT1", { from: { rotation: -30, scale: 0.2 } });
+mword(50.13, "#i2");
+pop(50.13, "#iUp", { from: { rotation: -30 } });
+pop(50.45, "#iDn", { from: { rotation: 30 } });
+pop(51.13, "#iT2", { from: { rotation: -30, scale: 0.2 }, to: { duration: 0.45 } });
+
+// ---------- J 51.65-61.30 how AI likes you ----------
+scene("#sJ", 51.65, 61.30);
+up(51.75, "#jK", { from: { y: 20 } });
+up(52.0, "#jCard", { from: { y: 50 } });
+pop(52.6, "#jBcr", { from: { rotation: 0, scale: 0.6 } });
+up(55.05, "#j1", { from: { x: 60, y: 0 }, to: { x: 0 } });
+up(57.31, "#j2", { from: { x: 60, y: 0 }, to: { x: 0 } });
+up(58.71, "#j3", { from: { x: 60, y: 0 }, to: { x: 0 } });
+tl.to("#jBcr", { y: -96, duration: 0.45, ease: E.inout }, 59.29);
+tl.to("#jBcr", { y: 170, duration: 0.55, ease: E.inout }, 59.89);
+tl.to("#jBcr", { y: 0, duration: 0.5, ease: E.inout }, 60.62);
+
+// ---------- K 61.30-71.45 sentiment score ----------
+scene("#sK", 61.30, 71.45);
+up(61.4, "#kG", { from: { y: 40 } });
+up(63.29, "#kK", { from: { y: 20 } });
+draw($("#kA1"), 63.29, 0.35); draw($("#kA2"), 63.55, 0.35); draw($("#kA3"), 63.8, 0.35);
+tl.fromTo("#kNeedle", { rotation: 0, opacity: 0 }, { rotation: 0, opacity: 1, duration: 0.3 }, 63.6);
+tl.to("#kNeedle", { rotation: -40, duration: 0.6, ease: E.inout }, 64.4);
+pop(64.6, "#kDn", { from: { rotation: 20 } });
+pop(64.8, "#kUp", { from: { rotation: -20 } });
+pop(66.11, "#kTbi", { from: { rotation: 0, scale: 0.7 } });
+tl.to("#kNeedle", { rotation: 62, duration: 0.8, ease: "back.out(1.8)" }, 67.51);
+pop(68.33, "#kDep", { from: { rotation: 0, scale: 0.6 } });
+pop(69.63, "#kBag", { from: { rotation: -25 } });
+up(69.89, "#kRate", { from: { y: 24 } });
+
+// ---------- L 71.45-81.40 BCR scorecard, the ask ----------
+scene("#sL", 71.45, null);
+up(71.6, "#lCard", { from: { y: 50 } });
+tl.fromTo("#lHead", { opacity: 0.25 }, { opacity: 1, duration: 0.3, immediateRender: true }, 73.41);
+up(74.85, "#lR1", { from: { y: 0, opacity: 0.3 }, to: { duration: 0.3 } });
+pop(74.85, "#lV1", { from: { rotation: 0, scale: 0.6 } });
+up(77.29, "#lR2", { from: { y: 0, opacity: 0.3 }, to: { duration: 0.3 } });
+pop(77.29, "#lV2", { from: { rotation: 0, scale: 0.6 } });
+tl.fromTo("#lLow", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4, ease: E.out }, 79.73);
+tl.fromTo("#lAsk", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: E.soft }, 78.9);
+
+tl.set({}, {}, DUR);
+window.seek = (t) => { tl.seek(t, false); painters.forEach((p) => p(t)); };
+window.seek(0);
+</script>
+</body>
+</html>
