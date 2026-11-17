@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Card-style overlay starter (skill card-style). Copy with `uv run python scripts/card_style.py init <dir> --words <json>`,
+then replace the two example scenes. One transparent 1080x1920 page = the whole graphic layer of a TikTok:
+the paper panel (top half, cards build on the word clock), the caption pill at the seam and full-frame takeovers.
+The speaker video sits underneath (base render, speaker in y 960-1920) and shows through the transparent half.
+beats:
+  S0 0.00-3.40  "<hook words>"  dark card, hero number counts up and lands on its word
+  S1 3.40-...   "<words>"       white card, headline mask-rises, rows build one at a time, one row flips yellow
+look: paper #F4F3EE, white + black cards, ONE accent (yellow) used as a state change, Montserrat only. -->
+<link rel="stylesheet" href="fonts/fonts.css">
+<script src="gsap.min.js"></script>
+<script src="data.js"></script>
+<style>
+:root { --ink: #0B0B0B; --paper: #F4F3EE; --white: #FFFFFF; --yellow: #FFD60A; --muted: #85837B; --soft: #EEEDE6;
+  --skel: #C9C6BB; --shadow: 0 2px 4px rgba(11,11,11,.05), 0 30px 70px -30px rgba(11,11,11,.35); --f: "Montserrat", sans-serif; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; background: transparent; }
+body { font-family: var(--f); color: var(--ink); -webkit-font-smoothing: antialiased; position: relative; }
+/* the panel: top half; grows to the full frame for a takeover */
+#panel { position: absolute; left: 0; top: 0; width: 1080px; height: 960px; overflow: hidden; background: var(--paper);
+  box-shadow: 0 18px 40px -10px rgba(0,0,0,.45); z-index: 1; }
+#dots { position: absolute; inset: -40px; background-image: radial-gradient(rgba(11,11,11,.09) 1.6px, transparent 1.8px); background-size: 40px 40px; }
+#glow { position: absolute; width: 760px; height: 760px; border-radius: 50%; background: #FFE873; filter: blur(110px); opacity: .28; left: 520px; top: -260px; }
+#take { position: absolute; inset: 0; background: var(--yellow); opacity: 0; }
+.scene { position: absolute; inset: 0; visibility: hidden; }
+/* cards: one width, radius and padding; height = content (max ~610 px), centred on y 512: >= 24 px above the caption pill */
+.card { position: absolute; left: 66px; width: 948px; border-radius: 44px; background: var(--white); box-shadow: var(--shadow); padding: 54px 58px; }
+.card.dark { background: var(--ink); color: var(--white); box-shadow: 0 30px 80px -30px rgba(0,0,0,.6); }
+.kick { font: 800 36px/1 var(--f); letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+.dark .kick { color: rgba(255,255,255,.6); }
+.h1 { font: 900 124px/1 var(--f); letter-spacing: -.045em; }
+.h2 { font: 800 86px/1.02 var(--f); letter-spacing: -.035em; }
+.h3 { font: 800 64px/1.06 var(--f); letter-spacing: -.025em; }
+.body { font: 600 46px/1.15 var(--f); letter-spacing: -.01em; }
+.dim { color: rgba(255,255,255,.62); }
+.line { display: block; overflow: hidden; padding-bottom: .1em; margin-bottom: -.1em; }   /* mask for rise() */
+.line > span { display: inline-block; }
+.w { display: inline-block; }
+.mark { position: relative; display: inline-block; z-index: 0; }                          /* marker sweep */
+.mark::before { content: ""; position: absolute; left: -.08em; right: -.08em; bottom: .02em; height: .44em; background: var(--yellow);
+  z-index: -1; transform-origin: left center; transform: scaleX(var(--s, 0)); border-radius: 6px; }
+.mark.box::before { top: .02em; bottom: -.02em; height: auto; border-radius: 14px; }       /* on dark cards: a full box */
+.chip { display: inline-flex; align-items: center; height: 88px; padding: 0 34px; border-radius: 44px; font: 800 44px/1 var(--f); letter-spacing: -.015em; white-space: nowrap; }
+.chip.y { background: var(--yellow); color: var(--ink); }
+.chip.k { background: var(--ink); color: var(--white); }
+.chip.o { border: 4px solid currentColor; }
+.chips { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+.row { display: flex; align-items: center; gap: 24px; height: 88px; border-radius: 26px; padding: 0 28px; background: var(--soft); margin-top: 12px; position: relative; overflow: hidden; }
+.row .n { font: 900 40px/1 var(--f); width: 64px; }
+.bar { height: 24px; border-radius: 12px; background: var(--skel); }
+.bubble { background: var(--soft); border-radius: 36px 36px 36px 10px; padding: 30px 36px; font: 800 54px/1.12 var(--f); letter-spacing: -.02em; }
+.dark .bubble { background: #22221F; color: var(--white); }
+/* captions: one black pill at the seam, white lowercase words, the spoken word on a yellow box */
+#cap { position: absolute; left: 0; width: 1080px; top: 848px; height: 104px; z-index: 5; }
+body.take #cap { opacity: 0; }   /* a takeover says the words itself */
+.chunk { position: absolute; left: 540px; top: 0; transform: translateX(-50%); display: flex; gap: 6px; align-items: center; background: var(--ink);
+  border-radius: 24px; padding: 8px 12px; font: 800 78px/1 var(--f); letter-spacing: -.02em; white-space: nowrap; color: var(--white); visibility: hidden; }
+.chunk .cw { padding: 6px 12px 12px; border-radius: 14px; }
+.chunk .cw.on { background: var(--yellow); color: var(--ink); }
+</style>
+</head>
+<body>
+<div id="panel">
+  <div id="dots"></div><div id="glow"></div><div id="take"></div>
+
+  <!-- example S0: hook card -->
+  <div class="scene" id="s0">
+    <div class="card dark">
+      <div class="kick">kicker</div>
+      <div id="s0n" style="font: 900 262px/1 var(--f); letter-spacing:-.06em; color: var(--yellow); margin-top: 22px">0%</div>
+      <div class="h3 line" id="s0l" style="margin-top: 4px"><span>line under the number</span></div>
+      <div class="chips"><span class="chip y" id="s0c">chip</span></div>
+    </div>
+  </div>
+
+  <!-- example S1: a list that builds, one row flips yellow -->
+  <div class="scene" id="s1">
+    <div class="card">
+      <div class="kick">kicker</div>
+      <div class="h2 line" id="s1h" style="margin-top: 18px"><span>headline</span></div>
+      <div id="s1rows" style="margin-top: 10px">
+        <div class="row"><div class="n">#1</div><div class="bar" style="width:430px"></div></div>
+        <div class="row"><div class="n">#2</div><div class="bar" style="width:520px"></div></div>
+        <div class="row" id="s1r3"><div class="n">#3</div><div class="bar" id="s1bar" style="width:380px"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="cap"></div>
+
+<script>
+const D = window.DATA, W = D.words, END = D.end, DROP = D.drop;
+const $ = (s) => document.querySelector(s);
+const tl = gsap.timeline({ paused: true });
+const E = "power3.out";
+const SFX = [];   // sound cues for the mixer (card | pop | swipe | hit | boom | whoosh), saved by `card_style.py render`
+const norm = (s) => s.toLowerCase().replace(/[.,?!]/g, "");
+// the n-th time `word` is said after `after` seconds; a typo throws, so a wrong anchor never renders silently
+function at(word, n = 1, after = 0) { let k = 0; for (const w of W) { if (w.t0 >= after && norm(w.w) === word && ++k === n) return w.t0; }
+  throw new Error("no word " + word); }
+
+// ---- primitives (measured on the reference: locked cards, mask-rise lines, one element at a time, emphasis = state change, no bounce)
+function scene(sel, t0, t1) {
+  const s = $(sel), c = s.querySelector(".card");
+  tl.set(s, { visibility: "visible" }, t0); SFX.push(["card", t0]);
+  if (c) tl.fromTo(c, { opacity: 0, y: 34, scale: .97 }, { opacity: 1, y: 0, scale: 1, duration: .42, ease: E }, t0);
+  if (t1 != null) { if (c) tl.to(c, { opacity: 0, y: -26, duration: .22, ease: "power2.in" }, t1 - .22); tl.set(s, { visibility: "hidden" }, t1); }
+}
+function rise(sel, t, d = .34) { const e = typeof sel === "string" ? $(sel) : sel; const inner = e.querySelector(":scope > span") || e;
+  tl.fromTo(inner, { yPercent: 115 }, { yPercent: 0, duration: d, ease: E }, t); }
+function pop(sel, t) { SFX.push(["pop", t]); tl.fromTo(sel, { opacity: 0, scale: .86, y: 10 }, { opacity: 1, scale: 1, y: 0, duration: .26, ease: E }, t); }
+function fadeIn(sel, t, y = 16) { tl.fromTo(sel, { opacity: 0, y }, { opacity: 1, y: 0, duration: .3, ease: E }, t); }
+function markSweep(sel, t, d = .32) { SFX.push(["swipe", t]); tl.fromTo(sel, { "--s": 0 }, { "--s": 1, duration: d, ease: "power2.out" }, t); }
+function flip(sel, t) { tl.to(sel, { backgroundColor: "#FFD60A", y: -6, boxShadow: "0 18px 30px -16px rgba(11,11,11,.45)", duration: .26, ease: E }, t); }
+function typeWords(el, words, times) {
+  // "|" in words = a line break (choose the break, never leave an orphan word)
+  el.innerHTML = words.map((w) => w === "|" ? "<br>" : `<span class="w" style="opacity:0">${w}</span>`).join(" ");
+  tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: .15 }, times[0] - .08);
+  [...el.querySelectorAll(".w")].forEach((s, i) => tl.fromTo(s, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: .2, ease: E }, times[i]));
+}
+function count(el, from, to, t, d, suffix = "%") { const o = { v: from };
+  tl.fromTo(o, { v: from }, { v: to, duration: d, ease: "power2.out", onUpdate: () => el.textContent = Math.round(o.v) + suffix }, t); }
+// dim an earlier example when the next one arrives: outline + 45% white (a 36%-opacity yellow reads as olive on black)
+function dimChip(sel, t) { tl.to(sel, { backgroundColor: "rgba(255,214,10,0)", color: "rgba(255,255,255,.55)", boxShadow: "inset 0 0 0 4px rgba(255,255,255,.4)", duration: .3 }, t); }
+// full-frame takeover: the panel covers the speaker from t0 (put it on a drop) to t1, content in `inner`
+function takeover(sceneSel, t0, t1) {
+  tl.set("#panel", { height: 1920 }, t0); tl.set("#take", { opacity: 1 }, t0); tl.set("body", { className: "take" }, t0);
+  tl.set(sceneSel, { visibility: "visible" }, t0); SFX.push(["boom", t0], ["whoosh", t1 - .25]);
+  tl.to(sceneSel, { opacity: 0, duration: .18 }, t1 - .02); tl.set(sceneSel, { visibility: "hidden" }, t1 + .2);
+  tl.set("body", { className: "" }, t1);
+  tl.to("#panel", { height: 960, duration: .38, ease: "power3.inOut" }, t1 - .02);
+  tl.to("#take", { opacity: 0, duration: .3, ease: "power2.inOut" }, t1 + .08);
+}
+
+document.fonts.ready.then(() => {
+tl.fromTo("#dots", { x: 0, y: 0 }, { x: -40, y: -40, duration: END, ease: "none" }, 0);
+tl.fromTo("#glow", { x: 0, y: 0, scale: 1 }, { x: -260, y: 120, scale: 1.15, duration: END, ease: "sine.inOut" }, 0);
+
+// ---- example scenes: replace with the video's beats (every time comes from at(), never a guess)
+tl.set("#s0", { visibility: "visible" }, 0);
+count($("#s0n"), 0, 40, 0.0, Math.min(1.2, END));
+rise("#s0l", 1.4);
+pop("#s0c", 2.2);
+tl.to("#s0 .card", { opacity: 0, y: -26, duration: .2, ease: "power2.in" }, 3.2); tl.set("#s0", { visibility: "hidden" }, 3.4);
+scene("#s1", 3.4, null);
+rise("#s1h", 3.6);
+[...document.querySelectorAll("#s1rows .row")].forEach((r, i) => fadeIn(r, 3.9 + i * .14));
+flip("#s1r3", 5.0);
+
+// ---- captions: 1-3 words, lowercase, glued phrases stay together, the spoken word on a yellow box
+(function captions() {
+  const cap = $("#cap"), chunks = []; let cur = [];
+  const glue = new Set(D.glue || []);
+  const T = [];
+  W.forEach((w) => { const p = T[T.length - 1];
+    if (p && !/[.,?]$/.test(p.w) && glue.has(norm(p.w.split(" ").pop()) + " " + norm(w.w))) { p.w += " " + w.w; p.t1 = w.t1; }
+    else T.push({ ...w }); });
+  T.forEach((w, i) => {
+    cur.push(w); const nx = T[i + 1];
+    const txt = cur.map((x) => norm(x.w)).join(" ");
+    const hard = !nx || /[.,?]$/.test(w.w) || nx.t0 - w.t1 > .3 || nx.seg !== w.seg;
+    if (hard || cur.length >= 3 || (txt + " " + norm(nx.w)).length > 14) { chunks.push(cur); cur = []; }
+  });
+  chunks.forEach((c, k) => {
+    const el = document.createElement("div"); el.className = "chunk";
+    // lowercase, except acronyms and brand casing (two or more capitals: SNSPA, TPU, ChatGPT)
+    const low = (s) => (s.match(/[A-Z]/g) || []).length >= 2 ? s : s.toLowerCase();
+    el.innerHTML = c.map((w) => `<span class="cw">${w.w.split(" ").map(low).join(" ").replace(/[.,]+$/, "")}</span>`).join("");
+    cap.appendChild(el);
+    let fs = 78; el.style.fontSize = fs + "px";
+    while (el.offsetWidth > 696 && fs > 56) { fs -= 2; el.style.fontSize = fs + "px"; }   // TikTok rail: x <= 888 below y 840
+    const a = c[0].t0 - .04, nxt = chunks[k + 1], b = nxt ? Math.min(nxt[0].t0 - .04, c[c.length - 1].t1 + .4) : END;
+    tl.set(el, { visibility: "visible" }, a); tl.fromTo(el, { y: 12, opacity: 0 }, { y: 0, opacity: 1, duration: .12, ease: E }, a);
+    tl.set(el, { visibility: "hidden" }, Math.max(b, a + .2));
+    [...el.children].forEach((s, i) => { tl.set(s, { className: "cw on" }, c[i].t0); tl.set(s, { className: "cw" }, c[i + 1] ? c[i + 1].t0 : b); });
+  });
+})();
+
+// ---- layout: cards centred only now, after every scene's content is in the DOM and the font has loaded
+document.querySelectorAll(".card").forEach((c) => { const h = c.offsetHeight; c.style.top = Math.round(512 - h / 2) + "px"; });
+window.cards = [...document.querySelectorAll(".card")].map((c) => [c.parentElement.id, c.offsetHeight, c.offsetTop]);
+tl.set({}, {}, END);
+window.seek = (t) => { tl.time(t, false); };
+window.SFX = SFX;
+window.ready = true;
+});
+
+// ---- layout QA (card_style.py qa): text overflowing a card or the frame, under TikTok's top tabs or right rail, or colliding
+window.qa = () => {
+  // what the renderer would paint: Chromium's own test (a child with visibility:visible shows inside a hidden parent)
+  const vis = (e) => e.checkVisibility({ opacityProperty: true, visibilityProperty: true }) &&
+    [...function* () { for (let n = e; n && n !== document.body; n = n.parentElement) yield n; }()].every((n) => parseFloat(getComputedStyle(n).opacity) >= .05);
+  const els = [...document.querySelectorAll(".kick,.h1,.h2,.h3,.body,.chip,.bubble,.w,.chunk,[data-qa]")].filter(vis);
+  const out = [];
+  for (const e of els) {
+    const r = e.getBoundingClientRect(); if (r.width < 2) continue;
+    const card = e.closest(".card");
+    if (card) { const c = card.getBoundingClientRect();
+      if (r.right > c.right - 24 || r.left < c.left + 20 || r.bottom > c.bottom - 10) out.push(`overflow ${e.id || e.className} ${e.textContent.slice(0, 24)}`); }
+    if (r.left < 0 || r.right > 1080) out.push(`off-frame ${e.textContent.slice(0, 24)}`);
+    if (r.top < 200 && r.bottom > 0) out.push(`under top tabs ${e.textContent.slice(0, 24)}`);
+    if (r.bottom > 840 && r.right > 888 && !e.closest("#panel")) out.push(`rail ${e.textContent.slice(0, 24)}`);
+  }
+  const leaf = els.filter((e) => !els.some((o) => o !== e && e.contains(o)));
+  for (let i = 0; i < leaf.length; i++) for (let j = i + 1; j < leaf.length; j++) {
+    const a = leaf[i].getBoundingClientRect(), b = leaf[j].getBoundingClientRect();
+    const ox = Math.min(a.right, b.right) - Math.max(a.left, b.left), oy = Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top);
+    if (ox > 6 && oy > 6 && leaf[i].parentElement !== leaf[j].parentElement) out.push(`collide "${leaf[i].textContent.slice(0, 18)}" x "${leaf[j].textContent.slice(0, 18)}"`);
+  }
+  return out;
+};
+</script>
+</body>
+</html>
